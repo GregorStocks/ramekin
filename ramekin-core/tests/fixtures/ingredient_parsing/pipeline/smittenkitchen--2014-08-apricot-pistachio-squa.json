@@ -3,10 +3,6 @@
   "recipe_slug": "2014-08-apricot-pistachio-squa",
   "ingredients": [
     {
-      "raw": "Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup (125 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -21,7 +17,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -36,7 +31,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,7 +49,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -78,13 +71,8 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Crust",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "3/4 cup (a scant 4 ounces or 110 grams) shelled unsalted pistachios",
@@ -101,7 +89,6 @@
           }
         ],
         "note": "a scant 4 ounces or 110 grams",
-        "section": "Filling",
         "category": "Other"
       }
     },
@@ -120,7 +107,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -130,7 +116,6 @@
         "item": "Few pinches of sea salt",
         "measurements": [],
         "note": null,
-        "section": "Filling",
         "category": "Other"
       }
     },
@@ -149,7 +134,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -168,7 +152,6 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -183,7 +166,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -198,7 +180,6 @@
           }
         ],
         "note": "totally optional",
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -213,7 +194,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Other"
       }
     }

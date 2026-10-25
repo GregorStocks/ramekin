@@ -3,7 +3,7 @@
   "recipe_slug": "creamed-corn-recipe",
   "ingredients": [
     {
-      "raw": "20 oz frozen corn kernels (or 2 15 oz cans canned corn - drained and rinsed)",
+      "raw": "20 oz frozen corn kernels or 2 15 oz cans canned corn - drained and rinsed",
       "expected": {
         "item": "frozen corn kernels",
         "measurements": [
@@ -12,7 +12,7 @@
             "unit": "oz"
           }
         ],
-        "note": "or 2 15 oz cans canned corn - drained and rinsed",
+        "note": "or 2 15 oz cans canned corn; drained and rinsed",
         "category": "Frozen"
       }
     },
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "3 tablespoons white sugar (brown sugar can be used for a deeper caramely flavor)",
+      "raw": "3 tablespoons white sugar brown sugar can be used for a deeper caramely flavor",
       "expected": {
-        "item": "white sugar",
+        "item": "white sugar brown sugar can be used for a deeper caramely flavor",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "brown sugar can be used for a deeper caramely flavor",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon fresh or dried thyme (optional)",
+      "raw": "1/2 teaspoon fresh or dried thyme optional",
       "expected": {
         "item": "fresh or dried thyme",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon fresh or dried rosemary (optional)",
+      "raw": "1/2 teaspoon fresh or dried rosemary optional",
       "expected": {
         "item": "fresh or dried rosemary",
         "measurements": [
@@ -115,21 +115,21 @@
       }
     },
     {
-      "raw": "1/2 cup to 1 cup Parmesan cheese (depends how thick and cheesy you want it)",
+      "raw": "1/2 cup to 1 cup Parmesan cheese depends how thick and cheesy you want it",
       "expected": {
-        "item": "Parmesan cheese",
+        "item": "Parmesan cheese depends how thick and cheesy you want it",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "cup"
           }
         ],
-        "note": "depends how thick and cheesy you want it",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons cornstarch (or 3 tablespoons all purpose flour)",
+      "raw": "2 tablespoons cornstarch or 3 tablespoons all purpose flour",
       "expected": {
         "item": "cornstarch",
         "measurements": [

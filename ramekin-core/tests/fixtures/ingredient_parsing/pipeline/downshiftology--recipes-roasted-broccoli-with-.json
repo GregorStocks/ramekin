@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-roasted-broccoli-with-",
   "ingredients": [
     {
-      "raw": "1  head of broccoli",
+      "raw": "1 head of broccoli",
       "expected": {
         "item": "broccoli",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "3  egg yolks",
+      "raw": "3 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter or ghee (melted and hot)",
+      "raw": "1/2 cup unsalted butter or ghee, melted and hot",
       "expected": {
         "item": "unsalted butter or ghee",
         "measurements": [

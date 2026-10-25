@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/2  yellow onion, (diced)",
+      "raw": "½ yellow onion, diced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic, (minced)",
+      "raw": "2 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 tsp. sea salt",
+      "raw": "½ tsp. sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/4 tsp. black pepper",
+      "raw": "¼ tsp. black pepper",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/2 tsp. cumin",
+      "raw": "½ tsp. cumin",
       "expected": {
         "item": "cumin",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 cup grape tomatoes, (whole)",
+      "raw": "1 cup grape tomatoes, whole",
       "expected": {
         "item": "grape tomatoes",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 cup taco meat, (cooled (see recipe above))",
+      "raw": "1 cup taco meat, cooled (see recipe above)",
       "expected": {
         "item": "taco meat",
         "measurements": [
@@ -124,12 +124,12 @@
             "unit": "cup"
           }
         ],
-        "note": "cooled (see recipe above)",
+        "note": "see recipe above, cooled",
         "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup jack cheese, (shredded)",
+      "raw": "¼ cup jack cheese, shredded",
       "expected": {
         "item": "jack cheese",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/2  avocado, (diced (optional, when serving))",
+      "raw": "½ avocado, diced (optional, when serving)",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -166,12 +166,12 @@
             "unit": null
           }
         ],
-        "note": "diced (optional, when serving)",
+        "note": "optional, when serving, diced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup plain greek yogurt",
+      "raw": "¼ cup plain greek yogurt",
       "expected": {
         "item": "plain greek yogurt",
         "measurements": [
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "1 tbsp. cilantro, (minced)",
+      "raw": "1 tbsp. cilantro, minced",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -227,7 +227,7 @@
       }
     },
     {
-      "raw": "1 clove garlic, (minced)",
+      "raw": "1 clove garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "1/4 tsp. sea salt",
+      "raw": "¼ tsp. sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [

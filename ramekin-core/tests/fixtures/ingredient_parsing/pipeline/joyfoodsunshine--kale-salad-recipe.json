@@ -3,16 +3,20 @@
   "recipe_slug": "kale-salad-recipe",
   "ingredients": [
     {
-      "raw": "1 bunch  kale (stems removed, chopped thin (8 cups))",
+      "raw": "1 bunch  kale stems removed, chopped thin (8 cups)",
       "expected": {
         "item": "kale",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
+          },
+          {
+            "amount": "8",
+            "unit": "cup"
           }
         ],
-        "note": "stems removed, chopped thin (8 cups)",
+        "note": "stems removed, chopped thin",
         "category": "Produce"
       }
     },
@@ -31,7 +35,7 @@
       }
     },
     {
-      "raw": "2  carrots (shredded)",
+      "raw": "2 carrots shredded",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -45,7 +49,7 @@
       }
     },
     {
-      "raw": "½  cucumber (julienned)",
+      "raw": "½ cucumber julienned",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -59,7 +63,7 @@
       }
     },
     {
-      "raw": "1  red pepper (julienned)",
+      "raw": "1 red pepper julienned",
       "expected": {
         "item": "red pepper",
         "measurements": [
@@ -73,7 +77,7 @@
       }
     },
     {
-      "raw": "1  avocado (diced)",
+      "raw": "1 avocado diced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -115,7 +119,7 @@
       }
     },
     {
-      "raw": "1 ounce sharp cheddar cheese (cubed)",
+      "raw": "1 ounce sharp cheddar cheese cubed",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [

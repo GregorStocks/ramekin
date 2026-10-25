@@ -3,15 +3,6 @@
   "recipe_slug": "2010-04-homemade-pop-tarts",
   "ingredients": [
     {
-      "raw": "Pastry",
-      "expected": {
-        "item": "Pastry",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "2 cups (8 1/2 ounces) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -112,20 +103,6 @@
       }
     },
     {
-      "raw": "Cinnamon Filling",
-      "is_section_header": true
-    },
-    {
-      "raw": "(enough for 9 tarts)",
-      "expected": {
-        "item": "enough for 9 tarts",
-        "measurements": [],
-        "note": null,
-        "section": "Cinnamon Filling",
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1/2 cup (3 3/4 ounces) brown sugar",
       "expected": {
         "item": "brown sugar",
@@ -140,7 +117,6 @@
           }
         ],
         "note": null,
-        "section": "Cinnamon Filling",
         "category": "Baking"
       }
     },
@@ -155,7 +131,6 @@
           }
         ],
         "note": "to taste",
-        "section": "Cinnamon Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -170,7 +145,6 @@
           }
         ],
         "note": null,
-        "section": "Cinnamon Filling",
         "category": "Baking"
       }
     },
@@ -185,13 +159,8 @@
           }
         ],
         "note": null,
-        "section": "Cinnamon Filling",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Jam Filling",
-      "is_section_header": true
     },
     {
       "raw": "3/4 cup (8 ounces) jam",
@@ -208,7 +177,6 @@
           }
         ],
         "note": null,
-        "section": "Jam Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,7 +191,6 @@
           }
         ],
         "note": "mixed with 1 tablespoon cold water",
-        "section": "Jam Filling",
         "category": "Baking"
       }
     }

@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 1/2 Tbsp kosher salt, or 2 Tbsp table salt*",
+      "raw": "2 1/2 tablespoons kosher salt, or 2 tablespoons table salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -26,7 +26,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or 2 Tbsp table salt",
+        "note": "or 2 tablespoons table salt",
         "category": "Spices & Seasonings"
       }
     },

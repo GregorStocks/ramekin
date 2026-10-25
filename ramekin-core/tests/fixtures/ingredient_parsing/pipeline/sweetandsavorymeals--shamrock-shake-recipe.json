@@ -59,21 +59,21 @@
       }
     },
     {
-      "raw": "1/8 teaspoon mint green food coloring (or more)",
+      "raw": "1/8 teaspoon mint green food coloring or more",
       "expected": {
-        "item": "mint green food coloring",
+        "item": "mint green food coloring or more",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": "or more",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "10  Oreos (crushed)",
+      "raw": "10 Oreos crushed",
       "expected": {
         "item": "Oreos",
         "measurements": [

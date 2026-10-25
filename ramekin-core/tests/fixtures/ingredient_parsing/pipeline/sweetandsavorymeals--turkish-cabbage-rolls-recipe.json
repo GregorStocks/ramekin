@@ -3,21 +3,21 @@
   "recipe_slug": "turkish-cabbage-rolls-recipe",
   "ingredients": [
     {
-      "raw": "1  head green cabbage (choose a larger one)",
+      "raw": "1 head green cabbage choose a larger one",
       "expected": {
-        "item": "green cabbage",
+        "item": "green cabbage choose a larger one",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": "choose a larger one",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  onion (finely diced)",
+      "raw": "1 onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -171,21 +171,21 @@
       }
     },
     {
-      "raw": "1/2 cup Turkish tomato sauce (or regular tomato sauce)",
+      "raw": "1/2 cup Turkish tomato sauce or regular tomato sauce",
       "expected": {
-        "item": "Turkish tomato sauce",
+        "item": "Turkish tomato sauce or regular tomato sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or regular tomato sauce",
-        "category": "Other"
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -199,31 +199,31 @@
       }
     },
     {
-      "raw": "1 1/2 lbs ground lamb (uncooked)",
+      "raw": "1 1/2 lbs ground lamb uncooked",
       "expected": {
-        "item": "ground lamb",
+        "item": "ground lamb uncooked",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
           }
         ],
-        "note": "uncooked",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup bulgur wheat (soaked)",
+      "raw": "1 cup bulgur wheat soaked",
       "expected": {
-        "item": "bulgur wheat",
+        "item": "bulgur wheat soaked",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "soaked",
-        "category": "Pasta & Rice"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -311,7 +311,7 @@
       }
     },
     {
-      "raw": "1 teaspoon sumac (optional)",
+      "raw": "1 teaspoon sumac optional",
       "expected": {
         "item": "sumac",
         "measurements": [
@@ -353,7 +353,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh parsley (finely chopped)",
+      "raw": "1 tablespoon fresh parsley finely chopped",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -367,7 +367,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh mint (finely chopped)",
+      "raw": "1 tablespoon fresh mint finely chopped",
       "expected": {
         "item": "fresh mint",
         "measurements": [
@@ -395,7 +395,7 @@
       }
     },
     {
-      "raw": "1/4 cup dried apricots (very finely chopped)",
+      "raw": "1/4 cup dried apricots very finely chopped",
       "expected": {
         "item": "dried apricots",
         "measurements": [
@@ -409,21 +409,21 @@
       }
     },
     {
-      "raw": "1 cup Greek yogurt (full fat)",
+      "raw": "1 cup Greek yogurt full fat",
       "expected": {
-        "item": "Greek yogurt",
+        "item": "Greek yogurt full fat",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "full fat",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3 cloves garlic (minced)",
+      "raw": "3 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -451,7 +451,7 @@
       }
     },
     {
-      "raw": "1/4 cup fresh mint leaves (very finely chopped)",
+      "raw": "1/4 cup fresh mint leaves very finely chopped",
       "expected": {
         "item": "fresh mint leaves",
         "measurements": [
@@ -465,17 +465,17 @@
       }
     },
     {
-      "raw": "1 tablespoon chopped dill (very finely)",
+      "raw": "1 tablespoon chopped dill very finely",
       "expected": {
-        "item": "chopped dill",
+        "item": "chopped dill very finely",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "very finely",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -488,11 +488,11 @@
       }
     },
     {
-      "raw": "Chopped fresh parsley (dill, or mint)",
+      "raw": "Chopped fresh parsley dill, or mint",
       "expected": {
-        "item": "Chopped fresh parsley",
+        "item": "Chopped fresh parsley dill, or mint",
         "measurements": [],
-        "note": "dill, or mint",
+        "note": null,
         "category": "Produce"
       }
     },

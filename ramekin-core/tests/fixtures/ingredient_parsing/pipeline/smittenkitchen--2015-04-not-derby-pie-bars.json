@@ -3,75 +3,6 @@
   "recipe_slug": "2015-04-not-derby-pie-bars",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Squash Toasts with Ricotta and Cider Vinegar",
-      "expected": {
-        "item": "Months Ago: Squash Toasts with Ricotta and Cider Vinegar",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Potato and Broccoli Frittata",
-      "expected": {
-        "item": "Years Ago: Potato and Broccoli Frittata",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Homesick Texan Carnitas",
-      "expected": {
-        "item": "Years Ago: Homesick Texan Carnitas",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Apple Cider Caramels",
-      "expected": {
-        "item": "Years Ago: Apple Cider Caramels",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup (125 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -86,7 +17,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -101,7 +31,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,7 +53,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -147,13 +75,8 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Crust",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "6 tablespoons (85 grams) unsalted butter",
@@ -170,7 +93,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,7 +107,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -200,7 +121,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -215,7 +135,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -230,7 +149,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,7 +163,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,7 +177,6 @@
           }
         ],
         "note": "optional",
-        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -275,7 +191,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -290,7 +205,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -313,7 +227,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -328,7 +241,6 @@
           }
         ],
         "note": "always",
-        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -338,7 +250,6 @@
         "item": "Flaky sea salt on top",
         "measurements": [],
         "note": "if desired",
-        "section": "Filling",
         "category": "Other"
       }
     }

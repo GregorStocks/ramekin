@@ -3,35 +3,35 @@
   "recipe_slug": "frittata-recipe",
   "ingredients": [
     {
-      "raw": "6  large eggs (use 8 eggs for a 12-inch skillet)",
+      "raw": "6 large eggs, use 8 eggs for a 12-inch skillet",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, use 8 eggs for a 12-inch skillet",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": "use 8 eggs for a 12-inch skillet",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¼ cup unsweetened almond milk (or any milk)",
+      "raw": "¼ cup unsweetened almond milk, or any milk",
       "expected": {
-        "item": "unsweetened almond milk",
+        "item": "unsweetened almond milk, or any milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or any milk",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon sea salt (more for sprinkling)",
+      "raw": "¼ teaspoon sea salt, more for sprinkling",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "Extra-virgin olive oil (for drizzling)",
+      "raw": "Extra-virgin olive oil, for drizzling",
       "expected": {
         "item": "Extra-virgin olive oil",
         "measurements": [],
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "6  scallions (chopped)",
+      "raw": "6 scallions, chopped",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "1  shallot (chopped)",
+      "raw": "1 shallot, chopped",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -156,7 +156,7 @@
       }
     },
     {
-      "raw": "2  roasted red bell peppers (chopped)",
+      "raw": "2 roasted red bell peppers, chopped",
       "expected": {
         "item": "roasted red bell peppers",
         "measurements": [
@@ -198,7 +198,7 @@
       }
     },
     {
-      "raw": "4  spring onions or scallions (chopped)",
+      "raw": "4 spring onions or scallions, chopped",
       "expected": {
         "item": "spring onions or scallions",
         "measurements": [
@@ -212,21 +212,21 @@
       }
     },
     {
-      "raw": "½ cup chopped asparagus (tender parts)",
+      "raw": "½ cup chopped asparagus, tender parts",
       "expected": {
-        "item": "chopped asparagus",
+        "item": "chopped asparagus, tender parts",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "tender parts",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "½ cup frozen peas (thawed)",
+      "raw": "½ cup frozen peas, thawed",
       "expected": {
         "item": "frozen peas",
         "measurements": [
@@ -282,7 +282,7 @@
       }
     },
     {
-      "raw": "1  shallot (chopped)",
+      "raw": "1 shallot, chopped",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -296,7 +296,7 @@
       }
     },
     {
-      "raw": "12 ounces mixed mushrooms (chopped)",
+      "raw": "12 ounces mixed mushrooms, chopped",
       "expected": {
         "item": "mixed mushrooms",
         "measurements": [
@@ -338,7 +338,7 @@
       }
     },
     {
-      "raw": "1  shallot (chopped)",
+      "raw": "1 shallot, chopped",
       "expected": {
         "item": "shallot",
         "measurements": [

@@ -83,12 +83,12 @@
       }
     },
     {
-      "raw": "1-2 celery ribs (about 4 ounces; 120g); finely minced (see notes)",
+      "raw": "1 to 2 celery ribs (about 4 ounces; 120g); finely minced (see notes)",
       "expected": {
         "item": "celery ribs ; finely minced",
         "measurements": [
           {
-            "amount": "1-2",
+            "amount": "1 to 2",
             "unit": null
           },
           {
@@ -250,7 +250,7 @@
       }
     },
     {
-      "raw": "6 tablespoons unsalted butter (3 ounces; 80g)",
+      "raw": "6 tablespoons unsalted butter (3 ounces; 84g)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -263,7 +263,7 @@
             "unit": "oz"
           },
           {
-            "amount": "80",
+            "amount": "84",
             "unit": "g"
           }
         ],
@@ -290,7 +290,7 @@
       }
     },
     {
-      "raw": "4 cup (960ml) whole milk",
+      "raw": "4 cups (960ml) whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -377,9 +377,9 @@
       }
     },
     {
-      "raw": "One 28-ounce (794g) can whole peeled tomatoes in the juices, blended, or one 24-ounce (700g) bottle tomato passata",
+      "raw": "One 28-ounce (794g) can whole peeled tomatoes in their juices, blended, or one 24-ounce (700g) bottle tomato passata",
       "expected": {
-        "item": "whole peeled tomatoes in the juices, blended",
+        "item": "whole peeled tomatoes in their juices, blended",
         "measurements": [
           {
             "amount": "1",
@@ -399,7 +399,16 @@
       }
     },
     {
-      "raw": "2 pounds (900g) store-bought fresh lasagna noodles or fresh homemade (Follow the recipe and instructions here through step 10, doubling the quantity to yield 2 pounds total), cut into 6- by 12-inch-long rectangles",
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 pounds (900g) store-bought fresh lasagna noodles or fresh homemade (follow the recipe and instructions here through step 10, doubling the quantity to yield 2 pounds total), cut into 6- by 12-inch-long rectangles",
       "expected": {
         "item": "store-bought fresh lasagna noodles or fresh homemade",
         "measurements": [
@@ -412,7 +421,7 @@
             "unit": "g"
           }
         ],
-        "note": "Follow the recipe and instructions here through step 10, doubling the quantity to yield 2 pounds total, cut into 6- by 12-inch-long rectangles",
+        "note": "follow the recipe and instructions here through step 10, doubling the quantity to yield 2 pounds total, cut into 6- by 12-inch-long rectangles",
         "category": "Pasta & Rice"
       }
     },
@@ -426,13 +435,17 @@
       }
     },
     {
-      "raw": "8 ounces fresh mozzarella, cut into 1/4-inch pieces",
+      "raw": "8 ounces (226g) fresh mozzarella, cut into 1/4-inch pieces",
       "expected": {
         "item": "fresh mozzarella",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": "cut into 1/4-inch pieces",
@@ -440,7 +453,7 @@
       }
     },
     {
-      "raw": "1 cup finely grated Parmigiano-Reggiano (4 ounces; 112g), divided",
+      "raw": "1 cup finely grated Parmigiano-Reggiano (4 ounces; 113g), divided",
       "expected": {
         "item": "finely grated Parmigiano-Reggiano",
         "measurements": [
@@ -453,7 +466,7 @@
             "unit": "oz"
           },
           {
-            "amount": "112",
+            "amount": "113",
             "unit": "g"
           }
         ],

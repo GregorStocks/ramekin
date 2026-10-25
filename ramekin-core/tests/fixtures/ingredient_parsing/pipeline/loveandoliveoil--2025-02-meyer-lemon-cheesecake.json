@@ -3,13 +3,17 @@
   "recipe_slug": "2025-02-meyer-lemon-cheesecake",
   "ingredients": [
     {
-      "raw": "1/3 cup granulated sugar",
+      "raw": "⅓ cup  / 66 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "66",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "1 tablespoon finely grated lemon zest",
+      "raw": "1 tablespoon   finely grated lemon zest",
       "expected": {
         "item": "finely grated lemon zest",
         "measurements": [
@@ -31,7 +35,7 @@
       }
     },
     {
-      "raw": "1 teaspoon cornstarch",
+      "raw": "1 teaspoon   cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -45,21 +49,21 @@
       }
     },
     {
-      "raw": "pinch  fine sea salt (omit if using salted butter)",
+      "raw": "pinch   fine sea salt, omit if using salted butter",
       "expected": {
-        "item": "fine sea salt",
+        "item": "fine sea salt, omit if using salted butter",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": "omit if using salted butter",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  large egg (at room temperature)",
+      "raw": "1   large egg, at room temperature",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -73,13 +77,17 @@
       }
     },
     {
-      "raw": "¼ cup Meyer lemon juice (freshly squeezed, from 1-2 juicy lemons)",
+      "raw": "¼ cup  / 60 g Meyer lemon juice, freshly squeezed, from 1-2 juicy lemons",
       "expected": {
         "item": "Meyer lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": "freshly squeezed, from 1-2 juicy lemons",
@@ -87,27 +95,35 @@
       }
     },
     {
-      "raw": "1 ½ tablespoons butter (salted or unsalted)",
+      "raw": "1 ½ tablespoons  / 21 g butter, salted or unsalted",
       "expected": {
-        "item": "butter",
+        "item": "butter, salted or unsalted",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": "salted or unsalted",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 oz lemon or vanilla wafer cookies (finely ground)",
+      "raw": "6 oz  / 170 g lemon or vanilla wafer cookies, finely ground",
       "expected": {
         "item": "lemon or vanilla wafer cookies",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": "finely ground",
@@ -115,13 +131,17 @@
       }
     },
     {
-      "raw": "4 tablespoons butter (melted)",
+      "raw": "4 tablespoons  / 50 g butter, melted",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": "melted",
@@ -129,13 +149,17 @@
       }
     },
     {
-      "raw": "1/3 cup granulated sugar",
+      "raw": "⅓ cup  / 66 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "66",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,7 +167,7 @@
       }
     },
     {
-      "raw": "2 tablespoons finely grated lemon zest",
+      "raw": "2 tablespoons   finely grated lemon zest",
       "expected": {
         "item": "finely grated lemon zest",
         "measurements": [
@@ -157,13 +181,17 @@
       }
     },
     {
-      "raw": "12 ounces full fat cream cheese (at room temperature)",
+      "raw": "12 ounces  / 340 g full fat cream cheese, at room temperature",
       "expected": {
         "item": "full fat cream cheese",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -171,13 +199,17 @@
       }
     },
     {
-      "raw": "1/3 cup sour cream (at room temperature)",
+      "raw": "⅓ cup  / 80 g sour cream, at room temperature",
       "expected": {
         "item": "sour cream",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -185,7 +217,7 @@
       }
     },
     {
-      "raw": "2 tablespoons lemon juice",
+      "raw": "2 tablespoons   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -199,13 +231,17 @@
       }
     },
     {
-      "raw": "2 tablespoons all-purpose flour",
+      "raw": "2 tablespoons  / 16 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -213,7 +249,7 @@
       }
     },
     {
-      "raw": "½ teaspoon vanilla bean paste (or 1 teaspoon vanilla extract)",
+      "raw": "½ teaspoon   vanilla bean paste, or 1 teaspoon vanilla extract",
       "expected": {
         "item": "vanilla bean paste",
         "measurements": [
@@ -227,7 +263,7 @@
       }
     },
     {
-      "raw": "pinch  fine sea salt",
+      "raw": "pinch   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -241,7 +277,7 @@
       }
     },
     {
-      "raw": "2 large eggs (at room temperature)",
+      "raw": "2 large   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -255,16 +291,16 @@
       }
     },
     {
-      "raw": "⅓ - ½ cup lemon curd (you can also use store bought)",
+      "raw": "⅓ – ½ cup   lemon curd, you can also use store bought",
       "expected": {
-        "item": "lemon curd",
+        "item": "lemon curd, you can also use store bought",
         "measurements": [
           {
             "amount": "1/3-1/2",
             "unit": "cup"
           }
         ],
-        "note": "you can also use store bought",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     }

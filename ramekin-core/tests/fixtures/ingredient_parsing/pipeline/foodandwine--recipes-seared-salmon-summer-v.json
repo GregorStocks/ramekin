@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "1/4 pound&nbsp;shiitake mushrooms, stems removed and reserved, caps quartered, divided",
+      "raw": "1/4 pound shiitake mushrooms, stems removed and reserved, caps quartered, divided",
       "expected": {
         "item": "shiitake mushrooms, stems removed and reserved, caps quartered",
         "measurements": [
@@ -165,7 +165,7 @@
       }
     },
     {
-      "raw": "1 pound&nbsp;fresh spinach",
+      "raw": "1 pound fresh spinach",
       "expected": {
         "item": "fresh spinach",
         "measurements": [

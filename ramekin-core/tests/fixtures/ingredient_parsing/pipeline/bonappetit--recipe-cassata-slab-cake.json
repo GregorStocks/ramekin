@@ -161,6 +161,64 @@
       "expanded": true
     },
     {
+      "raw": "Zest and juice of 1 small orange",
+      "expected": {
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small orange"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Zest and juice of 1 small orange",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small orange"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "Zest and juice of 1 medium lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Zest and juice of 1 medium lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
       "raw": "Zest and juice of 1 medium lemon",
       "expected": {
         "item": "lemon zest",

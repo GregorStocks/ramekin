@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  garlic clove ( finely diced)",
+      "raw": "1 garlic clove  finely diced",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "200 g shrimp or mixed seafood (cut into bitesize pieces)",
+      "raw": "200 g shrimp or mixed seafood cut into bitesize pieces",
       "expected": {
-        "item": "shrimp or mixed seafood",
+        "item": "shrimp or mixed seafood cut into bitesize pieces",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": "cut into bitesize pieces",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3  button mushrooms ( finely sliced)",
+      "raw": "3 button mushrooms  finely sliced",
       "expected": {
         "item": "button mushrooms",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 tbsp fresh parsley  (finely chopped)",
+      "raw": "1 tbsp fresh parsley  finely chopped",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "100 g onion (finely diced)",
+      "raw": "100 g onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -157,23 +157,23 @@
       }
     },
     {
-      "raw": "½  knorr chicken bouillon cube (use the other half for béchamel sauce)",
+      "raw": "½ knorr chicken bouillon cube use the other half for béchamel sauce",
       "expected": {
-        "item": "knorr chicken bouillon cube",
+        "item": "knorr chicken bouillon cube use the other half for béchamel sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "use the other half for béchamel sauce",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "⅛ tsp cumin powder",
+      "raw": "⅛ tsp ground cumin",
       "expected": {
-        "item": "cumin powder",
+        "item": "ground cumin",
         "measurements": [
           {
             "amount": "0.13",
@@ -283,7 +283,7 @@
       }
     },
     {
-      "raw": "½  chicken bouillon cube",
+      "raw": "½ chicken bouillon cube",
       "expected": {
         "item": "chicken bouillon cube",
         "measurements": [
@@ -325,16 +325,16 @@
       }
     },
     {
-      "raw": "preferred shredded melting cheese (cheddar, gouda, mozzarella, etc.)",
+      "raw": "preferred shredded melting cheese cheddar, gouda, mozzarella, etc.",
       "expected": {
-        "item": "preferred shredded melting cheese",
+        "item": "preferred shredded melting cheese cheddar, gouda, mozzarella, etc.",
         "measurements": [],
-        "note": "cheddar, gouda, mozzarella, etc.",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "hard cheese ((optional) parmesan, pecorino, etc.)",
+      "raw": "hard cheese (optional) parmesan, pecorino, etc.",
       "expected": {
         "item": "hard cheese parmesan, pecorino, etc.",
         "measurements": [],
@@ -343,12 +343,12 @@
       }
     },
     {
-      "raw": "fresh parsley (dried or fresh, optional garnish)",
+      "raw": "fresh parsley dried or fresh, optional garnish",
       "expected": {
-        "item": "fresh parsley",
+        "item": "fresh parsley dried or fresh, optional garnish",
         "measurements": [],
-        "note": "dried or fresh, optional garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

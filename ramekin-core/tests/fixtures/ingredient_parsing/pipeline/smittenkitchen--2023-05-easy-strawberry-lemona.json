@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 pound (455 grams) fresh strawberries, plus and a few extra berries for garnish",
+      "raw": "1 pound (455 grams) fresh strawberries, plus a few extra berries for garnish",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus and a few extra berries for garnish",
+        "note": "plus a few extra berries for garnish",
         "category": "Produce"
       }
     },

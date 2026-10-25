@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1-2 Tablespoons honey ((to taste))",
+      "raw": "1-2 Tablespoons honey (to taste)",
       "expected": {
         "item": "honey",
         "measurements": [
@@ -73,17 +73,17 @@
       }
     },
     {
-      "raw": "Dash of cinnamon (up to 1/8 tsp)",
+      "raw": "Dash of cinnamon up to 1/8 tsp",
       "expected": {
-        "item": "cinnamon",
+        "item": "cinnamon up to 1/8 tsp",
         "measurements": [
           {
             "amount": null,
             "unit": "dash"
           }
         ],
-        "note": "up to 1/8 tsp",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "½  banana (sliced or diced)",
+      "raw": "½ banana sliced or diced",
       "expected": {
         "item": "banana",
         "measurements": [
@@ -152,17 +152,17 @@
       }
     },
     {
-      "raw": "½ cup fresh berries (strawberries, raspberries, blueberries, etc.)",
+      "raw": "½ cup fresh berries strawberries, raspberries, blueberries, etc.",
       "expected": {
-        "item": "fresh berries",
+        "item": "fresh berries strawberries, raspberries, blueberries, etc.",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "strawberries, raspberries, blueberries, etc.",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {

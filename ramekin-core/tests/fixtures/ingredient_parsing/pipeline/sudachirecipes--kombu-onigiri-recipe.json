@@ -3,7 +3,7 @@
   "recipe_slug": "kombu-onigiri-recipe",
   "ingredients": [
     {
-      "raw": "50 g rehydrated kombu ((kelp))",
+      "raw": "50 g rehydrated kombu (kelp)",
       "expected": {
         "item": "rehydrated kombu",
         "measurements": [
@@ -143,17 +143,17 @@
       }
     },
     {
-      "raw": "6 pieces roasted seaweed for sushi (nori) (cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri)",
+      "raw": "6 pieces roasted seaweed for sushi (nori) cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri",
       "expected": {
-        "item": "roasted seaweed for sushi",
+        "item": "roasted seaweed for sushi cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri",
         "measurements": [
           {
             "amount": "6",
             "unit": "piece"
           }
         ],
-        "note": "nori, cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri",
-        "category": "Spices & Seasonings"
+        "note": "nori",
+        "category": "Other"
       }
     }
   ]

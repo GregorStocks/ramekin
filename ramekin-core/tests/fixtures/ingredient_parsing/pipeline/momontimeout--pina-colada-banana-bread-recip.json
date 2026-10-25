@@ -3,7 +3,7 @@
   "recipe_slug": "pina-colada-banana-bread-recip",
   "ingredients": [
     {
-      "raw": "3  ripe bananas",
+      "raw": "3 ripe bananas",
       "expected": {
         "item": "ripe bananas",
         "measurements": [
@@ -45,21 +45,21 @@
       }
     },
     {
-      "raw": "1  egg (room temperature)",
+      "raw": "1 egg room temperature",
       "expected": {
-        "item": "egg",
+        "item": "egg room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "6 tbsp butter (softened)",
+      "raw": "6 tbsp butter softened",
       "expected": {
         "item": "butter",
         "measurements": [

@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  onion (chopped fine)",
+      "raw": "1 onion chopped fine",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2 garlic cloves minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2/3 cup (about 17 crackers) Saltine crackers, (coarsely crushed )",
+      "raw": "2/3 cup (about 17 crackers) Saltine crackers, coarsely crushed",
       "expected": {
         "item": "Saltine crackers",
         "measurements": [
@@ -87,16 +87,16 @@
       }
     },
     {
-      "raw": "1 pound ground beef,  (80/20)",
+      "raw": "1 pound ground beef,  80/20",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef, 80/20",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "80/20",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -208,7 +208,7 @@
       }
     },
     {
-      "raw": "1/4 cup brown sugar,&nbsp; (firmly packed)",
+      "raw": "1/4 cup brown sugar,  firmly packed",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -264,7 +264,7 @@
       }
     },
     {
-      "raw": "hot sauce, (to taste)",
+      "raw": "hot sauce, to taste",
       "expected": {
         "item": "hot sauce",
         "measurements": [],

@@ -31,11 +31,11 @@
       }
     },
     {
-      "raw": "Kosher salt to taste",
+      "raw": "Kosher salt",
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -54,9 +54,9 @@
       }
     },
     {
-      "raw": "1 teaspoon curry powder or vadouvan spice, optional (see note)",
+      "raw": "1 teaspoon curry powder or Vadouvan spice, optional (see note)",
       "expected": {
-        "item": "curry powder or vadouvan spice",
+        "item": "curry powder or Vadouvan spice",
         "measurements": [
           {
             "amount": "1",

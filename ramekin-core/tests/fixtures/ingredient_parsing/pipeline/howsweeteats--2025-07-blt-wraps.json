@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 to 3  tomatoes, (sliced)",
+      "raw": "2 to 3 tomatoes, sliced",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4  burrito-size tortillas",
+      "raw": "4 burrito-size tortillas",
       "expected": {
         "item": "burrito-size tortillas",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "1  jalapeño pepper, (seeded and diced)",
+      "raw": "1 jalapeño pepper, seeded and diced",
       "expected": {
         "item": "jalapeño pepper",
         "measurements": [

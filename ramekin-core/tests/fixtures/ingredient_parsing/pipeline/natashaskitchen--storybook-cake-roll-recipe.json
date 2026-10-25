@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "5  large eggs (room temp)",
+      "raw": "5 large eggs, room temp",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, room temp",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": "room temp",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -73,21 +73,21 @@
       }
     },
     {
-      "raw": "3 Tbsp rum - I used Bacardi golden rum (optional, but adds great flavor)",
+      "raw": "3 Tbsp rum - I used Bacardi golden rum, optional, but adds great flavor",
       "expected": {
-        "item": "rum - I used Bacardi golden rum",
+        "item": "rum - I used Bacardi golden rum, optional, but adds great flavor",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "optional, but adds great flavor",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1  egg yolk",
+      "raw": "1 egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -129,16 +129,16 @@
       }
     },
     {
-      "raw": "1/2 cup sweetened condensed milk (uncooked - straight from the can)",
+      "raw": "1/2 cup sweetened condensed milk, uncooked - straight from the can",
       "expected": {
-        "item": "sweetened condensed milk",
+        "item": "sweetened condensed milk, uncooked - straight from the can",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "uncooked - straight from the can",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -189,21 +189,21 @@
       }
     },
     {
-      "raw": "1/2 cup golden brown cookie crumbs (I used crumbs from 4 graham crackers)",
+      "raw": "1/2 cup golden brown cookie crumbs, I used crumbs from 4 graham crackers",
       "expected": {
-        "item": "golden brown cookie crumbs",
+        "item": "golden brown cookie crumbs, I used crumbs from 4 graham crackers",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "I used crumbs from 4 graham crackers",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "11  ×17 rimmed baking sheet lined with parchment paper",
+      "raw": "11 ×17 rimmed baking sheet lined with parchment paper",
       "expected": {
         "item": "×17 rimmed baking sheet lined with parchment paper",
         "measurements": [

@@ -3,15 +3,6 @@
   "recipe_slug": "2011-12-parsnip-latkes-with-ho",
   "ingredients": [
     {
-      "raw": "Pancakes",
-      "expected": {
-        "item": "Pancakes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1/2 pound (about 1 large) Russet potato",
       "expected": {
         "item": "Russet potato",
@@ -159,10 +150,6 @@
       }
     },
     {
-      "raw": "Sauce",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup sour cream",
       "expected": {
         "item": "sour cream",
@@ -173,7 +160,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -188,7 +174,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -203,7 +188,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,7 +202,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -233,7 +216,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Produce"
       }
     }

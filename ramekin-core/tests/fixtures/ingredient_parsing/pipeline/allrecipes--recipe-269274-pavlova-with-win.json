@@ -116,6 +116,35 @@
       "expanded": true
     },
     {
+      "raw": "3 lemons, zested and juiced",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lemons"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 lemons, zested and juiced",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lemons"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
       "raw": "0.33333334326744 cup white sugar",
       "expected": {
         "item": "white sugar",

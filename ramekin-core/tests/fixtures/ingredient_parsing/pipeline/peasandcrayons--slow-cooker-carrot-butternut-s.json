@@ -3,7 +3,7 @@
   "recipe_slug": "slow-cooker-carrot-butternut-s",
   "ingredients": [
     {
-      "raw": "1 lb butternut squash ((peeled and cubed))",
+      "raw": "1 lb butternut squash (peeled and cubed)",
       "expected": {
         "item": "butternut squash",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "6-8  large carrots ((peeled and chopped))",
+      "raw": "6-8 large carrots (peeled and chopped)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/4 cup chopped yellow onion",
+      "raw": "¼ cup chopped yellow onion",
       "expected": {
         "item": "chopped yellow onion",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/8 tsp paprika (or to taste)",
+      "raw": "⅛ tsp paprika or to taste",
       "expected": {
         "item": "paprika",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/8 tsp salt",
+      "raw": "⅛ tsp salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "grated gouda or cheddar cheese ((skip for vegan/dairy-free))",
+      "raw": "grated gouda or cheddar cheese (skip for vegan/dairy-free)",
       "expected": {
         "item": "grated gouda or cheddar cheese",
         "measurements": [],
@@ -96,11 +96,11 @@
       }
     },
     {
-      "raw": "chopped bacon (or vegan bacon bits)",
+      "raw": "chopped bacon or vegan bacon bits",
       "expected": {
-        "item": "chopped bacon",
+        "item": "chopped bacon or vegan bacon bits",
         "measurements": [],
-        "note": "or vegan bacon bits",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

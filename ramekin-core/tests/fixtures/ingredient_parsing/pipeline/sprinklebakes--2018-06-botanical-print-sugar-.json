@@ -21,21 +21,25 @@
       }
     },
     {
-      "raw": "1 cup plus 2 tablespoons (225g granulated sugar)",
+      "raw": "1 cup plus 2 tablespoons 225g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 cup plus 2 tablespoons",
             "unit": null
+          },
+          {
+            "amount": "225",
+            "unit": "g"
           }
         ],
-        "note": "225g granulated sugar",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -95,63 +99,63 @@
       }
     },
     {
-      "raw": "3  bags (12 ounces each green candy melting wafers)",
+      "raw": "3 bags 12 ounces each green candy melting wafers",
       "expected": {
-        "item": "green candy melting wafers",
+        "item": "12 ounces each green candy melting wafers",
         "measurements": [
           {
             "amount": "3",
             "unit": "bag"
           }
         ],
-        "note": "12 ounces each green candy melting wafers",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1  bag (12 ounces bright white candy melting wafers)",
+      "raw": "1 bag 12 ounces bright white candy melting wafers",
       "expected": {
-        "item": "bright white candy melting wafers",
+        "item": "12 ounces bright white candy melting wafers",
         "measurements": [
           {
             "amount": "1",
             "unit": "bag"
           }
         ],
-        "note": "12 ounces bright white candy melting wafers",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup ready-made frosting (or homemade buttercream)",
+      "raw": "1/2 cup ready-made frosting or homemade buttercream",
       "expected": {
-        "item": "ready-made frosting",
+        "item": "ready-made frosting or homemade buttercream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or homemade buttercream",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "4  ornate frame candy molds (4×6-inches each)",
+      "raw": "4 ornate frame candy molds 4×6-inches each",
       "expected": {
-        "item": "ornate frame candy molds",
+        "item": "ornate frame candy molds 4×6-inches each",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "4×6-inches each",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "2  sheets edible rice paper",
+      "raw": "2 sheets edible rice paper",
       "expected": {
         "item": "edible rice paper",
         "measurements": [
@@ -174,11 +178,11 @@
       }
     },
     {
-      "raw": "Soft bristle art brushes (3-4)",
+      "raw": "Soft bristle art brushes 3-4",
       "expected": {
-        "item": "Soft bristle art brushes",
+        "item": "Soft bristle art brushes 3-4",
         "measurements": [],
-        "note": "3-4",
+        "note": null,
         "category": "Other"
       }
     },
@@ -192,11 +196,11 @@
       }
     },
     {
-      "raw": "Rubber stamp with script motif (new, unused)",
+      "raw": "Rubber stamp with script motif new, unused",
       "expected": {
-        "item": "Rubber stamp with script motif",
+        "item": "Rubber stamp with script motif new, unused",
         "measurements": [],
-        "note": "new, unused",
+        "note": null,
         "category": "Other"
       }
     },

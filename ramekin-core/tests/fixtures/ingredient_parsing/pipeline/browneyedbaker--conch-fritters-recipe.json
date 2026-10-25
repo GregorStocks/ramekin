@@ -3,13 +3,17 @@
   "recipe_slug": "conch-fritters-recipe",
   "ingredients": [
     {
-      "raw": "1 cup all-purpose flour",
+      "raw": "1 cup  (125 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "1 teaspoon sugar",
+      "raw": "1 teaspoon   sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -31,7 +35,7 @@
       }
     },
     {
-      "raw": "1 teaspoon baking powder",
+      "raw": "1 teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -45,7 +49,7 @@
       }
     },
     {
-      "raw": "1  egg (lightly beaten)",
+      "raw": "1   egg, lightly beaten",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -59,7 +63,7 @@
       }
     },
     {
-      "raw": "6 tablespoons buttermilk",
+      "raw": "6 tablespoons   buttermilk",
       "expected": {
         "item": "buttermilk",
         "measurements": [
@@ -73,13 +77,17 @@
       }
     },
     {
-      "raw": "8 ounces conch (finely minced)",
+      "raw": "8 ounces  (226.8 g) conch, finely minced",
       "expected": {
         "item": "conch",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "finely minced",
@@ -87,7 +95,7 @@
       }
     },
     {
-      "raw": "1  jalapeño (finely minced)",
+      "raw": "1   jalapeño, finely minced",
       "expected": {
         "item": "jalapeño",
         "measurements": [
@@ -101,13 +109,17 @@
       }
     },
     {
-      "raw": "¼ cup finely minced white onion",
+      "raw": "¼ cup  (40 g) finely minced white onion",
       "expected": {
         "item": "finely minced white onion",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -115,13 +127,17 @@
       }
     },
     {
-      "raw": "¼ cup finely minced red bell pepper",
+      "raw": "¼ cup  (37.25 g) finely minced red bell pepper",
       "expected": {
         "item": "finely minced red bell pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "37.25",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -129,13 +145,17 @@
       }
     },
     {
-      "raw": "¼ cup finely minced carrots",
+      "raw": "¼ cup  (32 g) finely minced carrots",
       "expected": {
         "item": "finely minced carrots",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,7 +163,7 @@
       }
     },
     {
-      "raw": "1 clove garlic (minced)",
+      "raw": "1 clove   garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -157,10 +177,14 @@
       }
     },
     {
-      "raw": "¾ teaspoon Creole seasoning",
+      "raw": "¾ teaspoon  (0.75 teaspoon) Creole seasoning",
       "expected": {
         "item": "Creole seasoning",
         "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
           {
             "amount": "0.75",
             "unit": "tsp"
@@ -171,7 +195,7 @@
       }
     },
     {
-      "raw": "Vegetable oil (for frying)",
+      "raw": "Vegetable oil, for frying",
       "expected": {
         "item": "Vegetable oil",
         "measurements": [],
@@ -180,13 +204,17 @@
       }
     },
     {
-      "raw": "½ cup salsa",
+      "raw": "½ cup  (130 g) salsa",
       "expected": {
         "item": "salsa",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -194,13 +222,17 @@
       }
     },
     {
-      "raw": "1 cup mayonnaise",
+      "raw": "1 cup  (224 g) mayonnaise",
       "expected": {
         "item": "mayonnaise",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "224",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -208,7 +240,7 @@
       }
     },
     {
-      "raw": "1 teaspoon garlic powder",
+      "raw": "1 teaspoon   garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -222,24 +254,14 @@
       }
     },
     {
-      "raw": "½ teaspoon dried basil",
+      "raw": "½ teaspoon  (0.5 teaspoon) dried basil",
       "expected": {
         "item": "dried basil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "½ teaspoon salt",
-      "expected": {
-        "item": "salt",
-        "measurements": [
+          },
           {
             "amount": "0.5",
             "unit": "tsp"
@@ -250,10 +272,32 @@
       }
     },
     {
-      "raw": "¼ teaspoon cayenne pepper",
+      "raw": "½ teaspoon  (0.5 teaspoon) salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ teaspoon  (0.25 teaspoon) cayenne pepper",
       "expected": {
         "item": "cayenne pepper",
         "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
@@ -264,10 +308,14 @@
       }
     },
     {
-      "raw": "¼ teaspoon freshly ground black pepper",
+      "raw": "¼ teaspoon  (0.25 teaspoon) freshly ground black pepper",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
           {
             "amount": "0.25",
             "unit": "tsp"

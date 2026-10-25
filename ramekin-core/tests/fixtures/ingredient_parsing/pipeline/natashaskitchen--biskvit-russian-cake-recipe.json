@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "10  eggs",
+      "raw": "10 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "3/4 cup red wine (I used St. Chapelle Soft Red)",
+      "raw": "3/4 cup red wine, I used St. Chapelle Soft Red",
       "expected": {
-        "item": "red wine",
+        "item": "red wine, I used St. Chapelle Soft Red",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "I used St. Chapelle Soft Red",
+        "note": null,
         "category": "Beverages"
       }
     },

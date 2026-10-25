@@ -3,13 +3,13 @@
   "recipe_slug": "broccoli-cheddar-soup-recipe",
   "ingredients": [
     {
-      "raw": "2 teaspoon olive oil",
+      "raw": "1 tablespoon olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tsp"
+            "amount": "1",
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -17,68 +17,40 @@
       }
     },
     {
-      "raw": "3 tablespoon butter",
+      "raw": "4 tablespoons unsalted butter (divided)",
       "expected": {
-        "item": "butter",
+        "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "3",
+            "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "divided",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 large yellow onions (chopped)",
+      "raw": "1 medium  onion (finely chopped)",
       "expected": {
-        "item": "yellow onions",
+        "item": "onion",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "large"
+            "amount": "1",
+            "unit": "medium"
           }
         ],
-        "note": "chopped",
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "5 large carrot (diced)",
-      "expected": {
-        "item": "carrot",
-        "measurements": [
-          {
-            "amount": "5",
-            "unit": "large"
-          }
-        ],
-        "note": "diced",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "3 ribs celery (diced)",
-      "expected": {
-        "item": "ribs celery",
-        "measurements": [
-          {
-            "amount": "3",
-            "unit": null
-          }
-        ],
-        "note": "diced",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "5 cloves garlic (minced)",
+      "raw": "3 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
           {
-            "amount": "5",
+            "amount": "3",
             "unit": "clove"
           }
         ],
@@ -87,83 +59,13 @@
       }
     },
     {
-      "raw": "8 heads broccoli ((10-12 cups broccoli florets))",
-      "expected": {
-        "item": "broccoli",
-        "measurements": [
-          {
-            "amount": "8",
-            "unit": "head"
-          }
-        ],
-        "note": "10-12 cups broccoli florets",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "4 cups vegetable broth ((or chicken broth, chicken stock, or bone broth))",
-      "expected": {
-        "item": "vegetable broth",
-        "measurements": [
-          {
-            "amount": "4",
-            "unit": "cup"
-          }
-        ],
-        "note": "or chicken broth, chicken stock, or bone broth",
-        "category": "Canned Goods"
-      }
-    },
-    {
-      "raw": "2 teaspoon salt",
-      "expected": {
-        "item": "salt",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1/2 teaspoon freshly ground black pepper",
-      "expected": {
-        "item": "freshly ground black pepper",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1/2 teaspoon thyme",
-      "expected": {
-        "item": "thyme",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1.5 tablespoon all-purpose flour",
+      "raw": "¼ cup all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "1.5",
-            "unit": "tbsp"
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
         "note": null,
@@ -171,30 +73,128 @@
       }
     },
     {
-      "raw": "2 cups whole milk (plus more as needed)",
+      "raw": "3 cups vegetable broth (warmed)",
       "expected": {
-        "item": "whole milk",
+        "item": "vegetable broth",
         "measurements": [
           {
-            "amount": "2",
+            "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "plus more as needed",
+        "note": "warmed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3 cups half-and-half",
+      "expected": {
+        "item": "half-and-half",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups shredded sharp cheddar cheese (plus more to garnish)",
+      "raw": "1 teaspoon salt",
       "expected": {
-        "item": "shredded sharp cheddar cheese",
+        "item": "salt",
         "measurements": [
           {
-            "amount": "2",
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ teaspoon black pepper (plus more for serving)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ teaspoon ground mustard",
+      "expected": {
+        "item": "ground mustard",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 cups small broccoli florets",
+      "expected": {
+        "item": "small broccoli florets",
+        "measurements": [
+          {
+            "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "plus more to garnish",
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup shredded carrots",
+      "expected": {
+        "item": "shredded carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup white cheddar (freshly grated)",
+      "expected": {
+        "item": "white cheddar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 cup sharp cheddar (freshly grated)",
+      "expected": {
+        "item": "sharp cheddar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated",
         "category": "Cheese"
       }
     }

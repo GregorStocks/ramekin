@@ -101,9 +101,9 @@
       }
     },
     {
-      "raw": "1/2 cup extra-virgin olive oil",
+      "raw": "1/2 cup extra virgin olive oil",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 medium avocado, diced about 1 cup",
+      "raw": "1 medium avocado, diced, about 1 cup",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -124,7 +124,7 @@
             "unit": "medium"
           }
         ],
-        "note": "diced about 1 cup",
+        "note": "diced, about 1 cup",
         "category": "Produce"
       }
     },
@@ -143,9 +143,9 @@
       }
     },
     {
-      "raw": "1 teaspoon Kosher salt, as needed for seasoning",
+      "raw": "1 teaspoon kosher salt, as needed for seasoning",
       "expected": {
-        "item": "Kosher salt, as needed for seasoning",
+        "item": "kosher salt, as needed for seasoning",
         "measurements": [
           {
             "amount": "1",

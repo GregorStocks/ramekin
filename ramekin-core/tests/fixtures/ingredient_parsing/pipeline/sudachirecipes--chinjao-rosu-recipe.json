@@ -3,35 +3,35 @@
   "recipe_slug": "chinjao-rosu-recipe",
   "ingredients": [
     {
-      "raw": "150 g bell pepper (I used green piman and red bell pepper)",
+      "raw": "150 g bell pepper I used green piman and red bell pepper",
       "expected": {
-        "item": "bell pepper",
+        "item": "bell pepper I used green piman and red bell pepper",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": "I used green piman and red bell pepper",
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "150 g canned bamboo shoots water-packed, or king oyster mushrooms, celery, or broccoli stems.",
+      "expected": {
+        "item": "canned bamboo shoots water-packed, or king oyster mushrooms, celery, or broccoli stems.",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "150 g canned bamboo shoots (water-packed, or king oyster mushrooms, celery, or broccoli stems.)",
-      "expected": {
-        "item": "canned bamboo shoots",
-        "measurements": [
-          {
-            "amount": "150",
-            "unit": "g"
-          }
-        ],
-        "note": "water-packed, or king oyster mushrooms, celery, or broccoli stems.",
-        "category": "Canned Goods"
-      }
-    },
-    {
-      "raw": "15 g ginger root (peeled)",
+      "raw": "15 g ginger root peeled",
       "expected": {
         "item": "ginger root",
         "measurements": [
@@ -59,30 +59,30 @@
       }
     },
     {
-      "raw": "250 g boneless pork chop (or beef/chicken)",
+      "raw": "250 g boneless pork chop or beef/chicken",
       "expected": {
-        "item": "boneless pork chop",
+        "item": "boneless pork chop or beef/chicken",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": "or beef/chicken",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1½ tbsp cooking oil (neutral, high-heat, e.g., canola or rice bran)",
+      "raw": "1½ tbsp cooking oil neutral, high-heat, e.g., canola or rice bran",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil neutral, high-heat, e.g., canola or rice bran",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": "neutral, high-heat, e.g., canola or rice bran",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -101,53 +101,53 @@
       }
     },
     {
-      "raw": "toasted sesame oil (a few drops to finish)",
+      "raw": "toasted sesame oil a few drops to finish",
       "expected": {
-        "item": "toasted sesame oil",
+        "item": "toasted sesame oil a few drops to finish",
         "measurements": [],
-        "note": "a few drops to finish",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "¼ tsp salt (fine)",
+      "raw": "¼ tsp salt fine",
       "expected": {
-        "item": "salt",
+        "item": "salt fine",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "fine",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch ground white pepper (or black pepper)",
+      "raw": "1 pinch ground white pepper or black pepper",
       "expected": {
-        "item": "ground white pepper",
+        "item": "ground white pepper or black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "or black pepper",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tsp sake (or dry sherry, white wine)",
+      "raw": "2 tsp sake or dry sherry, white wine",
       "expected": {
-        "item": "sake",
+        "item": "sake or dry sherry, white wine",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "or dry sherry, white wine",
+        "note": null,
         "category": "Beverages"
       }
     },
@@ -166,45 +166,45 @@
       }
     },
     {
-      "raw": "1  egg white (for velveting)",
+      "raw": "1 egg white for velveting",
       "expected": {
-        "item": "egg white",
+        "item": "egg white for velveting",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for velveting",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tbsp potato starch (katakuriko) (or cornstarch)",
+      "raw": "2 tbsp potato starch (katakuriko) or cornstarch",
       "expected": {
-        "item": "potato starch",
+        "item": "potato starch or cornstarch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "katakuriko, or cornstarch",
+        "note": "katakuriko",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp cooking oil (to seal marinade)",
+      "raw": "1 tsp cooking oil to seal marinade",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil to seal marinade",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "to seal marinade",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -278,16 +278,16 @@
       }
     },
     {
-      "raw": "¼ tsp potato starch (katakuriko) (or cornstarch)",
+      "raw": "¼ tsp potato starch (katakuriko) or cornstarch",
       "expected": {
-        "item": "potato starch",
+        "item": "potato starch or cornstarch",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "katakuriko, or cornstarch",
+        "note": "katakuriko",
         "category": "Baking"
       }
     }

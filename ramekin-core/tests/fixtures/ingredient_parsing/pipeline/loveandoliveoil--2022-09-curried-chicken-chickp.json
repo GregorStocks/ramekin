@@ -3,21 +3,17 @@
   "recipe_slug": "2022-09-curried-chicken-chickp",
   "ingredients": [
     {
-      "raw": "8 oz chicken breasts (1 large or 2 small)",
+      "raw": "8 oz  / 226 g chicken breasts, 1 large or 2 small",
       "expected": {
-        "item": "chicken breasts",
+        "item": "chicken breasts, 1 large or 2 small",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           },
           {
-            "amount": "1",
-            "unit": "large"
-          },
-          {
-            "amount": "2",
-            "unit": "small"
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -25,7 +21,7 @@
       }
     },
     {
-      "raw": "1 tablespoon olive oil",
+      "raw": "1 tablespoon   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -39,7 +35,7 @@
       }
     },
     {
-      "raw": "1 teaspoon Vadouvan curry powder",
+      "raw": "1 teaspoon   Vadouvan curry powder",
       "expected": {
         "item": "Vadouvan curry powder",
         "measurements": [
@@ -62,7 +58,7 @@
       }
     },
     {
-      "raw": "1/2 cup drained canned chickpeas (coarsely chopped)",
+      "raw": "½ cup   drained canned chickpeas, coarsely chopped",
       "expected": {
         "item": "drained canned chickpeas",
         "measurements": [
@@ -76,13 +72,17 @@
       }
     },
     {
-      "raw": "1/4 cup mayonnaise",
+      "raw": "¼ cup  / 56 g mayonnaise",
       "expected": {
         "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -90,7 +90,7 @@
       }
     },
     {
-      "raw": "1 teaspoon Vadouvan curry powder (or to taste)",
+      "raw": "1 teaspoon   Vadouvan curry powder, or to taste",
       "expected": {
         "item": "Vadouvan curry powder",
         "measurements": [
@@ -104,7 +104,7 @@
       }
     },
     {
-      "raw": "4  large wrap tortillas",
+      "raw": "4   large wrap tortillas",
       "expected": {
         "item": "wrap tortillas",
         "measurements": [
@@ -118,13 +118,17 @@
       }
     },
     {
-      "raw": "1/4 cup cranberry sauce",
+      "raw": "¼ cup  / 70 g cranberry sauce",
       "expected": {
         "item": "cranberry sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "70",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -132,7 +136,7 @@
       }
     },
     {
-      "raw": "1  small cucumber (cut into 1/4-inch square strips)",
+      "raw": "1   small cucumber, cut into 1/4-inch square strips",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -146,7 +150,7 @@
       }
     },
     {
-      "raw": "1  medium bell pepper or 3-4 small sweet peppers (cored, seeded and thinly sliced)",
+      "raw": "1   medium bell pepper or 3-4 small sweet peppers, cored, seeded and thinly sliced",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -155,18 +159,22 @@
             "unit": "medium"
           }
         ],
-        "note": "or 3-4 small sweet peppers (cored, seeded and thinly sliced)",
+        "note": "or 3-4 small sweet peppers; cored, seeded and thinly sliced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup toasted almonds (coarsely chopped)",
+      "raw": "¼ cup  / 35 g toasted almonds, coarsely chopped",
       "expected": {
         "item": "toasted almonds",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
           }
         ],
         "note": "coarsely chopped",
@@ -174,13 +182,17 @@
       }
     },
     {
-      "raw": "2 cups baby arugula",
+      "raw": "2 cups  / 40 g baby arugula",
       "expected": {
         "item": "baby arugula",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -188,7 +200,7 @@
       }
     },
     {
-      "raw": "1/4 cup coarsely chopped fresh cilantro",
+      "raw": "¼ cup   coarsely chopped fresh cilantro",
       "expected": {
         "item": "coarsely chopped fresh cilantro",
         "measurements": [

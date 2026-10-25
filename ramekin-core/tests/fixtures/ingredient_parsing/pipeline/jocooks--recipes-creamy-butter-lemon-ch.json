@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-creamy-butter-lemon-ch",
   "ingredients": [
     {
-      "raw": "4  chicken breasts (boneless and skinless, cut into bite size pieces)",
+      "raw": "4 chicken breasts (boneless and skinless, cut into bite size pieces)",
       "expected": {
         "item": "chicken breasts",
         "measurements": [
@@ -136,6 +136,35 @@
         "note": null,
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "juice and zest of 1 lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "juice and zest of 1 lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "juice and zest of 1 lemon",

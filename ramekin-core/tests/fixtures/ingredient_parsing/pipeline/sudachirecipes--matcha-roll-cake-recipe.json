@@ -3,7 +3,7 @@
   "recipe_slug": "matcha-roll-cake-recipe",
   "ingredients": [
     {
-      "raw": "3  egg",
+      "raw": "3 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "20 ml cooking oil (neutral flavor like canola etc.)",
+      "raw": "20 ml cooking oil neutral flavor like canola etc.",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil neutral flavor like canola etc.",
         "measurements": [
           {
             "amount": "20",
             "unit": "ml"
           }
         ],
-        "note": "neutral flavor like canola etc.",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "150 ml heavy cream (36% or higher)",
+      "raw": "150 ml heavy cream 36% or higher",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream 36% or higher",
         "measurements": [
           {
             "amount": "150",
             "unit": "ml"
           }
         ],
-        "note": "36% or higher",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -157,25 +157,25 @@
       }
     },
     {
-      "raw": "12  strawberries (half for filling, half for decorating)",
+      "raw": "12 strawberries half for filling, half for decorating",
       "expected": {
-        "item": "strawberries",
+        "item": "strawberries half for filling, half",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": "half for filling, half for decorating",
-        "category": "Produce"
+        "note": "for decorating",
+        "category": "Other"
       }
     },
     {
-      "raw": "powdered sugar (or matcha powder for dusting)",
+      "raw": "powdered sugar or matcha powder for dusting",
       "expected": {
-        "item": "powdered sugar",
+        "item": "powdered sugar or matcha powder",
         "measurements": [],
-        "note": "or matcha powder for dusting",
+        "note": "for dusting",
         "category": "Baking"
       }
     }

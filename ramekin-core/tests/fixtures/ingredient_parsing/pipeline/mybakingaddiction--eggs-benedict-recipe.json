@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tablespoon lemon juice (plus more to taste)",
+      "raw": "1 tablespoon lemon juice plus more to taste",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "6  poached eggs",
+      "raw": "6 poached eggs",
       "expected": {
         "item": "poached eggs",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "3  English muffins",
+      "raw": "3 English muffins",
       "expected": {
         "item": "English muffins",
         "measurements": [

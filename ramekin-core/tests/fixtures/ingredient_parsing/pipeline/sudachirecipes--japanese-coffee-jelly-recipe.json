@@ -3,35 +3,44 @@
   "recipe_slug": "japanese-coffee-jelly-recipe",
   "ingredients": [
     {
-      "raw": "15 g gelatin powder (or)",
+      "raw": "Setting agent (choose 1):",
       "expected": {
-        "item": "gelatin powder",
-        "measurements": [
-          {
-            "amount": "15",
-            "unit": "g"
-          }
-        ],
-        "note": "or",
+        "item": "Setting agent :",
+        "measurements": [],
+        "note": "choose 1",
         "category": "Other"
       }
     },
     {
-      "raw": "15 g agar agar powder (or)",
+      "raw": "15 g gelatin powder or",
       "expected": {
-        "item": "agar agar powder",
+        "item": "gelatin powder or",
         "measurements": [
           {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": "or",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 g kanten agar powder ((each sachet is usually 4g))",
+      "raw": "15 g agar agar powder or",
+      "expected": {
+        "item": "agar agar powder or",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 g kanten agar powder (each sachet is usually 4g)",
       "expected": {
         "item": "kanten agar powder",
         "measurements": [
@@ -45,35 +54,35 @@
       }
     },
     {
-      "raw": "500 ml water (if using espresso shots, reduce the water by 30ml for each shot used (see note))",
+      "raw": "500 ml water if using espresso shots, reduce the water by 30ml for each shot used (see note)",
       "expected": {
-        "item": "water",
+        "item": "water if using espresso shots, reduce the water by 30ml for each shot used",
         "measurements": [
           {
             "amount": "500",
             "unit": "ml"
           }
         ],
-        "note": "if using espresso shots, reduce the water by 30ml for each shot used (see note)",
-        "category": "Beverages"
+        "note": "see note",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tbsp instant coffee powder (preferably instant espresso powder or espresso shots)",
+      "raw": "2 tbsp instant coffee powder preferably instant espresso powder or espresso shots",
       "expected": {
-        "item": "instant coffee powder",
+        "item": "instant coffee powder preferably instant espresso powder or espresso shots",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "preferably instant espresso powder or espresso shots",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2-3 tbsp sugar (or to taste)",
+      "raw": "2-3 tbsp sugar or to taste",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -87,11 +96,11 @@
       }
     },
     {
-      "raw": "toppings of your choice (cream, ice cream, flavored syrups, chopped nuts etc)",
+      "raw": "toppings of your choice cream, ice cream, flavored syrups, chopped nuts etc",
       "expected": {
-        "item": "toppings of your choice",
+        "item": "toppings of your choice cream, ice cream, flavored syrups",
         "measurements": [],
-        "note": "cream, ice cream, flavored syrups, chopped nuts etc",
+        "note": "chopped nuts etc",
         "category": "Other"
       }
     }

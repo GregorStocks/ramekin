@@ -3,7 +3,7 @@
   "recipe_slug": "vanilla-cupcakes-recipe",
   "ingredients": [
     {
-      "raw": "2/3 cup (86 g) cake flour ((scoop and level to measure))",
+      "raw": "2/3 cup (86 g) cake flour (scoop and level to measure)",
       "expected": {
         "item": "cake flour",
         "measurements": [
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "2/3 cup (95 g) all-purpose flour ((scoop and level to measure))",
+      "raw": "2/3 cup (95 g) all-purpose flour (scoop and level to measure)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -85,9 +85,9 @@
       }
     },
     {
-      "raw": "1/2 cup (113 g) unsalted butter, (brought to room temperature)",
+      "raw": "1/2 cup (113 g) unsalted butter, brought to room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, brought to room temperature",
         "measurements": [
           {
             "amount": "0.5",
@@ -98,28 +98,28 @@
             "unit": "g"
           }
         ],
-        "note": "brought to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 large eggs, (brought to room temperature)",
+      "raw": "2 large eggs, brought to room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, brought to room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "brought to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/3 cup (80 ml) whole milk, (brought to room temperature)",
+      "raw": "1/3 cup (80 ml) whole milk, brought to room temperature",
       "expected": {
-        "item": "whole milk",
+        "item": "whole milk, brought to room temperature",
         "measurements": [
           {
             "amount": "0.33",
@@ -130,14 +130,14 @@
             "unit": "ml"
           }
         ],
-        "note": "brought to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/3 cup (80 ml) buttermilk, (brought to room temperature)",
+      "raw": "1/3 cup (80 ml) buttermilk, brought to room temperature",
       "expected": {
-        "item": "buttermilk",
+        "item": "buttermilk, brought to room temperature",
         "measurements": [
           {
             "amount": "0.33",
@@ -148,7 +148,7 @@
             "unit": "ml"
           }
         ],
-        "note": "brought to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -167,9 +167,9 @@
       }
     },
     {
-      "raw": "1/2 cup (113 g) unsalted butter, (brought to room temperature)",
+      "raw": "1/2 cup (113 g) unsalted butter, brought to room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, brought to room temperature",
         "measurements": [
           {
             "amount": "0.5",
@@ -180,14 +180,14 @@
             "unit": "g"
           }
         ],
-        "note": "brought to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup (56 g) salted butter, (brought to room temperature)",
+      "raw": "1/4 cup (56 g) salted butter, brought to room temperature",
       "expected": {
-        "item": "salted butter",
+        "item": "salted butter, brought to room temperature",
         "measurements": [
           {
             "amount": "0.25",
@@ -198,7 +198,7 @@
             "unit": "g"
           }
         ],
-        "note": "brought to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

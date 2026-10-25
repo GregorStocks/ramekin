@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "3&nbsp;  large eggs",
+      "raw": "3   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2&nbsp; cups white whole wheat flour (or whole wheat pastry flour)",
+      "raw": "2  cups white whole wheat flour (or whole wheat pastry flour)",
       "expected": {
         "item": "white whole wheat flour",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1/2&nbsp; teaspoon kosher salt",
+      "raw": "1/2  teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [

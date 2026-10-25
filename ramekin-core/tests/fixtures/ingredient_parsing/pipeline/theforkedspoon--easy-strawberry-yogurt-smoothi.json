@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/4 cup milk ((cow, almond, soy, etc))",
+      "raw": "¼ cup milk, (cow, almond, soy, etc)",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 cup strawberries (frozen)",
+      "raw": "1 cup strawberries, frozen",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 cup banana (frozen)",
+      "raw": "1 cup banana, frozen",
       "expected": {
         "item": "banana",
         "measurements": [
@@ -73,21 +73,21 @@
       }
     },
     {
-      "raw": "1 cup Greek yogurt (plain or flavored)",
+      "raw": "1 cup Greek yogurt, plain or flavored",
       "expected": {
-        "item": "Greek yogurt",
+        "item": "Greek yogurt, plain or flavored",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "plain or flavored",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "additional milk or yogurt (as needed)",
+      "raw": "additional milk or yogurt, as needed",
       "expected": {
         "item": "additional milk or yogurt",
         "measurements": [],
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "fresh fruit (sliced)",
+      "raw": "fresh fruit, sliced",
       "expected": {
         "item": "fresh fruit",
         "measurements": [],

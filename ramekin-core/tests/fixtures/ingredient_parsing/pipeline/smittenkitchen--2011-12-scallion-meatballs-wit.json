@@ -3,10 +3,6 @@
   "recipe_slug": "2011-12-scallion-meatballs-wit",
   "ingredients": [
     {
-      "raw": "Sauce",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 cup dark brown sugar",
       "expected": {
         "item": "dark brown sugar",
@@ -17,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": "preferably Japanese or reduced sodium",
-        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -62,7 +55,6 @@
           }
         ],
         "note": "sweet rice wine; or 1/2 cup sake with 1/4 cup sugar",
-        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -77,7 +69,6 @@
           }
         ],
         "note": "I used half and it tasted like plenty to me; adjust to your preference",
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -92,7 +83,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,13 +97,8 @@
           }
         ],
         "note": "no, I did not count how many I put in there",
-        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
-    },
-    {
-      "raw": "Meatballs",
-      "is_section_header": true
     },
     {
       "raw": "1 pound ground turkey",
@@ -126,7 +111,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -145,7 +129,6 @@
           }
         ],
         "note": "finely chopped",
-        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -164,7 +147,6 @@
           }
         ],
         "note": "about 1/2 cup, the cilantro-averse can use flat-leaf parsley, finely chopped",
-        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -179,7 +161,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -194,7 +175,6 @@
           }
         ],
         "note": "toasted if you can find it",
-        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -209,7 +189,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -219,7 +198,6 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -229,7 +207,6 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": null,
-        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     }

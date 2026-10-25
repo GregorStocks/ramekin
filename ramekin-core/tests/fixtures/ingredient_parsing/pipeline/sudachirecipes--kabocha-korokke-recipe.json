@@ -3,7 +3,7 @@
   "recipe_slug": "kabocha-korokke-recipe",
   "ingredients": [
     {
-      "raw": "400 g kabocha squash ((before peeling))",
+      "raw": "400 g kabocha squash (before peeling)",
       "expected": {
         "item": "kabocha squash",
         "measurements": [
@@ -101,21 +101,21 @@
       }
     },
     {
-      "raw": "2 tbsp preferred shredded melting cheese (Gouda, Emmental, and Gruyère, Cheddar, etc)",
+      "raw": "2 tbsp preferred shredded melting cheese Gouda, Emmental, and Gruyère, Cheddar, etc",
       "expected": {
-        "item": "preferred shredded melting cheese",
+        "item": "preferred shredded melting cheese Gouda, Emmental, and Gruyère, Cheddar, etc",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "Gouda, Emmental, and Gruyère, Cheddar, etc",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "50 g onion (finely diced)",
+      "raw": "50 g onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -199,21 +199,21 @@
       }
     },
     {
-      "raw": "5 tbsp all-purpose flour (for batter)",
+      "raw": "5 tbsp all-purpose flour for batter",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour for batter",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
           }
         ],
-        "note": "for batter",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3 tbsp all-purpose flour (for coating)",
+      "raw": "3 tbsp all-purpose flour for coating",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "cooking oil (for deep frying)",
+      "raw": "cooking oil for deep frying",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
@@ -250,12 +250,12 @@
       }
     },
     {
-      "raw": "dried parsley (optional garnish)",
+      "raw": "dried parsley optional garnish",
       "expected": {
-        "item": "dried parsley",
+        "item": "dried parsley optional garnish",
         "measurements": [],
-        "note": "optional garnish",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {

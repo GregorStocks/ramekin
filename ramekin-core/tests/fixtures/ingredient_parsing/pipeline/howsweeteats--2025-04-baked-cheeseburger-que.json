@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "8 ounces sharp cheddar cheese, (freshly grated)",
+      "raw": "8 ounces sharp cheddar cheese, freshly grated",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "4 to 6  burrito-size tortillas",
+      "raw": "4 to 6 burrito-size tortillas",
       "expected": {
         "item": "burrito-size tortillas",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "chopped tomatoes, (for topping)",
+      "raw": "chopped tomatoes, for topping",
       "expected": {
         "item": "chopped tomatoes",
         "measurements": [],
@@ -100,7 +100,7 @@
       }
     },
     {
-      "raw": "shredded lettuce, (for topping)",
+      "raw": "shredded lettuce, for topping",
       "expected": {
         "item": "shredded lettuce",
         "measurements": [],
@@ -109,7 +109,7 @@
       }
     },
     {
-      "raw": "pickled onions, (for topping)",
+      "raw": "pickled onions, for topping",
       "expected": {
         "item": "pickled onions",
         "measurements": [],
@@ -118,7 +118,7 @@
       }
     },
     {
-      "raw": "pickles or relish, (for topping)",
+      "raw": "pickles or relish, for topping",
       "expected": {
         "item": "pickles or relish",
         "measurements": [],

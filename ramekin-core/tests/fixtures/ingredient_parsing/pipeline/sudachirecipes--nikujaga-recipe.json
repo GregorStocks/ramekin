@@ -3,7 +3,7 @@
   "recipe_slug": "nikujaga-recipe",
   "ingredients": [
     {
-      "raw": "300 g potato (waxy type, approximately 3-4cm cubes)",
+      "raw": "300 g potato (waxy type such as May Queen or Yukon Gold, cut into 3 cm chunks)",
       "expected": {
         "item": "potato",
         "measurements": [
@@ -12,40 +12,40 @@
             "unit": "g"
           }
         ],
-        "note": "waxy type, approximately 3-4cm cubes",
+        "note": "waxy type such as May Queen or Yukon Gold, cut into 3 cm chunks",
         "category": "Produce"
       }
     },
     {
-      "raw": "120 g carrot",
+      "raw": "150 g carrot (roll-cut, pieces no thicker than 2 cm)",
       "expected": {
         "item": "carrot",
         "measurements": [
           {
-            "amount": "120",
+            "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "roll-cut, pieces no thicker than 2 cm",
         "category": "Produce"
       }
     },
     {
-      "raw": "100 g onion",
+      "raw": "150 g onion (cut into 1.5-2 cm wedges)",
       "expected": {
         "item": "onion",
         "measurements": [
           {
-            "amount": "100",
+            "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1.5-2 cm wedges",
         "category": "Produce"
       }
     },
     {
-      "raw": "200 g thinly sliced pork belly (or thinly sliced beef)",
+      "raw": "200 g thinly sliced pork belly ((or thinly sliced beef), cut into 5 cm pieces)",
       "expected": {
         "item": "thinly sliced pork belly",
         "measurements": [
@@ -54,12 +54,12 @@
             "unit": "g"
           }
         ],
-        "note": "or thinly sliced beef",
+        "note": "cut into 5 cm pieces; or thinly sliced beef",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tsp cooking oil",
+      "raw": "1 tsp cooking oil (neutral)",
       "expected": {
         "item": "cooking oil",
         "measurements": [
@@ -68,26 +68,26 @@
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "neutral",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "400 ml dashi stock",
+      "raw": "450 ml dashi stock (homemade or teabag-style dashi packets)",
       "expected": {
         "item": "dashi stock",
         "measurements": [
           {
-            "amount": "400",
+            "amount": "450",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "homemade or teabag-style dashi packets",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 tbsp light brown sugar",
+      "raw": "1 tbsp light brown sugar (or white sugar)",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -96,18 +96,18 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or white sugar",
         "category": "Baking"
       }
     },
     {
-      "raw": "50 ml mirin",
+      "raw": "3 tbsp mirin",
       "expected": {
         "item": "mirin",
         "measurements": [
           {
-            "amount": "50",
-            "unit": "ml"
+            "amount": "3",
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -115,16 +115,16 @@
       }
     },
     {
-      "raw": "50 ml sake",
+      "raw": "3 tbsp sake (or dry sherry)",
       "expected": {
         "item": "sake",
         "measurements": [
           {
-            "amount": "50",
-            "unit": "ml"
+            "amount": "3",
+            "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or dry sherry",
         "category": "Beverages"
       }
     },
@@ -143,13 +143,13 @@
       }
     },
     {
-      "raw": "40 ml Japanese soy sauce (koikuchi shoyu)",
+      "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
         "item": "Japanese soy sauce",
         "measurements": [
           {
-            "amount": "40",
-            "unit": "ml"
+            "amount": "2",
+            "unit": "tbsp"
           }
         ],
         "note": "koikuchi shoyu",
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "8-10  snow peas (to garnish)",
+      "raw": "8-10  snow peas (strings removed, for garnish)",
       "expected": {
         "item": "snow peas",
         "measurements": [
@@ -166,21 +166,21 @@
             "unit": null
           }
         ],
-        "note": "to garnish",
+        "note": "strings removed, for garnish",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tsp Japanese soy sauce (koikuchi shoyu) (added seasoning at the end)",
+      "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu) (for final seasoning)",
       "expected": {
         "item": "Japanese soy sauce",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tsp"
+            "amount": "1",
+            "unit": "tbsp"
           }
         ],
-        "note": "koikuchi shoyu, added seasoning at the end",
+        "note": "koikuchi shoyu, for final seasoning",
         "category": "Condiments & Sauces"
       }
     }

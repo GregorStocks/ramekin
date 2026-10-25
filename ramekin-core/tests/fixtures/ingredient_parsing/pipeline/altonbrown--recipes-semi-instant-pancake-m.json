@@ -73,13 +73,13 @@
       }
     },
     {
-      "raw": "283 grams semi-instant pancake mix",
+      "raw": "2 cups semi-instant pancake mix",
       "expected": {
         "item": "semi-instant pancake mix",
         "measurements": [
           {
-            "amount": "283",
-            "unit": "g"
+            "amount": "2",
+            "unit": "cup"
           }
         ],
         "note": null,
@@ -87,16 +87,16 @@
       }
     },
     {
-      "raw": "2 large  eggs, separated, at room temperature",
+      "raw": "2 large  eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "separated, at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "4 tablespoons unsalted butter, melted and cooled",
+      "raw": "2  ounces vegetable oil",
       "expected": {
-        "item": "unsalted butter",
+        "item": "vegetable oil",
         "measurements": [
           {
-            "amount": "4",
-            "unit": "tbsp"
+            "amount": "2",
+            "unit": "oz"
           }
         ],
-        "note": "melted and cooled",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {

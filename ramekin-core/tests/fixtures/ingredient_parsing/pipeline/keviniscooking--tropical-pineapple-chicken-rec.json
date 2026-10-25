@@ -3,7 +3,7 @@
   "recipe_slug": "tropical-pineapple-chicken-rec",
   "ingredients": [
     {
-      "raw": "2 lbs chicken ((See Note 1))",
+      "raw": "2 lbs chicken (See Note 1)",
       "expected": {
         "item": "chicken",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3 cups pineapple ((See Note 2))",
+      "raw": "3 cups pineapple (See Note 2)",
       "expected": {
         "item": "pineapple",
         "measurements": [
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "4  green onions (ends trimmed, cut half)",
+      "raw": "4 green onions ends trimmed, cut half",
       "expected": {
-        "item": "green onions",
+        "item": "green onions ends trimmed, cut half",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "ends trimmed, cut half",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -283,7 +283,7 @@
       }
     },
     {
-      "raw": "2  Scotch Bonnet pepper ((See Note 3))",
+      "raw": "2 Scotch Bonnet pepper (See Note 3)",
       "expected": {
         "item": "Scotch Bonnet pepper",
         "measurements": [
@@ -297,17 +297,17 @@
       }
     },
     {
-      "raw": "2  green onions (tops only, chopped)",
+      "raw": "2 green onions tops only, chopped",
       "expected": {
-        "item": "green onions",
+        "item": "green onions tops only",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "tops only, chopped",
-        "category": "Produce"
+        "note": "chopped",
+        "category": "Other"
       }
     }
   ]

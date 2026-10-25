@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "5  large eggs",
+      "raw": "5 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1½ cups half &amp; half",
+      "raw": "1½ cups half & half",
       "expected": {
         "item": "half & half",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2 tablespoons bourbon ((optional; see note))",
+      "raw": "2 tablespoons bourbon (optional; see note)",
       "expected": {
         "item": "bourbon",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "4  large Granny Smith apples, (peeled and thinly sliced)",
+      "raw": "4 large Granny Smith apples, peeled and thinly sliced",
       "expected": {
         "item": "Granny Smith apples",
         "measurements": [

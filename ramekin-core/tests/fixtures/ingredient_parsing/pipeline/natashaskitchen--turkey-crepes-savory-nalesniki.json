@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 Tbsp unsalted butter (melted. Plus more to sauté.)",
+      "raw": "4 Tbsp unsalted butter, melted. Plus more to sauté.",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -54,7 +54,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "melted. Plus more to sauté.",
+        "note": "melted., Plus more to sauté.",
         "category": "Dairy & Eggs"
       }
     },
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "1 cup all-purpose flour (or use 1/2 cup whole wheat flour and 1/2 cup all-purpose)",
+      "raw": "1 cup all-purpose flour, or use 1/2 cup whole wheat flour and 1/2 cup all-purpose",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -96,16 +96,16 @@
       }
     },
     {
-      "raw": "1/2 lb leftover turkey meat (dark and/or white meat)",
+      "raw": "1/2 lb leftover turkey meat, dark and/or white meat",
       "expected": {
-        "item": "leftover turkey meat",
+        "item": "leftover turkey meat, dark and/or white meat",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
           }
         ],
-        "note": "dark and/or white meat",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "1/2 lb mushrooms (sliced)",
+      "raw": "1/2 lb mushrooms, sliced",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "1  medium onion (finely chopped)",
+      "raw": "1 medium onion, finely chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "1  carrot (finely grated (or 4 tiny awkward ones from the garden))",
+      "raw": "1 carrot, finely grated (or 4 tiny awkward ones from the garden)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -161,7 +161,7 @@
             "unit": null
           }
         ],
-        "note": "finely grated (or 4 tiny awkward ones from the garden)",
+        "note": "finely grated; or 4 tiny awkward ones from the garden",
         "category": "Produce"
       }
     },

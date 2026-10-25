@@ -3,26 +3,26 @@
   "recipe_slug": "turmeric-roasted-carrots-recip",
   "ingredients": [
     {
-      "raw": "2 lb carrots (pealed and cut on the diagonal)",
+      "raw": "2 lb carrots pealed and cut on the diagonal",
       "expected": {
-        "item": "carrots",
+        "item": "carrots pealed and cut on the diagonal",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "pealed and cut on the diagonal",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "Extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil)",
+      "raw": "Extra virgin olive oil I used Private Reserve Greek extra virgin olive oil",
       "expected": {
-        "item": "Extra virgin olive oil",
+        "item": "Extra virgin olive oil I used Private Reserve Greek extra virgin olive oil",
         "measurements": [],
-        "note": "I used Private Reserve Greek extra virgin olive oil",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -44,16 +44,16 @@
       }
     },
     {
-      "raw": "Spices  of your choice",
+      "raw": "Spices  of your choice  (I used 1/2 teaspoon ground turmeric and 3/4 teaspoon of harissa spice blend)",
       "expected": {
         "item": "Spices of your choice",
         "measurements": [],
-        "note": null,
+        "note": "I used 1/2 teaspoon ground turmeric and 3/4 teaspoon of harissa spice blend",
         "category": "Other"
       }
     },
     {
-      "raw": "1  garlic clove (finely minced)",
+      "raw": "1 garlic clove finely minced",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -67,17 +67,17 @@
       }
     },
     {
-      "raw": "1/2  lime (juice of)",
+      "raw": "1/2 lime juice of",
       "expected": {
-        "item": "lime",
+        "item": "lime juice of",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "juice of",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {

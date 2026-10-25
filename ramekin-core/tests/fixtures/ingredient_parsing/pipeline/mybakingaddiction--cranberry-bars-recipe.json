@@ -3,21 +3,21 @@
   "recipe_slug": "cranberry-bars-recipe",
   "ingredients": [
     {
-      "raw": "1 cup all-purpose flour  (or a gluten-free 1-to-1 baking flour)",
+      "raw": "1 cup all-purpose flour  or a gluten-free 1-to-1 baking flour",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour or a gluten-free 1-to-1 baking flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or a gluten-free 1-to-1 baking flour",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup granulated sugar",
+      "raw": "½ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/8 teaspoon salt",
+      "raw": "⅛ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -59,21 +59,21 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (cold)",
+      "raw": "½ cup unsalted butter cold",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter cold",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "cold",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (melted)",
+      "raw": "½ cup unsalted butter melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -101,21 +101,21 @@
       }
     },
     {
-      "raw": "2  large eggs (room temperature)",
+      "raw": "2 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3/4 teaspoon almond extract",
+      "raw": "¾ teaspoon almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon pure vanilla extract",
+      "raw": "¼ teaspoon pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "¼ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -157,16 +157,16 @@
       }
     },
     {
-      "raw": "1 cup all-purpose flour  (or gluten-free 1-to-1 baking flour)",
+      "raw": "1 cup all-purpose flour  or gluten-free 1-to-1 baking flour",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour or gluten-free 1-to-1 baking flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or gluten-free 1-to-1 baking flour",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon pure vanilla extract",
+      "raw": "½ teaspoon pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "1/2 cup toasted sliced almonds (optional)",
+      "raw": "½ cup toasted sliced almonds optional",
       "expected": {
         "item": "toasted sliced almonds",
         "measurements": [

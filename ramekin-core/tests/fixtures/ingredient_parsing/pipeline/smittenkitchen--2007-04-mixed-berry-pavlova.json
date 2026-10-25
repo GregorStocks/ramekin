@@ -3,15 +3,6 @@
   "recipe_slug": "2007-04-mixed-berry-pavlova",
   "ingredients": [
     {
-      "raw": "Meringue Cake",
-      "expected": {
-        "item": "Meringue Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "4 large (120 grams) egg whites",
       "expected": {
         "item": "egg whites",
@@ -104,15 +95,6 @@
       }
     },
     {
-      "raw": "Whipped Cream",
-      "expected": {
-        "item": "Whipped Cream",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
       "raw": "1 cup heavy whipping cream",
       "expected": {
         "item": "heavy whipping cream",
@@ -155,10 +137,6 @@
       }
     },
     {
-      "raw": "Mixed Berry Topping",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 pint fresh strawberries, hulled and sliced",
       "expected": {
         "item": "fresh strawberries",
@@ -169,7 +147,6 @@
           }
         ],
         "note": "hulled and sliced",
-        "section": "Mixed Berry Topping",
         "category": "Produce"
       }
     },
@@ -184,7 +161,6 @@
           }
         ],
         "note": null,
-        "section": "Mixed Berry Topping",
         "category": "Produce"
       }
     },
@@ -199,7 +175,6 @@
           }
         ],
         "note": null,
-        "section": "Mixed Berry Topping",
         "category": "Produce"
       }
     }

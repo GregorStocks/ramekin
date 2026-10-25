@@ -3,7 +3,7 @@
   "recipe_slug": "panzanella-salad-recipe",
   "ingredients": [
     {
-      "raw": "4  cups sourdough bread* ((about half a loaf - diced or torn into ½&amp;quot; cubes))",
+      "raw": "4  cups sourdough bread* (about half a loaf – diced or torn into ½\" cubes)",
       "expected": {
         "item": "sourdough bread",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "Sea salt &amp; pepper ((or galic salt))",
+      "raw": "Sea salt & pepper (or galic salt)",
       "expected": {
         "item": "Sea salt & pepper",
         "measurements": [],
@@ -40,21 +40,21 @@
       }
     },
     {
-      "raw": "2  tomatoes (vine ripened)",
+      "raw": "2 tomatoes vine ripened",
       "expected": {
-        "item": "tomatoes",
+        "item": "tomatoes vine ripened",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "vine ripened",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  cucumber (peeled and finely diced)",
+      "raw": "1 cucumber peeled and finely diced",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -68,21 +68,21 @@
       }
     },
     {
-      "raw": "1  bell pepper (red, yellow, orange, or green finely diced)",
+      "raw": "1 bell pepper red, yellow, orange, or green finely diced",
       "expected": {
-        "item": "bell pepper",
+        "item": "bell pepper red, yellow, orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "red, yellow, orange, or green finely diced",
-        "category": "Produce"
+        "note": "or green finely diced",
+        "category": "Other"
       }
     },
     {
-      "raw": "¼ cup red onion (sliced thin or finely diced)",
+      "raw": "¼ cup red onion sliced thin or finely diced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "¼ cup fresh basil (finely chopped)",
+      "raw": "¼ cup fresh basil finely chopped",
       "expected": {
         "item": "fresh basil",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "8 ounces fresh mozzarella (chopped)",
+      "raw": "8 ounces fresh mozzarella chopped",
       "expected": {
         "item": "fresh mozzarella",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "½ teaspoon sea salt (or more to taste)",
+      "raw": "½ teaspoon sea salt or more to taste",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon pepper (or more to taste)",
+      "raw": "¼ teaspoon pepper or more to taste",
       "expected": {
         "item": "pepper",
         "measurements": [
@@ -152,21 +152,16 @@
       }
     },
     {
-      "raw": "fresh corn (1 ear)",
+      "raw": "fresh corn 1 ear",
       "expected": {
-        "item": "fresh corn",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "ear"
-          }
-        ],
+        "item": "fresh corn 1 ear",
+        "measurements": [],
         "note": null,
-        "category": "Produce"
+        "category": "Other"
       }
     },
     {
-      "raw": "1  avocado (diced)",
+      "raw": "1 avocado diced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -194,7 +189,7 @@
       }
     },
     {
-      "raw": "3 Tablespoons balsamic vinegar ((or white whine vinegar, apple cider, etc.))",
+      "raw": "3 Tablespoons balsamic vinegar (or white whine vinegar, apple cider, etc.)",
       "expected": {
         "item": "balsamic vinegar",
         "measurements": [

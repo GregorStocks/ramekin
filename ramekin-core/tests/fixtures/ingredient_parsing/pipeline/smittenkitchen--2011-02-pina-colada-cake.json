@@ -3,15 +3,6 @@
   "recipe_slug": "2011-02-pina-colada-cake",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "2 cups (250 grams or 8 3/4 ounces) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -192,15 +183,6 @@
       }
     },
     {
-      "raw": "To brush over the cake",
-      "expected": {
-        "item": "To brush over the cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1 to 2 tablespoons rum (optional)",
       "expected": {
         "item": "rum",
@@ -229,10 +211,6 @@
       }
     },
     {
-      "raw": "Glaze",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup (120 grams or 4 ounces) powdered sugar",
       "expected": {
         "item": "powdered sugar",
@@ -251,7 +229,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -266,7 +243,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -281,7 +257,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Beverages"
       }
     }

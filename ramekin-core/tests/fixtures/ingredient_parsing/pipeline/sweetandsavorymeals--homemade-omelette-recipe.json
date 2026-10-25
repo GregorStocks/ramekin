@@ -17,35 +17,35 @@
       }
     },
     {
-      "raw": "3  large eggs (room temperature)",
+      "raw": "3 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons cream (or milk)",
+      "raw": "2 tablespoons cream or milk",
       "expected": {
-        "item": "cream",
+        "item": "cream or milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or milk",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Salt and pepper (to taste)",
+      "raw": "Salt and pepper to taste",
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "1/2 cup cheddar cheese (shredded)",
+      "raw": "1/2 cup cheddar cheese shredded",
       "expected": {
         "item": "cheddar cheese",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "1 tablespoon unsalted butter or olive oil",
+      "raw": "1 tablespoon unsalted butter  or olive oil",
       "expected": {
         "item": "unsalted butter or olive oil",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "1/4 cup red bell pepper (diced)",
+      "raw": "1/4 cup red bell pepper diced",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "1/2 cup mushrooms (sliced)",
+      "raw": "1/2 cup mushrooms sliced",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "1 clove garlic (minced)",
+      "raw": "1 clove garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [

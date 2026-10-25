@@ -3,7 +3,7 @@
   "recipe_slug": "salisbury-steak-recipe",
   "ingredients": [
     {
-      "raw": "1 1/2 lbs. lean ground beef",
+      "raw": "1 ½ lbs. lean ground beef",
       "expected": {
         "item": "lean ground beef",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/2 cup yellow onion, (finely diced)",
+      "raw": "½ cup yellow onion, finely diced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic, (minced)",
+      "raw": "3 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2 tsp. ground black pepper",
+      "raw": "½ tsp. ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 tsp. sea salt",
+      "raw": "½ tsp. sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 lb cremini mushrooms,  (quartered (approx. 15 mushrooms))",
+      "raw": "1 lb cremini mushrooms,  quartered (approx. 15 mushrooms)",
       "expected": {
         "item": "cremini mushrooms",
         "measurements": [
@@ -96,7 +96,7 @@
             "unit": "lb"
           }
         ],
-        "note": "quartered (approx. 15 mushrooms)",
+        "note": "approx. 15 mushrooms, quartered",
         "category": "Produce"
       }
     },
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 3/4 cups low sodium beef broth",
+      "raw": "1 ¾ cups low sodium beef broth",
       "expected": {
         "item": "low sodium beef broth",
         "measurements": [
@@ -143,21 +143,25 @@
       }
     },
     {
-      "raw": "1 lb. red potatoes,  (diced (approx. 1 lb))",
+      "raw": "1 lb. red potatoes,  diced (approx. 1 lb)",
       "expected": {
         "item": "red potatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
           }
         ],
-        "note": "diced (approx. 1 lb)",
+        "note": "approx. 1 lb, diced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 tsp. sea salt",
+      "raw": "½ tsp. sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -171,7 +175,7 @@
       }
     },
     {
-      "raw": "1/4 tsp. ground black pepper",
+      "raw": "¼ tsp. ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -185,16 +189,16 @@
       }
     },
     {
-      "raw": "2-4 tbsp. low sodium beef broth, (as needed, to thin)",
+      "raw": "2-4 tbsp. low sodium beef broth, as needed, to thin",
       "expected": {
-        "item": "low sodium beef broth",
+        "item": "low sodium beef broth, as needed, to thin",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "tbsp"
           }
         ],
-        "note": "as needed, to thin",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -213,7 +217,7 @@
       }
     },
     {
-      "raw": "3 tbsp. yellow onion, (minced)",
+      "raw": "3 tbsp. yellow onion, minced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -227,7 +231,7 @@
       }
     },
     {
-      "raw": "4 cups peas ((fresh or frozen))",
+      "raw": "4 cups peas (fresh or frozen)",
       "expected": {
         "item": "peas",
         "measurements": [
@@ -241,7 +245,7 @@
       }
     },
     {
-      "raw": "1/4  sea salt",
+      "raw": "¼ sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -255,7 +259,7 @@
       }
     },
     {
-      "raw": "1/4 tsp. ground black pepper",
+      "raw": "¼ tsp. ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [

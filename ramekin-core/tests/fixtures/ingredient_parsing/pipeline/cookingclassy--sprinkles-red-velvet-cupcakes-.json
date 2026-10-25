@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "3/4 cup salted butter (, firm but not cold*)",
+      "raw": "3/4 cup salted butter , firm but not cold*",
       "expected": {
-        "item": "salted butter",
+        "item": "salted butter, firm but not cold",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "firm but not cold",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -143,21 +143,21 @@
       }
     },
     {
-      "raw": "1  recipe Cream Cheese Frosting (, recipe follows)",
+      "raw": "1 recipe Cream Cheese Frosting , recipe follows",
       "expected": {
-        "item": "recipe Cream Cheese Frosting",
+        "item": "recipe Cream Cheese Frosting, recipe follows",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "recipe follows",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup salted butter (, firm but not cold (if using unsalted add 1/8 tsp salt))",
+      "raw": "1/2 cup salted butter , firm but not cold (if using unsalted add 1/8 tsp salt)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -166,12 +166,12 @@
             "unit": "cup"
           }
         ],
-        "note": "firm but not cold (if using unsalted add 1/8 tsp salt)",
+        "note": "if using unsalted add 1/8 tsp salt, firm but not cold",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 oz cream cheese (, cold (I recommend using Philadelphia brand in this recipe))",
+      "raw": "6 oz cream cheese , cold (I recommend using Philadelphia brand in this recipe)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -180,7 +180,7 @@
             "unit": "oz"
           }
         ],
-        "note": "cold (I recommend using Philadelphia brand in this recipe)",
+        "note": "I recommend using Philadelphia brand in this recipe, cold",
         "category": "Cheese"
       }
     },
@@ -213,11 +213,11 @@
       }
     },
     {
-      "raw": "Red and blue food coloring (, for decor (optional))",
+      "raw": "Red and blue food coloring , for decor (optional)",
       "expected": {
         "item": "Red and blue food coloring",
         "measurements": [],
-        "note": "for decor (optional)",
+        "note": "optional, for decor",
         "category": "Other"
       }
     }

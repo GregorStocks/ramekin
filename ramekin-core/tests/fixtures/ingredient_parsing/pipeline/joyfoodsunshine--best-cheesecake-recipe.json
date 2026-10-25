@@ -3,7 +3,7 @@
   "recipe_slug": "best-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "1 ½ cups graham cracker crumbs ((12 full sheets of grahams processed in the food processor until fine))",
+      "raw": "1 ½ cups graham cracker crumbs (12 full sheets of grahams processed in the food processor until fine)",
       "expected": {
         "item": "graham cracker crumbs",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "6 Tablespoons salted butter (melted)",
+      "raw": "6 Tablespoons salted butter melted",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "24 ounces cream cheese (room temperature)",
+      "raw": "24 ounces cream cheese room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese room temperature",
         "measurements": [
           {
             "amount": "24",
             "unit": "oz"
           }
         ],
-        "note": "room temperature",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,31 +115,31 @@
       }
     },
     {
-      "raw": "½ cup sour cream (room temperature)",
+      "raw": "½ cup sour cream room temperature",
       "expected": {
-        "item": "sour cream",
+        "item": "sour cream room temperature",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3  large eggs (room temperature)",
+      "raw": "3 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {

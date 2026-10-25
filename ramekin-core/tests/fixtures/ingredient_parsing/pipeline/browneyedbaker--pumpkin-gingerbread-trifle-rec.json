@@ -3,13 +3,17 @@
   "recipe_slug": "pumpkin-gingerbread-trifle-rec",
   "ingredients": [
     {
-      "raw": "2⅓ cups all-purpose flour",
+      "raw": "2⅓ cups  (291.67 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.33",
             "unit": "cup"
+          },
+          {
+            "amount": "291.67",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "1 teaspoon baking soda",
+      "raw": "1 teaspoon   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -31,7 +35,7 @@
       }
     },
     {
-      "raw": "1 teaspoon ground ginger",
+      "raw": "1 teaspoon   ground ginger",
       "expected": {
         "item": "ground ginger",
         "measurements": [
@@ -45,7 +49,7 @@
       }
     },
     {
-      "raw": "1 teaspoon ground cinnamon",
+      "raw": "1 teaspoon   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -59,10 +63,14 @@
       }
     },
     {
-      "raw": "¾ teaspoon salt",
+      "raw": "¾ teaspoon  (0.75 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
           {
             "amount": "0.75",
             "unit": "tsp"
@@ -73,13 +81,17 @@
       }
     },
     {
-      "raw": "½ cup vegetable shortening",
+      "raw": "½ cup  (102.5 g) vegetable shortening",
       "expected": {
         "item": "vegetable shortening",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "102.5",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -87,13 +99,17 @@
       }
     },
     {
-      "raw": "⅓ cup granulated sugar",
+      "raw": "⅓ cup  (66.67 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "66.67",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -101,13 +117,17 @@
       }
     },
     {
-      "raw": "1 cup molasses",
+      "raw": "1 cup  (337 ml) molasses",
       "expected": {
         "item": "molasses",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "337",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -115,7 +135,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1   egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -129,13 +149,17 @@
       }
     },
     {
-      "raw": "¾ cup hot water",
+      "raw": "¾ cup  (187.5 ml) hot water",
       "expected": {
         "item": "hot water",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "187.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -143,13 +167,17 @@
       }
     },
     {
-      "raw": "2 cups cold milk",
+      "raw": "2 cups  (488 ml) cold milk",
       "expected": {
         "item": "cold milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "488",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -157,13 +185,17 @@
       }
     },
     {
-      "raw": "3.4  ounce package instant vanilla pudding mix",
+      "raw": "3.4  ounce  (96.39 g) package instant vanilla pudding mix",
       "expected": {
         "item": "package instant vanilla pudding mix",
         "measurements": [
           {
             "amount": "3.4",
             "unit": "oz"
+          },
+          {
+            "amount": "96.39",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -171,13 +203,17 @@
       }
     },
     {
-      "raw": "15 ounce canned pumpkin",
+      "raw": "15 ounce  (425.24 g) canned pumpkin",
       "expected": {
         "item": "canned pumpkin",
         "measurements": [
           {
             "amount": "15",
             "unit": "oz"
+          },
+          {
+            "amount": "425.24",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -185,13 +221,17 @@
       }
     },
     {
-      "raw": "½ cup light brown sugar",
+      "raw": "½ cup  (110 g) light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -199,7 +239,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -213,13 +253,17 @@
       }
     },
     {
-      "raw": "2 cups heavy cream",
+      "raw": "2 cups  (476 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -227,13 +271,17 @@
       }
     },
     {
-      "raw": "⅓ cup granulated sugar",
+      "raw": "⅓ cup  (66.67 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "66.67",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -241,7 +289,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [

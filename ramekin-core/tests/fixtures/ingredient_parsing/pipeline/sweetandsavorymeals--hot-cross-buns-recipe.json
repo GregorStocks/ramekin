@@ -59,21 +59,17 @@
       }
     },
     {
-      "raw": "1  envelope active dry yeast (about 2 1/4 teaspoons)",
+      "raw": "1 envelope active dry yeast about 2 1/4 teaspoons",
       "expected": {
-        "item": "active dry yeast",
+        "item": "active dry yeast about 2 1/4 teaspoons",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
-          },
-          {
-            "amount": "2.25",
-            "unit": "tsp"
           }
         ],
-        "note": "about 2 1/4 teaspoons",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -105,7 +101,7 @@
       }
     },
     {
-      "raw": "1/4 cup unsalted butter (softened)",
+      "raw": "1/4 cup unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -133,7 +129,7 @@
       }
     },
     {
-      "raw": "2  large eggs (beaten)",
+      "raw": "2 large eggs beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -161,7 +157,7 @@
       }
     },
     {
-      "raw": "1 teaspoon cinnamon powder (optional)",
+      "raw": "1 teaspoon cinnamon powder optional",
       "expected": {
         "item": "cinnamon powder",
         "measurements": [
@@ -189,7 +185,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [

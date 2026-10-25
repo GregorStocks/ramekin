@@ -3,7 +3,7 @@
   "recipe_slug": "fajita-chicken-kebab-recipe",
   "ingredients": [
     {
-      "raw": "1 pound boneless skinless&nbsp;chicken breasts",
+      "raw": "1 pound boneless skinless chicken breasts",
       "expected": {
         "item": "boneless skinless chicken breasts",
         "measurements": [
@@ -29,6 +29,35 @@
         "note": null,
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Zest and juice of 1 large lime (plus additional for serving)",
+      "expected": {
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large lime"
+          }
+        ],
+        "note": "plus additional for serving",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Zest and juice of 1 large lime (plus additional for serving)",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large lime"
+          }
+        ],
+        "note": "plus additional for serving",
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "Zest and juice of 1 large lime (plus additional for serving)",

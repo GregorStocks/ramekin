@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "1  large head of romaine lettuce",
+      "raw": "1 large head of romaine lettuce",
       "expected": {
         "item": "romaine lettuce",
         "measurements": [
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "1 cup sprouts ((I used onion sprouts))",
+      "raw": "1 cup sprouts, (I used onion sprouts)",
       "expected": {
         "item": "sprouts",
         "measurements": [

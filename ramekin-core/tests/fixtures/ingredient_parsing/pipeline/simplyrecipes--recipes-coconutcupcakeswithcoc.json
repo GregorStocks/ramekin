@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-coconutcupcakeswithcoc",
   "ingredients": [
     {
-      "raw": "3/4 cup of unsalted butter, room temperature",
+      "raw": "3/4 cup unsalted butter, room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 1/4 cup of sugar",
+      "raw": "1 1/4 cups sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -45,9 +45,9 @@
       }
     },
     {
-      "raw": "2 1/4 cups of flour",
+      "raw": "2 1/4 cups all-purpose flour",
       "expected": {
-        "item": "flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.25",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 teaspoon of salt",
+      "raw": "1 teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 teaspoon of baking powder",
+      "raw": "1 teaspoon baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -87,21 +87,21 @@
       }
     },
     {
-      "raw": "1 cup of canned coconut milk (full fat is best)",
+      "raw": "1 cup full-fat canned coconut milk",
       "expected": {
-        "item": "canned coconut milk",
+        "item": "full-fat canned coconut milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "full fat is best",
+        "note": null,
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 teaspoon of vanilla extract",
+      "raw": "1 teaspoon vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/2 cup of sweetened desiccated coconut",
+      "raw": "1/2 cup sweetened desiccated coconut",
       "expected": {
         "item": "sweetened desiccated coconut",
         "measurements": [
@@ -129,9 +129,9 @@
       }
     },
     {
-      "raw": "1/2 cup of butter (1 stick), room temperature",
+      "raw": "1/2 cup (1 stick) unsalted butter, room temperature",
       "expected": {
-        "item": "butter",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "8 oz of Philly cream cheese (1 package), room temperature",
+      "raw": "8 ounces (1 package) Philly cream cheese, room temperature",
       "expected": {
         "item": "Philly cream cheese",
         "measurements": [
@@ -165,12 +165,12 @@
       }
     },
     {
-      "raw": "1/2-1 cup of powdered sugar, sifted",
+      "raw": "1/2 to 1 cup powdered sugar, sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
-            "amount": "0.5-1",
+            "amount": "0.5 to 1",
             "unit": "cup"
           }
         ],
@@ -179,7 +179,7 @@
       }
     },
     {
-      "raw": "1/4 cup of sweetened desiccated coconut",
+      "raw": "1/4 cup sweetened desiccated coconut, plus more for decorating",
       "expected": {
         "item": "sweetened desiccated coconut",
         "measurements": [
@@ -188,7 +188,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus more for decorating",
         "category": "Baking"
       }
     }

@@ -3,9 +3,9 @@
   "recipe_slug": "gobi-manchurian-recipe",
   "ingredients": [
     {
-      "raw": "1 small head (500 grams)  cauliflower (/gobi (250 grams cleaned florets))",
+      "raw": "1 small head (500 grams) cauliflower /gobi (250 grams cleaned florets)",
       "expected": {
-        "item": "cauliflower",
+        "item": "cauliflower /gobi",
         "measurements": [
           {
             "amount": "1",
@@ -16,12 +16,12 @@
             "unit": "g"
           }
         ],
-        "note": "/gobi (250 grams cleaned florets)",
-        "category": "Produce"
+        "note": "250 grams cleaned florets",
+        "category": "Other"
       }
     },
     {
-      "raw": "Oil (for deep frying as needed)",
+      "raw": "Oil for deep frying as needed",
       "expected": {
         "item": "Oil",
         "measurements": [],
@@ -30,7 +30,7 @@
       }
     },
     {
-      "raw": "½ cup (65 grams)  all-purpose flour (( prefer organic or at least unbleached))",
+      "raw": "½ cup (65 grams) all-purpose flour ( prefer organic or at least unbleached)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -48,7 +48,7 @@
       }
     },
     {
-      "raw": "¼ cup (32 grams)  cornstarch ((white corn flour or yellow corn flour))",
+      "raw": "¼ cup (32 grams) cornstarch (white corn flour or yellow corn flour)",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -66,21 +66,21 @@
       }
     },
     {
-      "raw": "½ to 1 teaspoon Kashmiri red chili powder (or paste (less spicy variety) (optional))",
+      "raw": "½ to 1 teaspoon Kashmiri red chili powder or paste (less spicy variety) (optional)",
       "expected": {
-        "item": "Kashmiri red chili powder",
+        "item": "Kashmiri red chili powder or paste",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "or paste (less spicy variety) (optional)",
+        "note": "less spicy variety, optional",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon black pepper (crushed or ground)",
+      "raw": "¼ teaspoon black pepper crushed or ground",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -94,7 +94,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon salt ((adjust to taste))",
+      "raw": "¼ teaspoon salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -108,7 +108,7 @@
       }
     },
     {
-      "raw": "½ cup water ((more if needed))",
+      "raw": "½ cup water (more if needed)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -122,7 +122,7 @@
       }
     },
     {
-      "raw": "1½ tablespoons oil ((for sauce))",
+      "raw": "1½ tablespoons oil (for sauce)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -136,7 +136,7 @@
       }
     },
     {
-      "raw": "1 tablespoon garlic (fine chopped)",
+      "raw": "1 tablespoon garlic fine chopped",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -150,7 +150,7 @@
       }
     },
     {
-      "raw": "½ tablespoon ginger (fine chopped)",
+      "raw": "½ tablespoon ginger fine chopped",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -164,7 +164,7 @@
       }
     },
     {
-      "raw": "1  green chili (chopped (optional))",
+      "raw": "1 green chili chopped (optional)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -173,26 +173,26 @@
             "unit": null
           }
         ],
-        "note": "chopped (optional)",
+        "note": "optional, chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "⅓ cup onions (or spring onions/ scallions fine chopped - green &amp;amp; white separated )",
+      "raw": "⅓ cup onions or spring onions/ scallions fine chopped – green & white separated",
       "expected": {
-        "item": "onions",
+        "item": "onions or spring onions/ scallions",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "or spring onions/ scallions fine chopped - green & white separated",
+        "note": "fine chopped - green & white separated",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup bell pepper  ((capsicum chopped fine) (optional))",
+      "raw": "¼ cup bell pepper  (capsicum chopped fine) (optional)",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -206,7 +206,7 @@
       }
     },
     {
-      "raw": "1 tablespoon soya sauce ((organic or naturally brewed)(or tamari))",
+      "raw": "1 tablespoon soya sauce (organic or naturally brewed)(or tamari)",
       "expected": {
         "item": "soya sauce",
         "measurements": [
@@ -220,7 +220,7 @@
       }
     },
     {
-      "raw": "2 to 3 tablespoon Red Chilli sauce ((or 2 tbsps hot &amp;amp; sweet sauce, adjust to taste, maggi/chings brand))",
+      "raw": "2 to 3 tablespoon Red Chilli sauce (or 2 tbsps hot & sweet sauce, adjust to taste, maggi/chings brand)",
       "expected": {
         "item": "Red Chilli sauce",
         "measurements": [
@@ -234,7 +234,7 @@
       }
     },
     {
-      "raw": "1 to 2 tablespoon tomato ketchup ((optional, use if using hot sauce))",
+      "raw": "1 to 2 tablespoon tomato ketchup (optional, use if using hot sauce)",
       "expected": {
         "item": "tomato ketchup",
         "measurements": [
@@ -248,7 +248,7 @@
       }
     },
     {
-      "raw": "½  teaspoon Kashmiri red chili powder  ((or paprika optional) )",
+      "raw": "½  teaspoon Kashmiri red chili powder  (or paprika optional)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -262,7 +262,7 @@
       }
     },
     {
-      "raw": "½ tablespoon rice vinegar ((I used apple cider vinegar))",
+      "raw": "½ tablespoon rice vinegar (I used apple cider vinegar)",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -276,7 +276,7 @@
       }
     },
     {
-      "raw": "1 teaspoon sugar ((adjust to taste))",
+      "raw": "1 teaspoon sugar (adjust to taste)",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -290,7 +290,7 @@
       }
     },
     {
-      "raw": "salt (as needed)",
+      "raw": "salt as needed",
       "expected": {
         "item": "salt",
         "measurements": [],
@@ -313,7 +313,7 @@
       }
     },
     {
-      "raw": "½ to ¾ teaspoon black pepper (crushed or ground)",
+      "raw": "½ to ¾ teaspoon black pepper crushed or ground",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -327,7 +327,7 @@
       }
     },
     {
-      "raw": "⅛ teaspoon salt ((adjust to taste))",
+      "raw": "⅛ teaspoon salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -341,7 +341,7 @@
       }
     },
     {
-      "raw": "2 tablespoons spring onion greens (chopped for garnish)",
+      "raw": "2 tablespoons spring onion greens chopped for garnish",
       "expected": {
         "item": "spring onion greens",
         "measurements": [
@@ -350,7 +350,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped for garnish",
+        "note": "chopped, for garnish",
         "category": "Other"
       }
     }

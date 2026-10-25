@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  small garlic clove",
+      "raw": "1 small garlic clove",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "¼ cup extra-virgin olive oil (plus more for a smoother pesto)",
+      "raw": "¼ cup extra-virgin olive oil, plus more for a smoother pesto",
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "¼ cup freshly grated Parmesan cheese (optional)",
+      "raw": "¼ cup freshly grated Parmesan cheese, optional",
       "expected": {
         "item": "freshly grated Parmesan cheese",
         "measurements": [

@@ -3,7 +3,7 @@
   "recipe_slug": "maple-pecan-sticky-buns-recipe",
   "ingredients": [
     {
-      "raw": "6 tablespoons unsalted butter (cubed)",
+      "raw": "6 tablespoons unsalted butter, cubed",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -149,7 +149,7 @@
       }
     },
     {
-      "raw": "1/4 cup (60ml) maple syrup ((dark amber))",
+      "raw": "1/4 cup (60ml) maple syrup, (dark amber)",
       "expected": {
         "item": "maple syrup",
         "measurements": [
@@ -181,7 +181,7 @@
       }
     },
     {
-      "raw": "1 cup (140g) pecans (lightly toasted and coarsely chopped)",
+      "raw": "1 cup (140g) pecans, lightly toasted and coarsely chopped",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -245,9 +245,9 @@
       }
     },
     {
-      "raw": "3 tablespoons (1 1/2 ounces, 42g) butter (salted or unsalted, at room temperature)",
+      "raw": "3 tablespoons (1 1/2 ounces, 42g) butter, salted or unsalted, at room temperature",
       "expected": {
-        "item": "butter",
+        "item": "butter, salted or unsalted",
         "measurements": [
           {
             "amount": "3",
@@ -262,7 +262,7 @@
             "unit": "g"
           }
         ],
-        "note": "salted or unsalted, at room temperature",
+        "note": "at room temperature",
         "category": "Dairy & Eggs"
       }
     }

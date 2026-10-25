@@ -3,80 +3,6 @@
   "recipe_slug": "2014-11-pretzel-parker-house-r",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Five Egg Sandwiches",
-      "expected": {
-        "item": "Months Ago: Five Egg Sandwiches",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Japanese Vegetable Pancakes",
-      "expected": {
-        "item": "Years Ago: Japanese Vegetable Pancakes",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Chocolate Buckwheat Cake",
-      "expected": {
-        "item": "Years Ago: Chocolate Buckwheat Cake",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Vermontucky Lemonade",
-      "expected": {
-        "item": "Years Ago: Vermontucky Lemonade",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Rolls",
-      "expected": {
-        "item": "Rolls",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "3/4 cup plus 2 tablespoons (205 ml) milk",
       "expected": {
         "item": "milk",
@@ -181,10 +107,6 @@
       }
     },
     {
-      "raw": "To finish",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 cup (120 ml) water",
       "expected": {
         "item": "water",
@@ -199,7 +121,6 @@
           }
         ],
         "note": null,
-        "section": "To Finish",
         "category": "Beverages"
       }
     },
@@ -214,7 +135,6 @@
           }
         ],
         "note": "see Notes below",
-        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -229,7 +149,6 @@
           }
         ],
         "note": "beaten with 1 teaspoon water",
-        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -239,7 +158,6 @@
         "item": "Pretzel salt, coarse salt or sesame seeds",
         "measurements": [],
         "note": null,
-        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     }

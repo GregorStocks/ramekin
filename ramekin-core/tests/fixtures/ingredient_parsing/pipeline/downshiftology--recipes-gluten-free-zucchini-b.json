@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "3  eggs (beaten)",
+      "raw": "3 eggs, beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1-2  balls of burrata",
+      "raw": "1-2 balls of burrata",
       "expected": {
         "item": "burrata",
         "measurements": [

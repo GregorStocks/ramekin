@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "Chili Salt ((or just kosher salt))",
+      "raw": "Chili Salt, (or just kosher salt)",
       "expected": {
         "item": "Chili Salt",
         "measurements": [],
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1 teaspoon sugar ((optional))",
+      "raw": "1 teaspoon sugar, (optional)",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -119,21 +119,21 @@
       }
     },
     {
-      "raw": "2 fluid ounces club soda (or grapefruit soda)",
+      "raw": "2 fluid ounces club soda, or grapefruit soda",
       "expected": {
-        "item": "club soda",
+        "item": "club soda, or grapefruit soda",
         "measurements": [
           {
             "amount": "2",
             "unit": "fl oz"
           }
         ],
-        "note": "or grapefruit soda",
+        "note": null,
         "category": "Beverages"
       }
     },
     {
-      "raw": "Grapefruit and lime wedges (for serving)",
+      "raw": "Grapefruit and lime wedges, for serving",
       "expected": {
         "item": "Grapefruit and lime wedges",
         "measurements": [],

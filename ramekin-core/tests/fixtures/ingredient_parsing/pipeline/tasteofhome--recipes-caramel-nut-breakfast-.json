@@ -73,10 +73,6 @@
       }
     },
     {
-      "raw": "TOPPING:",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup packed brown sugar",
       "expected": {
         "item": "brown sugar",
@@ -87,7 +83,6 @@
           }
         ],
         "note": "packed",
-        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -102,7 +97,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -117,13 +111,8 @@
           }
         ],
         "note": "melted",
-        "section": "Topping",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "DRIZZLE:",
-      "is_section_header": true
     },
     {
       "raw": "1 cup confectioners' sugar",
@@ -136,7 +125,6 @@
           }
         ],
         "note": null,
-        "section": "Drizzle",
         "category": "Baking"
       }
     },
@@ -151,7 +139,6 @@
           }
         ],
         "note": null,
-        "section": "Drizzle",
         "category": "Baking"
       }
     },
@@ -166,7 +153,6 @@
           }
         ],
         "note": null,
-        "section": "Drizzle",
         "category": "Beverages"
       }
     }

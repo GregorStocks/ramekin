@@ -3,15 +3,6 @@
   "recipe_slug": "2007-09-bronx-worthy-bagels",
   "ingredients": [
     {
-      "raw": "Sponge",
-      "expected": {
-        "item": "Sponge",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1 teaspoon instant yeast",
       "expected": {
         "item": "instant yeast",
@@ -54,10 +45,6 @@
       }
     },
     {
-      "raw": "Dough",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 teaspoon instant yeast",
       "expected": {
         "item": "instant yeast",
@@ -68,7 +55,6 @@
           }
         ],
         "note": null,
-        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -83,7 +69,6 @@
           }
         ],
         "note": null,
-        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -98,7 +83,6 @@
           }
         ],
         "note": null,
-        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,7 +97,6 @@
           }
         ],
         "note": "see note below; or 1 tablespoon dark or light malt syrup, honey, or brown sugar",
-        "section": "Dough",
         "category": "Baking"
       }
     }

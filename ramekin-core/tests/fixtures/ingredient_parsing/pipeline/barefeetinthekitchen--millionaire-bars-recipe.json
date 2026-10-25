@@ -3,7 +3,7 @@
   "recipe_slug": "millionaire-bars-recipe",
   "ingredients": [
     {
-      "raw": "½ cup cold butter (cut into pieces)",
+      "raw": "½ cup cold butter cut into pieces",
       "expected": {
         "item": "cold butter",
         "measurements": [
@@ -213,12 +213,12 @@
       }
     },
     {
-      "raw": "Optional: kosher (course sea salt, or Maldon salt (if you have it))",
+      "raw": "Optional: kosher course sea salt, or Maldon salt (if you have it)",
       "expected": {
-        "item": "kosher",
+        "item": "kosher course sea salt, or Maldon salt",
         "measurements": [],
-        "note": "optional, course sea salt, or Maldon salt (if you have it)",
-        "category": "Other"
+        "note": "optional, if you have it",
+        "category": "Spices & Seasonings"
       }
     }
   ]

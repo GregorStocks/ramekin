@@ -3,7 +3,7 @@
   "recipe_slug": "quick-carrot-apple-salad-recip",
   "ingredients": [
     {
-      "raw": "4  medium carrots (coarsely grated)",
+      "raw": "4 medium carrots, coarsely grated",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  apple (diced)",
+      "raw": "1 apple, diced",
       "expected": {
         "item": "apple",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "3/4 cup craisins (dried cranberries)",
+      "raw": "3/4 cup craisins, dried cranberries",
       "expected": {
-        "item": "craisins",
+        "item": "craisins, dried cranberries",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "dried cranberries",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4 cup purple or sweet onion (finely diced)",
+      "raw": "1/4 cup purple or sweet onion, finely diced",
       "expected": {
         "item": "purple or sweet onion",
         "measurements": [
@@ -59,16 +59,16 @@
       }
     },
     {
-      "raw": "1/2 cup mayonnaise (real mayo or vegenaise)",
+      "raw": "1/2 cup mayonnaise, real mayo or vegenaise",
       "expected": {
-        "item": "mayonnaise",
+        "item": "mayonnaise, real mayo or vegenaise",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "real mayo or vegenaise",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/8 tsp sea salt (or to taste)",
+      "raw": "1/8 tsp sea salt, or to taste",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "pinch of black pepper (freshly ground)",
+      "raw": "pinch of black pepper, freshly ground",
       "expected": {
         "item": "black pepper",
         "measurements": [

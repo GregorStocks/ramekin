@@ -3,15 +3,6 @@
   "recipe_slug": "2012-03-carrot-cake-pancakes",
   "ingredients": [
     {
-      "raw": "Pancakes",
-      "expected": {
-        "item": "Pancakes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1 cup all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -222,10 +213,6 @@
       }
     },
     {
-      "raw": "Cream cheese topping",
-      "is_section_header": true
-    },
-    {
       "raw": "4 ounces cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
@@ -236,7 +223,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Cream Cheese Topping",
         "category": "Cheese"
       }
     },
@@ -251,7 +237,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Topping",
         "category": "Baking"
       }
     },
@@ -266,7 +251,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -281,7 +265,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Topping",
         "category": "Baking"
       }
     },
@@ -296,7 +279,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Topping",
         "category": "Spices & Seasonings"
       }
     }

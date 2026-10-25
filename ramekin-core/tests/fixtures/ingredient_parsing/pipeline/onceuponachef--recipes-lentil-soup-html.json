@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-lentil-soup-html",
   "ingredients": [
     {
-      "raw": "3  slices bacon, finely chopped",
+      "raw": "3 slices bacon, (finely chopped)",
       "expected": {
         "item": "bacon",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  large yellow onion, finely chopped",
+      "raw": "1  large yellow onion, (finely chopped)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  stalk celery, finely chopped",
+      "raw": "1  stalk celery, (finely chopped)",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2 medium carrots, diced",
+      "raw": "2  medium carrots, (diced)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "3  cloves garlic, chopped",
+      "raw": "3 cloves garlic, (chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,45 +87,45 @@
       }
     },
     {
-      "raw": "1 14.5-oz can diced tomatoes",
+      "raw": "1 (14.5-oz) can diced tomatoes",
       "expected": {
         "item": "diced tomatoes",
         "measurements": [
           {
             "amount": "1",
-            "unit": "14.5-oz can"
+            "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14.5-oz",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "6 cups chicken broth, best quality such as Swanson",
+      "raw": "6 cups chicken broth, (best quality such as Swanson)",
       "expected": {
-        "item": "chicken broth, best quality",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": "such as Swanson",
+        "note": "best quality such as Swanson",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 cup French lentils (lentilles du Puy) or common brown or green lentils",
+      "raw": "1 cup French lentils, (lentilles du Puy or common brown or green lentils)",
       "expected": {
-        "item": "French lentils or common brown or green lentils",
+        "item": "French lentils",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "lentilles du Puy",
-        "category": "Canned Goods"
+        "note": "lentilles du Puy or common brown or green lentils",
+        "category": "Other"
       }
     },
     {
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2 bay leaves",
+      "raw": "2  bay leaves",
       "expected": {
         "item": "bay leaves",
         "measurements": [
@@ -171,9 +171,9 @@
       }
     },
     {
-      "raw": "¼ teaspoon ground black pepper",
+      "raw": "¼ teaspoon freshly ground black pepper",
       "expected": {
-        "item": "ground black pepper",
+        "item": "freshly ground black pepper",
         "measurements": [
           {
             "amount": "0.25",
@@ -185,11 +185,11 @@
       }
     },
     {
-      "raw": "A few tablespoons chopped fresh parsley, for garnish (optional)",
+      "raw": "A few tablespoons chopped fresh parsley, (for garnish (optional))",
       "expected": {
         "item": "A few tablespoons chopped fresh parsley",
         "measurements": [],
-        "note": "optional, for garnish",
+        "note": "for garnish (optional)",
         "category": "Other"
       }
     }

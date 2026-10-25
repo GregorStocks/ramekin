@@ -3,6 +3,15 @@
   "recipe_slug": "balsamic-pork-loin-recipe",
   "ingredients": [
     {
+      "raw": "Pork Loin",
+      "expected": {
+        "item": "Pork Loin",
+        "measurements": [],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
       "raw": "3 ½-4 pound pork loin",
       "expected": {
         "item": "pork loin",
@@ -17,7 +26,7 @@
       }
     },
     {
-      "raw": "5  sprigs rosemary",
+      "raw": "5 sprigs rosemary",
       "expected": {
         "item": "rosemary",
         "measurements": [
@@ -87,16 +96,16 @@
       }
     },
     {
-      "raw": "¼ cup maple syrup (or honey)",
+      "raw": "¼ cup maple syrup or honey",
       "expected": {
-        "item": "maple syrup",
+        "item": "maple syrup or honey",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or honey",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
@@ -129,7 +138,7 @@
       }
     },
     {
-      "raw": "4  garlic cloves minced",
+      "raw": "4 garlic cloves minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -143,7 +152,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh rosemary (chopped)",
+      "raw": "1 tablespoon fresh rosemary chopped",
       "expected": {
         "item": "fresh rosemary",
         "measurements": [

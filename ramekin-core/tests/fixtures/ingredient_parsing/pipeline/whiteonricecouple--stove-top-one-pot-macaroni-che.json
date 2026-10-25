@@ -3,13 +3,17 @@
   "recipe_slug": "stove-top-one-pot-macaroni-che",
   "ingredients": [
     {
-      "raw": "1 pound small elbow macaroni (, uncooked)",
+      "raw": "1 pound  (454 g) small elbow macaroni , uncooked",
       "expected": {
         "item": "small elbow macaroni",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": "uncooked",
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "3 cups water ((approximately))",
+      "raw": "3 cups  (720 ml) water (approximately)",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "720",
+            "unit": "ml"
           }
         ],
         "note": "approximately",
@@ -31,27 +39,35 @@
       }
     },
     {
-      "raw": "2 cups low-fat Milk (, or more if needed)",
+      "raw": "2 cups  (480 ml) low-fat Milk , or more if needed",
       "expected": {
-        "item": "low-fat Milk",
+        "item": "low-fat Milk, or more if needed",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "ml"
           }
         ],
-        "note": "or more if needed",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon Butter (, for flavor)",
+      "raw": "1 tablespoon  (15 ml) Butter , for flavor",
       "expected": {
         "item": "Butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": "for flavor",
@@ -59,13 +75,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon Mustard powder",
+      "raw": "1/2 teaspoon  (2.5 ml) Mustard powder",
       "expected": {
         "item": "Mustard powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -73,13 +93,17 @@
       }
     },
     {
-      "raw": "1 teaspoon Salt (, plus additional for final season later)",
+      "raw": "1 teaspoon  (5 ml) Salt , plus additional for final season later",
       "expected": {
         "item": "Salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": "plus additional for final season later",
@@ -101,16 +125,20 @@
       }
     },
     {
-      "raw": "8 ounces Grated Cheddar Cheese",
+      "raw": "8 ounces  (227 g) Grated Cheddar Cheese , any one or combination of (jack, cheddar, swiss, mozzarella, gouda, parmesan*, asiago*, pecorino*) *Hard cheeses are best combined with a secondary, softer, better melting cheese. Cheese varies in flavor and salt level too! The more cheddar cheese you use, the creamier the mac and cheese will be",
       "expected": {
-        "item": "Grated Cheddar Cheese",
+        "item": "Grated Cheddar Cheese, any one or combination of *Hard cheeses are best combined with a secondary, softer, better melting cheese. Cheese varies in flavor and salt level too! The more cheddar cheese you use, the creamier the mac and cheese will be",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "jack, cheddar, swiss, mozzarella, gouda, parmesan*, asiago*, pecorino",
         "category": "Cheese"
       }
     },
@@ -151,7 +179,7 @@
       }
     },
     {
-      "raw": "black pepper to taste ((optional))",
+      "raw": "black pepper to taste (optional)",
       "expected": {
         "item": "black pepper",
         "measurements": [],

@@ -3,7 +3,7 @@
   "recipe_slug": "pineapple-cucumber-salad-recip",
   "ingredients": [
     {
-      "raw": "1  ripe pineapple (cut into 1-inch chunks)",
+      "raw": "1 ripe pineapple cut into 1-inch chunks",
       "expected": {
         "item": "ripe pineapple",
         "measurements": [
@@ -17,21 +17,21 @@
       }
     },
     {
-      "raw": "1  English cucumber (seeded and cut into half moon pieces)",
+      "raw": "1 English cucumber seeded and cut into half moon pieces",
       "expected": {
-        "item": "English cucumber",
+        "item": "English cucumber seeded and cut into half moon pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeded and cut into half moon pieces",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  red onion (thinly sliced)",
+      "raw": "1 red onion thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  jalapeno (seeds removed and diced)",
+      "raw": "1 jalapeno seeds removed and diced",
       "expected": {
         "item": "jalapeno",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1  avocado (diced)",
+      "raw": "1 avocado diced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1  red bell pepper (seeds removed and diced)",
+      "raw": "1 red bell pepper seeds removed and diced",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/4 cup cilantro (chopped)",
+      "raw": "1/4 cup cilantro chopped",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic (minced)",
+      "raw": "2 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [

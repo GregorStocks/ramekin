@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 pint cherry tomatoes (halved)",
+      "raw": "1 pint cherry tomatoes halved",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -31,21 +31,25 @@
       }
     },
     {
-      "raw": "1  cucumber (peeled and diced (about 1 cup))",
+      "raw": "1 cucumber peeled and diced (about 1 cup)",
       "expected": {
         "item": "cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "peeled and diced (about 1 cup)",
+        "note": "about 1 cup, peeled and diced",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ cup red onion (finely sliced or diced)",
+      "raw": "½ cup red onion finely sliced or diced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -59,7 +63,7 @@
       }
     },
     {
-      "raw": "½ cup Kalamata olives (roughly chopped)",
+      "raw": "½ cup Kalamata olives roughly chopped",
       "expected": {
         "item": "Kalamata olives",
         "measurements": [
@@ -87,7 +91,7 @@
       }
     },
     {
-      "raw": "2  pita rounds (sliced into 1” pieces (1 pita = 85 g))",
+      "raw": "2 pita rounds sliced into 1” pieces (1 pita = 85 g)",
       "expected": {
         "item": "pita rounds",
         "measurements": [
@@ -96,7 +100,7 @@
             "unit": null
           }
         ],
-        "note": "sliced into 1” pieces (1 pita = 85 g)",
+        "note": "1 pita = 85 g, sliced into 1” pieces",
         "category": "Other"
       }
     },
@@ -199,7 +203,7 @@
       }
     },
     {
-      "raw": "2 teaspoons granulated sugar ((or honey))",
+      "raw": "2 teaspoons granulated sugar (or honey)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [

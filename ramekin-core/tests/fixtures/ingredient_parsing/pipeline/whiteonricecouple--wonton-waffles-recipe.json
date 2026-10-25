@@ -3,41 +3,49 @@
   "recipe_slug": "wonton-waffles-recipe",
   "ingredients": [
     {
-      "raw": "24-30  Wonton Wrappers (or Skins&nbsp;)",
+      "raw": "24-30   Wonton Wrappers or Skins",
       "expected": {
-        "item": "Wonton Wrappers",
+        "item": "Wonton Wrappers or Skins",
         "measurements": [
           {
             "amount": "24-30",
             "unit": null
           }
         ],
-        "note": "or Skins",
+        "note": null,
         "category": "Frozen"
       }
     },
     {
-      "raw": "1/2 pound ground pork ( (or chicken, beef, shrimp, or vegan meat)&nbsp;)",
+      "raw": "1/2 pound  (227 g) ground pork  (or chicken, beef, shrimp, or vegan meat)",
       "expected": {
         "item": "ground pork",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
-        "note": "(or chicken, beef, shrimp, or vegan meat)",
+        "note": "or chicken, beef, shrimp, or vegan meat",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 teaspoon finely minced ginger",
+      "raw": "1 teaspoon  (5 ml) finely minced ginger",
       "expected": {
         "item": "finely minced ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -45,7 +53,7 @@
       }
     },
     {
-      "raw": "3 stalks green onions  (, finely minced )",
+      "raw": "3 stalks   green onions  , finely minced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -59,27 +67,35 @@
       }
     },
     {
-      "raw": "1/2 cup cilantro ( or cabbage, finely minced )",
+      "raw": "1/2 cup  (120 ml) cilantro  or cabbage, finely minced",
       "expected": {
-        "item": "cilantro",
+        "item": "cilantro or cabbage",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
           }
         ],
-        "note": "or cabbage, finely minced",
+        "note": "finely minced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 teaspoon garlic powder",
+      "raw": "1/2 teaspoon  (2.5 ml) garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -87,13 +103,17 @@
       }
     },
     {
-      "raw": "1 teaspoon soy sauce",
+      "raw": "1 teaspoon  (5 ml) soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -101,13 +121,17 @@
       }
     },
     {
-      "raw": "1 teaspoon sesame oil",
+      "raw": "1 teaspoon  (5 ml) sesame oil",
       "expected": {
         "item": "sesame oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -115,13 +139,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "1/2 teaspoon  (2.5 ml) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -129,7 +157,7 @@
       }
     },
     {
-      "raw": "cooking oil (, for spraying or brushing )",
+      "raw": "cooking oil , for spraying or brushing",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
@@ -138,13 +166,17 @@
       }
     },
     {
-      "raw": "1/4 cup soy sauce",
+      "raw": "1/4 cup  (60 ml) soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -152,7 +184,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic (, minced )",
+      "raw": "2 cloves   garlic , minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -166,55 +198,17 @@
       }
     },
     {
-      "raw": "1 Tablespoon rice vinegar ( or distilled vinegar )",
+      "raw": "1 Tablespoon  (15 ml) rice vinegar  or distilled vinegar",
       "expected": {
-        "item": "rice vinegar",
+        "item": "rice vinegar or distilled vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          }
-        ],
-        "note": "or distilled vinegar",
-        "category": "Oils & Vinegars"
-      }
-    },
-    {
-      "raw": "2 teaspoons sugar  (, optional )",
-      "expected": {
-        "item": "sugar",
-        "measurements": [
+          },
           {
-            "amount": "2",
-            "unit": "tsp"
-          }
-        ],
-        "note": "optional",
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "2 Tablespoons hot water  (, this dissolves the sugar and makes sauce less salty )",
-      "expected": {
-        "item": "hot water",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": "this dissolves the sugar and makes sauce less salty",
-        "category": "Beverages"
-      }
-    },
-    {
-      "raw": "1 teaspoon  sesame oil",
-      "expected": {
-        "item": "sesame oil",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -222,16 +216,74 @@
       }
     },
     {
-      "raw": "1 Tablespoon  chili crunch ( / chili crisp , or your choice of hot sauce )",
+      "raw": "2 teaspoons  (10 ml) sugar  , optional",
       "expected": {
-        "item": "chili crunch",
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 Tablespoons  (30 ml) hot water  , this dissolves the sugar and makes sauce less salty",
+      "expected": {
+        "item": "hot water, this dissolves the sugar and makes sauce less salty",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 teaspoon   (5 ml) sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 Tablespoon   (15 ml) chili crunch  / chili crisp , or your choice of hot sauce",
+      "expected": {
+        "item": "chili crunch / chili crisp",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
-        "note": "/ chili crisp , or your choice of hot sauce",
+        "note": "or your choice of hot sauce",
         "category": "Other"
       }
     }

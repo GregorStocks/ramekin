@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 tsp kosher salt",
+      "raw": "1 teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tsp ground black pepper",
+      "raw": "1 teaspoon ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2 tsp cayenne pepper",
+      "raw": "½ teaspoon cayenne pepper",
       "expected": {
         "item": "cayenne pepper",
         "measurements": [
@@ -59,21 +59,21 @@
       }
     },
     {
-      "raw": "1 tsp hot sauce (tapatio or cholula)",
+      "raw": "1 teaspoon hot sauce tapatio or cholula",
       "expected": {
-        "item": "hot sauce",
+        "item": "hot sauce tapatio or cholula",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "tapatio or cholula",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  whole chicken (cut into pieces)",
+      "raw": "1 whole chicken cut into pieces",
       "expected": {
         "item": "whole chicken",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 tbsp baking powder",
+      "raw": "1 tablespoon baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 tbsp garlic powder",
+      "raw": "1 tablespoon garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1 tbsp onion powder",
+      "raw": "1 tablespoon onion powder",
       "expected": {
         "item": "onion powder",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2 tbsp kosher salt",
+      "raw": "2 tablespoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/2 tbsp ground black pepper",
+      "raw": "½ tablespoon ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 tsp cayenne",
+      "raw": "1 teaspoon cayenne",
       "expected": {
         "item": "cayenne",
         "measurements": [
@@ -185,16 +185,16 @@
       }
     },
     {
-      "raw": "5-8 cups peanut oil (or enough to fill a deep stock pot or deep fryer)",
+      "raw": "5-8 cups peanut oil or enough to fill a deep stock pot or deep fryer",
       "expected": {
-        "item": "peanut oil",
+        "item": "peanut oil or enough to fill a deep stock pot or deep fryer",
         "measurements": [
           {
             "amount": "5-8",
             "unit": "cup"
           }
         ],
-        "note": "or enough to fill a deep stock pot or deep fryer",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     }

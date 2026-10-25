@@ -3,7 +3,7 @@
   "recipe_slug": "strawberry-bread-recipe",
   "ingredients": [
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -129,17 +129,17 @@
       }
     },
     {
-      "raw": "1 1/2 cups fresh diced strawberries (divided)",
+      "raw": "1 1/2 cups fresh diced strawberries divided",
       "expected": {
-        "item": "fresh diced strawberries",
+        "item": "fresh diced strawberries divided",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "divided",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {

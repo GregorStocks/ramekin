@@ -3,7 +3,7 @@
   "recipe_slug": "crab-dip-recipe",
   "ingredients": [
     {
-      "raw": "2 teaspoons olive oil",
+      "raw": "2 teaspoons   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  small red bell pepper (finely chopped)",
+      "raw": "1   small red bell pepper, finely chopped",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  small yellow onion (finely chopped)",
+      "raw": "1   small yellow onion, finely chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2   garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -59,13 +59,17 @@
       }
     },
     {
-      "raw": "16 ounces lump crab meat (drained, if canned)",
+      "raw": "16 ounces  (453.59 g) lump crab meat, drained, if canned",
       "expected": {
         "item": "lump crab meat",
         "measurements": [
           {
             "amount": "16",
             "unit": "oz"
+          },
+          {
+            "amount": "453.59",
+            "unit": "g"
           }
         ],
         "note": "drained, if canned",
@@ -73,13 +77,17 @@
       }
     },
     {
-      "raw": "8 ounces cream cheese (at room temperature)",
+      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -87,13 +95,17 @@
       }
     },
     {
-      "raw": "1 cup mayonnaise",
+      "raw": "1 cup  (224 g) mayonnaise",
       "expected": {
         "item": "mayonnaise",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "224",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -101,27 +113,39 @@
       }
     },
     {
-      "raw": "4 ounces Monterey Jack cheese (shredded (1 cup shredded))",
+      "raw": "4 ounces  (113.4 g) Monterey Jack cheese, shredded (1 cup shredded)",
       "expected": {
         "item": "Monterey Jack cheese",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
+          },
+          {
+            "amount": "113.4",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (1 cup shredded)",
+        "note": "shredded",
         "category": "Cheese"
       }
     },
     {
-      "raw": "¼ cup Parmesan cheese",
+      "raw": "¼ cup  (25 g) Parmesan cheese",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -129,7 +153,7 @@
       }
     },
     {
-      "raw": "3 tablespoons Worcestershire sauce",
+      "raw": "3 tablespoons   Worcestershire sauce",
       "expected": {
         "item": "Worcestershire sauce",
         "measurements": [
@@ -143,7 +167,7 @@
       }
     },
     {
-      "raw": "2 tablespoons lemon juice",
+      "raw": "2 tablespoons   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -157,7 +181,7 @@
       }
     },
     {
-      "raw": "2 tablespoons minced fresh parsley",
+      "raw": "2 tablespoons   minced fresh parsley",
       "expected": {
         "item": "minced fresh parsley",
         "measurements": [
@@ -171,10 +195,14 @@
       }
     },
     {
-      "raw": "1½ teaspoons Old Bay seasoning",
+      "raw": "1½ teaspoons  (1.5 teaspoons) Old Bay seasoning",
       "expected": {
         "item": "Old Bay seasoning",
         "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
           {
             "amount": "1.5",
             "unit": "tsp"
@@ -185,7 +213,7 @@
       }
     },
     {
-      "raw": "1 teaspoon hot sauce",
+      "raw": "1 teaspoon   hot sauce",
       "expected": {
         "item": "hot sauce",
         "measurements": [
@@ -199,13 +227,17 @@
       }
     },
     {
-      "raw": "½ cup Panko bread crumbs",
+      "raw": "½ cup  (30 g) Panko bread crumbs",
       "expected": {
         "item": "Panko bread crumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -213,7 +245,7 @@
       }
     },
     {
-      "raw": "1 tablespoon Parmesan cheese",
+      "raw": "1 tablespoon   Parmesan cheese",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
@@ -227,7 +259,7 @@
       }
     },
     {
-      "raw": "2 tablespoons unsalted butter (melted)",
+      "raw": "2 tablespoons   unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

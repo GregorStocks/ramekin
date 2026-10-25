@@ -3,7 +3,7 @@
   "recipe_slug": "almond-banana-bread-recipe",
   "ingredients": [
     {
-      "raw": "2 medium bananas, mashed",
+      "raw": "2  medium bananas (mashed)",
       "expected": {
         "item": "bananas",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 tablespoons coconut oil, melted",
+      "raw": "2 tablespoons coconut oil (melted)",
       "expected": {
         "item": "coconut oil",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3 eggs",
+      "raw": "3  eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,17 +73,13 @@
       }
     },
     {
-      "raw": "1 cup (4 oz.) almond flour",
+      "raw": "1 cup 4 oz. almond flour",
       "expected": {
-        "item": "almond flour",
+        "item": "4 oz. almond flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "4",
-            "unit": "oz"
           }
         ],
         "note": null,
@@ -91,17 +87,13 @@
       }
     },
     {
-      "raw": "½ cup (2 oz.) coconut flour",
+      "raw": "½ cup 2 oz. coconut flour",
       "expected": {
-        "item": "coconut flour",
+        "item": "2 oz. coconut flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": "oz"
           }
         ],
         "note": null,
@@ -165,16 +157,16 @@
       }
     },
     {
-      "raw": "1 teaspoon turbinado sugar, not paleo, totally optional!",
+      "raw": "1 teaspoon turbinado sugar (not paleo, totally optional!)",
       "expected": {
-        "item": "turbinado sugar, not paleo, totally",
+        "item": "turbinado sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "optional!",
+        "note": "not paleo, totally optional!",
         "category": "Baking"
       }
     }

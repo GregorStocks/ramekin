@@ -3,15 +3,6 @@
   "recipe_slug": "2012-04-banana-bread-crepe-cak",
   "ingredients": [
     {
-      "raw": "Banana crepes",
-      "expected": {
-        "item": "Banana crepes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "4 tablespoons butter, melted and cooled slightly, plus extra for greasing pan",
       "expected": {
         "item": "butter",
@@ -178,10 +169,6 @@
       }
     },
     {
-      "raw": "Cream cheese yogurt filling",
-      "is_section_header": true
-    },
-    {
       "raw": "8 ounces (225 grams) cream cheese, well-softened",
       "expected": {
         "item": "cream cheese",
@@ -196,7 +183,6 @@
           }
         ],
         "note": "well-softened",
-        "section": "Cream Cheese Yogurt Filling",
         "category": "Cheese"
       }
     },
@@ -215,7 +201,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Yogurt Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -234,7 +219,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Yogurt Filling",
         "category": "Baking"
       }
     },
@@ -249,13 +233,8 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Yogurt Filling",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "Walnut butterscotch topping",
-      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) heavy whipping cream",
@@ -272,7 +251,6 @@
           }
         ],
         "note": null,
-        "section": "Walnut Butterscotch Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -291,7 +269,6 @@
           }
         ],
         "note": "packed",
-        "section": "Walnut Butterscotch Topping",
         "category": "Baking"
       }
     },
@@ -310,7 +287,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Walnut Butterscotch Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -329,7 +305,6 @@
           }
         ],
         "note": "about 50 grams, toasted",
-        "section": "Walnut Butterscotch Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -344,7 +319,6 @@
           }
         ],
         "note": null,
-        "section": "Walnut Butterscotch Topping",
         "category": "Baking"
       }
     },
@@ -359,7 +333,6 @@
           }
         ],
         "note": "or to taste",
-        "section": "Walnut Butterscotch Topping",
         "category": "Spices & Seasonings"
       }
     }

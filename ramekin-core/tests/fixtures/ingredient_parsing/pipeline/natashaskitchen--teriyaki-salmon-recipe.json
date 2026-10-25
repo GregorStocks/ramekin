@@ -3,17 +3,17 @@
   "recipe_slug": "teriyaki-salmon-recipe",
   "ingredients": [
     {
-      "raw": "2 1/2 lbs salmon filet sliced into 2\" wide slices (*)",
+      "raw": "2 1/2 lbs salmon filet sliced into 2\" wide slices, *",
       "expected": {
-        "item": "salmon filet",
+        "item": "salmon filet sliced into 2\" wide slices,",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": "*, sliced into 2\" wide slices",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "2  large or 3 medium garlic cloves (minced)",
+      "raw": "2 large or 3 medium garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "2 tsp freshly grated ginger (or 1/2 tsp ground ginger)",
+      "raw": "2 tsp freshly grated ginger, or 1/2 tsp ground ginger",
       "expected": {
         "item": "freshly grated ginger",
         "measurements": [
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "Sesame seeds to garnish (optional)",
+      "raw": "Sesame seeds to garnish, optional",
       "expected": {
         "item": "Sesame seeds to garnish",
         "measurements": [],
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "Green onion (chopped, optional)",
+      "raw": "Green onion, chopped, optional",
       "expected": {
         "item": "Green onion",
         "measurements": [],

@@ -3,7 +3,7 @@
   "recipe_slug": "2023-03-pistachio-meyer-lemon-",
   "ingredients": [
     {
-      "raw": "1 teaspoon Meyer lemon zest (from 1 lemon (save the rest of the zest for the mousse layer later))",
+      "raw": "1 teaspoon   Meyer lemon zest, from 1 lemon (save the rest of the zest for the mousse layer later)",
       "expected": {
         "item": "Meyer lemon zest",
         "measurements": [
@@ -12,18 +12,22 @@
             "unit": "tsp"
           }
         ],
-        "note": "from 1 lemon (save the rest of the zest for the mousse layer later)",
+        "note": "save the rest of the zest for the mousse layer later, from 1 lemon",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/3 cup Meyer lemon juice (from about 3 lemons)",
+      "raw": "⅓ cup  / 80 g Meyer lemon juice, from about 3 lemons",
       "expected": {
         "item": "Meyer lemon juice",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": "from about 3 lemons",
@@ -31,13 +35,17 @@
       }
     },
     {
-      "raw": "1/4 cup granulated sugar",
+      "raw": "¼ cup  / 50 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,13 +53,17 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons cornstarch",
+      "raw": "1 ½ teaspoons  / 3 g cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -59,7 +71,7 @@
       }
     },
     {
-      "raw": "1 tablespoon water",
+      "raw": "1 tablespoon   water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -73,7 +85,7 @@
       }
     },
     {
-      "raw": "3/4 sheet  leaf gelatin*",
+      "raw": "¾ sheet    leaf gelatin*",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -87,13 +99,17 @@
       }
     },
     {
-      "raw": "2 tablespoons salted butter (cut into small cubes)",
+      "raw": "2 tablespoons  / 28 g salted butter, cut into small cubes",
       "expected": {
         "item": "salted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": "cut into small cubes",
@@ -101,7 +117,7 @@
       }
     },
     {
-      "raw": "yellow food coloring (optional)",
+      "raw": "yellow food coloring, optional",
       "expected": {
         "item": "yellow food coloring",
         "measurements": [],
@@ -110,13 +126,17 @@
       }
     },
     {
-      "raw": "1 3/4 oz raw shelled pistachios",
+      "raw": "1 ¾ oz  / 50 g raw shelled pistachios",
       "expected": {
         "item": "raw shelled pistachios",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "oz"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -124,13 +144,17 @@
       }
     },
     {
-      "raw": "1 3/4 oz pistachio flour or almond flour",
+      "raw": "1 ¾ oz  / 50 g pistachio flour or almond flour",
       "expected": {
         "item": "pistachio flour or almond flour",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "oz"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -138,13 +162,17 @@
       }
     },
     {
-      "raw": "1/2 cup powdered sugar (plus more for dusting)",
+      "raw": "½ cup  / 50 g powdered sugar, plus more for dusting",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": "plus more for dusting",
@@ -152,7 +180,7 @@
       }
     },
     {
-      "raw": "pinch salt",
+      "raw": "pinch   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -166,13 +194,17 @@
       }
     },
     {
-      "raw": "2 large egg whites",
+      "raw": "2 large  / 65 g egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -180,13 +212,17 @@
       }
     },
     {
-      "raw": "1/4 cup granulated sugar",
+      "raw": "¼ cup  / 50 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -194,7 +230,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon pistachio extract (optional)",
+      "raw": "¼ teaspoon   pistachio extract, optional",
       "expected": {
         "item": "pistachio extract",
         "measurements": [
@@ -208,7 +244,7 @@
       }
     },
     {
-      "raw": "1 tablespoon chopped pistachios (for sprinkling)",
+      "raw": "1 tablespoon   chopped pistachios, for sprinkling",
       "expected": {
         "item": "chopped pistachios",
         "measurements": [
@@ -222,7 +258,7 @@
       }
     },
     {
-      "raw": "2 sheets leaf gelatin",
+      "raw": "2 sheets   leaf gelatin",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -236,7 +272,7 @@
       }
     },
     {
-      "raw": "4 large egg yolks (at room temperature)",
+      "raw": "4 large   egg yolks, at room temperature",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -250,13 +286,17 @@
       }
     },
     {
-      "raw": "1/4 cup granulated sugar",
+      "raw": "¼ cup  / 50 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -264,13 +304,17 @@
       }
     },
     {
-      "raw": "6 tablespoons heavy cream",
+      "raw": "6 tablespoons  / 90 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -278,13 +322,17 @@
       }
     },
     {
-      "raw": "6 tablespoons whole milk",
+      "raw": "6 tablespoons  / 90 g whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -292,7 +340,7 @@
       }
     },
     {
-      "raw": "1 tablespoon Meyer lemon zest (from 2 large lemons)",
+      "raw": "1 tablespoon   Meyer lemon zest, from 2 large lemons",
       "expected": {
         "item": "Meyer lemon zest",
         "measurements": [
@@ -306,7 +354,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon vanilla paste or extract",
+      "raw": "½ teaspoon   vanilla paste or extract",
       "expected": {
         "item": "vanilla paste or extract",
         "measurements": [
@@ -320,13 +368,17 @@
       }
     },
     {
-      "raw": "1 cup heavy cream",
+      "raw": "1 cup  / 238 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -334,7 +386,7 @@
       }
     },
     {
-      "raw": "6 sheets leaf gelatin",
+      "raw": "6 sheets   leaf gelatin",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -348,13 +400,17 @@
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  / 200 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -362,13 +418,17 @@
       }
     },
     {
-      "raw": "2/3 cup corn syrup or glucose syrup",
+      "raw": "⅔ cup  / 226 g corn syrup or glucose syrup",
       "expected": {
         "item": "corn syrup or glucose syrup",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -376,13 +436,17 @@
       }
     },
     {
-      "raw": "1/2 cup water",
+      "raw": "½ cup  / 118 g water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -390,13 +454,17 @@
       }
     },
     {
-      "raw": "1/2 cup sweetened condensed milk",
+      "raw": "½ cup  / 163 g sweetened condensed milk",
       "expected": {
         "item": "sweetened condensed milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "163",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -404,13 +472,17 @@
       }
     },
     {
-      "raw": "7 ounces good quality white chocolate (finely chopped)",
+      "raw": "7 ounces  / 200 g good quality white chocolate, finely chopped",
       "expected": {
         "item": "white chocolate",
         "measurements": [
           {
             "amount": "7",
             "unit": "oz"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": "finely chopped, good quality",
@@ -418,16 +490,16 @@
       }
     },
     {
-      "raw": "food coloring (as desired)",
+      "raw": "food coloring, as desired",
       "expected": {
-        "item": "food coloring",
+        "item": "food coloring, as desired",
         "measurements": [],
-        "note": "as desired",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "chopped pistachios (for garnish)",
+      "raw": "chopped pistachios, for garnish",
       "expected": {
         "item": "chopped pistachios",
         "measurements": [],

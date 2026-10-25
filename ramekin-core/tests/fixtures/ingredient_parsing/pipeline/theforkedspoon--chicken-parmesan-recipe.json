@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 large yellow onion (minced)",
+      "raw": "1 large yellow onion, minced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic (minced)",
+      "raw": "3 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "½ teaspoon crushed red pepper flakes (plus more to taste)",
+      "raw": "½ teaspoon crushed red pepper flakes, plus more to taste",
       "expected": {
         "item": "crushed red pepper flakes",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 (28-ounce) can whole tomatoes (with juice)",
+      "raw": "1 (28-ounce) can whole tomatoes, with juice",
       "expected": {
         "item": "whole tomatoes",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "6  fresh basil leaves (plus more to taste)",
+      "raw": "6 fresh basil leaves, plus more to taste",
       "expected": {
         "item": "fresh basil leaves",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1½ pounds chicken breasts (or 3 large chicken breasts)",
+      "raw": "1½ pounds chicken breasts, or 3 large chicken breasts",
       "expected": {
         "item": "chicken breasts",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1½ teaspoon salt (divided 3 ways)",
+      "raw": "1½ teaspoon salt, divided 3 ways",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1½ teaspoon black pepper (divided 3 ways)",
+      "raw": "1½ teaspoon black pepper, divided 3 ways",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -143,11 +143,16 @@
       }
     },
     {
-      "raw": "vegetable oil (like canola oil; for frying (approximately 1-2 cups))",
+      "raw": "vegetable oil, like canola oil; for frying (approximately 1-2 cups)",
       "expected": {
         "item": "vegetable oil",
-        "measurements": [],
-        "note": "like canola oil; for frying (approximately 1-2 cups)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "cup"
+          }
+        ],
+        "note": "approximately 1-2 cups, like canola oil; for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -166,7 +171,7 @@
       }
     },
     {
-      "raw": "2 large eggs (plus ¼ cup water, whisked)",
+      "raw": "2 large eggs, plus ¼ cup water, whisked",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -194,7 +199,7 @@
       }
     },
     {
-      "raw": "1 cup parmesan cheese (freshly grated, divided)",
+      "raw": "1 cup parmesan cheese, freshly grated, divided",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [
@@ -208,7 +213,7 @@
       }
     },
     {
-      "raw": "1 cup mozzarella cheese (freshly shredded, plus more if desired)",
+      "raw": "1 cup mozzarella cheese, freshly shredded, plus more if desired",
       "expected": {
         "item": "mozzarella cheese",
         "measurements": [
@@ -222,7 +227,7 @@
       }
     },
     {
-      "raw": "fresh basil (for garnish)",
+      "raw": "fresh basil, for garnish",
       "expected": {
         "item": "fresh basil",
         "measurements": [],

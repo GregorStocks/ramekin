@@ -3,7 +3,7 @@
   "recipe_slug": "baked-breaded-chicken-strips-r",
   "ingredients": [
     {
-      "raw": "2 lbs chicken breast (about 3 large chicken breasts)",
+      "raw": "2 lbs chicken breast, about 3 large chicken breasts",
       "expected": {
         "item": "chicken breast",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "Sea Salt &amp;amp; Pepper",
+      "raw": "Sea Salt & Pepper",
       "expected": {
         "item": "Sea Salt & Pepper",
         "measurements": [],
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "2-3  small garlic cloves (pressed)",
+      "raw": "2-3 small garlic cloves, pressed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -68,9 +68,9 @@
       }
     },
     {
-      "raw": "2 cups bread crumbs",
+      "raw": "2 cups bread crumbs, I used a mixture of 1 cup seasoned italian-style bread crumbs and 1 cup panko bread crumbs, but you can use 100% seasoned bread crumbs",
       "expected": {
-        "item": "bread crumbs",
+        "item": "bread crumbs, I used a mixture of 1 cup seasoned italian-style bread crumbs and 1 cup panko bread crumbs, but you can use 100% seasoned bread crumbs",
         "measurements": [
           {
             "amount": "2",
@@ -124,17 +124,17 @@
       }
     },
     {
-      "raw": "1/2 tsp poppy seeds (for effect, optional ;).)",
+      "raw": "1/2 tsp poppy seeds, for effect, optional ;).",
       "expected": {
-        "item": "poppy seeds .)",
+        "item": "poppy seeds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "for effect, optional ;",
-        "category": "Nuts & Dried Fruit"
+        "note": "for effect, optional ;).",
+        "category": "Spices & Seasonings"
       }
     }
   ]

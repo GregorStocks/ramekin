@@ -3,7 +3,7 @@
   "recipe_slug": "lemon-blueberry-cake-recipe",
   "ingredients": [
     {
-      "raw": "1 cup unsalted butter (softened to room temperature)",
+      "raw": "1 cup unsalted butter softened to room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "4  large eggs (at room temperature)",
+      "raw": "4 large eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -129,49 +129,49 @@
       }
     },
     {
-      "raw": "1/2 cup lemon juice (from about 3 lemons)",
+      "raw": "1/2 cup lemon juice from about 3 lemons",
       "expected": {
-        "item": "lemon juice",
+        "item": "lemon juice from about 3 lemons",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "from about 3 lemons",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 cups blueberries (fresh or frozen - if frozen do NOT Thaw)",
+      "raw": "2 cups blueberries fresh or frozen - if frozen do NOT Thaw",
       "expected": {
-        "item": "blueberries",
+        "item": "blueberries fresh or frozen - if frozen do NOT Thaw",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "fresh or frozen - if frozen do NOT Thaw",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon all-purpose flour (or cornstarch)",
+      "raw": "1 tablespoon all-purpose flour or cornstarch",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour or cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or cornstarch",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "12 ounces full-fat cream cheese (softened to room temperature)",
+      "raw": "12 ounces full-fat cream cheese softened to room temperature",
       "expected": {
         "item": "full-fat cream cheese",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1 1/2 cup unsalted butter (softened to room temperature)",
+      "raw": "1 1/2 cup unsalted butter softened to room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -199,16 +199,16 @@
       }
     },
     {
-      "raw": "4 1/2 - 5 cups confectioners sugar (or more if needed)",
+      "raw": "4 1/2 - 5 cups confectioners sugar or more if needed",
       "expected": {
-        "item": "confectioners sugar",
+        "item": "confectioners sugar or more if needed",
         "measurements": [
           {
             "amount": "4.5-5",
             "unit": "cup"
           }
         ],
-        "note": "or more if needed",
+        "note": null,
         "category": "Baking"
       }
     },

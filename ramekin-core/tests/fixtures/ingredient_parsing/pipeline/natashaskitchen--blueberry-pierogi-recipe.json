@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "4 cups all-purpose (unbleached flour)",
+      "raw": "4 cups all-purpose, unbleached flour",
       "expected": {
-        "item": "all-purpose",
+        "item": "all-purpose, unbleached flour",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "unbleached flour",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/3 cup sugar (plus more to sprinkle the top)",
+      "raw": "1/3 cup sugar, plus more to sprinkle the top",
       "expected": {
         "item": "sugar",
         "measurements": [

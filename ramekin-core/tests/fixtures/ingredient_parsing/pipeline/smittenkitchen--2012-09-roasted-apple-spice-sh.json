@@ -3,15 +3,6 @@
   "recipe_slug": "2012-09-roasted-apple-spice-sh",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "6 medium apples, any variety you like to bake with, peeled, halved and cored",
       "expected": {
         "item": "apples",
@@ -248,10 +239,6 @@
       }
     },
     {
-      "raw": "Frosting",
-      "is_section_header": true
-    },
-    {
       "raw": "3 8-ounce (675 grams total) blocks cream cheese, at room temperature",
       "expected": {
         "item": "8-ounce blocks cream cheese",
@@ -266,7 +253,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -293,7 +279,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -312,7 +297,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -331,7 +315,6 @@
           }
         ],
         "note": "sifted",
-        "section": "Frosting",
         "category": "Baking"
       }
     }

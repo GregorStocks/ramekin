@@ -17,21 +17,21 @@
       }
     },
     {
-      "raw": "50 g Japanese leek (naganegi) (green part)",
+      "raw": "50 g Japanese leek (naganegi) green part",
       "expected": {
-        "item": "Japanese leek",
+        "item": "Japanese leek green part",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": "naganegi, green part",
-        "category": "Produce"
+        "note": "naganegi",
+        "category": "Other"
       }
     },
     {
-      "raw": "50 g ginger root (thickly sliced)",
+      "raw": "50 g ginger root thickly sliced",
       "expected": {
         "item": "ginger root",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "100 g onion (roughly cut)",
+      "raw": "100 g onion roughly cut",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -115,16 +115,16 @@
       }
     },
     {
-      "raw": "250 ml pork stock (from part 1)",
+      "raw": "250 ml pork stock from part 1",
       "expected": {
-        "item": "pork stock",
+        "item": "pork stock from part 1",
         "measurements": [
           {
             "amount": "250",
             "unit": "ml"
           }
         ],
-        "note": "from part 1",
+        "note": null,
         "category": "Other"
       }
     },
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "6  soft-boiled egg",
+      "raw": "6 soft-boiled egg",
       "expected": {
         "item": "soft-boiled egg",
         "measurements": [
@@ -194,16 +194,16 @@
       }
     },
     {
-      "raw": "Japanese leek (naganegi) (white part, to make &amp;quot;shiraganegi&amp;quot;)",
+      "raw": "Japanese leek (naganegi) white part, to make \"shiraganegi\"",
       "expected": {
-        "item": "Japanese leek",
+        "item": "Japanese leek white part, to make \"shiraganegi\"",
         "measurements": [],
-        "note": "naganegi, white part, to make \"shiraganegi\"",
-        "category": "Produce"
+        "note": "naganegi",
+        "category": "Other"
       }
     },
     {
-      "raw": "chili threads (optional)",
+      "raw": "chili threads optional",
       "expected": {
         "item": "chili threads",
         "measurements": [],

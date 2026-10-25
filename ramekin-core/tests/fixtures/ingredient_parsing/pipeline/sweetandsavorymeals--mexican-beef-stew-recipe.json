@@ -231,12 +231,12 @@
       }
     },
     {
-      "raw": "3 tablespoons taco seasoning",
+      "raw": "2 tablespoons taco seasoning",
       "expected": {
         "item": "taco seasoning",
         "measurements": [
           {
-            "amount": "3",
+            "amount": "2",
             "unit": "tbsp"
           }
         ],

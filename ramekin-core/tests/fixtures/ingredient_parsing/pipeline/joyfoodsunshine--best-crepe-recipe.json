@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  eggs",
+      "raw": "4 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons salted butter (melted and cooled slightly)",
+      "raw": "2 Tablespoons salted butter melted and cooled slightly",
       "expected": {
-        "item": "salted butter",
+        "item": "salted butter melted and cooled slightly",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "melted and cooled slightly",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {

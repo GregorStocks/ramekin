@@ -3,13 +3,17 @@
   "recipe_slug": "sriracha-chicken-wings-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds chicken wings (, rinsed &amp;amp; patted dry)",
+      "raw": "2 pounds  (907 g) chicken wings , rinsed & patted dry",
       "expected": {
         "item": "chicken wings",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
           }
         ],
         "note": "rinsed & patted dry",
@@ -17,31 +21,35 @@
       }
     },
     {
-      "raw": "kosher salt (, to season wings)",
+      "raw": "kosher salt , to season wings",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt, to season wings",
         "measurements": [],
-        "note": "to season wings",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "ground black pepper (, to season wings)",
+      "raw": "ground black pepper , to season wings",
       "expected": {
-        "item": "ground black pepper",
+        "item": "ground black pepper, to season wings",
         "measurements": [],
-        "note": "to season wings",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 Tablespoons vegetable oil",
+      "raw": "2 Tablespoons  (30 ml) vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -49,10 +57,14 @@
       }
     },
     {
-      "raw": "2 cloves garlic (, finely minced )",
+      "raw": "2 cloves  (2 cloves) garlic , finely minced",
       "expected": {
         "item": "garlic",
         "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          },
           {
             "amount": "2",
             "unit": "clove"
@@ -63,27 +75,39 @@
       }
     },
     {
-      "raw": "1 small small onion (, minced (@ 1/2 cup))",
+      "raw": "1 small  (1 small) small onion , minced (@ 1/2 cup)",
       "expected": {
         "item": "small onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": "minced (@ 1/2 cup)",
+        "note": "@ 1/2 cup, minced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup ketchup",
+      "raw": "1/2 cup  (120 g) ketchup",
       "expected": {
         "item": "ketchup",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -91,27 +115,35 @@
       }
     },
     {
-      "raw": "1/4 cup Sriracha sauce (or any chili hot sauce (or more for a spicier sauce))",
+      "raw": "1/4 cup  (60 g) Sriracha sauce or any chili hot sauce (or more for a spicier sauce)",
       "expected": {
-        "item": "Sriracha sauce",
+        "item": "Sriracha sauce or any chili hot sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": "or any chili hot sauce (or more for a spicier sauce)",
+        "note": "or more for a spicier sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 Tablespoon vinegar",
+      "raw": "1 Tablespoon  (15 ml) vinegar",
       "expected": {
         "item": "vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -119,27 +151,35 @@
       }
     },
     {
-      "raw": "1 teaspoon fish sauce ( or soy sauce (choose fish sauce, it tastes better!))",
+      "raw": "1 teaspoon  (5 ml) fish sauce  or soy sauce (choose fish sauce, it tastes better!)",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce or soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
-        "note": "or soy sauce (choose fish sauce, it tastes better!)",
+        "note": "choose fish sauce, it tastes better!",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/4 teaspoon ground cumin",
+      "raw": "1/4 teaspoon  (1.25 ml) ground cumin",
       "expected": {
         "item": "ground cumin",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.25",
+            "unit": "ml"
           }
         ],
         "note": null,

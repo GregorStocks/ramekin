@@ -3,10 +3,6 @@
   "recipe_slug": "tiramisu-trifles-recipe",
   "ingredients": [
     {
-      "raw": "For the base",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup heavy whipping cream",
       "expected": {
         "item": "heavy whipping cream",
@@ -17,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "For the Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": "any style",
-        "section": "For the Base",
         "category": "Other"
       }
     },
@@ -62,7 +55,6 @@
           }
         ],
         "note": null,
-        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -77,7 +69,6 @@
           }
         ],
         "note": null,
-        "section": "For the Base",
         "category": "Other"
       }
     },
@@ -92,13 +83,8 @@
           }
         ],
         "note": null,
-        "section": "For the Base",
         "category": "Beverages"
       }
-    },
-    {
-      "raw": "For the layering",
-      "is_section_header": true
     },
     {
       "raw": "1 cup heavy cream, whipped with 2 tablespoons granulated sugar",
@@ -111,7 +97,6 @@
           }
         ],
         "note": null,
-        "section": "For the Layering",
         "category": "Dairy & Eggs"
       }
     },
@@ -126,13 +111,8 @@
           }
         ],
         "note": null,
-        "section": "For the Layering",
         "category": "Other"
       }
-    },
-    {
-      "raw": "For the garnish",
-      "is_section_header": true
     },
     {
       "raw": "fresh raspberries",
@@ -140,7 +120,6 @@
         "item": "fresh raspberries",
         "measurements": [],
         "note": null,
-        "section": "For the Garnish",
         "category": "Produce"
       }
     },
@@ -150,7 +129,6 @@
         "item": "chocolate shavings",
         "measurements": [],
         "note": null,
-        "section": "For the Garnish",
         "category": "Other"
       }
     }

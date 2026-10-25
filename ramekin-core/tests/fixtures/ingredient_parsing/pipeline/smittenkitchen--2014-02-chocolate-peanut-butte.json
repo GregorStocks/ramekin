@@ -3,10 +3,6 @@
   "recipe_slug": "2014-02-chocolate-peanut-butte",
   "ingredients": [
     {
-      "raw": "Chocolate Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "9 ounces (255 grams) chocolate wafers (such as these; the cookie portion of these are best for homemade crumbs)",
       "expected": {
         "item": "chocolate wafers",
@@ -21,7 +17,6 @@
           }
         ],
         "note": "such as these; the cookie portion of these are best for homemade crumbs",
-        "section": "Chocolate Crust",
         "category": "Snacks"
       }
     },
@@ -40,7 +35,6 @@
           }
         ],
         "note": "coarsely chopped or 1 cup chips",
-        "section": "Chocolate Crust",
         "category": "Baking"
       }
     },
@@ -59,7 +53,6 @@
           }
         ],
         "note": "packed",
-        "section": "Chocolate Crust",
         "category": "Baking"
       }
     },
@@ -78,13 +71,8 @@
           }
         ],
         "note": "melted and still hot",
-        "section": "Chocolate Crust",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Fudge Layer",
-      "is_section_header": true
     },
     {
       "raw": "1 cup (235 ml) heavy or whipping cream",
@@ -101,7 +89,6 @@
           }
         ],
         "note": null,
-        "section": "Fudge Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -120,7 +107,6 @@
           }
         ],
         "note": "chopped",
-        "section": "Fudge Layer",
         "category": "Baking"
       }
     },
@@ -139,13 +125,8 @@
           }
         ],
         "note": "optional",
-        "section": "Fudge Layer",
         "category": "Condiments & Sauces"
       }
-    },
-    {
-      "raw": "Cheesecake Layer",
-      "is_section_header": true
     },
     {
       "raw": "2 8-ounce packages (455 grams) cream cheese, at room temperature",
@@ -162,7 +143,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Cheesecake Layer",
         "category": "Cheese"
       }
     },
@@ -181,7 +161,6 @@
           }
         ],
         "note": null,
-        "section": "Cheesecake Layer",
         "category": "Condiments & Sauces"
       }
     },
@@ -200,7 +179,6 @@
           }
         ],
         "note": null,
-        "section": "Cheesecake Layer",
         "category": "Baking"
       }
     },
@@ -219,7 +197,6 @@
           }
         ],
         "note": null,
-        "section": "Cheesecake Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -234,7 +211,6 @@
           }
         ],
         "note": null,
-        "section": "Cheesecake Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,13 +229,8 @@
           }
         ],
         "note": null,
-        "section": "Cheesecake Layer",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "Ganache Topping",
-      "is_section_header": true
     },
     {
       "raw": "1/3 cup (80 ml) heavy or whipping cream",
@@ -276,7 +247,6 @@
           }
         ],
         "note": null,
-        "section": "Ganache Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -295,7 +265,6 @@
           }
         ],
         "note": "chopped",
-        "section": "Ganache Topping",
         "category": "Baking"
       }
     },
@@ -314,7 +283,6 @@
           }
         ],
         "note": "optional",
-        "section": "Ganache Topping",
         "category": "Condiments & Sauces"
       }
     }

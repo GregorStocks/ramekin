@@ -3,6 +3,104 @@
   "recipe_slug": "breakfast-nachos-recipe",
   "ingredients": [
     {
+      "raw": "12 ounces tortilla chips * see note regarding recommended brands",
+      "expected": {
+        "item": "tortilla chips * see note regarding recommended brands",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 pound breakfast sausage",
+      "expected": {
+        "item": "breakfast sausage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "¾ teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ teaspoon granulated garlic or garlic powder",
+      "expected": {
+        "item": "granulated garlic or garlic powder",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
       "raw": "1 tablespoon butter",
       "expected": {
         "item": "butter",
@@ -17,82 +115,27 @@
       }
     },
     {
-      "raw": "3-4  eggs (lightly whisked)",
+      "raw": "1½ cups chili beans",
       "expected": {
-        "item": "eggs",
-        "measurements": [
-          {
-            "amount": "3-4",
-            "unit": null
-          }
-        ],
-        "note": "lightly whisked",
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "kosher salt (to taste)",
-      "expected": {
-        "item": "kosher salt",
-        "measurements": [],
-        "note": "to taste",
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "freshly ground black pepper (to taste)",
-      "expected": {
-        "item": "freshly ground black pepper",
-        "measurements": [],
-        "note": "to taste",
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1 1/2 cups cooked pinto beans or 1 can (drained and rinsed)",
-      "expected": {
-        "item": "cooked pinto beans",
+        "item": "chili beans",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "or 1 can (drained and rinsed)",
-        "category": "Other"
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/2 cup green chile enchilada sauce (store-bought is fine as well)",
+      "raw": "16 ounces freshly shredded pepper jack Colby jack or Monterey jack cheese",
       "expected": {
-        "item": "green chile enchilada sauce",
+        "item": "freshly shredded pepper jack Colby jack or Monterey jack cheese",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": "store-bought is fine as well",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "sliced jalapenos (if desired for topping)",
-      "expected": {
-        "item": "sliced jalapenos",
-        "measurements": [],
-        "note": "if desired for topping",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1/2 cup shredded Mexican cheese blend or the cheese of your choice",
-      "expected": {
-        "item": "shredded Mexican cheese blend or the cheese of your choice",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
+            "amount": "16",
+            "unit": "oz"
           }
         ],
         "note": null,
@@ -100,17 +143,67 @@
       }
     },
     {
-      "raw": "3  handfuls tortilla chips",
+      "raw": "¼ cup fresh cilantro finely chopped",
       "expected": {
-        "item": "tortilla chips",
+        "item": "fresh cilantro",
         "measurements": [
           {
-            "amount": "3",
-            "unit": "handful"
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 green onions sliced thin",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "salsa or pico de gallo",
+      "expected": {
+        "item": "salsa or pico de gallo",
+        "measurements": [],
         "note": null,
-        "category": "Snacks"
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "sliced jalapeños",
+      "expected": {
+        "item": "sliced jalapeños",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "avocado sliced thin",
+      "expected": {
+        "item": "avocado",
+        "measurements": [],
+        "note": "sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     }
   ]

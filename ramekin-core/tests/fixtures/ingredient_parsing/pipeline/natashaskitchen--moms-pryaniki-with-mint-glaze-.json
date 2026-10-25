@@ -3,16 +3,16 @@
   "recipe_slug": "moms-pryaniki-with-mint-glaze-",
   "ingredients": [
     {
-      "raw": "2  large egg yolks (reserve whites for frosting)",
+      "raw": "2 large egg yolks, reserve whites for frosting",
       "expected": {
-        "item": "egg yolks",
+        "item": "egg yolks, reserve whites for frosting",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "reserve whites for frosting",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "5 cups all-purpose flour ((or 4 1/2 cups if using Canadian flour) plus more flour for hands)",
+      "raw": "*5 cups all-purpose flour, (or 4 1/2 cups if using Canadian flour) plus more flour for hands",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "2  large egg whites",
+      "raw": "2 large egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -129,16 +129,16 @@
       }
     },
     {
-      "raw": "2 cups powdered sugar (confectioners sugar)",
+      "raw": "2 cups powdered sugar, confectioners sugar",
       "expected": {
-        "item": "powdered sugar",
+        "item": "powdered sugar, confectioners sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "confectioners sugar",
+        "note": null,
         "category": "Baking"
       }
     },

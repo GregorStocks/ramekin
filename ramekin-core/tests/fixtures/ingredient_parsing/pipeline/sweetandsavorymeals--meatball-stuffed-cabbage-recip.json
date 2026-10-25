@@ -3,7 +3,7 @@
   "recipe_slug": "meatball-stuffed-cabbage-recip",
   "ingredients": [
     {
-      "raw": "1  green cabbage",
+      "raw": "1 green cabbage",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -17,35 +17,35 @@
       }
     },
     {
-      "raw": "1/2 cup cooked rice (you can use any rice that you like)",
+      "raw": "1/2 cup cooked rice you can use any rice that you like",
       "expected": {
-        "item": "cooked rice",
+        "item": "cooked rice you can use any rice that you like",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "you can use any rice that you like",
-        "category": "Pasta & Rice"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 lb ground beef (any ground meat will work)",
+      "raw": "1 lb ground beef any ground meat will work",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef any ground meat will work",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "any ground meat will work",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  small yellow onion (diced)",
+      "raw": "1 small yellow onion diced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon sea salt (or to taste)",
+      "raw": "1/2 teaspoon sea salt or to taste",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon ground black pepper (or to taste)",
+      "raw": "1/4 teaspoon ground black pepper or to taste",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "Salt and pepper (to taste)",
+      "raw": "Salt and pepper to taste",
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
@@ -180,35 +180,35 @@
       }
     },
     {
-      "raw": "2 cups water (or chicken broth)",
+      "raw": "2 cups water or chicken broth",
       "expected": {
-        "item": "water",
+        "item": "water or chicken broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "or chicken broth",
+        "note": null,
         "category": "Beverages"
       }
     },
     {
-      "raw": "2-3 cups cabbage (from inside the cabbage)",
+      "raw": "2-3 cups cabbage from inside the cabbage",
       "expected": {
-        "item": "cabbage",
+        "item": "cabbage from inside the cabbage",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "cup"
           }
         ],
-        "note": "from inside the cabbage",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "4  Roma tomatoes (chopped)",
+      "raw": "4 Roma tomatoes chopped",
       "expected": {
         "item": "Roma tomatoes",
         "measurements": [
@@ -222,7 +222,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic (minced)",
+      "raw": "2 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "Fresh cilantro (chopped)",
+      "raw": "Fresh cilantro chopped",
       "expected": {
         "item": "Fresh cilantro",
         "measurements": [],
@@ -245,16 +245,16 @@
       }
     },
     {
-      "raw": "Vegetable oil (or olive oil)",
+      "raw": "Vegetable oil or olive oil",
       "expected": {
-        "item": "Vegetable oil",
+        "item": "Vegetable oil or olive oil",
         "measurements": [],
-        "note": "or olive oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Salt and pepper (to taste)",
+      "raw": "Salt and pepper to taste",
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],

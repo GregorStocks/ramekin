@@ -3,18 +3,18 @@
   "recipe_slug": "easy-tofu-mitarashi-dango-reci",
   "ingredients": [
     {
-      "raw": "water (for boiling)",
+      "raw": "water for boiling",
       "expected": {
-        "item": "water",
+        "item": "water for boiling",
         "measurements": [],
-        "note": "for boiling",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "100 g glutinous rice flour",
+      "raw": "100 g glutinous rice flour shiratamako or mochiko",
       "expected": {
-        "item": "glutinous rice flour",
+        "item": "glutinous rice flour shiratamako or mochiko",
         "measurements": [
           {
             "amount": "100",
@@ -22,21 +22,21 @@
           }
         ],
         "note": null,
-        "category": "Baking"
+        "category": "Other"
       }
     },
     {
-      "raw": "125 g silken tofu (+ 1-2 tsp extra if dough seems dry)",
+      "raw": "125 g silken tofu + 1-2 tsp extra if dough seems dry",
       "expected": {
-        "item": "silken tofu",
+        "item": "silken tofu + 1-2 tsp extra if dough seems dry",
         "measurements": [
           {
             "amount": "125",
             "unit": "g"
           }
         ],
-        "note": "+ 1-2 tsp extra if dough seems dry",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {

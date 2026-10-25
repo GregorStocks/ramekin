@@ -82,16 +82,16 @@
       }
     },
     {
-      "raw": "Freshly ground black pepper (more for later)",
+      "raw": "Freshly ground black pepper more for later",
       "expected": {
-        "item": "Freshly ground black pepper",
+        "item": "Freshly ground black pepper more for later",
         "measurements": [],
-        "note": "more for later",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3 lb Top sirloin steak or beef tenderloin fillet, ( cut into 1 1/2-inch cubes)",
+      "raw": "3 lb Top sirloin steak or beef tenderloin fillet,  cut into 1 1/2-inch cubes",
       "expected": {
         "item": "Top sirloin steak or beef tenderloin fillet",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1  large red onion",
+      "raw": "1 large red onion",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "2  green bell peppers",
+      "raw": "2 green bell peppers",
       "expected": {
         "item": "green bell peppers",
         "measurements": [
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "2  red bell or orange bell peppers",
+      "raw": "2 red bell or orange bell peppers",
       "expected": {
         "item": "red bell or orange bell peppers",
         "measurements": [
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "1  large red onion, (thinly sliced)",
+      "raw": "1 large red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "2  lemons, (juiced)",
+      "raw": "2 lemons, juiced",
       "expected": {
         "item": "lemon juice",
         "measurements": [

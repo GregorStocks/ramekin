@@ -3,13 +3,17 @@
   "recipe_slug": "2024-02-flourless-pistachio-ca",
   "ingredients": [
     {
-      "raw": "2 cups pistachio flour*",
+      "raw": "2 cups  / 220 g pistachio flour*",
       "expected": {
         "item": "pistachio flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "3/4 cup almond flour*",
+      "raw": "¾ cup  / 80 g almond flour*",
       "expected": {
         "item": "almond flour",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "2 tablespoons cornstarch",
+      "raw": "2 tablespoons  / 16 g cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,7 +57,7 @@
       }
     },
     {
-      "raw": "3/4 teaspoon fine sea salt",
+      "raw": "¾ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -59,13 +71,17 @@
       }
     },
     {
-      "raw": "1 1/4 cups granulated sugar",
+      "raw": "1 ¼ cups  / 250 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -73,41 +89,45 @@
       }
     },
     {
-      "raw": "1 teaspoon orange zest (very finely garted)",
+      "raw": "1 teaspoon   orange zest, very finely garted",
       "expected": {
-        "item": "orange zest",
+        "item": "orange zest, very finely garted",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "very finely garted",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "6 large eggs (at warm room temperature**)",
+      "raw": "6 large   eggs, at warm room temperature**",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, at warm room temperature",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": "at warm room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "10 tablespoons unsalted butter (cut into cubes)",
+      "raw": "10 tablespoons  / 140 g unsalted butter, cut into cubes",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "10",
             "unit": "tbsp"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
           }
         ],
         "note": "cut into cubes",
@@ -115,13 +135,17 @@
       }
     },
     {
-      "raw": "2 tablespoons extra virgin olive oil",
+      "raw": "2 tablespoons  / 28 g extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -129,7 +153,7 @@
       }
     },
     {
-      "raw": "3/4 teaspoon pistachio extract",
+      "raw": "¾ teaspoon   pistachio extract",
       "expected": {
         "item": "pistachio extract",
         "measurements": [
@@ -143,13 +167,17 @@
       }
     },
     {
-      "raw": "5 oz 60-70% dark chocolate (finely chopped)",
+      "raw": "5 oz  / 140 g 60-70% dark chocolate, finely chopped",
       "expected": {
         "item": "60-70% dark chocolate",
         "measurements": [
           {
             "amount": "5",
             "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
@@ -157,13 +185,17 @@
       }
     },
     {
-      "raw": "1 oz 30-35% milk chocolate (finely chopped)",
+      "raw": "1 oz  / 28 g 30-35% milk chocolate, finely chopped",
       "expected": {
         "item": "30-35% milk chocolate",
         "measurements": [
           {
             "amount": "1",
             "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
@@ -171,13 +203,17 @@
       }
     },
     {
-      "raw": "1 cup heavy cream",
+      "raw": "1 cup  / 238 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
         "note": null,

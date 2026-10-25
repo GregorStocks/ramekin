@@ -3,38 +3,30 @@
   "recipe_slug": "apple-pear-crisp-recipe",
   "ingredients": [
     {
-      "raw": "6 cups peeled, cored, and thinly sliced baking apples  (about 6 large)",
+      "raw": "6 cups peeled, cored, and thinly sliced baking apples  about 6 large",
       "expected": {
-        "item": "peeled, cored, and thinly sliced baking apples",
+        "item": "peeled, cored, and thinly sliced baking apples about 6 large",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
-          },
-          {
-            "amount": "6",
-            "unit": "large"
           }
         ],
-        "note": "about 6 large",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "4 cups peeled, cored, and thinly sliced pears  (about 5 large)",
+      "raw": "4 cups peeled, cored, and thinly sliced pears  about 5 large",
       "expected": {
-        "item": "peeled, cored, and thinly sliced pears",
+        "item": "peeled, cored, and thinly sliced pears about 5 large",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "5",
-            "unit": "large"
           }
         ],
-        "note": "about 5 large",
+        "note": null,
         "category": "Other"
       }
     },
@@ -53,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2 cup granulated sugar",
+      "raw": "½ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -67,7 +59,7 @@
       }
     },
     {
-      "raw": "1/4 cup light brown sugar",
+      "raw": "¼ cup light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -151,17 +143,17 @@
       }
     },
     {
-      "raw": "1 cup light brown sugar (lightly packed)",
+      "raw": "1 cup light brown sugar lightly packed",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar lightly packed",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "lightly packed",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -179,7 +171,7 @@
       }
     },
     {
-      "raw": "½ cup pecan chips (optional)",
+      "raw": "½ cup pecan chips optional",
       "expected": {
         "item": "pecan chips",
         "measurements": [
@@ -193,7 +185,7 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (melted and cooled)",
+      "raw": "½ cup unsalted butter melted and cooled",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

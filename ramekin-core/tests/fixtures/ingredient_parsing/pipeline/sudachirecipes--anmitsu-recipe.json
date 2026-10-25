@@ -87,17 +87,17 @@
       }
     },
     {
-      "raw": "65 g glutinous rice flour (shiratamako)",
+      "raw": "65 g glutinous rice flour shiratamako",
       "expected": {
-        "item": "glutinous rice flour",
+        "item": "glutinous rice flour shiratamako",
         "measurements": [
           {
             "amount": "65",
             "unit": "g"
           }
         ],
-        "note": "shiratamako",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1  kiwi",
+      "raw": "1 kiwi",
       "expected": {
         "item": "kiwi",
         "measurements": [
@@ -143,35 +143,35 @@
       }
     },
     {
-      "raw": "12 segments mandarin orange (mikan) (canned or fresh)",
+      "raw": "12 segments mandarin orange (mikan) canned or fresh",
       "expected": {
-        "item": "segments mandarin orange",
+        "item": "segments mandarin orange canned or fresh",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": "mikan, canned or fresh",
+        "note": "mikan",
         "category": "Other"
       }
     },
     {
-      "raw": "6 slices peach (canned or fresh)",
+      "raw": "6 slices peach canned or fresh",
       "expected": {
-        "item": "peach",
+        "item": "peach canned or fresh",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
           }
         ],
-        "note": "canned or fresh",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "6  Maraschino cherries",
+      "raw": "6 Maraschino cherries",
       "expected": {
         "item": "Maraschino cherries",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "whipped cream ((or ice cream) optional)",
+      "raw": "whipped cream (or ice cream) optional",
       "expected": {
         "item": "whipped cream",
         "measurements": [],

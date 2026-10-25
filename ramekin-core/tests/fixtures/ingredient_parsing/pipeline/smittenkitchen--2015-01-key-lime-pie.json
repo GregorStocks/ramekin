@@ -3,84 +3,6 @@
   "recipe_slug": "2015-01-key-lime-pie",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Easiest Fridge Dill Pickles",
-      "expected": {
-        "item": "Months Ago: Easiest Fridge Dill Pickles",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: One-Pan Farro with Tomatoes",
-      "expected": {
-        "item": "Years Ago: One-Pan Farro with Tomatoes",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Bacon Corn Hash",
-      "expected": {
-        "item": "Years Ago: Bacon Corn Hash",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Raspberry Ricotta Scones",
-      "expected": {
-        "item": "Years Ago: Raspberry Ricotta Scones",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Plus, since it’s popsicle season where you are: Both last week’s Butterscotch Pudding and this week’s Key Lime Pie have popsicle equivalents in the archives. Make them and send sweltering thoughts our way, please.",
-      "expected": {
-        "item": "Plus, since it’s popsicle season where you are: Both last week’s Butterscotch Pudding and this week’s Key Lime Pie have popsicle equivalents in the archives. Make them and send sweltering thoughts our way, please.",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "1 1/2 cups (155 grams) finely ground graham cracker crumbs (from about 10 crackers)",
       "expected": {
         "item": "finely ground graham cracker crumbs",
@@ -95,7 +17,6 @@
           }
         ],
         "note": "from about 10 crackers",
-        "section": "Crust",
         "category": "Other"
       }
     },
@@ -114,7 +35,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -129,7 +49,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,13 +67,8 @@
           }
         ],
         "note": "melted",
-        "section": "Crust",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "1 1/2 tablespoons finely grated lime zest",
@@ -167,7 +81,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -182,7 +95,6 @@
           }
         ],
         "note": "though extra-large would do you no harm here",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -201,7 +113,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -220,13 +131,8 @@
           }
         ],
         "note": "from about 1 dozen tiny key limes or 4 persian/regular limes",
-        "section": "Filling",
         "category": "Produce"
       }
-    },
-    {
-      "raw": "To Finish",
-      "is_section_header": true
     },
     {
       "raw": "3/4 cup (175 ml) heavy whipping cream",
@@ -243,7 +149,6 @@
           }
         ],
         "note": null,
-        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -258,7 +163,6 @@
           }
         ],
         "note": "to taste",
-        "section": "To Finish",
         "category": "Baking"
       }
     }

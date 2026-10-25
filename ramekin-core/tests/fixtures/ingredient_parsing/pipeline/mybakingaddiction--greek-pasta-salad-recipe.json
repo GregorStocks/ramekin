@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "3/4 cup red wine vinegar",
+      "raw": "¾ cup red wine vinegar",
       "expected": {
         "item": "red wine vinegar",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1-1/2 teaspoons freshly ground black pepper",
+      "raw": "1 ½ teaspoons freshly ground black pepper",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [
@@ -115,21 +115,21 @@
       }
     },
     {
-      "raw": "1 pound rotini pasta (cooked according to package directions)",
+      "raw": "1 pound rotini pasta cooked to al dente according to package directions and drained",
       "expected": {
-        "item": "rotini pasta",
+        "item": "rotini pasta cooked to al dente according to package directions and drained",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "cooked according to package directions",
-        "category": "Pasta & Rice"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 pint cherry tomatoes (cut in half (you can sub in grape tomatoes))",
+      "raw": "1 pint cherry tomatoes cut in half (you can sub in grape tomatoes)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -138,12 +138,12 @@
             "unit": "pint"
           }
         ],
-        "note": "cut in half (you can sub in grape tomatoes)",
+        "note": "you can sub in grape tomatoes, cut in half",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large cucumber (seeded and chopped)",
+      "raw": "1 large cucumber seeded and chopped",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1  red bell pepper (chopped)",
+      "raw": "1 red bell pepper chopped",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1  green bell pepper (chopped)",
+      "raw": "1 green bell pepper chopped",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "4  green onions (thinly sliced)",
+      "raw": "4 green onions thinly sliced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -199,21 +199,21 @@
       }
     },
     {
-      "raw": "3/4 cup Kalamata olives",
+      "raw": "¾ cup pitted Kalamata olives halved or quartered if desired",
       "expected": {
-        "item": "Kalamata olives",
+        "item": "pitted Kalamata olives",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "halved or quartered, if desired",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1-1/2 cups crumbled feta cheese",
+      "raw": "1 ½ cups crumbled feta cheese",
       "expected": {
         "item": "crumbled feta cheese",
         "measurements": [
@@ -227,16 +227,16 @@
       }
     },
     {
-      "raw": "1 7- ounce pepperoni stick (sliced)",
+      "raw": "1 (7-ounce) pepperoni stick sliced",
       "expected": {
-        "item": "7- ounce pepperoni stick",
+        "item": "pepperoni stick",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced",
+        "note": "7-ounce, sliced",
         "category": "Other"
       }
     }

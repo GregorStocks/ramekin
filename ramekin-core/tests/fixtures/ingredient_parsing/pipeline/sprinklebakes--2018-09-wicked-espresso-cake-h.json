@@ -3,30 +3,30 @@
   "recipe_slug": "2018-09-wicked-espresso-cake-h",
   "ingredients": [
     {
-      "raw": "Flour based cooking spray (recommend Baker’s Joy)",
+      "raw": "Flour based cooking spray recommend Baker’s Joy",
       "expected": {
-        "item": "Flour based cooking spray",
+        "item": "Flour based cooking spray recommend Baker’s Joy",
         "measurements": [],
-        "note": "recommend Baker’s Joy",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "4 tablespoons finely ground espresso (Wicked Joe’sWicked French Roast beans)",
+      "raw": "4 tablespoons finely ground espresso Wicked Joe’sWicked French Roast beans",
       "expected": {
-        "item": "finely ground espresso",
+        "item": "finely ground espresso Wicked Joe’sWicked French Roast beans",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "Wicked Joe’sWicked French Roast beans",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2  cup/120ml hot water",
+      "raw": "1/2 cup/120ml hot water",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -174,17 +174,17 @@
       }
     },
     {
-      "raw": "6  large eggs (room temperature)",
+      "raw": "6 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -274,7 +274,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -288,7 +288,7 @@
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -316,7 +316,7 @@
       }
     },
     {
-      "raw": "2 tablespoons butter (melted)",
+      "raw": "2 tablespoons butter melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -388,7 +388,7 @@
       }
     },
     {
-      "raw": "10  large egg yolks",
+      "raw": "10 large egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -424,7 +424,7 @@
       }
     },
     {
-      "raw": "2  cups/400 g white granulated sugar",
+      "raw": "2 cups/400 g white granulated sugar",
       "expected": {
         "item": "white granulated sugar",
         "measurements": [
@@ -442,7 +442,7 @@
       }
     },
     {
-      "raw": "4  cups/ 32oz. unsalted butter (softened)",
+      "raw": "4 cups/ 32oz. unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -544,25 +544,25 @@
       }
     },
     {
-      "raw": "3 tablespoons whole coffee beans (using Wicked Joe’s Wicked French Roast beans)",
+      "raw": "3 tablespoons whole coffee beans using Wicked Joe’s Wicked French Roast beans",
       "expected": {
-        "item": "whole coffee beans",
+        "item": "whole coffee beans using Wicked Joe’s Wicked French Roast beans",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "using Wicked Joe’s Wicked French Roast beans",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "Buttercream orbs (see blog post for details)",
+      "raw": "Buttercream orbs see blog post for details",
       "expected": {
-        "item": "Buttercream orbs",
+        "item": "Buttercream orbs see blog post for details",
         "measurements": [],
-        "note": "see blog post for details",
+        "note": null,
         "category": "Other"
       }
     }

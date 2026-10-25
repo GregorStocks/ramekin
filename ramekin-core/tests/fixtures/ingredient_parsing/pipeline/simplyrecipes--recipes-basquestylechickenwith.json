@@ -58,9 +58,9 @@
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "1/2 teaspoon kosher salt",
       "expected": {
-        "item": "salt",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
@@ -72,9 +72,9 @@
       }
     },
     {
-      "raw": "1/4 teaspoon ground black pepper",
+      "raw": "1/4 teaspoon freshly ground black pepper",
       "expected": {
-        "item": "ground black pepper",
+        "item": "freshly ground black pepper",
         "measurements": [
           {
             "amount": "0.25",

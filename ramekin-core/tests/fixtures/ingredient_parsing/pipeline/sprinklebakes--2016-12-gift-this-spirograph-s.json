@@ -67,21 +67,25 @@
       }
     },
     {
-      "raw": "1 cup plus 2 tablespoons (225g granulated sugar)",
+      "raw": "1 cup plus 2 tablespoons 225g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 cup plus 2 tablespoons",
             "unit": null
+          },
+          {
+            "amount": "225",
+            "unit": "g"
           }
         ],
-        "note": "225g granulated sugar",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -141,29 +145,29 @@
       }
     },
     {
-      "raw": "Fondant rounds (dry)",
+      "raw": "Fondant rounds dry",
       "expected": {
-        "item": "Fondant rounds",
+        "item": "Fondant rounds dry",
         "measurements": [],
-        "note": "dry",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "Spirograph drawing tool (ring and circle)",
+      "raw": "Spirograph drawing tool ring and circle",
       "expected": {
-        "item": "Spirograph drawing tool",
+        "item": "Spirograph drawing tool ring and circle",
         "measurements": [],
-        "note": "ring and circle",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "Fine-tipped food color markers (I recommend fine-tipped Foodoodlers)",
+      "raw": "Fine-tipped food color markers I recommend fine-tipped Foodoodlers",
       "expected": {
-        "item": "Fine-tipped food color markers",
+        "item": "Fine-tipped food color markers I recommend fine-tipped Foodoodlers",
         "measurements": [],
-        "note": "I recommend fine-tipped Foodoodlers",
+        "note": null,
         "category": "Other"
       }
     },
@@ -177,11 +181,11 @@
       }
     },
     {
-      "raw": "Buttercream frosting (optional but tasty)",
+      "raw": "Buttercream frosting optional but tasty",
       "expected": {
-        "item": "Buttercream frosting",
+        "item": "Buttercream frosting optional but tasty",
         "measurements": [],
-        "note": "optional but tasty",
+        "note": null,
         "category": "Other"
       }
     },

@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-carnitas-burrito-bowl",
   "ingredients": [
     {
-      "raw": "4 cups romaine lettuce (shredded)",
+      "raw": "4 cups romaine lettuce, shredded",
       "expected": {
         "item": "romaine lettuce",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/4 cup shredded cheese (optional)",
+      "raw": "1/4 cup shredded cheese, optional",
       "expected": {
         "item": "shredded cheese",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "lime crema (optional)",
+      "raw": "lime crema, optional",
       "expected": {
         "item": "lime crema",
         "measurements": [],
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "1  bell pepper (thinly sliced)",
+      "raw": "1 bell pepper, thinly sliced",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "1/2  onion (thinly sliced)",
+      "raw": "1/2 onion, thinly sliced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "fajita seasoning (to taste)",
+      "raw": "fajita seasoning, to taste",
       "expected": {
         "item": "fajita seasoning",
         "measurements": [],

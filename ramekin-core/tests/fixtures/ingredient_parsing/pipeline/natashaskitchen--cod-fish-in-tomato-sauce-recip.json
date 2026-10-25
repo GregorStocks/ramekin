@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  large sweet onion (finely chopped)",
+      "raw": "1 large sweet onion, finely chopped",
       "expected": {
         "item": "sweet onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  garlic clove (minced)",
+      "raw": "1 garlic clove, minced",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -73,34 +73,25 @@
       }
     },
     {
-      "raw": "Seasonings: 1 bay leaf (6 black peppercorns, 6 allspice berries, 4 cloves)",
+      "raw": "Seasonings: 1 bay leaf, 6 black peppercorns, 6 allspice berries, 4 cloves",
       "expected": {
-        "item": "Seasonings: 1 bay leaf",
-        "measurements": [
-          {
-            "amount": "4",
-            "unit": "clove"
-          }
-        ],
-        "note": "6 black peppercorns, 6 allspice berries, 4 cloves",
-        "category": "Spices & Seasonings"
+        "item": "Seasonings: 1 bay leaf, 6 black peppercorns, 6 allspice berries, 4 cloves",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "Juice of 1 small lemon (2 Tbsp)",
+      "raw": "Juice of 1 small lemon, 2 Tbsp",
       "expected": {
         "item": "lemon juice",
         "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          },
           {
             "amount": "1",
             "unit": "small lemon"
           }
         ],
-        "note": null,
+        "note": "2 Tbsp",
         "category": "Produce"
       }
     },
@@ -133,7 +124,7 @@
       }
     },
     {
-      "raw": "2 lbs cod fillets (cut into 3-inch pieces (drain well, and pat dry with paper towels))",
+      "raw": "2 lbs cod fillets, cut into 3-inch pieces (drain well, and pat dry with paper towels)",
       "expected": {
         "item": "cod fillets",
         "measurements": [
@@ -142,7 +133,7 @@
             "unit": "lb"
           }
         ],
-        "note": "cut into 3-inch pieces (drain well, and pat dry with paper towels)",
+        "note": "drain well, and pat dry with paper towels, cut into 3-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -161,16 +152,16 @@
       }
     },
     {
-      "raw": "1 tsp salt (I used sea salt)",
+      "raw": "1 tsp salt, I used sea salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, I used sea salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "I used sea salt",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -189,34 +180,34 @@
       }
     },
     {
-      "raw": "1/4 cup light olive oil or avocado oil (to sautee fish)",
+      "raw": "1/4 cup light olive oil or avocado oil, to sautee fish",
       "expected": {
-        "item": "light olive oil or avocado oil",
+        "item": "light olive oil or avocado oil, to sautee fish",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "to sautee fish",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Fresh parsley for garnish (optional)",
+      "raw": "Fresh parsley for garnish, optional",
       "expected": {
         "item": "Fresh parsley",
         "measurements": [],
-        "note": "optional, for garnish",
+        "note": "for garnish, optional",
         "category": "Produce"
       }
     },
     {
-      "raw": "a cheesecloth (or tea infuser, or spice ball for holding spices.)",
+      "raw": "a cheesecloth, or tea infuser, or spice ball for holding spices.",
       "expected": {
-        "item": "a cheesecloth",
+        "item": "a cheesecloth, or tea infuser, or spice ball for holding spices.",
         "measurements": [],
-        "note": "or tea infuser, or spice ball for holding spices.",
+        "note": null,
         "category": "Other"
       }
     }

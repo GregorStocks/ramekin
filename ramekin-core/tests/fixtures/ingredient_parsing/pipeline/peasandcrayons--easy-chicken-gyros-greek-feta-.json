@@ -3,21 +3,21 @@
   "recipe_slug": "easy-chicken-gyros-greek-feta-",
   "ingredients": [
     {
-      "raw": "8 ounces chicken breast (cooked any way you'd like (see notes))",
+      "raw": "8 ounces chicken breast cooked any way you’d like (see notes)",
       "expected": {
-        "item": "chicken breast",
+        "item": "chicken breast cooked any way you’d like",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "cooked any way you'd like (see notes)",
-        "category": "Meat & Seafood"
+        "note": "see notes",
+        "category": "Other"
       }
     },
     {
-      "raw": "2-4 leaves romaine lettuce (trimmed)",
+      "raw": "2-4 leaves romaine lettuce trimmed",
       "expected": {
         "item": "romaine lettuce",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/2 cup grape tomatoes*  ((chopped or sliced) see below)",
+      "raw": "½ cup grape tomatoes*  (chopped or sliced) see below",
       "expected": {
         "item": "grape tomatoes* see below",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/4  English cucumber (sliced thin)",
+      "raw": "¼ English cucumber sliced thin",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2  fluffy pita breads",
+      "raw": "2 fluffy pita breads",
       "expected": {
         "item": "fluffy pita breads",
         "measurements": [
@@ -109,16 +109,16 @@
       }
     },
     {
-      "raw": "extra crumbled feta cheese (I'm guilty of this one! Yum!)",
+      "raw": "extra crumbled feta cheese I’m guilty of this one! Yum!",
       "expected": {
-        "item": "extra crumbled feta cheese",
+        "item": "extra crumbled feta cheese I’m guilty of this one! Yum!",
         "measurements": [],
-        "note": "I'm guilty of this one! Yum!",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup extra virgin olive oil",
+      "raw": "¼ cup extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
@@ -174,7 +174,7 @@
       }
     },
     {
-      "raw": "1  TBPS dijon mustard",
+      "raw": "1 TBPS dijon mustard",
       "expected": {
         "item": "TBPS dijon mustard",
         "measurements": [
@@ -188,7 +188,7 @@
       }
     },
     {
-      "raw": "1/2 tsp dried parsley (or 1 tsp fresh)",
+      "raw": "½ tsp dried parsley or 1 tsp fresh",
       "expected": {
         "item": "dried parsley",
         "measurements": [
@@ -202,7 +202,7 @@
       }
     },
     {
-      "raw": "1/2 tsp garlic powder",
+      "raw": "½ tsp garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -216,7 +216,7 @@
       }
     },
     {
-      "raw": "1/4 tsp dried oregano",
+      "raw": "¼ tsp dried oregano",
       "expected": {
         "item": "dried oregano",
         "measurements": [
@@ -230,7 +230,7 @@
       }
     },
     {
-      "raw": "1/4 tsp dried basil",
+      "raw": "¼ tsp dried basil",
       "expected": {
         "item": "dried basil",
         "measurements": [
@@ -244,7 +244,7 @@
       }
     },
     {
-      "raw": "1/8 tsp salt",
+      "raw": "⅛ tsp salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -258,21 +258,21 @@
       }
     },
     {
-      "raw": "1 TBSP water (if/as needed to thin the sauce)",
+      "raw": "1 TBSP water if/as needed to thin the sauce",
       "expected": {
-        "item": "water",
+        "item": "water if/as needed to thin the sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "if/as needed to thin the sauce",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "black pepper (to taste)",
+      "raw": "black pepper to taste",
       "expected": {
         "item": "black pepper",
         "measurements": [],

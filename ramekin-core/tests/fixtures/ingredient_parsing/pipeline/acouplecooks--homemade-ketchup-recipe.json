@@ -117,6 +117,94 @@
       "expanded": true
     },
     {
+      "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
       "raw": "1/2 teaspoon paprika",
       "expected": {
         "item": "paprika",

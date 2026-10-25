@@ -3,17 +3,17 @@
   "recipe_slug": "fruit-tart-recipe",
   "ingredients": [
     {
-      "raw": "1/2 cup butter (one stick)",
+      "raw": "1/2 cup butter one stick",
       "expected": {
-        "item": "butter",
+        "item": "butter one stick",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "one stick",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "4-6  strawberries",
+      "raw": "4-6 strawberries",
       "expected": {
         "item": "strawberries",
         "measurements": [

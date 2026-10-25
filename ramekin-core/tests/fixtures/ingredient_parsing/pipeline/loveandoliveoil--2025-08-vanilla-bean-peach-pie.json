@@ -3,13 +3,17 @@
   "recipe_slug": "2025-08-vanilla-bean-peach-pie",
   "ingredients": [
     {
-      "raw": "3 cups all-purpose flour",
+      "raw": "3 cups  / 375 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "1 tablespoon sugar",
+      "raw": "1 tablespoon  / 12 g sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "1 teaspoon salt",
+      "raw": "1 teaspoon   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -45,17 +53,17 @@
       }
     },
     {
-      "raw": "1/2 cup 1 stick cold unsalted butter (cut into 1/4-inch pieces)",
+      "raw": "½ cup  / 113 g 1 stick cold unsalted butter, cut into 1/4-inch pieces",
       "expected": {
-        "item": "cold unsalted butter",
+        "item": "1 stick cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           },
           {
-            "amount": "1",
-            "unit": "stick"
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "cut into 1/4-inch pieces",
@@ -63,13 +71,17 @@
       }
     },
     {
-      "raw": "1/2 cup cold vegetable shortening* (cut into pieces)",
+      "raw": "½ cup  / 110 g cold vegetable shortening*, cut into pieces",
       "expected": {
         "item": "cold vegetable shortening",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
         "note": "cut into pieces",
@@ -77,13 +89,17 @@
       }
     },
     {
-      "raw": "1/2 cup cold water",
+      "raw": "½ cup  / 120 g cold water",
       "expected": {
         "item": "cold water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -91,7 +107,7 @@
       }
     },
     {
-      "raw": "1  plump vanilla bean",
+      "raw": "1   plump vanilla bean",
       "expected": {
         "item": "plump vanilla bean",
         "measurements": [
@@ -105,13 +121,17 @@
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  / 200 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -119,13 +139,17 @@
       }
     },
     {
-      "raw": "3 tablespoons cornstarch",
+      "raw": "3 tablespoons  / 24 g cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -133,13 +157,17 @@
       }
     },
     {
-      "raw": "1 3/4 lbs ripe peaches (about 5-6 medium peaches or 5 cups sliced)",
+      "raw": "1 ¾ lbs  / 800 g ripe peaches, about 5-6 medium peaches or 5 cups sliced",
       "expected": {
         "item": "ripe peaches",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "lb"
+          },
+          {
+            "amount": "800",
+            "unit": "g"
           }
         ],
         "note": "about 5-6 medium peaches or 5 cups sliced",
@@ -147,7 +175,7 @@
       }
     },
     {
-      "raw": "2 teaspoons fresh lemon juice",
+      "raw": "2 teaspoons   fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -161,13 +189,17 @@
       }
     },
     {
-      "raw": "2 tablespoons cold unsalted butter (cut into small pieces)",
+      "raw": "2 tablespoons  / 28 g cold unsalted butter, cut into small pieces",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": "cut into small pieces",
@@ -175,7 +207,7 @@
       }
     },
     {
-      "raw": "1  egg (lightly beaten (for egg wash))",
+      "raw": "1   egg, lightly beaten (for egg wash)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -184,18 +216,22 @@
             "unit": null
           }
         ],
-        "note": "lightly beaten (for egg wash)",
+        "note": "for egg wash, lightly beaten",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup cold heavy whipping cream",
+      "raw": "1 cup  / 240 g cold heavy whipping cream",
       "expected": {
         "item": "cold heavy whipping cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -203,17 +239,17 @@
       }
     },
     {
-      "raw": "1/8 teaspoon guar gum* (optional, to stabilize the cream)",
+      "raw": "⅛ teaspoon   guar gum*, optional, to stabilize the cream",
       "expected": {
-        "item": "guar gum",
+        "item": "guar gum*, optional, to stabilize the cream",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": "optional, to stabilize the cream",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

@@ -114,9 +114,11 @@ fn run_pipeline_batch(raw_lines: &[String], paprika: bool) -> Vec<BatchResult> {
 
 /// Generate test fixtures from the latest pipeline run.
 ///
-/// Reads parse_ingredients output from pipeline results and creates
-/// one JSON file per recipe in the pipeline/ directory.
-/// Uses UPSERT behavior: only adds new recipes, never deletes existing ones.
+/// Reads parse_ingredients output from pipeline results and writes one JSON
+/// file per recipe in the pipeline/ directory: new recipes, and recipes whose
+/// raw lines changed since their fixture was written (an extractor fix), so
+/// fixtures never hold lines current extraction no longer produces. Recipes
+/// missing from the run (a failed fetch) keep their fixtures.
 pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
@@ -127,11 +129,12 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
     let (run_id, run_dir) = find_latest_run(runs_dir)?;
     tracing::info!("Generating from run: {}", run_id);
 
-    // Create directory if it doesn't exist (UPSERT: never delete existing)
+    // Create directory if it doesn't exist
     fs::create_dir_all(&pipeline_dir)?;
 
     let mut total_recipes = 0;
     let mut total_ingredients = 0;
+    let mut refreshed_recipes = 0;
 
     // Walk through all URL directories in the run
     let urls_dir = run_dir.join("urls");
@@ -159,53 +162,156 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
         let site = extract_site_from_url(&url_name);
         let recipe_slug = extract_recipe_slug(&url_name);
 
-        // Collect all ingredients for this recipe
-        let mut ingredients = Vec::new();
-        for ingredient in &output.ingredients {
-            let raw = ingredient.raw.clone().unwrap_or_default();
-            if raw.is_empty() {
-                continue;
-            }
-
-            let expected = run_pipeline(&raw);
-            ingredients.push(IngredientTestCase {
-                raw,
-                expected: Some(expected),
-                is_section_header: false,
-                expanded: false,
-            });
-        }
-
+        let raw_lines: Vec<String> = output
+            .ingredients
+            .iter()
+            .filter_map(|ingredient| ingredient.raw.clone())
+            .filter(|raw| !raw.is_empty())
+            .collect();
+        let ingredients = fixture_cases(&raw_lines, false);
         if ingredients.is_empty() {
             continue;
         }
 
-        let recipe_file = RecipeTestFile {
-            source: site.clone(),
-            recipe_slug: recipe_slug.clone(),
-            ingredients,
-        };
-
         let filename = format!("{}--{}.json", site, recipe_slug);
         let filepath = pipeline_dir.join(&filename);
-
-        // UPSERT: only write if file doesn't already exist
-        if !filepath.exists() {
-            total_ingredients += recipe_file.ingredients.len();
-            let json = serde_json::to_string_pretty(&recipe_file)? + "\n";
-            fs::write(&filepath, json)?;
-            total_recipes += 1;
+        let existing = fs::read_to_string(&filepath)
+            .ok()
+            .and_then(|json| serde_json::from_str::<RecipeTestFile>(&json).ok());
+        match existing {
+            Some(existing) if same_cases(&existing.ingredients, &ingredients) => continue,
+            Some(_) => refreshed_recipes += 1,
+            None => {
+                total_recipes += 1;
+                total_ingredients += ingredients.len();
+            }
         }
+        let recipe_file = RecipeTestFile {
+            source: site,
+            recipe_slug,
+            ingredients,
+        };
+        let json = serde_json::to_string_pretty(&recipe_file)? + "\n";
+        fs::write(&filepath, json)?;
     }
 
     tracing::info!(
-        "Generated {} new recipes ({} ingredients) in {}",
+        "Generated {} new recipes ({} ingredients) and refreshed {} in {}",
         total_recipes,
         total_ingredients,
+        refreshed_recipes,
         pipeline_dir.display()
     );
 
     Ok(())
+}
+
+/// A recipe fixture's cases for its raw lines: ignored lines dropped, section
+/// headers marked, hard-wrapped lines merged, and "each" expansions added.
+fn fixture_cases(raw_lines: &[String], paprika: bool) -> Vec<IngredientTestCase> {
+    let batch_results = run_pipeline_batch(raw_lines, paprika);
+
+    // Build new ingredients list, preserving section headers as markers
+    // Skip lines that should be ignored (scraper artifacts)
+    let mut new_ingredients = Vec::new();
+    let mut batch_iter = batch_results.into_iter().peekable();
+    let mut peer_section_anchor: Option<String> = None;
+
+    let mut line_idx = 0;
+    while line_idx < raw_lines.len() {
+        let raw = &raw_lines[line_idx];
+        // Skip lines that should be ignored (scraper artifacts like "Gather Your Ingredients")
+        if should_ignore_line(raw) {
+            line_idx += 1;
+            continue;
+        }
+        let section_header = if paprika {
+            detect_paprika_section_header(raw)
+        } else {
+            detect_section_header(raw)
+        };
+        if let Some(section_name) = section_header {
+            // This is a section header - mark it as such
+            new_ingredients.push(IngredientTestCase {
+                raw: raw.clone(),
+                expected: None,
+                is_section_header: true,
+                expanded: false,
+            });
+            peer_section_anchor = next_peer_section_anchor(&section_name);
+            line_idx += 1;
+            continue;
+        }
+        if let Some(section_name) = detect_peer_section_header(raw, peer_section_anchor.as_deref())
+        {
+            new_ingredients.push(IngredientTestCase {
+                raw: raw.clone(),
+                expected: None,
+                is_section_header: true,
+                expanded: false,
+            });
+            peer_section_anchor = Some(section_name);
+            line_idx += 1;
+            continue;
+        }
+        // Regular ingredient - consume one batch result for this raw line,
+        // then consume additional "each" expansion results (same raw, different item).
+        // This avoids incorrectly treating duplicate raw lines (e.g., butter used
+        // in two recipe steps) as "each" expansions.
+        let mut consumed_lines = 1;
+        if let Some(result) = batch_iter.peek() {
+            // The parser merges hard-wrapped continuation lines (an unclosed
+            // parenthetical closed by the next line) into one ingredient, so the
+            // result's raw may span several raw lines.
+            let mut merged_raw = raw.clone();
+            while merged_raw != result.raw
+                && result.raw.starts_with(merged_raw.as_str())
+                && line_idx + consumed_lines < raw_lines.len()
+            {
+                merged_raw.push(' ');
+                merged_raw.push_str(raw_lines[line_idx + consumed_lines].trim());
+                consumed_lines += 1;
+            }
+            if result.raw == merged_raw {
+                let first_result = batch_iter.next().unwrap();
+                let first_item = first_result.expected.item.clone();
+                new_ingredients.push(IngredientTestCase {
+                    raw: first_result.raw,
+                    expected: Some(first_result.expected),
+                    is_section_header: false,
+                    expanded: false,
+                });
+                // Consume additional "each" expansion results (same raw line, different item)
+                while let Some(next) = batch_iter.peek() {
+                    if next.raw == merged_raw && next.expected.item != first_item {
+                        let next = batch_iter.next().unwrap();
+                        new_ingredients.push(IngredientTestCase {
+                            raw: next.raw,
+                            expected: Some(next.expected),
+                            is_section_header: false,
+                            expanded: true,
+                        });
+                    } else {
+                        break;
+                    }
+                }
+            } else {
+                consumed_lines = 1;
+            }
+        }
+        line_idx += consumed_lines;
+    }
+    new_ingredients
+}
+
+/// Whether two fixtures' cases match.
+fn same_cases(old: &[IngredientTestCase], new: &[IngredientTestCase]) -> bool {
+    old.len() == new.len()
+        && old.iter().zip(new).all(|(old, new)| {
+            old.raw == new.raw
+                && old.expected == new.expected
+                && old.is_section_header == new.is_section_header
+        })
 }
 
 /// Update all test fixtures to match current parser output.
@@ -252,115 +358,9 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                     .collect();
                 // Paprika imports parse with the Paprika rules, as in production.
                 let paprika = subdir == "paprika";
-                let batch_results = run_pipeline_batch(&raw_lines, paprika);
+                let new_ingredients = fixture_cases(&raw_lines, paprika);
 
-                // Build new ingredients list, preserving section headers as markers
-                // Skip lines that should be ignored (scraper artifacts)
-                let mut new_ingredients = Vec::new();
-                let mut batch_iter = batch_results.into_iter().peekable();
-                let mut peer_section_anchor: Option<String> = None;
-
-                let mut line_idx = 0;
-                while line_idx < raw_lines.len() {
-                    let raw = &raw_lines[line_idx];
-                    // Skip lines that should be ignored (scraper artifacts like "Gather Your Ingredients")
-                    if should_ignore_line(raw) {
-                        line_idx += 1;
-                        continue;
-                    }
-                    let section_header = if paprika {
-                        detect_paprika_section_header(raw)
-                    } else {
-                        detect_section_header(raw)
-                    };
-                    if let Some(section_name) = section_header {
-                        // This is a section header - mark it as such
-                        new_ingredients.push(IngredientTestCase {
-                            raw: raw.clone(),
-                            expected: None,
-                            is_section_header: true,
-                            expanded: false,
-                        });
-                        peer_section_anchor = next_peer_section_anchor(&section_name);
-                        line_idx += 1;
-                        continue;
-                    }
-                    if let Some(section_name) =
-                        detect_peer_section_header(raw, peer_section_anchor.as_deref())
-                    {
-                        new_ingredients.push(IngredientTestCase {
-                            raw: raw.clone(),
-                            expected: None,
-                            is_section_header: true,
-                            expanded: false,
-                        });
-                        peer_section_anchor = Some(section_name);
-                        line_idx += 1;
-                        continue;
-                    }
-                    // Regular ingredient - consume one batch result for this raw line,
-                    // then consume additional "each" expansion results (same raw, different item).
-                    // This avoids incorrectly treating duplicate raw lines (e.g., butter used
-                    // in two recipe steps) as "each" expansions.
-                    let mut consumed_lines = 1;
-                    if let Some(result) = batch_iter.peek() {
-                        // The parser merges hard-wrapped continuation lines (an unclosed
-                        // parenthetical closed by the next line) into one ingredient, so the
-                        // result's raw may span several raw lines.
-                        let mut merged_raw = raw.clone();
-                        while merged_raw != result.raw
-                            && result.raw.starts_with(merged_raw.as_str())
-                            && line_idx + consumed_lines < raw_lines.len()
-                        {
-                            merged_raw.push(' ');
-                            merged_raw.push_str(raw_lines[line_idx + consumed_lines].trim());
-                            consumed_lines += 1;
-                        }
-                        if result.raw == merged_raw {
-                            let first_result = batch_iter.next().unwrap();
-                            let first_item = first_result.expected.item.clone();
-                            new_ingredients.push(IngredientTestCase {
-                                raw: first_result.raw,
-                                expected: Some(first_result.expected),
-                                is_section_header: false,
-                                expanded: false,
-                            });
-                            // Consume additional "each" expansion results (same raw line, different item)
-                            while let Some(next) = batch_iter.peek() {
-                                if next.raw == merged_raw && next.expected.item != first_item {
-                                    let next = batch_iter.next().unwrap();
-                                    new_ingredients.push(IngredientTestCase {
-                                        raw: next.raw,
-                                        expected: Some(next.expected),
-                                        is_section_header: false,
-                                        expanded: true,
-                                    });
-                                } else {
-                                    break;
-                                }
-                            }
-                        } else {
-                            consumed_lines = 1;
-                        }
-                    }
-                    line_idx += consumed_lines;
-                }
-
-                // Check if anything changed
-                let old_ingredients = &recipe.ingredients;
-                let len_changed = old_ingredients.len() != new_ingredients.len();
-                let content_changed =
-                    old_ingredients
-                        .iter()
-                        .zip(new_ingredients.iter())
-                        .any(|(old, new)| {
-                            old.raw != new.raw
-                                || old.expected != new.expected
-                                || old.is_section_header != new.is_section_header
-                        });
-                let changed = len_changed || content_changed;
-
-                if changed {
+                if !same_cases(&recipe.ingredients, &new_ingredients) {
                     let new_recipe = RecipeTestFile {
                         source: recipe.source.clone(),
                         recipe_slug: recipe.recipe_slug.clone(),
@@ -499,7 +499,7 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
         .unwrap_or_else(default_fixtures_dir);
     let paprika_dir = fixtures_dir.join("paprika");
 
-    // Create directory if it doesn't exist (UPSERT: never delete existing)
+    // Create directory if it doesn't exist
     fs::create_dir_all(&paprika_dir)?;
 
     // Open the paprikarecipes archive
@@ -746,4 +746,73 @@ pub fn migrate_curated(fixtures_dir: Option<&Path>) -> Result<()> {
     tracing::info!("\nDeleted {} old individual files", files_to_delete.len());
 
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// A run directory holding one recipe's parse_ingredients output.
+    fn write_run(runs: &Path, url_dir: &str, raw_lines: &[&str]) {
+        let step = runs
+            .join("2026-01-01_00-00-00.000/urls")
+            .join(url_dir)
+            .join("parse_ingredients");
+        fs::create_dir_all(&step).unwrap();
+        let ingredients: Vec<_> = raw_lines
+            .iter()
+            .map(
+                |raw| serde_json::json!({"item": "", "measurements": [], "note": null, "raw": raw}),
+            )
+            .collect();
+        fs::write(
+            step.join("output.json"),
+            serde_json::json!({ "ingredients": ingredients }).to_string(),
+        )
+        .unwrap();
+    }
+
+    fn fixture_raw(fixtures: &Path, name: &str) -> Vec<String> {
+        let json = fs::read_to_string(fixtures.join("pipeline").join(name)).unwrap();
+        let file: RecipeTestFile = serde_json::from_str(&json).unwrap();
+        file.ingredients.into_iter().map(|case| case.raw).collect()
+    }
+
+    #[test]
+    fn generate_refreshes_fixtures_whose_raw_lines_changed() {
+        let dir = tempfile::tempdir().unwrap();
+        let (runs, fixtures) = (dir.path().join("runs"), dir.path().join("fixtures"));
+        write_run(
+            &runs,
+            "example-com_cake",
+            &["1 Years Ago: Pie", "2 cups flour"],
+        );
+        generate_from_pipeline(&runs, Some(&fixtures)).unwrap();
+        assert_eq!(
+            fixture_raw(&fixtures, "example--cake.json"),
+            ["1 Years Ago: Pie", "2 cups flour"]
+        );
+
+        // An extractor fix drops the junk line; the fixture follows.
+        fs::remove_dir_all(&runs).unwrap();
+        write_run(&runs, "example-com_cake", &["2 cups flour"]);
+        generate_from_pipeline(&runs, Some(&fixtures)).unwrap();
+        assert_eq!(
+            fixture_raw(&fixtures, "example--cake.json"),
+            ["2 cups flour"]
+        );
+
+        // A recipe missing from the run (a failed fetch) keeps its fixture.
+        fs::remove_dir_all(&runs).unwrap();
+        write_run(&runs, "example-com_bread", &["1 cup water"]);
+        generate_from_pipeline(&runs, Some(&fixtures)).unwrap();
+        assert_eq!(
+            fixture_raw(&fixtures, "example--cake.json"),
+            ["2 cups flour"]
+        );
+        assert_eq!(
+            fixture_raw(&fixtures, "example--bread.json"),
+            ["1 cup water"]
+        );
+    }
 }

@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "1  large lemon",
+      "raw": "1 large lemon",
       "expected": {
         "item": "lemon",
         "measurements": [
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "Chopped parsley, (for garnish)",
+      "raw": "Chopped parsley, for garnish",
       "expected": {
         "item": "Chopped parsley",
         "measurements": [],
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "2  large lemons",
+      "raw": "2 large lemons",
       "expected": {
         "item": "lemons",
         "measurements": [
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "5  garlic cloves, (chopped)",
+      "raw": "5 garlic cloves, chopped",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

@@ -17,9 +17,9 @@
       }
     },
     {
-      "raw": "1/2 cup chicken or vegetable stock (use vegetable stock for vegan&nbsp;option)",
+      "raw": "1/2 cup chicken stock (use vegetable stock for vegan option)",
       "expected": {
-        "item": "chicken or vegetable stock",
+        "item": "chicken stock",
         "measurements": [
           {
             "amount": "0.5",
@@ -59,25 +59,25 @@
       }
     },
     {
-      "raw": "Peanut oil or canola oil",
+      "raw": "Peanut oil, or canola oil",
       "expected": {
-        "item": "Peanut oil or canola oil",
+        "item": "Peanut oil, or canola oil",
         "measurements": [],
         "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 pound broccoli florets, rinsed, patted dry, cut into bite-sized pieces",
+      "raw": "1 pound broccoli florets, rinsed, patted dry, and cut into bite-sized pieces",
       "expected": {
-        "item": "broccoli florets",
+        "item": "broccoli florets, rinsed, patted dry, and cut into bite-sized pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "rinsed, patted dry, cut into bite-sized pieces",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "2 cloves of garlic, minced (about 1 Tbsp)",
+      "raw": "2 cloves garlic, minced (about 1 tablespoon)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -109,7 +109,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "about 1 Tbsp, minced",
+        "note": "about 1 tablespoon, minced",
         "category": "Produce"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "tuscan-tortellini-soup-recipe",
   "ingredients": [
     {
-      "raw": "1  medium onion",
+      "raw": "1 medium onion",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  carrots",
+      "raw": "4 carrots",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "1 TBSP Italian seasoning blend (Mrs. Dash is my favorite)",
+      "raw": "1 TBSP Italian seasoning blend Mrs. Dash is my favorite",
       "expected": {
-        "item": "Italian seasoning blend",
+        "item": "Italian seasoning blend Mrs. Dash is my favorite",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "Mrs. Dash is my favorite",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/4 tsp black pepper",
+      "raw": "¼ tsp black pepper",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "14.5 oz canned fire roasted tomatoes ((crushed or diced))",
+      "raw": "14.5 oz canned fire roasted tomatoes (crushed or diced)",
       "expected": {
         "item": "canned fire roasted tomatoes",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "15.5 oz can white beans ((drained and rinsed))",
+      "raw": "15.5 oz can white beans (drained and rinsed)",
       "expected": {
         "item": "can white beans",
         "measurements": [

@@ -3,15 +3,6 @@
   "recipe_slug": "2013-04-bee-sting-cake",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "2 1/4 teaspoons (or 1 1/4-ounce package) instant yeast (not active dry) (also sold as rapid rise or bread machine yeast)",
       "expected": {
         "item": "instant yeast",
@@ -110,10 +101,6 @@
       }
     },
     {
-      "raw": "Honey-Almond-Crunch Topping",
-      "is_section_header": true
-    },
-    {
       "raw": "6 tablespoons unsalted butter, cold is fine",
       "expected": {
         "item": "unsalted butter",
@@ -124,7 +111,6 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Honey-Almond-Crunch Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,7 +125,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-Almond-Crunch Topping",
         "category": "Baking"
       }
     },
@@ -154,7 +139,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-Almond-Crunch Topping",
         "category": "Baking"
       }
     },
@@ -169,7 +153,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-Almond-Crunch Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -188,7 +171,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-Almond-Crunch Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -203,13 +185,8 @@
           }
         ],
         "note": null,
-        "section": "Honey-Almond-Crunch Topping",
         "category": "Spices & Seasonings"
       }
-    },
-    {
-      "raw": "Pastry Cream Filling",
-      "is_section_header": true
     },
     {
       "raw": "1 cup whole milk",
@@ -222,7 +199,6 @@
           }
         ],
         "note": null,
-        "section": "Pastry Cream Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -232,7 +208,6 @@
         "item": "Seeds from 1/4 to 1/2 vanilla bean, 1 teaspoon pure vanilla extract",
         "measurements": [],
         "note": "or 1/4 teaspoon almond extract",
-        "section": "Pastry Cream Filling",
         "category": "Other"
       }
     },
@@ -247,7 +222,6 @@
           }
         ],
         "note": null,
-        "section": "Pastry Cream Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,7 +236,6 @@
           }
         ],
         "note": null,
-        "section": "Pastry Cream Filling",
         "category": "Baking"
       }
     },
@@ -277,7 +250,6 @@
           }
         ],
         "note": "updated",
-        "section": "Pastry Cream Filling",
         "category": "Baking"
       }
     },
@@ -292,7 +264,6 @@
           }
         ],
         "note": null,
-        "section": "Pastry Cream Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,7 +278,6 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Pastry Cream Filling",
         "category": "Dairy & Eggs"
       }
     }

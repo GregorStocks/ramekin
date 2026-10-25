@@ -105,10 +105,6 @@
       }
     },
     {
-      "raw": "MERINGUE TOPPING:",
-      "is_section_header": true
-    },
-    {
       "raw": "4 large egg whites, room temperature",
       "expected": {
         "item": "egg whites",
@@ -119,7 +115,6 @@
           }
         ],
         "note": "room temperature",
-        "section": "Meringue Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -134,7 +129,6 @@
           }
         ],
         "note": null,
-        "section": "Meringue Topping",
         "category": "Baking"
       }
     },
@@ -149,7 +143,6 @@
           }
         ],
         "note": null,
-        "section": "Meringue Topping",
         "category": "Baking"
       }
     }

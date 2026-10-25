@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  medium carrot",
+      "raw": "1 medium carrot",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  stalk celery",
+      "raw": "1 stalk celery",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  red bell pepper",
+      "raw": "1 red bell pepper",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3  scallions (thinly sliced)",
+      "raw": "3 scallions (thinly sliced)",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -73,9 +73,9 @@
       }
     },
     {
-      "raw": "1/2 cup frozen shelled edamame",
+      "raw": "1/2 cup cooked shelled edamame",
       "expected": {
-        "item": "frozen shelled edamame",
+        "item": "cooked shelled edamame",
         "measurements": [
           {
             "amount": "0.5",
@@ -83,7 +83,7 @@
           }
         ],
         "note": null,
-        "category": "Frozen"
+        "category": "Other"
       }
     },
     {
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "1 Tbsp oil (canola or vegetable oil)",
+      "raw": "1 Tbsp oil (neutral flavored oil)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -156,7 +156,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "canola or vegetable oil",
+        "note": "neutral flavored oil",
         "category": "Oils & Vinegars"
       }
     },

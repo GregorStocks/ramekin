@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1  whole egg",
+      "raw": "1 whole egg",
       "expected": {
         "item": "whole egg",
         "measurements": [
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "6  small firm but ripe pears",
+      "raw": "6 small firm but ripe pears",
       "expected": {
         "item": "firm but ripe pears",
         "measurements": [
@@ -165,16 +165,16 @@
       }
     },
     {
-      "raw": "1  bottle (750 ml white wine (or remaining spumante from pastry cream))",
+      "raw": "1 bottle 750 ml white wine (or remaining spumante from pastry cream)",
       "expected": {
-        "item": "white wine",
+        "item": "750 ml white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "bottle"
           }
         ],
-        "note": "750 ml white wine (or remaining spumante from pastry cream)",
+        "note": "or remaining spumante from pastry cream",
         "category": "Beverages"
       }
     },
@@ -193,7 +193,7 @@
       }
     },
     {
-      "raw": "2  cinnamon sticks",
+      "raw": "2 cinnamon sticks",
       "expected": {
         "item": "cinnamon sticks",
         "measurements": [
@@ -221,21 +221,21 @@
       }
     },
     {
-      "raw": "3  sheets (1 1/2 boxes puff pastry, thawed)",
+      "raw": "3 sheets 1 1/2 boxes puff pastry, thawed",
       "expected": {
-        "item": "puff pastry",
+        "item": "1 1/2 boxes puff pastry",
         "measurements": [
           {
             "amount": "3",
             "unit": "sheet"
           }
         ],
-        "note": "1 1/2 boxes puff pastry, thawed",
+        "note": "thawed",
         "category": "Frozen"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [

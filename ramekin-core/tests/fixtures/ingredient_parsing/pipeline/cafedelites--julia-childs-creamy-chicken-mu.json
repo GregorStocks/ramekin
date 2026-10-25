@@ -3,31 +3,31 @@
   "recipe_slug": "julia-childs-creamy-chicken-mu",
   "ingredients": [
     {
-      "raw": "4 medium-sized chicken breasts (boneless and skinless)",
+      "raw": "4 medium-sized chicken breasts boneless and skinless",
       "expected": {
-        "item": "medium-sized chicken breasts",
+        "item": "medium-sized chicken breasts boneless and skinless",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "boneless and skinless",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1 teaspoon lemon juice (original recipe: 1/2 teaspoon)",
+      "raw": "1 teaspoon lemon juice original recipe: 1/2 teaspoon",
       "expected": {
-        "item": "lemon juice",
+        "item": "lemon juice original recipe: 1/2 teaspoon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "original recipe: 1/2 teaspoon",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -59,21 +59,21 @@
       }
     },
     {
-      "raw": "2 tablespoons reduced fat butter (original recipe: 5 tablespoons full fat)",
+      "raw": "2 tablespoons reduced fat butter original recipe: 5 tablespoons full fat",
       "expected": {
-        "item": "reduced fat butter",
+        "item": "reduced fat butter original recipe: 5 tablespoons full fat",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "original recipe: 5 tablespoons full fat",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon green onions (minced)",
+      "raw": "1 tablespoon green onions minced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "8 oz mushrooms (sliced)",
+      "raw": "8 oz mushrooms sliced",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -129,31 +129,31 @@
       }
     },
     {
-      "raw": "1/4 cup  port wine (or dry white vermouth)",
+      "raw": "1/4 cup  port wine or dry white vermouth",
       "expected": {
-        "item": "port wine",
+        "item": "port wine or dry white vermouth",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or dry white vermouth",
+        "note": null,
         "category": "Beverages"
       }
     },
     {
-      "raw": "4 oz reduced fat cream cheese (at room temperature, original recipe: 1 cup whipping cream)",
+      "raw": "4 oz reduced fat cream cheese at room temperature, original recipe: 1 cup whipping cream",
       "expected": {
-        "item": "reduced fat cream cheese",
+        "item": "reduced fat cream cheese at room temperature, original recipe: 1 cup whipping cream",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": "at room temperature, original recipe: 1 cup whipping cream",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "2 tablespoons parsley (minced)",
+      "raw": "2 tablespoons parsley minced",
       "expected": {
         "item": "parsley",
         "measurements": [
@@ -213,17 +213,17 @@
       }
     },
     {
-      "raw": "1-2 cups broccoli (extra addition, cut into florets and steamed - optional)",
+      "raw": "1-2 cups broccoli extra addition, cut into florets and steamed – optional",
       "expected": {
-        "item": "broccoli",
+        "item": "broccoli extra addition",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "cup"
           }
         ],
-        "note": "extra addition, cut into florets and steamed - optional",
-        "category": "Produce"
+        "note": "cut into florets and steamed - optional",
+        "category": "Other"
       }
     }
   ]

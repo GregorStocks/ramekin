@@ -3,27 +3,55 @@
   "recipe_slug": "cooking-recipe-ideas-recipes-a",
   "ingredients": [
     {
-      "raw": "2 1/2 c. all-purpose flour",
+      "raw": "1/4 c. mayonnaise",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "mayonnaise",
         "measurements": [
           {
-            "amount": "2.5",
+            "amount": "0.25",
             "unit": "cup"
           }
         ],
         "note": null,
-        "category": "Baking"
+        "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp. baking powder",
+      "raw": "Juice of 1 lime",
       "expected": {
-        "item": "baking powder",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": "tsp"
+            "unit": "lime"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tbsp. finely chopped fresh cilantro",
+      "expected": {
+        "item": "finely chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tbsp. honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -31,9 +59,97 @@
       }
     },
     {
-      "raw": "1 tsp. baking soda",
+      "raw": "1 jalapeño, seeds removed if desired, finely chopped",
       "expected": {
-        "item": "baking soda",
+        "item": "jalapeño, seeds removed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "if desired, finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 c. shredded purple cabbage",
+      "expected": {
+        "item": "shredded purple cabbage",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 c. fresh or frozen corn kernels, thawed",
+      "expected": {
+        "item": "fresh or frozen corn kernels",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 tbsp. extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tsp. chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tsp. paprika",
+      "expected": {
+        "item": "paprika",
         "measurements": [
           {
             "amount": "1",
@@ -41,13 +157,13 @@
           }
         ],
         "note": null,
-        "category": "Baking"
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 tsp. kosher salt",
+      "raw": "1/2 tsp. cayenne pepper",
       "expected": {
-        "item": "kosher salt",
+        "item": "cayenne pepper",
         "measurements": [
           {
             "amount": "0.5",
@@ -59,12 +175,12 @@
       }
     },
     {
-      "raw": "1/4 tsp. dried oregano",
+      "raw": "1/2 tsp. ground cumin",
       "expected": {
-        "item": "dried oregano",
+        "item": "ground cumin",
         "measurements": [
           {
-            "amount": "0.25",
+            "amount": "0.5",
             "unit": "tsp"
           }
         ],
@@ -73,27 +189,27 @@
       }
     },
     {
-      "raw": "1 large egg, beaten",
+      "raw": "1 1/2 lb. cod or other flaky white fish",
       "expected": {
-        "item": "egg",
+        "item": "cod or other flaky white fish",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "large"
+            "amount": "1.5",
+            "unit": "lb"
           }
         ],
-        "note": "beaten",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/4 c. extra-virgin olive oil",
+      "raw": "1 tbsp. vegetable oil",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "vegetable oil",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "1",
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -101,87 +217,40 @@
       }
     },
     {
-      "raw": "3/4 c. whole milk",
+      "raw": "8 corn tortillas, toasted",
       "expected": {
-        "item": "whole milk",
+        "item": "corn tortillas",
         "measurements": [
           {
-            "amount": "0.75",
-            "unit": "cup"
+            "amount": "8",
+            "unit": null
           }
         ],
-        "note": null,
+        "note": "toasted",
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 avocado, finely chopped",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Sour cream and lime wedges, for serving",
+      "expected": {
+        "item": "Sour cream and lime wedges",
+        "measurements": [],
+        "note": "for serving",
         "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "2 cloves garlic, minced",
-      "expected": {
-        "item": "garlic",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "clove"
-          }
-        ],
-        "note": "minced",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1 c. shredded mozzarella",
-      "expected": {
-        "item": "shredded mozzarella",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Cheese"
-      }
-    },
-    {
-      "raw": "1 c. minced tomatoes",
-      "expected": {
-        "item": "minced tomatoes",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1/4 c. finely chopped basil",
-      "expected": {
-        "item": "finely chopped basil",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "2 tbsp. freshly grated Parmesan",
-      "expected": {
-        "item": "freshly grated Parmesan",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Cheese"
       }
     }
   ]

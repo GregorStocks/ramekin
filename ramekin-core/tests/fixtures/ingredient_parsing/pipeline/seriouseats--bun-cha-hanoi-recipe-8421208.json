@@ -3,7 +3,7 @@
   "recipe_slug": "bun-cha-hanoi-recipe-8421208",
   "ingredients": [
     {
-      "raw": "1 1/4 pounds (567g) ground pork, 20 percent fat",
+      "raw": "1 1/4 pounds (567 g) ground pork, 20 percent fat",
       "expected": {
         "item": "ground pork, 20 percent fat",
         "measurements": [
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "1 small shallot (35g), finely chopped (about 2 tablespoons)",
+      "raw": "1 small shallot (35 g), finely chopped (about 2 tablespoons)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -43,7 +43,7 @@
       }
     },
     {
-      "raw": "5 medium cloves (25g) garlic, minced (2 tablespoons)",
+      "raw": "5 medium cloves (25 g) garlic, minced (2 tablespoons)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -65,7 +65,7 @@
       }
     },
     {
-      "raw": "3 tablespoons (37g) granulated sugar",
+      "raw": "3 tablespoons (37 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -83,7 +83,7 @@
       }
     },
     {
-      "raw": "2 tablespoons (30ml) fish sauce (see note)",
+      "raw": "2 tablespoons (30 ml) fish sauce (see note)",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "1 pound (456g) skin-on pork belly, frozen for 45 to 50 minutes",
+      "raw": "1 pound (456 g) skin-on pork belly, frozen for 45 to 50 minutes",
       "expected": {
         "item": "skin-on pork belly, frozen for 45 to 50 minutes",
         "measurements": [
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "2 tablespoons (30ml) hot water",
+      "raw": "2 tablespoons (30 ml) hot water",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -160,16 +160,20 @@
       }
     },
     {
-      "raw": "2 tablespoons (25g) sugar",
+      "raw": "2 tablespoons granulated sugar (1 ounce; 28 g)",
       "expected": {
-        "item": "sugar",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           },
           {
-            "amount": "25",
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
             "unit": "g"
           }
         ],
@@ -178,9 +182,27 @@
       }
     },
     {
-      "raw": "2 tablespoons (30ml) vegetable or other neutral oil",
+      "raw": "2 tablespoons (30 ml) fish sauce (see note)",
       "expected": {
-        "item": "vegetable or other neutral oil",
+        "item": "fish sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": "see note",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) vegetable oil or other neutral oil",
+      "expected": {
+        "item": "vegetable oil or other neutral oil",
         "measurements": [
           {
             "amount": "2",
@@ -196,25 +218,21 @@
       }
     },
     {
-      "raw": "2 scallions, white and green parts, thinly sliced (about 20g)",
+      "raw": "2 scallions, white and green parts, thinly sliced",
       "expected": {
         "item": "scallions, white and green parts",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "20",
-            "unit": "g"
           }
         ],
-        "note": "about 20g, thinly sliced",
+        "note": "thinly sliced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 small shallot (35g), roughly chopped (2 tablespoons)",
+      "raw": "1 small shallot (about 35 g), roughly chopped (2 tablespoons)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -231,12 +249,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 35 g, roughly chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 medium cloves garlic, roughly chopped (1 tablespoon)",
+      "raw": "2 medium (10 g) cloves garlic, roughly chopped",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -245,8 +263,8 @@
             "unit": "medium clove"
           },
           {
-            "amount": "1",
-            "unit": "tbsp"
+            "amount": "10",
+            "unit": "g"
           }
         ],
         "note": "roughly chopped",
@@ -268,9 +286,9 @@
       }
     },
     {
-      "raw": "1/2 cup (120ml) hot water",
+      "raw": "1/2 cup (120 ml) water",
       "expected": {
-        "item": "hot water",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
@@ -286,7 +304,7 @@
       }
     },
     {
-      "raw": "1/4 cup (60ml) rice vinegar",
+      "raw": "1/4 cup (60 ml) rice vinegar",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -304,7 +322,7 @@
       }
     },
     {
-      "raw": "1/4 cup (60ml) sugar",
+      "raw": "1/4 cup (60 ml) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -322,7 +340,7 @@
       }
     },
     {
-      "raw": "1 small carrot (59g), peeled and thinly sliced (1/2 cup)",
+      "raw": "1 small carrot (59 g), peeled and thinly sliced (1/2 cup)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -344,7 +362,7 @@
       }
     },
     {
-      "raw": "1 small kohlrabi (68g), thinly sliced, then cut into small pieces (1/2 cup), see note",
+      "raw": "1 small kohlrabi (68 g), thinly sliced, then cut into small pieces (1/2 cup), see note",
       "expected": {
         "item": "kohlrabi, thinly sliced, then cut into small pieces",
         "measurements": [
@@ -366,7 +384,7 @@
       }
     },
     {
-      "raw": "4 cups (960ml) water",
+      "raw": "4 cups (960 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -384,13 +402,17 @@
       }
     },
     {
-      "raw": "3/4 cup (150g) sugar",
+      "raw": "3/4 cup granulated sugar (5.25 ounces; 150 g)",
       "expected": {
-        "item": "sugar",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "5.25",
+            "unit": "oz"
           },
           {
             "amount": "150",
@@ -402,7 +424,7 @@
       }
     },
     {
-      "raw": "1/2 cup (120ml) fish sauce (see note)",
+      "raw": "1/2 cup (120 ml) fish sauce (see note)",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -420,7 +442,7 @@
       }
     },
     {
-      "raw": "8 ounces (227g) uncooked rice vermicelli noodles (see note)",
+      "raw": "8 ounces (227 g) uncooked rice vermicelli noodles (see note)",
       "expected": {
         "item": "uncooked rice vermicelli noodles",
         "measurements": [
@@ -522,7 +544,7 @@
       }
     },
     {
-      "raw": "8 cloves (50g) garlic, chopped (1/4 cup)",
+      "raw": "8 cloves (40 g) garlic, chopped (about 1/4 cup)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -531,7 +553,7 @@
             "unit": "clove"
           },
           {
-            "amount": "50",
+            "amount": "40",
             "unit": "g"
           },
           {
@@ -539,7 +561,7 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped",
+        "note": "about 1/4 cup, chopped",
         "category": "Produce"
       }
     },

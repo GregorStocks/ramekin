@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic, (minced)",
+      "raw": "2 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,16 +87,16 @@
       }
     },
     {
-      "raw": "1 slice white or whole wheat sandwich bread, (crusts removed and torn into ¼-inch (6-mm) pieces)",
+      "raw": "1 slice white or whole wheat sandwich bread, crusts removed and torn into ¼-inch (6-mm) pieces",
       "expected": {
-        "item": "white or whole wheat sandwich bread",
+        "item": "white or whole wheat sandwich bread, crusts removed and torn into 1/4-inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "slice"
           }
         ],
-        "note": "crusts removed and torn into 1/4-inch (6-mm) pieces",
+        "note": "6-mm",
         "category": "Bakery & Bread"
       }
     },
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "½ cup chopped scallions, (from 4 to 5 scallions)",
+      "raw": "½ cup chopped scallions, from 4 to 5 scallions",
       "expected": {
         "item": "chopped scallions",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "5  hamburger buns",
+      "raw": "5 hamburger buns",
       "expected": {
         "item": "hamburger buns",
         "measurements": [
@@ -143,30 +143,30 @@
       }
     },
     {
-      "raw": "Lettuce leaves, (for serving (optional))",
+      "raw": "Lettuce leaves, for serving (optional)",
       "expected": {
         "item": "Lettuce leaves",
         "measurements": [],
-        "note": "for serving (optional)",
+        "note": "optional, for serving",
         "category": "Produce"
       }
     },
     {
-      "raw": "¾ cup mayonnaise, (best quality such as Hellmann's or Duke's)",
+      "raw": "¾ cup mayonnaise, best quality such as Hellmann's or Duke's",
       "expected": {
-        "item": "mayonnaise",
+        "item": "mayonnaise, best quality",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "best quality such as Hellmann's or Duke's",
+        "note": "such as Hellmann's or Duke's",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "¼ cup Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets))",
+      "raw": "¼ cup Asian chili sauce, such as Sambal Oelek (available in Asian aisle of most supermarkets)",
       "expected": {
         "item": "Asian chili sauce",
         "measurements": [
@@ -175,7 +175,7 @@
             "unit": "cup"
           }
         ],
-        "note": "such as Sambal Oelek (available in Asian aisle of most supermarkets)",
+        "note": "available in Asian aisle of most supermarkets, such as Sambal Oelek",
         "category": "Other"
       }
     },

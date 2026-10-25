@@ -3,7 +3,7 @@
   "recipe_slug": "carrot-cake-recipe",
   "ingredients": [
     {
-      "raw": "2 cups (250g) all-purpose flour",
+      "raw": "2 cups   (250g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon kosher or sea salt",
+      "raw": "1/2 teaspoon   kosher or sea salt",
       "expected": {
         "item": "kosher or sea salt",
         "measurements": [
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "1 teaspoon baking powder",
+      "raw": "1 teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "1 teaspoon baking soda",
+      "raw": "1 teaspoon   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1 teaspoon ground cinnamon",
+      "raw": "1 teaspoon   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon ground nutmeg ((or 1/2 teaspoon freshly grated nutmeg))",
+      "raw": "1/4 teaspoon   ground nutmeg (or 1/2 teaspoon freshly grated nutmeg)",
       "expected": {
         "item": "ground nutmeg",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon ground ginger",
+      "raw": "1/4 teaspoon   ground ginger",
       "expected": {
         "item": "ground ginger",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1 cup (200g) sugar",
+      "raw": "1 cup   (200g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -123,7 +123,7 @@
       }
     },
     {
-      "raw": "1 cup (220g) brown sugar",
+      "raw": "1 cup   (220g) brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -141,7 +141,7 @@
       }
     },
     {
-      "raw": "1 1/4 cups (300ml) vegetable oil",
+      "raw": "1 1/4 cups   (300ml) vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -159,7 +159,7 @@
       }
     },
     {
-      "raw": "4 large eggs",
+      "raw": "4 large   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -173,7 +173,7 @@
       }
     },
     {
-      "raw": "2 cups (480ml) grated carrots (, about 2-3 large carrots worth)",
+      "raw": "2 cups   (480ml) grated carrots , about 2-3 large carrots worth",
       "expected": {
         "item": "grated carrots",
         "measurements": [
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "1/2 cup (1 stick or 113g) unsalted butter (, softened)",
+      "raw": "1/2 cup   (1 stick or 113g) unsalted butter , softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "8 ounces (225g) cream cheese ((1 package), softened)",
+      "raw": "8 ounces   (225g) cream cheese (1 package), softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -235,7 +235,7 @@
       }
     },
     {
-      "raw": "2 cups (240g) confectioners sugar ((1/2 pound))",
+      "raw": "2 cups   (240g) confectioners sugar (1/2 pound)",
       "expected": {
         "item": "confectioners sugar",
         "measurements": [
@@ -257,7 +257,7 @@
       }
     },
     {
-      "raw": "2 teaspoons vanilla extract",
+      "raw": "2 teaspoons   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -271,16 +271,16 @@
       }
     },
     {
-      "raw": "2 Tablespoons to 1/2 cup milk (, optional if you want a drizzle-able frosting)",
+      "raw": "2 Tablespoons to 1/2 cup   milk , optional if you want a drizzle-able frosting",
       "expected": {
-        "item": "milk",
+        "item": "milk, optional if you want a drizzle-able frosting",
         "measurements": [
           {
             "amount": "2 tablespoons to 1/2 cup",
             "unit": null
           }
         ],
-        "note": "optional if you want a drizzle-able frosting",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

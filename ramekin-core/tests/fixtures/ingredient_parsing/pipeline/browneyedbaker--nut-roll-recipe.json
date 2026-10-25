@@ -3,7 +3,7 @@
   "recipe_slug": "nut-roll-recipe",
   "ingredients": [
     {
-      "raw": "1 teaspoon sugar",
+      "raw": "1 teaspoon   sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -17,13 +17,17 @@
       }
     },
     {
-      "raw": "½ cup warm water",
+      "raw": "½ cup  (125 ml) warm water",
       "expected": {
         "item": "warm water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -31,13 +35,17 @@
       }
     },
     {
-      "raw": "2 ounces cake yeast or 3 packets (6¾ teaspoons) active dry yeast",
+      "raw": "2 ounces  (56.7 g) cake yeast or 3 packets (6¾ teaspoons) active dry yeast",
       "expected": {
         "item": "cake yeast",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
+          },
+          {
+            "amount": "56.7",
+            "unit": "g"
           },
           {
             "amount": "6.75",
@@ -49,7 +57,7 @@
       }
     },
     {
-      "raw": "6  eggs",
+      "raw": "6   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -63,13 +71,17 @@
       }
     },
     {
-      "raw": "16 ounces sour cream",
+      "raw": "16 ounces  (453.59 ml) sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [
           {
             "amount": "16",
             "unit": "oz"
+          },
+          {
+            "amount": "453.59",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -77,13 +89,17 @@
       }
     },
     {
-      "raw": "2 cups unsalted butter, melted and cooled",
+      "raw": "2 cups  (454 g) unsalted butter, melted and cooled",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": "melted and cooled",
@@ -91,13 +107,17 @@
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  (200 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -105,7 +125,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -119,10 +139,14 @@
       }
     },
     {
-      "raw": "½ teaspoon salt",
+      "raw": "½ teaspoon  (0.5 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
           {
             "amount": "0.5",
             "unit": "tsp"
@@ -133,13 +157,17 @@
       }
     },
     {
-      "raw": "9 to 10 cups grams all-purpose flour",
+      "raw": "9 to 10 cups  (1.13 kg) grams all-purpose flour",
       "expected": {
         "item": "grams all-purpose flour",
         "measurements": [
           {
             "amount": "9 to 10",
             "unit": "cup"
+          },
+          {
+            "amount": "1.13",
+            "unit": "kg"
           }
         ],
         "note": null,
@@ -147,13 +175,17 @@
       }
     },
     {
-      "raw": "3 pounds walnuts (finely ground)",
+      "raw": "3 pounds  (1.36 kg) walnuts, finely ground",
       "expected": {
         "item": "walnuts",
         "measurements": [
           {
             "amount": "3",
             "unit": "lb"
+          },
+          {
+            "amount": "1.36",
+            "unit": "kg"
           }
         ],
         "note": "finely ground",
@@ -161,13 +193,17 @@
       }
     },
     {
-      "raw": "3 cups granulated sugar",
+      "raw": "3 cups  (600 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "600",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -175,13 +211,17 @@
       }
     },
     {
-      "raw": "¾ cup unsalted butter, melted and cooled",
+      "raw": "¾ cup  (170.25 g) unsalted butter, melted and cooled",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "170.25",
+            "unit": "g"
           }
         ],
         "note": "melted and cooled",
@@ -189,13 +229,17 @@
       }
     },
     {
-      "raw": "¾ cup evaporated milk",
+      "raw": "¾ cup  (192 ml) evaporated milk",
       "expected": {
         "item": "evaporated milk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "192",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -203,13 +247,17 @@
       }
     },
     {
-      "raw": "½ cup whole milk",
+      "raw": "½ cup  (122 ml) whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -217,10 +265,14 @@
       }
     },
     {
-      "raw": "½ teaspoon vanilla extract",
+      "raw": "½ teaspoon  (0.5 teaspoon) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
           {
             "amount": "0.5",
             "unit": "tsp"

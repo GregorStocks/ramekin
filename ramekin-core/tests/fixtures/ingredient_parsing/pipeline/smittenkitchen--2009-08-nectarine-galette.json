@@ -3,10 +3,6 @@
   "recipe_slug": "2009-08-nectarine-galette",
   "ingredients": [
     {
-      "raw": "Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup unbleached all-purpose flour",
       "expected": {
         "item": "unbleached all-purpose flour",
@@ -17,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -70,13 +63,8 @@
           }
         ],
         "note": "chilled, cut into 1/2-inch pieces",
-        "section": "Crust",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "1 tablespoon ground almonds",
@@ -89,7 +77,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -104,7 +91,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -119,7 +105,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -134,7 +119,6 @@
           }
         ],
         "note": "pulverized - or - 1 extra tablespoon ground almonds, plus an extra teaspoon sugar",
-        "section": "Filling",
         "category": "Snacks"
       }
     },
@@ -149,7 +133,6 @@
           }
         ],
         "note": "rolled into a 14-inch circle and chilled",
-        "section": "Filling",
         "category": "Other"
       }
     },
@@ -168,7 +151,6 @@
           }
         ],
         "note": "about 4 large",
-        "section": "Filling",
         "category": "Other"
       }
     },
@@ -183,7 +165,6 @@
           }
         ],
         "note": "melted",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -198,7 +179,6 @@
           }
         ],
         "note": "optional",
-        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -208,7 +188,6 @@
         "item": "Peach or nectarine jam",
         "measurements": [],
         "note": "optional",
-        "section": "Filling",
         "category": "Produce"
       }
     }

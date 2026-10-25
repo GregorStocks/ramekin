@@ -96,6 +96,35 @@
       "expanded": true
     },
     {
+      "raw": "1/4 teaspoon each salt and pepper*",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon each salt and pepper*",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
       "raw": "1 cup (4 ounces / 90g) shredded or crumbled cheese such as feta, cheddar, goat cheese, or gruyere",
       "expected": {
         "item": "shredded or crumbled cheese",
@@ -127,7 +156,7 @@
       }
     },
     {
-      "raw": "optional toppings for serving: extra cheese, chopped herbs, hollandaise sauce, &amp;amp; freshly ground pepper to taste",
+      "raw": "optional toppings for serving: extra cheese, chopped herbs, hollandaise sauce, & freshly ground pepper to taste",
       "expected": {
         "item": "optional toppings for serving: extra cheese, chopped herbs, hollandaise sauce",
         "measurements": [],

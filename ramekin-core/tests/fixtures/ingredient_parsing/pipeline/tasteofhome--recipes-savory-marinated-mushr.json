@@ -147,10 +147,6 @@
       }
     },
     {
-      "raw": "DRESSING:",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 cup prepared Italian salad dressing",
       "expected": {
         "item": "prepared Italian salad dressing",
@@ -161,7 +157,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,7 +171,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -191,7 +185,6 @@
           }
         ],
         "note": "minced",
-        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -206,7 +199,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,7 +213,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

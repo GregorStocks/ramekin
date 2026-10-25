@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  roma tomatoes (sliced)",
+      "raw": "2 roma tomatoes, sliced",
       "expected": {
         "item": "roma tomatoes",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "½  red onion (thinly sliced)",
+      "raw": "½ red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "⅓ cup shaved or freshly grated parmesan (more to taste)",
+      "raw": "⅓ cup shaved or freshly grated parmesan, more to taste",
       "expected": {
         "item": "shaved or freshly grated parmesan",
         "measurements": [
@@ -222,7 +222,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon herbs de Provence (optional)",
+      "raw": "1/2 teaspoon herbs de Provence, optional",
       "expected": {
         "item": "herbs de Provence",
         "measurements": [
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "½ teaspoon salt (or to taste)",
+      "raw": "½ teaspoon salt, or to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -250,7 +250,7 @@
       }
     },
     {
-      "raw": "cracked black pepper (to taste)",
+      "raw": "cracked black pepper, to taste",
       "expected": {
         "item": "cracked black pepper",
         "measurements": [],

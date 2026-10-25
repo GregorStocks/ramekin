@@ -55,6 +55,35 @@
       "expanded": true
     },
     {
+      "raw": "zest and juice of 1/4 lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "zest and juice of 1/4 lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
       "raw": "2 sole fillets, skinned",
       "expected": {
         "item": "sole fillets, skinned",

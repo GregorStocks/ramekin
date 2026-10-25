@@ -3,7 +3,7 @@
   "recipe_slug": "canederli-di-pane-italian-brea",
   "ingredients": [
     {
-      "raw": "3 cups (250 g) breadcrumbs from very stale bread or 5 cups (250 g) diced day-old bread, plus additional breadcrumbs if needed (see notes)",
+      "raw": "3 cups (250 g) breadcrumbs from very stale bread or 5 cups (250 g) diced day-old bread (see notes)",
       "expected": {
         "item": "breadcrumbs from very stale bread",
         "measurements": [
@@ -20,12 +20,12 @@
             "unit": "g"
           }
         ],
-        "note": "or 5 cups diced day-old bread (see notes); plus additional breadcrumbs if needed",
+        "note": "or 5 cups diced day-old bread (see notes)",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup (237 ml) milk, plus more if needed",
+      "raw": "1 cup (237 ml) milk, plus more as needed",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -38,7 +38,7 @@
             "unit": "ml"
           }
         ],
-        "note": "plus more if needed",
+        "note": "plus more as needed",
         "category": "Dairy & Eggs"
       }
     },
@@ -87,9 +87,9 @@
       }
     },
     {
-      "raw": "1/4 pound (113 g) minced speck or sweet Italian sausage (about 1 large link), casing removed",
+      "raw": "1/4 pound (113 g) minced Speck or sweet Italian sausage (about 1 large link), casing removed",
       "expected": {
-        "item": "minced speck or sweet Italian sausage",
+        "item": "minced Speck or sweet Italian sausage",
         "measurements": [
           {
             "amount": "0.25",
@@ -169,15 +169,10 @@
       }
     },
     {
-      "raw": "1/4 teaspoon freshly ground black pepper",
+      "raw": "Freshly ground black pepper",
       "expected": {
-        "item": "freshly ground black pepper",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
+        "item": "Freshly ground black pepper",
+        "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
       }
@@ -197,16 +192,16 @@
       }
     },
     {
-      "raw": "2 quarts (2 L) rich homemade chicken stock or broth",
+      "raw": "3 quarts (3 L) rich homemade chicken stock or broth",
       "expected": {
         "item": "rich homemade chicken stock or broth",
         "measurements": [
           {
-            "amount": "2",
+            "amount": "3",
             "unit": "quart"
           },
           {
-            "amount": "2",
+            "amount": "3",
             "unit": "l"
           }
         ],

@@ -63,10 +63,6 @@
       }
     },
     {
-      "raw": "DRESSING:",
-      "is_section_header": true
-    },
-    {
       "raw": "1/4 cup vegetable oil",
       "expected": {
         "item": "vegetable oil",
@@ -77,7 +73,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,7 +87,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -107,7 +101,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -122,7 +115,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -137,7 +129,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

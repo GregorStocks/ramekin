@@ -87,17 +87,17 @@
       }
     },
     {
-      "raw": "¼ cup butter (melted and semi-cooled)",
+      "raw": "¼ cup butter melted and semi-cooled",
       "expected": {
-        "item": "butter",
+        "item": "butter melted and semi-cooled",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "melted and semi-cooled",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1¼ cups butter (melted)",
+      "raw": "1¼ cups butter melted",
       "expected": {
         "item": "butter",
         "measurements": [

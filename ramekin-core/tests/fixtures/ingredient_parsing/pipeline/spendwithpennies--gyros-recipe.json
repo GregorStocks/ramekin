@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2  Roma tomatoes (sliced)",
+      "raw": "2 Roma tomatoes sliced",
       "expected": {
         "item": "Roma tomatoes",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "¼  red onion (sliced)",
+      "raw": "¼ red onion sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "¼  onion (grated on small holes)",
+      "raw": "¼ onion grated on small holes",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "1 clove garlic (minced)",
+      "raw": "1 clove garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -180,17 +180,17 @@
       }
     },
     {
-      "raw": "1 teaspoon olive oil (for cooking)",
+      "raw": "1 teaspoon olive oil for cooking",
       "expected": {
-        "item": "olive oil",
+        "item": "olive oil for cooking",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "for cooking",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

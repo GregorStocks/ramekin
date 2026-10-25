@@ -3,27 +3,39 @@
   "recipe_slug": "law-bok-gow-chinese-turnip-cak",
   "ingredients": [
     {
-      "raw": "2 ounces dried shiitake mushrooms (about 10 mushrooms)",
+      "raw": "2 ounces dried shiitake mushrooms (58g; 1 3/4 cup), about 10 to 15 mushrooms",
       "expected": {
         "item": "dried shiitake mushrooms",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
+          },
+          {
+            "amount": "58",
+            "unit": "g"
+          },
+          {
+            "amount": "1.75",
+            "unit": "cup"
           }
         ],
-        "note": "about 10 mushrooms",
+        "note": "about 10 to 15 mushrooms",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 pounds daikon radish, peeled and finely grated on a box grater",
+      "raw": "3 pounds (1.3kg) daikon radish, peeled and finely grated on a box grater",
       "expected": {
         "item": "daikon radish",
         "measurements": [
           {
             "amount": "3",
             "unit": "lb"
+          },
+          {
+            "amount": "1.3",
+            "unit": "kg"
           }
         ],
         "note": "peeled and finely grated on a box grater",
@@ -45,55 +57,83 @@
       }
     },
     {
-      "raw": "5 ounces Chinese bacon ( lap yuk ), diced (see note)",
+      "raw": "3 ounces Chinese bacon (85g; 2/3 cup), such as lap yuk, diced, see note",
       "expected": {
         "item": "Chinese bacon",
         "measurements": [
           {
-            "amount": "5",
+            "amount": "3",
             "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          },
+          {
+            "amount": "0.67",
+            "unit": "cup"
           }
         ],
-        "note": "lap yuk, see note, diced",
+        "note": "such as lap yuk, diced, see note",
         "category": "Other"
       }
     },
     {
-      "raw": "2 Chinese sausage, diced (see note)",
+      "raw": "2 Chinese sausages (3 1/4 ounces; 100g), such as lap cheong, diced, see note",
       "expected": {
-        "item": "Chinese sausage",
+        "item": "Chinese sausages",
         "measurements": [
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": "3.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
-        "note": "see note, diced",
+        "note": "such as lap cheong, diced, see note",
         "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup small dried shrimp, rinsed and patted dry (see note)",
+      "raw": "1/4 cup small dried shrimp (1 ounce; 28g), rinsed and patted dry, see note",
       "expected": {
         "item": "small dried shrimp",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": "see note, rinsed and patted dry",
+        "note": "rinsed and patted dry, see note",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tablespoon soy sauce",
+      "raw": "1 tablespoon (15ml) soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -101,13 +141,21 @@
       }
     },
     {
-      "raw": "8 ounces rice flour",
+      "raw": "8 ounces rice flour (227g; 2 1/4 cups)",
       "expected": {
         "item": "rice flour",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          },
+          {
+            "amount": "2.25",
+            "unit": "cup"
           }
         ],
         "note": null,
@@ -124,30 +172,37 @@
       }
     },
     {
-      "raw": "2 scallions, white and light green parts only, chopped",
+      "raw": "2 scallions (1 ounce; 30g), white and light green parts only, chopped (about 1/4 cup)",
       "expected": {
         "item": "scallions, white and light green parts only",
         "measurements": [
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
-        "note": "chopped",
+        "note": "about 1/4 cup, chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 bunch cilantro, leaves and tender stems only, chopped",
+      "raw": "Chopped fresh cilantro, for garnish",
       "expected": {
-        "item": "cilantro, leaves and tender stems only",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "bunch"
-          }
-        ],
-        "note": "chopped",
+        "item": "Chopped fresh cilantro",
+        "measurements": [],
+        "note": "for garnish",
         "category": "Produce"
       }
     },

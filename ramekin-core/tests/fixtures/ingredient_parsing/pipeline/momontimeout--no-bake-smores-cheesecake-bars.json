@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "24 oz cream cheese (softened)",
+      "raw": "24 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "9.3 oz milk chocolate bars (6 - 1.55 oz bars)",
+      "raw": "9.3 oz milk chocolate bars 6 - 1.55 oz bars",
       "expected": {
-        "item": "milk chocolate bars",
+        "item": "milk chocolate bars 6 - 1.55 oz bars",
         "measurements": [
           {
             "amount": "9.3",
             "unit": "oz"
           }
         ],
-        "note": "6 - 1.55 oz bars",
-        "category": "Snacks"
+        "note": null,
+        "category": "Other"
       }
     },
     {

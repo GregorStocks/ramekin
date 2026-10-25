@@ -157,10 +157,6 @@
       }
     },
     {
-      "raw": "TOPPING:",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup packed brown sugar",
       "expected": {
         "item": "brown sugar",
@@ -171,7 +167,6 @@
           }
         ],
         "note": "packed",
-        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -186,7 +181,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,7 +195,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -216,7 +209,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

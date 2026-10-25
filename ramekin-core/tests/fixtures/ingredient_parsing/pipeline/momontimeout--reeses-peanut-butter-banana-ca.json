@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/2 tsp ground cinnamon (optional)",
+      "raw": "1/2 tsp ground cinnamon optional",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 cup butter (softened)",
+      "raw": "1/2 cup butter softened",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -101,17 +101,17 @@
       }
     },
     {
-      "raw": "2  eggs (room temperature)",
+      "raw": "2 eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "3  ripe bananas (mashed)",
+      "raw": "3 ripe bananas mashed",
       "expected": {
         "item": "ripe bananas",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "20  miniature Reese's peanut butter cups (coarsely chopped)",
+      "raw": "20 miniature Reese's peanut butter cups coarsely chopped",
       "expected": {
         "item": "miniature Reese's peanut butter cups",
         "measurements": [

@@ -3,21 +3,21 @@
   "recipe_slug": "soft-pretzel-recipe",
   "ingredients": [
     {
-      "raw": "1 1/2 cups warm water (100-110 degrees F)",
+      "raw": "1 ½ cups warm water 100-110 degrees F",
       "expected": {
-        "item": "warm water",
+        "item": "warm water 100-110 degrees F",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "100-110 degrees F",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 packet active dry yeast  ((1/4 ounce or 2 1/4 teaspoons))",
+      "raw": "1 packet active dry yeast  (1/4 ounce or 2 1/4 teaspoons)",
       "expected": {
         "item": "active dry yeast",
         "measurements": [
@@ -53,7 +53,7 @@
       }
     },
     {
-      "raw": "1/2  teaspoon kosher salt",
+      "raw": "½  teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "2 to 2 3/4 cups white whole wheat flour (divided)",
+      "raw": "2 to 2 ¾ cups white whole wheat flour divided",
       "expected": {
         "item": "white whole wheat flour",
         "measurements": [
@@ -81,7 +81,7 @@
       }
     },
     {
-      "raw": "1 cup all-purpose flour (divided)",
+      "raw": "1 cup all-purpose flour divided",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -95,21 +95,21 @@
       }
     },
     {
-      "raw": "1  large egg (room temperature)",
+      "raw": "1 large egg room temperature",
       "expected": {
-        "item": "egg",
+        "item": "egg room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 1/2 tablespoons unsalted butter (melted)",
+      "raw": "1 ½ tablespoons unsalted butter melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -132,7 +132,7 @@
       }
     },
     {
-      "raw": "Cinnamon Sugar ((I use 1/4 teaspoon cinnamon for each tablespoon sugar))",
+      "raw": "Cinnamon Sugar (I use 1/4 teaspoon cinnamon for each tablespoon sugar)",
       "expected": {
         "item": "Cinnamon Sugar",
         "measurements": [],

@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "1 tbsp katakuriko potato starch  (*1)",
+      "raw": "1 tbsp katakuriko potato starch  *1",
       "expected": {
-        "item": "katakuriko potato starch",
+        "item": "katakuriko potato starch *1",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "*1",
+        "note": null,
         "category": "Other"
       }
     },
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -110,6 +110,15 @@
       }
     },
     {
+      "raw": "Sandwich (apart from above ebi katsu):",
+      "expected": {
+        "item": "Sandwich :",
+        "measurements": [],
+        "note": "apart from above ebi katsu",
+        "category": "Frozen"
+      }
+    },
+    {
       "raw": "60 g cabbage",
       "expected": {
         "item": "cabbage",
@@ -124,16 +133,16 @@
       }
     },
     {
-      "raw": "4 slices white toast bread  (*2)",
+      "raw": "4 slices white toast bread  *2",
       "expected": {
-        "item": "white toast bread",
+        "item": "white toast bread *2",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": "*2",
+        "note": null,
         "category": "Other"
       }
     },
@@ -152,17 +161,17 @@
       }
     },
     {
-      "raw": "4 tbsp tartar sauce (*3)",
+      "raw": "4 tbsp tartar sauce *3",
       "expected": {
-        "item": "tartar sauce",
+        "item": "tartar sauce *3",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "*3",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

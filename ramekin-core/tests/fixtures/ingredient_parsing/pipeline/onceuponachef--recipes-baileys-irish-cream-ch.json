@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-baileys-irish-cream-ch",
   "ingredients": [
     {
-      "raw": "8 ounces cream cheese, (preferably Philadelphia brand)",
+      "raw": "8 ounces cream cheese, preferably Philadelphia brand",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  large egg yolk",
+      "raw": "1 large egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "4 ounces bittersweet or semisweet chocolate, (finely chopped)",
+      "raw": "4 ounces bittersweet or semisweet chocolate, finely chopped",
       "expected": {
         "item": "bittersweet or semisweet chocolate",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -199,16 +199,16 @@
       }
     },
     {
-      "raw": "¾ cup all-purpose flour, (spooned into measuring cup and leveled-off with a knife)",
+      "raw": "¾ cup all-purpose flour, spooned into measuring cup and leveled-off with a knife",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour, spooned into measuring cup and leveled-off with a knife",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "spooned into measuring cup and leveled-off with a knife",
+        "note": null,
         "category": "Baking"
       }
     },

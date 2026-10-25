@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "3/4 cup shredded coconut (divided)",
+      "raw": "3/4 cup shredded coconut, divided",
       "expected": {
         "item": "shredded coconut",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "10  Medjool dates (pitted)",
+      "raw": "10 Medjool dates, pitted",
       "expected": {
         "item": "Medjool dates",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "3 1/2 cups raw cashews (soaked overnight)",
+      "raw": "3 1/2 cups raw cashews, soaked overnight",
       "expected": {
-        "item": "raw cashews",
+        "item": "raw cashews, soaked overnight",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": "soaked overnight",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -101,16 +101,16 @@
       }
     },
     {
-      "raw": "3/4 cup raw honey (or maple for vegan)",
+      "raw": "3/4 cup raw honey, or maple for vegan",
       "expected": {
-        "item": "raw honey",
+        "item": "raw honey, or maple for vegan",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "or maple for vegan",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1  vanilla bean (scraped)",
+      "raw": "1 vanilla bean, scraped",
       "expected": {
         "item": "vanilla bean",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1  mango (peeled and sliced)",
+      "raw": "1 mango, peeled and sliced",
       "expected": {
         "item": "mango",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "Coconut flakes (for garnish)",
+      "raw": "Coconut flakes, for garnish",
       "expected": {
         "item": "Coconut flakes",
         "measurements": [],

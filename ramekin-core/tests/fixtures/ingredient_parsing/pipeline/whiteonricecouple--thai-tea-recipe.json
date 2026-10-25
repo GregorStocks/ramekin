@@ -3,13 +3,17 @@
   "recipe_slug": "thai-tea-recipe",
   "ingredients": [
     {
-      "raw": "1 cup Thai Tea Mix",
+      "raw": "1 cup  (80 g) Thai Tea Mix",
       "expected": {
         "item": "Thai Tea Mix",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "4 cups water",
+      "raw": "4 cups  (960 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "960",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "3/4 cup granulated sugar",
+      "raw": "3/4 cup  (150 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,13 +57,17 @@
       }
     },
     {
-      "raw": "3/4 cup half and half ((approximately), (some folks also use coconut milk, whole milk, sweetened condensed milk))",
+      "raw": "3/4 cup  (180 ml) half and half (approximately), (some folks also use coconut milk, whole milk, sweetened condensed milk)",
       "expected": {
         "item": "half and half",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
           }
         ],
         "note": "approximately, some folks also use coconut milk, whole milk, sweetened condensed milk",
@@ -68,13 +84,17 @@
       }
     },
     {
-      "raw": "4 cups water",
+      "raw": "4 cups  (960 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "960",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -82,7 +102,7 @@
       }
     },
     {
-      "raw": "4  organic black tea bags",
+      "raw": "4   organic black tea bags",
       "expected": {
         "item": "organic black tea bags",
         "measurements": [
@@ -96,13 +116,17 @@
       }
     },
     {
-      "raw": "3/4 cup granulated sugar",
+      "raw": "3/4 cup  (150 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -110,7 +134,7 @@
       }
     },
     {
-      "raw": "2  anise stars",
+      "raw": "2   anise stars",
       "expected": {
         "item": "anise stars",
         "measurements": [
@@ -124,7 +148,7 @@
       }
     },
     {
-      "raw": "1  green cardamom pod (, smashed)",
+      "raw": "1   green cardamom pod , smashed",
       "expected": {
         "item": "green cardamom pod",
         "measurements": [
@@ -138,7 +162,7 @@
       }
     },
     {
-      "raw": "2  whole cloves",
+      "raw": "2   whole cloves",
       "expected": {
         "item": "whole cloves",
         "measurements": [
@@ -152,13 +176,17 @@
       }
     },
     {
-      "raw": "3/4 cup half and half  ((approximately), (some folks also use coconut milk, whole milk, sweetened condensed milk))",
+      "raw": "3/4 cup  (180 ml) half and half  (approximately), (some folks also use coconut milk, whole milk, sweetened condensed milk)",
       "expected": {
         "item": "half and half",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
           }
         ],
         "note": "approximately, some folks also use coconut milk, whole milk, sweetened condensed milk",

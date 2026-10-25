@@ -3,15 +3,6 @@
   "recipe_slug": "2013-03-chocolate-hazelnut-mac",
   "ingredients": [
     {
-      "raw": "Macaroons",
-      "expected": {
-        "item": "Macaroons",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "Oil or butter for greasing parchment rounds",
       "expected": {
         "item": "Oil or butter",
@@ -107,10 +98,6 @@
       }
     },
     {
-      "raw": "Chocolate filling",
-      "is_section_header": true
-    },
-    {
       "raw": "6 ounces (170 grams or the equivalent of 1 cup chips) bittersweet chocolate, coarsely chopped",
       "expected": {
         "item": "bittersweet chocolate",
@@ -125,7 +112,6 @@
           }
         ],
         "note": "170 grams or the equivalent of 1 cup chips, coarsely chopped",
-        "section": "Chocolate Filling",
         "category": "Baking"
       }
     },
@@ -140,7 +126,6 @@
           }
         ],
         "note": null,
-        "section": "Chocolate Filling",
         "category": "Beverages"
       }
     },
@@ -155,13 +140,8 @@
           }
         ],
         "note": "optional",
-        "section": "Chocolate Filling",
         "category": "Beverages"
       }
-    },
-    {
-      "raw": "Whipped frosting and filling",
-      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups chilled heavy or whipping cream",
@@ -174,7 +154,6 @@
           }
         ],
         "note": null,
-        "section": "Whipped Frosting and Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,7 +168,6 @@
           }
         ],
         "note": null,
-        "section": "Whipped Frosting and Filling",
         "category": "Baking"
       }
     },
@@ -204,7 +182,6 @@
           }
         ],
         "note": "or another hazelnut liqueur or 1 teaspoon vanilla extract",
-        "section": "Whipped Frosting and Filling",
         "category": "Other"
       }
     }

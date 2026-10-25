@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "1 1/2 (or 2) cups blueberries, frozen or fresh",
+      "raw": "1 1/2 or 2 cups blueberries, frozen or fresh",
       "expected": {
         "item": "blueberries",
         "measurements": [
           {
-            "amount": "1.5",
+            "amount": "1.5 or 2",
             "unit": "cup"
           }
         ],
-        "note": "frozen or fresh; or 2",
+        "note": "frozen or fresh",
         "category": "Produce"
       }
     },
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 cups milk (whole or 2%)",
+      "raw": "2 cups milk (whole or 2 percent)",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -54,7 +54,7 @@
             "unit": "cup"
           }
         ],
-        "note": "whole or 2%",
+        "note": "whole or 2 percent",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,9 +101,9 @@
       }
     },
     {
-      "raw": "1 tablespoon lemon zest",
+      "raw": "1 tablespoon finely grated lemon zest",
       "expected": {
-        "item": "lemon zest",
+        "item": "finely grated lemon zest",
         "measurements": [
           {
             "amount": "1",

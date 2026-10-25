@@ -3,13 +3,13 @@
   "recipe_slug": "cherry-upside-down-cake-recipe",
   "ingredients": [
     {
-      "raw": "1/4 cup 4 Tbsp unsalted butter",
+      "raw": "4 Tbsp unsalted butter",
       "expected": {
-        "item": "4 Tbsp unsalted butter",
+        "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "4",
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "1 1/2 cups all-purpose flour (spoon into measuring cup and scrape off the top)",
+      "raw": "1 1/2 cups all-purpose flour, spoon into measuring cup and scrape off the top",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour, spoon into measuring cup and scrape off the top",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "spoon into measuring cup and scrape off the top",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -101,13 +101,13 @@
       }
     },
     {
-      "raw": "1/2 cup 8 Tbsp unsalted butter, softened at room temp",
+      "raw": "8 Tbsp unsalted butter, softened at room temp",
       "expected": {
-        "item": "8 Tbsp unsalted butter",
+        "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "cup"
+            "amount": "8",
+            "unit": "tbsp"
           }
         ],
         "note": "softened at room temp",
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "2  large eggs (separated)",
+      "raw": "2 large eggs, separated",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -143,16 +143,16 @@
       }
     },
     {
-      "raw": "1/2 cup whole milk (luke warm)",
+      "raw": "1/2 cup whole milk, luke warm",
       "expected": {
-        "item": "whole milk",
+        "item": "whole milk, luke warm",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "luke warm",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

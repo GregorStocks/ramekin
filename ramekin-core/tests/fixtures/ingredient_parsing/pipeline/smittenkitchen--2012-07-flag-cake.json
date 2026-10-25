@@ -3,15 +3,6 @@
   "recipe_slug": "2012-07-flag-cake",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "2 sticks (1 cup, 1/2 pound or 225 grams) unsalted butter, softened",
       "expected": {
         "item": "unsalted butter",
@@ -186,10 +177,6 @@
       }
     },
     {
-      "raw": "Frosting",
-      "is_section_header": true
-    },
-    {
       "raw": "8-ounce (225 gram) block cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
@@ -204,7 +191,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -227,7 +213,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -246,7 +231,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -265,13 +249,8 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "Decoration",
-      "is_section_header": true
     },
     {
       "raw": "Powdered sugar",
@@ -279,7 +258,6 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": null,
-        "section": "Decoration",
         "category": "Baking"
       }
     },
@@ -302,7 +280,6 @@
           }
         ],
         "note": null,
-        "section": "Decoration",
         "category": "Produce"
       }
     },
@@ -325,7 +302,6 @@
           }
         ],
         "note": null,
-        "section": "Decoration",
         "category": "Produce"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "raspberry-syrup-recipe",
   "ingredients": [
     {
-      "raw": "2&nbsp;cups&nbsp;fresh or frozen&nbsp;raspberries",
+      "raw": "2 cups fresh or frozen raspberries",
       "expected": {
         "item": "fresh or frozen raspberries",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1&nbsp;cup&nbsp;water",
+      "raw": "1 cup water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "1/4&nbsp;to&nbsp;1/2&nbsp;cup&nbsp;maple syrup,&nbsp;honey, or&nbsp;sugar of choice&nbsp;(cane or coconut sugar both work)",
+      "raw": "1/4 to 1/2 cup maple syrup (honey, or sugar of choice (cane or coconut sugar both work))",
       "expected": {
-        "item": "maple syrup, honey, or sugar of choice",
+        "item": "maple syrup",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "cup"
           }
         ],
-        "note": "cane or coconut sugar both work",
+        "note": "honey, or sugar of choice (cane or coconut sugar both work)",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon&nbsp;vanilla extract",
+      "raw": "1 tablespoon vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [

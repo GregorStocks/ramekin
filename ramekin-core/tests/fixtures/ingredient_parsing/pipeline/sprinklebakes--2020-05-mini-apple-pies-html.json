@@ -81,17 +81,17 @@
       }
     },
     {
-      "raw": "1  egg (slightly beaten)",
+      "raw": "1 egg slightly beaten",
       "expected": {
-        "item": "egg",
+        "item": "egg slightly beaten",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "slightly beaten",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -187,17 +187,17 @@
       }
     },
     {
-      "raw": "5  large (tart, firm apples, thinly sliced (tested with Granny Smith))",
+      "raw": "5 large tart, firm apples, thinly sliced (tested with Granny Smith)",
       "expected": {
-        "item": "tart",
+        "item": "tart, firm apples",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": "firm apples, thinly sliced (tested with Granny Smith)",
-        "category": "Bakery & Bread"
+        "note": "tested with Granny Smith, thinly sliced",
+        "category": "Other"
       }
     },
     {
@@ -215,12 +215,12 @@
       }
     },
     {
-      "raw": "Egg wash (1 egg beaten with 1 tbsp. water)",
+      "raw": "Egg wash 1 egg beaten with 1 tbsp. water",
       "expected": {
-        "item": "Egg wash",
+        "item": "Egg wash 1 egg",
         "measurements": [],
-        "note": "1 egg beaten with 1 tbsp. water",
-        "category": "Dairy & Eggs"
+        "note": "beaten with 1 tbsp. water",
+        "category": "Other"
       }
     },
     {

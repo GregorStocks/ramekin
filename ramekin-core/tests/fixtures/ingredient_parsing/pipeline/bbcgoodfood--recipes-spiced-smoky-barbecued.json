@@ -46,6 +46,35 @@
       "expanded": true
     },
     {
+      "raw": "grated zest and juice of 1  lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "grated",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "grated zest and juice of 1  lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
       "raw": "2 tbsp Kashmiri  spice mix, or good-quality curry powder",
       "expected": {
         "item": "Kashmiri spice mix, or good-quality curry powder",
@@ -100,6 +129,35 @@
         "note": null,
         "category": "Other"
       }
+    },
+    {
+      "raw": "2 large bunches each rosemary and thyme",
+      "expected": {
+        "item": "rosemary",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large bunch"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 large bunches each rosemary and thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large bunch"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "2 large bunches each rosemary and thyme",

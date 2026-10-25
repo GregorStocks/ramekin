@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-lemon-curd-html",
   "ingredients": [
     {
-      "raw": "1½ cups  sugar",
+      "raw": "1½ cups sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 teaspoons lemon zest (from 2 lemons)",
+      "raw": "2 teaspoons lemon zest, (from 2 lemons)",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "½ cup  lemon juice (from 3 lemons)",
+      "raw": "½ cup lemon juice, (from 3 lemons)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "⅛ teaspoon  salt",
+      "raw": "⅛ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -73,17 +73,17 @@
       }
     },
     {
-      "raw": "1 stick (½ cup)  unsalted butter, cut into 8 pieces",
+      "raw": "1/2 cup (1 stick) unsalted butter, cut into 8 pieces",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "stick"
-          },
-          {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
           }
         ],
         "note": "cut into 8 pieces",

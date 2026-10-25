@@ -203,16 +203,20 @@
       }
     },
     {
-      "raw": "2 cups (480) homemade chicken stock or store-bought low-sodium chicken broth",
+      "raw": "2 cups (480 g) homemade chicken stock or store-bought low-sodium chicken broth",
       "expected": {
         "item": "homemade chicken stock or store-bought low-sodium chicken broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "g"
           }
         ],
-        "note": "480",
+        "note": null,
         "category": "Canned Goods"
       }
     },

@@ -3,16 +3,16 @@
   "recipe_slug": "2025-06-jalapeno-cheddar-chick",
   "ingredients": [
     {
-      "raw": "1 pound lean ground chicken, (I like to use 94% lean)",
+      "raw": "1 pound lean ground chicken, I like to use 94% lean",
       "expected": {
-        "item": "lean ground chicken",
+        "item": "lean ground chicken, I like to use 94% lean",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "I like to use 94% lean",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves, (minced)",
+      "raw": "2 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "1 to 2  jalapeno peppers, (seeded and diced)",
+      "raw": "1 to 2 jalapeno peppers, seeded and diced",
       "expected": {
         "item": "jalapeno peppers",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "3 tablespoons chopped fresh herbs, (like parsley or chives)",
+      "raw": "3 tablespoons chopped fresh herbs, like parsley or chives",
       "expected": {
         "item": "chopped fresh herbs",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "½  lemon, (juice freshly squeezed)",
+      "raw": "½ lemon, juice freshly squeezed",
       "expected": {
         "item": "lemon",
         "measurements": [

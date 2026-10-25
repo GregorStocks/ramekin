@@ -3,7 +3,7 @@
   "recipe_slug": "turkey-burger-recipe",
   "ingredients": [
     {
-      "raw": "1 pound Ground turkey (preferably dark meat or between 80-90% lean)",
+      "raw": "1 pound Ground turkey, preferably dark meat or between 80-90% lean",
       "expected": {
         "item": "Ground turkey",
         "measurements": [
@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "1 teaspoon Worcestershire sauce (or soy sauce)",
+      "raw": "1 teaspoon Worcestershire sauce, or soy sauce",
       "expected": {
-        "item": "Worcestershire sauce",
+        "item": "Worcestershire sauce, or soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or soy sauce",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "4  hamburger buns",
+      "raw": "4 hamburger buns",
       "expected": {
         "item": "hamburger buns",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "4  green leaf lettuce leaves",
+      "raw": "4 green leaf lettuce leaves",
       "expected": {
         "item": "green leaf lettuce leaves",
         "measurements": [

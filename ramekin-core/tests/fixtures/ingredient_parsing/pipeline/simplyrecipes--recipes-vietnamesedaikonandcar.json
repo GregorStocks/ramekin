@@ -3,35 +3,39 @@
   "recipe_slug": "recipes-vietnamesedaikonandcar",
   "ingredients": [
     {
-      "raw": "2 pounds carrots (about 5 medium sized carrots), peeled",
+      "raw": "2 pounds carrots (about 5 medium), peeled",
       "expected": {
         "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
+          },
+          {
+            "amount": "5",
+            "unit": "medium"
           }
         ],
-        "note": "about 5 medium sized carrots, peeled",
+        "note": "about 5 medium, peeled",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 pounds of daikon radishes (about 2 large daikon), peeled",
+      "raw": "2 pounds daikon radish, peeled",
       "expected": {
-        "item": "daikon radishes",
+        "item": "daikon radish",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "about 2 large daikon, peeled",
+        "note": "peeled",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup plus 4 teaspoons of sugar",
+      "raw": "1 cup plus 4 teaspoons sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -73,7 +77,7 @@
       }
     },
     {
-      "raw": "2 cups warm water (warm enough to easily dissolve sugar",
+      "raw": "2 cups warm water",
       "expected": {
         "item": "warm water",
         "measurements": [
@@ -82,7 +86,7 @@
             "unit": "cup"
           }
         ],
-        "note": "warm enough to easily dissolve sugar",
+        "note": null,
         "category": "Beverages"
       }
     }

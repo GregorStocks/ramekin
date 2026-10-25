@@ -3,7 +3,7 @@
   "recipe_slug": "2021-02-chocolate-dipped-orang",
   "ingredients": [
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 teaspoon orange peel (finely grated)",
+      "raw": "1 teaspoon orange peel finely grated",
       "expected": {
         "item": "orange peel",
         "measurements": [
@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "1/8 teaspoon salt (fine grain)",
+      "raw": "1/8 teaspoon salt fine grain",
       "expected": {
-        "item": "salt",
+        "item": "salt fine grain",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": "fine grain",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,21 +87,21 @@
       }
     },
     {
-      "raw": "10 tablespoons unsalted butter (melted and cooled slightly)",
+      "raw": "10 tablespoons unsalted butter melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter melted and cooled slightly",
         "measurements": [
           {
             "amount": "10",
             "unit": "tbsp"
           }
         ],
-        "note": "melted and cooled slightly",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup semisweet chocolate chips (chopped)",
+      "raw": "1 cup semisweet chocolate chips chopped",
       "expected": {
         "item": "semisweet chocolate chips",
         "measurements": [
@@ -115,16 +115,16 @@
       }
     },
     {
-      "raw": "2 tablespoons olive oil (or vegetable oil)",
+      "raw": "2 tablespoons olive oil or vegetable oil",
       "expected": {
-        "item": "olive oil",
+        "item": "olive oil or vegetable oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or vegetable oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     }

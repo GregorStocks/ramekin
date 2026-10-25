@@ -91,21 +91,21 @@
       }
     },
     {
-      "raw": "¾ cup mayonnaise, (best quality such as Hellmann's)",
+      "raw": "¾ cup mayonnaise, best quality such as Hellmann's",
       "expected": {
-        "item": "mayonnaise",
+        "item": "mayonnaise, best quality",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "best quality such as Hellmann's",
+        "note": "such as Hellmann's",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 tablespoons lime juice, (from one lime)",
+      "raw": "2 tablespoons lime juice, from one lime",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -119,21 +119,21 @@
       }
     },
     {
-      "raw": "2 to 3  chipotle chiles in adobo sauce, (canned, roughly chopped, plus 1 to 2 teaspoons sauce  (see note below))",
+      "raw": "2 to 3 chipotle chiles in adobo sauce, canned, roughly chopped, plus 1 to 2 teaspoons sauce  (see note below)",
       "expected": {
-        "item": "chipotle chiles in adobo sauce",
+        "item": "chipotle chiles in adobo sauce, canned",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": "canned, roughly chopped, plus 1 to 2 teaspoons sauce  (see note below)",
+        "note": "see note below, roughly chopped, plus 1 to 2 teaspoons sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "1  large clove garlic, (roughly chopped)",
+      "raw": "1 large clove garlic, roughly chopped",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -203,7 +203,7 @@
       }
     },
     {
-      "raw": "1½ pounds skinless cod, (cut into 1-inch (2.5-cm) wide x 4-inch (10-cm) long strips)",
+      "raw": "1½ pounds skinless cod, cut into 1-inch (2.5-cm) wide x 4-inch (10-cm) long strips",
       "expected": {
         "item": "skinless cod",
         "measurements": [
@@ -212,12 +212,12 @@
             "unit": "lb"
           }
         ],
-        "note": "cut into 1-inch (2.5-cm) wide x 4-inch (10-cm) long strips",
+        "note": "2.5-cm, 10-cm, cut into 1-inch wide x 4-inch long strips",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "Vegetable oil, (for frying)",
+      "raw": "Vegetable oil, for frying",
       "expected": {
         "item": "Vegetable oil",
         "measurements": [],
@@ -226,7 +226,7 @@
       }
     },
     {
-      "raw": "12  (6-in/15-cm) soft corn tortillas, warmed",
+      "raw": "12 (6-in/15-cm) soft corn tortillas, warmed",
       "expected": {
         "item": "soft corn tortillas",
         "measurements": [
@@ -240,7 +240,7 @@
       }
     },
     {
-      "raw": "Lime wedges, (for serving)",
+      "raw": "Lime wedges, for serving",
       "expected": {
         "item": "Lime wedges",
         "measurements": [],

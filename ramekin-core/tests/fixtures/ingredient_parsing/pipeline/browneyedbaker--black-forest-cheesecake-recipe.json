@@ -3,7 +3,7 @@
   "recipe_slug": "black-forest-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "24  Oreo cookies (whole)",
+      "raw": "24   Oreo cookies, whole",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 tablespoon granulated sugar",
+      "raw": "1 tablespoon   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -31,13 +31,17 @@
       }
     },
     {
-      "raw": "¼ cup unsalted butter (melted)",
+      "raw": "¼ cup  (56.75 g) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "56.75",
+            "unit": "g"
           }
         ],
         "note": "melted",
@@ -45,13 +49,17 @@
       }
     },
     {
-      "raw": "10 ounces bittersweet chocolate (finely chopped)",
+      "raw": "10 ounces  (283.5 g) bittersweet chocolate, finely chopped",
       "expected": {
         "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "10",
             "unit": "oz"
+          },
+          {
+            "amount": "283.5",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
@@ -59,13 +67,17 @@
       }
     },
     {
-      "raw": "32 ounce cream cheese, at room temperature",
+      "raw": "32 ounce  (907.19 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
+          },
+          {
+            "amount": "907.19",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -73,13 +85,17 @@
       }
     },
     {
-      "raw": "1¼ cups + 2 tablespoons granulated sugar",
+      "raw": "1¼ cups  (250 g) + 2 tablespoons granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 1/4 cups plus 2 tablespoons",
             "unit": null
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -87,13 +103,17 @@
       }
     },
     {
-      "raw": "¼ cup unsweetened cocoa powder",
+      "raw": "¼ cup  (21.5 g) unsweetened cocoa powder",
       "expected": {
         "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "21.5",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -101,7 +121,7 @@
       }
     },
     {
-      "raw": "4  eggs (at room temperature)",
+      "raw": "4   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -115,13 +135,17 @@
       }
     },
     {
-      "raw": "24 ounces frozen dark sweet cherries (thawed)",
+      "raw": "24 ounces  (680.39 g) frozen dark sweet cherries, thawed",
       "expected": {
         "item": "frozen dark sweet cherries",
         "measurements": [
           {
             "amount": "24",
             "unit": "oz"
+          },
+          {
+            "amount": "680.39",
+            "unit": "g"
           }
         ],
         "note": "thawed",
@@ -129,13 +153,17 @@
       }
     },
     {
-      "raw": "¼ cup granulated sugar",
+      "raw": "¼ cup  (50 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,7 +171,7 @@
       }
     },
     {
-      "raw": "Pinch of salt",
+      "raw": "Pinch   of salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -157,7 +185,7 @@
       }
     },
     {
-      "raw": "2 tablespoons cornstarch",
+      "raw": "2 tablespoons   cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -171,7 +199,7 @@
       }
     },
     {
-      "raw": "1 tablespoon lemon juice",
+      "raw": "1 tablespoon   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -185,13 +213,17 @@
       }
     },
     {
-      "raw": "4 ounces cream cheese (at room temperature)",
+      "raw": "4 ounces  (113.4 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
+          },
+          {
+            "amount": "113.4",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -199,13 +231,17 @@
       }
     },
     {
-      "raw": "¼ cup granulated sugar",
+      "raw": "¼ cup  (50 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -213,10 +249,14 @@
       }
     },
     {
-      "raw": "¾ teaspoon vanilla extract",
+      "raw": "¾ teaspoon  (0.75 teaspoon) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
           {
             "amount": "0.75",
             "unit": "tsp"
@@ -227,13 +267,17 @@
       }
     },
     {
-      "raw": "1 cup heavy cream",
+      "raw": "1 cup  (238 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "ml"
           }
         ],
         "note": null,

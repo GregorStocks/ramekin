@@ -3,75 +3,6 @@
   "recipe_slug": "2014-10-fall-toush-salad",
   "ingredients": [
     {
-      "raw": "And for the other side of the world&#8230;(trying something new!)",
-      "expected": {
-        "item": "And for the other side of the world…",
-        "measurements": [],
-        "note": "trying something new!",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Asparagus-Stuffed Eggs",
-      "expected": {
-        "item": "Months Ago: Asparagus-Stuffed Eggs",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Bee Sting Cake",
-      "expected": {
-        "item": "Years Ago: Bee Sting Cake",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Pasta with Garlicky Broccoli Rabe",
-      "expected": {
-        "item": "Years Ago: Pasta with Garlicky Broccoli Rabe",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: French Onion Soup",
-      "expected": {
-        "item": "Years Ago: French Onion Soup",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Salad",
-      "is_section_header": true
-    },
-    {
       "raw": "3 tablespoons olive oil, possibly plus another spoonful",
       "expected": {
         "item": "olive oil, possibly",
@@ -82,7 +13,6 @@
           }
         ],
         "note": "plus another spoonful",
-        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,7 +27,6 @@
           }
         ],
         "note": "one medium",
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -112,7 +41,6 @@
           }
         ],
         "note": null,
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -122,7 +50,6 @@
         "item": "Salt and freshly ground black pepper or Aleppo pepper flakes",
         "measurements": [],
         "note": "to taste",
-        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,7 +64,6 @@
           }
         ],
         "note": null,
-        "section": "Salad",
         "category": "Bakery & Bread"
       }
     },
@@ -147,7 +73,6 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
-        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,7 +87,6 @@
           }
         ],
         "note": "thinly sliced",
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -177,7 +101,6 @@
           }
         ],
         "note": "about, finely chopped",
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -192,7 +115,6 @@
           }
         ],
         "note": "about, finely chopped",
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -202,13 +124,8 @@
         "item": "Additional ground sumac or paprika",
         "measurements": [],
         "note": "to finish",
-        "section": "Salad",
         "category": "Spices & Seasonings"
       }
-    },
-    {
-      "raw": "Dressing",
-      "is_section_header": true
     },
     {
       "raw": "2 teaspoons ground sumac or paprika (see Note above)",
@@ -221,7 +138,6 @@
           }
         ],
         "note": "see Note above",
-        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,7 +152,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -251,7 +166,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -266,7 +180,6 @@
           }
         ],
         "note": "minced",
-        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -281,7 +194,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -296,7 +208,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -306,7 +217,6 @@
         "item": "Salt and freshly ground black pepper or Aleppo pepper flakes",
         "measurements": [],
         "note": "to taste",
-        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

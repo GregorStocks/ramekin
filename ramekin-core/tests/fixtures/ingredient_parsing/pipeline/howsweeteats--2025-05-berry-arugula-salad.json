@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "crumbled goat cheese, (for topping)",
+      "raw": "crumbled goat cheese, for topping",
       "expected": {
         "item": "crumbled goat cheese",
         "measurements": [],
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "1  garlic clove, (minced)",
+      "raw": "1 garlic clove, minced",
       "expected": {
         "item": "garlic clove",
         "measurements": [

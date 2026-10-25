@@ -3,13 +3,17 @@
   "recipe_slug": "creole-shrimp-and-grits-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds unpeeled medium-size raw shrimp  ((26/30 count))",
+      "raw": "2 pounds  (907.18 g) unpeeled medium-size raw shrimp , (26/30 count)",
       "expected": {
         "item": "unpeeled medium-size raw shrimp",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
+          },
+          {
+            "amount": "907.18",
+            "unit": "g"
           }
         ],
         "note": "26/30 count",
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "4 cups water",
+      "raw": "4 cups  (1 l) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "l"
           }
         ],
         "note": null,
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "4 tablespoons unsalted butter",
+      "raw": "4 tablespoons   unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -45,13 +53,17 @@
       }
     },
     {
-      "raw": "1/3 cup all-purpose flour",
+      "raw": "⅓ cup  (41.67 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "41.67",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -59,7 +71,7 @@
       }
     },
     {
-      "raw": "1  medium onion (finely chopped)",
+      "raw": "1   medium onion, finely chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -73,7 +85,7 @@
       }
     },
     {
-      "raw": "2  celery ribs (chopped)",
+      "raw": "2   celery ribs, chopped",
       "expected": {
         "item": "celery ribs",
         "measurements": [
@@ -87,7 +99,7 @@
       }
     },
     {
-      "raw": "1  green bell pepper (chopped)",
+      "raw": "1   green bell pepper, chopped",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -101,7 +113,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2   garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -115,10 +127,14 @@
       }
     },
     {
-      "raw": "1½ teaspoons Creole seasoning",
+      "raw": "1½ teaspoons  (1.5 teaspoons) Creole seasoning",
       "expected": {
         "item": "Creole seasoning",
         "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
           {
             "amount": "1.5",
             "unit": "tsp"
@@ -129,7 +145,7 @@
       }
     },
     {
-      "raw": "1 teaspoon lemon juice",
+      "raw": "1 teaspoon   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -143,10 +159,14 @@
       }
     },
     {
-      "raw": "½ teaspoon Worcestershire sauce",
+      "raw": "½ teaspoon  (0.5 teaspoon) Worcestershire sauce",
       "expected": {
         "item": "Worcestershire sauce",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
           {
             "amount": "0.5",
             "unit": "tsp"
@@ -157,13 +177,17 @@
       }
     },
     {
-      "raw": "6 ounces canned tomato paste",
+      "raw": "6 ounces  (170.1 g) canned tomato paste",
       "expected": {
         "item": "canned tomato paste",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
+          },
+          {
+            "amount": "170.1",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -171,7 +195,7 @@
       }
     },
     {
-      "raw": "1  bay leaf",
+      "raw": "1   bay leaf",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -185,13 +209,17 @@
       }
     },
     {
-      "raw": "2½ cups milk",
+      "raw": "2½ cups  (610 ml) milk",
       "expected": {
         "item": "milk",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "610",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -199,13 +227,17 @@
       }
     },
     {
-      "raw": "2½ cups water",
+      "raw": "2½ cups  (625 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "625",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -213,7 +245,7 @@
       }
     },
     {
-      "raw": "1 teaspoon salt",
+      "raw": "1 teaspoon   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -227,13 +259,17 @@
       }
     },
     {
-      "raw": "1½ cups uncooked quick-cooking grits",
+      "raw": "1½ cups  (234 g) uncooked quick-cooking grits",
       "expected": {
         "item": "uncooked quick-cooking grits",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "234",
+            "unit": "g"
           }
         ],
         "note": null,

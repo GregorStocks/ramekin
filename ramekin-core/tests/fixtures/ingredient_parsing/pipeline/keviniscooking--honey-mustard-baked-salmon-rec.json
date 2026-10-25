@@ -3,17 +3,17 @@
   "recipe_slug": "honey-mustard-baked-salmon-rec",
   "ingredients": [
     {
-      "raw": "1.5 lbs fresh salmon filets ( skin on 1&amp;quot; thick (See Note 1))",
+      "raw": "1.5 lbs fresh salmon filets  skin on 1\" thick (See Note 1)",
       "expected": {
-        "item": "fresh salmon filets",
+        "item": "fresh salmon filets skin on 1\" thick",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
           }
         ],
-        "note": "skin on 1\" thick (See Note 1)",
-        "category": "Meat & Seafood"
+        "note": "See Note 1",
+        "category": "Other"
       }
     },
     {
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 tsp horseradish sauce ((See Note 2))",
+      "raw": "1 tsp horseradish sauce (See Note 2)",
       "expected": {
         "item": "horseradish sauce",
         "measurements": [

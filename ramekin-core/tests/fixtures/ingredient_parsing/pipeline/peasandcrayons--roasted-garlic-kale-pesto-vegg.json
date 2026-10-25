@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/3 cup extra virgin olive oil",
+      "raw": "⅓ cup extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2 cup freshly grated parmesan cheese",
+      "raw": "½ cup freshly grated parmesan cheese",
       "expected": {
         "item": "freshly grated parmesan cheese",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/2  head of roasted garlic ((approx. 6 cloves))",
+      "raw": "½ head of roasted garlic (approx. 6 cloves)",
       "expected": {
         "item": "roasted garlic",
         "measurements": [
@@ -119,16 +119,16 @@
       }
     },
     {
-      "raw": "salt (to taste (don't skip, but season to taste))",
+      "raw": "salt to taste (don’t skip, but season to taste)",
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": "to taste (don't skip, but season to taste)",
+        "note": "don’t skip, but season to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "pinch of black pepper (if desired)",
+      "raw": "pinch of black pepper if desired",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "8 oz pasta ((choose one with ridges + grooves))",
+      "raw": "8 oz pasta (choose one with ridges + grooves)",
       "expected": {
         "item": "pasta",
         "measurements": [
@@ -156,7 +156,7 @@
       }
     },
     {
-      "raw": "8 oz mushrooms (sliced)",
+      "raw": "8 oz mushrooms sliced",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -184,17 +184,17 @@
       }
     },
     {
-      "raw": "2-4 oz cheese (I used mozzarella + parmesan)",
+      "raw": "2-4 oz cheese I used mozzarella + parmesan",
       "expected": {
-        "item": "cheese",
+        "item": "cheese I used mozzarella + parmesan",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "oz"
           }
         ],
-        "note": "I used mozzarella + parmesan",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

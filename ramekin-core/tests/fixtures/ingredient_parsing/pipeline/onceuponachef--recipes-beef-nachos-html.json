@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-beef-nachos-html",
   "ingredients": [
     {
-      "raw": "1 tablespoon minced jalapeño peppers, (from 1 pepper (seeded; see note))",
+      "raw": "1 tablespoon minced jalapeño peppers, from 1 pepper (seeded; see note)",
       "expected": {
         "item": "minced jalapeño peppers",
         "measurements": [
@@ -12,26 +12,26 @@
             "unit": "tbsp"
           }
         ],
-        "note": "from 1 pepper (seeded; see note)",
+        "note": "seeded; see note, from 1 pepper",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  scallions, (light and dark green parts, thinly sliced)",
+      "raw": "2 scallions, light and dark green parts, thinly sliced",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, light and dark green parts",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "light and dark green parts, thinly sliced",
+        "note": "thinly sliced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  small clove garlic, (minced)",
+      "raw": "1 small clove garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 tablespoon lime juice, (from 1 lime)",
+      "raw": "1 tablespoon lime juice, from 1 lime",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -87,16 +87,20 @@
       }
     },
     {
-      "raw": "2  small ripe tomatoes, (about ¾ pound (340 g), cored and diced)",
+      "raw": "2 small ripe tomatoes, about ¾ pound (340 g), cored and diced",
       "expected": {
         "item": "ripe tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
-        "note": "about 3/4 pound (340 g), cored and diced",
+        "note": "about 3/4 pound, cored and diced",
         "category": "Produce"
       }
     },
@@ -115,7 +119,7 @@
       }
     },
     {
-      "raw": "1  small yellow onion, (finely chopped)",
+      "raw": "1 small yellow onion, finely chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -129,7 +133,7 @@
       }
     },
     {
-      "raw": "1  large clove garlic, (minced)",
+      "raw": "1 large clove garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -277,7 +281,7 @@
       }
     },
     {
-      "raw": "2  jalapeño peppers, (thinly sliced into rounds (optional))",
+      "raw": "2 jalapeño peppers, thinly sliced into rounds (optional)",
       "expected": {
         "item": "jalapeño peppers",
         "measurements": [
@@ -286,7 +290,7 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced into rounds (optional)",
+        "note": "optional, thinly sliced into rounds",
         "category": "Produce"
       }
     },

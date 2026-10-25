@@ -3,13 +3,17 @@
   "recipe_slug": "asian-pulled-pork-recipe",
   "ingredients": [
     {
-      "raw": "about 4  pounds boneless pork butt or pork shoulder",
+      "raw": "about 4  pounds  (1.8 kg) boneless pork butt or pork shoulder",
       "expected": {
         "item": "boneless pork butt or pork shoulder",
         "measurements": [
           {
             "amount": "4",
             "unit": "lb"
+          },
+          {
+            "amount": "1.8",
+            "unit": "kg"
           }
         ],
         "note": "about",
@@ -17,31 +21,35 @@
       }
     },
     {
-      "raw": "salt (, to season pork)",
+      "raw": "salt , to season pork",
       "expected": {
-        "item": "salt",
+        "item": "salt, to season pork",
         "measurements": [],
-        "note": "to season pork",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "fresh cracked black pepper ( , to season pork)",
+      "raw": "fresh cracked black pepper  , to season pork",
       "expected": {
-        "item": "fresh cracked black pepper",
+        "item": "fresh cracked black pepper, to season pork",
         "measurements": [],
-        "note": "to season pork",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 Tablespoon oil",
+      "raw": "1 Tablespoon  (15 ml) oil",
       "expected": {
         "item": "oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -49,7 +57,7 @@
       }
     },
     {
-      "raw": "1  onion (, diced)",
+      "raw": "1   onion , diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -63,7 +71,7 @@
       }
     },
     {
-      "raw": "5 cloves garlic (, minced)",
+      "raw": "5 cloves   garlic , minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -77,13 +85,17 @@
       }
     },
     {
-      "raw": "8 ounces tomato sauce",
+      "raw": "8 ounces  (227 g) tomato sauce",
       "expected": {
         "item": "tomato sauce",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -91,27 +103,35 @@
       }
     },
     {
-      "raw": "3 Tablespoons fish sauce ( or soy sauce)",
+      "raw": "3 Tablespoons  (45 ml) fish sauce  or soy sauce",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce or soy sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
           }
         ],
-        "note": "or soy sauce",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/4 cup Sriracha hot sauce (or to taste)",
+      "raw": "1/4 cup  (60 g) Sriracha hot sauce or to taste",
       "expected": {
         "item": "Sriracha hot sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -119,13 +139,17 @@
       }
     },
     {
-      "raw": "1/2 cup hoisin",
+      "raw": "1/2 cup  (138 g) hoisin",
       "expected": {
         "item": "hoisin",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "138",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -133,27 +157,35 @@
       }
     },
     {
-      "raw": "1 Tablespoon vinegar (or apple cider vinegar)",
+      "raw": "1 Tablespoon  (15 ml) vinegar or apple cider vinegar",
       "expected": {
-        "item": "vinegar",
+        "item": "vinegar or apple cider vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
-        "note": "or apple cider vinegar",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 Tablespoon brown sugar",
+      "raw": "1 Tablespoon  (12 g) brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -161,13 +193,17 @@
       }
     },
     {
-      "raw": "1 teaspoon black pepper",
+      "raw": "1 teaspoon  (2 g) black pepper",
       "expected": {
         "item": "black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
           }
         ],
         "note": null,

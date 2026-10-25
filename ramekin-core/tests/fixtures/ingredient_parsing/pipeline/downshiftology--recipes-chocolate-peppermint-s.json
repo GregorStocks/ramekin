@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "1/2 cup shredded coconut (unsweetened)",
+      "raw": "1/2 cup shredded coconut, unsweetened",
       "expected": {
-        "item": "shredded coconut",
+        "item": "shredded coconut, unsweetened",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "unsweetened",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "8  Medjool dates (pitted)",
+      "raw": "8 Medjool dates, pitted",
       "expected": {
         "item": "Medjool dates",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2 tbsp coconut oil (melted)",
+      "raw": "2 tbsp coconut oil, melted",
       "expected": {
         "item": "coconut oil",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 1/2 cups raw cashews (soaked overnight and drained)",
+      "raw": "1 1/2 cups raw cashews, soaked overnight and drained",
       "expected": {
         "item": "raw cashews",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/2 cup coconut oil (melted)",
+      "raw": "1/2 cup coconut oil, melted",
       "expected": {
         "item": "coconut oil",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/2 cup cacao butter (melted)",
+      "raw": "1/2 cup cacao butter, melted",
       "expected": {
         "item": "cacao butter",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1 tbsp coconut oil (melted)",
+      "raw": "1 tbsp coconut oil, melted",
       "expected": {
         "item": "coconut oil",
         "measurements": [

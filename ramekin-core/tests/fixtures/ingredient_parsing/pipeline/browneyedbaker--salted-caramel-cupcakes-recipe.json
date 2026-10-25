@@ -3,13 +3,17 @@
   "recipe_slug": "salted-caramel-cupcakes-recipe",
   "ingredients": [
     {
-      "raw": "½ cup plus 1 tablespoon Dutch-process cocoa powder",
+      "raw": "½ cup  (43 g) plus 1 tablespoon Dutch-process cocoa powder",
       "expected": {
         "item": "Dutch-process cocoa powder",
         "measurements": [
           {
             "amount": "1/2 cup plus 1 tablespoon",
             "unit": null
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "½ cup plus 1 tablespoon hot water",
+      "raw": "½ cup  (125 ml) plus 1 tablespoon hot water",
       "expected": {
         "item": "hot water",
         "measurements": [
           {
             "amount": "1/2 cup plus 1 tablespoon",
             "unit": null
+          },
+          {
+            "amount": "125",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "2¼ cups all-purpose flour",
+      "raw": "2¼ cups  (281.25 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "cup"
+          },
+          {
+            "amount": "281.25",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,24 +57,14 @@
       }
     },
     {
-      "raw": "¾ teaspoon baking soda",
+      "raw": "¾ teaspoon  (0.75 teaspoon) baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "¾ teaspoon baking powder",
-      "expected": {
-        "item": "baking powder",
-        "measurements": [
+          },
           {
             "amount": "0.75",
             "unit": "tsp"
@@ -73,10 +75,32 @@
       }
     },
     {
-      "raw": "½ teaspoon salt",
+      "raw": "¾ teaspoon  (0.75 teaspoon) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "½ teaspoon  (0.5 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
           {
             "amount": "0.5",
             "unit": "tsp"
@@ -87,13 +111,17 @@
       }
     },
     {
-      "raw": "1 cup plus 1 tablespoon unsalted butter (at room temperature)",
+      "raw": "1 cup  (227 g) plus 1 tablespoon unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1 cup plus 1 tablespoon",
             "unit": null
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -101,13 +129,17 @@
       }
     },
     {
-      "raw": "1 2/3 cups granulated sugar",
+      "raw": "1 ⅔ cups  (333.33 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.67",
             "unit": "cup"
+          },
+          {
+            "amount": "333.33",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -115,7 +147,7 @@
       }
     },
     {
-      "raw": "3  eggs",
+      "raw": "3   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -129,7 +161,7 @@
       }
     },
     {
-      "raw": "1 tablespoon vanilla extract",
+      "raw": "1 tablespoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -143,13 +175,17 @@
       }
     },
     {
-      "raw": "¾ cup sour cream",
+      "raw": "¾ cup  (172.5 ml) sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "172.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -157,13 +193,17 @@
       }
     },
     {
-      "raw": "1 cup unsalted butter (at room temperature)",
+      "raw": "1 cup  (227 g) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -171,13 +211,17 @@
       }
     },
     {
-      "raw": "8 ounces cream cheese (at room temperature)",
+      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -185,13 +229,17 @@
       }
     },
     {
-      "raw": "½ cup salted caramel sauce",
+      "raw": "½ cup  (113 ml) salted caramel sauce",
       "expected": {
         "item": "salted caramel sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -199,13 +247,17 @@
       }
     },
     {
-      "raw": "4 cups powdered sugar",
+      "raw": "4 cups  (480 g) powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -222,11 +274,11 @@
       }
     },
     {
-      "raw": "Fleur de Sel (or other flaky sea salt)",
+      "raw": "Fleur de Sel, or other flaky sea salt",
       "expected": {
-        "item": "Fleur de Sel",
+        "item": "Fleur de Sel, or other flaky sea salt",
         "measurements": [],
-        "note": "or other flaky sea salt",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

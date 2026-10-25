@@ -3,16 +3,16 @@
   "recipe_slug": "shrimp-taco-recipe",
   "ingredients": [
     {
-      "raw": "1 pound shrimp (small or medium sized shrimp, thawed, peeled, deveined, with the tails off)",
+      "raw": "1 pound shrimp, small or medium sized shrimp, thawed, peeled, deveined, with the tails off",
       "expected": {
-        "item": "shrimp",
+        "item": "shrimp, small or medium sized shrimp",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "small or medium sized shrimp, thawed, peeled, deveined, with the tails off",
+        "note": "thawed, peeled, deveined, with the tails off",
         "category": "Meat & Seafood"
       }
     },
@@ -101,21 +101,21 @@
       }
     },
     {
-      "raw": "8  corn tortillas (or flour tortillas)",
+      "raw": "8 corn tortillas, or flour tortillas",
       "expected": {
-        "item": "corn tortillas",
+        "item": "corn tortillas, or flour tortillas",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "or flour tortillas",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "1½ cup purple cabbage (shredded)",
+      "raw": "1½ cup purple cabbage, shredded",
       "expected": {
         "item": "purple cabbage",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1½ cup green cabbage (shredded)",
+      "raw": "1½ cup green cabbage, shredded",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "2 tablespoon fresh cilantro (minced)",
+      "raw": "2 tablespoon fresh cilantro, minced",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [

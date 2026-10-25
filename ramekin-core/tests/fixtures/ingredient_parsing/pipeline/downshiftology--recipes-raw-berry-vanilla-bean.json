@@ -3,16 +3,16 @@
   "recipe_slug": "recipes-raw-berry-vanilla-bean",
   "ingredients": [
     {
-      "raw": "3 1/2 cups raw cashews (soaked overnight)",
+      "raw": "3 1/2 cups raw cashews, soaked overnight",
       "expected": {
-        "item": "raw cashews",
+        "item": "raw cashews, soaked overnight",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": "soaked overnight",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2  vanilla beans (scraped)",
+      "raw": "2 vanilla beans, scraped",
       "expected": {
         "item": "vanilla beans",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "10  Medjool dates (pitted)",
+      "raw": "10 Medjool dates, pitted",
       "expected": {
         "item": "Medjool dates",
         "measurements": [

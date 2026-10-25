@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-buffalo-chicken-meatba",
   "ingredients": [
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh chopped dill ((or 1 teaspoon dried))",
+      "raw": "1 tablespoon fresh chopped dill (or 1 teaspoon dried)",
       "expected": {
         "item": "fresh chopped dill",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tablespoon Frank&amp;#39;s Red Hot sauce ((or similar brand))",
+      "raw": "1 tablespoon Frank's Red Hot sauce (or similar brand)",
       "expected": {
         "item": "Frank's Red Hot sauce",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 clove garlic, (minced)",
+      "raw": "1 clove garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 pound ground chicken, (preferably Purdue &amp;quot;Fresh &amp;amp; Lean&amp;quot; (avoid the one that is 98% lean))",
+      "raw": "1 pound ground chicken, preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean)",
       "expected": {
         "item": "ground chicken",
         "measurements": [
@@ -96,7 +96,7 @@
             "unit": "lb"
           }
         ],
-        "note": "preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean)",
+        "note": "avoid the one that is 98% lean, preferably Purdue \"Fresh & Lean\"",
         "category": "Meat & Seafood"
       }
     },
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "3 to 4 tablespoons Frank&amp;#39;s Red Hot sauce ((see note))",
+      "raw": "3 to 4 tablespoons Frank's Red Hot sauce (see note)",
       "expected": {
         "item": "Frank's Red Hot sauce",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1 teaspoon fresh chopped dill ((or ¼ teaspoon dried))",
+      "raw": "1 teaspoon fresh chopped dill (or ¼ teaspoon dried)",
       "expected": {
         "item": "fresh chopped dill",
         "measurements": [
@@ -227,16 +227,16 @@
       }
     },
     {
-      "raw": "2  scallions, (dark green parts only, thinly sliced)",
+      "raw": "2 scallions, dark green parts only, thinly sliced",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, dark green parts only",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "dark green parts only, thinly sliced",
+        "note": "thinly sliced",
         "category": "Produce"
       }
     }

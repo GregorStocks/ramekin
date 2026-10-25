@@ -3,10 +3,6 @@
   "recipe_slug": "2011-04-blackberry-and-coconut",
   "ingredients": [
     {
-      "raw": "Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup plus 2 tablespoons white whole wheat flour, spelt flour or matzo cake meal",
       "expected": {
         "item": "white whole wheat flour, spelt flour or matzo cake meal",
@@ -17,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": "I used a coarse Turbinado because I had it on hand",
-        "section": "Crust",
         "category": "Other"
       }
     },
@@ -62,7 +55,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,13 +69,8 @@
           }
         ],
         "note": "melted",
-        "section": "Crust",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups unsweetened finely shredded coconut",
@@ -96,7 +83,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -111,7 +97,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -126,7 +111,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -141,7 +125,6 @@
           }
         ],
         "note": "feel free to swap any berry/cherry you can find in season, halved",
-        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -156,7 +139,6 @@
           }
         ],
         "note": "crushed",
-        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     }

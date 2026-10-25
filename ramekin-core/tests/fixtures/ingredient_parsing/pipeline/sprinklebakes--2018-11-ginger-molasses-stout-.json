@@ -53,7 +53,7 @@
       }
     },
     {
-      "raw": "6  large eggs",
+      "raw": "6 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "2 tablespoons peeled (grated fresh ginger root)",
+      "raw": "2 tablespoons peeled grated fresh ginger root",
       "expected": {
         "item": "peeled grated fresh ginger root",
         "measurements": [
@@ -309,7 +309,7 @@
       }
     },
     {
-      "raw": "12 ounces semisweet chocolate (chopped)",
+      "raw": "12 ounces semisweet chocolate chopped",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [

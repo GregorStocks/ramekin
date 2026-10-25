@@ -62,7 +62,7 @@
       }
     },
     {
-      "raw": "1 tsp za&amp;#8217;atar spice, more for later",
+      "raw": "1 tsp za’atar spice, more for later",
       "expected": {
         "item": "za’atar spice",
         "measurements": [
@@ -98,7 +98,7 @@
       }
     },
     {
-      "raw": "Scant 1 pint/400 g&nbsp; cherry tomatoes, halved",
+      "raw": "Scant 1 pint/400 g  cherry tomatoes, halved",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [

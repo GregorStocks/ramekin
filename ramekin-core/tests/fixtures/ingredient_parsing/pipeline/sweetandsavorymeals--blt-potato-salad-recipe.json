@@ -3,7 +3,7 @@
   "recipe_slug": "blt-potato-salad-recipe",
   "ingredients": [
     {
-      "raw": "2 1/2 pounds Yukon Gold potatoes or Tri-Color potatoes (washed, peeled and cut into 1 inch pieces*)",
+      "raw": "2 1/2 pounds Yukon Gold potatoes or Tri-Color potatoes washed, peeled and cut into 1 inch pieces*",
       "expected": {
         "item": "Yukon Gold potatoes or Tri-Color potatoes",
         "measurements": [
@@ -45,21 +45,21 @@
       }
     },
     {
-      "raw": "12 slices thick cut bacon (cut into 1 inch pieces)",
+      "raw": "12 slices thick cut bacon cut into 1 inch pieces",
       "expected": {
-        "item": "thick cut bacon",
+        "item": "thick cut bacon cut into 1 inch pieces",
         "measurements": [
           {
             "amount": "12",
             "unit": "slice"
           }
         ],
-        "note": "cut into 1 inch pieces",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  romaine lettuce heart (cut into 1 inch pieces)",
+      "raw": "1 romaine lettuce heart cut into 1 inch pieces",
       "expected": {
         "item": "romaine lettuce heart",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2 cups cherry tomatoes (halved)",
+      "raw": "2 cups cherry tomatoes halved",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "6  scallions (thinly chopped)",
+      "raw": "6 scallions thinly chopped",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/4 cup chives (chopped)",
+      "raw": "1/4 cup chives chopped",
       "expected": {
         "item": "chives",
         "measurements": [
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "Pickle slices (optional)",
+      "raw": "Pickle slices optional",
       "expected": {
         "item": "Pickle slices",
         "measurements": [],

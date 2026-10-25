@@ -3,7 +3,7 @@
   "recipe_slug": "vegan-burger-recipe",
   "ingredients": [
     {
-      "raw": "1  large red pepper (cored and roughly chopped)",
+      "raw": "1 large red pepper cored and roughly chopped",
       "expected": {
         "item": "red pepper",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/2  small red onion (roughly chopped)",
+      "raw": "½ small red onion roughly chopped",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/2 cup raw almonds",
+      "raw": "½ cup raw almonds",
       "expected": {
         "item": "raw almonds",
         "measurements": [
@@ -45,21 +45,21 @@
       }
     },
     {
-      "raw": "1/4 cup pepitas (pumpkin&nbsp;seeds)",
+      "raw": "¼ cup pepitas pumpkin seeds",
       "expected": {
-        "item": "pepitas",
+        "item": "pepitas pumpkin seeds",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "pumpkin seeds",
-        "category": "Nuts & Dried Fruit"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup hemp seed hearts",
+      "raw": "¼ cup hemp seed hearts",
       "expected": {
         "item": "hemp seed hearts",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "2 tablespoons ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
+      "raw": "2 tablespoons ground flaxseed meal chia seeds, or additional hemp seed hearts",
       "expected": {
-        "item": "ground flaxseed meal",
+        "item": "ground flaxseed meal chia seeds, or additional hemp seed hearts",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "chia seeds, or additional hemp seed hearts",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 1/4 teaspoons cumin",
+      "raw": "1 ¼ teaspoons cumin",
       "expected": {
         "item": "cumin",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "3/4 teaspoon chili powder",
+      "raw": "¾ teaspoon chili powder",
       "expected": {
         "item": "chili powder",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon smoked paprika",
+      "raw": "¼ teaspoon smoked paprika",
       "expected": {
         "item": "smoked paprika",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1 can black beans, ((15 ounces) rinsed and drained)",
+      "raw": "1 can black beans, (15 ounces) rinsed and drained",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -175,21 +175,21 @@
       }
     },
     {
-      "raw": "1/2 cup old fashioned rolled oats (gluten free if needed)",
+      "raw": "½ cup old fashioned rolled oats gluten free if needed",
       "expected": {
-        "item": "old fashioned rolled oats",
+        "item": "old fashioned rolled oats gluten free if needed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "gluten free if needed",
-        "category": "Snacks"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "Whole grain buns (for serving)",
+      "raw": "Whole grain buns for serving",
       "expected": {
         "item": "Whole grain buns",
         "measurements": [],
@@ -198,11 +198,11 @@
       }
     },
     {
-      "raw": "Sliced tomatoes, (avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard)",
+      "raw": "Sliced tomatoes, avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard",
       "expected": {
-        "item": "Sliced tomatoes",
+        "item": "Sliced tomatoes, avocado, arugula, sliced red onions, avocado, plain yogurt, mustard",
         "measurements": [],
-        "note": "avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard",
+        "note": "dairy-free if needed",
         "category": "Produce"
       }
     }

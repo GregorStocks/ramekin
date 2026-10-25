@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-brownie-trifle",
   "ingredients": [
     {
-      "raw": "2  simple mills brownie mix",
+      "raw": "2 simple mills brownie mix",
       "expected": {
         "item": "simple mills brownie mix",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 cup  coconut oil, butter or ghee (melted )",
+      "raw": "1 cup  coconut oil, butter or ghee, melted",
       "expected": {
         "item": "coconut oil, butter or ghee",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4  eggs",
+      "raw": "4 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -59,16 +59,16 @@
       }
     },
     {
-      "raw": "3 cup milk (any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work)",
+      "raw": "3 cup milk, any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
       "expected": {
-        "item": "milk",
+        "item": "milk, any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "4 13.5 ounce cans full-fat coconut milk  (chilled 24-48 hours)",
+      "raw": "4 13.5 ounce cans full-fat coconut milk , chilled 24-48 hours",
       "expected": {
         "item": "full-fat coconut milk",
         "measurements": [

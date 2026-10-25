@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "1 (8 oz) pkg. cream cheese, (well softened (see notes))",
+      "raw": "1 (8 oz) pkg. cream cheese, well softened (see notes)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -48,7 +48,7 @@
             "unit": "oz"
           }
         ],
-        "note": "well softened (see notes)",
+        "note": "see notes, well softened",
         "category": "Cheese"
       }
     },

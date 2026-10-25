@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1  large yellow onion (chopped)",
+      "raw": "1 large yellow onion chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "3  garlic cloves (peeled and chopped)",
+      "raw": "3 garlic cloves peeled and chopped",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "2  dried bay leaves",
+      "raw": "2 dried bay leaves",
       "expected": {
         "item": "dried bay leaves",
         "measurements": [
@@ -184,7 +184,7 @@
       }
     },
     {
-      "raw": "1/4  tsp ground nutmeg",
+      "raw": "1/4 tsp ground nutmeg",
       "expected": {
         "item": "ground nutmeg",
         "measurements": [
@@ -240,17 +240,17 @@
       }
     },
     {
-      "raw": "1/2 tsp salt (more if you like)",
+      "raw": "1/2 tsp salt more if you like",
       "expected": {
-        "item": "salt",
+        "item": "salt more if you like",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "more if you like",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -268,21 +268,21 @@
       }
     },
     {
-      "raw": "4 cups 2% milk (warmed)",
+      "raw": "4 cups 2% milk warmed",
       "expected": {
-        "item": "2% milk",
+        "item": "2% milk warmed",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "warmed",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [

@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "12 to 16 warm soft corn tortillas , for serving",
+      "raw": "12 to 16 warm soft corn tortillas, for serving",
       "expected": {
         "item": "warm soft corn tortillas",
         "measurements": [
@@ -119,13 +119,13 @@
       }
     },
     {
-      "raw": "2 limes cut into 8 wedges each, for serving",
+      "raw": "2 medium limes cut into 8 wedges each, for serving",
       "expected": {
         "item": "limes",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": "cut into 8 wedges each, for serving",

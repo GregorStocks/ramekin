@@ -3,17 +3,17 @@
   "recipe_slug": "dads-classic-meatloaf-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds ground beef (85/15)",
+      "raw": "2 pounds ground beef 85/15",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef 85/15",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "85/15",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,17 +73,17 @@
       }
     },
     {
-      "raw": "1 cup crushed crackers (quick cook oats or breadcrumbs)",
+      "raw": "1 cup crushed crackers quick cook oats or breadcrumbs",
       "expected": {
-        "item": "crushed crackers",
+        "item": "crushed crackers quick cook oats or breadcrumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "quick cook oats or breadcrumbs",
-        "category": "Other"
+        "note": null,
+        "category": "Snacks"
       }
     },
     {

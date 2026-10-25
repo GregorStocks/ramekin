@@ -3,7 +3,7 @@
   "recipe_slug": "dal-khichdi-recipe",
   "ingredients": [
     {
-      "raw": "1 to 2 tablespoons ghee ((clarified butter) or oil)",
+      "raw": "1 to 2 tablespoons ghee (clarified butter) or oil",
       "expected": {
         "item": "ghee or oil",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  bay leaf  (or 1 sprig of curry leaves (optional))",
+      "raw": "1 bay leaf  or 1 sprig of curry leaves (optional)",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -45,21 +45,21 @@
       }
     },
     {
-      "raw": "¾ to 1 teaspoon ginger (grated or ginger paste (1 inch piece))",
+      "raw": "¾ to 1 teaspoon ginger grated or ginger paste (1 inch piece)",
       "expected": {
-        "item": "ginger",
+        "item": "ginger grated or ginger paste",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "grated or ginger paste (1 inch piece)",
-        "category": "Produce"
+        "note": "1 inch piece",
+        "category": "Other"
       }
     },
     {
-      "raw": "¼ cup onion (finely chopped (1 very small, optional))",
+      "raw": "¼ cup onion finely chopped (1 very small, optional)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -68,36 +68,40 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped (1 very small, optional)",
+        "note": "1 very small, optional, finely chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  green chili (slit or ½ tsp red chili powder)",
+      "raw": "1 green chili slit or ½ tsp red chili powder",
       "expected": {
-        "item": "green chili",
+        "item": "green chili slit",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "slit or 1/2 tsp red chili powder",
-        "category": "Produce"
+        "note": "or 1/2 tsp red chili powder",
+        "category": "Other"
       }
     },
     {
-      "raw": "½ cup tomatoes (deseeded &amp;amp; fine chopped or pureed (1 medium))",
+      "raw": "½ cup tomatoes deseeded & fine chopped or pureed (1 medium)",
       "expected": {
-        "item": "tomatoes",
+        "item": "tomatoes deseeded & fine chopped or pureed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "medium"
           }
         ],
-        "note": "deseeded & fine chopped or pureed (1 medium)",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,7 +119,7 @@
       }
     },
     {
-      "raw": "⅓ teaspoon salt ((adjust to taste))",
+      "raw": "⅓ teaspoon salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -129,7 +133,7 @@
       }
     },
     {
-      "raw": "½ cup rice ((any kind or quinoa, steel cut oats, millets))",
+      "raw": "½ cup rice (any kind or quinoa, steel cut oats, millets)",
       "expected": {
         "item": "rice",
         "measurements": [
@@ -143,7 +147,7 @@
       }
     },
     {
-      "raw": "½ cup moong dal ((skinless petite yellow lentils) (or any other dal))",
+      "raw": "½ cup moong dal (skinless petite yellow lentils) (or any other dal)",
       "expected": {
         "item": "moong dal",
         "measurements": [
@@ -157,7 +161,7 @@
       }
     },
     {
-      "raw": "4 cups water ((more to adjust, for porridge consistency))",
+      "raw": "4 cups water (more to adjust, for porridge consistency)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -171,7 +175,7 @@
       }
     },
     {
-      "raw": "1 pinch asafoetida ((hing) (optional))",
+      "raw": "1 pinch asafoetida (hing) (optional)",
       "expected": {
         "item": "asafoetida",
         "measurements": [
@@ -185,7 +189,7 @@
       }
     },
     {
-      "raw": "½ tablespoon ghee (for topping)",
+      "raw": "½ tablespoon ghee for topping",
       "expected": {
         "item": "ghee",
         "measurements": [
@@ -199,7 +203,7 @@
       }
     },
     {
-      "raw": "1 medium carrot (cubed)",
+      "raw": "1 medium carrot cubed",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -213,7 +217,7 @@
       }
     },
     {
-      "raw": "8  french beans (cut to 1 inch length)",
+      "raw": "8 french beans cut to 1 inch length",
       "expected": {
         "item": "french beans",
         "measurements": [
@@ -227,7 +231,7 @@
       }
     },
     {
-      "raw": "1 small potato (cubed)",
+      "raw": "1 small potato cubed",
       "expected": {
         "item": "potato",
         "measurements": [

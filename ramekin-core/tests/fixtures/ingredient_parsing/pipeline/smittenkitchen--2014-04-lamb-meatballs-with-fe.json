@@ -3,10 +3,6 @@
   "recipe_slug": "2014-04-lamb-meatballs-with-fe",
   "ingredients": [
     {
-      "raw": "Meatballs",
-      "is_section_header": true
-    },
-    {
       "raw": "3 to 8 tablespoons water",
       "expected": {
         "item": "water",
@@ -17,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Beverages"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -66,7 +59,6 @@
           }
         ],
         "note": "about 70 grams, such as Panko",
-        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -85,7 +77,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Cheese"
       }
     },
@@ -100,7 +91,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,7 +105,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -130,7 +119,6 @@
           }
         ],
         "note": "minced",
-        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -145,7 +133,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -164,7 +151,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Canned Goods"
       }
     },
@@ -179,7 +165,6 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -194,13 +179,8 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
-    },
-    {
-      "raw": "Sauce",
-      "is_section_header": true
     },
     {
       "raw": "1 medium onion, finely chopped",
@@ -213,7 +193,6 @@
           }
         ],
         "note": "finely chopped",
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -228,7 +207,6 @@
           }
         ],
         "note": "minced",
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -238,7 +216,6 @@
         "item": "A couple glugs of red wine or white/dry vermouth",
         "measurements": [],
         "note": "optional",
-        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -257,7 +234,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -272,7 +248,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,7 +262,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -302,7 +276,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -317,7 +290,6 @@
           }
         ],
         "note": "to taste",
-        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -336,7 +308,6 @@
           }
         ],
         "note": "about 45 grams, chopped kalamata olives",
-        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -351,7 +322,6 @@
           }
         ],
         "note": "plus more for garnish",
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -366,7 +336,6 @@
           }
         ],
         "note": "plus more for garnish",
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -381,7 +350,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -400,7 +368,6 @@
           }
         ],
         "note": "for garnish",
-        "section": "Sauce",
         "category": "Cheese"
       }
     }

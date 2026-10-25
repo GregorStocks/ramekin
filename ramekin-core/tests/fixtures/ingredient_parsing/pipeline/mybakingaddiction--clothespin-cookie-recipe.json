@@ -3,17 +3,17 @@
   "recipe_slug": "clothespin-cookie-recipe",
   "ingredients": [
     {
-      "raw": "1 cup unsalted butter (cold)",
+      "raw": "1 cup unsalted butter cold",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter cold",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "cold",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 cup unsalted butter (softened)",
+      "raw": "1 cup unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "1 pound powdered sugar (sifted)",
+      "raw": "1 pound powdered sugar sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "1 ½ - 2 ½ tablespoons cream or milk",
+      "raw": "1 ½ – 2 ½ tablespoons cream or milk",
       "expected": {
         "item": "cream or milk",
         "measurements": [

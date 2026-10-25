@@ -3,16 +3,16 @@
   "recipe_slug": "2018-07-quick-berry-tiramisu-i",
   "ingredients": [
     {
-      "raw": "12 ounces fresh strawberries (or frozen, thawed)",
+      "raw": "12 ounces fresh strawberries or frozen, thawed",
       "expected": {
-        "item": "fresh strawberries",
+        "item": "fresh strawberries or frozen",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "or frozen, thawed",
+        "note": "thawed",
         "category": "Produce"
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "3 ounces mascarpone cheese (softened)",
+      "raw": "3 ounces mascarpone cheese softened",
       "expected": {
         "item": "mascarpone cheese",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "12  crisp lady fingers (chopped into 1-inch pieces)",
+      "raw": "12 crisp lady fingers chopped into 1-inch pieces",
       "expected": {
         "item": "crisp lady fingers",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "12  fresh mint leaves",
+      "raw": "12 fresh mint leaves",
       "expected": {
         "item": "fresh mint leaves",
         "measurements": [

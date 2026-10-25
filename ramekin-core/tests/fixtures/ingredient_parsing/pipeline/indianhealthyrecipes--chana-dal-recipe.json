@@ -3,7 +3,7 @@
   "recipe_slug": "chana-dal-recipe",
   "ingredients": [
     {
-      "raw": "1 cup (205 grams)  chana dal  ((Bengal gram))",
+      "raw": "1 cup (205 grams) chana dal  (Bengal gram)",
       "expected": {
         "item": "chana dal",
         "measurements": [
@@ -21,9 +21,9 @@
       }
     },
     {
-      "raw": "3 cups (710 ml)  water  (to pressure cook (more if using pot))",
+      "raw": "3 cups (710 ml) water  to pressure cook (more if using pot)",
       "expected": {
-        "item": "water",
+        "item": "water to pressure cook",
         "measurements": [
           {
             "amount": "3",
@@ -34,8 +34,8 @@
             "unit": "ml"
           }
         ],
-        "note": "to pressure cook (more if using pot)",
-        "category": "Beverages"
+        "note": "more if using pot",
+        "category": "Other"
       }
     },
     {
@@ -53,7 +53,7 @@
       }
     },
     {
-      "raw": "2 tablespoons (30 ml)  ghee or oil",
+      "raw": "2 tablespoons (30 ml) ghee or oil",
       "expected": {
         "item": "ghee or oil",
         "measurements": [
@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "¾ cup (100 grams)  onions  ((1 medium onion fine chopped))",
+      "raw": "¾ cup (100 grams) onions  (1 medium onion fine chopped)",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -89,35 +89,35 @@
       }
     },
     {
-      "raw": "½ tablespoon ginger  (minced/grated (6 grams from ¾ inch root))",
+      "raw": "½ tablespoon ginger  minced/grated (6 grams from ¾ inch root)",
       "expected": {
-        "item": "ginger",
+        "item": "ginger minced/grated",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "minced/grated (6 grams from 3/4 inch root)",
-        "category": "Produce"
+        "note": "6 grams from 3/4 inch root",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon garlic  (minced/ grated (11 grams from 4 to 5 medium cloves))",
+      "raw": "1 tablespoon garlic  minced/ grated (11 grams from 4 to 5 medium cloves)",
       "expected": {
-        "item": "garlic",
+        "item": "garlic minced/",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "minced/ grated (11 grams from 4 to 5 medium cloves)",
-        "category": "Produce"
+        "note": "11 grams from 4 to 5 medium cloves, grated",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup (150 grams)  tomatoes ( (2 medium chopped finely))",
+      "raw": "1 cup (150 grams) tomatoes  (2 medium chopped finely)",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -130,12 +130,12 @@
             "unit": "g"
           }
         ],
-        "note": "(2 medium chopped finely)",
+        "note": "2 medium chopped finely",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  Indian bay leaf ( (optional))",
+      "raw": "1 Indian bay leaf  (optional)",
       "expected": {
         "item": "Indian bay leaf",
         "measurements": [
@@ -144,12 +144,12 @@
             "unit": null
           }
         ],
-        "note": "(optional)",
+        "note": "optional",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 inch cinnamon piece  ((Ceylon/cassia, read notes))",
+      "raw": "2 inch cinnamon piece  (Ceylon/cassia, read notes)",
       "expected": {
         "item": "inch cinnamon piece",
         "measurements": [
@@ -163,7 +163,7 @@
       }
     },
     {
-      "raw": "1  black cardamom  ((omit if you don’t like))",
+      "raw": "1 black cardamom  (omit if you don’t like)",
       "expected": {
         "item": "black cardamom",
         "measurements": [
@@ -177,7 +177,7 @@
       }
     },
     {
-      "raw": "3  green cardamoms ( (or use ¼ tsp ground))",
+      "raw": "3 green cardamoms  (or use ¼ tsp ground)",
       "expected": {
         "item": "green cardamoms",
         "measurements": [
@@ -186,12 +186,12 @@
             "unit": null
           }
         ],
-        "note": "(or use 1/4 tsp ground)",
+        "note": "or use 1/4 tsp ground",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon sea salt ( (adjust to taste))",
+      "raw": "1 teaspoon sea salt  (adjust to taste)",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -200,12 +200,12 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust to taste)",
+        "note": "adjust to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon Kashmiri red chili powder ( (adjust to taste))",
+      "raw": "½ teaspoon Kashmiri red chili powder  (adjust to taste)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -214,12 +214,12 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust to taste)",
+        "note": "adjust to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon garam masala ( (adjust to taste))",
+      "raw": "½ teaspoon garam masala  (adjust to taste)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -228,7 +228,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust to taste)",
+        "note": "adjust to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -261,7 +261,7 @@
       }
     },
     {
-      "raw": "1 teaspoon dried fenugreek leaves ( (kasuri methi))",
+      "raw": "1 teaspoon dried fenugreek leaves  (kasuri methi)",
       "expected": {
         "item": "dried fenugreek leaves",
         "measurements": [
@@ -270,12 +270,12 @@
             "unit": "tsp"
           }
         ],
-        "note": "(kasuri methi)",
+        "note": "kasuri methi",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon amchur  ((mango powder or sub with chaat masala or 2 tbsps lemon juice while serving))",
+      "raw": "½ teaspoon amchur  (mango powder or sub with chaat masala or 2 tbsps lemon juice while serving)",
       "expected": {
         "item": "amchur",
         "measurements": [
@@ -289,7 +289,7 @@
       }
     },
     {
-      "raw": "3 tablespoons coriander leaves ( (cilantro chopped finely))",
+      "raw": "3 tablespoons coriander leaves  (cilantro chopped finely)",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -298,12 +298,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "(cilantro chopped finely)",
+        "note": "cilantro chopped finely",
         "category": "Produce"
       }
     },
     {
-      "raw": "1½ to 2 tablespoon ghee or oil ((30 ml))",
+      "raw": "1½ to 2 tablespoon ghee or oil (30 ml)",
       "expected": {
         "item": "ghee or oil",
         "measurements": [
@@ -335,49 +335,57 @@
       }
     },
     {
-      "raw": "2  green chilies  (deseed &amp;amp; slit or dried red chilies (or both, omit if making for kids))",
+      "raw": "2 green chilies  deseed & slit or dried red chilies (or both, omit if making for kids)",
       "expected": {
-        "item": "green chilies",
+        "item": "green chilies deseed & slit or dried red chilies",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "deseed & slit or dried red chilies (or both, omit if making for kids)",
-        "category": "Produce"
+        "note": "or both, omit if making for kids",
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  garlic cloves  (chopped (4 grams))",
+      "raw": "2 garlic cloves  chopped (4 grams)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "g"
           }
         ],
-        "note": "chopped (4 grams)",
+        "note": "chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ inch ginger  (juliennes (4 grams))",
+      "raw": "½ inch ginger  juliennes (4 grams)",
       "expected": {
-        "item": "inch ginger",
+        "item": "inch ginger juliennes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "g"
           }
         ],
-        "note": "juliennes (4 grams)",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "¼ teaspoon asafoetida ( (hing, optional))",
+      "raw": "¼ teaspoon asafoetida  (hing, optional)",
       "expected": {
         "item": "asafoetida",
         "measurements": [
@@ -386,12 +394,12 @@
             "unit": "tsp"
           }
         ],
-        "note": "(hing, optional)",
+        "note": "hing, optional",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon red chili powder  ((optional, only if required))",
+      "raw": "¼ teaspoon red chili powder  (optional, only if required)",
       "expected": {
         "item": "red chili powder",
         "measurements": [

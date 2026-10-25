@@ -3,7 +3,7 @@
   "recipe_slug": "snickerdoodle-cookie-recipe",
   "ingredients": [
     {
-      "raw": "1 cup unsalted butter (softened to room temperature)",
+      "raw": "1 cup unsalted butter softened to room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "2 tablespoons light brown sugar (packed)",
+      "raw": "2 tablespoons light brown sugar packed",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar packed",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "packed",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -73,17 +73,17 @@
       }
     },
     {
-      "raw": "2 3/4 cup flour (all purpose or plain)",
+      "raw": "2 3/4 cup flour all purpose or plain",
       "expected": {
-        "item": "flour",
+        "item": "flour all purpose or plain",
         "measurements": [
           {
             "amount": "2.75",
             "unit": "cup"
           }
         ],
-        "note": "all purpose or plain",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {

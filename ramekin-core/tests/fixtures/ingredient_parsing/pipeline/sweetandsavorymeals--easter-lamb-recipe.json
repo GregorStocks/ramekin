@@ -3,7 +3,7 @@
   "recipe_slug": "easter-lamb-recipe",
   "ingredients": [
     {
-      "raw": "2  whole legs of lamb",
+      "raw": "2 whole legs of lamb",
       "expected": {
         "item": "whole legs of lamb",
         "measurements": [
@@ -17,45 +17,45 @@
       }
     },
     {
-      "raw": "2  large carrots (peeled and cut into 1/4 inch rounds)",
+      "raw": "2 large carrots peeled and cut into 1/4 inch rounds",
       "expected": {
-        "item": "carrots",
+        "item": "carrots peeled and cut into 1/4 inch rounds",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into 1/4 inch rounds",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "6 cloves garlic (whole)",
+      "raw": "6 cloves garlic whole",
       "expected": {
-        "item": "garlic",
+        "item": "garlic whole",
         "measurements": [
           {
             "amount": "6",
             "unit": "clove"
           }
         ],
-        "note": "whole",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "6  sprigs fresh rosemary (whole)",
+      "raw": "6 sprigs fresh rosemary whole",
       "expected": {
-        "item": "fresh rosemary",
+        "item": "fresh rosemary whole",
         "measurements": [
           {
             "amount": "6",
             "unit": "sprig"
           }
         ],
-        "note": "whole",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/2  red bell pepper (diced)",
+      "raw": "1/2 red bell pepper diced",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "8 cloves garlic (minced)",
+      "raw": "8 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1 cup cashews (finely chopped)",
+      "raw": "1 cup cashews finely chopped",
       "expected": {
         "item": "cashews",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1/2  dried Italian herbs",
+      "raw": "1/2 dried Italian herbs",
       "expected": {
         "item": "dried Italian herbs",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "2 tablespoons parsley (chopped)",
+      "raw": "2 tablespoons parsley chopped",
       "expected": {
         "item": "parsley",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "2 tablespoons fresh rosemary (chopped)",
+      "raw": "2 tablespoons fresh rosemary chopped",
       "expected": {
         "item": "fresh rosemary",
         "measurements": [

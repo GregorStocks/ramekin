@@ -3,10 +3,6 @@
   "recipe_slug": "2007-08-tartlets-not-innocent",
   "ingredients": [
     {
-      "raw": "For crust",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup all purpose flour",
       "expected": {
         "item": "all purpose flour",
@@ -17,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": null,
-        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -66,7 +59,6 @@
           }
         ],
         "note": "cut into 1/2-inch pieces",
-        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,7 +73,6 @@
           }
         ],
         "note": null,
-        "section": "For Crust",
         "category": "Beverages"
       }
     },
@@ -96,13 +87,8 @@
           }
         ],
         "note": null,
-        "section": "For Crust",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "For filling",
-      "is_section_header": true
     },
     {
       "raw": "1/3 cup whole almonds (about 2 ounces)",
@@ -119,7 +105,6 @@
           }
         ],
         "note": "about 2 ounces",
-        "section": "For Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -134,7 +119,6 @@
           }
         ],
         "note": null,
-        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -149,7 +133,6 @@
           }
         ],
         "note": null,
-        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -164,7 +147,6 @@
           }
         ],
         "note": "room temperature",
-        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -179,7 +161,6 @@
           }
         ],
         "note": "raspberry liqueur",
-        "section": "For Filling",
         "category": "Beverages"
       }
     },
@@ -194,7 +175,6 @@
           }
         ],
         "note": "pitted, cut into 3/4-inch-thick wedges",
-        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -209,7 +189,6 @@
           }
         ],
         "note": null,
-        "section": "For Filling",
         "category": "Other"
       }
     }

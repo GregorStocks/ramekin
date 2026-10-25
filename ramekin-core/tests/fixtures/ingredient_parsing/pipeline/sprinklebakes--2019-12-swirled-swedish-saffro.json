@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "1/2 cup warm milk (110° to 115°F)",
+      "raw": "1/2 cup warm milk 110° to 115°F",
       "expected": {
-        "item": "warm milk",
+        "item": "warm milk 110° to 115°F",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "110° to 115°F",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1/4 cup butter (softened)",
+      "raw": "1/4 cup butter softened",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -91,16 +91,16 @@
       }
     },
     {
-      "raw": "4  capsules (.100 gram each powdered saffron)",
+      "raw": "4 capsules .100 gram each powdered saffron",
       "expected": {
-        "item": "capsules",
+        "item": "capsules .100 gram each powdered saffron",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": ".100 gram each powdered saffron",
+        "note": null,
         "category": "Other"
       }
     },
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "6 tablespoons butter (melted)",
+      "raw": "6 tablespoons butter melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -189,12 +189,12 @@
       }
     },
     {
-      "raw": "Egg wash (1 egg plus 1 tablespoon water beaten together)",
+      "raw": "Egg wash 1 egg plus 1 tablespoon water beaten together",
       "expected": {
-        "item": "Egg wash",
+        "item": "Egg wash 1 egg plus 1 tablespoon water beaten together",
         "measurements": [],
-        "note": "1 egg plus 1 tablespoon water beaten together",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

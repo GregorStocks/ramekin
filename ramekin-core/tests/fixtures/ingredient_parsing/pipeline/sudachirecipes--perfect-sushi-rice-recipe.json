@@ -3,17 +3,17 @@
   "recipe_slug": "perfect-sushi-rice-recipe",
   "ingredients": [
     {
-      "raw": "300 g uncooked Japanese rice (I used koshihikari)",
+      "raw": "300 g uncooked Japanese rice I used koshihikari",
       "expected": {
-        "item": "uncooked Japanese rice",
+        "item": "uncooked Japanese rice I used koshihikari",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": "I used koshihikari",
-        "category": "Pasta & Rice"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "5 g dried kelp (kombu) (optional)",
+      "raw": "5 g dried kelp (kombu) optional",
       "expected": {
         "item": "dried kelp",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 tbsp sake (optional)",
+      "raw": "1 tbsp sake optional",
       "expected": {
         "item": "sake",
         "measurements": [

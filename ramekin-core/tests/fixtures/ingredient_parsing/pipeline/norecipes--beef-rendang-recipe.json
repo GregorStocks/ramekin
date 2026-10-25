@@ -3,7 +3,7 @@
   "recipe_slug": "beef-rendang-recipe",
   "ingredients": [
     {
-      "raw": "1 teaspoon salt",
+      "raw": "1 teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 teaspoon ground coriander seed",
+      "raw": "1 teaspoon  ground coriander seed",
       "expected": {
         "item": "ground coriander seed",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon ground turmeric",
+      "raw": "¼ teaspoon  ground turmeric",
       "expected": {
         "item": "ground turmeric",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2.5 centimeters fresh ginger ((roughly chopped))",
+      "raw": "2.5 centimeters  fresh ginger (roughly chopped)",
       "expected": {
         "item": "centimeters fresh ginger",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "25 grams garlic ((roughly chopped))",
+      "raw": "25 grams  garlic (roughly chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "200 grams shallots ((4 large roughly chopped))",
+      "raw": "200 grams  shallots (4 large roughly chopped)",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "3 tablespoons chili pepper flakes ((to taste))",
+      "raw": "3 tablespoons  chili pepper flakes (to taste)",
       "expected": {
         "item": "chili pepper flakes",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "2 tablespoons vegetable oil",
+      "raw": "2 tablespoons  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -119,21 +119,21 @@
       }
     },
     {
-      "raw": "900 grams beef shanks (or shortribs (cut into large cubes))",
+      "raw": "900 grams  beef shanks or shortribs (cut into large cubes)",
       "expected": {
-        "item": "beef shanks",
+        "item": "beef shanks or shortribs",
         "measurements": [
           {
             "amount": "900",
             "unit": "g"
           }
         ],
-        "note": "or shortribs (cut into large cubes)",
+        "note": "cut into large cubes",
         "category": "Other"
       }
     },
     {
-      "raw": "2 stalks lemongrass ((white part only, smashed))",
+      "raw": "2 stalks  lemongrass (white part only, smashed)",
       "expected": {
         "item": "lemongrass",
         "measurements": [
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "4  kaffir lime leaves ((or 1 teaspoon Makrut lime zest))",
+      "raw": "4  kaffir lime leaves (or 1 teaspoon Makrut lime zest)",
       "expected": {
         "item": "kaffir lime leaves",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "2.5 centimeters galangal ((sliced into coins))",
+      "raw": "2.5 centimeters  galangal (sliced into coins)",
       "expected": {
         "item": "centimeters galangal",
         "measurements": [
@@ -175,7 +175,7 @@
       }
     },
     {
-      "raw": "2 packs coconut cream powder ((or 1 can coconut milk))",
+      "raw": "2 packs  coconut cream powder (or 1 can coconut milk)",
       "expected": {
         "item": "coconut cream powder",
         "measurements": [
@@ -189,7 +189,7 @@
       }
     },
     {
-      "raw": "1 tablespoon coconut sugar ((brown sugar or palm sugar can be substituted))",
+      "raw": "1 tablespoon  coconut sugar (brown sugar or palm sugar can be substituted)",
       "expected": {
         "item": "coconut sugar",
         "measurements": [

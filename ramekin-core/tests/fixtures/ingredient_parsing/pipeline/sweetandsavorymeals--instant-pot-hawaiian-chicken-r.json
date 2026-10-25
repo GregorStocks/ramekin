@@ -3,16 +3,16 @@
   "recipe_slug": "instant-pot-hawaiian-chicken-r",
   "ingredients": [
     {
-      "raw": "2 lbs chicken thighs (boneless and skinless - cut into 1-2 inch pieces, or chicken breasts)",
+      "raw": "2 lbs chicken thighs boneless and skinless - cut into 1-2 inch pieces, or chicken breasts",
       "expected": {
-        "item": "chicken thighs",
+        "item": "chicken thighs boneless and skinless - cut into 1-2 inch pieces, or chicken breasts",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "boneless and skinless - cut into 1-2 inch pieces, or chicken breasts",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -87,21 +87,21 @@
       }
     },
     {
-      "raw": "1 20 oz can pineapple chunks (do NOT drain)",
+      "raw": "1 20 oz can pineapple chunks do NOT drain",
       "expected": {
-        "item": "pineapple chunks",
+        "item": "pineapple chunks do NOT drain",
         "measurements": [
           {
             "amount": "1",
             "unit": "20 oz can"
           }
         ],
-        "note": "do NOT drain",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  red bell pepper (cut into 1-inch chunks)",
+      "raw": "1 red bell pepper cut into 1-inch chunks",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1  yellow bell pepper (cut into 1-inch chunks)",
+      "raw": "1 yellow bell pepper cut into 1-inch chunks",
       "expected": {
         "item": "yellow bell pepper",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1 teaspoon red pepper flakes (optional)",
+      "raw": "1 teaspoon red pepper flakes optional",
       "expected": {
         "item": "red pepper flakes",
         "measurements": [
@@ -227,7 +227,7 @@
       }
     },
     {
-      "raw": "4  green onions sliced",
+      "raw": "4 green onions sliced",
       "expected": {
         "item": "green onions",
         "measurements": [

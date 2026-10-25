@@ -3,17 +3,17 @@
   "recipe_slug": "beef-udon-recipe",
   "ingredients": [
     {
-      "raw": "150 g thinly sliced beef (or thinly sliced pork)",
+      "raw": "150 g thinly sliced beef or thinly sliced pork",
       "expected": {
-        "item": "thinly sliced beef",
+        "item": "thinly sliced beef or thinly sliced pork",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": "or thinly sliced pork",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "½ tsp grated ginger root (or ginger paste)",
+      "raw": "½ tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "¼  onion",
+      "raw": "¼ onion",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "500 ml dashi stock ((from step 1) or instant dashi)",
+      "raw": "500 ml dashi stock (from step 1) or instant dashi",
       "expected": {
         "item": "dashi stock or instant dashi",
         "measurements": [
@@ -185,16 +185,16 @@
       }
     },
     {
-      "raw": "1 tsp beef suet (fat) (or beef tallow, lard, cooking oil)",
+      "raw": "1 tsp beef suet (fat) or beef tallow, lard, cooking oil",
       "expected": {
-        "item": "beef suet",
+        "item": "beef suet or beef tallow, lard, cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "fat, or beef tallow, lard, cooking oil",
+        "note": "fat",
         "category": "Meat & Seafood"
       }
     },
@@ -213,16 +213,16 @@
       }
     },
     {
-      "raw": "finely chopped green onions (to garnish)",
+      "raw": "finely chopped green onions to garnish",
       "expected": {
-        "item": "finely chopped green onions",
+        "item": "finely chopped green onions to garnish",
         "measurements": [],
-        "note": "to garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "Japanese chili powder (shichimi togarashi) (optional)",
+      "raw": "Japanese chili powder (shichimi togarashi) optional",
       "expected": {
         "item": "Japanese chili powder",
         "measurements": [],

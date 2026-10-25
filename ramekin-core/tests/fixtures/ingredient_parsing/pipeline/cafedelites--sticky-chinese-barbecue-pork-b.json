@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "2 tablespoons Chinese Shaoxing wine (rice vinegar or a dry sherry can be used instead)",
+      "raw": "2 tablespoons Chinese Shaoxing wine rice vinegar or a dry sherry can be used instead",
       "expected": {
-        "item": "Chinese Shaoxing wine",
+        "item": "Chinese Shaoxing wine rice vinegar or a dry sherry can be used instead",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "rice vinegar or a dry sherry can be used instead",
-        "category": "Other"
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 tablespoon garlic (minced)",
+      "raw": "1 tablespoon garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,17 +87,17 @@
       }
     },
     {
-      "raw": "3/4 teaspoon red food colouring (optional for that beautiful red colour)",
+      "raw": "3/4 teaspoon red food colouring optional for that beautiful red colour",
       "expected": {
-        "item": "red food colouring",
+        "item": "red food colouring optional for that beautiful red colour",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": "optional for that beautiful red colour",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,39 +115,31 @@
       }
     },
     {
-      "raw": "6  pork belly spare ribs (about 2.2 pounds or 1kg)",
+      "raw": "6 pork belly spare ribs about 2.2 pounds or 1kg",
       "expected": {
-        "item": "pork belly spare ribs",
+        "item": "pork belly spare ribs about 2.2 pounds or 1kg",
         "measurements": [
           {
             "amount": "6",
             "unit": null
-          },
-          {
-            "amount": "2.2",
-            "unit": "lb"
-          },
-          {
-            "amount": "1",
-            "unit": "kg"
           }
         ],
-        "note": "about 2.2 pounds or 1kg",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1  shallot (to garnish)",
+      "raw": "1 shallot to garnish",
       "expected": {
-        "item": "shallot",
+        "item": "shallot to garnish",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "to garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -179,17 +171,17 @@
       }
     },
     {
-      "raw": "1 tablespoon Chinese wine (Shaoxing - or dry sherry)",
+      "raw": "1 tablespoon Chinese wine Shaoxing – or dry sherry",
       "expected": {
-        "item": "Chinese wine",
+        "item": "Chinese wine Shaoxing - or dry sherry",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "Shaoxing - or dry sherry",
-        "category": "Other"
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -221,7 +213,7 @@
       }
     },
     {
-      "raw": "1 teaspoon garlic (minced)",
+      "raw": "1 teaspoon garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [

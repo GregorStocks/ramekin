@@ -115,30 +115,30 @@
       }
     },
     {
-      "raw": "1 1/4 cups all-purpose (or plain flour)",
+      "raw": "1 1/4 cups all-purpose or plain flour",
       "expected": {
-        "item": "all-purpose",
+        "item": "all-purpose or plain flour",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": "or plain flour",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "2  eggs (at room temperature)",
+      "raw": "2 eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

@@ -3,13 +3,17 @@
   "recipe_slug": "grilling-pork-souvlaki-with-pi",
   "ingredients": [
     {
-      "raw": "1/2 cup olive oil",
+      "raw": "1/2 cup (120 ml) extra-virgin olive oil",
       "expected": {
-        "item": "olive oil",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -17,16 +21,24 @@
       }
     },
     {
-      "raw": "1 small red onion, finely chopped",
+      "raw": "1/2 cup finely chopped red onion (2 1/2 ounces; 71 g), from 1 small onion",
       "expected": {
-        "item": "red onion",
+        "item": "finely chopped red onion",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "small"
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "from 1 small onion",
         "category": "Produce"
       }
     },
@@ -45,13 +57,17 @@
       }
     },
     {
-      "raw": "4 tablespoons fresh lemon juice",
+      "raw": "4 tablespoons (60 ml) fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -59,13 +75,17 @@
       }
     },
     {
-      "raw": "2 tablespoons red wine vinegar",
+      "raw": "2 tablespoons (30 ml) red wine vinegar",
       "expected": {
         "item": "red wine vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -87,10 +107,19 @@
       }
     },
     {
-      "raw": "Salt and Pepper",
+      "raw": "2 teaspoons (6 g) Diamond Crystal kosher salt; for table salt, use half as much by volume or the same weight",
       "expected": {
-        "item": "Salt and Pepper",
-        "measurements": [],
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume or the same weight",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Spices & Seasonings"
       }
@@ -105,13 +134,17 @@
       }
     },
     {
-      "raw": "1 1/2 pounds pork loin, trimmed of silver skin and excess fat, cut into 1-inch cubes",
+      "raw": "1 1/2 pounds (680 g) boneless pork loin or tenderloin, trimmed of silver skin and excess fat, cut into 1-inch cubes",
       "expected": {
-        "item": "pork loin",
+        "item": "boneless pork loin or tenderloin",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
           }
         ],
         "note": "trimmed of silver skin and excess fat, cut into 1-inch cubes",
@@ -119,27 +152,47 @@
       }
     },
     {
-      "raw": "1 English cucumber, peeled and grated",
+      "raw": "1 medium English cucumber (12 ounces; 340 g), peeled (1 cup)",
       "expected": {
         "item": "English cucumber",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "medium"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "peeled and grated",
+        "note": "peeled",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cups of Greek yogurt",
+      "raw": "2 cups Greek yogurt (16 ounces; 454 g)",
       "expected": {
         "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -147,13 +200,17 @@
       }
     },
     {
-      "raw": "4 cloves of garlic, minced",
+      "raw": "4 cloves garlic, minced (1 tablespoon)",
       "expected": {
         "item": "garlic",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
           }
         ],
         "note": "minced",
@@ -161,13 +218,17 @@
       }
     },
     {
-      "raw": "2 tablespoons lemon juice",
+      "raw": "2 tablespoons (30 ml) fresh lemon juice",
       "expected": {
-        "item": "lemon juice",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -175,13 +236,17 @@
       }
     },
     {
-      "raw": "2 tablespoons extra-virgin olive oil",
+      "raw": "2 tablespoons (30 ml) extra-virgin olive oil",
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,

@@ -63,13 +63,13 @@
       }
     },
     {
-      "raw": "1/2 pound walnut halves (about 2 cups)",
+      "raw": "8 ounces walnut halves (about 2 cups)",
       "expected": {
         "item": "walnut halves",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "lb"
+            "amount": "8",
+            "unit": "oz"
           },
           {
             "amount": "2",
@@ -188,7 +188,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh pomegranate arils&nbsp;for garnish (optional)",
+      "raw": "1/2 cup fresh pomegranate arils for garnish, optional",
       "expected": {
         "item": "fresh pomegranate arils",
         "measurements": [
@@ -197,7 +197,7 @@
             "unit": "cup"
           }
         ],
-        "note": "optional, for garnish",
+        "note": "for garnish, optional",
         "category": "Produce"
       }
     }

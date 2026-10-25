@@ -3,10 +3,6 @@
   "recipe_slug": "lime-coconut-sour-cream-bundt-",
   "ingredients": [
     {
-      "raw": "For the Cake",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup unsalted butter , softened",
       "expected": {
         "item": "unsalted butter",
@@ -17,7 +13,6 @@
           }
         ],
         "note": "softened",
-        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Produce"
       }
     },
@@ -62,7 +55,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -77,7 +69,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -92,7 +83,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -107,7 +97,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -122,7 +111,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -137,7 +125,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -152,13 +139,8 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "For the Lime Glaze",
-      "is_section_header": true
     },
     {
       "raw": "1 cup confectioners’ sugar, sifted",
@@ -171,7 +153,6 @@
           }
         ],
         "note": "sifted",
-        "section": "For the Lime Glaze",
         "category": "Baking"
       }
     },
@@ -186,7 +167,6 @@
           }
         ],
         "note": null,
-        "section": "For the Lime Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -201,7 +181,6 @@
           }
         ],
         "note": null,
-        "section": "For the Lime Glaze",
         "category": "Baking"
       }
     },
@@ -216,7 +195,6 @@
           }
         ],
         "note": null,
-        "section": "For the Lime Glaze",
         "category": "Produce"
       }
     }

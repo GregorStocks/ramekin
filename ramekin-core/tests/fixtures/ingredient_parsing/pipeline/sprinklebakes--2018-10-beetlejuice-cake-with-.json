@@ -63,16 +63,16 @@
       }
     },
     {
-      "raw": "4  eggs (at room temperature)",
+      "raw": "4 eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -299,16 +299,20 @@
       }
     },
     {
-      "raw": "2  sticks (226g unsalted butter, softened)",
+      "raw": "2 sticks 226g unsalted butter, softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
-        "note": "226g unsalted butter, softened",
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },
@@ -345,12 +349,12 @@
       }
     },
     {
-      "raw": "Up to 1/4 cup (60ml milk or heavy cream, if needed)",
+      "raw": "Up to 1/4 cup 60ml milk or heavy cream, if needed",
       "expected": {
-        "item": "Up to 1/4 cup",
+        "item": "Up to 1/4 cup 60ml milk or heavy cream",
         "measurements": [],
-        "note": "60ml milk or heavy cream, if needed",
-        "category": "Other"
+        "note": "if needed",
+        "category": "Dairy & Eggs"
       }
     }
   ]

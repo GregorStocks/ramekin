@@ -152,21 +152,26 @@
       }
     },
     {
-      "raw": "Tomato slices",
+      "raw": "Slices tomato",
       "expected": {
-        "item": "Tomato slices",
-        "measurements": [],
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "slice"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "Red onion slices",
+      "raw": "Red onion",
       "expected": {
-        "item": "Red onion slices",
+        "item": "Red onion",
         "measurements": [],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

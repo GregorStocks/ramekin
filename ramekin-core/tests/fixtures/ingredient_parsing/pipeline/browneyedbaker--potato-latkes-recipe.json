@@ -3,7 +3,7 @@
   "recipe_slug": "potato-latkes-recipe",
   "ingredients": [
     {
-      "raw": "3 pounds russet potatoes (about 5 large)",
+      "raw": "3 pounds  (1.36 kg) russet potatoes, about 5 large",
       "expected": {
         "item": "russet potatoes",
         "measurements": [
@@ -12,8 +12,8 @@
             "unit": "lb"
           },
           {
-            "amount": "5",
-            "unit": "large"
+            "amount": "1.36",
+            "unit": "kg"
           }
         ],
         "note": "about 5 large",
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "1  large yellow onion",
+      "raw": "1   large yellow onion",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -49,13 +49,17 @@
       }
     },
     {
-      "raw": "¼ cup plain breadcrumbs",
+      "raw": "¼ cup  (27 g) plain breadcrumbs",
       "expected": {
         "item": "plain breadcrumbs",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -63,10 +67,14 @@
       }
     },
     {
-      "raw": "3½ teaspoons kosher salt",
+      "raw": "3½ teaspoons  (3.5 teaspoons) kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "tsp"
+          },
           {
             "amount": "3.5",
             "unit": "tsp"
@@ -77,7 +85,7 @@
       }
     },
     {
-      "raw": "2 teaspoons baking powder",
+      "raw": "2 teaspoons   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -91,10 +99,14 @@
       }
     },
     {
-      "raw": "¼ teaspoon ground black pepper",
+      "raw": "¼ teaspoon  (0.25 teaspoon) ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
@@ -105,7 +117,7 @@
       }
     },
     {
-      "raw": "4 tablespoons vegetable oil + more as needed",
+      "raw": "4 tablespoons   vegetable oil + more as needed",
       "expected": {
         "item": "vegetable oil + more",
         "measurements": [

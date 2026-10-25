@@ -3,7 +3,7 @@
   "recipe_slug": "mongolian-beef-recipe",
   "ingredients": [
     {
-      "raw": "1 pound flank steak ((sliced against the grain into 1/4-inch/6mm thick slices))",
+      "raw": "1 pound flank steak (sliced against the grain into 1/4-inch/6mm thick slices)",
       "expected": {
         "item": "flank steak",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 teaspoons neutral oil ((such as vegetable, canola, or avocado oil))",
+      "raw": "2 teaspoons neutral oil (such as vegetable, canola, or avocado oil)",
       "expected": {
         "item": "neutral oil",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 teaspoons Shaoxing wine ((or dry cooking sherry, optional))",
+      "raw": "2 teaspoons Shaoxing wine (or dry cooking sherry, optional)",
       "expected": {
         "item": "Shaoxing wine",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "3/4 cup hot water ((or hot low sodium chicken or beef stock))",
+      "raw": "3/4 cup hot water (or hot low sodium chicken or beef stock)",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 teaspoon dark soy sauce ((optional))",
+      "raw": "1 teaspoon dark soy sauce (optional)",
       "expected": {
         "item": "dark soy sauce",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1 teaspoon ginger ((minced))",
+      "raw": "1 teaspoon ginger (minced)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "8  dried red chili peppers",
+      "raw": "8 dried red chili peppers (optional)",
       "expected": {
         "item": "dried red chili peppers",
         "measurements": [
@@ -208,12 +208,12 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "optional",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 cloves garlic",
+      "raw": "3 cloves garlic (finely chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -222,12 +222,12 @@
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "4  scallions",
+      "raw": "4 scallions (white and green parts separated, cut on the diagonal into 2-inch/5cm pieces)",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -236,12 +236,12 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "white and green parts separated, cut on the diagonal into 2-inch/5cm pieces",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 1/2 tablespoons cornstarch",
+      "raw": "1 1/2 tablespoons cornstarch (mixed with 2 tablespoons/30ml water to make a slurry)",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -250,7 +250,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "mixed with 2 tablespoons/30ml water to make a slurry",
         "category": "Baking"
       }
     }

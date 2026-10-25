@@ -3,15 +3,6 @@
   "recipe_slug": "2014-01-chicken-pho",
   "ingredients": [
     {
-      "raw": "Broth",
-      "expected": {
-        "item": "Broth",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
-    },
-    {
       "raw": "2 unpeeled yellow onions, quartered",
       "expected": {
         "item": "unpeeled yellow onions",
@@ -147,10 +138,6 @@
       }
     },
     {
-      "raw": "Garnishes",
-      "is_section_header": true
-    },
-    {
       "raw": "1 large scallion, thinly sliced",
       "expected": {
         "item": "scallion",
@@ -161,7 +148,6 @@
           }
         ],
         "note": "thinly sliced",
-        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -176,7 +162,6 @@
           }
         ],
         "note": null,
-        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -191,7 +176,6 @@
           }
         ],
         "note": null,
-        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -206,7 +190,6 @@
           }
         ],
         "note": null,
-        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -221,7 +204,6 @@
           }
         ],
         "note": "cut into wedges",
-        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -236,7 +218,6 @@
           }
         ],
         "note": "thinly sliced",
-        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -246,7 +227,6 @@
         "item": "Asian chili-garlic sauce",
         "measurements": [],
         "note": null,
-        "section": "Garnishes",
         "category": "Condiments & Sauces"
       }
     },
@@ -256,7 +236,6 @@
         "item": "Hoisin sauce",
         "measurements": [],
         "note": null,
-        "section": "Garnishes",
         "category": "Condiments & Sauces"
       }
     },
@@ -266,7 +245,6 @@
         "item": "Crispy shallots, recipe follows",
         "measurements": [],
         "note": null,
-        "section": "Garnishes",
         "category": "Other"
       }
     }

@@ -3,15 +3,6 @@
   "recipe_slug": "2014-03-whole-grain-cinnamon-s",
   "ingredients": [
     {
-      "raw": "Bread",
-      "expected": {
-        "item": "Bread",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "5 cups (635 grams) white whole-wheat or regular whole-wheat flour",
       "expected": {
         "item": "white whole-wheat or regular whole-wheat flour",
@@ -166,10 +157,6 @@
       }
     },
     {
-      "raw": "Filling",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 cup (100 grams) granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -184,7 +171,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -199,7 +185,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,7 +203,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -237,7 +221,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -252,7 +235,6 @@
           }
         ],
         "note": "beaten with 1 tablespoon water",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

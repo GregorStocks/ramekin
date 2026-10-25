@@ -129,10 +129,15 @@
       }
     },
     {
-      "raw": "Juice from one lemon",
+      "raw": "1  lemon ( juiced)",
       "expected": {
-        "item": "Juice from one lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

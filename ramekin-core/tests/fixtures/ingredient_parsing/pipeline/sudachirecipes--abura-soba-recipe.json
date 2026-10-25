@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2 pinches Chinese-style chicken bouillon powder (optional)",
+      "raw": "2 pinches Chinese-style chicken bouillon powder optional",
       "expected": {
         "item": "Chinese-style chicken bouillon powder",
         "measurements": [
@@ -129,17 +129,17 @@
       }
     },
     {
-      "raw": "2 portions ramen noodles (fresh or spaghetti hack)",
+      "raw": "2 portions ramen noodles fresh or spaghetti hack",
       "expected": {
-        "item": "ramen noodles",
+        "item": "ramen noodles fresh or spaghetti hack",
         "measurements": [
           {
             "amount": "2",
             "unit": "portion"
           }
         ],
-        "note": "fresh or spaghetti hack",
-        "category": "Pasta & Rice"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -185,31 +185,31 @@
       }
     },
     {
-      "raw": "4 pieces pork chashu (or easy oven baked alternative)",
+      "raw": "4 pieces pork chashu or easy oven baked alternative",
       "expected": {
-        "item": "pork chashu",
+        "item": "pork chashu or easy oven baked alternative",
         "measurements": [
           {
             "amount": "4",
             "unit": "piece"
           }
         ],
-        "note": "or easy oven baked alternative",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "2  ramen egg (or soft boiled egg)",
+      "raw": "2 ramen egg or soft boiled egg",
       "expected": {
-        "item": "ramen egg",
+        "item": "ramen egg or soft boiled egg",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "or soft boiled egg",
-        "category": "Other"
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -222,7 +222,7 @@
       }
     },
     {
-      "raw": "narutomaki fish cake (optional)",
+      "raw": "narutomaki fish cake optional",
       "expected": {
         "item": "narutomaki fish cake",
         "measurements": [],
@@ -231,30 +231,30 @@
       }
     },
     {
-      "raw": "roasted seaweed for sushi (nori) (to garnish)",
+      "raw": "roasted seaweed for sushi (nori) to garnish",
       "expected": {
-        "item": "roasted seaweed for sushi",
+        "item": "roasted seaweed for sushi to garnish",
         "measurements": [],
-        "note": "nori, to garnish",
-        "category": "Spices & Seasonings"
+        "note": "nori",
+        "category": "Other"
       }
     },
     {
-      "raw": "chili oil (rayu) (to garnish)",
+      "raw": "chili oil (rayu) to garnish",
       "expected": {
-        "item": "chili oil",
+        "item": "chili oil to garnish",
         "measurements": [],
-        "note": "rayu, to garnish",
-        "category": "Oils & Vinegars"
+        "note": "rayu",
+        "category": "Other"
       }
     },
     {
-      "raw": "rice vinegar (to garnish)",
+      "raw": "rice vinegar to garnish",
       "expected": {
-        "item": "rice vinegar",
+        "item": "rice vinegar to garnish",
         "measurements": [],
-        "note": "to garnish",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

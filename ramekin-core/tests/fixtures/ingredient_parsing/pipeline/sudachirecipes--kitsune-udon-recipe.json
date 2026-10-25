@@ -17,12 +17,12 @@
       }
     },
     {
-      "raw": "water (for blanching, enough to fully submerge aburaage)",
+      "raw": "water for blanching, enough to fully submerge aburaage",
       "expected": {
-        "item": "water",
+        "item": "water for blanching, enough to fully submerge aburaage",
         "measurements": [],
-        "note": "for blanching, enough to fully submerge aburaage",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -54,17 +54,17 @@
       }
     },
     {
-      "raw": "2 tbsp mirin (hon-mirin best)",
+      "raw": "2 tbsp mirin hon-mirin best",
       "expected": {
-        "item": "mirin",
+        "item": "mirin hon-mirin best",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "hon-mirin best",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -96,23 +96,23 @@
       }
     },
     {
-      "raw": "2 tbsp Japanese light soy sauce (usukuchi shoyu) (or regular soy sauce)",
+      "raw": "2 tbsp Japanese light soy sauce (usukuchi shoyu) or regular soy sauce",
       "expected": {
-        "item": "Japanese light soy sauce",
+        "item": "Japanese light soy sauce or regular soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "usukuchi shoyu, or regular soy sauce",
+        "note": "usukuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1000 ml dashi stock",
+      "raw": "1000 ml dashi stock make it plant-based by using a shiitake and kombu awase dashi",
       "expected": {
-        "item": "dashi stock",
+        "item": "dashi stock make it plant-based by using a shiitake and kombu awase dashi",
         "measurements": [
           {
             "amount": "1000",
@@ -120,20 +120,20 @@
           }
         ],
         "note": null,
-        "category": "Canned Goods"
+        "category": "Other"
       }
     },
     {
-      "raw": "4 tbsp Japanese light soy sauce (usukuchi shoyu) (or regular soy sauce)",
+      "raw": "4 tbsp Japanese light soy sauce (usukuchi shoyu) or regular soy sauce",
       "expected": {
-        "item": "Japanese light soy sauce",
+        "item": "Japanese light soy sauce or regular soy sauce",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "usukuchi shoyu, or regular soy sauce",
+        "note": "usukuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -166,17 +166,17 @@
       }
     },
     {
-      "raw": "4 portions udon noodles (thick or medium-thick preferred for texture)",
+      "raw": "4 portions udon noodles thick or medium-thick preferred for texture",
       "expected": {
-        "item": "udon noodles",
+        "item": "udon noodles thick or medium-thick preferred for texture",
         "measurements": [
           {
             "amount": "4",
             "unit": "portion"
           }
         ],
-        "note": "thick or medium-thick preferred for texture",
-        "category": "Pasta & Rice"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -189,17 +189,17 @@
       }
     },
     {
-      "raw": "12 slices kamaboko fish cake (omit for plant-based diets)",
+      "raw": "12 slices kamaboko fish cake omit for plant-based diets",
       "expected": {
-        "item": "kamaboko fish cake",
+        "item": "kamaboko fish cake omit for plant-based diets",
         "measurements": [
           {
             "amount": "12",
             "unit": "slice"
           }
         ],
-        "note": "omit for plant-based diets",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

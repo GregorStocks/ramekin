@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/4 cup sugar",
+      "raw": "¼ cup sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/4 tsp baking soda",
+      "raw": "¼ tsp baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/4 tsp salt",
+      "raw": "¼ tsp salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/3 cup COLD unsalted butter",
+      "raw": "⅓ cup COLD unsalted butter",
       "expected": {
         "item": "COLD unsalted butter",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/2 cup cold unsweetened almond milk",
+      "raw": "½ cup cold unsweetened almond milk",
       "expected": {
         "item": "cold unsweetened almond milk",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/2 tsp vanilla extract",
+      "raw": "½ tsp vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1/2 tsp almond extract",
+      "raw": "½ tsp almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -143,35 +143,35 @@
       }
     },
     {
-      "raw": "1 cup blueberries (fresh or frozen)",
+      "raw": "1 cup blueberries fresh or frozen",
       "expected": {
-        "item": "blueberries",
+        "item": "blueberries fresh or frozen",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "fresh or frozen",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup sliced almonds (pre-toasting optional)",
+      "raw": "¼ cup sliced almonds pre-toasting optional",
       "expected": {
-        "item": "sliced almonds",
+        "item": "sliced almonds pre-toasting",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "pre-toasting optional",
-        "category": "Nuts & Dried Fruit"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup powdered sugar",
+      "raw": "½ cup powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [

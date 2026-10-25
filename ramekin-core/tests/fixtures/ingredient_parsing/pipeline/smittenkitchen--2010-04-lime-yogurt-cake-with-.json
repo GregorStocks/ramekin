@@ -3,15 +3,6 @@
   "recipe_slug": "2010-04-lime-yogurt-cake-with-",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "1 cup whole milk plain unsweetened yogurt (this is the ideal; however, I had success with 2% Greek yogurt)",
       "expected": {
         "item": "whole milk plain unsweetened yogurt",
@@ -152,10 +143,6 @@
       }
     },
     {
-      "raw": "Sauce",
-      "is_section_header": true
-    },
-    {
       "raw": "12 ounces fresh blackberries (frozen should work as well, but you should start with half the water)",
       "expected": {
         "item": "fresh blackberries",
@@ -166,7 +153,6 @@
           }
         ],
         "note": "frozen should work as well, but you should start with half the water",
-        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -181,7 +167,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -196,7 +181,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -211,7 +195,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
         "category": "Produce"
       }
     }

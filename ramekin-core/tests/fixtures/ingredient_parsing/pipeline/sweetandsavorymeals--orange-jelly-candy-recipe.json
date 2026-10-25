@@ -3,9 +3,9 @@
   "recipe_slug": "orange-jelly-candy-recipe",
   "ingredients": [
     {
-      "raw": "1 cup sour orange juice (preferably freshly squeezed)",
+      "raw": "1 cup sour orange juice - no pulp (preferably freshly squeezed)",
       "expected": {
-        "item": "sour orange juice",
+        "item": "sour orange juice - no pulp",
         "measurements": [
           {
             "amount": "1",
@@ -13,7 +13,7 @@
           }
         ],
         "note": "preferably freshly squeezed",
-        "category": "Beverages"
+        "category": "Other"
       }
     },
     {

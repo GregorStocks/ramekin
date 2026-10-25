@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "200 ml heavy cream (35% milk fat or higher)",
+      "raw": "200 ml heavy cream 35% milk fat or higher",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream 35% milk fat or higher",
         "measurements": [
           {
             "amount": "200",
             "unit": "ml"
           }
         ],
-        "note": "35% milk fat or higher",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2  pasteurized egg yolk",
+      "raw": "2 pasteurized egg yolk",
       "expected": {
         "item": "pasteurized egg yolk",
         "measurements": [
@@ -129,12 +129,12 @@
       }
     },
     {
-      "raw": "ice cubes (to speed up cooling, optional)",
+      "raw": "ice cubes to speed up cooling, optional",
       "expected": {
-        "item": "ice cubes",
+        "item": "ice cubes to speed up cooling",
         "measurements": [],
-        "note": "to speed up cooling, optional",
-        "category": "Frozen"
+        "note": "optional",
+        "category": "Other"
       }
     }
   ]

@@ -3,16 +3,16 @@
   "recipe_slug": "sweet-cherry-filled-buns-vatru",
   "ingredients": [
     {
-      "raw": "1 cup warm milk (about 100˚F, not hot!)",
+      "raw": "1 cup warm milk, about 100˚F, not hot!",
       "expected": {
-        "item": "warm milk",
+        "item": "warm milk, about 100˚F, not hot!",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "about 100˚F, not hot!",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "4 Tbsp granulated sugar (divided)",
+      "raw": "4 Tbsp granulated sugar, divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "3 1/4 cups all purpose flour (divided, plus more for dusting)",
+      "raw": "3 1/4 cups all purpose flour, divided, plus more for dusting",
       "expected": {
         "item": "all purpose flour",
         "measurements": [
@@ -59,21 +59,21 @@
       }
     },
     {
-      "raw": "1  egg (room temp (take it out of the fridge at the start of the recipe))",
+      "raw": "1 egg, room temp (take it out of the fridge at the start of the recipe)",
       "expected": {
-        "item": "egg",
+        "item": "egg, room temp",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "room temp (take it out of the fridge at the start of the recipe)",
+        "note": "take it out of the fridge at the start of the recipe",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 Tbsp unsalted butter (melted)",
+      "raw": "1 Tbsp unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1  egg (beaten with fork (for egg wash))",
+      "raw": "1 egg, beaten with fork (for egg wash)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -110,12 +110,12 @@
             "unit": null
           }
         ],
-        "note": "beaten with fork (for egg wash)",
+        "note": "for egg wash, beaten with fork",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 lb sweet red cherries (pitted)",
+      "raw": "1 lb sweet red cherries, pitted",
       "expected": {
         "item": "sweet red cherries",
         "measurements": [
@@ -129,21 +129,21 @@
       }
     },
     {
-      "raw": "1/4 cup granulated sugar (1/2 tsp for each bun)",
+      "raw": "1/4 cup granulated sugar, 1/2 tsp for each bun",
       "expected": {
-        "item": "granulated sugar",
+        "item": "granulated sugar, 1/2 tsp for each bun",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "1/2 tsp for each bun",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "4 Tbsp unsalted butter (cold, diced)",
+      "raw": "4 Tbsp unsalted butter, cold, diced",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

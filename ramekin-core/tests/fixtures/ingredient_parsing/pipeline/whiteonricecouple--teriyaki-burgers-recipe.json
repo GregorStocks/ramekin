@@ -3,13 +3,17 @@
   "recipe_slug": "teriyaki-burgers-recipe",
   "ingredients": [
     {
-      "raw": "1 pound ground beef",
+      "raw": "1 pound  (454 g) ground beef",
       "expected": {
         "item": "ground beef",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "2 teaspoons fish sauce (, optional)",
+      "raw": "2 teaspoons  (10 ml) fish sauce , optional",
       "expected": {
         "item": "fish sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
           }
         ],
         "note": "optional",
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "1 clove garlic (, crushed or minced (optional))",
+      "raw": "1 clove   garlic , crushed or minced (optional)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -40,18 +48,22 @@
             "unit": "clove"
           }
         ],
-        "note": "crushed or minced (optional)",
+        "note": "optional, crushed or minced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 teaspoon sugar (, optional)",
+      "raw": "1/2 teaspoon  (2.5 ml) sugar , optional",
       "expected": {
         "item": "sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": "optional",
@@ -59,7 +71,7 @@
       }
     },
     {
-      "raw": "fresh cracked black pepper ( to taste)",
+      "raw": "fresh cracked black pepper  to taste",
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [],
@@ -68,7 +80,7 @@
       }
     },
     {
-      "raw": "3  hamburger buns",
+      "raw": "3   hamburger buns",
       "expected": {
         "item": "hamburger buns",
         "measurements": [
@@ -82,31 +94,35 @@
       }
     },
     {
-      "raw": "kosher salt ( or sea salt, to taste)",
+      "raw": "kosher salt  or sea salt, to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt or sea salt",
         "measurements": [],
-        "note": "or sea salt, to taste",
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "lettuce, tomato, pickles ( and other desired trimmings)",
+      "raw": "lettuce, tomato, pickles  and other desired trimmings",
       "expected": {
-        "item": "lettuce, tomato, pickles",
+        "item": "lettuce, tomato, pickles and other desired trimmings",
         "measurements": [],
-        "note": "and other desired trimmings",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup soy sauce",
+      "raw": "1/4 cup  (60 ml) soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -114,27 +130,35 @@
       }
     },
     {
-      "raw": "1/4 cup sake (or water)",
+      "raw": "1/4 cup  (60 ml) sake or water",
       "expected": {
-        "item": "sake",
+        "item": "sake or water",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
-        "note": "or water",
+        "note": null,
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/4 cup brown sugar",
+      "raw": "1/4 cup  (55 g) brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -142,13 +166,17 @@
       }
     },
     {
-      "raw": "1 Tablespoon rice vinegar ((or apple cider))",
+      "raw": "1 Tablespoon  (15 ml) rice vinegar (or apple cider)",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": "or apple cider",
@@ -156,13 +184,17 @@
       }
     },
     {
-      "raw": "1 teaspoon cornstarch",
+      "raw": "1 teaspoon  (5 ml) cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -170,13 +202,17 @@
       }
     },
     {
-      "raw": "1 teaspoon grated fresh ginger (, or 1/2 teaspoon ground ginger)",
+      "raw": "1 teaspoon  (5 ml) grated fresh ginger , or 1/2 teaspoon ground ginger",
       "expected": {
         "item": "grated fresh ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": "or 1/2 teaspoon ground ginger",
@@ -184,7 +220,7 @@
       }
     },
     {
-      "raw": "1 large ripe mango (, peeled and cut into small dice )",
+      "raw": "1 large   ripe mango , peeled and cut into small dice",
       "expected": {
         "item": "ripe mango",
         "measurements": [
@@ -198,27 +234,31 @@
       }
     },
     {
-      "raw": "1 small tomato (, small dice )",
+      "raw": "1 small   tomato , small dice",
       "expected": {
-        "item": "tomato",
+        "item": "tomato, small dice",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "small dice",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup  minced red onion",
+      "raw": "1/4 cup   (40 g) minced red onion",
       "expected": {
         "item": "minced red onion",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -226,27 +266,35 @@
       }
     },
     {
-      "raw": "1  Tablespoon  minced jalapeno or serrano chili  (, or to personal taste )",
+      "raw": "1  Tablespoon   (15 ml) minced jalapeno or serrano chili  , or to personal taste",
       "expected": {
-        "item": "minced jalapeno or serrano chili",
+        "item": "minced jalapeno or serrano chili, or to personal taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
-        "note": "or to personal taste",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "1 Tablespoon finely minced fresh cilantro leaves",
+      "raw": "1 Tablespoon  (15 ml) finely minced fresh cilantro leaves",
       "expected": {
         "item": "finely minced fresh cilantro leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -254,13 +302,17 @@
       }
     },
     {
-      "raw": "1 teaspoon fresh lime juice (, or more to taste)",
+      "raw": "1 teaspoon  (5 ml) fresh lime juice , or more to taste",
       "expected": {
         "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": "or more to taste",
@@ -268,7 +320,7 @@
       }
     },
     {
-      "raw": "salt (, to taste)",
+      "raw": "salt , to taste",
       "expected": {
         "item": "salt",
         "measurements": [],

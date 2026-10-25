@@ -85,7 +85,7 @@
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -167,7 +167,7 @@
       }
     },
     {
-      "raw": "6  egg whites",
+      "raw": "6 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "1 pound unsalted butter (cubed, at room temperature)",
+      "raw": "1 pound unsalted butter cubed, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -305,11 +305,11 @@
       }
     },
     {
-      "raw": "Scalloped edging fondant cutter (see blog post for sources)",
+      "raw": "Scalloped edging fondant cutter see blog post for sources",
       "expected": {
-        "item": "Scalloped edging fondant cutter",
+        "item": "Scalloped edging fondant cutter see blog post for sources",
         "measurements": [],
-        "note": "see blog post for sources",
+        "note": null,
         "category": "Other"
       }
     },
@@ -328,16 +328,16 @@
       }
     },
     {
-      "raw": "1/2  batch American buttercream (recipe here)",
+      "raw": "1/2 batch American buttercream recipe here",
       "expected": {
-        "item": "American buttercream",
+        "item": "American buttercream recipe here",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "batch"
           }
         ],
-        "note": "recipe here",
+        "note": null,
         "category": "Other"
       }
     },

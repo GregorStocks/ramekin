@@ -3,7 +3,7 @@
   "recipe_slug": "gingerbread-cake-recipe",
   "ingredients": [
     {
-      "raw": "2 cups (250g) all-purpose flour (spooned &amp;amp; leveled)",
+      "raw": "2 cups (250g) all-purpose flour (spooned & leveled)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "3/4 cup (180ml or 225g) unsulphured or dark molasses (do not use blackstrap; I prefer Grandma&amp;#8217;s brand)",
+      "raw": "3/4 cup (180ml or 225g) unsulphured or dark molasses (do not use blackstrap; I prefer Grandma’s brand)",
       "expected": {
         "item": "unsulphured or dark molasses",
         "measurements": [
@@ -113,7 +113,7 @@
       }
     },
     {
-      "raw": "3/4 cup (180ml) hot water (about&nbsp;100°F (38°C))",
+      "raw": "3/4 cup (180ml) hot water (about 100°F (38°C))",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 large&nbsp;egg, at room temperature",
+      "raw": "1 large egg, at room temperature",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -235,7 +235,7 @@
       }
     },
     {
-      "raw": "1 and 3/4 cups&nbsp;(210g) confectioners&amp;#8217; sugar",
+      "raw": "1 and 3/4 cups (210g) confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [
@@ -265,6 +265,94 @@
         "note": null,
         "category": "Baking"
       }
+    },
+    {
+      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small pinch"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
+      "expected": {
+        "item": "cloves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small pinch"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
+      "expected": {
+        "item": "cloves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "small pinch each of ground cinnamon, ginger, and cloves",

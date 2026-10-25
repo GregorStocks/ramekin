@@ -3,21 +3,21 @@
   "recipe_slug": "quick-pickled-zucchini-recipe",
   "ingredients": [
     {
-      "raw": "2 - 2 1/4 lb zucchini (4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work))",
+      "raw": "2 - 2 1/4 lb zucchini, 4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
       "expected": {
-        "item": "zucchini",
+        "item": "zucchini, 4 medium",
         "measurements": [
           {
             "amount": "2-2.25",
             "unit": "lb"
           }
         ],
-        "note": "4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
+        "note": "green zucchini, yellow squash, or light green Mexican zucchini will work",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves of garlic (halved)",
+      "raw": "3 cloves of garlic, halved",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2-3  bay leaves",
+      "raw": "2-3 bay leaves",
       "expected": {
         "item": "bay leaves",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "6-8  pepper corns",
+      "raw": "6-8 pepper corns",
       "expected": {
         "item": "pepper corns",
         "measurements": [
@@ -115,16 +115,16 @@
       }
     },
     {
-      "raw": "1/2 cup white vinegar (5% acidity)",
+      "raw": "1/2 cup white vinegar, 5% acidity",
       "expected": {
-        "item": "white vinegar",
+        "item": "white vinegar, 5% acidity",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "5% acidity",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -143,16 +143,16 @@
       }
     },
     {
-      "raw": "1 Tbsp salt (we used sea salt, non-iodized)",
+      "raw": "1 Tbsp salt, we used sea salt, non-iodized",
       "expected": {
-        "item": "salt",
+        "item": "salt, we used sea salt, non-iodized",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "we used sea salt, non-iodized",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

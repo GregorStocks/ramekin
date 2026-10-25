@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "2  large egg whites",
+      "raw": "2 large egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "8 ounces cream cheese, (softened)",
+      "raw": "8 ounces cream cheese, softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "white sparkle sugar, (for topping)",
+      "raw": "white sparkle sugar, for topping",
       "expected": {
         "item": "white sparkle sugar",
         "measurements": [],

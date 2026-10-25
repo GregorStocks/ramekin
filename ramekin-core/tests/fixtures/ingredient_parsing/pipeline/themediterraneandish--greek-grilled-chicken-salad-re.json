@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "2 tbsp extra virgin olive oil (more for later)",
+      "raw": "2 tbsp extra virgin olive oil more for later",
       "expected": {
-        "item": "extra virgin olive oil",
+        "item": "extra virgin olive oil more for later",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "more for later",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3  garlic cloves (minced)",
+      "raw": "3 garlic cloves minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -73,21 +73,21 @@
       }
     },
     {
-      "raw": "Kosher salt (generous pinch to taste)",
+      "raw": "Kosher salt generous pinch to taste",
       "expected": {
-        "item": "Kosher salt",
+        "item": "Kosher salt generous pinch",
         "measurements": [],
-        "note": "generous pinch to taste",
-        "category": "Spices & Seasonings"
+        "note": "to taste",
+        "category": "Other"
       }
     },
     {
-      "raw": "Black pepper (generous pinch to taste)",
+      "raw": "Black pepper generous pinch to taste",
       "expected": {
-        "item": "Black pepper",
+        "item": "Black pepper generous pinch",
         "measurements": [],
-        "note": "generous pinch to taste",
-        "category": "Spices & Seasonings"
+        "note": "to taste",
+        "category": "Other"
       }
     },
     {
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "pinch cayenne pepper (optional)",
+      "raw": "pinch cayenne pepper optional",
       "expected": {
         "item": "cayenne pepper",
         "measurements": [
@@ -175,16 +175,16 @@
       }
     },
     {
-      "raw": "Homemade Greek dressing,",
+      "raw": "Homemade Greek dressing,  use this Greek dressing recipe",
       "expected": {
-        "item": "Homemade Greek dressing",
+        "item": "Homemade Greek dressing, use this Greek dressing recipe",
         "measurements": [],
         "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "8 oz hearts of Romaine lettuce,  (chopped )",
+      "raw": "8 oz hearts of Romaine lettuce,  chopped",
       "expected": {
         "item": "hearts of Romaine lettuce",
         "measurements": [
@@ -212,7 +212,7 @@
       }
     },
     {
-      "raw": "1  bell pepper any color, (cored and chopped)",
+      "raw": "1 bell pepper any color, cored and chopped",
       "expected": {
         "item": "bell pepper any color",
         "measurements": [
@@ -226,7 +226,7 @@
       }
     },
     {
-      "raw": "1  English cucumber sliced into rounds, (diced)",
+      "raw": "1 English cucumber sliced into rounds, diced",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -235,12 +235,12 @@
             "unit": null
           }
         ],
-        "note": "diced, sliced into rounds",
+        "note": "sliced into rounds, diced",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  shallots, (thinly sliced)",
+      "raw": "2 shallots, thinly sliced",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -254,20 +254,20 @@
       }
     },
     {
-      "raw": "Pitted Kalamata olives,  (to your liking)",
+      "raw": "Pitted Kalamata olives,  to your liking",
       "expected": {
-        "item": "Pitted Kalamata olives",
+        "item": "Pitted Kalamata olives, to your liking",
         "measurements": [],
-        "note": "to your liking",
+        "note": null,
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "Quality Greek feta blocks,  (to your liking)",
+      "raw": "Quality Greek feta blocks,  to your liking",
       "expected": {
-        "item": "Quality Greek feta blocks",
+        "item": "Quality Greek feta blocks, to your liking",
         "measurements": [],
-        "note": "to your liking",
+        "note": null,
         "category": "Other"
       }
     }

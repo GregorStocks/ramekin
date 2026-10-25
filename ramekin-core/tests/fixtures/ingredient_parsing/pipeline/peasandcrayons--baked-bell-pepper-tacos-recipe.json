@@ -3,7 +3,7 @@
   "recipe_slug": "baked-bell-pepper-tacos-recipe",
   "ingredients": [
     {
-      "raw": "4  large bell peppers",
+      "raw": "4 large bell peppers",
       "expected": {
         "item": "bell peppers",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "3-4 cups taco filling ((choose from below))",
+      "raw": "3-4 cups taco filling (choose from below)",
       "expected": {
         "item": "taco filling",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "3/4 cup shredded cheese (extra as desired)",
+      "raw": "¾ cup shredded cheese extra as desired",
       "expected": {
-        "item": "shredded cheese",
+        "item": "shredded cheese extra as desired",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "extra as desired",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3/4 cup chopped tomato",
+      "raw": "¾ cup chopped tomato",
       "expected": {
         "item": "chopped tomato",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3/4 cup chopped lettuce",
+      "raw": "¾ cup chopped lettuce",
       "expected": {
         "item": "chopped lettuce",
         "measurements": [
@@ -73,20 +73,20 @@
       }
     },
     {
-      "raw": "cilantro and lime (as a tasty garnish)",
+      "raw": "cilantro and lime as a tasty garnish",
       "expected": {
-        "item": "cilantro and lime",
+        "item": "cilantro and lime as a tasty garnish",
         "measurements": [],
-        "note": "as a tasty garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "a. 1lb ground beef, chicken, or turkey",
+      "raw": "a. 1lb ground beef, chicken, or turkey seasoned your favorite way and browned on the stove-top! I use a combination of enchilada sauce (homemade or store bought) and homemade taco seasoning to flavor mine, plus a little mexican hot sacue for a kick! You can also make your protein option in advance and keep in the fridge for 2-3 days or freezer for emergency taco night filling. This also works with my lentil-veggie taco filling too!",
       "expected": {
-        "item": "a. 1lb ground beef, chicken, or turkey",
+        "item": "a. 1lb ground beef, chicken, or turkey seasoned your favorite way and browned on the stove-top! I use a combination of enchilada sauce and homemade taco seasoning to flavor mine",
         "measurements": [],
-        "note": null,
+        "note": "homemade or store bought, plus a little mexican hot sacue for a kick! You can also make your protein option in advance and keep in the fridge for 2-3 days or freezer for emergency taco night filling. This also works with my lentil-veggie taco filling too!",
         "category": "Meat & Seafood"
       }
     },
@@ -100,16 +100,16 @@
       }
     },
     {
-      "raw": "c. 3-4 cups Seasoned tofu (like chipotle-style sofritos)",
+      "raw": "c. 3-4 cups Seasoned tofu like chipotle-style sofritos",
       "expected": {
-        "item": "3-4 cups Seasoned tofu",
+        "item": "3-4 cups Seasoned tofu like chipotle-style sofritos",
         "measurements": [
           {
             "amount": null,
             "unit": "cup"
           }
         ],
-        "note": "like chipotle-style sofritos",
+        "note": null,
         "category": "Other"
       }
     },

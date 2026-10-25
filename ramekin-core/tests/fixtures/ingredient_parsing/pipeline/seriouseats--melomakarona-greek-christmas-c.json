@@ -75,9 +75,9 @@
       }
     },
     {
-      "raw": "1 cup (240 ml) olive oil or sunflower oil",
+      "raw": "1 cup (240 ml) olive oil",
       "expected": {
-        "item": "olive oil or sunflower oil",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "18 ounces all-purpose flour ( 510 g; 4 cups)",
+      "raw": "18 ounces all-purpose flour (510 g; 4 cups)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [

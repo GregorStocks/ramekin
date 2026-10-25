@@ -3,7 +3,7 @@
   "recipe_slug": "hamburger-recipe",
   "ingredients": [
     {
-      "raw": "1 ½ pounds ground chuck* (, (80/20))",
+      "raw": "1 ½ pounds ground chuck*, , (80/20)",
       "expected": {
         "item": "ground chuck",
         "measurements": [
@@ -12,7 +12,7 @@
             "unit": "lb"
           }
         ],
-        "note": "(80/20)",
+        "note": "80/20",
         "category": "Meat & Seafood"
       }
     },
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "6  hamburger buns (, toasted, if desired)",
+      "raw": "6 hamburger buns, , toasted, if desired",
       "expected": {
         "item": "hamburger buns",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "6 slices American cheese* (, or your favorite cheese)",
+      "raw": "6 slices American cheese*, , or your favorite cheese",
       "expected": {
         "item": "American cheese",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "6  lettuce leaves",
+      "raw": "6 lettuce leaves",
       "expected": {
         "item": "lettuce leaves",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1  beefsteak tomato (, thinly sliced)",
+      "raw": "1 beefsteak tomato, , thinly sliced",
       "expected": {
         "item": "beefsteak tomato",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1/2  of a red or white onion (, thinly sliced)",
+      "raw": "½  of a red or white onion, , thinly sliced",
       "expected": {
         "item": "red or white onion",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "6  Pickle slices",
+      "raw": "6 Pickle slices",
       "expected": {
         "item": "Pickle slices",
         "measurements": [

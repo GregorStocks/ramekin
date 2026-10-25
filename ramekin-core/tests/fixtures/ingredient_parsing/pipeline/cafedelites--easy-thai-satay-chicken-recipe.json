@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "1 1/4 tablespoon light brown sugar (packed, omit for keto)",
+      "raw": "1 1/4 tablespoon light brown sugar packed, omit for keto",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar packed, omit for keto",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tbsp"
           }
         ],
-        "note": "packed, omit for keto",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "1 tablespoon Kecap Manis (sweet soy sauce)",
+      "raw": "1 tablespoon Kecap Manis sweet soy sauce",
       "expected": {
-        "item": "Kecap Manis",
+        "item": "Kecap Manis sweet soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "sweet soy sauce",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,21 +101,21 @@
       }
     },
     {
-      "raw": "4  skinless chicken thighs (bone-in or out)",
+      "raw": "4  chicken thighs bone-in or out",
       "expected": {
-        "item": "skinless chicken thighs",
+        "item": "chicken thighs bone-in or out",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "bone-in or out",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 teaspoons peanut oil (for frying)",
+      "raw": "2 teaspoons peanut oil for frying",
       "expected": {
         "item": "peanut oil",
         "measurements": [
@@ -129,31 +129,31 @@
       }
     },
     {
-      "raw": "1 1/3 cup coconut milk (all remaining milk from the tin)",
+      "raw": "1 1/3 cup coconut milk all remaining milk from the tin",
       "expected": {
-        "item": "coconut milk",
+        "item": "coconut milk all remaining milk from the tin",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
           }
         ],
-        "note": "all remaining milk from the tin",
-        "category": "Canned Goods"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup creamy peanut butter (all natural preferable)",
+      "raw": "1/4 cup creamy peanut butter all natural preferable",
       "expected": {
-        "item": "creamy peanut butter",
+        "item": "creamy peanut butter all natural preferable",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "all natural preferable",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -171,31 +171,31 @@
       }
     },
     {
-      "raw": "1 tablespoon sweet soy sauce (Kecap Manis)",
+      "raw": "1 tablespoon sweet soy sauce Kecap Manis",
       "expected": {
-        "item": "sweet soy sauce",
+        "item": "sweet soy sauce Kecap Manis",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "Kecap Manis",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon brown sugar (packed, omit for keto)",
+      "raw": "1 tablespoon brown sugar packed, omit for keto",
       "expected": {
-        "item": "brown sugar",
+        "item": "brown sugar packed, omit for keto",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "packed, omit for keto",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "1/2 tablespoon Tamarind puree (optional)",
+      "raw": "1/2 tablespoon Tamarind puree optional",
       "expected": {
         "item": "Tamarind puree",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "1 teaspoon garlic (minced)",
+      "raw": "1 teaspoon garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -255,7 +255,7 @@
       }
     },
     {
-      "raw": "1-2 tablespoons lime juice (freshly squeezed)",
+      "raw": "1-2 tablespoons lime juice freshly squeezed",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -269,35 +269,35 @@
       }
     },
     {
-      "raw": "1 handful cilantro (to garnish)",
+      "raw": "1 handful cilantro to garnish",
       "expected": {
-        "item": "cilantro",
+        "item": "cilantro to garnish",
         "measurements": [
           {
             "amount": "1",
             "unit": "handful"
           }
         ],
-        "note": "to garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3  lime wedges (to garnish)",
+      "raw": "3 lime wedges to garnish",
       "expected": {
-        "item": "lime wedges",
+        "item": "lime wedges to garnish",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "to garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  red chillies (sliced to garnish)",
+      "raw": "1 red chillies sliced to garnish",
       "expected": {
         "item": "red chillies",
         "measurements": [

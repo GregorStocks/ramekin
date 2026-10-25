@@ -133,10 +133,6 @@
       }
     },
     {
-      "raw": "Topping Ingredients:",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 cup brown sugar",
       "expected": {
         "item": "brown sugar",
@@ -147,7 +143,6 @@
           }
         ],
         "note": null,
-        "section": "Topping Ingredients",
         "category": "Baking"
       }
     },
@@ -162,7 +157,6 @@
           }
         ],
         "note": null,
-        "section": "Topping Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -177,7 +171,6 @@
           }
         ],
         "note": null,
-        "section": "Topping Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -192,7 +185,6 @@
           }
         ],
         "note": null,
-        "section": "Topping Ingredients",
         "category": "Spices & Seasonings"
       }
     }

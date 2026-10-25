@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 (8-ounce) cans crushed pineapple (well drained)",
+      "raw": "2 (8-ounce) cans crushed pineapple well drained",
       "expected": {
         "item": "crushed pineapple",
         "measurements": [
@@ -59,21 +59,21 @@
       }
     },
     {
-      "raw": "1 (20-ounce) can pineapple tidbits (well-drained)",
+      "raw": "1 (20-ounce) can pineapple tidbits well-drained",
       "expected": {
-        "item": "pineapple tidbits",
+        "item": "pineapple tidbits well-drained",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "20-ounce, well-drained",
-        "category": "Canned Goods"
+        "note": "20-ounce",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 1/2 cups pecans, (divided, and chopped )",
+      "raw": "1 1/2 cups pecans, divided, and chopped",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1  (8-ounce) container  frozen whipped topping (thawed )",
+      "raw": "1  (8-ounce) container  frozen whipped topping thawed",
       "expected": {
         "item": "frozen whipped topping",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 (8-ounce) container  frozen whipped topping (thawed )",
+      "raw": "1 (8-ounce) container  frozen whipped topping thawed",
       "expected": {
         "item": "frozen whipped topping",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "2 tablespoons coconut (toasted )",
+      "raw": "2 tablespoons coconut toasted",
       "expected": {
         "item": "coconut",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "6-8  maraschino cherries",
+      "raw": "6-8 maraschino cherries",
       "expected": {
         "item": "maraschino cherries",
         "measurements": [

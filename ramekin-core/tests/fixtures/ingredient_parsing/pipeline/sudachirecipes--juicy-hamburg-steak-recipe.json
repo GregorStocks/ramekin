@@ -17,30 +17,30 @@
       }
     },
     {
-      "raw": "½  onion (finely minced to ~5mm, 100-150g per 300g meat)",
+      "raw": "½ onion finely minced to ~5mm, 100-150g per 300g meat",
       "expected": {
-        "item": "onion",
+        "item": "onion finely minced to ~5mm, 100-150g per 300g meat",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "finely minced to ~5mm, 100-150g per 300g meat",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "4 tbsp panko breadcrumbs (or Western breadcrumbs, avoid seasoned types)",
+      "raw": "4 tbsp panko breadcrumbs or Western breadcrumbs, avoid seasoned types",
       "expected": {
-        "item": "panko breadcrumbs",
+        "item": "panko breadcrumbs or Western breadcrumbs, avoid seasoned types",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "or Western breadcrumbs, avoid seasoned types",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "200 g ground beef (or 50% beef and 50% pork, ~20% fat content recommended)",
+      "raw": "200 g ground beef or 50% beef and 50% pork, ~20% fat content recommended",
       "expected": {
         "item": "ground beef",
         "measurements": [
@@ -87,17 +87,17 @@
       }
     },
     {
-      "raw": "½ tsp salt (0.8-1.0% of meat weight)",
+      "raw": "½ tsp salt 0.8-1.0% of meat weight",
       "expected": {
-        "item": "salt",
+        "item": "salt 0.8-1.0% of meat weight",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "0.8-1.0% of meat weight",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 pinch nutmeg powder (optional)",
+      "raw": "1 pinch nutmeg powder optional",
       "expected": {
         "item": "nutmeg powder",
         "measurements": [
@@ -129,17 +129,17 @@
       }
     },
     {
-      "raw": "½ tbsp lard (optional, use if meat is lean)",
+      "raw": "½ tbsp lard optional, use if meat is lean",
       "expected": {
-        "item": "lard",
+        "item": "lard optional, use if meat is lean",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "optional, use if meat is lean",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -227,17 +227,17 @@
       }
     },
     {
-      "raw": "½ tsp smooth Dijon mustard (avoid whole-grain)",
+      "raw": "½ tsp smooth Dijon mustard avoid whole-grain",
       "expected": {
-        "item": "smooth Dijon mustard",
+        "item": "smooth Dijon mustard avoid whole-grain",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "avoid whole-grain",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -301,11 +301,11 @@
       }
     },
     {
-      "raw": "steamed vegetables (or fresh salad)",
+      "raw": "steamed vegetables or fresh salad",
       "expected": {
-        "item": "steamed vegetables",
+        "item": "steamed vegetables or fresh salad",
         "measurements": [],
-        "note": "or fresh salad",
+        "note": null,
         "category": "Other"
       }
     }

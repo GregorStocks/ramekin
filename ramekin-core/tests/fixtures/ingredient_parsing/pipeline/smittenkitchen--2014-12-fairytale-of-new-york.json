@@ -3,80 +3,6 @@
   "recipe_slug": "2014-12-fairytale-of-new-york",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Cherry Almond Dutch Baby",
-      "expected": {
-        "item": "Months Ago: Cherry Almond Dutch Baby",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Pickled Vegetable Sandwich Slaw",
-      "expected": {
-        "item": "Years Ago: Pickled Vegetable Sandwich Slaw",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Triple Berry Summer Buttermilk Bundt",
-      "expected": {
-        "item": "Years Ago: Triple Berry Summer Buttermilk Bundt",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Blueberry Yogurt Multigrain Pancakes",
-      "expected": {
-        "item": "Years Ago: Blueberry Yogurt Multigrain Pancakes",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Winter Warmth Syrup",
-      "expected": {
-        "item": "Winter Warmth Syrup",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1 1/2 cups water",
       "expected": {
         "item": "water",
@@ -189,10 +115,6 @@
       }
     },
     {
-      "raw": "For Each Cocktail",
-      "is_section_header": true
-    },
-    {
       "raw": "1 piece of orange peel (about 1 by 2 inches)",
       "expected": {
         "item": "orange peel",
@@ -203,7 +125,6 @@
           }
         ],
         "note": "about 1 by 2 inches",
-        "section": "For Each Cocktail",
         "category": "Produce"
       }
     },
@@ -218,7 +139,6 @@
           }
         ],
         "note": "recipe above",
-        "section": "For Each Cocktail",
         "category": "Other"
       }
     },
@@ -233,7 +153,6 @@
           }
         ],
         "note": "Fee Brothers black walnut bitters are recommended, I used orange bitters",
-        "section": "For Each Cocktail",
         "category": "Beverages"
       }
     },
@@ -248,7 +167,6 @@
           }
         ],
         "note": null,
-        "section": "For Each Cocktail",
         "category": "Beverages"
       }
     }

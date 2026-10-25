@@ -3,7 +3,7 @@
   "recipe_slug": "easy-chocolate-cake-recipe",
   "ingredients": [
     {
-      "raw": "1 cup (142g) all-purpose flour ((scoop and level to measure))",
+      "raw": "1 cup (142g) all-purpose flour (scoop and level to measure)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -39,7 +39,7 @@
       }
     },
     {
-      "raw": "6 Tbsp (35g) Dutch process cocoa powder, (plus more for dusting pan)",
+      "raw": "6 Tbsp (35g) Dutch process cocoa powder, plus more for dusting pan",
       "expected": {
         "item": "Dutch process cocoa powder",
         "measurements": [
@@ -99,16 +99,16 @@
       }
     },
     {
-      "raw": "1/2 cup vegetable oil (or canola oil)",
+      "raw": "1/2 cup vegetable oil or canola oil",
       "expected": {
-        "item": "vegetable oil",
+        "item": "vegetable oil or canola oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or canola oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -141,7 +141,7 @@
       }
     },
     {
-      "raw": "6 oz. semi-sweet chocolate, (finely chopped)",
+      "raw": "6 oz. semi-sweet chocolate, finely chopped",
       "expected": {
         "item": "semi-sweet chocolate",
         "measurements": [

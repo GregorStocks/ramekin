@@ -3,9 +3,9 @@
   "recipe_slug": "zaru-udon-recipe",
   "ingredients": [
     {
-      "raw": "200 ml dashi stock",
+      "raw": "200 ml dashi stock or make it plant-based with my shiitake and kombu dashi recipe",
       "expected": {
-        "item": "dashi stock",
+        "item": "dashi stock or make it plant-based with my shiitake and kombu dashi recipe",
         "measurements": [
           {
             "amount": "200",
@@ -59,26 +59,26 @@
       }
     },
     {
-      "raw": "2 portions udon noodles (fresh, frozen, or dried)",
+      "raw": "2 portions udon noodles fresh, frozen, or dried",
       "expected": {
-        "item": "udon noodles",
+        "item": "udon noodles fresh",
         "measurements": [
           {
             "amount": "2",
             "unit": "portion"
           }
         ],
-        "note": "fresh, frozen, or dried",
-        "category": "Pasta & Rice"
+        "note": "frozen, or dried",
+        "category": "Other"
       }
     },
     {
-      "raw": "kizami nori (shredded nori) (optional garnish)",
+      "raw": "kizami nori (shredded nori) optional garnish",
       "expected": {
-        "item": "kizami nori",
+        "item": "kizami nori optional garnish",
         "measurements": [],
-        "note": "shredded nori, optional garnish",
-        "category": "Spices & Seasonings"
+        "note": "shredded nori",
+        "category": "Other"
       }
     },
     {
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "1 tsp ginger root (grated)",
+      "raw": "1 tsp ginger root grated",
       "expected": {
         "item": "ginger root",
         "measurements": [
@@ -110,16 +110,16 @@
       }
     },
     {
-      "raw": "2 tbsp tempura flakes (tenkasu) (store-bought or homemade)",
+      "raw": "2 tbsp tempura flakes (tenkasu) store-bought or homemade",
       "expected": {
-        "item": "tempura flakes",
+        "item": "tempura flakes store-bought or homemade",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "tenkasu, store-bought or homemade",
+        "note": "tenkasu",
         "category": "Other"
       }
     },

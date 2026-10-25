@@ -171,10 +171,6 @@
       }
     },
     {
-      "raw": "Optional Frosting Ingredients:",
-      "is_section_header": true
-    },
-    {
       "raw": "8 ounces cream cheese (room temperature)",
       "expected": {
         "item": "cream cheese",
@@ -185,7 +181,6 @@
           }
         ],
         "note": "room temperature",
-        "section": "Optional Frosting Ingredients",
         "category": "Cheese"
       }
     },
@@ -200,7 +195,6 @@
           }
         ],
         "note": "room temperature",
-        "section": "Optional Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -215,7 +209,6 @@
           }
         ],
         "note": null,
-        "section": "Optional Frosting Ingredients",
         "category": "Baking"
       }
     },
@@ -230,7 +223,6 @@
           }
         ],
         "note": "or 1 vanilla bean (scraped)",
-        "section": "Optional Frosting Ingredients",
         "category": "Baking"
       }
     }

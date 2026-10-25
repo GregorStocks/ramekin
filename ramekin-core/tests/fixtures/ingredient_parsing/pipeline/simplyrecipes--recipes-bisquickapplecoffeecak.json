@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 tablespoon sugar",
+      "raw": "2 tablespoons sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -45,13 +45,13 @@
       }
     },
     {
-      "raw": "1 egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "large"
           }
         ],
         "note": null,

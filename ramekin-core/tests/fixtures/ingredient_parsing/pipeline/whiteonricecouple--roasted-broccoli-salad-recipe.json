@@ -3,13 +3,17 @@
   "recipe_slug": "roasted-broccoli-salad-recipe",
   "ingredients": [
     {
-      "raw": "1 pound broccoli florets (, cut into bite sized pieces)",
+      "raw": "1 pound  (454 g) broccoli florets , cut into bite sized pieces",
       "expected": {
         "item": "broccoli florets",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": "cut into bite sized pieces",
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "3 Tablespoons olive oil (, for coating)",
+      "raw": "3 Tablespoons  (45 ml) olive oil , for coating",
       "expected": {
         "item": "olive oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
           }
         ],
         "note": "for coating",
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt (, or to taste)",
+      "raw": "1/2 teaspoon  (2.5 ml) kosher salt , or to taste",
       "expected": {
         "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": "or to taste",
@@ -45,7 +57,7 @@
       }
     },
     {
-      "raw": "Fresh cracked black pepper (, to taste)",
+      "raw": "Fresh cracked black pepper , to taste",
       "expected": {
         "item": "Fresh cracked black pepper",
         "measurements": [],
@@ -54,7 +66,7 @@
       }
     },
     {
-      "raw": "3-4 slices thick cut bacon (, cooked &amp;amp; cut into bite sized pieces (omit to make this salad vegetarian))",
+      "raw": "3-4 slices   thick cut bacon , cooked & cut into bite sized pieces (omit to make this salad vegetarian)",
       "expected": {
         "item": "thick cut bacon",
         "measurements": [
@@ -63,18 +75,22 @@
             "unit": "slice"
           }
         ],
-        "note": "cooked & cut into bite sized pieces (omit to make this salad vegetarian)",
+        "note": "omit to make this salad vegetarian, cooked & cut into bite sized pieces",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/4 cup minced red onion",
+      "raw": "1/4 cup  (60 ml) minced red onion",
       "expected": {
         "item": "minced red onion",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -82,13 +98,17 @@
       }
     },
     {
-      "raw": "1/2 cup dried fruit of choice ((dried cranberries, apricots, raisins, etc. - cut larger fruit into 1/2-inch pieces))",
+      "raw": "1/2 cup  (120 ml) dried fruit of choice (dried cranberries, apricots, raisins, etc. – cut larger fruit into 1/2-inch pieces)",
       "expected": {
         "item": "dried fruit of choice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
           }
         ],
         "note": "dried cranberries, apricots, raisins, etc. - cut larger fruit into 1/2-inch pieces",
@@ -96,13 +116,17 @@
       }
     },
     {
-      "raw": "1/4 cup roasted nuts of choice ((pecans, almonds, cashews, etc. - chop larger nuts if desired))",
+      "raw": "1/4 cup  (60 ml) roasted nuts of choice (pecans, almonds, cashews, etc. – chop larger nuts if desired)",
       "expected": {
         "item": "roasted nuts of choice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": "pecans, almonds, cashews, etc. - chop larger nuts if desired",
@@ -110,13 +134,17 @@
       }
     },
     {
-      "raw": "1/3 cup mayonnaise",
+      "raw": "1/3 cup  (80 ml) mayonnaise",
       "expected": {
         "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -124,13 +152,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons apple cider vinegar",
+      "raw": "2 Tablespoons  (30 ml) apple cider vinegar",
       "expected": {
         "item": "apple cider vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -138,13 +170,17 @@
       }
     },
     {
-      "raw": "1 teaspoon brown sugar",
+      "raw": "1 teaspoon  (5 ml) brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -152,13 +188,17 @@
       }
     },
     {
-      "raw": "1 teaspoon Worcestershire sauce",
+      "raw": "1 teaspoon  (5 ml) Worcestershire sauce",
       "expected": {
         "item": "Worcestershire sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -166,13 +206,17 @@
       }
     },
     {
-      "raw": "1 teaspoon dijon mustard",
+      "raw": "1 teaspoon  (5 ml) dijon mustard",
       "expected": {
         "item": "dijon mustard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -180,13 +224,17 @@
       }
     },
     {
-      "raw": "1 teaspoon optional dried herbs ((thyme, basil, dill, etc.))",
+      "raw": "1 teaspoon  (5 ml) optional dried herbs (thyme, basil, dill, etc.)",
       "expected": {
         "item": "optional dried herbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": "thyme, basil, dill, etc.",
@@ -194,13 +242,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt (, or to taste)",
+      "raw": "1/2 teaspoon  (2.5 ml) kosher salt , or to taste",
       "expected": {
         "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": "or to taste",
@@ -208,7 +260,7 @@
       }
     },
     {
-      "raw": "fresh cracked black pepper (, to taste)",
+      "raw": "fresh cracked black pepper , to taste",
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [],

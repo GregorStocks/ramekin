@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "¾ cups sugar (separated)",
+      "raw": "¾ cups sugar separated",
       "expected": {
-        "item": "sugar",
+        "item": "sugar separated",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "separated",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "6  eggs",
+      "raw": "6 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,21 +73,17 @@
       }
     },
     {
-      "raw": "1 cup butter (2 sticks, softened)",
+      "raw": "1 cup butter 2 sticks, softened",
       "expected": {
-        "item": "butter",
+        "item": "butter 2 sticks",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": "stick"
           }
         ],
-        "note": "2 sticks, softened",
-        "category": "Dairy & Eggs"
+        "note": "softened",
+        "category": "Other"
       }
     },
     {

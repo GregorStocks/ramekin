@@ -3,21 +3,21 @@
   "recipe_slug": "easy-tortellini-soup-recipe",
   "ingredients": [
     {
-      "raw": "1 TBSP avocado oil (or olive oil)",
+      "raw": "1 TBSP avocado oil or olive oil",
       "expected": {
-        "item": "avocado oil",
+        "item": "avocado oil or olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  medium yellow onion",
+      "raw": "1 medium yellow onion",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "4  carrots",
+      "raw": "4 carrots",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/4 tsp dried thyme",
+      "raw": "¼ tsp dried thyme",
       "expected": {
         "item": "dried thyme",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/4 tsp dried basil",
+      "raw": "¼ tsp dried basil",
       "expected": {
         "item": "dried basil",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/8 tsp dried oregano",
+      "raw": "⅛ tsp dried oregano",
       "expected": {
         "item": "dried oregano",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste ((I added 1/4 tsp of each))",
+      "raw": "salt and pepper, to taste (I added 1/4 tsp of each)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "1-2 oz fresh baby spinach ((1-2 cups chopped))",
+      "raw": "1-2 oz fresh baby spinach (1-2 cups chopped)",
       "expected": {
         "item": "fresh baby spinach",
         "measurements": [

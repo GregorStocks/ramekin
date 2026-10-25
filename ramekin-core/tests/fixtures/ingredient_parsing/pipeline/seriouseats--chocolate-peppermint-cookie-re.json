@@ -247,6 +247,20 @@
       }
     },
     {
+      "raw": "1/4 teaspoon peppermint extract",
+      "expected": {
+        "item": "peppermint extract",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
       "raw": "2 3/4 cups powdered sugar (11 ounces; 312 g)",
       "expected": {
         "item": "powdered sugar",

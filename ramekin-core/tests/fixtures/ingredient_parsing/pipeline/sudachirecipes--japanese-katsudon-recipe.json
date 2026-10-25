@@ -3,7 +3,7 @@
   "recipe_slug": "japanese-katsudon-recipe",
   "ingredients": [
     {
-      "raw": "2  boneless pork chop",
+      "raw": "2 boneless pork chop",
       "expected": {
         "item": "boneless pork chop",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "cooking oil (for frying)",
+      "raw": "cooking oil for frying",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
@@ -180,9 +180,9 @@
       }
     },
     {
-      "raw": "1 tsp Chinese-style chicken bouillon powder",
+      "raw": "1 tsp Chinese-style chicken bouillon powder I use youki garasupu",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder",
+        "item": "Chinese-style chicken bouillon powder I use youki garasupu",
         "measurements": [
           {
             "amount": "1",
@@ -190,7 +190,7 @@
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "category": "Other"
       }
     },
     {
@@ -208,17 +208,17 @@
       }
     },
     {
-      "raw": "3  eggs (room temperature)",
+      "raw": "3 eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -236,12 +236,12 @@
       }
     },
     {
-      "raw": "Japanese wild parsley (mitsuba) (optional to garnish)",
+      "raw": "Japanese wild parsley (mitsuba) optional to garnish",
       "expected": {
-        "item": "Japanese wild parsley",
+        "item": "Japanese wild parsley optional to garnish",
         "measurements": [],
-        "note": "mitsuba, optional to garnish",
-        "category": "Produce"
+        "note": "mitsuba",
+        "category": "Other"
       }
     }
   ]

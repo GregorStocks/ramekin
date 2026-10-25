@@ -3,7 +3,7 @@
   "recipe_slug": "cherry-pie-recipe",
   "ingredients": [
     {
-      "raw": "2 ⅓ cups all purpose flour (sifted)",
+      "raw": "2 ⅓ cups all purpose flour sifted",
       "expected": {
         "item": "all purpose flour",
         "measurements": [
@@ -45,21 +45,17 @@
       }
     },
     {
-      "raw": "2 sticks unsalted butter (cold, cubed, 1 cup)",
+      "raw": "2 sticks unsalted butter cold, cubed, 1 cup",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter cold, cubed, 1 cup",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
-        "note": "cold, cubed, 1 cup",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -77,7 +73,7 @@
       }
     },
     {
-      "raw": "5 cups cherries ( pitted)",
+      "raw": "5 cups cherries  pitted",
       "expected": {
         "item": "cherries",
         "measurements": [
@@ -175,7 +171,7 @@
       }
     },
     {
-      "raw": "1 tablespoon coarse sugar (optional)",
+      "raw": "1 tablespoon coarse sugar optional",
       "expected": {
         "item": "coarse sugar",
         "measurements": [

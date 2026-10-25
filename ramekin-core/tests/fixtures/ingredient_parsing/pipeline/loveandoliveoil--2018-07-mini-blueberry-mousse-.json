@@ -3,7 +3,7 @@
   "recipe_slug": "2018-07-mini-blueberry-mousse-",
   "ingredients": [
     {
-      "raw": "8 oz (1 1/2 cups) fresh or frozen blueberries",
+      "raw": "8 oz  / 226 g (1 1/2 cups) fresh or frozen blueberries",
       "expected": {
         "item": "fresh or frozen blueberries",
         "measurements": [
@@ -14,6 +14,10 @@
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -21,13 +25,17 @@
       }
     },
     {
-      "raw": "1/4 cup granulated sugar (divided)",
+      "raw": "¼ cup  / 50 g granulated sugar, divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": "divided",
@@ -35,13 +43,17 @@
       }
     },
     {
-      "raw": "3 teaspoons lemon juice (divided)",
+      "raw": "3 teaspoons  / 15 g lemon juice, divided",
       "expected": {
         "item": "lemon juice",
         "measurements": [
           {
             "amount": "3",
             "unit": "tsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
         "note": "divided",
@@ -49,7 +61,7 @@
       }
     },
     {
-      "raw": "1 1/2  sheets leaf gelatin*",
+      "raw": "1 ½   sheets leaf gelatin*",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -63,13 +75,17 @@
       }
     },
     {
-      "raw": "2 tablespoons water (plus more for blooming gelatin)",
+      "raw": "2 tablespoons  / 30 g water, plus more for blooming gelatin",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": "plus more for blooming gelatin",
@@ -77,7 +93,7 @@
       }
     },
     {
-      "raw": "2  large eggs (separated, at room temperature)",
+      "raw": "2   large eggs, separated, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -91,13 +107,17 @@
       }
     },
     {
-      "raw": "1/4 cup granulated sugar (divided)",
+      "raw": "¼ cup  / 50 g granulated sugar, divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": "divided",
@@ -105,13 +125,17 @@
       }
     },
     {
-      "raw": "1 tablespoon milk",
+      "raw": "1 tablespoon  / 15 g milk",
       "expected": {
         "item": "milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -119,7 +143,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon almond extract",
+      "raw": "¼ teaspoon   almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -133,13 +157,17 @@
       }
     },
     {
-      "raw": "6 tablespoons cake flour",
+      "raw": "6 tablespoons  / 40 g cake flour",
       "expected": {
         "item": "cake flour",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -147,13 +175,17 @@
       }
     },
     {
-      "raw": "2 tablespoons almond flour",
+      "raw": "2 tablespoons  / 15 g almond flour",
       "expected": {
         "item": "almond flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -161,7 +193,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon fine sea salt",
+      "raw": "¼ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -175,7 +207,7 @@
       }
     },
     {
-      "raw": "3  sheets leaf gelatin",
+      "raw": "3   sheets leaf gelatin",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -189,13 +221,17 @@
       }
     },
     {
-      "raw": "1/2 cup blueberry purée",
+      "raw": "½ cup  / 75 g blueberry purée",
       "expected": {
         "item": "blueberry purée",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -203,13 +239,17 @@
       }
     },
     {
-      "raw": "1/2 cup mascarpone cheese (chilled)",
+      "raw": "½ cup  / 112 g mascarpone cheese, chilled",
       "expected": {
         "item": "mascarpone cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "112",
+            "unit": "g"
           }
         ],
         "note": "chilled",
@@ -217,13 +257,17 @@
       }
     },
     {
-      "raw": "1/4 cup powdered sugar",
+      "raw": "¼ cup  / 50 g powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -231,13 +275,17 @@
       }
     },
     {
-      "raw": "3/4 cup whipping cream (chilled)",
+      "raw": "¾ cup  / 180 g whipping cream, chilled",
       "expected": {
         "item": "whipping cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
           }
         ],
         "note": "chilled",
@@ -245,7 +293,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon vanilla extract",
+      "raw": "½ teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -259,7 +307,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon almond extract",
+      "raw": "¼ teaspoon   almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -273,7 +321,7 @@
       }
     },
     {
-      "raw": "pinch fine sea salt",
+      "raw": "pinch   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -287,7 +335,7 @@
       }
     },
     {
-      "raw": "6  sheets leaf gelatin*",
+      "raw": "6   sheets leaf gelatin*",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -301,13 +349,17 @@
       }
     },
     {
-      "raw": "1 cup sugar",
+      "raw": "1 cup  / 200 g sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -315,13 +367,17 @@
       }
     },
     {
-      "raw": "2/3 cup corn syrup or glucose syrup",
+      "raw": "⅔ cup  / 226 g corn syrup or glucose syrup",
       "expected": {
         "item": "corn syrup or glucose syrup",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -329,13 +385,17 @@
       }
     },
     {
-      "raw": "1/2 cup water",
+      "raw": "½ cup  / 120 g water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -343,13 +403,17 @@
       }
     },
     {
-      "raw": "1/2 cup sweetened condensed milk",
+      "raw": "½ cup  / 163 g sweetened condensed milk",
       "expected": {
         "item": "sweetened condensed milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "163",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -357,13 +421,17 @@
       }
     },
     {
-      "raw": "7 ounces good quality white chocolate (finely chopped)",
+      "raw": "7 ounces  / 200 g good quality white chocolate, finely chopped",
       "expected": {
         "item": "white chocolate",
         "measurements": [
           {
             "amount": "7",
             "unit": "oz"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": "finely chopped, good quality",

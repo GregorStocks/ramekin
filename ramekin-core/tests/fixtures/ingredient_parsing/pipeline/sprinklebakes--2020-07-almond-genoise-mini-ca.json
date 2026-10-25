@@ -3,31 +3,27 @@
   "recipe_slug": "2020-07-almond-genoise-mini-ca",
   "ingredients": [
     {
-      "raw": "2  whole eggs (at room temperature)",
+      "raw": "2 whole eggs at room temperature",
       "expected": {
-        "item": "whole eggs",
+        "item": "whole eggs at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "at room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup 56g confectioners’ sugar",
+      "raw": "1/2 cup confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "56",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -35,17 +31,13 @@
       }
     },
     {
-      "raw": "1/2 cup 50g almond flour",
+      "raw": "1/2 cup almond flour",
       "expected": {
         "item": "almond flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -67,7 +59,7 @@
       }
     },
     {
-      "raw": "2  egg whites",
+      "raw": "2 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -123,17 +115,13 @@
       }
     },
     {
-      "raw": "5 cups 570g confectioners’ sugar",
+      "raw": "5 cups confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "5",
             "unit": "cup"
-          },
-          {
-            "amount": "570",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -141,17 +129,13 @@
       }
     },
     {
-      "raw": "1 cup 226g unsalted butter, at room temperature",
+      "raw": "1 cup unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "226",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -201,17 +185,13 @@
       }
     },
     {
-      "raw": "2 cups 227g confectioners’ sugar",
+      "raw": "2 cups confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -247,7 +227,7 @@
       }
     },
     {
-      "raw": "Edible gold leaf (optional)",
+      "raw": "Edible gold leaf optional",
       "expected": {
         "item": "Edible gold leaf",
         "measurements": [],
@@ -256,7 +236,7 @@
       }
     },
     {
-      "raw": "9  Jordan almonds for mini cakes (or 18 for petit fours)",
+      "raw": "9 Jordan almonds for mini cakes or 18 for petit fours",
       "expected": {
         "item": "Jordan almonds for mini cakes",
         "measurements": [
@@ -270,7 +250,7 @@
       }
     },
     {
-      "raw": "2 oz. semisweet chocolate (melted)",
+      "raw": "2 oz. semisweet chocolate melted",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [

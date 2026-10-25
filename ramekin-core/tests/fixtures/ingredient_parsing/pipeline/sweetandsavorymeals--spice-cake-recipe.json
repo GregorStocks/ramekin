@@ -129,17 +129,17 @@
       }
     },
     {
-      "raw": "1 1/2 cups light brown sugar (packed)",
+      "raw": "1 1/2 cups light brown sugar packed",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar packed",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "packed",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -171,21 +171,21 @@
       }
     },
     {
-      "raw": "1/2 cup applesauce (unsweetened)",
+      "raw": "1/2 cup applesauce unsweetened",
       "expected": {
-        "item": "applesauce",
+        "item": "applesauce unsweetened",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "unsweetened",
-        "category": "Canned Goods"
+        "note": null,
+        "category": "Produce"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -255,30 +255,30 @@
       }
     },
     {
-      "raw": "12 oz cream cheese (at room temperature)",
+      "raw": "12 oz cream cheese at room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese at room temperature",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (at room temperature)",
+      "raw": "1/2 cup unsalted butter at room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter at room temperature",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

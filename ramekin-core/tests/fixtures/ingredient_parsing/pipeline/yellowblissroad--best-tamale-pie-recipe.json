@@ -17,30 +17,30 @@
       }
     },
     {
-      "raw": "½ cup chopped onion (about ½ of a small onion)",
+      "raw": "½ cup chopped onion about ½ of a small onion",
       "expected": {
-        "item": "chopped onion",
+        "item": "chopped onion about 1/2 of a small onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "about 1/2 of a small onion",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "15 ounce can diced tomatoes (drained (or 15 oz can tomato sauce))",
+      "raw": "15 ounce can diced tomatoes drained (or 15 oz can tomato sauce)",
       "expected": {
-        "item": "can diced tomatoes",
+        "item": "can diced tomatoes drained",
         "measurements": [
           {
             "amount": "15",
             "unit": "oz"
           }
         ],
-        "note": "drained (or 15 oz can tomato sauce)",
+        "note": "or 15 oz can tomato sauce",
         "category": "Canned Goods"
       }
     },
@@ -59,30 +59,30 @@
       }
     },
     {
-      "raw": "4 ounce can chopped ripe olives (drained)",
+      "raw": "4 ounce can chopped ripe olives drained",
       "expected": {
-        "item": "can chopped ripe olives",
+        "item": "can chopped ripe olives drained",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": "drained",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "4 ounce can chopped green chilies (drained)",
+      "raw": "4 ounce can chopped green chilies drained",
       "expected": {
-        "item": "can chopped green chilies",
+        "item": "can chopped green chilies drained",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": "drained",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [

@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 teaspoon soy sauce (use gluten-free soy sauce if cooking gluten-free)",
+      "raw": "1 teaspoon soy sauce (use gluten-free soy sauce if cooking gluten free)",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -40,7 +40,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "use gluten-free soy sauce if cooking gluten-free",
+        "note": "use gluten-free soy sauce if cooking gluten free",
         "category": "Condiments & Sauces"
       }
     },
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3 tablespoons soy sauce (use gluten-free soy sauce if cooking gluten-free)",
+      "raw": "3 tablespoons soy sauce (use gluten-free soy sauce if cooking gluten free)",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -68,7 +68,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "use gluten-free soy sauce if cooking gluten-free",
+        "note": "use gluten-free soy sauce if cooking gluten free",
         "category": "Condiments & Sauces"
       }
     },
@@ -101,9 +101,9 @@
       }
     },
     {
-      "raw": "1 tablespoon shaoxing cooking wine or cooking sherry",
+      "raw": "1 tablespoon Shaoxing cooking wine or cooking sherry",
       "expected": {
-        "item": "shaoxing cooking wine or cooking sherry",
+        "item": "Shaoxing cooking wine or cooking sherry",
         "measurements": [
           {
             "amount": "1",
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2 lbs. of mixed mushrooms (oyster, crimini, button, shiitake, and/or enoki), roughly chopped or quartered (you want bite-sized pieces)",
+      "raw": "2 pounds mixed mushrooms (oyster, cremini, button, shiitake, and/or enoki), roughly chopped or quartered (you want bite-sized pieces)",
       "expected": {
         "item": "mixed mushrooms",
         "measurements": [
@@ -152,21 +152,21 @@
             "unit": "lb"
           }
         ],
-        "note": "oyster, crimini, button, shiitake, and/or enoki, you want bite-sized pieces, roughly chopped or quartered",
+        "note": "oyster, cremini, button, shiitake, and/or enoki, you want bite-sized pieces, roughly chopped or quartered",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 garlic cloves, sliced thinly",
+      "raw": "4 cloves garlic, thinly sliced",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "clove"
           }
         ],
-        "note": "sliced thinly",
+        "note": "thinly sliced",
         "category": "Produce"
       }
     },
@@ -185,21 +185,21 @@
       }
     },
     {
-      "raw": "2-5 dried red chilies, roughly chopped OR 1/4-1/2 teaspoon dried chili flakes",
+      "raw": "2 to 5 dried red chilies, roughly chopped, or 1/4 to 1/2 teaspoon dried chili flakes",
       "expected": {
         "item": "dried red chilies",
         "measurements": [
           {
-            "amount": "2-5",
+            "amount": "2 to 5",
             "unit": null
           }
         ],
-        "note": "roughly chopped OR 1/4-1/2 teaspoon dried chili flakes",
+        "note": "roughly chopped, or 1/4 to 1/2 teaspoon dried chili flakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/2 cups of snow peas or snap peas, de-stringed",
+      "raw": "1 1/2 cups snow peas or snap peas, de-stringed",
       "expected": {
         "item": "snow peas or snap peas, de-stringed",
         "measurements": [
@@ -227,20 +227,20 @@
       }
     },
     {
-      "raw": "Cooked rice, for serving",
+      "raw": "Cooked rice, for serving, optional",
       "expected": {
         "item": "Cooked rice",
         "measurements": [],
-        "note": "for serving",
+        "note": "for serving, optional",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "Toasted sesame seeds (optional)",
+      "raw": "Toasted sesame seeds, for optional garnish",
       "expected": {
         "item": "Toasted sesame seeds",
         "measurements": [],
-        "note": "optional",
+        "note": "for optional garnish",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,13 +3,17 @@
   "recipe_slug": "blueberry-cheesecake-pie-recip",
   "ingredients": [
     {
-      "raw": "2 cups graham cracker crumbs (about 9 whole graham crackers)",
+      "raw": "2 cups  (168 g) graham cracker crumbs, about 9 whole graham crackers",
       "expected": {
         "item": "graham cracker crumbs",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "168",
+            "unit": "g"
           }
         ],
         "note": "about 9 whole graham crackers",
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "2 tablespoons light brown sugar",
+      "raw": "2 tablespoons   light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -31,10 +35,14 @@
       }
     },
     {
-      "raw": "¼ teaspoon ground cinnamon",
+      "raw": "¼ teaspoon  (0.25 teaspoon) ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
@@ -45,7 +53,7 @@
       }
     },
     {
-      "raw": "Pinch of salt",
+      "raw": "Pinch   of salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -59,13 +67,17 @@
       }
     },
     {
-      "raw": "¼ cup unsalted butter (melted)",
+      "raw": "¼ cup  (56.75 g) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "56.75",
+            "unit": "g"
           }
         ],
         "note": "melted",
@@ -73,13 +85,17 @@
       }
     },
     {
-      "raw": "8 ounces cream cheese (at room temperature)",
+      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -87,13 +103,17 @@
       }
     },
     {
-      "raw": "⅓ cup granulated sugar",
+      "raw": "⅓ cup  (66.67 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "66.67",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -101,7 +121,7 @@
       }
     },
     {
-      "raw": "2  eggs (at room temperature)",
+      "raw": "2   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -115,7 +135,7 @@
       }
     },
     {
-      "raw": "1 teaspoon lemon juice",
+      "raw": "1 teaspoon   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -129,7 +149,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -143,13 +163,17 @@
       }
     },
     {
-      "raw": "2 cups fresh blueberries",
+      "raw": "2 cups  (296 g) fresh blueberries",
       "expected": {
         "item": "fresh blueberries",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "296",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -157,13 +181,17 @@
       }
     },
     {
-      "raw": "½ cup water",
+      "raw": "½ cup  (125 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -171,13 +199,17 @@
       }
     },
     {
-      "raw": "⅓ cup granulated sugar",
+      "raw": "⅓ cup  (66.67 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "66.67",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -185,10 +217,14 @@
       }
     },
     {
-      "raw": "1½ tablespoons cornstarch whisked into 2 tablespoons water",
+      "raw": "1½ tablespoons  (1.5 tablespoons) cornstarch whisked into 2 tablespoons water",
       "expected": {
         "item": "cornstarch",
         "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
           {
             "amount": "1.5",
             "unit": "tbsp"

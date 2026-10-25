@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -124,17 +124,17 @@
       }
     },
     {
-      "raw": "1  jalapeno (seeds and veins removed and finely minced)",
+      "raw": "1 jalapeno seeds and veins removed and finely minced",
       "expected": {
-        "item": "jalapeno",
+        "item": "jalapeno seeds and veins",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeds and veins removed and finely minced",
-        "category": "Produce"
+        "note": "removed and finely minced",
+        "category": "Other"
       }
     },
     {
@@ -180,7 +180,7 @@
       }
     },
     {
-      "raw": "Parsley (finely chopped)",
+      "raw": "Parsley finely chopped",
       "expected": {
         "item": "Parsley",
         "measurements": [],

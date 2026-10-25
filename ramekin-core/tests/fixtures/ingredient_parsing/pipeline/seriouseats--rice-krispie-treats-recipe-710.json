@@ -3,7 +3,7 @@
   "recipe_slug": "rice-krispie-treats-recipe-710",
   "ingredients": [
     {
-      "raw": "6 cups (165g) Rice Krispies",
+      "raw": "6 cups (165 g) Rice Krispies",
       "expected": {
         "item": "Rice Krispies",
         "measurements": [
@@ -30,7 +30,7 @@
       }
     },
     {
-      "raw": "4 tablespoons (56g) unsalted butter",
+      "raw": "4 tablespoons (56 g) unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -62,16 +62,16 @@
       }
     },
     {
-      "raw": "One 16-ounce bag marshmallows, any size",
+      "raw": "1 (12-ounce) bag marshmallows, any size",
       "expected": {
         "item": "marshmallows",
         "measurements": [
           {
             "amount": "1",
-            "unit": "16-ounce bag"
+            "unit": "bag"
           }
         ],
-        "note": "any size",
+        "note": "12-ounce, any size",
         "category": "Baking"
       }
     },

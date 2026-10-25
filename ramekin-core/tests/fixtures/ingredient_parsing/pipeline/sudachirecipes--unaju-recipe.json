@@ -3,7 +3,7 @@
   "recipe_slug": "unaju-recipe",
   "ingredients": [
     {
-      "raw": "3 tbsp turbinado sugar ((zarame) light brown with coarse texture)",
+      "raw": "3 tbsp turbinado sugar (zarame) light brown with coarse texture",
       "expected": {
         "item": "turbinado sugar light brown with coarse texture",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "300 g filleted eels (1 fillet is approx 150g)",
+      "raw": "300 g filleted eels 1 fillet is approx 150g",
       "expected": {
-        "item": "filleted eels",
+        "item": "filleted eels 1 fillet is approx 150g",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": "1 fillet is approx 150g",
+        "note": null,
         "category": "Other"
       }
     },
@@ -101,9 +101,9 @@
       }
     },
     {
-      "raw": "2 portions cooked Japanese short-grain rice",
+      "raw": "2 portions cooked Japanese short-grain rice see here for how to cook Japanese rice",
       "expected": {
-        "item": "cooked Japanese short-grain rice",
+        "item": "cooked Japanese short-grain rice see here for how to cook Japanese rice",
         "measurements": [
           {
             "amount": "2",
@@ -111,11 +111,11 @@
           }
         ],
         "note": null,
-        "category": "Pasta & Rice"
+        "category": "Other"
       }
     },
     {
-      "raw": "Japanese sansho pepper (optional)",
+      "raw": "Japanese sansho pepper optional",
       "expected": {
         "item": "Japanese sansho pepper",
         "measurements": [],

@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 cup butter (softened)",
+      "raw": "1 cup butter softened",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -213,17 +213,17 @@
       }
     },
     {
-      "raw": "½ cup rolled oats (additional for GF version )",
+      "raw": "½ cup rolled oats additional for GF version",
       "expected": {
-        "item": "rolled oats",
+        "item": "rolled oats additional for GF version",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "additional for GF version",
-        "category": "Snacks"
+        "note": null,
+        "category": "Other"
       }
     },
     {

@@ -3,10 +3,6 @@
   "recipe_slug": "2008-09-moms-apple-cake",
   "ingredients": [
     {
-      "raw": "For the apples",
-      "is_section_header": true
-    },
-    {
       "raw": "6 apples, Mom uses McIntosh apples, I use a mix of whatever looks good",
       "expected": {
         "item": "apples, Mom uses McIntosh apples, I use a mix of whatever looks good",
@@ -17,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "For the Apples",
         "category": "Produce"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "For the Apples",
         "category": "Spices & Seasonings"
       }
     },
@@ -51,13 +45,8 @@
           }
         ],
         "note": null,
-        "section": "For the Apples",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "For the cake",
-      "is_section_header": true
     },
     {
       "raw": "2 3/4 cups (360 grams) flour",
@@ -74,7 +63,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -89,7 +77,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -104,7 +91,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -123,7 +109,6 @@
           }
         ],
         "note": "safflower, sunflower, olive and coconut oil also work, as does melted butter",
-        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -142,7 +127,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -161,7 +145,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Beverages"
       }
     },
@@ -180,7 +163,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -195,7 +177,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -214,7 +195,6 @@
           }
         ],
         "note": "optional and to be honest, we never use them, chopped",
-        "section": "For the Cake",
         "category": "Nuts & Dried Fruit"
       }
     }

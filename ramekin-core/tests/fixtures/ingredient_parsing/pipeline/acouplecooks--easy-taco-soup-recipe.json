@@ -165,7 +165,7 @@
       }
     },
     {
-      "raw": "1 tablespoon&nbsp;each&nbsp;dried oregano and cumin",
+      "raw": "1 tablespoon each dried oregano and cumin",
       "expected": {
         "item": "dried oregano",
         "measurements": [
@@ -179,7 +179,7 @@
       }
     },
     {
-      "raw": "1 tablespoon&nbsp;each&nbsp;dried oregano and cumin",
+      "raw": "1 tablespoon each dried oregano and cumin",
       "expected": {
         "item": "cumin",
         "measurements": [
@@ -194,7 +194,36 @@
       "expanded": true
     },
     {
-      "raw": "1 teaspoon&nbsp;each&nbsp;garlic and onion powder",
+      "raw": "1 tablespoon each dried oregano and cumin",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon each dried oregano and cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 teaspoon each garlic and onion powder",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -208,7 +237,36 @@
       }
     },
     {
-      "raw": "1 teaspoon&nbsp;each&nbsp;garlic and onion powder",
+      "raw": "1 teaspoon each garlic and onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 teaspoon each garlic and onion powder",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon each garlic and onion powder",
       "expected": {
         "item": "onion powder",
         "measurements": [

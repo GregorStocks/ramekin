@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  yellow onion (finely diced)",
+      "raw": "1 yellow onion finely diced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "6  garlic cloves (minced)",
+      "raw": "6 garlic cloves minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon black pepper (freshly ground)",
+      "raw": "1/4 teaspoon black pepper freshly ground",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "Chopped fresh basil (finely minced)",
+      "raw": "Chopped fresh basil finely minced",
       "expected": {
         "item": "Chopped fresh basil",
         "measurements": [],

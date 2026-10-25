@@ -3,16 +3,16 @@
   "recipe_slug": "vegetarian-cauliflower-rice-bu",
   "ingredients": [
     {
-      "raw": "2 TBSP avocado oil (or olive oil (divided))",
+      "raw": "2 TBSP avocado oil or olive oil (divided)",
       "expected": {
-        "item": "avocado oil",
+        "item": "avocado oil or olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil (divided)",
+        "note": "divided",
         "category": "Oils & Vinegars"
       }
     },
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic ((peeled and minced))",
+      "raw": "2 cloves garlic (peeled and minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1-2 cups black beans  ((canned or cooked from scratch))",
+      "raw": "1-2 cups black beans  (canned or cooked from scratch)",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1-2 TBSP salsa ((your fav jarred salsa))",
+      "raw": "1-2 TBSP salsa (your fav jarred salsa)",
       "expected": {
         "item": "salsa",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "1-2 cups Pico de Gallo ((see below for recipe))",
+      "raw": "1-2 cups Pico de Gallo (see below for recipe)",
       "expected": {
         "item": "Pico de Gallo",
         "measurements": [
@@ -166,7 +166,7 @@
       }
     },
     {
-      "raw": "1 cup grated cheese ((Cheddar, Mex Blend, or Pepper Jack))",
+      "raw": "1 cup grated cheese (Cheddar, Mex Blend, or Pepper Jack)",
       "expected": {
         "item": "grated cheese",
         "measurements": [
@@ -194,7 +194,7 @@
       }
     },
     {
-      "raw": "½  lime (cut into wedges (for an optional burst of citrus))",
+      "raw": "½ lime cut into wedges (for an optional burst of citrus)",
       "expected": {
         "item": "lime",
         "measurements": [
@@ -203,21 +203,21 @@
             "unit": null
           }
         ],
-        "note": "cut into wedges (for an optional burst of citrus)",
+        "note": "for an optional burst of citrus, cut into wedges",
         "category": "Produce"
       }
     },
     {
-      "raw": "guacamole (or sliced avocado)",
+      "raw": "guacamole or sliced avocado",
       "expected": {
-        "item": "guacamole",
+        "item": "guacamole or sliced avocado",
         "measurements": [],
-        "note": "or sliced avocado",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "sliced jalapeno peppers ((fresh or pickled))",
+      "raw": "sliced jalapeno peppers (fresh or pickled)",
       "expected": {
         "item": "sliced jalapeno peppers",
         "measurements": [],
@@ -299,7 +299,7 @@
       }
     },
     {
-      "raw": "1  jalapeño pepper ((seeds and stem removed))",
+      "raw": "1 jalapeño pepper (seeds and stem removed)",
       "expected": {
         "item": "jalapeño pepper",
         "measurements": [
@@ -313,7 +313,7 @@
       }
     },
     {
-      "raw": "¼ cup fresh chopped cilantro (plus extra to taste)",
+      "raw": "¼ cup fresh chopped cilantro plus extra to taste",
       "expected": {
         "item": "fresh chopped cilantro",
         "measurements": [
@@ -327,16 +327,16 @@
       }
     },
     {
-      "raw": "fresh squeezed lime juice (to taste (approx 1/4 a lime))",
+      "raw": "fresh squeezed lime juice to taste (approx 1/4 a lime)",
       "expected": {
         "item": "fresh squeezed lime juice",
         "measurements": [],
-        "note": "to taste (approx 1/4 a lime)",
+        "note": "approx 1/4 a lime, to taste",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼-½ tsp salt (to taste)",
+      "raw": "¼-½ tsp salt to taste",
       "expected": {
         "item": "salt",
         "measurements": [

@@ -3,7 +3,7 @@
   "recipe_slug": "easy-grilled-pork-chops-recipe",
   "ingredients": [
     {
-      "raw": "4  bone-in thick center cut or none in",
+      "raw": "4 bone-in thick center cut or none in",
       "expected": {
         "item": "bone-in thick center cut or none in",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2  dried bay leaves",
+      "raw": "2 dried bay leaves",
       "expected": {
         "item": "dried bay leaves",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic (peeled and smashed)",
+      "raw": "4 cloves garlic peeled and smashed",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "3  sprig fresh rosemary",
+      "raw": "3 sprig fresh rosemary",
       "expected": {
         "item": "fresh rosemary",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1  lemon (sliced)",
+      "raw": "1 lemon sliced",
       "expected": {
         "item": "lemon",
         "measurements": [
@@ -143,16 +143,16 @@
       }
     },
     {
-      "raw": "2 tablespoons extra virgin olive oil (or canola oil)",
+      "raw": "2 tablespoons extra virgin olive oil or canola oil",
       "expected": {
-        "item": "extra virgin olive oil",
+        "item": "extra virgin olive oil or canola oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or canola oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },

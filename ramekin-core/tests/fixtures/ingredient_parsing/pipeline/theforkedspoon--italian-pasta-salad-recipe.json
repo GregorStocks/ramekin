@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic (minced)",
+      "raw": "3 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh parsley (chopped)",
+      "raw": "1 tablespoon fresh parsley, chopped",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "salt + black pepper (to taste)",
+      "raw": "salt + black pepper, to taste",
       "expected": {
         "item": "salt + black pepper",
         "measurements": [],
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "1 pound fusilli pasta (cooked to al dente (may also use rotini pasta or bowtie pasta))",
+      "raw": "1 pound fusilli pasta, cooked to al dente (may also use rotini pasta or bowtie pasta)",
       "expected": {
         "item": "fusilli pasta",
         "measurements": [
@@ -91,12 +91,12 @@
             "unit": "lb"
           }
         ],
-        "note": "cooked to al dente (may also use rotini pasta or bowtie pasta)",
+        "note": "may also use rotini pasta or bowtie pasta, cooked to al dente",
         "category": "Other"
       }
     },
     {
-      "raw": "16 ounces mozzarella balls (drained and sliced in half)",
+      "raw": "16 ounces mozzarella balls, drained and sliced in half",
       "expected": {
         "item": "mozzarella balls",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "6 ounces salami (sliced and quartered)",
+      "raw": "6 ounces salami, sliced and quartered",
       "expected": {
         "item": "salami",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "5 ounces fresh baby spinach ((or arugula))",
+      "raw": "5 ounces fresh baby spinach, (or arugula)",
       "expected": {
         "item": "fresh baby spinach",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "15 ounces cherry tomatoes (halved (or grape tomatoes))",
+      "raw": "15 ounces cherry tomatoes, halved (or grape tomatoes)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -147,12 +147,12 @@
             "unit": "oz"
           }
         ],
-        "note": "halved (or grape tomatoes)",
+        "note": "halved; or grape tomatoes",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 (15 ounce) can artichoke hearts (drained and chopped)",
+      "raw": "1 (15 ounce) can artichoke hearts, drained and chopped",
       "expected": {
         "item": "artichoke hearts",
         "measurements": [
@@ -170,7 +170,7 @@
       }
     },
     {
-      "raw": "1 (6.5 ounce) can black olives (drained and chopped)",
+      "raw": "1 (6.5 ounce) can black olives, drained and chopped",
       "expected": {
         "item": "black olives",
         "measurements": [

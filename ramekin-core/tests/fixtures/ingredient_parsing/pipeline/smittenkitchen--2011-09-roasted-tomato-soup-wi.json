@@ -3,15 +3,6 @@
   "recipe_slug": "2011-09-roasted-tomato-soup-wi",
   "ingredients": [
     {
-      "raw": "Soup",
-      "expected": {
-        "item": "Soup",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
-    },
-    {
       "raw": "3 pounds plum tomatoes, halved lengthwise",
       "expected": {
         "item": "plum tomatoes",
@@ -100,10 +91,6 @@
       }
     },
     {
-      "raw": "Lid",
-      "is_section_header": true
-    },
-    {
       "raw": "4 1-inch slices from a large loaf of rye bread, whole wheat sourdough or bread of your choice (or 16 1-inch slices from a baguette), toasted until hard and lightly buttered on one side",
       "expected": {
         "item": "1-inch slices from a large loaf of rye bread, whole wheat sourdough or bread of your choice",
@@ -114,7 +101,6 @@
           }
         ],
         "note": "toasted until hard and lightly buttered on one side; or 16 1-inch slices from a baguette",
-        "section": "Lid",
         "category": "Bakery & Bread"
       }
     },
@@ -129,7 +115,6 @@
           }
         ],
         "note": null,
-        "section": "Lid",
         "category": "Produce"
       }
     },
@@ -144,7 +129,6 @@
           }
         ],
         "note": "or more to taste",
-        "section": "Lid",
         "category": "Cheese"
       }
     }

@@ -3,10 +3,6 @@
   "recipe_slug": "2009-11-cappuccino-fudge-chees",
   "ingredients": [
     {
-      "raw": "Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "1 9-ounce box chocolate wafer cookies or 9 ounces of homemade chocolate wafers",
       "expected": {
         "item": "chocolate wafer cookies",
@@ -17,7 +13,6 @@
           }
         ],
         "note": "or 9 ounces of homemade chocolate wafers",
-        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": "coarsely chopped",
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": "packed",
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -62,7 +55,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,13 +69,8 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Other"
       }
-    },
-    {
-      "raw": "Ganache",
-      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups heavy or whipping cream",
@@ -96,7 +83,6 @@
           }
         ],
         "note": null,
-        "section": "Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,7 +97,6 @@
           }
         ],
         "note": "chopped",
-        "section": "Ganache",
         "category": "Baking"
       }
     },
@@ -126,13 +111,8 @@
           }
         ],
         "note": null,
-        "section": "Ganache",
         "category": "Other"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "3 8-ounce packages cream cheese, room temperature",
@@ -145,7 +125,6 @@
           }
         ],
         "note": "room temperature",
-        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -160,7 +139,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -175,7 +153,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -190,7 +167,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -205,7 +181,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -220,7 +195,6 @@
           }
         ],
         "note": "medium-coarse grind, I skipped this, increased the espresso powder instead",
-        "section": "Filling",
         "category": "Other"
       }
     },
@@ -235,7 +209,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -250,7 +223,6 @@
           }
         ],
         "note": "light",
-        "section": "Filling",
         "category": "Other"
       }
     },
@@ -265,13 +237,8 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Topping",
-      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups sour cream",
@@ -284,7 +251,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -299,7 +265,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -314,7 +279,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Baking"
       }
     }

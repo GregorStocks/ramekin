@@ -3,63 +3,68 @@
   "recipe_slug": "chicken-florentine-recipe",
   "ingredients": [
     {
-      "raw": "6  boneless skinless chicken breasts (see notes)",
+      "raw": "4 chicken cutlets, or 2 large chicken breasts sliced horizontally into 4 cutlets",
       "expected": {
-        "item": "boneless skinless chicken breasts",
+        "item": "chicken cutlets",
         "measurements": [
           {
-            "amount": "6",
+            "amount": "4",
             "unit": null
           }
         ],
-        "note": "see notes",
+        "note": "or 2 large chicken breasts sliced horizontally into 4 cutlets",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "salt and pepper (to season)",
+      "raw": "¾ teaspoon salt",
       "expected": {
-        "item": "salt and pepper",
-        "measurements": [],
-        "note": "to season",
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup all-purpose flour (for dredging, plus more if needed)",
+      "raw": "½ teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 tablespoons all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": "for dredging, plus more if needed",
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "2 tablespoon butter",
-      "expected": {
-        "item": "butter",
-        "measurements": [
-          {
-            "amount": "2",
+            "amount": "4",
             "unit": "tbsp"
           }
         ],
         "note": null,
-        "category": "Dairy & Eggs"
+        "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoon olive oil",
+      "raw": "1 tablespoon olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
           {
-            "amount": "2",
+            "amount": "1",
             "unit": "tbsp"
           }
         ],
@@ -68,12 +73,12 @@
       }
     },
     {
-      "raw": "2 tablespoon butter",
+      "raw": "1 tablespoon butter",
       "expected": {
         "item": "butter",
         "measurements": [
           {
-            "amount": "2",
+            "amount": "1",
             "unit": "tbsp"
           }
         ],
@@ -82,27 +87,27 @@
       }
     },
     {
-      "raw": "1 medium onion (diced)",
+      "raw": "1 tablespoon butter",
       "expected": {
-        "item": "onion",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "tbsp"
           }
         ],
-        "note": "diced",
-        "category": "Produce"
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 cloves garlic (chopped)",
+      "raw": "1 small shallot, chopped",
       "expected": {
-        "item": "garlic",
+        "item": "shallot",
         "measurements": [
           {
-            "amount": "6",
-            "unit": "clove"
+            "amount": "1",
+            "unit": "small"
           }
         ],
         "note": "chopped",
@@ -110,51 +115,51 @@
       }
     },
     {
-      "raw": "2 cups dry white wine",
+      "raw": "3 cloves garlic, minced",
       "expected": {
-        "item": "dry white wine",
+        "item": "garlic",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "cup"
+            "amount": "3",
+            "unit": "clove"
           }
         ],
-        "note": null,
-        "category": "Beverages"
-      }
-    },
-    {
-      "raw": "10 ounces cremini mushrooms (sliced)",
-      "expected": {
-        "item": "cremini mushrooms",
-        "measurements": [
-          {
-            "amount": "10",
-            "unit": "oz"
-          }
-        ],
-        "note": "sliced",
+        "note": "minced",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoon all-purpose flour",
+      "raw": "¾ cup low-sodium chicken broth",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "low-sodium chicken broth",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "0.75",
+            "unit": "cup"
           }
         ],
         "note": null,
-        "category": "Baking"
+        "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 cup low-sodium chicken broth",
+      "raw": "1 teaspoon Italian seasoning",
       "expected": {
-        "item": "low-sodium chicken broth",
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
@@ -162,7 +167,21 @@
           }
         ],
         "note": null,
-        "category": "Canned Goods"
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "½ cup freshly grated parmesan cheese",
+      "expected": {
+        "item": "freshly grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -180,54 +199,12 @@
       }
     },
     {
-      "raw": "1 cup whole milk",
+      "raw": "chopped parsley, to garnish, optional",
       "expected": {
-        "item": "whole milk",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "1 cup heavy whipping cream  ((or half-and-half))",
-      "expected": {
-        "item": "heavy whipping cream",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          }
-        ],
-        "note": "or half-and-half",
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "1/2 cup parmesan cheese (grated)",
-      "expected": {
-        "item": "parmesan cheese",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": "grated",
-        "category": "Cheese"
-      }
-    },
-    {
-      "raw": "freshly grated black pepper (to season)",
-      "expected": {
-        "item": "freshly grated black pepper",
+        "item": "chopped parsley, to garnish",
         "measurements": [],
-        "note": "to season",
-        "category": "Spices & Seasonings"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

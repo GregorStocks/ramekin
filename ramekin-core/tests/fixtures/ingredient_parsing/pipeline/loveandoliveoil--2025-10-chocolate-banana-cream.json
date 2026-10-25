@@ -3,13 +3,17 @@
   "recipe_slug": "2025-10-chocolate-banana-cream",
   "ingredients": [
     {
-      "raw": "1 1/2 cups all purpose flour",
+      "raw": "1 ½ cups  / 187 g all purpose flour",
       "expected": {
         "item": "all purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "187",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "3 tablespoons dark or Dutch process cocoa powder",
+      "raw": "3 tablespoons  / 19g dark or Dutch process cocoa powder",
       "expected": {
         "item": "dark or Dutch process cocoa powder",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "2 tablespoons powdered sugar",
+      "raw": "2 tablespoons  / 16 g powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,7 +57,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon fine sea salt",
+      "raw": "½ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -59,17 +71,17 @@
       }
     },
     {
-      "raw": "1/2 cup 1 stick cold unsalted butter (cut into cubes)",
+      "raw": "½ cup  / 113 g 1 stick cold unsalted butter, cut into cubes",
       "expected": {
-        "item": "cold unsalted butter",
+        "item": "1 stick cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           },
           {
-            "amount": "1",
-            "unit": "stick"
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "cut into cubes",
@@ -77,13 +89,17 @@
       }
     },
     {
-      "raw": "2 tablespoons unflavored vegetable shortening* (chilled and cut into cubes)",
+      "raw": "2 tablespoons  / 24 g unflavored vegetable shortening*, chilled and cut into cubes",
       "expected": {
         "item": "unflavored vegetable shortening",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
           }
         ],
         "note": "chilled and cut into cubes",
@@ -91,7 +107,7 @@
       }
     },
     {
-      "raw": "3-5 tablespoons ice water",
+      "raw": "3-5 tablespoons   ice water",
       "expected": {
         "item": "ice water",
         "measurements": [
@@ -105,13 +121,17 @@
       }
     },
     {
-      "raw": "2/3 cup granulated sugar",
+      "raw": "⅔ cup  / 133 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -119,13 +139,17 @@
       }
     },
     {
-      "raw": "3 tablespoons all-purpose flour",
+      "raw": "3 tablespoons  / 24 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -133,13 +157,17 @@
       }
     },
     {
-      "raw": "2 tablespoons cornstarch",
+      "raw": "2 tablespoons  / 16 g cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -147,7 +175,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon fine sea salt",
+      "raw": "¼ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -161,13 +189,17 @@
       }
     },
     {
-      "raw": "2 cups whole milk",
+      "raw": "2 cups  / 480 g whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -175,7 +207,7 @@
       }
     },
     {
-      "raw": "4 large egg yolks",
+      "raw": "4 large   egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -189,13 +221,17 @@
       }
     },
     {
-      "raw": "2 tablespoons unsalted butter",
+      "raw": "2 tablespoons  / 28 g unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -203,7 +239,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -217,13 +253,17 @@
       }
     },
     {
-      "raw": "1/4 cup dark chocolate (50-70%) (finely chopped)",
+      "raw": "¼ cup  / 45 g dark chocolate (50-70%), finely chopped",
       "expected": {
         "item": "dark chocolate",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
           }
         ],
         "note": "50-70%, finely chopped",
@@ -231,7 +271,7 @@
       }
     },
     {
-      "raw": "2 large bananas (sliced)",
+      "raw": "2 large   bananas, sliced",
       "expected": {
         "item": "bananas",
         "measurements": [
@@ -245,13 +285,17 @@
       }
     },
     {
-      "raw": "1 1/4 cup heavy cream",
+      "raw": "1 ¼ cup  / 300 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -259,13 +303,17 @@
       }
     },
     {
-      "raw": "3 tablespoons granulated sugar",
+      "raw": "3 tablespoons  / 36 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -273,7 +321,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon vanilla",
+      "raw": "½ teaspoon   vanilla",
       "expected": {
         "item": "vanilla",
         "measurements": [
@@ -287,7 +335,7 @@
       }
     },
     {
-      "raw": "1/8 teaspoon guar gum (optional*)",
+      "raw": "⅛ teaspoon   guar gum, optional*",
       "expected": {
         "item": "guar gum",
         "measurements": [
@@ -301,11 +349,11 @@
       }
     },
     {
-      "raw": "chocolate curls (for garnish (optional))",
+      "raw": "chocolate curls, for garnish (optional)",
       "expected": {
         "item": "chocolate curls",
         "measurements": [],
-        "note": "for garnish (optional)",
+        "note": "optional, for garnish",
         "category": "Other"
       }
     }

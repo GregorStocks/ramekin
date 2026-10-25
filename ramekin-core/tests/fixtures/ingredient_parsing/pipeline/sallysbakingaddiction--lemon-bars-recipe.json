@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "2 cups + 2 Tablespoons (265g) all-purpose flour (spooned &amp;amp; leveled)",
+      "raw": "2 cups + 2 Tablespoons (265g) all-purpose flour (spooned & leveled)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -139,9 +139,9 @@
       }
     },
     {
-      "raw": "1 cup (240ml) lemon juice (about 4 lemons)",
+      "raw": "1 cup (240ml) fresh lemon juice (about 4 lemons)",
       "expected": {
-        "item": "lemon juice",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
@@ -157,7 +157,21 @@
       }
     },
     {
-      "raw": "optional: confectioners&amp;#8217; sugar for dusting",
+      "raw": "2 teaspoons fresh lemon zest, optional",
+      "expected": {
+        "item": "fresh lemon zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "optional: confectioners’ sugar for dusting",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [],

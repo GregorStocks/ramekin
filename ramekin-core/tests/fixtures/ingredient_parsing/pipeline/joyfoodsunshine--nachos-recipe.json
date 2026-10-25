@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "¾ cup red onion (diced &amp;amp; divided (about 1 small onion))",
+      "raw": "¾ cup red onion diced & divided (about 1 small onion)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -26,7 +26,7 @@
             "unit": "cup"
           }
         ],
-        "note": "diced & divided (about 1 small onion)",
+        "note": "about 1 small onion, diced & divided",
         "category": "Produce"
       }
     },
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 Tablespoon olive oil (optional)",
+      "raw": "1 Tablespoon olive oil optional",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "16 ounces cheddar cheese (shredded)",
+      "raw": "16 ounces cheddar cheese shredded",
       "expected": {
         "item": "cheddar cheese",
         "measurements": [
@@ -227,16 +227,20 @@
       }
     },
     {
-      "raw": "2.25 ounces can sliced black olives (drained and rinsed (about ½ cup))",
+      "raw": "2.25 ounces can sliced black olives drained and rinsed (about ½ cup)",
       "expected": {
-        "item": "can sliced black olives",
+        "item": "can sliced black olives drained and rinsed",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": "drained and rinsed (about 1/2 cup)",
+        "note": "about 1/2 cup",
         "category": "Canned Goods"
       }
     },
@@ -259,12 +263,12 @@
       }
     },
     {
-      "raw": "salsa (guacamole, sour cream, etc.)",
+      "raw": "salsa guacamole, sour cream, etc.",
       "expected": {
-        "item": "salsa",
+        "item": "salsa guacamole, sour cream, etc.",
         "measurements": [],
-        "note": "guacamole, sour cream, etc.",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

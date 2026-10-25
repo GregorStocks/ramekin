@@ -74,6 +74,35 @@
       "expanded": true
     },
     {
+      "raw": "Grated zest and juice of 1 lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "grated",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Grated zest and juice of 1 lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
       "raw": "1 tsp. crushed red pepper flakes",
       "expected": {
         "item": "crushed red pepper flakes",

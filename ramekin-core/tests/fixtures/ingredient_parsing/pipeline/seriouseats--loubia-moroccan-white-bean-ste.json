@@ -3,17 +3,21 @@
   "recipe_slug": "loubia-moroccan-white-bean-ste",
   "ingredients": [
     {
-      "raw": "1 pound dried Great Northern white beans or Cannellini white beans, picked off any debris and rinsed",
+      "raw": "1 pound (454 g) dried Great Northern or cannellini beans, picked over to remove debris and rinsed",
       "expected": {
-        "item": "dried Great Northern white beans or Cannellini white beans",
+        "item": "dried Great Northern or cannellini beans",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
-        "note": "picked off any debris and rinsed",
-        "category": "Canned Goods"
+        "note": "picked over to remove debris and rinsed",
+        "category": "Other"
       }
     },
     {

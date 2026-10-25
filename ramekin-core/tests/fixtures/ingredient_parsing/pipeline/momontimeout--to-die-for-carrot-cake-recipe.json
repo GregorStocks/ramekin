@@ -3,16 +3,16 @@
   "recipe_slug": "to-die-for-carrot-cake-recipe",
   "ingredients": [
     {
-      "raw": "1 ¼ cups unsweetened applesauce (or oil, this is what my Nana used)",
+      "raw": "1 ¼ cups unsweetened applesauce or oil, this is what my Nana used",
       "expected": {
-        "item": "unsweetened applesauce",
+        "item": "unsweetened applesauce or oil, this is what my Nana used",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": "or oil, this is what my Nana used",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "3  eggs (room temperature)",
+      "raw": "3 eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 cup chopped nuts (optional)",
+      "raw": "1 cup chopped nuts optional",
       "expected": {
         "item": "chopped nuts",
         "measurements": [
@@ -171,21 +171,21 @@
       }
     },
     {
-      "raw": "1 cup Dole crushed pineapple (not drained! {use the pineapple in JUICE not syrup})",
+      "raw": "1 cup Dole crushed pineapple not drained! {use the pineapple in JUICE not syrup}",
       "expected": {
-        "item": "Dole crushed pineapple",
+        "item": "Dole crushed pineapple not drained! {use the pineapple in JUICE not syrup}",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "not drained! {use the pineapple in JUICE not syrup}",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "½ cup butter (softened)",
+      "raw": "½ cup butter softened",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "8 ounces cream cheese (softened)",
+      "raw": "8 ounces cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [

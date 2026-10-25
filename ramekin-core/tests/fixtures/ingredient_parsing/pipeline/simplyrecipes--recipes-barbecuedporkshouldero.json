@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-barbecuedporkshouldero",
   "ingredients": [
     {
-      "raw": "2 Tbsp brown sugar, packed",
+      "raw": "2 tablespoons brown sugar, packed",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 Tbsp white sugar",
+      "raw": "2 tablespoons white sugar",
       "expected": {
         "item": "white sugar",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 Tbsp paprika",
+      "raw": "2 tablespoons paprika",
       "expected": {
         "item": "paprika",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 Tbsp kosher salt",
+      "raw": "1 tablespoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -87,9 +87,9 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons chipotle chile powder",
+      "raw": "1 1/2 teaspoons chipotle chili powder",
       "expected": {
-        "item": "chipotle chile powder",
+        "item": "chipotle chili powder",
         "measurements": [
           {
             "amount": "1.5",
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 Tbsp salt",
+      "raw": "1 tablespoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1 Tbsp finely ground black pepper",
+      "raw": "1 tablespoon finely ground black pepper",
       "expected": {
         "item": "finely ground black pepper",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 Tbsp garlic powder",
+      "raw": "1 tablespoon garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1 Tbsp onion powder",
+      "raw": "1 tablespoon onion powder",
       "expected": {
         "item": "onion powder",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1 Tbsp dried oregano",
+      "raw": "1 tablespoon dried oregano",
       "expected": {
         "item": "dried oregano",
         "measurements": [
@@ -199,9 +199,9 @@
       }
     },
     {
-      "raw": "1 teaspoon dry rosemary (or fresh, finely minced)",
+      "raw": "1 teaspoon dried rosemary (or fresh, finely minced)",
       "expected": {
-        "item": "dry rosemary",
+        "item": "dried rosemary",
         "measurements": [
           {
             "amount": "1",
@@ -209,13 +209,13 @@
           }
         ],
         "note": "or fresh, finely minced",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon dry sage",
+      "raw": "1/2 teaspoon dried sage",
       "expected": {
-        "item": "dry sage",
+        "item": "dried sage",
         "measurements": [
           {
             "amount": "0.5",
@@ -223,7 +223,7 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -241,31 +241,31 @@
       }
     },
     {
-      "raw": "One 4 pound pork shoulder roast, preferably Boston butt, boneless or bone-in (you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both)",
+      "raw": "1 (4-pound) pork shoulder roast, preferably Boston butt, boneless or bone-in (you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both)",
       "expected": {
-        "item": "4 pound pork shoulder roast, preferably Boston butt, boneless or bone-in",
+        "item": "pork shoulder roast, preferably Boston butt, boneless or bone-in",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both",
+        "note": "4-pound, you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both",
         "category": "Other"
       }
     },
     {
-      "raw": "5 to 6 cups of wood chips, hickory, oak, apple, or other fruit wood",
+      "raw": "5 to 6 cups wood chips, such as hickory, oak, apple, or other fruit wood",
       "expected": {
-        "item": "wood chips, hickory, oak, apple, or other fruit wood",
+        "item": "wood chips",
         "measurements": [
           {
             "amount": "5 to 6",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "such as hickory, oak, apple, or other fruit wood",
+        "category": "Other"
       }
     }
   ]

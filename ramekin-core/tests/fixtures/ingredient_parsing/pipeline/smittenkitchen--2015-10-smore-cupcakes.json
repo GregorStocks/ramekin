@@ -3,94 +3,6 @@
   "recipe_slug": "2015-10-smore-cupcakes",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Carrot Graham Layer Cake",
-      "expected": {
-        "item": "Months Ago: Carrot Graham Layer Cake",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Three-Bean Chili",
-      "expected": {
-        "item": "Years Ago: Three-Bean Chili",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Lentil and Chickpea Salad with Feta and Tahini",
-      "expected": {
-        "item": "Years Ago: Lentil and Chickpea Salad with Feta and Tahini",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Over-the-Top Mushroom Quiche",
-      "expected": {
-        "item": "Years Ago: Over-the-Top Mushroom Quiche",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "4.5 Years Ago: Apple Tarte Tatin",
-      "expected": {
-        "item": "Years Ago: Apple Tarte Tatin",
-        "measurements": [
-          {
-            "amount": "4.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Cupcakes",
-      "expected": {
-        "item": "Cupcakes",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "1 cup (125 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -261,10 +173,6 @@
       }
     },
     {
-      "raw": "Filling",
-      "is_section_header": true
-    },
-    {
       "raw": "1/4 pound (4 ounces) milk or semi-sweet chocolate, chopped small or in chips",
       "expected": {
         "item": "milk or semi-sweet chocolate",
@@ -279,7 +187,6 @@
           }
         ],
         "note": "chopped small or in chips",
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -294,7 +201,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -309,13 +215,8 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
-    },
-    {
-      "raw": "Frosting",
-      "is_section_header": true
     },
     {
       "raw": "2 large egg whites",
@@ -328,7 +229,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -343,7 +243,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -358,7 +257,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -373,7 +271,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     }

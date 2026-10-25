@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "½ cup whole milk ((room temperature))",
+      "raw": "½ cup whole milk (room temperature)",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "½ cup full-fat Greek yogurt ((room temperature))",
+      "raw": "½ cup full-fat Greek yogurt (room temperature)",
       "expected": {
         "item": "full-fat Greek yogurt",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "¼ cup salted butter (melted (for brushing))",
+      "raw": "¼ cup salted butter melted (for brushing)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -138,7 +138,7 @@
             "unit": "cup"
           }
         ],
-        "note": "melted (for brushing)",
+        "note": "for brushing, melted",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,11 +152,11 @@
       }
     },
     {
-      "raw": "Fresh cilantro (chopped (Optional garnish))",
+      "raw": "Fresh cilantro chopped (Optional garnish)",
       "expected": {
         "item": "Fresh cilantro",
         "measurements": [],
-        "note": "chopped (Optional garnish)",
+        "note": "Optional garnish, chopped",
         "category": "Produce"
       }
     }

@@ -3,13 +3,17 @@
   "recipe_slug": "2025-03-sweet-spicy-sesame-sna",
   "ingredients": [
     {
-      "raw": "2 cups corn chex cereal",
+      "raw": "2 cups  / 74 g corn chex cereal",
       "expected": {
         "item": "corn chex cereal",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "74",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "2 cups rice chex cereal",
+      "raw": "2 cups  / 70 g rice chex cereal",
       "expected": {
         "item": "rice chex cereal",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "70",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "2 cups mini pretzels",
+      "raw": "2 cups  / 100 g mini pretzels",
       "expected": {
         "item": "mini pretzels",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,9 +57,9 @@
       }
     },
     {
-      "raw": "2/3 cup unsalted shelled peanuts",
+      "raw": "⅔ cup  / 90 unsalted shelled peanuts",
       "expected": {
-        "item": "unsalted shelled peanuts",
+        "item": "/ 90 unsalted shelled peanuts",
         "measurements": [
           {
             "amount": "0.67",
@@ -59,9 +71,9 @@
       }
     },
     {
-      "raw": "2/3 cup bagel chips",
+      "raw": "⅔ cup  / 50 bagel chips",
       "expected": {
-        "item": "bagel chips",
+        "item": "/ 50 bagel chips",
         "measurements": [
           {
             "amount": "0.67",
@@ -69,13 +81,13 @@
           }
         ],
         "note": null,
-        "category": "Snacks"
+        "category": "Other"
       }
     },
     {
-      "raw": "2/3 cup sesame sticks",
+      "raw": "⅔ cup  / 62 sesame sticks",
       "expected": {
-        "item": "sesame sticks",
+        "item": "/ 62 sesame sticks",
         "measurements": [
           {
             "amount": "0.67",
@@ -83,13 +95,13 @@
           }
         ],
         "note": null,
-        "category": "Snacks"
+        "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup white sesame seeds",
+      "raw": "¼ cup  / 36 white sesame seeds",
       "expected": {
-        "item": "white sesame seeds",
+        "item": "/ 36 white sesame seeds",
         "measurements": [
           {
             "amount": "0.25",
@@ -97,17 +109,21 @@
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "category": "Other"
       }
     },
     {
-      "raw": "6 tablespoons vegetable oil",
+      "raw": "6 tablespoons  / 84 g vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "84",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -115,13 +131,17 @@
       }
     },
     {
-      "raw": "3 tablespoons honey",
+      "raw": "3 tablespoons  / 63 g honey",
       "expected": {
         "item": "honey",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "63",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -129,13 +149,17 @@
       }
     },
     {
-      "raw": "2 tablespoons sesame oil",
+      "raw": "2 tablespoons  / 28 g sesame oil",
       "expected": {
         "item": "sesame oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,13 +167,17 @@
       }
     },
     {
-      "raw": "2 tablespoons soy sauce",
+      "raw": "2 tablespoons  / 36 g soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -157,7 +185,7 @@
       }
     },
     {
-      "raw": "1-2 tablespoons gochugaru pepper flakes* (or to taste)",
+      "raw": "1-2 tablespoons   gochugaru pepper flakes*, or to taste",
       "expected": {
         "item": "gochugaru pepper flakes",
         "measurements": [
@@ -171,7 +199,7 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons garlic powder",
+      "raw": "1 ½ teaspoons   garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -185,7 +213,7 @@
       }
     },
     {
-      "raw": "1 teaspoon onion powder",
+      "raw": "1 teaspoon   onion powder",
       "expected": {
         "item": "onion powder",
         "measurements": [
@@ -199,7 +227,7 @@
       }
     },
     {
-      "raw": "1 teaspoon paprika",
+      "raw": "1 teaspoon   paprika",
       "expected": {
         "item": "paprika",
         "measurements": [
@@ -213,7 +241,7 @@
       }
     },
     {
-      "raw": "1 teaspoon kosher salt*",
+      "raw": "1 teaspoon   kosher salt*",
       "expected": {
         "item": "kosher salt",
         "measurements": [

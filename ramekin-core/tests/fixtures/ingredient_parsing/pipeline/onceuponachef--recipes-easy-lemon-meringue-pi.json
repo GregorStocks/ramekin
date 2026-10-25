@@ -17,9 +17,9 @@
       }
     },
     {
-      "raw": "⅓ cup sugar",
+      "raw": "⅓ cup cup sugar",
       "expected": {
-        "item": "sugar",
+        "item": "cup sugar",
         "measurements": [
           {
             "amount": "0.33",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "4  large egg yolks (reserve the whites for the meringue)",
+      "raw": "4 large egg yolks (reserve the whites for the meringue)",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1  (14-oz) can Eagle sweetened condensed milk (see note)",
+      "raw": "1 (14-oz) can Eagle sweetened condensed milk (see note)",
       "expected": {
         "item": "Eagle sweetened condensed milk",
         "measurements": [

@@ -3,7 +3,7 @@
   "recipe_slug": "chocolate-hazelnut-cheesecake-",
   "ingredients": [
     {
-      "raw": "18  OREO Cookies",
+      "raw": "18 OREO Cookies",
       "expected": {
         "item": "OREO Cookies",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 Tbsp. butter (melted)",
+      "raw": "2 Tbsp. butter melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -31,31 +31,31 @@
       }
     },
     {
-      "raw": "12 oz light cream cheese (Neufchâtel cheese, softened)",
+      "raw": "12 oz light cream cheese Neufchâtel cheese, softened",
       "expected": {
-        "item": "light cream cheese",
+        "item": "light cream cheese Neufchâtel cheese",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "Neufchâtel cheese, softened",
-        "category": "Cheese"
+        "note": "softened",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup Greek yogurt (plain or vanilla)",
+      "raw": "1/2 cup Greek yogurt plain or vanilla",
       "expected": {
-        "item": "Greek yogurt",
+        "item": "Greek yogurt plain or vanilla",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "plain or vanilla",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -73,17 +73,17 @@
       }
     },
     {
-      "raw": "4 oz bittersweet chocolate (melted and cooled slightly)",
+      "raw": "4 oz bittersweet chocolate melted and cooled slightly",
       "expected": {
-        "item": "bittersweet chocolate",
+        "item": "bittersweet chocolate melted and cooled slightly",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": "melted and cooled slightly",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "3  eggs (room temperature, lightly beaten)",
+      "raw": "3 eggs room temperature, lightly beaten",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "room temperature, lightly beaten",
-        "category": "Dairy & Eggs"
+        "note": "lightly beaten",
+        "category": "Other"
       }
     },
     {
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/2 cup toasted hazelnuts (chopped optional)",
+      "raw": "1/2 cup toasted hazelnuts chopped optional",
       "expected": {
         "item": "toasted hazelnuts",
         "measurements": [
@@ -166,12 +166,12 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped optional",
+        "note": "chopped, optional",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4 cup chocolate jimmies (optional)",
+      "raw": "1/4 cup chocolate jimmies optional",
       "expected": {
         "item": "chocolate jimmies",
         "measurements": [

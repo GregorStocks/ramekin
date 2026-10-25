@@ -59,15 +59,6 @@
       }
     },
     {
-      "raw": "Other optional toppings:&nbsp;",
-      "expected": {
-        "item": "Other optional toppings:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "Blueberries, blackberries",
       "expected": {
         "item": "Blueberries, blackberries",

@@ -3,13 +3,17 @@
   "recipe_slug": "2017-10-apple-sour-cream-coffe",
   "ingredients": [
     {
-      "raw": "1/2 cup granulated sugar",
+      "raw": "½ cup  / 100 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "2 teaspoons ground cinnamon",
+      "raw": "2 teaspoons   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -31,21 +35,25 @@
       }
     },
     {
-      "raw": "1/2 cup finely chopped pecans (almonds, or walnuts)",
+      "raw": "½ cup  / 60 g finely chopped pecans, almonds, or walnuts",
       "expected": {
-        "item": "finely chopped pecans",
+        "item": "finely chopped pecans, almonds, or walnuts",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": "almonds, or walnuts",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2 cup (1 stick) unsalted butter (at room temperature)",
+      "raw": "½ cup  / 113 g (1 stick) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -56,6 +64,10 @@
           {
             "amount": "1",
             "unit": "stick"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -63,13 +75,17 @@
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  / 200 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -77,7 +93,7 @@
       }
     },
     {
-      "raw": "2  large eggs (at room temperature)",
+      "raw": "2   large eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -91,13 +107,17 @@
       }
     },
     {
-      "raw": "1 cup sour cream (at room temperature)",
+      "raw": "1 cup  / 240 g sour cream, at room temperature",
       "expected": {
         "item": "sour cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -105,7 +125,7 @@
       }
     },
     {
-      "raw": "1 teaspoon baking soda",
+      "raw": "1 teaspoon   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -119,13 +139,17 @@
       }
     },
     {
-      "raw": "1 3/4 cup all-purpose flour",
+      "raw": "1 ¾ cup  / 218 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -133,7 +157,7 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons baking powder",
+      "raw": "1 ½ teaspoons   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -147,7 +171,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon fine sea salt",
+      "raw": "½ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -161,7 +185,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -175,16 +199,20 @@
       }
     },
     {
-      "raw": "2  medium apples (peeled, cored, and finely diced (about 1 1/2 cups diced))",
+      "raw": "2   medium apples, peeled, cored, and finely diced (about 1 1/2 cups diced)",
       "expected": {
         "item": "apples",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
           }
         ],
-        "note": "peeled, cored, and finely diced (about 1 1/2 cups diced)",
+        "note": "about 1 1/2 cups diced, peeled, cored, and finely diced",
         "category": "Produce"
       }
     }

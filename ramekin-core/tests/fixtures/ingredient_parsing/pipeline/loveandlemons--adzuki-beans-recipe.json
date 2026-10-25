@@ -3,35 +3,39 @@
   "recipe_slug": "adzuki-beans-recipe",
   "ingredients": [
     {
-      "raw": "1/2  large Napa cabbage head (sliced (6 1/2 cups))",
+      "raw": "1/2 large Napa cabbage head, sliced (6 1/2 cups)",
       "expected": {
         "item": "Napa cabbage head",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "large"
+          },
+          {
+            "amount": "6.5",
+            "unit": "cup"
           }
         ],
-        "note": "sliced (6 1/2 cups)",
+        "note": "sliced",
         "category": "Other"
       }
     },
     {
-      "raw": "3  small carrots (shaved with a vegetable peeler)",
+      "raw": "3 small carrots, shaved with a vegetable peeler",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, shaved with a vegetable peeler",
         "measurements": [
           {
             "amount": "3",
             "unit": "small"
           }
         ],
-        "note": "shaved with a vegetable peeler",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup sugar snap peas (sliced)",
+      "raw": "1 cup sugar snap peas, sliced",
       "expected": {
         "item": "sugar snap peas",
         "measurements": [
@@ -45,7 +49,7 @@
       }
     },
     {
-      "raw": "2 tablespoons sesame seeds (more for serving)",
+      "raw": "2 tablespoons sesame seeds, more for serving",
       "expected": {
         "item": "sesame seeds",
         "measurements": [
@@ -73,7 +77,7 @@
       }
     },
     {
-      "raw": "2 tablespoons chopped fresh cilantro leaves (more for serving)",
+      "raw": "2 tablespoons chopped fresh cilantro leaves, more for serving",
       "expected": {
         "item": "chopped fresh cilantro leaves",
         "measurements": [
@@ -87,7 +91,7 @@
       }
     },
     {
-      "raw": "1 1/2 cups cooked adzuki beans (drained and rinsed)",
+      "raw": "1 1/2 cups cooked adzuki beans, drained and rinsed",
       "expected": {
         "item": "cooked adzuki beans",
         "measurements": [
@@ -101,7 +105,7 @@
       }
     },
     {
-      "raw": "2  avocados (sliced)",
+      "raw": "2 avocados, sliced",
       "expected": {
         "item": "avocados",
         "measurements": [
@@ -115,7 +119,7 @@
       }
     },
     {
-      "raw": "1  small fresh red chile (sliced)",
+      "raw": "1 small fresh red chile, sliced",
       "expected": {
         "item": "fresh red chile",
         "measurements": [

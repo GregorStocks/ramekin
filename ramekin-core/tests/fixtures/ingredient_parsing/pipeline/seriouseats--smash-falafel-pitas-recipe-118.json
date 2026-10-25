@@ -3,9 +3,9 @@
   "recipe_slug": "smash-falafel-pitas-recipe-118",
   "ingredients": [
     {
-      "raw": "4 (6-inch) fresh pita (9 ounces, 256g total), see note",
+      "raw": "4 (6-inch) fresh pita (9 ounces, 256g total); see notes",
       "expected": {
-        "item": "fresh pita",
+        "item": "fresh pita ; see notes",
         "measurements": [
           {
             "amount": "4",
@@ -20,12 +20,12 @@
             "unit": "g"
           }
         ],
-        "note": "6-inch, see note",
+        "note": "6-inch",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "Homemade Falafel , prepared through Step 2 and chilled for 15 minutes",
+      "raw": "Homemade Falafel, prepared through Step 2 and chilled for 15 minutes",
       "expected": {
         "item": "Homemade Falafel",
         "measurements": [],
@@ -34,7 +34,7 @@
       }
     },
     {
-      "raw": "3 Tbsp. (45ml) olive oil, divided",
+      "raw": "3 tablespoons (45 ml) olive oil, divided",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -61,29 +61,29 @@
       }
     },
     {
-      "raw": "Chopped fresh tomatoes Chopped fresh cucumbers",
+      "raw": "Chopped fresh tomatoes",
       "expected": {
-        "item": "Chopped fresh tomatoes Chopped fresh cucumbers",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "chopped fresh cucumbers",
-      "expected": {
-        "item": "chopped fresh cucumbers",
+        "item": "Chopped fresh tomatoes",
         "measurements": [],
         "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "Pickled turnips and pickled mixed vegetables Tahini Sauce With Garlic and Lemon (optional)",
+      "raw": "Chopped cucumbers",
       "expected": {
-        "item": "Pickled turnips and pickled mixed vegetables Tahini Sauce With Garlic and Lemon",
+        "item": "Chopped cucumbers",
         "measurements": [],
-        "note": "optional",
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Pickled turnips and pickled mixed vegetables",
+      "expected": {
+        "item": "Pickled turnips and pickled mixed vegetables",
+        "measurements": [],
+        "note": null,
         "category": "Other"
       }
     },

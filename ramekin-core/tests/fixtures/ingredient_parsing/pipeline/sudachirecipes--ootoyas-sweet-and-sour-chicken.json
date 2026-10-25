@@ -3,17 +3,17 @@
   "recipe_slug": "ootoyas-sweet-and-sour-chicken",
   "ingredients": [
     {
-      "raw": "250 g boneless chicken thigh (boneless, skin-on)",
+      "raw": "250 g boneless chicken thigh boneless, skin-on",
       "expected": {
-        "item": "boneless chicken thigh",
+        "item": "boneless chicken thigh boneless, skin-on",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": "boneless, skin-on",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -31,44 +31,44 @@
       }
     },
     {
-      "raw": "1 tsp sake (or white wine)",
+      "raw": "1 tsp sake or white wine",
       "expected": {
-        "item": "sake",
+        "item": "sake or white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or white wine",
+        "note": null,
         "category": "Beverages"
       }
     },
     {
-      "raw": "½ tsp grated ginger root (or ginger paste)",
+      "raw": "½ tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "½ tsp grated garlic (or garlic paste)",
+      "raw": "½ tsp grated garlic or garlic paste",
       "expected": {
-        "item": "grated garlic",
+        "item": "grated garlic or garlic paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or garlic paste",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "2 tsp Japanese black vinegar (kurozu) ((kurozu))",
+      "raw": "2 tsp Japanese black vinegar (kurozu) (kurozu)",
       "expected": {
         "item": "Japanese black vinegar",
         "measurements": [
@@ -157,16 +157,16 @@
       }
     },
     {
-      "raw": "1 tbsp sake (or white wine)",
+      "raw": "1 tbsp sake or white wine",
       "expected": {
-        "item": "sake",
+        "item": "sake or white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or white wine",
+        "note": null,
         "category": "Beverages"
       }
     },
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "cooking oil (for shallow frying)",
+      "raw": "cooking oil for shallow frying",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "50 g lotus root (renkon) ((renkon) optional)",
+      "raw": "50 g lotus root (renkon) (renkon) optional",
       "expected": {
         "item": "lotus root",
         "measurements": [

@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "½ cup candied walnuts, (chopped (recipe below))",
+      "raw": "½ cup candied walnuts, chopped (recipe below)",
       "expected": {
         "item": "candied walnuts",
         "measurements": [
@@ -49,7 +49,7 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped (recipe below)",
+        "note": "recipe below, chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -68,9 +68,9 @@
       }
     },
     {
-      "raw": "¼ cup roasted, (salted pepitas)",
+      "raw": "¼ cup roasted, salted pepitas",
       "expected": {
-        "item": "roasted salted pepitas",
+        "item": "roasted, salted pepitas",
         "measurements": [
           {
             "amount": "0.25",
@@ -78,7 +78,7 @@
           }
         ],
         "note": null,
-        "category": "Nuts & Dried Fruit"
+        "category": "Snacks"
       }
     },
     {
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "1  garlic clove, (finely minced or pressed)",
+      "raw": "1 garlic clove, finely minced or pressed",
       "expected": {
         "item": "garlic clove",
         "measurements": [

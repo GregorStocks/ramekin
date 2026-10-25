@@ -3,16 +3,24 @@
   "recipe_slug": "salmon-fried-rice-recipe",
   "ingredients": [
     {
-      "raw": "1  skin-on salmon fillet",
+      "raw": "1 skin-on salmon fillet (4 oz, 120 g; I use salmon from a Japanese grocery store, so it‘s a thinner cut; leftover salted salmon (shiojake) works well)",
       "expected": {
         "item": "skin-on salmon fillet",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "4 oz, 120 g; I use salmon from a Japanese grocery store, so it‘s a thinner cut; leftover salted salmon (shiojake) works well",
         "category": "Meat & Seafood"
       }
     },
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "1  green onion/scallion",
+      "raw": "1 green onion/scallion",
       "expected": {
         "item": "green onion/scallion",
         "measurements": [
@@ -45,7 +53,7 @@
       }
     },
     {
-      "raw": "1  large eggs (50 g each w/o shell)",
+      "raw": "1 large eggs (50 g w/o shell)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -54,7 +62,7 @@
             "unit": "large"
           }
         ],
-        "note": "50 g each w/o shell",
+        "note": "50 g w/o shell",
         "category": "Dairy & Eggs"
       }
     },
@@ -87,7 +95,7 @@
       }
     },
     {
-      "raw": "2 servings cooked Japanese short-grain rice",
+      "raw": "2 servings cooked Japanese short-grain rice (typically 150 g per serving; cooled or preferably day-old; frozen cooked rice works well)",
       "expected": {
         "item": "servings cooked Japanese short-grain rice",
         "measurements": [
@@ -96,7 +104,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "typically 150 g per serving; cooled or preferably day-old; frozen cooked rice works well",
         "category": "Pasta & Rice"
       }
     },
@@ -115,7 +123,7 @@
       }
     },
     {
-      "raw": "¼ tsp Diamond Crystal kosher salt ((to taste))",
+      "raw": "¼ tsp Diamond Crystal kosher salt (to taste)",
       "expected": {
         "item": "Diamond Crystal kosher salt",
         "measurements": [
@@ -129,7 +137,7 @@
       }
     },
     {
-      "raw": "⅛ tsp white pepper powder ((to taste))",
+      "raw": "⅛ tsp white pepper powder (to taste)",
       "expected": {
         "item": "white pepper powder",
         "measurements": [
@@ -143,7 +151,7 @@
       }
     },
     {
-      "raw": "⅛ tsp freshly ground black pepper ((to taste))",
+      "raw": "⅛ tsp freshly ground black pepper (to taste)",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [

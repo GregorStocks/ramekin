@@ -67,13 +67,13 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons (21 g) unsalted butter",
+      "raw": "1 1/2 tablespoons (21 g) unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1.5",
-            "unit": "tsp"
+            "unit": "tbsp"
           },
           {
             "amount": "21",

@@ -3,7 +3,7 @@
   "recipe_slug": "stuffed-zucchini-recipe",
   "ingredients": [
     {
-      "raw": "1/2 cup long-grain rice, (rinsed well)",
+      "raw": "1/2 cup long-grain rice, rinsed well",
       "expected": {
         "item": "long-grain rice",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  small onion, (shredded)",
+      "raw": "1 small onion, shredded",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/3  packed cup chopped parsley",
+      "raw": "1/3 packed cup chopped parsley",
       "expected": {
         "item": "chopped parsley",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/3  packed cup chopped dill",
+      "raw": "1/3 packed cup chopped dill",
       "expected": {
         "item": "chopped dill",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "1  can (14.5 oz diced tomato with juice)",
+      "raw": "1 can 14.5 oz diced tomato with juice",
       "expected": {
-        "item": "diced tomato with juice",
+        "item": "14.5 oz diced tomato with juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "14.5 oz diced tomato with juice",
+        "note": null,
         "category": "Other"
       }
     },
@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "4  large and very firm tomatoes, (divided (3 to be cored and stuffed, and 1 to be sliced))",
+      "raw": "4 large and very firm tomatoes, divided (3 to be cored and stuffed, and 1 to be sliced)",
       "expected": {
         "item": "and very firm tomatoes",
         "measurements": [
@@ -161,12 +161,12 @@
             "unit": "large"
           }
         ],
-        "note": "divided (3 to be cored and stuffed, and 1 to be sliced)",
+        "note": "3 to be cored and stuffed, and 1 to be sliced, divided",
         "category": "Other"
       }
     },
     {
-      "raw": "1  small onion (sliced into rounds)",
+      "raw": "1 small onion sliced into rounds",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -180,7 +180,7 @@
       }
     },
     {
-      "raw": "2 1/2 lb Medium-sized zucchini or Middle Eastern zucchini, (about 8 or so zucchini, lightly peeled)",
+      "raw": "2 1/2 lb Medium-sized zucchini or Middle Eastern zucchini, about 8 or so zucchini, lightly peeled",
       "expected": {
         "item": "Medium-sized zucchini or Middle Eastern zucchini",
         "measurements": [
@@ -194,16 +194,16 @@
       }
     },
     {
-      "raw": "1  can (14.5 oz tomato sauce)",
+      "raw": "1 can 14.5 oz tomato sauce",
       "expected": {
-        "item": "tomato sauce",
+        "item": "14.5 oz tomato sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "14.5 oz tomato sauce",
+        "note": null,
         "category": "Canned Goods"
       }
     },

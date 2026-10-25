@@ -3,16 +3,16 @@
   "recipe_slug": "homemade-apple-syrup-recipe",
   "ingredients": [
     {
-      "raw": "2 cups pure apple juice or apple cider, look for 100% apples, no additives or sweeteners",
+      "raw": "2 cups pure apple juice or apple cider (look for 100% apples, no additives or sweeteners)",
       "expected": {
-        "item": "pure apple juice or apple cider, look for 100% apples, no additives or sweeteners",
+        "item": "pure apple juice or apple cider",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "look for 100% apples, no additives or sweeteners",
         "category": "Beverages"
       }
     },
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "3 cinnamon sticks, optional",
+      "raw": "3  cinnamon sticks (optional)",
       "expected": {
         "item": "cinnamon sticks",
         "measurements": [
@@ -45,21 +45,21 @@
       }
     },
     {
-      "raw": "¼ teaspoon&nbsp;apple pie spice,&nbsp;optional and to taste",
+      "raw": "¼ teaspoon apple pie spice (optional and to taste)",
       "expected": {
-        "item": "apple pie spice, optional",
+        "item": "apple pie spice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "and to taste",
+        "note": "optional and to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract, optional",
+      "raw": "1 teaspoon vanilla extract (optional)",
       "expected": {
         "item": "vanilla extract",
         "measurements": [

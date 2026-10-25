@@ -3,16 +3,16 @@
   "recipe_slug": "recipes-sausagespinachricottas",
   "ingredients": [
     {
-      "raw": "1 12-ounce package jumbo pasta shells",
+      "raw": "1 (12-ounce) package jumbo pasta shells",
       "expected": {
         "item": "jumbo pasta shells",
         "measurements": [
           {
             "amount": "1",
-            "unit": "12-ounce package"
+            "unit": "package"
           }
         ],
-        "note": null,
+        "note": "12-ounce",
         "category": "Pasta & Rice"
       }
     },
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "10-ounces chopped frozen spinach, thawed, squeezed dry, chopped further (or 10 ounces chopped fresh spinach)",
+      "raw": "10 ounces chopped frozen spinach, thawed, squeezed dry, chopped further (or 10 ounces chopped fresh spinach)",
       "expected": {
         "item": "chopped frozen spinach",
         "measurements": [
@@ -143,9 +143,9 @@
       }
     },
     {
-      "raw": "1/4 cup unseasoned bread crumbs",
+      "raw": "1/4 cup unseasoned breadcrumbs",
       "expected": {
-        "item": "unseasoned bread crumbs",
+        "item": "unseasoned breadcrumbs",
         "measurements": [
           {
             "amount": "0.25",
@@ -153,7 +153,7 @@
           }
         ],
         "note": null,
-        "category": "Bakery & Bread"
+        "category": "Other"
       }
     },
     {
@@ -185,16 +185,16 @@
       }
     },
     {
-      "raw": "1 28-ounce can tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
+      "raw": "1 (28-ounce) can tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
       "expected": {
         "item": "tomatoes with herbs, including the liquid, tomatoes broken up",
         "measurements": [
           {
             "amount": "1",
-            "unit": "28-ounce can"
+            "unit": "can"
           }
         ],
-        "note": "or your favorite tomato or pasta sauce",
+        "note": "28-ounce, or your favorite tomato or pasta sauce",
         "category": "Other"
       }
     }

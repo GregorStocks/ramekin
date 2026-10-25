@@ -3,10 +3,15 @@
   "recipe_slug": "reverse-seared-steak-recipe",
   "ingredients": [
     {
-      "raw": "Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
+      "raw": "1 to 2 Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
       "expected": {
         "item": "Thick-cut beef steak, at least 1 1/2 to 2 inches thick",
-        "measurements": [],
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
         "note": "s, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
         "category": "Meat & Seafood"
       }
@@ -21,18 +26,18 @@
       }
     },
     {
-      "raw": "Vegetable oil (if finishing on the stovetop)",
+      "raw": "Vegetable oil (if finishing on the stovetop; optional)",
       "expected": {
         "item": "Vegetable oil",
         "measurements": [],
-        "note": "if finishing on the stovetop",
+        "note": "if finishing on the stovetop; optional",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon (15g) butter (if finishing on the stovetop)",
+      "raw": "1 tablespoon (15 g) unsalted butter (if finishing on the stovetop; optional)",
       "expected": {
-        "item": "butter",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -43,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "if finishing on the stovetop",
+        "note": "if finishing on the stovetop; optional",
         "category": "Dairy & Eggs"
       }
     }

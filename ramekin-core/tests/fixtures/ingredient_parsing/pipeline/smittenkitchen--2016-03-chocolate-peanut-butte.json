@@ -3,89 +3,6 @@
   "recipe_slug": "2016-03-chocolate-peanut-butte",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Caponata",
-      "expected": {
-        "item": "Months Ago: Caponata",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Herbed Tomato and Roasted Garlic Tart",
-      "expected": {
-        "item": "Years Ago: Herbed Tomato and Roasted Garlic Tart",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Baked Pasta with Sausage and Broccoli Rabe",
-      "expected": {
-        "item": "Years Ago: Baked Pasta with Sausage and Broccoli Rabe",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Fig Olive Oil and Sea Salt Challah",
-      "expected": {
-        "item": "Years Ago: Fig Olive Oil and Sea Salt Challah",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "4.5 Years Ago: Roasted Eggplant with Tomatoes and Mint",
-      "expected": {
-        "item": "Years Ago: Roasted Eggplant with Tomatoes and Mint",
-        "measurements": [
-          {
-            "amount": "4.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "2 5.3-ounce (150 gram) shortbread cookie packages (to yield 1 3/4 to 2 cups shortbread cookie crumbs)",
       "expected": {
         "item": "5.3-ounce shortbread cookie packages",
@@ -100,7 +17,6 @@
           }
         ],
         "note": "to yield 1 3/4 to 2 cups shortbread cookie crumbs",
-        "section": "Crust",
         "category": "Other"
       }
     },
@@ -115,7 +31,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -130,7 +45,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,13 +59,8 @@
           }
         ],
         "note": "see note about butter amount, melted",
-        "section": "Crust",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "1/2 cup (4 ounces or 115 grams) cream cheese, softened",
@@ -172,7 +81,6 @@
           }
         ],
         "note": "softened",
-        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -195,7 +103,6 @@
           }
         ],
         "note": "softened",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -214,7 +121,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -233,7 +139,6 @@
           }
         ],
         "note": "I use Skippy but think a more natural one would work just fine here",
-        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -248,7 +153,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -263,13 +167,8 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "Topping",
-      "is_section_header": true
     },
     {
       "raw": "1 cup (about 6 ounces or 170 grams) semisweet chocolate chips",
@@ -290,7 +189,6 @@
           }
         ],
         "note": "about 6 ounces or 170 grams",
-        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -300,7 +198,6 @@
         "item": "A pinch of salt",
         "measurements": [],
         "note": null,
-        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -319,7 +216,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -329,7 +225,6 @@
         "item": "Flaky sea salt",
         "measurements": [],
         "note": "optional, to finish",
-        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

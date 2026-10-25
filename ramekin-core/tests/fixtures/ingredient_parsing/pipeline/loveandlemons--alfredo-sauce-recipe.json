@@ -3,7 +3,7 @@
   "recipe_slug": "alfredo-sauce-recipe",
   "ingredients": [
     {
-      "raw": "12 ounces cauliflower florets ((1 small cauliflower))",
+      "raw": "12 ounces cauliflower florets (from about 1 small cauliflower)",
       "expected": {
         "item": "cauliflower florets",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "oz"
           }
         ],
-        "note": "1 small cauliflower",
+        "note": "from about 1 small cauliflower",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ cup grated Parmesan cheese (more for serving)",
+      "raw": "½ cup grated Parmesan cheese (plus more for serving)",
       "expected": {
         "item": "grated Parmesan cheese",
         "measurements": [
@@ -26,7 +26,7 @@
             "unit": "cup"
           }
         ],
-        "note": "more for serving",
+        "note": "plus more for serving",
         "category": "Cheese"
       }
     },
@@ -124,6 +124,20 @@
       }
     },
     {
+      "raw": "16 ounces fettuccine pasta",
+      "expected": {
+        "item": "fettuccine pasta",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
       "raw": "1 to 1½ cups reserved pasta cooking water",
       "expected": {
         "item": "reserved pasta cooking water",
@@ -135,6 +149,15 @@
         ],
         "note": null,
         "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Chopped fresh parsley (for garnish)",
+      "expected": {
+        "item": "Chopped fresh parsley",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
       }
     }
   ]

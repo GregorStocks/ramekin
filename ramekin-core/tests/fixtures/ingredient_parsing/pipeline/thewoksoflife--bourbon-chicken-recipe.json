@@ -3,7 +3,7 @@
   "recipe_slug": "bourbon-chicken-recipe",
   "ingredients": [
     {
-      "raw": "1 1/2 pounds boneless skinless chicken thighs or chicken breast ((cut into 1-inch chunks))",
+      "raw": "1 1/2 pounds boneless skinless chicken thighs or chicken breast (cut into 1-inch chunks)",
       "expected": {
         "item": "boneless skinless chicken thighs or chicken breast",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 slice ginger",
+      "raw": "1 slice ginger (1/4 inch thick and smashed with knife or cleaver)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -180,12 +180,12 @@
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "1/4 inch thick and smashed with knife or cleaver",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cloves garlic ((minced))",
+      "raw": "2 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "¼ cup onion ((minced))",
+      "raw": "¼ cup onion (minced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -227,7 +227,7 @@
       }
     },
     {
-      "raw": "1 tablespoon cornstarch ((mixed with 2 tablespoons water))",
+      "raw": "1 tablespoon cornstarch (mixed with 2 tablespoons water)",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "1  scallion ((chopped))",
+      "raw": "1 scallion (chopped)",
       "expected": {
         "item": "scallion",
         "measurements": [

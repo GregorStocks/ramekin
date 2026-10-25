@@ -3,7 +3,7 @@
   "recipe_slug": "mocha-cake-recipe",
   "ingredients": [
     {
-      "raw": "Butter (for greasing the pan)",
+      "raw": "Butter for greasing the pan",
       "expected": {
         "item": "Butter",
         "measurements": [],
@@ -12,7 +12,7 @@
       }
     },
     {
-      "raw": "1/2 cup all-purpose flour",
+      "raw": "½ cup all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -26,16 +26,16 @@
       }
     },
     {
-      "raw": "1/4 cup whole wheat pastry flour (plus 2 tablespoons)",
+      "raw": "¼ cup whole wheat pastry flour plus 2 tablespoons",
       "expected": {
-        "item": "whole wheat pastry flour",
+        "item": "whole wheat pastry flour plus 2 tablespoons",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -54,16 +54,16 @@
       }
     },
     {
-      "raw": "1/4 cup unsweetened cocoa powder (plus 2 tablespoons, plus extra for the pan)",
+      "raw": "¼ cup unsweetened cocoa powder plus 2 tablespoons, plus extra for the pan",
       "expected": {
-        "item": "unsweetened cocoa powder",
+        "item": "unsweetened cocoa powder plus 2 tablespoons",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons, plus extra for the pan",
+        "note": "plus extra for the pan",
         "category": "Baking"
       }
     },
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon baking powder",
+      "raw": "½ teaspoon baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt",
+      "raw": "½ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "1/2 cup low fat buttermilk",
+      "raw": "½ cup low fat buttermilk",
       "expected": {
         "item": "low fat buttermilk",
         "measurements": [
@@ -138,31 +138,31 @@
       }
     },
     {
-      "raw": "1/4 cup coconut oil (melted and cooloed)",
+      "raw": "¼ cup coconut oil melted and cooloed",
       "expected": {
-        "item": "coconut oil",
+        "item": "coconut oil melted and cooloed",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "melted and cooloed",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  large egg (at room temperature)",
+      "raw": "1 large egg at room temperature",
       "expected": {
-        "item": "egg",
+        "item": "egg at room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "at room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -180,7 +180,7 @@
       }
     },
     {
-      "raw": "1/2 cup freshly brewed hot coffee",
+      "raw": "½ cup freshly brewed hot coffee",
       "expected": {
         "item": "freshly brewed hot coffee",
         "measurements": [
@@ -194,45 +194,45 @@
       }
     },
     {
-      "raw": "4 ounces reduced fat cream cheese (at room temperature)",
+      "raw": "4 ounces reduced fat cream cheese at room temperature",
       "expected": {
-        "item": "reduced fat cream cheese",
+        "item": "reduced fat cream cheese at room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": "at room temperature",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3 tablespoons unsalted butter (at room temperature)",
+      "raw": "3 tablespoons unsalted butter at room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter at room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon brewed coffee (at room temperature or cold)",
+      "raw": "1 tablespoon brewed coffee at room temperature or cold",
       "expected": {
-        "item": "brewed coffee",
+        "item": "brewed coffee at room temperature or cold",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "at room temperature or cold",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -250,7 +250,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon pure vanilla extract",
+      "raw": "½ teaspoon pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -264,7 +264,7 @@
       }
     },
     {
-      "raw": "1 1/2 cups powdered sugar",
+      "raw": "1 ½ cups powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -278,7 +278,7 @@
       }
     },
     {
-      "raw": "1/4 cup unsweetened cocoa powder",
+      "raw": "¼ cup unsweetened cocoa powder",
       "expected": {
         "item": "unsweetened cocoa powder",
         "measurements": [
@@ -292,7 +292,7 @@
       }
     },
     {
-      "raw": "1/8 teaspoon salt",
+      "raw": "⅛ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -306,7 +306,7 @@
       }
     },
     {
-      "raw": "Chopped chocolate covered espresso beans (for decorating)",
+      "raw": "Chopped chocolate covered espresso beans for decorating",
       "expected": {
         "item": "Chopped chocolate covered espresso beans",
         "measurements": [],

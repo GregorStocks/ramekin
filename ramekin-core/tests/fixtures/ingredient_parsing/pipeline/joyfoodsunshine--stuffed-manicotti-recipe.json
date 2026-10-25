@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "¼ cup fresh basil ((finely chopped, measured before chopping))",
+      "raw": "¼ cup fresh basil (finely chopped, measured before chopping)",
       "expected": {
         "item": "fresh basil",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 Tablespoon Italian parsley ((finely chopped))",
+      "raw": "1 Tablespoon Italian parsley (finely chopped)",
       "expected": {
         "item": "Italian parsley",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "24 ounces marinara sauce ((about 3 cups))",
+      "raw": "24 ounces marinara sauce (about 3 cups)",
       "expected": {
         "item": "marinara sauce",
         "measurements": [

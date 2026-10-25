@@ -3,21 +3,21 @@
   "recipe_slug": "tender-beef-kebabs-shashlik-re",
   "ingredients": [
     {
-      "raw": "2 lbs good quality beef (I used top sirloin, cut into 1 1/2\" pieces)",
+      "raw": "2 lbs good quality beef, I used top sirloin, cut into 1 1/2\" pieces",
       "expected": {
-        "item": "beef",
+        "item": "beef, I used top sirloin",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "I used top sirloin, cut into 1 1/2\" pieces, good quality",
+        "note": "cut into 1 1/2\" pieces, good quality",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2  Bell peppers (any color, sliced into 1 1/2\" wide pieces)",
+      "raw": "2 Bell peppers, any color, sliced into 1 1/2\" wide pieces",
       "expected": {
         "item": "Bell peppers",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  large Purple Onion (sliced into 1 1/2\" wide pieces)",
+      "raw": "1 large Purple Onion, sliced into 1 1/2\" wide pieces",
       "expected": {
         "item": "Purple Onion",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "15  medium bamboo or wood skewers",
+      "raw": "15 medium bamboo or wood skewers",
       "expected": {
         "item": "bamboo or wood skewers",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh lemon juice (from 2 medium lemons)",
+      "raw": "1/2 cup fresh lemon juice, from 2 medium lemons",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -87,16 +87,16 @@
       }
     },
     {
-      "raw": "1 tsp salt (we love fine sea salt)",
+      "raw": "1 tsp salt, we love fine sea salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, we love fine sea salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "we love fine sea salt",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "4  garlic cloves (pressed)",
+      "raw": "4 garlic cloves, pressed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "3 Tbsp fresh or frozen dill (chopped (or 1 Tbsp dry dill weed))",
+      "raw": "3 Tbsp fresh or frozen dill, chopped (or 1 Tbsp dry dill weed)",
       "expected": {
         "item": "fresh or frozen dill",
         "measurements": [
@@ -138,12 +138,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped (or 1 Tbsp dry dill weed)",
+        "note": "chopped; or 1 Tbsp dry dill weed",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  dry bay leaves",
+      "raw": "2 dry bay leaves",
       "expected": {
         "item": "dry bay leaves",
         "measurements": [

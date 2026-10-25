@@ -3,15 +3,6 @@
   "recipe_slug": "2012-01-potato-chip-cookies",
   "ingredients": [
     {
-      "raw": "Cookie",
-      "expected": {
-        "item": "Cookie",
-        "measurements": [],
-        "note": null,
-        "category": "Snacks"
-      }
-    },
-    {
       "raw": "1 cup (2 sticks or 225 grams) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -126,15 +117,6 @@
       }
     },
     {
-      "raw": "Potato chip salt finish (optional)",
-      "expected": {
-        "item": "Potato chip salt finish",
-        "measurements": [],
-        "note": "optional",
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1 tablespoon crushed potato chips",
       "expected": {
         "item": "crushed potato chips",
@@ -160,15 +142,6 @@
         ],
         "note": null,
         "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "Chocolate dip finish (optional)",
-      "expected": {
-        "item": "Chocolate dip finish",
-        "measurements": [],
-        "note": "optional",
-        "category": "Other"
       }
     },
     {

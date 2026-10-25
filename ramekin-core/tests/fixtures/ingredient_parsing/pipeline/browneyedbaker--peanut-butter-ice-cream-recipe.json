@@ -3,13 +3,17 @@
   "recipe_slug": "peanut-butter-ice-cream-recipe",
   "ingredients": [
     {
-      "raw": "1 cup whole milk",
+      "raw": "1 cup  (244 ml) whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "244",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "¾ cup granulated sugar",
+      "raw": "¾ cup  (150 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "½ cup creamy peanut butter",
+      "raw": "½ cup  (129 g) creamy peanut butter",
       "expected": {
         "item": "creamy peanut butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "129",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,13 +57,17 @@
       }
     },
     {
-      "raw": "2 cups heavy cream (divided)",
+      "raw": "2 cups  (476 ml) heavy cream, divided",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "ml"
           }
         ],
         "note": "divided",
@@ -59,7 +75,7 @@
       }
     },
     {
-      "raw": "Pinch of salt",
+      "raw": "Pinch   of salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -73,7 +89,7 @@
       }
     },
     {
-      "raw": "6  egg yolks",
+      "raw": "6   egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -87,7 +103,7 @@
       }
     },
     {
-      "raw": "2 teaspoons vanilla extract",
+      "raw": "2 teaspoons   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -101,13 +117,17 @@
       }
     },
     {
-      "raw": "½ cup creamy peanut butter (melted and cooled slightly)",
+      "raw": "½ cup  (129 g) creamy peanut butter, melted and cooled slightly",
       "expected": {
         "item": "creamy peanut butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "129",
+            "unit": "g"
           }
         ],
         "note": "melted and cooled slightly",

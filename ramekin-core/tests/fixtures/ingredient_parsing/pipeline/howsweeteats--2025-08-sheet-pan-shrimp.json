@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves (minced or pressed)",
+      "raw": "2 garlic cloves minced or pressed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -96,16 +96,16 @@
       }
     },
     {
-      "raw": "1 pound peeled and deveined raw jumbo shrimp (thawed if frozen)",
+      "raw": "1 pound peeled and deveined raw jumbo shrimp thawed if frozen",
       "expected": {
-        "item": "peeled and deveined raw jumbo shrimp",
+        "item": "peeled and deveined raw jumbo shrimp thawed if frozen",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "thawed if frozen",
+        "note": null,
         "category": "Other"
       }
     },
@@ -124,17 +124,17 @@
       }
     },
     {
-      "raw": "3  ears of corn (kernels cut from the cob)",
+      "raw": "3 ears of corn kernels cut from the cob",
       "expected": {
-        "item": "corn",
+        "item": "corn kernels cut from the cob",
         "measurements": [
           {
             "amount": "3",
             "unit": "ear"
           }
         ],
-        "note": "kernels cut from the cob",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "jasmine rice (for serving)",
+      "raw": "jasmine rice for serving",
       "expected": {
         "item": "jasmine rice",
         "measurements": [],

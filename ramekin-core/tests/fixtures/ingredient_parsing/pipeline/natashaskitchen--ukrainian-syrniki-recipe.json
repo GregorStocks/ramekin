@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -129,11 +129,11 @@
       }
     },
     {
-      "raw": "Fresh fruit or jam (sour cream, powdered sugar; whatever you like!)",
+      "raw": "Fresh fruit or jam, sour cream, powdered sugar; whatever you like!",
       "expected": {
-        "item": "Fresh fruit or jam",
+        "item": "Fresh fruit or jam, sour cream, powdered sugar; whatever you like!",
         "measurements": [],
-        "note": "sour cream, powdered sugar; whatever you like!",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     }

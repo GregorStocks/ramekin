@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 cup yellow onion, (chopped)",
+      "raw": "1 cup yellow onion, chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  green bell pepper, (chopped)",
+      "raw": "1 green bell pepper, chopped",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 large garlic cloves, (minced)",
+      "raw": "4 large garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 cup frozen corn, (thawed and well drained)",
+      "raw": "1 cup frozen corn, thawed and well drained",
       "expected": {
         "item": "frozen corn",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 (15-ounces) can black beans, (drained and rinsed)",
+      "raw": "1 (15-ounces) can black beans, drained and rinsed",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 (15-ounces) can petite diced tomatoes with green chilies,  (including juices)",
+      "raw": "1 (15-ounces) can petite diced tomatoes with green chilies,  including juices",
       "expected": {
         "item": "petite diced tomatoes with green chilies",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1/4 cup pimiento-stuffed green olives, (sliced)",
+      "raw": "1/4 cup pimiento-stuffed green olives, sliced",
       "expected": {
         "item": "pimiento-stuffed green olives",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "2 teaspoons brown sugar, (packed)",
+      "raw": "2 teaspoons brown sugar, packed",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -199,12 +199,12 @@
       }
     },
     {
-      "raw": "2 1/2 teaspoons salt, (or more to taste )",
+      "raw": "2 1/4 teaspoons salt, or more to taste",
       "expected": {
         "item": "salt",
         "measurements": [
           {
-            "amount": "2.5",
+            "amount": "2.25",
             "unit": "tsp"
           }
         ],
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon hot sauce, (or more to taste )",
+      "raw": "1/4 teaspoon hot sauce, or more to taste",
       "expected": {
         "item": "hot sauce",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "1/2 cup whole milk&nbsp;",
+      "raw": "1/2 cup whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -269,7 +269,7 @@
       }
     },
     {
-      "raw": "1/2 cup cheddar, (shredded)",
+      "raw": "1/2 cup cheddar, shredded",
       "expected": {
         "item": "cheddar",
         "measurements": [

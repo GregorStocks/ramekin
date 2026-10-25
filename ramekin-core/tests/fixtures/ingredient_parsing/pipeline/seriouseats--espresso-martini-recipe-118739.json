@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "1 fluid ounce (30 ml) fresh espresso or 1 1/2 fluid ounces (45 ml) fresh strong coffee from a moka pot or cold brew concentrate",
+      "raw": "1 fluid ounce (30 ml) fresh espresso or 1 1/2 fluid ounces (45 ml) fresh strong coffee from a moka pot or cold brew concentrate (see notes)",
       "expected": {
         "item": "fresh espresso",
         "measurements": [
@@ -38,14 +38,14 @@
             "unit": "ml"
           }
         ],
-        "note": "or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate",
+        "note": "see notes; or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 ounce (30 ml) coffee liqueur, such as Kahlua or Mr. Black",
+      "raw": "1 ounce (30 ml) chilled coffee liqueur, such as Kahlúa or Mr. Black",
       "expected": {
-        "item": "coffee liqueur",
+        "item": "chilled coffee liqueur",
         "measurements": [
           {
             "amount": "1",
@@ -56,25 +56,30 @@
             "unit": "ml"
           }
         ],
-        "note": "such as Kahlua or Mr. Black",
-        "category": "Beverages"
+        "note": "such as Kahlúa or Mr. Black",
+        "category": "Other"
       }
     },
     {
-      "raw": "Very tiny pinch of kosher salt",
+      "raw": "1 very tiny pinch kosher salt",
       "expected": {
-        "item": "Very tiny pinch of kosher salt",
-        "measurements": [],
+        "item": "very tiny pinch kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
         "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "Ice, for shaking",
+      "raw": "Ice (preferably about 2 large cubes), for shaking",
       "expected": {
         "item": "Ice",
         "measurements": [],
-        "note": "for shaking",
+        "note": "preferably about 2 large cubes, for shaking",
         "category": "Frozen"
       }
     },

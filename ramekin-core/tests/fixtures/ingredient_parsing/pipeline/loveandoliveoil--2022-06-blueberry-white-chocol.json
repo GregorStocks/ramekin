@@ -3,13 +3,17 @@
   "recipe_slug": "2022-06-blueberry-white-chocol",
   "ingredients": [
     {
-      "raw": "¾ cup fresh blueberries",
+      "raw": "¾ cup  / 100 g fresh blueberries",
       "expected": {
         "item": "fresh blueberries",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "1¼ cup all-purpose flour (divided)",
+      "raw": "1¼ cup  / 156 g all-purpose flour, divided",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "156",
+            "unit": "g"
           }
         ],
         "note": "divided",
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "2 tablespoons buttermilk powder (optional)",
+      "raw": "2 tablespoons  / 18 g buttermilk powder, optional",
       "expected": {
         "item": "buttermilk powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "18",
+            "unit": "g"
           }
         ],
         "note": "optional",
@@ -45,7 +57,7 @@
       }
     },
     {
-      "raw": "½ teaspoon fine sea salt",
+      "raw": "½ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -59,13 +71,17 @@
       }
     },
     {
-      "raw": "3.5 oz white chocolate*",
+      "raw": "3.5 oz  / 100 g white chocolate*",
       "expected": {
         "item": "white chocolate",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "oz"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -73,13 +89,17 @@
       }
     },
     {
-      "raw": "½ cup unsalted butter (cut into pieces)",
+      "raw": "½ cup  / 113 g unsalted butter, cut into pieces",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "cut into pieces",
@@ -87,13 +107,17 @@
       }
     },
     {
-      "raw": "¼ cup packed light brown sugar",
+      "raw": "¼ cup  / 56 g packed light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
           }
         ],
         "note": "packed",
@@ -101,13 +125,17 @@
       }
     },
     {
-      "raw": "½ cup granulated sugar",
+      "raw": "½ cup  / 100 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -115,7 +143,7 @@
       }
     },
     {
-      "raw": "1  large egg (at room temperature)",
+      "raw": "1   large egg, at room temperature",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -129,7 +157,7 @@
       }
     },
     {
-      "raw": "1  large egg yolk (at room temperature)",
+      "raw": "1   large egg yolk, at room temperature",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -143,7 +171,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -157,7 +185,7 @@
       }
     },
     {
-      "raw": "1 teaspoon lemon zest",
+      "raw": "1 teaspoon   lemon zest",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -171,13 +199,17 @@
       }
     },
     {
-      "raw": "¼ cup white chocolate callets or chips (plus more for topping)",
+      "raw": "¼ cup  / 30 g white chocolate callets or chips, plus more for topping",
       "expected": {
         "item": "white chocolate callets or chips",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": "plus more for topping",
@@ -185,13 +217,17 @@
       }
     },
     {
-      "raw": "¼ cup fresh or frozen blueberries",
+      "raw": "¼ cup  / 35 g fresh or frozen blueberries",
       "expected": {
         "item": "fresh or frozen blueberries",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -199,7 +235,7 @@
       }
     },
     {
-      "raw": "1 tablespoon freshly squeezed lemon juice",
+      "raw": "1 tablespoon   freshly squeezed lemon juice",
       "expected": {
         "item": "freshly squeezed lemon juice",
         "measurements": [
@@ -213,7 +249,7 @@
       }
     },
     {
-      "raw": "1 tablespoon filtered water",
+      "raw": "1 tablespoon   filtered water",
       "expected": {
         "item": "filtered water",
         "measurements": [
@@ -227,13 +263,17 @@
       }
     },
     {
-      "raw": "½ cup powdered sugar (preferably organic) (sifted)",
+      "raw": "½ cup  / 60 g powdered sugar (preferably organic), sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": "preferably organic, sifted",
@@ -241,7 +281,7 @@
       }
     },
     {
-      "raw": "1 teaspoon maple syrup",
+      "raw": "1 teaspoon   maple syrup",
       "expected": {
         "item": "maple syrup",
         "measurements": [

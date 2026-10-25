@@ -3,63 +3,75 @@
   "recipe_slug": "green-chili-recipe",
   "ingredients": [
     {
-      "raw": "3  poblano peppers (stemmed, seeded, and coarsely chopped into 3/4-inch pieces (about 3 cups))",
+      "raw": "3 poblano peppers stemmed, seeded, and coarsely chopped into 3/4-inch pieces (about 3 cups)",
       "expected": {
-        "item": "poblano peppers",
+        "item": "poblano peppers stemmed, seeded, and coarsely chopped into 3/4-inch pieces",
         "measurements": [
           {
             "amount": "3",
             "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
           }
         ],
-        "note": "stemmed, seeded, and coarsely chopped into 3/4-inch pieces (about 3 cups)",
-        "category": "Produce"
+        "note": "about 3 cups",
+        "category": "Other"
       }
     },
     {
-      "raw": "4 medium garlic cloves (peels on and left whole)",
+      "raw": "4 medium garlic cloves peels on and left whole",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves peels on and left whole",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": "peels on and left whole",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2  jalapeño peppers (seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces (about 1/2 cup))",
+      "raw": "2 jalapeño peppers seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces (about 1/2 cup)",
       "expected": {
-        "item": "jalapeño peppers",
+        "item": "jalapeño peppers seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces",
         "measurements": [
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": "seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces (about 1/2 cup)",
-        "category": "Produce"
+        "note": "about 1/2 cup",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  medium yellow onion (chopped into 1/4- to 1/2-inch pieces (about 1 cup))",
+      "raw": "1 medium yellow onion chopped into 1/4- to 1/2-inch pieces (about 1 cup)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "chopped into 1/4- to 1/2-inch pieces (about 1 cup)",
+        "note": "about 1 cup, chopped into 1/4- to 1/2-inch pieces",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 tablespoons extra-virgin olive oil (divided)",
+      "raw": "3 tablespoons extra-virgin olive oil divided",
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [
@@ -73,7 +85,7 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons kosher salt (divided)",
+      "raw": "1 ½ teaspoons kosher salt divided",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -87,7 +99,7 @@
       }
     },
     {
-      "raw": "3/4 teaspoon ground black pepper (divided)",
+      "raw": "¾ teaspoon ground black pepper divided",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -101,7 +113,7 @@
       }
     },
     {
-      "raw": "2 pounds pork tenderloin (cut into 1 1/2-inch pieces)",
+      "raw": "2 pounds pork tenderloin cut into 1 1/2-inch pieces",
       "expected": {
         "item": "pork tenderloin",
         "measurements": [
@@ -115,7 +127,7 @@
       }
     },
     {
-      "raw": "1/4 cup fine-grain cornmeal",
+      "raw": "¼ cup fine-grain cornmeal",
       "expected": {
         "item": "fine-grain cornmeal",
         "measurements": [
@@ -129,7 +141,7 @@
       }
     },
     {
-      "raw": "1 can fire-roasted diced tomatoes ((14.5 ounces) )",
+      "raw": "1 can fire-roasted diced tomatoes (14.5 ounces)",
       "expected": {
         "item": "fire-roasted diced tomatoes",
         "measurements": [
@@ -147,7 +159,7 @@
       }
     },
     {
-      "raw": "1 jar prepared tomatillo (green) salsa ((16 ounces) about 1 1/2 cups)",
+      "raw": "1 jar prepared tomatillo (green) salsa (16 ounces) about 1 1/2 cups",
       "expected": {
         "item": "prepared tomatillo salsa about 1 1/2 cups",
         "measurements": [
@@ -165,7 +177,7 @@
       }
     },
     {
-      "raw": "3–4 cups low-sodium chicken broth (divided)",
+      "raw": "3–4 cups low-sodium chicken broth divided",
       "expected": {
         "item": "low-sodium chicken broth",
         "measurements": [
@@ -207,7 +219,7 @@
       }
     },
     {
-      "raw": "1 can white hominy, drained ((15 ounces) )",
+      "raw": "1 can white hominy, drained (15 ounces)",
       "expected": {
         "item": "white hominy",
         "measurements": [
@@ -243,11 +255,11 @@
       }
     },
     {
-      "raw": "Plain nonfat Greek yogurt (or sour cream)",
+      "raw": "Plain nonfat Greek yogurt or sour cream",
       "expected": {
-        "item": "Plain nonfat Greek yogurt",
+        "item": "Plain nonfat Greek yogurt or sour cream",
         "measurements": [],
-        "note": "or sour cream",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

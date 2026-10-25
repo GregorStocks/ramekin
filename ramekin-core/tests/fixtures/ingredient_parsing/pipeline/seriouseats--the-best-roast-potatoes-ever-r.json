@@ -12,7 +12,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon (4g) baking soda",
+      "raw": "1/2 teaspoon (4 g) baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -30,7 +30,7 @@
       }
     },
     {
-      "raw": "4 pounds (about 2kg) russet or Yukon Gold potatoes, peeled and cut into quarters, sixths, or eighths, depending on size (see note)",
+      "raw": "4 pounds (about 2 kg) russet or Yukon Gold potatoes, peeled and cut into quarters, sixths, or eighths, depending on size (see note)",
       "expected": {
         "item": "russet or Yukon Gold potatoes, peeled and cut into quarters, sixths, or eighths, depending on size",
         "measurements": [
@@ -43,12 +43,12 @@
             "unit": "kg"
           }
         ],
-        "note": "about 2kg, see note",
+        "note": "about 2 kg, see note",
         "category": "Produce"
       }
     },
     {
-      "raw": "5 tablespoons (75ml) extra-virgin olive oil, duck fat, goose fat, or beef fat",
+      "raw": "5 tablespoons (75 ml) extra-virgin olive oil, duck fat, goose fat, or beef fat",
       "expected": {
         "item": "extra-virgin olive oil, duck fat, goose fat, or beef fat",
         "measurements": [
@@ -66,9 +66,9 @@
       }
     },
     {
-      "raw": "Small handful picked rosemary leaves, finely chopped",
+      "raw": "Small handful picked fresh rosemary leaves, finely chopped",
       "expected": {
-        "item": "picked rosemary leaves",
+        "item": "picked fresh rosemary leaves",
         "measurements": [
           {
             "amount": null,
@@ -76,7 +76,7 @@
           }
         ],
         "note": "finely chopped",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

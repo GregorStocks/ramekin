@@ -3,13 +3,17 @@
   "recipe_slug": "pecan-tassies-recipe",
   "ingredients": [
     {
-      "raw": "1 cup unsalted butter",
+      "raw": "1 cup  (227 g) unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "6 ounces cream cheese",
+      "raw": "6 ounces  (170.1 g) cream cheese",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
+          },
+          {
+            "amount": "170.1",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "2 cups all-purpose flour",
+      "raw": "2 cups  (250 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,13 +57,17 @@
       }
     },
     {
-      "raw": "1½ cups light brown sugar",
+      "raw": "1½ cups  (330 g) light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "330",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -59,13 +75,17 @@
       }
     },
     {
-      "raw": "1 cup chopped pecans (plus more for sprinkling on top)",
+      "raw": "1 cup  (99 g) chopped pecans, plus more for sprinkling on top",
       "expected": {
         "item": "chopped pecans",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
           }
         ],
         "note": "plus more for sprinkling on top",
@@ -73,7 +93,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -87,7 +107,7 @@
       }
     },
     {
-      "raw": "2 tablespoons unsalted butter (melted)",
+      "raw": "2 tablespoons   unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -101,10 +121,14 @@
       }
     },
     {
-      "raw": "½ teaspoon vanilla extract",
+      "raw": "½ teaspoon  (0.5 teaspoon) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
           {
             "amount": "0.5",
             "unit": "tsp"

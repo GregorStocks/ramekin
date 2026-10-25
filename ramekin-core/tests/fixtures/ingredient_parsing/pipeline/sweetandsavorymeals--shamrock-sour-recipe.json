@@ -3,12 +3,12 @@
   "recipe_slug": "shamrock-sour-recipe",
   "ingredients": [
     {
-      "raw": "Green sprinkles (or green sanding sugar)",
+      "raw": "Green sprinkles or green sanding sugar",
       "expected": {
-        "item": "Green sprinkles",
+        "item": "Green sprinkles or green sanding sugar",
         "measurements": [],
-        "note": "or green sanding sugar",
-        "category": "Other"
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1  tiny drop of green food coloring",
+      "raw": "1 tiny drop of green food coloring",
       "expected": {
         "item": "tiny drop of green food coloring",
         "measurements": [

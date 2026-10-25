@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-quickbeefstirfrywithbe",
   "ingredients": [
     {
-      "raw": "1 pound top sirloin or chuck steaks (about 1/2 inch thick), trimmed",
+      "raw": "1 pound top sirloin or chuck steaks (about 1/2-inch thick), trimmed",
       "expected": {
         "item": "top sirloin or chuck steaks",
         "measurements": [
@@ -12,14 +12,14 @@
             "unit": "lb"
           }
         ],
-        "note": "about 1/2 inch thick, trimmed",
+        "note": "about 1/2-inch thick, trimmed",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "Salt and freshly ground black pepper",
+      "raw": "Kosher salt and freshly ground black pepper",
       "expected": {
-        "item": "Salt and freshly ground black pepper",
+        "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "1 tablespoon soy sauce (use gluten-free soy sauce if cooking gluten-free)",
+      "raw": "1 tablespoon soy sauce (use gluten-free soy sauce if cooking gluten free)",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -133,7 +133,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "use gluten-free soy sauce if cooking gluten-free",
+        "note": "use gluten-free soy sauce if cooking gluten free",
         "category": "Condiments & Sauces"
       }
     },

@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "Pinch of ground black pepper",
+      "raw": "Pinch ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "Dash of hot sauce",
+      "raw": "Dash hot sauce",
       "expected": {
         "item": "hot sauce",
         "measurements": [
@@ -129,9 +129,9 @@
       }
     },
     {
-      "raw": "2 large eggs + 1/4 cup water",
+      "raw": "2 large eggs",
       "expected": {
-        "item": "eggs + 1/4 cup water",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
@@ -139,7 +139,7 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

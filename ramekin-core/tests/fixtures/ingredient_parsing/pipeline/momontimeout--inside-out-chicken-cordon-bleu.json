@@ -3,17 +3,17 @@
   "recipe_slug": "inside-out-chicken-cordon-bleu",
   "ingredients": [
     {
-      "raw": "2 to 3  chicken breasts (boneless, skinless )",
+      "raw": "2 to 3 chicken breasts boneless, skinless",
       "expected": {
-        "item": "chicken breasts",
+        "item": "chicken breasts boneless, skinless",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": "boneless, skinless",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  chicken bouillon cube",
+      "raw": "1 chicken bouillon cube",
       "expected": {
         "item": "chicken bouillon cube",
         "measurements": [

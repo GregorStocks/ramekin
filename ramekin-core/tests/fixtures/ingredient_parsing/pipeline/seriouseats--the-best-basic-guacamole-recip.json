@@ -3,21 +3,29 @@
   "recipe_slug": "the-best-basic-guacamole-recip",
   "ingredients": [
     {
-      "raw": "1 small yellow onion, roughly chopped",
+      "raw": "1/2 of 1 medium white onion (about 4 ounces; 113 g), roughly chopped",
       "expected": {
-        "item": "yellow onion",
+        "item": "1 medium white onion",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "small"
+            "amount": "0.5",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 4 ounces; 113 g, roughly chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 serrano chile, roughly chopped",
+      "raw": "1 serrano chile, stemmed and roughly chopped (remove seeds before chopping for a less hot result)",
       "expected": {
         "item": "serrano chile",
         "measurements": [
@@ -26,14 +34,14 @@
             "unit": null
           }
         ],
-        "note": "roughly chopped",
+        "note": "remove seeds before chopping for a less hot result, stemmed and roughly chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup picked cilantro leaves, finely chopped, divided",
+      "raw": "1/2 cup picked cilantro leaves and tender stems, finely chopped, divided",
       "expected": {
-        "item": "picked cilantro leaves",
+        "item": "picked cilantro leaves and tender stems",
         "measurements": [
           {
             "amount": "0.5",
@@ -45,45 +53,52 @@
       }
     },
     {
-      "raw": "2 teaspoons kosher salt",
+      "raw": "Kosher salt",
       "expected": {
-        "item": "kosher salt",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tsp"
-          }
-        ],
+        "item": "Kosher salt",
+        "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 ripe avocados",
+      "raw": "4 ripe Hass avocados (about 7 ounces; 200 g each)",
       "expected": {
-        "item": "ripe avocados",
+        "item": "ripe Hass avocados",
         "measurements": [
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": "oz each"
+          },
+          {
+            "amount": "200",
+            "unit": "g each"
           }
         ],
-        "note": null,
+        "note": "about 7 ounces; 200 g each",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons juice from 2 limes",
+      "raw": "2 to 3 tablespoons (30-45 ml) fresh lime juice (from about 2 limes)",
       "expected": {
-        "item": "juice from 2 limes",
+        "item": "fresh lime juice",
         "measurements": [
           {
-            "amount": "2",
+            "amount": "2 to 3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30-45",
+            "unit": "ml"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "from about 2 limes",
+        "category": "Produce"
       }
     }
   ]

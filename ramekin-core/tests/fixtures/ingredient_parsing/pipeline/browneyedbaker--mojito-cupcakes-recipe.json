@@ -3,13 +3,17 @@
   "recipe_slug": "mojito-cupcakes-recipe",
   "ingredients": [
     {
-      "raw": "½ cup buttermilk",
+      "raw": "½ cup  (120 ml) buttermilk",
       "expected": {
         "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -17,27 +21,35 @@
       }
     },
     {
-      "raw": "½ cup mint leaves (bruised)",
+      "raw": "½ cup  (22.5 g) mint leaves, bruised",
       "expected": {
-        "item": "mint leaves",
+        "item": "mint leaves, bruised",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "22.5",
+            "unit": "g"
           }
         ],
-        "note": "bruised",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "1½ cups all-purpose flour",
+      "raw": "1½ cups  (187.5 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "187.5",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,10 +57,14 @@
       }
     },
     {
-      "raw": "1½ teaspoons baking powder",
+      "raw": "1½ teaspoons  (1.5 teaspoons) baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
           {
             "amount": "1.5",
             "unit": "tsp"
@@ -59,10 +75,14 @@
       }
     },
     {
-      "raw": "¼ teaspoon salt",
+      "raw": "¼ teaspoon  (0.25 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
@@ -73,13 +93,17 @@
       }
     },
     {
-      "raw": "½ cup unsalted butter (at room temperature)",
+      "raw": "½ cup  (113.5 g) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "113.5",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -87,13 +111,17 @@
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  (200 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -101,7 +129,7 @@
       }
     },
     {
-      "raw": "2  eggs (at room temperature)",
+      "raw": "2   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -144,7 +172,36 @@
       "expanded": true
     },
     {
-      "raw": "2 tablespoons white rum",
+      "raw": "Zest and juice of 1½ limes",
+      "expected": {
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "limes"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Zest and juice of 1½ limes",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "limes"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "2 tablespoons   white rum",
       "expected": {
         "item": "white rum",
         "measurements": [
@@ -158,10 +215,14 @@
       }
     },
     {
-      "raw": "¼ teaspoon vanilla extract",
+      "raw": "¼ teaspoon  (0.25 teaspoon) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
@@ -172,7 +233,7 @@
       }
     },
     {
-      "raw": "2 tablespoons white rum",
+      "raw": "2 tablespoons   white rum",
       "expected": {
         "item": "white rum",
         "measurements": [
@@ -186,7 +247,7 @@
       }
     },
     {
-      "raw": "2  sprigs fresh mint",
+      "raw": "2   sprigs fresh mint",
       "expected": {
         "item": "fresh mint",
         "measurements": [
@@ -200,13 +261,17 @@
       }
     },
     {
-      "raw": "1½ cups unsalted butter (at room temperature)",
+      "raw": "1½ cups  (340.5 g) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "340.5",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -214,13 +279,17 @@
       }
     },
     {
-      "raw": "4¼ cups powdered sugar",
+      "raw": "4¼ cups  (510 g) powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "4.25",
             "unit": "cup"
+          },
+          {
+            "amount": "510",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +297,14 @@
       }
     },
     {
-      "raw": "1½ tablespoons lime juice",
+      "raw": "1½ tablespoons  (1.5 tablespoons) lime juice",
       "expected": {
         "item": "lime juice",
         "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
           {
             "amount": "1.5",
             "unit": "tbsp"
@@ -242,7 +315,7 @@
       }
     },
     {
-      "raw": "3 tablespoons white rum",
+      "raw": "3 tablespoons   white rum",
       "expected": {
         "item": "white rum",
         "measurements": [

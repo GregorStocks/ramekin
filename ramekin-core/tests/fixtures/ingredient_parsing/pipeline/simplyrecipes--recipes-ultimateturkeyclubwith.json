@@ -3,20 +3,16 @@
   "recipe_slug": "recipes-ultimateturkeyclubwith",
   "ingredients": [
     {
-      "raw": "1 (2-3 pound) turkey breast, bone-in and skin-on",
+      "raw": "1 (2 to 3) pound turkey breast, bone-in and skin-on",
       "expected": {
         "item": "turkey breast, bone-in and skin-on",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
-          },
-          {
-            "amount": "2-3",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "2 to 3",
         "category": "Other"
       }
     },
@@ -63,13 +59,13 @@
       }
     },
     {
-      "raw": "12 strips bacon",
+      "raw": "12 slices bacon",
       "expected": {
-        "item": "strips bacon",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "12",
-            "unit": null
+            "unit": "slice"
           }
         ],
         "note": null,
@@ -109,7 +105,7 @@
       }
     },
     {
-      "raw": "3 avocados, sliced",
+      "raw": "3 avocados, pitted and sliced",
       "expected": {
         "item": "avocados",
         "measurements": [
@@ -118,7 +114,7 @@
             "unit": null
           }
         ],
-        "note": "sliced",
+        "note": "pitted and sliced",
         "category": "Produce"
       }
     },
@@ -151,17 +147,17 @@
       }
     },
     {
-      "raw": "1 bulb garlic, roasted",
+      "raw": "1 head garlic",
       "expected": {
-        "item": "bulb garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "head"
           }
         ],
-        "note": "roasted",
-        "category": "Other"
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +184,7 @@
       }
     },
     {
-      "raw": "Pinch of salt",
+      "raw": "Pinch salt",
       "expected": {
         "item": "salt",
         "measurements": [

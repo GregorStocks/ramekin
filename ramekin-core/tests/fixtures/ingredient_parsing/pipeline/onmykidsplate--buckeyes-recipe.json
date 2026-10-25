@@ -3,31 +3,31 @@
   "recipe_slug": "buckeyes-recipe",
   "ingredients": [
     {
-      "raw": "½ cup butter  (unsalted, softened)",
+      "raw": "½ cup butter  unsalted, softened",
       "expected": {
-        "item": "butter",
+        "item": "butter unsalted",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "unsalted, softened",
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup peanut butter (creamy no stir version)",
+      "raw": "1 cup peanut butter creamy no stir version",
       "expected": {
-        "item": "peanut butter",
+        "item": "peanut butter creamy no stir version",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "creamy no stir version",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -59,21 +59,17 @@
       }
     },
     {
-      "raw": "3 cups chocolate chips (about 20 ounces)",
+      "raw": "3 cups chocolate chips about 20 ounces",
       "expected": {
-        "item": "chocolate chips",
+        "item": "chocolate chips about 20 ounces",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "20",
-            "unit": "oz"
           }
         ],
-        "note": "about 20 ounces",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {

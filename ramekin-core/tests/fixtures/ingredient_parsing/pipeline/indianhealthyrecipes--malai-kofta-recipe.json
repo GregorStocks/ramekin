@@ -3,21 +3,25 @@
   "recipe_slug": "malai-kofta-recipe",
   "ingredients": [
     {
-      "raw": "1 heaped cup  paneer ( crumbled (about 150 grams))",
+      "raw": "1 heaped cup  paneer  crumbled (about 150 grams)",
       "expected": {
         "item": "paneer",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaped cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
-        "note": "crumbled (about 150 grams)",
+        "note": "about 150 grams, crumbled",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 heaped cup  potato boiled &amp;amp; crumbled ((about 2 large))",
+      "raw": "1 heaped cup  potato boiled & crumbled (about 2 large)",
       "expected": {
         "item": "potato",
         "measurements": [
@@ -35,7 +39,7 @@
       }
     },
     {
-      "raw": "2½ tablespoons corn starch ((same as white refined corn flour))",
+      "raw": "2½ tablespoons corn starch (same as white refined corn flour)",
       "expected": {
         "item": "corn starch",
         "measurements": [
@@ -63,7 +67,7 @@
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves  (chopped finely)",
+      "raw": "2 tablespoons coriander leaves  chopped finely",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -100,7 +104,7 @@
       }
     },
     {
-      "raw": "1 tablespoons cashews chopped ( (optional))",
+      "raw": "1 tablespoons cashews chopped  (optional)",
       "expected": {
         "item": "cashews",
         "measurements": [
@@ -109,12 +113,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "(optional), chopped",
+        "note": "optional, chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1 tablespoons raisins ( (optional))",
+      "raw": "1 tablespoons raisins  (optional)",
       "expected": {
         "item": "raisins",
         "measurements": [
@@ -123,7 +127,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "(optional)",
+        "note": "optional",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -151,7 +155,7 @@
       }
     },
     {
-      "raw": "1 cup onions (cubed )",
+      "raw": "1 cup onions cubed",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -165,7 +169,7 @@
       }
     },
     {
-      "raw": "1½ cup tomatoes (cubed)",
+      "raw": "1½ cup tomatoes cubed",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -179,7 +183,7 @@
       }
     },
     {
-      "raw": "15  cashew nuts",
+      "raw": "15 cashew nuts",
       "expected": {
         "item": "cashew nuts",
         "measurements": [
@@ -193,7 +197,7 @@
       }
     },
     {
-      "raw": "2  green cardamoms",
+      "raw": "2 green cardamoms",
       "expected": {
         "item": "green cardamoms",
         "measurements": [
@@ -207,7 +211,7 @@
       }
     },
     {
-      "raw": "½ inch cinnamon stick ((optional))",
+      "raw": "½ inch cinnamon stick (optional)",
       "expected": {
         "item": "inch cinnamon stick",
         "measurements": [
@@ -221,9 +225,9 @@
       }
     },
     {
-      "raw": "3  cloves ((optional))",
+      "raw": "3 cloves (optional)",
       "expected": {
-        "item": "3  cloves ((optional))",
+        "item": "3 cloves (optional)",
         "measurements": [
           {
             "amount": "3",
@@ -235,7 +239,7 @@
       }
     },
     {
-      "raw": "2 tablespoons oil ((or 2 tbsp butter))",
+      "raw": "2 tablespoons oil (or 2 tbsp butter)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -249,7 +253,7 @@
       }
     },
     {
-      "raw": "1  bay leaf ((optional))",
+      "raw": "1 bay leaf (optional)",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -263,7 +267,7 @@
       }
     },
     {
-      "raw": "½ inch cinnamon stick ((optional))",
+      "raw": "½ inch cinnamon stick (optional)",
       "expected": {
         "item": "inch cinnamon stick",
         "measurements": [
@@ -277,7 +281,7 @@
       }
     },
     {
-      "raw": "2  cardamoms ((optional))",
+      "raw": "2 cardamoms (optional)",
       "expected": {
         "item": "cardamoms",
         "measurements": [
@@ -305,7 +309,7 @@
       }
     },
     {
-      "raw": "1 teaspoon red chili powder  ((adjust to taste))",
+      "raw": "1 teaspoon red chili powder  (adjust to taste)",
       "expected": {
         "item": "red chili powder",
         "measurements": [
@@ -319,7 +323,7 @@
       }
     },
     {
-      "raw": "¾ to 1¼  teaspoon garam masala ((adjust to taste))",
+      "raw": "¾ to 1¼  teaspoon garam masala (adjust to taste)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -333,7 +337,7 @@
       }
     },
     {
-      "raw": "1 teaspoon coriander powder ((ground coriander seeds))",
+      "raw": "1 teaspoon coriander powder (ground coriander seeds)",
       "expected": {
         "item": "coriander powder",
         "measurements": [
@@ -347,7 +351,7 @@
       }
     },
     {
-      "raw": "1 teaspoon salt ((adjust to taste))",
+      "raw": "1 teaspoon salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -375,7 +379,7 @@
       }
     },
     {
-      "raw": "½ cup water ((¼ cup more if needed))",
+      "raw": "½ cup water (¼ cup more if needed)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -389,7 +393,7 @@
       }
     },
     {
-      "raw": "1 teaspoon kasuri methi ((fenugreek leaves))",
+      "raw": "1 teaspoon kasuri methi (fenugreek leaves)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [

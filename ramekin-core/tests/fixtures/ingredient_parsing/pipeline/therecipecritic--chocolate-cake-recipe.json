@@ -87,17 +87,17 @@
       }
     },
     {
-      "raw": "¾ Cup unsweetened cocoa powder (not Dutch process)",
+      "raw": "¾ Cup unsweetened cocoa powder not Dutch process",
       "expected": {
-        "item": "unsweetened cocoa powder",
+        "item": "unsweetened cocoa powder not Dutch process",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "not Dutch process",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "8 Ounces Cream Cheese (softened)",
+      "raw": "8 Ounces Cream Cheese softened",
       "expected": {
         "item": "Cream Cheese",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "½ Cup unsalted Butter (softened)",
+      "raw": "½ Cup unsalted Butter softened",
       "expected": {
         "item": "unsalted Butter",
         "measurements": [

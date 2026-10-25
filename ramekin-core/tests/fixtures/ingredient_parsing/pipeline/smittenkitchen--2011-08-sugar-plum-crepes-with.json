@@ -3,15 +3,6 @@
   "recipe_slug": "2011-08-sugar-plum-crepes-with",
   "ingredients": [
     {
-      "raw": "Crepes",
-      "expected": {
-        "item": "Crepes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "2 tablespoons butter, melted and cooled slightly (I browned this first, which probably won’t surprise you)",
       "expected": {
         "item": "butter",
@@ -105,15 +96,6 @@
       }
     },
     {
-      "raw": "Plums",
-      "expected": {
-        "item": "Plums",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
       "raw": "1 pound sugar or other plums, pitted and cut into quarters if tiny, eighths if larger",
       "expected": {
         "item": "sugar or other plums, pitted and cut into quarters if tiny, eighths if larger",
@@ -184,10 +166,6 @@
       }
     },
     {
-      "raw": "Assembly",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup ricotta (ever wanted to make your own?)",
       "expected": {
         "item": "ricotta",
@@ -198,7 +176,6 @@
           }
         ],
         "note": "ever wanted to make your own?",
-        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -213,7 +190,6 @@
           }
         ],
         "note": null,
-        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -223,7 +199,6 @@
         "item": "Toasted and chopped pistachios or almonds",
         "measurements": [],
         "note": null,
-        "section": "Assembly",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -233,7 +208,6 @@
         "item": "Additional honey",
         "measurements": [],
         "note": "if desired",
-        "section": "Assembly",
         "category": "Other"
       }
     }

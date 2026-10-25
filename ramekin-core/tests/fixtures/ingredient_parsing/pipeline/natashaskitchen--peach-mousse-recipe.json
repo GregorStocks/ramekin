@@ -3,7 +3,7 @@
   "recipe_slug": "peach-mousse-recipe",
   "ingredients": [
     {
-      "raw": "1 lb ripe peaches (peeled, diced)",
+      "raw": "1 lb ripe peaches, peeled, diced",
       "expected": {
         "item": "ripe peaches",
         "measurements": [
@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "1 Tbsp unflavored gelatin (I used Knox brand)",
+      "raw": "1 Tbsp unflavored gelatin, I used Knox brand",
       "expected": {
-        "item": "unflavored gelatin",
+        "item": "unflavored gelatin, I used Knox brand",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "I used Knox brand",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1  ripe peach (peeled and thinly sliced)",
+      "raw": "1 ripe peach, peeled and thinly sliced",
       "expected": {
         "item": "ripe peach",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "mint leaves (optional)",
+      "raw": "mint leaves, optional",
       "expected": {
         "item": "mint leaves",
         "measurements": [],

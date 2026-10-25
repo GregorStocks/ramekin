@@ -3,17 +3,13 @@
   "recipe_slug": "coquito-spiced-coconut-drink-r",
   "ingredients": [
     {
-      "raw": "1 (12 ounce) can evaporated milk",
+      "raw": "One 12-ounce can evaporated milk",
       "expected": {
         "item": "evaporated milk",
         "measurements": [
           {
             "amount": "1",
-            "unit": "can"
-          },
-          {
-            "amount": "12",
-            "unit": "oz"
+            "unit": "12-ounce can"
           }
         ],
         "note": null,
@@ -35,16 +31,16 @@
       }
     },
     {
-      "raw": "1 (2-inch long) piece ginger, peeled and sliced crosswise into 1/4-inch thick rounds",
+      "raw": "One 2-inch knob fresh ginger, peeled and sliced crosswise into 1/4-inch thick rounds",
       "expected": {
-        "item": "ginger",
+        "item": "fresh ginger",
         "measurements": [
           {
             "amount": "1",
-            "unit": "piece"
+            "unit": "2-inch knob"
           }
         ],
-        "note": "2-inch long, peeled and sliced crosswise into 1/4-inch thick rounds",
+        "note": "peeled and sliced crosswise into 1/4-inch thick rounds",
         "category": "Produce"
       }
     },
@@ -63,17 +59,13 @@
       }
     },
     {
-      "raw": "1 (15 ounce) can sweetened condensed milk",
+      "raw": "One 15-ounce can sweetened condensed milk",
       "expected": {
         "item": "sweetened condensed milk",
         "measurements": [
           {
             "amount": "1",
-            "unit": "can"
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
+            "unit": "15-ounce can"
           }
         ],
         "note": null,
@@ -81,44 +73,40 @@
       }
     },
     {
-      "raw": "1 (13.5 ounce) can coconut milk (see notes)",
+      "raw": "One 13.5-ounce can coconut milk",
       "expected": {
         "item": "coconut milk",
         "measurements": [
           {
             "amount": "1",
-            "unit": "can"
-          },
-          {
-            "amount": "13.5",
-            "unit": "oz"
+            "unit": "13.5-ounce can"
           }
         ],
-        "note": "see notes",
+        "note": null,
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/2 cup to 1 cup white rum (see notes)",
+      "raw": "1/2 cup to 1 cup white or aged rum",
       "expected": {
-        "item": "white rum",
+        "item": "white or aged rum",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "cup"
           }
         ],
-        "note": "see notes",
+        "note": null,
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/4 teaspoon ground cinnamon, plus additional for garnish",
+      "raw": "1/2 teaspoon ground cinnamon, plus additional for garnish",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
           {
-            "amount": "0.25",
+            "amount": "0.5",
             "unit": "tsp"
           }
         ],
@@ -127,7 +115,7 @@
       }
     },
     {
-      "raw": "4 large egg yolks",
+      "raw": "4 large egg yolks (optional)",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -136,7 +124,7 @@
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "optional",
         "category": "Dairy & Eggs"
       }
     },

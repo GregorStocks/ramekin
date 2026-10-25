@@ -3,7 +3,7 @@
   "recipe_slug": "samoa-icebox-cake-recipe",
   "ingredients": [
     {
-      "raw": "24  full-size graham crackers",
+      "raw": "24   full-size graham crackers",
       "expected": {
         "item": "full-size graham crackers",
         "measurements": [
@@ -17,13 +17,17 @@
       }
     },
     {
-      "raw": "6.8 ounce boxed instant coconut cream pudding",
+      "raw": "6.8 ounce  (192.78 g) boxed instant coconut cream pudding",
       "expected": {
         "item": "boxed instant coconut cream pudding",
         "measurements": [
           {
             "amount": "6.8",
             "unit": "oz"
+          },
+          {
+            "amount": "192.78",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,13 +35,17 @@
       }
     },
     {
-      "raw": "4 cups whole milk",
+      "raw": "4 cups  (976 ml) whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "976",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -45,13 +53,17 @@
       }
     },
     {
-      "raw": "12 ounces cream cheese (at room temperature)",
+      "raw": "12 ounces  (340.2 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
+          },
+          {
+            "amount": "340.2",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -59,13 +71,17 @@
       }
     },
     {
-      "raw": "1 cup powdered sugar",
+      "raw": "1 cup  (120 g) powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -73,13 +89,17 @@
       }
     },
     {
-      "raw": "½ cup heavy cream",
+      "raw": "½ cup  (119 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -87,7 +107,7 @@
       }
     },
     {
-      "raw": "3 tablespoons caramel sauce (homemade or store-bought)",
+      "raw": "3 tablespoons   caramel sauce, homemade or store-bought",
       "expected": {
         "item": "caramel sauce",
         "measurements": [
@@ -101,13 +121,17 @@
       }
     },
     {
-      "raw": "1 cup hot fudge sauce (homemade or store-bought)",
+      "raw": "1 cup  (304 ml) hot fudge sauce, homemade or store-bought",
       "expected": {
         "item": "hot fudge sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "304",
+            "unit": "ml"
           }
         ],
         "note": "homemade or store-bought",
@@ -115,13 +139,17 @@
       }
     },
     {
-      "raw": "1¼ cups heavy cream",
+      "raw": "1¼ cups  (297.5 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "297.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -129,13 +157,17 @@
       }
     },
     {
-      "raw": "⅔ cup powdered sugar",
+      "raw": "⅔ cup  (80 g) powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,13 +175,17 @@
       }
     },
     {
-      "raw": "2 cups shredded coconut, toasted",
+      "raw": "2 cups  (160 g) shredded coconut, toasted",
       "expected": {
         "item": "shredded coconut",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
           }
         ],
         "note": "toasted",

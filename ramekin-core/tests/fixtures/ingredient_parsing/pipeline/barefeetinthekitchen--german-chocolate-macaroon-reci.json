@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "5  egg whites",
+      "raw": "5 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 cup pecans (finely chopped)",
+      "raw": "1 cup pecans finely chopped",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -115,12 +115,12 @@
       }
     },
     {
-      "raw": "caramel sauce (homemade or store-bought)",
+      "raw": "caramel sauce homemade or store-bought",
       "expected": {
-        "item": "caramel sauce",
+        "item": "caramel sauce homemade or store-bought",
         "measurements": [],
-        "note": "homemade or store-bought",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {

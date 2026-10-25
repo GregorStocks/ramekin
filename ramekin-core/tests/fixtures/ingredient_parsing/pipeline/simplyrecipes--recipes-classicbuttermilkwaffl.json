@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1/4 cup (1/2 stick) unsalted butter, melted",
+      "raw": "1/4 cup (1/2 stick) unsalted butter, melted and slightly cooled",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -118,7 +118,7 @@
             "unit": "stick"
           }
         ],
-        "note": "melted",
+        "note": "melted and slightly cooled",
         "category": "Dairy & Eggs"
       }
     },

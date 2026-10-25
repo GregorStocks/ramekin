@@ -17,9 +17,9 @@
       }
     },
     {
-      "raw": "6 tablespoons extra virgin olive oil",
+      "raw": "6 tablespoons extra-virgin olive oil",
       "expected": {
-        "item": "extra virgin olive oil",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "6",
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 tablespoons fresh lemon juice",
+      "raw": "2 tablespoons fresh lemon juice, (from 1 lemon)",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -40,12 +40,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large shallot, roughly chopped",
+      "raw": "1  large shallot, (roughly chopped)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "4 large cloves garlic, roughly chopped",
+      "raw": "4  large cloves garlic, (roughly chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "¼ cup fresh basil leaves, chopped",
+      "raw": "¼ cup fresh basil leaves, (chopped)",
       "expected": {
         "item": "fresh basil leaves",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh thyme leaves (or 1 teaspoon dried)",
+      "raw": "1 tablespoon fresh thyme leaves ((or 1 teaspoon dried))",
       "expected": {
         "item": "fresh thyme leaves",
         "measurements": [
@@ -101,9 +101,9 @@
       }
     },
     {
-      "raw": "¼ teaspoon red pepper flakes",
+      "raw": "¼ teaspoon crushed red pepper flakes",
       "expected": {
-        "item": "red pepper flakes",
+        "item": "crushed red pepper flakes",
         "measurements": [
           {
             "amount": "0.25",
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2 pounds jumbo shrimp (21-25 per pound), peeled and de-veined (leave tails on if desired), thawed if frozen",
+      "raw": "2 lbs jumbo (21/25) shrimp, (peeled and de-veined (leave tails on if desired), thawed if frozen)",
       "expected": {
         "item": "jumbo shrimp",
         "measurements": [
@@ -152,7 +152,7 @@
             "unit": "lb"
           }
         ],
-        "note": "21-25 per pound, leave tails on if desired, peeled and de-veined, thawed if frozen",
+        "note": "21/25, peeled and de-veined (leave tails on if desired), thawed if frozen",
         "category": "Meat & Seafood"
       }
     }

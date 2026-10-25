@@ -199,10 +199,6 @@
       }
     },
     {
-      "raw": "FROSTING:",
-      "is_section_header": true
-    },
-    {
       "raw": "9 ounces cream cheese, softened",
       "expected": {
         "item": "cream cheese",
@@ -213,7 +209,6 @@
           }
         ],
         "note": "softened",
-        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -228,7 +223,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -243,7 +237,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -258,7 +251,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -273,13 +265,8 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "GLAZE:",
-      "is_section_header": true
     },
     {
       "raw": "3 ounces semisweet chocolate",
@@ -292,7 +279,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -307,7 +293,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -317,7 +302,6 @@
         "item": "Candy corn",
         "measurements": [],
         "note": "for garnish",
-        "section": "Glaze",
         "category": "Snacks"
       }
     }

@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic (minced)",
+      "raw": "3 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "¼ cup fresh cilantro (finely chopped)",
+      "raw": "¼ cup fresh cilantro, finely chopped",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "salt + pepper (to taste)",
+      "raw": "salt + pepper, to taste",
       "expected": {
         "item": "salt + pepper",
         "measurements": [],
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "1 pound large shrimp (peeled and deveined with tail on)",
+      "raw": "1 pound large shrimp, peeled and deveined with tail on",
       "expected": {
         "item": "large shrimp",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "2 tablespoon olive oil (divided)",
+      "raw": "2 tablespoon olive oil, divided",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "2  heads Romaine lettuce (finely chopped)",
+      "raw": "2 heads Romaine lettuce, finely chopped",
       "expected": {
         "item": "Romaine lettuce",
         "measurements": [
@@ -175,7 +175,7 @@
       }
     },
     {
-      "raw": "10 ounces grape or cherry tomatoes (halved)",
+      "raw": "10 ounces grape or cherry tomatoes, halved",
       "expected": {
         "item": "grape or cherry tomatoes",
         "measurements": [
@@ -189,7 +189,7 @@
       }
     },
     {
-      "raw": "1/2  English cucumber (chopped)",
+      "raw": "½ English cucumber, chopped",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -203,7 +203,7 @@
       }
     },
     {
-      "raw": "1/2  small red onion (diced)",
+      "raw": "½ small red onion, diced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -217,7 +217,7 @@
       }
     },
     {
-      "raw": "1/2 cup green onions (chopped)",
+      "raw": "½ cup green onions, chopped",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -231,7 +231,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh cilantro (chopped)",
+      "raw": "½ cup fresh cilantro, chopped",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -245,7 +245,7 @@
       }
     },
     {
-      "raw": "1 cup corn (from a can/ frozen and thawed/ from the cob)",
+      "raw": "1 cup corn, from a can/ frozen and thawed/ from the cob",
       "expected": {
         "item": "corn",
         "measurements": [
@@ -259,7 +259,7 @@
       }
     },
     {
-      "raw": "1 large avocado (peeled, pitted, diced)",
+      "raw": "1 large avocado, peeled, pitted, diced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -273,21 +273,21 @@
       }
     },
     {
-      "raw": "¼ cup Casero Cheese (use feta as a substitute, omit to be dairy free)",
+      "raw": "¼ cup Casero Cheese, use feta as a substitute, omit to be dairy free",
       "expected": {
-        "item": "Casero Cheese",
+        "item": "Casero Cheese, use feta as a substitute, omit to be dairy free",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "use feta as a substitute, omit to be dairy free",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "tortilla chips or wonton chips (for topping, omit to be gluten-free)",
+      "raw": "tortilla chips or wonton chips, for topping, omit to be gluten-free",
       "expected": {
         "item": "tortilla chips or wonton chips",
         "measurements": [],
@@ -296,7 +296,7 @@
       }
     },
     {
-      "raw": "fresh lime juice (for serving)",
+      "raw": "fresh lime juice, for serving",
       "expected": {
         "item": "fresh lime juice",
         "measurements": [],

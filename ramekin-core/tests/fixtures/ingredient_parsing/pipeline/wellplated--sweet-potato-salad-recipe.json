@@ -17,21 +17,21 @@
       }
     },
     {
-      "raw": "3 large sweet potatoes (peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like))",
+      "raw": "3 large sweet potatoes peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like)",
       "expected": {
-        "item": "sweet potatoes",
+        "item": "sweet potatoes peeled and cut into chunks",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like)",
-        "category": "Produce"
+        "note": "I do a rough 3/4 inch, but you can do any size you like",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup celery hearts (thinly sliced )",
+      "raw": "1 cup celery hearts thinly sliced",
       "expected": {
         "item": "celery hearts",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 cup green onions (thinly sliced )",
+      "raw": "1 cup green onions thinly sliced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1  jalapeño (seeded and minced)",
+      "raw": "1 jalapeño seeded and minced",
       "expected": {
         "item": "jalapeño",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2 garlic cloves minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "3 tablespoons&nbsp; rice vinegar",
+      "raw": "3 tablespoons  rice vinegar",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon kosher salt",
+      "raw": "¼ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1/8 teaspoon ground black pepper",
+      "raw": "⅛ teaspoon ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [

@@ -3,15 +3,6 @@
   "recipe_slug": "2013-12-eggnog-florentines",
   "ingredients": [
     {
-      "raw": "Pecan florentines",
-      "expected": {
-        "item": "Pecan florentines",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1/4 cup plus 2 tablespoons (6 tablespoons or 45 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -154,10 +145,6 @@
       }
     },
     {
-      "raw": "Eggnog filling",
-      "is_section_header": true
-    },
-    {
       "raw": "4 large eggs, hard-boiled",
       "expected": {
         "item": "eggs",
@@ -168,7 +155,6 @@
           }
         ],
         "note": "hard-boiled",
-        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -187,7 +173,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -206,7 +191,6 @@
           }
         ],
         "note": null,
-        "section": "Eggnog Filling",
         "category": "Baking"
       }
     },
@@ -221,7 +205,6 @@
           }
         ],
         "note": null,
-        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -236,7 +219,6 @@
           }
         ],
         "note": null,
-        "section": "Eggnog Filling",
         "category": "Baking"
       }
     },
@@ -251,7 +233,6 @@
           }
         ],
         "note": "I halved this because I’m a spice wimp",
-        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -266,7 +247,6 @@
           }
         ],
         "note": "I halved this too",
-        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -281,7 +261,6 @@
           }
         ],
         "note": null,
-        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -296,7 +275,6 @@
           }
         ],
         "note": "can be skipped or reduced",
-        "section": "Eggnog Filling",
         "category": "Beverages"
       }
     }

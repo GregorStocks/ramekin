@@ -3,41 +3,53 @@
   "recipe_slug": "beef-sukiyaki-hot-pot-recipe",
   "ingredients": [
     {
-      "raw": "2 cups Dashi (, or water)",
+      "raw": "2 cups  (480 ml) Dashi , or water",
       "expected": {
-        "item": "Dashi",
+        "item": "Dashi, or water",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "ml"
           }
         ],
-        "note": "or water",
+        "note": null,
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/3 cup Soy Sauce (, (if using water instead of dashi, add a bit more soy sauce and adjust to taste))",
+      "raw": "1/3 cup  (80 ml) Soy Sauce , (if using water instead of dashi, add a bit more soy sauce and adjust to taste)",
       "expected": {
         "item": "Soy Sauce",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "ml"
           }
         ],
-        "note": "(if using water instead of dashi, add a bit more soy sauce and adjust to taste)",
+        "note": "if using water instead of dashi, add a bit more soy sauce and adjust to taste",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2-4 Tablespoons Sake (, optional)",
+      "raw": "2-4 Tablespoons  (30-60 ml) Sake , optional",
       "expected": {
         "item": "Sake",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30-60",
+            "unit": "ml"
           }
         ],
         "note": "optional",
@@ -45,13 +57,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons Sugar (, or to taste)",
+      "raw": "2 Tablespoons  (25 g) Sugar , or to taste",
       "expected": {
         "item": "Sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -59,41 +75,53 @@
       }
     },
     {
-      "raw": "1 Tablespoon Vegetable Oil (, or beef fat trimmings)",
+      "raw": "1 Tablespoon  (15 ml) Vegetable Oil , or beef fat trimmings",
       "expected": {
-        "item": "Vegetable Oil",
+        "item": "Vegetable Oil, or beef fat trimmings",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
-        "note": "or beef fat trimmings",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "12 oz. Beef Tri Tip, Strip Loin, or Rib Eye (, sliced 1/8\" thick *see note 1 below)",
+      "raw": "12 oz.  (340 g) Beef Tri Tip, Strip Loin, or Rib Eye , sliced 1/8″ thick *see note 1 below",
       "expected": {
         "item": "Beef Tri Tip, Strip Loin, or Rib Eye",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
-        "note": "sliced 1/8\" thick *see note 1 below",
+        "note": "sliced 1/8″ thick *see note 1 below",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup quartered Shallots, sliced sweet onions, or pearl onions",
+      "raw": "1/2 cup  (120 ml) quartered Shallots, sliced sweet onions, or pearl onions",
       "expected": {
         "item": "quartered Shallots, sliced sweet onions, or pearl onions",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -101,7 +129,7 @@
       }
     },
     {
-      "raw": "8  Napa Cabbage leaves (, sliced *see note 2 below)",
+      "raw": "8   Napa Cabbage leaves , sliced *see note 2 below",
       "expected": {
         "item": "Napa Cabbage leaves",
         "measurements": [
@@ -115,7 +143,7 @@
       }
     },
     {
-      "raw": "4  Green Onions or 1 Negi (Japanese Leek) (, sliced on angle in 2&amp;quot; pieces)",
+      "raw": "4   Green Onions or 1 Negi (Japanese Leek) , sliced on angle in 2\" pieces",
       "expected": {
         "item": "Green Onions or 1 Negi",
         "measurements": [
@@ -129,21 +157,25 @@
       }
     },
     {
-      "raw": "12 ounces fresh Mushrooms (, one or more of Shiitake, Enoki, Brown Mushrooms, Oyster, etc...))",
+      "raw": "12 ounces  (340 g) fresh Mushrooms , one or more of Shiitake, Enoki, Brown Mushrooms, Oyster, etc…)",
       "expected": {
-        "item": "fresh Mushrooms",
+        "item": "fresh Mushrooms, one or more of Shiitake, Enoki, Brown Mushrooms, Oyster, etc…)",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
-        "note": "one or more of Shiitake, Enoki, Brown Mushrooms, Oyster, etc...",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "6 ounces (about 1/2 package) Broiled Tofu (, cut into 1/2\" sticks)",
+      "raw": "6 ounces  (170 g) (about 1/2 package) Broiled Tofu , cut into 1/2″ sticks",
       "expected": {
         "item": "Broiled Tofu",
         "measurements": [
@@ -152,40 +184,61 @@
             "unit": "oz"
           },
           {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
             "amount": "0.5",
             "unit": "package"
           }
         ],
-        "note": "about 1/2 package, cut into 1/2\" sticks",
+        "note": "about 1/2 package, cut into 1/2″ sticks",
         "category": "Other"
       }
     },
     {
-      "raw": "7 ounces Ito Konnyaku noodles, shirataki, yam, or cellophane noodles (, cooked if needed, drained &amp;amp; rinsed)",
+      "raw": "7 ounces  (198 g) Ito Konnyaku noodles, shirataki, yam, or cellophane noodles , cooked if needed, drained & rinsed",
       "expected": {
-        "item": "Ito Konnyaku noodles, shirataki, yam, or cellophane noodles",
+        "item": "Ito Konnyaku noodles, shirataki, yam, or cellophane noodles, cooked if needed",
         "measurements": [
           {
             "amount": "7",
             "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
           }
         ],
-        "note": "cooked if needed, drained & rinsed",
+        "note": "drained & rinsed",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "2 cups Shungiku (a type of chrysanthemum leaf), Spinach, or Arugula",
+      "raw": "2 cups  (60 g) Shungiku (a type of chrysanthemum leaf), Spinach, or Arugula",
       "expected": {
         "item": "Shungiku, Spinach, or Arugula",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": "a type of chrysanthemum leaf",
         "category": "Produce"
+      }
+    },
+    {
+      "raw": "Shime – stuff to eat with the sukiyaki and to finish off the broth:",
+      "expected": {
+        "item": "Shime - stuff to eat with the sukiyaki and to finish off the broth:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -198,7 +251,7 @@
       }
     },
     {
-      "raw": "optional- 1 egg for each person (, beaten)",
+      "raw": "optional- 1 egg for each person , beaten",
       "expected": {
         "item": "egg for each person",
         "measurements": [

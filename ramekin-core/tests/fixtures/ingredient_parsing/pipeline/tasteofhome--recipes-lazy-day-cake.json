@@ -115,10 +115,6 @@
       }
     },
     {
-      "raw": "TOPPING:",
-      "is_section_header": true
-    },
-    {
       "raw": "1-1/2 cups sweetened shredded coconut",
       "expected": {
         "item": "sweetened shredded coconut",
@@ -129,7 +125,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -144,7 +139,6 @@
           }
         ],
         "note": "packed",
-        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -159,7 +153,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -174,7 +167,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Baking"
       }
     }

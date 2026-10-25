@@ -3,13 +3,17 @@
   "recipe_slug": "blueberry-crumb-bars-recipe",
   "ingredients": [
     {
-      "raw": "3 cups all-purpose flour",
+      "raw": "3 cups  (375 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  (200 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "1 teaspoon baking powder",
+      "raw": "1 teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -45,10 +53,14 @@
       }
     },
     {
-      "raw": "¼ teaspoon salt",
+      "raw": "¼ teaspoon  (0.25 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
@@ -59,13 +71,17 @@
       }
     },
     {
-      "raw": "1 cup cold unsalted butter, cut into small cubes",
+      "raw": "1 cup  (227 g) cold unsalted butter, cut into small cubes",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": "cut into small cubes",
@@ -73,7 +89,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1   egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -87,13 +103,17 @@
       }
     },
     {
-      "raw": "4 cups fresh blueberries ((20 ounces))",
+      "raw": "4 cups  (592 g) fresh blueberries, (20 ounces)",
       "expected": {
         "item": "fresh blueberries",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "592",
+            "unit": "g"
           },
           {
             "amount": "20",
@@ -105,13 +125,17 @@
       }
     },
     {
-      "raw": "½ cup granulated sugar",
+      "raw": "½ cup  (100 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -119,7 +143,7 @@
       }
     },
     {
-      "raw": "4 teaspoons cornstarch",
+      "raw": "4 teaspoons   cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -133,14 +157,10 @@
       }
     },
     {
-      "raw": "Juice of one lemon (about 3 tablespoons)",
+      "raw": "Juice of one lemon, about 3 tablespoons",
       "expected": {
         "item": "lemon juice",
         "measurements": [
-          {
-            "amount": "3",
-            "unit": "tbsp"
-          },
           {
             "amount": "1",
             "unit": "lemon"

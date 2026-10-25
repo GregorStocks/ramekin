@@ -3,10 +3,6 @@
   "recipe_slug": "smothered-chicken-burritos-rec",
   "ingredients": [
     {
-      "raw": "Chicken filling ingredients:",
-      "is_section_header": true
-    },
-    {
       "raw": "3 pounds boneless skinless chicken thighs",
       "expected": {
         "item": "boneless skinless chicken thighs",
@@ -17,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "Chicken Filling Ingredients",
         "category": "Meat & Seafood"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Chicken Filling Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -47,7 +41,6 @@
           }
         ],
         "note": null,
-        "section": "Chicken Filling Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -62,7 +55,6 @@
           }
         ],
         "note": null,
-        "section": "Chicken Filling Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,13 +69,8 @@
           }
         ],
         "note": null,
-        "section": "Chicken Filling Ingredients",
         "category": "Spices & Seasonings"
       }
-    },
-    {
-      "raw": "Burrito ingredients:",
-      "is_section_header": true
     },
     {
       "raw": "6-8  flour tortillas (or 12-16 corn tortillas)",
@@ -96,7 +83,6 @@
           }
         ],
         "note": "or 12-16 corn tortillas",
-        "section": "Burrito Ingredients",
         "category": "Bakery & Bread"
       }
     },
@@ -111,7 +97,6 @@
           }
         ],
         "note": null,
-        "section": "Burrito Ingredients",
         "category": "Canned Goods"
       }
     },
@@ -126,7 +111,6 @@
           }
         ],
         "note": null,
-        "section": "Burrito Ingredients",
         "category": "Cheese"
       }
     },
@@ -141,13 +125,8 @@
           }
         ],
         "note": null,
-        "section": "Burrito Ingredients",
         "category": "Oils & Vinegars"
       }
-    },
-    {
-      "raw": "Sauce ingredients:",
-      "is_section_header": true
     },
     {
       "raw": "3 tablespoons butter",
@@ -160,7 +139,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,7 +153,6 @@
           }
         ],
         "note": "or brown rice flour",
-        "section": "Sauce Ingredients",
         "category": "Baking"
       }
     },
@@ -190,7 +167,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce Ingredients",
         "category": "Canned Goods"
       }
     },
@@ -205,7 +181,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -220,7 +195,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -235,7 +209,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -250,7 +223,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -265,7 +237,6 @@
           }
         ],
         "note": null,
-        "section": "Sauce Ingredients",
         "category": "Cheese"
       }
     }

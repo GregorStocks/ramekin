@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "1  large egg (50 g each w/o shell)",
+      "raw": "1  large egg (50 g w/o shell)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -86,7 +86,7 @@
             "unit": "large"
           }
         ],
-        "note": "50 g each w/o shell",
+        "note": "50 g w/o shell",
         "category": "Dairy & Eggs"
       }
     },

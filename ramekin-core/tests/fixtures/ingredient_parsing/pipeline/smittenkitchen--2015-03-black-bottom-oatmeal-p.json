@@ -3,71 +3,6 @@
   "recipe_slug": "2015-03-black-bottom-oatmeal-p",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Herbed Tomato and Roasted Garlic Tart",
-      "expected": {
-        "item": "Months Ago: Herbed Tomato and Roasted Garlic Tart",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Baked Pasta with Broccoli Rabe and Sausage",
-      "expected": {
-        "item": "Years Ago: Baked Pasta with Broccoli Rabe and Sausage",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Roasted Apple Spice Sheet Cake",
-      "expected": {
-        "item": "Years Ago: Roasted Apple Spice Sheet Cake",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Red Wine Chocolate Cake",
-      "expected": {
-        "item": "Years Ago: Red Wine Chocolate Cake",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1 1/4 cups (155 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -162,10 +97,6 @@
       }
     },
     {
-      "raw": "Filling",
-      "is_section_header": true
-    },
-    {
       "raw": "1 1/2 cups (120 grams) rolled oats",
       "expected": {
         "item": "rolled oats",
@@ -180,7 +111,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Snacks"
       }
     },
@@ -199,7 +129,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -218,7 +147,6 @@
           }
         ],
         "note": "coarsely chopped",
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -237,7 +165,6 @@
           }
         ],
         "note": "packed",
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -252,7 +179,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -267,7 +193,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -286,7 +211,6 @@
           }
         ],
         "note": "melted",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -301,7 +225,6 @@
           }
         ],
         "note": "see Note below for replacements",
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -316,7 +239,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -331,7 +253,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -346,7 +267,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 cup (240 ml) dry white wine",
+      "raw": "1 cup (240 ml) dry white wine, divided",
       "expected": {
         "item": "dry white wine",
         "measurements": [
@@ -156,7 +156,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "divided",
         "category": "Beverages"
       }
     },
@@ -247,7 +247,7 @@
       }
     },
     {
-      "raw": "1 pound (454 g) littleneck clams, scrubbed",
+      "raw": "1 pound (454 g) littleneck clams, scrubbed (see notes)",
       "expected": {
         "item": "littleneck clams",
         "measurements": [
@@ -260,7 +260,7 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed",
+        "note": "see notes, scrubbed",
         "category": "Meat & Seafood"
       }
     },

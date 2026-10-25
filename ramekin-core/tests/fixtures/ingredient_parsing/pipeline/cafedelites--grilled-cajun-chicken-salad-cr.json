@@ -3,16 +3,16 @@
   "recipe_slug": "grilled-cajun-chicken-salad-cr",
   "ingredients": [
     {
-      "raw": "4  boneless skinless chicken thighs (or breasts)",
+      "raw": "4 boneless skinless chicken thighs or breasts",
       "expected": {
-        "item": "boneless skinless chicken thighs",
+        "item": "boneless skinless chicken thighs or breasts",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "or breasts",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -87,49 +87,49 @@
       }
     },
     {
-      "raw": "1 pinch freshly ground black pepper (adjust to your taste)",
+      "raw": "1 pinch freshly ground black pepper adjust to your taste",
       "expected": {
-        "item": "freshly ground black pepper",
+        "item": "freshly ground black pepper adjust to your taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "adjust to your taste",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1-2 teaspoons cayenne pepper (adjust to your taste)",
+      "raw": "1-2 teaspoons cayenne pepper adjust to your taste",
       "expected": {
-        "item": "cayenne pepper",
+        "item": "cayenne pepper adjust to your taste",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": "adjust to your taste",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "4 cups romaine lettuce (cos lettuce)",
+      "raw": "4 cups romaine lettuce cos lettuce",
       "expected": {
-        "item": "romaine lettuce",
+        "item": "romaine lettuce cos lettuce",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "cos lettuce",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  lebanese cucumber (quartered)",
+      "raw": "1 lebanese cucumber quartered",
       "expected": {
         "item": "lebanese cucumber",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2 cups Heirloom tomatoes (halved)",
+      "raw": "2 cups Heirloom tomatoes halved",
       "expected": {
         "item": "Heirloom tomatoes",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1  avocado (sliced)",
+      "raw": "1 avocado sliced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1/4  red onion (sliced thinly)",
+      "raw": "1/4 red onion sliced thinly",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -213,16 +213,16 @@
       }
     },
     {
-      "raw": "2 tablespoons non fat plain greek yogurt (or sour cream)",
+      "raw": "2 tablespoons non fat plain greek yogurt or sour cream",
       "expected": {
-        "item": "non fat plain greek yogurt",
+        "item": "non fat plain greek yogurt or sour cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or sour cream",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

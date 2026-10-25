@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 &amp;frac14; cups canned light coconut milk",
+      "raw": "1 ¼ cups canned light coconut milk",
       "expected": {
         "item": "canned light coconut milk",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "&amp;frac14; cup chopped green onions",
+      "raw": "¼ cup chopped green onions",
       "expected": {
         "item": "chopped green onions",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "&amp;frac14; cup torn fresh basil",
+      "raw": "¼ cup torn fresh basil",
       "expected": {
         "item": "torn fresh basil",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "&amp;frac14; cup torn fresh mint",
+      "raw": "¼ cup torn fresh mint",
       "expected": {
         "item": "torn fresh mint",
         "measurements": [
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "2 Thai chilies, diced, or &amp;frac12; teaspoon red pepper flakes",
+      "raw": "2 Thai chilies, diced, or ½ teaspoon red pepper flakes",
       "expected": {
         "item": "Thai chilies",
         "measurements": [

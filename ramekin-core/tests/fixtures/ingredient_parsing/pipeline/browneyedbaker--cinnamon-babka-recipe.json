@@ -3,13 +3,17 @@
   "recipe_slug": "cinnamon-babka-recipe",
   "ingredients": [
     {
-      "raw": "1 cup light brown sugar",
+      "raw": "1 cup  (220 g) light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "¼ cup all-purpose flour",
+      "raw": "¼ cup  (31.25 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "31.25",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "2 teaspoons ground cinnamon",
+      "raw": "2 teaspoons   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -45,10 +53,14 @@
       }
     },
     {
-      "raw": "⅛ teaspoon salt",
+      "raw": "⅛ teaspoon  (0.13 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
           {
             "amount": "0.13",
             "unit": "tsp"
@@ -59,7 +71,7 @@
       }
     },
     {
-      "raw": "2 tablespoons unsalted butter (melted and cooled)",
+      "raw": "2 tablespoons   unsalted butter, melted and cooled",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -73,7 +85,7 @@
       }
     },
     {
-      "raw": "1  egg white",
+      "raw": "1   egg white",
       "expected": {
         "item": "egg white",
         "measurements": [
@@ -87,21 +99,25 @@
       }
     },
     {
-      "raw": "½ cup whole milk (heated to 110 degrees F)",
+      "raw": "½ cup  (122 ml) whole milk, heated to 110 degrees F",
       "expected": {
-        "item": "whole milk",
+        "item": "whole milk, heated to 110 degrees F",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "ml"
           }
         ],
-        "note": "heated to 110 degrees F",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2   egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -115,7 +131,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -129,13 +145,17 @@
       }
     },
     {
-      "raw": "2 cups all-purpose flour",
+      "raw": "2 cups  (250 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,13 +163,17 @@
       }
     },
     {
-      "raw": "¼ cup granulated sugar",
+      "raw": "¼ cup  (50 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -157,10 +181,14 @@
       }
     },
     {
-      "raw": "1½ teaspoons instant or rapid-rise yeast",
+      "raw": "1½ teaspoons  (1.5 teaspoons) instant or rapid-rise yeast",
       "expected": {
         "item": "instant or rapid-rise yeast",
         "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
           {
             "amount": "1.5",
             "unit": "tsp"
@@ -171,10 +199,14 @@
       }
     },
     {
-      "raw": "½ teaspoon salt",
+      "raw": "½ teaspoon  (0.5 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
           {
             "amount": "0.5",
             "unit": "tsp"
@@ -185,7 +217,7 @@
       }
     },
     {
-      "raw": "8 tablespoons unsalted butter (cut into 8 pieces and softened)",
+      "raw": "8 tablespoons   unsalted butter, cut into 8 pieces and softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -199,7 +231,7 @@
       }
     },
     {
-      "raw": "1  egg (lightly beaten)",
+      "raw": "1   egg, lightly beaten",
       "expected": {
         "item": "egg",
         "measurements": [

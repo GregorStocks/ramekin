@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic (minced)",
+      "raw": "2 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "½  English cucumber (peeled (optional) and grated)",
+      "raw": "½ English cucumber, peeled (optional) and grated",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -124,26 +124,26 @@
             "unit": null
           }
         ],
-        "note": "peeled (optional) and grated",
+        "note": "optional, peeled and grated",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup Greek yogurt (full-fat is recommended)",
+      "raw": "1 cup Greek yogurt, full-fat is recommended",
       "expected": {
-        "item": "Greek yogurt",
+        "item": "Greek yogurt, full-fat is recommended",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "full-fat is recommended",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1-2 cloves garlic (minced)",
+      "raw": "1-2 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -157,21 +157,21 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh lemon juice (or red wine vinegar)",
+      "raw": "1 tablespoon fresh lemon juice, or red wine vinegar",
       "expected": {
-        "item": "fresh lemon juice",
+        "item": "fresh lemon juice, or red wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or red wine vinegar",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons fresh dill (minced)",
+      "raw": "2 teaspoons fresh dill, minced",
       "expected": {
         "item": "fresh dill",
         "measurements": [
@@ -213,21 +213,21 @@
       }
     },
     {
-      "raw": "4  homemade pita breads (or flatbreads, slightly warmed)",
+      "raw": "4 homemade pita breads, or flatbreads, slightly warmed",
       "expected": {
-        "item": "homemade pita breads",
+        "item": "homemade pita breads, or flatbreads",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "or flatbreads, slightly warmed",
+        "note": "slightly warmed",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "2 ripe tomatoes (quartered)",
+      "raw": "2 ripe tomatoes, quartered",
       "expected": {
         "item": "ripe tomatoes",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "½  English cucumber (thinly sliced)",
+      "raw": "½ English cucumber, thinly sliced",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -255,7 +255,7 @@
       }
     },
     {
-      "raw": "¼  red onion (thinly sliced)",
+      "raw": "¼ red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -269,7 +269,7 @@
       }
     },
     {
-      "raw": "crumbled feta cheese (optional)",
+      "raw": "crumbled feta cheese, optional",
       "expected": {
         "item": "crumbled feta cheese",
         "measurements": [],

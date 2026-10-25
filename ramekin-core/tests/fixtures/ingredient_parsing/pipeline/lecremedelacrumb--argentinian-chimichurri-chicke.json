@@ -3,7 +3,7 @@
   "recipe_slug": "argentinian-chimichurri-chicke",
   "ingredients": [
     {
-      "raw": "1  recipe for Argentinian chimichurri sauce",
+      "raw": "1 recipe for Argentinian chimichurri sauce",
       "expected": {
         "item": "recipe for Argentinian chimichurri sauce",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  medium-large boneless skinless chicken breasts (cut into 1 1/2 inch pieces)",
+      "raw": "4 medium-large boneless skinless chicken breasts, cut into 1 1/2 inch pieces",
       "expected": {
         "item": "boneless skinless chicken breasts",
         "measurements": [
@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "2 tablespoons fresh-squeezed lime juice (or lemon juice)",
+      "raw": "2 tablespoons fresh-squeezed lime juice, or lemon juice",
       "expected": {
-        "item": "fresh-squeezed lime juice",
+        "item": "fresh-squeezed lime juice, or lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or lemon juice",
-        "category": "Other"
+        "note": null,
+        "category": "Produce"
       }
     },
     {

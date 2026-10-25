@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 ½ cups all-purpose flour, (plus extra for your workspace/kneading)",
+      "raw": "2 ½ cups all-purpose flour, plus extra for your workspace/kneading",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves, (minced)",
+      "raw": "2 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "1  lemon, (juiced and zest freshly grated)",
+      "raw": "1 lemon, juiced and zest freshly grated",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -152,7 +152,36 @@
       }
     },
     {
-      "raw": "1  lemon, (juiced and zest freshly grated)",
+      "raw": "1 lemon, juiced and zest freshly grated",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 lemon, juiced and zest freshly grated",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "freshly grated",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 lemon, juiced and zest freshly grated",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -241,16 +270,16 @@
       }
     },
     {
-      "raw": "crumbled or sliced feta, (for topping (as much as you want!))",
+      "raw": "crumbled or sliced feta, for topping (as much as you want!)",
       "expected": {
         "item": "crumbled or sliced feta",
         "measurements": [],
-        "note": "for topping (as much as you want!)",
+        "note": "as much as you want!, for topping",
         "category": "Cheese"
       }
     },
     {
-      "raw": "roasted red peppers, (for topping)",
+      "raw": "roasted red peppers, for topping",
       "expected": {
         "item": "roasted red peppers",
         "measurements": [],
@@ -259,7 +288,7 @@
       }
     },
     {
-      "raw": "pickled onions, (for topping)",
+      "raw": "pickled onions, for topping",
       "expected": {
         "item": "pickled onions",
         "measurements": [],
@@ -268,7 +297,7 @@
       }
     },
     {
-      "raw": "lettuce, (for topping)",
+      "raw": "lettuce, for topping",
       "expected": {
         "item": "lettuce",
         "measurements": [],

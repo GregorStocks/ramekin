@@ -3,9 +3,9 @@
   "recipe_slug": "recipes-cheesyfuneralpotatoesf",
   "ingredients": [
     {
-      "raw": "1 1/2 pounds Russet potatoes (about 3 large or 4 small potatoes)",
+      "raw": "1 1/2 pounds russet potatoes (about 3 large or 4 small potatoes)",
       "expected": {
-        "item": "Russet potatoes",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "8 tablespoons of butter, divided",
+      "raw": "8 tablespoons butter, divided",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -63,16 +63,16 @@
       }
     },
     {
-      "raw": "2 cups homemade cream of chicken soup (store-bought will also work)",
+      "raw": "2 cups cream of chicken soup (store-bought)",
       "expected": {
-        "item": "homemade cream of chicken soup",
+        "item": "cream of chicken soup",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "store-bought will also work",
+        "note": "store-bought",
         "category": "Canned Goods"
       }
     },
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1 1/4 teaspoon salt, divided",
+      "raw": "1 1/4 teaspoons salt, divided",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -133,9 +133,9 @@
       }
     },
     {
-      "raw": "1 1/2&nbsp; cups panko bread crumbs",
+      "raw": "1 1/2 cups panko breadcrumbs",
       "expected": {
-        "item": "panko bread crumbs",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "1.5",

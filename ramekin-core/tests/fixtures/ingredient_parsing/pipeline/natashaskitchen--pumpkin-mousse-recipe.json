@@ -3,7 +3,7 @@
   "recipe_slug": "pumpkin-mousse-recipe",
   "ingredients": [
     {
-      "raw": "1/2 oz unflavored gelatin  ((2 packets or 14 grams total))",
+      "raw": "1/2 oz unflavored gelatin , (2 packets or 14 grams total)",
       "expected": {
         "item": "unflavored gelatin",
         "measurements": [
@@ -95,7 +95,7 @@
       }
     },
     {
-      "raw": "16 oz whipped topping (thawed in the refrigerator)",
+      "raw": "16 oz whipped topping, thawed in the refrigerator",
       "expected": {
         "item": "whipped topping",
         "measurements": [
@@ -109,16 +109,16 @@
       }
     },
     {
-      "raw": "1/2  tsp ground cinnamon (to garnish)",
+      "raw": "1/2  tsp ground cinnamon, to garnish",
       "expected": {
-        "item": "ground cinnamon",
+        "item": "ground cinnamon, to garnish",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "to garnish",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -151,17 +151,17 @@
       }
     },
     {
-      "raw": "1 tsp rum (dark or golden, or vanilla extract)",
+      "raw": "1 tsp rum, dark or golden, or vanilla extract",
       "expected": {
-        "item": "rum",
+        "item": "rum, dark or golden, or vanilla extract",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "dark or golden, or vanilla extract",
-        "category": "Beverages"
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

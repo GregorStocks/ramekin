@@ -3,7 +3,7 @@
   "recipe_slug": "taco-soup-recipe-8776983",
   "ingredients": [
     {
-      "raw": "1 small yellow onion (6 ounce; 170g), peeled",
+      "raw": "1 small yellow onion (6 ounces; 170g), peeled",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -101,9 +101,9 @@
       }
     },
     {
-      "raw": "2 tablespoons (30ml) canola oil",
+      "raw": "2 tablespoons (30ml) neutral cooking oil such as vegetable or canola oil",
       "expected": {
-        "item": "canola oil",
+        "item": "neutral cooking oil",
         "measurements": [
           {
             "amount": "2",
@@ -114,22 +114,18 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "such as vegetable or canola oil",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 1/2 tablespoons h omemade taco seasoning or store-bought taco seasoning (0.75 ounce; 21g)",
+      "raw": "2 1/2 tablespoons homemade taco seasoning or store-bought taco seasoning (21g)",
       "expected": {
-        "item": "h omemade taco seasoning or store-bought taco seasoning",
+        "item": "homemade taco seasoning or store-bought taco seasoning",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "0.75",
-            "unit": "oz"
           },
           {
             "amount": "21",

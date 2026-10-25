@@ -3,7 +3,7 @@
   "recipe_slug": "chicken-mince-donburi-recipe",
   "ingredients": [
     {
-      "raw": "3  egg",
+      "raw": "3 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -101,17 +101,17 @@
       }
     },
     {
-      "raw": "1 tbsp sake (see note)",
+      "raw": "1 tbsp sake see note",
       "expected": {
-        "item": "sake",
+        "item": "sake see note",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "see note",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "1 tsp red pickled ginger (benishoga) (optional)",
+      "raw": "1 tsp red pickled ginger (benishoga) optional",
       "expected": {
         "item": "red pickled ginger",
         "measurements": [

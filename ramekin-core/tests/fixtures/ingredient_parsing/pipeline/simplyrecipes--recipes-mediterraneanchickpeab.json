@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 16-ounce can chickpeas (or 2 cups homemade chickpeas )",
+      "raw": "1 (16-ounce can chickpeas or 2 cups homemade chickpeas",
       "expected": {
         "item": "chickpeas",
         "measurements": [
@@ -227,7 +227,7 @@
       }
     },
     {
-      "raw": "1 teaspoon finely minced fresh chili (optional)",
+      "raw": "1 teaspoon finely minced fresh chili, optional",
       "expected": {
         "item": "finely minced fresh chili",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "1/2 cup finely chopped fresh herbs (I like the combination of parsley, mint, and cilantro)",
+      "raw": "1/2 cup finely chopped fresh herbs (I like the combination of parsley, mint, and cilantro.)",
       "expected": {
         "item": "finely chopped fresh herbs",
         "measurements": [
@@ -250,7 +250,7 @@
             "unit": "cup"
           }
         ],
-        "note": "I like the combination of parsley, mint, and cilantro",
+        "note": "I like the combination of parsley, mint, and cilantro.",
         "category": "Produce"
       }
     },

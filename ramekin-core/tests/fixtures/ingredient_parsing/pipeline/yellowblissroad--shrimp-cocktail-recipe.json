@@ -3,21 +3,21 @@
   "recipe_slug": "shrimp-cocktail-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds raw, tail on large shrimp (16-20 per pound, peeled and deveined)",
+      "raw": "2 pounds raw, tail on large shrimp 16-20 per pound, peeled and deveined",
       "expected": {
-        "item": "raw, tail on large shrimp",
+        "item": "raw, tail on large shrimp 16-20 per pound",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "16-20 per pound, peeled and deveined",
+        "note": "peeled and deveined",
         "category": "Other"
       }
     },
     {
-      "raw": "3  lemons",
+      "raw": "3 lemons",
       "expected": {
         "item": "lemons",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  small onion (quartered)",
+      "raw": "1 small onion quartered",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic (peeled)",
+      "raw": "4 cloves garlic peeled",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2  bay leaves",
+      "raw": "2 bay leaves",
       "expected": {
         "item": "bay leaves",
         "measurements": [
@@ -87,11 +87,11 @@
       }
     },
     {
-      "raw": "several sprigs of fresh flat-leaf parsley (about 1/3 of a bunch)",
+      "raw": "several sprigs of fresh flat-leaf parsley about ⅓ of a bunch",
       "expected": {
-        "item": "several sprigs of fresh flat-leaf parsley",
+        "item": "several sprigs of fresh flat-leaf parsley about 1/3 of a bunch",
         "measurements": [],
-        "note": "about 1/3 of a bunch",
+        "note": null,
         "category": "Other"
       }
     },
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "frech minced parsley (for garnish, if desired)",
+      "raw": "frech minced parsley for garnish, if desired",
       "expected": {
         "item": "frech minced parsley",
         "measurements": [],
@@ -175,7 +175,7 @@
       }
     },
     {
-      "raw": "pinch of kosher salt (or more to taste)",
+      "raw": "pinch of kosher salt or more to taste",
       "expected": {
         "item": "kosher salt",
         "measurements": [

@@ -3,17 +3,17 @@
   "recipe_slug": "grilled-asparagus-recipe",
   "ingredients": [
     {
-      "raw": "1 pound asparagus (wood ends removed)",
+      "raw": "1 pound asparagus wood ends removed",
       "expected": {
-        "item": "asparagus",
+        "item": "asparagus wood ends",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "wood ends removed",
-        "category": "Produce"
+        "note": "removed",
+        "category": "Other"
       }
     },
     {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tablespoon garlic (minced)",
+      "raw": "1 tablespoon garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "3/4 teaspoon salt (to season)",
+      "raw": "3/4 teaspoon salt to season",
       "expected": {
-        "item": "salt",
+        "item": "salt to season",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": "to season",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -73,30 +73,30 @@
       }
     },
     {
-      "raw": "2-4 tablespoons parmesan cheese (fresh grated)",
+      "raw": "2-4 tablespoons parmesan cheese fresh grated",
       "expected": {
-        "item": "parmesan cheese",
+        "item": "parmesan cheese fresh",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "tbsp"
           }
         ],
-        "note": "fresh grated",
-        "category": "Cheese"
+        "note": "grated",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 squeeze lemon juice (freshly squeezed, adjust to your tastes)",
+      "raw": "1 squeeze lemon juice freshly squeezed, adjust to your tastes",
       "expected": {
-        "item": "squeeze lemon juice",
+        "item": "squeeze lemon juice freshly squeezed, adjust to your tastes",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "freshly squeezed, adjust to your tastes",
+        "note": null,
         "category": "Other"
       }
     }

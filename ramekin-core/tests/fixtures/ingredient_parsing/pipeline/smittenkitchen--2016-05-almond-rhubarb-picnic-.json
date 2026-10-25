@@ -3,89 +3,6 @@
   "recipe_slug": "2016-05-almond-rhubarb-picnic-",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Roasted Leek and White Bean Galettes and Date Breakfast Squares",
-      "expected": {
-        "item": "Months Ago: Roasted Leek and White Bean Galettes and Date Breakfast Squares",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Pumpkin Pie with Pecan Prailine Sauce",
-      "expected": {
-        "item": "Years Ago: Pumpkin Pie with Pecan Prailine Sauce",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Green Bean Casserole with Crispy Onions and Apple-Herb Stuffing For All Seasons",
-      "expected": {
-        "item": "Years Ago: Green Bean Casserole with Crispy Onions and Apple-Herb Stuffing For All Seasons",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Spinach Salad with Warm Bacon Vinaigrette",
-      "expected": {
-        "item": "Years Ago: Spinach Salad with Warm Bacon Vinaigrette",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "4.5 Years Ago: Gingersnaps and Sweet Potato and Marshmallow Biscuits",
-      "expected": {
-        "item": "Years Ago: Gingersnaps and Sweet Potato and Marshmallow Biscuits",
-        "measurements": [
-          {
-            "amount": "4.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Crust",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup (125 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -100,7 +17,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -115,7 +31,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,7 +49,6 @@
           }
         ],
         "note": null,
-        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -157,13 +71,8 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Crust",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "3/4 cup (75 grams or 2 1/2 to 2 3/4 ounces) sliced almonds, ideally toasted and cooled",
@@ -184,7 +93,6 @@
           }
         ],
         "note": "ideally toasted and cooled",
-        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -203,7 +111,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -213,7 +120,6 @@
         "item": "A few pinches of sea salt",
         "measurements": [],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,7 +142,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -255,7 +160,6 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -270,7 +174,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -285,7 +188,6 @@
           }
         ],
         "note": "totally optional",
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -300,7 +202,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Produce"
       }
     }

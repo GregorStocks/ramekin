@@ -3,13 +3,17 @@
   "recipe_slug": "recipes-howtomakehomemadesausa",
   "ingredients": [
     {
-      "raw": "4 pounds pork shoulder",
+      "raw": "4 pounds (1.8kg) pork shoulder",
       "expected": {
         "item": "pork shoulder",
         "measurements": [
           {
             "amount": "4",
             "unit": "lb"
+          },
+          {
+            "amount": "1.8",
+            "unit": "kg"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "1 pound pork fat",
+      "raw": "1 pound (.45kg) pork fat",
       "expected": {
         "item": "pork fat",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": ".45",
+            "unit": "kg"
           }
         ],
         "note": null,
@@ -129,7 +137,7 @@
       }
     },
     {
-      "raw": "¾ cup dry sherry",
+      "raw": "3/4 cup dry sherry",
       "expected": {
         "item": "dry sherry",
         "measurements": [
@@ -143,7 +151,7 @@
       }
     },
     {
-      "raw": "¼ cup sherry vinegar",
+      "raw": "1/4 cup sherry vinegar",
       "expected": {
         "item": "sherry vinegar",
         "measurements": [

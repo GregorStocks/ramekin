@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh ginger (grated)",
+      "raw": "1 tablespoon fresh ginger, grated",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 tablespoon garlic (minced)",
+      "raw": "1 tablespoon garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 pound sushi-grade ahi tuna or salmon (cut into 1/2-inch cubes)",
+      "raw": "1 pound sushi-grade ahi tuna or salmon, cut into 1/2-inch cubes",
       "expected": {
         "item": "sushi-grade ahi tuna or salmon",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "3 tablespoon Sriracha (plus more to taste)",
+      "raw": "3 tablespoon Sriracha, plus more to taste",
       "expected": {
         "item": "Sriracha",
         "measurements": [
@@ -115,16 +115,16 @@
       }
     },
     {
-      "raw": "6 cups cooked rice (sushi rice, white rice, or brown rice)",
+      "raw": "6 cups cooked rice, sushi rice, white rice, or brown rice",
       "expected": {
-        "item": "cooked rice",
+        "item": "cooked rice, sushi rice, white rice, or brown rice",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": "sushi rice, white rice, or brown rice",
+        "note": null,
         "category": "Pasta & Rice"
       }
     },
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1  avocado (peeled, pitted, and sliced)",
+      "raw": "1 avocado, peeled, pitted, and sliced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 large mango (peeled, pitted, and sliced)",
+      "raw": "1 large mango, peeled, pitted, and sliced",
       "expected": {
         "item": "mango",
         "measurements": [

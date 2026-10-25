@@ -3,7 +3,7 @@
   "recipe_slug": "vietnamese-pho-recipe",
   "ingredients": [
     {
-      "raw": "2  large onions (, halved)",
+      "raw": "2 large onions , halved",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "150g / 5oz   ginger (, sliced down the centre)",
+      "raw": "150g / 5oz  ginger , sliced down the centre",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "10  star anise",
+      "raw": "10 star anise",
       "expected": {
         "item": "star anise",
         "measurements": [
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "4  cinnamon quills",
+      "raw": "4 cinnamon quills",
       "expected": {
         "item": "cinnamon quills",
         "measurements": [
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "4  cardamon pods",
+      "raw": "4 cardamon pods",
       "expected": {
         "item": "cardamon pods",
         "measurements": [
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "3  cloves ((the spice cloves!))",
+      "raw": "3 cloves (the spice cloves!)",
       "expected": {
         "item": "the spice cloves!",
         "measurements": [
@@ -105,7 +105,16 @@
       }
     },
     {
-      "raw": "1.5kg / 3lb   beef brisket",
+      "raw": "Beef bones (Note 1):",
+      "expected": {
+        "item": "Beef bones :",
+        "measurements": [],
+        "note": "Note 1",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1.5kg / 3lb  beef brisket",
       "expected": {
         "item": "beef brisket",
         "measurements": [
@@ -123,7 +132,7 @@
       }
     },
     {
-      "raw": "1kg / 2lb   meaty beef bones",
+      "raw": "1kg / 2lb  meaty beef bones",
       "expected": {
         "item": "meaty beef bones",
         "measurements": [
@@ -141,7 +150,7 @@
       }
     },
     {
-      "raw": "1kg / 2lb   marrow bones ((leg, knuckle), cut to reveal marrow)",
+      "raw": "1kg / 2lb  marrow bones (leg, knuckle), cut to reveal marrow",
       "expected": {
         "item": "marrow bones",
         "measurements": [
@@ -159,7 +168,7 @@
       }
     },
     {
-      "raw": "3.5 litres / 3.75 quarts   water ((15 cups))",
+      "raw": "3.5 litres / 3.75 quarts  water (15 cups)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -209,7 +218,7 @@
       }
     },
     {
-      "raw": "40 ml / 3 tbsp   fish sauce ((Note 2))",
+      "raw": "40 ml / 3 tbsp  fish sauce (Note 2)",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -227,7 +236,7 @@
       }
     },
     {
-      "raw": "50g / 1.5 oz   dried rice sticks ((or 120g/4oz fresh) (Note 3))",
+      "raw": "50g / 1.5 oz  dried rice sticks (or 120g/4oz fresh) (Note 3)",
       "expected": {
         "item": "dried rice sticks",
         "measurements": [
@@ -245,7 +254,7 @@
       }
     },
     {
-      "raw": "30g / 1 oz   beef tenderloin, raw, very thinly sliced ((Note 4))",
+      "raw": "30g / 1 oz  beef tenderloin, raw, very thinly sliced (Note 4)",
       "expected": {
         "item": "beef tenderloin",
         "measurements": [
@@ -263,7 +272,7 @@
       }
     },
     {
-      "raw": "3 - 5  brisket slices ((used for broth))",
+      "raw": "3 – 5 brisket slices (used for broth)",
       "expected": {
         "item": "brisket slices",
         "measurements": [
@@ -286,7 +295,7 @@
       }
     },
     {
-      "raw": "Thai basil, 3 - 5 sprigs",
+      "raw": "Thai basil, 3 – 5 sprigs",
       "expected": {
         "item": "Thai basil, 3 - 5 sprigs",
         "measurements": [],
@@ -295,7 +304,7 @@
       }
     },
     {
-      "raw": "Coriander/cilantro, 3 - 5 sprigs ((or more basil))",
+      "raw": "Coriander/cilantro, 3 – 5 sprigs (or more basil)",
       "expected": {
         "item": "Coriander/cilantro, 3 - 5 sprigs",
         "measurements": [],
@@ -331,7 +340,7 @@
       }
     },
     {
-      "raw": "Sriracha* ((for spiciness))",
+      "raw": "Sriracha* (for spiciness)",
       "expected": {
         "item": "Sriracha",
         "measurements": [],

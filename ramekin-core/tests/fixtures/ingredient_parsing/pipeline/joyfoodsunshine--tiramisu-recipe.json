@@ -3,21 +3,21 @@
   "recipe_slug": "tiramisu-recipe",
   "ingredients": [
     {
-      "raw": "6  eggs (separated)",
+      "raw": "6 eggs separated",
       "expected": {
-        "item": "eggs",
+        "item": "eggs separated",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "separated",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "¾ cup granulated sugar (divided)",
+      "raw": "¾ cup granulated sugar divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "6  egg yolks",
+      "raw": "6 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -171,16 +171,16 @@
       }
     },
     {
-      "raw": "1 ¾ cups coffee (strong brewed, or espresso)",
+      "raw": "1 ¾ cups coffee strong brewed, or espresso",
       "expected": {
-        "item": "coffee",
+        "item": "coffee strong brewed, or espresso",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": "strong brewed, or espresso",
+        "note": null,
         "category": "Beverages"
       }
     },

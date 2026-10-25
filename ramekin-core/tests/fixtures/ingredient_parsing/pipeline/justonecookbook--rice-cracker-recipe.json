@@ -3,7 +3,7 @@
   "recipe_slug": "rice-cracker-recipe",
   "ingredients": [
     {
-      "raw": "4  Japanese rice cake (kiri mochi)",
+      "raw": "4 Japanese rice cake (kiri mochi) (I use dried rectangular rice cakes called kirimochi)",
       "expected": {
         "item": "Japanese rice cake",
         "measurements": [
@@ -12,7 +12,7 @@
             "unit": null
           }
         ],
-        "note": "kiri mochi",
+        "note": "kiri mochi, I use dried rectangular rice cakes called kirimochi",
         "category": "Other"
       }
     },
@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "Diamond Crystal kosher salt ((I used Himalayan Pink Salt))",
+      "raw": "Diamond Crystal kosher salt (I used Himalayan Pink Salt)",
       "expected": {
         "item": "Diamond Crystal kosher salt",
         "measurements": [],
@@ -35,11 +35,11 @@
       }
     },
     {
-      "raw": "furikake (rice seasoning)",
+      "raw": "furikake (rice seasoning) (you can make homemade Japanese Rice Seasoning)",
       "expected": {
         "item": "furikake",
         "measurements": [],
-        "note": "rice seasoning",
+        "note": "rice seasoning, you can make homemade Japanese Rice Seasoning",
         "category": "Spices & Seasonings"
       }
     },

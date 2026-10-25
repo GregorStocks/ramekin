@@ -3,75 +3,6 @@
   "recipe_slug": "2014-11-pickled-cabbage-salad",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Five Egg Sandwiches",
-      "expected": {
-        "item": "Months Ago: Five Egg Sandwiches",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Japanese Vegetable Pancakes",
-      "expected": {
-        "item": "Years Ago: Japanese Vegetable Pancakes",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Warm, Crisp and a Little Melty Salad Croutons",
-      "expected": {
-        "item": "Years Ago: Warm, Crisp and a Little Melty Salad Croutons",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Leek Toasts with Blue Cheese",
-      "expected": {
-        "item": "Years Ago: Leek Toasts with Blue Cheese",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Brine",
-      "is_section_header": true
-    },
-    {
       "raw": "1 1/2 cups white vinegar",
       "expected": {
         "item": "white vinegar",
@@ -82,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "Brine",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Brine",
         "category": "Beverages"
       }
     },
@@ -112,7 +41,6 @@
           }
         ],
         "note": null,
-        "section": "Brine",
         "category": "Baking"
       }
     },
@@ -127,7 +55,6 @@
           }
         ],
         "note": null,
-        "section": "Brine",
         "category": "Spices & Seasonings"
       }
     },
@@ -142,13 +69,8 @@
           }
         ],
         "note": "plus more to taste",
-        "section": "Brine",
         "category": "Spices & Seasonings"
       }
-    },
-    {
-      "raw": "Salad",
-      "is_section_header": true
     },
     {
       "raw": "1 small head (2 pounds) green cabbage",
@@ -165,7 +87,6 @@
           }
         ],
         "note": null,
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -180,7 +101,6 @@
           }
         ],
         "note": null,
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -195,7 +115,6 @@
           }
         ],
         "note": "I used only 1/2 my very thick one",
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -210,7 +129,6 @@
           }
         ],
         "note": null,
-        "section": "Salad",
         "category": "Produce"
       }
     }

@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  small white onion (chopped)",
+      "raw": "1 small white onion chopped",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "2-3  avocado leaves (or bay leaves)",
+      "raw": "2-3 avocado leaves or bay leaves",
       "expected": {
-        "item": "avocado leaves",
+        "item": "avocado leaves or bay leaves",
         "measurements": [
           {
             "amount": "2-3",
             "unit": null
           }
         ],
-        "note": "or bay leaves",
-        "category": "Other"
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {

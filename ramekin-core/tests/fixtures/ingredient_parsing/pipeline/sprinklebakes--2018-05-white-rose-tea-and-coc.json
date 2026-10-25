@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "5  teabags Numi White Rose Tea",
+      "raw": "5 teabags Numi White Rose Tea",
       "expected": {
         "item": "teabags Numi White Rose Tea",
         "measurements": [
@@ -35,16 +35,16 @@
       }
     },
     {
-      "raw": "1  envelope (.25 ounce unflavored powdered gelatin)",
+      "raw": "1 envelope .25 ounce unflavored powdered gelatin",
       "expected": {
-        "item": "unflavored powdered gelatin",
+        "item": ".25 ounce unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
           }
         ],
-        "note": ".25 ounce unflavored powdered gelatin",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -127,16 +127,16 @@
       }
     },
     {
-      "raw": "1/2  envelope (about 1 1/2 teaspoons unflavored powdered gelatin)",
+      "raw": "1/2 envelope about 1 1/2 teaspoons unflavored powdered gelatin",
       "expected": {
-        "item": "unflavored powdered gelatin",
+        "item": "about 1 1/2 teaspoons unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "envelope"
           }
         ],
-        "note": "about 1 1/2 teaspoons unflavored powdered gelatin",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -173,17 +173,17 @@
       }
     },
     {
-      "raw": "15 ounce can full fat coconut milk (unshaken and well chilled)",
+      "raw": "15 ounce can full fat coconut milk unshaken and well chilled",
       "expected": {
-        "item": "can full fat coconut milk",
+        "item": "can full fat coconut milk unshaken and well chilled",
         "measurements": [
           {
             "amount": "15",
             "unit": "oz"
           }
         ],
-        "note": "unshaken and well chilled",
-        "category": "Canned Goods"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -215,16 +215,11 @@
       }
     },
     {
-      "raw": "Garnish",
-      "is_section_header": true
-    },
-    {
       "raw": "Cream puffs",
       "expected": {
         "item": "Cream puffs",
         "measurements": [],
         "note": null,
-        "section": "Garnish",
         "category": "Bakery & Bread"
       }
     },
@@ -234,7 +229,6 @@
         "item": "Edible organic rose petals",
         "measurements": [],
         "note": null,
-        "section": "Garnish",
         "category": "Other"
       }
     }

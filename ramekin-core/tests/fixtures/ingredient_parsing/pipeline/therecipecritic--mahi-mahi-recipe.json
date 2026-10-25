@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  mahi mahi fish filets",
+      "raw": "4 mahi mahi fish filets",
       "expected": {
         "item": "mahi mahi fish filets",
         "measurements": [
@@ -133,39 +133,31 @@
       }
     },
     {
-      "raw": "1 large diced avocado  (about 1 cup)",
+      "raw": "1 large diced avocado  about 1 cup",
       "expected": {
-        "item": "diced avocado",
+        "item": "diced avocado about 1 cup",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
-        "note": "about 1 cup",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  diced Roma tomato  (about ½ cup)",
+      "raw": "1 diced Roma tomato  about ½ cup",
       "expected": {
-        "item": "diced Roma tomato",
+        "item": "diced Roma tomato about 1/2 cup",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "0.5",
-            "unit": "cup"
           }
         ],
-        "note": "about 1/2 cup",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {

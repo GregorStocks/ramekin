@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "5 oz x 2 fresh salmon fillets (skin off)",
+      "raw": "5 oz x 2 fresh salmon fillets skin off",
       "expected": {
-        "item": "x 2 fresh salmon fillets",
+        "item": "x 2 fresh salmon fillets skin off",
         "measurements": [
           {
             "amount": "5",
             "unit": "oz"
           }
         ],
-        "note": "skin off",
+        "note": null,
         "category": "Other"
       }
     },
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 medium lemon (juiced)",
+      "raw": "1/2 medium lemon juiced",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -87,21 +87,21 @@
       }
     },
     {
-      "raw": "2 large eggs (poached or boiled)",
+      "raw": "2 large eggs poached or boiled",
       "expected": {
-        "item": "eggs",
+        "item": "eggs poached or boiled",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "poached or boiled",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 heads cos lettuce (washed and dried)",
+      "raw": "2 heads cos lettuce washed and dried",
       "expected": {
         "item": "cos lettuce",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 medium avocado (sliced)",
+      "raw": "1 medium avocado sliced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -143,30 +143,30 @@
       }
     },
     {
-      "raw": "2 tablespoons whole egg mayo (full fat or reduced fat)",
+      "raw": "2 tablespoons whole egg mayo full fat or reduced fat",
       "expected": {
-        "item": "whole egg mayo",
+        "item": "whole egg mayo full fat or reduced fat",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "full fat or reduced fat",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "3 tablespoons Greek yogurt or sour cream (full fat or reduced fat)",
+      "raw": "3 tablespoons Greek yogurt or sour cream full fat or reduced fat",
       "expected": {
-        "item": "Greek yogurt or sour cream",
+        "item": "Greek yogurt or sour cream full fat or reduced fat",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "full fat or reduced fat",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1 clove garlic (crushed)",
+      "raw": "1 clove garlic crushed",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "1 fillet anchovy (finely chopped)",
+      "raw": "1 fillet anchovy finely chopped",
       "expected": {
         "item": "anchovy",
         "measurements": [
@@ -241,17 +241,17 @@
       }
     },
     {
-      "raw": "1 pinch salt and pepper  (for seasoning)",
+      "raw": "1 pinch salt and pepper  for seasoning",
       "expected": {
-        "item": "salt and pepper",
+        "item": "salt and pepper for seasoning",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "for seasoning",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

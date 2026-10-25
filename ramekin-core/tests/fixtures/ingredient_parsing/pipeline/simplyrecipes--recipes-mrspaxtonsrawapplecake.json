@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 cups of sugar",
+      "raw": "2 cups sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -31,13 +31,13 @@
       }
     },
     {
-      "raw": "3 eggs, slightly beaten",
+      "raw": "3 large eggs, slightly beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "large"
           }
         ],
         "note": "slightly beaten",
@@ -45,9 +45,9 @@
       }
     },
     {
-      "raw": "3 cups of white flour",
+      "raw": "3 cups all-purpose flour",
       "expected": {
-        "item": "white flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoon baking soda",
+      "raw": "1 1/2 teaspoons baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -73,9 +73,9 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla",
+      "raw": "1 teaspoon vanilla extract",
       "expected": {
-        "item": "vanilla",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1",
@@ -115,21 +115,21 @@
       }
     },
     {
-      "raw": "3 cups chopped, peeled apples (varieties that are good for baking - i.e. Granny Smith, Gravenstein, Fuji)",
+      "raw": "3 cups peeled, cored, and chopped apples (varieties that are good for baking, such as Granny Smith, Gravenstein, Fuji)",
       "expected": {
-        "item": "chopped, peeled apples",
+        "item": "peeled, cored, and chopped apples",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "varieties that are good for baking - i.e. Granny Smith, Gravenstein, Fuji",
-        "category": "Produce"
+        "note": "varieties that are good for baking, such as Granny Smith, Gravenstein, Fuji",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup of&nbsp;sweetened shredded coconut",
+      "raw": "1 cup sweetened shredded coconut",
       "expected": {
         "item": "sweetened shredded coconut",
         "measurements": [
@@ -143,9 +143,9 @@
       }
     },
     {
-      "raw": "1 cup of chopped nuts - walnuts or pecans",
+      "raw": "1 cup chopped nuts, walnuts or pecans",
       "expected": {
-        "item": "chopped nuts - walnuts or pecans",
+        "item": "chopped nuts, walnuts or pecans",
         "measurements": [
           {
             "amount": "1",
@@ -157,17 +157,17 @@
       }
     },
     {
-      "raw": "1/2 stick sweet butter",
+      "raw": "4 tablespoons unsalted butter",
       "expected": {
-        "item": "sweet butter",
+        "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "stick"
+            "amount": "4",
+            "unit": "tbsp"
           }
         ],
         "note": null,
-        "category": "Produce"
+        "category": "Dairy & Eggs"
       }
     },
     {

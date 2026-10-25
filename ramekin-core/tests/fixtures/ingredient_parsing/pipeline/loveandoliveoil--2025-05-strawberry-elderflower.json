@@ -3,21 +3,25 @@
   "recipe_slug": "2025-05-strawberry-elderflower",
   "ingredients": [
     {
-      "raw": "1 lb fresh strawberries (hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed))",
+      "raw": "1 lb   fresh strawberries, hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed)",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
           }
         ],
-        "note": "hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed)",
+        "note": "about 1 1/2 cups mashed, hulled, coarsely chopped, and mashed",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup granulated sugar",
+      "raw": "½ cup   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -31,7 +35,7 @@
       }
     },
     {
-      "raw": "1 tablespoon lemon juice",
+      "raw": "1 tablespoon   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -45,21 +49,21 @@
       }
     },
     {
-      "raw": "2 tablespoons St. Germain liqueur (optional, or other liqueur of your choice)",
+      "raw": "2 tablespoons   St. Germain liqueur, optional, or other liqueur of your choice",
       "expected": {
-        "item": "St. Germain liqueur",
+        "item": "St. Germain liqueur, optional, or other liqueur of your choice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "optional, or other liqueur of your choice",
+        "note": null,
         "category": "Beverages"
       }
     },
     {
-      "raw": "8 oz mascarpone (cold)",
+      "raw": "8 oz   mascarpone, cold",
       "expected": {
         "item": "mascarpone",
         "measurements": [
@@ -73,7 +77,7 @@
       }
     },
     {
-      "raw": "1/4 cup granulated sugar",
+      "raw": "¼ cup   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -87,7 +91,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon vanilla bean paste (or the seeds of 1/2 a vanilla bean)",
+      "raw": "½ teaspoon   vanilla bean paste, or the seeds of 1/2 a vanilla bean",
       "expected": {
         "item": "vanilla bean paste",
         "measurements": [
@@ -101,7 +105,7 @@
       }
     },
     {
-      "raw": "pinch fine sea salt",
+      "raw": "pinch   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -115,7 +119,7 @@
       }
     },
     {
-      "raw": "1 1/4 cup heavy whipping cream (cold)",
+      "raw": "1 ¼ cup   heavy whipping cream, cold",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
@@ -129,7 +133,7 @@
       }
     },
     {
-      "raw": "7 oz ladyfinger cookies (from 1 package (24 cookies))",
+      "raw": "7 oz   ladyfinger cookies, from 1 package (24 cookies)",
       "expected": {
         "item": "ladyfinger cookies",
         "measurements": [
@@ -138,26 +142,26 @@
             "unit": "oz"
           }
         ],
-        "note": "from 1 package (24 cookies)",
+        "note": "24 cookies, from 1 package",
         "category": "Snacks"
       }
     },
     {
-      "raw": "2 tablespoons elderflower syrup (optional, or other flavored syrup of your choice)",
+      "raw": "2 tablespoons   elderflower syrup, optional, or other flavored syrup of your choice",
       "expected": {
-        "item": "elderflower syrup",
+        "item": "elderflower syrup, optional, or other flavored syrup of your choice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "optional, or other flavored syrup of your choice",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "freeze dried strawberry powder (optional, for topping)",
+      "raw": "freeze dried strawberry powder, optional, for topping",
       "expected": {
         "item": "freeze dried strawberry powder",
         "measurements": [],

@@ -217,15 +217,6 @@
       }
     },
     {
-      "raw": "Pickled shallots",
-      "expected": {
-        "item": "Pickled shallots",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1/4 cup red or white wine vinegar",
       "expected": {
         "item": "red or white wine vinegar",
@@ -293,15 +284,6 @@
         ],
         "note": "peeled and thinly sliced",
         "category": "Produce"
-      }
-    },
-    {
-      "raw": "Asparagus pesto",
-      "expected": {
-        "item": "Asparagus pesto",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
       }
     },
     {
@@ -389,10 +371,6 @@
       }
     },
     {
-      "raw": "To assemble",
-      "is_section_header": true
-    },
-    {
       "raw": "6 large slices whole-wheat sourdough bread, miche, or another sliced country bread of your choice, toasted",
       "expected": {
         "item": "slices whole-wheat sourdough bread, miche, or another sliced country bread of your choice",
@@ -403,7 +381,6 @@
           }
         ],
         "note": "toasted",
-        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -418,7 +395,6 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -433,7 +409,6 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -448,7 +423,6 @@
           }
         ],
         "note": "halved to approximate sandwich lengths",
-        "section": "To Assemble",
         "category": "Meat & Seafood"
       }
     },
@@ -463,7 +437,6 @@
           }
         ],
         "note": "toasted",
-        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -478,7 +451,6 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -488,7 +460,6 @@
         "item": "A few leaves of iceberg lettuce",
         "measurements": [],
         "note": null,
-        "section": "To Assemble",
         "category": "Other"
       }
     },
@@ -503,7 +474,6 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -518,7 +488,6 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -533,7 +502,6 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -543,7 +511,6 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
-        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -558,7 +525,6 @@
           }
         ],
         "note": "about 1/2-inch, cut into small cubes",
-        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -573,7 +539,6 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Oils & Vinegars"
       }
     },
@@ -588,7 +553,6 @@
           }
         ],
         "note": "finely chopped",
-        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -603,7 +567,6 @@
           }
         ],
         "note": "casings removed",
-        "section": "To Assemble",
         "category": "Other"
       }
     },
@@ -613,7 +576,6 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
-        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -623,7 +585,6 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -638,7 +599,6 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -653,13 +613,8 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
-    },
-    {
-      "raw": "Waffles",
-      "is_section_header": true
     },
     {
       "raw": "3/4 cups all-purpose flour",
@@ -672,7 +627,6 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -687,7 +641,6 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -702,7 +655,6 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -717,7 +669,6 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -732,7 +683,6 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
         "category": "Spices & Seasonings"
       }
     },
@@ -747,7 +697,6 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -762,7 +711,6 @@
           }
         ],
         "note": "melted and cooled slightly",
-        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -777,7 +725,6 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -792,7 +739,6 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
         "category": "Cheese"
       }
     },
@@ -802,13 +748,8 @@
         "item": "Spray cooking oil to coat waffle iron",
         "measurements": [],
         "note": null,
-        "section": "Waffles",
         "category": "Other"
       }
-    },
-    {
-      "raw": "Creamed greens",
-      "is_section_header": true
     },
     {
       "raw": "5 ounces baby spinach or another fairly quick-cooking green of your choice, stemmed if stems are heavy",
@@ -821,7 +762,6 @@
           }
         ],
         "note": null,
-        "section": "Creamed Greens",
         "category": "Produce"
       }
     },
@@ -831,7 +771,6 @@
         "item": "Butter",
         "measurements": [],
         "note": null,
-        "section": "Creamed Greens",
         "category": "Dairy & Eggs"
       }
     },
@@ -846,7 +785,6 @@
           }
         ],
         "note": "finely chopped",
-        "section": "Creamed Greens",
         "category": "Produce"
       }
     },
@@ -861,7 +799,6 @@
           }
         ],
         "note": null,
-        "section": "Creamed Greens",
         "category": "Dairy & Eggs"
       }
     }

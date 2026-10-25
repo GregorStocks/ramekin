@@ -3,10 +3,6 @@
   "recipe_slug": "2011-06-dobos-torte",
   "ingredients": [
     {
-      "raw": "Cake layers:",
-      "is_section_header": true
-    },
-    {
       "raw": "7 large eggs, separated",
       "expected": {
         "item": "eggs",
@@ -17,7 +13,6 @@
           }
         ],
         "note": "separated",
-        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,7 +49,6 @@
           }
         ],
         "note": "plus extra for dusting racks",
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -78,7 +71,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -93,7 +85,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Produce"
       }
     },
@@ -108,7 +99,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,7 +121,6 @@
           }
         ],
         "note": "coarsely chopped",
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -154,7 +143,6 @@
           }
         ],
         "note": "cut into chunks",
-        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -169,7 +157,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -184,7 +171,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,18 +185,7 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
-      }
-    },
-    {
-      "raw": "Caramel layer (optional)",
-      "expected": {
-        "item": "Caramel layer",
-        "measurements": [],
-        "note": "optional",
-        "section": "Cake Layers",
-        "category": "Other"
       }
     },
     {
@@ -224,7 +199,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -239,7 +213,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Beverages"
       }
     },
@@ -254,7 +227,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Nuts & Dried Fruit"
       }
     }

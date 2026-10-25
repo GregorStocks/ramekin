@@ -31,31 +31,31 @@
       }
     },
     {
-      "raw": "2 1/4 tsp active dry yeast (one package active dry yeast)",
+      "raw": "2 1/4 tsp active dry yeast one package active dry yeast",
       "expected": {
-        "item": "active dry yeast",
+        "item": "active dry yeast one package active dry yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
           }
         ],
-        "note": "one package active dry yeast",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3 cups unbleached all-purpose flour (more for dusting)",
+      "raw": "3 cups unbleached all-purpose flour more for dusting",
       "expected": {
-        "item": "unbleached all-purpose flour",
+        "item": "unbleached all-purpose flour more",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "more for dusting",
-        "category": "Baking"
+        "note": "for dusting",
+        "category": "Other"
       }
     },
     {
@@ -115,11 +115,11 @@
       }
     },
     {
-      "raw": "Fresh garden vegetables (tomato, cucumbers, radish)",
+      "raw": "Fresh garden vegetables tomato, cucumbers, radish",
       "expected": {
-        "item": "Fresh garden vegetables",
+        "item": "Fresh garden vegetables tomato, cucumbers, radish",
         "measurements": [],
-        "note": "tomato, cucumbers, radish",
+        "note": null,
         "category": "Other"
       }
     },
@@ -133,12 +133,12 @@
       }
     },
     {
-      "raw": "Homemade labneh or feta cheese (omit if vegan)",
+      "raw": "Homemade labneh or feta cheese omit if vegan",
       "expected": {
-        "item": "Homemade labneh or feta cheese",
+        "item": "Homemade labneh or feta cheese omit if vegan",
         "measurements": [],
-        "note": "omit if vegan",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

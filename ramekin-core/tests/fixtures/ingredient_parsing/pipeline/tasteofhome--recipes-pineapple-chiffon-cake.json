@@ -143,10 +143,6 @@
       }
     },
     {
-      "raw": "GLAZE:",
-      "is_section_header": true
-    },
-    {
       "raw": "2 cups confectioners' sugar",
       "expected": {
         "item": "confectioners' sugar",
@@ -157,7 +153,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -172,7 +167,6 @@
           }
         ],
         "note": "melted",
-        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -187,7 +181,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Beverages"
       }
     }

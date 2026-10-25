@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-grilled-baby-potatoes-",
   "ingredients": [
     {
-      "raw": "1 pound baby Yukon Gold potatoes",
+      "raw": "1 lb baby Yukon Gold potatoes",
       "expected": {
         "item": "baby Yukon Gold potatoes",
         "measurements": [
@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "¼ cup mayonnaise, best quality such as Hellman's or Duke's",
+      "raw": "¼ cup mayonnaise, (best quality such as Hellman's or Duke's)",
       "expected": {
-        "item": "mayonnaise, best quality",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "such as Hellman's or Duke's",
+        "note": "best quality such as Hellman's or Duke's",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic, minced",
+      "raw": "3 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2 teaspoons chopped fresh thyme (rosemary would also work well, or a combination)",
+      "raw": "2 teaspoons chopped fresh thyme ((rosemary would also work well, or a combination))",
       "expected": {
         "item": "chopped fresh thyme",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 tablespoon chopped fresh Italian parsley, for garnish (optional)",
+      "raw": "1 tablespoon chopped fresh Italian parsley, (for garnish (optional))",
       "expected": {
         "item": "chopped fresh Italian parsley",
         "measurements": [
@@ -110,7 +110,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional, for garnish",
+        "note": "for garnish (optional)",
         "category": "Produce"
       }
     }

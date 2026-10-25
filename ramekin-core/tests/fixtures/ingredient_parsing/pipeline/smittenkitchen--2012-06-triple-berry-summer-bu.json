@@ -3,15 +3,6 @@
   "recipe_slug": "2012-06-triple-berry-summer-bu",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "2 1/2 cups (355 grams) plus 2 tablespoons (20 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -184,10 +175,6 @@
       }
     },
     {
-      "raw": "Glaze",
-      "is_section_header": true
-    },
-    {
       "raw": "2 cups (240 grams) powdered or confections’ sugar",
       "expected": {
         "item": "powdered or confections’ sugar",
@@ -202,7 +189,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -217,7 +203,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Produce"
       }
     },
@@ -236,7 +221,6 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     }

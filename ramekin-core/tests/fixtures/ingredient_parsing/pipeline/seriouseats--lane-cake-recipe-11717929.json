@@ -204,7 +204,7 @@
       }
     },
     {
-      "raw": "12 large egg yolks (7 ounces; 200g)",
+      "raw": "12 large egg yolks (7 ounces; 200 g)",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -292,7 +292,7 @@
       }
     },
     {
-      "raw": "6 ounces finely shredded unsweetened coconut (170 g; 1 1/2 cups),",
+      "raw": "6 ounces finely shredded unsweetened coconut (170 g; 1 1/2 cups)",
       "expected": {
         "item": "finely shredded unsweetened coconut",
         "measurements": [
@@ -358,7 +358,7 @@
       }
     },
     {
-      "raw": "1/2 cup (60 ml) bourbon",
+      "raw": "1/2 cup (120 ml) bourbon",
       "expected": {
         "item": "bourbon",
         "measurements": [
@@ -367,7 +367,7 @@
             "unit": "cup"
           },
           {
-            "amount": "60",
+            "amount": "120",
             "unit": "ml"
           }
         ],

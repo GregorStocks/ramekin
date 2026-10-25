@@ -3,21 +3,21 @@
   "recipe_slug": "apple-pie-dream-dessert-recipe",
   "ingredients": [
     {
-      "raw": "3 ounces box lime flavored Jell-o (or pistachio Jell-o)",
+      "raw": "3 ounces box lime flavored Jell-o or pistachio Jell-o",
       "expected": {
-        "item": "box lime flavored Jell-o",
+        "item": "box lime flavored Jell-o or pistachio Jell-o",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": "or pistachio Jell-o",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup all-purpose flour (divided)",
+      "raw": "1 cup all-purpose flour divided",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (cold and divided)",
+      "raw": "1/2 cup unsalted butter cold and divided",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter cold and divided",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "cold and divided",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 cup pecans (finely chopped in a food processor - or use more crackers if you are allergic to nuts)",
+      "raw": "1 cup pecans finely chopped in a food processor - or use more crackers if you are allergic to nuts",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (melted)",
+      "raw": "1/2 cup unsalted butter melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "8 ounces cream cheese (softened to room temperature)",
+      "raw": "8 ounces cream cheese softened to room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/2 cup butter (softened to room temperature)",
+      "raw": "1/2 cup butter softened to room temperature",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "8 oz container frozen whipped topping (thawed)",
+      "raw": "8 oz container frozen whipped topping thawed",
       "expected": {
         "item": "container frozen whipped topping",
         "measurements": [

@@ -3,30 +3,30 @@
   "recipe_slug": "recipes-maple-muffins-html",
   "ingredients": [
     {
-      "raw": "2¼ cups all purpose flour, spooned into measuring cup and leveled-off with a knife",
+      "raw": "2¼ cups all purpose flour, (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "all purpose flour, spooned into measuring cup and leveled-off with a knife",
+        "item": "all purpose flour",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ cup whole wheat flour, spooned into measuring cup an leveled-off with a knife",
+      "raw": "¾ cup whole wheat flour, (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "whole wheat flour, spooned into measuring cup an leveled-off with a knife",
+        "item": "whole wheat flour",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "category": "Baking"
       }
     },
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1½ cups pure maple syrup, preferably Grade B (Grade A works fine too)",
+      "raw": "1½ cups pure maple syrup, (preferably Grade B (Grade A works fine too))",
       "expected": {
         "item": "pure maple syrup",
         "measurements": [
@@ -68,12 +68,12 @@
             "unit": "cup"
           }
         ],
-        "note": "Grade A works fine too, preferably Grade B",
+        "note": "preferably Grade B (Grade A works fine too)",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "12 tablespoons (1½ sticks) unsalted butter, melted",
+      "raw": "12 tablespoons (1½ sticks) unsalted butter, melted and cooled slightly, plus more for greasing the muffin tin",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -86,7 +86,7 @@
             "unit": "stick"
           }
         ],
-        "note": "melted",
+        "note": "melted and cooled slightly, plus more for greasing the muffin tin",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1 large egg",
+      "raw": "1  large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "1 large egg yolk",
+      "raw": "1  large egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "1 cup coarsely chopped walnuts, toasted if desired (optional)",
+      "raw": "1 cup coarsely chopped walnuts, (toasted if desired, optional)",
       "expected": {
         "item": "coarsely chopped walnuts",
         "measurements": [
@@ -142,14 +142,14 @@
             "unit": "cup"
           }
         ],
-        "note": "optional, toasted if desired",
+        "note": "toasted if desired, optional",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "Softened unsalted butter, for greasing the pan",
+      "raw": "Softened butter, (for greasing the pan)",
       "expected": {
-        "item": "Softened unsalted butter",
+        "item": "Softened butter",
         "measurements": [],
         "note": "for greasing the pan",
         "category": "Dairy & Eggs"

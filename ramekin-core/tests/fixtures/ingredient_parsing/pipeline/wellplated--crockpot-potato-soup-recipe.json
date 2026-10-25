@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 small yellow onion (diced)",
+      "raw": "1 small yellow onion diced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,31 +31,31 @@
       }
     },
     {
-      "raw": "3 large carrots (scrubbed and diced)",
+      "raw": "3 large carrots scrubbed and diced",
       "expected": {
-        "item": "carrots",
+        "item": "carrots scrubbed and diced",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "scrubbed and diced",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 pounds Yukon gold potatoes (peeled and cut into 1/2-inch chunks)",
+      "raw": "2 pounds Yukon gold potatoes peeled and cut into 1/2-inch chunks",
       "expected": {
-        "item": "Yukon gold potatoes",
+        "item": "Yukon gold potatoes peeled and cut into 1/2-inch chunks",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "peeled and cut into 1/2-inch chunks",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 teaspoon kosher salt (plus additional to taste)",
+      "raw": "1 teaspoon kosher salt plus additional to taste",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon cayenne pepper",
+      "raw": "¼ teaspoon cayenne pepper",
       "expected": {
         "item": "cayenne pepper",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "3–4 cups reduced-sodium chicken broth ((or vegetable broth for a vegetarian soup))",
+      "raw": "3–4 cups reduced-sodium chicken broth (or vegetable broth for a vegetarian soup)",
       "expected": {
         "item": "reduced-sodium chicken broth",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 can 2% evaporated milk ((12-ounces)  )",
+      "raw": "1 can 2% evaporated milk (12-ounces)",
       "expected": {
         "item": "2% evaporated milk",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 cup shredded sharp cheddar cheese (plus additional for serving)",
+      "raw": "1 cup shredded sharp cheddar cheese plus additional for serving",
       "expected": {
         "item": "shredded sharp cheddar cheese",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1 cup nonfat plain Greek yogurt (plus additional for serving)",
+      "raw": "1 cup nonfat plain Greek yogurt plus additional for serving",
       "expected": {
         "item": "nonfat plain Greek yogurt",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "Cooked crumbled bacon ((optional))",
+      "raw": "Cooked crumbled bacon (optional)",
       "expected": {
         "item": "Cooked crumbled bacon",
         "measurements": [],
@@ -180,7 +180,7 @@
       }
     },
     {
-      "raw": "Chopped fresh chives ((optional))",
+      "raw": "Chopped fresh chives (optional)",
       "expected": {
         "item": "Chopped fresh chives",
         "measurements": [],

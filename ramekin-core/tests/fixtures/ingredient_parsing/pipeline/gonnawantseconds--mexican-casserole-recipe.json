@@ -3,16 +3,16 @@
   "recipe_slug": "mexican-casserole-recipe",
   "ingredients": [
     {
-      "raw": "1 pound ground beef,  (80/20)",
+      "raw": "1 pound ground beef,  80/20",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef, 80/20",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "80/20",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 can  chili beans, (undrained)",
+      "raw": "1 can  chili beans, undrained",
       "expected": {
         "item": "chili beans",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 cup frozen corn,  (thawed and drained)",
+      "raw": "1 cup frozen corn,  thawed and drained",
       "expected": {
         "item": "frozen corn",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "3 cups Jack cheese, divided (shredded)",
+      "raw": "3 cups Jack cheese, divided shredded",
       "expected": {
         "item": "Jack cheese",
         "measurements": [
@@ -96,7 +96,7 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded, divided",
+        "note": "divided shredded",
         "category": "Cheese"
       }
     },
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1 (2.25-ounce) can sliced black olives,  (drained)",
+      "raw": "1 (2.25-ounce) can sliced black olives,  drained",
       "expected": {
         "item": "sliced black olives",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1 cup green onion, (sliced~divided)",
+      "raw": "1 cup green onion, sliced~divided",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 cup fresh tomatoes,  (seeded and chopped)",
+      "raw": "1 cup fresh tomatoes,  seeded and chopped",
       "expected": {
         "item": "fresh tomatoes",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/2 cup cilantro,  (chopped)",
+      "raw": "1/2 cup cilantro,  chopped",
       "expected": {
         "item": "cilantro",
         "measurements": [

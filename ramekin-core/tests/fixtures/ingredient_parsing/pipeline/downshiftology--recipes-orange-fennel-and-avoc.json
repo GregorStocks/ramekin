@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-orange-fennel-and-avoc",
   "ingredients": [
     {
-      "raw": "4  cara cara oranges",
+      "raw": "4 cara cara oranges",
       "expected": {
         "item": "cara cara oranges",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  navel oranges",
+      "raw": "4 navel oranges",
       "expected": {
         "item": "navel oranges",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2  avocado (sliced)",
+      "raw": "2 avocado, sliced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2  fennel bulb (thinly sliced)",
+      "raw": "1/2 fennel bulb, thinly sliced",
       "expected": {
         "item": "fennel bulb",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2  red onion (thinly sliced)",
+      "raw": "1/2 red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -124,16 +124,16 @@
       }
     },
     {
-      "raw": "1 tsp honey (or maple)",
+      "raw": "1 tsp honey, or maple",
       "expected": {
-        "item": "honey",
+        "item": "honey, or maple",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or maple",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],

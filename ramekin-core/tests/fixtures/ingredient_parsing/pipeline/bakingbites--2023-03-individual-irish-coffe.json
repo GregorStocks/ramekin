@@ -3,15 +3,6 @@
   "recipe_slug": "2023-03-individual-irish-coffe",
   "ingredients": [
     {
-      "raw": "Individual Irish Coffee Chocolate Pudding Cakes",
-      "expected": {
-        "item": "Individual Irish Coffee Chocolate Pudding Cakes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "Cake",
       "expected": {
         "item": "Cake",
@@ -161,10 +152,6 @@
       }
     },
     {
-      "raw": "Topping",
-      "is_section_header": true
-    },
-    {
       "raw": "6 tbsp brown sugar",
       "expected": {
         "item": "brown sugar",
@@ -175,7 +162,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -194,7 +180,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -209,7 +194,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Beverages"
       }
     },
@@ -224,7 +208,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Beverages"
       }
     }

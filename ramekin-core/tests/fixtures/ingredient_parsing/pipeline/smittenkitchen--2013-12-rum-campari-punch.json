@@ -3,15 +3,6 @@
   "recipe_slug": "2013-12-rum-campari-punch",
   "ingredients": [
     {
-      "raw": "Punch",
-      "expected": {
-        "item": "Punch",
-        "measurements": [],
-        "note": null,
-        "category": "Beverages"
-      }
-    },
-    {
       "raw": "1 1/4 cups sugar",
       "expected": {
         "item": "sugar",
@@ -118,10 +109,6 @@
       }
     },
     {
-      "raw": "Garnish",
-      "is_section_header": true
-    },
-    {
       "raw": "1 giant ice cube",
       "expected": {
         "item": "giant ice cube",
@@ -132,7 +119,6 @@
           }
         ],
         "note": null,
-        "section": "Garnish",
         "category": "Other"
       }
     },
@@ -147,7 +133,6 @@
           }
         ],
         "note": "sliced thin",
-        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -162,7 +147,6 @@
           }
         ],
         "note": "sliced thin",
-        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -172,7 +156,6 @@
         "item": "or thick peels of zest from 1 lime and 1 orange",
         "measurements": [],
         "note": null,
-        "section": "Garnish",
         "category": "Other"
       }
     }

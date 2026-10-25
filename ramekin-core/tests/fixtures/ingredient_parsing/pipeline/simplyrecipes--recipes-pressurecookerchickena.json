@@ -143,9 +143,9 @@
       }
     },
     {
-      "raw": "1/2 pound crimini mushrooms, sliced",
+      "raw": "1/2 pound cremini mushrooms, sliced",
       "expected": {
-        "item": "crimini mushrooms",
+        "item": "cremini mushrooms",
         "measurements": [
           {
             "amount": "0.5",
@@ -171,9 +171,9 @@
       }
     },
     {
-      "raw": "1 1/2 pounds (5 to 6) boneless skinless chicken thighs, cut into 1 1/2-inch pieces",
+      "raw": "1 1/2 pounds (5 to 6) boneless, skinless chicken thighs, cut into 1 1/2-inch pieces",
       "expected": {
-        "item": "boneless skinless chicken thighs",
+        "item": "boneless, skinless chicken thighs",
         "measurements": [
           {
             "amount": "1.5",
@@ -185,9 +185,9 @@
       }
     },
     {
-      "raw": "1 1/2 cups long grain white rice",
+      "raw": "1 1/2 cups long-grain white rice",
       "expected": {
-        "item": "long grain white rice",
+        "item": "long-grain white rice",
         "measurements": [
           {
             "amount": "1.5",

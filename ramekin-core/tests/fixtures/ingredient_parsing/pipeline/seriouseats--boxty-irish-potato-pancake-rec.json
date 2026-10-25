@@ -107,7 +107,7 @@
       }
     },
     {
-      "raw": "1 large egg, lightly beaten",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -116,7 +116,7 @@
             "unit": "large"
           }
         ],
-        "note": "lightly beaten",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

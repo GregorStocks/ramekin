@@ -3,7 +3,7 @@
   "recipe_slug": "2020-01-strawberry-chocolate-c",
   "ingredients": [
     {
-      "raw": "6 cups cake flour (sifted)",
+      "raw": "6 cups cake flour sifted",
       "expected": {
         "item": "cake flour",
         "measurements": [
@@ -45,31 +45,31 @@
       }
     },
     {
-      "raw": "1 cup unsalted butter (at room temperature)",
+      "raw": "1 cup unsalted butter at room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter at room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup vegetable oil (I like peanut oil)",
+      "raw": "1/2 cup vegetable oil I like peanut oil",
       "expected": {
-        "item": "vegetable oil",
+        "item": "vegetable oil I like peanut oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "I like peanut oil",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,16 +87,16 @@
       }
     },
     {
-      "raw": "8  egg whites (at room temperature)",
+      "raw": "8 egg whites at room temperature",
       "expected": {
-        "item": "egg whites",
+        "item": "egg whites at room temperature",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "2  cups/1 lb unsalted butter (softened)",
+      "raw": "2 cups/1 lb unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -259,7 +259,7 @@
       }
     },
     {
-      "raw": "1 pint strawberries (sliced)",
+      "raw": "1 pint strawberries sliced",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -287,11 +287,11 @@
       }
     },
     {
-      "raw": "Decors and powder coating (see blog post for decor instructions)",
+      "raw": "Decors and powder coating see blog post for decor instructions",
       "expected": {
-        "item": "Decors and powder coating",
+        "item": "Decors and powder coating see blog post for decor instructions",
         "measurements": [],
-        "note": "see blog post for decor instructions",
+        "note": null,
         "category": "Other"
       }
     },
@@ -310,7 +310,7 @@
       }
     },
     {
-      "raw": "1  3.25 inch modeling chocolate heart décor",
+      "raw": "1 3.25 inch modeling chocolate heart décor",
       "expected": {
         "item": "3.25 inch modeling chocolate heart décor",
         "measurements": [
@@ -324,7 +324,7 @@
       }
     },
     {
-      "raw": "14  1.75 inch modeling chocolate strawberry decors",
+      "raw": "14 1.75 inch modeling chocolate strawberry decors",
       "expected": {
         "item": "1.75 inch modeling chocolate strawberry decors",
         "measurements": [

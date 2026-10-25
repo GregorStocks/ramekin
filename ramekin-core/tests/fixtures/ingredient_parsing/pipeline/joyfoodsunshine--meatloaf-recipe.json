@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "¼ cup bread crumbs ((1 slice of bread made into bread crumbs))",
+      "raw": "¼ cup bread crumbs (1 slice of bread made into bread crumbs)",
       "expected": {
         "item": "bread crumbs",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "½ cup onion (finely diced)",
+      "raw": "½ cup onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [

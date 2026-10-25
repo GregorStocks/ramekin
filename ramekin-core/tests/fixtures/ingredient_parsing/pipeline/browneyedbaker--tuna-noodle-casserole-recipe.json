@@ -3,13 +3,17 @@
   "recipe_slug": "tuna-noodle-casserole-recipe",
   "ingredients": [
     {
-      "raw": "½&nbsp; ounce Monterey Jack cheese (shredded)",
+      "raw": "½  ounce  (14.17 g) Monterey Jack cheese, shredded",
       "expected": {
         "item": "Monterey Jack cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "oz"
+          },
+          {
+            "amount": "14.17",
+            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "½ ounce sharp cheddar cheese (shredded)",
+      "raw": "½ ounce  (14.17 g) sharp cheddar cheese, shredded",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "oz"
+          },
+          {
+            "amount": "14.17",
+            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "2 cups potato chips, crushed",
+      "raw": "2 cups  (170 g) potato chips, crushed",
       "expected": {
         "item": "potato chips",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": "crushed",
@@ -45,7 +57,7 @@
       }
     },
     {
-      "raw": "2 slices white sandwich bread, torn into 1-inch pieces",
+      "raw": "2 slices   white sandwich bread, torn into 1-inch pieces",
       "expected": {
         "item": "white sandwich bread",
         "measurements": [
@@ -59,7 +71,7 @@
       }
     },
     {
-      "raw": "2 tablespoons unsalted butter",
+      "raw": "2 tablespoons   unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -73,24 +85,14 @@
       }
     },
     {
-      "raw": "¼ teaspoon salt",
+      "raw": "¼ teaspoon  (0.25 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "¼ teaspoons ground black pepper",
-      "expected": {
-        "item": "ground black pepper",
-        "measurements": [
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
@@ -101,7 +103,25 @@
       }
     },
     {
-      "raw": "3  5-ounce cans solid white albacore tuna packed in water",
+      "raw": "¼ teaspoons  (0.25 teaspoons) ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3   (3 140g) 5-ounce cans solid white albacore tuna packed in water",
       "expected": {
         "item": "solid white albacore tuna packed in water",
         "measurements": [
@@ -110,12 +130,12 @@
             "unit": "5-ounce cans"
           }
         ],
-        "note": null,
+        "note": "3 140g",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons olive oil",
+      "raw": "2 tablespoons   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -129,7 +149,7 @@
       }
     },
     {
-      "raw": "2 teaspoons lemon juice",
+      "raw": "2 teaspoons   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -143,7 +163,7 @@
       }
     },
     {
-      "raw": "1 tablespoon + 1¼ teaspoons salt (divided)",
+      "raw": "1 tablespoon   + 1¼ teaspoons salt, divided",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -157,7 +177,7 @@
       }
     },
     {
-      "raw": "1 teaspoon ground black pepper",
+      "raw": "1 teaspoon   ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -171,13 +191,17 @@
       }
     },
     {
-      "raw": "12 ounces egg noodles",
+      "raw": "12 ounces  (340.2 g) egg noodles",
       "expected": {
         "item": "egg noodles",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
+          },
+          {
+            "amount": "340.2",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -185,7 +209,7 @@
       }
     },
     {
-      "raw": "4 tablespoons unsalted butter (divided)",
+      "raw": "4 tablespoons   unsalted butter, divided",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -199,13 +223,17 @@
       }
     },
     {
-      "raw": "10 ounces white mushrooms (sliced ¼-inch thick)",
+      "raw": "10 ounces  (283.5 g) white mushrooms, sliced ¼-inch thick",
       "expected": {
         "item": "white mushrooms",
         "measurements": [
           {
             "amount": "10",
             "unit": "oz"
+          },
+          {
+            "amount": "283.5",
+            "unit": "g"
           }
         ],
         "note": "sliced 1/4-inch thick",
@@ -213,7 +241,7 @@
       }
     },
     {
-      "raw": "1  yellow onion (finely chopped)",
+      "raw": "1   yellow onion, finely chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -227,7 +255,7 @@
       }
     },
     {
-      "raw": "1  red bell pepper (stemmed, seeded, and finely chopped)",
+      "raw": "1   red bell pepper, stemmed, seeded, and finely chopped",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -241,7 +269,7 @@
       }
     },
     {
-      "raw": "3 tablespoons all-purpose flour",
+      "raw": "3 tablespoons   all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -255,13 +283,17 @@
       }
     },
     {
-      "raw": "3½ cups half-and-half",
+      "raw": "3½ cups  (828.06 ml) half-and-half",
       "expected": {
         "item": "half-and-half",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
+          },
+          {
+            "amount": "828.06",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -269,13 +301,17 @@
       }
     },
     {
-      "raw": "1½ cups chicken broth",
+      "raw": "1½ cups  (352.5 ml) chicken broth",
       "expected": {
         "item": "chicken broth",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "352.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -283,13 +319,17 @@
       }
     },
     {
-      "raw": "3½ ounces Monterey Jack cheese (shredded)",
+      "raw": "3½ ounces  (99.22 g) Monterey Jack cheese, shredded",
       "expected": {
         "item": "Monterey Jack cheese",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "oz"
+          },
+          {
+            "amount": "99.22",
+            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -297,13 +337,17 @@
       }
     },
     {
-      "raw": "3½ ounces sharp cheddar cheese (shredded)",
+      "raw": "3½ ounces  (99.22 g) sharp cheddar cheese, shredded",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "oz"
+          },
+          {
+            "amount": "99.22",
+            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -311,13 +355,17 @@
       }
     },
     {
-      "raw": "1½ cups frozen peas",
+      "raw": "1½ cups  (217.5 g) frozen peas",
       "expected": {
         "item": "frozen peas",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "217.5",
+            "unit": "g"
           }
         ],
         "note": null,

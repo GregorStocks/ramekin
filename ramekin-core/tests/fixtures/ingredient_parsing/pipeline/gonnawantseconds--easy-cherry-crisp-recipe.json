@@ -3,7 +3,7 @@
   "recipe_slug": "easy-cherry-crisp-recipe",
   "ingredients": [
     {
-      "raw": "3  pounds fresh cherries, (pitted)",
+      "raw": "3  pounds fresh cherries, pitted",
       "expected": {
         "item": "fresh cherries",
         "measurements": [
@@ -129,17 +129,17 @@
       }
     },
     {
-      "raw": "3/4 cup unsalted butter (very cold, cut into cubes)",
+      "raw": "3/4 cup unsalted butter very cold, cut into cubes",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter very cold",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "very cold, cut into cubes",
-        "category": "Dairy & Eggs"
+        "note": "cut into cubes",
+        "category": "Other"
       }
     },
     {

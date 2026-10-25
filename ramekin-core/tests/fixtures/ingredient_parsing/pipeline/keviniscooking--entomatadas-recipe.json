@@ -3,7 +3,7 @@
   "recipe_slug": "entomatadas-recipe",
   "ingredients": [
     {
-      "raw": "6  roma tomatoes",
+      "raw": "6 roma tomatoes",
       "expected": {
         "item": "roma tomatoes",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/2  medium white onion",
+      "raw": "1/2 medium white onion",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "1  jalapeño pepper (or serrano (more heat))",
+      "raw": "1 jalapeño pepper or serrano (more heat)",
       "expected": {
-        "item": "jalapeño pepper",
+        "item": "jalapeño pepper or serrano",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or serrano (more heat)",
+        "note": "more heat",
         "category": "Produce"
       }
     },
@@ -115,21 +115,21 @@
       }
     },
     {
-      "raw": "1 cup vegetable oil (frying tortillas)",
+      "raw": "1 cup vegetable oil frying tortillas",
       "expected": {
-        "item": "vegetable oil",
+        "item": "vegetable oil frying tortillas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "frying tortillas",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "12  corn tortillas",
+      "raw": "12 corn tortillas",
       "expected": {
         "item": "corn tortillas",
         "measurements": [

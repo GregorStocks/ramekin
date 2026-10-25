@@ -147,9 +147,9 @@
       }
     },
     {
-      "raw": "1/2 cup (120 ml) extra-virgin olive oil",
+      "raw": "1/2 cup (120 ml) extra virgin olive oil",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",
@@ -274,6 +274,24 @@
         ],
         "note": null,
         "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
       }
     },
     {

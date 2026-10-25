@@ -3,6 +3,15 @@
   "recipe_slug": "2021-02-peanut-butter-cup-hot-",
   "ingredients": [
     {
+      "raw": "Instant Peanut Butter Cup Hot Cocoa Mix:",
+      "expected": {
+        "item": "Instant Peanut Butter Cup Hot Cocoa Mix:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
       "raw": "10 oz. peanut butter chips",
       "expected": {
         "item": "peanut butter chips",
@@ -17,7 +26,7 @@
       }
     },
     {
-      "raw": "1  cup confectioners&amp;#039; sugar",
+      "raw": "1  cup confectioners' sugar",
       "expected": {
         "item": "confectioners' sugar",
         "measurements": [
@@ -115,11 +124,11 @@
       }
     },
     {
-      "raw": "Instant peanut butter cup hot cocoa mix (from recipe above)",
+      "raw": "Instant peanut butter cup hot cocoa mix from recipe above",
       "expected": {
-        "item": "Instant peanut butter cup hot cocoa mix",
+        "item": "Instant peanut butter cup hot cocoa mix from recipe above",
         "measurements": [],
-        "note": "from recipe above",
+        "note": null,
         "category": "Other"
       }
     },
@@ -138,7 +147,7 @@
       }
     },
     {
-      "raw": "6  mini Reese&amp;#039;s peanut butter cups (unwrapped)",
+      "raw": "6 mini Reese's peanut butter cups unwrapped",
       "expected": {
         "item": "mini Reese's peanut butter cups",
         "measurements": [
@@ -152,7 +161,7 @@
       }
     },
     {
-      "raw": "1/4 cup Reese&amp;#039;s peanut butter chips",
+      "raw": "1/4 cup Reese's peanut butter chips",
       "expected": {
         "item": "Reese's peanut butter chips",
         "measurements": [

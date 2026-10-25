@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "4 cups (460g) powdered sugar",
+      "raw": "4 cups (460g) powdered sugar, divided",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -34,21 +34,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "divided",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 to 4 tablespoons whipping cream",
+      "raw": "2 to 4 tablespoons heavy cream, divided",
       "expected": {
-        "item": "whipping cream",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "2 to 4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "divided",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,13 +67,13 @@
       }
     },
     {
-      "raw": "Pinch kosher salt",
+      "raw": "1/8 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
-            "amount": null,
-            "unit": "pinch"
+            "amount": "0.13",
+            "unit": "tsp"
           }
         ],
         "note": null,

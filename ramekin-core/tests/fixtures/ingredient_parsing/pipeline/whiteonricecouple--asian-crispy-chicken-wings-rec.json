@@ -3,13 +3,17 @@
   "recipe_slug": "asian-crispy-chicken-wings-rec",
   "ingredients": [
     {
-      "raw": "2 pounds chicken wings (, rinsed and patted dry)",
+      "raw": "2 pounds  (907 g) chicken wings , rinsed and patted dry",
       "expected": {
         "item": "chicken wings",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
           }
         ],
         "note": "rinsed and patted dry",
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "salt (, to taste)",
+      "raw": "salt , to taste",
       "expected": {
         "item": "salt",
         "measurements": [],
@@ -26,7 +30,7 @@
       }
     },
     {
-      "raw": "black pepper  (, to taste)",
+      "raw": "black pepper  , to taste",
       "expected": {
         "item": "black pepper",
         "measurements": [],
@@ -35,13 +39,17 @@
       }
     },
     {
-      "raw": "1 Tablespoon cornstarch",
+      "raw": "1 Tablespoon  (15 ml) cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -49,13 +57,17 @@
       }
     },
     {
-      "raw": "1 Tablespoon water",
+      "raw": "1 Tablespoon  (15 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -63,13 +75,17 @@
       }
     },
     {
-      "raw": "1 Tablespoon oil",
+      "raw": "1 Tablespoon  (15 ml) oil",
       "expected": {
         "item": "oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -77,7 +93,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic (, finely minced)",
+      "raw": "2 cloves   garlic , finely minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -91,13 +107,17 @@
       }
     },
     {
-      "raw": "1 cup water",
+      "raw": "1 cup  (240 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -105,13 +125,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons sugar",
+      "raw": "2 Tablespoons  (30 ml) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -119,13 +143,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "1/2 teaspoon  (2.5 ml) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -133,41 +161,53 @@
       }
     },
     {
-      "raw": "2 Tablespoons fish sauce ( or soy sauce (We highly recommend fish sauce))",
+      "raw": "2 Tablespoons  (30 ml) fish sauce  or soy sauce (We highly recommend fish sauce)",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce or soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
-        "note": "or soy sauce (We highly recommend fish sauce)",
+        "note": "We highly recommend fish sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3 Tablespoons garlic chili sauce",
+      "raw": "3 Tablespoons  (45 ml) garlic chili sauce , tabasco sauce, or sriracha sauce. OR about 2 finely minced thai chilis. Use a little less of these if you want it more mild, or use more if you want it extra spicy!",
       "expected": {
-        "item": "garlic chili sauce",
+        "item": "garlic chili sauce, tabasco sauce, or sriracha sauce. OR about 2 finely minced thai chilis. Use a little less of these if you want it more mild, or use more if you want it extra spicy!",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 Tablespoon vinegar",
+      "raw": "1 Tablespoon  (15 ml) vinegar",
       "expected": {
         "item": "vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,

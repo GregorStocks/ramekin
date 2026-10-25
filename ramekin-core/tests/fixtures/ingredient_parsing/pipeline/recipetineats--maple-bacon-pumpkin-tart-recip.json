@@ -3,7 +3,7 @@
   "recipe_slug": "maple-bacon-pumpkin-tart-recip",
   "ingredients": [
     {
-      "raw": "1  sheet store bought frozen puff pastry (, thawed (25 cm x 25cm / 10\" x 10\"))",
+      "raw": "1 sheet store bought frozen puff pastry , thawed (25 cm x 25cm / 10\" x 10\")",
       "expected": {
         "item": "store bought frozen puff pastry",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "sheet"
           }
         ],
-        "note": "thawed (25 cm x 25cm / 10\" x 10\")",
+        "note": "25 cm x 25cm / 10\" x 10\", thawed",
         "category": "Other"
       }
     },
     {
-      "raw": "8 slices streaky bacon ((Note 1))",
+      "raw": "8 slices streaky bacon (Note 1)",
       "expected": {
         "item": "streaky bacon",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 1/2 tbsp maple syrup ((Note 2))",
+      "raw": "1 1/2 tbsp maple syrup (Note 2)",
       "expected": {
         "item": "maple syrup",
         "measurements": [
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "7 oz / 200g   butternut or Jap pumpkin (, peeled and roughly diced into 1.5cm/0.5\" cubes)",
+      "raw": "7 oz / 200g  butternut or Jap pumpkin , peeled and roughly diced into 1.5cm/0.5\" cubes",
       "expected": {
         "item": "butternut or Jap pumpkin",
         "measurements": [
@@ -72,7 +72,7 @@
       }
     },
     {
-      "raw": "1/2 tbsp olive oil ((only required if roasting the pumpkin))",
+      "raw": "1/2 tbsp olive oil (only required if roasting the pumpkin)",
       "expected": {
         "item": "olive oil",
         "measurements": [

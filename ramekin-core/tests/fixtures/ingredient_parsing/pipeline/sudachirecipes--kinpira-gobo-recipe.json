@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  dried red chili pepper (optional)",
+      "raw": "1 dried red chili pepper optional",
       "expected": {
         "item": "dried red chili pepper",
         "measurements": [
@@ -157,31 +157,31 @@
       }
     },
     {
-      "raw": "½ tsp Chinese-style chicken bouillon powder (or plant-based alternative)",
+      "raw": "½ tsp Chinese-style chicken bouillon powder or plant-based alternative",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder",
+        "item": "Chinese-style chicken bouillon powder or plant-based alternative",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or plant-based alternative",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "⅛ tsp dashi granules (use kombu dashi granules for plant-based diets)",
+      "raw": "⅛ tsp dashi granules use kombu dashi granules for plant-based diets",
       "expected": {
-        "item": "dashi granules",
+        "item": "dashi granules use kombu dashi granules for plant-based diets",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": "use kombu dashi granules for plant-based diets",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

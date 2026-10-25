@@ -3,15 +3,6 @@
   "recipe_slug": "2010-10-spiced-applesauce-cake",
   "ingredients": [
     {
-      "raw": "For cake",
-      "expected": {
-        "item": "For cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "2 cups (8 3/4 ounces or 250 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -258,10 +249,6 @@
       }
     },
     {
-      "raw": "For frosting",
-      "is_section_header": true
-    },
-    {
       "raw": "5 ounces (142 grams) cream cheese, softened",
       "expected": {
         "item": "cream cheese",
@@ -276,7 +263,6 @@
           }
         ],
         "note": "softened",
-        "section": "For Frosting",
         "category": "Cheese"
       }
     },
@@ -299,7 +285,6 @@
           }
         ],
         "note": "softened",
-        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -314,7 +299,6 @@
           }
         ],
         "note": null,
-        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -337,7 +321,6 @@
           }
         ],
         "note": null,
-        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -352,7 +335,6 @@
           }
         ],
         "note": null,
-        "section": "For Frosting",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,15 +3,6 @@
   "recipe_slug": "2012-05-rhubarb-snacking-cake",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "1 1/4 pound (565 grams) rhubarb, trimmed and cut into 1/2-inch lengths on the diagonal",
       "expected": {
         "item": "rhubarb",
@@ -194,10 +185,6 @@
       }
     },
     {
-      "raw": "Crumb",
-      "is_section_header": true
-    },
-    {
       "raw": "1 cup (125 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -212,7 +199,6 @@
           }
         ],
         "note": null,
-        "section": "Crumb",
         "category": "Baking"
       }
     },
@@ -231,7 +217,6 @@
           }
         ],
         "note": null,
-        "section": "Crumb",
         "category": "Baking"
       }
     },
@@ -246,7 +231,6 @@
           }
         ],
         "note": null,
-        "section": "Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -261,7 +245,6 @@
           }
         ],
         "note": null,
-        "section": "Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -288,7 +271,6 @@
           }
         ],
         "note": "melted",
-        "section": "Crumb",
         "category": "Dairy & Eggs"
       }
     }

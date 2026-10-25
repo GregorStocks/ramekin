@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "1 tablespoon honey (or granulated sugar)",
+      "raw": "1 tablespoon honey or granulated sugar",
       "expected": {
-        "item": "honey",
+        "item": "honey or granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or granulated sugar",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons salted butter (melted)",
+      "raw": "2 tablespoons salted butter melted",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 teaspoon Italian Seasoning ((Optional for extra flavor))",
+      "raw": "1 teaspoon Italian Seasoning (Optional for extra flavor)",
       "expected": {
         "item": "Italian Seasoning",
         "measurements": [

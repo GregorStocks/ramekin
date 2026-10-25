@@ -3,9 +3,9 @@
   "recipe_slug": "carnitas-salad-bowl-recipe",
   "ingredients": [
     {
-      "raw": "2-3 cups crunchy lettuce (chopped small)",
+      "raw": "2-3 cups romaine or iceberg lettuce (chopped small)",
       "expected": {
-        "item": "crunchy lettuce",
+        "item": "romaine or iceberg lettuce",
         "measurements": [
           {
             "amount": "2-3",
@@ -13,11 +13,25 @@
           }
         ],
         "note": "chopped small",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1  small tomato (sliced into thin wedges)",
+      "raw": "½ cup green cabbage (very thinly sliced and roughly chopped)",
+      "expected": {
+        "item": "green cabbage",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "very thinly sliced and roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1  small tomato (chopped into ½-inch pieces)",
       "expected": {
         "item": "tomato",
         "measurements": [
@@ -26,40 +40,12 @@
             "unit": "small"
           }
         ],
-        "note": "sliced into thin wedges",
+        "note": "chopped into 1/2-inch pieces",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4  avocado (sliced thin)",
-      "expected": {
-        "item": "avocado",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": null
-          }
-        ],
-        "note": "sliced thin",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1/8  small red onion (sliced very thin)",
-      "expected": {
-        "item": "red onion",
-        "measurements": [
-          {
-            "amount": "0.13",
-            "unit": "small"
-          }
-        ],
-        "note": "sliced very thin",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1/4 cup corn (frozen (thawed), canned (drained))",
+      "raw": "¼ cup corn (frozen (thawed) OR canned (drained))",
       "expected": {
         "item": "corn",
         "measurements": [
@@ -68,12 +54,12 @@
             "unit": "cup"
           }
         ],
-        "note": "frozen (thawed), canned (drained)",
+        "note": "frozen (thawed) OR canned (drained)",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup black beans (rinsed and drained (optional))",
+      "raw": "¼ cup black beans (rinsed and drained )",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -82,12 +68,26 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed and drained (optional)",
+        "note": "rinsed and drained",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/2 cup pulled pork carnitas",
+      "raw": "1 tablespoon small red onion (sliced very thin and roughly chopped)",
+      "expected": {
+        "item": "small red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "sliced very thin and roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "½ cup pulled pork carnitas",
       "expected": {
         "item": "pulled pork carnitas",
         "measurements": [
@@ -98,6 +98,20 @@
         ],
         "note": null,
         "category": "Other"
+      }
+    },
+    {
+      "raw": "¼  avocado (sliced thin)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin",
+        "category": "Produce"
       }
     },
     {
@@ -115,35 +129,25 @@
       }
     },
     {
-      "raw": "dash of kosher salt",
+      "raw": "kosher salt (adjust to taste)",
       "expected": {
         "item": "kosher salt",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "dash"
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "adjust to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "dash of freshly ground black pepper",
+      "raw": "freshly ground black pepper (adjust to taste)",
       "expected": {
         "item": "freshly ground black pepper",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "dash"
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "adjust to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2-3  lime wedges",
+      "raw": "2-3  lime wedges (adjust to taste)",
       "expected": {
         "item": "lime wedges",
         "measurements": [
@@ -152,12 +156,12 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "adjust to taste",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup corn chips or tortilla strips (optional)",
+      "raw": "½ cup corn chips or tortilla strips (OPTIONAL)",
       "expected": {
         "item": "corn chips or tortilla strips",
         "measurements": [
@@ -166,7 +170,7 @@
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "OPTIONAL",
         "category": "Other"
       }
     }

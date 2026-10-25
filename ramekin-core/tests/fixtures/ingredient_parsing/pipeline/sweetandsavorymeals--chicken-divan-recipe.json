@@ -3,21 +3,21 @@
   "recipe_slug": "chicken-divan-recipe",
   "ingredients": [
     {
-      "raw": "2 tablespoon butter (unsalted)",
+      "raw": "2 tablespoon butter unsalted",
       "expected": {
-        "item": "butter",
+        "item": "butter unsalted",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "unsalted",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 1/2 lbs. chicken breast (chopped into bite-size pieces)",
+      "raw": "1 1/2 lbs. chicken breast chopped into bite-size pieces",
       "expected": {
         "item": "chicken breast",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon salt (or to taste)",
+      "raw": "1/4 teaspoon salt or to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon black pepper (or to taste)",
+      "raw": "1/4 teaspoon black pepper or to taste",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1  small onion (finely diced)",
+      "raw": "1 small onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -227,17 +227,17 @@
       }
     },
     {
-      "raw": "2 cups chicken broth (low sodium)",
+      "raw": "2 cups chicken broth low sodium",
       "expected": {
-        "item": "chicken broth",
+        "item": "chicken broth low sodium",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "low sodium",
-        "category": "Canned Goods"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -311,7 +311,7 @@
       }
     },
     {
-      "raw": "4 ounces cream cheese (cubed and at room temperature)",
+      "raw": "4 ounces cream cheese cubed and at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -325,7 +325,7 @@
       }
     },
     {
-      "raw": "1 cup sharp cheddar cheese (freshly grated)",
+      "raw": "1 cup sharp cheddar cheese freshly grated",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
@@ -339,7 +339,7 @@
       }
     },
     {
-      "raw": "1/2 cup Parmesan cheese (freshly grated)",
+      "raw": "1/2 cup Parmesan cheese freshly grated",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
@@ -367,7 +367,7 @@
       }
     },
     {
-      "raw": "1 cup cheddar cheese (grated)",
+      "raw": "1 cup cheddar cheese grated",
       "expected": {
         "item": "cheddar cheese",
         "measurements": [
@@ -381,21 +381,21 @@
       }
     },
     {
-      "raw": "1/4 cup melted butter (unsalted)",
+      "raw": "1/4 cup melted butter unsalted",
       "expected": {
-        "item": "melted butter",
+        "item": "melted butter unsalted",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "unsalted",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 cup corn flakes (crushed)",
+      "raw": "2 cup corn flakes crushed",
       "expected": {
         "item": "corn flakes",
         "measurements": [

@@ -3,27 +3,35 @@
   "recipe_slug": "2025-09-brown-butter-banana-ca",
   "ingredients": [
     {
-      "raw": "1/2 cup salted butter (ideally European style)",
+      "raw": "½ cup  / 113 g salted butter, ideally European style",
       "expected": {
-        "item": "salted butter",
+        "item": "salted butter, ideally European style",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
-        "note": "ideally European style",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups all-purpose flour",
+      "raw": "2 cups  / 250 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "3/4 teaspoon baking powder",
+      "raw": "¾ teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -45,7 +53,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon baking soda",
+      "raw": "¼ teaspoon   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -59,41 +67,53 @@
       }
     },
     {
-      "raw": "1/4 teaspoon fine sea salt (increase to 1/2 teaspoon if using unsalted butter)",
+      "raw": "¼ teaspoon   fine sea salt, increase to 1/2 teaspoon if using unsalted butter",
       "expected": {
-        "item": "fine sea salt",
+        "item": "fine sea salt, increase to 1/2 teaspoon if using unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "increase to 1/2 teaspoon if using unsalted butter",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 large very ripe bananas (mashed (about 1 cup mashed))",
+      "raw": "3 large  / 300 g very ripe bananas, mashed (about 1 cup mashed)",
       "expected": {
         "item": "very ripe bananas",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
           }
         ],
-        "note": "mashed (about 1 cup mashed)",
+        "note": "about 1 cup mashed, mashed",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  / 200 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -101,7 +121,7 @@
       }
     },
     {
-      "raw": "2 large eggs (at room temperature)",
+      "raw": "2 large   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -115,13 +135,17 @@
       }
     },
     {
-      "raw": "3/4 cup full fat buttermilk",
+      "raw": "¾ cup  / 190 g full fat buttermilk",
       "expected": {
         "item": "full fat buttermilk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "190",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -129,13 +153,17 @@
       }
     },
     {
-      "raw": "2 tablespoons vegetable oil",
+      "raw": "2 tablespoons  / 28 g vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,7 +171,7 @@
       }
     },
     {
-      "raw": "1 tablespoon vanilla extract",
+      "raw": "1 tablespoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -157,13 +185,17 @@
       }
     },
     {
-      "raw": "6 oz 60-70% dark chocolate (finely chopped)",
+      "raw": "6 oz  / 170 g 60-70% dark chocolate, finely chopped",
       "expected": {
         "item": "60-70% dark chocolate",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
@@ -171,13 +203,17 @@
       }
     },
     {
-      "raw": "1/4 cup granulated sugar",
+      "raw": "¼ cup  / 50 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -185,13 +221,17 @@
       }
     },
     {
-      "raw": "6 tablespoons Dutch process cocoa powder (sifted)",
+      "raw": "6 tablespoons  / 40 g Dutch process cocoa powder, sifted",
       "expected": {
         "item": "Dutch process cocoa powder",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
         "note": "sifted",
@@ -199,7 +239,7 @@
       }
     },
     {
-      "raw": "pinch fine sea salt",
+      "raw": "pinch   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -213,13 +253,17 @@
       }
     },
     {
-      "raw": "3/4 cup heavy cream",
+      "raw": "¾ cup  / 180 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -227,13 +271,17 @@
       }
     },
     {
-      "raw": "2 tablespoons glucose syrup (or substitute corn syrup or golden syrup)",
+      "raw": "2 tablespoons  / 42 g glucose syrup, or substitute corn syrup or golden syrup",
       "expected": {
         "item": "glucose syrup",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
         "note": "or substitute corn syrup or golden syrup",
@@ -241,13 +289,17 @@
       }
     },
     {
-      "raw": "2 tablespoons butter",
+      "raw": "2 tablespoons  / 28 g butter",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -255,13 +307,17 @@
       }
     },
     {
-      "raw": "1/3 cup sour cream (at room temperature)",
+      "raw": "⅓ cup  / 80 g sour cream, at room temperature",
       "expected": {
         "item": "sour cream",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",

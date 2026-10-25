@@ -3,17 +3,17 @@
   "recipe_slug": "chicken-teriyaki-donburi-recip",
   "ingredients": [
     {
-      "raw": "500 g boneless chicken thigh (preferably skin-on)",
+      "raw": "500 g boneless chicken thigh preferably skin-on",
       "expected": {
-        "item": "boneless chicken thigh",
+        "item": "boneless chicken thigh preferably skin-on",
         "measurements": [
           {
             "amount": "500",
             "unit": "g"
           }
         ],
-        "note": "preferably skin-on",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "1 tbsp potato starch (katakuriko) (or cornstarch/tapioca starch)",
+      "raw": "1 tbsp potato starch (katakuriko) or cornstarch/tapioca starch",
       "expected": {
-        "item": "potato starch",
+        "item": "potato starch or cornstarch/tapioca starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "katakuriko, or cornstarch/tapioca starch",
+        "note": "katakuriko",
         "category": "Baking"
       }
     },
@@ -129,21 +129,21 @@
       }
     },
     {
-      "raw": "½ tbsp grated garlic (or garlic paste)",
+      "raw": "½ tbsp grated garlic or garlic paste",
       "expected": {
-        "item": "grated garlic",
+        "item": "grated garlic or garlic paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "or garlic paste",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tbsp dashi stock ((liquid, not powder) or water)",
+      "raw": "2 tbsp dashi stock (liquid, not powder) or water",
       "expected": {
         "item": "dashi stock or water",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "100 g green cabbage (shredded)",
+      "raw": "100 g green cabbage shredded",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -207,7 +207,7 @@
       }
     },
     {
-      "raw": "2  soft-boiled egg (boiled for 6 ½-8 minutes depending on preferred doneness.)",
+      "raw": "2 soft-boiled egg boiled for 6 ½-8 minutes depending on preferred doneness.",
       "expected": {
         "item": "soft-boiled egg",
         "measurements": [

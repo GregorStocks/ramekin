@@ -3,31 +3,31 @@
   "recipe_slug": "turkey-gravy-recipe",
   "ingredients": [
     {
-      "raw": "4 cups turkey broth ( or stock mixed with drippings)",
+      "raw": "4 cups turkey broth  or stock mixed with drippings",
       "expected": {
-        "item": "turkey broth",
+        "item": "turkey broth or stock",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "or stock mixed with drippings",
+        "note": "mixed with drippings",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2-3 tablespoons fresh herbs (parsley, thyme, sage)",
+      "raw": "2-3 tablespoons fresh herbs parsley, thyme, sage",
       "expected": {
-        "item": "fresh herbs",
+        "item": "fresh herbs parsley, thyme, sage",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": "parsley, thyme, sage",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "⅓ cup cold water (or cold broth)",
+      "raw": "⅓ cup cold water or cold broth",
       "expected": {
-        "item": "cold water",
+        "item": "cold water or cold broth",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "or cold broth",
+        "note": null,
         "category": "Beverages"
       }
     },
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "⅔ cup cold water (or cold broth)",
+      "raw": "⅔ cup cold water or cold broth",
       "expected": {
-        "item": "cold water",
+        "item": "cold water or cold broth",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "or cold broth",
+        "note": null,
         "category": "Beverages"
       }
     }

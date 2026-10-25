@@ -3,21 +3,21 @@
   "recipe_slug": "chai-tea-latte-recipe",
   "ingredients": [
     {
-      "raw": "2  cinnamon sticks, (broken into pieces)",
+      "raw": "2 cinnamon sticks, broken into pieces",
       "expected": {
-        "item": "cinnamon sticks",
+        "item": "cinnamon sticks, broken into pieces",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "broken into pieces",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tsp whole black peppercorns",
+      "raw": "2 teaspoon whole black peppercorns",
       "expected": {
         "item": "whole black peppercorns",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2  star anise",
+      "raw": "2 star anise",
       "expected": {
         "item": "star anise",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 tsp whole cloves",
+      "raw": "1 teaspoon whole cloves",
       "expected": {
         "item": "whole cloves",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2  cardamom pods",
+      "raw": "2 cardamom pods",
       "expected": {
         "item": "cardamom pods",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 2- inch piece fresh ginger (thinly sliced)",
+      "raw": "1 2- inch piece fresh ginger thinly sliced",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "2 tbsp loose-leaf black tea (or 6 black tea bags)",
+      "raw": "2 tablespoon loose-leaf black tea or 6 black tea bags",
       "expected": {
         "item": "loose-leaf black tea",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/3 cup pure maple syrup",
+      "raw": "⅓ cup pure maple syrup",
       "expected": {
         "item": "pure maple syrup",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2 cups chai tea ((see recipe above))",
+      "raw": "2 cups chai tea (see recipe above)",
       "expected": {
         "item": "chai tea",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/3 cup pure maple syrup",
+      "raw": "⅓ cup pure maple syrup",
       "expected": {
         "item": "pure maple syrup",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "3/4 cup unsweetened almond milk",
+      "raw": "¾ cup unsweetened almond milk",
       "expected": {
         "item": "unsweetened almond milk",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "3/4 cup full-fat coconut milk, (at room temperature)",
+      "raw": "¾ cup full-fat coconut milk, at room temperature",
       "expected": {
         "item": "full-fat coconut milk",
         "measurements": [

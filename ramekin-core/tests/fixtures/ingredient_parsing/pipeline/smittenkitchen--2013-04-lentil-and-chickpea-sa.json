@@ -3,15 +3,6 @@
   "recipe_slug": "2013-04-lentil-and-chickpea-sa",
   "ingredients": [
     {
-      "raw": "Lentils",
-      "expected": {
-        "item": "Lentils",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
-    },
-    {
       "raw": "Scant 1 cup dried green lentils (Puy or Casteluccio, if you can find them) lentils, picked and rinsed over",
       "expected": {
         "item": "dried green lentils lentils",
@@ -68,10 +59,6 @@
       }
     },
     {
-      "raw": "For the dressing and salad",
-      "is_section_header": true
-    },
-    {
       "raw": "2 teaspoons coriander seeds, toasted and ground**",
       "expected": {
         "item": "coriander seeds",
@@ -82,7 +69,6 @@
           }
         ],
         "note": "toasted and ground",
-        "section": "For the Dressing and Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,7 +83,6 @@
           }
         ],
         "note": "toasted and ground",
-        "section": "For the Dressing and Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,7 +97,6 @@
           }
         ],
         "note": null,
-        "section": "For the Dressing and Salad",
         "category": "Produce"
       }
     },
@@ -122,7 +106,6 @@
         "item": "Salt",
         "measurements": [],
         "note": "Maldon or another flaky sea salt if you’ve got it",
-        "section": "For the Dressing and Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,7 +120,6 @@
           }
         ],
         "note": null,
-        "section": "For the Dressing and Salad",
         "category": "Other"
       }
     },
@@ -152,7 +134,6 @@
           }
         ],
         "note": "plus more to taste",
-        "section": "For the Dressing and Salad",
         "category": "Produce"
       }
     },
@@ -167,7 +148,6 @@
           }
         ],
         "note": null,
-        "section": "For the Dressing and Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -182,7 +162,6 @@
           }
         ],
         "note": "from a 15-ounce can",
-        "section": "For the Dressing and Salad",
         "category": "Other"
       }
     },
@@ -197,7 +176,6 @@
           }
         ],
         "note": "optional, pith and flesh discarded, rind finely diced",
-        "section": "For the Dressing and Salad",
         "category": "Other"
       }
     },
@@ -212,7 +190,6 @@
           }
         ],
         "note": "thinly sliced into half-moons",
-        "section": "For the Dressing and Salad",
         "category": "Other"
       }
     },
@@ -222,7 +199,6 @@
         "item": "A handful of small, delicate cilantro or flat-leaf parsley sprigs",
         "measurements": [],
         "note": null,
-        "section": "For the Dressing and Salad",
         "category": "Produce"
       }
     },
@@ -232,7 +208,6 @@
         "item": "A scant 1/4 cup feta",
         "measurements": [],
         "note": "goat’s milk if you can find it, otherwise use what you can get",
-        "section": "For the Dressing and Salad",
         "category": "Other"
       }
     },
@@ -247,7 +222,6 @@
           }
         ],
         "note": "toasted in a dry pan until a shade or two darker",
-        "section": "For the Dressing and Salad",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "snickers-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "24  Oreo cookies (whole)",
+      "raw": "24   Oreo cookies, whole",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4 tablespoons unsalted butter (melted)",
+      "raw": "4 tablespoons   unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -31,13 +31,17 @@
       }
     },
     {
-      "raw": "32 ounces cream cheese (at room temperature)",
+      "raw": "32 ounces  (907.19 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
+          },
+          {
+            "amount": "907.19",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -45,13 +49,17 @@
       }
     },
     {
-      "raw": "1¼ cups granulated sugar",
+      "raw": "1¼ cups  (250 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -59,7 +67,7 @@
       }
     },
     {
-      "raw": "4  eggs (at room temperature)",
+      "raw": "4   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,13 +81,17 @@
       }
     },
     {
-      "raw": "¾ cup heavy cream",
+      "raw": "¾ cup  (178.5 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "178.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -87,7 +99,7 @@
       }
     },
     {
-      "raw": "1 tablespoon vanilla extract",
+      "raw": "1 tablespoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -101,7 +113,7 @@
       }
     },
     {
-      "raw": "20  fun size Snickers bars (coarsely chopped)",
+      "raw": "20   fun size Snickers bars, coarsely chopped",
       "expected": {
         "item": "fun size Snickers bars",
         "measurements": [

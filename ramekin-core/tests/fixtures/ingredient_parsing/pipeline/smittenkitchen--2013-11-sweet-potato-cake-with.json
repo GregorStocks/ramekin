@@ -3,15 +3,6 @@
   "recipe_slug": "2013-11-sweet-potato-cake-with",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "1 1/2 pounds sweet potatoes (about 2 to 3 medium or 2 large)",
       "expected": {
         "item": "sweet potatoes",
@@ -204,10 +195,6 @@
       }
     },
     {
-      "raw": "Frosting",
-      "is_section_header": true
-    },
-    {
       "raw": "3 large egg whites",
       "expected": {
         "item": "egg whites",
@@ -218,7 +205,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -233,7 +219,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -248,7 +233,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -263,7 +247,6 @@
           }
         ],
         "note": "will help stabilize egg whites, don’t worry if you don’t have it",
-        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -278,7 +261,6 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
         "category": "Baking"
       }
     }

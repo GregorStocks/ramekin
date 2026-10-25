@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "4 ounces Longhorn cheese, grated",
+      "raw": "4 ounces Longhorn cheese, grated (see note)",
       "expected": {
         "item": "Longhorn cheese",
         "measurements": [
@@ -40,7 +40,7 @@
             "unit": "oz"
           }
         ],
-        "note": "grated",
+        "note": "see note, grated",
         "category": "Cheese"
       }
     },

@@ -45,10 +45,6 @@
       }
     },
     {
-      "raw": "DRESSING:",
-      "is_section_header": true
-    },
-    {
       "raw": "1/4 cup canola oil",
       "expected": {
         "item": "canola oil",
@@ -59,7 +55,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -74,7 +69,6 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -89,13 +83,8 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "SALAD:",
-      "is_section_header": true
     },
     {
       "raw": "8 cups torn leaf lettuce",
@@ -108,7 +97,6 @@
           }
         ],
         "note": null,
-        "section": "Salad",
         "category": "Other"
       }
     },
@@ -123,7 +111,6 @@
           }
         ],
         "note": "chopped",
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -138,7 +125,6 @@
           }
         ],
         "note": "chopped",
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -153,7 +139,6 @@
           }
         ],
         "note": "chopped",
-        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -172,7 +157,6 @@
           }
         ],
         "note": null,
-        "section": "Salad",
         "category": "Other"
       }
     },
@@ -187,7 +171,6 @@
           }
         ],
         "note": null,
-        "section": "Salad",
         "category": "Snacks"
       }
     }

@@ -139,7 +139,7 @@
       }
     },
     {
-      "raw": "2 cups (480 ml) store-bought low-sodium beef stock or 2 teaspoons jarred beef stock base dissolved in 2 cups tap water",
+      "raw": "2 cups (480 ml) store-bought low-sodium beef stock or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water",
       "expected": {
         "item": "store-bought low-sodium beef stock",
         "measurements": [
@@ -152,7 +152,7 @@
             "unit": "ml"
           }
         ],
-        "note": "or 2 teaspoons jarred beef stock base dissolved in 2 cups tap water",
+        "note": "or 2 teaspoons reduced-sodium jarred beef stock base; such as Better Than Bouillon brand dissolved in 2 cups tap water",
         "category": "Canned Goods"
       }
     },
@@ -243,17 +243,17 @@
       }
     },
     {
-      "raw": "1/4 teaspoonDiamond Crystal kosher salt; for table salt use half as much by volume",
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt use half as much by volume",
       "expected": {
-        "item": "teaspoonDiamond Crystal kosher salt; for table salt use half as much by volume",
+        "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": null
+            "unit": "tsp"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {

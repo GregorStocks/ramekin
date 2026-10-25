@@ -74,6 +74,35 @@
       "expanded": true
     },
     {
+      "raw": "1  lime, (juiced and zest freshly grated)",
+      "expected": {
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lime"
+          }
+        ],
+        "note": "freshly grated",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1  lime, (juiced and zest freshly grated)",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lime"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
       "raw": "1  garlic clove, (minced)",
       "expected": {
         "item": "garlic clove",

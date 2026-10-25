@@ -3,27 +3,39 @@
   "recipe_slug": "cherry-filling-recipe",
   "ingredients": [
     {
-      "raw": "1.5 pounds fresh cherries (, un-pitted (about 5 cups) or 4 cups pitted)",
+      "raw": "1.5 pounds  (680 g) fresh cherries , un-pitted (about 5 cups) or 4 cups pitted",
       "expected": {
-        "item": "fresh cherries",
+        "item": "fresh cherries, un-pitted",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "cup"
           }
         ],
-        "note": "un-pitted (about 5 cups) or 4 cups pitted",
+        "note": "about 5 cups; or 4 cups pitted",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup water",
+      "raw": "1 cup  (240 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -31,27 +43,35 @@
       }
     },
     {
-      "raw": "1/4 cup sugar (, or more to personal taste)",
+      "raw": "1/4 cup  (50 g) sugar , or more to personal taste",
       "expected": {
-        "item": "sugar",
+        "item": "sugar, or more to personal taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
-        "note": "or more to personal taste",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tablespoon fresh lemon juice",
+      "raw": "1 Tablespoon  (15 ml) fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -59,13 +79,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons water",
+      "raw": "2 Tablespoons  (30 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -73,13 +97,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons cornstarch",
+      "raw": "2 Tablespoons  (30 ml) cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,

@@ -3,16 +3,16 @@
   "recipe_slug": "2018-06-dark-chocolate-coconut",
   "ingredients": [
     {
-      "raw": "2 1/4  bars (164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark)",
+      "raw": "2 1/4 bars 164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
       "expected": {
-        "item": "Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
+        "item": "164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "bar"
           }
         ],
-        "note": "164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
+        "note": null,
         "category": "Other"
       }
     },
@@ -39,7 +39,7 @@
       }
     },
     {
-      "raw": "4  eggs",
+      "raw": "4 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [

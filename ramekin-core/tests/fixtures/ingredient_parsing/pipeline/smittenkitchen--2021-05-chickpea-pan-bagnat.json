@@ -60,6 +60,35 @@
       "expanded": true
     },
     {
+      "raw": "Zest and juice of half a lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Zest and juice of half a lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
       "raw": "1 tablespoon chopped flat-leaf parsley",
       "expected": {
         "item": "chopped flat-leaf parsley",

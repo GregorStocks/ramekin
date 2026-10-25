@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  eggs (beaten)",
+      "raw": "2 eggs beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic (minced)",
+      "raw": "2 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,17 +87,17 @@
       }
     },
     {
-      "raw": "1/2 tsp oregano (dried)",
+      "raw": "1/2 tsp oregano dried",
       "expected": {
-        "item": "oregano",
+        "item": "oregano dried",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "dried",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,31 +115,31 @@
       }
     },
     {
-      "raw": "1/4 cup chopped fresh basil (can substitute 1 TBSP dried basil, if you'd like))",
+      "raw": "1/4 cup chopped fresh basil can substitute 1 TBSP dried basil, if you'd like)",
       "expected": {
-        "item": "chopped fresh basil",
+        "item": "chopped fresh basil can substitute 1 TBSP dried basil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "can substitute 1 TBSP dried basil, if you'd like",
-        "category": "Produce"
+        "note": "if you'd like)",
+        "category": "Other"
       }
     },
     {
-      "raw": "5  rolls (I like to use French Rolls)",
+      "raw": "5 rolls I like to use French Rolls",
       "expected": {
-        "item": "rolls",
+        "item": "rolls I like to use French Rolls",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "I like to use French Rolls",
-        "category": "Bakery & Bread"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 cup Mozzarella cheese (shredded)",
+      "raw": "1 cup Mozzarella cheese shredded",
       "expected": {
         "item": "Mozzarella cheese",
         "measurements": [

@@ -3,17 +3,17 @@
   "recipe_slug": "best-chipotle-hummus-recipe",
   "ingredients": [
     {
-      "raw": "1 can chickpeas (15.5 oz (liquid reserved))",
+      "raw": "1 can chickpeas 15.5 oz (liquid reserved)",
       "expected": {
-        "item": "chickpeas",
+        "item": "chickpeas 15.5 oz",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "15.5 oz (liquid reserved)",
-        "category": "Canned Goods"
+        "note": "liquid reserved",
+        "category": "Other"
       }
     },
     {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2-3  chipotle peppers (packed in adobo sauce)",
+      "raw": "2-3 chipotle peppers (packed in adobo sauce)",
       "expected": {
         "item": "chipotle peppers",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "3  ice cubes",
+      "raw": "3 ice cubes",
       "expected": {
         "item": "ice cubes",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "a hearty drizzle of olive oil  ((I used a spicy chili oil one!))",
+      "raw": "a hearty drizzle of olive oil  (I used a spicy chili oil one!)",
       "expected": {
         "item": "a hearty drizzle of olive oil",
         "measurements": [],
@@ -142,11 +142,11 @@
       }
     },
     {
-      "raw": "minced chipotle pepper (for the chipotle lovers out there!)",
+      "raw": "minced chipotle pepper for the chipotle lovers out there!",
       "expected": {
-        "item": "minced chipotle pepper",
+        "item": "minced chipotle pepper for the chipotle lovers out there!",
         "measurements": [],
-        "note": "for the chipotle lovers out there!",
+        "note": null,
         "category": "Other"
       }
     },

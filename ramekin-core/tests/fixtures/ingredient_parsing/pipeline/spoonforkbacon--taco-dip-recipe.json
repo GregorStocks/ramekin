@@ -152,7 +152,7 @@
       }
     },
     {
-      "raw": "2  chipotle peppers in adobo",
+      "raw": "2 chipotle peppers in adobo",
       "expected": {
         "item": "chipotle peppers in adobo",
         "measurements": [
@@ -166,7 +166,7 @@
       }
     },
     {
-      "raw": "1  lime (juiced)",
+      "raw": "1 lime juiced",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -194,7 +194,7 @@
       }
     },
     {
-      "raw": "2  roma tomatoes (seeded and diced)",
+      "raw": "2 roma tomatoes seeded and diced",
       "expected": {
         "item": "roma tomatoes",
         "measurements": [

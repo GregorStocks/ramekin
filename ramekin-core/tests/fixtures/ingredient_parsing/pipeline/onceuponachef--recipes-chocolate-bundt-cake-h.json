@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-chocolate-bundt-cake-h",
   "ingredients": [
     {
-      "raw": "½ cup coffee ((any temperature is fine))",
+      "raw": "½ cup coffee (any temperature is fine)",
       "expected": {
         "item": "coffee",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4 oz semi-sweet chocolate, (coarsely chopped)",
+      "raw": "4 oz semi-sweet chocolate, coarsely chopped",
       "expected": {
         "item": "semi-sweet chocolate",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,21 +73,21 @@
       }
     },
     {
-      "raw": "2⅔  cups  all-purpose flour, (spooned into measuring cup and leveled-off)",
+      "raw": "2⅔  cups  all-purpose flour, spooned into measuring cup and leveled-off",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour, spooned into measuring cup and leveled-off",
         "measurements": [
           {
             "amount": "2.67",
             "unit": "cup"
           }
         ],
-        "note": "spooned into measuring cup and leveled-off",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "⅓ cup natural cocoa powder, (such as Hershey's)",
+      "raw": "⅓ cup natural cocoa powder, such as Hershey's",
       "expected": {
         "item": "natural cocoa powder",
         "measurements": [
@@ -189,7 +189,7 @@
       }
     },
     {
-      "raw": "2/3 cup granulated sugar",
+      "raw": "⅔ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -245,7 +245,7 @@
       }
     },
     {
-      "raw": "1½ oz unsweetened chocolate, (coarsely chopped)",
+      "raw": "1½ oz unsweetened chocolate, coarsely chopped",
       "expected": {
         "item": "unsweetened chocolate",
         "measurements": [

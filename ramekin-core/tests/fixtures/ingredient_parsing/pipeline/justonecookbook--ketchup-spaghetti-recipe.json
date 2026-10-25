@@ -3,7 +3,7 @@
   "recipe_slug": "ketchup-spaghetti-recipe",
   "ingredients": [
     {
-      "raw": "⅓ cup ketchup",
+      "raw": "⅓ cup ketchup (for an authentic flavor, use Kagome Tomato Ketchup from the Japanese grocery store)",
       "expected": {
         "item": "ketchup",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for an authentic flavor, use Kagome Tomato Ketchup from the Japanese grocery store",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ Tbsp milk ((optional; for a creamier taste))",
+      "raw": "½ Tbsp milk (optional; for a creamier taste)",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 tsp sugar ((optional; for an authentic Japanese taste))",
+      "raw": "1 tsp sugar (optional; for an authentic Japanese taste)",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "½  onion ((3.5 oz, 100 g))",
+      "raw": "½ onion (3.5 oz, 100 g)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -81,7 +81,7 @@
       }
     },
     {
-      "raw": "¼–½  green bell pepper ((2.5 oz, 70 g))",
+      "raw": "¼–½ green bell pepper (2.5 oz, 70 g)",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -103,7 +103,7 @@
       }
     },
     {
-      "raw": "4  mushrooms ((2.5 oz, 70 g))",
+      "raw": "4 mushrooms (2.5 oz, 70 g)",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -125,7 +125,7 @@
       }
     },
     {
-      "raw": "5 oz sausages",
+      "raw": "5 oz sausages (I use 4–6 kurobuta or arabiki sausages from the Japanese market; you can substitute another type of sausage, ham, bacon, etc.)",
       "expected": {
         "item": "sausages",
         "measurements": [
@@ -134,7 +134,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "I use 4-6 kurobuta or arabiki sausages from the Japanese market; you can substitute another type of sausage, ham, bacon, etc.",
         "category": "Meat & Seafood"
       }
     },
@@ -223,7 +223,7 @@
       }
     },
     {
-      "raw": "¼ cup reserved pasta water ((you may not need it; check your sauce and add gradually))",
+      "raw": "¼ cup reserved pasta water (you may not need it; check your sauce and add gradually)",
       "expected": {
         "item": "reserved pasta water",
         "measurements": [

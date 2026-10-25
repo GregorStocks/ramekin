@@ -3,13 +3,17 @@
   "recipe_slug": "2022-12-persimmon-pie-html",
   "ingredients": [
     {
-      "raw": "1½ cups all-purpose flour",
+      "raw": "1½ cups  / 187 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "187",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon fine sea salt",
+      "raw": "¼ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -31,7 +35,7 @@
       }
     },
     {
-      "raw": "1/8 teaspoon baking powder",
+      "raw": "⅛ teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -45,7 +49,7 @@
       }
     },
     {
-      "raw": "1/2 cup (1 stick) very cold unsalted butter (cut into cubes)",
+      "raw": "½ cup  / 113 g (1 stick) very cold unsalted butter, cut into cubes",
       "expected": {
         "item": "very cold unsalted butter",
         "measurements": [
@@ -56,6 +60,10 @@
           {
             "amount": "1",
             "unit": "stick"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "cut into cubes",
@@ -63,7 +71,7 @@
       }
     },
     {
-      "raw": "1 teaspoon apple cider vinegar",
+      "raw": "1 teaspoon   apple cider vinegar",
       "expected": {
         "item": "apple cider vinegar",
         "measurements": [
@@ -77,7 +85,7 @@
       }
     },
     {
-      "raw": "3 to 5 tablespoons ice water (as needed)",
+      "raw": "3 to 5 tablespoons   ice water, as needed",
       "expected": {
         "item": "ice water",
         "measurements": [
@@ -91,27 +99,31 @@
       }
     },
     {
-      "raw": "8  large ripe Fuyu* persimmons (enough to make 2 cups of puree)",
+      "raw": "8   large ripe Fuyu* persimmons, enough to make 2 cups of puree",
       "expected": {
-        "item": "ripe Fuyu* persimmons",
+        "item": "ripe Fuyu* persimmons, enough to make 2 cups of puree",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": "enough to make 2 cups of puree",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "3/4 cup evaporated milk",
+      "raw": "¾ cup  / 192 g evaporated milk",
       "expected": {
         "item": "evaporated milk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "192",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -119,13 +131,17 @@
       }
     },
     {
-      "raw": "½ cup packed light brown sugar",
+      "raw": "½ cup  / 105 g packed light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "105",
+            "unit": "g"
           }
         ],
         "note": "packed",
@@ -133,7 +149,7 @@
       }
     },
     {
-      "raw": "1 tablespoon all-purpose flour",
+      "raw": "1 tablespoon   all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -147,7 +163,7 @@
       }
     },
     {
-      "raw": "1½ teaspoons ground cinnamon",
+      "raw": "1½ teaspoons   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -161,7 +177,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon ground ginger",
+      "raw": "½ teaspoon   ground ginger",
       "expected": {
         "item": "ground ginger",
         "measurements": [
@@ -175,7 +191,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon fine sea salt",
+      "raw": "½ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -189,7 +205,7 @@
       }
     },
     {
-      "raw": "1/8 teaspoon ground allspice",
+      "raw": "⅛ teaspoon   ground allspice",
       "expected": {
         "item": "ground allspice",
         "measurements": [
@@ -203,7 +219,7 @@
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -217,7 +233,7 @@
       }
     },
     {
-      "raw": "1  large egg yolk",
+      "raw": "1   large egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -231,7 +247,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [

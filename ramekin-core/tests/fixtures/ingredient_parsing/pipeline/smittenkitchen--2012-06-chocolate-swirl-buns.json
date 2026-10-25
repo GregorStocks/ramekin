@@ -3,10 +3,6 @@
   "recipe_slug": "2012-06-chocolate-swirl-buns",
   "ingredients": [
     {
-      "raw": "Dough",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 cup (120 ml) milk, preferably whole",
       "expected": {
         "item": "milk",
@@ -21,7 +17,6 @@
           }
         ],
         "note": "preferably whole",
-        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,7 +35,6 @@
           }
         ],
         "note": "plus a pinch of granulated sugar",
-        "section": "Dough",
         "category": "Other"
       }
     },
@@ -59,7 +53,6 @@
           }
         ],
         "note": null,
-        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -74,7 +67,6 @@
           }
         ],
         "note": null,
-        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -93,7 +85,6 @@
           }
         ],
         "note": "plus more for work surface",
-        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -108,7 +99,6 @@
           }
         ],
         "note": null,
-        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,13 +117,8 @@
           }
         ],
         "note": "at room temperature, plus additional for bowl and muffin tins",
-        "section": "Dough",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45 grams) unsalted butter, at room temperature",
@@ -150,7 +135,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -169,7 +153,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -188,7 +171,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -203,7 +185,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,18 +199,7 @@
           }
         ],
         "note": "optional",
-        "section": "Filling",
         "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "Egg wash (optional)",
-      "expected": {
-        "item": "Egg wash",
-        "measurements": [],
-        "note": "optional",
-        "section": "Filling",
-        "category": "Dairy & Eggs"
       }
     },
     {
@@ -243,7 +213,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,7 +231,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

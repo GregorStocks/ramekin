@@ -3,15 +3,6 @@
   "recipe_slug": "2012-02-cheddar-beer-and-musta",
   "ingredients": [
     {
-      "raw": "Bread",
-      "expected": {
-        "item": "Bread",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
-    },
-    {
       "raw": "4 tablespoons (55 grams) unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -160,10 +151,6 @@
       }
     },
     {
-      "raw": "Filling",
-      "is_section_header": true
-    },
-    {
       "raw": "3 tablespoon (42 grams) unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -178,7 +165,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -197,7 +183,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Other"
       }
     },
@@ -216,7 +201,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -231,7 +215,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -250,7 +233,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,7 +251,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -288,7 +269,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -298,7 +278,6 @@
         "item": "Several grinds black pepper",
         "measurements": [],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -317,7 +296,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Cheese"
       }
     }

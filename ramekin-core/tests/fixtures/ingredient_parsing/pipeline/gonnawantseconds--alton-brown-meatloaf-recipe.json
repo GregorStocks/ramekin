@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/2  large yellow onion (roughly chopped)",
+      "raw": "1/2 large yellow onion roughly chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -87,21 +87,21 @@
       }
     },
     {
-      "raw": "1  carrot (peeled and cut into 1 inch pieces)",
+      "raw": "1 carrot peeled and cut into 1 inch pieces",
       "expected": {
-        "item": "carrot",
+        "item": "carrot peeled and cut into 1 inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "peeled and cut into 1 inch pieces",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3 cloves garlic (peeled)",
+      "raw": "3 cloves garlic peeled",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/2  red bell pepper",
+      "raw": "1/2 red bell pepper",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [

@@ -17,20 +17,16 @@
       }
     },
     {
-      "raw": "30 pitted Medjool dates (about 2-inches each), soaked in warm water for 5 minutes, then drained",
+      "raw": "30 pitted Medjool dates (about 2 inches each), soaked in warm water for 5 minutes, then drained",
       "expected": {
         "item": "pitted Medjool dates, soaked in warm water for 5 minutes",
         "measurements": [
           {
             "amount": "30",
             "unit": null
-          },
-          {
-            "amount": "2",
-            "unit": "inches each"
           }
         ],
-        "note": "about 2-inches each, then drained",
+        "note": "about 2 inches each, then drained",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -53,11 +49,11 @@
       }
     },
     {
-      "raw": "Metal or wooden toothpicks (see notes)",
+      "raw": "Metal or wooden toothpicks",
       "expected": {
         "item": "Metal or wooden toothpicks",
         "measurements": [],
-        "note": "see notes",
+        "note": null,
         "category": "Other"
       }
     }

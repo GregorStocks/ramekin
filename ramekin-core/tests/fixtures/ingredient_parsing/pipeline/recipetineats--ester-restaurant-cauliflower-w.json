@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "3/4 cup + 1 tbsp   extra virgin olive oil (, separated)",
+      "raw": "3/4 cup + 1 tbsp  extra virgin olive oil , separated",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 tbsp brown rice vinegar ((or rice vinegar or apple cider vinegar))",
+      "raw": "2 tbsp brown rice vinegar (or rice vinegar or apple cider vinegar)",
       "expected": {
         "item": "brown rice vinegar",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 tsp salt ((plus more to taste))",
+      "raw": "1 tsp salt (plus more to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "1  large head of cauliflower ((Note 1))",
+      "raw": "1 large head of cauliflower (Note 1)",
       "expected": {
         "item": "cauliflower",
         "measurements": [
@@ -124,16 +124,16 @@
       }
     },
     {
-      "raw": "1/2  lemon (, juice only)",
+      "raw": "1/2 lemon , juice only",
       "expected": {
-        "item": "lemon",
+        "item": "lemon, juice only",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "juice only",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "1/2 cup almonds (, roughly chopped and lightly toasted in a dry frypan)",
+      "raw": "1/2 cup almonds , roughly chopped and lightly toasted in a dry frypan",
       "expected": {
         "item": "almonds",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh mint leaves ((packed))",
+      "raw": "1/2 cup fresh mint leaves (packed)",
       "expected": {
         "item": "fresh mint leaves",
         "measurements": [

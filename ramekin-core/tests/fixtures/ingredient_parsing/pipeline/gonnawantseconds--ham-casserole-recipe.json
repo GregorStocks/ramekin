@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "6 tablespoons butter,  (melted)",
+      "raw": "6 tablespoons butter,  melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 1/2 pounds  ham (about 4 1/2-5 cups cubed), (cut into 1/2 cubes)",
+      "raw": "1 1/2 pounds  ham (about 4 1/2-5 cups cubed), cut into 1/2 cubes",
       "expected": {
         "item": "ham",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 cup yellow onion, (chopped)",
+      "raw": "1 cup yellow onion, chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 cup celery, (finely minced)",
+      "raw": "1 cup celery, finely minced",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic, (minced)",
+      "raw": "4 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -199,21 +199,21 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh thyme leaves, (stripped off stems)",
+      "raw": "1 tablespoon fresh thyme leaves, stripped off stems",
       "expected": {
-        "item": "fresh thyme leaves",
+        "item": "fresh thyme leaves, stripped off stems",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "stripped off stems",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons fresh sage leaves, (chopped)",
+      "raw": "2 teaspoons fresh sage leaves, chopped",
       "expected": {
         "item": "fresh sage leaves",
         "measurements": [
@@ -227,7 +227,7 @@
       }
     },
     {
-      "raw": "2 cups sharp cheddar cheese, (shredded)",
+      "raw": "2 cups sharp cheddar cheese, shredded",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "4 ounces cream cheese (softened)",
+      "raw": "4 ounces cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -255,7 +255,7 @@
       }
     },
     {
-      "raw": "1 cup frozen petites peas, (thawed and drained)",
+      "raw": "1 cup frozen petites peas, thawed and drained",
       "expected": {
         "item": "frozen petites peas",
         "measurements": [

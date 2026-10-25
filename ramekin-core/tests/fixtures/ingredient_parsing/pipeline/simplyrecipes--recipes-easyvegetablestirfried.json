@@ -17,17 +17,17 @@
       }
     },
     {
-      "raw": "1 cup chopped broccoli (crowns and stems)",
+      "raw": "1 cup broccoli crowns and stems",
       "expected": {
-        "item": "chopped broccoli",
+        "item": "broccoli crowns and stems",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "crowns and stems",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "Salt and freshly ground pepper to taste",
+      "raw": "Salt and freshly ground pepper, to taste",
       "expected": {
         "item": "Salt and freshly ground pepper",
         "measurements": [],
@@ -166,7 +166,7 @@
       }
     },
     {
-      "raw": "1/4 cup low-sodium soy sauce, plus more for serving or 3 tablespoons regular soy sauce and 1 tablespoon water, plus more for serving",
+      "raw": "1/4 cup low-sodium soy sauce, plus more for serving",
       "expected": {
         "item": "low-sodium soy sauce",
         "measurements": [
@@ -175,21 +175,21 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for serving or 3 tablespoons regular soy sauce and 1 tablespoon water, plus more for serving",
+        "note": "plus more for serving",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon sesame oil (regular or spicy)",
+      "raw": "1 tablespoon sesame oil, regular or spicy",
       "expected": {
-        "item": "sesame oil",
+        "item": "sesame oil, regular or spicy",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "regular or spicy",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },

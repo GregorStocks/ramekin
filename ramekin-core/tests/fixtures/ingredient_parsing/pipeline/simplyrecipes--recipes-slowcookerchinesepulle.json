@@ -17,9 +17,9 @@
       }
     },
     {
-      "raw": "2 1/2 teaspoons of Chinese 5-spice powder*",
+      "raw": "2 1/2 teaspoons Chinese Five Spice powder",
       "expected": {
-        "item": "Chinese 5-spice powder",
+        "item": "Chinese Five Spice powder",
         "measurements": [
           {
             "amount": "2.5",
@@ -27,7 +27,7 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "3 Tbsp soy sauce",
+      "raw": "3 tablespoons soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3 Tbsp honey",
+      "raw": "3 tablespoons honey",
       "expected": {
         "item": "honey",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2 Tbsp dry sherry or Shaoxing cooking wine",
+      "raw": "2 tablespoons dry sherry or Shaoxing cooking wine",
       "expected": {
         "item": "dry sherry or Shaoxing cooking wine",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2 Tbsp minced fresh ginger",
+      "raw": "2 tablespoons minced fresh ginger",
       "expected": {
         "item": "minced fresh ginger",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "2 Tbsp minced garlic",
+      "raw": "2 tablespoons minced garlic",
       "expected": {
         "item": "minced garlic",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "12 Hawaiian dinner rolls",
+      "raw": "12 Hawaiian dinner rolls, for serving",
       "expected": {
         "item": "Hawaiian dinner rolls",
         "measurements": [
@@ -124,12 +124,12 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for serving",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "1 large scallion sliced",
+      "raw": "1 large scallion, sliced, for serving",
       "expected": {
         "item": "scallion",
         "measurements": [
@@ -138,7 +138,7 @@
             "unit": "large"
           }
         ],
-        "note": "sliced",
+        "note": "sliced, for serving",
         "category": "Produce"
       }
     }

@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 cup carrots (diced)",
+      "raw": "1 cup carrots, diced",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "½ cup celery (diced)",
+      "raw": "½ cup celery, diced",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 cup onion (diced (about ½ a medium-sized onion))",
+      "raw": "1 cup onion, diced (about ½ a medium-sized onion)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -96,12 +96,12 @@
             "unit": "cup"
           }
         ],
-        "note": "diced (about 1/2 a medium-sized onion)",
+        "note": "about 1/2 a medium-sized onion, diced",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves  garlic (minced)",
+      "raw": "3 cloves  garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -171,21 +171,21 @@
       }
     },
     {
-      "raw": "1 cup milk (or cream or half-and-half)",
+      "raw": "1 cup milk, or cream or half-and-half",
       "expected": {
-        "item": "milk",
+        "item": "milk, or cream or half-and-half",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or cream or half-and-half",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 cups chicken  (cooked and shredded)",
+      "raw": "3 cups chicken , cooked and shredded",
       "expected": {
         "item": "chicken",
         "measurements": [
@@ -227,7 +227,7 @@
       }
     },
     {
-      "raw": "1 egg beaten (for egg wash (optional))",
+      "raw": "1 egg beaten, for egg wash (optional)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -236,7 +236,7 @@
             "unit": null
           }
         ],
-        "note": "for egg wash (optional), beaten",
+        "note": "optional, beaten, for egg wash",
         "category": "Dairy & Eggs"
       }
     }

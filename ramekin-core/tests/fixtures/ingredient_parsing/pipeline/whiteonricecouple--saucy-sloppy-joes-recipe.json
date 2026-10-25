@@ -3,13 +3,17 @@
   "recipe_slug": "saucy-sloppy-joes-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds ground beef ((preferably a leaner meat, 85-93% lean))",
+      "raw": "2 pounds  (907. g) ground beef (preferably a leaner meat, 85-93% lean)",
       "expected": {
         "item": "ground beef",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
           }
         ],
         "note": "preferably a leaner meat, 85-93% lean",
@@ -17,21 +21,25 @@
       }
     },
     {
-      "raw": "1 Tablespoon vegetable oil (, or preferred cooking oil)",
+      "raw": "1 Tablespoon  (15 ml) vegetable oil , or preferred cooking oil",
       "expected": {
-        "item": "vegetable oil",
+        "item": "vegetable oil, or preferred cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
-        "note": "or preferred cooking oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 medium onion (, diced)",
+      "raw": "1 medium   onion , diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -45,27 +53,35 @@
       }
     },
     {
-      "raw": "1 cup ketchup (, *see head note)",
+      "raw": "1 cup  (240 g) ketchup , *see head note",
       "expected": {
-        "item": "ketchup",
+        "item": "ketchup, *see head note",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
-        "note": "*see head note",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/2 cup tomato sauce",
+      "raw": "1/2 cup  (120 g) tomato sauce",
       "expected": {
         "item": "tomato sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -73,13 +89,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons mustard",
+      "raw": "2 Tablespoons  (30 ml) mustard",
       "expected": {
         "item": "mustard",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -87,27 +107,35 @@
       }
     },
     {
-      "raw": "2 Tablespoons fish sauce (, soy sauce, or Worcestershire sauce)",
+      "raw": "2 Tablespoons  (30 ml) fish sauce , soy sauce, or Worcestershire sauce",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce, soy sauce, or Worcestershire sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
-        "note": "soy sauce, or Worcestershire sauce",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon garlic powder",
+      "raw": "1 teaspoon  (5 ml) garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -115,13 +143,17 @@
       }
     },
     {
-      "raw": "1 teaspoon chili powder",
+      "raw": "1 teaspoon  (5 ml) chili powder",
       "expected": {
         "item": "chili powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -129,13 +161,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon Kosher salt (, or to taste)",
+      "raw": "1/2 teaspoon  (2.5 ml) Kosher salt , or to taste",
       "expected": {
         "item": "Kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": "or to taste",
@@ -143,7 +179,7 @@
       }
     },
     {
-      "raw": "black pepper (, to taste)",
+      "raw": "black pepper , to taste",
       "expected": {
         "item": "black pepper",
         "measurements": [],
@@ -152,13 +188,17 @@
       }
     },
     {
-      "raw": "2 cups shredded cheddar cheese (, optional)",
+      "raw": "2 cups  (226 g) shredded cheddar cheese , optional",
       "expected": {
         "item": "shredded cheddar cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": "optional",
@@ -166,7 +206,7 @@
       }
     },
     {
-      "raw": "8  burger buns (, warmed or toasted)",
+      "raw": "8   burger buns , warmed or toasted",
       "expected": {
         "item": "burger buns",
         "measurements": [
@@ -180,16 +220,16 @@
       }
     },
     {
-      "raw": "shredded cheese (optional, (if you didn’t add to sloppy Joe mixture already))",
+      "raw": "shredded cheese optional, (if you didn’t add to sloppy Joe mixture already)",
       "expected": {
         "item": "shredded cheese",
         "measurements": [],
-        "note": "optional, (if you didn’t add to sloppy Joe mixture already)",
+        "note": "if you didn’t add to sloppy Joe mixture already, optional",
         "category": "Cheese"
       }
     },
     {
-      "raw": "Pickles (, optional)",
+      "raw": "Pickles , optional",
       "expected": {
         "item": "Pickles",
         "measurements": [],

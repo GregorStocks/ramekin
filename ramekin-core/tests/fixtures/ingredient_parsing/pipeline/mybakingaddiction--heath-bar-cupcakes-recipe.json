@@ -3,10 +3,6 @@
   "recipe_slug": "heath-bar-cupcakes-recipe",
   "ingredients": [
     {
-      "raw": "For the Cupcakes",
-      "is_section_header": true
-    },
-    {
       "raw": "1 (18.25 ounce) package devil’s food cake mix",
       "expected": {
         "item": "devil’s food cake mix",
@@ -21,7 +17,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -40,7 +35,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -55,7 +49,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -70,7 +63,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cupcakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -85,7 +77,6 @@
           }
         ],
         "note": "lightly beaten",
-        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -100,7 +91,6 @@
           }
         ],
         "note": null,
-        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -115,7 +105,6 @@
           }
         ],
         "note": "dissolved in 1/2 cup warm water",
-        "section": "For the Cupcakes",
         "category": "Beverages"
       }
     },
@@ -130,13 +119,8 @@
           }
         ],
         "note": null,
-        "section": "For the Cupcakes",
         "category": "Other"
       }
-    },
-    {
-      "raw": "For the Buttercream",
-      "is_section_header": true
     },
     {
       "raw": "4 sticks unsalted butter, softened",
@@ -149,7 +133,6 @@
           }
         ],
         "note": "softened",
-        "section": "For the Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -164,7 +147,6 @@
           }
         ],
         "note": null,
-        "section": "For the Buttercream",
         "category": "Spices & Seasonings"
       }
     },
@@ -179,7 +161,6 @@
           }
         ],
         "note": null,
-        "section": "For the Buttercream",
         "category": "Baking"
       }
     },
@@ -194,7 +175,6 @@
           }
         ],
         "note": "sifted",
-        "section": "For the Buttercream",
         "category": "Baking"
       }
     },
@@ -209,13 +189,8 @@
           }
         ],
         "note": null,
-        "section": "For the Buttercream",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "For the Ganache",
-      "is_section_header": true
     },
     {
       "raw": "4 oz bittersweet chocolate, chopped into very small pieces",
@@ -228,7 +203,6 @@
           }
         ],
         "note": "chopped into very small pieces",
-        "section": "For the Ganache",
         "category": "Baking"
       }
     },
@@ -243,7 +217,6 @@
           }
         ],
         "note": null,
-        "section": "For the Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -258,7 +231,6 @@
           }
         ],
         "note": null,
-        "section": "For the Ganache",
         "category": "Baking"
       }
     },
@@ -273,7 +245,6 @@
           }
         ],
         "note": null,
-        "section": "For the Ganache",
         "category": "Baking"
       }
     },
@@ -288,7 +259,6 @@
           }
         ],
         "note": null,
-        "section": "For the Ganache",
         "category": "Baking"
       }
     },
@@ -303,7 +273,6 @@
           }
         ],
         "note": "chopped into large pieces",
-        "section": "For the Ganache",
         "category": "Other"
       }
     }

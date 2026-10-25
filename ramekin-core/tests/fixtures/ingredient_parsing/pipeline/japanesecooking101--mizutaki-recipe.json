@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  white fish filets (cut into 2\"-3\")",
+      "raw": "4 white fish filets (cut into 2″-3″)",
       "expected": {
         "item": "white fish filets",
         "measurements": [
@@ -26,12 +26,12 @@
             "unit": null
           }
         ],
-        "note": "cut into 2\"-3\"",
+        "note": "cut into 2″-3″",
         "category": "Other"
       }
     },
     {
-      "raw": "4  chicken thighs (cut into 4 pieces)",
+      "raw": "4 chicken thighs (cut into 4 pieces)",
       "expected": {
         "item": "chicken thighs",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "8  shrimps",
+      "raw": "8 shrimps",
       "expected": {
         "item": "shrimps",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2  Nappa cabbage (cut 2\" width)",
+      "raw": "1/2 Nappa cabbage (cut 2″ width)",
       "expected": {
         "item": "Nappa cabbage",
         "measurements": [
@@ -68,12 +68,12 @@
             "unit": null
           }
         ],
-        "note": "cut 2\" width",
+        "note": "cut 2″ width",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  Naganegi (long onions, cut diagonally)",
+      "raw": "2 Naganegi (long onions, cut diagonally)",
       "expected": {
         "item": "Naganegi",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1  bunch Kikuna (cut 2\" long)",
+      "raw": "1 bunch Kikuna (cut 2″ long)",
       "expected": {
         "item": "Kikuna",
         "measurements": [
@@ -96,12 +96,12 @@
             "unit": "bunch"
           }
         ],
-        "note": "cut 2\" long",
+        "note": "cut 2″ long",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  package tofu (cut 1\" width)",
+      "raw": "1 package tofu (cut 1″ width)",
       "expected": {
         "item": "tofu",
         "measurements": [
@@ -110,12 +110,12 @@
             "unit": "package"
           }
         ],
-        "note": "cut 1\" width",
+        "note": "cut 1″ width",
         "category": "Produce"
       }
     },
     {
-      "raw": "8  shiitake mushrooms",
+      "raw": "8 shiitake mushrooms",
       "expected": {
         "item": "shiitake mushrooms",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1  package enoki mushrooms",
+      "raw": "1 package enoki mushrooms",
       "expected": {
         "item": "enoki mushrooms",
         "measurements": [

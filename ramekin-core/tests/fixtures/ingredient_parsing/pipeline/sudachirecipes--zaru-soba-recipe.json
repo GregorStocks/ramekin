@@ -3,9 +3,9 @@
   "recipe_slug": "zaru-soba-recipe",
   "ingredients": [
     {
-      "raw": "200 ml dashi stock",
+      "raw": "200 ml dashi stock Use kombu and shiitake dashi to make it plant-based",
       "expected": {
-        "item": "dashi stock",
+        "item": "dashi stock Use kombu and shiitake dashi to make it plant-based",
         "measurements": [
           {
             "amount": "200",
@@ -13,7 +13,7 @@
           }
         ],
         "note": null,
-        "category": "Canned Goods"
+        "category": "Other"
       }
     },
     {
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1  dried shiitake mushroom",
+      "raw": "1 dried shiitake mushroom",
       "expected": {
         "item": "dried shiitake mushroom",
         "measurements": [
@@ -73,34 +73,30 @@
       }
     },
     {
-      "raw": "120 g dry soba noodles (approx 60g/2oz per portion)",
+      "raw": "120 g dry soba noodles approx 60g/2oz per portion",
       "expected": {
-        "item": "dry soba noodles",
+        "item": "dry soba noodles approx 60g/2oz per portion",
         "measurements": [
           {
             "amount": "120",
             "unit": "g"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
-        "note": "approx 60g/2oz per portion",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "ice cubes (for cooling)",
+      "raw": "ice cubes for cooling",
       "expected": {
-        "item": "ice cubes",
+        "item": "ice cubes for cooling",
         "measurements": [],
-        "note": "for cooling",
-        "category": "Frozen"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tbsp kizami nori (shredded nori) (optional)",
+      "raw": "2 tbsp kizami nori (shredded nori) optional",
       "expected": {
         "item": "kizami nori",
         "measurements": [

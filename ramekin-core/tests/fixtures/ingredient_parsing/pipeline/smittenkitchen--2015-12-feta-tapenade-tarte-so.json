@@ -3,89 +3,6 @@
   "recipe_slug": "2015-12-feta-tapenade-tarte-so",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Chocolate Chunk Granola Bars and Oven Ribs, Even Better",
-      "expected": {
-        "item": "Months Ago: Chocolate Chunk Granola Bars and Oven Ribs, Even Better",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Cherry Almond Dutch Baby",
-      "expected": {
-        "item": "Years Ago: Cherry Almond Dutch Baby",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Pickled Vegetable Sandwich Slaw and Peach and Pecan Sandy Crumble",
-      "expected": {
-        "item": "Years Ago: Pickled Vegetable Sandwich Slaw and Peach and Pecan Sandy Crumble",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Triple Berry Buttermilk Bundt and Chopped Salad with Feta, Lime and Mint",
-      "expected": {
-        "item": "Years Ago: Triple Berry Buttermilk Bundt and Chopped Salad with Feta, Lime and Mint",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "4.5 Years Ago: Blueberry Yogurt Multigrain Pancakes",
-      "expected": {
-        "item": "Years Ago: Blueberry Yogurt Multigrain Pancakes",
-        "measurements": [
-          {
-            "amount": "4.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Filling",
-      "is_section_header": true
-    },
-    {
       "raw": "1/2 cup sundried tomatoes in oil, drained",
       "expected": {
         "item": "sundried tomatoes in oil",
@@ -96,7 +13,6 @@
           }
         ],
         "note": "drained",
-        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -111,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -126,7 +41,6 @@
           }
         ],
         "note": "or 2 teaspoons chopped fresh oregano leaves; thyme and rosemary would work too",
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,7 +55,6 @@
           }
         ],
         "note": "peeled",
-        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -156,7 +69,6 @@
           }
         ],
         "note": "plus more to loosen if needed",
-        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -166,13 +78,8 @@
         "item": "Salt and freshly ground black pepper or red pepper flakes",
         "measurements": [],
         "note": "to taste",
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
-    },
-    {
-      "raw": "Assembly",
-      "is_section_header": true
     },
     {
       "raw": "2 packages puffed pastry (leave in fridge overnight to thaw)",
@@ -185,7 +92,6 @@
           }
         ],
         "note": "leave in fridge overnight to thaw",
-        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -200,7 +106,6 @@
           }
         ],
         "note": "for egg wash, beaten with 1 teaspoon water",
-        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -215,13 +120,8 @@
           }
         ],
         "note": "optional",
-        "section": "Assembly",
         "category": "Other"
       }
-    },
-    {
-      "raw": "Dip",
-      "is_section_header": true
     },
     {
       "raw": "6 ounces feta, crumbled",
@@ -234,7 +134,6 @@
           }
         ],
         "note": "crumbled",
-        "section": "Dip",
         "category": "Cheese"
       }
     },
@@ -249,7 +148,6 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Dip",
         "category": "Cheese"
       }
     },
@@ -264,7 +162,6 @@
           }
         ],
         "note": null,
-        "section": "Dip",
         "category": "Oils & Vinegars"
       }
     },
@@ -279,7 +176,6 @@
           }
         ],
         "note": null,
-        "section": "Dip",
         "category": "Produce"
       }
     },
@@ -289,7 +185,6 @@
         "item": "Coarse or kosher salt",
         "measurements": [],
         "note": "changed from 1/2 teaspoon, which could be overkill if your feta is very salty, to taste",
-        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -299,7 +194,6 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,16 +3,16 @@
   "recipe_slug": "2019-04-limoncello-almond-cake",
   "ingredients": [
     {
-      "raw": "4  eggs (at room temperature)",
+      "raw": "4 eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -146,16 +146,16 @@
       }
     },
     {
-      "raw": "8 oz. cream cheese (at room temperature)",
+      "raw": "8 oz. cream cheese at room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese at room temperature",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
         "category": "Cheese"
       }
     },
@@ -256,7 +256,7 @@
       }
     },
     {
-      "raw": "3-4  large eggs",
+      "raw": "3-4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -284,7 +284,7 @@
       }
     },
     {
-      "raw": "1 tablespoons vegetable shortening or coconut oil (plus more for greasing egg shells)",
+      "raw": "1 tablespoons vegetable shortening or coconut oil plus more for greasing egg shells",
       "expected": {
         "item": "vegetable shortening or coconut oil",
         "measurements": [

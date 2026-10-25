@@ -87,35 +87,30 @@
       }
     },
     {
-      "raw": "600 g boneless chicken thigh (skin-on (or chicken breast))",
+      "raw": "600 g boneless chicken thigh skin-on (or chicken breast)",
       "expected": {
-        "item": "boneless chicken thigh",
+        "item": "boneless chicken thigh skin-on",
         "measurements": [
           {
             "amount": "600",
             "unit": "g"
           }
         ],
-        "note": "skin-on (or chicken breast)",
+        "note": "or chicken breast",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 pinch salt and pepper",
+      "raw": "salt and pepper",
       "expected": {
         "item": "salt and pepper",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "pinch"
-          }
-        ],
+        "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "45 g all-purpose flour (for coating)",
+      "raw": "45 g all-purpose flour for coating",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -129,9 +124,9 @@
       }
     },
     {
-      "raw": "100 g panko breadcrumbs",
+      "raw": "100 g panko breadcrumbs coarse flakes or coarse homemade crumbs",
       "expected": {
-        "item": "panko breadcrumbs",
+        "item": "panko breadcrumbs coarse flakes or coarse homemade crumbs",
         "measurements": [
           {
             "amount": "100",
@@ -139,7 +134,7 @@
           }
         ],
         "note": null,
-        "category": "Bakery & Bread"
+        "category": "Other"
       }
     },
     {
@@ -157,7 +152,7 @@
       }
     },
     {
-      "raw": "2  egg",
+      "raw": "2 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -171,25 +166,25 @@
       }
     },
     {
-      "raw": "100 g all-purpose flour (for the batter)",
+      "raw": "100 g all-purpose flour for the batter",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour for the batter",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": "for the batter",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "cooking oil (for deep frying)",
+      "raw": "cooking oil neutral, high smoke point",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil neutral, high smoke point",
         "measurements": [],
-        "note": "for deep frying",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "best-cut-out-sugar-cookie-reci",
   "ingredients": [
     {
-      "raw": "1 cup salted butter (softened)",
+      "raw": "1 cup salted butter softened",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 cup&nbsp; granulated sugar",
+      "raw": "1 cup  granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "2  large eggs (room temperature)",
+      "raw": "2 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "4&nbsp; cups&nbsp; powdered sugar (sifted&nbsp;)",
+      "raw": "4  cups  powdered sugar sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "3-4 Tablespoons milk (room temperature)",
+      "raw": "3-4 Tablespoons milk room temperature",
       "expected": {
-        "item": "milk",
+        "item": "milk room temperature",
         "measurements": [
           {
             "amount": "3-4",
             "unit": "tbsp"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "Gel food coloring (optional)",
+      "raw": "Gel food coloring optional",
       "expected": {
         "item": "Gel food coloring",
         "measurements": [],

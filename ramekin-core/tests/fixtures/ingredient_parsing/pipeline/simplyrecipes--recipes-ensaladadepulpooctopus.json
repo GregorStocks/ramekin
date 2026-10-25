@@ -3,13 +3,13 @@
   "recipe_slug": "recipes-ensaladadepulpooctopus",
   "ingredients": [
     {
-      "raw": "One 2 pound octopus, cleaned",
+      "raw": "2 pounds octopus, cleaned",
       "expected": {
-        "item": "2 pound octopus",
+        "item": "octopus",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "2",
+            "unit": "lb"
           }
         ],
         "note": "cleaned",
@@ -109,7 +109,7 @@
       }
     },
     {
-      "raw": "1/2 cup (loose) chopped fresh cilantro, including tender stems",
+      "raw": "1/2 cup loosely packed chopped fresh cilantro, including tender stems",
       "expected": {
         "item": "chopped fresh cilantro",
         "measurements": [
@@ -118,7 +118,7 @@
             "unit": "cup"
           }
         ],
-        "note": "loose, including tender stems",
+        "note": "including tender stems, loosely packed",
         "category": "Produce"
       }
     },
@@ -137,7 +137,7 @@
       }
     },
     {
-      "raw": "2 Tbsp lime juice",
+      "raw": "2 tablespoon lime juice",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -151,7 +151,7 @@
       }
     },
     {
-      "raw": "2 Tbsp cider vinegar",
+      "raw": "2 tablespoon cider vinegar",
       "expected": {
         "item": "cider vinegar",
         "measurements": [

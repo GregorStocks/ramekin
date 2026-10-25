@@ -97,15 +97,6 @@
       }
     },
     {
-      "raw": "Pears",
-      "expected": {
-        "item": "Pears",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
       "raw": "4 cups (950 ml) water",
       "expected": {
         "item": "water",
@@ -178,10 +169,6 @@
       }
     },
     {
-      "raw": "Almond Filling",
-      "is_section_header": true
-    },
-    {
       "raw": "2/3 cup (75 grams) blanched slivered almonds",
       "expected": {
         "item": "blanched slivered almonds",
@@ -196,7 +183,6 @@
           }
         ],
         "note": null,
-        "section": "Almond Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -215,7 +201,6 @@
           }
         ],
         "note": null,
-        "section": "Almond Filling",
         "category": "Baking"
       }
     },
@@ -234,7 +219,6 @@
           }
         ],
         "note": null,
-        "section": "Almond Filling",
         "category": "Baking"
       }
     },
@@ -257,7 +241,6 @@
           }
         ],
         "note": "room temperature",
-        "section": "Almond Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -272,7 +255,6 @@
           }
         ],
         "note": null,
-        "section": "Almond Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -291,7 +273,6 @@
           }
         ],
         "note": "or 2 teaspoons brandy (optional)",
-        "section": "Almond Filling",
         "category": "Baking"
       }
     }

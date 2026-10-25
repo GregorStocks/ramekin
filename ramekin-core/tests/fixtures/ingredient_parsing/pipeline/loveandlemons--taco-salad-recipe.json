@@ -3,7 +3,7 @@
   "recipe_slug": "taco-salad-recipe",
   "ingredients": [
     {
-      "raw": "2  corn tortillas (sliced into strips)",
+      "raw": "2 corn tortillas, sliced into strips",
       "expected": {
         "item": "corn tortillas",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "Extra-virgin olive oil (for drizzling)",
+      "raw": "Extra-virgin olive oil, for drizzling",
       "expected": {
         "item": "Extra-virgin olive oil",
         "measurements": [],
@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "1  medium head romaine lettuce (chopped)",
+      "raw": "1 medium head romaine lettuce, chopped",
       "expected": {
         "item": "romaine lettuce",
         "measurements": [
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "½ cup cooked black beans (drained and rinsed)",
+      "raw": "½ cup cooked black beans, drained and rinsed",
       "expected": {
         "item": "cooked black beans",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "2  red radishes (thinly sliced)",
+      "raw": "2 red radishes, thinly sliced",
       "expected": {
         "item": "red radishes",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "1  avocado (sliced)",
+      "raw": "1 avocado, sliced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "Jalapeno slices (optional)",
+      "raw": "Jalapeno slices, optional",
       "expected": {
         "item": "Jalapeno slices",
         "measurements": [],
@@ -119,11 +119,11 @@
       }
     },
     {
-      "raw": "Cilantro Lime Dressing (the creamy avocado variation)",
+      "raw": "Cilantro Lime Dressing, the creamy avocado variation",
       "expected": {
-        "item": "Cilantro Lime Dressing",
+        "item": "Cilantro Lime Dressing, the creamy avocado variation",
         "measurements": [],
-        "note": "the creamy avocado variation",
+        "note": null,
         "category": "Other"
       }
     },
@@ -137,7 +137,7 @@
       }
     },
     {
-      "raw": "Lime wedges (for serving)",
+      "raw": "Lime wedges, for serving",
       "expected": {
         "item": "Lime wedges",
         "measurements": [],
@@ -160,7 +160,7 @@
       }
     },
     {
-      "raw": "8 ounces shiitake mushrooms (stemmed and diced)",
+      "raw": "8 ounces shiitake mushrooms, stemmed and diced",
       "expected": {
         "item": "shiitake mushrooms",
         "measurements": [
@@ -202,9 +202,9 @@
       }
     },
     {
-      "raw": "1 teaspoon chili powder",
+      "raw": "1 teaspoon chili powder, or taco seasoning",
       "expected": {
-        "item": "chili powder",
+        "item": "chili powder, or taco seasoning",
         "measurements": [
           {
             "amount": "1",

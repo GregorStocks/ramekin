@@ -87,16 +87,16 @@
       }
     },
     {
-      "raw": "One 12-count pack square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
+      "raw": "1 (12-count pack) square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
       "expected": {
-        "item": "12-count pack square soft white dinner rolls",
+        "item": "square soft white dinner rolls",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "such as Kings Hawaiian Sweet Rolls",
+        "note": "12-count pack, such as Kings Hawaiian Sweet Rolls",
         "category": "Other"
       }
     },
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "⅔ pound sliced Swiss cheese",
+      "raw": "⅔ lb sliced Swiss cheese",
       "expected": {
         "item": "sliced Swiss cheese",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "½ pound sliced Black Forest ham",
+      "raw": "½ lb sliced Black Forest ham",
       "expected": {
         "item": "sliced Black Forest ham",
         "measurements": [

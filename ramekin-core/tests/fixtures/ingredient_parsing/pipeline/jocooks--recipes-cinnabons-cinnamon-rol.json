@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1½ cups powdered sugar (also known as icing sugar, or confectioner's sugar)",
+      "raw": "1½ cups powdered sugar (also known as icing sugar, or confectioner’s sugar)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -166,7 +166,7 @@
             "unit": "cup"
           }
         ],
-        "note": "also known as icing sugar, or confectioner's sugar",
+        "note": "also known as icing sugar, or confectioner’s sugar",
         "category": "Baking"
       }
     },

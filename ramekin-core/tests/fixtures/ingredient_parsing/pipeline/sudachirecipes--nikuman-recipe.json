@@ -87,31 +87,31 @@
       }
     },
     {
-      "raw": "50 ml water (lukewarm)",
+      "raw": "50 ml water lukewarm",
       "expected": {
-        "item": "water",
+        "item": "water lukewarm",
         "measurements": [
           {
             "amount": "50",
             "unit": "ml"
           }
         ],
-        "note": "lukewarm",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "25 ml milk (whole milk)",
+      "raw": "25 ml milk whole milk",
       "expected": {
-        "item": "milk",
+        "item": "milk whole milk",
         "measurements": [
           {
             "amount": "25",
             "unit": "ml"
           }
         ],
-        "note": "whole milk",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "50 g onion (finely diced)",
+      "raw": "50 g onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "50 g canned bamboo shoots (finely diced)",
+      "raw": "50 g canned bamboo shoots finely diced",
       "expected": {
         "item": "canned bamboo shoots",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "30 g fresh shiitake mushroom (finely diced)",
+      "raw": "30 g fresh shiitake mushroom finely diced",
       "expected": {
         "item": "fresh shiitake mushroom",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "15 g boiled wood ear mushroom (diced)",
+      "raw": "15 g boiled wood ear mushroom diced",
       "expected": {
         "item": "boiled wood ear mushroom",
         "measurements": [
@@ -199,30 +199,30 @@
       }
     },
     {
-      "raw": "1 tsp grated ginger root (or ginger paste)",
+      "raw": "1 tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp grated garlic (or garlic paste)",
+      "raw": "1 tsp grated garlic or garlic paste",
       "expected": {
-        "item": "grated garlic",
+        "item": "grated garlic or garlic paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or garlic paste",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -255,17 +255,17 @@
       }
     },
     {
-      "raw": "1 tsp yellow miso paste (awase) (awase)",
+      "raw": "1 tsp yellow miso paste (awase) awase",
       "expected": {
-        "item": "yellow miso paste",
+        "item": "yellow miso paste awase",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "awase, awase",
-        "category": "Condiments & Sauces"
+        "note": "awase",
+        "category": "Other"
       }
     },
     {
@@ -367,45 +367,45 @@
       }
     },
     {
-      "raw": "1 tsp Chinese-style chicken bouillon powder (based on 1 tsp = 200ml soup ratio, scale to your brand&amp;#39;s strength)",
+      "raw": "1 tsp Chinese-style chicken bouillon powder based on 1 tsp = 200ml soup ratio, scale to your brand's strength",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder",
+        "item": "Chinese-style chicken bouillon powder based on 1 tsp = 200ml soup ratio, scale to your brand's strength",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "based on 1 tsp = 200ml soup ratio, scale to your brand's strength",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tbsp cold water (for slurry)",
+      "raw": "1 tbsp cold water for slurry",
       "expected": {
-        "item": "cold water",
+        "item": "cold water for slurry",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "for slurry",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tsp potato starch (katakuriko) (for slurry)",
+      "raw": "1 tsp potato starch (katakuriko) for slurry",
       "expected": {
-        "item": "potato starch",
+        "item": "potato starch for slurry",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "katakuriko, for slurry",
-        "category": "Baking"
+        "note": "katakuriko",
+        "category": "Other"
       }
     }
   ]

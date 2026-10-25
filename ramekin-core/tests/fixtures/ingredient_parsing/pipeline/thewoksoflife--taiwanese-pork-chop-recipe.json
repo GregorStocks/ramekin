@@ -3,21 +3,29 @@
   "recipe_slug": "taiwanese-pork-chop-recipe",
   "ingredients": [
     {
-      "raw": "4  bone-in pork chops",
+      "raw": "4 bone-in pork chops (about 2.5 lbs/1kg; we used bone-in pork loin end chops because they're fattier than center cut pork chops)",
       "expected": {
         "item": "bone-in pork chops",
         "measurements": [
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "2.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "about 2.5 lbs/1kg; we used bone-in pork loin end chops because they're fattier than center cut pork chops",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "5 cloves garlic ((grated))",
+      "raw": "5 cloves garlic (grated)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "3 tablespoons water ((plus 1/2 cup, divided))",
+      "raw": "3 tablespoons water (plus 1/2 cup, divided)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -129,7 +137,7 @@
       }
     },
     {
-      "raw": "1 teaspoon potato starch ((Plus ½ cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch))",
+      "raw": "1 teaspoon potato starch (Plus ½ cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch)",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -143,7 +151,7 @@
       }
     },
     {
-      "raw": "vegetable oil ((for frying))",
+      "raw": "vegetable oil (for frying)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [],
@@ -166,7 +174,7 @@
       }
     },
     {
-      "raw": "1  dried red chili",
+      "raw": "1 dried red chili",
       "expected": {
         "item": "dried red chili",
         "measurements": [
@@ -180,7 +188,7 @@
       }
     },
     {
-      "raw": "1 clove garlic ((chopped))",
+      "raw": "1 clove garlic (chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -208,7 +216,7 @@
       }
     },
     {
-      "raw": "2-2.5 cups pickled mustard greens ((chopped))",
+      "raw": "2-2.5 cups pickled mustard greens (chopped)",
       "expected": {
         "item": "pickled mustard greens",
         "measurements": [
@@ -222,7 +230,7 @@
       }
     },
     {
-      "raw": "1 small head napa cabbage ((washed and roughly chopped); can substitute any other leafy green))",
+      "raw": "1 small head napa cabbage (washed and roughly chopped); can substitute any other leafy green)",
       "expected": {
         "item": "napa cabbage ; can substitute any other leafy green)",
         "measurements": [
@@ -250,7 +258,7 @@
       }
     },
     {
-      "raw": "1 slice ginger ((optional))",
+      "raw": "1 slice ginger (optional)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -264,7 +272,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic ((sliced))",
+      "raw": "3 cloves garlic (sliced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -278,7 +286,7 @@
       }
     },
     {
-      "raw": "salt ((to taste))",
+      "raw": "salt (to taste)",
       "expected": {
         "item": "salt",
         "measurements": [],
@@ -287,7 +295,7 @@
       }
     },
     {
-      "raw": "4-6  tea eggs",
+      "raw": "4-6 tea eggs (See our tea egg recipe. Note, they should be made the night before you plan to serve for optimal flavor. You can also substitute with plain hard-boiled eggs.)",
       "expected": {
         "item": "tea eggs",
         "measurements": [
@@ -296,12 +304,12 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "See our tea egg recipe. Note, they should be made the night before you plan to serve for optimal flavor. You can also substitute with plain hard-boiled eggs.",
         "category": "Other"
       }
     },
     {
-      "raw": "6 cups cooked white rice",
+      "raw": "6 cups cooked white rice (See our guide on perfect stovetop rice! Otherwise, be sure to time your rice cooker appropriately before you start frying the pork chops)",
       "expected": {
         "item": "cooked white rice",
         "measurements": [
@@ -310,7 +318,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "See our guide on perfect stovetop rice! Otherwise, be sure to time your rice cooker appropriately before you start frying the pork chops",
         "category": "Pasta & Rice"
       }
     }

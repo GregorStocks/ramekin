@@ -3,13 +3,17 @@
   "recipe_slug": "2022-08-blueberry-cream-cheese",
   "ingredients": [
     {
-      "raw": "6 oz full fat cream cheese (at room temperature)",
+      "raw": "6 oz  / 170 g full fat cream cheese, at room temperature",
       "expected": {
         "item": "full fat cream cheese",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "¼ cup powdered sugar (sifted)",
+      "raw": "¼ cup  / 30 g powdered sugar, sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": "sifted",
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -45,7 +53,7 @@
       }
     },
     {
-      "raw": "½ cup (1 stick) unsalted butter (at room temperature)",
+      "raw": "½ cup  / 113 g (1 stick) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -56,6 +64,10 @@
           {
             "amount": "1",
             "unit": "stick"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -63,13 +75,17 @@
       }
     },
     {
-      "raw": "1 cup granulated sugar (plus more for topping)",
+      "raw": "1 cup  / 200 g granulated sugar, plus more for topping",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": "plus more for topping",
@@ -77,7 +93,7 @@
       }
     },
     {
-      "raw": "2  large eggs (at room temperature)",
+      "raw": "2   large eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -91,13 +107,17 @@
       }
     },
     {
-      "raw": "1 cup sour cream",
+      "raw": "1 cup  / 240 g sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -105,7 +125,7 @@
       }
     },
     {
-      "raw": "1 teaspoon baking soda",
+      "raw": "1 teaspoon   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -119,13 +139,17 @@
       }
     },
     {
-      "raw": "1 ⅔ cup all-purpose flour",
+      "raw": "1 ⅔ cup  / 210 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.67",
             "unit": "cup"
+          },
+          {
+            "amount": "210",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -133,7 +157,7 @@
       }
     },
     {
-      "raw": "1 ½ teaspoons baking powder",
+      "raw": "1 ½ teaspoons   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -147,7 +171,7 @@
       }
     },
     {
-      "raw": "½ teaspoon fine sea salt",
+      "raw": "½ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -161,7 +185,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -175,7 +199,7 @@
       }
     },
     {
-      "raw": "½ teaspoon almond extract",
+      "raw": "½ teaspoon   almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -189,13 +213,17 @@
       }
     },
     {
-      "raw": "1 cup fresh blueberries*",
+      "raw": "1 cup  / 140 g fresh blueberries*",
       "expected": {
         "item": "fresh blueberries",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
           }
         ],
         "note": null,

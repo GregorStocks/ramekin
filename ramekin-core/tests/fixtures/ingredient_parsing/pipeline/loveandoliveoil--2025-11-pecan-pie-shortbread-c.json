@@ -3,13 +3,17 @@
   "recipe_slug": "2025-11-pecan-pie-shortbread-c",
   "ingredients": [
     {
-      "raw": "scant 1 1/4 cups  all-purpose flour",
+      "raw": "scant 1 ¼ cups   / 150 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "scant cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "1/2 cup packed light brown sugar",
+      "raw": "½ cup  / 100 g packed light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": "packed",
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "1 tablespoon cornstarch",
+      "raw": "1 tablespoon  / 8 g cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,7 +57,7 @@
       }
     },
     {
-      "raw": "3/4 teaspoon fine sea salt",
+      "raw": "¾ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -59,13 +71,17 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (cold, cut into cubes)",
+      "raw": "½ cup  / 113 g unsalted butter, cold, cut into cubes",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "cold, cut into cubes",
@@ -73,7 +89,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -87,13 +103,17 @@
       }
     },
     {
-      "raw": "1/2 cup packed light brown sugar",
+      "raw": "½ cup  / 100 g packed light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": "packed",
@@ -101,13 +121,17 @@
       }
     },
     {
-      "raw": "1/4 cup light corn syrup",
+      "raw": "¼ cup  / 85 g light corn syrup",
       "expected": {
         "item": "light corn syrup",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -115,13 +139,17 @@
       }
     },
     {
-      "raw": "1/4 cup maple syrup",
+      "raw": "¼ cup  / 85 g maple syrup",
       "expected": {
         "item": "maple syrup",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -129,13 +157,17 @@
       }
     },
     {
-      "raw": "2 tablespoons heavy cream",
+      "raw": "2 tablespoons  / 30 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,7 +175,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon fine sea salt",
+      "raw": "¼ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -157,7 +189,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -171,7 +203,7 @@
       }
     },
     {
-      "raw": "pinch cinnamon",
+      "raw": "pinch   cinnamon",
       "expected": {
         "item": "cinnamon",
         "measurements": [
@@ -185,13 +217,17 @@
       }
     },
     {
-      "raw": "1 1/2 cups chopped pecans (lightly toasted)",
+      "raw": "1 ½ cups  / 170 g chopped pecans, lightly toasted",
       "expected": {
         "item": "chopped pecans",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": "lightly toasted",

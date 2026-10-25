@@ -3,7 +3,7 @@
   "recipe_slug": "best-stuffed-french-toast-reci",
   "ingredients": [
     {
-      "raw": "3  eggs",
+      "raw": "3 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -17,17 +17,17 @@
       }
     },
     {
-      "raw": "1/2 cup half and half (you can also use whole milk)",
+      "raw": "1/2 cup half and half you can also use whole milk",
       "expected": {
-        "item": "half and half",
+        "item": "half and half you can also use whole milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "you can also use whole milk",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,21 +87,25 @@
       }
     },
     {
-      "raw": "10 slices Brioche or any thick cut artisan type bread (the thicker the better (about 8-10 slices))",
+      "raw": "10 slices Brioche or any thick cut artisan type bread the thicker the better (about 8-10 slices)",
       "expected": {
-        "item": "Brioche or any thick cut artisan type bread",
+        "item": "Brioche or any thick cut artisan type bread the thicker the better",
         "measurements": [
           {
             "amount": "10",
             "unit": "slice"
+          },
+          {
+            "amount": "8-10",
+            "unit": "slice"
           }
         ],
-        "note": "the thicker the better (about 8-10 slices)",
+        "note": "about 8-10 slices",
         "category": "Other"
       }
     },
     {
-      "raw": "8 oz cream cheese (softened)",
+      "raw": "8 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -143,7 +147,7 @@
       }
     },
     {
-      "raw": "1 cup fresh strawberries (sliced thin)",
+      "raw": "1 cup fresh strawberries sliced thin",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
@@ -171,21 +175,21 @@
       }
     },
     {
-      "raw": "1 tbsp fresh lemon juice  (about half of one lemon)",
+      "raw": "1 tbsp fresh lemon juice  about half of one lemon",
       "expected": {
-        "item": "fresh lemon juice",
+        "item": "fresh lemon juice about half of one lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "about half of one lemon",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "8 tbsp butter (for frying (bacon fat is also good here))",
+      "raw": "8 tbsp butter for frying (bacon fat is also good here)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -194,7 +198,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "for frying (bacon fat is also good here)",
+        "note": "bacon fat is also good here, for frying",
         "category": "Dairy & Eggs"
       }
     }

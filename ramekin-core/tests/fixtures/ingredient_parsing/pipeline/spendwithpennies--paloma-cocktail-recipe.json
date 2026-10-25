@@ -17,11 +17,11 @@
       }
     },
     {
-      "raw": "lime wedges (and kosher salt, for serving)",
+      "raw": "lime wedges and kosher salt, for serving",
       "expected": {
-        "item": "lime wedges",
+        "item": "lime wedges and kosher salt",
         "measurements": [],
-        "note": "and kosher salt, for serving",
+        "note": "for serving",
         "category": "Produce"
       }
     },
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "3 ounces fresh grapefruit juice (freshly squeezed)",
+      "raw": "3 ounces fresh grapefruit juice freshly squeezed",
       "expected": {
         "item": "fresh grapefruit juice",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "½ tablespoon simple syrup (or to taste)",
+      "raw": "½ tablespoon simple syrup or to taste",
       "expected": {
         "item": "simple syrup",
         "measurements": [

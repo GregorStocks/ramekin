@@ -3,16 +3,20 @@
   "recipe_slug": "2022-07-roasted-carrots-with-b",
   "ingredients": [
     {
-      "raw": "16 oz carrots (with greens (from 1 large bunch, about 12-14 small-ish carrots))",
+      "raw": "16 oz  / 450 g carrots, with greens (from 1 large bunch, about 12-14 small-ish carrots)",
       "expected": {
         "item": "carrots",
         "measurements": [
           {
             "amount": "16",
             "unit": "oz"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
           }
         ],
-        "note": "with greens (from 1 large bunch, about 12-14 small-ish carrots)",
+        "note": "from 1 large bunch, about 12-14 small-ish carrots, with greens",
         "category": "Produce"
       }
     },
@@ -35,13 +39,17 @@
       }
     },
     {
-      "raw": "1 ½ cups lightly packed carrot greens (large stems removed)",
+      "raw": "1 ½ cups  / 50 g lightly packed carrot greens, large stems removed",
       "expected": {
         "item": "carrot greens",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": "large stems removed, lightly packed",
@@ -49,13 +57,17 @@
       }
     },
     {
-      "raw": "1 cup lightly packed basil leaves",
+      "raw": "1 cup  / 28 g lightly packed basil leaves",
       "expected": {
         "item": "basil leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": "lightly packed",
@@ -63,7 +75,7 @@
       }
     },
     {
-      "raw": "4  large garlic cloves (coarsely chopped)",
+      "raw": "4   large garlic cloves, coarsely chopped",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -77,7 +89,7 @@
       }
     },
     {
-      "raw": "2 tablespoons pine nuts (lightly toasted (plus more for topping, if desired))",
+      "raw": "2 tablespoons   pine nuts, lightly toasted (plus more for topping, if desired)",
       "expected": {
         "item": "pine nuts",
         "measurements": [
@@ -86,12 +98,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "lightly toasted (plus more for topping, if desired)",
+        "note": "plus more for topping, if desired, lightly toasted",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1 teaspoon red wine vinegar",
+      "raw": "1 teaspoon   red wine vinegar",
       "expected": {
         "item": "red wine vinegar",
         "measurements": [
@@ -105,7 +117,7 @@
       }
     },
     {
-      "raw": "1 teaspoon honey",
+      "raw": "1 teaspoon   honey",
       "expected": {
         "item": "honey",
         "measurements": [
@@ -119,7 +131,7 @@
       }
     },
     {
-      "raw": "½ teaspoon red pepper flakes",
+      "raw": "½ teaspoon   red pepper flakes",
       "expected": {
         "item": "red pepper flakes",
         "measurements": [
@@ -133,13 +145,17 @@
       }
     },
     {
-      "raw": "½ cup extra virgin olive oil",
+      "raw": "½ cup  / 108 g extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
           }
         ],
         "note": null,

@@ -59,16 +59,16 @@
       }
     },
     {
-      "raw": "4  buns (Lettuce, tomatoes, sautéed onions &amp;amp; mushrooms, cheese, pickles, ketchup, mayo....whatever you like!)",
+      "raw": "4 buns, Lettuce, tomatoes, sautéed onions & mushrooms, cheese, pickles, ketchup, mayo....whatever you like!",
       "expected": {
-        "item": "buns",
+        "item": "buns, Lettuce, tomatoes, sautéed onions & mushrooms, cheese, pickles, ketchup, mayo....whatever you like!",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "Lettuce, tomatoes, sautéed onions & mushrooms, cheese, pickles, ketchup, mayo....whatever you like!",
+        "note": null,
         "category": "Bakery & Bread"
       }
     }

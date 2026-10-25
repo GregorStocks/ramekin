@@ -3,75 +3,6 @@
   "recipe_slug": "2015-02-spaghetti-pangrattato-",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Strawberries and Cream with Graham Crumbles",
-      "expected": {
-        "item": "Months Ago: Strawberries and Cream with Graham Crumbles",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Almond-Crisped Peaches",
-      "expected": {
-        "item": "Years Ago: Almond-Crisped Peaches",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Mediterranean Baked Feta with Tomatoes",
-      "expected": {
-        "item": "Years Ago: Mediterranean Baked Feta with Tomatoes",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Zucchini Fritters",
-      "expected": {
-        "item": "Years Ago: Zucchini Fritters",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Crumbs",
-      "is_section_header": true
-    },
-    {
       "raw": "2 tablespoon olive oil",
       "expected": {
         "item": "olive oil",
@@ -82,7 +13,6 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,7 +31,6 @@
           }
         ],
         "note": "minced",
-        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -116,7 +45,6 @@
           }
         ],
         "note": "panko worked great here",
-        "section": "Crumbs",
         "category": "Bakery & Bread"
       }
     },
@@ -126,7 +54,6 @@
         "item": "Salt and red pepper flakes",
         "measurements": [],
         "note": "to taste",
-        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,7 +68,6 @@
           }
         ],
         "note": "minced",
-        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -151,13 +77,8 @@
         "item": "Few fine gratings fresh lemon zest",
         "measurements": [],
         "note": null,
-        "section": "Crumbs",
         "category": "Produce"
       }
-    },
-    {
-      "raw": "Crispy Egg",
-      "is_section_header": true
     },
     {
       "raw": "1 glug of olive oil per egg",
@@ -170,7 +91,6 @@
           }
         ],
         "note": null,
-        "section": "Crispy Egg",
         "category": "Other"
       }
     },
@@ -185,7 +105,6 @@
           }
         ],
         "note": null,
-        "section": "Crispy Egg",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,13 +114,8 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
-        "section": "Crispy Egg",
         "category": "Spices & Seasonings"
       }
-    },
-    {
-      "raw": "Pasta and Assembly",
-      "is_section_header": true
     },
     {
       "raw": "8 ounces dried spaghetti",
@@ -214,7 +128,6 @@
           }
         ],
         "note": null,
-        "section": "Pasta and Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -229,7 +142,6 @@
           }
         ],
         "note": null,
-        "section": "Pasta and Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -244,7 +156,6 @@
           }
         ],
         "note": "rinsed if salted, drained, chopped",
-        "section": "Pasta and Assembly",
         "category": "Canned Goods"
       }
     },
@@ -259,7 +170,6 @@
           }
         ],
         "note": "chopped",
-        "section": "Pasta and Assembly",
         "category": "Produce"
       }
     },
@@ -274,7 +184,6 @@
           }
         ],
         "note": "optional",
-        "section": "Pasta and Assembly",
         "category": "Cheese"
       }
     }

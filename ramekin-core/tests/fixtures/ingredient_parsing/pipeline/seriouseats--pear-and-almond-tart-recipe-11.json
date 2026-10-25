@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1 large egg, room temperature",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -114,14 +114,14 @@
             "unit": "large"
           }
         ],
-        "note": "room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon (15ml) brandy or dark rum, optional",
+      "raw": "1 tablespoon (15ml) brandy",
       "expected": {
-        "item": "brandy or dark rum",
+        "item": "brandy",
         "measurements": [
           {
             "amount": "1",
@@ -132,7 +132,7 @@
             "unit": "ml"
           }
         ],
-        "note": "optional",
+        "note": null,
         "category": "Beverages"
       }
     },

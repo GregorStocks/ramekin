@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-baked-lemon-donuts-bla",
   "ingredients": [
     {
-      "raw": "1  egg white (room temperature)",
+      "raw": "1 egg white, room temperature",
       "expected": {
         "item": "egg white",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1  lemon (juiced and zested)",
+      "raw": "1 lemon, juiced and zested",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -129,7 +129,36 @@
       }
     },
     {
-      "raw": "1  lemon (juiced and zested)",
+      "raw": "1 lemon, juiced and zested",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 lemon, juiced and zested",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 lemon, juiced and zested",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -172,17 +201,17 @@
       }
     },
     {
-      "raw": "1/4 cup coconut butter (warmed, stirred and pourable)",
+      "raw": "1/4 cup coconut butter, warmed, stirred and pourable",
       "expected": {
-        "item": "coconut butter",
+        "item": "coconut butter, warmed, stirred and pourable",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "warmed, stirred and pourable",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -200,21 +229,21 @@
       }
     },
     {
-      "raw": "2 tbsp water (to thin to desired consistency)",
+      "raw": "2 tbsp water, to thin to desired consistency",
       "expected": {
-        "item": "water",
+        "item": "water, to thin to desired consistency",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "to thin to desired consistency",
+        "note": null,
         "category": "Beverages"
       }
     },
     {
-      "raw": "1  lemon (zested for topping)",
+      "raw": "1 lemon, zested for topping",
       "expected": {
         "item": "lemon zest",
         "measurements": [

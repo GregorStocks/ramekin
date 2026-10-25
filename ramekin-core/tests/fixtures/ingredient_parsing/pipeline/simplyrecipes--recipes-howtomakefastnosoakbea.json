@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "2 o 3 cloves peeled garlic, optional",
+      "raw": "2 to 3 cloves peeled garlic, optional",
       "expected": {
-        "item": "o 3 cloves peeled garlic",
+        "item": "peeled garlic",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "2 to 3",
+            "unit": "clove"
           }
         ],
         "note": "optional",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

@@ -3,21 +3,21 @@
   "recipe_slug": "hummus-b-tahini-hummus-tahini-",
   "ingredients": [
     {
-      "raw": "One 14-ounce can or jar of chickpeas, drained and rinsed well (see notes)",
+      "raw": "1 (14-ounce) can or jar of chickpeas, drained and rinsed well",
       "expected": {
         "item": "or jar of chickpeas",
         "measurements": [
           {
             "amount": "1",
-            "unit": "14-ounce can"
+            "unit": "can"
           }
         ],
-        "note": "see notes, drained and rinsed well",
+        "note": "14-ounce, drained and rinsed well",
         "category": "Other"
       }
     },
     {
-      "raw": "1/3 cup (90ml) cold water (see notes)",
+      "raw": "1/3 cup (90 ml) cold water (see notes)",
       "expected": {
         "item": "cold water",
         "measurements": [
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "1/3 cup tahini (3 ounces; 85g), stirred well before measuring",
+      "raw": "1/3 cup tahini (3 ounces; 85 g), stirred well before measuring",
       "expected": {
         "item": "tahini, stirred well before measuring",
         "measurements": [
@@ -85,18 +85,18 @@
       }
     },
     {
-      "raw": "Cooked chickpeas",
+      "raw": "Cooked chickpeas, toasted pine nuts, finely chopped parsley, paprika, ground cumin (optional)",
       "expected": {
-        "item": "Cooked chickpeas",
+        "item": "Cooked chickpeas, toasted pine nuts, finely chopped parsley, paprika",
         "measurements": [],
-        "note": null,
+        "note": "optional, ground cumin",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "extra-virgin olive oil",
+      "raw": "Extra-virgin olive oil",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
         "note": null,
         "category": "Oils & Vinegars"
@@ -112,33 +112,13 @@
       }
     },
     {
-      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
+      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles (optional)",
       "expected": {
-        "item": "Sliced tomatoes",
+        "item": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
         "measurements": [],
-        "note": null,
+        "note": "optional",
         "category": "Produce"
       }
-    },
-    {
-      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
-      "expected": {
-        "item": "onions",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
-      "expected": {
-        "item": "Middle Eastern cucumber pickles",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      },
-      "expanded": true
     }
   ]
 }

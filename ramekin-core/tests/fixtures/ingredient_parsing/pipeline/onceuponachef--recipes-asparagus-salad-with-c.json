@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-asparagus-salad-with-c",
   "ingredients": [
     {
-      "raw": "3  large eggs",
+      "raw": "3 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  bunches thick asparagus spears, (bottom ends trimmed)",
+      "raw": "2 bunches thick asparagus spears, bottom ends trimmed",
       "expected": {
         "item": "thick asparagus spears",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tablespoon minced fresh chives, (for garnish)",
+      "raw": "1 tablespoon minced fresh chives, for garnish",
       "expected": {
         "item": "minced fresh chives",
         "measurements": [
@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "½ cup mayonnaise, (best quality such as Hellmann's or Duke's)",
+      "raw": "½ cup mayonnaise, best quality such as Hellmann's or Duke's",
       "expected": {
-        "item": "mayonnaise",
+        "item": "mayonnaise, best quality",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "best quality such as Hellmann's or Duke's",
+        "note": "such as Hellmann's or Duke's",
         "category": "Condiments & Sauces"
       }
     },

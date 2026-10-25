@@ -3,10 +3,6 @@
   "recipe_slug": "2014-09-sunken-apple-and-honey",
   "ingredients": [
     {
-      "raw": "Topping",
-      "is_section_header": true
-    },
-    {
       "raw": "4 tiny-to-small apples, halved, peeled and cored",
       "expected": {
         "item": "tiny-to-small apples",
@@ -17,7 +13,6 @@
           }
         ],
         "note": "halved, peeled and cored",
-        "section": "Topping",
         "category": "Other"
       }
     },
@@ -32,7 +27,6 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -47,13 +41,8 @@
           }
         ],
         "note": null,
-        "section": "Topping",
         "category": "Baking"
       }
-    },
-    {
-      "raw": "Batter",
-      "is_section_header": true
     },
     {
       "raw": "1/2 cup plus 1 tablespoon (125 grams) unsalted butter, at room temperature",
@@ -70,7 +59,6 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,7 +77,6 @@
           }
         ],
         "note": null,
-        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -104,7 +91,6 @@
           }
         ],
         "note": "any variety you like to eat",
-        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -119,7 +105,6 @@
           }
         ],
         "note": null,
-        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -134,7 +119,6 @@
           }
         ],
         "note": "separated",
-        "section": "Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,7 +133,6 @@
           }
         ],
         "note": null,
-        "section": "Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -164,7 +147,6 @@
           }
         ],
         "note": null,
-        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -179,7 +161,6 @@
           }
         ],
         "note": null,
-        "section": "Batter",
         "category": "Baking"
       }
     }

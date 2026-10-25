@@ -39,16 +39,20 @@
       }
     },
     {
-      "raw": "1 tablespoon plus 3/4 cup (170g granulated sugar)",
+      "raw": "1 tablespoon plus 3/4 cup 170g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 tablespoon plus 3/4 cup",
             "unit": null
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
-        "note": "170g granulated sugar",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -67,7 +71,7 @@
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -81,21 +85,17 @@
       }
     },
     {
-      "raw": "1  ripe banana (109g)",
+      "raw": "1 ripe banana 109g",
       "expected": {
-        "item": "ripe banana",
+        "item": "ripe banana 109g",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "109",
-            "unit": "g"
           }
         ],
         "note": null,
-        "category": "Produce"
+        "category": "Other"
       }
     },
     {
@@ -187,7 +187,7 @@
       }
     },
     {
-      "raw": "2-3  drops pink food color (optional)",
+      "raw": "2-3 drops pink food color optional",
       "expected": {
         "item": "pink food color",
         "measurements": [
@@ -278,7 +278,7 @@
       }
     },
     {
-      "raw": "2-3  drops pink food color",
+      "raw": "2-3 drops pink food color",
       "expected": {
         "item": "pink food color",
         "measurements": [

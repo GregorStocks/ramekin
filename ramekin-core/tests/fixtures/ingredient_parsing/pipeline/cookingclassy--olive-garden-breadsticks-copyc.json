@@ -3,7 +3,7 @@
   "recipe_slug": "olive-garden-breadsticks-copyc",
   "ingredients": [
     {
-      "raw": "1 cup + 2 Tbsp warm water ((110 - 115 degrees))",
+      "raw": "1 cup + 2 Tbsp warm water (110 - 115 degrees)",
       "expected": {
         "item": "warm water",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 Tbsp granulated sugar, (divided)",
+      "raw": "2 Tbsp granulated sugar, divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "3 - 3 1/2 cups all-purpose flour ((scoop and level to measure))",
+      "raw": "3 - 3 1/2 cups all-purpose flour (scoop and level to measure)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "3 Tbsp vegetable oil (or olive oil)",
+      "raw": "3 Tbsp vegetable oil or olive oil",
       "expected": {
-        "item": "vegetable oil",
+        "item": "vegetable oil or olive oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/4 tsp salt ((or to taste))",
+      "raw": "1/4 tsp salt (or to taste)",
       "expected": {
         "item": "salt",
         "measurements": [

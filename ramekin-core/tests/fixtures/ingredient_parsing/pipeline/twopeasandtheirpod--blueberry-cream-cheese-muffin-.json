@@ -157,10 +157,6 @@
       }
     },
     {
-      "raw": "Cream cheese filling:",
-      "is_section_header": true
-    },
-    {
       "raw": "3 tablespoons cream cheese",
       "expected": {
         "item": "cream cheese",
@@ -171,7 +167,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Filling",
         "category": "Cheese"
       }
     },
@@ -186,7 +181,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Filling",
         "category": "Produce"
       }
     },
@@ -201,7 +195,6 @@
           }
         ],
         "note": null,
-        "section": "Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -211,7 +204,6 @@
         "item": "Turbinado sugar-for sprinkling on muffins before baking",
         "measurements": [],
         "note": null,
-        "section": "Cream Cheese Filling",
         "category": "Other"
       }
     }

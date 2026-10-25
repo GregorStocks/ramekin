@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4  garlic cloves, (minced)",
+      "raw": "4 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "4  filet mignon steaks",
+      "raw": "4 filet mignon steaks",
       "expected": {
         "item": "filet mignon steaks",
         "measurements": [
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "8 to 12  small corn tortillas",
+      "raw": "8 to 12 small corn tortillas",
       "expected": {
         "item": "corn tortillas",
         "measurements": [
@@ -161,21 +161,21 @@
       }
     },
     {
-      "raw": "¼ cup crumbled feta, (or cotija! for topping)",
+      "raw": "¼ cup crumbled feta, or cotija! for topping",
       "expected": {
-        "item": "crumbled feta",
+        "item": "crumbled feta, or cotija!",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or cotija! for topping",
+        "note": "for topping",
         "category": "Cheese"
       }
     },
     {
-      "raw": "pickled onions, (for topping)",
+      "raw": "pickled onions, for topping",
       "expected": {
         "item": "pickled onions",
         "measurements": [],

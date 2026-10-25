@@ -3,9 +3,9 @@
   "recipe_slug": "carnita-street-tacos-recipe",
   "ingredients": [
     {
-      "raw": "12  small corn or flour tortillas",
+      "raw": "12 small flour tortillas or corn tortillas",
       "expected": {
-        "item": "corn or flour tortillas",
+        "item": "flour tortillas or corn tortillas",
         "measurements": [
           {
             "amount": "12",
@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "1  Slow-Cooker Pork Carnitas (or traditional Pork Carnitas)",
+      "raw": "3 cups Slow-Cooker Pork Carnitas or traditional Pork Carnitas",
       "expected": {
-        "item": "Slow-Cooker Pork Carnitas",
+        "item": "Slow-Cooker Pork Carnitas or traditional Pork Carnitas",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "3",
+            "unit": "cup"
           }
         ],
-        "note": "or traditional Pork Carnitas",
+        "note": null,
         "category": "Other"
       }
     },
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2  red onion (very thinly sliced)",
+      "raw": "½ red onion very thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -59,21 +59,7 @@
       }
     },
     {
-      "raw": "1/2 cup crumbled cotija cheese",
-      "expected": {
-        "item": "crumbled cotija cheese",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Cheese"
-      }
-    },
-    {
-      "raw": "1/4 cup chopped fresh cilantro",
+      "raw": "¼ cup chopped fresh cilantro",
       "expected": {
         "item": "chopped fresh cilantro",
         "measurements": [
@@ -87,7 +73,7 @@
       }
     },
     {
-      "raw": "3  limes (cut into wedges)",
+      "raw": "3 limes cut into wedges",
       "expected": {
         "item": "limes",
         "measurements": [
@@ -101,17 +87,30 @@
       }
     },
     {
-      "raw": "1/2 cup sour cream (optional)",
+      "raw": "sour cream",
       "expected": {
         "item": "sour cream",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": "optional",
+        "measurements": [],
+        "note": null,
         "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "crumbled cotija cheese or shredded cheese of your choice",
+      "expected": {
+        "item": "crumbled cotija cheese or shredded cheese of your choice",
+        "measurements": [],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "hot sauce or salsa",
+      "expected": {
+        "item": "hot sauce or salsa",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

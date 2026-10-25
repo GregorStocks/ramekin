@@ -3,15 +3,6 @@
   "recipe_slug": "2011-08-hazelnut-plum-crumb-ta",
   "ingredients": [
     {
-      "raw": "Crust and crumbs",
-      "expected": {
-        "item": "Crust and crumbs",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "3/4 cup unsalted butter (6 ounces or 175 grams), chilled, cut into small pieces, plus more for pan",
       "expected": {
         "item": "unsalted butter",
@@ -138,10 +129,6 @@
       }
     },
     {
-      "raw": "Filling",
-      "is_section_header": true
-    },
-    {
       "raw": "1 pound (455 grams) ripe but firm plums (about 4 standard black ones or 12 smaller Italian plums; I used a mix of both)",
       "expected": {
         "item": "ripe but firm plums",
@@ -156,7 +143,6 @@
           }
         ],
         "note": "about 4 standard black ones or 12 smaller Italian plums; I used a mix of both",
-        "section": "Filling",
         "category": "Other"
       }
     },
@@ -175,7 +161,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -194,7 +179,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -209,7 +193,6 @@
           }
         ],
         "note": "lightly beaten",
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -224,7 +207,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,7 +225,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,7 +243,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -277,7 +257,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -292,7 +271,6 @@
           }
         ],
         "note": null,
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -302,7 +280,6 @@
         "item": "Grated nutmeg",
         "measurements": [],
         "note": "optional",
-        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

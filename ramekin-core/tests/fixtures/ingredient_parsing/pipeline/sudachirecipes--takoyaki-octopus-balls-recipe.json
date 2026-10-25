@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "500 ml dashi stock (cooled)",
+      "raw": "500 ml dashi stock cooled",
       "expected": {
         "item": "dashi stock",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -129,39 +129,39 @@
       }
     },
     {
-      "raw": "1 tsp Japanese light soy sauce (usukuchi shoyu) (or regular Japanese soy sauce)",
+      "raw": "1 tsp Japanese light soy sauce (usukuchi shoyu) or regular Japanese soy sauce",
       "expected": {
-        "item": "Japanese light soy sauce",
+        "item": "Japanese light soy sauce or regular Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "usukuchi shoyu, or regular Japanese soy sauce",
+        "note": "usukuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "toasted sesame oil (for cooking)",
+      "raw": "toasted sesame oil for cooking",
       "expected": {
-        "item": "toasted sesame oil",
+        "item": "toasted sesame oil for cooking",
         "measurements": [],
-        "note": "for cooking",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "120 g boiled octopus (or steamed)",
+      "raw": "120 g boiled octopus or steamed",
       "expected": {
-        "item": "boiled octopus",
+        "item": "boiled octopus or steamed",
         "measurements": [
           {
             "amount": "120",
             "unit": "g"
           }
         ],
-        "note": "or steamed",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -208,7 +208,7 @@
       }
     },
     {
-      "raw": "Japanese mayonnaise (such as Kewpie)",
+      "raw": "Japanese mayonnaise such as Kewpie",
       "expected": {
         "item": "Japanese mayonnaise",
         "measurements": [],
@@ -217,7 +217,7 @@
       }
     },
     {
-      "raw": "aonori (dried green seaweed powder) (for garnish)",
+      "raw": "aonori (dried green seaweed powder) for garnish",
       "expected": {
         "item": "aonori",
         "measurements": [],
@@ -226,7 +226,7 @@
       }
     },
     {
-      "raw": "bonito flakes (katsuobushi) (for garnish)",
+      "raw": "bonito flakes (katsuobushi) for garnish",
       "expected": {
         "item": "bonito flakes",
         "measurements": [],
@@ -235,7 +235,7 @@
       }
     },
     {
-      "raw": "finely chopped green onions (for garnish)",
+      "raw": "finely chopped green onions for garnish",
       "expected": {
         "item": "finely chopped green onions",
         "measurements": [],

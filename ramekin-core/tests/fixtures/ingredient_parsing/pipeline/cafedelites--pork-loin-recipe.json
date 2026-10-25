@@ -3,21 +3,21 @@
   "recipe_slug": "pork-loin-recipe",
   "ingredients": [
     {
-      "raw": "4-5 pound pork loin roast (trimmed of skin and fat)",
+      "raw": "4-5 pound pork loin roast trimmed of skin and fat",
       "expected": {
-        "item": "pork loin roast",
+        "item": "pork loin roast trimmed of skin and fat",
         "measurements": [
           {
             "amount": "4-5",
             "unit": "lb"
           }
         ],
-        "note": "trimmed of skin and fat",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "1 ½ tablespoons olive oil (divided)",
+      "raw": "1 ½ tablespoons olive oil divided",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "2 teaspoons paprika (mild or smoked)",
+      "raw": "2 teaspoons paprika mild or smoked",
       "expected": {
-        "item": "paprika",
+        "item": "paprika mild or smoked",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "mild or smoked",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "½-1 teaspoon red chili powder (optional)",
+      "raw": "½-1 teaspoon red chili powder optional",
       "expected": {
         "item": "red chili powder",
         "measurements": [
@@ -157,17 +157,17 @@
       }
     },
     {
-      "raw": "6 cloves garlic (finely chppped or minced)",
+      "raw": "6 cloves garlic finely chppped or minced",
       "expected": {
-        "item": "garlic",
+        "item": "garlic finely chppped or minced",
         "measurements": [
           {
             "amount": "6",
             "unit": "clove"
           }
         ],
-        "note": "finely chppped or minced",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -185,31 +185,31 @@
       }
     },
     {
-      "raw": "2 tablespoons rice wine vinegar (or cider vinegar)",
+      "raw": "2 tablespoons rice wine vinegar or cider vinegar",
       "expected": {
-        "item": "rice wine vinegar",
+        "item": "rice wine vinegar or cider vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or cider vinegar",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 pinch salt (large)",
+      "raw": "1 pinch salt large",
       "expected": {
-        "item": "salt",
+        "item": "salt large",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "large",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -227,23 +227,9 @@
       }
     },
     {
-      "raw": "½ cup low sodium beef stock (or chicken stock/broth, FOR OVEN METHOD ONLY)",
+      "raw": "½ cup low sodium beef stock or chicken stock/broth, FOR OVEN METHOD ONLY",
       "expected": {
-        "item": "low sodium beef stock",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": "or chicken stock/broth, FOR OVEN METHOD ONLY",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "½ cup water (FOR OVEN METHOD ONLY)",
-      "expected": {
-        "item": "water",
+        "item": "low sodium beef stock or chicken stock/broth",
         "measurements": [
           {
             "amount": "0.5",
@@ -251,7 +237,21 @@
           }
         ],
         "note": "FOR OVEN METHOD ONLY",
-        "category": "Beverages"
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "½ cup water FOR OVEN METHOD ONLY",
+      "expected": {
+        "item": "water FOR OVEN METHOD ONLY",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
       }
     },
     {

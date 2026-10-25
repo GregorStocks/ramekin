@@ -3,17 +3,17 @@
   "recipe_slug": "zucchini-cookies-recipe",
   "ingredients": [
     {
-      "raw": "1/2 cup unsalted butter (room temperature)",
+      "raw": "½ cup unsalted butter room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter room temperature",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt",
+      "raw": "½ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/2 cup raisins",
+      "raw": "½ cup raisins",
       "expected": {
         "item": "raisins",
         "measurements": [
@@ -171,9 +171,9 @@
       }
     },
     {
-      "raw": "1 cup confectioners' sugar (sifted)",
+      "raw": "1 cup confectioners’ sugar sifted",
       "expected": {
-        "item": "confectioners' sugar",
+        "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "1",
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon pure vanilla extract",
+      "raw": "¼ teaspoon pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [

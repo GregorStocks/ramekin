@@ -180,7 +180,7 @@
       }
     },
     {
-      "raw": "4  salmon filets",
+      "raw": "4 salmon filets",
       "expected": {
         "item": "salmon filets",
         "measurements": [
@@ -208,7 +208,7 @@
       }
     },
     {
-      "raw": "chopped fresh parsley, (for topping)",
+      "raw": "chopped fresh parsley, for topping",
       "expected": {
         "item": "chopped fresh parsley",
         "measurements": [],

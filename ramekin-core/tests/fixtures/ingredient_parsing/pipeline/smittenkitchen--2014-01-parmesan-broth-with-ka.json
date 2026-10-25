@@ -3,15 +3,6 @@
   "recipe_slug": "2014-01-parmesan-broth-with-ka",
   "ingredients": [
     {
-      "raw": "Broth",
-      "expected": {
-        "item": "Broth",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
-    },
-    {
       "raw": "8 ounces cheese rinds, any paper at the ends removed",
       "expected": {
         "item": "cheese rinds",
@@ -105,10 +96,6 @@
       }
     },
     {
-      "raw": "To serve",
-      "is_section_header": true
-    },
-    {
       "raw": "2 to 3 ounces tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety), washed and patted dry (updated measurement)",
       "expected": {
         "item": "tuscan kale",
@@ -119,7 +106,6 @@
           }
         ],
         "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety, updated measurement, washed and patted dry",
-        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -134,7 +120,6 @@
           }
         ],
         "note": "from about 1/4 pound dried, usually about 1 1/2 cups, updated measurement, with their cooking liquid if fresh",
-        "section": "To Serve",
         "category": "Canned Goods"
       }
     },
@@ -144,7 +129,6 @@
         "item": "Thin slices of baguette",
         "measurements": [],
         "note": "toasted",
-        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -154,7 +138,6 @@
         "item": "Olive oil and parmesan",
         "measurements": [],
         "note": "for serving",
-        "section": "To Serve",
         "category": "Oils & Vinegars"
       }
     }
