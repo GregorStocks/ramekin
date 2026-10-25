@@ -49,7 +49,7 @@ function createJobPoller(scrapeApi: ScrapeApi) {
     if (result.status === "failed") {
       return { status: "failed", error: result.error };
     }
-    // Without untilRecipeReady this waits for enrichment, so "recipe_ready"
+    // Without untilRecipeReady this waits for normalize ops, so "recipe_ready"
     // never comes back.
     if (result.status === "recipe_ready") {
       return { status: "completed" };

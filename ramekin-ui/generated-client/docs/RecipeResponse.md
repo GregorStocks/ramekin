@@ -14,6 +14,7 @@ Name | Type
 `id` | string
 `ingredients` | [Array&lt;Ingredient&gt;](Ingredient.md)
 `instructions` | string
+`normalizeOps` | Array&lt;string&gt;
 `notes` | string
 `nutritionalInfo` | string
 `photoIds` | Array&lt;string&gt;
@@ -44,6 +45,7 @@ const example = {
   "id": null,
   "ingredients": null,
   "instructions": null,
+  "normalizeOps": null,
   "notes": null,
   "nutritionalInfo": null,
   "photoIds": null,

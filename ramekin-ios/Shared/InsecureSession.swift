@@ -79,7 +79,7 @@ class InsecureDecodableBuilder<T: Decodable>: URLSessionDecodableRequestBuilder<
         var request = try super.createURLRequest(
             urlSession: urlSession, method: method, encoding: encoding, headers: headers
         )
-        // Text review waits for extraction plus the normal ingestion enrichments.
+        // Text review waits for extraction plus the default import normalize ops.
         if request.url?.path == "/api/import/text" {
             request.timeoutInterval = 180
         }

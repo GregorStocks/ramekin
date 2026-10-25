@@ -290,7 +290,7 @@ struct VersionSourceBadgeView: View {
             return .blue
         case "scrape":
             return .orange
-        case "enrich", "enrichment":
+        case "normalize":
             return .green
         default:
             return .secondary

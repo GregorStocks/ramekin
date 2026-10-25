@@ -66,6 +66,12 @@ export interface RecipeResponse {
      */
     instructions: string;
     /**
+     * For a `normalize` version, the op ids it applied, in run order.
+     * @type {Array<string>}
+     * @memberof RecipeResponse
+     */
+    normalizeOps: Array<string>;
+    /**
      *
      * @type {string}
      * @memberof RecipeResponse

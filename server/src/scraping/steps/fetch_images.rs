@@ -104,7 +104,7 @@ impl PipelineStep for FetchImagesStep {
             output: serde_json::to_value(&output).expect("FetchImagesOutput serializes to JSON"),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("parse_ingredients".to_string()),
+            next_step: None,
         }
     }
 }

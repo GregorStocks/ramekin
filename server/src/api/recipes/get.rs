@@ -48,6 +48,8 @@ pub struct RecipeResponse {
     /// Version metadata
     pub version_id: Uuid,
     pub version_source: String,
+    /// For a `normalize` version, the op ids it applied, in run order.
+    pub normalize_ops: Vec<String>,
 }
 
 impl RecipeResponse {
@@ -84,6 +86,7 @@ impl RecipeResponse {
             notes: version.notes,
             version_id: version.id,
             version_source: version.version_source,
+            normalize_ops: crate::normalize::version_op_ids(version.normalize_ops.as_ref()),
         }
     }
 }

@@ -3,21 +3,21 @@
 //! These implement the `PipelineStep` trait with database operations
 //! for storing recipes, fetching images, etc.
 
-mod apply_auto_tags;
-mod apply_generated_description;
-mod apply_normalized_title;
+mod apply_normalize;
 mod fetch_html;
 mod fetch_images;
 mod helpers;
+mod load_recipe;
+mod propose_normalize;
 mod resolve_ingredient_names;
 mod save_recipe;
 
-pub use apply_auto_tags::ApplyAutoTagsStep;
-pub use apply_generated_description::ApplyGeneratedDescriptionStep;
-pub use apply_normalized_title::ApplyNormalizedTitleStep;
+pub use apply_normalize::ApplyNormalizeStep;
 pub use fetch_html::FetchHtmlStep;
 pub use fetch_images::FetchImagesStep;
+pub use load_recipe::LoadRecipeStep;
+pub use propose_normalize::{NormalizeProposal, ProposeNormalizeStep};
 pub use resolve_ingredient_names::ResolveIngredientNamesStep;
 pub use save_recipe::SaveRecipeStep;
 
-// Enrich steps use generic implementations from ramekin-core.
+// Normalize steps use generic implementations from ramekin-core.

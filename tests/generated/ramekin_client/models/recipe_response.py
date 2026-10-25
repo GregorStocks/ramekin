@@ -38,6 +38,7 @@ class RecipeResponse(BaseModel):
     id: UUID
     ingredients: List[Ingredient]
     instructions: StrictStr
+    normalize_ops: List[StrictStr] = Field(description="For a `normalize` version, the op ids it applied, in run order.")
     notes: Optional[StrictStr] = None
     nutritional_info: Optional[StrictStr] = None
     photo_ids: List[UUID]
@@ -52,7 +53,7 @@ class RecipeResponse(BaseModel):
     updated_at: datetime = Field(description="When viewing a specific version, this is the version's created_at")
     version_id: UUID = Field(description="Version metadata")
     version_source: StrictStr
-    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "derived_measurements", "description", "difficulty", "id", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "updated_at", "version_id", "version_source"]
+    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "derived_measurements", "description", "difficulty", "id", "ingredients", "instructions", "normalize_ops", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "updated_at", "version_id", "version_source"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -182,6 +183,7 @@ class RecipeResponse(BaseModel):
             "id": obj.get("id"),
             "ingredients": [Ingredient.from_dict(_item) for _item in obj["ingredients"]] if obj.get("ingredients") is not None else None,
             "instructions": obj.get("instructions"),
+            "normalize_ops": obj.get("normalize_ops"),
             "notes": obj.get("notes"),
             "nutritional_info": obj.get("nutritional_info"),
             "photo_ids": obj.get("photo_ids"),

@@ -342,8 +342,8 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                         "title": ""
                         if incomplete
                         else (
-                            "Force Text Enrichment Failure"
-                            if "TEXT_ENRICHMENT_FAILURE" in all_text
+                            "Force Text Normalize Failure"
+                            if "TEXT_NORMALIZE_FAILURE" in all_text
                             else "Text Pancakes"
                         ),
                         "ingredients": (
@@ -457,7 +457,7 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
 
     def _mock_normalize_title(self, all_text):
         """Return a mock normalized title."""
-        if "Force Text Enrichment Failure" in all_text:
+        if "Force Text Normalize Failure" in all_text:
             return '{"normalized_title":'
         # Try to extract the title from the prompt
         try:

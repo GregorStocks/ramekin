@@ -68,10 +68,10 @@ def test_scrape_status_page_renders_steps(
     expect(page.get_by_role("button", name="View Recipe →")).to_be_visible()
 
 
-def test_recipe_opens_while_enrichment_runs(page: Page, ui_url: str, api_url: str):
+def test_recipe_opens_while_normalize_ops_run(page: Page, ui_url: str, api_url: str):
     """The status page offers the recipe as soon as it is saved; the recipe
-    page says enrichment is running and refreshes when it lands."""
-    username = f"ui_enrich_{uuid.uuid4().hex[:8]}"
+    page says normalize ops are running and refreshes when they land."""
+    username = f"ui_normalize_{uuid.uuid4().hex[:8]}"
     password = "testpass123"
     with ApiClient(Configuration(host=api_url)) as client:
         token = (
@@ -84,7 +84,7 @@ def test_recipe_opens_while_enrichment_runs(page: Page, ui_url: str, api_url: st
     marker = "zq" + uuid.uuid4().hex[:8].translate(
         str.maketrans("0123456789", "ghijklmnop")
     )
-    title = f"Enriching {marker} soup"
+    title = f"Normalizing {marker} soup"
     recipe = {
         "@context": "https://schema.org",
         "@type": "Recipe",
@@ -118,19 +118,19 @@ def test_recipe_opens_while_enrichment_runs(page: Page, ui_url: str, api_url: st
         expect(page.locator("input[type='password']")).to_have_count(0)
 
         page.goto(f"{ui_url}/scrape/{job_id}")
-        expect(page.locator('.status-pill[data-status="enriching"]')).to_be_visible(
+        expect(page.locator('.status-pill[data-status="normalizing"]')).to_be_visible(
             timeout=15_000
         )
         page.get_by_role("button", name="View Recipe →").click()
 
         page.wait_for_url("**/recipes/**")
         expect(page.get_by_role("heading", name=title)).to_be_visible()
-        expect(page.locator(".enrichment-notice")).to_have_text(
+        expect(page.locator(".normalize-notice")).to_have_text(
             "Adding an AI title, description, and tags…"
         )
     finally:
         hold_description(marker, False)
 
     expect(page.get_by_text("A delicious test recipe.")).to_be_visible(timeout=15_000)
-    expect(page.locator(".enrichment-notice")).to_have_count(0)
+    expect(page.locator(".normalize-notice")).to_have_count(0)
     assert "scrapeJob" not in page.url

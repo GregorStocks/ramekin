@@ -38,6 +38,12 @@ export interface VersionSummary {
      */
     isCurrent: boolean;
     /**
+     * For a `normalize` version, the op ids it applied, in run order.
+     * @type {Array<string>}
+     * @memberof VersionSummary
+     */
+    normalizeOps: Array<string>;
+    /**
      * 
      * @type {string}
      * @memberof VersionSummary
@@ -58,6 +64,7 @@ export function instanceOfVersionSummary(value: object): value is VersionSummary
     if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('isCurrent' in value) || value['isCurrent'] === undefined) return false;
+    if (!('normalizeOps' in value) || value['normalizeOps'] === undefined) return false;
     if (!('title' in value) || value['title'] === undefined) return false;
     if (!('versionSource' in value) || value['versionSource'] === undefined) return false;
     return true;
@@ -76,6 +83,7 @@ export function VersionSummaryFromJSONTyped(json: any, ignoreDiscriminator: bool
         'createdAt': (new Date(json['created_at'])),
         'id': json['id'],
         'isCurrent': json['is_current'],
+        'normalizeOps': json['normalize_ops'],
         'title': json['title'],
         'versionSource': json['version_source'],
     };
@@ -95,6 +103,7 @@ export function VersionSummaryToJSONTyped(value?: VersionSummary | null, ignoreD
         'created_at': value['createdAt'].toISOString(),
         'id': value['id'],
         'is_current': value['isCurrent'],
+        'normalize_ops': value['normalizeOps'],
         'title': value['title'],
         'version_source': value['versionSource'],
     };
