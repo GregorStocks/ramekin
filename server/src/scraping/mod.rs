@@ -11,7 +11,8 @@ pub use allowlist::is_host_allowed;
 pub use jobs::{
     create_import_job, create_job, create_job_with_html, create_normalize_job,
     create_photo_rescrape_job, create_rescrape_job, find_import_jobs_by_key, get_job,
-    saved_recipe_id, stored_source, NormalizeStart, StoredSource,
+    prepare_text_source, record_text_source, saved_recipe_id, stored_source, NormalizeStart,
+    StoredSource,
 };
 pub use photo_import::{create_pending_photo_job, spawn_photo_import_job};
 pub use runner::{resume_interrupted_jobs, retry_job, spawn_import_job, spawn_scrape_job};

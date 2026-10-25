@@ -18,18 +18,18 @@ use ramekin_core::pipeline::{
 
 use crate::db::DbPool;
 use crate::models::ScrapeJob;
-use crate::schema::{scrape_jobs, user_tags};
+use crate::schema::{scrape_jobs, step_outputs, user_tags};
 
 use super::jobs::{
     fail_unfinished, get_job, mark_completed, mark_failed, update_current_step_keeping_start,
-    update_status_and_step,
+    update_status_and_step, SOURCE_TEXT_STEP,
 };
 use super::output_store::{latest_output, DbOutputStore};
 use super::photo_import::PHOTO_EXTRACT_STEP;
 use super::plan::JobPlan;
 use super::steps::{
-    ApplyNormalizeStep, FetchHtmlStep, FetchImagesStep, LoadRecipeStep, ProposeNormalizeStep,
-    ResolveIngredientNamesStep, SaveRecipeStep,
+    ApplyNormalizeStep, ExtractTextStep, FetchHtmlStep, FetchImagesStep, LoadRecipeStep,
+    ProposeNormalizeStep, ResolveIngredientNamesStep, SaveRecipeStep,
 };
 use super::{
     run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_FAILED,
@@ -53,6 +53,21 @@ async fn fetch_user_tags(pool: &DbPool, user_id: Uuid) -> Result<Vec<String>, Sc
     .await
 }
 
+/// Whether `job_id` re-extracts a recipe created from pasted text: it holds
+/// the text (copied from the recipe's stored source).
+async fn has_source_text(pool: &DbPool, job_id: Uuid) -> Result<bool, ScrapeError> {
+    run_scrape_db(pool, move |conn| {
+        diesel::select(diesel::dsl::exists(
+            step_outputs::table
+                .filter(step_outputs::scrape_job_id.eq(job_id))
+                .filter(step_outputs::step_name.eq(SOURCE_TEXT_STEP)),
+        ))
+        .get_result(conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))
+    })
+    .await
+}
+
 /// Build a step registry with an implementation of every step in `plan`.
 pub async fn build_registry(
     pool: Arc<DbPool>,
@@ -72,6 +87,9 @@ pub async fn build_registry(
             FetchHtmlStep::NAME => Box::new(FetchHtmlStep {
                 refetch: plan.refetch,
             }),
+            ExtractRecipeStep::NAME if has_source_text(&pool, job.id).await? => {
+                Box::new(ExtractTextStep)
+            }
             ExtractRecipeStep::NAME => Box::new(ExtractRecipeStep),
             FetchImagesStepMeta::NAME => Box::new(FetchImagesStep::new(pool.clone(), user_id)),
             ParseIngredientsStep::NAME => Box::new(ParseIngredientsStep),

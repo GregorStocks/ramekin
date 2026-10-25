@@ -294,6 +294,58 @@ def test_reextract_of_an_import_reparses_its_extracted_recipe(authed_api_client)
     ]
 
 
+def test_reextract_of_a_text_import_reads_its_pasted_text_again(authed_api_client):
+    client, _ = authed_api_client
+    recipes_api = RecipesApi(client)
+    recipe_id = str(
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="My Pancakes",
+                instructions="Mix and cook.",
+                ingredients=[],
+                raw_ingredients="1 cup flour",
+                source_text="Pancakes\n1 cup flour\nMix and cook.",
+            )
+        ).id
+    )
+
+    ops = ops_by_id(NormalizeApi(client).list_normalize_ops(recipe_id=recipe_id))
+    assert ops["reextract"].available
+    assert not ops["refetch"].available
+
+    job_id, proposal = run(client, recipe_id, ["reextract"])
+    # The mock text extractor reads every text as "Text Pancakes".
+    assert proposal.base.content.title == "My Pancakes"
+    assert proposal.proposed.content.title == "Text Pancakes"
+    assert [i.item for i in proposal.proposed.content.ingredients] == [
+        "all-purpose flour",
+        "butter",
+        "unknowable powder",
+    ]
+    steps = [step.name for step in ScrapeApi(client).get_scrape(str(job_id)).steps]
+    assert steps == ["extract_recipe", "parse_ingredients", "propose_normalize"]
+
+    NormalizeApi(client).accept_normalize_proposal(recipe_id, str(job_id))
+    assert recipes_api.get_recipe(recipe_id).title == "Text Pancakes"
+    # The text is still the recipe's source after the new version.
+    ops = ops_by_id(NormalizeApi(client).list_normalize_ops(recipe_id=recipe_id))
+    assert ops["reextract"].available
+
+
+def test_blank_source_text_is_rejected(authed_api_client):
+    client, _ = authed_api_client
+    with pytest.raises(ApiException) as error:
+        RecipesApi(client).create_recipe(
+            CreateRecipeRequest(
+                title="Blank",
+                instructions="Cook.",
+                ingredients=[],
+                source_text="   ",
+            )
+        )
+    assert error.value.status == 400
+
+
 def test_bulk_starts_one_job_per_recipe(authed_api_client):
     client, _ = authed_api_client
     typed_id = create_typed_recipe(client, "Bulk  Shrimp")

@@ -31,6 +31,7 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertTrue(didSave)
         XCTAssertEqual(saved?.title, "Corrected pancakes")
         XCTAssertEqual(saved?.rawIngredients, "2 cups flour")
+        XCTAssertEqual(saved?.sourceText, "Pasted recipe")
         XCTAssertEqual(model.recipeText, "Pasted recipe")
     }
 

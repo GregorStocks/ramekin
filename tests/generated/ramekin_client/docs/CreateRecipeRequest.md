@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **total_time** | **str** |  | [optional] 
 **photo_ids** | **List[UUID]** |  | [optional] 
 **raw_ingredients** | **str** | Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save. | [optional] 
+**source_text** | **str** | The pasted text a text draft was read from. Stored as the recipe&#39;s source, so Re-extract can read the recipe from it again. | [optional] 
 
 ## Example
 

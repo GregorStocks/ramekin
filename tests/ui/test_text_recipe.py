@@ -24,7 +24,14 @@ def test_text_review_correct_and_save(logged_in_page, ui_url):
     ).to_be_visible()
     page.get_by_label("Title", exact=False).fill("Reviewed text pancakes")
     page.get_by_label("Ingredients", exact=True).fill("2 cups all-purpose flour")
-    page.get_by_role("button", name="Save recipe", exact=True).click()
+    with page.expect_request(
+        lambda request: (
+            request.method == "POST" and request.url.endswith("/api/recipes")
+        )
+    ) as create:
+        page.get_by_role("button", name="Save recipe", exact=True).click()
+    # The pasted text is saved as the recipe's source, for Re-extract.
+    assert create.value.post_data_json["source_text"] == RECIPE_TEXT
     expect(
         page.get_by_role("heading", name="Reviewed text pancakes", exact=True)
     ).to_be_visible(timeout=30000)

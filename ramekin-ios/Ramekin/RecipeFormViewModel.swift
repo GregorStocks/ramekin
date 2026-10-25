@@ -283,6 +283,10 @@ extension RecipeFormViewModel {
             case .create:
                 var request = formData.makeCreateRequest()
                 request.rawIngredients = rawIngredients
+                // Stored as the recipe's source, so Re-extract can read it
+                // again. The text is hidden once a draft exists, so it's the
+                // text the draft came from.
+                request.sourceText = recipeText
                 try await api.createRecipe(request)
             case .edit(let recipeId):
                 try await api.updateRecipe(recipeId, try formData.makeUpdateRequest())

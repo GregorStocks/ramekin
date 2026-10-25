@@ -45,7 +45,8 @@ class CreateRecipeRequest(BaseModel):
     total_time: Optional[StrictStr] = None
     photo_ids: Optional[List[UUID]] = None
     raw_ingredients: Optional[StrictStr] = Field(default=None, description="Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save.")
-    __properties: ClassVar[List[str]] = ["cook_time", "description", "difficulty", "ingredients", "instructions", "notes", "nutritional_info", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "photo_ids", "raw_ingredients"]
+    source_text: Optional[StrictStr] = Field(default=None, description="The pasted text a text draft was read from. Stored as the recipe's source, so Re-extract can read the recipe from it again.")
+    __properties: ClassVar[List[str]] = ["cook_time", "description", "difficulty", "ingredients", "instructions", "notes", "nutritional_info", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "photo_ids", "raw_ingredients", "source_text"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,6 +104,11 @@ class CreateRecipeRequest(BaseModel):
         if self.raw_ingredients is None and "raw_ingredients" in self.model_fields_set:
             _dict['raw_ingredients'] = None
 
+        # set to None if source_text (nullable) is None
+        # and model_fields_set contains the field
+        if self.source_text is None and "source_text" in self.model_fields_set:
+            _dict['source_text'] = None
+
         return _dict
 
     @classmethod
@@ -131,7 +137,8 @@ class CreateRecipeRequest(BaseModel):
             "title": obj.get("title"),
             "total_time": obj.get("total_time"),
             "photo_ids": obj.get("photo_ids"),
-            "raw_ingredients": obj.get("raw_ingredients")
+            "raw_ingredients": obj.get("raw_ingredients"),
+            "source_text": obj.get("source_text")
         })
         return _obj
 

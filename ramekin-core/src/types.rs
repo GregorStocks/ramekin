@@ -63,6 +63,8 @@ pub enum ExtractionMethod {
     Paprika,
     /// Extracted from uploaded photos using vision AI
     PhotoUpload,
+    /// Extracted from pasted text by the text extraction model
+    Text,
 }
 
 /// Result of attempting a single extraction method
