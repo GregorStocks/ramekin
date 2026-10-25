@@ -32,7 +32,8 @@ struct RecipeDetailView: View {
         viewModel.canCompareSelectedVersions
     }
 
-    var body: some View {
+    /// Separate from body so body stays small enough to type-check.
+    private var scrollContent: some View {
         ScrollViewReader { proxy in
             ScrollView {
                 if viewModel.isLoading && viewModel.recipe == nil {
@@ -47,6 +48,10 @@ struct RecipeDetailView: View {
             .coordinateSpace(name: RecipeScrollAnchor.coordinateSpace)
             .modifier(RecipeScrollRestorationModifier(recipeId: recipeId, proxy: proxy))
         }
+    }
+
+    var body: some View {
+        scrollContent
         .scrollDismissesKeyboard(.interactively)
         .navigationTitle(viewModel.recipe?.title ?? "Recipe")
         .navigationBarTitleDisplayMode(.inline)
