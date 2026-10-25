@@ -3,68 +3,26 @@
   "recipe_slug": "cooking-recipe-ideas-recipes-a",
   "ingredients": [
     {
-      "raw": "2 c. ice",
+      "raw": "1 box spice cake mix, plus ingredients called for on box",
       "expected": {
-        "item": "ice",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Frozen"
-      }
-    },
-    {
-      "raw": "1/4 c. blue curaçao",
-      "expected": {
-        "item": "blue curaçao",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1 c. white rum",
-      "expected": {
-        "item": "white rum",
+        "item": "spice cake mix",
         "measurements": [
           {
             "amount": "1",
-            "unit": "cup"
+            "unit": "box"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "plus ingredients called for on box",
+        "category": "Baking"
       }
     },
     {
-      "raw": "2 c. lemonade",
+      "raw": "3 apples",
       "expected": {
-        "item": "lemonade",
+        "item": "apples",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Beverages"
-      }
-    },
-    {
-      "raw": "4 lemon slices",
-      "expected": {
-        "item": "lemon slices",
-        "measurements": [
-          {
-            "amount": "4",
+            "amount": "3",
             "unit": null
           }
         ],
@@ -73,17 +31,147 @@
       }
     },
     {
-      "raw": "8 maraschino cherries",
+      "raw": "1/3 c. chopped peanuts, preferably roasted",
       "expected": {
-        "item": "maraschino cherries",
+        "item": "chopped peanuts",
         "measurements": [
           {
-            "amount": "8",
-            "unit": null
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": "preferably roasted",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "3 c. chocolate chips",
+      "expected": {
+        "item": "chocolate chips",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
           }
         ],
         "note": null,
-        "category": "Canned Goods"
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 c. heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 c. (2 sticks) butter, softened",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 c. caramel, plus more for decoration",
+      "expected": {
+        "item": "caramel",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for decoration",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "4 c. powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tsp. pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tsp. cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 tbsp. heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pinch of kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

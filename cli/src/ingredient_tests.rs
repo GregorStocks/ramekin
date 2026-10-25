@@ -136,25 +136,38 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
     let mut total_ingredients = 0;
     let mut refreshed_recipes = 0;
 
-    // Walk through all URL directories in the run
+    // Recipes the run got as far as parsing, in a stable order.
     let urls_dir = run_dir.join("urls");
+    let mut url_dirs = Vec::new();
     for entry in fs::read_dir(&urls_dir)? {
-        let entry = entry?;
-        let url_dir = entry.path();
-
-        if !url_dir.is_dir() {
-            continue;
-        }
-
-        // Only recipes the run got as far as parsing
-        if !url_dir
+        let url_dir = entry?.path();
+        if url_dir
             .join("parse_ingredients")
             .join("output.json")
             .exists()
         {
-            continue;
+            url_dirs.push(url_dir);
         }
+    }
+    url_dirs.sort();
+    // Slugs are cut short, so several URLs can share a fixture name ("delish
+    // --cooking-recipe-ideas-recipes-a"). Such a fixture is written once,
+    // from the first of them, and never refreshed: which recipe it holds
+    // would otherwise change from run to run.
+    let fixture_name = |url_dir: &Path| {
+        let url_name = url_dir.file_name().unwrap().to_string_lossy();
+        format!(
+            "{}--{}.json",
+            extract_site_from_url(&url_name),
+            extract_recipe_slug(&url_name)
+        )
+    };
+    let mut url_count: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+    for url_dir in &url_dirs {
+        *url_count.entry(fixture_name(url_dir)).or_default() += 1;
+    }
 
+    for url_dir in url_dirs {
         // The extracted ingredient lines, before the parser's "each" and
         // citrus expansions, which fixture_cases redoes.
         let content = fs::read_to_string(url_dir.join("extract_recipe").join("output.json"))?;
@@ -178,12 +191,14 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
             continue;
         }
 
-        let filename = format!("{}--{}.json", site, recipe_slug);
+        let filename = fixture_name(&url_dir);
         let filepath = pipeline_dir.join(&filename);
+        let shared = url_count[&filename] > 1;
         let existing = fs::read_to_string(&filepath)
             .ok()
             .and_then(|json| serde_json::from_str::<RecipeTestFile>(&json).ok());
         match existing {
+            Some(_) if shared => continue,
             Some(existing) if same_cases(&existing.ingredients, &ingredients) => continue,
             Some(_) => refreshed_recipes += 1,
             None => {
@@ -764,6 +779,28 @@ mod tests {
         )
         .unwrap();
         fs::write(url.join("parse_ingredients/output.json"), "{}").unwrap();
+    }
+
+    #[test]
+    fn urls_sharing_a_fixture_name_dont_take_turns_writing_it() {
+        let dir = tempfile::tempdir().unwrap();
+        let (runs, fixtures) = (dir.path().join("runs"), dir.path().join("fixtures"));
+        // Slugs are cut at 30 characters, so these share a fixture name.
+        let first = "example-com_recipes-a-very-long-shared-slug-prefix-apple-pie";
+        let second = "example-com_recipes-a-very-long-shared-slug-prefix-banana-bread";
+        write_run(&runs, first, &["2 apples"]);
+        write_run(&runs, second, &["3 bananas"]);
+        generate_from_pipeline(&runs, Some(&fixtures)).unwrap();
+        let name = "example--recipes-a-very-long-shared-slu.json";
+        assert_eq!(fixture_raw(&fixtures, name), ["2 apples"]);
+
+        // A later run, in whatever order and with the first recipe changed,
+        // leaves it alone.
+        fs::remove_dir_all(&runs).unwrap();
+        write_run(&runs, second, &["3 bananas"]);
+        write_run(&runs, first, &["2 apples", "1 cup sugar"]);
+        generate_from_pipeline(&runs, Some(&fixtures)).unwrap();
+        assert_eq!(fixture_raw(&fixtures, name), ["2 apples"]);
     }
 
     fn fixture_raw(fixtures: &Path, name: &str) -> Vec<String> {
