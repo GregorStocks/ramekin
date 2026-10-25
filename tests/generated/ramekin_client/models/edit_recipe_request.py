@@ -17,10 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
-from ramekin_client.models.recipe_content import RecipeContent
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +27,9 @@ class EditRecipeRequest(BaseModel):
     """
     Request body for Edit with AI.
     """ # noqa: E501
-    instruction: StrictStr
-    photo_ids: Optional[List[UUID]] = None
-    recipe: RecipeContent
-    __properties: ClassVar[List[str]] = ["instruction", "photo_ids", "recipe"]
+    instruction: StrictStr = Field(description="The change the user wants, in their words.")
+    photo_ids: Optional[List[UUID]] = Field(default=None, description="Photos of the dish to give the model as context.")
+    __properties: ClassVar[List[str]] = ["instruction", "photo_ids"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,9 +70,6 @@ class EditRecipeRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of recipe
-        if self.recipe:
-            _dict['recipe'] = self.recipe.to_dict()
         return _dict
 
     @classmethod
@@ -88,8 +83,7 @@ class EditRecipeRequest(BaseModel):
 
         _obj = cls.model_validate({
             "instruction": obj.get("instruction"),
-            "photo_ids": obj.get("photo_ids"),
-            "recipe": RecipeContent.from_dict(obj["recipe"]) if obj.get("recipe") is not None else None
+            "photo_ids": obj.get("photo_ids")
         })
         return _obj
 

@@ -47,6 +47,7 @@ Return only JSON."#,
         json_response: true,
         max_tokens: Some(8192),
         temperature: Some(0.1),
+        ..Default::default()
     };
     let (result, response): (TextExtractResponse, _) =
         complete_json(client, "text_extract", &request).await?;

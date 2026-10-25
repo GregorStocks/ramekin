@@ -266,6 +266,23 @@ pub struct ListRecipesResponse {
 /// The FTS5 query matching `token` as a substring of any indexed field, or
 /// None when the normalized token is too short for the trigram index (under
 /// three characters) and has to be matched by a scan instead.
+/// The cookbook's filter for one search word: it appears in the recipe's
+/// title, description, instructions, notes or ingredients, ignoring case and
+/// accents. Words are ANDed by filtering once per word.
+pub(crate) fn search_word_filter<'a, QS: 'a>(
+    token: &str,
+) -> Box<
+    dyn diesel::BoxableExpression<QS, diesel::sqlite::Sqlite, SqlType = diesel::sql_types::Bool>
+        + 'a,
+> {
+    match search_index_query(token) {
+        Some(fts_query) => Box::new(raw_sql::recipe_search_match(fts_query)),
+        // Too short for the trigram index: match the index's stored text
+        // with LIKE instead.
+        None => raw_sql::recipe_search_like(literal_search_pattern(token)),
+    }
+}
+
 fn search_index_query(token: &str) -> Option<String> {
     let normalized = normalize_for_search(token);
     if normalized.chars().count() < 3 {
@@ -356,12 +373,7 @@ fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipe
     // between words, OR between fields). Matches are case- AND
     // accent-insensitive ("creme brulee" finds "Crème Brûlée").
     for token in &parsed.text {
-        query = match search_index_query(token) {
-            Some(fts_query) => query.filter(raw_sql::recipe_search_match(fts_query)),
-            // Too short for the trigram index: match the index's stored
-            // text with LIKE instead.
-            None => query.filter(raw_sql::recipe_search_like(literal_search_pattern(token))),
-        };
+        query = query.filter(search_word_filter(token));
     }
 
     // Tag filters (AND logic - must have ALL tags)

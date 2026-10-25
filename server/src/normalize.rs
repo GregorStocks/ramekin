@@ -24,6 +24,29 @@ use crate::types::RecipeContent;
 /// `version_source` of a version written by normalize ops.
 pub const VERSION_SOURCE: &str = "normalize";
 
+/// What wrote a version: normalize ops, or an accepted Edit with AI proposal.
+#[derive(Debug, Clone, Copy)]
+pub enum VersionOrigin<'a> {
+    Normalize(&'a [NormalizeOp]),
+    AiEdit,
+}
+
+impl VersionOrigin<'_> {
+    fn version_source(self) -> &'static str {
+        match self {
+            VersionOrigin::Normalize(_) => VERSION_SOURCE,
+            VersionOrigin::AiEdit => "ai_edit",
+        }
+    }
+
+    fn ops(self) -> Value {
+        match self {
+            VersionOrigin::Normalize(ops) => ops_json(ops),
+            VersionOrigin::AiEdit => ops_json(&[]),
+        }
+    }
+}
+
 /// Ops as stored in `normalize_ops` columns: a JSON array of op ids.
 pub fn ops_json(ops: &[NormalizeOp]) -> Value {
     serde_json::to_value(ops).expect("normalize ops serialize to JSON")
@@ -147,7 +170,7 @@ pub async fn load_version_blocking(
         .map_err(|e| e.to_string())?
 }
 
-/// Save `recipe` as the recipe's new current version, recording `ops`, if
+/// Save `recipe` as the recipe's new current version from `origin`, if
 /// its current version is still `expected_version_id`. Its tags are that
 /// version's tag links, so tags renamed or deleted since keep that change,
 /// plus `added_tags`. Queues its unknown
@@ -160,7 +183,7 @@ pub fn write_version(
     expected_version_id: Uuid,
     recipe: &NormalizedRecipe,
     added_tags: &[String],
-    ops: &[NormalizeOp],
+    origin: VersionOrigin,
 ) -> Result<Uuid, VersionWriteError> {
     let content = &recipe.content;
     let ingredients =
@@ -184,8 +207,8 @@ pub fn write_version(
         difficulty: content.difficulty.as_deref(),
         nutritional_info: content.nutritional_info.as_deref(),
         notes: content.notes.as_deref(),
-        version_source: VERSION_SOURCE,
-        normalize_ops: Some(ops_json(ops)),
+        version_source: origin.version_source(),
+        normalize_ops: Some(origin.ops()),
     };
     let version_id = create_new_version_cas(
         conn,

@@ -176,150 +176,6 @@
         ]
       }
     },
-    "/api/edit-recipe": {
-      "post": {
-        "tags": [
-          "edit_recipe"
-        ],
-        "summary": "Edit a recipe with AI",
-        "description": "Takes a recipe and a free-text instruction describing the desired change.\nReturns the complete modified recipe. Stateless - does NOT modify any database records.",
-        "operationId": "edit_recipe_with_ai",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EditRecipeRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Modified recipe",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RecipeContent"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid photo IDs",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "AI service unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
-    "/api/enrich": {
-      "post": {
-        "tags": [
-          "enrich"
-        ],
-        "summary": "Enrich a recipe",
-        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nSuggests tags from the user's existing tag library (requires AI; returns\n503 if unavailable). Gram amounts are computed when a recipe is read, so\ningredients come back unchanged.",
-        "operationId": "enrich_recipe",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RecipeContent"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Enriched recipe object",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RecipeContent"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "AI service unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
     "/api/import/photos": {
       "post": {
         "tags": [
@@ -1235,42 +1091,6 @@
         ]
       }
     },
-    "/api/recipes/reparse-ingredients": {
-      "post": {
-        "tags": [
-          "recipes"
-        ],
-        "summary": "Rebuild the ingredients of each of the user's scraped or imported recipes\nfrom the scrape that saved them, with the current extractor and parser,\nsaving a new version (source \"reparse\") for each recipe whose ingredients\nchange. Recipes edited by hand since that scrape are left alone.",
-        "operationId": "reparse_all_ingredients",
-        "responses": {
-          "200": {
-            "description": "Every recipe checked; changed recipes got a new version",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReparseIngredientsResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
     "/api/recipes/{id}": {
       "get": {
         "tags": [
@@ -1467,6 +1287,85 @@
         ]
       }
     },
+    "/api/recipes/{id}/edit-with-ai": {
+      "post": {
+        "tags": [
+          "edit_recipe"
+        ],
+        "summary": "Edit a recipe with AI",
+        "description": "Starts a job that edits the recipe's current version the way the\ninstruction says, looking up catalog weights and calories and the user's\ntags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it\ncompletes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed\nversion and a summary of the changes, and\n`POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.",
+        "operationId": "edit_recipe_with_ai",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditRecipeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Edit job started; it proposes a version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizeJobResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Empty instruction, or invalid photo IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/{id}/export": {
       "get": {
         "tags": [
@@ -1504,83 +1403,6 @@
           },
           "404": {
             "description": "Recipe not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
-    "/api/recipes/{id}/generate-description": {
-      "post": {
-        "tags": [
-          "recipes"
-        ],
-        "operationId": "generate_description",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Recipe ID",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Description generated and applied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GenerateDescriptionResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Recipe not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Recipe was modified concurrently",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "AI service unavailable",
             "content": {
               "application/json": {
                 "schema": {
@@ -1751,83 +1573,6 @@
         ]
       }
     },
-    "/api/recipes/{id}/normalize-title": {
-      "post": {
-        "tags": [
-          "recipes"
-        ],
-        "operationId": "normalize_title",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Recipe ID",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Title normalized and applied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NormalizeTitleResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Recipe not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Recipe was modified concurrently",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "AI service unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
     "/api/recipes/{id}/normalize/{job_id}": {
       "get": {
         "tags": [
@@ -1966,73 +1711,6 @@
           },
           "409": {
             "description": "The recipe changed since the job started",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
-    "/api/recipes/{id}/rescrape": {
-      "post": {
-        "tags": [
-          "recipes"
-        ],
-        "operationId": "rescrape",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Recipe ID",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Rescrape job created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RescrapeResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Recipe has no source URL",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Recipe not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -3611,22 +3289,20 @@
         "type": "object",
         "description": "Request body for Edit with AI.",
         "required": [
-          "recipe",
           "instruction"
         ],
         "properties": {
           "instruction": {
-            "type": "string"
+            "type": "string",
+            "description": "The change the user wants, in their words."
           },
           "photo_ids": {
             "type": "array",
             "items": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          "recipe": {
-            "$ref": "#/components/schemas/RecipeContent"
+            },
+            "description": "Photos of the dish to give the model as context."
           }
         }
       },
@@ -3687,31 +3363,6 @@
               "null"
             ],
             "description": "Original, unscaled servings text: a count or range, optionally with a\n\"serves\", \"servings\", \"yield\", or \"makes\" prefix and a \"servings\",\n\"people\", \"person(s)\", or \"portion(s)\" suffix (\"Serves 4 to 6\", \"Yield:\n4\"). A \"makes\" count needs a serving suffix; a yield of something else\n(\"Makes 12 cookies\", \"Makes 24\") gives no per-serving figure."
-          }
-        }
-      },
-      "GenerateDescriptionResponse": {
-        "type": "object",
-        "required": [
-          "generated_description",
-          "changed",
-          "cached"
-        ],
-        "properties": {
-          "cached": {
-            "type": "boolean"
-          },
-          "changed": {
-            "type": "boolean"
-          },
-          "generated_description": {
-            "type": "string"
-          },
-          "original_description": {
-            "type": [
-              "string",
-              "null"
-            ]
           }
         }
       },
@@ -4438,6 +4089,13 @@
           "status": {
             "type": "string",
             "description": "The job's status, as `GET /api/scrape/{id}` reports it."
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What an Edit with AI run says it changed, once it completes."
           }
         }
       },
@@ -4453,29 +4111,6 @@
               "type": "string"
             },
             "description": "Op ids to run. Implied ops are added, and the registry orders them."
-          }
-        }
-      },
-      "NormalizeTitleResponse": {
-        "type": "object",
-        "required": [
-          "original_title",
-          "normalized_title",
-          "changed",
-          "cached"
-        ],
-        "properties": {
-          "cached": {
-            "type": "boolean"
-          },
-          "changed": {
-            "type": "boolean"
-          },
-          "normalized_title": {
-            "type": "string"
-          },
-          "original_title": {
-            "type": "string"
           }
         }
       },
@@ -4919,37 +4554,6 @@
           },
           "name": {
             "type": "string"
-          }
-        }
-      },
-      "ReparseIngredientsResponse": {
-        "type": "object",
-        "required": [
-          "recipes_checked",
-          "recipes_updated",
-          "skipped_no_source",
-          "skipped_edited"
-        ],
-        "properties": {
-          "recipes_checked": {
-            "type": "integer",
-            "description": "Live recipes looked at.",
-            "minimum": 0
-          },
-          "recipes_updated": {
-            "type": "integer",
-            "description": "Recipes that got a new \"reparse\" version because their ingredients\nchanged.",
-            "minimum": 0
-          },
-          "skipped_edited": {
-            "type": "integer",
-            "description": "Recipes edited by hand since their last scrape, or changed while the\nre-parse ran.",
-            "minimum": 0
-          },
-          "skipped_no_source": {
-            "type": "integer",
-            "description": "Recipes with no saved scrape to re-read: typed in, or from text or a\nphoto, or a scrape whose page or text can't be read.",
-            "minimum": 0
           }
         }
       },

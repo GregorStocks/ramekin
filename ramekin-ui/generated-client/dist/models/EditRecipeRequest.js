@@ -11,14 +11,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { RecipeContentFromJSON, RecipeContentToJSON, } from './RecipeContent';
 /**
  * Check if a given object implements the EditRecipeRequest interface.
  */
 export function instanceOfEditRecipeRequest(value) {
     if (!('instruction' in value) || value['instruction'] === undefined)
-        return false;
-    if (!('recipe' in value) || value['recipe'] === undefined)
         return false;
     return true;
 }
@@ -32,7 +29,6 @@ export function EditRecipeRequestFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'instruction': json['instruction'],
         'photoIds': json['photo_ids'] == null ? undefined : json['photo_ids'],
-        'recipe': RecipeContentFromJSON(json['recipe']),
     };
 }
 export function EditRecipeRequestToJSON(json) {
@@ -45,6 +41,5 @@ export function EditRecipeRequestToJSONTyped(value, ignoreDiscriminator = false)
     return {
         'instruction': value['instruction'],
         'photo_ids': value['photoIds'],
-        'recipe': RecipeContentToJSON(value['recipe']),
     };
 }

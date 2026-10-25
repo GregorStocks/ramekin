@@ -21,13 +21,16 @@ public struct NormalizeProposalResponse: Codable, JSONEncodable, Hashable {
     public var proposed: NormalizedRecipe?
     /** The job's status, as `GET /api/scrape/{id}` reports it. */
     public var status: String
+    /** What an Edit with AI run says it changed, once it completes. */
+    public var summary: String?
 
-    public init(base: NormalizedRecipe, baseVersionId: UUID, ops: [String], proposed: NormalizedRecipe? = nil, status: String) {
+    public init(base: NormalizedRecipe, baseVersionId: UUID, ops: [String], proposed: NormalizedRecipe? = nil, status: String, summary: String? = nil) {
         self.base = base
         self.baseVersionId = baseVersionId
         self.ops = ops
         self.proposed = proposed
         self.status = status
+        self.summary = summary
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
@@ -36,6 +39,7 @@ public struct NormalizeProposalResponse: Codable, JSONEncodable, Hashable {
         case ops
         case proposed
         case status
+        case summary
     }
 
     // Encodable protocol methods
@@ -47,6 +51,7 @@ public struct NormalizeProposalResponse: Codable, JSONEncodable, Hashable {
         try container.encode(ops, forKey: .ops)
         try container.encodeIfPresent(proposed, forKey: .proposed)
         try container.encode(status, forKey: .status)
+        try container.encodeIfPresent(summary, forKey: .summary)
     }
 }
 

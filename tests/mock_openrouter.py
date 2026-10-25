@@ -198,7 +198,14 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 self.send_error(503, "Provider unavailable")
                 return
 
-            content = self._generate_response_content(request)
+            if request.get("tools"):
+                message, finish_reason = self._mock_edit_recipe_turn(request)
+            else:
+                message = {
+                    "role": "assistant",
+                    "content": self._generate_response_content(request),
+                }
+                finish_reason = "stop"
 
             response = {
                 "id": "mock-completion-id",
@@ -208,11 +215,8 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 "choices": [
                     {
                         "index": 0,
-                        "message": {
-                            "role": "assistant",
-                            "content": content,
-                        },
-                        "finish_reason": "stop",
+                        "message": message,
+                        "finish_reason": finish_reason,
                     }
                 ],
                 "usage": {
@@ -329,9 +333,6 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         if "ingredient name resolver" in all_text:
             return self._mock_resolve_ingredient_names(all_text)
 
-        if "recipe modification assistant" in all_text:
-            return self._mock_edit_recipe(all_text, has_images=has_images)
-
         if "recipe text extraction assistant" in all_text:
             if "TEXT_EXTRACTION_FAILURE" in all_text:
                 return '{"raw_recipe":'
@@ -409,40 +410,52 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             },
         }
 
-    def _mock_edit_recipe(self, all_text, has_images=False):
-        """Return a modified recipe for Edit with AI requests."""
-        # Try to extract the recipe JSON from the prompt
-        try:
-            # The recipe JSON is between "Here is the recipe:" and "Apply this change:"
-            start = all_text.index("Here is the recipe:") + len("Here is the recipe:")
-            end = all_text.index("Apply this change:")
-            recipe_json = all_text[start:end].strip()
-            recipe_json = recipe_json.replace(
-                (
-                    "If reference photos are attached to this message, use them as "
-                    "additional context when they help."
-                ),
-                "",
-            ).strip()
-            recipe = json.loads(recipe_json)
-            # Apply a visible modification so tests can tell whether images were passed.
-            prefix = "[Modified with Photo] " if has_images else "[Modified] "
-            recipe["title"] = prefix + recipe.get("title", "")
-            return json.dumps(recipe)
-        except (ValueError, json.JSONDecodeError):
-            # Fallback: return a minimal valid recipe
-            return json.dumps(
-                {
-                    "title": (
-                        "[Modified with Photo] Test Recipe"
-                        if has_images
-                        else "[Modified] Test Recipe"
-                    ),
-                    "instructions": "Modified instructions.",
-                    "ingredients": [],
-                    "tags": [],
-                }
+    def _mock_edit_recipe_turn(self, request):
+        """One turn of an Edit with AI tool loop: first prefix the title and
+        look an ingredient up, then finish once those tools have answered.
+        The prefix says whether photos came along, so tests can tell."""
+        messages = request.get("messages", [])
+        has_images = any(
+            isinstance(m.get("content"), list)
+            and any(
+                isinstance(part, dict) and part.get("type") == "image_url"
+                for part in m["content"]
             )
+            for m in messages
+        )
+        prompt = json.dumps(messages)
+        tool_results = [m for m in messages if m.get("role") == "tool"]
+        if "like my other" in prompt and not tool_results:
+            # Search the user's recipes by an ingredient, and report what
+            # came back so tests can see the search.
+            calls = [("search_recipes", {"query": "tahini"})]
+        elif "like my other" in prompt:
+            found = tool_results[-1].get("content", "")
+            calls = [("finish", {"summary": "Found: " + found.split("\n")[0]})]
+        elif tool_results:
+            calls = [("finish", {"summary": "Marked the title as modified."})]
+        else:
+            title = "Test Recipe"
+            marker = "Title: "
+            if marker in prompt:
+                start = prompt.index(marker) + len(marker)
+                title = prompt[start : prompt.index("\\n", start)]
+            prefix = "[Modified with Photo] " if has_images else "[Modified] "
+            calls = [
+                ("set_field", {"field": "title", "value": prefix + title}),
+                ("lookup_ingredient", {"name": "flour"}),
+            ]
+        tool_calls = [
+            {
+                "id": f"mock-call-{len(messages)}-{index}",
+                "type": "function",
+                "function": {"name": name, "arguments": json.dumps(args)},
+            }
+            for index, (name, args) in enumerate(calls)
+        ]
+        return {"role": "assistant", "content": None, "tool_calls": tool_calls}, (
+            "tool_calls"
+        )
 
     def _mock_generate_description(self, all_text):
         """Return a mock generated description, once no held marker

@@ -304,11 +304,6 @@ async fn main() {
         .nest("/api/shopping-list", api::shopping_list::router())
         .nest("/api/sync", api::sync::router())
         .nest("/api/users", api::users::router())
-        .route("/api/enrich", post(api::enrich::enrich_recipe))
-        .route(
-            "/api/edit-recipe",
-            post(api::edit_recipe::edit_recipe_with_ai),
-        )
         .route("/api/import/recipe", post(api::import::import_recipe))
         .route(
             "/api/import/recipe/lookup",

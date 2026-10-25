@@ -16,8 +16,11 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
+from pydantic import Field
+from typing_extensions import Annotated
+from uuid import UUID
 from ramekin_client.models.edit_recipe_request import EditRecipeRequest
-from ramekin_client.models.recipe_content import RecipeContent
+from ramekin_client.models.normalize_job_response import NormalizeJobResponse
 
 from ramekin_client.api_client import ApiClient, RequestSerialized
 from ramekin_client.api_response import ApiResponse
@@ -40,6 +43,7 @@ class EditRecipeApi:
     @validate_call
     def edit_recipe_with_ai(
         self,
+        id: Annotated[UUID, Field(description="Recipe ID")],
         edit_recipe_request: EditRecipeRequest,
         _request_timeout: Union[
             None,
@@ -53,11 +57,13 @@ class EditRecipeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RecipeContent:
+    ) -> NormalizeJobResponse:
         """Edit a recipe with AI
 
-        Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+        Starts a job that edits the recipe's current version the way the instruction says, looking up catalog weights and calories and the user's tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
 
+        :param id: Recipe ID (required)
+        :type id: UUID
         :param edit_recipe_request: (required)
         :type edit_recipe_request: EditRecipeRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -83,6 +89,7 @@ class EditRecipeApi:
         """ # noqa: E501
 
         _param = self._edit_recipe_with_ai_serialize(
+            id=id,
             edit_recipe_request=edit_recipe_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -91,11 +98,10 @@ class EditRecipeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RecipeContent",
+            '201': "NormalizeJobResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
-            '500': "ErrorResponse",
-            '503': "ErrorResponse",
+            '404': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -111,6 +117,7 @@ class EditRecipeApi:
     @validate_call
     def edit_recipe_with_ai_with_http_info(
         self,
+        id: Annotated[UUID, Field(description="Recipe ID")],
         edit_recipe_request: EditRecipeRequest,
         _request_timeout: Union[
             None,
@@ -124,11 +131,13 @@ class EditRecipeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RecipeContent]:
+    ) -> ApiResponse[NormalizeJobResponse]:
         """Edit a recipe with AI
 
-        Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+        Starts a job that edits the recipe's current version the way the instruction says, looking up catalog weights and calories and the user's tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
 
+        :param id: Recipe ID (required)
+        :type id: UUID
         :param edit_recipe_request: (required)
         :type edit_recipe_request: EditRecipeRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -154,6 +163,7 @@ class EditRecipeApi:
         """ # noqa: E501
 
         _param = self._edit_recipe_with_ai_serialize(
+            id=id,
             edit_recipe_request=edit_recipe_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -162,11 +172,10 @@ class EditRecipeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RecipeContent",
+            '201': "NormalizeJobResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
-            '500': "ErrorResponse",
-            '503': "ErrorResponse",
+            '404': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -182,6 +191,7 @@ class EditRecipeApi:
     @validate_call
     def edit_recipe_with_ai_without_preload_content(
         self,
+        id: Annotated[UUID, Field(description="Recipe ID")],
         edit_recipe_request: EditRecipeRequest,
         _request_timeout: Union[
             None,
@@ -198,8 +208,10 @@ class EditRecipeApi:
     ) -> RESTResponseType:
         """Edit a recipe with AI
 
-        Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+        Starts a job that edits the recipe's current version the way the instruction says, looking up catalog weights and calories and the user's tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
 
+        :param id: Recipe ID (required)
+        :type id: UUID
         :param edit_recipe_request: (required)
         :type edit_recipe_request: EditRecipeRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -225,6 +237,7 @@ class EditRecipeApi:
         """ # noqa: E501
 
         _param = self._edit_recipe_with_ai_serialize(
+            id=id,
             edit_recipe_request=edit_recipe_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -233,11 +246,10 @@ class EditRecipeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RecipeContent",
+            '201': "NormalizeJobResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
-            '500': "ErrorResponse",
-            '503': "ErrorResponse",
+            '404': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -248,6 +260,7 @@ class EditRecipeApi:
 
     def _edit_recipe_with_ai_serialize(
         self,
+        id,
         edit_recipe_request,
         _request_auth,
         _content_type,
@@ -270,6 +283,8 @@ class EditRecipeApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -307,7 +322,7 @@ class EditRecipeApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/edit-recipe',
+            resource_path='/api/recipes/{id}/edit-with-ai',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

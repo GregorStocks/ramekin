@@ -17,18 +17,19 @@ import * as runtime from '../runtime';
 import type {
   EditRecipeRequest,
   ErrorResponse,
-  RecipeContent,
+  NormalizeJobResponse,
 } from '../models/index';
 import {
     EditRecipeRequestFromJSON,
     EditRecipeRequestToJSON,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
-    RecipeContentFromJSON,
-    RecipeContentToJSON,
+    NormalizeJobResponseFromJSON,
+    NormalizeJobResponseToJSON,
 } from '../models/index';
 
 export interface EditRecipeWithAiRequest {
+    id: string;
     editRecipeRequest: EditRecipeRequest;
 }
 
@@ -38,10 +39,17 @@ export interface EditRecipeWithAiRequest {
 export class EditRecipeApi extends runtime.BaseAPI {
 
     /**
-     * Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     * Starts a job that edits the recipe\'s current version the way the instruction says, looking up catalog weights and calories and the user\'s tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
      * Edit a recipe with AI
      */
-    async editRecipeWithAiRaw(requestParameters: EditRecipeWithAiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RecipeContent>> {
+    async editRecipeWithAiRaw(requestParameters: EditRecipeWithAiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<NormalizeJobResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling editRecipeWithAi().'
+            );
+        }
+
         if (requestParameters['editRecipeRequest'] == null) {
             throw new runtime.RequiredError(
                 'editRecipeRequest',
@@ -64,7 +72,8 @@ export class EditRecipeApi extends runtime.BaseAPI {
             }
         }
 
-        let urlPath = `/api/edit-recipe`;
+        let urlPath = `/api/recipes/{id}/edit-with-ai`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
 
         const response = await this.request({
             path: urlPath,
@@ -74,14 +83,14 @@ export class EditRecipeApi extends runtime.BaseAPI {
             body: EditRecipeRequestToJSON(requestParameters['editRecipeRequest']),
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => RecipeContentFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => NormalizeJobResponseFromJSON(jsonValue));
     }
 
     /**
-     * Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     * Starts a job that edits the recipe\'s current version the way the instruction says, looking up catalog weights and calories and the user\'s tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
      * Edit a recipe with AI
      */
-    async editRecipeWithAi(requestParameters: EditRecipeWithAiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RecipeContent> {
+    async editRecipeWithAi(requestParameters: EditRecipeWithAiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NormalizeJobResponse> {
         const response = await this.editRecipeWithAiRaw(requestParameters, initOverrides);
         return await response.value();
     }

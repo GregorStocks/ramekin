@@ -46,6 +46,12 @@ export interface NormalizeProposalResponse {
      * @memberof NormalizeProposalResponse
      */
     status: string;
+    /**
+     * What an Edit with AI run says it changed, once it completes.
+     * @type {string}
+     * @memberof NormalizeProposalResponse
+     */
+    summary?: string | null;
 }
 /**
  * Check if a given object implements the NormalizeProposalResponse interface.

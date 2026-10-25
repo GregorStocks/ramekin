@@ -9,14 +9,10 @@ Method | HTTP request | Description
 [**estimateCalories**](RecipesAPI.md#estimatecalories) | **POST** /api/recipes/estimate-calories | 
 [**exportAllRecipes**](RecipesAPI.md#exportallrecipes) | **GET** /api/recipes/export | 
 [**exportRecipe**](RecipesAPI.md#exportrecipe) | **GET** /api/recipes/{id}/export | 
-[**generateDescription**](RecipesAPI.md#generatedescription) | **POST** /api/recipes/{id}/generate-description | 
 [**generatePhoto**](RecipesAPI.md#generatephoto) | **POST** /api/recipes/{id}/generate-photo | 
 [**getRecipe**](RecipesAPI.md#getrecipe) | **GET** /api/recipes/{id} | 
 [**listRecipes**](RecipesAPI.md#listrecipes) | **GET** /api/recipes | 
 [**listVersions**](RecipesAPI.md#listversions) | **GET** /api/recipes/{id}/versions | 
-[**normalizeTitle**](RecipesAPI.md#normalizetitle) | **POST** /api/recipes/{id}/normalize-title | 
-[**reparseAllIngredients**](RecipesAPI.md#reparseallingredients) | **POST** /api/recipes/reparse-ingredients | Rebuild the ingredients of each of the user&#39;s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \&quot;reparse\&quot;) for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-[**rescrape**](RecipesAPI.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrapePhoto**](RecipesAPI.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo | 
 [**updateRecipe**](RecipesAPI.md#updaterecipe) | **PUT** /api/recipes/{id} | 
 
@@ -252,53 +248,6 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generateDescription**
-```swift
-    open class func generateDescription(id: UUID, completion: @escaping (_ data: GenerateDescriptionResponse?, _ error: Error?) -> Void)
-```
-
-
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import RamekinClient
-
-let id = 987 // UUID | Recipe ID
-
-RecipesAPI.generateDescription(id: id) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **UUID** | Recipe ID | 
-
-### Return type
-
-[**GenerateDescriptionResponse**](GenerateDescriptionResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **generatePhoto**
 ```swift
     open class func generatePhoto(id: UUID, completion: @escaping (_ data: GeneratePhotoResponse?, _ error: Error?) -> Void)
@@ -485,144 +434,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**VersionListResponse**](VersionListResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **normalizeTitle**
-```swift
-    open class func normalizeTitle(id: UUID, completion: @escaping (_ data: NormalizeTitleResponse?, _ error: Error?) -> Void)
-```
-
-
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import RamekinClient
-
-let id = 987 // UUID | Recipe ID
-
-RecipesAPI.normalizeTitle(id: id) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **UUID** | Recipe ID | 
-
-### Return type
-
-[**NormalizeTitleResponse**](NormalizeTitleResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **reparseAllIngredients**
-```swift
-    open class func reparseAllIngredients(completion: @escaping (_ data: ReparseIngredientsResponse?, _ error: Error?) -> Void)
-```
-
-Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import RamekinClient
-
-
-// Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-RecipesAPI.reparseAllIngredients() { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**ReparseIngredientsResponse**](ReparseIngredientsResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **rescrape**
-```swift
-    open class func rescrape(id: UUID, completion: @escaping (_ data: RescrapeResponse?, _ error: Error?) -> Void)
-```
-
-
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import RamekinClient
-
-let id = 987 // UUID | Recipe ID
-
-RecipesAPI.rescrape(id: id) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **UUID** | Recipe ID | 
-
-### Return type
-
-[**RescrapeResponse**](RescrapeResponse.md)
 
 ### Authorization
 
