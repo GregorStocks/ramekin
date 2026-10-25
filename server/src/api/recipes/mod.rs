@@ -1,5 +1,6 @@
 pub mod create;
 pub mod delete;
+pub mod edit_with_ai;
 pub mod estimate_calories;
 pub mod export;
 pub mod generate_photo;
@@ -41,6 +42,10 @@ pub fn router() -> Router<AppState> {
         .route("/{id}/generate-photo", post(generate_photo::generate_photo))
         .route("/{id}/normalize", post(normalize::normalize_recipe))
         .route(
+            "/{id}/edit-with-ai",
+            post(edit_with_ai::edit_recipe_with_ai),
+        )
+        .route(
             "/{id}/normalize/{job_id}",
             get(normalize::get_normalize_proposal),
         )
@@ -69,6 +74,7 @@ pub fn router() -> Router<AppState> {
         normalize::normalize_recipes,
         normalize::get_normalize_proposal,
         normalize::accept_normalize_proposal,
+        edit_with_ai::edit_recipe_with_ai,
     ),
     components(schemas(
         create::CreateRecipeRequest,
@@ -94,6 +100,7 @@ pub fn router() -> Router<AppState> {
         normalize::NormalizeRequest,
         normalize::BulkNormalizeRequest,
         normalize::NormalizeJobResponse,
+        edit_with_ai::EditRecipeRequest,
         normalize::BulkNormalizeResult,
         normalize::BulkNormalizeResponse,
         normalize::NormalizeProposalResponse,

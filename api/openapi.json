@@ -176,83 +176,6 @@
         ]
       }
     },
-    "/api/edit-recipe": {
-      "post": {
-        "tags": [
-          "edit_recipe"
-        ],
-        "summary": "Edit a recipe with AI",
-        "description": "Takes a recipe and a free-text instruction describing the desired change.\nReturns the complete modified recipe. Stateless - does NOT modify any database records.",
-        "operationId": "edit_recipe_with_ai",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EditRecipeRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Modified recipe",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RecipeContent"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid photo IDs",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "AI service unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
     "/api/import/photos": {
       "post": {
         "tags": [
@@ -1335,6 +1258,85 @@
         "responses": {
           "204": {
             "description": "Recipe deleted successfully"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/recipes/{id}/edit-with-ai": {
+      "post": {
+        "tags": [
+          "edit_recipe"
+        ],
+        "summary": "Edit a recipe with AI",
+        "description": "Starts a job that edits the recipe's current version the way the\ninstruction says, looking up catalog weights and calories and the user's\ntags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it\ncompletes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed\nversion and a summary of the changes, and\n`POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.",
+        "operationId": "edit_recipe_with_ai",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditRecipeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Edit job started; it proposes a version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizeJobResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Empty instruction, or invalid photo IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized",
@@ -3280,22 +3282,20 @@
         "type": "object",
         "description": "Request body for Edit with AI.",
         "required": [
-          "recipe",
           "instruction"
         ],
         "properties": {
           "instruction": {
-            "type": "string"
+            "type": "string",
+            "description": "The change the user wants, in their words."
           },
           "photo_ids": {
             "type": "array",
             "items": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          "recipe": {
-            "$ref": "#/components/schemas/RecipeContent"
+            },
+            "description": "Photos of the dish to give the model as context."
           }
         }
       },
@@ -4082,6 +4082,13 @@
           "status": {
             "type": "string",
             "description": "The job's status, as `GET /api/scrape/{id}` reports it."
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What an Edit with AI run says it changed, once it completes."
           }
         }
       },

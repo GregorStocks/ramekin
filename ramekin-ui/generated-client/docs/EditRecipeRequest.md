@@ -9,7 +9,6 @@ Name | Type
 ------------ | -------------
 `instruction` | string
 `photoIds` | Array&lt;string&gt;
-`recipe` | [RecipeContent](RecipeContent.md)
 
 ## Example
 
@@ -20,7 +19,6 @@ import type { EditRecipeRequest } from ''
 const example = {
   "instruction": null,
   "photoIds": null,
-  "recipe": null,
 } satisfies EditRecipeRequest
 
 console.log(example)

@@ -17,7 +17,7 @@ use base64::Engine as _;
 use ramekin_core::ai::prompts::render_generate_recipe_photo_prompt;
 use ramekin_core::ai::{
     edit_recipe, generate_description, generate_recipe_photo, normalize_title, suggest_tags,
-    AiConfig, AiError, Usage,
+    AiConfig, AiError, NoUserData, Usage,
 };
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
@@ -932,19 +932,24 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                 let mut spend = Spend::default();
                 let (answers, invalid) = ask_all(suite, model, &golden, &mut spend, async |i| {
                     let case = &golden[i];
-                    // As the server sends it.
-                    let recipe =
-                        serde_json::to_string_pretty(&case.recipe).expect("a recipe serializes");
-                    edit_recipe::<EditRecipe>(&client, &recipe, &case.instruction, vec![])
-                        .await
-                        .map(|r| (r.recipe, r.usage))
+                    // Evals edit each recipe on its own, so the tools see no
+                    // user tags or other recipes.
+                    edit_recipe(
+                        &client,
+                        &case.recipe,
+                        &case.instruction,
+                        vec![],
+                        &NoUserData,
+                    )
+                    .await
+                    .map(|r| ((r.recipe, r.summary), r.usage))
                 })
                 .await?;
                 let shown: Vec<Option<Shown>> = answers
                     .iter()
                     .map(|a| {
-                        a.as_ref().map(|recipe| {
-                            let text = recipe_text(recipe);
+                        a.as_ref().map(|(recipe, summary)| {
+                            let text = format!("{}\nSummary: {summary}\n", recipe_text(recipe));
                             Shown {
                                 key: answer_key(text.as_bytes()),
                                 text: Some(text),

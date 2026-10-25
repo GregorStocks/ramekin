@@ -32,6 +32,14 @@ pub struct NormalizeProposalResponse {
     /// The job's status, as `GET /api/scrape/{id}` reports it.
     #[serde(rename = "status")]
     pub status: String,
+    /// What an Edit with AI run says it changed, once it completes.
+    #[serde(
+        rename = "summary",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub summary: Option<Option<String>>,
 }
 
 impl NormalizeProposalResponse {
@@ -47,6 +55,7 @@ impl NormalizeProposalResponse {
             ops,
             proposed: None,
             status,
+            summary: None,
         }
     }
 }

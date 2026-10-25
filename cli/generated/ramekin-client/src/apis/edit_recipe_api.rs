@@ -19,20 +19,25 @@ use serde::{de::Error as _, Deserialize, Serialize};
 pub enum EditRecipeWithAiError {
     Status400(models::ErrorResponse),
     Status401(models::ErrorResponse),
-    Status500(models::ErrorResponse),
-    Status503(models::ErrorResponse),
+    Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
-/// Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+/// Starts a job that edits the recipe's current version the way the instruction says, looking up catalog weights and calories and the user's tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
 pub async fn edit_recipe_with_ai(
     configuration: &configuration::Configuration,
+    id: &str,
     edit_recipe_request: models::EditRecipeRequest,
-) -> Result<models::RecipeContent, Error<EditRecipeWithAiError>> {
+) -> Result<models::NormalizeJobResponse, Error<EditRecipeWithAiError>> {
     // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
     let p_body_edit_recipe_request = edit_recipe_request;
 
-    let uri_str = format!("{}/api/edit-recipe", configuration.base_path);
+    let uri_str = format!(
+        "{}/api/recipes/{id}/edit-with-ai",
+        configuration.base_path,
+        id = crate::apis::urlencode(p_path_id)
+    );
     let mut req_builder = configuration
         .client
         .request(reqwest::Method::POST, &uri_str);
@@ -60,8 +65,8 @@ pub async fn edit_recipe_with_ai(
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::RecipeContent`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::RecipeContent`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::NormalizeJobResponse`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::NormalizeJobResponse`")))),
         }
     } else {
         let content = resp.text().await?;
