@@ -804,6 +804,18 @@ fn an_amount_of_another_recipe_says_so() {
             result.lines[0].text
         );
     }
+    // Another measurement on the line still counts it.
+    let mut batch = parse_ingredient("1 batch guacamole");
+    batch.measurements.push(Measurement {
+        amount: Some("200".into()),
+        unit: Some("g".into()),
+    });
+    assert_eq!(
+        estimate(&[batch], None, 1.0).unwrap().known_calories,
+        estimate(&[parse_ingredient("200 g guacamole")], None, 1.0)
+            .unwrap()
+            .known_calories
+    );
     // "recipe" deeper in the name is just a word.
     let result = estimate(&[parse_ingredient("1 cup recipe-ready broth")], None, 1.0).unwrap();
     assert!(result

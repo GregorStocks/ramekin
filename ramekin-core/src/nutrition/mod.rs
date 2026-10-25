@@ -445,7 +445,7 @@ fn is_frying_medium(ingredient: &ParsedIngredient) -> bool {
 
 /// Whether the line is an amount of another recipe ("1 recipe guacamole",
 /// "1/2 batch Rice Krispies Treats"): its weight is the other recipe's, so
-/// it can't be counted from the catalog.
+/// only another measurement on the line ("1 batch (2 cups)") counts it.
 fn refers_to_another_recipe(ingredient: &ParsedIngredient) -> bool {
     let Some(measurement) = ingredient.measurements.first() else {
         return false;
@@ -466,15 +466,28 @@ fn refers_to_another_recipe(ingredient: &ParsedIngredient) -> bool {
     }
 }
 
+/// What a line adds, or why it can't be counted.
 fn contribution(
     ingredient: &ParsedIngredient,
     scale: f64,
     learned: &catalog::Learned,
     estimated: &Gaps,
 ) -> Result<Line, &'static str> {
-    if refers_to_another_recipe(ingredient) {
-        return Err("Another recipe");
-    }
+    weigh_line(ingredient, scale, learned, estimated).map_err(|reason| {
+        if refers_to_another_recipe(ingredient) {
+            "Another recipe"
+        } else {
+            reason
+        }
+    })
+}
+
+fn weigh_line(
+    ingredient: &ParsedIngredient,
+    scale: f64,
+    learned: &catalog::Learned,
+    estimated: &Gaps,
+) -> Result<Line, &'static str> {
     let entry =
         match catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), learned) {
             Resolution::Entry { entry, .. } if entry.kind == Kind::Product => {
