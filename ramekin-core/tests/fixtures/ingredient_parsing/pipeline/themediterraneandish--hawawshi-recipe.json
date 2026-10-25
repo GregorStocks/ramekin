@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 jalapeno (halved and seeded (leave some of the seed if you like heat))",
+      "raw": "1 jalapeno, halved and seeded (leave some of the seed if you like heat)",
       "expected": {
         "item": "jalapeno",
         "measurements": [
@@ -54,12 +54,12 @@
             "unit": null
           }
         ],
-        "note": "halved and seeded (leave some of the seed if you like heat)",
+        "note": "leave some of the seed if you like heat, halved and seeded",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ ounce fresh parsley (stems trimmed (cut most of the stem but leave some for extra flavor))",
+      "raw": "½ ounce fresh parsley, stems trimmed (cut most of the stem but leave some for extra flavor)",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -68,7 +68,7 @@
             "unit": "oz"
           }
         ],
-        "note": "stems trimmed (cut most of the stem but leave some for extra flavor)",
+        "note": "cut most of the stem but leave some for extra flavor, stems trimmed",
         "category": "Produce"
       }
     },

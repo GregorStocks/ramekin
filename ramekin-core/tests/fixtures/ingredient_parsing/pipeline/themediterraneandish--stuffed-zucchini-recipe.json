@@ -171,7 +171,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 large and very firm tomatoes, (divided (3 to be cored and stuffed, and 1 to be sliced))",
+      "raw": "4 large and very firm tomatoes, divided (3 to be cored and stuffed, and 1 to be sliced)",
       "expected": {
         "item": "and very firm tomatoes",
         "measurements": [
@@ -180,7 +180,7 @@
             "unit": "large"
           }
         ],
-        "note": "divided (3 to be cored and stuffed, and 1 to be sliced)",
+        "note": "3 to be cored and stuffed, and 1 to be sliced, divided",
         "section": "For Zucchini",
         "category": "Other"
       }

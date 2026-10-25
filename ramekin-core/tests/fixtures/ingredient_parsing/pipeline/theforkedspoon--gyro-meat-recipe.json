@@ -131,7 +131,7 @@
       "is_section_header": true
     },
     {
-      "raw": "½ English cucumber, (peeled (optional) and grated)",
+      "raw": "½ English cucumber, peeled (optional) and grated",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -140,7 +140,7 @@
             "unit": null
           }
         ],
-        "note": "peeled (optional) and grated",
+        "note": "optional, peeled and grated",
         "section": "Tzatziki Sauce",
         "category": "Produce"
       }

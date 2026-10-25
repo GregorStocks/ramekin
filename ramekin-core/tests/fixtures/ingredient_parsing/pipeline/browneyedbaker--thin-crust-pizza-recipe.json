@@ -253,7 +253,7 @@
       }
     },
     {
-      "raw": "8 ounces (226.8 g) mozzarella cheese, (shredded (about 2 cups shredded))",
+      "raw": "8 ounces  (226.8 g) mozzarella cheese, shredded (about 2 cups shredded)",
       "expected": {
         "item": "mozzarella cheese",
         "measurements": [
@@ -264,9 +264,13 @@
           {
             "amount": "226.8",
             "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (about 2 cups shredded)",
+        "note": "about 2 cups shredded, shredded",
         "section": "For the Toppings",
         "category": "Cheese"
       }

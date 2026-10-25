@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "1 cup vegetables (diced small (bell pepper, zucchini, onion, etc.))",
+      "raw": "1 cup vegetables, diced small (bell pepper, zucchini, onion, etc.)",
       "expected": {
         "item": "vegetables",
         "measurements": [
@@ -106,7 +106,7 @@
             "unit": "cup"
           }
         ],
-        "note": "diced small (bell pepper, zucchini, onion, etc.)",
+        "note": "bell pepper, zucchini, onion, etc., diced small",
         "section": "Vegetables",
         "category": "Produce"
       }

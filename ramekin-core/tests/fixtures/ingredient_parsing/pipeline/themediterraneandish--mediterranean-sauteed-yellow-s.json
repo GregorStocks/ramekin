@@ -95,11 +95,11 @@
       }
     },
     {
-      "raw": "Pitted marinated olives, (sliced (optional))",
+      "raw": "Pitted marinated olives, sliced (optional)",
       "expected": {
         "item": "Pitted marinated olives",
         "measurements": [],
-        "note": "sliced (optional)",
+        "note": "optional, sliced",
         "category": "Other"
       }
     },

@@ -184,16 +184,16 @@
       }
     },
     {
-      "raw": "1 bottle (750 ml white wine (or remaining spumante from pastry cream))",
+      "raw": "1 bottle, 750 ml white wine (or remaining spumante from pastry cream)",
       "expected": {
-        "item": "white wine",
+        "item": "750 ml white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "bottle"
           }
         ],
-        "note": "750 ml white wine (or remaining spumante from pastry cream)",
+        "note": "or remaining spumante from pastry cream",
         "section": "Poached Pears",
         "category": "Beverages"
       }

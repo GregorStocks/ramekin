@@ -95,7 +95,7 @@
       }
     },
     {
-      "raw": "¼-⅓ cup grated Parmesan cheese (or crumbled feta (optional))",
+      "raw": "¼-⅓ cup grated Parmesan cheese, or crumbled feta (optional)",
       "expected": {
         "item": "grated Parmesan cheese",
         "measurements": [
@@ -104,7 +104,7 @@
             "unit": "cup"
           }
         ],
-        "note": "or crumbled feta (optional)",
+        "note": "optional; or crumbled feta",
         "category": "Cheese"
       }
     },

@@ -295,16 +295,20 @@
       }
     },
     {
-      "raw": "¼ to ½ cup mint leaves (chopped fine (about 15 leaves))",
+      "raw": "¼ to ½ cup mint leaves, chopped fine (about 15 leaves)",
       "expected": {
         "item": "mint leaves",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "15",
+            "unit": "leaf"
           }
         ],
-        "note": "chopped fine (about 15 leaves)",
+        "note": "about 15 leaves, chopped fine",
         "section": "Other Ingredients for Chicken Biryani",
         "category": "Produce"
       }
@@ -449,7 +453,7 @@
       }
     },
     {
-      "raw": "2 cups (200 grams, 2 medium) yellow onions (sliced (or use small red onions))",
+      "raw": "2 cups (200 grams, 2 medium) yellow onions, sliced (or use small red onions)",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -466,7 +470,7 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced (or use small red onions)",
+        "note": "sliced; or use small red onions",
         "section": "To Make Fried Onions",
         "category": "Produce"
       }
@@ -555,7 +559,7 @@
       }
     },
     {
-      "raw": "1 green chili (deseeded and slit (optional, leave out for low heat))",
+      "raw": "1 green chili, deseeded and slit (optional, leave out for low heat)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -564,7 +568,7 @@
             "unit": null
           }
         ],
-        "note": "deseeded and slit (optional, leave out for low heat)",
+        "note": "optional, leave out for low heat, deseeded and slit",
         "section": "To Marinate",
         "category": "Produce"
       }
@@ -690,7 +694,7 @@
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves (fine chopped (optional))",
+      "raw": "2 tablespoons coriander leaves, fine chopped (optional)",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -699,7 +703,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "fine chopped (optional)",
+        "note": "optional, fine chopped",
         "section": "To Marinate",
         "category": "Produce"
       }

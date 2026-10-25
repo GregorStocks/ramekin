@@ -177,7 +177,7 @@
       }
     },
     {
-      "raw": "6 cups (828 g) sour cherries, (pitted (See note below.))",
+      "raw": "6 cups  (828 g) sour cherries, pitted (See note below.)",
       "expected": {
         "item": "sour cherries",
         "measurements": [
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": "pitted (See note below.)",
+        "note": "See note below., pitted",
         "section": "For the Pie Filling",
         "category": "Produce"
       }

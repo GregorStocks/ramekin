@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "8 oz container cool whip (thawed (or homemade whipped cream))",
+      "raw": "8 oz container cool whip, thawed (or homemade whipped cream)",
       "expected": {
         "item": "container cool whip",
         "measurements": [
@@ -80,7 +80,7 @@
             "unit": "oz"
           }
         ],
-        "note": "thawed (or homemade whipped cream)",
+        "note": "thawed; or homemade whipped cream",
         "section": "Filling",
         "category": "Frozen"
       }

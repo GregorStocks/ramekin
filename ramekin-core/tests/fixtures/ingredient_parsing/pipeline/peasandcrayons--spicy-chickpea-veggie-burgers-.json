@@ -231,7 +231,7 @@
       }
     },
     {
-      "raw": "½ a fresh jalapeño (sliced thin (optional))",
+      "raw": "½ a fresh jalapeño, sliced thin (optional)",
       "expected": {
         "item": "a fresh jalapeño",
         "measurements": [
@@ -240,7 +240,7 @@
             "unit": null
           }
         ],
-        "note": "sliced thin (optional)",
+        "note": "optional, sliced thin",
         "section": "For the Slaw",
         "category": "Other"
       }

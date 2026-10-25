@@ -169,16 +169,20 @@
       }
     },
     {
-      "raw": "6 to 8 large garlic cloves, (finely chopped (about 3 tablespoons))",
+      "raw": "6 to 8   large garlic cloves, finely chopped (about 3 tablespoons)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
           {
             "amount": "6 to 8",
             "unit": "large"
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
           }
         ],
-        "note": "finely chopped (about 3 tablespoons)",
+        "note": "about 3 tablespoons, finely chopped",
         "section": "For Sauce",
         "category": "Produce"
       }

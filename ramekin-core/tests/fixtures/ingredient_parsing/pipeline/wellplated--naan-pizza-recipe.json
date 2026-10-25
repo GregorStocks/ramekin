@@ -3,20 +3,16 @@
   "recipe_slug": "naan-pizza-recipe",
   "ingredients": [
     {
-      "raw": "2 naan breads (about 8-inches each, or 4 mini naan breads (purchased or Homemade Naan))",
+      "raw": "2 naan breads, about 8-inches each, or 4 mini naan breads (purchased or Homemade Naan)",
       "expected": {
         "item": "naan breads",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "inches each"
           }
         ],
-        "note": "about 8-inches each, or 4 mini naan breads (purchased or Homemade Naan)",
+        "note": "purchased or Homemade Naan, about 8-inches each, or 4 mini naan breads",
         "category": "Bakery & Bread"
       }
     },

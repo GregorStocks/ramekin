@@ -7,16 +7,20 @@
       "is_section_header": true
     },
     {
-      "raw": "1 lb fresh strawberries, (hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed))",
+      "raw": "1 lb   fresh strawberries, hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed)",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
           }
         ],
-        "note": "hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed)",
+        "note": "about 1 1/2 cups mashed, hulled, coarsely chopped, and mashed",
         "section": "For Strawberry Sauce",
         "category": "Produce"
       }
@@ -150,7 +154,7 @@
       "is_section_header": true
     },
     {
-      "raw": "7 oz ladyfinger cookies, (from 1 package (24 cookies))",
+      "raw": "7 oz   ladyfinger cookies, from 1 package (24 cookies)",
       "expected": {
         "item": "ladyfinger cookies",
         "measurements": [
@@ -159,7 +163,7 @@
             "unit": "oz"
           }
         ],
-        "note": "from 1 package (24 cookies)",
+        "note": "24 cookies, from 1 package",
         "section": "For Assembly",
         "category": "Snacks"
       }

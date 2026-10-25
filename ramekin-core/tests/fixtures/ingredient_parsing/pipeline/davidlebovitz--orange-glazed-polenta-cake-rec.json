@@ -75,7 +75,7 @@
       }
     },
     {
-      "raw": "2 tablespoons liqueur or eau-de-vie, (such as orange liqueur (Grand Marnier or Cointreau), kirsch or grappa)",
+      "raw": "2 tablespoons liqueur or eau-de-vie, such as orange liqueur (Grand Marnier or Cointreau), kirsch or grappa",
       "expected": {
         "item": "liqueur or eau-de-vie",
         "measurements": [
@@ -84,7 +84,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "such as orange liqueur (Grand Marnier or Cointreau), kirsch or grappa",
+        "note": "Grand Marnier or Cointreau, such as orange liqueur , kirsch or grappa",
         "section": "For the Cake",
         "category": "Other"
       }

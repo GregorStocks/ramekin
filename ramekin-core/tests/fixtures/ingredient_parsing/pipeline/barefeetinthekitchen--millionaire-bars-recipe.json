@@ -240,13 +240,13 @@
       }
     },
     {
-      "raw": "Optional: kosher (course sea salt, or Maldon salt (if you have it))",
+      "raw": "Optional: kosher, course sea salt, or Maldon salt (if you have it)",
       "expected": {
-        "item": "kosher",
+        "item": "kosher, course sea salt, or Maldon salt",
         "measurements": [],
-        "note": "optional, course sea salt, or Maldon salt (if you have it)",
+        "note": "optional, if you have it",
         "section": "Chocolate Layer",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     }
   ]

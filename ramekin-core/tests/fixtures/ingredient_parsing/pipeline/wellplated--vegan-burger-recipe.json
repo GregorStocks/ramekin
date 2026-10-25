@@ -220,11 +220,11 @@
       "is_section_header": true
     },
     {
-      "raw": "Sliced tomatoes, (avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard)",
+      "raw": "Sliced tomatoes, avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard",
       "expected": {
-        "item": "Sliced tomatoes",
+        "item": "Sliced tomatoes, avocado, arugula, sliced red onions, avocado, plain yogurt, mustard",
         "measurements": [],
-        "note": "avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard",
+        "note": "dairy-free if needed",
         "section": "Topping Ideas",
         "category": "Produce"
       }

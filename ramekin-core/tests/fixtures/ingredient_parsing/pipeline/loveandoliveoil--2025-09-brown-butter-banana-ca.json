@@ -90,7 +90,7 @@
       }
     },
     {
-      "raw": "3 large / 300 g very ripe bananas, (mashed (about 1 cup mashed))",
+      "raw": "3 large  / 300 g very ripe bananas, mashed (about 1 cup mashed)",
       "expected": {
         "item": "very ripe bananas",
         "measurements": [
@@ -99,11 +99,15 @@
             "unit": "large"
           },
           {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": "mashed (about 1 cup mashed)",
+        "note": "about 1 cup mashed, mashed",
         "section": "For Banana Cake",
         "category": "Produce"
       }

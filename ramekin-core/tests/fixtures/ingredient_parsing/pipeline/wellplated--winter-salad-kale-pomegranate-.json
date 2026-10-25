@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "10 ounces kale (stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces))",
+      "raw": "10 ounces kale, stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces)",
       "expected": {
         "item": "kale",
         "measurements": [
@@ -46,7 +46,7 @@
             "unit": "oz"
           }
         ],
-        "note": "stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces)",
+        "note": "if using bagged, pre-cut kale, use 8 ounces, stems removed and chopped into ribbons",
         "section": "For the Winter Salad",
         "category": "Produce"
       }

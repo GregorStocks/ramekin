@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 tablespoon minced jalapeño peppers, (from 1 pepper (seeded; see note))",
+      "raw": "1 tablespoon minced jalapeño peppers, from 1 pepper (seeded; see note)",
       "expected": {
         "item": "minced jalapeño peppers",
         "measurements": [
@@ -16,7 +16,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "from 1 pepper (seeded; see note)",
+        "note": "seeded; see note, from 1 pepper",
         "section": "Quick Salsa",
         "category": "Produce"
       }
@@ -97,16 +97,20 @@
       }
     },
     {
-      "raw": "2 small ripe tomatoes, (about ¾ pound (340 g), cored and diced)",
+      "raw": "2 small ripe tomatoes, about ¾ pound (340 g), cored and diced",
       "expected": {
         "item": "ripe tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
-        "note": "about 3/4 pound (340 g), cored and diced",
+        "note": "about 3/4 pound, cored and diced",
         "section": "Quick Salsa",
         "category": "Produce"
       }
@@ -308,7 +312,7 @@
       }
     },
     {
-      "raw": "2 jalapeño peppers, (thinly sliced into rounds (optional))",
+      "raw": "2 jalapeño peppers, thinly sliced into rounds (optional)",
       "expected": {
         "item": "jalapeño peppers",
         "measurements": [
@@ -317,7 +321,7 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced into rounds (optional)",
+        "note": "optional, thinly sliced into rounds",
         "section": "Nachos",
         "category": "Produce"
       }

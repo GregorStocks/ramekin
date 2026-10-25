@@ -161,16 +161,16 @@
       }
     },
     {
-      "raw": "1 tablespoon rum (or brandy or bourbon (or substitute an additional tablespoon eggnog))",
+      "raw": "1 tablespoon rum, or brandy or bourbon (or substitute an additional tablespoon eggnog)",
       "expected": {
-        "item": "rum",
+        "item": "rum, or brandy or bourbon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or brandy or bourbon (or substitute an additional tablespoon eggnog)",
+        "note": "or substitute an additional tablespoon eggnog",
         "section": "For the Eggnog Bread",
         "category": "Beverages"
       }
@@ -199,16 +199,16 @@
       }
     },
     {
-      "raw": "1 ½ tablespoons rum (or brandy or bourbon (whichever you used in the loaf), or eggnog)",
+      "raw": "1 ½ tablespoons rum, or brandy or bourbon (whichever you used in the loaf), or eggnog",
       "expected": {
-        "item": "rum",
+        "item": "rum, or brandy or bourbon, or eggnog",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": "or brandy or bourbon (whichever you used in the loaf), or eggnog",
+        "note": "whichever you used in the loaf",
         "section": "For the Glaze",
         "category": "Beverages"
       }

@@ -226,16 +226,20 @@
       }
     },
     {
-      "raw": "50 g butter (room temperature (1/4 cup))",
+      "raw": "50 g butter, room temperature (1/4 cup)",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
-        "note": "room temperature (1/4 cup)",
+        "note": "room temperature",
         "section": "Dough",
         "category": "Dairy & Eggs"
       }

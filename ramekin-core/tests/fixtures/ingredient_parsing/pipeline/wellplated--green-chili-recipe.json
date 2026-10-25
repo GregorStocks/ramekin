@@ -3,16 +3,20 @@
   "recipe_slug": "green-chili-recipe",
   "ingredients": [
     {
-      "raw": "3 poblano peppers (stemmed, seeded, and coarsely chopped into 3/4-inch pieces (about 3 cups))",
+      "raw": "3 poblano peppers, stemmed, seeded, and coarsely chopped into 3/4-inch pieces (about 3 cups)",
       "expected": {
-        "item": "poblano peppers",
+        "item": "poblano peppers, stemmed, seeded, and coarsely chopped into 3/4-inch pieces",
         "measurements": [
           {
             "amount": "3",
             "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
           }
         ],
-        "note": "stemmed, seeded, and coarsely chopped into 3/4-inch pieces (about 3 cups)",
+        "note": "about 3 cups",
         "category": "Produce"
       }
     },
@@ -31,30 +35,38 @@
       }
     },
     {
-      "raw": "2 jalapeño peppers (seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces (about 1/2 cup))",
+      "raw": "2 jalapeño peppers, seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces (about 1/2 cup)",
       "expected": {
         "item": "jalapeño peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": "seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces (about 1/2 cup)",
+        "note": "about 1/2 cup, seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 medium yellow onion (chopped into 1/4- to 1/2-inch pieces (about 1 cup))",
+      "raw": "1 medium yellow onion, chopped into 1/4- to 1/2-inch pieces (about 1 cup)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "chopped into 1/4- to 1/2-inch pieces (about 1 cup)",
+        "note": "about 1 cup, chopped into 1/4- to 1/2-inch pieces",
         "category": "Produce"
       }
     },

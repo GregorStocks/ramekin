@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 package (9 oz. chocolate wafer cookies (such as Nabisco))",
+      "raw": "1 package, 9 oz. chocolate wafer cookies (such as Nabisco)",
       "expected": {
-        "item": "chocolate wafer cookies",
+        "item": "9 oz. chocolate wafer cookies",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": "9 oz. chocolate wafer cookies (such as Nabisco)",
+        "note": "such as Nabisco",
         "section": "Crust",
         "category": "Snacks"
       }

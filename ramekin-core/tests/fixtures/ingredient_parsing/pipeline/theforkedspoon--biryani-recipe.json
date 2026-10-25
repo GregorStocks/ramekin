@@ -150,18 +150,18 @@
       }
     },
     {
-      "raw": "2½ lbs lamb shoulder , (boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb))",
+      "raw": "2½ lbs lamb shoulder , boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb)",
       "expected": {
-        "item": "lamb shoulder",
+        "item": "lamb shoulder, boneless or bone-in",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb)",
+        "note": "you may also use lamb chops or leg of lamb, chopped into large chunks",
         "section": "Chicken and Lamb + Marinade",
-        "category": "Meat & Seafood"
+        "category": "Other"
       }
     },
     {

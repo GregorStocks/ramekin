@@ -89,16 +89,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 to 2 tablespoon ghee (or (1 tbsp oil or 2 tbsps butter))",
+      "raw": "1 to 2 tablespoon ghee, or (1 tbsp oil or 2 tbsps butter)",
       "expected": {
-        "item": "ghee",
+        "item": "ghee, or",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": "or (1 tbsp oil or 2 tbsps butter)",
+        "note": "1 tbsp oil or 2 tbsps butter",
         "section": "To Temper",
         "category": "Dairy & Eggs"
       }

@@ -127,16 +127,16 @@
       }
     },
     {
-      "raw": "1/4 cup chopped fresh basil (can substitute 1 TBSP dried basil, if you'd like))",
+      "raw": "1/4 cup chopped fresh basil, can substitute 1 TBSP dried basil, if you'd like)",
       "expected": {
-        "item": "chopped fresh basil",
+        "item": "chopped fresh basil, can substitute 1 TBSP dried basil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "can substitute 1 TBSP dried basil, if you'd like",
+        "note": "if you'd like)",
         "section": "Meatball Ingredients",
         "category": "Produce"
       }

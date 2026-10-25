@@ -146,7 +146,7 @@
       }
     },
     {
-      "raw": "1 pint cherry tomatoes (cut in half (you can sub in grape tomatoes))",
+      "raw": "1 pint cherry tomatoes, cut in half (you can sub in grape tomatoes)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -155,7 +155,7 @@
             "unit": "pint"
           }
         ],
-        "note": "cut in half (you can sub in grape tomatoes)",
+        "note": "you can sub in grape tomatoes, cut in half",
         "section": "For the Salad",
         "category": "Produce"
       }

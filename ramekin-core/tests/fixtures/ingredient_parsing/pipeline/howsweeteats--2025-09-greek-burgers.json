@@ -271,11 +271,11 @@
       }
     },
     {
-      "raw": "crumbled or sliced feta, (for topping (as much as you want!))",
+      "raw": "crumbled or sliced feta, for topping (as much as you want!)",
       "expected": {
         "item": "crumbled or sliced feta",
         "measurements": [],
-        "note": "for topping (as much as you want!)",
+        "note": "as much as you want!, for topping",
         "section": "Burgers",
         "category": "Cheese"
       }

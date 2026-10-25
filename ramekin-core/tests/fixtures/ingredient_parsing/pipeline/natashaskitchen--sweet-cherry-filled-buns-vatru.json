@@ -67,16 +67,16 @@
       }
     },
     {
-      "raw": "1 egg, (room temp (take it out of the fridge at the start of the recipe))",
+      "raw": "1 egg, room temp (take it out of the fridge at the start of the recipe)",
       "expected": {
-        "item": "egg",
+        "item": "egg, room temp",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "room temp (take it out of the fridge at the start of the recipe)",
+        "note": "take it out of the fridge at the start of the recipe",
         "section": "Yeast Buns Ingredients",
         "category": "Dairy & Eggs"
       }
@@ -112,7 +112,7 @@
       }
     },
     {
-      "raw": "1 egg, (beaten with fork (for egg wash))",
+      "raw": "1 egg, beaten with fork (for egg wash)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -121,7 +121,7 @@
             "unit": null
           }
         ],
-        "note": "beaten with fork (for egg wash)",
+        "note": "for egg wash, beaten with fork",
         "section": "Yeast Buns Ingredients",
         "category": "Dairy & Eggs"
       }

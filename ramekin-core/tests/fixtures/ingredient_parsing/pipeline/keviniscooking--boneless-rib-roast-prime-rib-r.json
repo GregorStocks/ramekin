@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 lb boneless beef rib roast (visible fat trimmed to 1/2-inch (See Note 1))",
+      "raw": "8 lb boneless beef rib roast, visible fat trimmed to 1/2-inch (See Note 1)",
       "expected": {
         "item": "boneless beef rib roast",
         "measurements": [
@@ -16,7 +16,7 @@
             "unit": "lb"
           }
         ],
-        "note": "visible fat trimmed to 1/2-inch (See Note 1)",
+        "note": "See Note 1, visible fat trimmed to 1/2-inch",
         "section": "Roast Rub",
         "category": "Other"
       }

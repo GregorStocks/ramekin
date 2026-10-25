@@ -96,7 +96,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pound fusilli pasta, (cooked to al dente (may also use rotini pasta or bowtie pasta))",
+      "raw": "1 pound fusilli pasta, cooked to al dente (may also use rotini pasta or bowtie pasta)",
       "expected": {
         "item": "fusilli pasta",
         "measurements": [
@@ -105,7 +105,7 @@
             "unit": "lb"
           }
         ],
-        "note": "cooked to al dente (may also use rotini pasta or bowtie pasta)",
+        "note": "may also use rotini pasta or bowtie pasta, cooked to al dente",
         "section": "For the Pasta Salad",
         "category": "Other"
       }
@@ -156,7 +156,7 @@
       }
     },
     {
-      "raw": "15 ounces cherry tomatoes, (halved (or grape tomatoes))",
+      "raw": "15 ounces cherry tomatoes, halved (or grape tomatoes)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -165,7 +165,7 @@
             "unit": "oz"
           }
         ],
-        "note": "halved (or grape tomatoes)",
+        "note": "halved; or grape tomatoes",
         "section": "For the Pasta Salad",
         "category": "Produce"
       }

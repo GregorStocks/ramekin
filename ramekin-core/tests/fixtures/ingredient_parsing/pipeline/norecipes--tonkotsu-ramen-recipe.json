@@ -195,7 +195,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic (finely grated (not pressed))",
+      "raw": "2 cloves garlic, finely grated (not pressed)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -204,7 +204,7 @@
             "unit": "clove"
           }
         ],
-        "note": "finely grated (not pressed)",
+        "note": "not pressed, finely grated",
         "section": "For Soup",
         "category": "Produce"
       }
@@ -270,7 +270,7 @@
       }
     },
     {
-      "raw": "2 tablespoons fatback (finely minced (salted pork fat))",
+      "raw": "2 tablespoons fatback, finely minced (salted pork fat)",
       "expected": {
         "item": "fatback",
         "measurements": [
@@ -279,7 +279,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely minced (salted pork fat)",
+        "note": "salted pork fat, finely minced",
         "section": "For Soup",
         "category": "Other"
       }

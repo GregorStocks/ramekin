@@ -3,16 +3,16 @@
   "recipe_slug": "best-chipotle-hummus-recipe",
   "ingredients": [
     {
-      "raw": "1 can chickpeas (15.5 oz (liquid reserved))",
+      "raw": "1 can chickpeas, 15.5 oz (liquid reserved)",
       "expected": {
-        "item": "chickpeas",
+        "item": "chickpeas, 15.5 oz",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "15.5 oz (liquid reserved)",
+        "note": "liquid reserved",
         "category": "Canned Goods"
       }
     },

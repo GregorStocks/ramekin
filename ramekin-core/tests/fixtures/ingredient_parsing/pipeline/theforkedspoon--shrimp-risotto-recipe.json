@@ -286,11 +286,11 @@
       }
     },
     {
-      "raw": "lemon wedges, (for serving (at least 3-4 lemons))",
+      "raw": "lemon wedges, for serving (at least 3-4 lemons)",
       "expected": {
         "item": "lemon wedges",
         "measurements": [],
-        "note": "for serving (at least 3-4 lemons)",
+        "note": "at least 3-4 lemons, for serving",
         "section": "For the Parmesan Risotto with Shrimp",
         "category": "Produce"
       }

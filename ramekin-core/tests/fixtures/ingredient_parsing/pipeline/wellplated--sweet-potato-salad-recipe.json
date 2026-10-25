@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "3 large sweet potatoes (peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like))",
+      "raw": "3 large sweet potatoes, peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like)",
       "expected": {
         "item": "sweet potatoes",
         "measurements": [
@@ -31,7 +31,7 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like)",
+        "note": "I do a rough 3/4 inch, but you can do any size you like, peeled and cut into chunks",
         "section": "For the Sweet Potato Salad",
         "category": "Produce"
       }

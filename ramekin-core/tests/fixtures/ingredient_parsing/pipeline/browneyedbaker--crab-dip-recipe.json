@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "4 ounces (113.4 g) Monterey Jack cheese, (shredded (1 cup shredded))",
+      "raw": "4 ounces  (113.4 g) Monterey Jack cheese, shredded (1 cup shredded)",
       "expected": {
         "item": "Monterey Jack cheese",
         "measurements": [
@@ -135,9 +135,13 @@
           {
             "amount": "113.4",
             "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (1 cup shredded)",
+        "note": "shredded",
         "section": "For the Dip",
         "category": "Cheese"
       }

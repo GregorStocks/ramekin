@@ -97,16 +97,16 @@
       }
     },
     {
-      "raw": "1 slice white or whole wheat sandwich bread, (crusts removed and torn into ¼-inch (6-mm) pieces)",
+      "raw": "1 slice white or whole wheat sandwich bread, crusts removed and torn into ¼-inch (6-mm) pieces",
       "expected": {
-        "item": "white or whole wheat sandwich bread",
+        "item": "white or whole wheat sandwich bread, crusts removed and torn into 1/4-inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "slice"
           }
         ],
-        "note": "crusts removed and torn into 1/4-inch (6-mm) pieces",
+        "note": "6-mm",
         "section": "For the Bulgogi Burgers",
         "category": "Bakery & Bread"
       }
@@ -157,11 +157,11 @@
       }
     },
     {
-      "raw": "Lettuce leaves, (for serving (optional))",
+      "raw": "Lettuce leaves, for serving (optional)",
       "expected": {
         "item": "Lettuce leaves",
         "measurements": [],
-        "note": "for serving (optional)",
+        "note": "optional, for serving",
         "section": "For the Bulgogi Burgers",
         "category": "Produce"
       }
@@ -186,7 +186,7 @@
       }
     },
     {
-      "raw": "¼ cup Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets))",
+      "raw": "¼ cup Asian chili sauce, such as Sambal Oelek (available in Asian aisle of most supermarkets)",
       "expected": {
         "item": "Asian chili sauce",
         "measurements": [
@@ -195,7 +195,7 @@
             "unit": "cup"
           }
         ],
-        "note": "such as Sambal Oelek (available in Asian aisle of most supermarkets)",
+        "note": "available in Asian aisle of most supermarkets, such as Sambal Oelek",
         "section": "For the Chili Mayonnaise",
         "category": "Other"
       }

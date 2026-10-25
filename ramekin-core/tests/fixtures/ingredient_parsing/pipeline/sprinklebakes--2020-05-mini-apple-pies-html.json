@@ -207,18 +207,18 @@
       }
     },
     {
-      "raw": "5 large (tart, firm apples, thinly sliced (tested with Granny Smith))",
+      "raw": "5 large, tart, firm apples, thinly sliced (tested with Granny Smith)",
       "expected": {
-        "item": "tart",
+        "item": "tart, firm apples",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": "firm apples, thinly sliced (tested with Granny Smith)",
+        "note": "tested with Granny Smith, thinly sliced",
         "section": "Apple Pie Filling",
-        "category": "Bakery & Bread"
+        "category": "Other"
       }
     },
     {

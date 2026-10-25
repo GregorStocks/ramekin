@@ -115,16 +115,16 @@
       }
     },
     {
-      "raw": "½ to 1 teaspoon red chili powder (or paprika (reduce for less spicy))",
+      "raw": "½ to 1 teaspoon red chili powder, or paprika (reduce for less spicy)",
       "expected": {
-        "item": "red chili powder",
+        "item": "red chili powder, or paprika",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "or paprika (reduce for less spicy)",
+        "note": "reduce for less spicy",
         "category": "Spices & Seasonings"
       }
     },

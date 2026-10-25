@@ -251,9 +251,9 @@
       }
     },
     {
-      "raw": "1 teaspoon (5 ml) minced fresh chilies (or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.))",
+      "raw": "1 teaspoon (5 ml) minced fresh chilies, or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.)",
       "expected": {
-        "item": "minced fresh chilies",
+        "item": "minced fresh chilies, or to personal taste",
         "measurements": [
           {
             "amount": "1",
@@ -264,7 +264,7 @@
             "unit": "ml"
           }
         ],
-        "note": "or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.)",
+        "note": "Serrano, Thai chilies, jalapeno, habanero, etc.",
         "section": "Crispy Quinoa Fritters",
         "category": "Produce"
       }

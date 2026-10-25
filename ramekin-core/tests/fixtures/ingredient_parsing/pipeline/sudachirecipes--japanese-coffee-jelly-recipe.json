@@ -58,16 +58,16 @@
       "is_section_header": true
     },
     {
-      "raw": "500 ml water (if using espresso shots, reduce the water by 30ml for each shot used (see note))",
+      "raw": "500 ml water, if using espresso shots, reduce the water by 30ml for each shot used (see note)",
       "expected": {
-        "item": "water",
+        "item": "water, if using espresso shots, reduce the water by 30ml for each shot used",
         "measurements": [
           {
             "amount": "500",
             "unit": "ml"
           }
         ],
-        "note": "if using espresso shots, reduce the water by 30ml for each shot used (see note)",
+        "note": "see note",
         "section": "Other Ingredients",
         "category": "Beverages"
       }

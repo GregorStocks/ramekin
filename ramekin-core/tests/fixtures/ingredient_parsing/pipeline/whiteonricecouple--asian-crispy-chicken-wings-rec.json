@@ -179,9 +179,9 @@
       }
     },
     {
-      "raw": "2 Tablespoons (30 ml) fish sauce (or soy sauce (We highly recommend fish sauce))",
+      "raw": "2 Tablespoons (30 ml) fish sauce, or soy sauce (We highly recommend fish sauce)",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce, or soy sauce",
         "measurements": [
           {
             "amount": "2",
@@ -192,7 +192,7 @@
             "unit": "ml"
           }
         ],
-        "note": "or soy sauce (We highly recommend fish sauce)",
+        "note": "We highly recommend fish sauce",
         "section": "Sweet-Spicy Chili Sauce",
         "category": "Condiments & Sauces"
       }

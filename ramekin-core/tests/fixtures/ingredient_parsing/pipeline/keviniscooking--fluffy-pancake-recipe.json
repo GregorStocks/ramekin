@@ -135,11 +135,11 @@
       "is_section_header": true
     },
     {
-      "raw": "Cooking spray (butter or lard for making pancakes (Gramma’s favorite was Crisco))",
+      "raw": "Cooking spray, butter or lard for making pancakes (Gramma’s favorite was Crisco)",
       "expected": {
-        "item": "Cooking spray",
+        "item": "Cooking spray, butter or lard for making pancakes",
         "measurements": [],
-        "note": "butter or lard for making pancakes (Gramma’s favorite was Crisco)",
+        "note": "Gramma’s favorite was Crisco",
         "section": "Cooking",
         "category": "Oils & Vinegars"
       }

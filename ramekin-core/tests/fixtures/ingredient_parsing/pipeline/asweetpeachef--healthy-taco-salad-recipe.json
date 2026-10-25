@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "1 cup taco meat, (cooled (see recipe above))",
+      "raw": "1 cup taco meat, cooled (see recipe above)",
       "expected": {
         "item": "taco meat",
         "measurements": [
@@ -140,7 +140,7 @@
             "unit": "cup"
           }
         ],
-        "note": "cooled (see recipe above)",
+        "note": "see recipe above, cooled",
         "section": "For the Taco Salad",
         "category": "Other"
       }
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "½ avocado, (diced (optional, when serving))",
+      "raw": "½ avocado, diced (optional, when serving)",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -185,7 +185,7 @@
             "unit": null
           }
         ],
-        "note": "diced (optional, when serving)",
+        "note": "optional, when serving, diced",
         "section": "For the Taco Salad",
         "category": "Produce"
       }

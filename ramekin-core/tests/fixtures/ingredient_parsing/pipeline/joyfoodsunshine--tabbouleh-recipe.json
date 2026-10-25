@@ -59,30 +59,38 @@
       }
     },
     {
-      "raw": "4 green onions (finely sliced (1/2 cup))",
+      "raw": "4 green onions, finely sliced (1/2 cup)",
       "expected": {
         "item": "green onions",
         "measurements": [
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": "finely sliced (1/2 cup)",
+        "note": "finely sliced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cucumber (peeled and finely diced (about 1 cup))",
+      "raw": "1 cucumber, peeled and finely diced (about 1 cup)",
       "expected": {
         "item": "cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "peeled and finely diced (about 1 cup)",
+        "note": "about 1 cup, peeled and finely diced",
         "category": "Produce"
       }
     },

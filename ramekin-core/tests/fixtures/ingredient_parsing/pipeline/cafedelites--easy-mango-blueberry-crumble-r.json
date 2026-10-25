@@ -37,16 +37,16 @@
       }
     },
     {
-      "raw": "1/2 tablespoon flour (light spelt, all purpose or plain))",
+      "raw": "1/2 tablespoon flour, light spelt, all purpose or plain)",
       "expected": {
-        "item": "flour",
+        "item": "flour, light spelt, all purpose or plain)",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "light spelt, all purpose or plain",
+        "note": null,
         "section": "Fruit Mix",
         "category": "Baking"
       }

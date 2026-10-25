@@ -129,16 +129,20 @@
       }
     },
     {
-      "raw": "3 large bananas (mashed (about 1 ½ cups))",
+      "raw": "3 large bananas, mashed (about 1 ½ cups)",
       "expected": {
         "item": "bananas",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
           }
         ],
-        "note": "mashed (about 1 1/2 cups)",
+        "note": "about 1 1/2 cups, mashed",
         "category": "Produce"
       }
     },
@@ -171,7 +175,7 @@
       }
     },
     {
-      "raw": "1 cup pecans (finely chopped (optional))",
+      "raw": "1 cup pecans, finely chopped (optional)",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -180,7 +184,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped (optional)",
+        "note": "optional, finely chopped",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "½ cup candied walnuts, (chopped (recipe below))",
+      "raw": "½ cup candied walnuts, chopped (recipe below)",
       "expected": {
         "item": "candied walnuts",
         "measurements": [
@@ -49,7 +49,7 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped (recipe below)",
+        "note": "recipe below, chopped",
         "category": "Nuts & Dried Fruit"
       }
     },

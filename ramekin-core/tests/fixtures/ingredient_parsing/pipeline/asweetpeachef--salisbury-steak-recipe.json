@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "1 lb cremini mushrooms, (quartered (approx. 15 mushrooms))",
+      "raw": "1 lb cremini mushrooms,  quartered (approx. 15 mushrooms)",
       "expected": {
         "item": "cremini mushrooms",
         "measurements": [
@@ -106,7 +106,7 @@
             "unit": "lb"
           }
         ],
-        "note": "quartered (approx. 15 mushrooms)",
+        "note": "approx. 15 mushrooms, quartered",
         "section": "For the Healthy Salisbury Steak",
         "category": "Produce"
       }
@@ -161,16 +161,20 @@
       "is_section_header": true
     },
     {
-      "raw": "1 lb. red potatoes, (diced (approx. 1 lb))",
+      "raw": "1 lb. red potatoes,  diced (approx. 1 lb)",
       "expected": {
         "item": "red potatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
           }
         ],
-        "note": "diced (approx. 1 lb)",
+        "note": "approx. 1 lb, diced",
         "section": "For the Mashed Red Potatoes",
         "category": "Produce"
       }

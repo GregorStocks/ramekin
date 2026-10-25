@@ -101,7 +101,7 @@
       "is_section_header": true
     },
     {
-      "raw": "5 sheets phyllo dough, (thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels))",
+      "raw": "5   sheets phyllo dough, thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels)",
       "expected": {
         "item": "phyllo dough",
         "measurements": [
@@ -110,7 +110,7 @@
             "unit": "sheet"
           }
         ],
-        "note": "thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels)",
+        "note": "use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels, thawed",
         "section": "For the Strudel Assembly",
         "category": "Frozen"
       }

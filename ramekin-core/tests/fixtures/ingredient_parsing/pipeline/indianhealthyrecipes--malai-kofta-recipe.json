@@ -7,16 +7,20 @@
       "is_section_header": true
     },
     {
-      "raw": "1 heaped cup paneer (crumbled (about 150 grams))",
+      "raw": "1 heaped cup paneer, crumbled (about 150 grams)",
       "expected": {
         "item": "paneer",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaped cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
-        "note": "crumbled (about 150 grams)",
+        "note": "about 150 grams, crumbled",
         "section": "For Malai Kofta",
         "category": "Cheese"
       }
