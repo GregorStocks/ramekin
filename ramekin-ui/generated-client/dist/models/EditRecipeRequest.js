@@ -13,19 +13,19 @@
  */
 import { RecipeContentFromJSON, RecipeContentToJSON, } from './RecipeContent';
 /**
- * Check if a given object implements the CustomEnrichRequest interface.
+ * Check if a given object implements the EditRecipeRequest interface.
  */
-export function instanceOfCustomEnrichRequest(value) {
+export function instanceOfEditRecipeRequest(value) {
     if (!('instruction' in value) || value['instruction'] === undefined)
         return false;
     if (!('recipe' in value) || value['recipe'] === undefined)
         return false;
     return true;
 }
-export function CustomEnrichRequestFromJSON(json) {
-    return CustomEnrichRequestFromJSONTyped(json, false);
+export function EditRecipeRequestFromJSON(json) {
+    return EditRecipeRequestFromJSONTyped(json, false);
 }
-export function CustomEnrichRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function EditRecipeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,10 +35,10 @@ export function CustomEnrichRequestFromJSONTyped(json, ignoreDiscriminator) {
         'recipe': RecipeContentFromJSON(json['recipe']),
     };
 }
-export function CustomEnrichRequestToJSON(json) {
-    return CustomEnrichRequestToJSONTyped(json, false);
+export function EditRecipeRequestToJSON(json) {
+    return EditRecipeRequestToJSONTyped(json, false);
 }
-export function CustomEnrichRequestToJSONTyped(value, ignoreDiscriminator = false) {
+export function EditRecipeRequestToJSONTyped(value, ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

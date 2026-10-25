@@ -1,18 +1,15 @@
-use crate::api::ai::{ai_client_from_env, ai_config_from_env};
+use crate::api::ai::ai_client_from_env;
 use crate::api::ApiError;
 use crate::auth::AuthUser;
 use crate::db::{run_blocking, DbPool};
-use crate::photos::{load_photo_images, PhotoImageLoadError};
 use crate::schema::user_tags;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
-use ramekin_core::ai::{custom_enrich, suggest_tags, CachingAiClient};
-use serde::Deserialize;
+use ramekin_core::ai::suggest_tags;
 use std::fmt;
 use std::sync::Arc;
 use utoipa::OpenApi;
-use utoipa::ToSchema;
 
 #[derive(Debug)]
 enum TagEnrichmentError {
@@ -142,93 +139,8 @@ async fn try_enrich_tags(
     Ok(tags)
 }
 
-/// Request body for custom enrichment.
-#[derive(Debug, Deserialize, ToSchema)]
-pub struct CustomEnrichRequest {
-    pub recipe: RecipeContent,
-    pub instruction: String,
-    #[serde(default)]
-    pub photo_ids: Vec<crate::ids::Uuid>,
-}
-
-/// Apply a custom AI modification to a recipe
-///
-/// Takes a recipe and a free-text instruction describing the desired change.
-/// Returns the complete modified recipe. Stateless - does NOT modify any database records.
-#[utoipa::path(
-    post,
-    path = "/api/enrich/custom",
-    tag = "enrich",
-    request_body = CustomEnrichRequest,
-    responses(
-        (status = 200, description = "Modified recipe", body = RecipeContent),
-        (status = 400, description = "Invalid photo IDs", body = crate::api::ErrorResponse),
-        (status = 401, description = "Unauthorized", body = crate::api::ErrorResponse),
-        (status = 500, description = "Internal server error", body = crate::api::ErrorResponse),
-        (status = 503, description = "AI service unavailable", body = crate::api::ErrorResponse)
-    ),
-    security(
-        ("bearer_auth" = [])
-    )
-)]
-pub async fn custom_enrich_recipe(
-    AuthUser(user): AuthUser,
-    State(pool): State<Arc<DbPool>>,
-    Json(request): Json<CustomEnrichRequest>,
-) -> impl IntoResponse {
-    let ai_client = match ai_config_from_env() {
-        Ok(config) => CachingAiClient::new(config.for_custom_enrich()),
-        Err(e) => return e.into_response(),
-    };
-
-    // Serialize the recipe to JSON for the prompt
-    let recipe_json = match serde_json::to_string_pretty(&request.recipe) {
-        Ok(j) => j,
-        Err(e) => {
-            tracing::error!("Failed to serialize recipe for AI: {}", e);
-            return ApiError::internal("Failed to serialize recipe").into_response();
-        }
-    };
-
-    let images = match load_photo_images(&pool, user.id, &request.photo_ids).await {
-        Ok(images) => images,
-        Err(PhotoImageLoadError::NotFound) => {
-            return ApiError::invalid_request(
-                "One or more photo_ids not found or don't belong to user",
-            )
-            .into_response();
-        }
-        Err(e @ (PhotoImageLoadError::Database(_) | PhotoImageLoadError::File(_))) => {
-            tracing::error!("Failed to load custom enrich photos: {}", e);
-            return ApiError::internal("Failed to load photos").into_response();
-        }
-    };
-
-    // Call custom enrich
-    let modified = match custom_enrich::<RecipeContent>(
-        &ai_client,
-        &recipe_json,
-        &request.instruction,
-        images,
-    )
-    .await
-    {
-        Ok(r) => r.recipe,
-        Err(e) => {
-            tracing::warn!("Custom enrich AI call failed: {}", e);
-            return ApiError::service_unavailable(format!("AI service error: {}", e))
-                .into_response();
-        }
-    };
-
-    (StatusCode::OK, Json(modified)).into_response()
-}
-
 #[derive(OpenApi)]
-#[openapi(
-    paths(enrich_recipe, custom_enrich_recipe),
-    components(schemas(RecipeContent, CustomEnrichRequest))
-)]
+#[openapi(paths(enrich_recipe), components(schemas(RecipeContent)))]
 pub struct ApiDoc;
 
 #[cfg(test)]

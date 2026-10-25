@@ -20,6 +20,7 @@ __version__ = "1.0.0"
 __all__ = [
     "AuthApi",
     "ClientLogsApi",
+    "EditRecipeApi",
     "EnrichApi",
     "ImportApi",
     "IngredientNamesApi",
@@ -60,9 +61,9 @@ __all__ = [
     "CreateScrapeResponse",
     "CreateTagRequest",
     "CreateTagResponse",
-    "CustomEnrichRequest",
     "DerivedMeasurement",
     "Direction",
+    "EditRecipeRequest",
     "ErrorCode",
     "ErrorResponse",
     "EstimateCaloriesRequest",
@@ -144,6 +145,7 @@ __all__ = [
 # import apis into sdk package
 from ramekin_client.api.auth_api import AuthApi as AuthApi
 from ramekin_client.api.client_logs_api import ClientLogsApi as ClientLogsApi
+from ramekin_client.api.edit_recipe_api import EditRecipeApi as EditRecipeApi
 from ramekin_client.api.enrich_api import EnrichApi as EnrichApi
 from ramekin_client.api.import_api import ImportApi as ImportApi
 from ramekin_client.api.ingredient_names_api import IngredientNamesApi as IngredientNamesApi
@@ -188,9 +190,9 @@ from ramekin_client.models.create_scrape_request import CreateScrapeRequest as C
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse as CreateScrapeResponse
 from ramekin_client.models.create_tag_request import CreateTagRequest as CreateTagRequest
 from ramekin_client.models.create_tag_response import CreateTagResponse as CreateTagResponse
-from ramekin_client.models.custom_enrich_request import CustomEnrichRequest as CustomEnrichRequest
 from ramekin_client.models.derived_measurement import DerivedMeasurement as DerivedMeasurement
 from ramekin_client.models.direction import Direction as Direction
+from ramekin_client.models.edit_recipe_request import EditRecipeRequest as EditRecipeRequest
 from ramekin_client.models.error_code import ErrorCode as ErrorCode
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.estimate_calories_request import EstimateCaloriesRequest as EstimateCaloriesRequest

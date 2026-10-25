@@ -115,6 +115,7 @@ impl From<&str> for ContentType {
 
 pub mod auth_api;
 pub mod client_logs_api;
+pub mod edit_recipe_api;
 pub mod enrich_api;
 pub mod import_api;
 pub mod ingredient_names_api;

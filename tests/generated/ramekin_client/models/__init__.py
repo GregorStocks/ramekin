@@ -31,9 +31,9 @@ from ramekin_client.models.create_scrape_request import CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse
 from ramekin_client.models.create_tag_request import CreateTagRequest
 from ramekin_client.models.create_tag_response import CreateTagResponse
-from ramekin_client.models.custom_enrich_request import CustomEnrichRequest
 from ramekin_client.models.derived_measurement import DerivedMeasurement
 from ramekin_client.models.direction import Direction
+from ramekin_client.models.edit_recipe_request import EditRecipeRequest
 from ramekin_client.models.error_code import ErrorCode
 from ramekin_client.models.error_response import ErrorResponse
 from ramekin_client.models.estimate_calories_request import EstimateCaloriesRequest

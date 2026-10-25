@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / "logs" / "ai-evals"
 JUDGMENTS = ROOT / "data" / "ai-evals" / "judgments"
 SAVE_PATH = re.compile(r"^/judgments/([a-z-]+)\.json$")
-SUITES = {"tags", "titles", "descriptions", "custom-enrich", "recipe-photos"}
+SUITES = {"tags", "titles", "descriptions", "edit-recipe", "recipe-photos"}
 MAX_BYTES = 5_000_000
 # A save reads, merges and writes the file, so two at once could lose one.
 SAVE_LOCK = threading.Lock()

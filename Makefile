@@ -372,7 +372,7 @@ ingredient-catalog-uncategorized: ## Write catalog foods and ambiguous names wit
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- ingredient-catalog-uncategorized \
 		$(if $(PROD_RECIPES),--prod-recipes $(PROD_RECIPES),)
 
-ai-eval: ## Evaluate AI models on the golden sets: MODELS=a,b [SUITE=ingredient-weights|food-estimates|ingredient-names|text-extraction|photo-extraction|tags|titles|descriptions|custom-enrich|recipe-photos|all] [BATCH=40] (cached; writes data/ai-evals/)
+ai-eval: ## Evaluate AI models on the golden sets: MODELS=a,b [SUITE=ingredient-weights|food-estimates|ingredient-names|text-extraction|photo-extraction|tags|titles|descriptions|edit-recipe|recipe-photos|all] [BATCH=40] (cached; writes data/ai-evals/)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
 	cargo run -q --release --manifest-path cli/Cargo.toml -- ai-eval \
 		--suite $(or $(SUITE),all) --models "$(MODELS)" \

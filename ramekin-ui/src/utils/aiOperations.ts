@@ -19,8 +19,8 @@ export const AI_OPERATIONS = {
   enrichRecipe: {
     individualLabel: "Enrich with AI",
   },
-  customEnrich: {
-    individualLabel: "Customize with AI",
+  editRecipe: {
+    individualLabel: "Edit with AI…",
   },
 } as const;
 

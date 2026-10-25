@@ -1,7 +1,7 @@
 //! AI prompt templates.
 
 pub mod auto_tag;
-pub mod custom_enrich;
+pub mod edit_recipe;
 pub mod estimate_ingredient_weights;
 pub mod generate_description;
 pub mod generate_recipe_photo;
@@ -10,7 +10,7 @@ pub mod photo_extract;
 pub mod resolve_ingredient_names;
 
 pub use auto_tag::render_auto_tag_prompt;
-pub use custom_enrich::{render_custom_enrich_system_prompt, render_custom_enrich_user_prompt};
+pub use edit_recipe::{render_edit_recipe_system_prompt, render_edit_recipe_user_prompt};
 pub use generate_description::render_generate_description_prompt;
 pub use generate_recipe_photo::render_generate_recipe_photo_prompt;
 pub use normalize_title::render_normalize_title_prompt;

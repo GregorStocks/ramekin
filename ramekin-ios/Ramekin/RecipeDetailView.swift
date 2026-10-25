@@ -78,9 +78,9 @@ struct RecipeDetailView: View {
                         .disabled(actionsDisabledForHistoricalVersion)
 
                         Button {
-                            viewModel.showingCustomEnrich = true
+                            viewModel.showingEditWithAI = true
                         } label: {
-                            Label("Customize with AI", systemImage: "wand.and.stars.inverse")
+                            Label("Edit with AI…", systemImage: "wand.and.stars.inverse")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
@@ -164,9 +164,9 @@ struct RecipeDetailView: View {
                 AddToMealPlanSheet(recipe: recipe, isPresented: $viewModel.showingAddToMealPlan)
             }
         }
-        .sheet(isPresented: $viewModel.showingCustomEnrich) {
+        .sheet(isPresented: $viewModel.showingEditWithAI) {
             if let recipe = viewModel.recipe {
-                CustomEnrichSheet(recipe: recipe, isPresented: $viewModel.showingCustomEnrich) { result in
+                EditWithAISheet(recipe: recipe, isPresented: $viewModel.showingEditWithAI) { result in
                     viewModel.enrichResult = result
                 }
             }

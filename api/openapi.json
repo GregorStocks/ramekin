@@ -176,19 +176,19 @@
         ]
       }
     },
-    "/api/enrich": {
+    "/api/edit-recipe": {
       "post": {
         "tags": [
-          "enrich"
+          "edit_recipe"
         ],
-        "summary": "Enrich a recipe",
-        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nSuggests tags from the user's existing tag library (requires AI; returns\n503 if unavailable). Gram amounts are computed when a recipe is read, so\ningredients come back unchanged.",
-        "operationId": "enrich_recipe",
+        "summary": "Edit a recipe with AI",
+        "description": "Takes a recipe and a free-text instruction describing the desired change.\nReturns the complete modified recipe. Stateless - does NOT modify any database records.",
+        "operationId": "edit_recipe_with_ai",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RecipeContent"
+                "$ref": "#/components/schemas/EditRecipeRequest"
               }
             }
           },
@@ -196,11 +196,21 @@
         },
         "responses": {
           "200": {
-            "description": "Enriched recipe object",
+            "description": "Modified recipe",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RecipeContent"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid photo IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -243,19 +253,19 @@
         ]
       }
     },
-    "/api/enrich/custom": {
+    "/api/enrich": {
       "post": {
         "tags": [
           "enrich"
         ],
-        "summary": "Apply a custom AI modification to a recipe",
-        "description": "Takes a recipe and a free-text instruction describing the desired change.\nReturns the complete modified recipe. Stateless - does NOT modify any database records.",
-        "operationId": "custom_enrich_recipe",
+        "summary": "Enrich a recipe",
+        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nSuggests tags from the user's existing tag library (requires AI; returns\n503 if unavailable). Gram amounts are computed when a recipe is read, so\ningredients come back unchanged.",
+        "operationId": "enrich_recipe",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CustomEnrichRequest"
+                "$ref": "#/components/schemas/RecipeContent"
               }
             }
           },
@@ -263,21 +273,11 @@
         },
         "responses": {
           "200": {
-            "description": "Modified recipe",
+            "description": "Enriched recipe object",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RecipeContent"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid photo IDs",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -3570,29 +3570,6 @@
           }
         }
       },
-      "CustomEnrichRequest": {
-        "type": "object",
-        "description": "Request body for custom enrichment.",
-        "required": [
-          "recipe",
-          "instruction"
-        ],
-        "properties": {
-          "instruction": {
-            "type": "string"
-          },
-          "photo_ids": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          "recipe": {
-            "$ref": "#/components/schemas/RecipeContent"
-          }
-        }
-      },
       "DerivedMeasurement": {
         "type": "object",
         "description": "Approximate grams for one ingredient line: oz/lb converted, or a volume\nthrough the catalog's density for the food. Computed on every read and\nnever stored, so catalog improvements reach every recipe; never send these\nback when saving.",
@@ -3622,6 +3599,29 @@
           "desc",
           "asc"
         ]
+      },
+      "EditRecipeRequest": {
+        "type": "object",
+        "description": "Request body for Edit with AI.",
+        "required": [
+          "recipe",
+          "instruction"
+        ],
+        "properties": {
+          "instruction": {
+            "type": "string"
+          },
+          "photo_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "recipe": {
+            "$ref": "#/components/schemas/RecipeContent"
+          }
+        }
       },
       "ErrorCode": {
         "type": "string",

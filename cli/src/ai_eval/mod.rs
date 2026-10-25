@@ -44,7 +44,7 @@ pub const SUITES: [&str; 10] = [
     "tags",
     "titles",
     "descriptions",
-    "custom-enrich",
+    "edit-recipe",
     "recipe-photos",
 ];
 
@@ -54,7 +54,7 @@ const JUDGED: [&str; 5] = [
     "tags",
     "titles",
     "descriptions",
-    "custom-enrich",
+    "edit-recipe",
     "recipe-photos",
 ];
 
@@ -946,10 +946,10 @@ fn spec(suite: &str) -> SuiteSpec {
             columns: judged::VERDICT_COLUMNS,
             batched: false,
         },
-        "custom-enrich" => SuiteSpec {
-            title: "Custom enrich",
+        "edit-recipe" => SuiteSpec {
+            title: "Edit with AI",
             about: concat!(
-                "A recipe changed by a user's instruction (`custom_enrich`), for 10 pipeline snapshots each paired with an instruction that suits it (`ENRICH_CASES`: make it vegetarian, halve it, convert to metric…). An answer that doesn't parse as the server's recipe shape is invalid, as in production. ",
+                "A recipe changed by a user's instruction (`edit_recipe`), for 10 pipeline snapshots each paired with an instruction that suits it (`EDIT_CASES`: make it vegetarian, halve it, convert to metric…). An answer that doesn't parse as the server's recipe shape is invalid, as in production. ",
                 judging!(),
                 " ",
                 verdicts!()

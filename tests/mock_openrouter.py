@@ -330,7 +330,7 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             return self._mock_resolve_ingredient_names(all_text)
 
         if "recipe modification assistant" in all_text:
-            return self._mock_custom_enrich(all_text, has_images=has_images)
+            return self._mock_edit_recipe(all_text, has_images=has_images)
 
         if "recipe text extraction assistant" in all_text:
             if "TEXT_EXTRACTION_FAILURE" in all_text:
@@ -409,8 +409,8 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             },
         }
 
-    def _mock_custom_enrich(self, all_text, has_images=False):
-        """Return a modified recipe for custom enrich requests."""
+    def _mock_edit_recipe(self, all_text, has_images=False):
+        """Return a modified recipe for Edit with AI requests."""
         # Try to extract the recipe JSON from the prompt
         try:
             # The recipe JSON is between "Here is the recipe:" and "Apply this change:"

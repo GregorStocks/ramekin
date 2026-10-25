@@ -1,5 +1,5 @@
 //! The human-judged suites: auto-tag, title normalization, description
-//! generation, custom enrich and recipe photos, whose answers no rule can
+//! generation, recipe edits and recipe photos, whose answers no rule can
 //! score.
 //!
 //! A run writes a blind judging page per suite
@@ -16,7 +16,7 @@ use anyhow::{anyhow, bail, Context, Result};
 use base64::Engine as _;
 use ramekin_core::ai::prompts::render_generate_recipe_photo_prompt;
 use ramekin_core::ai::{
-    custom_enrich, generate_description, generate_recipe_photo, normalize_title, suggest_tags,
+    edit_recipe, generate_description, generate_recipe_photo, normalize_title, suggest_tags,
     AiConfig, AiError, Usage,
 };
 use serde::{Deserialize, Serialize};
@@ -69,8 +69,8 @@ pub const TAG_VOCABULARY: &[&str] = &[
     "Japanese",
 ];
 
-/// Custom enrich cases: a snapshot and an instruction that suits it.
-const ENRICH_CASES: [(&str, &str); 10] = [
+/// Recipe edit cases: a snapshot and an instruction that suits it.
+const EDIT_CASES: [(&str, &str); 10] = [
     (
         "americastestkitchen-com_recipes-5027-best-beef-stew",
         "Make this vegetarian.",
@@ -194,14 +194,14 @@ impl RecipeCase {
 }
 
 /// Mirrors the server's `RecipeContent` (server/src/types.rs), the shape
-/// custom enrich must answer in: production parses the answer into it, so an
+/// recipe edits must answer in: production parses the answer into it, so an
 /// answer that doesn't fit is invalid here too.
 #[derive(Clone, Debug, Serialize, Deserialize)]
-pub struct EnrichRecipe {
+pub struct EditRecipe {
     pub title: String,
     #[serde(default)]
     pub description: Option<String>,
-    pub ingredients: Vec<EnrichIngredient>,
+    pub ingredients: Vec<EditIngredient>,
     pub instructions: String,
     #[serde(default)]
     pub source_url: Option<String>,
@@ -229,7 +229,7 @@ pub struct EnrichRecipe {
 
 /// Mirrors the server's `Ingredient` (server/src/models.rs).
 #[derive(Clone, Debug, Serialize, Deserialize)]
-pub struct EnrichIngredient {
+pub struct EditIngredient {
     pub item: String,
     pub measurements: Vec<Measurement>,
     pub note: Option<String>,
@@ -243,10 +243,10 @@ pub struct Measurement {
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
-pub struct EnrichCase {
+pub struct EditCase {
     pub id: String,
     pub instruction: String,
-    pub recipe: EnrichRecipe,
+    pub recipe: EditRecipe,
 }
 
 fn ingredient_lines(ingredients: &[SnapshotIngredient]) -> Vec<String> {
@@ -275,14 +275,14 @@ fn recipe_case(id: &str, snapshot: &Snapshot) -> RecipeCase {
     }
 }
 
-fn enrich_recipe(snapshot: Snapshot) -> EnrichRecipe {
-    EnrichRecipe {
+fn edit_case_recipe(snapshot: Snapshot) -> EditRecipe {
+    EditRecipe {
         title: snapshot.title.trim().to_string(),
         description: snapshot.description,
         ingredients: snapshot
             .ingredients
             .into_iter()
-            .map(|i| EnrichIngredient {
+            .map(|i| EditIngredient {
                 item: i.item,
                 measurements: i.measurements,
                 note: i.note,
@@ -362,15 +362,15 @@ pub fn write_golden(root: &Path) -> Result<Vec<(&'static str, String)>> {
         })
         .collect::<Result<Vec<_>>>()?;
 
-    let mut enrich = Vec::new();
-    for (id, instruction) in ENRICH_CASES {
+    let mut edits = Vec::new();
+    for (id, instruction) in EDIT_CASES {
         let snapshot = snapshots
             .remove(id)
-            .with_context(|| format!("No pipeline snapshot {id} for a custom-enrich case"))?;
-        enrich.push(EnrichCase {
+            .with_context(|| format!("No pipeline snapshot {id} for a edit-recipe case"))?;
+        edits.push(EditCase {
             id: id.to_string(),
             instruction: instruction.to_string(),
-            recipe: enrich_recipe(snapshot),
+            recipe: edit_case_recipe(snapshot),
         });
     }
 
@@ -378,7 +378,7 @@ pub fn write_golden(root: &Path) -> Result<Vec<(&'static str, String)>> {
         ("tags", serde_json::to_string_pretty(&tags)?),
         ("titles", serde_json::to_string_pretty(&titles)?),
         ("descriptions", serde_json::to_string_pretty(&descriptions)?),
-        ("custom-enrich", serde_json::to_string_pretty(&enrich)?),
+        ("edit-recipe", serde_json::to_string_pretty(&edits)?),
         ("recipe-photos", serde_json::to_string_pretty(&photos)?),
     ])
 }
@@ -436,7 +436,7 @@ pub fn answer_key(content: &[u8]) -> String {
 #[derive(Clone, Debug, Serialize)]
 pub struct Shown {
     pub key: String,
-    /// The answer as text (titles, descriptions, an enriched recipe).
+    /// The answer as text (titles, descriptions, an edited recipe).
     #[serde(skip_serializing_if = "Option::is_none")]
     pub text: Option<String>,
     /// An image's path, relative to the page.
@@ -450,7 +450,7 @@ pub struct PageCase {
     pub id: String,
     /// The source shown above the answers.
     pub source: String,
-    /// What the answers change (custom enrich), whose lines answers are
+    /// What the answers change (recipe edits), whose lines answers are
     /// compared to.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub original: Option<String>,
@@ -459,9 +459,9 @@ pub struct PageCase {
     pub answers: Vec<Shown>,
 }
 
-/// A recipe as plain text: the source on the page, and an enriched recipe's
+/// A recipe as plain text: the source on the page, and an edited recipe's
 /// answer (every field, so two answers differ in text whenever they differ).
-fn recipe_text(recipe: &EnrichRecipe) -> String {
+fn recipe_text(recipe: &EditRecipe) -> String {
     let mut out = format!("{}\n", recipe.title);
     let mut field = |label: &str, value: Option<&str>| {
         if let Some(value) = value.filter(|v| !v.trim().is_empty()) {
@@ -921,21 +921,21 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                 &verdicts,
             )?;
         }
-        "custom-enrich" => {
-            let golden: Vec<EnrichCase> = read_json(&golden)?;
+        "edit-recipe" => {
+            let golden: Vec<EditCase> = read_json(&golden)?;
             cases = golden.len();
             let verdicts: Verdicts = read_judgments(root, suite)?;
             let ids: Vec<String> = golden.iter().map(|c| c.id.clone()).collect();
             let mut unjudged = Unjudged::default();
             for model in models {
-                let client = client_for(model, AiConfig::clone)?;
+                let client = client_for(model, AiConfig::for_recipe_edit)?;
                 let mut spend = Spend::default();
                 let (answers, invalid) = ask_all(suite, model, &golden, &mut spend, async |i| {
                     let case = &golden[i];
                     // As the server sends it.
                     let recipe =
                         serde_json::to_string_pretty(&case.recipe).expect("a recipe serializes");
-                    custom_enrich::<EnrichRecipe>(&client, &recipe, &case.instruction, vec![])
+                    edit_recipe::<EditRecipe>(&client, &recipe, &case.instruction, vec![])
                         .await
                         .map(|r| (r.recipe, r.usage))
                 })
@@ -1274,10 +1274,10 @@ mod tests {
 
     #[test]
     fn recipe_text_marks_sections_and_skips_empty_fields() {
-        let recipe = EnrichRecipe {
+        let recipe = EditRecipe {
             title: "Stew".into(),
             description: Some(" ".into()),
-            ingredients: vec![EnrichIngredient {
+            ingredients: vec![EditIngredient {
                 item: "beef".into(),
                 measurements: vec![
                     Measurement {

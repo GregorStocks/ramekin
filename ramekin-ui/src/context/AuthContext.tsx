@@ -11,6 +11,7 @@ import {
   PhotosApi,
   ScrapeApi,
   EnrichApi,
+  EditRecipeApi,
   TagsApi,
   MealPlansApi,
   ShoppingListApi,
@@ -29,6 +30,7 @@ interface AuthContextValue {
   getPhotosApi: () => PhotosApi;
   getScrapeApi: () => ScrapeApi;
   getEnrichApi: () => EnrichApi;
+  getEditRecipeApi: () => EditRecipeApi;
   getTagsApi: () => TagsApi;
   getMealPlansApi: () => MealPlansApi;
   getShoppingListApi: () => ShoppingListApi;
@@ -102,6 +104,7 @@ export const AuthProvider: ParentComponent = (props) => {
   const getPhotosApi = () => new PhotosApi(getAuthedConfig());
   const getScrapeApi = () => new ScrapeApi(getAuthedConfig());
   const getEnrichApi = () => new EnrichApi(getAuthedConfig());
+  const getEditRecipeApi = () => new EditRecipeApi(getAuthedConfig());
   const getTagsApi = () => new TagsApi(getAuthedConfig());
   const getMealPlansApi = () => new MealPlansApi(getAuthedConfig());
   const getShoppingListApi = () => new ShoppingListApi(getAuthedConfig());
@@ -144,6 +147,7 @@ export const AuthProvider: ParentComponent = (props) => {
     getPhotosApi,
     getScrapeApi,
     getEnrichApi,
+    getEditRecipeApi,
     getTagsApi,
     getMealPlansApi,
     getShoppingListApi,

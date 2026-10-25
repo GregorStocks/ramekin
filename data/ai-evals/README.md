@@ -10,7 +10,7 @@ scorer, so a model change ships with its numbers.
   hand from the photos in `photos/` and isn't regenerated: to add a case, add
   the photo and its case (with a `note` on what makes it hard). The judged
   suites (below) are sampled from the pipeline snapshots, except
-  `custom-enrich`, whose recipes and instructions are paired by hand in
+  `edit-recipe`, whose recipes and instructions are paired by hand in
   `cli/src/ai_eval/judged.rs`.
 - `judgments/<suite>.json`: a person's judgments for the judged suites, which
   are their golden answers.
@@ -44,7 +44,7 @@ everything answered is cached.
 | `tags` | `suggest_tags` | The tags a person ticked for each recipe |
 | `titles` | `normalize_title` | Judged answers |
 | `descriptions` | `generate_description` | Judged answers |
-| `custom-enrich` | `custom_enrich` | Judged answers |
+| `edit-recipe` | `edit_recipe` | Judged answers |
 | `recipe-photos` | `generate_recipe_photo` (image models) | Judged photos |
 
 `SUITE=all` runs every suite but `recipe-photos`, which takes image models.
@@ -65,8 +65,8 @@ reload of the page. Beside it, `results.html` shows every model's answers
 named and with their judgments, one model at a time or side by side.
 
 Who judged: titles, descriptions, recipe photos and 13 of the 49
-custom-enrich answers were judged by the maintainer; the tag sets and the
-other 36 custom-enrich answers by Claude, at the maintainer's request.
+edit-recipe answers were judged by the maintainer; the tag sets and the
+other 36 edit-recipe answers by Claude, at the maintainer's request.
 
 Pick image candidates from the public blind-vote leaderboards (the LMArena
 and Artificial Analysis text-to-image arenas), not from OpenRouter's catalog
