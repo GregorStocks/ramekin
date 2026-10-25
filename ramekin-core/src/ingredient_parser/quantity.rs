@@ -401,17 +401,16 @@ fn named_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 
 /// The ways to measure a line, best first: per-item weights ("2 cans, 10 oz
 /// each") and sizes leading the item ("2 4-ounce balls burrata", "16
-/// uncooked large shrimp") or noted on a piece ("1 piece ginger" noted
-/// "2-inch"), then its measurements in order (the primary
+/// uncooked large shrimp"), then its measurements in order (the primary
 /// leads, so rounded gram enrichments don't replace precise amounts), then a
-/// weight stated only in the note, then a piece the item names ("2 thick
-/// slices bread"). Measurements are alternatives, not additive.
+/// weight stated only in the note, then an inch size that sizes the primary
+/// ("1 piece ginger" noted "2-inch", "1/2 inch ginger") in its place, then a
+/// piece the item names ("2 thick slices bread"). Measurements are
+/// alternatives, not additive.
 pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
     let mut measures: Vec<Measure> = leading_size(ingredient)
         .into_iter()
         .chain(item_size(ingredient))
-        .chain(noted_inch_piece(ingredient))
-        .chain(item_inches(ingredient))
         .map(Some)
         .collect();
     let mut weighed_package = false;
@@ -438,7 +437,11 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
             }
         }
     }
+    let inch_primary = noted_inch_piece(ingredient).or_else(|| item_inches(ingredient));
     for (index, Measurement { amount, unit }) in ingredient.measurements.iter().enumerate() {
+        if index == 0 && inch_primary.is_some() {
+            continue;
+        }
         let Some(amount) = amount.as_deref() else {
             measures.push(None);
             continue;
@@ -464,6 +467,9 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
             measures.push(Some(weight));
         }
     }
+    // An estimate from the catalog's inch pieces, so any weight the recipe
+    // states beats it.
+    measures.extend(inch_primary.map(Some));
     // Last, so a weight the recipe states ("2 slices bread (50 g each)")
     // beats the catalog's slice.
     measures.extend(named_piece(ingredient).map(Some));

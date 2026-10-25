@@ -1763,4 +1763,9 @@ fn ginger_pieces_sized_in_the_note_or_item_weigh_by_the_inch() {
     );
     // A note that sizes nothing leaves a bare piece unknown, as before.
     assert_eq!(calories("1 piece fresh ginger, peeled"), None);
+    // A stated weight still beats the inch size.
+    assert_eq!(
+        calories("1/2 inch (5 grams) ginger"),
+        calories("5 grams ginger")
+    );
 }
