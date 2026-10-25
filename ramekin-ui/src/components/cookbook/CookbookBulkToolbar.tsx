@@ -63,30 +63,12 @@ export default function CookbookBulkToolbar(props: CookbookBulkToolbarProps) {
         <button
           type="button"
           class="btn btn-small"
-          onClick={state.bulkNormalizeTitle}
+          onClick={state.openReNormalize}
           disabled={
             state.selected().size === 0 || state.bulkProgress() !== null
           }
         >
-          {state.bulkButtonLabel(
-            "normalizeTitle",
-            AI_OPERATIONS.normalizeTitle.bulkLabel,
-            AI_OPERATIONS.normalizeTitle.progressVerb,
-          )}
-        </button>
-        <button
-          type="button"
-          class="btn btn-small"
-          onClick={state.bulkGenerateDescription}
-          disabled={
-            state.selected().size === 0 || state.bulkProgress() !== null
-          }
-        >
-          {state.bulkButtonLabel(
-            "description",
-            AI_OPERATIONS.generateDescription.bulkLabel,
-            AI_OPERATIONS.generateDescription.progressVerb,
-          )}
+          {AI_OPERATIONS.reNormalize.individualLabel}
         </button>
         <button
           type="button"

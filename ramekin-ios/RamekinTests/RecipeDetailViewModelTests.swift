@@ -185,197 +185,6 @@ final class RecipeDetailViewModelTests: XCTestCase {
         viewModel.setRecipeScale(1_000_000)
         XCTAssertEqual(viewModel.recipeScale, 1_000_000)
     }
-
-    @MainActor
-    func testApplyEnrichmentUpdatesRecipeAndClearsPreview() async {
-        let recipeId = UUID()
-        let original = makeRecipe(id: recipeId, title: "Original")
-        let updated = makeRecipe(id: recipeId, title: "Updated")
-        let modified = RecipeContent(
-            ingredients: [],
-            instructions: "Updated instructions",
-            tags: ["dinner"],
-            title: "Updated"
-        )
-        var updateRequest: UpdateRecipeRequest?
-        var loadCount = 0
-
-        let viewModel = RecipeDetailViewModel(
-            recipeId: recipeId,
-            api: makeAPI(
-                getRecipe: { _, _ in
-                    loadCount += 1
-                    return loadCount == 1 ? original : updated
-                },
-                updateRecipe: { id, request in
-                    XCTAssertEqual(id, recipeId)
-                    updateRequest = request
-                }
-            )
-        )
-        viewModel.enrichResult = modified
-
-        await viewModel.loadRecipe()
-        await viewModel.applyEnrichment(modified)
-
-        XCTAssertEqual(updateRequest?.title, "Updated")
-        XCTAssertEqual(updateRequest?.instructions, "Updated instructions")
-        XCTAssertEqual(updateRequest?.expectedVersionId, original.versionId)
-        XCTAssertEqual(viewModel.recipe?.title, "Updated")
-        XCTAssertNil(viewModel.enrichResult)
-    }
-
-    @MainActor
-    func testFailedEnrichmentApplyReturnsErrorAndKeepsReview() async {
-        let recipeId = UUID()
-        let original = makeRecipe(id: recipeId, versionId: UUID())
-        let modified = RecipeContent(ingredients: [], instructions: "New", title: "New")
-        let viewModel = RecipeDetailViewModel(
-            recipeId: recipeId,
-            api: makeAPI(
-                getRecipe: { _, _ in original },
-                updateRecipe: { _, _ in throw URLError(.timedOut) }
-            )
-        )
-        viewModel.enrichResult = modified
-
-        await viewModel.loadRecipe()
-        let failure = await viewModel.applyEnrichment(modified)
-
-        XCTAssertNotNil(failure, "The review sheet needs the reason to show it")
-        XCTAssertNotNil(viewModel.enrichResult, "The review stays open to retry")
-    }
-
-    @MainActor
-    func testGenerateDescriptionReloadsRecipeOnlyWhenChanged() async {
-        let recipeId = UUID()
-        var loadCount = 0
-
-        let viewModel = RecipeDetailViewModel(
-            recipeId: recipeId,
-            api: makeAPI(
-                generateDescription: { id in
-                    XCTAssertEqual(id, recipeId)
-                    return GenerateDescriptionResponse(
-                        cached: false,
-                        changed: true,
-                        generatedDescription: "Generated"
-                    )
-                },
-                getRecipe: { _, _ in
-                    loadCount += 1
-                    return makeRecipe(id: recipeId, title: "Reloaded")
-                }
-            )
-        )
-        viewModel.recipe = makeRecipe(id: recipeId, title: "Original")
-
-        await viewModel.generateDescription()
-
-        XCTAssertEqual(loadCount, 1)
-        XCTAssertEqual(viewModel.recipe?.title, "Reloaded")
-        XCTAssertFalse(viewModel.isGeneratingDescription)
-        XCTAssertNil(viewModel.aiActionError)
-    }
-}
-
-final class RecipeDetailViewModelRescrapeTests: XCTestCase {
-    @MainActor
-    func testRescrapeShowsRecipeWhileNormalizingAndReloadsWhenDone() async {
-        let recipeId = UUID()
-        let jobId = UUID()
-        var statuses = ["parsing", "normalizing", "normalizing", "completed"]
-        var loadCount = 0
-        var viewModel: RecipeDetailViewModel!
-        var stateWhileNormalizing: (rescraping: Bool, finishing: Bool)?
-
-        viewModel = RecipeDetailViewModel(
-            recipeId: recipeId,
-            api: makeAPI(
-                getRecipe: { _, _ in
-                    loadCount += 1
-                    return makeRecipe(id: recipeId, title: "Load \(loadCount)")
-                },
-                getScrape: { id in
-                    XCTAssertEqual(id, jobId)
-                    let status = statuses.removeFirst()
-                    if statuses.count == 1 {
-                        // Second "normalizing" poll: the first one showed the recipe.
-                        stateWhileNormalizing = (viewModel.isRescraping, viewModel.isFinishingRescrapeNormalize)
-                    }
-                    return makeScrapeJob(id: jobId, status: status, recipeId: recipeId)
-                },
-                rescrape: { _ in RescrapeResponse(jobId: jobId, status: "pending") }
-            )
-        )
-        viewModel.rescrapePollIntervalNanoseconds = 0
-
-        await viewModel.rescrapeFromSource()
-
-        XCTAssertEqual(stateWhileNormalizing?.rescraping, false)
-        XCTAssertEqual(stateWhileNormalizing?.finishing, true)
-        XCTAssertEqual(loadCount, 2)
-        XCTAssertEqual(viewModel.recipe?.title, "Load 2")
-        XCTAssertFalse(viewModel.isRescraping)
-        XCTAssertFalse(viewModel.isFinishingRescrapeNormalize)
-        XCTAssertNil(viewModel.rescrapeError)
-    }
-
-    @MainActor
-    func testRescrapeFailureWhileNormalizingKeepsSavedRecipe() async {
-        let recipeId = UUID()
-        let jobId = UUID()
-        var statuses = ["normalizing", "failed"]
-        var loadCount = 0
-
-        let viewModel = RecipeDetailViewModel(
-            recipeId: recipeId,
-            api: makeAPI(
-                getRecipe: { _, _ in
-                    loadCount += 1
-                    return makeRecipe(id: recipeId, title: "Rescraped")
-                },
-                getScrape: { _ in
-                    let status = statuses.removeFirst()
-                    return makeScrapeJob(
-                        id: jobId,
-                        status: status,
-                        recipeId: recipeId,
-                        error: status == "failed" ? "AI call failed" : nil
-                    )
-                },
-                rescrape: { _ in RescrapeResponse(jobId: jobId, status: "pending") }
-            )
-        )
-        viewModel.rescrapePollIntervalNanoseconds = 0
-
-        await viewModel.rescrapeFromSource()
-
-        // Once when saved, again to pick up branches that landed.
-        XCTAssertEqual(loadCount, 2)
-        XCTAssertEqual(viewModel.recipe?.title, "Rescraped")
-        XCTAssertEqual(viewModel.rescrapeError, "AI call failed")
-        XCTAssertFalse(viewModel.isRescraping)
-        XCTAssertFalse(viewModel.isFinishingRescrapeNormalize)
-    }
-}
-
-private func makeScrapeJob(
-    id: UUID,
-    status: String,
-    recipeId: UUID?,
-    error: String? = nil
-) -> ScrapeJobResponse {
-    ScrapeJobResponse(
-        canRetry: status == "failed",
-        createdAt: Date(timeIntervalSince1970: 1),
-        error: error,
-        id: id,
-        recipeId: recipeId,
-        retryCount: 0,
-        status: status,
-        steps: []
-    )
 }
 
 private enum UnexpectedAPICall: Error {
@@ -384,33 +193,21 @@ private enum UnexpectedAPICall: Error {
 
 private func makeAPI(
     deleteRecipe: @escaping (UUID) async throws -> Void = { _ in throw UnexpectedAPICall.unexpected },
-    enrichRecipe: @escaping (RecipeContent) async throws -> RecipeContent = { _ in throw UnexpectedAPICall.unexpected },
     exportRecipe: @escaping (UUID) async throws -> RamekinAPI.ExportDownload = { _ in throw UnexpectedAPICall.unexpected },
     fetchCoverPhoto: @escaping (RecipeResponse) async -> UIImage? = { _ in nil },
-    generateDescription: @escaping (UUID) async throws -> GenerateDescriptionResponse = { _ in throw UnexpectedAPICall.unexpected },
     generatePhoto: @escaping (UUID) async throws -> GeneratePhotoResponse = { _ in throw UnexpectedAPICall.unexpected },
     getRecipe: @escaping (UUID, UUID?) async throws -> RecipeResponse = { _, _ in throw UnexpectedAPICall.unexpected },
-    getScrape: @escaping (UUID) async throws -> ScrapeJobResponse = { _ in throw UnexpectedAPICall.unexpected },
     listVersions: @escaping (UUID) async throws -> VersionListResponse = { _ in throw UnexpectedAPICall.unexpected },
-    normalizeTitle: @escaping (UUID) async throws -> NormalizeTitleResponse = { _ in throw UnexpectedAPICall.unexpected },
-    rescrape: @escaping (UUID) async throws -> RescrapeResponse = { _ in throw UnexpectedAPICall.unexpected },
-    revertRecipe: @escaping (UUID, RecipeResponse, UUID) async throws -> Void = { _, _, _ in throw UnexpectedAPICall.unexpected },
-    updateRecipe: @escaping (UUID, UpdateRecipeRequest) async throws -> Void = { _, _ in throw UnexpectedAPICall.unexpected }
+    revertRecipe: @escaping (UUID, RecipeResponse, UUID) async throws -> Void = { _, _, _ in throw UnexpectedAPICall.unexpected }
 ) -> RecipeDetailViewAPIClient {
     RecipeDetailViewAPIClient(
         deleteRecipe: deleteRecipe,
-        enrichRecipe: enrichRecipe,
         exportRecipe: exportRecipe,
         fetchCoverPhoto: fetchCoverPhoto,
-        generateDescription: generateDescription,
         generatePhoto: generatePhoto,
         getRecipe: getRecipe,
-        getScrape: getScrape,
         listVersions: listVersions,
-        normalizeTitle: normalizeTitle,
-        rescrape: rescrape,
-        revertRecipe: revertRecipe,
-        updateRecipe: updateRecipe
+        revertRecipe: revertRecipe
     )
 }
 

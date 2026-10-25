@@ -69,14 +69,6 @@ extension RecipeDetailView {
             resumeEditBanner
         }
 
-        if viewModel.isRescraping {
-            progressBanner("Rescraping from source…")
-        }
-
-        if viewModel.isFinishingRescrapeNormalize {
-            progressBanner("Adding an AI title, description, and tags…")
-        }
-
         // Export and delete run after their menu or dialog closes, so
         // without this nothing would show that they're under way.
         if viewModel.isExporting {

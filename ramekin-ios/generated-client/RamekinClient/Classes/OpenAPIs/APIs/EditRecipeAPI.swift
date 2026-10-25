@@ -15,26 +15,31 @@ open class EditRecipeAPI {
     /**
      Edit a recipe with AI
      
+     - parameter id: (path) Recipe ID 
      - parameter editRecipeRequest: (body)  
-     - returns: RecipeContent
+     - returns: NormalizeJobResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func editRecipeWithAi(editRecipeRequest: EditRecipeRequest) async throws -> RecipeContent {
-        return try await editRecipeWithAiWithRequestBuilder(editRecipeRequest: editRecipeRequest).execute().body
+    open class func editRecipeWithAi(id: UUID, editRecipeRequest: EditRecipeRequest) async throws -> NormalizeJobResponse {
+        return try await editRecipeWithAiWithRequestBuilder(id: id, editRecipeRequest: editRecipeRequest).execute().body
     }
 
     /**
      Edit a recipe with AI
-     - POST /api/edit-recipe
-     - Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     - POST /api/recipes/{id}/edit-with-ai
+     - Starts a job that edits the recipe's current version the way the instruction says, looking up catalog weights and calories and the user's tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
      - Bearer Token:
        - type: http
        - name: bearer_auth
+     - parameter id: (path) Recipe ID 
      - parameter editRecipeRequest: (body)  
-     - returns: RequestBuilder<RecipeContent> 
+     - returns: RequestBuilder<NormalizeJobResponse> 
      */
-    open class func editRecipeWithAiWithRequestBuilder(editRecipeRequest: EditRecipeRequest) -> RequestBuilder<RecipeContent> {
-        let localVariablePath = "/api/edit-recipe"
+    open class func editRecipeWithAiWithRequestBuilder(id: UUID, editRecipeRequest: EditRecipeRequest) -> RequestBuilder<NormalizeJobResponse> {
+        var localVariablePath = "/api/recipes/{id}/edit-with-ai"
+        let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
+        let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{id}", with: idPostEscape, options: .literal, range: nil)
         let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: editRecipeRequest)
 
@@ -46,7 +51,7 @@ open class EditRecipeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<RecipeContent>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<NormalizeJobResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

@@ -160,6 +160,8 @@ pub(super) const UNITS_RAW: &[&str] = &[
     "batch",
     "portions",
     "portion",
+    "servings",
+    "serving",
     "scoops",
     "scoop",
     "dollops",
@@ -172,6 +174,7 @@ pub(super) const UNITS_RAW: &[&str] = &[
     "glug",
     // Size descriptors that act like units
     "extra-large",
+    "extra large",
     "medium",
     "small",
     "large",
@@ -221,6 +224,7 @@ const COUNT_UNITS_NEEDING_AMOUNT: &[&str] = &[
     "bundle",
     "batch",
     "portion",
+    "serving",
     "scoop",
     "shot",
 ];
@@ -342,6 +346,7 @@ pub(super) static UNIT_CANONICAL_MAP: LazyLock<HashMap<&'static str, &'static st
             ("bundles", "bundle"),
             ("batches", "batch"),
             ("portions", "portion"),
+            ("servings", "serving"),
             ("scoops", "scoop"),
             ("dollops", "dollop"),
             ("splashes", "splash"),
@@ -353,6 +358,7 @@ pub(super) static UNIT_CANONICAL_MAP: LazyLock<HashMap<&'static str, &'static st
 
         // Size - normalize xl, and "big" is "large"
         map.insert("xl", "extra-large");
+        map.insert("extra large", "extra-large");
         map.insert("big", "large");
 
         map

@@ -250,27 +250,82 @@ fn noted_weight(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 }
 
 /// A size left at the front of a counted item, sizing each of the count: "2
-/// 4-ounce balls burrata", "1 14-oz block tofu", "1 2\" piece ginger".
+/// 4-ounce balls burrata", "1 14-oz block tofu", "1 2\" piece ginger", "2
+/// piece 1-inch fresh ginger root".
 fn leading_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
+    let (count, piece) = match read(ingredient.measurements.first()?)?.as_slice() {
+        [Term {
+            amount,
+            unit: Unit::Piece(unit),
+        }] if unit.is_empty() || measure::is_inch_piece_noun(unit) => (*amount, unit.clone()),
+        _ => return None,
+    };
+    let (size, _) = super::split_leading_size(&ingredient.item)?;
+    let size = normalize(size).replace(['"', '”'], " inch");
+    let unit = match measure::read_leading_weight(&size) {
+        Some((weight, mass)) => Unit::Grams(weight.times(Range::exact(grams_per(&mass)))),
+        // A bare size behind a counted piece ("2 piece 1-inch ...") sizes
+        // that piece.
+        None => Unit::Inches(measure::read_inch_piece(&size).or_else(|| {
+            (!piece.is_empty())
+                .then(|| measure::read_inch_piece(&format!("{size} {piece}")))
+                .flatten()
+        })?),
+    };
+    Some(vec![Term {
+        amount: count,
+        unit,
+    }])
+}
+
+/// An inch size stated only in the note of a counted piece, knob or chunk,
+/// sizing each of the count: "1 piece fresh ginger" noted "2-inch-long",
+/// "1 1/2 inches, peeled", "approx 1/2 inch" or "2\"".
+fn noted_inch_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
+    static SIZE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(
+            r#"^(?:(?:about|approx\.?|approximately|roughly)\s+)?(?P<size>[0-9][0-9./ -]*?)\s*-?\s*(?:inch(?:es)?|in\.|["”])(?:[- ]long)?$"#,
+        )
+        .unwrap()
+    });
     let count = match read(ingredient.measurements.first()?)?.as_slice() {
+        [Term {
+            amount,
+            unit: Unit::Piece(unit),
+        }] if measure::is_inch_piece_noun(unit) => *amount,
+        _ => return None,
+    };
+    let note = normalize(ingredient.note.as_deref()?);
+    let first = note.split([',', ';']).next()?.trim();
+    let size = SIZE.captures(first)?.name("size")?.as_str().trim();
+    let inches = measure::read_inch_piece(&format!("{size}-inch piece"))?;
+    Some(vec![Term {
+        amount: count,
+        unit: Unit::Inches(inches),
+    }])
+}
+
+/// An inch size whose unit the parser left in the item: "1 inch knob fresh
+/// ginger", "1/2 inch ginger", "1.5 inches fresh ginger". The amount is the
+/// piece's length, and there is one piece.
+fn item_inches(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
+    static INCH: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(?:inch(?:es)?|in\.)\s+(?:(?:piece|chunk|knob|hunk)s?\s+)?(?:of\s+)?\p{L}")
+            .unwrap()
+    });
+    let inches = match read(ingredient.measurements.first()?)?.as_slice() {
         [Term {
             amount,
             unit: Unit::Piece(unit),
         }] if unit.is_empty() => *amount,
         _ => return None,
     };
-    let (size, _) = super::split_leading_size(&ingredient.item)?;
-    let size = normalize(size);
-    let unit = match measure::read_leading_weight(&size) {
-        Some((weight, mass)) => Unit::Grams(weight.times(Range::exact(grams_per(&mass)))),
-        None => Unit::Inches(measure::read_inch_piece(
-            &size.replace(['"', '”'], " inch"),
-        )?),
-    };
-    Some(vec![Term {
-        amount: count,
-        unit,
-    }])
+    INCH.is_match(&normalize(&ingredient.item)).then(|| {
+        vec![Term {
+            amount: Range::exact(1.0),
+            unit: Unit::Inches(inches),
+        }]
+    })
 }
 
 /// A size the parser left in a counted item behind a word it doesn't read
@@ -348,8 +403,10 @@ fn named_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 /// each") and sizes leading the item ("2 4-ounce balls burrata", "16
 /// uncooked large shrimp"), then its measurements in order (the primary
 /// leads, so rounded gram enrichments don't replace precise amounts), then a
-/// weight stated only in the note, then a piece the item names ("2 thick
-/// slices bread"). Measurements are alternatives, not additive.
+/// weight stated only in the note, then an inch size that sizes the primary
+/// ("1 piece ginger" noted "2-inch", "1/2 inch ginger") in its place, then a
+/// piece the item names ("2 thick slices bread"). Measurements are
+/// alternatives, not additive.
 pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
     let mut measures: Vec<Measure> = leading_size(ingredient)
         .into_iter()
@@ -380,7 +437,11 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
             }
         }
     }
+    let inch_primary = noted_inch_piece(ingredient).or_else(|| item_inches(ingredient));
     for (index, Measurement { amount, unit }) in ingredient.measurements.iter().enumerate() {
+        if index == 0 && inch_primary.is_some() {
+            continue;
+        }
         let Some(amount) = amount.as_deref() else {
             measures.push(None);
             continue;
@@ -406,6 +467,9 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
             measures.push(Some(weight));
         }
     }
+    // An estimate from the catalog's inch pieces, so any weight the recipe
+    // states beats it.
+    measures.extend(inch_primary.map(Some));
     // Last, so a weight the recipe states ("2 slices bread (50 g each)")
     // beats the catalog's slice.
     measures.extend(named_piece(ingredient).map(Some));

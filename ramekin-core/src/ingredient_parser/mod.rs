@@ -2366,6 +2366,26 @@ mod tests {
             Some("extra-large pinch")
         );
 
+        // "extra large" is the extra-large size, with or without the hyphen.
+        for (raw, item, unit) in [
+            ("3 extra large eggs", "eggs", "extra-large"),
+            ("1 extra large egg yolk", "egg yolk", "extra-large"),
+            (
+                "4 Extra Large flour tortillas",
+                "flour tortillas",
+                "extra-large",
+            ),
+            (
+                "1 extra large handful spinach",
+                "spinach",
+                "extra-large handful",
+            ),
+        ] {
+            let parsed = parse_ingredient(raw);
+            assert_eq!(parsed.item, item, "{raw}");
+            assert_eq!(parsed.measurements[0].unit.as_deref(), Some(unit), "{raw}");
+        }
+
         let parsed = parse_ingredient("1 large bunch kale");
         assert_eq!(parsed.item, "kale");
         assert_eq!(
