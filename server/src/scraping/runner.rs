@@ -87,6 +87,7 @@ pub async fn build_registry(
             )),
             APPLY_NORMALIZE_STEP => Box::new(ApplyNormalizeStep::new(
                 pool.clone(),
+                job.id,
                 user_id,
                 plan.ops.clone(),
             )),
