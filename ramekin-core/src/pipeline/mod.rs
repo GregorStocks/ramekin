@@ -14,8 +14,8 @@ pub mod steps;
 pub use executor::{run_pipeline, StepRegistry};
 pub use normalize_ops::{
     default_import_ops, normalize_phase_steps, op_for_step, order_ops, NormalizeOp,
-    NormalizeOpGroup, APPLY_NORMALIZE_STEP, LOAD_RECIPE_STEP, PROPOSE_NORMALIZE_STEP,
-    RESOLVE_INGREDIENT_NAMES_STEP,
+    NormalizeOpGroup, APPLY_NORMALIZE_STEP, EDIT_WITH_AI_STEP, LOAD_RECIPE_STEP,
+    PROPOSE_NORMALIZE_STEP, RESOLVE_INGREDIENT_NAMES_STEP,
 };
 pub use step::{
     deserialize_optional_output_field, deserialize_required_output_field, PipelineStep,

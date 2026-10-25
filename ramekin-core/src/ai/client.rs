@@ -5,8 +5,10 @@ use openai_api_rs::v1::api::OpenAIClient;
 use openai_api_rs::v1::chat_completion::chat_completion::ChatCompletionRequest;
 use openai_api_rs::v1::chat_completion::{
     ChatCompletionMessage, Content, ContentType, FinishReason, ImageUrl, ImageUrlType, MessageRole,
+    Tool, ToolCall as OpenAiToolCall, ToolCallFunction, ToolType,
 };
 use openai_api_rs::v1::error::APIError;
+use openai_api_rs::v1::types::{Function, FunctionParameters};
 use serde_json::json;
 use std::sync::Arc;
 use std::time::Duration;
@@ -16,7 +18,7 @@ use tokio::time::Instant;
 
 use super::cache::{AiCache, CacheKey};
 use super::config::{AiConfig, ConfigError};
-use super::types::{ChatMessage, ChatRequest, ChatResponse, Role, Usage};
+use super::types::{ChatMessage, ChatRequest, ChatResponse, Role, ToolCall, ToolSpec, Usage};
 
 #[derive(Error, Debug)]
 pub enum AiError {
@@ -185,6 +187,7 @@ impl CachingAiClient {
             Role::System => MessageRole::system,
             Role::User => MessageRole::user,
             Role::Assistant => MessageRole::assistant,
+            Role::Tool => MessageRole::tool,
         };
 
         let content = if msg.images.is_empty() {
@@ -211,13 +214,46 @@ impl CachingAiClient {
             Content::ImageUrl(parts)
         };
 
+        let tool_calls = (!msg.tool_calls.is_empty()).then(|| {
+            msg.tool_calls
+                .iter()
+                .map(|call| OpenAiToolCall {
+                    id: call.id.clone(),
+                    r#type: "function".to_string(),
+                    function: ToolCallFunction {
+                        name: Some(call.name.clone()),
+                        arguments: Some(call.arguments.clone()),
+                    },
+                })
+                .collect()
+        });
+
         ChatCompletionMessage {
             role,
             content,
             name: None,
-            tool_calls: None,
-            tool_call_id: None,
+            tool_calls,
+            tool_call_id: msg.tool_call_id.clone(),
         }
+    }
+
+    /// Convert our tool spec to openai-api-rs's format.
+    fn to_openai_tool(spec: &ToolSpec) -> Result<Tool, AiError> {
+        let parameters: FunctionParameters = serde_json::from_value(spec.parameters.clone())
+            .map_err(|e| {
+                AiError::Api(format!(
+                    "Invalid parameters schema for tool {}: {e}",
+                    spec.name
+                ))
+            })?;
+        Ok(Tool {
+            r#type: ToolType::Function,
+            function: Function {
+                name: spec.name.clone(),
+                description: Some(spec.description.clone()),
+                parameters,
+            },
+        })
     }
 }
 
@@ -351,10 +387,12 @@ impl AiClient for CachingAiClient {
         request: &ChatRequest,
     ) -> Result<ChatResponse, AiError> {
         // Check cache first
-        let cache_key = CacheKey::new(prompt_name, &self.config.model, &request.messages);
+        let cache_key = CacheKey::for_request(prompt_name, &self.config.model, request);
 
         if let Some(cached) = self.cache.get(&cache_key) {
-            if response_content_usable(request.json_response, &cached.content) {
+            if !cached.tool_calls.is_empty()
+                || response_content_usable(request.json_response, &cached.content)
+            {
                 tracing::debug!(prompt_name = prompt_name, "AI response found in cache");
                 return Ok(cached.into());
             }
@@ -394,6 +432,16 @@ impl AiClient for CachingAiClient {
             openai_request.response_format = Some(json!({"type": "json_object"}));
         }
 
+        if !request.tools.is_empty() {
+            openai_request.tools = Some(
+                request
+                    .tools
+                    .iter()
+                    .map(Self::to_openai_tool)
+                    .collect::<Result<_, _>>()?,
+            );
+        }
+
         tracing::debug!(
             prompt_name = prompt_name,
             model = &self.config.model,
@@ -421,6 +469,16 @@ impl AiClient for CachingAiClient {
         let content = choice
             .and_then(|c| c.message.content.clone())
             .unwrap_or_default();
+        let tool_calls: Vec<ToolCall> = choice
+            .and_then(|c| c.message.tool_calls.clone())
+            .unwrap_or_default()
+            .into_iter()
+            .map(|call| ToolCall {
+                id: call.id,
+                name: call.function.name.unwrap_or_default(),
+                arguments: call.function.arguments.unwrap_or_default(),
+            })
+            .collect();
 
         // An unusable response must fail fast and must NOT be cached: caching
         // it would turn a transient provider problem into a permanent,
@@ -432,7 +490,7 @@ impl AiClient for CachingAiClient {
             )));
         }
 
-        if !response_content_usable(request.json_response, &content) {
+        if tool_calls.is_empty() && !response_content_usable(request.json_response, &content) {
             return Err(AiError::ParseError(format!(
                 "Unusable model response (finish_reason={:?}): {:?}",
                 finish_reason,
@@ -450,6 +508,7 @@ impl AiClient for CachingAiClient {
             content,
             usage,
             cached: false,
+            tool_calls,
         };
 
         // Cache the response
@@ -555,6 +614,7 @@ mod tests {
             content: content.to_string(),
             usage: Usage::default(),
             cached,
+            tool_calls: vec![],
         }
     }
 
@@ -564,6 +624,7 @@ mod tests {
             json_response: true,
             max_tokens: None,
             temperature: None,
+            ..Default::default()
         }
     }
 

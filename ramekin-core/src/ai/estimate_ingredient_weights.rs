@@ -51,6 +51,7 @@ pub async fn estimate_ingredient_weights(
         json_response: true,
         max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
+        ..Default::default()
     };
     let (parsed, response): (Response, _) =
         complete_json(ai_client, ESTIMATE_INGREDIENT_WEIGHTS_PROMPT_NAME, &request).await?;

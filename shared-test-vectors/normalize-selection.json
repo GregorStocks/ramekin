@@ -1,0 +1,211 @@
+{
+  "ops": [
+    {
+      "id": "refetch",
+      "label": "Re-fetch from source",
+      "group": "source",
+      "implies": ["reextract"],
+      "default_on_import": false
+    },
+    {
+      "id": "reextract",
+      "label": "Re-extract from saved source",
+      "group": "source",
+      "implies": [],
+      "default_on_import": false
+    },
+    {
+      "id": "normalize_title",
+      "label": "Normalize title",
+      "group": "normalize",
+      "implies": [],
+      "default_on_import": true
+    },
+    {
+      "id": "generate_description",
+      "label": "Generate description",
+      "group": "normalize",
+      "implies": [],
+      "default_on_import": true
+    },
+    {
+      "id": "auto_tag",
+      "label": "Auto-tag",
+      "group": "normalize",
+      "implies": [],
+      "default_on_import": true
+    }
+  ],
+  "default_selection": [
+    {
+      "name": "the ops imports run",
+      "unavailable": [],
+      "expected": ["normalize_title", "generate_description", "auto_tag"]
+    },
+    {
+      "name": "unavailable default ops stay unchecked",
+      "unavailable": ["auto_tag", "refetch"],
+      "expected": ["normalize_title", "generate_description"]
+    }
+  ],
+  "toggle": [
+    {
+      "name": "checking re-fetch checks and locks re-extract",
+      "unavailable": [],
+      "selected": [],
+      "toggle": "refetch",
+      "expected_selected": ["refetch"],
+      "expected_locked": ["reextract"],
+      "expected_effective": ["refetch", "reextract"]
+    },
+    {
+      "name": "a locked op can't be unchecked",
+      "unavailable": [],
+      "selected": ["refetch"],
+      "toggle": "reextract",
+      "expected_selected": ["refetch"],
+      "expected_locked": ["reextract"],
+      "expected_effective": ["refetch", "reextract"]
+    },
+    {
+      "name": "unchecking re-fetch unlocks re-extract",
+      "unavailable": [],
+      "selected": ["refetch"],
+      "toggle": "refetch",
+      "expected_selected": [],
+      "expected_locked": [],
+      "expected_effective": []
+    },
+    {
+      "name": "an unavailable op can't be checked",
+      "unavailable": ["refetch"],
+      "selected": [],
+      "toggle": "refetch",
+      "expected_selected": [],
+      "expected_locked": [],
+      "expected_effective": []
+    },
+    {
+      "name": "effective ops follow registry order",
+      "unavailable": [],
+      "selected": ["auto_tag"],
+      "toggle": "normalize_title",
+      "expected_selected": ["normalize_title", "auto_tag"],
+      "expected_locked": [],
+      "expected_effective": ["normalize_title", "auto_tag"]
+    }
+  ],
+  "step_labels": [
+    { "step": "normalize_title", "expected": "Normalize title" },
+    { "step": "fetch_html", "expected": "Fetching the page" },
+    { "step": "propose_normalize", "expected": "Preparing the preview" },
+    { "step": "edit_with_ai", "expected": "Editing with AI" },
+    { "step": "some_new_step", "expected": "some new step" }
+  ],
+  "proposal_changes": [
+    {
+      "name": "identical proposal changes nothing",
+      "base": {
+        "content": {
+          "title": "Soup",
+          "instructions": "Simmer.",
+          "ingredients": [
+            { "item": "water", "measurements": [{ "amount": "1", "unit": "cup" }] }
+          ],
+          "tags": ["dinner"]
+        },
+        "photo_ids": []
+      },
+      "proposed": {
+        "content": {
+          "title": "Soup",
+          "instructions": "Simmer.",
+          "ingredients": [
+            { "item": "water", "measurements": [{ "amount": "1", "unit": "cup" }] }
+          ],
+          "tags": ["dinner"]
+        },
+        "photo_ids": []
+      },
+      "expected_changed": false,
+      "expected_labels": []
+    },
+    {
+      "name": "title and tags changes are listed in reading order",
+      "base": {
+        "content": {
+          "title": "Soup!!",
+          "instructions": "Simmer.",
+          "ingredients": [],
+          "tags": []
+        },
+        "photo_ids": []
+      },
+      "proposed": {
+        "content": {
+          "title": "Soup",
+          "instructions": "Simmer.",
+          "ingredients": [],
+          "tags": ["dinner"]
+        },
+        "photo_ids": []
+      },
+      "expected_changed": true,
+      "expected_labels": ["Title", "Tags"]
+    },
+    {
+      "name": "re-parsed ingredients that read the same still change",
+      "base": {
+        "content": {
+          "title": "Soup",
+          "instructions": "Simmer.",
+          "ingredients": [{ "item": "1 cup water", "measurements": [] }]
+        },
+        "photo_ids": []
+      },
+      "proposed": {
+        "content": {
+          "title": "Soup",
+          "instructions": "Simmer.",
+          "ingredients": [
+            { "item": "water", "measurements": [{ "amount": "1", "unit": "cup" }] }
+          ]
+        },
+        "photo_ids": []
+      },
+      "expected_changed": true,
+      "expected_labels": ["Ingredients (parsed)"]
+    },
+    {
+      "name": "a rating alone changes the recipe",
+      "base": {
+        "content": { "title": "Soup", "instructions": "Simmer.", "ingredients": [] },
+        "photo_ids": []
+      },
+      "proposed": {
+        "content": {
+          "title": "Soup",
+          "instructions": "Simmer.",
+          "ingredients": [],
+          "rating": 4
+        },
+        "photo_ids": []
+      },
+      "expected_changed": true,
+      "expected_labels": ["Rating"]
+    },
+    {
+      "name": "new photos alone change the recipe",
+      "base": {
+        "content": { "title": "Soup", "instructions": "Simmer.", "ingredients": [] },
+        "photo_ids": []
+      },
+      "proposed": {
+        "content": { "title": "Soup", "instructions": "Simmer.", "ingredients": [] },
+        "photo_ids": ["01a171d9-31fe-72c1-bf9a-e9645ca1759b"]
+      },
+      "expected_changed": true,
+      "expected_labels": []
+    }
+  ]
+}

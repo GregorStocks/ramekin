@@ -38,67 +38,11 @@ class TestEditRecipeRequest(unittest.TestCase):
                 instruction = '',
                 photo_ids = [
                     ''
-                    ],
-                recipe = ramekin_client.models.recipe_content.RecipeContent(
-                    cook_time = '', 
-                    description = '', 
-                    difficulty = '', 
-                    ingredients = [
-                        ramekin_client.models.ingredient.Ingredient(
-                            item = '', 
-                            measurements = [
-                                ramekin_client.models.measurement.Measurement(
-                                    amount = '', 
-                                    unit = '', )
-                                ], 
-                            note = '', 
-                            section = '', )
-                        ], 
-                    instructions = '', 
-                    notes = '', 
-                    nutritional_info = '', 
-                    prep_time = '', 
-                    rating = 56, 
-                    servings = '', 
-                    source_name = '', 
-                    source_url = '', 
-                    tags = [
-                        ''
-                        ], 
-                    title = '', 
-                    total_time = '', )
+                    ]
             )
         else:
             return EditRecipeRequest(
                 instruction = '',
-                recipe = ramekin_client.models.recipe_content.RecipeContent(
-                    cook_time = '', 
-                    description = '', 
-                    difficulty = '', 
-                    ingredients = [
-                        ramekin_client.models.ingredient.Ingredient(
-                            item = '', 
-                            measurements = [
-                                ramekin_client.models.measurement.Measurement(
-                                    amount = '', 
-                                    unit = '', )
-                                ], 
-                            note = '', 
-                            section = '', )
-                        ], 
-                    instructions = '', 
-                    notes = '', 
-                    nutritional_info = '', 
-                    prep_time = '', 
-                    rating = 56, 
-                    servings = '', 
-                    source_name = '', 
-                    source_url = '', 
-                    tags = [
-                        ''
-                        ], 
-                    title = '', 
-                    total_time = '', ),
         )
         """
 

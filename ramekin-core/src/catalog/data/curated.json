@@ -376,6 +376,7 @@
     "caramel syrup": "toppings, butterscotch or caramel",
     "caramelized onions": "onions, yellow, sauteed",
     "caramelized white chocolate": "candies, white chocolate",
+    "caramels": "candies, caramels",
     "caraway seeds": "spices, caraway seed",
     "cardamom": "spices, cardamom",
     "cardamom bitters": "bitters",
@@ -1100,7 +1101,6 @@
     "full-fat sour cream": "sour cream",
     "full-sized fresh artichokes": "artichokes, (globe or french)",
     "fully risen pizza dough or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be": "pizza dough",
-    "fun size butterfinger candy bars": "candies, nestle, butterfinger bar",
     "galangal": "ginger root, raw",
     "garlic chive": "chives, raw",
     "garlic clove": "garlic, raw",
@@ -3251,6 +3251,7 @@
     "fruit": "Produce",
     "fruit, cut into 1-inch chunks if large, stone fruit pitted": "Produce",
     "fukujinzuke pickles": "Condiments & Sauces",
+    "fun size butterfinger candy bars": "Snacks",
     "fungi, cloud ears, dried": "Produce",
     "furikake": "Spices & Seasonings",
     "garam masala": "Spices & Seasonings",
@@ -4742,6 +4743,17 @@
         "value": 107.0
       }
     },
+    "fun size butterfinger candy bars": {
+      "default_portion": "bar",
+      "fdc_id": 167565,
+      "portions": {
+        "bar": {
+          "source": "USDA SR Legacy 167565 (Candies, NESTLE, BUTTERFINGER Bar): 1 fun size bar (0.65 oz) = 18 g",
+          "url": "https://fdc.nal.usda.gov/food-details/167565/nutrients",
+          "value": 18.0
+        }
+      }
+    },
     "furikake": {
       "grams_per_cup": {
         "source": "USDA FoodData Central Branded food 2195707: serving 5 g = 1 Tbsp",
@@ -4899,7 +4911,15 @@
       }
     },
     "gummy worms": {
-      "fdc_id": 2710359
+      "default_portion": "worm",
+      "fdc_id": 2710359,
+      "portions": {
+        "worm": {
+          "source": "USDA SR Legacy 167989 (Candies, gumdrops, starch jelly pieces): 10 gummy worms = 74 g",
+          "url": "https://fdc.nal.usda.gov/food-details/167989/nutrients",
+          "value": 7.4
+        }
+      }
     },
     "halloumi cheese": {
       "kcal_per_100g": {
@@ -5783,6 +5803,9 @@
         }
       }
     },
+    "candies, caramels": {
+      "default_portion": "piece"
+    },
     "candies, marshmallows": {
       "portions": {
         "jumbo": {
@@ -5810,7 +5833,24 @@
       "default_portion": "large"
     },
     "fish, anchovy, european, canned in oil, drained solids": {
-      "default_portion": "anchovy"
+      "default_portion": "anchovy",
+      "portions": {
+        "fillet": {
+          "source": "USDA SR Legacy 174183 (Fish, anchovy, european, canned in oil, drained solids): 1 anchovy = 4 g; canned anchovies are fillets",
+          "url": "https://fdc.nal.usda.gov/food-details/174183/nutrients",
+          "value": 4.0
+        }
+      }
+    },
+    "frankfurter, meat": {
+      "default_portion": "hot dog",
+      "portions": {
+        "hot dog": {
+          "source": "USDA SR Legacy 172968 (Frankfurter, meat): 1 serving (1 hot dog) = 52 g",
+          "url": "https://fdc.nal.usda.gov/food-details/172968/nutrients",
+          "value": 52.0
+        }
+      }
     },
     "garlic, raw": {
       "portions": {
@@ -5850,6 +5890,36 @@
           "source": "USDA FNDDS 2709789 (Lettuce, raw): 1 leaf = 8 g",
           "url": "https://fdc.nal.usda.gov/food-details/2709789/nutrients",
           "value": 8.0
+        }
+      }
+    },
+    "nuts, cashew nuts, raw": {
+      "default_portion": "nut",
+      "portions": {
+        "nut": {
+          "source": "USDA FNDDS 2707494 (Cashews, unroasted): 1 nut = 1.5 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707494/nutrients",
+          "value": 1.5
+        }
+      }
+    },
+    "nuts, pecans": {
+      "default_portion": "nut",
+      "portions": {
+        "nut": {
+          "source": "USDA FNDDS 2707522 (Pecans, unroasted): 1 nut = 1.5 g; a recipe's pecans are halves, and SR Legacy's 1 oz = 20 halves agrees",
+          "url": "https://fdc.nal.usda.gov/food-details/2707522/nutrients",
+          "value": 1.5
+        }
+      }
+    },
+    "nuts, walnuts, english": {
+      "default_portion": "nut",
+      "portions": {
+        "nut": {
+          "source": "USDA FNDDS 2707531 (Walnuts, excluding honey roasted): 1 nut = 2.0 g; a recipe's walnuts are halves, and SR Legacy's 1 oz = 14 halves agrees",
+          "url": "https://fdc.nal.usda.gov/food-details/2707531/nutrients",
+          "value": 2.0
         }
       }
     },
@@ -5909,11 +5979,40 @@
         }
       }
     },
+    "rhubarb, raw": {
+      "portions": {
+        "stick": {
+          "source": "USDA SR Legacy 167758 (Rhubarb, raw): 1 stalk = 51 g; a stick of rhubarb is a stalk",
+          "url": "https://fdc.nal.usda.gov/food-details/167758/nutrients",
+          "value": 51.0
+        }
+      }
+    },
     "rosemary, fresh": {
       "trace_ok": true
     },
+    "sausage, smoked link sausage, pork and beef": {
+      "default_portion": "link",
+      "portions": {
+        "link": {
+          "source": "USDA SR Legacy 172939 (Sausage, smoked link sausage, pork and beef, nonfat dry milk added): 1 link (4\" long x 1-1/8\" dia) = 68 g; this food has no link weight of its own",
+          "url": "https://fdc.nal.usda.gov/food-details/172939/nutrients",
+          "value": 68.0
+        }
+      }
+    },
     "soup, chicken broth cubes, dry": {
       "default_portion": "cube"
+    },
+    "soup, ramen noodle, any flavor, dry": {
+      "default_portion": "package",
+      "portions": {
+        "package": {
+          "source": "USDA SR Legacy 171177 (Soup, ramen noodle, any flavor, dry): 1 package without flavor packet = 81 g; a recipe's instant ramen is the noodles (the 5.8 g flavor packet is often discarded or listed apart)",
+          "url": "https://fdc.nal.usda.gov/food-details/171177/nutrients",
+          "value": 81.0
+        }
+      }
     },
     "spearmint, fresh": {
       "trace_ok": true

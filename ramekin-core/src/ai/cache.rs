@@ -6,7 +6,7 @@ use sha2::{Digest, Sha256};
 use std::fs;
 use std::path::PathBuf;
 
-use super::types::{ChatMessage, ChatResponse, Usage};
+use super::types::{ChatMessage, ChatRequest, ChatResponse, ToolCall, Usage};
 use crate::cache_io::{parse_or_warn, read_or_warn};
 
 /// Disk-based AI response cache.
@@ -19,6 +19,8 @@ pub struct AiCache {
 pub struct CachedAiResponse {
     pub content: String,
     pub usage: Usage,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub tool_calls: Vec<ToolCall>,
     pub cached_at: DateTime<Utc>,
     pub model: String,
 }
@@ -29,6 +31,7 @@ impl From<CachedAiResponse> for ChatResponse {
             content: cached.content,
             usage: cached.usage,
             cached: true,
+            tool_calls: cached.tool_calls,
         }
     }
 }
@@ -55,6 +58,21 @@ impl CacheKey {
             prompt_name: prompt_name.to_string(),
             model: model.to_string(),
             input_hash,
+        }
+    }
+
+    /// The key for `request`: its messages, plus its tools when it has any
+    /// (so requests without tools keep the keys they always had).
+    pub fn for_request(prompt_name: &str, model: &str, request: &ChatRequest) -> Self {
+        if request.tools.is_empty() {
+            return Self::new(prompt_name, model, &request.messages);
+        }
+        let input_json = serde_json::to_string(&(&request.messages, &request.tools))
+            .expect("chat messages and tools serialize to JSON");
+        Self {
+            prompt_name: prompt_name.to_string(),
+            model: model.to_string(),
+            input_hash: sha256_hex(&input_json),
         }
     }
 
@@ -107,6 +125,7 @@ impl AiCache {
         let cached = CachedAiResponse {
             content: response.content.clone(),
             usage: response.usage.clone(),
+            tool_calls: response.tool_calls.clone(),
             cached_at: Utc::now(),
             model: model.to_string(),
         };
@@ -179,6 +198,7 @@ mod tests {
             content: "{}".to_string(),
             usage: Usage::default(),
             cached: false,
+            tool_calls: vec![],
         }
     }
 

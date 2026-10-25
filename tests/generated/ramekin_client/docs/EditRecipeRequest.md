@@ -6,9 +6,8 @@ Request body for Edit with AI.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instruction** | **str** |  | 
-**photo_ids** | **List[UUID]** |  | [optional] 
-**recipe** | [**RecipeContent**](RecipeContent.md) |  | 
+**instruction** | **str** | The change the user wants, in their words. | 
+**photo_ids** | **List[UUID]** | Photos of the dish to give the model as context. | [optional] 
 
 ## Example
 
