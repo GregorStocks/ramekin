@@ -96,7 +96,7 @@ final class RecipeFormDraftResumeTests: XCTestCase {
             description: nil,
             difficulty: nil,
             id: UUID(),
-            ingredients: [Ingredient(item: "salt", measurements: [])],
+            ingredients: [],
             instructions: "Simmer",
             notes: nil,
             nutritionalInfo: nil,
