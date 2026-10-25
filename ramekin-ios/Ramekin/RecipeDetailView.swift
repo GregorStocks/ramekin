@@ -4,8 +4,12 @@ struct RecipeDetailView: View {
     let recipeId: UUID
 
     @Environment(\.dismiss) var dismiss
+    @Environment(\.recipeFormDraftMemory) var draftMemory
     @StateObject var viewModel: RecipeDetailViewModel
     @FocusState var customScaleFocused: Bool
+    /// Unsaved edits from before the app was terminated, offered for resuming.
+    @State var resumableEdit: RecipeFormDraft?
+    @State var resumingEdit: RecipeFormDraft?
 
     init(recipeId: UUID) {
         self.recipeId = recipeId
@@ -28,17 +32,26 @@ struct RecipeDetailView: View {
         viewModel.canCompareSelectedVersions
     }
 
-    var body: some View {
-        ScrollView {
-            if viewModel.isLoading && viewModel.recipe == nil {
-                ProgressView()
-                    .padding(.top, 100)
-            } else if let error = viewModel.error, viewModel.recipe == nil {
-                errorView(message: error)
-            } else if let recipe = viewModel.recipe {
-                recipeContent(recipe)
+    /// Separate from body so body stays small enough to type-check.
+    private var scrollContent: some View {
+        ScrollViewReader { proxy in
+            ScrollView {
+                if viewModel.isLoading && viewModel.recipe == nil {
+                    ProgressView()
+                        .padding(.top, 100)
+                } else if let error = viewModel.error, viewModel.recipe == nil {
+                    errorView(message: error)
+                } else if let recipe = viewModel.recipe {
+                    recipeContent(recipe)
+                }
             }
+            .coordinateSpace(name: RecipeScrollAnchor.coordinateSpace)
+            .modifier(RecipeScrollRestorationModifier(recipeId: recipeId, proxy: proxy))
         }
+    }
+
+    var body: some View {
+        scrollContent
         .scrollDismissesKeyboard(.interactively)
         .navigationTitle(viewModel.recipe?.title ?? "Recipe")
         .navigationBarTitleDisplayMode(.inline)
@@ -46,6 +59,9 @@ struct RecipeDetailView: View {
             if let recipe = viewModel.recipe {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Edit") {
+                        // A fresh edit replaces the one offered for resuming.
+                        resumableEdit = nil
+                        resumingEdit = nil
                         viewModel.showingEdit = true
                     }
                     .fontWeight(.semibold)
@@ -157,7 +173,7 @@ struct RecipeDetailView: View {
         }
         .sheet(isPresented: $viewModel.showingEdit) {
             NavigationStack {
-                RecipeFormView(mode: .edit(recipeId: recipeId)) {
+                RecipeFormView(mode: .edit(recipeId: recipeId), resuming: resumingEdit) {
                     Task { await viewModel.loadRecipe() }
                 }
             }
@@ -255,6 +271,7 @@ struct RecipeDetailView: View {
             errorMessage: $viewModel.exportError
         ))
         .task {
+            resumableEdit = draftMemory.stored(.edit(recipeId: recipeId))
             await viewModel.loadRecipe()
         }
         .onChange(of: viewModel.isVersionHistoryExpanded) { isExpanded in
@@ -266,6 +283,17 @@ struct RecipeDetailView: View {
             viewModel.cancelRescrape()
         }
         .modifier(RecipeScaleRestorationModifier(recipeId: recipeId, viewModel: viewModel))
+    }
+
+    func resumeEdit() {
+        resumingEdit = resumableEdit
+        resumableEdit = nil
+        viewModel.showingEdit = true
+    }
+
+    func discardResumableEdit() {
+        draftMemory.remember(.edit(recipeId: recipeId), nil)
+        resumableEdit = nil
     }
 
     func setRecipeScale(_ value: Double) {
@@ -284,12 +312,12 @@ struct RecipeDetailView: View {
 private struct RecipeScaleRestorationModifier: ViewModifier {
     let recipeId: UUID
     @ObservedObject var viewModel: RecipeDetailViewModel
-    @Environment(\.recipeScaleMemory) private var scaleMemory
+    @Environment(\.recipePlaceMemory) private var placeMemory
 
     func body(content: Content) -> some View {
         content
             .onAppear {
-                guard let stored = scaleMemory.stored(recipeId) else { return }
+                guard let stored = placeMemory.stored(recipeId) else { return }
                 viewModel.customScaleInput = stored.customInput
                 viewModel.setRecipeScale(stored.scale)
             }
@@ -298,10 +326,92 @@ private struct RecipeScaleRestorationModifier: ViewModifier {
     }
 
     private func rememberScale() {
-        scaleMemory.remember(
-            recipeId,
-            RecipeScaleState(scale: viewModel.recipeScale, customInput: viewModel.customScaleInput)
-        )
+        placeMemory.update(recipeId) { place in
+            place.scale = viewModel.recipeScale
+            place.customInput = viewModel.customScaleInput
+        }
+    }
+}
+
+/// Ids for the points a recipe's scroll position is restored to.
+enum RecipeScrollAnchor {
+    static let coordinateSpace = "recipe-detail-scroll"
+
+    static func ingredient(_ index: Int) -> String { "ingredient-\(index)" }
+    static func step(_ index: Int) -> String { "step-\(index)" }
+}
+
+private struct RecipeScrollAnchorPositionsKey: PreferenceKey {
+    static let defaultValue: [String: CGFloat] = [:]
+
+    static func reduce(value: inout [String: CGFloat], nextValue: () -> [String: CGFloat]) {
+        value.merge(nextValue()) { $1 }
+    }
+}
+
+extension View {
+    /// Makes this view a point the recipe's scroll position is remembered by.
+    func recipeScrollAnchor(_ id: String) -> some View {
+        self.id(id).background(GeometryReader { geometry in
+            Color.clear.preference(
+                key: RecipeScrollAnchorPositionsKey.self,
+                value: [id: geometry.frame(in: .named(RecipeScrollAnchor.coordinateSpace)).minY]
+            )
+        })
+    }
+}
+
+/// Scrolls back to the ingredient or step the user left the recipe at, once
+/// it has rendered, and records the topmost one in view as they scroll. The
+/// iOS 16 target has no scrollPosition(id:), hence anchors and scrollTo.
+private struct RecipeScrollRestorationModifier: ViewModifier {
+    let recipeId: UUID
+    let proxy: ScrollViewProxy
+    @Environment(\.recipePlaceMemory) private var placeMemory
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var hasAppeared = false
+    /// Stored anchor still to scroll to; nothing is recorded until then.
+    @State private var pendingAnchor: String?
+    @State private var topAnchor: String?
+
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                guard !hasAppeared else { return }
+                hasAppeared = true
+                pendingAnchor = placeMemory.stored(recipeId)?.scrollAnchor
+            }
+            .onPreferenceChange(RecipeScrollAnchorPositionsKey.self) { positions in
+                // Empty until the recipe has loaded and rendered.
+                guard !positions.isEmpty else { return }
+                if let anchor = pendingAnchor {
+                    pendingAnchor = nil
+                    // A recipe edited since may no longer have the anchor.
+                    if positions[anchor] != nil {
+                        topAnchor = anchor
+                        // Next run loop, once this layout pass is done.
+                        DispatchQueue.main.async { proxy.scrollTo(anchor, anchor: .top) }
+                        return
+                    }
+                }
+                topAnchor = SceneRestoration.topAnchor(positions)
+            }
+            // Writing scene storage re-renders every tab, so record only once
+            // scrolling settles; leaving the foreground records at once.
+            .task(id: topAnchor) {
+                try? await Task.sleep(nanoseconds: 500_000_000)
+                guard !Task.isCancelled else { return }
+                rememberAnchor()
+            }
+            .onChange(of: scenePhase) { phase in
+                if phase != .active { rememberAnchor() }
+            }
+    }
+
+    private func rememberAnchor() {
+        guard hasAppeared, pendingAnchor == nil,
+              placeMemory.stored(recipeId)?.scrollAnchor != topAnchor else { return }
+        placeMemory.update(recipeId) { $0.scrollAnchor = topAnchor }
     }
 }
 

@@ -164,7 +164,7 @@ enum Tab: String, Hashable {
 
 /// Where the user is lives in scene storage, so relaunching after iOS
 /// terminates the app in the background comes back to the same tab, stack,
-/// and recipe scale. Scene storage keys must be unique within a scene and a
+/// recipe scale and scroll position, and unsaved recipe form. Scene storage keys must be unique within a scene and a
 /// recipe can be open on both stacks, so this view owns every key and hands
 /// the tabs bindings.
 struct ContentView: View {
@@ -172,7 +172,8 @@ struct ContentView: View {
     @SceneStorage("selectedTab") private var selectedTab: Tab = .recipes
     @SceneStorage("recipesPath") private var recipesPathData = Data()
     @SceneStorage("mealPlanPath") private var mealPlanPathData = Data()
-    @SceneStorage("recipeScales") private var recipeScalesData = Data()
+    @SceneStorage("recipePlaces") private var recipePlacesData = Data()
+    @SceneStorage("recipeFormDrafts") private var recipeFormDraftsData = Data()
 
     var body: some View {
         Group {
@@ -196,7 +197,8 @@ struct ContentView: View {
                         }
                         .tag(Tab.shopping)
                 }
-                .environment(\.recipeScaleMemory, recipeScaleMemory)
+                .environment(\.recipePlaceMemory, recipePlaceMemory)
+                .environment(\.recipeFormDraftMemory, recipeFormDraftMemory)
                 // A link opened before the tabs exist (cold launch, or while
                 // signed out) must still win over the restored tab.
                 .onAppear {
@@ -236,7 +238,7 @@ struct ContentView: View {
         case .recipes: recipesPathData = data
         case .mealPlan: mealPlanPathData = data
         }
-        pruneScalesToOpenRecipes()
+        pruneToOpenRecipes()
     }
 
     private func pathBinding(_ stack: Stack) -> Binding<[NavigationDestination]> {
@@ -247,22 +249,43 @@ struct ContentView: View {
         Set(Stack.allCases.flatMap { SceneRestoration.recipeIds(in: path($0)) })
     }
 
-    private var recipeScaleMemory: RecipeScaleMemory {
-        RecipeScaleMemory(
-            stored: { SceneRestoration.decodeScales(recipeScalesData)[$0] },
-            remember: { id, state in
-                var scales = SceneRestoration.decodeScales(recipeScalesData)
-                scales[id] = state
-                recipeScalesData = SceneRestoration.encodeScales(scales)
+    private var recipePlaceMemory: RecipePlaceMemory {
+        RecipePlaceMemory(
+            stored: { SceneRestoration.decodePlaces(recipePlacesData)[$0] },
+            remember: { id, place in
+                var places = SceneRestoration.decodePlaces(recipePlacesData)
+                places[id] = place
+                recipePlacesData = SceneRestoration.encodePlaces(places)
             }
         )
     }
 
-    private func pruneScalesToOpenRecipes() {
-        let scales = SceneRestoration.decodeScales(recipeScalesData)
-        let pruned = SceneRestoration.prunedScales(scales, keeping: openRecipeIds)
-        if pruned != scales {
-            recipeScalesData = SceneRestoration.encodeScales(pruned)
+    private var recipeFormDraftMemory: RecipeFormDraftMemory {
+        RecipeFormDraftMemory(
+            stored: { mode in
+                SceneRestoration.decodeDrafts(recipeFormDraftsData).first { $0.mode == mode }
+            },
+            remember: { mode, draft in
+                let drafts = SceneRestoration.decodeDrafts(recipeFormDraftsData)
+                let updated = SceneRestoration.replacingDraft(in: drafts, for: mode, with: draft)
+                if updated != drafts {
+                    recipeFormDraftsData = SceneRestoration.encodeDrafts(updated)
+                }
+            }
+        )
+    }
+
+    private func pruneToOpenRecipes() {
+        let open = openRecipeIds
+        let places = SceneRestoration.decodePlaces(recipePlacesData)
+        let prunedPlaces = SceneRestoration.prunedPlaces(places, keeping: open)
+        if prunedPlaces != places {
+            recipePlacesData = SceneRestoration.encodePlaces(prunedPlaces)
+        }
+        let drafts = SceneRestoration.decodeDrafts(recipeFormDraftsData)
+        let prunedDrafts = SceneRestoration.prunedDrafts(drafts, keeping: open)
+        if prunedDrafts != drafts {
+            recipeFormDraftsData = SceneRestoration.encodeDrafts(prunedDrafts)
         }
     }
 

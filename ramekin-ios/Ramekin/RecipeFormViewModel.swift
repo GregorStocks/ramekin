@@ -50,20 +50,35 @@ final class RecipeFormViewModel: ObservableObject {
     @Published var rawIngredients = ""
     @Published var draft: PrepareTextRecipeResponse?
     @Published var isPreparing = false
+    /// A resumed edit started from an older version than the one now saved,
+    /// so saving will replace someone else's changes.
+    @Published var resumedOverNewerVersion = false
 
     /// The form as last loaded or prepared, to tell whether the user has
     /// edited anything since.
     private var savedFormData: RecipeFormData
     private let api: RecipeFormViewAPIClient
+    /// Set while a resumed edit waits for the saved recipe to compare with.
+    private var resumedEditVersionId: UUID?
+    private var isResumingEdit = false
 
-    init(mode: RecipeFormMode, api: RecipeFormViewAPIClient = .live) {
+    init(mode: RecipeFormMode, resuming resumed: RecipeFormDraft? = nil, api: RecipeFormViewAPIClient = .live) {
         self.mode = mode
         self.api = api
         // One shared value: each RecipeFormData() starts with a fresh
         // ingredient row id, so two defaults would never compare equal.
         let initialFormData = RecipeFormData()
-        _formData = Published(initialValue: initialFormData)
+        _formData = Published(initialValue: resumed?.form ?? initialFormData)
         savedFormData = initialFormData
+        if let resumed {
+            recipeText = resumed.recipeText
+            rawIngredients = resumed.rawIngredients
+            draft = resumed.prepared
+            if case .edit = mode {
+                isResumingEdit = true
+                resumedEditVersionId = resumed.form.expectedVersionId
+            }
+        }
     }
 }
 
@@ -79,6 +94,19 @@ extension RecipeFormViewModel {
         case .edit:
             formData != savedFormData
         }
+    }
+
+    /// The form to keep if the app is terminated, or nil when there's nothing
+    /// to lose. A photo mid-upload isn't kept; photos already added are.
+    var resumableDraft: RecipeFormDraft? {
+        guard hasUnsavedChanges else { return nil }
+        return RecipeFormDraft(
+            mode: mode,
+            form: formData,
+            recipeText: recipeText,
+            rawIngredients: rawIngredients,
+            prepared: draft
+        )
     }
 
     var canSave: Bool {
@@ -277,8 +305,16 @@ extension RecipeFormViewModel {
         isLoading = true
         do {
             let recipe = try await api.getRecipe(id)
-            formData = RecipeFormData(recipe: recipe)
-            savedFormData = formData
+            let loaded = RecipeFormData(recipe: recipe)
+            if isResumingEdit {
+                // Keep the resumed edits; the loaded recipe is what they'd replace.
+                isResumingEdit = false
+                resumedOverNewerVersion = recipe.versionId != resumedEditVersionId
+                formData.expectedVersionId = recipe.versionId
+            } else {
+                formData = loaded
+            }
+            savedFormData = loaded
             isLoading = false
         } catch is CancellationError {
             isLoading = false
