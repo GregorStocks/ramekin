@@ -2033,3 +2033,34 @@ fn bread_pieces_baguette_slices_and_whole_wheat_tortillas_weigh_by_the_piece() {
         );
     }
 }
+
+#[test]
+fn seasoning_mix_packets_and_bouillon_cubes_weigh_by_the_package() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // An envelope, packet or package of a mix is the same container.
+        ("1 envelope taco seasoning", "28 g taco seasoning"),
+        ("1 packet taco seasoning", "28 g taco seasoning"),
+        ("1 envelope brown gravy mix", "24 g brown gravy mix"),
+        ("1 package ranch mix", "28 g ranch mix"),
+        // USDA's gelatin envelope answers for a package.
+        ("2 packages unflavored gelatin", "14 g unflavored gelatin"),
+        // A bare count of bouillon is cubes.
+        (
+            "1 chicken bouillon (cube or powder)",
+            "4 g chicken bouillon",
+        ),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}

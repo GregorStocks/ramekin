@@ -442,10 +442,6 @@
       "cup": {
         "grams": 150.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "package": {
-        "grams": 7.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "ginger beer": {
@@ -863,12 +859,6 @@
     "sausage, italian, pork, mild, raw": {
       "cup": {
         "grams": 225.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "seasoning mix, dry, taco, original": {
-      "package": {
-        "grams": 28.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },

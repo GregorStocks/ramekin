@@ -5554,6 +5554,13 @@
         "source": "USDA FoodData Central Branded food 2034751 (Ranch Dip Seasoning Mix, McCormick & Company, Inc.): 278 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/2034751/nutrients",
         "value": 278.0
+      },
+      "portions": {
+        "package": {
+          "source": "USDA FoodData Central Branded food 2680475 (SALAD DRESSING & SEASONING MIX, Hidden Valley): package 1.0 oz/28 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2680475/nutrients",
+          "value": 28.0
+        }
       }
     },
     "ras el hanout": {
@@ -5990,6 +5997,15 @@
         }
       }
     },
+    "gravy, brown, dry": {
+      "portions": {
+        "package": {
+          "source": "USDA FoodData Central Branded food 2622331 (BROWN GRAVY MIX, McCormick): package 0.87 oz/24 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2622331/nutrients",
+          "value": 24.0
+        }
+      }
+    },
     "kale, raw": {
       "portions": {
         "leaf": {
@@ -6138,7 +6154,19 @@
         }
       }
     },
+    "seasoning mix, dry, taco, original": {
+      "portions": {
+        "package": {
+          "source": "USDA FoodData Central Branded food 2036930 (ORIGINAL TACO SEASONING MIX, McCormick): package 1 oz/28 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2036930/nutrients",
+          "value": 28.0
+        }
+      }
+    },
     "soup, chicken broth cubes, dry": {
+      "default_portion": "cube"
+    },
+    "soup, chicken broth or bouillon, dry": {
       "default_portion": "cube"
     },
     "soup, ramen noodle, any flavor, dry": {
