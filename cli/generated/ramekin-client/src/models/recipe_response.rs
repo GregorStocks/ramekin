@@ -45,6 +45,9 @@ pub struct RecipeResponse {
     pub ingredients: Vec<models::Ingredient>,
     #[serde(rename = "instructions")]
     pub instructions: String,
+    /// For a `normalize` version, the op ids it applied, in run order.
+    #[serde(rename = "normalize_ops")]
+    pub normalize_ops: Vec<String>,
     #[serde(
         rename = "notes",
         default,
@@ -124,6 +127,7 @@ impl RecipeResponse {
         id: uuid::Uuid,
         ingredients: Vec<models::Ingredient>,
         instructions: String,
+        normalize_ops: Vec<String>,
         photo_ids: Vec<uuid::Uuid>,
         tags: Vec<String>,
         title: String,
@@ -140,6 +144,7 @@ impl RecipeResponse {
             id,
             ingredients,
             instructions,
+            normalize_ops,
             notes: None,
             nutritional_info: None,
             photo_ids,

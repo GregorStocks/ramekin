@@ -71,6 +71,7 @@ describe("recipe form request serialization", () => {
       updatedAt: new Date("2026-01-02T00:00:00Z"),
       versionId: "version-1",
       versionSource: "manual",
+      normalizeOps: [],
     } satisfies RecipeResponse);
 
     expect(values).toMatchObject({

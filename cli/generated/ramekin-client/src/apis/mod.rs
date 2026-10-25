@@ -119,6 +119,7 @@ pub mod enrich_api;
 pub mod import_api;
 pub mod ingredient_names_api;
 pub mod meal_plans_api;
+pub mod normalize_api;
 pub mod photos_api;
 pub mod recipes_api;
 pub mod scrape_api;

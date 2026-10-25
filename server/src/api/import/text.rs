@@ -12,10 +12,7 @@ use ramekin_core::ai::{
 };
 use ramekin_core::metric_weights::is_metric_weight_unit;
 use ramekin_core::pipeline::{
-    scrape_auto_applied_ai_enrichments, steps::EnrichAutoTagStep,
-    steps::EnrichGenerateDescriptionStep, steps::EnrichNormalizeTitleStep,
-    steps::ParseIngredientsStep, PipelineStep, ScrapeAutoAppliedAiEnrichment, StepContext,
-    StepOutputStore,
+    default_import_ops, steps::ParseIngredientsStep, PipelineStep, StepContext, StepOutputStore,
 };
 use ramekin_core::RawRecipe;
 use serde::{Deserialize, Serialize};
@@ -158,10 +155,10 @@ pub async fn prepare_text_recipe(
     value["tags"] = json!(raw.categories.clone().unwrap_or_default());
     let mut content: RecipeContent = serde_json::from_value(value)
         .map_err(|_| ApiError::internal("Invalid extracted recipe"))?;
-    // An incomplete recipe needs correction before AI enrichment can be grounded.
-    let enrich = incomplete.is_empty();
+    // An incomplete recipe needs correction before normalize ops can be grounded.
+    let normalize = incomplete.is_empty();
     warnings.extend(incomplete);
-    if enrich {
+    if normalize {
         let tags = run_db(&pool, move |conn| {
             user_tags::table
                 .filter(user_tags::user_id.eq(user.id))
@@ -176,40 +173,18 @@ pub async fn prepare_text_recipe(
         outputs
             .0
             .insert("extract_recipe".into(), json!({"raw_recipe": raw}));
-        for enrichment in scrape_auto_applied_ai_enrichments() {
-            match enrichment {
-                ScrapeAutoAppliedAiEnrichment::NormalizeTitle => {
-                    let output = outputs
-                        .execute(&EnrichNormalizeTitleStep::new(client.clone()))
-                        .await?;
-                    if output["changed"] == true {
-                        content.title = required_string(&output, "normalized_title")?;
-                    }
-                }
-                ScrapeAutoAppliedAiEnrichment::GenerateDescription => {
-                    let output = outputs
-                        .execute(&EnrichGenerateDescriptionStep::new(client.clone()))
-                        .await?;
-                    if output["changed"] == true {
-                        content.description =
-                            Some(required_string(&output, "generated_description")?);
-                    }
-                }
-                ScrapeAutoAppliedAiEnrichment::AutoTag => {
-                    let output = outputs
-                        .execute(&EnrichAutoTagStep::new(client.clone(), tags.clone()))
-                        .await?;
-                    let suggested: Vec<String> =
-                        serde_json::from_value(output["suggested_tags"].clone())
-                            .map_err(|_| ApiError::internal("Invalid tag pipeline output"))?;
-                    for tag in suggested {
-                        if !content.tags.contains(&tag) {
-                            content.tags.push(tag);
-                        }
-                    }
-                }
+        let ops = default_import_ops();
+        for op in &ops {
+            if let Some(step) = op.step(client.clone(), &tags) {
+                outputs.execute(step.as_ref()).await?;
             }
         }
+        crate::normalize::apply_op_outputs(&mut content, &ops, &outputs)
+            .await
+            .map_err(|e| {
+                tracing::warn!(error = %e, "Recipe draft failed");
+                ApiError::internal("Invalid recipe pipeline output")
+            })?;
     }
     let items: Vec<String> = content
         .ingredients
@@ -244,11 +219,4 @@ pub async fn prepare_text_recipe(
         derived_measurements,
         warnings,
     }))
-}
-
-fn required_string(output: &Value, field: &str) -> Result<String, ApiError> {
-    output[field]
-        .as_str()
-        .map(str::to_string)
-        .ok_or_else(|| ApiError::internal("Invalid enrichment pipeline output"))
 }

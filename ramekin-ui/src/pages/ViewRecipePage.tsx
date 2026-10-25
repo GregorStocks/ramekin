@@ -716,6 +716,7 @@ export default function ViewRecipePage() {
                         createdAt: r().updatedAt,
                         isCurrent: false,
                         versionSource: r().versionSource,
+                        normalizeOps: r().normalizeOps,
                       })
                     }
                   >

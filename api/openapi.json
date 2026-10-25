@@ -1120,6 +1120,121 @@
         ]
       }
     },
+    "/api/recipes/normalize": {
+      "post": {
+        "tags": [
+          "normalize"
+        ],
+        "operationId": "normalize_recipes",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkNormalizeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "One result per recipe: its job, or why none started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkNormalizeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unknown op",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/recipes/normalize-ops": {
+      "get": {
+        "tags": [
+          "normalize"
+        ],
+        "operationId": "list_normalize_ops",
+        "parameters": [
+          {
+            "name": "recipe_id",
+            "in": "query",
+            "description": "Report which ops can run on this recipe.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Every normalize op, in run order",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizeOpsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/reparse-ingredients": {
       "post": {
         "tags": [
@@ -1559,6 +1674,83 @@
         ]
       }
     },
+    "/api/recipes/{id}/normalize": {
+      "post": {
+        "tags": [
+          "normalize"
+        ],
+        "operationId": "normalize_recipe",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NormalizeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Normalize job started; it proposes a version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizeJobResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unknown op, or an op unavailable for this recipe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/{id}/normalize-title": {
       "post": {
         "tags": [
@@ -1620,6 +1812,160 @@
           },
           "503": {
             "description": "AI service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/recipes/{id}/normalize/{job_id}": {
+      "get": {
+        "tags": [
+          "normalize"
+        ],
+        "operationId": "get_normalize_proposal",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "job_id",
+            "in": "path",
+            "description": "Normalize job ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The job's base version and, once it completes, its proposal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizeProposalResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Normalize job not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/recipes/{id}/normalize/{job_id}/accept": {
+      "post": {
+        "tags": [
+          "normalize"
+        ],
+        "operationId": "accept_normalize_proposal",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "job_id",
+            "in": "path",
+            "description": "Normalize job ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Proposal saved as the recipe's new version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptNormalizeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The job has not finished proposing a version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Normalize job not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The recipe changed since the job started",
             "content": {
               "application/json": {
                 "schema": {
@@ -2856,6 +3202,19 @@
   },
   "components": {
     "schemas": {
+      "AcceptNormalizeResponse": {
+        "type": "object",
+        "required": [
+          "version_id"
+        ],
+        "properties": {
+          "version_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The new current version."
+          }
+        }
+      },
       "BookmarkletTokenResponse": {
         "type": "object",
         "required": [
@@ -2865,6 +3224,69 @@
           "token": {
             "type": "string",
             "description": "A freshly minted, long-lived token scoped to the capture endpoints.\nEmbed it in the bookmarklet; it does not expire and does not invalidate\npreviously minted bookmarklet tokens."
+          }
+        }
+      },
+      "BulkNormalizeRequest": {
+        "type": "object",
+        "required": [
+          "recipe_ids",
+          "ops"
+        ],
+        "properties": {
+          "ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Op ids to run on each recipe."
+          },
+          "recipe_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "BulkNormalizeResponse": {
+        "type": "object",
+        "required": [
+          "results"
+        ],
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkNormalizeResult"
+            }
+          }
+        }
+      },
+      "BulkNormalizeResult": {
+        "type": "object",
+        "required": [
+          "recipe_id"
+        ],
+        "properties": {
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Why no job started for this recipe."
+          },
+          "job_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "recipe_id": {
+            "type": "string",
+            "format": "uuid"
           }
         }
       },
@@ -3868,6 +4290,165 @@
           }
         }
       },
+      "NormalizeJobResponse": {
+        "type": "object",
+        "required": [
+          "job_id",
+          "status"
+        ],
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The job; poll it with `GET /api/scrape/{id}`."
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "NormalizeOpGroupResponse": {
+        "type": "string",
+        "enum": [
+          "source",
+          "normalize"
+        ]
+      },
+      "NormalizeOpInfo": {
+        "type": "object",
+        "description": "One normalize op, as the registry defines it.",
+        "required": [
+          "id",
+          "label",
+          "group",
+          "uses_ai",
+          "writes",
+          "runs_after",
+          "implies",
+          "default_on_import",
+          "available"
+        ],
+        "properties": {
+          "available": {
+            "type": "boolean",
+            "description": "Whether the op can run on the recipe asked about; always true without\na recipe."
+          },
+          "default_on_import": {
+            "type": "boolean",
+            "description": "Whether imports and scrapes run the op automatically."
+          },
+          "group": {
+            "$ref": "#/components/schemas/NormalizeOpGroupResponse"
+          },
+          "id": {
+            "type": "string"
+          },
+          "implies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Ops that always run with this one."
+          },
+          "label": {
+            "type": "string"
+          },
+          "runs_after": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Ops this one runs after when both run."
+          },
+          "unavailable_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "uses_ai": {
+            "type": "boolean"
+          },
+          "writes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Recipe fields the op can change."
+          }
+        }
+      },
+      "NormalizeOpsResponse": {
+        "type": "object",
+        "required": [
+          "ops"
+        ],
+        "properties": {
+          "ops": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NormalizeOpInfo"
+            },
+            "description": "Every op, in run order."
+          }
+        }
+      },
+      "NormalizeProposalResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "ops",
+          "base_version_id",
+          "base"
+        ],
+        "properties": {
+          "base": {
+            "$ref": "#/components/schemas/NormalizedRecipe"
+          },
+          "base_version_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The version the job started from."
+          },
+          "ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The ops the job runs, in run order."
+          },
+          "proposed": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/NormalizedRecipe",
+                "description": "What accepting saves; absent until the job completes."
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "description": "The job's status, as `GET /api/scrape/{id}` reports it."
+          }
+        }
+      },
+      "NormalizeRequest": {
+        "type": "object",
+        "required": [
+          "ops"
+        ],
+        "properties": {
+          "ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Op ids to run. Implied ops are added, and the registry orders them."
+          }
+        }
+      },
       "NormalizeTitleResponse": {
         "type": "object",
         "required": [
@@ -3888,6 +4469,26 @@
           },
           "original_title": {
             "type": "string"
+          }
+        }
+      },
+      "NormalizedRecipe": {
+        "type": "object",
+        "description": "A recipe's content and photos: what a normalize run starts from, and what\nit proposes.",
+        "required": [
+          "content",
+          "photo_ids"
+        ],
+        "properties": {
+          "content": {
+            "$ref": "#/components/schemas/RecipeContent"
+          },
+          "photo_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         }
       },
@@ -4099,7 +4700,8 @@
           "created_at",
           "updated_at",
           "version_id",
-          "version_source"
+          "version_source",
+          "normalize_ops"
         ],
         "properties": {
           "cook_time": {
@@ -4143,6 +4745,13 @@
           },
           "instructions": {
             "type": "string"
+          },
+          "normalize_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "For a `normalize` version, the op ids it applied, in run order."
           },
           "notes": {
             "type": [
@@ -4418,7 +5027,7 @@
               "null"
             ],
             "format": "uuid",
-            "description": "Recipe ID once the recipe is saved (also set on a job that failed\nafter saving; rescrapes have it from the start)"
+            "description": "Recipe ID once the recipe is saved (also set on a job that failed\nafter saving; rescrapes and normalize jobs have it from the start)"
           },
           "retry_count": {
             "type": "integer",
@@ -4427,7 +5036,7 @@
           },
           "status": {
             "type": "string",
-            "description": "Current job status (pending, scraping, parsing, enriching, completed,\nfailed). While \"enriching\" the recipe is saved and `recipe_id` is set;\nAI enrichment may still update it until the job completes."
+            "description": "Current job status (pending, scraping, parsing, normalizing, completed,\nfailed). While an import or scrape is \"normalizing\" the recipe is\nsaved and `recipe_id` is set; normalize ops may still update it until\nthe job completes. A manual normalize job saves nothing: it ends with\na proposal (see `GET /api/recipes/{id}/normalize/{job_id}`)."
           },
           "steps": {
             "type": "array",
@@ -5339,6 +5948,7 @@
           "id",
           "title",
           "version_source",
+          "normalize_ops",
           "created_at",
           "is_current"
         ],
@@ -5353,6 +5963,13 @@
           },
           "is_current": {
             "type": "boolean"
+          },
+          "normalize_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "For a `normalize` version, the op ids it applied, in run order."
           },
           "title": {
             "type": "string"

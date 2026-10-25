@@ -9,7 +9,6 @@ use serde_json::json;
 use ramekin_core::pipeline::{
     deserialize_optional_output_field, deserialize_required_output_field,
     steps::SaveRecipeStepMeta, PipelineStep, StepContext, StepMetadata, StepResult,
-    RESOLVE_INGREDIENT_NAMES_STEP,
 };
 use ramekin_core::{ExtractionMethod, RawRecipe};
 
@@ -273,12 +272,8 @@ impl PipelineStep for SaveRecipeStep {
                 }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                // Photo-only rescrape must not run post-save enrichments:
-                // they can create another version after the photo-only update.
-                next_step: match self.mode {
-                    SaveMode::PhotoOnly { .. } => None,
-                    _ => Some(RESOLVE_INGREDIENT_NAMES_STEP.to_string()),
-                },
+                // The job's plan decides what runs next.
+                next_step: None,
             },
             Err(e) => StepResult {
                 step_name: SaveRecipeStepMeta::NAME.to_string(),
@@ -367,6 +362,7 @@ impl SaveRecipeStep {
                 nutritional_info: raw.nutritional_info.as_deref(),
                 notes: raw.notes.as_deref(),
                 version_source: &version_source,
+                normalize_ops: None,
             };
 
             let version_id = create_new_version_cas(
@@ -434,6 +430,7 @@ impl SaveRecipeStep {
                 nutritional_info: raw.nutritional_info.as_deref(),
                 notes: None,
                 version_source: &version_source,
+                normalize_ops: None,
             };
 
             let version_id = create_new_version_cas(

@@ -131,6 +131,7 @@ diesel::table! {
         version_source -> Text,
         created_at -> TimestamptzSqlite,
         change_seq -> BigInt,
+        normalize_ops -> Nullable<Json>,
     }
 }
 
@@ -169,6 +170,7 @@ diesel::table! {
         current_step_started_at -> Nullable<TimestamptzSqlite>,
         expected_version_id -> Nullable<UuidText>,
         idempotency_key -> Nullable<Text>,
+        normalize_ops -> Nullable<Json>,
     }
 }
 

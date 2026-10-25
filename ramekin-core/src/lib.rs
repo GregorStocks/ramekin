@@ -34,9 +34,9 @@ pub use tags::{
     format_tag, parse_tag, validate_tag_name, ParsedTag, TagNameError, SEEDED_NAMESPACES,
 };
 pub use types::{
-    EnrichAutoTagOutput, ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod,
-    FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, ParseIngredientsOutput, PipelineStep,
-    RawRecipe, SaveRecipeOutput, StepOutput,
+    ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
+    FetchImagesOutput, ParseIngredientsOutput, PipelineStep, RawRecipe, SaveRecipeOutput,
+    StepOutput,
 };
 pub use volume_to_weight::derived_grams;
 

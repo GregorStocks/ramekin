@@ -234,6 +234,8 @@ pub struct RecipeVersion {
     pub notes: Option<String>,
     pub version_source: String,
     pub created_at: DateTime<Utc>,
+    /// The ops a `normalize` version applied, as a JSON array of op ids.
+    pub normalize_ops: Option<serde_json::Value>,
 }
 
 #[derive(Insertable)]
@@ -257,6 +259,7 @@ pub struct NewRecipeVersion<'a> {
     pub nutritional_info: Option<&'a str>,
     pub notes: Option<&'a str>,
     pub version_source: &'a str,
+    pub normalize_ops: Option<serde_json::Value>,
 }
 
 impl<'a> NewRecipeVersion<'a> {
@@ -283,6 +286,7 @@ impl<'a> NewRecipeVersion<'a> {
             nutritional_info: current.nutritional_info.as_deref(),
             notes: current.notes.as_deref(),
             version_source,
+            normalize_ops: None,
         }
     }
 }
@@ -308,6 +312,9 @@ pub struct ScrapeJob {
     pub current_step_started_at: Option<DateTime<Utc>>,
     pub expected_version_id: Option<Uuid>,
     pub idempotency_key: Option<String>,
+    /// The ops of a manual normalize job, as a JSON array of op ids. Such a
+    /// job proposes a version instead of saving one.
+    pub normalize_ops: Option<serde_json::Value>,
 }
 
 #[derive(Insertable)]

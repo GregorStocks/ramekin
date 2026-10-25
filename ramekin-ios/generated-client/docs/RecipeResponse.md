@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id** | **UUID** |  | 
 **ingredients** | [Ingredient] |  | 
 **instructions** | **String** |  | 
+**normalizeOps** | **[String]** | For a &#x60;normalize&#x60; version, the op ids it applied, in run order. | 
 **notes** | **String** |  | [optional] 
 **nutritionalInfo** | **String** |  | [optional] 
 **photoIds** | **[UUID]** |  | 

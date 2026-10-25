@@ -58,6 +58,9 @@ class TestRecipeResponse(unittest.TestCase):
                         section = '', )
                     ],
                 instructions = '',
+                normalize_ops = [
+                    ''
+                    ],
                 notes = '',
                 nutritional_info = '',
                 photo_ids = [
@@ -99,6 +102,9 @@ class TestRecipeResponse(unittest.TestCase):
                         section = '', )
                     ],
                 instructions = '',
+                normalize_ops = [
+                    ''
+                    ],
                 photo_ids = [
                     ''
                     ],

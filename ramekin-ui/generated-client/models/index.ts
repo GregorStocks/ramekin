@@ -1,6 +1,10 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './AcceptNormalizeResponse';
 export * from './BookmarkletTokenResponse';
+export * from './BulkNormalizeRequest';
+export * from './BulkNormalizeResponse';
+export * from './BulkNormalizeResult';
 export * from './CalorieEstimateResponse';
 export * from './CalorieLine';
 export * from './CalorieRange';
@@ -45,7 +49,14 @@ export * from './MealPlanListResponse';
 export * from './MealPlanOp';
 export * from './MealType';
 export * from './Measurement';
+export * from './NormalizeJobResponse';
+export * from './NormalizeOpGroupResponse';
+export * from './NormalizeOpInfo';
+export * from './NormalizeOpsResponse';
+export * from './NormalizeProposalResponse';
+export * from './NormalizeRequest';
 export * from './NormalizeTitleResponse';
+export * from './NormalizedRecipe';
 export * from './OpKind';
 export * from './OpResult';
 export * from './PaginationMetadata';

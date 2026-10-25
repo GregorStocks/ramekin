@@ -6,7 +6,6 @@
 //! failure, etc.). `step_summary` produces a short human-readable summary line
 //! for a completed step's stored output.
 
-use crate::ids::Uuid;
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde::Serialize;
@@ -14,11 +13,10 @@ use serde_json::Value as JsonValue;
 use utoipa::ToSchema;
 
 use crate::db::DbPool;
+use crate::models::ScrapeJob;
 use crate::schema::step_outputs;
+use crate::scraping::plan::JobPlan;
 use crate::scraping::{run_scrape_db, ScrapeError};
-use ramekin_core::pipeline::{
-    is_scrape_post_save_step, scrape_pipeline_step_names, scrape_post_save_step_dependencies,
-};
 
 /// Row shape read by `build_step_states_from_outputs`:
 /// `(step_name, created_at, duration_ms, summary, success, error)`. The full
@@ -59,8 +57,8 @@ pub struct StepState {
 /// Each arm mirrors the actual output shape written by the corresponding
 /// `PipelineStep` implementation — keep these in sync.
 pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
-    // Apply steps store `{ skipped: <reason>, ... }` when the user edited the
-    // recipe before the enrichment landed.
+    // apply_normalize stores `{ skipped: <reason>, ... }` when the user
+    // edited the recipe before the normalize ops landed.
     if let Some(reason) = output.get("skipped").and_then(|v| v.as_str()) {
         return Some(format!("skipped: {reason}"));
     }
@@ -119,8 +117,16 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
                 n => format!("{n} new ingredient names resolved"),
             })
         }
-        // EnrichNormalizeTitleStep stores `{ changed, normalized_title, ... }`.
-        "enrich_normalize_title" => {
+        // LoadRecipeStep stores the base version as `raw_recipe`.
+        "load_recipe" => {
+            let title = output
+                .get("raw_recipe")
+                .and_then(|r| r.get("title"))
+                .and_then(|t| t.as_str())?;
+            Some(format!("loaded \"{}\"", title))
+        }
+        // NormalizeTitleStep stores `{ changed, normalized_title, ... }`.
+        "normalize_title" => {
             let changed = output
                 .get("changed")
                 .and_then(|v| v.as_bool())
@@ -131,20 +137,8 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
                 "title unchanged".to_string()
             })
         }
-        // ApplyNormalizedTitleStep stores `{ changed, new_version_id? }`.
-        "apply_normalized_title" => {
-            let changed = output
-                .get("changed")
-                .and_then(|v| v.as_bool())
-                .unwrap_or(false);
-            Some(if changed {
-                "normalized title applied".to_string()
-            } else {
-                "no title change applied".to_string()
-            })
-        }
-        // EnrichGenerateDescriptionStep stores `{ changed, generated_description, ... }`.
-        "enrich_generate_description" => {
+        // GenerateDescriptionStep stores `{ changed, generated_description, ... }`.
+        "generate_description" => {
             let changed = output
                 .get("changed")
                 .and_then(|v| v.as_bool())
@@ -155,41 +149,37 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
                 "description unchanged".to_string()
             })
         }
-        // ApplyGeneratedDescriptionStep stores `{ changed, new_version_id? }`.
-        "apply_generated_description" => {
-            let changed = output
-                .get("changed")
-                .and_then(|v| v.as_bool())
-                .unwrap_or(false);
-            Some(if changed {
-                "generated description applied".to_string()
-            } else {
-                "no description change applied".to_string()
-            })
-        }
-        // EnrichAutoTagStep stores `{ suggested_tags, cached, usage }`.
-        "enrich_auto_tag" => {
+        // AutoTagStep stores `{ suggested_tags, cached, usage }`.
+        "auto_tag" => {
             let count = output
                 .get("suggested_tags")
                 .and_then(|v| v.as_array())
                 .map(|a| a.len())?;
             Some(format!("{} tags suggested", count))
         }
-        // ApplyAutoTagsStep stores `{ tags_applied: [...], new_version_id? }`
-        // (or `{ message, tags_applied: [] }` when there's nothing to apply).
-        "apply_auto_tags" => {
-            let count = output
-                .get("tags_applied")
-                .and_then(|v| v.as_array())
-                .map(|a| a.len())?;
-            Some(format!("{} tags applied", count))
+        // ApplyNormalizeStep stores `{ changed, new_version_id? }`.
+        "apply_normalize" => {
+            let changed = output
+                .get("changed")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false);
+            Some(if changed {
+                "normalized version saved".to_string()
+            } else {
+                "nothing to change".to_string()
+            })
         }
+        // ProposeNormalizeStep stores `NormalizeProposal`.
+        "propose_normalize" => output
+            .get("proposed")
+            .is_some()
+            .then(|| "version proposed".to_string()),
         _ => None,
     }
 }
 
 /// Produce a synthetic `StepState` for a `failed_at_step` value that isn't
-/// one of the canonical scrape pipeline steps (e.g. `photo_extract` for the
+/// one of the job's planned steps (e.g. `photo_extract` for the
 /// photo-only import path). Without this, the status API would render every
 /// canonical step as `"pending"` and silently hide the real failure.
 ///
@@ -200,12 +190,13 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
 ///
 /// Returns `None` if `failed_at_step` is absent or matches a known step.
 pub fn extra_failed_state_for_unknown_step(
+    plan: &JobPlan,
     failed_at_step: Option<&str>,
     current_step_started_at: Option<DateTime<Utc>>,
     job_error_message: Option<&str>,
 ) -> Option<StepState> {
     let name = failed_at_step?;
-    if scrape_pipeline_step_names().contains(&name) {
+    if plan.contains(name) {
         return None;
     }
     Some(StepState {
@@ -238,13 +229,10 @@ pub fn extra_failed_state_for_unknown_step(
 /// scrape pipeline (e.g. `photo_extract` in photo-only imports).
 pub async fn build_step_states(
     pool: &DbPool,
-    job_id: Uuid,
-    job_status: &str,
-    current_step: Option<&str>,
-    current_step_started_at: Option<DateTime<Utc>>,
-    failed_at_step: Option<&str>,
-    job_error_message: Option<&str>,
+    job: &ScrapeJob,
+    plan: &JobPlan,
 ) -> Result<Vec<StepState>, ScrapeError> {
+    let job_id = job.id;
     // Only select the pre-computed `summary` column — NOT the full `output`
     // JSON. Loading `output` would pull megabytes per poll for `fetch_html` /
     // `extract_recipe` rows, and the status API only ever needed the short
@@ -267,12 +255,13 @@ pub async fn build_step_states(
     .await?;
 
     Ok(build_step_states_from_outputs(
+        plan,
         outputs,
-        job_status,
-        current_step,
-        current_step_started_at,
-        failed_at_step,
-        job_error_message,
+        &job.status,
+        job.current_step.as_deref(),
+        job.current_step_started_at,
+        job.failed_at_step.as_deref(),
+        job.error_message.as_deref(),
     ))
 }
 
@@ -280,6 +269,7 @@ pub async fn build_step_states(
 /// given `step_outputs` rows plus the job's live state. Separated from
 /// `build_step_states` so it can be unit-tested without a DB.
 fn build_step_states_from_outputs(
+    plan: &JobPlan,
     outputs: Vec<StepOutputRow>,
     job_status: &str,
     current_step: Option<&str>,
@@ -308,14 +298,14 @@ fn build_step_states_from_outputs(
     }
 
     let terminal = matches!(job_status, "completed" | "failed");
-    let pipeline_steps = scrape_pipeline_step_names();
-    // Post-save steps run concurrently, but the job row names only the
-    // earliest running one. A later post-save step that hasn't written output
-    // but whose dependencies all have is running alongside it.
-    let post_save = scrape_post_save_step_dependencies();
+    let pipeline_steps = plan.step_names();
+    // Concurrent steps run together, but the job row names only the earliest
+    // running one. A later concurrent step that hasn't written output but
+    // whose dependencies all have is running alongside it.
+    let post_save = &plan.concurrent;
     let post_save_index = |name: &str| post_save.iter().position(|(n, _)| *n == name);
-    // During the post-save phase `current_step_started_at` is when the phase
-    // started. A retry reruns every post-save step after its resume point, so
+    // During the concurrent phase `current_step_started_at` is when the phase
+    // started. A retry reruns every concurrent step after its resume point, so
     // a later step's row from before then is a previous attempt's: drop it.
     if let (false, Some(current_idx), Some(phase_start)) = (
         terminal,
@@ -327,8 +317,7 @@ fn build_step_states_from_outputs(
         });
     }
     let running_alongside_current = |name: &str| -> bool {
-        let Some(current) = current_step.filter(|s| !terminal && is_scrape_post_save_step(s))
-        else {
+        let Some(current) = current_step.filter(|s| !terminal && plan.is_concurrent(s)) else {
             return false;
         };
         let (Some(idx), Some(current_idx)) = (post_save_index(name), post_save_index(current))
@@ -354,7 +343,7 @@ fn build_step_states_from_outputs(
         //      live current_step must win so the retry renders as "running"
         //      instead of the stale "completed".
         //   3. Output row present with `success = false` → "failed" (this is
-        //      the continues-on-failure enrichment case: the overall job
+        //      the continues-on-failure post-save case: the overall job
         //      completed, but the step itself failed and the per-step error
         //      should be surfaced).
         //   4. Output row present → "completed".
@@ -440,6 +429,7 @@ fn build_step_states_from_outputs(
     }
 
     if let Some(extra) = extra_failed_state_for_unknown_step(
+        plan,
         failed_at_step,
         current_step_started_at,
         job_error_message,
@@ -511,23 +501,23 @@ mod tests {
     }
 
     #[test]
-    fn step_summary_enrich_auto_tag() {
+    fn step_summary_auto_tag() {
         let output = json!({
             "suggested_tags": ["dessert", "quick"],
             "cached": false
         });
         assert_eq!(
-            step_summary("enrich_auto_tag", &output).as_deref(),
+            step_summary("auto_tag", &output).as_deref(),
             Some("2 tags suggested")
         );
     }
 
     #[test]
-    fn step_summary_apply_auto_tags() {
-        let output = json!({ "tags_applied": ["dessert"], "new_version_id": "v1" });
+    fn step_summary_apply_normalize() {
+        let output = json!({ "changed": true, "new_version_id": "v1" });
         assert_eq!(
-            step_summary("apply_auto_tags", &output).as_deref(),
-            Some("1 tags applied")
+            step_summary("apply_normalize", &output).as_deref(),
+            Some("normalized version saved")
         );
     }
 
@@ -543,40 +533,23 @@ mod tests {
     }
 
     #[test]
-    fn pipeline_steps_matches_build_registry_order() {
-        // Sanity check: the canonical list must match what `build_registry`
-        // actually registers, in order.
-        assert_eq!(
-            scrape_pipeline_step_names(),
-            vec![
-                "fetch_html",
-                "extract_recipe",
-                "fetch_images",
-                "parse_ingredients",
-                "save_recipe",
-                "resolve_ingredient_names",
-                "enrich_normalize_title",
-                "apply_normalized_title",
-                "enrich_generate_description",
-                "apply_generated_description",
-                "enrich_auto_tag",
-                "apply_auto_tags",
-            ]
-        );
-    }
-
-    #[test]
     fn extra_failed_state_for_unknown_step_returns_none_when_missing() {
         // No failed step → no synthetic state.
-        assert!(extra_failed_state_for_unknown_step(None, None, None).is_none());
+        assert!(
+            extra_failed_state_for_unknown_step(&JobPlan::import(), None, None, None).is_none()
+        );
     }
 
     #[test]
     fn extra_failed_state_for_unknown_step_returns_none_for_canonical_step() {
         // A canonical step is already handled by the main loop; don't
         // duplicate it with a synthetic entry.
-        let out =
-            extra_failed_state_for_unknown_step(Some("extract_recipe"), None, Some("bad recipe"));
+        let out = extra_failed_state_for_unknown_step(
+            &JobPlan::import(),
+            Some("extract_recipe"),
+            None,
+            Some("bad recipe"),
+        );
         assert!(out.is_none());
     }
 
@@ -589,6 +562,7 @@ mod tests {
             .unwrap()
             .with_timezone(&Utc);
         let state = extra_failed_state_for_unknown_step(
+            &JobPlan::import(),
             Some("photo_extract"),
             Some(started),
             Some("photo extraction failed"),
@@ -645,6 +619,7 @@ mod tests {
             None,
         )];
         let states = build_step_states_from_outputs(
+            &JobPlan::import(),
             outputs,
             "failed",
             None,
@@ -665,57 +640,61 @@ mod tests {
 
     #[test]
     fn continues_on_failure_step_renders_as_failed() {
-        // Auto-applied enrichment steps can fail after save_recipe; the status
+        // Best-effort post-save steps can fail after save_recipe; the status
         // page must still render that step as "failed" with the stored error.
         let finished = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
             .unwrap()
             .with_timezone(&Utc);
         let outputs = vec![(
-            "apply_auto_tags".to_string(),
+            "resolve_ingredient_names".to_string(),
             finished,
             Some(500),
             None,
             false,
             Some("boom".to_string()),
         )];
-        let states = build_step_states_from_outputs(outputs, "completed", None, None, None, None);
-        let enrich = states
+        let states = build_step_states_from_outputs(
+            &JobPlan::import(),
+            outputs,
+            "completed",
+            None,
+            None,
+            None,
+            None,
+        );
+        let resolve = states
             .iter()
-            .find(|s| s.name == "apply_auto_tags")
-            .expect("apply_auto_tags state present");
-        assert_eq!(enrich.status, "failed");
-        assert_eq!(enrich.error.as_deref(), Some("boom"));
-        assert_eq!(enrich.finished_at, Some(finished));
-        assert_eq!(enrich.duration_ms, Some(500));
-        assert!(enrich.has_output);
+            .find(|s| s.name == "resolve_ingredient_names")
+            .expect("resolve_ingredient_names state present");
+        assert_eq!(resolve.status, "failed");
+        assert_eq!(resolve.error.as_deref(), Some("boom"));
+        assert_eq!(resolve.finished_at, Some(finished));
+        assert_eq!(resolve.duration_ms, Some(500));
+        assert!(resolve.has_output);
     }
 
     #[test]
     fn step_summary_skipped_apply() {
-        let output =
-            json!({ "tags_applied": [], "skipped": "recipe was edited after it was saved" });
+        let output = json!({ "changed": false, "skipped": "recipe was edited after it was saved" });
         assert_eq!(
-            step_summary("apply_auto_tags", &output).as_deref(),
+            step_summary("apply_normalize", &output).as_deref(),
             Some("skipped: recipe was edited after it was saved")
         );
     }
 
     #[test]
-    fn concurrent_post_save_steps_render_as_running() {
-        // The job row names only the earliest running post-save step; the
+    fn concurrent_steps_render_as_running() {
+        // The job row names only the earliest running concurrent step; the
         // others whose dependencies have finished are running alongside it.
         let at = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
             .unwrap()
             .with_timezone(&Utc);
         let done = |name: &str| (name.to_string(), at, Some(10), None, true, None);
-        let outputs = vec![
-            done("save_recipe"),
-            done("enrich_normalize_title"),
-            done("apply_normalized_title"),
-        ];
+        let outputs = vec![done("save_recipe"), done("normalize_title")];
         let states = build_step_states_from_outputs(
+            &JobPlan::import(),
             outputs,
-            "enriching",
+            "normalizing",
             Some("resolve_ingredient_names"),
             Some(at),
             None,
@@ -729,17 +708,16 @@ mod tests {
                 .unwrap()
         };
         assert_eq!(status("resolve_ingredient_names"), "running");
-        assert_eq!(status("apply_normalized_title"), "completed");
-        assert_eq!(status("enrich_generate_description"), "running");
-        assert_eq!(status("enrich_auto_tag"), "running");
-        // Waits on enrich_generate_description.
-        assert_eq!(status("apply_generated_description"), "pending");
-        assert_eq!(status("apply_auto_tags"), "pending");
+        assert_eq!(status("normalize_title"), "completed");
+        assert_eq!(status("generate_description"), "running");
+        assert_eq!(status("auto_tag"), "running");
+        // Waits on generate_description and auto_tag.
+        assert_eq!(status("apply_normalize"), "pending");
     }
 
     #[test]
-    fn retried_post_save_steps_ignore_previous_attempt_rows() {
-        // A retry resumed at enrich_normalize_title reruns enrich_auto_tag
+    fn retried_concurrent_steps_ignore_previous_attempt_rows() {
+        // A retry resumed at normalize_title reruns auto_tag
         // too; its row from the failed attempt must not show as finished.
         let before = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
             .unwrap()
@@ -765,26 +743,20 @@ mod tests {
                 None,
             ),
             (
-                "enrich_normalize_title".to_string(),
+                "normalize_title".to_string(),
                 before,
                 Some(10),
                 None,
                 false,
                 Some("AI call failed".to_string()),
             ),
-            (
-                "enrich_auto_tag".to_string(),
-                before,
-                Some(10),
-                None,
-                true,
-                None,
-            ),
+            ("auto_tag".to_string(), before, Some(10), None, true, None),
         ];
         let states = build_step_states_from_outputs(
+            &JobPlan::import(),
             outputs,
-            "enriching",
-            Some("enrich_normalize_title"),
+            "normalizing",
+            Some("normalize_title"),
             Some(phase_start),
             None,
             None,
@@ -798,14 +770,14 @@ mod tests {
         };
         assert_eq!(status("save_recipe"), "completed");
         assert_eq!(status("resolve_ingredient_names"), "completed");
-        assert_eq!(status("enrich_normalize_title"), "running");
-        assert_eq!(status("enrich_auto_tag"), "running");
-        assert_eq!(status("apply_auto_tags"), "pending");
+        assert_eq!(status("normalize_title"), "running");
+        assert_eq!(status("auto_tag"), "running");
+        assert_eq!(status("apply_normalize"), "pending");
     }
 
     #[test]
-    fn dependents_of_a_failed_post_save_step_are_not_running() {
-        // A failed enrich step stops new work; its dependents never start
+    fn dependents_of_a_failed_concurrent_step_are_not_running() {
+        // A failed normalize step stops new work; its dependents never start
         // while the job waits for steps already in flight.
         let at = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
             .unwrap()
@@ -813,7 +785,7 @@ mod tests {
         let outputs = vec![
             ("save_recipe".to_string(), at, Some(10), None, true, None),
             (
-                "enrich_normalize_title".to_string(),
+                "normalize_title".to_string(),
                 at,
                 Some(10),
                 None,
@@ -822,8 +794,9 @@ mod tests {
             ),
         ];
         let states = build_step_states_from_outputs(
+            &JobPlan::import(),
             outputs,
-            "enriching",
+            "normalizing",
             Some("resolve_ingredient_names"),
             Some(at),
             None,
@@ -836,9 +809,9 @@ mod tests {
                 .map(|s| s.status.as_str())
                 .unwrap()
         };
-        assert_eq!(status("apply_normalized_title"), "pending");
-        assert_eq!(status("enrich_generate_description"), "pending");
-        assert_eq!(status("enrich_auto_tag"), "running");
+        assert_eq!(status("generate_description"), "pending");
+        assert_eq!(status("auto_tag"), "running");
+        assert_eq!(status("apply_normalize"), "pending");
     }
 
     #[test]
@@ -863,6 +836,7 @@ mod tests {
         )];
 
         let states = build_step_states_from_outputs(
+            &JobPlan::import(),
             outputs,
             "scraping",
             Some("fetch_html"),

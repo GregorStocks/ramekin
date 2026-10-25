@@ -357,7 +357,7 @@ mod tests {
         write_step_output(
             dir.path(),
             slug,
-            "enrich_auto_tag",
+            "auto_tag",
             r#"{"suggested_tags": ["dinner", "breakfast"]}"#,
         );
 
@@ -374,22 +374,22 @@ mod tests {
     }
 
     #[test]
-    fn assembles_ignoring_ai_title_and_description_enrichments() {
+    fn assembles_ignoring_ai_title_and_description_outputs() {
         let dir = TempDir::new().unwrap();
         let slug = "example-com_r";
         write_step_output(dir.path(), slug, "extract_recipe", extract_output_body());
-        // Enrichment outputs exist on disk but must not leak into snapshots:
+        // Normalize outputs exist on disk but must not leak into snapshots:
         // both are AI calls, so they churn across machines/caches.
         write_step_output(
             dir.path(),
             slug,
-            "enrich_normalize_title",
+            "normalize_title",
             r#"{"changed": true, "normalized_title": "AI Rewritten Title"}"#,
         );
         write_step_output(
             dir.path(),
             slug,
-            "enrich_generate_description",
+            "generate_description",
             r#"{"changed": true, "generated_description": "AI-generated description."}"#,
         );
 
