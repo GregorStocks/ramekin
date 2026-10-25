@@ -14,11 +14,11 @@
     {
       "raw": "4 to 5 medium-large yellow onions [see Note], halved and thinly sliced",
       "expected": {
-        "item": "medium-large yellow onions",
+        "item": "yellow onions",
         "measurements": [
           {
             "amount": "4 to 5",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": "see Note, halved and thinly sliced",

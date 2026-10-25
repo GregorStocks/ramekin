@@ -91,15 +91,15 @@
     {
       "raw": "4 medium/large limes",
       "expected": {
-        "item": "medium/large limes",
+        "item": "limes",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

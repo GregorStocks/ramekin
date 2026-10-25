@@ -23,11 +23,11 @@
     {
       "raw": "4 medium/large leeks",
       "expected": {
-        "item": "medium/large leeks",
+        "item": "leeks",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": null,

@@ -5,15 +5,15 @@
     {
       "raw": "4  medium-large potatoes",
       "expected": {
-        "item": "medium-large potatoes",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

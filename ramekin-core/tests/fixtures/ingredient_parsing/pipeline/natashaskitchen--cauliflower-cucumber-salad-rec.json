@@ -5,15 +5,15 @@
     {
       "raw": "1  small/medium head of cauliflower (cut into small pieces)",
       "expected": {
-        "item": "small/medium head of cauliflower",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "small head"
           }
         ],
         "note": "cut into small pieces",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

@@ -46,11 +46,11 @@
     {
       "raw": "4 medium-large ears corn, kernels cut from the cob (2 1/2 to 3 cups)",
       "expected": {
-        "item": "medium-large ears corn, kernels cut from the cob",
+        "item": "ears corn, kernels cut from the cob",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "medium"
           },
           {
             "amount": "2.5 to 3",
@@ -58,7 +58,7 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

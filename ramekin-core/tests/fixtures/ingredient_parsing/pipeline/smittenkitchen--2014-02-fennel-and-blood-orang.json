@@ -19,15 +19,15 @@
     {
       "raw": "1 medium-large fennel bulb, leaves and stems trimmed off",
       "expected": {
-        "item": "medium-large fennel bulb",
+        "item": "fennel bulb",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": "leaves and stems trimmed off",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

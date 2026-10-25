@@ -69,15 +69,19 @@
     {
       "raw": "1 cup coarsely grated mozzarella (about 3 ounces",
       "expected": {
-        "item": "coarsely grated mozzarella (about 3 ounces",
+        "item": "coarsely grated mozzarella",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "about 3 ounces",
+        "category": "Cheese"
       }
     },
     {

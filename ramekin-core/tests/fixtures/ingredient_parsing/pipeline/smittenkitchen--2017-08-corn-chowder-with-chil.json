@@ -5,15 +5,15 @@
     {
       "raw": "8 medium/large ears corn, husks and silks removed",
       "expected": {
-        "item": "medium/large ears corn",
+        "item": "ears corn",
         "measurements": [
           {
             "amount": "8",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": "husks and silks removed",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

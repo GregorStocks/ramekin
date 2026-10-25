@@ -45,14 +45,14 @@
     {
       "raw": "2 cups milk, warmed (again, not too hot",
       "expected": {
-        "item": "milk, warmed (again, not too hot",
+        "item": "milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "again, not too hot, warmed",
         "category": "Dairy & Eggs"
       }
     },

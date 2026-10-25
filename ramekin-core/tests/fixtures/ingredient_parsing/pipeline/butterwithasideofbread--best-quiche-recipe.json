@@ -19,14 +19,14 @@
     {
       "raw": "1 lb Italian sausage (mild",
       "expected": {
-        "item": "Italian sausage (mild",
+        "item": "Italian sausage",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "mild",
         "category": "Meat & Seafood"
       }
     },

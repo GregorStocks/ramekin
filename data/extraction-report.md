@@ -9,20 +9,20 @@
 
 ## Extraction Methods
 
-- JSON-LD: 4261/5533 (77.0%)
+- JSON-LD: 4262/5533 (77.0%)
 - Microdata: 542/5533 (9.8%)
 - Both: 0/5533 (0.0%)
-- Neither: 730/5533 (13.2%)
+- Neither: 729/5533 (13.2%)
 
 ## Ingredient Parsing
 
 - Total ingredients: 60608
-- Volume-to-weight converted: 27708/42558 (65.1%)
-- Unknown ingredient (no density data): 5241
-- Already has weight: 9609
-- No volume unit (count-based): 17412
-- Metric converted (oz→g): 2462
-- Metric converted (lb→g): 1833
+- Volume-to-weight converted: 27718/42555 (65.1%)
+- Unknown ingredient (no density data): 5227
+- Already has weight: 9610
+- No volume unit (count-based): 17413
+- Metric converted (oz→g): 2464
+- Metric converted (lb→g): 1834
 
 ## By Site
 

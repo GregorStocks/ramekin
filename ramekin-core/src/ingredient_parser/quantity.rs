@@ -273,6 +273,36 @@ fn leading_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
     }])
 }
 
+/// A size the parser left in a counted item behind a word it doesn't read
+/// as a unit, sizing each of the count: "16 uncooked large shrimp", "1 very
+/// small red onion", "1 diced medium onion". Only the item's first words are
+/// read, so "chicken thighs cut into large chunks" names no size.
+fn item_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
+    static SIZE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(
+            r"^(?:(?:uncooked|raw|very|firm|ripe|whole|diced|fresh)\s+)*(?P<size>small|medium|large|extra[- ]large|jumbo)\s+\p{L}",
+        )
+        .unwrap()
+    });
+    let count = match read(ingredient.measurements.first()?)?.as_slice() {
+        [Term {
+            amount,
+            unit: Unit::Piece(unit),
+        }] if unit.is_empty() => *amount,
+        _ => return None,
+    };
+    let item = normalize(&ingredient.item);
+    let size = SIZE
+        .captures(&item)?
+        .name("size")?
+        .as_str()
+        .replace('-', " ");
+    Some(vec![Term {
+        amount: count,
+        unit: Unit::Piece(size),
+    }])
+}
+
 /// The piece a counted item names, which the parser leaves in the item: a
 /// slice at its front ("2 thick slices country bread", "1 1/2-inch slice
 /// sandwich bread", "3 large slices sandwich bread", where the size is the
@@ -315,13 +345,17 @@ fn named_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 }
 
 /// The ways to measure a line, best first: per-item weights ("2 cans, 10 oz
-/// each") and sizes leading the item ("2 4-ounce balls burrata"), then its
-/// measurements in order (the primary leads, so rounded gram enrichments
-/// don't replace precise amounts), then a weight stated only in the note,
-/// then a piece the item names ("2 thick slices bread"). Measurements are
-/// alternatives, not additive.
+/// each") and sizes leading the item ("2 4-ounce balls burrata", "16
+/// uncooked large shrimp"), then its measurements in order (the primary
+/// leads, so rounded gram enrichments don't replace precise amounts), then a
+/// weight stated only in the note, then a piece the item names ("2 thick
+/// slices bread"). Measurements are alternatives, not additive.
 pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
-    let mut measures: Vec<Measure> = leading_size(ingredient).into_iter().map(Some).collect();
+    let mut measures: Vec<Measure> = leading_size(ingredient)
+        .into_iter()
+        .chain(item_size(ingredient))
+        .map(Some)
+        .collect();
     let mut weighed_package = false;
     if let Some((primary, alternatives)) = ingredient.measurements.split_first() {
         // A stated weight per item beats a package's standard size, as a

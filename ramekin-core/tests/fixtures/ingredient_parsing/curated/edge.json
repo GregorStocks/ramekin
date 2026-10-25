@@ -927,15 +927,15 @@
       "name": "of_a_orphan_with_descriptor",
       "raw": "1/2 of a medium-large cabbage",
       "expected": {
-        "item": "medium-large cabbage",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

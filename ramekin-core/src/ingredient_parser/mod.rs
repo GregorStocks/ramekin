@@ -253,6 +253,12 @@ fn repair_unclosed_parenthetical_measurement_fragment(s: &str) -> String {
         return join_segments(&join_segments(before, &item), &format!("({})", measurement));
     }
 
+    // "butternut squash (peeled, seeded and sliced": a "(" that never closes
+    // runs to the end of the line, so it closes there.
+    if !content.is_empty() && !s.get(start..).unwrap_or("").contains(')') {
+        return format!("{})", s.trim_end());
+    }
+
     s.to_string()
 }
 
@@ -2158,6 +2164,33 @@ mod tests {
     }
 
     #[test]
+    fn test_parse_size_pair_is_its_first_size() {
+        for (raw, item, unit) in [
+            (
+                "1 medium/small butternut squash",
+                "butternut squash",
+                "medium",
+            ),
+            ("2 small-medium sweet potatoes", "sweet potatoes", "small"),
+            ("2 small- medium onions", "onions", "small"),
+            ("1 med/large yellow onion", "yellow onion", "medium"),
+            ("1 small/medium head of lettuce", "lettuce", "small head"),
+            ("1/2 of a medium-large cabbage", "cabbage", "medium"),
+        ] {
+            let parsed = parse_ingredient(raw);
+            assert_eq!(parsed.item, item, "{raw}");
+            assert_eq!(parsed.measurements[0].unit.as_deref(), Some(unit), "{raw}");
+        }
+    }
+
+    #[test]
+    fn test_parse_unclosed_parenthetical_note_closes_at_the_end() {
+        let parsed = parse_ingredient("1 lb Italian sausage (mild");
+        assert_eq!(parsed.item, "Italian sausage");
+        assert_eq!(parsed.note.as_deref(), Some("mild"));
+    }
+
+    #[test]
     fn test_parse_sized_count_alternative() {
         for (raw, item, size) in [
             ("2 large or 3 smaller leeks", "leeks", "smaller"),
@@ -2168,7 +2201,7 @@ mod tests {
                 "regular",
             ),
             ("5 large or 6 medium-sized lemons", "lemons", "medium"),
-            ("4 large or 5 small-medium apples", "apples", "small-medium"),
+            ("4 large or 5 small-medium apples", "apples", "small"),
         ] {
             let parsed = parse_ingredient(raw);
             assert_eq!(parsed.item, item, "{raw}");
