@@ -12,7 +12,7 @@ use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, Fetch
 
 use crate::db::DbPool;
 use crate::models::{NewImportJob, NewScrapeJob, ScrapeJob};
-use crate::schema::{scrape_jobs, step_outputs};
+use crate::schema::{photos, scrape_jobs, step_outputs};
 
 use super::output_store::{copy_output, latest_output, PreparedOutput};
 use super::steps::{EditRequest, FetchHtmlStep};
@@ -79,6 +79,49 @@ pub struct StoredSource {
 /// Re-extract can read the recipe from it again.
 pub const SOURCE_TEXT_STEP: &str = "source_text";
 
+/// The step a photo-imported recipe's photo ids are stored under, so
+/// Re-extract can read the photos again.
+pub const SOURCE_PHOTOS_STEP: &str = "source_photos";
+
+/// The photos a recipe was imported from, ready to save as the import job's
+/// `source_photos` output.
+pub async fn prepare_photos_source(photo_ids: &[Uuid]) -> Result<PreparedOutput, ScrapeError> {
+    prepare_output(
+        SOURCE_PHOTOS_STEP,
+        serde_json::json!({ "photo_ids": photo_ids }),
+    )
+    .await
+}
+
+/// The photo ids a `source_photos` output holds.
+pub fn source_photo_ids(output: &serde_json::Value) -> Option<Vec<Uuid>> {
+    serde_json::from_value(output.get("photo_ids")?.clone()).ok()
+}
+
+/// Whether every photo a `source_photos` output names is still live.
+fn source_photos_live(
+    conn: &mut diesel::SqliteConnection,
+    job_id: Uuid,
+) -> Result<bool, DieselError> {
+    let output: serde_json::Value = step_outputs::table
+        .filter(step_outputs::scrape_job_id.eq(job_id))
+        .filter(step_outputs::step_name.eq(SOURCE_PHOTOS_STEP))
+        .order(step_outputs::created_at.desc())
+        .select(step_outputs::output)
+        .first(conn)?;
+    let Some(mut ids) = source_photo_ids(&output) else {
+        return Ok(false);
+    };
+    ids.sort();
+    ids.dedup();
+    let live: i64 = photos::table
+        .filter(photos::id.eq_any(&ids))
+        .filter(photos::deleted_at.is_null())
+        .count()
+        .get_result(conn)?;
+    Ok(!ids.is_empty() && live == ids.len() as i64)
+}
+
 /// The pasted text a recipe was created from, ready to store with
 /// `record_text_source`.
 pub async fn prepare_text_source(text: &str) -> Result<PreparedOutput, ScrapeError> {
@@ -110,8 +153,9 @@ pub fn record_text_source(
 }
 
 /// Find `recipe_id`'s latest stored source, if it has one: the page it was
-/// fetched from, the text it was pasted as, or the recipe an import
-/// extracted. Recipes typed into the form have none.
+/// fetched from, the text it was pasted as, the photos it was imported from
+/// (while they're all still live), or the recipe an import extracted.
+/// Recipes typed into the form have none.
 pub async fn stored_source(
     pool: &DbPool,
     recipe_id: Uuid,
@@ -120,6 +164,7 @@ pub async fn stored_source(
         for step_name in [
             FetchHtmlStep::NAME,
             SOURCE_TEXT_STEP,
+            SOURCE_PHOTOS_STEP,
             ExtractRecipeStep::NAME,
         ] {
             let job: Option<(Uuid, Option<String>)> = step_outputs::table
@@ -132,6 +177,11 @@ pub async fn stored_source(
                 .first(conn)
                 .optional()?;
             if let Some((job_id, url)) = job {
+                // Deleted photos can't be read again; re-parse what the
+                // import extracted from them instead.
+                if step_name == SOURCE_PHOTOS_STEP && !source_photos_live(conn, job_id)? {
+                    continue;
+                }
                 return Ok(Some(StoredSource {
                     job_id,
                     url,
@@ -171,8 +221,11 @@ pub async fn create_normalize_job(
             NormalizeStart::Reextract(source) if source.step_name == FetchHtmlStep::NAME => {
                 (source.url.as_deref(), ExtractRecipeStep::NAME)
             }
-            // Text extraction stands in for extract_recipe (see the runner).
-            NormalizeStart::Reextract(source) if source.step_name == SOURCE_TEXT_STEP => {
+            // Text and photo extraction stand in for extract_recipe (see the
+            // runner).
+            NormalizeStart::Reextract(source)
+                if [SOURCE_TEXT_STEP, SOURCE_PHOTOS_STEP].contains(&source.step_name) =>
+            {
                 (None, ExtractRecipeStep::NAME)
             }
             NormalizeStart::Reextract(source) => {

@@ -7,8 +7,15 @@ from uuid import uuid4
 
 import pytest
 
-from conftest import make_ingredient, wait_for_job_completion
-from ramekin_client.api import ImportApi, NormalizeApi, RecipesApi, ScrapeApi, TagsApi
+from conftest import connect_db, make_ingredient, wait_for_job_completion
+from ramekin_client.api import (
+    ImportApi,
+    NormalizeApi,
+    PhotosApi,
+    RecipesApi,
+    ScrapeApi,
+    TagsApi,
+)
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
     BulkNormalizeRequest,
@@ -330,6 +337,73 @@ def test_reextract_of_a_text_import_reads_its_pasted_text_again(authed_api_clien
     # The text is still the recipe's source after the new version.
     ops = ops_by_id(NormalizeApi(client).list_normalize_ops(recipe_id=recipe_id))
     assert ops["reextract"].available
+
+
+def import_photo_recipe(client, image) -> tuple[str, str]:
+    """Import a recipe from one photo; returns the recipe and photo ids."""
+    photo_id = PhotosApi(client).upload(file=("test.png", image)).id
+    job = ImportApi(client).import_from_photos(
+        import_from_photos_request={"photo_ids": [photo_id]}
+    )
+    finished = wait_for_job_completion(ScrapeApi(client), str(job.job_id))
+    assert finished.status == "completed", finished.error
+    return str(finished.recipe_id), str(photo_id)
+
+
+def rename(client, recipe_id: str, title: str):
+    recipes_api = RecipesApi(client)
+    current = recipes_api.get_recipe(recipe_id)
+    recipes_api.update_recipe(
+        recipe_id,
+        UpdateRecipeRequest(expected_version_id=current.version_id, title=title),
+    )
+
+
+def test_reextract_of_a_photo_import_reads_its_photos_again(
+    authed_api_client, test_image
+):
+    client, _ = authed_api_client
+    recipe_id, _ = import_photo_recipe(client, test_image)
+    rename(client, recipe_id, "My Renamed Recipe")
+
+    ops = ops_by_id(NormalizeApi(client).list_normalize_ops(recipe_id=recipe_id))
+    assert ops["reextract"].available
+
+    job_id, proposal = run(client, recipe_id, ["reextract"])
+    # The mock vision model reads every photo as "Photo Imported Recipe".
+    assert proposal.base.content.title == "My Renamed Recipe"
+    assert proposal.proposed.content.title == "Photo Imported Recipe"
+    assert extract_ran(client, job_id)
+
+
+def extract_ran(client, job_id) -> bool:
+    """Whether the job ran extract_recipe, rather than reusing the import's
+    output (which carries no duration)."""
+    steps = {
+        step.name: step for step in ScrapeApi(client).get_scrape(str(job_id)).steps
+    }
+    assert steps["extract_recipe"].status == "completed"
+    return steps["extract_recipe"].duration_ms is not None
+
+
+def test_reextract_of_a_photo_import_reparses_once_its_photos_are_gone(
+    authed_api_client, test_image, database_url
+):
+    client, _ = authed_api_client
+    recipe_id, photo_id = import_photo_recipe(client, test_image)
+    conn = connect_db(database_url)
+    try:
+        conn.execute(
+            "UPDATE photos SET deleted_at = strftime('%Y-%m-%d %H:%M:%f+00:00', 'now')"
+            " WHERE id = ?",
+            (photo_id,),
+        )
+    finally:
+        conn.close()
+
+    job_id, proposal = run(client, recipe_id, ["reextract"])
+    assert proposal.proposed.content.title == "Photo Imported Recipe"
+    assert not extract_ran(client, job_id)
 
 
 def test_blank_source_text_is_rejected(authed_api_client):
