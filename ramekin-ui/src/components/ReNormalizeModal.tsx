@@ -70,6 +70,9 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
   const [error, setError] = createSignal<string | null>(null);
   const [busy, setBusy] = createSignal(false);
   let controller: AbortController | null = null;
+  // Bumped whenever the modal opens or closes, so answers to a closed
+  // session's requests are ignored.
+  let session = 0;
 
   const abortRun = () => {
     controller?.abort();
@@ -79,20 +82,28 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
 
   createEffect(
     on(props.isOpen, (open) => {
+      session += 1;
       abortRun();
       if (!open) return;
+      const opened = session;
       setError(null);
       setPhase({ kind: "loading" });
       void props
         .getNormalizeApi()
         .listNormalizeOps({ recipeId: props.recipeId })
         .then((response) => {
+          if (opened !== session) return;
           setOps(response.ops);
           setSelected(defaultNormalizeSelection(response.ops));
           setPhase({ kind: "choose" });
         })
         .catch(async (err: unknown) => {
-          setError(await extractApiError(err, "Failed to load normalize ops"));
+          const message = await extractApiError(
+            err,
+            "Failed to load normalize ops",
+          );
+          if (opened !== session) return;
+          setError(message);
           setPhase({ kind: "choose" });
         });
     }),

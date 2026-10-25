@@ -92,16 +92,22 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
       setExpanded(null);
       setError(null);
       accepted = false;
+      const opened = session;
       void props
         .getNormalizeApi()
         .listNormalizeOps({})
         .then((response) => {
+          if (opened !== session) return;
           setOps(response.ops);
           setSelected(defaultNormalizeSelection(response.ops));
         })
-        .catch(async (err: unknown) =>
-          setError(await extractApiError(err, "Failed to load normalize ops")),
-        );
+        .catch(async (err: unknown) => {
+          const message = await extractApiError(
+            err,
+            "Failed to load normalize ops",
+          );
+          if (opened === session) setError(message);
+        });
     }),
   );
 
