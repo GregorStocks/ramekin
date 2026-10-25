@@ -13,7 +13,10 @@ use crate::models::{NewScrapeJob, ScrapeJob};
 use crate::photos::load_photo_images;
 use crate::schema::scrape_jobs;
 
-use super::jobs::{mark_failed, prepare_output, save_step_output, update_status_and_step};
+use super::jobs::{
+    mark_failed, prepare_output, prepare_photos_source, save_step_output, update_status_and_step,
+    SOURCE_PHOTOS_STEP,
+};
 use super::runner::{job_slot, run_scrape_job_in_slot};
 use super::{run_scrape_db_write, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
 
@@ -129,6 +132,8 @@ async fn run_photo_import_job_inner(
     let extract_json =
         serde_json::to_value(&extract_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    // The photos, for Re-extract to read again.
+    let photos_source = prepare_photos_source(&photo_ids).await?;
     // fetch_images output (photos already uploaded)
     let images_output = FetchImagesOutput {
         photo_ids: photo_ids.into_iter().map(Into::into).collect(),
@@ -142,6 +147,7 @@ async fn run_photo_import_job_inner(
     run_scrape_db_write(&pool, move |conn| {
         save_step_output(conn, job_id, ExtractRecipeStep::NAME, extract_output)?;
         save_step_output(conn, job_id, FetchImagesStepMeta::NAME, images_output)?;
+        save_step_output(conn, job_id, SOURCE_PHOTOS_STEP, photos_source)?;
 
         // Update job to start from parse_ingredients
         let now = chrono::Utc::now();
