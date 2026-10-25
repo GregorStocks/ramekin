@@ -43,14 +43,17 @@ impl ApplyNormalizeStep {
     }
 }
 
-/// The newest version an earlier run of this step in job `job_id` wrote.
-/// Jobs from before `apply_normalize` wrote one version per op, under step
-/// names the migration renamed to it, so a retry of such a job builds on
-/// what those steps already applied.
+/// Jobs from before `apply_normalize` wrote one version per op; the
+/// migration renamed those steps' rows to this.
+const LEGACY_APPLY_STEP: &str = "legacy_apply_normalize";
+
+/// The newest version an earlier run of this step (or of the old per-op
+/// apply steps) in job `job_id` wrote, so a retry builds on what they
+/// already applied.
 fn written_version(conn: &mut diesel::SqliteConnection, job_id: Uuid) -> QueryResult<Option<Uuid>> {
     let outputs: Vec<JsonValue> = step_outputs::table
         .filter(step_outputs::scrape_job_id.eq(job_id))
-        .filter(step_outputs::step_name.eq(APPLY_NORMALIZE_STEP))
+        .filter(step_outputs::step_name.eq_any([APPLY_NORMALIZE_STEP, LEGACY_APPLY_STEP]))
         .filter(step_outputs::success.eq(true))
         .order(step_outputs::created_at.desc())
         .select(step_outputs::output)

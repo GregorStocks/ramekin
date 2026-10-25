@@ -18,11 +18,13 @@ WHERE version_source = 'enrichment';
 UPDATE scrape_jobs SET status = 'normalizing' WHERE status = 'enriching';
 
 -- Step names: the AI steps lost their enrich_ prefix, and one apply_normalize
--- step replaced the three apply steps.
+-- step replaced the three apply steps. An old apply step's row is not an
+-- apply_normalize run (it applied one op), so it keeps a name of its own,
+-- which apply_normalize reads to build on the versions those steps wrote.
 UPDATE step_outputs SET step_name = 'normalize_title' WHERE step_name = 'enrich_normalize_title';
 UPDATE step_outputs SET step_name = 'generate_description' WHERE step_name = 'enrich_generate_description';
 UPDATE step_outputs SET step_name = 'auto_tag' WHERE step_name = 'enrich_auto_tag';
-UPDATE step_outputs SET step_name = 'apply_normalize'
+UPDATE step_outputs SET step_name = 'legacy_apply_normalize'
 WHERE step_name IN ('apply_normalized_title', 'apply_generated_description', 'apply_auto_tags');
 UPDATE scrape_jobs SET current_step = 'normalize_title' WHERE current_step = 'enrich_normalize_title';
 UPDATE scrape_jobs SET current_step = 'generate_description' WHERE current_step = 'enrich_generate_description';
