@@ -443,12 +443,33 @@ fn is_frying_medium(ingredient: &ParsedIngredient) -> bool {
             .is_some_and(|note| FRYING.is_match(note) && !note.to_lowercase().contains("plus more"))
 }
 
+/// Whether the line is an amount of another recipe ("1 recipe guacamole",
+/// "1/2 batch Rice Krispies Treats"): its weight is the other recipe's, so
+/// it can't be counted from the catalog.
+fn refers_to_another_recipe(ingredient: &ParsedIngredient) -> bool {
+    let Some(measurement) = ingredient.measurements.first() else {
+        return false;
+    };
+    if measurement.amount.is_none() {
+        return false;
+    }
+    let item = ingredient.item.to_lowercase();
+    match measurement.unit.as_deref().map(str::to_lowercase).as_deref() {
+        Some("batch" | "batches") => true,
+        None => item.starts_with("recipe ") || item.starts_with("recipes "),
+        Some(_) => false,
+    }
+}
+
 fn contribution(
     ingredient: &ParsedIngredient,
     scale: f64,
     learned: &catalog::Learned,
     estimated: &Gaps,
 ) -> Result<Line, &'static str> {
+    if refers_to_another_recipe(ingredient) {
+        return Err("Another recipe");
+    }
     let entry =
         match catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), learned) {
             Resolution::Entry { entry, .. } if entry.kind == Kind::Product => {
@@ -660,6 +681,7 @@ fn unknown_label(reason: &str) -> &'static str {
         }
         "Missing density for this food" => "Can't convert this measurement to weight",
         "Frying oil: only part of it is absorbed" => "Frying oil: only part is absorbed",
+        "Another recipe" => "Refers to another recipe",
         other => panic!("no label for unknown reason {other:?}"),
     }
 }

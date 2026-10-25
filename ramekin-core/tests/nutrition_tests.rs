@@ -786,6 +786,30 @@ fn frying_oil_is_not_charged_in_full() {
 }
 
 #[test]
+fn an_amount_of_another_recipe_says_so() {
+    for raw in [
+        "1 recipe guacamole",
+        "1/2 recipe the best basic guacamole",
+        "1 batch roasted tomato salsa or your favorite salsa, for serving",
+        "1/2 batch Rice Krispies Treats",
+    ] {
+        let result = estimate(&[parse_ingredient(raw)], None, 1.0).unwrap();
+        assert_eq!(result.unknown_ingredients[0].reason, "Another recipe", "{raw}");
+        assert!(
+            result.lines[0].text.starts_with("Refers to another recipe"),
+            "{raw}: {}",
+            result.lines[0].text
+        );
+    }
+    // "recipe" deeper in the name is just a word.
+    let result = estimate(&[parse_ingredient("1 cup recipe-ready broth")], None, 1.0).unwrap();
+    assert!(result
+        .unknown_ingredients
+        .iter()
+        .all(|unknown| unknown.reason != "Another recipe"));
+}
+
+#[test]
 fn a_spoonful_of_oil_for_frying_still_counts() {
     let mut line = ingredient("olive oil", "1", "tbsp");
     line.note = Some("for frying the meatballs".into());
