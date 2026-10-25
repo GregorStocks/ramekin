@@ -148,7 +148,6 @@
     "baby back pork ribs or spare ribs": null,
     "baby bell peppers": "peppers, sweet, red, raw",
     "baby bella mushrooms": "mushrooms, brown, italian, or crimini, raw",
-    "baby bok choy": "cabbage, chinese (pak-choi)",
     "baby carrots": "carrots, baby, raw",
     "baby kale": "kale, raw",
     "baby portabella mushrooms": "mushrooms, brown, italian, or crimini, raw",
@@ -300,8 +299,6 @@
     "brie cheese": "cheese, brie",
     "brined green olives": "olives, pickled, canned or bottled, green",
     "brisket": "beef, brisket, whole, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
-    "broccoli crowns": "broccoli, raw",
-    "broccoli florets": "broccoli, raw",
     "broccolini": "broccoli",
     "brown basmati rice": "rice, brown, long-grain, raw",
     "brown butter": "butter",
@@ -2859,6 +2856,7 @@
     "avocados, raw, all commercial varieties": "Produce",
     "avocados, raw, california": "Produce",
     "baby back pork ribs or spare ribs": "Meat & Seafood",
+    "baby bok choy": "Produce",
     "baby corn": "Canned Goods",
     "bacon bits": "Meat & Seafood",
     "bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame)": "Bakery & Bread",
@@ -2977,6 +2975,8 @@
     "bread, white, commercially prepared (includes soft bread crumbs)": "Bakery & Bread",
     "bread, whole-wheat, commercially prepared": "Bakery & Bread",
     "brioche buns": "Bakery & Bread",
+    "broccoli crowns": "Produce",
+    "broccoli florets": "Produce",
     "broccoli, chinese, raw": "Produce",
     "broccoli, cooked, boiled, drained, without salt": "Produce",
     "broccoli, frozen, chopped, unprepared": "Frozen",
@@ -3325,6 +3325,7 @@
     "japanese roasted green pea snack": "Snacks",
     "jellies": "Condiments & Sauces",
     "jujube, raw": "Produce",
+    "jumbo marshmallows": "Baking",
     "kale, raw": "Produce",
     "kamaboko fish cake": "Meat & Seafood",
     "kansui": "Baking",
@@ -4061,6 +4062,17 @@
         "value": 166.0
       }
     },
+    "baby bok choy": {
+      "default_portion": "head",
+      "fdc_id": 170390,
+      "portions": {
+        "head": {
+          "source": "America's Test Kitchen, Sesame-Soy-Glazed Baby Bok Choy: '4 baby bok choy (about 4 ounces each)'",
+          "url": "https://www.americastestkitchen.com/recipes/370-sesame-soy-glazed-baby-bok-choy",
+          "value": 113.0
+        }
+      }
+    },
     "baby corn": {
       "kcal_per_100g": {
         "source": "USDA FoodData Central Branded food 2588804 (SWEET & WHOLE IN BRINE BABY CORN, Lieber Chocolate & Food Products Co.): 32 kcal per 100 g",
@@ -4223,6 +4235,28 @@
           "source": "Bakerly Brioche Hamburger Buns: 4 buns in a 7.05 oz (200 g) bag, so 50 g a bun",
           "url": "https://giantfoodstores.com/groceries/bread-bakery/rolls-buns/hamburger-buns-rolls/bakerly-brioche-hamburger-buns-4-ct-705-oz-bag.html",
           "value": 50.0
+        }
+      }
+    },
+    "broccoli crowns": {
+      "default_portion": "crown",
+      "fdc_id": 170379,
+      "portions": {
+        "crown": {
+          "source": "H-E-B Fresh Broccoli Crowns, sold each: avg. 0.6 lb (272 g)",
+          "url": "https://www.heb.com/product-detail/fresh-broccoli-crowns-avg-0-6-lb/319052",
+          "value": 272.0
+        }
+      }
+    },
+    "broccoli florets": {
+      "default_portion": "floret",
+      "fdc_id": 170379,
+      "portions": {
+        "floret": {
+          "source": "USDA FNDDS 2709643 (Broccoli, raw): 1 floweret = 10 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2709643/nutrients",
+          "value": 10.0
         }
       }
     },
@@ -4960,6 +4994,17 @@
         "source": "USDA FoodData Central Branded food 374828 (GREEN PEA CRISPS, Calbee North America, LLC): 429 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/374828/nutrients",
         "value": 429.0
+      }
+    },
+    "jumbo marshmallows": {
+      "default_portion": "marshmallow",
+      "fdc_id": 167995,
+      "portions": {
+        "marshmallow": {
+          "source": "Campfire Giant Roasters Marshmallows: 1 piece = 28 g (90 kcal)",
+          "url": "https://foods.fatsecret.com/calories-nutrition/campfire/giant-roasters-marshmallows",
+          "value": 28.0
+        }
       }
     },
     "kamaboko fish cake": {
@@ -5728,6 +5773,16 @@
     "basil, fresh": {
       "trace_ok": true
     },
+    "blackberries, raw": {
+      "default_portion": "blackberry",
+      "portions": {
+        "blackberry": {
+          "source": "USDA FNDDS 2709273 (Blackberries, raw): 1 blackberry = 5 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2709273/nutrients",
+          "value": 5.0
+        }
+      }
+    },
     "bread, pita, white, enriched": {
       "default_portion": "pita large"
     },
@@ -5737,6 +5792,20 @@
           "source": "USDA FNDDS 2707598 (Bread, white): 1 large or thick slice = 43 g",
           "url": "https://fdc.nal.usda.gov/food-details/2707598/nutrients",
           "value": 43.0
+        }
+      }
+    },
+    "candies, marshmallows": {
+      "portions": {
+        "jumbo": {
+          "source": "Campfire Giant Roasters Marshmallows: 1 piece = 28 g (90 kcal)",
+          "url": "https://foods.fatsecret.com/calories-nutrition/campfire/giant-roasters-marshmallows",
+          "value": 28.0
+        },
+        "large": {
+          "source": "USDA SR Legacy 167995 (Candies, marshmallows): 1 regular = 7.2 g; the regular marshmallow is the one sold as large",
+          "url": "https://fdc.nal.usda.gov/food-details/167995/nutrients",
+          "value": 7.2
         }
       }
     },
@@ -5793,6 +5862,16 @@
           "source": "USDA FNDDS 2709789 (Lettuce, raw): 1 leaf = 8 g",
           "url": "https://fdc.nal.usda.gov/food-details/2709789/nutrients",
           "value": 8.0
+        }
+      }
+    },
+    "papayas, raw": {
+      "default_portion": "fruit",
+      "portions": {
+        "fruit": {
+          "source": "USDA FNDDS 2709246 (Papaya, raw): 1 fruit = 330 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2709246/nutrients",
+          "value": 330.0
         }
       }
     },
