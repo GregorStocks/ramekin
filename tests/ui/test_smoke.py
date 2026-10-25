@@ -449,20 +449,17 @@ def test_cookbook_grouped_tag_filter(page: Page, ui_url: str, api_url: str):
     page.click("button[type='submit']")
     page.wait_for_selector(".recipe-card")
 
-    # Grouped sections visible.
-    expect(
-        page.locator(".cookbook-filter-tag-group summary", has_text="course")
-    ).to_be_visible()
-    expect(
-        page.locator(".cookbook-filter-tag-group summary", has_text="ingredient")
-    ).to_be_visible()
-    expect(
-        page.locator(".cookbook-filter-tag-group summary", has_text="Uncategorized")
-    ).to_be_visible()
+    # One button per namespace.
+    for label in ("course", "ingredient", "Uncategorized"):
+        expect(
+            page.locator(".cookbook-tag-group-button", has_text=label)
+        ).to_be_visible()
 
-    # Clicking the "chicken" chip (under the ingredient namespace) filters
-    # the recipes. The chip label renders as "<span>ingredient:</span>chicken"
-    # so the accessible name includes the full text "ingredient:chicken".
-    page.locator(".filter-chip", has_text="chicken").click()
+    # The namespace button opens a popover listing its values; clicking the
+    # "chicken" value filters the recipes.
+    page.locator(".cookbook-tag-group-button", has_text="ingredient").click()
+    popover = page.get_by_label("ingredient tags")
+    expect(popover).to_be_visible()
+    popover.locator(".filter-chip", has_text="chicken").click()
     expect(page.get_by_text("Chicken dish")).to_be_visible()
     expect(page.locator(".recipe-card h3", has_text="Morning oats")).to_have_count(0)
