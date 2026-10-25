@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import functools
 import json
+import os
 import re
 import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -78,9 +79,16 @@ class Handler(SimpleHTTPRequestHandler):
         print(f"Saved {path.relative_to(ROOT)}")
 
 
+def default_host() -> str:
+    """The address this SSH session came in on, so the printed links open
+    from the machine you're sshing from; else localhost."""
+    fields = os.environ.get("SSH_CONNECTION", "").split()
+    return fields[2] if len(fields) == 4 else "127.0.0.1"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--host", default=default_host())
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     handler = functools.partial(Handler, directory=str(PAGES))

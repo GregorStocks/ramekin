@@ -55,8 +55,9 @@ No rule can score a tag set, a title, prose or a photo, so a person judges
 them. Each run writes a blind page per suite,
 `logs/ai-evals/<suite>/judge.html`. It shows each case's source and the answers
 nobody has judged yet, shuffled, with model names hidden and identical answers
-merged. `make ai-eval-judge` serves the pages (`HOST=` to reach them from
-another machine); mark each answer best, good or bad (for tags, tick the tags
+merged. `make ai-eval-judge` serves the pages, on the address you sshed in to
+when run over SSH, so its links open from that machine (`HOST=` to pick
+another); mark each answer best, good or bad (for tags, tick the tags
 that apply to each recipe), then click Save, which writes
 `judgments/<suite>.json` (opened as a file instead, the page copies the JSON
 for you to paste there). Rerun: the report then scores every
