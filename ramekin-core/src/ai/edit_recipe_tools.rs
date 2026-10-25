@@ -301,6 +301,11 @@ impl RecipeDraft {
                         continue;
                     };
                     for measurement in measurements {
+                        // A per-item size ("10 oz each") stays as it is;
+                        // the count it describes scales.
+                        if is_per_item(measurement) {
+                            continue;
+                        }
                         let Some(amount) = measurement
                             .get("amount")
                             .and_then(Value::as_str)
@@ -598,6 +603,15 @@ fn parsed_ingredient(line: &str, section: Option<Value>) -> Result<Value, String
     Ok(ingredient)
 }
 
+/// Whether a measurement is one item's size ("10 oz each"), as the clients'
+/// ingredient formatting decides it.
+fn is_per_item(measurement: &Value) -> bool {
+    measurement
+        .get("unit")
+        .and_then(Value::as_str)
+        .is_some_and(|unit| unit.trim().to_lowercase().ends_with(" each"))
+}
+
 /// An amount as recipes store them: up to 3 decimals, no trailing zeros.
 fn format_amount(amount: f64) -> String {
     let text = format!("{amount:.3}");
@@ -693,6 +707,24 @@ mod tests {
         // Nothing else changes.
         assert_eq!(recipe["servings"], "4");
         assert_eq!(recipe["ingredients"][0]["raw"], "2 cups water");
+    }
+
+    #[tokio::test]
+    async fn scale_leaves_per_item_sizes_alone() {
+        let mut draft = RecipeDraft::new(json!({
+            "title": "Bars",
+            "ingredients": [{
+                "item": "marshmallows",
+                "measurements": [{"amount": "2", "unit": "package"}, {"amount": "10", "unit": "oz each"}],
+                "note": null, "raw": null, "section": null
+            }],
+            "instructions": "Melt."
+        }))
+        .unwrap();
+        call(&mut draft, "scale_recipe", json!({"factor": 2})).await;
+        let measurements = &draft.into_value()["ingredients"][0]["measurements"];
+        assert_eq!(measurements[0]["amount"], "4");
+        assert_eq!(measurements[1]["amount"], "10");
     }
 
     #[tokio::test]
