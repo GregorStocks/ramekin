@@ -11,9 +11,9 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// CustomEnrichRequest : Request body for custom enrichment.
+/// EditRecipeRequest : Request body for Edit with AI.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct CustomEnrichRequest {
+pub struct EditRecipeRequest {
     #[serde(rename = "instruction")]
     pub instruction: String,
     #[serde(rename = "photo_ids", skip_serializing_if = "Option::is_none")]
@@ -22,10 +22,10 @@ pub struct CustomEnrichRequest {
     pub recipe: Box<models::RecipeContent>,
 }
 
-impl CustomEnrichRequest {
-    /// Request body for custom enrichment.
-    pub fn new(instruction: String, recipe: models::RecipeContent) -> CustomEnrichRequest {
-        CustomEnrichRequest {
+impl EditRecipeRequest {
+    /// Request body for Edit with AI.
+    pub fn new(instruction: String, recipe: models::RecipeContent) -> EditRecipeRequest {
+        EditRecipeRequest {
             instruction,
             photo_ids: None,
             recipe: Box::new(recipe),

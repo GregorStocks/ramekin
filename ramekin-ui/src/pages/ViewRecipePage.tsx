@@ -72,7 +72,8 @@ export default function ViewRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { getRecipesApi, getEnrichApi, getScrapeApi, token } = useAuth();
+  const { getRecipesApi, getEnrichApi, getEditRecipeApi, getScrapeApi, token } =
+    useAuth();
 
   // Check if we're in "random browsing" mode
   const randomQuery = () =>
@@ -358,6 +359,7 @@ export default function ViewRecipePage() {
     recipe,
     getRecipesApi,
     getEnrichApi,
+    getEditRecipeApi,
     loadRecipe,
     clearHistoricalVersion: () => setSearchParams({ version_id: undefined }),
     setError,
@@ -607,8 +609,8 @@ export default function ViewRecipePage() {
                         class="btn"
                         data-close-actions="true"
                         onClick={() =>
-                          recipeAiActions.setShowCustomEnrichInput(
-                            !recipeAiActions.showCustomEnrichInput(),
+                          recipeAiActions.setShowEditWithAiInput(
+                            !recipeAiActions.showEditWithAiInput(),
                           )
                         }
                         disabled={
@@ -616,7 +618,7 @@ export default function ViewRecipePage() {
                           isViewingHistoricalVersion()
                         }
                       >
-                        {AI_OPERATIONS.customEnrich.individualLabel}
+                        {AI_OPERATIONS.editRecipe.individualLabel}
                       </button>
                       <button
                         type="button"
@@ -645,34 +647,31 @@ export default function ViewRecipePage() {
                   </div>
                 </details>
               </div>
-              <Show when={recipeAiActions.showCustomEnrichInput()}>
-                <div class="custom-enrich-input">
+              <Show when={recipeAiActions.showEditWithAiInput()}>
+                <div class="edit-with-ai-input">
                   <input
                     type="text"
                     placeholder="e.g., make this vegan, double the servings..."
-                    value={recipeAiActions.customInstruction()}
+                    value={recipeAiActions.editInstruction()}
                     onInput={(e) =>
-                      recipeAiActions.setCustomInstruction(
-                        e.currentTarget.value,
-                      )
+                      recipeAiActions.setEditInstruction(e.currentTarget.value)
                     }
                     onKeyDown={(e) => {
-                      if (e.key === "Enter")
-                        recipeAiActions.handleCustomEnrich();
+                      if (e.key === "Enter") recipeAiActions.handleEditWithAi();
                     }}
                     disabled={recipeAiActions.enriching()}
-                    aria-label="Recipe customization instructions"
+                    aria-label="What to change with AI"
                   />
                   <button
                     type="button"
                     class="btn btn-primary"
-                    onClick={recipeAiActions.handleCustomEnrich}
+                    onClick={recipeAiActions.handleEditWithAi}
                     disabled={
                       recipeAiActions.enriching() ||
-                      !recipeAiActions.customInstruction().trim()
+                      !recipeAiActions.editInstruction().trim()
                     }
                   >
-                    {recipeAiActions.enriching() ? "Customizing..." : "Go"}
+                    {recipeAiActions.enriching() ? "Editing..." : "Go"}
                   </button>
                 </div>
               </Show>

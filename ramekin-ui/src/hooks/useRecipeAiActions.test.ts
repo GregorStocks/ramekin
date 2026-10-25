@@ -1,5 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import type {
+  EditRecipeApi,
+  EditRecipeWithAiRequest,
   EnrichApi,
   RecipeContent,
   RecipeResponse,
@@ -49,6 +51,7 @@ describe("recipe AI actions", () => {
         ({
           enrichRecipe: vi.fn(async () => enriched),
         }) as unknown as EnrichApi,
+      getEditRecipeApi: () => ({}) as unknown as EditRecipeApi,
       loadRecipe: vi.fn(async () => {}),
       clearHistoricalVersion: vi.fn(),
       setError: vi.fn(),
@@ -59,5 +62,42 @@ describe("recipe AI actions", () => {
     await actions.handleApplyEnrichment();
 
     expect(submittedRequest?.expectedVersionId).toBe("version-1");
+  });
+
+  it("previews an AI edit of the current recipe with the user's instruction", async () => {
+    const current = recipe("version-1");
+    const edited: RecipeContent = {
+      title: "Vegan Soup",
+      ingredients: [],
+      instructions: "Simmer",
+      tags: [],
+    };
+    let sentRequest: EditRecipeWithAiRequest | undefined;
+    const actions = useRecipeAiActions({
+      recipeId: () => current.id,
+      recipe: () => current,
+      getRecipesApi: () => ({}) as unknown as RecipesApi,
+      getEnrichApi: () => ({}) as unknown as EnrichApi,
+      getEditRecipeApi: () =>
+        ({
+          editRecipeWithAi: vi.fn(async (request: EditRecipeWithAiRequest) => {
+            sentRequest = request;
+            return edited;
+          }),
+        }) as unknown as EditRecipeApi,
+      loadRecipe: vi.fn(async () => {}),
+      clearHistoricalVersion: vi.fn(),
+      setError: vi.fn(),
+    });
+
+    actions.setShowEditWithAiInput(true);
+    actions.setEditInstruction("make it vegan");
+    await actions.handleEditWithAi();
+
+    expect(sentRequest?.editRecipeRequest.instruction).toBe("make it vegan");
+    expect(sentRequest?.editRecipeRequest.recipe.title).toBe("Soup");
+    expect(actions.enrichedContent()).toEqual(edited);
+    expect(actions.showEditWithAiInput()).toBe(false);
+    expect(actions.editInstruction()).toBe("");
   });
 });

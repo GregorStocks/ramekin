@@ -29,7 +29,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**login**](docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *ClientLogsApi* | [**create_client_log**](docs/ClientLogsApi.md#create_client_log) | **POST** /api/client-logs | 
-*EnrichApi* | [**custom_enrich_recipe**](docs/EnrichApi.md#custom_enrich_recipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
+*EditRecipeApi* | [**edit_recipe_with_ai**](docs/EditRecipeApi.md#edit_recipe_with_ai) | **POST** /api/edit-recipe | Edit a recipe with AI
 *EnrichApi* | [**enrich_recipe**](docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_from_photos**](docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
@@ -102,9 +102,9 @@ Class | Method | HTTP request | Description
  - [CreateScrapeResponse](docs/CreateScrapeResponse.md)
  - [CreateTagRequest](docs/CreateTagRequest.md)
  - [CreateTagResponse](docs/CreateTagResponse.md)
- - [CustomEnrichRequest](docs/CustomEnrichRequest.md)
  - [DerivedMeasurement](docs/DerivedMeasurement.md)
  - [Direction](docs/Direction.md)
+ - [EditRecipeRequest](docs/EditRecipeRequest.md)
  - [ErrorCode](docs/ErrorCode.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [EstimateCaloriesRequest](docs/EstimateCaloriesRequest.md)

@@ -74,7 +74,7 @@ final class RecipeDetailViewModel: ObservableObject {
     @Published var revertCandidate: VersionSummary?
     @Published var showingAddToShoppingList = false
     @Published var showingAddToMealPlan = false
-    @Published var showingCustomEnrich = false
+    @Published var showingEditWithAI = false
     @Published var showingEdit = false
     @Published var showingCompareSheet = false
     @Published var enrichResult: RecipeContent?

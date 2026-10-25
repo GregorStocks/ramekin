@@ -22,45 +22,45 @@ import {
 } from './RecipeContent';
 
 /**
- * Request body for custom enrichment.
+ * Request body for Edit with AI.
  * @export
- * @interface CustomEnrichRequest
+ * @interface EditRecipeRequest
  */
-export interface CustomEnrichRequest {
+export interface EditRecipeRequest {
     /**
      * 
      * @type {string}
-     * @memberof CustomEnrichRequest
+     * @memberof EditRecipeRequest
      */
     instruction: string;
     /**
      * 
      * @type {Array<string>}
-     * @memberof CustomEnrichRequest
+     * @memberof EditRecipeRequest
      */
     photoIds?: Array<string>;
     /**
      * 
      * @type {RecipeContent}
-     * @memberof CustomEnrichRequest
+     * @memberof EditRecipeRequest
      */
     recipe: RecipeContent;
 }
 
 /**
- * Check if a given object implements the CustomEnrichRequest interface.
+ * Check if a given object implements the EditRecipeRequest interface.
  */
-export function instanceOfCustomEnrichRequest(value: object): value is CustomEnrichRequest {
+export function instanceOfEditRecipeRequest(value: object): value is EditRecipeRequest {
     if (!('instruction' in value) || value['instruction'] === undefined) return false;
     if (!('recipe' in value) || value['recipe'] === undefined) return false;
     return true;
 }
 
-export function CustomEnrichRequestFromJSON(json: any): CustomEnrichRequest {
-    return CustomEnrichRequestFromJSONTyped(json, false);
+export function EditRecipeRequestFromJSON(json: any): EditRecipeRequest {
+    return EditRecipeRequestFromJSONTyped(json, false);
 }
 
-export function CustomEnrichRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): CustomEnrichRequest {
+export function EditRecipeRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): EditRecipeRequest {
     if (json == null) {
         return json;
     }
@@ -72,11 +72,11 @@ export function CustomEnrichRequestFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
-export function CustomEnrichRequestToJSON(json: any): CustomEnrichRequest {
-    return CustomEnrichRequestToJSONTyped(json, false);
+export function EditRecipeRequestToJSON(json: any): EditRecipeRequest {
+    return EditRecipeRequestToJSONTyped(json, false);
 }
 
-export function CustomEnrichRequestToJSONTyped(value?: CustomEnrichRequest | null, ignoreDiscriminator: boolean = false): any {
+export function EditRecipeRequestToJSONTyped(value?: EditRecipeRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

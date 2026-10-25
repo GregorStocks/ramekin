@@ -23,9 +23,10 @@ docs/CreateScrapeRequest.md
 docs/CreateScrapeResponse.md
 docs/CreateTagRequest.md
 docs/CreateTagResponse.md
-docs/CustomEnrichRequest.md
 docs/DerivedMeasurement.md
 docs/Direction.md
+docs/EditRecipeApi.md
+docs/EditRecipeRequest.md
 docs/EnrichApi.md
 docs/ErrorCode.md
 docs/ErrorResponse.md
@@ -119,6 +120,7 @@ git_push.sh
 src/apis/auth_api.rs
 src/apis/client_logs_api.rs
 src/apis/configuration.rs
+src/apis/edit_recipe_api.rs
 src/apis/enrich_api.rs
 src/apis/import_api.rs
 src/apis/ingredient_names_api.rs
@@ -152,9 +154,9 @@ src/models/create_scrape_request.rs
 src/models/create_scrape_response.rs
 src/models/create_tag_request.rs
 src/models/create_tag_response.rs
-src/models/custom_enrich_request.rs
 src/models/derived_measurement.rs
 src/models/direction.rs
+src/models/edit_recipe_request.rs
 src/models/error_code.rs
 src/models/error_response.rs
 src/models/estimate_calories_request.rs

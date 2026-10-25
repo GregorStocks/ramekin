@@ -1,10 +1,10 @@
-//! Custom enrichment prompt for applying user-specified changes to recipes.
+//! Edit with AI prompt for applying user-described changes to recipes.
 
 /// Prompt name for cache keys.
-pub const CUSTOM_ENRICH_PROMPT_NAME: &str = "custom_enrich";
+pub const EDIT_RECIPE_PROMPT_NAME: &str = "edit_recipe";
 
-/// Render the system prompt for custom enrichment.
-pub fn render_custom_enrich_system_prompt() -> String {
+/// Render the system prompt for an AI recipe edit.
+pub fn render_edit_recipe_system_prompt() -> String {
     r#"You are a recipe modification assistant. The user will give you a recipe as JSON and an instruction describing what change they want. They may also attach reference photos of the dish. Apply the requested change using the recipe and any relevant visual context, then return the complete modified recipe as JSON.
 
 IMPORTANT RULES:
@@ -43,7 +43,7 @@ JSON Schema:
 }
 
 /// Render the user message with the recipe and instruction.
-pub fn render_custom_enrich_user_prompt(recipe_json: &str, instruction: &str) -> String {
+pub fn render_edit_recipe_user_prompt(recipe_json: &str, instruction: &str) -> String {
     format!(
         "Here is the recipe:\n\n{recipe_json}\n\nIf reference photos are attached to this message, use them as additional context when they help.\n\nApply this change: {instruction}",
         recipe_json = recipe_json,
@@ -57,7 +57,7 @@ mod tests {
 
     #[test]
     fn test_render_system_prompt() {
-        let prompt = render_custom_enrich_system_prompt();
+        let prompt = render_edit_recipe_system_prompt();
         assert!(prompt.contains("recipe modification assistant"));
         assert!(prompt.contains("JSON Schema"));
         assert!(prompt.contains("ingredients"));
@@ -67,7 +67,7 @@ mod tests {
     fn test_render_user_prompt() {
         let recipe = r#"{"title": "Chicken Stir Fry", "instructions": "Cook chicken"}"#;
         let instruction = "make this vegan";
-        let prompt = render_custom_enrich_user_prompt(recipe, instruction);
+        let prompt = render_edit_recipe_user_prompt(recipe, instruction);
         assert!(prompt.contains("Chicken Stir Fry"));
         assert!(prompt.contains("make this vegan"));
     }
