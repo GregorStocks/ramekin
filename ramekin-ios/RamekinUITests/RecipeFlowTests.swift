@@ -216,8 +216,16 @@ final class RecipeFlowTests: XCTestCase {
 
         // Background first so iOS saves scene state, then kill the process
         // the way the OS does; swiping the app away would discard the state.
+        // Background work (sync) can keep the app from suspending, and scene
+        // state is saved on entering the background, so wait only for that.
         XCUIDevice.shared.press(.home)
-        XCTAssertTrue(app.wait(for: .runningBackgroundSuspended, timeout: slowSimulatorTimeout))
+        let backgrounded = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "state != %d", XCUIApplication.State.runningForeground.rawValue),
+            object: app
+        )
+        XCTAssertEqual(XCTWaiter.wait(for: [backgrounded], timeout: slowSimulatorTimeout), .completed)
+        // Give the system a moment to write the scene's state.
+        _ = XCTWaiter.wait(for: [XCTestExpectation(description: "Scene state saved")], timeout: 2)
         app.terminate()
         // Keep the stored session: resetting auth would sign out.
         app.launchArguments = []
