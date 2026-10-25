@@ -33,7 +33,9 @@ use crate::types::RawRecipe;
 /// or the current version when the job loaded it instead of re-reading the
 /// source.
 pub(crate) async fn base_raw_recipe(ctx: &StepContext<'_>) -> Result<RawRecipe, String> {
-    for step_name in [LOAD_RECIPE_STEP, ExtractRecipeStep::NAME] {
+    // A job has one or the other: imports and source ops extract, and a job
+    // without a source op loads the current version.
+    for step_name in [ExtractRecipeStep::NAME, LOAD_RECIPE_STEP] {
         if let Some(output) = ctx.outputs.get_output(step_name).await {
             return deserialize_required_output_field(&output, step_name, "raw_recipe");
         }
@@ -44,8 +46,8 @@ pub(crate) async fn base_raw_recipe(ctx: &StepContext<'_>) -> Result<RawRecipe, 
     ))
 }
 
-/// A failed normalize step's result.
-pub(crate) fn normalize_step_failure(step_name: &str, start: Instant, error: String) -> StepResult {
+/// A failed step's result.
+pub fn step_failure(step_name: &str, start: Instant, error: String) -> StepResult {
     StepResult {
         step_name: step_name.to_string(),
         success: false,

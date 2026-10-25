@@ -14,13 +14,14 @@ use ramekin_core::pipeline::{order_ops, NormalizeOp, NormalizeOpGroup, PROPOSE_N
 use serde::{Deserialize, Serialize};
 use utoipa::{IntoParams, ToSchema};
 
+use crate::api::recipes::read::fetch_current_recipe_with_version;
 use crate::api::{run_db, run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::normalize::{load_version, ops_from_json, write_version, NormalizedRecipe};
 use crate::recipes::VersionWriteError;
-use crate::schema::{recipe_versions, recipes, scrape_jobs};
+use crate::schema::scrape_jobs;
 use crate::scraping::output_store::latest_output;
 use crate::scraping::steps::NormalizeProposal;
 use crate::scraping::{self, NormalizeStart, StoredSource};
@@ -141,66 +142,79 @@ fn parse_ops(ids: &[String]) -> Result<Vec<NormalizeOp>, ApiError> {
     Ok(order_ops(&ops))
 }
 
-/// What a recipe's source ops can run from.
-struct RecipeSources {
+/// A recipe's current version and what its source ops could run from.
+struct RecipeSource {
+    recipe_id: Uuid,
     current_version_id: Uuid,
-    refetch: Result<String, String>,
-    reextract: Result<StoredSource, String>,
+    source_url: Option<String>,
 }
 
-impl RecipeSources {
-    fn reason(&self, op: NormalizeOp) -> Option<&str> {
-        match op {
-            NormalizeOp::Refetch => self.refetch.as_ref().err().map(String::as_str),
-            NormalizeOp::Reextract => self.reextract.as_ref().err().map(String::as_str),
-            NormalizeOp::NormalizeTitle
-            | NormalizeOp::GenerateDescription
-            | NormalizeOp::AutoTag => None,
+impl RecipeSource {
+    async fn load(pool: &DbPool, user_id: Uuid, recipe_id: Uuid) -> Result<Self, ApiError> {
+        run_db(pool, move |conn| {
+            let recipe = fetch_current_recipe_with_version(conn, user_id, recipe_id).map_err(
+                |e| match e {
+                    diesel::NotFound => ApiError::not_found("Recipe not found"),
+                    _ => ApiError::internal("Failed to fetch recipe"),
+                },
+            )?;
+            Ok(Self {
+                recipe_id,
+                current_version_id: recipe.version.id,
+                source_url: recipe.version.source_url,
+            })
+        })
+        .await
+    }
+
+    /// The URL a refetch would fetch, or why there is none.
+    fn refetch_url(&self) -> Result<String, String> {
+        let url = self
+            .source_url
+            .clone()
+            .filter(|url| !url.is_empty())
+            .ok_or("Recipe has no source URL")?;
+        scraping::is_host_allowed(&url).map_err(|e| e.to_string())?;
+        Ok(url)
+    }
+
+    /// The source a reextract would rebuild from, or why there is none.
+    async fn stored_source(&self, pool: &DbPool) -> Result<Result<StoredSource, String>, ApiError> {
+        let source = scraping::stored_source(pool, self.recipe_id)
+            .await
+            .map_err(|e| {
+                tracing::error!("Failed to find stored source: {e}");
+                ApiError::internal("Failed to fetch recipe")
+            })?;
+        Ok(source.ok_or_else(|| "Recipe has no saved source to re-extract from".to_string()))
+    }
+
+    /// Where a job running `ops` starts: its first source op's source, or
+    /// the current version. 400 when that source op can't run.
+    async fn start_for(
+        &self,
+        pool: &DbPool,
+        ops: &[NormalizeOp],
+    ) -> Result<NormalizeStart, ApiError> {
+        let unavailable = |op: NormalizeOp, reason: String| {
+            ApiError::invalid_request(format!("{} is unavailable: {reason}", op.label()))
+        };
+        // Refetch implies reextract, but rebuilds from the page it fetches.
+        if ops.contains(&NormalizeOp::Refetch) {
+            let url = self
+                .refetch_url()
+                .map_err(|reason| unavailable(NormalizeOp::Refetch, reason))?;
+            Ok(NormalizeStart::Refetch { url })
+        } else if ops.contains(&NormalizeOp::Reextract) {
+            let source = self
+                .stored_source(pool)
+                .await?
+                .map_err(|reason| unavailable(NormalizeOp::Reextract, reason))?;
+            Ok(NormalizeStart::Reextract(source))
+        } else {
+            Ok(NormalizeStart::BaseVersion)
         }
     }
-}
-
-async fn recipe_sources(
-    pool: &DbPool,
-    user_id: Uuid,
-    recipe_id: Uuid,
-) -> Result<RecipeSources, ApiError> {
-    let (current_version_id, source_url) = run_db(pool, move |conn| {
-        recipes::table
-            .inner_join(
-                recipe_versions::table.on(recipe_versions::id
-                    .nullable()
-                    .eq(recipes::current_version_id)),
-            )
-            .filter(recipes::id.eq(recipe_id))
-            .filter(recipes::user_id.eq(user_id))
-            .filter(recipes::deleted_at.is_null())
-            .select((recipe_versions::id, recipe_versions::source_url))
-            .first::<(Uuid, Option<String>)>(conn)
-            .map_err(|e| match e {
-                diesel::NotFound => ApiError::not_found("Recipe not found"),
-                _ => ApiError::internal("Failed to fetch recipe"),
-            })
-    })
-    .await?;
-    let refetch = match source_url.filter(|url| !url.is_empty()) {
-        None => Err("Recipe has no source URL".to_string()),
-        Some(url) => scraping::is_host_allowed(&url)
-            .map(|_| url)
-            .map_err(|e| e.to_string()),
-    };
-    let reextract = scraping::stored_source(pool, recipe_id)
-        .await
-        .map_err(|e| {
-            tracing::error!("Failed to find stored source: {e}");
-            ApiError::internal("Failed to fetch recipe")
-        })?
-        .ok_or_else(|| "Recipe has no saved source to re-extract from".to_string());
-    Ok(RecipeSources {
-        current_version_id,
-        refetch,
-        reextract,
-    })
 }
 
 #[utoipa::path(
@@ -220,17 +234,26 @@ pub async fn list_normalize_ops(
     State(pool): State<Arc<DbPool>>,
     Query(params): Query<NormalizeOpsParams>,
 ) -> Result<impl IntoResponse, ApiError> {
-    let sources = match params.recipe_id {
-        Some(recipe_id) => Some(recipe_sources(&pool, user.id, recipe_id).await?),
-        None => None,
+    let (refetch, reextract) = match params.recipe_id {
+        Some(recipe_id) => {
+            let source = RecipeSource::load(&pool, user.id, recipe_id).await?;
+            (
+                source.refetch_url().err(),
+                source.stored_source(&pool).await?.err(),
+            )
+        }
+        None => (None, None),
     };
     let ops = NormalizeOp::ALL
         .iter()
         .map(|op| {
-            let unavailable_reason = sources
-                .as_ref()
-                .and_then(|sources| sources.reason(*op))
-                .map(str::to_string);
+            let unavailable_reason = match op {
+                NormalizeOp::Refetch => refetch.clone(),
+                NormalizeOp::Reextract => reextract.clone(),
+                NormalizeOp::NormalizeTitle
+                | NormalizeOp::GenerateDescription
+                | NormalizeOp::AutoTag => None,
+            };
             NormalizeOpInfo {
                 id: op.id().to_string(),
                 label: op.label().to_string(),
@@ -258,29 +281,13 @@ async fn start_normalize_job(
     recipe_id: Uuid,
     ops: &[NormalizeOp],
 ) -> Result<NormalizeJobResponse, ApiError> {
-    let sources = recipe_sources(pool, user_id, recipe_id).await?;
-    for op in ops {
-        if let Some(reason) = sources.reason(*op) {
-            return Err(ApiError::invalid_request(format!(
-                "{} is unavailable: {reason}",
-                op.label()
-            )));
-        }
-    }
-    let start = if ops.contains(&NormalizeOp::Refetch) {
-        NormalizeStart::Refetch {
-            url: sources.refetch.expect("checked above"),
-        }
-    } else if ops.contains(&NormalizeOp::Reextract) {
-        NormalizeStart::Reextract(sources.reextract.expect("checked above"))
-    } else {
-        NormalizeStart::BaseVersion
-    };
+    let source = RecipeSource::load(pool, user_id, recipe_id).await?;
+    let start = source.start_for(pool, ops).await?;
     let job = scraping::create_normalize_job(
         pool,
         user_id,
         recipe_id,
-        sources.current_version_id,
+        source.current_version_id,
         ops,
         start,
     )
@@ -289,7 +296,7 @@ async fn start_normalize_job(
         tracing::error!("Failed to create normalize job: {e}");
         ApiError::internal("Failed to create normalize job")
     })?;
-    scraping::spawn_normalize_job(pool.clone(), job.id);
+    scraping::spawn_import_job(pool.clone(), job.id, "normalize");
     Ok(NormalizeJobResponse {
         job_id: job.id,
         status: job.status,
@@ -465,7 +472,8 @@ pub async fn accept_normalize_proposal(
     Path((recipe_id, job_id)): Path<(Uuid, Uuid)>,
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
-    let (status, _, _) = load_normalize_job(&pool, user_id, recipe_id, job_id).await?;
+    let (status, ops, base_version_id) =
+        load_normalize_job(&pool, user_id, recipe_id, job_id).await?;
     let proposal = match status.as_str() {
         scraping::STATUS_COMPLETED => load_proposal(&pool, job_id).await?,
         _ => None,
@@ -477,9 +485,9 @@ pub async fn accept_normalize_proposal(
             conn,
             recipe_id,
             user_id,
-            proposal.base_version_id,
+            base_version_id,
             &proposal.proposed,
-            &proposal.ops,
+            &ops,
         )
         .map_err(|e| match e {
             VersionWriteError::Stale => ApiError::conflict(

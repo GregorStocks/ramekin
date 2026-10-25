@@ -14,6 +14,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use utoipa::ToSchema;
 
+use crate::api::recipes::paprika::format_ingredients_text;
 use crate::ids::{PhotoIds, Uuid};
 use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
 use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
@@ -29,14 +30,26 @@ pub fn ops_json(ops: &[NormalizeOp]) -> Value {
 }
 
 pub fn ops_from_json(value: &Value) -> Result<Vec<NormalizeOp>, String> {
-    serde_json::from_value(value.clone()).map_err(|e| format!("Malformed normalize ops: {e}"))
+    Vec::<NormalizeOp>::deserialize(value).map_err(|e| format!("Malformed normalize ops: {e}"))
 }
 
 /// The op ids a version's `normalize_ops` column records, for API responses.
 pub fn version_op_ids(normalize_ops: Option<&Value>) -> Vec<String> {
     normalize_ops
-        .and_then(|ops| serde_json::from_value(ops.clone()).ok())
+        .and_then(|ops| Vec::<String>::deserialize(ops).ok())
         .unwrap_or_default()
+}
+
+/// Add the `suggested` tags `tags` doesn't already have, ignoring case.
+pub fn merge_tags(tags: &mut Vec<String>, suggested: Vec<String>) {
+    for tag in suggested {
+        if !tags
+            .iter()
+            .any(|existing| existing.eq_ignore_ascii_case(&tag))
+        {
+            tags.push(tag);
+        }
+    }
 }
 
 /// A recipe's content and photos: what a normalize run starts from, and what
@@ -79,7 +92,7 @@ impl NormalizedRecipe {
         RawRecipe {
             title: content.title.clone(),
             description: content.description.clone(),
-            ingredients: ingredient_lines(&content.ingredients),
+            ingredients: format_ingredients_text(&content.ingredients),
             instructions: content.instructions.clone(),
             image_urls: Vec::new(),
             source_url: content.source_url.clone(),
@@ -98,32 +111,6 @@ impl NormalizedRecipe {
     }
 }
 
-/// One line per ingredient, like the ingredient blob an extractor produces.
-fn ingredient_lines(ingredients: &[Ingredient]) -> String {
-    ingredients
-        .iter()
-        .map(|ingredient| {
-            let measurement = ingredient
-                .measurements
-                .first()
-                .map(|m| {
-                    format!(
-                        "{} {}",
-                        m.amount.as_deref().unwrap_or(""),
-                        m.unit.as_deref().unwrap_or("")
-                    )
-                })
-                .unwrap_or_default();
-            let line = format!("{measurement} {}", ingredient.item);
-            match &ingredient.note {
-                Some(note) => format!("{}, {note}", line.trim()),
-                None => line.trim().to_string(),
-            }
-        })
-        .collect::<Vec<_>>()
-        .join("\n")
-}
-
 /// Load a version and its tags as a [`NormalizedRecipe`].
 pub fn load_version(
     conn: &mut diesel::SqliteConnection,
@@ -135,6 +122,16 @@ pub fn load_version(
         .first(conn)
         .map_err(|e| format!("Failed to load version {version_id}: {e}"))?;
     NormalizedRecipe::from_version(&version, tags)
+}
+
+/// [`load_version`] off the runtime threads.
+pub async fn load_version_blocking(
+    pool: &crate::db::DbPool,
+    version_id: Uuid,
+) -> Result<NormalizedRecipe, String> {
+    crate::db::run_blocking(pool, move |conn| load_version(conn, version_id))
+        .await
+        .map_err(|e| e.to_string())?
 }
 
 /// Save `recipe` as the recipe's new current version, recording `ops`, if
@@ -275,17 +272,9 @@ pub async fn apply_op_outputs(
                 }
             }
             NormalizeOp::AutoTag => {
-                let suggested: Vec<String> =
+                let suggested =
                     deserialize_required_output_field(&output, step_name, "suggested_tags")?;
-                for tag in suggested {
-                    if !content
-                        .tags
-                        .iter()
-                        .any(|existing| existing.eq_ignore_ascii_case(&tag))
-                    {
-                        content.tags.push(tag);
-                    }
-                }
+                merge_tags(&mut content.tags, suggested);
             }
         }
     }
@@ -380,19 +369,6 @@ mod tests {
             .await
             .unwrap_err();
         assert_eq!(err, "auto_tag output not found");
-    }
-
-    #[test]
-    fn ingredient_lines_read_like_extracted_ones() {
-        let ingredients: Vec<Ingredient> = serde_json::from_value(json!([
-            { "item": "flour", "measurements": [{ "amount": "2", "unit": "cups" }] },
-            { "item": "salt", "measurements": [], "note": "to taste" },
-        ]))
-        .unwrap();
-        assert_eq!(
-            ingredient_lines(&ingredients),
-            "2 cups flour\nsalt, to taste"
-        );
     }
 
     #[test]

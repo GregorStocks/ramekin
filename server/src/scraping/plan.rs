@@ -26,52 +26,64 @@ pub struct JobPlan {
     /// Steps after the sequential ones, in canonical order, each with the
     /// steps it waits for.
     pub concurrent: Vec<(&'static str, Vec<&'static str>)>,
+    /// The normalize ops the job runs, in run order.
+    pub ops: Vec<NormalizeOp>,
+    /// Whether `fetch_html` must skip the HTTP cache: the job re-reads an
+    /// existing recipe's source, so it must see the page as it is now.
+    pub refetch: bool,
 }
 
-const SCRAPE_STEPS: &[&str] = &[
+/// The steps that read a recipe from its source URL.
+const SOURCE_STEPS: &[&str] = &[
     FetchHtmlStep::NAME,
     ExtractRecipeStep::NAME,
     FetchImagesStepMeta::NAME,
     ParseIngredientsStep::NAME,
-    SaveRecipeStepMeta::NAME,
 ];
+
+fn scrape_steps() -> Vec<&'static str> {
+    let mut steps = SOURCE_STEPS.to_vec();
+    steps.push(SaveRecipeStepMeta::NAME);
+    steps
+}
 
 impl JobPlan {
     pub fn for_job(job: &ScrapeJob) -> Result<Self, String> {
+        let rescrape = job.expected_version_id.is_some();
         match &job.normalize_ops {
             Some(ops) => Ok(Self::normalize(&ops_from_json(ops)?)),
             None if job.photo_only => Ok(Self {
-                sequential: SCRAPE_STEPS.to_vec(),
+                sequential: scrape_steps(),
                 // Photo-only rescrape must not run normalize ops: they could
                 // write another version after the photo-only update.
                 concurrent: Vec::new(),
+                ops: Vec::new(),
+                refetch: true,
             }),
-            None => Ok(Self::import()),
+            None => Ok(Self {
+                refetch: rescrape,
+                ..Self::import()
+            }),
         }
     }
 
-    /// A new recipe from a URL, capture or import, or a rescrape.
+    /// A new recipe from a URL, capture or import.
     pub fn import() -> Self {
+        let ops = default_import_ops();
         let mut concurrent = vec![(RESOLVE_INGREDIENT_NAMES_STEP, Vec::new())];
-        concurrent.extend(normalize_phase_steps(
-            &default_import_ops(),
-            APPLY_NORMALIZE_STEP,
-        ));
+        concurrent.extend(normalize_phase_steps(&ops, APPLY_NORMALIZE_STEP));
         Self {
-            sequential: SCRAPE_STEPS.to_vec(),
+            sequential: scrape_steps(),
             concurrent,
+            ops,
+            refetch: false,
         }
     }
 
     /// A manual normalize run of `ops`, proposing a version.
     pub fn normalize(ops: &[NormalizeOp]) -> Self {
         let sequential = if ops.contains(&NormalizeOp::Refetch) {
-            vec![
-                FetchHtmlStep::NAME,
-                ExtractRecipeStep::NAME,
-                FetchImagesStepMeta::NAME,
-                ParseIngredientsStep::NAME,
-            ]
+            SOURCE_STEPS.to_vec()
         } else if ops.contains(&NormalizeOp::Reextract) {
             // Starts at parse_ingredients when the source has no page to
             // extract from (Paprika and photo imports).
@@ -82,6 +94,8 @@ impl JobPlan {
         Self {
             sequential,
             concurrent: normalize_phase_steps(ops, PROPOSE_NORMALIZE_STEP),
+            ops: ops.to_vec(),
+            refetch: true,
         }
     }
 
@@ -95,7 +109,7 @@ impl JobPlan {
     }
 
     pub fn contains(&self, step_name: &str) -> bool {
-        self.step_names().contains(&step_name)
+        self.sequential.contains(&step_name) || self.is_concurrent(step_name)
     }
 
     pub fn is_concurrent(&self, step_name: &str) -> bool {

@@ -209,8 +209,7 @@ def test_failure_lets_earlier_steps_finish_so_retry_resumes_correctly(
         )
         wait_for(
             lambda: (
-                step_status(scrape_api.get_scrape(job_id), "auto_tag")
-                == "failed"
+                step_status(scrape_api.get_scrape(job_id), "auto_tag") == "failed"
                 or None
             )
         )

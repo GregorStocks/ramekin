@@ -57,7 +57,7 @@ impl PipelineStep for FetchHtmlStep {
                 output: json!({ "html": html }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("extract_recipe".to_string()),
+                next_step: None,
             },
             Err(e) => StepResult {
                 step_name: Self::NAME.to_string(),

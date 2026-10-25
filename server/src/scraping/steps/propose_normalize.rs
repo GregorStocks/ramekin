@@ -11,17 +11,14 @@ use ramekin_core::pipeline::{
 
 use crate::db::DbPool;
 use crate::ids::Uuid;
-use crate::normalize::{apply_op_outputs, load_version, source_recipe, NormalizedRecipe};
+use crate::normalize::{apply_op_outputs, load_version_blocking, source_recipe, NormalizedRecipe};
 
 use super::helpers::step_failure;
 
-/// The output of `propose_normalize`: what a manual normalize run would save.
+/// The output of `propose_normalize`: what a manual normalize run would save
+/// over the job's base version (`scrape_jobs.expected_version_id`).
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NormalizeProposal {
-    /// The version the run started from; accepting the proposal fails if the
-    /// recipe has moved past it.
-    pub base_version_id: Uuid,
-    pub ops: Vec<NormalizeOp>,
     pub proposed: NormalizedRecipe,
 }
 
@@ -56,15 +53,9 @@ impl PipelineStep for ProposeNormalizeStep {
 
     async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
-        let base_version_id = self.base_version_id;
-        let base = match crate::db::run_blocking(&self.pool, move |conn| {
-            load_version(conn, base_version_id)
-        })
-        .await
-        {
-            Ok(Ok(recipe)) => recipe,
-            Ok(Err(error)) => return step_failure(PROPOSE_NORMALIZE_STEP, start, error),
-            Err(error) => return step_failure(PROPOSE_NORMALIZE_STEP, start, error.to_string()),
+        let base = match load_version_blocking(&self.pool, self.base_version_id).await {
+            Ok(recipe) => recipe,
+            Err(error) => return step_failure(PROPOSE_NORMALIZE_STEP, start, error),
         };
 
         let mut proposed = if self
@@ -83,11 +74,7 @@ impl PipelineStep for ProposeNormalizeStep {
             return step_failure(PROPOSE_NORMALIZE_STEP, start, error);
         }
 
-        let proposal = NormalizeProposal {
-            base_version_id,
-            ops: self.ops.clone(),
-            proposed,
-        };
+        let proposal = NormalizeProposal { proposed };
         StepResult {
             step_name: PROPOSE_NORMALIZE_STEP.to_string(),
             success: true,

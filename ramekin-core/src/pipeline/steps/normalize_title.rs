@@ -7,7 +7,7 @@ use async_trait::async_trait;
 use serde::Serialize;
 
 use crate::ai::{normalize_title, AiClient, Usage};
-use crate::pipeline::steps::{base_raw_recipe, normalize_step_failure};
+use crate::pipeline::steps::{base_raw_recipe, step_failure};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 
 /// Step that normalizes recipe titles using the shared AI title normalizer.
@@ -46,7 +46,7 @@ impl PipelineStep for NormalizeTitleStep {
         let start = Instant::now();
         let raw_recipe = match base_raw_recipe(ctx).await {
             Ok(r) => r,
-            Err(e) => return normalize_step_failure(Self::NAME, start, e),
+            Err(e) => return step_failure(Self::NAME, start, e),
         };
 
         let title = raw_recipe.title.as_str();
@@ -59,9 +59,7 @@ impl PipelineStep for NormalizeTitleStep {
         .await
         {
             Ok(r) => r,
-            Err(e) => {
-                return normalize_step_failure(Self::NAME, start, format!("AI call failed: {e}"))
-            }
+            Err(e) => return step_failure(Self::NAME, start, format!("AI call failed: {e}")),
         };
 
         let normalized_title = result.normalized_title.trim().to_string();

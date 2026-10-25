@@ -302,25 +302,26 @@ fn build_step_states_from_outputs(
     // Concurrent steps run together, but the job row names only the earliest
     // running one. A later concurrent step that hasn't written output but
     // whose dependencies all have is running alongside it.
-    let post_save = &plan.concurrent;
-    let post_save_index = |name: &str| post_save.iter().position(|(n, _)| *n == name);
+    let concurrent_steps = &plan.concurrent;
+    let concurrent_index = |name: &str| concurrent_steps.iter().position(|(n, _)| *n == name);
     // During the concurrent phase `current_step_started_at` is when the phase
     // started. A retry reruns every concurrent step after its resume point, so
     // a later step's row from before then is a previous attempt's: drop it.
     if let (false, Some(current_idx), Some(phase_start)) = (
         terminal,
-        current_step.and_then(post_save_index),
+        current_step.and_then(concurrent_index),
         current_step_started_at,
     ) {
         by_name.retain(|name, (created_at, _, _, _, _)| {
-            post_save_index(name).is_none_or(|idx| idx <= current_idx) || *created_at >= phase_start
+            concurrent_index(name).is_none_or(|idx| idx <= current_idx)
+                || *created_at >= phase_start
         });
     }
     let running_alongside_current = |name: &str| -> bool {
         let Some(current) = current_step.filter(|s| !terminal && plan.is_concurrent(s)) else {
             return false;
         };
-        let (Some(idx), Some(current_idx)) = (post_save_index(name), post_save_index(current))
+        let (Some(idx), Some(current_idx)) = (concurrent_index(name), concurrent_index(current))
         else {
             return false;
         };
@@ -328,7 +329,7 @@ fn build_step_states_from_outputs(
         let succeeded = |dep: &str| by_name.get(dep).is_some_and(|(_, _, _, ok, _)| *ok);
         idx > current_idx
             && !by_name.contains_key(name)
-            && post_save[idx].1.iter().all(|dep| succeeded(dep))
+            && concurrent_steps[idx].1.iter().all(|dep| succeeded(dep))
     };
     let mut states = Vec::with_capacity(pipeline_steps.len());
 

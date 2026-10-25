@@ -4,7 +4,7 @@ use utoipa::ToSchema;
 
 /// Core recipe content - all fields AI ops can change.
 /// Used for: Enrich API request/response, base for CreateRecipeRequest.
-#[derive(Debug, Clone, Serialize, Deserialize, ToSchema)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, ToSchema)]
 pub struct RecipeContent {
     pub title: String,
     #[serde(default)]

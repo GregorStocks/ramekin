@@ -67,9 +67,7 @@ def create_typed_recipe(client, title: str, tags=None) -> str:
 def run(client, recipe_id: str, ops: list[str]):
     """Run a normalize job to completion; returns its proposal."""
     normalize_api = NormalizeApi(client)
-    job = normalize_api.normalize_recipe(
-        recipe_id, NormalizeRequest(ops=ops)
-    )
+    job = normalize_api.normalize_recipe(recipe_id, NormalizeRequest(ops=ops))
     finished = wait_for_job_completion(ScrapeApi(client), str(job.job_id))
     assert finished.status == "completed", finished.error
     assert str(finished.recipe_id) == recipe_id
@@ -315,3 +313,30 @@ def test_bulk_starts_one_job_per_recipe(authed_api_client):
         ScrapeApi(client), str(results[scraped_id].job_id)
     )
     assert finished.status == "completed", finished.error
+
+
+def test_refetch_needs_only_a_source_url(authed_api_client):
+    """Refetch implies reextract but rebuilds from the page it fetches, so a
+    typed recipe with a source URL can refetch without a saved source."""
+    client, _ = authed_api_client
+    path, url = write_fixture("Linked Page Tart")
+    try:
+        recipe_id = str(
+            RecipesApi(client)
+            .create_recipe(
+                CreateRecipeRequest(
+                    title="Typed Tart",
+                    instructions="Bake.",
+                    ingredients=[make_ingredient(item="butter")],
+                    source_url=url,
+                )
+            )
+            .id
+        )
+        ops = ops_by_id(NormalizeApi(client).list_normalize_ops(recipe_id=recipe_id))
+        assert ops["refetch"].available
+        assert not ops["reextract"].available
+        _, proposal = run(client, recipe_id, ["refetch"])
+    finally:
+        path.unlink(missing_ok=True)
+    assert proposal.proposed.content.title == "Linked Page Tart"

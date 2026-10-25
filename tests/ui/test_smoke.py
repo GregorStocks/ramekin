@@ -381,9 +381,7 @@ def test_cookbook_filters_adapt_between_desktop_and_mobile(logged_in_page: Page)
     expect(logged_in_page.locator("body")).not_to_have_css("overflow", "hidden")
 
 
-def test_version_history_labels_normalize_badges(
-    page: Page, ui_url: str, api_url: str
-):
+def test_version_history_labels_normalize_badges(page: Page, ui_url: str, api_url: str):
     """Verify normalize versions show the user-facing badge label."""
     username, password, recipe_id = create_scraped_recipe_with_normalize(api_url)
 

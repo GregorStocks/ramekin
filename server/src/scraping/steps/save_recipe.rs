@@ -272,7 +272,6 @@ impl PipelineStep for SaveRecipeStep {
                 }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                // The job's plan decides what runs next.
                 next_step: None,
             },
             Err(e) => StepResult {

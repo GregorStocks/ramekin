@@ -34,3 +34,6 @@ UPDATE scrape_jobs SET failed_at_step = 'generate_description' WHERE failed_at_s
 UPDATE scrape_jobs SET failed_at_step = 'auto_tag' WHERE failed_at_step = 'enrich_auto_tag';
 UPDATE scrape_jobs SET failed_at_step = 'apply_normalize'
 WHERE failed_at_step IN ('apply_normalized_title', 'apply_generated_description', 'apply_auto_tags');
+
+-- Re-extract finds a recipe's stored source through the jobs that worked on it.
+CREATE INDEX scrape_jobs_recipe_id_idx ON scrape_jobs (recipe_id);

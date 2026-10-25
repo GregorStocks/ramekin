@@ -10,7 +10,7 @@ use ramekin_core::pipeline::{
 
 use crate::db::DbPool;
 use crate::ids::Uuid;
-use crate::normalize::load_version;
+use crate::normalize::load_version_blocking;
 
 use super::helpers::step_failure;
 
@@ -39,15 +39,10 @@ impl PipelineStep for LoadRecipeStep {
 
     async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
-        let version_id = self.version_id;
-        let recipe =
-            match crate::db::run_blocking(&self.pool, move |conn| load_version(conn, version_id))
-                .await
-            {
-                Ok(Ok(recipe)) => recipe,
-                Ok(Err(error)) => return step_failure(LOAD_RECIPE_STEP, start, error),
-                Err(error) => return step_failure(LOAD_RECIPE_STEP, start, error.to_string()),
-            };
+        let recipe = match load_version_blocking(&self.pool, self.version_id).await {
+            Ok(recipe) => recipe,
+            Err(error) => return step_failure(LOAD_RECIPE_STEP, start, error),
+        };
         StepResult {
             step_name: LOAD_RECIPE_STEP.to_string(),
             success: true,

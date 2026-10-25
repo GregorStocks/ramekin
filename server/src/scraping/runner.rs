@@ -12,13 +12,12 @@ use ramekin_core::pipeline::steps::{
     ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
 use ramekin_core::pipeline::{
-    default_import_ops, op_for_step, NormalizeOp, PipelineStep, StepContext, StepOutputStore,
-    StepRegistry, StepResult, APPLY_NORMALIZE_STEP,
+    op_for_step, NormalizeOp, PipelineStep, StepContext, StepOutputStore, StepRegistry, StepResult,
+    APPLY_NORMALIZE_STEP, LOAD_RECIPE_STEP, PROPOSE_NORMALIZE_STEP, RESOLVE_INGREDIENT_NAMES_STEP,
 };
 
 use crate::db::DbPool;
 use crate::models::ScrapeJob;
-use crate::normalize::ops_from_json;
 use crate::schema::{scrape_jobs, user_tags};
 
 use super::jobs::{
@@ -54,89 +53,60 @@ async fn fetch_user_tags(pool: &DbPool, user_id: Uuid) -> Result<Vec<String>, Sc
     .await
 }
 
-/// Build a step registry for server-side pipeline execution of `job`.
-///
-/// A job with an `expected_version_id` works on an existing recipe: a
-/// rescrape or photo-only rescrape saves a new version of it, and a normalize
-/// job proposes one. Without it, an existing `recipe_id` is one an earlier
-/// attempt of this job already created.
+/// Build a step registry with an implementation of every step in `plan`.
 pub async fn build_registry(
     pool: Arc<DbPool>,
     job: &ScrapeJob,
+    plan: &JobPlan,
 ) -> Result<StepRegistry, ScrapeError> {
     let user_id = job.user_id;
-    let mut registry = StepRegistry::new();
-    // Rescrapes and refetches re-read an existing recipe's source.
-    registry.register(Box::new(FetchHtmlStep {
-        refetch: job.expected_version_id.is_some(),
-    }));
-    registry.register(Box::new(ExtractRecipeStep));
-    registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
-    registry.register(Box::new(ParseIngredientsStep));
-
-    let normalize_ops = job
-        .normalize_ops
-        .as_ref()
-        .map(ops_from_json)
-        .transpose()
-        .map_err(ScrapeError::InvalidState)?;
-    let ops = match normalize_ops {
-        Some(ops) => {
-            let base_version_id = job.expected_version_id.ok_or_else(|| {
-                ScrapeError::InvalidState("normalize job has no base version".to_string())
-            })?;
-            registry.register(Box::new(LoadRecipeStep::new(pool.clone(), base_version_id)));
-            registry.register(Box::new(ProposeNormalizeStep::new(
-                pool.clone(),
-                base_version_id,
-                ops.clone(),
-            )));
-            ops
-        }
-        None => {
-            // Pick the right SaveRecipeStep based on job mode.
-            let save_step = match (job.recipe_id, job.expected_version_id, job.photo_only) {
-                (Some(recipe_id), Some(expected_version_id), true) => {
-                    SaveRecipeStep::for_photo_rescrape(
-                        pool.clone(),
-                        user_id,
-                        recipe_id,
-                        expected_version_id,
-                    )
-                }
-                (Some(recipe_id), Some(expected_version_id), false) => {
-                    SaveRecipeStep::for_rescrape(
-                        pool.clone(),
-                        user_id,
-                        recipe_id,
-                        expected_version_id,
-                    )
-                }
-                (_, None, _) => SaveRecipeStep::new(pool.clone(), user_id, job.id),
-                (None, Some(_), _) => {
-                    return Err(ScrapeError::InvalidState(
-                        "new recipe job unexpectedly has an expected recipe version".to_string(),
-                    ));
-                }
-            };
-            registry.register(Box::new(save_step));
-            if job.photo_only {
-                // See JobPlan::for_job: nothing runs after a photo-only save.
-                Vec::new()
-            } else {
-                registry.register(Box::new(ResolveIngredientNamesStep::new(pool.clone())));
-                let ops = default_import_ops();
-                registry.register(Box::new(ApplyNormalizeStep::new(
-                    pool.clone(),
-                    user_id,
-                    ops.clone(),
-                )));
-                ops
-            }
-        }
+    let base_version_id = || {
+        job.expected_version_id.ok_or_else(|| {
+            ScrapeError::InvalidState("normalize job has no base version".to_string())
+        })
     };
+    let mut registry = StepRegistry::new();
+    let mut normalize_ops = Vec::new();
+    for name in plan.step_names() {
+        let step: Box<dyn PipelineStep> = match name {
+            FetchHtmlStep::NAME => Box::new(FetchHtmlStep {
+                refetch: plan.refetch,
+            }),
+            ExtractRecipeStep::NAME => Box::new(ExtractRecipeStep),
+            FetchImagesStepMeta::NAME => Box::new(FetchImagesStep::new(pool.clone(), user_id)),
+            ParseIngredientsStep::NAME => Box::new(ParseIngredientsStep),
+            SaveRecipeStepMeta::NAME => Box::new(save_step(pool.clone(), job)?),
+            RESOLVE_INGREDIENT_NAMES_STEP => {
+                Box::new(ResolveIngredientNamesStep::new(pool.clone()))
+            }
+            LOAD_RECIPE_STEP => Box::new(LoadRecipeStep::new(pool.clone(), base_version_id()?)),
+            PROPOSE_NORMALIZE_STEP => Box::new(ProposeNormalizeStep::new(
+                pool.clone(),
+                base_version_id()?,
+                plan.ops.clone(),
+            )),
+            APPLY_NORMALIZE_STEP => Box::new(ApplyNormalizeStep::new(
+                pool.clone(),
+                user_id,
+                plan.ops.clone(),
+            )),
+            name => match op_for_step(name) {
+                // Registered below, once they share one AI client.
+                Some(op) => {
+                    normalize_ops.push(op);
+                    continue;
+                }
+                None => {
+                    return Err(ScrapeError::InvalidState(format!(
+                        "no step implements {name}"
+                    )))
+                }
+            },
+        };
+        registry.register(step);
+    }
 
-    if ops.iter().any(|op| op.uses_ai()) {
+    if !normalize_ops.is_empty() {
         // A missing OPENROUTER_API_KEY must not fail the job before
         // save_recipe runs: hand the normalize steps a client that errors on
         // every call, so a missing key behaves exactly like an invalid one.
@@ -147,12 +117,12 @@ pub async fn build_registry(
                 Arc::new(UnconfiguredAiClient::new(e))
             }
         };
-        let user_tags = if ops.contains(&NormalizeOp::AutoTag) {
+        let user_tags = if normalize_ops.contains(&NormalizeOp::AutoTag) {
             fetch_user_tags(&pool, user_id).await?
         } else {
             Vec::new()
         };
-        for op in &ops {
+        for op in normalize_ops {
             if let Some(step) = op.step(ai_client.clone(), &user_tags) {
                 registry.register(step);
             }
@@ -161,32 +131,37 @@ pub async fn build_registry(
     Ok(registry)
 }
 
-/// Spawn an import job (same as scrape job, but no URL for tracing).
-pub fn spawn_import_job(pool: Arc<DbPool>, job_id: Uuid) {
-    let span = tracing::info_span!(
-        "import_job",
-        otel.name = "import_job",
-        job.id = %job_id,
-        job.operation = "import",
-        job.status = tracing::field::Empty,
-        job.error = tracing::field::Empty,
-    );
-
-    tokio::spawn(
-        async move {
-            run_scrape_job(pool, job_id).await;
-        }
-        .instrument(span),
-    );
+/// The save step for `job`'s mode: a new recipe, or a new version of the
+/// recipe a rescrape or photo-only rescrape works on.
+fn save_step(pool: Arc<DbPool>, job: &ScrapeJob) -> Result<SaveRecipeStep, ScrapeError> {
+    let user_id = job.user_id;
+    match (job.recipe_id, job.expected_version_id, job.photo_only) {
+        (Some(recipe_id), Some(expected_version_id), true) => Ok(
+            SaveRecipeStep::for_photo_rescrape(pool, user_id, recipe_id, expected_version_id),
+        ),
+        (Some(recipe_id), Some(expected_version_id), false) => Ok(SaveRecipeStep::for_rescrape(
+            pool,
+            user_id,
+            recipe_id,
+            expected_version_id,
+        )),
+        // Without an expected version, an existing recipe_id is one an
+        // earlier attempt of this job already created.
+        (_, None, _) => Ok(SaveRecipeStep::new(pool, user_id, job.id)),
+        (None, Some(_), _) => Err(ScrapeError::InvalidState(
+            "new recipe job unexpectedly has an expected recipe version".to_string(),
+        )),
+    }
 }
 
-/// Spawn a manual normalize job.
-pub fn spawn_normalize_job(pool: Arc<DbPool>, job_id: Uuid) {
+/// Spawn a job that has no URL to trace: an import (`operation` "import") or
+/// a manual normalize job ("normalize").
+pub fn spawn_import_job(pool: Arc<DbPool>, job_id: Uuid, operation: &str) {
     let span = tracing::info_span!(
-        "normalize_job",
-        otel.name = "normalize_job",
+        "import_job",
+        otel.name = %format!("{operation}_job"),
         job.id = %job_id,
-        job.operation = "normalize",
+        job.operation = %operation,
         job.status = tracing::field::Empty,
         job.error = tracing::field::Empty,
     );
@@ -295,7 +270,7 @@ pub async fn resume_interrupted_jobs(pool: &Arc<DbPool>) {
             }
             InterruptedJobAction::Respawn => match url {
                 Some(url) => spawn_scrape_job(pool.clone(), job_id, &url, "resume"),
-                None => spawn_import_job(pool.clone(), job_id),
+                None => spawn_import_job(pool.clone(), job_id, "resume"),
             },
         }
     }
@@ -413,7 +388,7 @@ async fn run_scrape_job_inner(
     );
 
     // Build the step registry and output store.
-    let registry = match build_registry(pool.clone(), &job).await {
+    let registry = match build_registry(pool.clone(), &job, &plan).await {
         Ok(registry) => registry,
         Err(e) => {
             mark_failed(&pool, job_id, &first_step, &e.to_string()).await?;
@@ -478,7 +453,7 @@ async fn run_scrape_job_inner(
         // Execute step with OpenTelemetry span
         let result = execute_step_with_tracing(step, url, &store, &step_name).await;
         let continues_on_failure = step.metadata().continues_on_failure;
-        let result = record_step_result(&store, &step_name, continues_on_failure, result).await;
+        let result = record_step_result(&store, &step_name, result).await;
 
         if !result.success {
             last_error = result.error.clone();
@@ -535,16 +510,12 @@ async fn run_scrape_job_inner(
 /// downstream retries think the step already ran and produces a deadlock
 /// where the pipeline can never make progress.
 ///
-/// Exception: for `continues_on_failure` steps, a persistence failure should
-/// NOT terminate the pipeline — otherwise a transient save error after
-/// `save_recipe` has already succeeded would cause the user to silently lose
-/// the rest of the job. We still mark the step as failed on the result so the
-/// persisted row (and status API) reflect the failure, but we preserve
-/// `next_step` so the chain continues.
+/// A `continues_on_failure` step whose output can't be saved still doesn't
+/// stop the job, like any other failure of such a step: a transient save
+/// error after `save_recipe` must not lose the rest of the job.
 async fn record_step_result(
     store: &DbOutputStore<'_>,
     step_name: &str,
-    continues_on_failure: bool,
     mut result: StepResult,
 ) -> StepResult {
     if let Err(e) = store
@@ -561,9 +532,6 @@ async fn record_step_result(
         tracing::error!("{msg}");
         result.success = false;
         result.error = Some(msg);
-        if !continues_on_failure {
-            result.next_step = None;
-        }
     }
 
     if result.success {
@@ -668,7 +636,7 @@ async fn run_concurrent_steps(
                             duration_ms: 0,
                             next_step: None,
                         };
-                        let result = record_step_result(store, name, false, result).await;
+                        let result = record_step_result(store, name, result).await;
                         if result.success {
                             finished.insert(name);
                             reused_any = true;
@@ -714,7 +682,7 @@ async fn run_concurrent_steps(
             break;
         };
         running_names.retain(|running| *running != name);
-        let result = record_step_result(store, name, continues_on_failure, result).await;
+        let result = record_step_result(store, name, result).await;
 
         outcome.last_step_name = Some(name.to_string());
         if !result.success {

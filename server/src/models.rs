@@ -53,14 +53,14 @@ pub struct NewSession<'a> {
 }
 
 /// A single measurement (amount + unit pair)
-#[derive(Debug, Clone, Serialize, Deserialize, utoipa::ToSchema)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, utoipa::ToSchema)]
 pub struct Measurement {
     pub amount: Option<String>,
     pub unit: Option<String>,
 }
 
 /// Ingredient structure for JSON storage
-#[derive(Debug, Clone, Serialize, Deserialize, utoipa::ToSchema)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, utoipa::ToSchema)]
 pub struct Ingredient {
     /// The ingredient name (e.g., "butter", "all-purpose flour")
     pub item: String,

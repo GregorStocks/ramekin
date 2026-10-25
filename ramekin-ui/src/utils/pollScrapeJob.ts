@@ -16,7 +16,8 @@ export function isTerminalScrapeJobStatus(status: string): boolean {
  */
 export function isScrapeRecipeReady(job: ScrapeJobResponse): boolean {
   return (
-    (job.status === "normalizing" || job.status === "completed") && !!job.recipeId
+    (job.status === "normalizing" || job.status === "completed") &&
+    !!job.recipeId
   );
 }
 

@@ -1,8 +1,8 @@
 use std::time::Instant;
 
 use crate::ids::Uuid;
-use serde_json::json;
 
+pub(super) use ramekin_core::pipeline::steps::step_failure;
 use ramekin_core::pipeline::{deserialize_required_output_field, StepContext, StepResult};
 
 use crate::recipes::VersionWriteError;
@@ -41,18 +41,6 @@ impl SaveOutputReadErrorExt for SaveOutputReadError {
             SaveOutputReadError::MalformedRecipeId(ref e) => e,
         };
         step_failure(step_name, start, message.to_string())
-    }
-}
-
-/// A failed step's result.
-pub(super) fn step_failure(step_name: &str, start: Instant, error: String) -> StepResult {
-    StepResult {
-        step_name: step_name.to_string(),
-        success: false,
-        output: json!({ "error": error }),
-        error: Some(error),
-        duration_ms: start.elapsed().as_millis() as u64,
-        next_step: None,
     }
 }
 

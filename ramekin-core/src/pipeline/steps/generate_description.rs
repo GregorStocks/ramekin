@@ -7,7 +7,7 @@ use async_trait::async_trait;
 use serde::Serialize;
 
 use crate::ai::{generate_description, AiClient, Usage};
-use crate::pipeline::steps::{base_raw_recipe, normalize_step_failure, NormalizeTitleStep};
+use crate::pipeline::steps::{base_raw_recipe, step_failure, NormalizeTitleStep};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 
 /// Step that generates concise menu-style recipe descriptions.
@@ -63,7 +63,7 @@ impl PipelineStep for GenerateDescriptionStep {
         let start = Instant::now();
         let raw_recipe = match base_raw_recipe(ctx).await {
             Ok(r) => r,
-            Err(e) => return normalize_step_failure(Self::NAME, start, e),
+            Err(e) => return step_failure(Self::NAME, start, e),
         };
 
         let title = title_for_description(ctx, &raw_recipe.title).await;
@@ -77,9 +77,7 @@ impl PipelineStep for GenerateDescriptionStep {
         .await
         {
             Ok(r) => r,
-            Err(e) => {
-                return normalize_step_failure(Self::NAME, start, format!("AI call failed: {e}"))
-            }
+            Err(e) => return step_failure(Self::NAME, start, format!("AI call failed: {e}")),
         };
 
         let generated_description = result.description.trim().to_string();

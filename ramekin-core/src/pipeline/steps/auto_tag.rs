@@ -7,7 +7,7 @@ use async_trait::async_trait;
 use serde::Serialize;
 
 use crate::ai::{suggest_tags, AiClient};
-use crate::pipeline::steps::{base_raw_recipe, normalize_step_failure};
+use crate::pipeline::steps::{base_raw_recipe, step_failure};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 
 /// Step that automatically tags recipes based on user's existing tags.
@@ -55,7 +55,7 @@ impl PipelineStep for AutoTagStep {
         let start = Instant::now();
         let raw_recipe = match base_raw_recipe(ctx).await {
             Ok(r) => r,
-            Err(e) => return normalize_step_failure(Self::NAME, start, e),
+            Err(e) => return step_failure(Self::NAME, start, e),
         };
 
         let result = match suggest_tags(
@@ -68,9 +68,7 @@ impl PipelineStep for AutoTagStep {
         .await
         {
             Ok(r) => r,
-            Err(e) => {
-                return normalize_step_failure(Self::NAME, start, format!("AI call failed: {e}"))
-            }
+            Err(e) => return step_failure(Self::NAME, start, format!("AI call failed: {e}")),
         };
 
         let output = AutoTagOutput {

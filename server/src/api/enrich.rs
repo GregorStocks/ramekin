@@ -136,13 +136,8 @@ async fn try_enrich_tags(
     .await
     .map_err(|e| TagEnrichmentError::Ai(e.to_string()))?;
 
-    // Merge suggested tags with existing (dedup, case-insensitive)
     let mut tags = request.tags.clone();
-    for tag in result.suggested_tags {
-        if !tags.iter().any(|t| t.eq_ignore_ascii_case(&tag)) {
-            tags.push(tag);
-        }
-    }
+    crate::normalize::merge_tags(&mut tags, result.suggested_tags);
 
     Ok(tags)
 }

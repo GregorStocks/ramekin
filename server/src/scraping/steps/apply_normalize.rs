@@ -10,7 +10,7 @@ use ramekin_core::pipeline::{
 
 use crate::db::DbPool;
 use crate::ids::Uuid;
-use crate::normalize::{apply_op_outputs, load_version, write_version};
+use crate::normalize::{apply_op_outputs, load_version_blocking, write_version};
 
 use super::helpers::{
     recipe_id_from_save_output, saved_version_id, skip_if_edited, step_failure,
@@ -52,24 +52,17 @@ impl PipelineStep for ApplyNormalizeStep {
             Ok(id) => id,
             Err(error) => return step_failure(APPLY_NORMALIZE_STEP, start, error),
         };
-        let pool = self.pool.clone();
-        let saved =
-            match crate::db::run_blocking(&pool, move |conn| load_version(conn, saved_version_id))
-                .await
-            {
-                Ok(Ok(recipe)) => recipe,
-                Ok(Err(error)) => return step_failure(APPLY_NORMALIZE_STEP, start, error),
-                Err(error) => return step_failure(APPLY_NORMALIZE_STEP, start, error.to_string()),
-            };
+        let saved = match load_version_blocking(&self.pool, saved_version_id).await {
+            Ok(recipe) => recipe,
+            Err(error) => return step_failure(APPLY_NORMALIZE_STEP, start, error),
+        };
 
         let mut normalized = saved.clone();
         if let Err(error) = apply_op_outputs(&mut normalized.content, &self.ops, ctx.outputs).await
         {
             return step_failure(APPLY_NORMALIZE_STEP, start, error);
         }
-        let changed = serde_json::to_value(&normalized.content).ok()
-            != serde_json::to_value(&saved.content).ok();
-        if !changed {
+        if normalized.content == saved.content {
             return StepResult {
                 step_name: APPLY_NORMALIZE_STEP.to_string(),
                 success: true,
