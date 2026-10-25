@@ -107,6 +107,7 @@ fn insert_version_row(
     let new_version = NewRecipeVersion {
         title: new_version.title.trim(),
         ingredients: new_version.ingredients.clone(),
+        normalize_ops: new_version.normalize_ops.clone(),
         ..*new_version
     };
     diesel::insert_into(recipe_versions::table)

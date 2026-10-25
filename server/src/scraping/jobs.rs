@@ -6,6 +6,7 @@ use diesel::result::{DatabaseErrorKind, Error as DieselError};
 use ramekin_core::pipeline::steps::{
     ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
+use ramekin_core::pipeline::{NormalizeOp, LOAD_RECIPE_STEP};
 use ramekin_core::RawRecipe;
 use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, FetchImagesOutput};
 
@@ -13,7 +14,7 @@ use crate::db::DbPool;
 use crate::models::{NewImportJob, NewScrapeJob, ScrapeJob};
 use crate::schema::{scrape_jobs, step_outputs};
 
-use super::output_store::{latest_output, PreparedOutput};
+use super::output_store::{copy_output, latest_output, PreparedOutput};
 use super::steps::FetchHtmlStep;
 use super::{
     run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_FAILED,
@@ -86,6 +87,103 @@ pub async fn create_photo_rescrape_job(
             ))
             .get_result::<ScrapeJob>(conn)
             .map_err(|e| ScrapeError::Database(e.to_string()))
+    })
+    .await
+}
+
+/// A recipe's latest stored source: the page its last fetch got, or for an
+/// import without a page, its extracted recipe.
+pub struct StoredSource {
+    job_id: Uuid,
+    /// The URL the source came from, if any.
+    url: Option<String>,
+    step_name: &'static str,
+}
+
+/// Find `recipe_id`'s latest stored source, if it has one. Text-created
+/// recipes never ran a job, so they have none.
+pub async fn stored_source(
+    pool: &DbPool,
+    recipe_id: Uuid,
+) -> Result<Option<StoredSource>, ScrapeError> {
+    run_scrape_db(pool, move |conn| {
+        for step_name in [FetchHtmlStep::NAME, ExtractRecipeStep::NAME] {
+            let job: Option<(Uuid, Option<String>)> = step_outputs::table
+                .inner_join(scrape_jobs::table)
+                .filter(scrape_jobs::recipe_id.eq(recipe_id))
+                .filter(step_outputs::step_name.eq(step_name))
+                .filter(step_outputs::success.eq(true))
+                .order(step_outputs::created_at.desc())
+                .select((scrape_jobs::id, scrape_jobs::url))
+                .first(conn)
+                .optional()?;
+            if let Some((job_id, url)) = job {
+                return Ok(Some(StoredSource {
+                    job_id,
+                    url,
+                    step_name,
+                }));
+            }
+        }
+        Ok(None)
+    })
+    .await
+}
+
+/// Where a normalize job's steps start.
+pub enum NormalizeStart {
+    /// Fetch `url` again.
+    Refetch { url: String },
+    /// Re-extract from a stored source.
+    Reextract(StoredSource),
+    /// Normalize the base version as it is.
+    BaseVersion,
+}
+
+/// Create a manual normalize job proposing a new version of `recipe_id` from
+/// `base_version_id` by `ops` (already ordered by the registry).
+pub async fn create_normalize_job(
+    pool: &DbPool,
+    user_id: Uuid,
+    recipe_id: Uuid,
+    base_version_id: Uuid,
+    ops: &[NormalizeOp],
+    start: NormalizeStart,
+) -> Result<ScrapeJob, ScrapeError> {
+    let ops = crate::normalize::ops_json(ops);
+    run_scrape_db_write(pool, move |conn| {
+        let (url, first_step) = match &start {
+            NormalizeStart::Refetch { url } => (Some(url.as_str()), FetchHtmlStep::NAME),
+            NormalizeStart::Reextract(source) if source.step_name == FetchHtmlStep::NAME => {
+                (source.url.as_deref(), ExtractRecipeStep::NAME)
+            }
+            NormalizeStart::Reextract(source) => {
+                (source.url.as_deref(), ParseIngredientsStep::NAME)
+            }
+            NormalizeStart::BaseVersion => (None, LOAD_RECIPE_STEP),
+        };
+        // Starting at a named step lets a restart resume a job without a URL.
+        let now = Utc::now();
+        let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
+            .values((
+                scrape_jobs::id.eq(Uuid::now_v7()),
+                scrape_jobs::user_id.eq(user_id),
+                scrape_jobs::url.eq(url),
+                scrape_jobs::recipe_id.eq(Some(recipe_id)),
+                scrape_jobs::expected_version_id.eq(Some(base_version_id)),
+                scrape_jobs::normalize_ops.eq(Some(ops)),
+                scrape_jobs::current_step.eq(Some(first_step)),
+                scrape_jobs::current_step_started_at.eq(Some(now)),
+            ))
+            .get_result(conn)?;
+        if let NormalizeStart::Reextract(source) = &start {
+            if !copy_output(conn, source.job_id, job.id, source.step_name)? {
+                return Err(ScrapeError::InvalidState(
+                    "stored source vanished".to_string(),
+                ));
+            }
+        }
+        Ok(job)
     })
     .await
 }

@@ -235,6 +235,7 @@ final class RecipeFormViewModelTests: XCTestCase {
             id: UUID(),
             ingredients: [],
             instructions: "Mix",
+            normalizeOps: [],
             notes: nil,
             nutritionalInfo: nil,
             photoIds: [],

@@ -2,14 +2,16 @@ mod allowlist;
 mod jobs;
 pub mod output_store;
 mod photo_import;
+pub mod plan;
 mod runner;
 pub mod status;
 pub mod steps;
 
 pub use allowlist::is_host_allowed;
 pub use jobs::{
-    create_import_job, create_job, create_job_with_html, create_photo_rescrape_job,
-    create_rescrape_job, find_import_jobs_by_key, get_job, saved_recipe_id,
+    create_import_job, create_job, create_job_with_html, create_normalize_job,
+    create_photo_rescrape_job, create_rescrape_job, find_import_jobs_by_key, get_job,
+    saved_recipe_id, stored_source, NormalizeStart, StoredSource,
 };
 pub use photo_import::{create_pending_photo_job, spawn_photo_import_job};
 pub use runner::{resume_interrupted_jobs, retry_job, spawn_import_job, spawn_scrape_job};
@@ -87,8 +89,9 @@ where
 pub const STATUS_PENDING: &str = "pending";
 pub const STATUS_SCRAPING: &str = "scraping";
 pub const STATUS_PARSING: &str = "parsing";
-/// The recipe is saved and visible; post-save steps (AI enrichment) are still
-/// running and may update it.
-pub const STATUS_ENRICHING: &str = "enriching";
+/// Normalize ops are running. For an import or scrape the recipe is already
+/// saved and visible, and they may still update it; a manual normalize job
+/// then proposes a version.
+pub const STATUS_NORMALIZING: &str = "normalizing";
 pub const STATUS_COMPLETED: &str = "completed";
 pub const STATUS_FAILED: &str = "failed";

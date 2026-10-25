@@ -4,6 +4,7 @@ use flate2::read::GzDecoder;
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::{auth_api, import_api, scrape_api};
 use ramekin_client::models::{LoginRequest, LookupImportJobsRequest};
+use ramekin_core::pipeline::op_for_step;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs::File;
@@ -426,7 +427,7 @@ pub async fn import_archive(
         tracing::info!("{} recipe(s) were already submitted", existing.len());
     }
     let saved_count = jobs.len();
-    let enrichment_failures =
+    let normalize_failures =
         tokio::time::timeout(Duration::from_secs(600), wait_for_imports(config, jobs))
             .await
             .context(
@@ -435,15 +436,15 @@ pub async fn import_archive(
 
     tracing::info!("IMPORT COMPLETE");
     tracing::info!("Recipes saved: {}", saved_count);
-    tracing::info!("Recipes with enrichment failures: {}", enrichment_failures);
+    tracing::info!("Recipes with normalize failures: {}", normalize_failures);
 
     Ok(())
 }
 
 /// Wait for the whole batch without serializing the server's background work.
-/// Completed jobs can still have failed optional enrichment steps.
+/// Completed jobs can still have failed optional normalize steps.
 async fn wait_for_imports(config: &Configuration, mut jobs: Vec<uuid::Uuid>) -> Result<usize> {
-    let mut enrichment_failures = 0;
+    let mut normalize_failures = 0;
     while !jobs.is_empty() {
         let mut pending = Vec::new();
         for id in jobs {
@@ -456,12 +457,12 @@ async fn wait_for_imports(config: &Configuration, mut jobs: Vec<uuid::Uuid>) -> 
                         .steps
                         .iter()
                         .any(|step| step.name == "save_recipe" && step.status == "completed");
-                    let enrichment_failed = job
+                    let normalize_failed = job
                         .failed_at_step
                         .as_ref()
                         .and_then(|step| step.as_deref())
-                        .is_some_and(|step| step.starts_with("enrich_"));
-                    if job.status == "failed" && !(saved && enrichment_failed) {
+                        .is_some_and(|step| op_for_step(step).is_some());
+                    if job.status == "failed" && !(saved && normalize_failed) {
                         bail!("Import job {id} failed; inspect its status for details; saved data is preserved");
                     }
                     if job.status == "completed" && job.recipe_id.flatten().is_none() {
@@ -474,13 +475,13 @@ async fn wait_for_imports(config: &Configuration, mut jobs: Vec<uuid::Uuid>) -> 
                         .map(|step| step.name.as_str())
                         .collect();
                     if !failed_steps.is_empty() {
-                        enrichment_failures += 1;
+                        normalize_failures += 1;
                         // Report step names, not provider response bodies or credentials.
                         tracing::warn!(job_id = %id, steps = %failed_steps.join(", "),
-                            "Recipe saved, but enrichment failed; inspect the import job for details");
+                            "Recipe saved, but normalizing it failed; inspect the import job for details");
                     }
                 }
-                "pending" | "scraping" | "parsing" | "enriching" => pending.push(id),
+                "pending" | "scraping" | "parsing" | "normalizing" => pending.push(id),
                 status => bail!("Import job {id} has unexpected status: {status}"),
             }
         }
@@ -489,7 +490,7 @@ async fn wait_for_imports(config: &Configuration, mut jobs: Vec<uuid::Uuid>) -> 
             tokio::time::sleep(Duration::from_millis(250)).await;
         }
     }
-    Ok(enrichment_failures)
+    Ok(normalize_failures)
 }
 
 #[cfg(test)]
@@ -609,10 +610,10 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn saved_recipe_with_failed_enrichment_is_counted() {
+    async fn saved_recipe_with_failed_normalize_step_is_counted() {
         for status in ["completed", "failed"] {
             assert_eq!(
-                poll_responses(vec![job(status, true, Some("enrich_auto_tag"))])
+                poll_responses(vec![job(status, true, Some("auto_tag"))])
                     .await
                     .unwrap(),
                 1
@@ -622,7 +623,7 @@ mod tests {
 
     #[tokio::test]
     async fn batch_waits_for_remaining_jobs_without_recounting_finished_ones() {
-        let failed = job("failed", true, Some("enrich_auto_tag"));
+        let failed = job("failed", true, Some("auto_tag"));
         let pending = job("parsing", false, None);
         let mut completed = job("completed", true, None);
         completed.id = pending.id;
@@ -638,8 +639,8 @@ mod tests {
     async fn failures_before_save_and_apply_failures_are_errors() {
         for (saved, step) in [
             (false, "parse_ingredients"),
-            (true, "apply_auto_tags"),
-            (false, "enrich_auto_tag"),
+            (true, "apply_normalize"),
+            (false, "auto_tag"),
         ] {
             let error = poll_responses(vec![job("failed", saved, Some(step))])
                 .await

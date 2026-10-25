@@ -9,7 +9,7 @@ import type {
 import {
   runSingleRecipeAiOperation,
   type RecipeAiOperationSummary,
-} from "../utils/aiEnrichments";
+} from "../utils/aiOperations";
 import { extractApiError } from "../utils/recipeFormHelpers";
 
 interface UseRecipeAiActionsOptions {

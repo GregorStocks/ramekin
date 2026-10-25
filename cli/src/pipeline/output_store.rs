@@ -137,7 +137,7 @@ mod tests {
 
         store
             .save_output(
-                "enrich_normalize_title",
+                "normalize_title",
                 &json!({ "error": "AI call failed: details" }),
                 7,
                 false,
@@ -148,10 +148,10 @@ mod tests {
 
         // get_output must keep returning None for failed steps so downstream
         // steps and the snapshot writer never consume error payloads.
-        assert_eq!(store.get_output("enrich_normalize_title").await, None);
-        assert!(!store.output_path("enrich_normalize_title").exists());
+        assert_eq!(store.get_output("normalize_title").await, None);
+        assert!(!store.output_path("normalize_title").exists());
 
-        let error_path = store.step_dir("enrich_normalize_title").join("error.json");
+        let error_path = store.step_dir("normalize_title").join("error.json");
         let persisted: serde_json::Value =
             serde_json::from_str(&fs::read_to_string(error_path).unwrap()).unwrap();
         assert_eq!(

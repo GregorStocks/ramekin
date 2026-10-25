@@ -7,8 +7,8 @@ enum RecipeVersionSupport {
             return "User Edit"
         case "scrape":
             return "Imported"
-        case "enrich", "enrichment":
-            return "AI Enriched"
+        case "normalize":
+            return "Normalized"
         case "ai_photo":
             return "AI Photo"
         case "reparse":

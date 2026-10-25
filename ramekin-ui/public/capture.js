@@ -115,10 +115,10 @@
     }
   }
 
-  // While enrichment is still running, the recipe page polls the job and
+  // While normalize ops are still running, the recipe page polls the job and
   // reloads once the AI title, description, and tags land.
-  function showActions(recipeId, enrichingJobId) {
-    var query = enrichingJobId ? "?scrapeJob=" + enrichingJobId : "";
+  function showActions(recipeId, normalizingJobId) {
+    var query = normalizingJobId ? "?scrapeJob=" + normalizingJobId : "";
     actionsEl.style.display = "flex";
     actionsEl.innerHTML = [
       '<a href="', externalOrigin, '/recipes/', recipeId, query, '" target="_blank" ',
@@ -195,18 +195,18 @@
     .then(function (r) { return r.json(); })
     .then(function (job) {
       log("poll #" + attempt + " -> " + job.status);
-      // "enriching": the recipe is saved and viewable; AI enrichment
-      // finishes in the background.
-      if ((job.status === "completed" || job.status === "enriching") && job.recipe_id) {
+      // "normalizing": the recipe is saved and viewable; normalize ops
+      // finish in the background.
+      if ((job.status === "completed" || job.status === "normalizing") && job.recipe_id) {
         clearStallWatchdog();
         log(job.status + ", recipe=" + job.recipe_id);
         setStatus("Recipe saved!", false, true);
-        showActions(job.recipe_id, job.status === "enriching" ? jobId : null);
+        showActions(job.recipe_id, job.status === "normalizing" ? jobId : null);
       } else if (job.status === "failed") {
         clearStallWatchdog();
         warn("failed: " + (job.error || "unknown"));
         setStatus(job.error || "Failed to extract recipe", true);
-        // A job that fails during enrichment has still saved the recipe.
+        // A job that fails while normalizing has still saved the recipe.
         if (job.recipe_id) {
           showActions(job.recipe_id, null);
         } else {

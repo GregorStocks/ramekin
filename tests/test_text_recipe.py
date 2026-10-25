@@ -107,7 +107,7 @@ def test_structured_creation_gets_weight_estimates(authed_api_client):
     assert recipe.derived_measurements[0].amount == "125"
 
 
-def test_model_warnings_are_shown_without_blocking_enrichment(authed_api_client):
+def test_model_warnings_are_shown_without_blocking_normalize_ops(authed_api_client):
     client, _ = authed_api_client
     draft = prepare(client, "TEXT_MODEL_WARNING\n" + RECIPE_TEXT)
     assert draft.warnings[0] == "The source mentions a note that was not supplied."
@@ -121,7 +121,7 @@ def test_incomplete_text_exposes_missing_fields(authed_api_client):
     assert draft.content.instructions == ""
     assert "Missing title. Add it before saving." in draft.warnings
     assert "Missing instructions. Add it before saving." in draft.warnings
-    # Missing fields block enrichment, which would have nothing to ground it.
+    # Missing fields block normalize ops, which would have nothing to ground them.
     assert draft.content.description is None
     with pytest.raises(ApiException) as error:
         RecipesApi(client).create_recipe(
@@ -139,7 +139,7 @@ def test_invalid_text_rejected(authed_api_client, text):
 
 
 @pytest.mark.parametrize(
-    "marker", ["TEXT_EXTRACTION_FAILURE", "TEXT_ENRICHMENT_FAILURE"]
+    "marker", ["TEXT_EXTRACTION_FAILURE", "TEXT_NORMALIZE_FAILURE"]
 )
 def test_pipeline_failure_does_not_save(authed_api_client, marker):
     client, _ = authed_api_client
