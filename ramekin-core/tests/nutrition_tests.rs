@@ -794,7 +794,10 @@ fn an_amount_of_another_recipe_says_so() {
         "1/2 batch Rice Krispies Treats",
     ] {
         let result = estimate(&[parse_ingredient(raw)], None, 1.0).unwrap();
-        assert_eq!(result.unknown_ingredients[0].reason, "Another recipe", "{raw}");
+        assert_eq!(
+            result.unknown_ingredients[0].reason, "Another recipe",
+            "{raw}"
+        );
         assert!(
             result.lines[0].text.starts_with("Refers to another recipe"),
             "{raw}: {}",

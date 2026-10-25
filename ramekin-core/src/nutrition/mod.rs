@@ -454,7 +454,12 @@ fn refers_to_another_recipe(ingredient: &ParsedIngredient) -> bool {
         return false;
     }
     let item = ingredient.item.to_lowercase();
-    match measurement.unit.as_deref().map(str::to_lowercase).as_deref() {
+    match measurement
+        .unit
+        .as_deref()
+        .map(str::to_lowercase)
+        .as_deref()
+    {
         Some("batch" | "batches") => true,
         None => item.starts_with("recipe ") || item.starts_with("recipes "),
         Some(_) => false,
