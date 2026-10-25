@@ -21,6 +21,8 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
     public var id: UUID
     public var ingredients: [Ingredient]
     public var instructions: String
+    /** For a `normalize` version, the op ids it applied, in run order. */
+    public var normalizeOps: [String]
     public var notes: String?
     public var nutritionalInfo: String?
     public var photoIds: [UUID]
@@ -38,7 +40,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
     public var versionId: UUID
     public var versionSource: String
 
-    public init(cookTime: String? = nil, createdAt: Date, derivedMeasurements: [DerivedMeasurement], description: String? = nil, difficulty: String? = nil, id: UUID, ingredients: [Ingredient], instructions: String, notes: String? = nil, nutritionalInfo: String? = nil, photoIds: [UUID], prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String], title: String, totalTime: String? = nil, updatedAt: Date, versionId: UUID, versionSource: String) {
+    public init(cookTime: String? = nil, createdAt: Date, derivedMeasurements: [DerivedMeasurement], description: String? = nil, difficulty: String? = nil, id: UUID, ingredients: [Ingredient], instructions: String, normalizeOps: [String], notes: String? = nil, nutritionalInfo: String? = nil, photoIds: [UUID], prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String], title: String, totalTime: String? = nil, updatedAt: Date, versionId: UUID, versionSource: String) {
         self.cookTime = cookTime
         self.createdAt = createdAt
         self.derivedMeasurements = derivedMeasurements
@@ -47,6 +49,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
         self.id = id
         self.ingredients = ingredients
         self.instructions = instructions
+        self.normalizeOps = normalizeOps
         self.notes = notes
         self.nutritionalInfo = nutritionalInfo
         self.photoIds = photoIds
@@ -72,6 +75,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
         case id
         case ingredients
         case instructions
+        case normalizeOps = "normalize_ops"
         case notes
         case nutritionalInfo = "nutritional_info"
         case photoIds = "photo_ids"
@@ -100,6 +104,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
         try container.encode(id, forKey: .id)
         try container.encode(ingredients, forKey: .ingredients)
         try container.encode(instructions, forKey: .instructions)
+        try container.encode(normalizeOps, forKey: .normalizeOps)
         try container.encodeIfPresent(notes, forKey: .notes)
         try container.encodeIfPresent(nutritionalInfo, forKey: .nutritionalInfo)
         try container.encode(photoIds, forKey: .photoIds)

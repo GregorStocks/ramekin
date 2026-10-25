@@ -182,7 +182,7 @@ pub async fn import_recipe(
     let status = if created {
         tracing::info!("Created import job {} for recipe '{}'", job.id, title);
         // Spawn background task to run the pipeline
-        scraping::spawn_import_job(pool.clone(), job.id);
+        scraping::spawn_import_job(pool.clone(), job.id, "import");
         StatusCode::CREATED
     } else {
         tracing::info!("Import of '{}' repeats job {}", title, job.id);

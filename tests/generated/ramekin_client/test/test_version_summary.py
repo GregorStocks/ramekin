@@ -38,6 +38,9 @@ class TestVersionSummary(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 id = '',
                 is_current = True,
+                normalize_ops = [
+                    ''
+                    ],
                 title = '',
                 version_source = ''
             )
@@ -46,6 +49,9 @@ class TestVersionSummary(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 id = '',
                 is_current = True,
+                normalize_ops = [
+                    ''
+                    ],
                 title = '',
                 version_source = '',
         )

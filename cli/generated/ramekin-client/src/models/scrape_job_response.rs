@@ -38,7 +38,7 @@ pub struct ScrapeJobResponse {
     /// The scrape job ID
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
-    /// Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes have it from the start)
+    /// Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes and normalize jobs have it from the start)
     #[serde(
         rename = "recipe_id",
         default,
@@ -49,7 +49,7 @@ pub struct ScrapeJobResponse {
     /// Number of retry attempts
     #[serde(rename = "retry_count")]
     pub retry_count: i32,
-    /// Current job status (pending, scraping, parsing, enriching, completed, failed). While \"enriching\" the recipe is saved and `recipe_id` is set; AI enrichment may still update it until the job completes.
+    /// Current job status (pending, scraping, parsing, normalizing, completed, failed). While an import or scrape is \"normalizing\" the recipe is saved and `recipe_id` is set; normalize ops may still update it until the job completes. A manual normalize job saves nothing: it ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
     #[serde(rename = "status")]
     pub status: String,
     /// Per-step state for the status page (ordered by pipeline step).

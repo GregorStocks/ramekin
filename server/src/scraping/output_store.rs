@@ -147,6 +147,49 @@ pub async fn latest_output(
     Ok(Some(output))
 }
 
+/// Copy job `from_job`'s latest successful `step_name` output into job
+/// `to_job` as a pre-populated output. The row is copied as stored, so a large
+/// output keeps pointing at its file instead of being read and written again.
+/// Returns whether there was an output to copy. Call inside `db::write`.
+pub fn copy_output(
+    conn: &mut SqliteConnection,
+    from_job: Uuid,
+    to_job: Uuid,
+    step_name: &str,
+) -> QueryResult<bool> {
+    let row: Option<(JsonValue, String, Option<String>, String)> = step_outputs::table
+        .filter(step_outputs::scrape_job_id.eq(from_job))
+        .filter(step_outputs::step_name.eq(step_name))
+        .filter(step_outputs::success.eq(true))
+        .order(step_outputs::created_at.desc())
+        .select((
+            step_outputs::output,
+            step_outputs::output_hash,
+            step_outputs::summary,
+            step_outputs::build_id,
+        ))
+        .first(conn)
+        .optional()?;
+    let Some((output, output_hash, summary, build_id)) = row else {
+        return Ok(false);
+    };
+    diesel::insert_into(step_outputs::table)
+        .values(NewStepOutput {
+            id: Uuid::now_v7(),
+            scrape_job_id: to_job,
+            step_name: step_name.to_string(),
+            build_id,
+            output,
+            duration_ms: None,
+            summary,
+            success: true,
+            error: None,
+            output_hash,
+        })
+        .execute(conn)?;
+    Ok(true)
+}
+
 diesel::define_sql_function! {
     /// SQLite length(): a text's length in characters.
     fn length(value: diesel::sql_types::Json) -> diesel::sql_types::BigInt;

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **id** | **UUID** |  | 
 **ingredients** | [**List[Ingredient]**](Ingredient.md) |  | 
 **instructions** | **str** |  | 
+**normalize_ops** | **List[str]** | For a &#x60;normalize&#x60; version, the op ids it applied, in run order. | 
 **notes** | **str** |  | [optional] 
 **nutritional_info** | **str** |  | [optional] 
 **photo_ids** | **List[UUID]** |  | 

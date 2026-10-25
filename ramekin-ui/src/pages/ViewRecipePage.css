@@ -273,7 +273,7 @@
   }
 }
 
-.enrichment-notice {
+.normalize-notice {
   padding: 0.5rem 0.75rem;
   margin-bottom: 1rem;
   border: 1px solid var(--border-hairline);
@@ -282,6 +282,6 @@
   font-size: 0.9rem;
 }
 
-.enrichment-notice-failed {
+.normalize-notice-failed {
   color: var(--text-secondary);
 }

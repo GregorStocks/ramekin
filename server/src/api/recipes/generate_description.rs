@@ -14,6 +14,7 @@ use axum::{
 };
 use diesel::prelude::*;
 use ramekin_core::ai::generate_description as ai_generate_description;
+use ramekin_core::pipeline::NormalizeOp;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -146,7 +147,10 @@ pub async fn generate_description(
         let write_result: Result<(), VersionWriteError> = crate::db::write(conn, |conn| {
             let new_version = NewRecipeVersion {
                 description: Some(&description_for_write),
-                ..NewRecipeVersion::copy_of(&current_version, "generate_description")
+                normalize_ops: Some(crate::normalize::ops_json(&[
+                    NormalizeOp::GenerateDescription,
+                ])),
+                ..NewRecipeVersion::copy_of(&current_version, crate::normalize::VERSION_SOURCE)
             };
 
             // Compare-and-swap: only repoint if current_version_id hasn't changed

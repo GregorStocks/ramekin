@@ -18,12 +18,12 @@ pub struct StepMetadata {
     /// definition of which steps fail soft; the core executor and the server
     /// runner both read it.
     ///
-    /// AI enrich steps set this to false: if one fails after `save_recipe`,
+    /// Normalize steps set this to false: if one fails after `save_recipe`,
     /// the job fails at that step with the saved recipe still attached, so
     /// clients can open the recipe and retry resumes at the failed step.
-    /// Only best-effort post-save steps (resolving ingredient names, applying
-    /// auto tags) set it to true; the job then completes and the status API
-    /// shows that step as failed.
+    /// Only the best-effort post-save step that resolves ingredient names
+    /// sets it to true; the job then completes and the status API shows that
+    /// step as failed.
     pub continues_on_failure: bool,
 }
 
@@ -161,12 +161,9 @@ mod tests {
 
     #[test]
     fn optional_output_field_allows_missing_output() {
-        let got = deserialize_optional_output_field::<Vec<String>>(
-            None,
-            "enrich_auto_tag",
-            "suggested_tags",
-        )
-        .unwrap();
+        let got =
+            deserialize_optional_output_field::<Vec<String>>(None, "auto_tag", "suggested_tags")
+                .unwrap();
 
         assert_eq!(got, None);
     }
@@ -176,13 +173,13 @@ mod tests {
         let output: JsonValue = json!({ "suggested_tags": "dessert" });
         let err = deserialize_optional_output_field::<Vec<String>>(
             Some(&output),
-            "enrich_auto_tag",
+            "auto_tag",
             "suggested_tags",
         )
         .unwrap_err();
 
         assert!(
-            err.starts_with("Malformed suggested_tags in enrich_auto_tag output:"),
+            err.starts_with("Malformed suggested_tags in auto_tag output:"),
             "unexpected error: {err}"
         );
     }

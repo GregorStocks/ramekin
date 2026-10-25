@@ -62,6 +62,7 @@ final class RecipePDFRendererTests: XCTestCase {
             id: UUID(),
             ingredients: [ingredient],
             instructions: "Mix everything and bake.",
+            normalizeOps: [],
             notes: nil,
             nutritionalInfo: nil,
             photoIds: [],

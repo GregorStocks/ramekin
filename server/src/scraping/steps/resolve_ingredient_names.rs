@@ -6,8 +6,7 @@ use diesel::prelude::*;
 use serde_json::json;
 
 use ramekin_core::pipeline::{
-    first_scrape_auto_applied_ai_step_name, PipelineStep, StepContext, StepMetadata, StepResult,
-    RESOLVE_INGREDIENT_NAMES_STEP,
+    PipelineStep, StepContext, StepMetadata, StepResult, RESOLVE_INGREDIENT_NAMES_STEP,
 };
 
 use crate::db::{run_blocking, DbPool};
@@ -15,11 +14,11 @@ use crate::ingredient_names::{resolve_pending, unlearned_names};
 use crate::models::Ingredient;
 use crate::schema::recipe_versions;
 
-use super::helpers::version_id_from_pipeline_outputs;
+use super::helpers::saved_version_id;
 
 /// Resolve the saved recipe's ingredient names the catalog doesn't know
 /// (catalog step 3). Runs right after save. The recipe is already saved, so
-/// like the enrichment steps a failure shows on the step without failing the
+/// unlike the normalize steps a failure shows on the step without failing the
 /// job (import jobs can't be retried); the failed names stay visible in
 /// Settings, which can retry them.
 pub struct ResolveIngredientNamesStep {
@@ -42,7 +41,7 @@ impl ResolveIngredientNamesStep {
             output,
             error,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: first_scrape_auto_applied_ai_step_name().map(str::to_string),
+            next_step: None,
         }
     }
 }
@@ -59,11 +58,10 @@ impl PipelineStep for ResolveIngredientNamesStep {
 
     async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
-        let version_id =
-            match version_id_from_pipeline_outputs(ctx, &[("save_recipe", "version_id")]).await {
-                Ok(id) => id,
-                Err(e) => return Self::result(start, Err(e)),
-            };
+        let version_id = match saved_version_id(ctx).await {
+            Ok(id) => id,
+            Err(e) => return Self::result(start, Err(e)),
+        };
         let queued = run_blocking(&self.pool, move |conn| {
             let ingredients: serde_json::Value = recipe_versions::table
                 .find(version_id)

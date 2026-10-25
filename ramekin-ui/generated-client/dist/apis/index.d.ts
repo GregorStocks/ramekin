@@ -4,6 +4,7 @@ export * from './EnrichApi';
 export * from './ImportApi';
 export * from './IngredientNamesApi';
 export * from './MealPlansApi';
+export * from './NormalizeApi';
 export * from './PhotosApi';
 export * from './RecipesApi';
 export * from './ScrapeApi';

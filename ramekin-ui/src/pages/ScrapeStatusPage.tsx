@@ -54,8 +54,8 @@ function statusLabel(status: string): string {
       return "Scraping";
     case "parsing":
       return "Parsing";
-    case "enriching":
-      return "Enriching";
+    case "normalizing":
+      return "Normalizing";
     case "completed":
       return "Completed";
     case "failed":
@@ -321,7 +321,7 @@ export default function ScrapeStatusPage() {
                   class="btn btn-primary view-recipe"
                   onClick={() =>
                     navigate(
-                      j().status === "enriching"
+                      j().status === "normalizing"
                         ? `/recipes/${j().recipeId}?scrapeJob=${j().id}`
                         : `/recipes/${j().recipeId}`,
                     )

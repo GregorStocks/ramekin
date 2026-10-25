@@ -34,6 +34,12 @@ export interface VersionSummary {
      */
     isCurrent: boolean;
     /**
+     * For a `normalize` version, the op ids it applied, in run order.
+     * @type {Array<string>}
+     * @memberof VersionSummary
+     */
+    normalizeOps: Array<string>;
+    /**
      *
      * @type {string}
      * @memberof VersionSummary

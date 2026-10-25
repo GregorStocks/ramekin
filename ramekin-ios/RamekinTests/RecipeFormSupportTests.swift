@@ -20,6 +20,7 @@ final class RecipeFormSupportTests: XCTestCase {
                 )
             ],
             instructions: "Mix and bake",
+            normalizeOps: [],
             notes: "Serve warm",
             nutritionalInfo: "200 cal",
             photoIds: [photoId],
@@ -74,6 +75,7 @@ final class RecipeFormSupportTests: XCTestCase {
             id: UUID(),
             ingredients: [],
             instructions: "Mix",
+            normalizeOps: [],
             notes: nil,
             nutritionalInfo: nil,
             photoIds: [],

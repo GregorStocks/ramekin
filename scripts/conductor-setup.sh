@@ -65,7 +65,7 @@ do_setup() {
                             if (NR > 0) {
                                 print ""
                             }
-                            print "# AI enrichment (synced from source)"
+                            print "# AI (synced from source)"
                             print openrouter_key
                         }
                     }
