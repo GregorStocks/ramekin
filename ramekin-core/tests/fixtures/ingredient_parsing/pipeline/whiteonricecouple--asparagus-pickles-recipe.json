@@ -3,11 +3,7 @@
   "recipe_slug": "asparagus-pickles-recipe",
   "ingredients": [
     {
-      "raw": "Pickle Brine:",
-      "is_section_header": true
-    },
-    {
-      "raw": "1/3 cup   Distillled White Vinegar",
+      "raw": "1/3 cup Distillled White Vinegar",
       "expected": {
         "item": "Distillled White Vinegar",
         "measurements": [
@@ -17,12 +13,11 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup   Water",
+      "raw": "1/2 cup Water",
       "expected": {
         "item": "Water",
         "measurements": [
@@ -32,12 +27,11 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Zest & Juice of 1 Lemon",
+      "raw": "Zest &amp;amp; Juice of 1 Lemon",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -47,12 +41,11 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Produce"
       }
     },
     {
-      "raw": "Zest & Juice of 1 Lemon",
+      "raw": "Zest &amp;amp; Juice of 1 Lemon",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -62,13 +55,12 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Produce"
       },
       "expanded": true
     },
     {
-      "raw": "4 sprigs   fresh Tarragon or Dill",
+      "raw": "4 sprigs fresh Tarragon or Dill",
       "expected": {
         "item": "fresh Tarragon or Dill",
         "measurements": [
@@ -78,12 +70,11 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 Tablespoons   Sugar",
+      "raw": "2 Tablespoons Sugar",
       "expected": {
         "item": "Sugar",
         "measurements": [
@@ -93,12 +84,11 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 inch   piece of Ginger , julienned",
+      "raw": "1 inch piece of Ginger (, julienned)",
       "expected": {
         "item": "inch piece of Ginger",
         "measurements": [
@@ -108,12 +98,11 @@
           }
         ],
         "note": "julienned",
-        "section": "Pickle Brine",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon   Fennel Seeds",
+      "raw": "1 teaspoon Fennel Seeds",
       "expected": {
         "item": "Fennel Seeds",
         "measurements": [
@@ -123,12 +112,11 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon   Dill Seeds",
+      "raw": "1 teaspoon Dill Seeds",
       "expected": {
         "item": "Dill Seeds",
         "measurements": [
@@ -138,27 +126,25 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon   Sea Salt , or Kosher Salt",
+      "raw": "1 teaspoon Sea Salt (, or Kosher Salt)",
       "expected": {
-        "item": "Sea Salt, or Kosher Salt",
+        "item": "Sea Salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "section": "Pickle Brine",
+        "note": "or Kosher Salt",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon   fresh cracked Black Pepper",
+      "raw": "1/2 teaspoon fresh cracked Black Pepper",
       "expected": {
         "item": "fresh cracked Black Pepper",
         "measurements": [
@@ -168,12 +154,11 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "pinch   crushed Red Pepper Flakes",
+      "raw": "pinch crushed Red Pepper Flakes",
       "expected": {
         "item": "crushed Red Pepper Flakes",
         "measurements": [
@@ -183,31 +168,25 @@
           }
         ],
         "note": null,
-        "section": "Pickle Brine",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Suggestions for Pickling:",
-      "is_section_header": true
-    },
-    {
-      "raw": "1/2 lb   Sweet Peas , Asparagus, Cucumbers or other Vegetables, well cleaned",
+      "raw": "1/2 lb Sweet Peas (, Asparagus, Cucumbers&nbsp;or other Vegetables, well cleaned)",
       "expected": {
-        "item": "Sweet Peas, Asparagus, Cucumbers or other Vegetables",
+        "item": "Sweet Peas",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
           }
         ],
-        "note": "well cleaned",
-        "section": "Suggestions for Pickling",
+        "note": "Asparagus, Cucumbers or other Vegetables, well cleaned",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2   medium Red Onion , thinly sliced",
+      "raw": "1/2  medium Red Onion (,&nbsp;thinly sliced)",
       "expected": {
         "item": "Red Onion",
         "measurements": [
@@ -217,7 +196,6 @@
           }
         ],
         "note": "thinly sliced",
-        "section": "Suggestions for Pickling",
         "category": "Produce"
       }
     }

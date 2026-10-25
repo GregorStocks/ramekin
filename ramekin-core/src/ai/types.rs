@@ -9,6 +9,26 @@ pub enum Role {
     System,
     User,
     Assistant,
+    /// A tool's result, answering the assistant's tool call `tool_call_id`.
+    Tool,
+}
+
+/// A tool the model may call: its name, what it does, and a JSON Schema for
+/// its arguments.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct ToolSpec {
+    pub name: String,
+    pub description: String,
+    pub parameters: serde_json::Value,
+}
+
+/// A call the model asked for: the tool's name and its arguments as JSON
+/// text (the model's, so possibly malformed).
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct ToolCall {
+    pub id: String,
+    pub name: String,
+    pub arguments: String,
 }
 
 /// Image data for vision API requests.
@@ -28,6 +48,12 @@ pub struct ChatMessage {
     /// Optional images for vision requests. Empty by default.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub images: Vec<ImageData>,
+    /// The tools an assistant message called.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub tool_calls: Vec<ToolCall>,
+    /// The call a tool message answers.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub tool_call_id: Option<String>,
 }
 
 impl ChatMessage {
@@ -36,6 +62,8 @@ impl ChatMessage {
             role: Role::System,
             content: content.into(),
             images: vec![],
+            tool_calls: vec![],
+            tool_call_id: None,
         }
     }
 
@@ -44,6 +72,8 @@ impl ChatMessage {
             role: Role::User,
             content: content.into(),
             images: vec![],
+            tool_calls: vec![],
+            tool_call_id: None,
         }
     }
 
@@ -52,6 +82,30 @@ impl ChatMessage {
             role: Role::User,
             content: content.into(),
             images,
+            tool_calls: vec![],
+            tool_call_id: None,
+        }
+    }
+
+    /// An assistant turn that called tools, to replay in the history.
+    pub fn assistant_tool_calls(content: impl Into<String>, tool_calls: Vec<ToolCall>) -> Self {
+        Self {
+            role: Role::Assistant,
+            content: content.into(),
+            images: vec![],
+            tool_calls,
+            tool_call_id: None,
+        }
+    }
+
+    /// A tool's result for the call `tool_call_id`.
+    pub fn tool_result(tool_call_id: impl Into<String>, content: impl Into<String>) -> Self {
+        Self {
+            role: Role::Tool,
+            content: content.into(),
+            images: vec![],
+            tool_calls: vec![],
+            tool_call_id: Some(tool_call_id.into()),
         }
     }
 
@@ -60,6 +114,8 @@ impl ChatMessage {
             role: Role::Assistant,
             content: content.into(),
             images: vec![],
+            tool_calls: vec![],
+            tool_call_id: None,
         }
     }
 }
@@ -82,6 +138,9 @@ pub struct ChatRequest {
     /// If true, request JSON response format.
     #[serde(skip)]
     pub json_response: bool,
+    /// Tools the model may call instead of answering.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub tools: Vec<ToolSpec>,
 }
 
 /// Token usage information.
@@ -93,7 +152,7 @@ pub struct Usage {
 }
 
 /// Response from a chat completion.
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ChatResponse {
     /// The generated content.
     pub content: String,
@@ -102,4 +161,7 @@ pub struct ChatResponse {
     /// Whether this response came from cache.
     #[serde(default)]
     pub cached: bool,
+    /// The tools the model called, if it called any instead of answering.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub tool_calls: Vec<ToolCall>,
 }

@@ -5,49 +5,21 @@ pub const EDIT_RECIPE_PROMPT_NAME: &str = "edit_recipe";
 
 /// Render the system prompt for an AI recipe edit.
 pub fn render_edit_recipe_system_prompt() -> String {
-    r#"You are a recipe modification assistant. The user will give you a recipe as JSON and an instruction describing what change they want. They may also attach reference photos of the dish. Apply the requested change using the recipe and any relevant visual context, then return the complete modified recipe as JSON.
+    r#"You edit a recipe the way the user asks, using tools. You see the recipe with its ingredients and steps numbered. The user may also attach photos of the dish as context.
 
-IMPORTANT RULES:
-- Return ONLY valid JSON matching the exact schema below. No other text.
-- Return the COMPLETE recipe, not just the changed parts.
-- Preserve all fields that aren't affected by the change.
-- For ingredients, preserve the structure exactly (measurements array with amount/unit, note, raw, section fields).
-
-JSON Schema:
-{
-  "title": "string",
-  "description": "string or null",
-  "ingredients": [
-    {
-      "item": "string",
-      "measurements": [{"amount": "string or null", "unit": "string or null"}],
-      "note": "string or null",
-      "raw": "string or null",
-      "section": "string or null"
-    }
-  ],
-  "instructions": "string",
-  "source_url": "string or null",
-  "source_name": "string or null",
-  "tags": ["string"],
-  "servings": "string or null",
-  "prep_time": "string or null",
-  "cook_time": "string or null",
-  "total_time": "string or null",
-  "rating": "integer or null",
-  "difficulty": "string or null",
-  "nutritional_info": "string or null",
-  "notes": "string or null"
-}"#
-    .to_string()
+How to work:
+- Change only what the request needs. Every edit tool changes one thing; anything you don't touch stays exactly as it is.
+- Look things up rather than guessing: lookup_ingredient gives catalog grams per cup, grams per piece and calories per 100 g, for unit conversions and calorie targets. scale_recipe multiplies every amount at once. list_tags and search_recipes show the user's own tags and recipes.
+- Numbers shift after you add or remove an ingredient or step; the tool's reply says so. Keep track, or work from the end of the list backwards.
+- Write ingredient lines the way a recipe would ("2 cups flour, sifted"); they are parsed into amount, unit, item and note.
+- When the recipe says what the user asked for, call finish with a short summary of what you changed. If the request can't be done, change nothing and say why in the summary."#
+        .to_string()
 }
 
-/// Render the user message with the recipe and instruction.
-pub fn render_edit_recipe_user_prompt(recipe_json: &str, instruction: &str) -> String {
+/// Render the user message with the recipe and the request.
+pub fn render_edit_recipe_user_prompt(recipe: &str, instruction: &str) -> String {
     format!(
-        "Here is the recipe:\n\n{recipe_json}\n\nIf reference photos are attached to this message, use them as additional context when they help.\n\nApply this change: {instruction}",
-        recipe_json = recipe_json,
-        instruction = instruction
+        "Here is the recipe:\n\n{recipe}\nIf photos are attached, use them as context when they help.\n\nThe change I want: {instruction}"
     )
 }
 
@@ -58,16 +30,13 @@ mod tests {
     #[test]
     fn test_render_system_prompt() {
         let prompt = render_edit_recipe_system_prompt();
-        assert!(prompt.contains("recipe modification assistant"));
-        assert!(prompt.contains("JSON Schema"));
-        assert!(prompt.contains("ingredients"));
+        assert!(prompt.contains("You edit a recipe"));
+        assert!(prompt.contains("finish"));
     }
 
     #[test]
     fn test_render_user_prompt() {
-        let recipe = r#"{"title": "Chicken Stir Fry", "instructions": "Cook chicken"}"#;
-        let instruction = "make this vegan";
-        let prompt = render_edit_recipe_user_prompt(recipe, instruction);
+        let prompt = render_edit_recipe_user_prompt("Title: Chicken Stir Fry\n", "make this vegan");
         assert!(prompt.contains("Chicken Stir Fry"));
         assert!(prompt.contains("make this vegan"));
     }

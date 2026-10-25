@@ -9,14 +9,10 @@ Method | HTTP request | Description
 [**estimate_calories**](RecipesApi.md#estimate_calories) | **POST** /api/recipes/estimate-calories | 
 [**export_all_recipes**](RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 [**export_recipe**](RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
-[**generate_description**](RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
 [**generate_photo**](RecipesApi.md#generate_photo) | **POST** /api/recipes/{id}/generate-photo | 
 [**get_recipe**](RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
-[**normalize_title**](RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
-[**reparse_all_ingredients**](RecipesApi.md#reparse_all_ingredients) | **POST** /api/recipes/reparse-ingredients | Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-[**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrape_photo**](RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 
@@ -159,34 +155,6 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## generate_description
-
-> models::GenerateDescriptionResponse generate_description(id)
-
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **uuid::Uuid** | Recipe ID | [required] |
-
-### Return type
-
-[**models::GenerateDescriptionResponse**](GenerateDescriptionResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## generate_photo
 
 > models::GeneratePhotoResponse generate_photo(id)
@@ -291,87 +259,6 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::VersionListResponse**](VersionListResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## normalize_title
-
-> models::NormalizeTitleResponse normalize_title(id)
-
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **uuid::Uuid** | Recipe ID | [required] |
-
-### Return type
-
-[**models::NormalizeTitleResponse**](NormalizeTitleResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## reparse_all_ingredients
-
-> models::ReparseIngredientsResponse reparse_all_ingredients()
-Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**models::ReparseIngredientsResponse**](ReparseIngredientsResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## rescrape
-
-> models::RescrapeResponse rescrape(id)
-
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **uuid::Uuid** | Recipe ID | [required] |
-
-### Return type
-
-[**models::RescrapeResponse**](RescrapeResponse.md)
 
 ### Authorization
 

@@ -2,7 +2,6 @@
 apis/AuthApi.ts
 apis/ClientLogsApi.ts
 apis/EditRecipeApi.ts
-apis/EnrichApi.ts
 apis/ImportApi.ts
 apis/IngredientNamesApi.ts
 apis/MealPlansApi.ts
@@ -40,11 +39,9 @@ docs/DerivedMeasurement.md
 docs/Direction.md
 docs/EditRecipeApi.md
 docs/EditRecipeRequest.md
-docs/EnrichApi.md
 docs/ErrorCode.md
 docs/ErrorResponse.md
 docs/EstimateCaloriesRequest.md
-docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
 docs/ImportApi.md
 docs/ImportExtractionMethod.md
@@ -79,7 +76,6 @@ docs/NormalizeOpInfo.md
 docs/NormalizeOpsResponse.md
 docs/NormalizeProposalResponse.md
 docs/NormalizeRequest.md
-docs/NormalizeTitleResponse.md
 docs/NormalizedRecipe.md
 docs/OpKind.md
 docs/OpResult.md
@@ -94,7 +90,6 @@ docs/RecipeSummary.md
 docs/RecipesApi.md
 docs/RenameTagRequest.md
 docs/RenameTagResponse.md
-docs/ReparseIngredientsResponse.md
 docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
@@ -154,7 +149,6 @@ models/EditRecipeRequest.ts
 models/ErrorCode.ts
 models/ErrorResponse.ts
 models/EstimateCaloriesRequest.ts
-models/GenerateDescriptionResponse.ts
 models/GeneratePhotoResponse.ts
 models/ImportExtractionMethod.ts
 models/ImportFromPhotosRequest.ts
@@ -185,7 +179,6 @@ models/NormalizeOpInfo.ts
 models/NormalizeOpsResponse.ts
 models/NormalizeProposalResponse.ts
 models/NormalizeRequest.ts
-models/NormalizeTitleResponse.ts
 models/NormalizedRecipe.ts
 models/OpKind.ts
 models/OpResult.ts
@@ -198,7 +191,6 @@ models/RecipeResponse.ts
 models/RecipeSummary.ts
 models/RenameTagRequest.ts
 models/RenameTagResponse.ts
-models/ReparseIngredientsResponse.ts
 models/RescrapeResponse.ts
 models/RetryScrapeResponse.ts
 models/ScrapeJobResponse.ts

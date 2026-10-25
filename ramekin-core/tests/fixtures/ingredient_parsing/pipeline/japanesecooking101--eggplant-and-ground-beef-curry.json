@@ -131,15 +131,15 @@
     {
       "raw": "4 servings Steamed Rice",
       "expected": {
-        "item": "servings Steamed Rice",
+        "item": "Steamed Rice",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "serving"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
     },
     {

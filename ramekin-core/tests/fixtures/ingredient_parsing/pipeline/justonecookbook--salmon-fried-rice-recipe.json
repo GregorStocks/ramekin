@@ -111,11 +111,11 @@
     {
       "raw": "2 servings cooked Japanese short-grain rice (typically 150 g per serving; cooled or preferably day-old; frozen cooked rice works well)",
       "expected": {
-        "item": "servings cooked Japanese short-grain rice",
+        "item": "cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "serving"
           }
         ],
         "note": "typically 150 g per serving; cooled or preferably day-old; frozen cooked rice works well",

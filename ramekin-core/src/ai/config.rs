@@ -24,9 +24,10 @@ pub const DEFAULT_EXTRACTION_MODEL: &str = "anthropic/claude-sonnet-5.5";
 /// timeouts, at about $0.07 a photo.
 pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-3.1-flash-image";
 /// Default model for Edit with AI (`for_recipe_edit`): a frontier model, since
-/// the user asks for arbitrary changes and reviews the whole rewritten recipe.
-/// In `make ai-eval SUITE=edit-recipe` it answered every case validly in
-/// 17-30 s, at about $0.07 an edit.
+/// the user asks for arbitrary changes. In `make ai-eval SUITE=edit-recipe`'s
+/// tool loop it answered every case validly and was judged best or tied best
+/// on all of them, at about $0.08 an edit (gemini-3.8-flash failed to finish
+/// 2 of 13; claude-sonnet-5.5 was good on all, best on 1).
 pub const DEFAULT_EDIT_MODEL: &str = "anthropic/claude-opus-5.5";
 
 /// Default rate limit between requests in milliseconds.
@@ -41,10 +42,9 @@ pub const INGREDIENT_TIMEOUT_SECS: u64 = 120;
 /// normalize ops in the request, so iOS gives that request 180 s and the web
 /// client sets no timeout.
 pub const EXTRACTION_TIMEOUT_SECS: u64 = 60;
-/// The least request timeout for Edit with AI, which also writes out a whole
-/// recipe: 17-30 s for the edit model on the eval's recipes. The user waits on
-/// it in the request, so it stays inside the clients' 60 s (URLSession's
-/// default included).
+/// The least request timeout for one turn of Edit with AI's tool loop. It runs
+/// as a background job, so nothing waits on it in a request; a turn is a few
+/// tool calls after the model's hidden reasoning.
 pub const EDIT_RECIPE_TIMEOUT_SECS: u64 = 50;
 /// The least request timeout for generating a recipe photo: 10-30 s for the
 /// current image models (the default about 13 s). The user waits on it in the
@@ -176,7 +176,7 @@ impl AiConfig {
     }
 
     /// This configuration for Edit with AI: its model, and a timeout long
-    /// enough to write out a whole recipe.
+    /// enough for one turn of its tool loop.
     pub fn for_recipe_edit(&self) -> Self {
         Self {
             model: self.edit_model.clone(),

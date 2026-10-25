@@ -88,6 +88,12 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
+    "beverages, protein powder whey based": {
+      "scoop": {
+        "grams": 30.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
     "bread, french or vienna (includes sourdough)": {
       "cup": {
         "grams": 35.0,
@@ -505,12 +511,6 @@
     "lemon grass (citronella), raw": {
       "stalk": {
         "grams": 25.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "lemons, raw, without peel": {
-      "slice": {
-        "grams": 7.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },

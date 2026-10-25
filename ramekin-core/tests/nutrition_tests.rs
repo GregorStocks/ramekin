@@ -403,6 +403,7 @@ fn counted_ingredients_use_usda_piece_weights() {
         (count("eggs", "3"), "eggs", 150.0),
         (ingredient("eggs", "2", "large"), "eggs", 100.0),
         (ingredient("eggs", "1", "extra-large"), "eggs", 56.0),
+        (parse_ingredient("3 extra large eggs"), "eggs", 168.0),
         (ingredient("egg yolks", "2", "large"), "egg yolks", 34.0),
         (ingredient("garlic", "2", "cloves"), "garlic", 6.0),
         (ingredient("onion", "1", "medium"), "onion", 110.0),
@@ -587,11 +588,20 @@ fn informal_measures_weigh_by_convention() {
         kcal("2 scoops vanilla ice cream").min,
         kcal("1 cup vanilla ice cream").min
     ));
-    // A scoop of powder depends on the brand's scoop.
+    // An ice-cream scoop is never a question for the model.
+    let ice_cream = estimate(&[parse_ingredient("2 scoops vanilla ice cream")], None, 1.0).unwrap();
+    assert!(ice_cream.weight_gaps.is_empty());
+    // A scoop of powder depends on the brand's scoop, so it's estimated per
+    // food (a whey scoop is ~30 g by label convention).
     let powder = estimate(&[parse_ingredient("1 scoop protein powder")], None, 1.0).unwrap();
-    assert_eq!(
-        powder.unknown_ingredients[0].reason,
-        "Unsupported quantity unit"
+    assert!(close(
+        powder.known_calories.unwrap().min,
+        kcal("30 g protein powder").min
+    ));
+    assert!(
+        powder.lines[0].text.ends_with("(estimated weight)"),
+        "{}",
+        powder.lines[0].text
     );
 }
 
@@ -1598,6 +1608,33 @@ fn a_weight_in_the_note_weighs_a_counted_line() {
 }
 
 #[test]
+fn a_weight_per_person_weighs_each_portion() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    assert_eq!(
+        calories("2 portions cooked Japanese short-grain rice (approx. 150 g per person)"),
+        calories("300 g cooked Japanese short-grain rice")
+    );
+    assert_eq!(
+        calories("3 servings cooked white rice (100 g per serving)"),
+        calories("300 g cooked white rice")
+    );
+    // A portion or serving with no weight can't be weighed.
+    assert_eq!(
+        calories("2 portions cooked Japanese short-grain rice"),
+        None
+    );
+    assert_eq!(
+        calories("2 servings cooked Japanese short-grain rice"),
+        None
+    );
+}
+
+#[test]
 fn alternatives_count_the_first_and_say_so() {
     let line = |item: &str| {
         let result = estimate(&[ingredient(item, "100", "g")], None, 1.0).unwrap();
@@ -1724,4 +1761,120 @@ fn every_estimated_weight_is_used() {
         }
     }
     assert!(unused.is_empty(), "unused estimated weights: {unused:#?}");
+}
+
+#[test]
+fn counted_nuts_and_sausages_weigh_by_the_piece() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    // A bare count of nuts is that many nuts (halves, for pecans and
+    // walnuts), of hot dogs or smoked sausages that many links, and of candy
+    // that many pieces.
+    for (item, amount, grams) in [
+        ("cashew nuts", "15", 22.5),
+        ("whole cashewnuts", "4", 6.0),
+        ("pecan halves", "12", 18.0),
+        ("walnut halves", "12", 24.0),
+        ("hot dogs", "8", 416.0),
+        ("hot dog sausages", "3", 156.0),
+        ("smoked sausages", "4", 272.0),
+        ("caramels", "28", 282.8),
+        ("gummy worms", "24", 177.6),
+        ("fun size butterfinger candy bars", "2", 36.0),
+    ] {
+        let counted = calories(item, amount, "").expect(item);
+        let weighed = calories(item, &grams.to_string(), "g").expect(item);
+        assert!((counted - weighed).abs() < 1e-6, "{amount} {item}");
+    }
+}
+
+#[test]
+fn caramels_are_candies_not_caramel_sauce() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    assert_ne!(
+        calories("caramels", "100", "g"),
+        calories("caramel sauce", "100", "g")
+    );
+}
+
+#[test]
+fn pieces_usda_weighs_under_another_name() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (item, amount, unit, grams) in [
+        // SR names the piece by its alternatives: "wedge or slice".
+        ("lemon", "2", "wedge", 14.0),
+        ("lemon", "3", "slices", 21.0),
+        // A bundle is a bunch.
+        ("scallions", "1", "bundle", 105.0),
+        ("green onion", "2", "bundles", 210.0),
+        // A stick of rhubarb is a stalk.
+        ("rhubarb", "2", "stick", 102.0),
+        // Instant ramen is a package of noodles.
+        ("instant ramen noodles", "1", "package", 81.0),
+        ("instant ramen noodles", "2", "", 162.0),
+        // Canned anchovies are fillets.
+        ("anchovy", "1", "fillet", 4.0),
+    ] {
+        let counted = calories(item, amount, unit).expect(item);
+        let weighed = calories(item, &grams.to_string(), "g").expect(item);
+        assert!((counted - weighed).abs() < 1e-6, "{amount} {unit} {item}");
+    }
+}
+
+#[test]
+fn ginger_pieces_sized_in_the_note_or_item_weigh_by_the_inch() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    let inches = |size: &str| calories(&format!("1 {size}-inch piece fresh ginger"));
+    for (raw, size) in [
+        // The size in the note of a counted piece.
+        ("1 (2-inch-long) piece fresh ginger", "2"),
+        (
+            "1 piece (1 1/2 inches) fresh ginger, peeled and chopped",
+            "1 1/2",
+        ),
+        (
+            "1 piece fresh ginger ((approx 1/2 inch) peeled and chopped)",
+            "1/2",
+        ),
+        ("1 piece peeled ginger (2\")", "2"),
+        // The unit left in the item.
+        ("1 inch knob fresh ginger ((sliced thin))", "1"),
+        ("1 inch piece ginger", "1"),
+        ("1/2 inch ginger (juliennes)", "1/2"),
+        ("1.5 inches fresh ginger ((sliced into 8 coins))", "1.5"),
+    ] {
+        assert!(calories(raw).is_some(), "{raw}");
+        assert_eq!(calories(raw), inches(size), "{raw}");
+    }
+    // A leading inch size behind a piece unit sizes each piece.
+    assert_eq!(
+        calories("2 piece 1-inch fresh ginger root"),
+        calories("2 1-inch pieces fresh ginger root")
+    );
+    // A note that sizes nothing leaves a bare piece unknown, as before.
+    assert_eq!(calories("1 piece fresh ginger, peeled"), None);
+    // A stated weight still beats the inch size.
+    assert_eq!(
+        calories("1/2 inch (5 grams) ginger"),
+        calories("5 grams ginger")
+    );
 }

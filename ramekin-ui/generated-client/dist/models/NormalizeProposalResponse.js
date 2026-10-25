@@ -39,6 +39,7 @@ export function NormalizeProposalResponseFromJSONTyped(json, ignoreDiscriminator
         'ops': json['ops'],
         'proposed': json['proposed'] == null ? undefined : NormalizedRecipeFromJSON(json['proposed']),
         'status': json['status'],
+        'summary': json['summary'] == null ? undefined : json['summary'],
     };
 }
 export function NormalizeProposalResponseToJSON(json) {
@@ -54,5 +55,6 @@ export function NormalizeProposalResponseToJSONTyped(value, ignoreDiscriminator 
         'ops': value['ops'],
         'proposed': NormalizedRecipeToJSON(value['proposed']),
         'status': value['status'],
+        'summary': value['summary'],
     };
 }

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ops** | **List[str]** | The ops the job runs, in run order. | 
 **proposed** | [**NormalizedRecipe**](NormalizedRecipe.md) | What accepting saves; absent until the job completes. | [optional] 
 **status** | **str** | The job&#39;s status, as &#x60;GET /api/scrape/{id}&#x60; reports it. | 
+**summary** | **str** | What an Edit with AI run says it changed, once it completes. | [optional] 
 
 ## Example
 

@@ -1,23 +1,13 @@
 import { extractApiError } from "./recipeFormHelpers";
 
 export const AI_OPERATIONS = {
-  normalizeTitle: {
-    bulkLabel: "Auto-rename",
-    individualLabel: "Auto-rename",
-    progressVerb: "Renaming",
-  },
-  generateDescription: {
-    bulkLabel: "Generate descriptions",
-    individualLabel: "Generate Description",
-    progressVerb: "Describing",
+  reNormalize: {
+    individualLabel: "Re-normalize…",
   },
   generatePhoto: {
     bulkLabel: "Generate AI photos",
     individualLabel: "Generate AI Photo",
     progressVerb: "Generating photos",
-  },
-  enrichRecipe: {
-    individualLabel: "Enrich with AI",
   },
   editRecipe: {
     individualLabel: "Edit with AI…",

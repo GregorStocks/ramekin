@@ -171,6 +171,7 @@ diesel::table! {
         expected_version_id -> Nullable<UuidText>,
         idempotency_key -> Nullable<Text>,
         normalize_ops -> Nullable<Json>,
+        edit_request -> Nullable<Json>,
     }
 }
 

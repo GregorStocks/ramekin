@@ -960,11 +960,14 @@ pub fn unsized_unit(unit: &str) -> Option<String> {
 
 /// Normalize a counted unit to a portion key: lowercase, "extra-large" ->
 /// "extra large", and the first word singular ("cloves" -> "clove"). Matches
-/// the importer's `portion_key`.
+/// the importer's `portion_key`. A bundle is a bunch ("1 bundle scallions").
 pub fn piece_unit(unit: &str) -> String {
     let unit = normalize(&unit.replace('-', " "));
     let (first, rest) = unit.split_once(' ').unwrap_or((&unit, ""));
-    let first = singular(first);
+    let first = match singular(first).as_str() {
+        "bundle" => "bunch".to_string(),
+        first => first.to_string(),
+    };
     if rest.is_empty() {
         first
     } else {
@@ -999,6 +1002,14 @@ pub fn grams_per_piece(entry: &Entry, unit: Option<&str>) -> Option<f64> {
     };
     let key = piece_unit(unit);
     if let Some(&grams) = portions.get(&key) {
+        return Some(grams);
+    }
+    // A portion USDA names by alternatives ("wedge or slice", "slice or
+    // wedge") weighs either.
+    if let Some(&grams) = portions
+        .iter()
+        .find_map(|(name, grams)| name.split(" or ").any(|alt| alt == key).then_some(grams))
+    {
         return Some(grams);
     }
     // A sized piece ("small head") uses the piece at that size ("head
