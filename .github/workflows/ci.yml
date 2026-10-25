@@ -32,9 +32,8 @@ jobs:
       - name: Create Python venv
         run: make venv
 
-      # The pretool-hook tests execute .claude/hooks/agent-issues-pretool-hook.sh,
-      # which self-installs agent-issues from GitHub HEAD if the binary is missing.
-      # Preinstall it pinned to a rev so tests never depend on that repo's tip.
+      # Preinstall agent-issues pinned to a rev so CI never depends on that
+      # repo's tip.
       # --force because the setup action's tools cache restores ~/.local/bin with
       # stale shims but not uv's tool environments.
       - name: Install agent-issues (pinned)
