@@ -22,11 +22,11 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     public var failedAtStep: String?
     /** The scrape job ID */
     public var id: UUID
-    /** Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes have it from the start) */
+    /** Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes and normalize jobs have it from the start) */
     public var recipeId: UUID?
     /** Number of retry attempts */
     public var retryCount: Int
-    /** Current job status (pending, scraping, parsing, enriching, completed, failed). While \"enriching\" the recipe is saved and `recipe_id` is set; AI enrichment may still update it until the job completes. */
+    /** Current job status (pending, scraping, parsing, normalizing, completed, failed). While an import or scrape is \"normalizing\" the recipe is saved and `recipe_id` is set; normalize ops may still update it until the job completes. A manual normalize job saves nothing: it ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`). */
     public var status: String
     /** Per-step state for the status page (ordered by pipeline step). */
     public var steps: [StepState]

@@ -680,16 +680,6 @@ fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
                     // FetchImages is skipped in CLI, ParseIngredients runs before save
                     return FinalStatus::FailedAtSave;
                 }
-                PipelineStep::EnrichNormalizeTitle
-                | PipelineStep::ApplyNormalizedTitle
-                | PipelineStep::EnrichGenerateDescription
-                | PipelineStep::ApplyGeneratedDescription => {
-                    return FinalStatus::FailedAtSave;
-                }
-                PipelineStep::EnrichAutoTag | PipelineStep::ApplyAutoTags => {
-                    // Enrichment failures are expected - don't fail the job
-                    // Continue to check remaining steps
-                }
             };
         }
     }

@@ -140,6 +140,7 @@ extension RecipeDetailView {
                         createdAt: recipe.updatedAt,
                         id: recipe.versionId,
                         isCurrent: false,
+                        normalizeOps: recipe.normalizeOps,
                         title: recipe.title,
                         versionSource: recipe.versionSource
                     )

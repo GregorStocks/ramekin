@@ -72,6 +72,7 @@ final class RecipeScaleSupportTests: XCTestCase {
                 )
             ],
             instructions: "Mix.",
+            normalizeOps: [],
             notes: nil,
             nutritionalInfo: nil,
             photoIds: [],

@@ -1,4 +1,4 @@
-"""Seeding waits for saved recipes and reports asynchronous enrichment failures."""
+"""Seeding waits for saved recipes and reports asynchronous normalize failures."""
 
 import gzip
 import json
@@ -142,7 +142,7 @@ def test_seed_reports_finished_jobs_and_preserves_recipes(
     )
     assert result.returncode == 0, result.stderr
     assert "Recipes saved: 1" in result.stderr
-    assert f"Recipes with enrichment failures: {int(auth_failure)}" in result.stderr
+    assert f"Recipes with normalize failures: {int(auth_failure)}" in result.stderr
     assert "test-api-key" not in result.stderr
 
     config = Configuration(host=server_url)
@@ -161,7 +161,7 @@ def test_seed_reports_finished_jobs_and_preserves_recipes(
         job = ScrapeApi(client).get_scrape(job_id)
         assert job.status == ("failed" if auth_failure else "completed")
         if auth_failure:
-            assert "Recipe saved, but enrichment failed" in result.stderr
+            assert "Recipe saved, but normalizing it failed" in result.stderr
             failed = next(step for step in job.steps if step.status == "failed")
             assert "Missing Authentication header" in failed.error
             assert recipe.title == title

@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
 from typing import Optional, Set
@@ -31,9 +31,10 @@ class VersionSummary(BaseModel):
     created_at: datetime
     id: UUID
     is_current: StrictBool
+    normalize_ops: List[StrictStr] = Field(description="For a `normalize` version, the op ids it applied, in run order.")
     title: StrictStr
     version_source: StrictStr
-    __properties: ClassVar[List[str]] = ["created_at", "id", "is_current", "title", "version_source"]
+    __properties: ClassVar[List[str]] = ["created_at", "id", "is_current", "normalize_ops", "title", "version_source"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class VersionSummary(BaseModel):
             "created_at": obj.get("created_at"),
             "id": obj.get("id"),
             "is_current": obj.get("is_current"),
+            "normalize_ops": obj.get("normalize_ops"),
             "title": obj.get("title"),
             "version_source": obj.get("version_source")
         })

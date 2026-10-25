@@ -38,6 +38,11 @@ Class | Method | HTTP request | Description
 *IngredientNamesAPI* | [**getIngredientNamesStatus**](docs/IngredientNamesAPI.md#getingredientnamesstatus) | **GET** /api/ingredient-names/status | 
 *IngredientNamesAPI* | [**retryIngredientNames**](docs/IngredientNamesAPI.md#retryingredientnames) | **POST** /api/ingredient-names/retry | 
 *MealPlansAPI* | [**listMealPlans**](docs/MealPlansAPI.md#listmealplans) | **GET** /api/meal-plans | 
+*NormalizeAPI* | [**acceptNormalizeProposal**](docs/NormalizeAPI.md#acceptnormalizeproposal) | **POST** /api/recipes/{id}/normalize/{job_id}/accept | 
+*NormalizeAPI* | [**getNormalizeProposal**](docs/NormalizeAPI.md#getnormalizeproposal) | **GET** /api/recipes/{id}/normalize/{job_id} | 
+*NormalizeAPI* | [**listNormalizeOps**](docs/NormalizeAPI.md#listnormalizeops) | **GET** /api/recipes/normalize-ops | 
+*NormalizeAPI* | [**normalizeRecipe**](docs/NormalizeAPI.md#normalizerecipe) | **POST** /api/recipes/{id}/normalize | 
+*NormalizeAPI* | [**normalizeRecipes**](docs/NormalizeAPI.md#normalizerecipes) | **POST** /api/recipes/normalize | 
 *PhotosAPI* | [**getPhoto**](docs/PhotosAPI.md#getphoto) | **GET** /api/photos/{id} | 
 *PhotosAPI* | [**getPhotoThumbnail**](docs/PhotosAPI.md#getphotothumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosAPI* | [**upload**](docs/PhotosAPI.md#upload) | **POST** /api/photos | 
@@ -79,7 +84,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AcceptNormalizeResponse](docs/AcceptNormalizeResponse.md)
  - [BookmarkletTokenResponse](docs/BookmarkletTokenResponse.md)
+ - [BulkNormalizeRequest](docs/BulkNormalizeRequest.md)
+ - [BulkNormalizeResponse](docs/BulkNormalizeResponse.md)
+ - [BulkNormalizeResult](docs/BulkNormalizeResult.md)
  - [CalorieEstimateResponse](docs/CalorieEstimateResponse.md)
  - [CalorieLine](docs/CalorieLine.md)
  - [CalorieRange](docs/CalorieRange.md)
@@ -124,7 +133,14 @@ Class | Method | HTTP request | Description
  - [MealType](docs/MealType.md)
  - [Measurement](docs/Measurement.md)
  - [ModelErrorResponse](docs/ModelErrorResponse.md)
+ - [NormalizeJobResponse](docs/NormalizeJobResponse.md)
+ - [NormalizeOpGroupResponse](docs/NormalizeOpGroupResponse.md)
+ - [NormalizeOpInfo](docs/NormalizeOpInfo.md)
+ - [NormalizeOpsResponse](docs/NormalizeOpsResponse.md)
+ - [NormalizeProposalResponse](docs/NormalizeProposalResponse.md)
+ - [NormalizeRequest](docs/NormalizeRequest.md)
  - [NormalizeTitleResponse](docs/NormalizeTitleResponse.md)
+ - [NormalizedRecipe](docs/NormalizedRecipe.md)
  - [OpKind](docs/OpKind.md)
  - [OpResult](docs/OpResult.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)

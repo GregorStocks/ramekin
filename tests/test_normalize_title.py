@@ -48,7 +48,8 @@ def test_normalize_title_applies_and_carries_tags_forward(authed_api_client):
 
     recipe = recipes_api.get_recipe(recipe_id)
     assert recipe.title == "Garlic Shrimp Pasta"
-    assert recipe.version_source == "normalize_title"
+    assert recipe.version_source == "normalize"
+    assert recipe.normalize_ops == ["normalize_title"]
     assert sorted(recipe.tags) == ["dinner", "seafood"]
 
 

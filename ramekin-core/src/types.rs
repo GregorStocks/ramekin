@@ -1,7 +1,8 @@
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-/// Pipeline steps in execution order
+/// The CLI pipeline's steps in execution order. Normalize ops are not run by
+/// the CLI; see `pipeline::NormalizeOp`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum PipelineStep {
@@ -10,12 +11,6 @@ pub enum PipelineStep {
     FetchImages,
     ParseIngredients,
     SaveRecipe,
-    EnrichNormalizeTitle,
-    ApplyNormalizedTitle,
-    EnrichGenerateDescription,
-    ApplyGeneratedDescription,
-    EnrichAutoTag,
-    ApplyAutoTags,
 }
 
 impl PipelineStep {
@@ -26,12 +21,6 @@ impl PipelineStep {
         PipelineStep::FetchImages,
         PipelineStep::ParseIngredients,
         PipelineStep::SaveRecipe,
-        PipelineStep::EnrichNormalizeTitle,
-        PipelineStep::ApplyNormalizedTitle,
-        PipelineStep::EnrichGenerateDescription,
-        PipelineStep::ApplyGeneratedDescription,
-        PipelineStep::EnrichAutoTag,
-        PipelineStep::ApplyAutoTags,
     ];
 
     /// Steps that are DB-specific (CLI can skip or stub these)
@@ -46,12 +35,6 @@ impl PipelineStep {
             PipelineStep::FetchImages => "fetch_images",
             PipelineStep::ParseIngredients => "parse_ingredients",
             PipelineStep::SaveRecipe => "save_recipe",
-            PipelineStep::EnrichNormalizeTitle => "enrich_normalize_title",
-            PipelineStep::ApplyNormalizedTitle => "apply_normalized_title",
-            PipelineStep::EnrichGenerateDescription => "enrich_generate_description",
-            PipelineStep::ApplyGeneratedDescription => "apply_generated_description",
-            PipelineStep::EnrichAutoTag => "enrich_auto_tag",
-            PipelineStep::ApplyAutoTags => "apply_auto_tags",
         }
     }
 
@@ -63,23 +46,9 @@ impl PipelineStep {
             "fetch_images" => Some(PipelineStep::FetchImages),
             "parse_ingredients" => Some(PipelineStep::ParseIngredients),
             "save_recipe" => Some(PipelineStep::SaveRecipe),
-            "enrich_normalize_title" => Some(PipelineStep::EnrichNormalizeTitle),
-            "apply_normalized_title" => Some(PipelineStep::ApplyNormalizedTitle),
-            "enrich_generate_description" => Some(PipelineStep::EnrichGenerateDescription),
-            "apply_generated_description" => Some(PipelineStep::ApplyGeneratedDescription),
-            "enrich_auto_tag" => Some(PipelineStep::EnrichAutoTag),
-            "apply_auto_tags" => Some(PipelineStep::ApplyAutoTags),
             _ => None,
         }
     }
-}
-
-/// Output from the enrich_auto_tag step
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct EnrichAutoTagOutput {
-    pub success: bool,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub error: Option<String>,
 }
 
 /// Identifies which extraction method was used

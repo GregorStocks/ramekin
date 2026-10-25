@@ -3,6 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::scraping;
+use crate::scraping::plan::JobPlan;
 use crate::scraping::status::{build_step_states, StepState};
 use axum::{
     extract::{Path, State},
@@ -18,15 +19,17 @@ use utoipa::ToSchema;
 pub struct ScrapeJobResponse {
     /// The scrape job ID
     pub id: Uuid,
-    /// Current job status (pending, scraping, parsing, enriching, completed,
-    /// failed). While "enriching" the recipe is saved and `recipe_id` is set;
-    /// AI enrichment may still update it until the job completes.
+    /// Current job status (pending, scraping, parsing, normalizing, completed,
+    /// failed). While an import or scrape is "normalizing" the recipe is
+    /// saved and `recipe_id` is set; normalize ops may still update it until
+    /// the job completes. A manual normalize job saves nothing: it ends with
+    /// a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
     pub status: String,
     /// URL being scraped (optional for imports)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
     /// Recipe ID once the recipe is saved (also set on a job that failed
-    /// after saving; rescrapes have it from the start)
+    /// after saving; rescrapes and normalize jobs have it from the start)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub recipe_id: Option<Uuid>,
     /// Error message if failed
@@ -85,8 +88,8 @@ pub async fn get_scrape(
     let can_retry = job.status == scraping::STATUS_FAILED;
 
     let recipe_id = match job.recipe_id {
-        // A job that fails during enrichment has still saved its recipe.
-        None if job.status == scraping::STATUS_ENRICHING
+        // A job that fails while normalizing has still saved its recipe.
+        None if job.status == scraping::STATUS_NORMALIZING
             || job.status == scraping::STATUS_FAILED =>
         {
             match scraping::saved_recipe_id(&pool, job.id).await {
@@ -103,17 +106,14 @@ pub async fn get_scrape(
     // Build the per-step state list for the status page. `failed_at_step`
     // now stores the real pipeline step name (e.g. `"fetch_html"`), so we
     // can pass it straight through to the status builder.
-    let steps = match build_step_states(
-        &pool,
-        job.id,
-        &job.status,
-        job.current_step.as_deref(),
-        job.current_step_started_at,
-        job.failed_at_step.as_deref(),
-        job.error_message.as_deref(),
-    )
-    .await
-    {
+    let plan = match JobPlan::for_job(&job) {
+        Ok(plan) => plan,
+        Err(e) => {
+            tracing::error!("Failed to plan scrape job: {}", e);
+            return ApiError::internal("Failed to get scrape job").into_response();
+        }
+    };
+    let steps = match build_step_states(&pool, &job, &plan).await {
         Ok(s) => s,
         Err(e) => {
             tracing::error!("Failed to build step states: {}", e);

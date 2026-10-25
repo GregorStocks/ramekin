@@ -84,16 +84,16 @@ final class RecipeDetailViewModel: ObservableObject {
     @Published var isDeleting = false
     @Published var deleteError: String?
     @Published var isRescraping = false
-    /// The rescraped recipe is saved and shown; AI enrichment (title,
-    /// description, tags) is still running and will reload it when done.
-    @Published var isFinishingRescrapeEnrichment = false
+    /// The rescraped recipe is saved and shown; its normalize ops (title,
+    /// description, tags) are still running and will reload it when done.
+    @Published var isFinishingRescrapeNormalize = false
     @Published var rescrapeError: String?
     @Published var showingRescrapeConfirmation = false
     @Published var isEnriching = false
     @Published var isGeneratingPhoto = false
     @Published var isGeneratingDescription = false
     @Published var isNormalizingTitle = false
-    @Published var autoEnrichError: String?
+    @Published var aiActionError: String?
     @Published var recipeScale: Double = 1
     @Published var customScaleInput = ""
     @Published var isExporting = false
@@ -127,10 +127,10 @@ extension RecipeDetailViewModel {
     }
 
     var actionsDisabledForHistoricalVersion: Bool {
-        isViewingHistoricalVersion || isReverting || isRescraping || isAutoEnrichmentRunning || isDeleting
+        isViewingHistoricalVersion || isReverting || isRescraping || isAiActionRunning || isDeleting
     }
 
-    var isAutoEnrichmentRunning: Bool {
+    var isAiActionRunning: Bool {
         isEnriching || isGeneratingPhoto || isGeneratingDescription || isNormalizingTitle
     }
 
@@ -138,7 +138,7 @@ extension RecipeDetailViewModel {
         compareSelection.count == 2
     }
 
-    var autoEnrichmentProgressLabel: String? {
+    var aiActionProgressLabel: String? {
         if isEnriching { return "Enriching recipe…" }
         if isGeneratingPhoto { return "Generating AI photo…" }
         if isGeneratingDescription { return "Generating description…" }
@@ -327,12 +327,12 @@ extension RecipeDetailViewModel {
 
     func rescrapeFromSource() async {
         isRescraping = true
-        isFinishingRescrapeEnrichment = false
+        isFinishingRescrapeNormalize = false
         rescrapeError = nil
         error = nil
         defer {
             isRescraping = false
-            isFinishingRescrapeEnrichment = false
+            isFinishingRescrapeNormalize = false
         }
 
         do {
@@ -351,24 +351,24 @@ extension RecipeDetailViewModel {
                     await loadRecipe()
                     return
                 } else if job.status == "failed" {
-                    if isFinishingRescrapeEnrichment {
-                        // Other enrichment branches may have landed before
-                        // this one failed.
+                    if isFinishingRescrapeNormalize {
+                        // The rescraped recipe was saved before normalizing
+                        // failed; show the latest version.
                         await loadRecipe()
                     }
                     rescrapeError = job.error ?? "Unknown error"
                     return
-                } else if job.status == "enriching" && !isFinishingRescrapeEnrichment {
+                } else if job.status == "normalizing" && !isFinishingRescrapeNormalize {
                     // The rescraped recipe is saved: show it now and reload
-                    // again once AI enrichment finishes.
+                    // again once its normalize ops finish.
                     await loadRecipe()
                     isRescraping = false
-                    isFinishingRescrapeEnrichment = true
+                    isFinishingRescrapeNormalize = true
                 }
 
-                // Enrichment has no deadline here: AI calls can take longer
+                // Normalizing has no deadline here: AI calls can take longer
                 // than this window, and leaving the view cancels the task.
-                if !isFinishingRescrapeEnrichment
+                if !isFinishingRescrapeNormalize
                     && Date().timeIntervalSince(pollStartTime) > timeoutInterval {
                     rescrapeError = "Rescrape timed out"
                     return
@@ -386,7 +386,7 @@ extension RecipeDetailViewModel {
     func enrichWithAI() async {
         guard let recipe else { return }
         isEnriching = true
-        autoEnrichError = nil
+        aiActionError = nil
 
         let content = RecipeContent(
             cookTime: recipe.cookTime,
@@ -411,7 +411,7 @@ extension RecipeDetailViewModel {
             enrichResult = enriched
         } catch is CancellationError {
         } catch {
-            autoEnrichError = "Failed to enrich recipe"
+            aiActionError = "Failed to enrich recipe"
         }
         isEnriching = false
     }
@@ -419,14 +419,14 @@ extension RecipeDetailViewModel {
     func generatePhoto() async {
         guard recipe != nil else { return }
         isGeneratingPhoto = true
-        autoEnrichError = nil
+        aiActionError = nil
 
         do {
             _ = try await api.generatePhoto(recipeId)
             await loadRecipe()
         } catch is CancellationError {
         } catch {
-            autoEnrichError = "Failed to generate AI photo"
+            aiActionError = "Failed to generate AI photo"
         }
         isGeneratingPhoto = false
     }
@@ -434,7 +434,7 @@ extension RecipeDetailViewModel {
     func generateDescription() async {
         guard recipe != nil else { return }
         isGeneratingDescription = true
-        autoEnrichError = nil
+        aiActionError = nil
 
         do {
             let result = try await api.generateDescription(recipeId)
@@ -443,7 +443,7 @@ extension RecipeDetailViewModel {
             }
         } catch is CancellationError {
         } catch {
-            autoEnrichError = "Failed to generate description"
+            aiActionError = "Failed to generate description"
         }
         isGeneratingDescription = false
     }
@@ -451,7 +451,7 @@ extension RecipeDetailViewModel {
     func normalizeTitle() async {
         guard recipe != nil else { return }
         isNormalizingTitle = true
-        autoEnrichError = nil
+        aiActionError = nil
 
         do {
             let result = try await api.normalizeTitle(recipeId)
@@ -460,7 +460,7 @@ extension RecipeDetailViewModel {
             }
         } catch is CancellationError {
         } catch {
-            autoEnrichError = "Failed to normalize title"
+            aiActionError = "Failed to normalize title"
         }
         isNormalizingTitle = false
     }

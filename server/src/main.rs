@@ -9,6 +9,7 @@ mod files;
 mod ids;
 mod ingredient_names;
 mod models;
+mod normalize;
 mod photos;
 mod raw_sql;
 mod recipes;

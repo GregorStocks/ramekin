@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | 
 **id** | **UUID** |  | 
 **isCurrent** | **Bool** |  | 
+**normalizeOps** | **[String]** | For a &#x60;normalize&#x60; version, the op ids it applied, in run order. | 
 **title** | **String** |  | 
 **versionSource** | **String** |  | 
 

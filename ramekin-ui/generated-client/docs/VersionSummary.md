@@ -10,6 +10,7 @@ Name | Type
 `createdAt` | Date
 `id` | string
 `isCurrent` | boolean
+`normalizeOps` | Array&lt;string&gt;
 `title` | string
 `versionSource` | string
 
@@ -23,6 +24,7 @@ const example = {
   "createdAt": null,
   "id": null,
   "isCurrent": null,
+  "normalizeOps": null,
   "title": null,
   "versionSource": null,
 } satisfies VersionSummary

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **ingredients** | [**Vec<models::Ingredient>**](Ingredient.md) |  | 
 **instructions** | **String** |  | 
+**normalize_ops** | **Vec<String>** | For a `normalize` version, the op ids it applied, in run order. | 
 **notes** | Option<**String**> |  | [optional]
 **nutritional_info** | Option<**String**> |  | [optional]
 **photo_ids** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | 

@@ -9,9 +9,8 @@ export default function VersionSourceBadge(props: VersionSourceBadgeProps) {
         return "User Edit";
       case "scrape":
         return "Imported";
-      case "enrich":
-      case "enrichment":
-        return "AI Enriched";
+      case "normalize":
+        return "Normalized";
       case "ai_photo":
         return "AI Photo";
       case "reparse":
@@ -29,11 +28,9 @@ export default function VersionSourceBadge(props: VersionSourceBadgeProps) {
         return "version-source-badge version-source-user";
       case "scrape":
         return "version-source-badge version-source-scrape";
-      case "enrich":
-      case "enrichment":
-        return "version-source-badge version-source-enrich";
+      case "normalize":
       case "ai_photo":
-        return "version-source-badge version-source-enrich";
+        return "version-source-badge version-source-ai";
       default:
         return "version-source-badge";
     }

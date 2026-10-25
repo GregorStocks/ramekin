@@ -1,7 +1,7 @@
 //! Consolidated end-of-pipeline recipe view.
 //!
 //! Assembles the final state of a scraped recipe by combining the outputs of
-//! `extract_recipe` and `parse_ingredients`. AI enrichment outputs are
+//! `extract_recipe` and `parse_ingredients`. AI normalize outputs are
 //! deliberately excluded: they vary with per-machine AI cache state, and the
 //! result must be deterministic given the scrape cache.
 //! Used by the CLI snapshot writer and (eventually) the server scrape-status view.

@@ -24,7 +24,7 @@ pub mod volume_to_weight;
 
 pub use error::{ExtractError, FetchError};
 pub use extract::{extract_recipe, extract_recipe_with_stats};
-pub use fetch::{fetch_bytes, fetch_html};
+pub use fetch::{fetch_bytes, fetch_html, refetch_html};
 pub use http::{
     CacheStats, CachingClient, CachingClientBuilder, DiskCache, HttpClient, MockClient,
     MockResponse,
@@ -34,9 +34,9 @@ pub use tags::{
     format_tag, parse_tag, validate_tag_name, ParsedTag, TagNameError, SEEDED_NAMESPACES,
 };
 pub use types::{
-    EnrichAutoTagOutput, ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod,
-    FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, ParseIngredientsOutput, PipelineStep,
-    RawRecipe, SaveRecipeOutput, StepOutput,
+    ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
+    FetchImagesOutput, ParseIngredientsOutput, PipelineStep, RawRecipe, SaveRecipeOutput,
+    StepOutput,
 };
 pub use volume_to_weight::derived_grams;
 

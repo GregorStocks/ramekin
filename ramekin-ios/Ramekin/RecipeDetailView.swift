@@ -24,8 +24,8 @@ struct RecipeDetailView: View {
         viewModel.actionsDisabledForHistoricalVersion
     }
 
-    var isAutoEnrichmentRunning: Bool {
-        viewModel.isAutoEnrichmentRunning
+    var isAiActionRunning: Bool {
+        viewModel.isAiActionRunning
     }
 
     var canCompareSelectedVersions: Bool {
@@ -130,7 +130,7 @@ struct RecipeDetailView: View {
                             .disabled(
                                 actionsDisabledForHistoricalVersion
                                     || viewModel.isRescraping
-                                    || viewModel.isFinishingRescrapeEnrichment
+                                    || viewModel.isFinishingRescrapeNormalize
                             )
                         }
 
@@ -237,13 +237,13 @@ struct RecipeDetailView: View {
         } message: {
             Text(viewModel.rescrapeError ?? "")
         }
-        .alert("AI Enrichment Failed", isPresented: Binding(
-            get: { viewModel.autoEnrichError != nil },
-            set: { if !$0 { viewModel.autoEnrichError = nil } }
+        .alert("AI Action Failed", isPresented: Binding(
+            get: { viewModel.aiActionError != nil },
+            set: { if !$0 { viewModel.aiActionError = nil } }
         )) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text(viewModel.autoEnrichError ?? "")
+            Text(viewModel.aiActionError ?? "")
         }
         .alert(
             "Revert to this version?",

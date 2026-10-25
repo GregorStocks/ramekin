@@ -27,6 +27,8 @@ export function instanceOfRecipeResponse(value) {
         return false;
     if (!('instructions' in value) || value['instructions'] === undefined)
         return false;
+    if (!('normalizeOps' in value) || value['normalizeOps'] === undefined)
+        return false;
     if (!('photoIds' in value) || value['photoIds'] === undefined)
         return false;
     if (!('tags' in value) || value['tags'] === undefined)
@@ -57,6 +59,7 @@ export function RecipeResponseFromJSONTyped(json, ignoreDiscriminator) {
         'id': json['id'],
         'ingredients': (json['ingredients'].map(IngredientFromJSON)),
         'instructions': json['instructions'],
+        'normalizeOps': json['normalize_ops'],
         'notes': json['notes'] == null ? undefined : json['notes'],
         'nutritionalInfo': json['nutritional_info'] == null ? undefined : json['nutritional_info'],
         'photoIds': json['photo_ids'],
@@ -89,6 +92,7 @@ export function RecipeResponseToJSONTyped(value, ignoreDiscriminator = false) {
         'id': value['id'],
         'ingredients': (value['ingredients'].map(IngredientToJSON)),
         'instructions': value['instructions'],
+        'normalize_ops': value['normalizeOps'],
         'notes': value['notes'],
         'nutritional_info': value['nutritionalInfo'],
         'photo_ids': value['photoIds'],
