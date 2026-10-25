@@ -1,0 +1,109 @@
+.renormalize {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.renormalize-hint {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.normalize-op-group {
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+  margin: 0 0 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.normalize-op-group legend {
+  font-weight: 600;
+  padding: 0 0.25rem;
+}
+
+.normalize-op {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+}
+
+.normalize-op input {
+  margin-top: 0.2rem;
+}
+
+.normalize-op-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.normalize-op-unavailable {
+  color: var(--text-muted);
+}
+
+.normalize-op-note {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.renormalize-steps {
+  list-style: none;
+  padding: 0;
+}
+
+.renormalize-step {
+  padding: 0.2rem 0;
+  color: var(--text-secondary);
+}
+
+.renormalize-step-running {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.renormalize-step-failed {
+  color: var(--danger);
+}
+
+.renormalize-step-mark {
+  display: inline-block;
+  width: 1.5rem;
+}
+
+.renormalize-rows {
+  list-style: none;
+  padding: 0;
+}
+
+.renormalize-row {
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 0.5rem 0;
+}
+
+.renormalize-row-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.renormalize-row-title {
+  flex: 1 1 12rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.renormalize-row-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.renormalize-row-status {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.renormalize-row-failed {
+  color: var(--danger);
+}

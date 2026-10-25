@@ -30,7 +30,6 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**signup**](docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *ClientLogsApi* | [**create_client_log**](docs/ClientLogsApi.md#create_client_log) | **POST** /api/client-logs | 
 *EditRecipeApi* | [**edit_recipe_with_ai**](docs/EditRecipeApi.md#edit_recipe_with_ai) | **POST** /api/edit-recipe | Edit a recipe with AI
-*EnrichApi* | [**enrich_recipe**](docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_from_photos**](docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *ImportApi* | [**lookup_import_jobs**](docs/ImportApi.md#lookup_import_jobs) | **POST** /api/import/recipe/lookup | 
@@ -51,14 +50,10 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**estimate_calories**](docs/RecipesApi.md#estimate_calories) | **POST** /api/recipes/estimate-calories | 
 *RecipesApi* | [**export_all_recipes**](docs/RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 *RecipesApi* | [**export_recipe**](docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
-*RecipesApi* | [**generate_description**](docs/RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
 *RecipesApi* | [**generate_photo**](docs/RecipesApi.md#generate_photo) | **POST** /api/recipes/{id}/generate-photo | 
 *RecipesApi* | [**get_recipe**](docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_versions**](docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
-*RecipesApi* | [**normalize_title**](docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
-*RecipesApi* | [**reparse_all_ingredients**](docs/RecipesApi.md#reparse_all_ingredients) | **POST** /api/recipes/reparse-ingredients | Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-*RecipesApi* | [**rescrape**](docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesApi* | [**update_recipe**](docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
@@ -108,7 +103,6 @@ Class | Method | HTTP request | Description
  - [ErrorCode](docs/ErrorCode.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [EstimateCaloriesRequest](docs/EstimateCaloriesRequest.md)
- - [GenerateDescriptionResponse](docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](docs/GeneratePhotoResponse.md)
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](docs/ImportFromPhotosRequest.md)
@@ -139,7 +133,6 @@ Class | Method | HTTP request | Description
  - [NormalizeOpsResponse](docs/NormalizeOpsResponse.md)
  - [NormalizeProposalResponse](docs/NormalizeProposalResponse.md)
  - [NormalizeRequest](docs/NormalizeRequest.md)
- - [NormalizeTitleResponse](docs/NormalizeTitleResponse.md)
  - [NormalizedRecipe](docs/NormalizedRecipe.md)
  - [OpKind](docs/OpKind.md)
  - [OpResult](docs/OpResult.md)
@@ -152,7 +145,6 @@ Class | Method | HTTP request | Description
  - [RecipeSummary](docs/RecipeSummary.md)
  - [RenameTagRequest](docs/RenameTagRequest.md)
  - [RenameTagResponse](docs/RenameTagResponse.md)
- - [ReparseIngredientsResponse](docs/ReparseIngredientsResponse.md)
  - [RescrapeResponse](docs/RescrapeResponse.md)
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)

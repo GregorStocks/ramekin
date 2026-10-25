@@ -1,7 +1,6 @@
 pub mod ai;
 pub mod client_logs;
 pub mod edit_recipe;
-pub mod enrich;
 pub mod error;
 pub mod import;
 pub mod ingredient_names;
@@ -101,7 +100,6 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         recipes::ApiDoc::openapi(),
         scrape::ApiDoc::openapi(),
         client_logs::ApiDoc::openapi(),
-        enrich::ApiDoc::openapi(),
         edit_recipe::ApiDoc::openapi(),
         tags::ApiDoc::openapi(),
         import::ApiDoc::openapi(),

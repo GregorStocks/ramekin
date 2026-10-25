@@ -21,7 +21,6 @@ __all__ = [
     "AuthApi",
     "ClientLogsApi",
     "EditRecipeApi",
-    "EnrichApi",
     "ImportApi",
     "IngredientNamesApi",
     "MealPlansApi",
@@ -67,7 +66,6 @@ __all__ = [
     "ErrorCode",
     "ErrorResponse",
     "EstimateCaloriesRequest",
-    "GenerateDescriptionResponse",
     "GeneratePhotoResponse",
     "ImportExtractionMethod",
     "ImportFromPhotosRequest",
@@ -98,7 +96,6 @@ __all__ = [
     "NormalizeOpsResponse",
     "NormalizeProposalResponse",
     "NormalizeRequest",
-    "NormalizeTitleResponse",
     "NormalizedRecipe",
     "OpKind",
     "OpResult",
@@ -111,7 +108,6 @@ __all__ = [
     "RecipeSummary",
     "RenameTagRequest",
     "RenameTagResponse",
-    "ReparseIngredientsResponse",
     "RescrapeResponse",
     "RetryScrapeResponse",
     "ScrapeJobResponse",
@@ -146,7 +142,6 @@ __all__ = [
 from ramekin_client.api.auth_api import AuthApi as AuthApi
 from ramekin_client.api.client_logs_api import ClientLogsApi as ClientLogsApi
 from ramekin_client.api.edit_recipe_api import EditRecipeApi as EditRecipeApi
-from ramekin_client.api.enrich_api import EnrichApi as EnrichApi
 from ramekin_client.api.import_api import ImportApi as ImportApi
 from ramekin_client.api.ingredient_names_api import IngredientNamesApi as IngredientNamesApi
 from ramekin_client.api.meal_plans_api import MealPlansApi as MealPlansApi
@@ -196,7 +191,6 @@ from ramekin_client.models.edit_recipe_request import EditRecipeRequest as EditR
 from ramekin_client.models.error_code import ErrorCode as ErrorCode
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.estimate_calories_request import EstimateCaloriesRequest as EstimateCaloriesRequest
-from ramekin_client.models.generate_description_response import GenerateDescriptionResponse as GenerateDescriptionResponse
 from ramekin_client.models.generate_photo_response import GeneratePhotoResponse as GeneratePhotoResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod as ImportExtractionMethod
 from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest as ImportFromPhotosRequest
@@ -227,7 +221,6 @@ from ramekin_client.models.normalize_op_info import NormalizeOpInfo as Normalize
 from ramekin_client.models.normalize_ops_response import NormalizeOpsResponse as NormalizeOpsResponse
 from ramekin_client.models.normalize_proposal_response import NormalizeProposalResponse as NormalizeProposalResponse
 from ramekin_client.models.normalize_request import NormalizeRequest as NormalizeRequest
-from ramekin_client.models.normalize_title_response import NormalizeTitleResponse as NormalizeTitleResponse
 from ramekin_client.models.normalized_recipe import NormalizedRecipe as NormalizedRecipe
 from ramekin_client.models.op_kind import OpKind as OpKind
 from ramekin_client.models.op_result import OpResult as OpResult
@@ -240,7 +233,6 @@ from ramekin_client.models.recipe_response import RecipeResponse as RecipeRespon
 from ramekin_client.models.recipe_summary import RecipeSummary as RecipeSummary
 from ramekin_client.models.rename_tag_request import RenameTagRequest as RenameTagRequest
 from ramekin_client.models.rename_tag_response import RenameTagResponse as RenameTagResponse
-from ramekin_client.models.reparse_ingredients_response import ReparseIngredientsResponse as ReparseIngredientsResponse
 from ramekin_client.models.rescrape_response import RescrapeResponse as RescrapeResponse
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse as RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse as ScrapeJobResponse

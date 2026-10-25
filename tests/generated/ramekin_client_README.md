@@ -67,7 +67,6 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *ClientLogsApi* | [**create_client_log**](ramekin_client/docs/ClientLogsApi.md#create_client_log) | **POST** /api/client-logs | 
 *EditRecipeApi* | [**edit_recipe_with_ai**](ramekin_client/docs/EditRecipeApi.md#edit_recipe_with_ai) | **POST** /api/edit-recipe | Edit a recipe with AI
-*EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *ImportApi* | [**lookup_import_jobs**](ramekin_client/docs/ImportApi.md#lookup_import_jobs) | **POST** /api/import/recipe/lookup | 
@@ -88,14 +87,10 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**estimate_calories**](ramekin_client/docs/RecipesApi.md#estimate_calories) | **POST** /api/recipes/estimate-calories | 
 *RecipesApi* | [**export_all_recipes**](ramekin_client/docs/RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 *RecipesApi* | [**export_recipe**](ramekin_client/docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
-*RecipesApi* | [**generate_description**](ramekin_client/docs/RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
 *RecipesApi* | [**generate_photo**](ramekin_client/docs/RecipesApi.md#generate_photo) | **POST** /api/recipes/{id}/generate-photo | 
 *RecipesApi* | [**get_recipe**](ramekin_client/docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_versions**](ramekin_client/docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
-*RecipesApi* | [**normalize_title**](ramekin_client/docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
-*RecipesApi* | [**reparse_all_ingredients**](ramekin_client/docs/RecipesApi.md#reparse_all_ingredients) | **POST** /api/recipes/reparse-ingredients | Rebuild the ingredients of each of the user&#39;s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \&quot;reparse\&quot;) for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-*RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](ramekin_client/docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](ramekin_client/docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
@@ -145,7 +140,6 @@ Class | Method | HTTP request | Description
  - [ErrorCode](ramekin_client/docs/ErrorCode.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
  - [EstimateCaloriesRequest](ramekin_client/docs/EstimateCaloriesRequest.md)
- - [GenerateDescriptionResponse](ramekin_client/docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](ramekin_client/docs/GeneratePhotoResponse.md)
  - [ImportExtractionMethod](ramekin_client/docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](ramekin_client/docs/ImportFromPhotosRequest.md)
@@ -176,7 +170,6 @@ Class | Method | HTTP request | Description
  - [NormalizeOpsResponse](ramekin_client/docs/NormalizeOpsResponse.md)
  - [NormalizeProposalResponse](ramekin_client/docs/NormalizeProposalResponse.md)
  - [NormalizeRequest](ramekin_client/docs/NormalizeRequest.md)
- - [NormalizeTitleResponse](ramekin_client/docs/NormalizeTitleResponse.md)
  - [NormalizedRecipe](ramekin_client/docs/NormalizedRecipe.md)
  - [OpKind](ramekin_client/docs/OpKind.md)
  - [OpResult](ramekin_client/docs/OpResult.md)
@@ -189,7 +182,6 @@ Class | Method | HTTP request | Description
  - [RecipeSummary](ramekin_client/docs/RecipeSummary.md)
  - [RenameTagRequest](ramekin_client/docs/RenameTagRequest.md)
  - [RenameTagResponse](ramekin_client/docs/RenameTagResponse.md)
- - [ReparseIngredientsResponse](ramekin_client/docs/ReparseIngredientsResponse.md)
  - [RescrapeResponse](ramekin_client/docs/RescrapeResponse.md)
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)

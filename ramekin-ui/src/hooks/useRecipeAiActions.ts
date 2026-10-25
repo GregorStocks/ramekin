@@ -2,7 +2,6 @@ import { createSignal } from "solid-js";
 import type { Accessor } from "solid-js";
 import type {
   EditRecipeApi,
-  EnrichApi,
   RecipeContent,
   RecipeResponse,
   RecipesApi,
@@ -17,14 +16,12 @@ interface UseRecipeAiActionsOptions {
   recipeId: Accessor<string>;
   recipe: Accessor<RecipeResponse | null>;
   getRecipesApi: () => RecipesApi;
-  getEnrichApi: () => EnrichApi;
   getEditRecipeApi: () => EditRecipeApi;
   loadRecipe: () => Promise<void>;
-  clearHistoricalVersion: () => void;
   setError: (message: string | null) => void;
 }
 
-function recipeToContent(recipe: RecipeResponse): RecipeContent {
+export function recipeToContent(recipe: RecipeResponse): RecipeContent {
   return {
     title: recipe.title,
     description: recipe.description,
@@ -57,8 +54,6 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
   const [editInstruction, setEditInstruction] = createSignal("");
   const [showEditWithAiInput, setShowEditWithAiInput] = createSignal(false);
   const [generatingPhoto, setGeneratingPhoto] = createSignal(false);
-  const [normalizingTitle, setNormalizingTitle] = createSignal(false);
-  const [generatingDescription, setGeneratingDescription] = createSignal(false);
 
   const setEnrichmentPreview = (
     content: RecipeContent,
@@ -71,25 +66,6 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
   const clearEnrichmentPreview = () => {
     setEnrichedContent(null);
     setEnrichmentSourceVersionId(null);
-  };
-
-  const handleEnrich = async () => {
-    const currentRecipe = options.recipe();
-    if (!currentRecipe) return;
-
-    setEnriching(true);
-    options.setError(null);
-    try {
-      const enriched = await options.getEnrichApi().enrichRecipe({
-        recipeContent: recipeToContent(currentRecipe),
-      });
-      setEnrichmentPreview(enriched, currentRecipe.versionId);
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to enrich recipe");
-      options.setError(message);
-    } finally {
-      setEnriching(false);
-    }
   };
 
   const handleApplyEnrichment = async () => {
@@ -157,30 +133,6 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
     }
   };
 
-  const handleNormalizeTitle = async () => {
-    if (!options.recipe()) return;
-
-    setNormalizingTitle(true);
-    options.setError(null);
-    try {
-      const api = options.getRecipesApi();
-      const summary = await runSingleRecipeAiOperation(
-        options.recipeId(),
-        (id) => api.normalizeTitle({ id }),
-        "Failed to normalize title",
-      );
-      const operationError = firstOperationError(summary);
-      if (operationError) {
-        options.setError(operationError);
-      } else if (summary.changed > 0) {
-        options.clearHistoricalVersion();
-        await options.loadRecipe();
-      }
-    } finally {
-      setNormalizingTitle(false);
-    }
-  };
-
   const handleEditWithAi = async () => {
     const currentRecipe = options.recipe();
     const instruction = editInstruction();
@@ -210,30 +162,6 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
     }
   };
 
-  const handleGenerateDescription = async () => {
-    if (!options.recipe()) return;
-
-    setGeneratingDescription(true);
-    options.setError(null);
-    try {
-      const api = options.getRecipesApi();
-      const summary = await runSingleRecipeAiOperation(
-        options.recipeId(),
-        (id) => api.generateDescription({ id }),
-        "Failed to generate description",
-      );
-      const operationError = firstOperationError(summary);
-      if (operationError) {
-        options.setError(operationError);
-      } else if (summary.changed > 0) {
-        options.clearHistoricalVersion();
-        await options.loadRecipe();
-      }
-    } finally {
-      setGeneratingDescription(false);
-    }
-  };
-
   return {
     enriching,
     enrichedContent,
@@ -243,14 +171,9 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
     showEditWithAiInput,
     setShowEditWithAiInput,
     generatingPhoto,
-    normalizingTitle,
-    generatingDescription,
-    handleEnrich,
     handleApplyEnrichment,
     handleGeneratePhoto,
-    handleNormalizeTitle,
     handleEditWithAi,
-    handleGenerateDescription,
     handleEnrichClose: clearEnrichmentPreview,
   };
 }

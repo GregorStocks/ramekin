@@ -7,8 +7,7 @@ import {
 } from "../utils/aiOperations";
 import { createRequestTracker } from "../utils/requestTracker";
 
-export type BulkOperation =
-  "rescrapePhoto" | "normalizeTitle" | "description" | "photo";
+export type BulkOperation = "rescrapePhoto" | "photo";
 
 export interface BulkProgress {
   operation: BulkOperation;
@@ -36,6 +35,7 @@ export function useCookbookBulkSelection(
   );
   const [bulkRecipes, setBulkRecipes] = createSignal<RecipeSummary[]>([]);
   const [showPdfModal, setShowPdfModal] = createSignal(false);
+  const [showReNormalizeModal, setShowReNormalizeModal] = createSignal(false);
   const [bulkProgress, setBulkProgress] = createSignal<BulkProgress | null>(
     null,
   );
@@ -126,7 +126,8 @@ export function useCookbookBulkSelection(
     return source.filter((recipe) => ids.has(recipe.id));
   };
 
-  const openPdfExport = async () => {
+  /** Load every matching recipe when the selection reaches past this page. */
+  const loadSelectedRecipes = async (errorMessage: string) => {
     if (
       bulkRecipes().length === 0 &&
       selected().size > options.recipes().length
@@ -134,11 +135,23 @@ export function useCookbookBulkSelection(
       try {
         await fetchAllMatching();
       } catch {
-        options.setError("Failed to load recipes for PDF");
-        return;
+        options.setError(errorMessage);
+        return false;
       }
     }
-    setShowPdfModal(true);
+    return true;
+  };
+
+  const openPdfExport = async () => {
+    if (await loadSelectedRecipes("Failed to load recipes for PDF")) {
+      setShowPdfModal(true);
+    }
+  };
+
+  const openReNormalize = async () => {
+    if (await loadSelectedRecipes("Failed to load recipes to re-normalize")) {
+      setShowReNormalizeModal(true);
+    }
   };
 
   const progressFor = (operation: BulkOperation) => {
@@ -196,42 +209,6 @@ export function useCookbookBulkSelection(
     else options.setNotice(message);
   };
 
-  const bulkNormalizeTitle = async () => {
-    const api = options.getRecipesApi();
-    await runSelectedBulkOperation({
-      operation: "normalizeTitle",
-      confirm: (count) =>
-        count === 1
-          ? "Normalize (de-clickbait) the title of this recipe?"
-          : `Normalize (de-clickbait) titles for ${count} recipes? Each one calls the LLM (cached results are free).`,
-      action: (id) => api.normalizeTitle({ id }),
-      errorFallback: "normalize failed",
-      reloadRecipes: true,
-      summarize: (summary) =>
-        summary.errors.length > 0
-          ? `${summary.succeeded}/${summary.total} normalized (${summary.changed} changed). Errors: ${summarizeErrors(summary.errors)}`
-          : `Normalized ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
-    });
-  };
-
-  const bulkGenerateDescription = async () => {
-    const api = options.getRecipesApi();
-    await runSelectedBulkOperation({
-      operation: "description",
-      confirm: (count) =>
-        count === 1
-          ? "Generate a description for this recipe?"
-          : `Generate descriptions for ${count} recipes? Each one calls the LLM (cached results are free).`,
-      action: (id) => api.generateDescription({ id }),
-      errorFallback: "description failed",
-      reloadRecipes: true,
-      summarize: (summary) =>
-        summary.errors.length > 0
-          ? `${summary.succeeded}/${summary.total} described (${summary.changed} changed). Errors: ${summarizeErrors(summary.errors)}`
-          : `Generated descriptions for ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
-    });
-  };
-
   const bulkGeneratePhoto = async () => {
     const api = options.getRecipesApi();
     await runSelectedBulkOperation({
@@ -273,6 +250,8 @@ export function useCookbookBulkSelection(
     selectAllStatus,
     showPdfModal,
     setShowPdfModal,
+    showReNormalizeModal,
+    setShowReNormalizeModal,
     bulkProgress,
     resetForQueryChange,
     toggleBulkMode,
@@ -281,9 +260,8 @@ export function useCookbookBulkSelection(
     clearSelection,
     selectedRecipes,
     openPdfExport,
+    openReNormalize,
     bulkButtonLabel,
-    bulkNormalizeTitle,
-    bulkGenerateDescription,
     bulkGeneratePhoto,
     bulkRescrapePhoto,
   };

@@ -57,17 +57,6 @@ pub enum ExportRecipeError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`generate_description`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GenerateDescriptionError {
-    Status401(models::ErrorResponse),
-    Status404(models::ErrorResponse),
-    Status409(models::ErrorResponse),
-    Status503(models::ErrorResponse),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`generate_photo`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -101,35 +90,6 @@ pub enum ListRecipesError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ListVersionsError {
-    Status401(models::ErrorResponse),
-    Status404(models::ErrorResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`normalize_title`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum NormalizeTitleError {
-    Status401(models::ErrorResponse),
-    Status404(models::ErrorResponse),
-    Status409(models::ErrorResponse),
-    Status503(models::ErrorResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`reparse_all_ingredients`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ReparseAllIngredientsError {
-    Status401(models::ErrorResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`rescrape`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum RescrapeError {
-    Status400(models::ErrorResponse),
     Status401(models::ErrorResponse),
     Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
@@ -365,58 +325,6 @@ pub async fn export_recipe(
     }
 }
 
-pub async fn generate_description(
-    configuration: &configuration::Configuration,
-    id: &str,
-) -> Result<models::GenerateDescriptionResponse, Error<GenerateDescriptionError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_id = id;
-
-    let uri_str = format!(
-        "{}/api/recipes/{id}/generate-description",
-        configuration.base_path,
-        id = crate::apis::urlencode(p_path_id)
-    );
-    let mut req_builder = configuration
-        .client
-        .request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.bearer_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GenerateDescriptionResponse`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GenerateDescriptionResponse`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<GenerateDescriptionError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent {
-            status,
-            content,
-            entity,
-        }))
-    }
-}
-
 pub async fn generate_photo(
     configuration: &configuration::Configuration,
     id: &str,
@@ -635,157 +543,6 @@ pub async fn list_versions(
     } else {
         let content = resp.text().await?;
         let entity: Option<ListVersionsError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent {
-            status,
-            content,
-            entity,
-        }))
-    }
-}
-
-pub async fn normalize_title(
-    configuration: &configuration::Configuration,
-    id: &str,
-) -> Result<models::NormalizeTitleResponse, Error<NormalizeTitleError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_id = id;
-
-    let uri_str = format!(
-        "{}/api/recipes/{id}/normalize-title",
-        configuration.base_path,
-        id = crate::apis::urlencode(p_path_id)
-    );
-    let mut req_builder = configuration
-        .client
-        .request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.bearer_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::NormalizeTitleResponse`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::NormalizeTitleResponse`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<NormalizeTitleError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent {
-            status,
-            content,
-            entity,
-        }))
-    }
-}
-
-pub async fn reparse_all_ingredients(
-    configuration: &configuration::Configuration,
-) -> Result<models::ReparseIngredientsResponse, Error<ReparseAllIngredientsError>> {
-    let uri_str = format!(
-        "{}/api/recipes/reparse-ingredients",
-        configuration.base_path
-    );
-    let mut req_builder = configuration
-        .client
-        .request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.bearer_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ReparseIngredientsResponse`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ReparseIngredientsResponse`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<ReparseAllIngredientsError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent {
-            status,
-            content,
-            entity,
-        }))
-    }
-}
-
-pub async fn rescrape(
-    configuration: &configuration::Configuration,
-    id: &str,
-) -> Result<models::RescrapeResponse, Error<RescrapeError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_id = id;
-
-    let uri_str = format!(
-        "{}/api/recipes/{id}/rescrape",
-        configuration.base_path,
-        id = crate::apis::urlencode(p_path_id)
-    );
-    let mut req_builder = configuration
-        .client
-        .request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.bearer_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::RescrapeResponse`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::RescrapeResponse`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<RescrapeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,

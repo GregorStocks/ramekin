@@ -39,31 +39,6 @@ pub async fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<Scrap
     .await
 }
 
-/// Create a rescrape job for an existing recipe.
-/// This pre-populates recipe_id so save_recipe knows to update instead of create.
-pub async fn create_rescrape_job(
-    pool: &DbPool,
-    user_id: Uuid,
-    recipe_id: Uuid,
-    expected_version_id: Uuid,
-    url: &str,
-) -> Result<ScrapeJob, ScrapeError> {
-    let url = url.to_string();
-    run_scrape_db_write(pool, move |conn| {
-        diesel::insert_into(scrape_jobs::table)
-            .values((
-                scrape_jobs::id.eq(Uuid::now_v7()),
-                scrape_jobs::user_id.eq(user_id),
-                scrape_jobs::url.eq(url.as_str()),
-                scrape_jobs::recipe_id.eq(Some(recipe_id)),
-                scrape_jobs::expected_version_id.eq(Some(expected_version_id)),
-            ))
-            .get_result::<ScrapeJob>(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))
-    })
-    .await
-}
-
 /// Create a photo-only rescrape job. The pipeline runs normally but the save
 /// step only updates `photo_ids`, carrying forward every other field from the
 /// current version.

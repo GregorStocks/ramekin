@@ -13,10 +13,14 @@ import StarRating from "../components/StarRating";
 import CalorieEstimate from "../components/CalorieEstimate";
 import Modal from "../components/Modal";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
+import ReNormalizeModal from "../components/ReNormalizeModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
 import AddToMealPlanModal from "../components/AddToMealPlanModal";
 import RecipeVersioningSection from "../components/RecipeVersioningSection";
-import { useRecipeAiActions } from "../hooks/useRecipeAiActions";
+import {
+  recipeToContent,
+  useRecipeAiActions,
+} from "../hooks/useRecipeAiActions";
 import {
   extractApiError,
   parseApiError,
@@ -72,8 +76,13 @@ export default function ViewRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { getRecipesApi, getEnrichApi, getEditRecipeApi, getScrapeApi, token } =
-    useAuth();
+  const {
+    getRecipesApi,
+    getEditRecipeApi,
+    getNormalizeApi,
+    getScrapeApi,
+    token,
+  } = useAuth();
 
   // Check if we're in "random browsing" mode
   const randomQuery = () =>
@@ -159,8 +168,7 @@ export default function ViewRecipePage() {
   );
   const [reverting, setReverting] = createSignal(false);
 
-  // Rescrape state
-  const [rescraping, setRescraping] = createSignal(false);
+  const [showReNormalize, setShowReNormalize] = createSignal(false);
 
   // A scrape job whose recipe is saved but whose normalize ops (title,
   // description, tags) are still running. The scrape status page links here
@@ -358,10 +366,8 @@ export default function ViewRecipePage() {
     recipeId: () => params.id,
     recipe,
     getRecipesApi,
-    getEnrichApi,
     getEditRecipeApi,
     loadRecipe,
-    clearHistoricalVersion: () => setSearchParams({ version_id: undefined }),
     setError,
   });
 
@@ -393,39 +399,6 @@ export default function ViewRecipePage() {
         }
       });
   });
-
-  // Rescrape handler
-  const handleRescrape = async () => {
-    const r = recipe();
-    if (!r || !r.sourceUrl) return;
-
-    setRescraping(true);
-    setError(null);
-    try {
-      // Start the rescrape job
-      const response = await getRecipesApi().rescrape({ id: params.id });
-      const jobId = response.jobId;
-
-      const result = await pollScrapeJob(getScrapeApi(), jobId, {
-        untilRecipeReady: true,
-      });
-      if (result.status === "completed") {
-        await loadRecipe();
-      } else if (result.status === "recipe_ready") {
-        await loadRecipe();
-        setNormalizingJobId(jobId);
-      } else if (result.status === "failed") {
-        setError(`Rescrape failed: ${result.error}`);
-      } else {
-        setError("Rescrape timed out");
-      }
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to rescrape recipe");
-      setError(message);
-    } finally {
-      setRescraping(false);
-    }
-  };
 
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat("en-US", {
@@ -549,60 +522,18 @@ export default function ViewRecipePage() {
                     </div>
                     <div class="recipe-action-group">
                       <p class="recipe-action-label">Update recipe</p>
-                      <Show when={r().sourceUrl}>
-                        <button
-                          type="button"
-                          class="btn"
-                          onClick={handleRescrape}
-                          disabled={
-                            rescraping() ||
-                            !!normalizingJobId() ||
-                            isViewingHistoricalVersion()
-                          }
-                        >
-                          {rescraping() ? "Rescraping..." : "Rescrape"}
-                        </button>
-                      </Show>
                       <button
                         type="button"
                         class="btn"
-                        onClick={recipeAiActions.handleNormalizeTitle}
+                        data-close-actions="true"
+                        onClick={() => setShowReNormalize(true)}
                         disabled={
-                          recipeAiActions.normalizingTitle() ||
+                          !!normalizingJobId() ||
                           isViewingHistoricalVersion() ||
                           loading()
                         }
                       >
-                        {recipeAiActions.normalizingTitle()
-                          ? "Renaming..."
-                          : AI_OPERATIONS.normalizeTitle.individualLabel}
-                      </button>
-                      <button
-                        type="button"
-                        class="btn"
-                        onClick={recipeAiActions.handleGenerateDescription}
-                        disabled={
-                          recipeAiActions.generatingDescription() ||
-                          isViewingHistoricalVersion() ||
-                          loading()
-                        }
-                      >
-                        {recipeAiActions.generatingDescription()
-                          ? "Generating..."
-                          : AI_OPERATIONS.generateDescription.individualLabel}
-                      </button>
-                      <button
-                        type="button"
-                        class="btn"
-                        onClick={recipeAiActions.handleEnrich}
-                        disabled={
-                          recipeAiActions.enriching() ||
-                          isViewingHistoricalVersion()
-                        }
-                      >
-                        {recipeAiActions.enriching()
-                          ? "Enriching..."
-                          : AI_OPERATIONS.enrichRecipe.individualLabel}
+                        {AI_OPERATIONS.reNormalize.individualLabel}
                       </button>
                       <button
                         type="button"
@@ -1032,12 +963,24 @@ export default function ViewRecipePage() {
               <EnrichPreviewModal
                 isOpen={() => recipeAiActions.enrichedContent() !== null}
                 onClose={recipeAiActions.handleEnrichClose}
-                currentRecipe={recipe()!}
+                currentContent={recipeToContent(recipe()!)}
                 enrichedContent={recipeAiActions.enrichedContent()!}
                 onApply={recipeAiActions.handleApplyEnrichment}
                 applying={recipeAiActions.applyingEnrichment()}
               />
             </Show>
+
+            <ReNormalizeModal
+              isOpen={showReNormalize}
+              onClose={() => setShowReNormalize(false)}
+              recipeId={params.id}
+              getNormalizeApi={getNormalizeApi}
+              getScrapeApi={getScrapeApi}
+              onAccepted={async () => {
+                setSearchParams({ version_id: undefined });
+                await loadRecipe();
+              }}
+            />
 
             {/* Add to Shopping List Modal */}
             <AddToShoppingListModal

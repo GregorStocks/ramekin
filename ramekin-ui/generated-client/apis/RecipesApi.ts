@@ -21,12 +21,9 @@ import type {
   Direction,
   ErrorResponse,
   EstimateCaloriesRequest,
-  GenerateDescriptionResponse,
   GeneratePhotoResponse,
   ListRecipesResponse,
-  NormalizeTitleResponse,
   RecipeResponse,
-  ReparseIngredientsResponse,
   RescrapeResponse,
   SortBy,
   UpdateRecipeRequest,
@@ -45,18 +42,12 @@ import {
     ErrorResponseToJSON,
     EstimateCaloriesRequestFromJSON,
     EstimateCaloriesRequestToJSON,
-    GenerateDescriptionResponseFromJSON,
-    GenerateDescriptionResponseToJSON,
     GeneratePhotoResponseFromJSON,
     GeneratePhotoResponseToJSON,
     ListRecipesResponseFromJSON,
     ListRecipesResponseToJSON,
-    NormalizeTitleResponseFromJSON,
-    NormalizeTitleResponseToJSON,
     RecipeResponseFromJSON,
     RecipeResponseToJSON,
-    ReparseIngredientsResponseFromJSON,
-    ReparseIngredientsResponseToJSON,
     RescrapeResponseFromJSON,
     RescrapeResponseToJSON,
     SortByFromJSON,
@@ -83,10 +74,6 @@ export interface ExportRecipeRequest {
     id: string;
 }
 
-export interface GenerateDescriptionRequest {
-    id: string;
-}
-
 export interface GeneratePhotoRequest {
     id: string;
 }
@@ -105,14 +92,6 @@ export interface ListRecipesRequest {
 }
 
 export interface ListVersionsRequest {
-    id: string;
-}
-
-export interface NormalizeTitleRequest {
-    id: string;
-}
-
-export interface RescrapeRequest {
     id: string;
 }
 
@@ -340,49 +319,6 @@ export class RecipesApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateDescriptionRaw(requestParameters: GenerateDescriptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateDescriptionResponse>> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling generateDescription().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/api/recipes/{id}/generate-description`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GenerateDescriptionResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async generateDescription(requestParameters: GenerateDescriptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateDescriptionResponse> {
-        const response = await this.generateDescriptionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
     async generatePhotoRaw(requestParameters: GeneratePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GeneratePhotoResponse>> {
         if (requestParameters['id'] == null) {
             throw new runtime.RequiredError(
@@ -566,129 +502,6 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async listVersions(requestParameters: ListVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VersionListResponse> {
         const response = await this.listVersionsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async normalizeTitleRaw(requestParameters: NormalizeTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<NormalizeTitleResponse>> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling normalizeTitle().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/api/recipes/{id}/normalize-title`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => NormalizeTitleResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async normalizeTitle(requestParameters: NormalizeTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NormalizeTitleResponse> {
-        const response = await this.normalizeTitleRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Rebuild the ingredients of each of the user\'s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-     */
-    async reparseAllIngredientsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ReparseIngredientsResponse>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/api/recipes/reparse-ingredients`;
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ReparseIngredientsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Rebuild the ingredients of each of the user\'s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
-     */
-    async reparseAllIngredients(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReparseIngredientsResponse> {
-        const response = await this.reparseAllIngredientsRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async rescrapeRaw(requestParameters: RescrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RescrapeResponse>> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling rescrape().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/api/recipes/{id}/rescrape`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => RescrapeResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async rescrape(requestParameters: RescrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RescrapeResponse> {
-        const response = await this.rescrapeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
