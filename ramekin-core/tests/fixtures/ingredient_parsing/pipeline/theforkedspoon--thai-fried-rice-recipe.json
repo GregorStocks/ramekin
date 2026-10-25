@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2 Thai red chiles , (thinly sliced (optional))",
+      "raw": "2 Thai red chiles , thinly sliced (optional)",
       "expected": {
         "item": "Thai red chiles",
         "measurements": [
@@ -68,7 +68,7 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced (optional)",
+        "note": "optional, thinly sliced",
         "category": "Other"
       }
     },

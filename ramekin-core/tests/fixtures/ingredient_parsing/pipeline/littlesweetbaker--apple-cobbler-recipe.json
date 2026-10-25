@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 cups apples, (peeled and sliced 1/4″ thick (about 6 large apples))",
+      "raw": "8 cups   apples, peeled and sliced 1/4″ thick (about 6 large apples)",
       "expected": {
         "item": "apples",
         "measurements": [
@@ -16,7 +16,7 @@
             "unit": "cup"
           }
         ],
-        "note": "peeled and sliced 1/4″ thick (about 6 large apples)",
+        "note": "about 6 large apples, peeled and sliced 1/4″ thick",
         "section": "Filling",
         "category": "Produce"
       }

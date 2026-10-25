@@ -97,16 +97,20 @@
       }
     },
     {
-      "raw": "10 slices Brioche or any thick cut artisan type bread (the thicker the better (about 8-10 slices))",
+      "raw": "10 slices Brioche or any thick cut artisan type bread, the thicker the better (about 8-10 slices)",
       "expected": {
-        "item": "Brioche or any thick cut artisan type bread",
+        "item": "Brioche or any thick cut artisan type bread, the thicker the better",
         "measurements": [
           {
             "amount": "10",
             "unit": "slice"
+          },
+          {
+            "amount": "8-10",
+            "unit": "slice"
           }
         ],
-        "note": "the thicker the better (about 8-10 slices)",
+        "note": "about 8-10 slices",
         "section": "Egg Mixture",
         "category": "Other"
       }
@@ -202,7 +206,7 @@
       }
     },
     {
-      "raw": "8 tbsp butter (for frying (bacon fat is also good here))",
+      "raw": "8 tbsp butter, for frying (bacon fat is also good here)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -211,7 +215,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "for frying (bacon fat is also good here)",
+        "note": "bacon fat is also good here, for frying",
         "section": "Egg Mixture",
         "category": "Dairy & Eggs"
       }

@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "1 jalapeño pepper (or serrano (more heat))",
+      "raw": "1 jalapeño pepper, or serrano (more heat)",
       "expected": {
-        "item": "jalapeño pepper",
+        "item": "jalapeño pepper, or serrano",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or serrano (more heat)",
+        "note": "more heat",
         "category": "Produce"
       }
     },

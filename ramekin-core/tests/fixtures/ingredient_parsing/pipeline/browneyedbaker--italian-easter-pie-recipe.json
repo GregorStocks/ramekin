@@ -234,7 +234,7 @@
       }
     },
     {
-      "raw": "4 ounces (113.4 g) mozzarella cheese, (shredded (about 1 cup))",
+      "raw": "4 ounces  (113.4 g) mozzarella cheese, shredded (about 1 cup)",
       "expected": {
         "item": "mozzarella cheese",
         "measurements": [
@@ -245,15 +245,19 @@
           {
             "amount": "113.4",
             "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (about 1 cup)",
+        "note": "about 1 cup, shredded",
         "section": "For the Pie Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "4 ounces (113.4 g) provolone cheese, (shredded (about 1 cup))",
+      "raw": "4 ounces  (113.4 g) provolone cheese, shredded (about 1 cup)",
       "expected": {
         "item": "provolone cheese",
         "measurements": [
@@ -264,9 +268,13 @@
           {
             "amount": "113.4",
             "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (about 1 cup)",
+        "note": "about 1 cup, shredded",
         "section": "For the Pie Filling",
         "category": "Cheese"
       }

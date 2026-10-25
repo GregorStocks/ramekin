@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "10 ounces corn, (cooked if frozen (I use a steamfresh bag))",
+      "raw": "10 ounces corn, cooked if frozen (I use a steamfresh bag)",
       "expected": {
         "item": "corn",
         "measurements": [
@@ -91,7 +91,7 @@
             "unit": "oz"
           }
         ],
-        "note": "cooked if frozen (I use a steamfresh bag)",
+        "note": "I use a steamfresh bag, cooked if frozen",
         "section": "Frito Slaw",
         "category": "Produce"
       }

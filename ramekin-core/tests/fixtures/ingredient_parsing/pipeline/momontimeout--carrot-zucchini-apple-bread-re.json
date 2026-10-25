@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "1/2 cup pecans (chopped (optional))",
+      "raw": "1/2 cup pecans, chopped (optional)",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -222,7 +222,7 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped (optional)",
+        "note": "optional, chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -231,7 +231,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup cream cheese (softened (I use light))",
+      "raw": "1/2 cup cream cheese, softened (I use light)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -240,7 +240,7 @@
             "unit": "cup"
           }
         ],
-        "note": "softened (I use light)",
+        "note": "I use light, softened",
         "section": "Frosting",
         "category": "Cheese"
       }

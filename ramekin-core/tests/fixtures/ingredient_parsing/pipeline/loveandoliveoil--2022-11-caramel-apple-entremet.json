@@ -136,9 +136,9 @@
       "is_section_header": true
     },
     {
-      "raw": "2 large apples (about 12oz or 340g), (peeled, cored, and cut into small 3/8-inch cubes (I recommend one granny smith and one softer, sweeter variety like Gala))",
+      "raw": "2 large   apples (about 12oz or 340g), peeled, cored, and cut into small 3/8-inch cubes (I recommend one granny smith and one softer, sweeter variety like Gala)",
       "expected": {
-        "item": "apples",
+        "item": "apples, peeled, cored, and cut into small 3/8-inch cubes",
         "measurements": [
           {
             "amount": "2",
@@ -153,7 +153,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 12oz or 340g, peeled, cored, and cut into small 3/8-inch cubes (I recommend one granny smith and one softer, sweeter variety like Gala)",
+        "note": "about 12oz or 340g, I recommend one granny smith and one softer, sweeter variety like Gala",
         "section": "For Caramel Apple Layer",
         "category": "Produce"
       }
@@ -378,7 +378,7 @@
       }
     },
     {
-      "raw": "1 vanilla bean, (split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract—add at the end with the almond))",
+      "raw": "1   vanilla bean, split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract—add at the end with the almond)",
       "expected": {
         "item": "vanilla bean",
         "measurements": [
@@ -387,7 +387,7 @@
             "unit": null
           }
         ],
-        "note": "split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract-add at the end with the almond)",
+        "note": "split and seeds scraped out; or substitute 1 teaspoon vanilla bean paste or extract-add at the end with the almond",
         "section": "For Vanilla-Almond Crémeux",
         "category": "Spices & Seasonings"
       }

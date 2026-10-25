@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 ¾ cups milk (any kind you like (I use unsweetened almond milk))",
+      "raw": "1 ¾ cups milk, any kind you like (I use unsweetened almond milk)",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -16,7 +16,7 @@
             "unit": "cup"
           }
         ],
-        "note": "any kind you like (I use unsweetened almond milk)",
+        "note": "I use unsweetened almond milk, any kind you like",
         "section": "Overnight Steel Cut Oats—base Recipe",
         "category": "Dairy & Eggs"
       }
@@ -146,11 +146,11 @@
       }
     },
     {
-      "raw": "Toasted almonds (walnuts, or pecans (add just before serving to maintain the most crunch))",
+      "raw": "Toasted almonds, walnuts, or pecans (add just before serving to maintain the most crunch)",
       "expected": {
-        "item": "Toasted almonds",
+        "item": "Toasted almonds, walnuts, or pecans",
         "measurements": [],
-        "note": "walnuts, or pecans (add just before serving to maintain the most crunch)",
+        "note": "add just before serving to maintain the most crunch",
         "section": "Optional Additions",
         "category": "Nuts & Dried Fruit"
       }

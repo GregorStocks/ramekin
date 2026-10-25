@@ -161,11 +161,16 @@
       }
     },
     {
-      "raw": "vegetable oil, (like canola oil; for frying (approximately 1-2 cups))",
+      "raw": "vegetable oil, like canola oil; for frying (approximately 1-2 cups)",
       "expected": {
         "item": "vegetable oil",
-        "measurements": [],
-        "note": "like canola oil; for frying (approximately 1-2 cups)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "cup"
+          }
+        ],
+        "note": "approximately 1-2 cups, like canola oil; for frying",
         "section": "For the Chicken Parmesan",
         "category": "Oils & Vinegars"
       }

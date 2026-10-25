@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 cup onion, (diced (about ½ a medium-sized onion))",
+      "raw": "1 cup onion, diced (about ½ a medium-sized onion)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -110,7 +110,7 @@
             "unit": "cup"
           }
         ],
-        "note": "diced (about 1/2 a medium-sized onion)",
+        "note": "about 1/2 a medium-sized onion, diced",
         "section": "For the Pie Filling",
         "category": "Produce"
       }
@@ -251,7 +251,7 @@
       }
     },
     {
-      "raw": "1 egg beaten, (for egg wash (optional))",
+      "raw": "1 egg beaten, for egg wash (optional)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -260,7 +260,7 @@
             "unit": null
           }
         ],
-        "note": "for egg wash (optional), beaten",
+        "note": "optional, beaten, for egg wash",
         "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }

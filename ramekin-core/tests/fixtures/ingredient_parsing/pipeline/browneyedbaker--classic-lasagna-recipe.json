@@ -155,7 +155,7 @@
       }
     },
     {
-      "raw": "20 ounces (566.99 g) mozzarella cheese, (shredded (5 cups))",
+      "raw": "20 ounces  (566.99 g) mozzarella cheese, shredded (5 cups)",
       "expected": {
         "item": "mozzarella cheese",
         "measurements": [
@@ -166,9 +166,13 @@
           {
             "amount": "566.99",
             "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (5 cups)",
+        "note": "shredded",
         "section": "For the Lasagna",
         "category": "Cheese"
       }

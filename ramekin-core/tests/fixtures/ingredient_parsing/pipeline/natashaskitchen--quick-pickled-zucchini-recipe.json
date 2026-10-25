@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 - 2 1/4 lb zucchini, (4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work))",
+      "raw": "2 - 2 1/4 lb zucchini, 4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
       "expected": {
-        "item": "zucchini",
+        "item": "zucchini, 4 medium",
         "measurements": [
           {
             "amount": "2-2.25",
             "unit": "lb"
           }
         ],
-        "note": "4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
+        "note": "green zucchini, yellow squash, or light green Mexican zucchini will work",
         "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }

@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/2 cup bell pepper (finely diced or grated (optional, see Note 1))",
+      "raw": "1/2 cup bell pepper, finely diced or grated (optional, see Note 1)",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -40,12 +40,12 @@
             "unit": "cup"
           }
         ],
-        "note": "finely diced or grated (optional, see Note 1)",
+        "note": "optional, see Note 1, finely diced or grated",
         "category": "Produce"
       }
     },
     {
-      "raw": "48 Ritz crackers (crushed (1 1/2 sleeves))",
+      "raw": "48 Ritz crackers, crushed (1 1/2 sleeves)",
       "expected": {
         "item": "Ritz crackers",
         "measurements": [
@@ -54,7 +54,7 @@
             "unit": null
           }
         ],
-        "note": "crushed (1 1/2 sleeves)",
+        "note": "1 1/2 sleeves, crushed",
         "category": "Snacks"
       }
     },

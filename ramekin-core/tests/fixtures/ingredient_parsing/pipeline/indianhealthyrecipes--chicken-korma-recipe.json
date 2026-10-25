@@ -150,7 +150,7 @@
       }
     },
     {
-      "raw": "1 cup onions (sliced (2 medium yellow onions))",
+      "raw": "1 cup onions, sliced (2 medium yellow onions)",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -159,24 +159,24 @@
             "unit": "cup"
           }
         ],
-        "note": "sliced (2 medium yellow onions)",
+        "note": "2 medium yellow onions, sliced",
         "section": "To Saute & Blend",
         "category": "Produce"
       }
     },
     {
-      "raw": "10 whole cashew nuts (or almonds (or use 5 each))",
+      "raw": "10 whole cashew nuts, or almonds (or use 5 each)",
       "expected": {
-        "item": "whole cashew nuts",
+        "item": "whole cashew nuts, or almonds",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": "or almonds (or use 5 each)",
+        "note": "or use 5 each",
         "section": "To Saute & Blend",
-        "category": "Other"
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -274,7 +274,7 @@
       }
     },
     {
-      "raw": "1 to 2 green chilies (slit or chopped (optional, Thai/Indian or serrano peppers))",
+      "raw": "1 to 2 green chilies, slit or chopped (optional, Thai/Indian or serrano peppers)",
       "expected": {
         "item": "green chilies",
         "measurements": [
@@ -283,7 +283,7 @@
             "unit": null
           }
         ],
-        "note": "slit or chopped (optional, Thai/Indian or serrano peppers)",
+        "note": "optional, Thai/Indian or serrano peppers, slit or chopped",
         "section": "For Korma Curry",
         "category": "Produce"
       }

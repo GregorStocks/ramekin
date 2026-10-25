@@ -318,7 +318,7 @@
       }
     },
     {
-      "raw": "16 ounces (453.59 g) fresh strawberries, (rinsed, hulled and halved (quartered if large))",
+      "raw": "16 ounces  (453.59 g) fresh strawberries, rinsed, hulled and halved (quartered if large)",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
@@ -331,7 +331,7 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed, hulled and halved (quartered if large)",
+        "note": "quartered if large, rinsed, hulled and halved",
         "section": "Strawberry Cream Cheese Filling",
         "category": "Produce"
       }

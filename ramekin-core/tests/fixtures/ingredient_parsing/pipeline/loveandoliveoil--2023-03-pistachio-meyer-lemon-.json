@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 teaspoon Meyer lemon zest, (from 1 lemon (save the rest of the zest for the mousse layer later))",
+      "raw": "1 teaspoon   Meyer lemon zest, from 1 lemon (save the rest of the zest for the mousse layer later)",
       "expected": {
         "item": "Meyer lemon zest",
         "measurements": [
@@ -16,7 +16,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "from 1 lemon (save the rest of the zest for the mousse layer later)",
+        "note": "save the rest of the zest for the mousse layer later, from 1 lemon",
         "section": "For Lemon Curd",
         "category": "Produce"
       }

@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2 cups cooked white rice, (cold (=1 cup uncooked white rice with 1 Tbsp butter & 1/4 tsp salt))",
+      "raw": "2 cups cooked white rice, cold (=1 cup uncooked white rice with 1 Tbsp butter & 1/4 tsp salt)",
       "expected": {
         "item": "cooked white rice",
         "measurements": [
@@ -96,12 +96,12 @@
             "unit": "cup"
           }
         ],
-        "note": "cold (=1 cup uncooked white rice with 1 Tbsp butter & 1/4 tsp salt)",
+        "note": "=1 cup uncooked white rice with 1 Tbsp butter & 1/4 tsp salt, cold",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "1 tsp sesame oil, (optional (but highly recommended))",
+      "raw": "1 tsp sesame oil, optional (but highly recommended)",
       "expected": {
         "item": "sesame oil",
         "measurements": [
@@ -110,7 +110,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional (but highly recommended)",
+        "note": "but highly recommended, optional",
         "category": "Oils & Vinegars"
       }
     },

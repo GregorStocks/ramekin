@@ -346,16 +346,16 @@
       }
     },
     {
-      "raw": "2 portions cooked ramen noodles (or udon noodles (optional))",
+      "raw": "2 portions cooked ramen noodles, or udon noodles (optional)",
       "expected": {
-        "item": "cooked ramen noodles",
+        "item": "cooked ramen noodles, or udon noodles",
         "measurements": [
           {
             "amount": "2",
             "unit": "portion"
           }
         ],
-        "note": "or udon noodles (optional)",
+        "note": "optional",
         "section": "Toppings",
         "category": "Other"
       }

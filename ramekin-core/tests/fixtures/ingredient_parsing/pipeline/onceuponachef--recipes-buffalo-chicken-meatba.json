@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "1 pound ground chicken, (preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean))",
+      "raw": "1 pound ground chicken, preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean)",
       "expected": {
         "item": "ground chicken",
         "measurements": [
@@ -106,7 +106,7 @@
             "unit": "lb"
           }
         ],
-        "note": "preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean)",
+        "note": "avoid the one that is 98% lean, preferably Purdue \"Fresh & Lean\"",
         "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }

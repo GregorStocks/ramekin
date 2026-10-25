@@ -227,7 +227,7 @@
       }
     },
     {
-      "raw": "1 egg, (lightly beaten (for egg wash))",
+      "raw": "1   egg, lightly beaten (for egg wash)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -236,7 +236,7 @@
             "unit": null
           }
         ],
-        "note": "lightly beaten (for egg wash)",
+        "note": "for egg wash, lightly beaten",
         "section": "For Filling",
         "category": "Dairy & Eggs"
       }

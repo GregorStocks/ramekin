@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 pound turkey sausage (sweet or spicy with casings removed (I used spicy))",
+      "raw": "1 pound turkey sausage, sweet or spicy with casings removed (I used spicy)",
       "expected": {
         "item": "turkey sausage",
         "measurements": [
@@ -31,7 +31,7 @@
             "unit": "lb"
           }
         ],
-        "note": "sweet or spicy with casings removed (I used spicy)",
+        "note": "I used spicy, sweet or spicy with casings removed",
         "section": "For the Burgers",
         "category": "Meat & Seafood"
       }

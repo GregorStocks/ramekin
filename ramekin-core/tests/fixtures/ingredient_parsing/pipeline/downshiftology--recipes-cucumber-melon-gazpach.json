@@ -101,7 +101,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 1/2 large cucumbers, (peeled and diced (plus 1/2 large cucumber, peeled, sliced and small diced for garnish))",
+      "raw": "2 1/2 large cucumbers, peeled and diced (plus 1/2 large cucumber, peeled, sliced and small diced for garnish)",
       "expected": {
         "item": "cucumbers",
         "measurements": [
@@ -110,7 +110,7 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and diced (plus 1/2 large cucumber, peeled, sliced and small diced for garnish)",
+        "note": "plus 1/2 large cucumber, peeled, sliced and small diced for garnish, peeled and diced",
         "section": "Gazpacho",
         "category": "Produce"
       }
@@ -281,7 +281,7 @@
       }
     },
     {
-      "raw": "1 tbsp chives, (finely chopped (for garnish))",
+      "raw": "1 tbsp chives, finely chopped (for garnish)",
       "expected": {
         "item": "chives",
         "measurements": [
@@ -290,7 +290,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely chopped (for garnish)",
+        "note": "for garnish, finely chopped",
         "section": "Gazpacho",
         "category": "Produce"
       }

@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 boneless pork chops (rib-end/loin (2-2.5cm, 3/4-1 inch thick), fat-on)",
+      "raw": "2 boneless pork chops, rib-end/loin (2-2.5cm, 3/4-1 inch thick), fat-on",
       "expected": {
-        "item": "boneless pork chops",
+        "item": "boneless pork chops, rib-end/loin, fat-on",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "rib-end/loin (2-2.5cm, 3/4-1 inch thick), fat-on",
+        "note": "2-2.5cm, 3/4-1 inch thick",
         "section": "Tonkatsu",
         "category": "Meat & Seafood"
       }

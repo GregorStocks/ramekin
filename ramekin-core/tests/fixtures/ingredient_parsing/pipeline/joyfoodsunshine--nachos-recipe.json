@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "¾ cup red onion (diced & divided (about 1 small onion))",
+      "raw": "¾ cup red onion, diced & divided (about 1 small onion)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -31,7 +31,7 @@
             "unit": "cup"
           }
         ],
-        "note": "diced & divided (about 1 small onion)",
+        "note": "about 1 small onion, diced & divided",
         "section": "Ground Beef",
         "category": "Produce"
       }
@@ -251,16 +251,20 @@
       }
     },
     {
-      "raw": "2.25 ounces can sliced black olives (drained and rinsed (about ½ cup))",
+      "raw": "2.25 ounces can sliced black olives, drained and rinsed (about ½ cup)",
       "expected": {
         "item": "can sliced black olives",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": "drained and rinsed (about 1/2 cup)",
+        "note": "about 1/2 cup, drained and rinsed",
         "section": "Nachos",
         "category": "Canned Goods"
       }

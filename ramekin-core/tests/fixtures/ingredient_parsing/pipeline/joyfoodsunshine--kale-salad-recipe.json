@@ -7,16 +7,20 @@
       "is_section_header": true
     },
     {
-      "raw": "1 bunch kale (stems removed, chopped thin (8 cups))",
+      "raw": "1 bunch kale, stems removed, chopped thin (8 cups)",
       "expected": {
         "item": "kale",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
+          },
+          {
+            "amount": "8",
+            "unit": "cup"
           }
         ],
-        "note": "stems removed, chopped thin (8 cups)",
+        "note": "stems removed, chopped thin",
         "section": "Kale Salad",
         "category": "Produce"
       }

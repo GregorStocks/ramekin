@@ -109,7 +109,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 large baking apples, (peeled, cored and sliced ¼-inch (6-mm) thick)",
+      "raw": "8 large baking apples, peeled, cored and sliced ¼-inch (6-mm) thick",
       "expected": {
         "item": "baking apples",
         "measurements": [
@@ -118,7 +118,7 @@
             "unit": "large"
           }
         ],
-        "note": "peeled, cored and sliced 1/4-inch (6-mm) thick",
+        "note": "6-mm, peeled, cored and sliced 1/4-inch thick",
         "section": "For the Fruit Filling",
         "category": "Produce"
       }

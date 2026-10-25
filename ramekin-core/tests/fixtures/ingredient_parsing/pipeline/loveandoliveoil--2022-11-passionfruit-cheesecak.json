@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "5 oz / 142 g vanilla wafer cookies, (finely ground (1 cup crumbs))",
+      "raw": "5 oz  / 142 g vanilla wafer cookies, finely ground (1 cup crumbs)",
       "expected": {
         "item": "vanilla wafer cookies",
         "measurements": [
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely ground (1 cup crumbs)",
+        "note": "1 cup crumbs, finely ground",
         "section": "For Crust",
         "category": "Other"
       }

@@ -3,16 +3,16 @@
   "recipe_slug": "vegetarian-cauliflower-rice-bu",
   "ingredients": [
     {
-      "raw": "2 TBSP avocado oil (or olive oil (divided))",
+      "raw": "2 TBSP avocado oil, or olive oil (divided)",
       "expected": {
-        "item": "avocado oil",
+        "item": "avocado oil, or olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil (divided)",
+        "note": "divided",
         "category": "Oils & Vinegars"
       }
     },
@@ -194,7 +194,7 @@
       }
     },
     {
-      "raw": "½ lime (cut into wedges (for an optional burst of citrus))",
+      "raw": "½ lime, cut into wedges (for an optional burst of citrus)",
       "expected": {
         "item": "lime",
         "measurements": [
@@ -203,7 +203,7 @@
             "unit": null
           }
         ],
-        "note": "cut into wedges (for an optional burst of citrus)",
+        "note": "for an optional burst of citrus, cut into wedges",
         "category": "Produce"
       }
     },
@@ -346,11 +346,11 @@
       }
     },
     {
-      "raw": "fresh squeezed lime juice (to taste (approx 1/4 a lime))",
+      "raw": "fresh squeezed lime juice, to taste (approx 1/4 a lime)",
       "expected": {
         "item": "fresh squeezed lime juice",
         "measurements": [],
-        "note": "to taste (approx 1/4 a lime)",
+        "note": "approx 1/4 a lime, to taste",
         "section": "Homemade Pico De Gallo",
         "category": "Produce"
       }

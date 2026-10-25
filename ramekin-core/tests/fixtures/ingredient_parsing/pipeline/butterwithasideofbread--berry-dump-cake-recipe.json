@@ -22,16 +22,20 @@
       }
     },
     {
-      "raw": "1/2 cup butter (melted (1 stick))",
+      "raw": "1/2 cup butter, melted (1 stick)",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
           }
         ],
-        "note": "melted (1 stick)",
+        "note": "melted",
         "section": "Ingredients",
         "category": "Dairy & Eggs"
       }

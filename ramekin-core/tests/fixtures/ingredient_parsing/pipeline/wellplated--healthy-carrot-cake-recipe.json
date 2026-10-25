@@ -255,16 +255,16 @@
       }
     },
     {
-      "raw": "¼ cup raisins, (golden raisins, or dried cranberries (optional))",
+      "raw": "¼ cup raisins, golden raisins, or dried cranberries (optional)",
       "expected": {
-        "item": "raisins",
+        "item": "raisins, golden raisins, or dried cranberries",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "golden raisins, or dried cranberries (optional)",
+        "note": "optional",
         "section": "For the Cake",
         "category": "Nuts & Dried Fruit"
       }

@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "1 tablespoon cashews (chopped (optional))",
+      "raw": "1 tablespoon cashews, chopped (optional)",
       "expected": {
         "item": "cashews",
         "measurements": [
@@ -91,7 +91,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped (optional)",
+        "note": "optional, chopped",
         "section": "To Temper",
         "category": "Nuts & Dried Fruit"
       }
@@ -112,7 +112,7 @@
       }
     },
     {
-      "raw": "2 green chilies (chopped (skip if making for kids))",
+      "raw": "2 green chilies, chopped (skip if making for kids)",
       "expected": {
         "item": "green chilies",
         "measurements": [
@@ -121,7 +121,7 @@
             "unit": null
           }
         ],
-        "note": "chopped (skip if making for kids)",
+        "note": "skip if making for kids, chopped",
         "section": "To Temper",
         "category": "Produce"
       }
@@ -191,16 +191,16 @@
       }
     },
     {
-      "raw": "½ cup water (to soak rava (+ 2 to 3 tbsps to adjust the consistency))",
+      "raw": "½ cup water, to soak rava (+ 2 to 3 tbsps to adjust the consistency)",
       "expected": {
-        "item": "water",
+        "item": "water, to soak rava",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "to soak rava (+ 2 to 3 tbsps to adjust the consistency)",
+        "note": "+ 2 to 3 tbsps to adjust the consistency",
         "section": "Other Ingredients",
         "category": "Beverages"
       }

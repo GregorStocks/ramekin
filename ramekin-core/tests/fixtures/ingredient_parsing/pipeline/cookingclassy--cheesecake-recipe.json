@@ -68,7 +68,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 (8 oz) pkgs. cream cheese, (softened through or at room temperature (preferably Philadelphia))",
+      "raw": "4 (8 oz) pkgs. cream cheese, softened through or at room temperature (preferably Philadelphia)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -81,7 +81,7 @@
             "unit": "oz"
           }
         ],
-        "note": "softened through or at room temperature (preferably Philadelphia)",
+        "note": "preferably Philadelphia, softened through or at room temperature",
         "section": "For the Cheesecake Filling",
         "category": "Cheese"
       }

@@ -187,11 +187,11 @@
       }
     },
     {
-      "raw": "ghee, (butter or coconut oil (to coat skillet))",
+      "raw": "ghee, butter or coconut oil (to coat skillet)",
       "expected": {
-        "item": "ghee",
+        "item": "ghee, butter or coconut oil",
         "measurements": [],
-        "note": "butter or coconut oil (to coat skillet)",
+        "note": "to coat skillet",
         "section": "Paleo Pumpkin Pancakes",
         "category": "Dairy & Eggs"
       }

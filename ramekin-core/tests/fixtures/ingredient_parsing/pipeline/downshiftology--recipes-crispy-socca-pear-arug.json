@@ -77,16 +77,20 @@
       }
     },
     {
-      "raw": "1 small shallot, (thinly sliced (approx 1/4 cup))",
+      "raw": "1 small shallot, thinly sliced (approx 1/4 cup)",
       "expected": {
         "item": "shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
-        "note": "thinly sliced (approx 1/4 cup)",
+        "note": "approx 1/4 cup, thinly sliced",
         "section": "Socca",
         "category": "Produce"
       }

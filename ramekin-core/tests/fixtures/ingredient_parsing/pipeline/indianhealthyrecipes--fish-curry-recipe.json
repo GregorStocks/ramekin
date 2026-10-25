@@ -150,16 +150,16 @@
       }
     },
     {
-      "raw": "2 medium tomatoes (ripe (¾ to 1 cup chopped))",
+      "raw": "2 medium tomatoes, ripe (¾ to 1 cup chopped)",
       "expected": {
-        "item": "tomatoes",
+        "item": "tomatoes, ripe",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "ripe (3/4 to 1 cup chopped)",
+        "note": "3/4 to 1 cup chopped",
         "section": "To Saute & Puree",
         "category": "Produce"
       }
@@ -289,7 +289,7 @@
       }
     },
     {
-      "raw": "1 to 1 ½ tsp garam masala (or curry powder as needed (refer notes))",
+      "raw": "1 to 1 ½ tsp garam masala, or curry powder as needed (refer notes)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -298,7 +298,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "or curry powder as needed (refer notes)",
+        "note": "refer notes; or curry powder as needed",
         "section": "For Curry",
         "category": "Spices & Seasonings"
       }

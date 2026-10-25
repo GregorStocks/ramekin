@@ -176,16 +176,16 @@
       "is_section_header": true
     },
     {
-      "raw": "8 ounces milk or semi-sweet chocolate, (broken into small pieces (see note))",
+      "raw": "8 ounces milk or semi-sweet chocolate, broken into small pieces (see note)",
       "expected": {
-        "item": "milk or semi-sweet chocolate",
+        "item": "milk or semi-sweet chocolate, broken into small pieces",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "broken into small pieces (see note)",
+        "note": "see note",
         "section": "For the Frosting",
         "category": "Baking"
       }

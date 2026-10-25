@@ -73,9 +73,11 @@ static INGREDIENT_NOTES_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
 /// WPRM sets an ingredient's notes apart in their own span ("3 large eggs" and
 /// "room temperature"), but its HTML text and its JSON-LD both run them into
 /// the name, "3 large eggs room temperature", which the parser then reads as
-/// part of the food. Puts the notes of each line that matches a card
-/// ingredient in parentheses; notes that already open with "(" or "," are
-/// left as they are. None when no line changes.
+/// part of the food. Sets the notes of each line that matches a card
+/// ingredient apart: in parentheses, or after a comma when they hold
+/// parentheses of their own ("chopped (4 grams)"), since the parser doesn't
+/// read nested ones. Notes that open with "(" or ",", and parenthesized ones
+/// already after a comma, are left. None when no line changes.
 pub(super) fn parenthesize_wprm_notes(ingredients: &str, document: &Html) -> Option<String> {
     let mut notes_by_line = std::collections::HashMap::new();
     for item in document.select(&WPRM_INGREDIENT_SELECTOR) {
@@ -100,8 +102,15 @@ pub(super) fn parenthesize_wprm_notes(ingredients: &str, document: &Html) -> Opt
                 .and_then(|notes| Some((key.strip_suffix(notes.as_str())?.trim_end(), notes)));
             match base {
                 Some((base, notes)) if !base.is_empty() => {
-                    changed = true;
-                    format!("{base} ({notes})")
+                    if !notes.contains(['(', ')']) {
+                        changed = true;
+                        format!("{base} ({notes})")
+                    } else if !base.ends_with(',') {
+                        changed = true;
+                        format!("{base}, {notes}")
+                    } else {
+                        line.to_string()
+                    }
                 }
                 _ => line.to_string(),
             }

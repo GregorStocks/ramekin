@@ -206,7 +206,7 @@
       }
     },
     {
-      "raw": "1 vanilla bean, (scraped (or 1 tsp vanilla extract))",
+      "raw": "1 vanilla bean, scraped (or 1 tsp vanilla extract)",
       "expected": {
         "item": "vanilla bean",
         "measurements": [
@@ -215,7 +215,7 @@
             "unit": null
           }
         ],
-        "note": "scraped (or 1 tsp vanilla extract)",
+        "note": "scraped; or 1 tsp vanilla extract",
         "section": "Vanilla Bean Marshmallow",
         "category": "Spices & Seasonings"
       }

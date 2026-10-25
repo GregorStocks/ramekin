@@ -360,7 +360,7 @@
       }
     },
     {
-      "raw": "1 tablespoon bourbon, amaretto, or brandy, (optional (increase vanilla to 1 tablespoon if omitting))",
+      "raw": "1 tablespoon   bourbon, amaretto, or brandy, optional (increase vanilla to 1 tablespoon if omitting)",
       "expected": {
         "item": "bourbon, amaretto, or brandy",
         "measurements": [
@@ -369,7 +369,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional (increase vanilla to 1 tablespoon if omitting)",
+        "note": "increase vanilla to 1 tablespoon if omitting, optional",
         "section": "For Pumpkin Cream Layer",
         "category": "Beverages"
       }
@@ -462,11 +462,11 @@
       }
     },
     {
-      "raw": "chocolate curls or grated chocolate, (for garnish (optional))",
+      "raw": "chocolate curls or grated chocolate, for garnish (optional)",
       "expected": {
         "item": "chocolate curls or grated chocolate",
         "measurements": [],
-        "note": "for garnish (optional)",
+        "note": "optional, for garnish",
         "section": "For Whipped Cream & Garnish",
         "category": "Other"
       }

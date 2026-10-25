@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "10 ounces (284 g) tuna (drained (preferably a good chunky tuna in olive oil), (usually 2 cans that are 5 oz each))",
+      "raw": "10 ounces (284 g) tuna, drained (preferably a good chunky tuna in olive oil), (usually 2 cans that are 5 oz each)",
       "expected": {
         "item": "tuna",
         "measurements": [
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained (preferably a good chunky tuna in olive oil), (usually 2 cans that are 5 oz each)",
+        "note": "preferably a good chunky tuna in olive oil, usually 2 cans that are 5 oz each, drained",
         "section": "For the Tuna Salad",
         "category": "Meat & Seafood"
       }

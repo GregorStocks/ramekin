@@ -149,9 +149,9 @@
       "is_section_header": true
     },
     {
-      "raw": "130g / 1 1/3 cups tightly packed mozzarella cheese, freshly grated (per pizza, (Note 8))",
+      "raw": "130g / 1 1/3 cups tightly packed mozzarella cheese, freshly grated, per pizza, (Note 8)",
       "expected": {
-        "item": "mozzarella cheese",
+        "item": "mozzarella cheese, freshly grated, per pizza",
         "measurements": [
           {
             "amount": "130",
@@ -162,7 +162,7 @@
             "unit": "cup"
           }
         ],
-        "note": "per pizza, (Note 8), freshly grated, tightly packed",
+        "note": "Note 8, tightly packed",
         "section": "Toppings",
         "category": "Cheese"
       }

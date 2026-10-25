@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 bay leaf (or 1 sprig of curry leaves (optional))",
+      "raw": "1 bay leaf, or 1 sprig of curry leaves (optional)",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "¾ to 1 teaspoon ginger (grated or ginger paste (1 inch piece))",
+      "raw": "¾ to 1 teaspoon ginger, grated or ginger paste (1 inch piece)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -54,12 +54,12 @@
             "unit": "tsp"
           }
         ],
-        "note": "grated or ginger paste (1 inch piece)",
+        "note": "1 inch piece, grated or ginger paste",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup onion (finely chopped (1 very small, optional))",
+      "raw": "¼ cup onion, finely chopped (1 very small, optional)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -68,7 +68,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped (1 very small, optional)",
+        "note": "1 very small, optional, finely chopped",
         "category": "Produce"
       }
     },
@@ -87,16 +87,20 @@
       }
     },
     {
-      "raw": "½ cup tomatoes (deseeded & fine chopped or pureed (1 medium))",
+      "raw": "½ cup tomatoes, deseeded & fine chopped or pureed (1 medium)",
       "expected": {
         "item": "tomatoes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "medium"
           }
         ],
-        "note": "deseeded & fine chopped or pureed (1 medium)",
+        "note": "deseeded & fine chopped or pureed",
         "category": "Produce"
       }
     },

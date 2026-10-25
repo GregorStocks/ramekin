@@ -3,9 +3,9 @@
   "recipe_slug": "cooking-recipe-ideas-recipes-a",
   "ingredients": [
     {
-      "raw": "2 c. panko bread crumbs",
+      "raw": "2 c. ice",
       "expected": {
-        "item": "panko bread crumbs",
+        "item": "ice",
         "measurements": [
           {
             "amount": "2",
@@ -13,59 +13,13 @@
           }
         ],
         "note": null,
-        "category": "Bakery & Bread"
+        "category": "Frozen"
       }
     },
     {
-      "raw": "1/2 tsp. garlic powder",
+      "raw": "1/4 c. blue curaçao",
       "expected": {
-        "item": "garlic powder",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "Kosher salt",
-      "expected": {
-        "item": "Kosher salt",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "Freshly ground black pepper",
-      "expected": {
-        "item": "Freshly ground black pepper",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "3 large eggs",
-      "expected": {
-        "item": "eggs",
-        "measurements": [
-          {
-            "amount": "3",
-            "unit": "large"
-          }
-        ],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "1/4 c. buttermilk",
-      "expected": {
-        "item": "buttermilk",
+        "item": "blue curaçao",
         "measurements": [
           {
             "amount": "0.25",
@@ -73,77 +27,63 @@
           }
         ],
         "note": null,
-        "category": "Dairy & Eggs"
+        "category": "Other"
       }
     },
     {
-      "raw": "6 bone-in, skin-on chicken thighs",
+      "raw": "1 c. white rum",
       "expected": {
-        "item": "bone-in, skin-on chicken thighs",
+        "item": "white rum",
         "measurements": [
           {
-            "amount": "6",
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 c. lemonade",
+      "expected": {
+        "item": "lemonade",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 lemon slices",
+      "expected": {
+        "item": "lemon slices",
+        "measurements": [
+          {
+            "amount": "4",
             "unit": null
           }
         ],
         "note": null,
-        "category": "Meat & Seafood"
+        "category": "Produce"
       }
     },
     {
-      "raw": "3 tbsp. Dijon mustard",
+      "raw": "8 maraschino cherries",
       "expected": {
-        "item": "Dijon mustard",
+        "item": "maraschino cherries",
         "measurements": [
           {
-            "amount": "3",
-            "unit": "tbsp"
+            "amount": "8",
+            "unit": null
           }
         ],
         "note": null,
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "2 tbsp. barbecue sauce",
-      "expected": {
-        "item": "barbecue sauce",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "1 tbsp. mayonnaise",
-      "expected": {
-        "item": "mayonnaise",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "2 tsp. honey",
-      "expected": {
-        "item": "honey",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
+        "category": "Canned Goods"
       }
     }
   ]

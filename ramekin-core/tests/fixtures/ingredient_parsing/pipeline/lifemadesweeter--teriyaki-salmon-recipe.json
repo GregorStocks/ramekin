@@ -176,16 +176,20 @@
       "is_section_header": true
     },
     {
-      "raw": "1 1/2 - 2 pound salmon filet (or 4 salmon (4-6 ounce) filets, skin on)",
+      "raw": "1 1/2 - 2 pound salmon filet, or 4 salmon (4-6 ounce) filets, skin on",
       "expected": {
         "item": "salmon filet",
         "measurements": [
           {
             "amount": "1.5-2",
             "unit": "lb"
+          },
+          {
+            "amount": "4-6",
+            "unit": "oz"
           }
         ],
-        "note": "or 4 salmon (4-6 ounce) filets, skin on",
+        "note": "or 4 salmon filets, skin on",
         "section": "For the Salmon",
         "category": "Meat & Seafood"
       }
