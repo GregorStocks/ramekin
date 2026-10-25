@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pound  / 453 g chicken tenders, or chicken breasts cut into 1-inch strips",
+      "raw": "1 pound / 453 g chicken tenders, (or chicken breasts cut into 1-inch strips)",
       "expected": {
         "item": "chicken tenders",
         "measurements": [
@@ -188,7 +188,7 @@
       }
     },
     {
-      "raw": "½ teaspoon   red pepper flakes, more or less to taste",
+      "raw": "½ teaspoon red pepper flakes, (more or less to taste)",
       "expected": {
         "item": "red pepper flakes",
         "measurements": [
@@ -286,7 +286,7 @@
       }
     },
     {
-      "raw": "1 teaspoon   lemon juice, more or less to taste",
+      "raw": "1 teaspoon lemon juice, (more or less to taste)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -301,7 +301,7 @@
       }
     },
     {
-      "raw": "salt and freshly ground black pepper, to taste",
+      "raw": "salt and freshly ground black pepper, (to taste)",
       "expected": {
         "item": "salt and freshly ground black pepper",
         "measurements": [],
@@ -311,7 +311,7 @@
       }
     },
     {
-      "raw": "2 tablespoons   chopped fresh parsley, for topping",
+      "raw": "2 tablespoons chopped fresh parsley, (for topping)",
       "expected": {
         "item": "chopped fresh parsley",
         "measurements": [
@@ -326,7 +326,7 @@
       }
     },
     {
-      "raw": "parmesan cheese, for topping",
+      "raw": "parmesan cheese, (for topping)",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [],

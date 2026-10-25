@@ -45,20 +45,16 @@
       }
     },
     {
-      "raw": "1 tablespoon plus 3/4 cup 170g granulated sugar",
+      "raw": "1 tablespoon plus 3/4 cup (170g granulated sugar)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 tablespoon plus 3/4 cup",
             "unit": null
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "170g granulated sugar",
         "section": "Cupcakes",
         "category": "Baking"
       }
@@ -94,18 +90,22 @@
       }
     },
     {
-      "raw": "1 ripe banana 109g",
+      "raw": "1 ripe banana (109g)",
       "expected": {
-        "item": "ripe banana 109g",
+        "item": "ripe banana",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "109",
+            "unit": "g"
           }
         ],
         "note": null,
         "section": "Cupcakes",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -203,7 +203,7 @@
       }
     },
     {
-      "raw": "2-3 drops pink food color optional",
+      "raw": "2-3 drops pink food color (optional)",
       "expected": {
         "item": "pink food color",
         "measurements": [

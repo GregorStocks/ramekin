@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "2 tablespoons apple cider vinegar OR 3 Tbs rice wine vinegar",
+      "raw": "2 tablespoons apple cider vinegar (OR 3 Tbs rice wine vinegar)",
       "expected": {
         "item": "apple cider vinegar",
         "measurements": [
@@ -31,7 +31,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or 3 Tbs rice wine vinegar",
+        "note": "OR 3 Tbs rice wine vinegar",
         "section": "For the Teriyaki Sauce",
         "category": "Oils & Vinegars"
       }
@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic minced",
+      "raw": "2 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -112,18 +112,18 @@
       }
     },
     {
-      "raw": "1/3 cup orange juice about half an orange",
+      "raw": "1/3 cup orange juice (about half an orange)",
       "expected": {
-        "item": "orange juice about half an orange",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about half an orange",
         "section": "For the Teriyaki Sauce",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -176,7 +176,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 1/2 - 2 pound salmon filet or 4 salmon (4-6 ounce) filets, skin on",
+      "raw": "1 1/2 - 2 pound salmon filet, or 4 salmon (4-6 ounce) filets, skin on",
       "expected": {
         "item": "salmon filet",
         "measurements": [
@@ -195,7 +195,7 @@
       }
     },
     {
-      "raw": "kosher or sea salt and freshly cracked black pepper to taste",
+      "raw": "kosher or sea salt and freshly cracked black pepper (to taste)",
       "expected": {
         "item": "kosher or sea salt and freshly cracked black pepper",
         "measurements": [],
@@ -239,7 +239,7 @@
       "is_section_header": true
     },
     {
-      "raw": "green onions sliced",
+      "raw": "green onions (sliced)",
       "expected": {
         "item": "green onions",
         "measurements": [],
@@ -249,7 +249,7 @@
       }
     },
     {
-      "raw": "fresh cilantro chopped",
+      "raw": "fresh cilantro (chopped)",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [],

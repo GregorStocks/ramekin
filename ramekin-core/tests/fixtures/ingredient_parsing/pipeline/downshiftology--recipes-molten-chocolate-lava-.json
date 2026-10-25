@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "7 oz dark bittersweet chocolate, chopped",
+      "raw": "7 oz dark bittersweet chocolate, (chopped)",
       "expected": {
         "item": "dark bittersweet chocolate",
         "measurements": [
@@ -119,16 +119,16 @@
       "is_section_header": true
     },
     {
-      "raw": "13.5 oz full fat coconut milk, refrigerated overnight",
+      "raw": "13.5 oz full fat coconut milk, (refrigerated overnight)",
       "expected": {
-        "item": "full fat coconut milk, refrigerated overnight",
+        "item": "full fat coconut milk",
         "measurements": [
           {
             "amount": "13.5",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "refrigerated overnight",
         "section": "Topping",
         "category": "Canned Goods"
       }

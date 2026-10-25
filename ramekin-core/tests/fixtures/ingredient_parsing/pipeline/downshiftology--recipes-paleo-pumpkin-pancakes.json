@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "4 large eggs, beaten",
+      "raw": "4 large eggs, (beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -142,31 +142,31 @@
       }
     },
     {
-      "raw": "1 tbsp honey, or maple syrup",
+      "raw": "1 tbsp honey, (or maple syrup)",
       "expected": {
-        "item": "honey, or maple syrup",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or maple syrup",
         "section": "Paleo Pumpkin Pancakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp white wine vinegar, or apple cider vinegar",
+      "raw": "1 tsp white wine vinegar, (or apple cider vinegar)",
       "expected": {
-        "item": "white wine vinegar, or apple cider vinegar",
+        "item": "white wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or apple cider vinegar",
         "section": "Paleo Pumpkin Pancakes",
         "category": "Oils & Vinegars"
       }
@@ -197,11 +197,11 @@
       }
     },
     {
-      "raw": "chopped pecans, to sprinkle on top",
+      "raw": "chopped pecans, (to sprinkle on top)",
       "expected": {
-        "item": "chopped pecans, to sprinkle on top",
+        "item": "chopped pecans",
         "measurements": [],
-        "note": null,
+        "note": "to sprinkle on top",
         "section": "Paleo Pumpkin Pancakes",
         "category": "Nuts & Dried Fruit"
       }

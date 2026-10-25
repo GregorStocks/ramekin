@@ -17,17 +17,17 @@
       }
     },
     {
-      "raw": "4 boneless skinless chicken breasts, thawed",
+      "raw": "4 boneless (skinless chicken breasts, thawed)",
       "expected": {
-        "item": "boneless skinless chicken breasts",
+        "item": "boneless",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "thawed",
-        "category": "Meat & Seafood"
+        "note": "skinless chicken breasts, thawed",
+        "category": "Other"
       }
     },
     {

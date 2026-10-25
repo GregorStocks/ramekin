@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "1 cup strawberries, frozen",
+      "raw": "1 cup strawberries, (frozen)",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "1 cup banana, frozen",
+      "raw": "1 cup banana, (frozen)",
       "expected": {
         "item": "banana",
         "measurements": [
@@ -82,22 +82,22 @@
       }
     },
     {
-      "raw": "1 cup Greek yogurt, plain or flavored",
+      "raw": "1 cup Greek yogurt, (plain or flavored)",
       "expected": {
-        "item": "Greek yogurt, plain or flavored",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plain or flavored",
         "section": "For the Smoothie Bowl",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "additional milk or yogurt, as needed",
+      "raw": "additional milk or yogurt, (as needed)",
       "expected": {
         "item": "additional milk or yogurt",
         "measurements": [],
@@ -111,7 +111,7 @@
       "is_section_header": true
     },
     {
-      "raw": "fresh fruit, sliced",
+      "raw": "fresh fruit, (sliced)",
       "expected": {
         "item": "fresh fruit",
         "measurements": [],

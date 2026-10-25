@@ -146,33 +146,33 @@
       }
     },
     {
-      "raw": "1 tbsp cold water for slurry",
+      "raw": "1 tbsp cold water (for slurry)",
       "expected": {
-        "item": "cold water for slurry",
+        "item": "cold water",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for slurry",
         "section": "Sauce",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
-      "raw": "1 tsp potato starch (katakuriko) for slurry",
+      "raw": "1 tsp potato starch (katakuriko) (for slurry)",
       "expected": {
-        "item": "potato starch for slurry",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "katakuriko",
+        "note": "katakuriko, for slurry",
         "section": "Sauce",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -180,33 +180,33 @@
       "is_section_header": true
     },
     {
-      "raw": "1 tbsp Japanese leek (naganegi) white part, finely diced",
+      "raw": "1 tbsp Japanese leek (naganegi) (white part, finely diced)",
       "expected": {
-        "item": "Japanese leek white part",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "naganegi, finely diced",
+        "note": "naganegi, white part, finely diced",
         "section": "Tenshinhan",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "30 g imitation crab crab sticks",
+      "raw": "30 g imitation crab (crab sticks)",
       "expected": {
-        "item": "imitation crab crab sticks",
+        "item": "imitation crab",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "crab sticks",
         "section": "Tenshinhan",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -240,33 +240,33 @@
       }
     },
     {
-      "raw": "1 tbsp shiitake mushroom dashi leftover from soaked shiitake",
+      "raw": "1 tbsp shiitake mushroom dashi (leftover from soaked shiitake)",
       "expected": {
-        "item": "shiitake mushroom dashi leftover from soaked shiitake",
+        "item": "shiitake mushroom dashi",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "leftover from soaked shiitake",
         "section": "Tenshinhan",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tsp ginger paste or grated ginger",
+      "raw": "1 tsp ginger paste (or grated ginger)",
       "expected": {
-        "item": "ginger paste or grated ginger",
+        "item": "ginger paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or grated ginger",
         "section": "Tenshinhan",
-        "category": "Produce"
+        "category": "Other"
       }
     },
     {
@@ -330,13 +330,13 @@
       }
     },
     {
-      "raw": "green peas to garnish",
+      "raw": "green peas (to garnish)",
       "expected": {
-        "item": "green peas to garnish",
+        "item": "green peas",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "Tenshinhan",
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

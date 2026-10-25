@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "1 tsp ground sesame seeds optional",
+      "raw": "1 tsp ground sesame seeds (optional)",
       "expected": {
         "item": "ground sesame seeds",
         "measurements": [
@@ -146,16 +146,16 @@
       }
     },
     {
-      "raw": "2 perilla leaves (shiso) or nori / chopped green onion",
+      "raw": "2 perilla leaves (shiso) (or nori / chopped green onion)",
       "expected": {
-        "item": "perilla leaves or nori / chopped green onion",
+        "item": "perilla leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "shiso",
+        "note": "shiso, or nori / chopped green onion",
         "section": "Kaisendon",
         "category": "Produce"
       }

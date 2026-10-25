@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "2 bunches thick asparagus spears, bottom ends trimmed",
+      "raw": "2 bunches thick asparagus spears, (bottom ends trimmed)",
       "expected": {
         "item": "thick asparagus spears",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1 tablespoon minced fresh chives, for garnish",
+      "raw": "1 tablespoon minced fresh chives, (for garnish)",
       "expected": {
         "item": "minced fresh chives",
         "measurements": [
@@ -56,16 +56,16 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup mayonnaise, best quality such as Hellmann's or Duke's",
+      "raw": "½ cup mayonnaise, (best quality such as Hellmann's or Duke's)",
       "expected": {
-        "item": "mayonnaise, best quality",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "such as Hellmann's or Duke's",
+        "note": "best quality such as Hellmann's or Duke's",
         "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }

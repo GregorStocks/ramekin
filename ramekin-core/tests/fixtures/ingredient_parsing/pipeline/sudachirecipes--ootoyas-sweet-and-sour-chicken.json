@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "250 g boneless chicken thigh boneless, skin-on",
+      "raw": "250 g boneless chicken thigh (boneless, skin-on)",
       "expected": {
-        "item": "boneless chicken thigh boneless, skin-on",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless, skin-on",
         "section": "For the Chicken",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -37,46 +37,46 @@
       }
     },
     {
-      "raw": "1 tsp sake or white wine",
+      "raw": "1 tsp sake (or white wine)",
       "expected": {
-        "item": "sake or white wine",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or white wine",
         "section": "For the Chicken",
         "category": "Beverages"
       }
     },
     {
-      "raw": "½ tsp grated ginger root or ginger paste",
+      "raw": "½ tsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root or ginger paste",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "section": "For the Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ tsp grated garlic or garlic paste",
+      "raw": "½ tsp grated garlic (or garlic paste)",
       "expected": {
-        "item": "grated garlic or garlic paste",
+        "item": "grated garlic",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or garlic paste",
         "section": "For the Chicken",
         "category": "Produce"
       }
@@ -176,16 +176,16 @@
       }
     },
     {
-      "raw": "1 tbsp sake or white wine",
+      "raw": "1 tbsp sake (or white wine)",
       "expected": {
-        "item": "sake or white wine",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or white wine",
         "section": "Sauce",
         "category": "Beverages"
       }
@@ -225,7 +225,7 @@
       "is_section_header": true
     },
     {
-      "raw": "cooking oil for shallow frying",
+      "raw": "cooking oil (for shallow frying)",
       "expected": {
         "item": "cooking oil",
         "measurements": [],

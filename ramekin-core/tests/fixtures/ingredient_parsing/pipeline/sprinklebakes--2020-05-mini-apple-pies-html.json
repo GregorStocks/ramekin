@@ -90,18 +90,18 @@
       }
     },
     {
-      "raw": "1 egg slightly beaten",
+      "raw": "1 egg (slightly beaten)",
       "expected": {
-        "item": "egg slightly beaten",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "slightly beaten",
         "section": "Pate Sucrée Crust",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -207,7 +207,7 @@
       }
     },
     {
-      "raw": "5 large tart, firm apples, thinly sliced (tested with Granny Smith)",
+      "raw": "5 large, tart, firm apples, thinly sliced (tested with Granny Smith)",
       "expected": {
         "item": "tart, firm apples",
         "measurements": [
@@ -241,13 +241,13 @@
       "is_section_header": true
     },
     {
-      "raw": "Egg wash 1 egg beaten with 1 tbsp. water",
+      "raw": "Egg wash (1 egg beaten with 1 tbsp. water)",
       "expected": {
-        "item": "Egg wash 1 egg",
+        "item": "Egg wash",
         "measurements": [],
-        "note": "beaten with 1 tbsp. water",
+        "note": "1 egg beaten with 1 tbsp. water",
         "section": "Assemble the Pies",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "50 g green cabbage shredded",
+      "raw": "50 g green cabbage (shredded)",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -176,18 +176,22 @@
       }
     },
     {
-      "raw": "100 g thinly sliced pork belly approx 4 slices",
+      "raw": "100 g thinly sliced pork belly (approx 4 slices)",
       "expected": {
-        "item": "thinly sliced pork belly approx 4 slices",
+        "item": "thinly sliced pork belly",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "approx 4 slices",
         "section": "Tonpeiyaki",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {

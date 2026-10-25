@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "4 cups shredded cheddar cheese divided",
+      "raw": "4 cups shredded cheddar cheese (divided)",
       "expected": {
         "item": "shredded cheddar cheese",
         "measurements": [
@@ -166,16 +166,16 @@
       }
     },
     {
-      "raw": "1 medium jalapeno sliced, or pickled jalapenos",
+      "raw": "1 medium jalapeno (sliced, or pickled jalapenos)",
       "expected": {
-        "item": "jalapeno sliced, or pickled jalapenos",
+        "item": "jalapeno",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "sliced, or pickled jalapenos",
         "section": "Additional Topping Ideas",
         "category": "Produce"
       }

@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "4 eggs at room temperature",
+      "raw": "4 eggs (at room temperature)",
       "expected": {
-        "item": "eggs at room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Sponge Roll",
         "category": "Dairy & Eggs"
       }
@@ -164,16 +164,16 @@
       "is_section_header": true
     },
     {
-      "raw": "8 oz. cream cheese at room temperature",
+      "raw": "8 oz. cream cheese (at room temperature)",
       "expected": {
-        "item": "cream cheese at room temperature",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Filling and Frosting",
         "category": "Cheese"
       }
@@ -320,7 +320,7 @@
       }
     },
     {
-      "raw": "1 tablespoons vegetable shortening or coconut oil plus more for greasing egg shells",
+      "raw": "1 tablespoons vegetable shortening or coconut oil (plus more for greasing egg shells)",
       "expected": {
         "item": "vegetable shortening or coconut oil",
         "measurements": [

@@ -221,7 +221,7 @@
       }
     },
     {
-      "raw": "3 large  eggs beaten",
+      "raw": "3 large eggs (beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "¼ cups  parsley minced",
+      "raw": "¼ cups parsley (minced)",
       "expected": {
         "item": "parsley",
         "measurements": [
@@ -285,7 +285,7 @@
       }
     },
     {
-      "raw": "powdered sugar for dusting",
+      "raw": "powdered sugar (for dusting)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [],
@@ -295,7 +295,7 @@
       }
     },
     {
-      "raw": "ground cinnamon for dusting",
+      "raw": "ground cinnamon (for dusting)",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [],

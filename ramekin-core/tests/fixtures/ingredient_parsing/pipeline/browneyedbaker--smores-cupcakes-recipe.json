@@ -193,7 +193,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 ounces  (113.4 g) semisweet chocolate, finely chopped",
+      "raw": "4 ounces (113.4 g) semisweet chocolate, (finely chopped)",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
@@ -235,13 +235,17 @@
       "is_section_header": true
     },
     {
-      "raw": "1   envelope unflavored gelatin, 1 tablespoon",
+      "raw": "1 envelope unflavored gelatin, (1 tablespoon)",
       "expected": {
-        "item": "unflavored gelatin, 1 tablespoon",
+        "item": "unflavored gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
           }
         ],
         "note": null,

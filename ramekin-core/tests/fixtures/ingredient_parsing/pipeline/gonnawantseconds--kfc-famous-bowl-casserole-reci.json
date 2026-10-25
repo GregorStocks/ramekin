@@ -3,49 +3,49 @@
   "recipe_slug": "kfc-famous-bowl-casserole-reci",
   "ingredients": [
     {
-      "raw": "6 cups prepared mashed potatoes homemade or store bought",
+      "raw": "6 cups prepared mashed potatoes (homemade or store bought)",
       "expected": {
-        "item": "prepared mashed potatoes homemade or store bought",
+        "item": "prepared mashed potatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store bought",
         "category": "Other"
       }
     },
     {
-      "raw": "8 ounces frozen corn,  thawed, drained, and heated",
+      "raw": "8 ounces frozen corn, (thawed, drained, and heated)",
       "expected": {
-        "item": "frozen corn, thawed, drained, and heated",
+        "item": "frozen corn",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "thawed, drained, and heated",
         "category": "Frozen"
       }
     },
     {
-      "raw": "26 ounces frozen chicken nuggets (chopped) or popcorn chicken  heated per package instructions",
+      "raw": "26 ounces frozen chicken nuggets (chopped) or popcorn chicken (heated per package instructions)",
       "expected": {
-        "item": "frozen chicken nuggets or popcorn chicken heated per package instructions",
+        "item": "frozen chicken nuggets or popcorn chicken",
         "measurements": [
           {
             "amount": "26",
             "unit": "oz"
           }
         ],
-        "note": "chopped",
+        "note": "chopped, heated per package instructions",
         "category": "Frozen"
       }
     },
     {
-      "raw": "2 cups Colby jack or cheddar cheese,   shredded",
+      "raw": "2 cups Colby jack or cheddar cheese, (shredded)",
       "expected": {
         "item": "Colby jack or cheddar cheese",
         "measurements": [
@@ -77,7 +77,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 tablespoons fresh parsley,  minced",
+      "raw": "2 tablespoons fresh parsley, (minced)",
       "expected": {
         "item": "fresh parsley",
         "measurements": [

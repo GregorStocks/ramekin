@@ -101,21 +101,21 @@
       }
     },
     {
-      "raw": "2 tbsp preferred shredded melting cheese Gouda, Emmental, and Gruyère, Cheddar, etc",
+      "raw": "2 tbsp preferred shredded melting cheese (Gouda, Emmental, and Gruyère, Cheddar, etc)",
       "expected": {
-        "item": "preferred shredded melting cheese Gouda, Emmental, and Gruyère, Cheddar, etc",
+        "item": "preferred shredded melting cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "Gouda, Emmental, and Gruyère, Cheddar, etc",
+        "category": "Cheese"
       }
     },
     {
-      "raw": "50 g onion finely diced",
+      "raw": "50 g onion (finely diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -205,22 +205,22 @@
       }
     },
     {
-      "raw": "5 tbsp all-purpose flour for batter",
+      "raw": "5 tbsp all-purpose flour (for batter)",
       "expected": {
-        "item": "all-purpose flour for batter",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for batter",
         "section": "Coating",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "3 tbsp all-purpose flour for coating",
+      "raw": "3 tbsp all-purpose flour (for coating)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -250,7 +250,7 @@
       }
     },
     {
-      "raw": "cooking oil for deep frying",
+      "raw": "cooking oil (for deep frying)",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
@@ -260,13 +260,13 @@
       }
     },
     {
-      "raw": "dried parsley optional garnish",
+      "raw": "dried parsley (optional garnish)",
       "expected": {
-        "item": "dried parsley optional garnish",
+        "item": "dried parsley",
         "measurements": [],
-        "note": null,
+        "note": "optional garnish",
         "section": "Coating",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {

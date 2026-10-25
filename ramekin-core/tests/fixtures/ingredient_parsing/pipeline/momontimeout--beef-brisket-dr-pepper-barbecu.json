@@ -3,45 +3,53 @@
   "recipe_slug": "beef-brisket-dr-pepper-barbecu",
   "ingredients": [
     {
-      "raw": "1 beef brisket 7 to 9 lbs",
+      "raw": "1 beef brisket (7 to 9 lbs)",
       "expected": {
-        "item": "beef brisket 7 to 9 lbs",
+        "item": "beef brisket",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "7 to 9",
+            "unit": "lb"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "16.9 oz Dr Pepper 1 bottle",
+      "raw": "16.9 oz Dr Pepper (1 bottle)",
       "expected": {
-        "item": "Dr Pepper 1 bottle",
+        "item": "Dr Pepper",
         "measurements": [
           {
             "amount": "16.9",
             "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "bottle"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
-      "raw": "2 tsp salt used smoked sea salt for a wonderful smoky flavor",
+      "raw": "2 tsp salt (used smoked sea salt for a wonderful smoky flavor)",
       "expected": {
-        "item": "salt used smoked sea salt for a wonderful smoky flavor",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "used smoked sea salt for a wonderful smoky flavor",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +101,7 @@
       }
     },
     {
-      "raw": "1 medium onion diced",
+      "raw": "1 medium onion (diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -108,7 +116,7 @@
       }
     },
     {
-      "raw": "2 garlic cloves diced",
+      "raw": "2 garlic cloves (diced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -123,18 +131,22 @@
       }
     },
     {
-      "raw": "16.9 oz Dr Pepper 1 bottle",
+      "raw": "16.9 oz Dr Pepper (1 bottle)",
       "expected": {
-        "item": "Dr Pepper 1 bottle",
+        "item": "Dr Pepper",
         "measurements": [
           {
             "amount": "16.9",
             "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "bottle"
           }
         ],
         "note": null,
         "section": "Dr Pepper Barbecue Sauce",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -243,18 +255,18 @@
       }
     },
     {
-      "raw": "1 tsp salt smoked sea salt is great if you have it",
+      "raw": "1 tsp salt (smoked sea salt is great if you have it)",
       "expected": {
-        "item": "salt smoked sea salt is great if you have it",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "smoked sea salt is great if you have it",
         "section": "Dr Pepper Barbecue Sauce",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     }
   ]

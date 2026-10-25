@@ -86,16 +86,16 @@
       "is_section_header": true
     },
     {
-      "raw": "300 g filleted eels 1 fillet is approx 150g",
+      "raw": "300 g filleted eels (1 fillet is approx 150g)",
       "expected": {
-        "item": "filleted eels 1 fillet is approx 150g",
+        "item": "filleted eels",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 fillet is approx 150g",
         "section": "Unagi Don",
         "category": "Other"
       }
@@ -116,22 +116,22 @@
       }
     },
     {
-      "raw": "2 portions cooked Japanese short-grain rice see here for how to cook Japanese rice",
+      "raw": "2 portions cooked Japanese short-grain rice (see here for how to cook Japanese rice)",
       "expected": {
-        "item": "cooked Japanese short-grain rice see here for how to cook Japanese rice",
+        "item": "cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "2",
             "unit": "portion"
           }
         ],
-        "note": null,
+        "note": "see here for how to cook Japanese rice",
         "section": "Unagi Don",
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "Japanese sansho pepper optional",
+      "raw": "Japanese sansho pepper (optional)",
       "expected": {
         "item": "Japanese sansho pepper",
         "measurements": [],

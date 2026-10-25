@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "⅓ cup prepared salsa plus additional for serving",
+      "raw": "⅓ cup prepared salsa (plus additional for serving)",
       "expected": {
         "item": "prepared salsa",
         "measurements": [
@@ -145,11 +145,11 @@
       }
     },
     {
-      "raw": "Sour cream or plain Greek yogurt",
+      "raw": "Sour cream (or plain Greek yogurt)",
       "expected": {
-        "item": "Sour cream or plain Greek yogurt",
+        "item": "Sour cream",
         "measurements": [],
-        "note": null,
+        "note": "or plain Greek yogurt",
         "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }

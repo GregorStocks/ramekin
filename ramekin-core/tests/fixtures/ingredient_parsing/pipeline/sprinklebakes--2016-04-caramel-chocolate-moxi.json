@@ -324,7 +324,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 oz. semisweet chocolate chopped",
+      "raw": "4 oz. semisweet chocolate (chopped)",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
@@ -396,13 +396,17 @@
       "is_section_header": true
     },
     {
-      "raw": "2 TCHO chocolate bars 70 grams each",
+      "raw": "2 TCHO chocolate bars (70 grams each)",
       "expected": {
-        "item": "TCHO chocolate bars 70 grams each",
+        "item": "TCHO chocolate bars",
         "measurements": [
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": "70",
+            "unit": "g each"
           }
         ],
         "note": null,
@@ -411,13 +415,17 @@
       }
     },
     {
-      "raw": "2 TCHO chocolate squares .28 oz. each",
+      "raw": "2 TCHO chocolate squares (.28 oz. each)",
       "expected": {
-        "item": "TCHO chocolate squares .28 oz. each",
+        "item": "TCHO chocolate squares",
         "measurements": [
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": ".28",
+            "unit": "oz each"
           }
         ],
         "note": null,
@@ -426,35 +434,31 @@
       }
     },
     {
-      "raw": "1 package 50g Marich milk chocolate salted caramel popcorn",
+      "raw": "1 package (50g Marich milk chocolate salted caramel popcorn)",
       "expected": {
         "item": "Marich milk chocolate salted caramel popcorn",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "50g Marich milk chocolate salted caramel popcorn",
         "section": "Chocolate “moxie” Toppings",
         "category": "Other"
       }
     },
     {
-      "raw": "1 package 50 g Marich dark chocolate salted caramels",
+      "raw": "1 package (50 g Marich dark chocolate salted caramels)",
       "expected": {
-        "item": "50 g Marich dark chocolate salted caramels",
+        "item": "Marich dark chocolate salted caramels",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": null,
+        "note": "50 g Marich dark chocolate salted caramels",
         "section": "Chocolate “moxie” Toppings",
         "category": "Other"
       }
@@ -475,16 +479,16 @@
       }
     },
     {
-      "raw": "2 Alter Eco Truffles velvet and salted caramel",
+      "raw": "2 Alter Eco Truffles (velvet and salted caramel)",
       "expected": {
-        "item": "Alter Eco Truffles velvet and salted caramel",
+        "item": "Alter Eco Truffles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "velvet and salted caramel",
         "section": "Chocolate “moxie” Toppings",
         "category": "Other"
       }

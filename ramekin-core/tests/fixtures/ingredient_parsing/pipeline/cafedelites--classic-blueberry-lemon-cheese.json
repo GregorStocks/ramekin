@@ -22,40 +22,44 @@
       }
     },
     {
-      "raw": "1 1/2 cups warm milk almond, skim, full fat or 2%",
+      "raw": "1 1/2 cups warm milk (almond, skim, full fat or 2%)",
       "expected": {
-        "item": "warm milk almond, skim, full fat",
+        "item": "warm milk",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "or 2%",
+        "note": "almond, skim, full fat or 2%",
         "section": "Waffles",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/3 cup butter melted, reduced fat or light",
+      "raw": "1/3 cup butter (melted, reduced fat or light)",
       "expected": {
-        "item": "butter melted, reduced fat or light",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "melted, reduced fat or light",
         "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 lemon juiced, about 1/4 cup fresh lemon juice",
+      "raw": "1 lemon (juiced, about 1/4 cup fresh lemon juice)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
           {
             "amount": "1",
             "unit": "lemon"
@@ -82,31 +86,31 @@
       }
     },
     {
-      "raw": "2 cups plain flour all purpose flour",
+      "raw": "2 cups plain flour (all purpose flour)",
       "expected": {
-        "item": "plain flour all purpose flour",
+        "item": "plain flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "all purpose flour",
         "section": "Waffles",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "4 tablespoons granulated sugar white or coconut sugar/s – can substitute with a natural granulated sweetener that measures 1:1 with sugar",
+      "raw": "4 tablespoons granulated sugar (white or coconut sugar/s – can substitute with a natural granulated sweetener that measures 1:1 with sugar)",
       "expected": {
-        "item": "granulated sugar white or coconut sugar/s - can substitute with a natural granulated sweetener that measures 1:1 with sugar",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "white or coconut sugar/s - can substitute with a natural granulated sweetener that measures 1:1 with sugar",
         "section": "Waffles",
         "category": "Baking"
       }
@@ -127,18 +131,13 @@
       }
     },
     {
-      "raw": "1 1/2 cups fresh or frozen, blueberries",
+      "raw": "1 1/2 cups fresh (or frozen, blueberries)",
       "expected": {
-        "item": "fresh or frozen, blueberries",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": "cup"
-          }
-        ],
+        "item": "1 1/2 cups fresh (or frozen, blueberries)",
+        "measurements": [],
         "note": null,
         "section": "Waffles",
-        "category": "Produce"
+        "category": "Other"
       }
     },
     {
@@ -161,31 +160,31 @@
       }
     },
     {
-      "raw": "4 tablespoons vanilla Greek yogurt or plain or blueberry flavoured, or whipping cream if you don't like yoghurt",
+      "raw": "4 tablespoons vanilla Greek yogurt (or plain or blueberry flavoured, or whipping cream if you don't like yoghurt)",
       "expected": {
-        "item": "vanilla Greek yogurt or plain or blueberry flavoured, or whipping cream if you don't like yoghurt",
+        "item": "vanilla Greek yogurt",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or plain or blueberry flavoured, or whipping cream if you don't like yoghurt",
         "section": "Cheesecake Topping",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons granulated sugar  or a natural granulated sweetener that measures 1:1 with sugar",
+      "raw": "2 tablespoons granulated sugar (or a natural granulated sweetener that measures 1:1 with sugar)",
       "expected": {
-        "item": "granulated sugar or a natural granulated sweetener that measures 1:1 with sugar",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or a natural granulated sweetener that measures 1:1 with sugar",
         "section": "Cheesecake Topping",
         "category": "Baking"
       }

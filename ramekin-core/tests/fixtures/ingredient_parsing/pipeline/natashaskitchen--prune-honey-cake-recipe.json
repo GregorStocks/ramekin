@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "6 large eggs, room temp",
+      "raw": "6 large eggs, (room temp)",
       "expected": {
-        "item": "eggs, room temp",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temp",
         "section": "For the Cake",
         "category": "Dairy & Eggs"
       }

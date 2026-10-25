@@ -108,9 +108,9 @@
       }
     },
     {
-      "raw": "1 cup  (240 ml) meyer lemon juice * use 3/4 cup if using regular lemon juice",
+      "raw": "1 cup (240 ml) meyer lemon juice (* use 3/4 cup if using regular lemon juice)",
       "expected": {
-        "item": "meyer lemon juice * use 3/4 cup if using regular lemon juice",
+        "item": "meyer lemon juice",
         "measurements": [
           {
             "amount": "1",
@@ -121,9 +121,9 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "* use 3/4 cup if using regular lemon juice",
         "section": "Pie Filling",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

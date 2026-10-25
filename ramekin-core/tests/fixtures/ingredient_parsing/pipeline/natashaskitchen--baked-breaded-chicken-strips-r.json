@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 lbs chicken breast, about 3 large chicken breasts",
+      "raw": "2 lbs chicken breast, (about 3 large chicken breasts)",
       "expected": {
         "item": "chicken breast",
         "measurements": [
@@ -62,7 +62,7 @@
       }
     },
     {
-      "raw": "2-3 small garlic cloves, pressed",
+      "raw": "2-3 small garlic cloves, (pressed)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -77,16 +77,16 @@
       }
     },
     {
-      "raw": "2 cups bread crumbs, I used a mixture of 1 cup seasoned italian-style bread crumbs and 1 cup panko bread crumbs, but you can use 100% seasoned bread crumbs",
+      "raw": "2 cups bread crumbs, (I used a mixture of 1 cup seasoned italian-style bread crumbs and 1 cup panko bread crumbs, but you can use 100% seasoned bread crumbs)",
       "expected": {
-        "item": "bread crumbs, I used a mixture of 1 cup seasoned italian-style bread crumbs and 1 cup panko bread crumbs, but you can use 100% seasoned bread crumbs",
+        "item": "bread crumbs",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used a mixture of 1 cup seasoned italian-style bread crumbs and 1 cup panko bread crumbs, but you can use 100% seasoned bread crumbs",
         "section": "Ingredients for Chicken Strips",
         "category": "Bakery & Bread"
       }

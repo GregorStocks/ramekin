@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "½ cup butter room temperature",
+      "raw": "½ cup butter (room temperature)",
       "expected": {
-        "item": "butter room temperature",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {

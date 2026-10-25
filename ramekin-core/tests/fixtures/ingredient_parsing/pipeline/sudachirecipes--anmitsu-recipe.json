@@ -105,18 +105,18 @@
       "is_section_header": true
     },
     {
-      "raw": "65 g glutinous rice flour shiratamako",
+      "raw": "65 g glutinous rice flour (shiratamako)",
       "expected": {
-        "item": "glutinous rice flour shiratamako",
+        "item": "glutinous rice flour",
         "measurements": [
           {
             "amount": "65",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shiratamako",
         "section": "Shiratama Dango",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -169,33 +169,33 @@
       }
     },
     {
-      "raw": "12 segments mandarin orange (mikan) canned or fresh",
+      "raw": "12 segments mandarin orange (mikan) (canned or fresh)",
       "expected": {
-        "item": "segments mandarin orange canned or fresh",
+        "item": "segments mandarin orange",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": "mikan",
+        "note": "mikan, canned or fresh",
         "section": "Toppings",
         "category": "Other"
       }
     },
     {
-      "raw": "6 slices peach canned or fresh",
+      "raw": "6 slices peach (canned or fresh)",
       "expected": {
-        "item": "peach canned or fresh",
+        "item": "peach",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "canned or fresh",
         "section": "Toppings",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

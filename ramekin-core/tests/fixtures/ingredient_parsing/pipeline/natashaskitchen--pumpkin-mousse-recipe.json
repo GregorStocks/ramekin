@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "16 oz whipped topping, thawed in the refrigerator",
+      "raw": "16 oz whipped topping, (thawed in the refrigerator)",
       "expected": {
         "item": "whipped topping",
         "measurements": [
@@ -120,16 +120,16 @@
       }
     },
     {
-      "raw": "1/2  tsp ground cinnamon, to garnish",
+      "raw": "1/2 tsp ground cinnamon, (to garnish)",
       "expected": {
-        "item": "ground cinnamon, to garnish",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "section": "Pumpkin Mousse Ingredients",
         "category": "Spices & Seasonings"
       }
@@ -169,18 +169,18 @@
       }
     },
     {
-      "raw": "1 tsp rum, dark or golden, or vanilla extract",
+      "raw": "1 tsp rum, (dark or golden, or vanilla extract)",
       "expected": {
-        "item": "rum, dark or golden, or vanilla extract",
+        "item": "rum",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "dark or golden, or vanilla extract",
         "section": "Rum Whipped Cream Ingredients",
-        "category": "Baking"
+        "category": "Beverages"
       }
     }
   ]

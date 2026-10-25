@@ -3,17 +3,17 @@
   "recipe_slug": "banana-bundt-cake-with-chocola",
   "ingredients": [
     {
-      "raw": "1 ½ cups mashed ripe bananas about 3 bananas",
+      "raw": "1 ½ cups mashed ripe bananas (about 3 bananas)",
       "expected": {
-        "item": "mashed ripe bananas about 3 bananas",
+        "item": "mashed ripe bananas",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "about 3 bananas",
+        "category": "Produce"
       }
     },
     {
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "¾ cup unsalted butter softened",
+      "raw": "¾ cup unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -147,7 +147,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 ounces semisweet chocolate chopped",
+      "raw": "4 ounces semisweet chocolate (chopped)",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [

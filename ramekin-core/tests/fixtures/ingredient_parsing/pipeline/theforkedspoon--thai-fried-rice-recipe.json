@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "5 shallots, minced",
+      "raw": "5 shallots, (minced)",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 cups carrots, shredded",
+      "raw": "2 cups carrots, (shredded)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "5 cloves garlic, minced",
+      "raw": "5 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2 teaspoon fresh ginger, minced",
+      "raw": "2 teaspoon fresh ginger, (minced)",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1 lime, juiced",
+      "raw": "1 lime, (juiced)",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 cup green onion, chopped",
+      "raw": "1 cup green onion, (chopped)",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -157,16 +157,16 @@
       }
     },
     {
-      "raw": "4 eggs, cooked, sunny-side-up",
+      "raw": "4 eggs, (cooked, sunny-side-up)",
       "expected": {
-        "item": "eggs, cooked, sunny-side-up",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cooked, sunny-side-up",
         "category": "Dairy & Eggs"
       }
     },

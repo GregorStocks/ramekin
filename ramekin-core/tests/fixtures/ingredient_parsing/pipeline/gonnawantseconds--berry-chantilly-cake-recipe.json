@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "12 tablespoons unsalted butter at room temperature",
+      "raw": "12 tablespoons unsalted butter (at room temperature)",
       "expected": {
-        "item": "unsalted butter at room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "12",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups  sugar divided",
+      "raw": "2 cups sugar (divided)",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -52,18 +52,18 @@
       }
     },
     {
-      "raw": "8 large egg yolks at room temperature",
+      "raw": "8 large egg yolks (at room temperature)",
       "expected": {
-        "item": "egg yolks at room temperature",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -127,31 +127,31 @@
       }
     },
     {
-      "raw": "1  cup sour cream at room temperature",
+      "raw": "1 cup sour cream (at room temperature)",
       "expected": {
-        "item": "sour cream at room temperature",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 large  egg whites at room temperature",
+      "raw": "8 large egg whites (at room temperature)",
       "expected": {
-        "item": "egg whites at room temperature",
+        "item": "egg whites",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cake",
         "category": "Dairy & Eggs"
       }
@@ -199,7 +199,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup strawberries hulled, cut into chunks the size of the raspberries",
+      "raw": "1 cup strawberries (hulled, cut into chunks the size of the raspberries)",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -342,33 +342,33 @@
       }
     },
     {
-      "raw": "8  ounces cream cheese at room temperature",
+      "raw": "8 ounces cream cheese (at room temperature)",
       "expected": {
-        "item": "cream cheese at room temperature",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Chantilly Frosting",
         "category": "Cheese"
       }
     },
     {
-      "raw": "8 ounces Mascarpone at room temperature",
+      "raw": "8 ounces Mascarpone (at room temperature)",
       "expected": {
-        "item": "Mascarpone at room temperature",
+        "item": "Mascarpone",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Chantilly Frosting",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {

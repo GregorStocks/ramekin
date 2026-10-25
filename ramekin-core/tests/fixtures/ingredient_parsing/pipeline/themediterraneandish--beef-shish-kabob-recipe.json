@@ -92,17 +92,17 @@
       }
     },
     {
-      "raw": "Freshly ground black pepper more for later",
+      "raw": "Freshly ground black pepper (more for later)",
       "expected": {
-        "item": "Freshly ground black pepper more for later",
+        "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "more for later",
         "section": "For the Skewers",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 lb Top sirloin steak or beef tenderloin fillet,  cut into 1 1/2-inch cubes",
+      "raw": "3 lb Top sirloin steak or beef tenderloin fillet, (cut into 1 1/2-inch cubes)",
       "expected": {
         "item": "Top sirloin steak or beef tenderloin fillet",
         "measurements": [
@@ -166,7 +166,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 large red onion, thinly sliced",
+      "raw": "1 large red onion, (thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -181,7 +181,7 @@
       }
     },
     {
-      "raw": "2 lemons, juiced",
+      "raw": "2 lemons, (juiced)",
       "expected": {
         "item": "lemon juice",
         "measurements": [

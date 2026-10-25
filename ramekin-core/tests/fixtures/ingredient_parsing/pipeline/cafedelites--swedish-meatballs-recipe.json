@@ -52,22 +52,22 @@
       }
     },
     {
-      "raw": "1 egg large",
+      "raw": "1 egg (large)",
       "expected": {
-        "item": "egg large",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large",
         "section": "Meatballs",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 clove garlic minced",
+      "raw": "1 clove garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -127,22 +127,22 @@
       }
     },
     {
-      "raw": "1/4 teaspoon Grillkrydda or all spice or all purpose seasoning",
+      "raw": "1/4 teaspoon Grillkrydda (or all spice or all purpose seasoning)",
       "expected": {
-        "item": "Grillkrydda or all spice or all purpose seasoning",
+        "item": "Grillkrydda",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or all spice or all purpose seasoning",
         "section": "Meatballs",
-        "category": "Spices & Seasonings"
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 onion finely chopped",
+      "raw": "1/2 onion (finely chopped)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -157,37 +157,37 @@
       }
     },
     {
-      "raw": "1 pound ground beef mince",
+      "raw": "1 pound ground beef (mince)",
       "expected": {
-        "item": "ground beef mince",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "mince",
         "section": "Meatballs",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/2 pound ground pork mince",
+      "raw": "1/2 pound ground pork (mince)",
       "expected": {
-        "item": "ground pork mince",
+        "item": "ground pork",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "mince",
         "section": "Meatballs",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2 tablespoons fresh parsley finely chopped",
+      "raw": "2 tablespoons fresh parsley (finely chopped)",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -251,63 +251,63 @@
       }
     },
     {
-      "raw": "1/4 cup plain flour all purpose flour",
+      "raw": "1/4 cup plain flour (all purpose flour)",
       "expected": {
-        "item": "plain flour all purpose flour",
+        "item": "plain flour",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "all purpose flour",
         "section": "Gravy Sauce (Optional)",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "250 ml vegetable broth or stock",
+      "raw": "250 ml vegetable broth (or stock)",
       "expected": {
-        "item": "vegetable broth or stock",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "250",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or stock",
         "section": "Gravy Sauce (Optional)",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "250 ml beef broth or stock",
+      "raw": "250 ml beef broth (or stock)",
       "expected": {
-        "item": "beef broth or stock",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "250",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or stock",
         "section": "Gravy Sauce (Optional)",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 cup thickened or heavy cream",
+      "raw": "1 cup thickened (or heavy cream)",
       "expected": {
-        "item": "thickened or heavy cream",
+        "item": "thickened",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or heavy cream",
         "section": "Gravy Sauce (Optional)",
-        "category": "Dairy & Eggs"
+        "category": "Other"
       }
     },
     {
@@ -341,33 +341,33 @@
       }
     },
     {
-      "raw": "1 pinch salt to season",
+      "raw": "1 pinch salt (to season)",
       "expected": {
-        "item": "salt to season",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to season",
         "section": "Gravy Sauce (Optional)",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch pepper to season",
+      "raw": "1 pinch pepper (to season)",
       "expected": {
-        "item": "pepper to season",
+        "item": "pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to season",
         "section": "Gravy Sauce (Optional)",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     }
   ]

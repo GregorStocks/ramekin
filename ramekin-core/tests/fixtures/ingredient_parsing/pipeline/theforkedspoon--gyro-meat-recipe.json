@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic, minced",
+      "raw": "2 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -146,22 +146,22 @@
       }
     },
     {
-      "raw": "1 cup Greek yogurt, full-fat is recommended",
+      "raw": "1 cup Greek yogurt, (full-fat is recommended)",
       "expected": {
-        "item": "Greek yogurt, full-fat is recommended",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "full-fat is recommended",
         "section": "Tzatziki Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1-2 cloves garlic, minced",
+      "raw": "1-2 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -176,22 +176,22 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh lemon juice, or red wine vinegar",
+      "raw": "1 tablespoon fresh lemon juice, (or red wine vinegar)",
       "expected": {
-        "item": "fresh lemon juice, or red wine vinegar",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or red wine vinegar",
         "section": "Tzatziki Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons fresh dill, minced",
+      "raw": "2 teaspoons fresh dill, (minced)",
       "expected": {
         "item": "fresh dill",
         "measurements": [
@@ -240,22 +240,22 @@
       "is_section_header": true
     },
     {
-      "raw": "4 homemade pita breads, or flatbreads, slightly warmed",
+      "raw": "4 homemade pita breads, (or flatbreads, slightly warmed)",
       "expected": {
-        "item": "homemade pita breads, or flatbreads",
+        "item": "homemade pita breads",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "slightly warmed",
+        "note": "or flatbreads, slightly warmed",
         "section": "For the Gyro Pitas",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "2 ripe tomatoes, quartered",
+      "raw": "2 ripe tomatoes, (quartered)",
       "expected": {
         "item": "ripe tomatoes",
         "measurements": [
@@ -270,7 +270,7 @@
       }
     },
     {
-      "raw": "½ English cucumber, thinly sliced",
+      "raw": "½ English cucumber, (thinly sliced)",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -285,7 +285,7 @@
       }
     },
     {
-      "raw": "¼ red onion, thinly sliced",
+      "raw": "¼ red onion, (thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -300,7 +300,7 @@
       }
     },
     {
-      "raw": "crumbled feta cheese, optional",
+      "raw": "crumbled feta cheese, (optional)",
       "expected": {
         "item": "crumbled feta cheese",
         "measurements": [],

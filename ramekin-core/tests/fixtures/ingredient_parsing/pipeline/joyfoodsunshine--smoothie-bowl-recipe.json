@@ -21,17 +21,17 @@
       }
     },
     {
-      "raw": "1 banana frozen",
+      "raw": "1 banana (frozen)",
       "expected": {
-        "item": "banana frozen",
+        "item": "banana",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "frozen",
+        "category": "Produce"
       }
     },
     {

@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 large red pepper cored and roughly chopped",
+      "raw": "1 large red pepper (cored and roughly chopped)",
       "expected": {
         "item": "red pepper",
         "measurements": [
@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "½ small red onion roughly chopped",
+      "raw": "½ small red onion (roughly chopped)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -52,18 +52,18 @@
       }
     },
     {
-      "raw": "¼ cup pepitas pumpkin seeds",
+      "raw": "¼ cup pepitas (pumpkin seeds)",
       "expected": {
-        "item": "pepitas pumpkin seeds",
+        "item": "pepitas",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pumpkin seeds",
         "section": "For the Burgers",
-        "category": "Other"
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -82,16 +82,16 @@
       }
     },
     {
-      "raw": "2 tablespoons ground flaxseed meal chia seeds, or additional hemp seed hearts",
+      "raw": "2 tablespoons ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
       "expected": {
-        "item": "ground flaxseed meal chia seeds, or additional hemp seed hearts",
+        "item": "ground flaxseed meal",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "chia seeds, or additional hemp seed hearts",
         "section": "For the Burgers",
         "category": "Nuts & Dried Fruit"
       }
@@ -191,22 +191,22 @@
       }
     },
     {
-      "raw": "½ cup old fashioned rolled oats gluten free if needed",
+      "raw": "½ cup old fashioned rolled oats (gluten free if needed)",
       "expected": {
-        "item": "old fashioned rolled oats gluten free if needed",
+        "item": "old fashioned rolled oats",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "gluten free if needed",
         "section": "For the Burgers",
-        "category": "Other"
+        "category": "Snacks"
       }
     },
     {
-      "raw": "Whole grain buns for serving",
+      "raw": "Whole grain buns (for serving)",
       "expected": {
         "item": "Whole grain buns",
         "measurements": [],

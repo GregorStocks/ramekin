@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "100 g cake flour or all-purpose in a pinch",
+      "raw": "100 g cake flour (or all-purpose in a pinch)",
       "expected": {
-        "item": "cake flour or all-purpose in a pinch",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or all-purpose in a pinch",
         "section": "Batter",
         "category": "Baking"
       }
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "75 ml dashi stock cooled",
+      "raw": "75 ml dashi stock (cooled)",
       "expected": {
         "item": "dashi stock",
         "measurements": [
@@ -97,18 +97,18 @@
       }
     },
     {
-      "raw": "1 egg relatively large",
+      "raw": "1 egg (relatively large)",
       "expected": {
-        "item": "egg relatively large",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "relatively large",
         "section": "Batter",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -195,22 +195,22 @@
       "is_section_header": true
     },
     {
-      "raw": "150 g green cabbage or spring/pointed cabbage",
+      "raw": "150 g green cabbage (or spring/pointed cabbage)",
       "expected": {
-        "item": "green cabbage or spring/pointed cabbage",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or spring/pointed cabbage",
         "section": "Fillings (See in Post for More Ideas)",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tbsp tempura flakes (tenkasu) optional, or crushed plain potato chips",
+      "raw": "2 tbsp tempura flakes (tenkasu) (optional, or crushed plain potato chips)",
       "expected": {
         "item": "tempura flakes",
         "measurements": [
@@ -225,7 +225,7 @@
       }
     },
     {
-      "raw": "2 tsp red pickled ginger (benishoga) optional",
+      "raw": "2 tsp red pickled ginger (benishoga) (optional)",
       "expected": {
         "item": "red pickled ginger",
         "measurements": [
@@ -255,18 +255,18 @@
       }
     },
     {
-      "raw": "2 tbsp cooking oil neutural flavor",
+      "raw": "2 tbsp cooking oil (neutural flavor)",
       "expected": {
-        "item": "cooking oil neutural flavor",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "neutural flavor",
         "section": "Fillings (See in Post for More Ideas)",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -289,7 +289,7 @@
       "is_section_header": true
     },
     {
-      "raw": "Japanese mayonnaise to taste",
+      "raw": "Japanese mayonnaise (to taste)",
       "expected": {
         "item": "Japanese mayonnaise",
         "measurements": [],
@@ -299,7 +299,7 @@
       }
     },
     {
-      "raw": "bonito flakes (katsuobushi) to taste",
+      "raw": "bonito flakes (katsuobushi) (to taste)",
       "expected": {
         "item": "bonito flakes",
         "measurements": [],
@@ -309,7 +309,7 @@
       }
     },
     {
-      "raw": "aonori (dried green seaweed powder) to taste",
+      "raw": "aonori (dried green seaweed powder) (to taste)",
       "expected": {
         "item": "aonori",
         "measurements": [],

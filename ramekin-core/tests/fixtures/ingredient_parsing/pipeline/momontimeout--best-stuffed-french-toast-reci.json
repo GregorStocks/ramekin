@@ -22,18 +22,18 @@
       }
     },
     {
-      "raw": "1/2 cup half and half you can also use whole milk",
+      "raw": "1/2 cup half and half (you can also use whole milk)",
       "expected": {
-        "item": "half and half you can also use whole milk",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you can also use whole milk",
         "section": "Egg Mixture",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -97,9 +97,9 @@
       }
     },
     {
-      "raw": "10 slices Brioche or any thick cut artisan type bread the thicker the better (about 8-10 slices)",
+      "raw": "10 slices Brioche or any thick cut artisan type bread, the thicker the better (about 8-10 slices)",
       "expected": {
-        "item": "Brioche or any thick cut artisan type bread the thicker the better",
+        "item": "Brioche or any thick cut artisan type bread, the thicker the better",
         "measurements": [
           {
             "amount": "10",
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "8 oz cream cheese softened",
+      "raw": "8 oz cream cheese (softened)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "1 cup fresh strawberries sliced thin",
+      "raw": "1 cup fresh strawberries (sliced thin)",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
@@ -191,22 +191,22 @@
       }
     },
     {
-      "raw": "1 tbsp fresh lemon juice  about half of one lemon",
+      "raw": "1 tbsp fresh lemon juice (about half of one lemon)",
       "expected": {
-        "item": "fresh lemon juice about half of one lemon",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about half of one lemon",
         "section": "Egg Mixture",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "8 tbsp butter for frying (bacon fat is also good here)",
+      "raw": "8 tbsp butter, for frying (bacon fat is also good here)",
       "expected": {
         "item": "butter",
         "measurements": [

@@ -3,16 +3,16 @@
   "recipe_slug": "imo-mochi",
   "ingredients": [
     {
-      "raw": "230 g potatoes starchy varieties like russet or Yukon Gold",
+      "raw": "230 g potatoes (starchy varieties like russet or Yukon Gold)",
       "expected": {
-        "item": "potatoes starchy varieties like russet or Yukon Gold",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "230",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "starchy varieties like russet or Yukon Gold",
         "category": "Produce"
       }
     },
@@ -26,44 +26,44 @@
       }
     },
     {
-      "raw": "3 tbsp preferred shredded melting cheese Gouda or Cheddar",
+      "raw": "3 tbsp preferred shredded melting cheese (Gouda or Cheddar)",
       "expected": {
-        "item": "preferred shredded melting cheese Gouda or Cheddar",
+        "item": "preferred shredded melting cheese",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Gouda or Cheddar",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2 tbsp potato starch (katakuriko) or tapioca starch",
+      "raw": "2 tbsp potato starch (katakuriko) (or tapioca starch)",
       "expected": {
-        "item": "potato starch or tapioca starch",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "katakuriko",
+        "note": "katakuriko, or tapioca starch",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tbsp grated parmesan cheese or powdered cheese",
+      "raw": "1 tbsp grated parmesan cheese (or powdered cheese)",
       "expected": {
-        "item": "grated parmesan cheese or powdered cheese",
+        "item": "grated parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or powdered cheese",
         "category": "Cheese"
       }
     },
@@ -96,30 +96,30 @@
       }
     },
     {
-      "raw": "½ tbsp butter unsalted preferred",
+      "raw": "½ tbsp butter (unsalted preferred)",
       "expected": {
-        "item": "butter unsalted preferred",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "unsalted preferred",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp cooking oil neutral",
+      "raw": "1 tsp cooking oil (neutral)",
       "expected": {
-        "item": "cooking oil neutral",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "neutral",
         "category": "Oils & Vinegars"
       }
     },

@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "2 slices   sourdough bread, lightly toasted",
+      "raw": "2 slices sourdough bread, (lightly toasted)",
       "expected": {
         "item": "sourdough bread",
         "measurements": [
@@ -94,7 +94,7 @@
       }
     },
     {
-      "raw": "5   large egg yolks, at room temperature",
+      "raw": "5 large egg yolks, (at room temperature)",
       "expected": {
         "item": "egg yolks",
         "measurements": [

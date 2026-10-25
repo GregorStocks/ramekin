@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "6 tablespoons unsalted butter melted",
+      "raw": "6 tablespoons unsalted butter (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "8 oz container cool whip thawed (or homemade whipped cream)",
+      "raw": "8 oz container cool whip, thawed (or homemade whipped cream)",
       "expected": {
         "item": "container cool whip",
         "measurements": [
@@ -101,13 +101,13 @@
       }
     },
     {
-      "raw": "mint green food coloring preferably gel food coloring",
+      "raw": "mint green food coloring (preferably gel food coloring)",
       "expected": {
-        "item": "mint green food coloring preferably gel food coloring",
+        "item": "mint green food coloring",
         "measurements": [],
-        "note": null,
+        "note": "preferably gel food coloring",
         "section": "Filling",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -115,18 +115,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup heavy whipping cream very cold",
+      "raw": "1 cup heavy whipping cream (very cold)",
       "expected": {
-        "item": "heavy whipping cream very cold",
+        "item": "heavy whipping cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "very cold",
         "section": "Topping",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

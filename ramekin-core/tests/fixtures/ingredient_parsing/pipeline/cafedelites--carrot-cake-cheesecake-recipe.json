@@ -7,33 +7,33 @@
       "is_section_header": true
     },
     {
-      "raw": "3/4 cup all-purpose plain flour",
+      "raw": "3/4 cup all-purpose (plain flour)",
       "expected": {
-        "item": "all-purpose plain flour",
+        "item": "all-purpose",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plain flour",
         "section": "Carrot Cake",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup whole wheat flour wholemeal flour",
+      "raw": "1/2 cup whole wheat flour (wholemeal flour)",
       "expected": {
-        "item": "whole wheat flour wholemeal flour",
+        "item": "whole wheat flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "wholemeal flour",
         "section": "Carrot Cake",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -97,63 +97,63 @@
       }
     },
     {
-      "raw": "1/4 cup oil you can use melted coconut oil",
+      "raw": "1/4 cup oil (you can use melted coconut oil)",
       "expected": {
-        "item": "oil you can use melted coconut oil",
+        "item": "oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you can use melted coconut oil",
         "section": "Carrot Cake",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/4 cup unsweetened applesauce or oil",
+      "raw": "1/4 cup unsweetened applesauce (or oil)",
       "expected": {
-        "item": "unsweetened applesauce or oil",
+        "item": "unsweetened applesauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or oil",
         "section": "Carrot Cake",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/4 cup unsweetened almond milk or any milk",
+      "raw": "1/4 cup unsweetened almond milk (or any milk)",
       "expected": {
-        "item": "unsweetened almond milk or any milk",
+        "item": "unsweetened almond milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or any milk",
         "section": "Carrot Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 eggs large",
+      "raw": "2 eggs (large)",
       "expected": {
-        "item": "eggs large",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large",
         "section": "Carrot Cake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -172,37 +172,37 @@
       }
     },
     {
-      "raw": "2/3 cup natural granulated sweetener or sugar",
+      "raw": "2/3 cup natural granulated sweetener (or sugar)",
       "expected": {
-        "item": "natural granulated sweetener or sugar",
+        "item": "natural granulated sweetener",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or sugar",
         "section": "Carrot Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup coconut sugar or light-brown sugar",
+      "raw": "1/3 cup coconut sugar (or light-brown sugar)",
       "expected": {
-        "item": "coconut sugar or light-brown sugar",
+        "item": "coconut sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or light-brown sugar",
         "section": "Carrot Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/4 cups carrots finely grated",
+      "raw": "1 1/4 cups carrots (finely grated)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -221,93 +221,93 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup light cream cheese at room temperature",
+      "raw": "1 cup light cream cheese (at room temperature)",
       "expected": {
-        "item": "light cream cheese at room temperature",
+        "item": "light cream cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cheesecake",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup non-fat plain Greek yogurt",
+      "raw": "1/2 cup non-fat (plain Greek yogurt)",
       "expected": {
-        "item": "non-fat plain Greek yogurt",
+        "item": "non-fat",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plain Greek yogurt",
         "section": "Cheesecake",
         "category": "Other"
       }
     },
     {
-      "raw": "1/3 cup natural powdered sweetener or sugar",
+      "raw": "1/3 cup natural powdered sweetener (or sugar)",
       "expected": {
-        "item": "natural powdered sweetener or sugar",
+        "item": "natural powdered sweetener",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or sugar",
         "section": "Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon all-purpose flour plain flour",
+      "raw": "1 tablespoon all-purpose flour (plain flour)",
       "expected": {
-        "item": "all-purpose flour plain flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "plain flour",
         "section": "Cheesecake",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "1 egg large",
+      "raw": "1 egg (large)",
       "expected": {
-        "item": "egg large",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large",
         "section": "Cheesecake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 teaspoons lemon juice fresh squeezed, optional",
+      "raw": "2 teaspoons lemon juice (fresh squeezed, optional)",
       "expected": {
-        "item": "lemon juice fresh",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "squeezed, optional",
+        "note": "fresh squeezed, optional",
         "section": "Cheesecake",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -330,31 +330,31 @@
       "is_section_header": true
     },
     {
-      "raw": "1/3 cup cream cheese at room temperature",
+      "raw": "1/3 cup cream cheese (at room temperature)",
       "expected": {
-        "item": "cream cheese at room temperature",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Frosting (Optional)",
         "category": "Cheese"
       }
     },
     {
-      "raw": "3/4 cup natural powdered sweetener or sugar",
+      "raw": "3/4 cup natural powdered sweetener (or sugar)",
       "expected": {
-        "item": "natural powdered sweetener or sugar",
+        "item": "natural powdered sweetener",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or sugar",
         "section": "Frosting (Optional)",
         "category": "Baking"
       }
@@ -390,18 +390,18 @@
       }
     },
     {
-      "raw": "1/4 cup pecans chopped, or walnuts to garnish",
+      "raw": "1/4 cup pecans (chopped, or walnuts to garnish)",
       "expected": {
-        "item": "pecans chopped, or walnuts to garnish",
+        "item": "pecans",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "chopped, or walnuts to garnish",
         "section": "Frosting (Optional)",
-        "category": "Other"
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "2 eggs beaten",
+      "raw": "2 eggs (beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic minced",
+      "raw": "2 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -97,18 +97,18 @@
       }
     },
     {
-      "raw": "1/2 tsp oregano dried",
+      "raw": "1/2 tsp oregano (dried)",
       "expected": {
-        "item": "oregano dried",
+        "item": "oregano",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "dried",
         "section": "Meatball Ingredients",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -127,9 +127,9 @@
       }
     },
     {
-      "raw": "1/4 cup chopped fresh basil can substitute 1 TBSP dried basil, if you'd like)",
+      "raw": "1/4 cup chopped fresh basil, can substitute 1 TBSP dried basil, if you'd like)",
       "expected": {
-        "item": "chopped fresh basil can substitute 1 TBSP dried basil",
+        "item": "chopped fresh basil, can substitute 1 TBSP dried basil",
         "measurements": [
           {
             "amount": "0.25",
@@ -138,7 +138,7 @@
         ],
         "note": "if you'd like)",
         "section": "Meatball Ingredients",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -146,18 +146,18 @@
       "is_section_header": true
     },
     {
-      "raw": "5 rolls I like to use French Rolls",
+      "raw": "5 rolls (I like to use French Rolls)",
       "expected": {
-        "item": "rolls I like to use French Rolls",
+        "item": "rolls",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I like to use French Rolls",
         "section": "You'll Also Need the Following~",
-        "category": "Other"
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "1 cup Mozzarella cheese shredded",
+      "raw": "1 cup Mozzarella cheese (shredded)",
       "expected": {
         "item": "Mozzarella cheese",
         "measurements": [

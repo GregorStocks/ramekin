@@ -7,13 +7,17 @@
       "is_section_header": true
     },
     {
-      "raw": "5 oz spring mix salad greens, 142 grams",
+      "raw": "5 oz spring mix salad greens, (142 grams)",
       "expected": {
-        "item": "spring mix salad greens, 142 grams",
+        "item": "spring mix salad greens",
         "measurements": [
           {
             "amount": "5",
             "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -22,7 +26,7 @@
       }
     },
     {
-      "raw": "1/2 lb strawberries, hulled and sliced",
+      "raw": "1/2 lb strawberries, (hulled and sliced)",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -37,22 +41,22 @@
       }
     },
     {
-      "raw": "1/2 cup feta cheese, crumbled, or goat cheese",
+      "raw": "1/2 cup feta cheese, (crumbled, or goat cheese)",
       "expected": {
-        "item": "feta cheese, crumbled, or goat cheese",
+        "item": "feta cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "crumbled, or goat cheese",
         "section": "For the Strawberry Salad",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/4 cup red onion, thinly sliced*",
+      "raw": "1/4 cup red onion, (thinly sliced*)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -67,7 +71,7 @@
       }
     },
     {
-      "raw": "1/2 cup sliced almonds, toasted",
+      "raw": "1/2 cup sliced almonds, (toasted)",
       "expected": {
         "item": "sliced almonds",
         "measurements": [
@@ -101,7 +105,7 @@
       }
     },
     {
-      "raw": "1/4 cup red wine vinegar, or added to taste*",
+      "raw": "1/4 cup red wine vinegar, (or added to taste*)",
       "expected": {
         "item": "red wine vinegar",
         "measurements": [
@@ -146,7 +150,7 @@
       }
     },
     {
-      "raw": "1/2 tsp salt,  or to taste",
+      "raw": "1/2 tsp salt, (or to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -161,7 +165,7 @@
       }
     },
     {
-      "raw": "1/4 tsp black pepper,  or added to taste",
+      "raw": "1/4 tsp black pepper, (or added to taste)",
       "expected": {
         "item": "black pepper",
         "measurements": [

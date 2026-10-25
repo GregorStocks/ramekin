@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 to 3 tomatoes, sliced",
+      "raw": "2 to 3 tomatoes, (sliced)",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -72,7 +72,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 jalapeño pepper, seeded and diced",
+      "raw": "1 jalapeño pepper, (seeded and diced)",
       "expected": {
         "item": "jalapeño pepper",
         "measurements": [

@@ -3,7 +3,7 @@
   "recipe_slug": "strawberry-peach-smoothie-bowl",
   "ingredients": [
     {
-      "raw": "1 ripe peach pitted and sliced",
+      "raw": "1 ripe peach (pitted and sliced)",
       "expected": {
         "item": "ripe peach",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 cup fresh strawberries halved",
+      "raw": "1 cup fresh strawberries (halved)",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "¼ cup rolled oats uncooked",
+      "raw": "¼ cup rolled oats (uncooked)",
       "expected": {
-        "item": "rolled oats uncooked",
+        "item": "rolled oats",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "uncooked",
+        "category": "Snacks"
       }
     },
     {
@@ -115,13 +115,13 @@
       }
     },
     {
-      "raw": "flaked coconut unsweetened",
+      "raw": "flaked coconut (unsweetened)",
       "expected": {
-        "item": "flaked coconut unsweetened",
+        "item": "flaked coconut",
         "measurements": [],
-        "note": null,
+        "note": "unsweetened",
         "section": "Toppings",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {

@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1   small red bell pepper, finely chopped",
+      "raw": "1 small red bell pepper, (finely chopped)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1   small yellow onion, finely chopped",
+      "raw": "1 small yellow onion, (finely chopped)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "2   garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "16 ounces  (453.59 g) lump crab meat, drained, if canned",
+      "raw": "16 ounces (453.59 g) lump crab meat, (drained, if canned)",
       "expected": {
         "item": "lump crab meat",
         "measurements": [
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
+      "raw": "8 ounces (226.8 g) cream cheese, (at room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -283,7 +283,7 @@
       }
     },
     {
-      "raw": "2 tablespoons   unsalted butter, melted",
+      "raw": "2 tablespoons unsalted butter, (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

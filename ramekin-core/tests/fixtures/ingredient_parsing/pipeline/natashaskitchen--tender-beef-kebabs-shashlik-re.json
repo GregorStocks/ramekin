@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "2 lbs good quality beef, I used top sirloin, cut into 1 1/2\" pieces",
+      "raw": "2 lbs good quality beef, (I used top sirloin, cut into 1 1/2\" pieces)",
       "expected": {
-        "item": "beef, I used top sirloin",
+        "item": "beef",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "cut into 1 1/2\" pieces, good quality",
+        "note": "I used top sirloin, cut into 1 1/2\" pieces, good quality",
         "section": "Ingredients for Steak Kabobs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2 Bell peppers, any color, sliced into 1 1/2\" wide pieces",
+      "raw": "2 Bell peppers, (any color, sliced into 1 1/2\" wide pieces)",
       "expected": {
         "item": "Bell peppers",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1 large Purple Onion, sliced into 1 1/2\" wide pieces",
+      "raw": "1 large Purple Onion, (sliced into 1 1/2\" wide pieces)",
       "expected": {
         "item": "Purple Onion",
         "measurements": [
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh lemon juice, from 2 medium lemons",
+      "raw": "1/2 cup fresh lemon juice, (from 2 medium lemons)",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -101,16 +101,16 @@
       }
     },
     {
-      "raw": "1 tsp salt, we love fine sea salt",
+      "raw": "1 tsp salt, (we love fine sea salt)",
       "expected": {
-        "item": "salt, we love fine sea salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "we love fine sea salt",
         "section": "Ingredients for Steak Marinade",
         "category": "Spices & Seasonings"
       }
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "4 garlic cloves, pressed",
+      "raw": "4 garlic cloves, (pressed)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

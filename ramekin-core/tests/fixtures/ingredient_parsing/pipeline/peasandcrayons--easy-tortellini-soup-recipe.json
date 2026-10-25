@@ -3,16 +3,16 @@
   "recipe_slug": "easy-tortellini-soup-recipe",
   "ingredients": [
     {
-      "raw": "1 TBSP avocado oil or olive oil",
+      "raw": "1 TBSP avocado oil (or olive oil)",
       "expected": {
-        "item": "avocado oil or olive oil",
+        "item": "avocado oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or olive oil",
         "category": "Oils & Vinegars"
       }
     },

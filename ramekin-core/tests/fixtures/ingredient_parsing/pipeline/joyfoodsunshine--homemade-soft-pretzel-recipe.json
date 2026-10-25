@@ -22,18 +22,18 @@
       }
     },
     {
-      "raw": "1 cup warm water 105-110 degrees F",
+      "raw": "1 cup warm water (105-110 degrees F)",
       "expected": {
-        "item": "warm water 105-110 degrees F",
+        "item": "warm water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "105-110 degrees F",
         "section": "Pretzels",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -52,22 +52,22 @@
       }
     },
     {
-      "raw": "2 Tablespoons whole milk room temperature.",
+      "raw": "2 Tablespoons whole milk (room temperature.)",
       "expected": {
-        "item": "whole milk room temperature.",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "room temperature.",
         "section": "Pretzels",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¼ cup salted butter melted",
+      "raw": "¼ cup salted butter (melted)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -150,7 +150,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3 Tablespoons salted butter melted",
+      "raw": "3 Tablespoons salted butter (melted)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -165,7 +165,7 @@
       }
     },
     {
-      "raw": "Coarse sea salt to taste",
+      "raw": "Coarse sea salt (to taste)",
       "expected": {
         "item": "Coarse sea salt",
         "measurements": [],

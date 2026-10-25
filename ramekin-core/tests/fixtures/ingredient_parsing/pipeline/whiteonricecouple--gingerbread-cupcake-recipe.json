@@ -193,7 +193,7 @@
       }
     },
     {
-      "raw": "1 Tablespoon  (15 ml) freshly grated Ginger (finely grated)  or 1 teaspoon (5ml) ground Ginger Powder",
+      "raw": "1 Tablespoon (15 ml) freshly grated Ginger (finely grated), or 1 teaspoon (5ml) ground Ginger Powder",
       "expected": {
         "item": "freshly grated Ginger",
         "measurements": [
@@ -277,9 +277,9 @@
       }
     },
     {
-      "raw": "1 cup  (120 g) Powdered Sugar  or to personal taste",
+      "raw": "1 cup (120 g) Powdered Sugar (or to personal taste)",
       "expected": {
-        "item": "Powdered Sugar or to personal taste",
+        "item": "Powdered Sugar",
         "measurements": [
           {
             "amount": "1",
@@ -290,7 +290,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to personal taste",
         "section": "Frosting",
         "category": "Baking"
       }

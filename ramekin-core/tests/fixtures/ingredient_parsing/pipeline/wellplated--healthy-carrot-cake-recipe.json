@@ -97,48 +97,48 @@
       }
     },
     {
-      "raw": "1 large egg at room temperature",
+      "raw": "1 large egg (at room temperature)",
       "expected": {
-        "item": "egg at room temperature",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "For the Cake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 large egg whites at room temperature",
+      "raw": "2 large egg whites (at room temperature)",
       "expected": {
-        "item": "egg whites at room temperature",
+        "item": "egg whites",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 ¼ cups light brown sugar lightly packed",
+      "raw": "1 ¼ cups light brown sugar (lightly packed)",
       "expected": {
-        "item": "light brown sugar lightly packed",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "lightly packed",
         "section": "For the Cake",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -195,7 +195,7 @@
       }
     },
     {
-      "raw": "1 cup crushed pineapple drained",
+      "raw": "1 cup crushed pineapple (drained)",
       "expected": {
         "item": "crushed pineapple",
         "measurements": [
@@ -225,31 +225,31 @@
       }
     },
     {
-      "raw": "⅔ cup buttermilk at room temperature",
+      "raw": "⅔ cup buttermilk (at room temperature)",
       "expected": {
-        "item": "buttermilk at room temperature",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "For the Cake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ cup walnuts or pecans, toasted and roughly chopped",
+      "raw": "½ cup walnuts (or pecans, toasted and roughly chopped)",
       "expected": {
-        "item": "walnuts or pecans",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "toasted and roughly chopped",
+        "note": "or pecans, toasted and roughly chopped",
         "section": "For the Cake",
         "category": "Nuts & Dried Fruit"
       }
@@ -304,7 +304,7 @@
       }
     },
     {
-      "raw": "2 tablespoons unsalted butter softened",
+      "raw": "2 tablespoons unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -334,7 +334,7 @@
       }
     },
     {
-      "raw": "⅛ teaspoon almond extract optional",
+      "raw": "⅛ teaspoon almond extract (optional)",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -379,11 +379,11 @@
       }
     },
     {
-      "raw": "toasted chopped pecans or walnuts",
+      "raw": "toasted chopped pecans (or walnuts)",
       "expected": {
-        "item": "toasted chopped pecans or walnuts",
+        "item": "toasted chopped pecans",
         "measurements": [],
-        "note": null,
+        "note": "or walnuts",
         "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Nuts & Dried Fruit"
       }

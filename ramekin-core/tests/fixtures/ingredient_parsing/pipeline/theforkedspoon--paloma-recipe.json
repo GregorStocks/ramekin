@@ -136,22 +136,22 @@
       }
     },
     {
-      "raw": "2 fluid ounces club soda, or grapefruit soda",
+      "raw": "2 fluid ounces club soda, (or grapefruit soda)",
       "expected": {
-        "item": "club soda, or grapefruit soda",
+        "item": "club soda",
         "measurements": [
           {
             "amount": "2",
             "unit": "fl oz"
           }
         ],
-        "note": null,
+        "note": "or grapefruit soda",
         "section": "For the Paloma",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Grapefruit and lime wedges, for serving",
+      "raw": "Grapefruit and lime wedges, (for serving)",
       "expected": {
         "item": "Grapefruit and lime wedges",
         "measurements": [],

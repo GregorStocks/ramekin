@@ -3,16 +3,16 @@
   "recipe_slug": "apricot-pie-recipe",
   "ingredients": [
     {
-      "raw": "1 recipe for Flaky Cream Cheese Pastry Dough, Se Notes Section",
+      "raw": "1 recipe for Flaky Cream Cheese Pastry Dough, (Se Notes Section)",
       "expected": {
-        "item": "recipe for Flaky Cream Cheese Pastry Dough, Se Notes Section",
+        "item": "recipe for Flaky Cream Cheese Pastry Dough",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Se Notes Section",
         "category": "Other"
       }
     },
@@ -21,7 +21,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 1/2 lbs fresh ripe apricots, pitted and sliced into 1/2\" thick slices",
+      "raw": "2 1/2 lbs fresh ripe apricots, (pitted and sliced into 1/2\" thick slices)",
       "expected": {
         "item": "fresh ripe apricots",
         "measurements": [

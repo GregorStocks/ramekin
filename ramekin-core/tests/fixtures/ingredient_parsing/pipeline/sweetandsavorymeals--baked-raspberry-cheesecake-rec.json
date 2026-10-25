@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "2 1/4 cups graham cracker crumbs or finely crushed digestive biscuits",
+      "raw": "2 1/4 cups graham cracker crumbs (or finely crushed digestive biscuits)",
       "expected": {
-        "item": "graham cracker crumbs or finely crushed digestive biscuits",
+        "item": "graham cracker crumbs",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or finely crushed digestive biscuits",
         "section": "Cheesecake Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1 stick unsalted butter melted",
+      "raw": "1 stick unsalted butter (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -41,46 +41,46 @@
       "is_section_header": true
     },
     {
-      "raw": "3 1/2 cups raspberries fresh or frozen",
+      "raw": "3 1/2 cups raspberries (fresh or frozen)",
       "expected": {
-        "item": "raspberries fresh or frozen",
+        "item": "raspberries",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "fresh or frozen",
         "section": "Raspberry Cheesecake Filling",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "24 oz full-fat cream cheese room temperature",
+      "raw": "24 oz full-fat cream cheese (room temperature)",
       "expected": {
-        "item": "full-fat cream cheese room temperature",
+        "item": "full-fat cream cheese",
         "measurements": [
           {
             "amount": "24",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Raspberry Cheesecake Filling",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup sour cream or plain Greek yogurt room temperature",
+      "raw": "1/2 cup sour cream or plain Greek yogurt (room temperature)",
       "expected": {
-        "item": "sour cream or plain Greek yogurt room temperature",
+        "item": "sour cream or plain Greek yogurt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Raspberry Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
@@ -131,18 +131,18 @@
       }
     },
     {
-      "raw": "3 large eggs room temperature",
+      "raw": "3 large eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Raspberry Cheesecake Filling",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -150,18 +150,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2 cups raspberries fresh or frozen",
+      "raw": "2 cups raspberries (fresh or frozen)",
       "expected": {
-        "item": "raspberries fresh or frozen",
+        "item": "raspberries",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "fresh or frozen",
         "section": "Raspberry Sauce",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

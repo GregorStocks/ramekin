@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "200 g ground chicken or ground turkey/pork",
+      "raw": "200 g ground chicken (or ground turkey/pork)",
       "expected": {
-        "item": "ground chicken or ground turkey/pork",
+        "item": "ground chicken",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or ground turkey/pork",
         "section": "Homemade Chicken Meatballs",
         "category": "Meat & Seafood"
       }
@@ -52,22 +52,22 @@
       }
     },
     {
-      "raw": "½ tsp grated ginger root or ginger paste",
+      "raw": "½ tsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root or ginger paste",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "section": "Homemade Chicken Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 clove grated garlic or ½ tsp garlic paste per clove",
+      "raw": "1 clove grated garlic (or ½ tsp garlic paste per clove)",
       "expected": {
         "item": "grated garlic",
         "measurements": [
@@ -97,16 +97,16 @@
       }
     },
     {
-      "raw": "2 tbsp cornstarch or potato starch",
+      "raw": "2 tbsp cornstarch (or potato starch)",
       "expected": {
-        "item": "cornstarch or potato starch",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or potato starch",
         "section": "Homemade Chicken Meatballs",
         "category": "Baking"
       }
@@ -116,18 +116,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1000 ml dashi stock homemade or quality dashi packets",
+      "raw": "1000 ml dashi stock (homemade or quality dashi packets)",
       "expected": {
-        "item": "dashi stock homemade or quality dashi packets",
+        "item": "dashi stock",
         "measurements": [
           {
             "amount": "1000",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "homemade or quality dashi packets",
         "section": "Broth",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {
@@ -176,22 +176,22 @@
       }
     },
     {
-      "raw": "1 tsp grated ginger root or ginger paste",
+      "raw": "1 tsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root or ginger paste",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "section": "Broth",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cloves grated garlic or ½ tsp garlic paste per clove",
+      "raw": "2 cloves grated garlic (or ½ tsp garlic paste per clove)",
       "expected": {
         "item": "grated garlic",
         "measurements": [
@@ -240,37 +240,37 @@
       "is_section_header": true
     },
     {
-      "raw": "1 carrot peeled and cut into thick rounds",
+      "raw": "1 carrot (peeled and cut into thick rounds)",
       "expected": {
-        "item": "carrot peeled and cut into thick rounds",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into thick rounds",
         "section": "Other Ingredients",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 Japanese leek (naganegi) white part, cut into thick diagonal slices",
+      "raw": "1 Japanese leek (naganegi) (white part, cut into thick diagonal slices)",
       "expected": {
-        "item": "Japanese leek white part",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "naganegi, cut into thick diagonal slices",
+        "note": "naganegi, white part, cut into thick diagonal slices",
         "section": "Other Ingredients",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 bunch enoki mushrooms stems removed",
+      "raw": "1 bunch enoki mushrooms (stems removed)",
       "expected": {
         "item": "enoki mushrooms",
         "measurements": [
@@ -285,7 +285,7 @@
       }
     },
     {
-      "raw": "2 fresh shiitake mushrooms stems removed",
+      "raw": "2 fresh shiitake mushrooms (stems removed)",
       "expected": {
         "item": "fresh shiitake mushrooms",
         "measurements": [
@@ -300,7 +300,7 @@
       }
     },
     {
-      "raw": "⅛  Napa cabbage roughly cut",
+      "raw": "⅛ Napa cabbage (roughly cut)",
       "expected": {
         "item": "Napa cabbage",
         "measurements": [
@@ -315,7 +315,7 @@
       }
     },
     {
-      "raw": "150 g firm tofu cubed",
+      "raw": "150 g firm tofu (cubed)",
       "expected": {
         "item": "firm tofu",
         "measurements": [
@@ -330,7 +330,7 @@
       }
     },
     {
-      "raw": "1 bunch potherb mustard (mizuna) stems removed",
+      "raw": "1 bunch potherb mustard (mizuna) (stems removed)",
       "expected": {
         "item": "potherb mustard",
         "measurements": [

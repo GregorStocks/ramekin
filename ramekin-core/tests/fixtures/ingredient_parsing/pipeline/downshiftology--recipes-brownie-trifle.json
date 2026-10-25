@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 cup  coconut oil, butter or ghee, melted",
+      "raw": "1 cup coconut oil, butter or ghee, (melted)",
       "expected": {
         "item": "coconut oil, butter or ghee",
         "measurements": [
@@ -71,16 +71,16 @@
       "is_section_header": true
     },
     {
-      "raw": "3 cup milk, any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
+      "raw": "3 cup milk, (any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work)",
       "expected": {
-        "item": "milk, any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
+        "item": "milk",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
         "section": "Chocolate Chia Pudding Mousse",
         "category": "Dairy & Eggs"
       }
@@ -150,7 +150,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 13.5 ounce cans full-fat coconut milk , chilled 24-48 hours",
+      "raw": "4 13.5 ounce cans full-fat coconut milk , (chilled 24-48 hours)",
       "expected": {
         "item": "full-fat coconut milk",
         "measurements": [

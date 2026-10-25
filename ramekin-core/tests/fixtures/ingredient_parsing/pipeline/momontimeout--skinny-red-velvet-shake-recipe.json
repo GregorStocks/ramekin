@@ -3,16 +3,16 @@
   "recipe_slug": "skinny-red-velvet-shake-recipe",
   "ingredients": [
     {
-      "raw": "1 cup frozen yogurt I used Greek",
+      "raw": "1 cup frozen yogurt (I used Greek)",
       "expected": {
-        "item": "frozen yogurt I used Greek",
+        "item": "frozen yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used Greek",
         "category": "Frozen"
       }
     },
@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "1 scoop of protein powder optional, use chocolate or vanilla",
+      "raw": "1 scoop of protein powder (optional, use chocolate or vanilla)",
       "expected": {
-        "item": "protein powder optional, use chocolate or vanilla",
+        "item": "protein powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "scoop"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "optional, use chocolate or vanilla",
+        "category": "Other"
       }
     },
     {
@@ -63,7 +63,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 oz light cream cheese softened",
+      "raw": "2 oz light cream cheese (softened)",
       "expected": {
         "item": "light cream cheese",
         "measurements": [

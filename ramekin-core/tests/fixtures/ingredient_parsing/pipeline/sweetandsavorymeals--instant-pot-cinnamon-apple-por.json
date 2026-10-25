@@ -22,22 +22,22 @@
       }
     },
     {
-      "raw": "4 bone-in pork chops 1 - 1 1/2 inches thick",
+      "raw": "4 bone-in pork chops (1 - 1 1/2 inches thick)",
       "expected": {
-        "item": "bone-in pork chops 1 - 1 1/2 inches thick",
+        "item": "bone-in pork chops",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1 - 1 1/2 inches thick",
         "section": "Meat and Veggies",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "Kosher salt and freshly ground black pepper to taste",
+      "raw": "Kosher salt and freshly ground black pepper (to taste)",
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
@@ -47,22 +47,22 @@
       }
     },
     {
-      "raw": "2 cups cubed butternut squash 1 inch pieces",
+      "raw": "2 cups cubed butternut squash (1 inch pieces)",
       "expected": {
-        "item": "cubed butternut squash 1 inch pieces",
+        "item": "cubed butternut squash",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1 inch pieces",
         "section": "Meat and Veggies",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "2 Granny Smith apples thickly sliced or chopped",
+      "raw": "2 Granny Smith apples (thickly sliced or chopped)",
       "expected": {
         "item": "Granny Smith apples",
         "measurements": [
@@ -92,7 +92,7 @@
       }
     },
     {
-      "raw": "2 Rosemary sprigs minced",
+      "raw": "2 Rosemary sprigs (minced)",
       "expected": {
         "item": "Rosemary sprigs",
         "measurements": [

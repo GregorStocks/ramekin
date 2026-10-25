@@ -17,45 +17,45 @@
       }
     },
     {
-      "raw": "2 large carrots peeled and cut into 1/4 inch rounds",
+      "raw": "2 large carrots (peeled and cut into 1/4 inch rounds)",
       "expected": {
-        "item": "carrots peeled and cut into 1/4 inch rounds",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "peeled and cut into 1/4 inch rounds",
+        "category": "Produce"
       }
     },
     {
-      "raw": "6 cloves garlic whole",
+      "raw": "6 cloves garlic (whole)",
       "expected": {
-        "item": "garlic whole",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "6",
             "unit": "clove"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "whole",
+        "category": "Produce"
       }
     },
     {
-      "raw": "6 sprigs fresh rosemary whole",
+      "raw": "6 sprigs fresh rosemary (whole)",
       "expected": {
-        "item": "fresh rosemary whole",
+        "item": "fresh rosemary",
         "measurements": [
           {
             "amount": "6",
             "unit": "sprig"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "whole",
+        "category": "Produce"
       }
     },
     {
@@ -108,7 +108,7 @@
       }
     },
     {
-      "raw": "1/2 red bell pepper diced",
+      "raw": "1/2 red bell pepper (diced)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -123,7 +123,7 @@
       }
     },
     {
-      "raw": "8 cloves garlic minced",
+      "raw": "8 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "1 cup cashews finely chopped",
+      "raw": "1 cup cashews (finely chopped)",
       "expected": {
         "item": "cashews",
         "measurements": [
@@ -198,7 +198,7 @@
       }
     },
     {
-      "raw": "2 tablespoons parsley chopped",
+      "raw": "2 tablespoons parsley (chopped)",
       "expected": {
         "item": "parsley",
         "measurements": [
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "2 tablespoons fresh rosemary chopped",
+      "raw": "2 tablespoons fresh rosemary (chopped)",
       "expected": {
         "item": "fresh rosemary",
         "measurements": [

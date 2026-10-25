@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "3 cups Slow-Cooker Pork Carnitas or traditional Pork Carnitas",
+      "raw": "3 cups Slow-Cooker Pork Carnitas (or traditional Pork Carnitas)",
       "expected": {
-        "item": "Slow-Cooker Pork Carnitas or traditional Pork Carnitas",
+        "item": "Slow-Cooker Pork Carnitas",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or traditional Pork Carnitas",
         "category": "Other"
       }
     },
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "½ red onion very thinly sliced",
+      "raw": "½ red onion (very thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "3 limes cut into wedges",
+      "raw": "3 limes (cut into wedges)",
       "expected": {
         "item": "limes",
         "measurements": [

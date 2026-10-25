@@ -234,7 +234,7 @@
       }
     },
     {
-      "raw": "1 pound unsalted butter cubed, at room temperature",
+      "raw": "1 pound unsalted butter (cubed, at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -337,11 +337,11 @@
       }
     },
     {
-      "raw": "Scalloped edging fondant cutter see blog post for sources",
+      "raw": "Scalloped edging fondant cutter (see blog post for sources)",
       "expected": {
-        "item": "Scalloped edging fondant cutter see blog post for sources",
+        "item": "Scalloped edging fondant cutter",
         "measurements": [],
-        "note": null,
+        "note": "see blog post for sources",
         "section": "Assembly",
         "category": "Other"
       }
@@ -362,16 +362,16 @@
       }
     },
     {
-      "raw": "1/2 batch American buttercream recipe here",
+      "raw": "1/2 batch American buttercream (recipe here)",
       "expected": {
-        "item": "American buttercream recipe here",
+        "item": "American buttercream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "batch"
           }
         ],
-        "note": null,
+        "note": "recipe here",
         "section": "Assembly",
         "category": "Other"
       }

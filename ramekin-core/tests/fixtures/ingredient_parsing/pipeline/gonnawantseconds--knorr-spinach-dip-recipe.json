@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 (10-ounce) box frozen spinach, thawed and well-drained",
+      "raw": "1 (10-ounce) box frozen spinach, (thawed and well-drained)",
       "expected": {
         "item": "frozen spinach",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "1 (8 ounces) can water chestnuts, well-drained and coarsely chopped",
+      "raw": "1 (8 ounces) can water chestnuts, (well-drained and coarsely chopped)",
       "expected": {
         "item": "water chestnuts",
         "measurements": [
@@ -86,16 +86,16 @@
       }
     },
     {
-      "raw": "1/4 cup, plus extra for garnish green onions thinly sliced",
+      "raw": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
       "expected": {
-        "item": "1/4 cup, plus extra for garnish green onions thinly sliced",
+        "item": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "plus extra for garnish green onions thinly sliced",
+        "note": "thinly sliced, plus extra for garnish green onions",
         "section": "Dip",
         "category": "Other"
       }
@@ -144,7 +144,7 @@
       }
     },
     {
-      "raw": "Hawaiian rolls, cut into cubes",
+      "raw": "Hawaiian rolls, (cut into cubes)",
       "expected": {
         "item": "Hawaiian rolls",
         "measurements": [],

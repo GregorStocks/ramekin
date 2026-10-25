@@ -443,7 +443,46 @@ fn is_frying_medium(ingredient: &ParsedIngredient) -> bool {
             .is_some_and(|note| FRYING.is_match(note) && !note.to_lowercase().contains("plus more"))
 }
 
+/// Whether the line is an amount of another recipe ("1 recipe guacamole",
+/// "1/2 batch Rice Krispies Treats"): its weight is the other recipe's, so
+/// only another measurement on the line ("1 batch (2 cups)") counts it.
+fn refers_to_another_recipe(ingredient: &ParsedIngredient) -> bool {
+    let Some(measurement) = ingredient.measurements.first() else {
+        return false;
+    };
+    if measurement.amount.is_none() {
+        return false;
+    }
+    let item = ingredient.item.to_lowercase();
+    match measurement
+        .unit
+        .as_deref()
+        .map(str::to_lowercase)
+        .as_deref()
+    {
+        Some("batch" | "batches") => true,
+        None => item.starts_with("recipe ") || item.starts_with("recipes "),
+        Some(_) => false,
+    }
+}
+
+/// What a line adds, or why it can't be counted.
 fn contribution(
+    ingredient: &ParsedIngredient,
+    scale: f64,
+    learned: &catalog::Learned,
+    estimated: &Gaps,
+) -> Result<Line, &'static str> {
+    weigh_line(ingredient, scale, learned, estimated).map_err(|reason| {
+        if refers_to_another_recipe(ingredient) {
+            "Another recipe"
+        } else {
+            reason
+        }
+    })
+}
+
+fn weigh_line(
     ingredient: &ParsedIngredient,
     scale: f64,
     learned: &catalog::Learned,
@@ -660,6 +699,7 @@ fn unknown_label(reason: &str) -> &'static str {
         }
         "Missing density for this food" => "Can't convert this measurement to weight",
         "Frying oil: only part of it is absorbed" => "Frying oil: only part is absorbed",
+        "Another recipe" => "Refers to another recipe",
         other => panic!("no label for unknown reason {other:?}"),
     }
 }

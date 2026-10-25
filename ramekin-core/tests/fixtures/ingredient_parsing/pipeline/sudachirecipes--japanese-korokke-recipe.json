@@ -3,49 +3,49 @@
   "recipe_slug": "japanese-korokke-recipe",
   "ingredients": [
     {
-      "raw": "300 g potato starchy variety such as Russet or Yukon Gold, not waxy",
+      "raw": "300 g potato (starchy variety such as Russet or Yukon Gold, not waxy)",
       "expected": {
-        "item": "potato starchy variety",
+        "item": "potato",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": "such as Russet or Yukon Gold, not waxy",
-        "category": "Other"
+        "note": "starchy variety such as Russet or Yukon Gold, not waxy",
+        "category": "Produce"
       }
     },
     {
-      "raw": "½ tbsp salt for boiling",
+      "raw": "½ tbsp salt (for boiling)",
       "expected": {
-        "item": "salt for boiling",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "for boiling",
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tbsp butter or neutral oil",
+      "raw": "1 tbsp butter (or neutral oil)",
       "expected": {
-        "item": "butter or neutral oil",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or neutral oil",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "100 g onion finely diced",
+      "raw": "100 g onion (finely diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "100 g ground meat 50/50 beef-pork mix or 100% beef/pork",
+      "raw": "100 g ground meat (50/50 beef-pork mix or 100% beef/pork)",
       "expected": {
-        "item": "ground meat 50/50 beef-pork mix or 100% beef/pork",
+        "item": "ground meat",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "50/50 beef-pork mix or 100% beef/pork",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -143,21 +143,21 @@
       }
     },
     {
-      "raw": "1 tbsp whole milk  at room temperature",
+      "raw": "1 tbsp whole milk (at room temperature)",
       "expected": {
-        "item": "whole milk at room temperature",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Worcestershire sauce  optional, to serve",
+      "raw": "Worcestershire sauce (optional, to serve)",
       "expected": {
         "item": "Worcestershire sauce",
         "measurements": [],
@@ -200,7 +200,7 @@
       }
     },
     {
-      "raw": "5 tbsp all-purpose flour plus extra for dusting",
+      "raw": "5 tbsp all-purpose flour (plus extra for dusting)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -215,26 +215,26 @@
       }
     },
     {
-      "raw": "75 g panko breadcrumbs or regular breadcrumbs",
+      "raw": "75 g panko breadcrumbs (or regular breadcrumbs)",
       "expected": {
-        "item": "panko breadcrumbs or regular breadcrumbs",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "75",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or regular breadcrumbs",
         "section": "Batter",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "cooking oil neutral, high smoke point, for deep frying",
+      "raw": "cooking oil (neutral, high smoke point, for deep frying)",
       "expected": {
-        "item": "cooking oil neutral, high smoke point",
+        "item": "cooking oil",
         "measurements": [],
-        "note": "for deep frying",
+        "note": "neutral, high smoke point, for deep frying",
         "section": "Batter",
         "category": "Oils & Vinegars"
       }

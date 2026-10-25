@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "1 clove garlic, minced",
+      "raw": "1 clove garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -255,16 +255,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 scallions, dark green parts only, thinly sliced",
+      "raw": "2 scallions, (dark green parts only, thinly sliced)",
       "expected": {
-        "item": "scallions, dark green parts only",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "thinly sliced",
+        "note": "dark green parts only, thinly sliced",
         "section": "For Serving (Optional)",
         "category": "Produce"
       }

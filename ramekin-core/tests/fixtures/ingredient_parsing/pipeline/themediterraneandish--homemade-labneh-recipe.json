@@ -49,11 +49,11 @@
       }
     },
     {
-      "raw": "Za’atar  or chopped fresh herbs",
+      "raw": "Za’atar (or chopped fresh herbs)",
       "expected": {
-        "item": "Za’atar or chopped fresh herbs",
+        "item": "Za’atar",
         "measurements": [],
-        "note": null,
+        "note": "or chopped fresh herbs",
         "section": "To Serve (Optional)",
         "category": "Spices & Seasonings"
       }

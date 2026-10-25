@@ -56,16 +56,16 @@
       }
     },
     {
-      "raw": "2 tablespoons   St. Germain liqueur, optional, or other liqueur of your choice",
+      "raw": "2 tablespoons St. Germain liqueur, (optional, or other liqueur of your choice)",
       "expected": {
-        "item": "St. Germain liqueur, optional, or other liqueur of your choice",
+        "item": "St. Germain liqueur",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "optional, or other liqueur of your choice",
         "section": "For Strawberry Sauce",
         "category": "Beverages"
       }
@@ -75,7 +75,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 oz   mascarpone, cold",
+      "raw": "8 oz mascarpone, (cold)",
       "expected": {
         "item": "mascarpone",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "½ teaspoon   vanilla bean paste, or the seeds of 1/2 a vanilla bean",
+      "raw": "½ teaspoon vanilla bean paste, (or the seeds of 1/2 a vanilla bean)",
       "expected": {
         "item": "vanilla bean paste",
         "measurements": [
@@ -135,7 +135,7 @@
       }
     },
     {
-      "raw": "1 ¼ cup   heavy whipping cream, cold",
+      "raw": "1 ¼ cup heavy whipping cream, (cold)",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
@@ -169,22 +169,22 @@
       }
     },
     {
-      "raw": "2 tablespoons   elderflower syrup, optional, or other flavored syrup of your choice",
+      "raw": "2 tablespoons elderflower syrup, (optional, or other flavored syrup of your choice)",
       "expected": {
-        "item": "elderflower syrup, optional, or other flavored syrup of your choice",
+        "item": "elderflower syrup",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "optional, or other flavored syrup of your choice",
         "section": "For Assembly",
         "category": "Other"
       }
     },
     {
-      "raw": "freeze dried strawberry powder, optional, for topping",
+      "raw": "freeze dried strawberry powder, (optional, for topping)",
       "expected": {
         "item": "freeze dried strawberry powder",
         "measurements": [],

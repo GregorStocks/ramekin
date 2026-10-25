@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-nut-free-paleo-pancake",
   "ingredients": [
     {
-      "raw": "4 large eggs, beaten",
+      "raw": "4 large eggs, (beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -129,11 +129,11 @@
       }
     },
     {
-      "raw": "ghee or coconut oil, to coat skillet",
+      "raw": "ghee or coconut oil, (to coat skillet)",
       "expected": {
-        "item": "ghee or coconut oil, to coat skillet",
+        "item": "ghee or coconut oil",
         "measurements": [],
-        "note": null,
+        "note": "to coat skillet",
         "category": "Dairy & Eggs"
       }
     },

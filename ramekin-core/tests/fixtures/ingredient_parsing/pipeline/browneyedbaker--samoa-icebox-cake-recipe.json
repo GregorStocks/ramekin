@@ -68,7 +68,7 @@
       "is_section_header": true
     },
     {
-      "raw": "12 ounces  (340.2 g) cream cheese, at room temperature",
+      "raw": "12 ounces (340.2 g) cream cheese, (at room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -125,7 +125,7 @@
       }
     },
     {
-      "raw": "3 tablespoons   caramel sauce, homemade or store-bought",
+      "raw": "3 tablespoons caramel sauce, (homemade or store-bought)",
       "expected": {
         "item": "caramel sauce",
         "measurements": [
@@ -140,7 +140,7 @@
       }
     },
     {
-      "raw": "1 cup  (304 ml) hot fudge sauce, homemade or store-bought",
+      "raw": "1 cup (304 ml) hot fudge sauce, (homemade or store-bought)",
       "expected": {
         "item": "hot fudge sauce",
         "measurements": [

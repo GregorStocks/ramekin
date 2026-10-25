@@ -3,21 +3,21 @@
   "recipe_slug": "chicken-nanban-recipe",
   "ingredients": [
     {
-      "raw": "450 g chicken breast skin on, or boneless chicken thigh",
+      "raw": "450 g chicken breast (skin on, or boneless chicken thigh)",
       "expected": {
-        "item": "chicken breast skin on, or boneless chicken thigh",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "450",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin on, or boneless chicken thigh",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "salt and pepper to taste",
+      "raw": "salt and pepper (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -26,30 +26,30 @@
       }
     },
     {
-      "raw": "3 tbsp cake flour or all purpose",
+      "raw": "3 tbsp cake flour (or all purpose)",
       "expected": {
-        "item": "cake flour or all purpose",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or all purpose",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tbsp cornstarch or potato starch",
+      "raw": "1 tbsp cornstarch (or potato starch)",
       "expected": {
-        "item": "cornstarch or potato starch",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or potato starch",
         "category": "Baking"
       }
     },
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "cooking oil for frying",
+      "raw": "cooking oil (for frying)",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
@@ -81,33 +81,33 @@
       "is_section_header": true
     },
     {
-      "raw": "1 small pickled gherkin or fresh cucumber",
+      "raw": "1 small pickled gherkin (or fresh cucumber)",
       "expected": {
-        "item": "pickled gherkin or fresh cucumber",
+        "item": "pickled gherkin",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "or fresh cucumber",
         "section": "Japanese Tartar Sauce",
-        "category": "Produce"
+        "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "¼ onion rinse after mincing to reduce sharpness",
+      "raw": "¼ onion (rinse after mincing to reduce sharpness)",
       "expected": {
-        "item": "onion rinse after mincing to reduce sharpness",
+        "item": "onion",
         "measurements": [
           {
             "amount": "0.25",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "rinse after mincing to reduce sharpness",
         "section": "Japanese Tartar Sauce",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -126,16 +126,16 @@
       }
     },
     {
-      "raw": "4 tbsp Japanese mayonnaise or regular mayonnaise",
+      "raw": "4 tbsp Japanese mayonnaise (or regular mayonnaise)",
       "expected": {
-        "item": "Japanese mayonnaise or regular mayonnaise",
+        "item": "Japanese mayonnaise",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or regular mayonnaise",
         "section": "Japanese Tartar Sauce",
         "category": "Condiments & Sauces"
       }
@@ -216,13 +216,13 @@
       }
     },
     {
-      "raw": "parsley dried or finely chopped fresh, for color",
+      "raw": "parsley (dried or finely chopped fresh, for color)",
       "expected": {
-        "item": "parsley dried or finely chopped fresh",
+        "item": "parsley",
         "measurements": [],
-        "note": "for color",
+        "note": "dried or finely chopped fresh, for color",
         "section": "Japanese Tartar Sauce",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -245,16 +245,16 @@
       }
     },
     {
-      "raw": "3 tbsp rice vinegar or apple cider vinegar",
+      "raw": "3 tbsp rice vinegar (or apple cider vinegar)",
       "expected": {
-        "item": "rice vinegar or apple cider vinegar",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or apple cider vinegar",
         "section": "Nanbanzu",
         "category": "Oils & Vinegars"
       }
@@ -290,18 +290,18 @@
       }
     },
     {
-      "raw": "1 dried red chili pepper split lengthways, deseeded",
+      "raw": "1 dried red chili pepper (split lengthways, deseeded)",
       "expected": {
-        "item": "dried red chili pepper split lengthways",
+        "item": "dried red chili pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "deseeded",
+        "note": "split lengthways, deseeded",
         "section": "Nanbanzu",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     }
   ]

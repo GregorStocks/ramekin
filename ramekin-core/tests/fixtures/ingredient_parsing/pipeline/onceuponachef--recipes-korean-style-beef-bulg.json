@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic, minced",
+      "raw": "2 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -127,7 +127,7 @@
       }
     },
     {
-      "raw": "½ cup chopped scallions, from 4 to 5 scallions",
+      "raw": "½ cup chopped scallions, (from 4 to 5 scallions)",
       "expected": {
         "item": "chopped scallions",
         "measurements": [
@@ -171,16 +171,16 @@
       "is_section_header": true
     },
     {
-      "raw": "¾ cup mayonnaise, best quality such as Hellmann's or Duke's",
+      "raw": "¾ cup mayonnaise, (best quality such as Hellmann's or Duke's)",
       "expected": {
-        "item": "mayonnaise, best quality",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "such as Hellmann's or Duke's",
+        "note": "best quality such as Hellmann's or Duke's",
         "section": "For the Chili Mayonnaise",
         "category": "Condiments & Sauces"
       }

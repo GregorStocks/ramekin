@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "4 garlic cloves, minced",
+      "raw": "4 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -181,22 +181,22 @@
       }
     },
     {
-      "raw": "¼ cup crumbled feta, or cotija! for topping",
+      "raw": "¼ cup crumbled feta, (or cotija! for topping)",
       "expected": {
-        "item": "crumbled feta, or cotija!",
+        "item": "crumbled feta",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "for topping",
+        "note": "or cotija! for topping",
         "section": "Tacos",
         "category": "Cheese"
       }
     },
     {
-      "raw": "pickled onions, for topping",
+      "raw": "pickled onions, (for topping)",
       "expected": {
         "item": "pickled onions",
         "measurements": [],

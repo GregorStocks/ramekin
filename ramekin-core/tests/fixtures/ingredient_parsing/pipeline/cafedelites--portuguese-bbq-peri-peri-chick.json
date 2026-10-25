@@ -82,18 +82,18 @@
       }
     },
     {
-      "raw": "2 teaspoons lemon juice fresh squeezed, optional",
+      "raw": "2 teaspoons lemon juice (fresh squeezed, optional)",
       "expected": {
-        "item": "lemon juice fresh",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "squeezed, optional",
+        "note": "fresh squeezed, optional",
         "section": "For the Marinade",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "1 pinch cracked pepper to taste, optional",
+      "raw": "1 pinch cracked pepper (to taste, optional)",
       "expected": {
         "item": "cracked pepper",
         "measurements": [
@@ -161,48 +161,48 @@
       "is_section_header": true
     },
     {
-      "raw": "3-4 pounds whole chicken Butterflied is preferred",
+      "raw": "3-4 pounds whole chicken (Butterflied is preferred)",
       "expected": {
-        "item": "whole chicken Butterflied is preferred",
+        "item": "whole chicken",
         "measurements": [
           {
             "amount": "3-4",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "Butterflied is preferred",
         "section": "Chicken",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 pinch salt to season",
+      "raw": "1 pinch salt (to season)",
       "expected": {
-        "item": "salt to season",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to season",
         "section": "Chicken",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch pepper to season",
+      "raw": "1 pinch pepper (to season)",
       "expected": {
-        "item": "pepper to season",
+        "item": "pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to season",
         "section": "Chicken",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -225,7 +225,7 @@
       }
     },
     {
-      "raw": "3 teaspoons butter optional",
+      "raw": "3 teaspoons butter (optional)",
       "expected": {
         "item": "butter",
         "measurements": [

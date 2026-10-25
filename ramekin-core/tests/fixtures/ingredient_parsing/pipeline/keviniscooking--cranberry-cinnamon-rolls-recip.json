@@ -7,37 +7,37 @@
       "is_section_header": true
     },
     {
-      "raw": "12 oz cranberries fresh or frozen See Note 1",
+      "raw": "12 oz cranberries fresh or frozen (See Note 1)",
       "expected": {
-        "item": "cranberries fresh or frozen See Note 1",
+        "item": "cranberries fresh or frozen",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "See Note 1",
         "section": "Cranberry Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup sugar See Note 2 for substitutions",
+      "raw": "1 cup sugar (See Note 2 for substitutions)",
       "expected": {
-        "item": "sugar See Note 2 for substitutions",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "See Note 2 for substitutions",
         "section": "Cranberry Filling",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "1 orange juice and zest",
+      "raw": "1 orange (juice and zest)",
       "expected": {
         "item": "orange juice and zest",
         "measurements": [
@@ -67,18 +67,18 @@
       }
     },
     {
-      "raw": "1 tbsp grated ginger root See Note 3 for substitutions",
+      "raw": "1 tbsp grated ginger root (See Note 3 for substitutions)",
       "expected": {
-        "item": "grated ginger root See Note 3 for substitutions",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "See Note 3 for substitutions",
         "section": "Cranberry Filling",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -135,48 +135,60 @@
       }
     },
     {
-      "raw": "50 g sugar 1/4 cup",
+      "raw": "50 g sugar (1/4 cup)",
       "expected": {
-        "item": "sugar 1/4 cup",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
         "note": null,
         "section": "Dough",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "4 g salt 1/4 tsp",
+      "raw": "4 g salt (1/4 tsp)",
       "expected": {
-        "item": "salt 1/4 tsp",
+        "item": "salt",
         "measurements": [
           {
             "amount": "4",
             "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
           }
         ],
         "note": null,
         "section": "Dough",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "7 g instant yeast 2 1/4 tsp",
+      "raw": "7 g instant yeast (2 1/4 tsp)",
       "expected": {
-        "item": "instant yeast 2 1/4 tsp",
+        "item": "instant yeast",
         "measurements": [
           {
             "amount": "7",
             "unit": "g"
+          },
+          {
+            "amount": "2.25",
+            "unit": "tsp"
           }
         ],
         "note": null,
         "section": "Dough",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -195,24 +207,28 @@
       }
     },
     {
-      "raw": "160 g milk 2/3 cup",
+      "raw": "160 g milk (2/3 cup)",
       "expected": {
-        "item": "milk 2/3 cup",
+        "item": "milk",
         "measurements": [
           {
             "amount": "160",
             "unit": "g"
+          },
+          {
+            "amount": "0.67",
+            "unit": "cup"
           }
         ],
         "note": null,
         "section": "Dough",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "50 g butter room temperature (1/4 cup)",
+      "raw": "50 g butter, room temperature (1/4 cup)",
       "expected": {
-        "item": "butter room temperature",
+        "item": "butter",
         "measurements": [
           {
             "amount": "50",
@@ -223,9 +239,9 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Dough",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -233,48 +249,60 @@
       "is_section_header": true
     },
     {
-      "raw": "100 g powdered sugar 1cup",
+      "raw": "100 g powdered sugar (1cup)",
       "expected": {
-        "item": "powdered sugar 1cup",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
         "note": null,
-        "section": "Glaze",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "5 g orange extract or orange water 1 tsp",
-      "expected": {
-        "item": "orange extract",
-        "measurements": [
-          {
-            "amount": "5",
-            "unit": "g"
-          }
-        ],
-        "note": "or orange water 1 tsp",
         "section": "Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "25 g heavy cream 2 tbsp",
+      "raw": "5 g orange extract or orange water (1 tsp)",
       "expected": {
-        "item": "heavy cream 2 tbsp",
+        "item": "orange extract or orange water",
         "measurements": [
           {
-            "amount": "25",
+            "amount": "5",
             "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tsp"
           }
         ],
         "note": null,
         "section": "Glaze",
-        "category": "Other"
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "25 g heavy cream (2 tbsp)",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "25",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "Glaze",
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -102,7 +102,7 @@
       }
     },
     {
-      "raw": "Sea Salt  to taste (@ 1 teaspoon (5 g))",
+      "raw": "Sea Salt, to taste (@ 1 teaspoon (5 g))",
       "expected": {
         "item": "Sea Salt",
         "measurements": [],
@@ -211,9 +211,9 @@
       }
     },
     {
-      "raw": "1 teaspoon   Kosher Salt  or Sea Salt (5g)",
+      "raw": "1 teaspoon Kosher Salt, or Sea Salt (5g)",
       "expected": {
-        "item": "Kosher Salt or Sea Salt",
+        "item": "Kosher Salt, or Sea Salt",
         "measurements": [
           {
             "amount": "1",
@@ -264,9 +264,9 @@
       }
     },
     {
-      "raw": "1 cup   Espresso  or Strong Coffee (240ml)",
+      "raw": "1 cup Espresso, or Strong Coffee (240ml)",
       "expected": {
-        "item": "Espresso or Strong Coffee",
+        "item": "Espresso, or Strong Coffee",
         "measurements": [
           {
             "amount": "1",

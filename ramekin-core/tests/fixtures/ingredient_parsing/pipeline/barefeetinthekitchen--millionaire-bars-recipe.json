@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup cold butter cut into pieces",
+      "raw": "½ cup cold butter (cut into pieces)",
       "expected": {
         "item": "cold butter",
         "measurements": [
@@ -240,9 +240,9 @@
       }
     },
     {
-      "raw": "Optional: kosher course sea salt, or Maldon salt (if you have it)",
+      "raw": "Optional: kosher, course sea salt, or Maldon salt (if you have it)",
       "expected": {
-        "item": "kosher course sea salt, or Maldon salt",
+        "item": "kosher, course sea salt, or Maldon salt",
         "measurements": [],
         "note": "optional, if you have it",
         "section": "Chocolate Layer",

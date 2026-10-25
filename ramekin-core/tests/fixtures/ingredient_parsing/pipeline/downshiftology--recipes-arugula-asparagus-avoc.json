@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste",
+      "raw": "salt and pepper, (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -144,7 +144,7 @@
       }
     },
     {
-      "raw": "1/2 tsp shallot, finely diced",
+      "raw": "1/2 tsp shallot, (finely diced)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -174,7 +174,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste",
+      "raw": "salt and pepper, (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],

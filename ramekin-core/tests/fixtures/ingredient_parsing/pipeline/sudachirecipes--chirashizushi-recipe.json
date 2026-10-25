@@ -7,13 +7,17 @@
       "is_section_header": true
     },
     {
-      "raw": "3 dried shiitake mushroom or 2 medium/1 large",
+      "raw": "3 dried shiitake mushroom (or 2 medium/1 large)",
       "expected": {
         "item": "dried shiitake mushroom",
         "measurements": [
           {
             "amount": "3",
             "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "large"
           }
         ],
         "note": "or 2 medium/1 large",
@@ -52,7 +56,7 @@
       }
     },
     {
-      "raw": "30 g fried tofu pouch (aburaage) thinly sliced",
+      "raw": "30 g fried tofu pouch (aburaage) (thinly sliced)",
       "expected": {
         "item": "fried tofu pouch",
         "measurements": [
@@ -236,7 +240,7 @@
       }
     },
     {
-      "raw": "75 g sashimi grade tuna cubed",
+      "raw": "75 g sashimi grade tuna (cubed)",
       "expected": {
         "item": "sashimi grade tuna",
         "measurements": [
@@ -304,7 +308,7 @@
       "is_section_header": true
     },
     {
-      "raw": "25 g lotus root (renkon) sliced and boiled",
+      "raw": "25 g lotus root (renkon) (sliced and boiled)",
       "expected": {
         "item": "lotus root",
         "measurements": [
@@ -319,18 +323,18 @@
       }
     },
     {
-      "raw": "100 g shrimp deshelled and boiled",
+      "raw": "100 g shrimp (deshelled and boiled)",
       "expected": {
-        "item": "shrimp deshelled and boiled",
+        "item": "shrimp",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "deshelled and boiled",
         "section": "Other Toppings",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -349,7 +353,7 @@
       }
     },
     {
-      "raw": "2 tbsp sweet pink fish powder (sakura denbu) optional",
+      "raw": "2 tbsp sweet pink fish powder (sakura denbu) (optional)",
       "expected": {
         "item": "sweet pink fish powder",
         "measurements": [
@@ -364,18 +368,18 @@
       }
     },
     {
-      "raw": "10 snow peas blanched and cut in half diagonally",
+      "raw": "10 snow peas (blanched and cut in half diagonally)",
       "expected": {
-        "item": "snow peas blanched and cut in half diagonally",
+        "item": "snow peas",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "blanched and cut in half diagonally",
         "section": "Other Toppings",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

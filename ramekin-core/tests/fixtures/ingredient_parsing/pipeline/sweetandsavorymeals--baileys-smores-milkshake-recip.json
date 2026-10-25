@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "2 oz. vodka or vanilla vodka, or rum",
+      "raw": "2 oz. vodka (or vanilla vodka, or rum)",
       "expected": {
-        "item": "vodka or vanilla vodka, or rum",
+        "item": "vodka",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "or vanilla vodka, or rum",
         "category": "Beverages"
       }
     },

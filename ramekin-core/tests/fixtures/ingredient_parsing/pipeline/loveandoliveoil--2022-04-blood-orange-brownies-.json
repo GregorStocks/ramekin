@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon   citric acid, or 2 tablespoons lemon juice",
+      "raw": "¼ teaspoon citric acid, (or 2 tablespoons lemon juice)",
       "expected": {
         "item": "citric acid",
         "measurements": [
@@ -41,7 +41,7 @@
       }
     },
     {
-      "raw": "2   large eggs, at room temperature",
+      "raw": "2 large eggs, (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -56,7 +56,7 @@
       }
     },
     {
-      "raw": "4   large egg yolks, at room temperature",
+      "raw": "4 large egg yolks, (at room temperature)",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "1 teaspoon   blood orange zest, very finely grated/chopped",
+      "raw": "1 teaspoon blood orange zest, (very finely grated/chopped)",
       "expected": {
         "item": "blood orange zest",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1   large egg, at room temperature",
+      "raw": "1 large egg, (at room temperature)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -200,7 +200,7 @@
       }
     },
     {
-      "raw": "1   large egg yolk, at room temperature",
+      "raw": "1 large egg yolk, (at room temperature)",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -230,7 +230,7 @@
       }
     },
     {
-      "raw": "½ cup  / 50 g Dutch process cocoa powder, sifted",
+      "raw": "½ cup / 50 g Dutch process cocoa powder, (sifted)",
       "expected": {
         "item": "Dutch process cocoa powder",
         "measurements": [

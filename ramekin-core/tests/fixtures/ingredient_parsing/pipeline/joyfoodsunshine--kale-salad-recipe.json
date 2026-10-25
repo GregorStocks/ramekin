@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 bunch  kale stems removed, chopped thin (8 cups)",
+      "raw": "1 bunch kale, stems removed, chopped thin (8 cups)",
       "expected": {
         "item": "kale",
         "measurements": [
@@ -41,7 +41,7 @@
       }
     },
     {
-      "raw": "2 carrots shredded",
+      "raw": "2 carrots (shredded)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -56,7 +56,7 @@
       }
     },
     {
-      "raw": "½ cucumber julienned",
+      "raw": "½ cucumber (julienned)",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "1 red pepper julienned",
+      "raw": "1 red pepper (julienned)",
       "expected": {
         "item": "red pepper",
         "measurements": [
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "1 avocado diced",
+      "raw": "1 avocado (diced)",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "1 ounce sharp cheddar cheese cubed",
+      "raw": "1 ounce sharp cheddar cheese (cubed)",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [

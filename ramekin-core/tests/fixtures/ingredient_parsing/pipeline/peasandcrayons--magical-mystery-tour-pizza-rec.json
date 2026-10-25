@@ -17,17 +17,17 @@
       }
     },
     {
-      "raw": "¼ cup pesto homemade or store bought",
+      "raw": "¼ cup pesto (homemade or store bought)",
       "expected": {
-        "item": "pesto homemade or store bought",
+        "item": "pesto",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "homemade or store bought",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 large portobello cap sliced",
+      "raw": "1 large portobello cap (sliced)",
       "expected": {
         "item": "portobello cap",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "2 button mushrooms sliced",
+      "raw": "2 button mushrooms (sliced)",
       "expected": {
         "item": "button mushrooms",
         "measurements": [

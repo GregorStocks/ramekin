@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic peeled and smashed",
+      "raw": "4 cloves garlic (peeled and smashed)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "1 lemon sliced",
+      "raw": "1 lemon (sliced)",
       "expected": {
         "item": "lemon",
         "measurements": [
@@ -161,16 +161,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 tablespoons extra virgin olive oil or canola oil",
+      "raw": "2 tablespoons extra virgin olive oil (or canola oil)",
       "expected": {
-        "item": "extra virgin olive oil or canola oil",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or canola oil",
         "section": "Grilled Pork Chops",
         "category": "Oils & Vinegars"
       }

@@ -178,13 +178,13 @@
       }
     },
     {
-      "raw": "pumpkin pie spice dusted on top, if desired",
+      "raw": "pumpkin pie spice (dusted on top, if desired)",
       "expected": {
-        "item": "pumpkin pie spice dusted on top",
+        "item": "pumpkin pie spice",
         "measurements": [],
-        "note": "if desired",
+        "note": "dusted on top, if desired",
         "section": "Easy Vanilla Glaze",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -3,9 +3,9 @@
   "recipe_slug": "best-chipotle-hummus-recipe",
   "ingredients": [
     {
-      "raw": "1 can chickpeas 15.5 oz (liquid reserved)",
+      "raw": "1 can chickpeas, 15.5 oz (liquid reserved)",
       "expected": {
-        "item": "chickpeas 15.5 oz",
+        "item": "chickpeas, 15.5 oz",
         "measurements": [
           {
             "amount": "1",
@@ -13,7 +13,7 @@
           }
         ],
         "note": "liquid reserved",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {
@@ -149,11 +149,11 @@
       }
     },
     {
-      "raw": "minced chipotle pepper for the chipotle lovers out there!",
+      "raw": "minced chipotle pepper (for the chipotle lovers out there!)",
       "expected": {
-        "item": "minced chipotle pepper for the chipotle lovers out there!",
+        "item": "minced chipotle pepper",
         "measurements": [],
-        "note": null,
+        "note": "for the chipotle lovers out there!",
         "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Other"
       }

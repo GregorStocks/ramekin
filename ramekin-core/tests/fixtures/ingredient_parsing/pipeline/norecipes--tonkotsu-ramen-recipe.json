@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "5 cloves  garlic grated",
+      "raw": "5 cloves garlic (grated)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -195,7 +195,7 @@
       }
     },
     {
-      "raw": "2 cloves  garlic finely grated (not pressed)",
+      "raw": "2 cloves garlic, finely grated (not pressed)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -255,7 +255,7 @@
       }
     },
     {
-      "raw": "1 tablespoon  toasted sesame seeds coarsely ground",
+      "raw": "1 tablespoon toasted sesame seeds (coarsely ground)",
       "expected": {
         "item": "toasted sesame seeds",
         "measurements": [
@@ -270,7 +270,7 @@
       }
     },
     {
-      "raw": "2 tablespoons  fatback finely minced (salted pork fat)",
+      "raw": "2 tablespoons fatback, finely minced (salted pork fat)",
       "expected": {
         "item": "fatback",
         "measurements": [
@@ -329,7 +329,7 @@
       }
     },
     {
-      "raw": "2  scallions finely chopped",
+      "raw": "2 scallions (finely chopped)",
       "expected": {
         "item": "scallions",
         "measurements": [

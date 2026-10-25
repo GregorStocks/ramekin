@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "⅛ tsp paprika or to taste",
+      "raw": "⅛ tsp paprika (or to taste)",
       "expected": {
         "item": "paprika",
         "measurements": [
@@ -101,11 +101,11 @@
       }
     },
     {
-      "raw": "chopped bacon or vegan bacon bits",
+      "raw": "chopped bacon (or vegan bacon bits)",
       "expected": {
-        "item": "chopped bacon or vegan bacon bits",
+        "item": "chopped bacon",
         "measurements": [],
-        "note": null,
+        "note": "or vegan bacon bits",
         "section": "Tasty Topping Options – Choose Your Favorites!",
         "category": "Meat & Seafood"
       }

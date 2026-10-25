@@ -7,22 +7,26 @@
       "is_section_header": true
     },
     {
-      "raw": "2 medium sweet potatoes, approx 1.5 lbs",
+      "raw": "2 medium sweet potatoes, (approx 1.5 lbs)",
       "expected": {
-        "item": "sweet potatoes, approx 1.5 lbs",
+        "item": "sweet potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
+          },
+          {
+            "amount": "1.5",
+            "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "approx 1.5 lbs",
         "section": "Sweet Potato Gnocchi",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cups almond flour, plus more as needed",
+      "raw": "2 cups almond flour, (plus more as needed)",
       "expected": {
         "item": "almond flour",
         "measurements": [
@@ -37,7 +41,7 @@
       }
     },
     {
-      "raw": "1 cup arrowroot powder, plus more as needed",
+      "raw": "1 cup arrowroot powder, (plus more as needed)",
       "expected": {
         "item": "arrowroot powder",
         "measurements": [
@@ -86,7 +90,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3/4 cup olive oil, divided",
+      "raw": "3/4 cup olive oil, (divided)",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -116,7 +120,7 @@
       }
     },
     {
-      "raw": "1/4 cup sage leaves, roughly chopped",
+      "raw": "1/4 cup sage leaves, (roughly chopped)",
       "expected": {
         "item": "sage leaves",
         "measurements": [
@@ -131,7 +135,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh parsley, roughly chopped",
+      "raw": "1/2 cup fresh parsley, (roughly chopped)",
       "expected": {
         "item": "fresh parsley",
         "measurements": [

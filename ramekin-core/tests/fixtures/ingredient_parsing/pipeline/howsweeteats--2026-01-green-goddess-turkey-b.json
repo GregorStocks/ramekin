@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "2 large carrots, finely grated",
+      "raw": "2 large carrots, (finely grated)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "1 red onion, thinly sliced",
+      "raw": "1 red onion, (thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -250,7 +250,7 @@
       }
     },
     {
-      "raw": "4 green onions, thinly sliced",
+      "raw": "4 green onions, (thinly sliced)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -265,7 +265,7 @@
       }
     },
     {
-      "raw": "2 garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -280,7 +280,7 @@
       }
     },
     {
-      "raw": "1 large egg, lightly beaten",
+      "raw": "1 large egg, (lightly beaten)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -325,7 +325,7 @@
       }
     },
     {
-      "raw": "4 to 6 buns, for serving",
+      "raw": "4 to 6 buns, (for serving)",
       "expected": {
         "item": "buns",
         "measurements": [

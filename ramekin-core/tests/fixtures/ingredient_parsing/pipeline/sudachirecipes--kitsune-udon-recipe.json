@@ -22,13 +22,13 @@
       }
     },
     {
-      "raw": "water for blanching, enough to fully submerge aburaage",
+      "raw": "water (for blanching, enough to fully submerge aburaage)",
       "expected": {
-        "item": "water for blanching, enough to fully submerge aburaage",
+        "item": "water",
         "measurements": [],
-        "note": null,
+        "note": "for blanching, enough to fully submerge aburaage",
         "section": "Kitsune",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -62,18 +62,18 @@
       }
     },
     {
-      "raw": "2 tbsp mirin hon-mirin best",
+      "raw": "2 tbsp mirin (hon-mirin best)",
       "expected": {
-        "item": "mirin hon-mirin best",
+        "item": "mirin",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "hon-mirin best",
         "section": "Kitsune",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -107,16 +107,16 @@
       }
     },
     {
-      "raw": "2 tbsp Japanese light soy sauce (usukuchi shoyu) or regular soy sauce",
+      "raw": "2 tbsp Japanese light soy sauce (usukuchi shoyu) (or regular soy sauce)",
       "expected": {
-        "item": "Japanese light soy sauce or regular soy sauce",
+        "item": "Japanese light soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "usukuchi shoyu",
+        "note": "usukuchi shoyu, or regular soy sauce",
         "section": "Kitsune",
         "category": "Condiments & Sauces"
       }
@@ -126,31 +126,31 @@
       "is_section_header": true
     },
     {
-      "raw": "1000 ml dashi stock make it plant-based by using a shiitake and kombu awase dashi",
+      "raw": "1000 ml dashi stock (make it plant-based by using a shiitake and kombu awase dashi)",
       "expected": {
-        "item": "dashi stock make it plant-based by using a shiitake and kombu awase dashi",
+        "item": "dashi stock",
         "measurements": [
           {
             "amount": "1000",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "make it plant-based by using a shiitake and kombu awase dashi",
         "section": "Udon Soup",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {
-      "raw": "4 tbsp Japanese light soy sauce (usukuchi shoyu) or regular soy sauce",
+      "raw": "4 tbsp Japanese light soy sauce (usukuchi shoyu) (or regular soy sauce)",
       "expected": {
-        "item": "Japanese light soy sauce or regular soy sauce",
+        "item": "Japanese light soy sauce",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "usukuchi shoyu",
+        "note": "usukuchi shoyu, or regular soy sauce",
         "section": "Udon Soup",
         "category": "Condiments & Sauces"
       }
@@ -190,18 +190,18 @@
       "is_section_header": true
     },
     {
-      "raw": "4 portions udon noodles thick or medium-thick preferred for texture",
+      "raw": "4 portions udon noodles (thick or medium-thick preferred for texture)",
       "expected": {
-        "item": "udon noodles thick or medium-thick preferred for texture",
+        "item": "udon noodles",
         "measurements": [
           {
             "amount": "4",
             "unit": "portion"
           }
         ],
-        "note": null,
+        "note": "thick or medium-thick preferred for texture",
         "section": "Other Elements",
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -215,18 +215,18 @@
       }
     },
     {
-      "raw": "12 slices kamaboko fish cake omit for plant-based diets",
+      "raw": "12 slices kamaboko fish cake (omit for plant-based diets)",
       "expected": {
-        "item": "kamaboko fish cake omit for plant-based diets",
+        "item": "kamaboko fish cake",
         "measurements": [
           {
             "amount": "12",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "omit for plant-based diets",
         "section": "Other Elements",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     }
   ]

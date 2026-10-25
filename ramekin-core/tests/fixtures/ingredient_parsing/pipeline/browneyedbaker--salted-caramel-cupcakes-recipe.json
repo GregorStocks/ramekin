@@ -121,7 +121,7 @@
       }
     },
     {
-      "raw": "1 cup  (227 g) plus 1 tablespoon unsalted butter, at room temperature",
+      "raw": "1 cup (227 g) plus 1 tablespoon unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -212,7 +212,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup  (227 g) unsalted butter, at room temperature",
+      "raw": "1 cup (227 g) unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -231,7 +231,7 @@
       }
     },
     {
-      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
+      "raw": "8 ounces (226.8 g) cream cheese, (at room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -302,11 +302,11 @@
       }
     },
     {
-      "raw": "Fleur de Sel, or other flaky sea salt",
+      "raw": "Fleur de Sel, (or other flaky sea salt)",
       "expected": {
-        "item": "Fleur de Sel, or other flaky sea salt",
+        "item": "Fleur de Sel",
         "measurements": [],
-        "note": null,
+        "note": "or other flaky sea salt",
         "section": "To Garnish",
         "category": "Spices & Seasonings"
       }

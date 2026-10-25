@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "10 ounces  (284 g) tuna drained (preferably a good chunky tuna in olive oil),  (usually 2 cans that are 5 oz each)",
+      "raw": "10 ounces (284 g) tuna, drained (preferably a good chunky tuna in olive oil), (usually 2 cans that are 5 oz each)",
       "expected": {
         "item": "tuna",
         "measurements": [
@@ -26,9 +26,9 @@
       }
     },
     {
-      "raw": "1 Tablespoon  (15 ml) olive oil  or butter",
+      "raw": "1 Tablespoon (15 ml) olive oil (or butter)",
       "expected": {
-        "item": "olive oil or butter",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
@@ -39,7 +39,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or butter",
         "section": "For the Tuna Salad",
         "category": "Oils & Vinegars"
       }
@@ -247,9 +247,9 @@
       }
     },
     {
-      "raw": "1/2 teaspoon  (2.5 ml) hot sauce  or Sriracha sauce – optional",
+      "raw": "1/2 teaspoon (2.5 ml) hot sauce (or Sriracha sauce – optional)",
       "expected": {
-        "item": "hot sauce or Sriracha sauce",
+        "item": "hot sauce",
         "measurements": [
           {
             "amount": "0.5",
@@ -260,7 +260,7 @@
             "unit": "ml"
           }
         ],
-        "note": "optional",
+        "note": "or Sriracha sauce - optional",
         "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
@@ -285,24 +285,24 @@
       "is_section_header": true
     },
     {
-      "raw": "8 slices   sourdough bread or bread of choice",
+      "raw": "8 slices sourdough bread (or bread of choice)",
       "expected": {
-        "item": "sourdough bread or bread of choice",
+        "item": "sourdough bread",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "or bread of choice",
         "section": "For the Tunacado Sandwich",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "4 Tablespoons  (60 ml) olive oil  or butter",
+      "raw": "4 Tablespoons (60 ml) olive oil (or butter)",
       "expected": {
-        "item": "olive oil or butter",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "4",
@@ -313,7 +313,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or butter",
         "section": "For the Tunacado Sandwich",
         "category": "Oils & Vinegars"
       }

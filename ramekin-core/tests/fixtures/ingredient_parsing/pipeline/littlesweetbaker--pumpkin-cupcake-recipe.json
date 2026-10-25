@@ -71,16 +71,16 @@
       }
     },
     {
-      "raw": "1 tsp   pumpkin pie spice, or cinnamon",
+      "raw": "1 tsp pumpkin pie spice, (or cinnamon)",
       "expected": {
-        "item": "pumpkin pie spice, or cinnamon",
+        "item": "pumpkin pie spice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or cinnamon",
         "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
@@ -177,7 +177,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1/4 cup   (half stick) unsalted butter, room temperature",
+      "raw": "1/4 cup (half stick) unsalted butter, (room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -192,7 +192,7 @@
       }
     },
     {
-      "raw": "4 oz   (half block) cream cheese, room temperature",
+      "raw": "4 oz (half block) cream cheese, (room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -252,7 +252,7 @@
       }
     },
     {
-      "raw": "1 & 1/2 cups   (190g) powdered sugar, sifted",
+      "raw": "1 & 1/2 cups (190g) powdered sugar, (sifted)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [

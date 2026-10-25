@@ -3,21 +3,21 @@
   "recipe_slug": "mediterranean-cucumber-salad-r",
   "ingredients": [
     {
-      "raw": "2 English cucumbers thinly sliced using mandoline or knife (see notes)",
+      "raw": "2 English cucumbers, thinly sliced using mandoline or knife (see notes)",
       "expected": {
-        "item": "English cucumbers thinly sliced using mandoline or knife",
+        "item": "English cucumbers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "see notes",
-        "category": "Other"
+        "note": "see notes, thinly sliced using mandoline or knife",
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 to 2 shallots thinly sliced",
+      "raw": "1 to 2 shallots (thinly sliced)",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "4 to 6 radishes thinly sliced",
+      "raw": "4 to 6 radishes (thinly sliced)",
       "expected": {
         "item": "radishes",
         "measurements": [
@@ -67,18 +67,18 @@
       "is_section_header": true
     },
     {
-      "raw": "3 to 4 tbsp extra virgin olive oil I used Early Harvest Greek extra virgin olive oil",
+      "raw": "3 to 4 tbsp extra virgin olive oil (I used Early Harvest Greek extra virgin olive oil)",
       "expected": {
-        "item": "extra virgin olive oil I used Early Harvest Greek extra virgin olive oil",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "3 to 4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used Early Harvest Greek extra virgin olive oil",
         "section": "For Dressing",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {

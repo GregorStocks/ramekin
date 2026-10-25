@@ -21,9 +21,9 @@
       }
     },
     {
-      "raw": "3 cups (710 ml) water  to pressure cook (more if using pot)",
+      "raw": "3 cups (710 ml) water, to pressure cook (more if using pot)",
       "expected": {
-        "item": "water to pressure cook",
+        "item": "water, to pressure cook",
         "measurements": [
           {
             "amount": "3",
@@ -35,7 +35,7 @@
           }
         ],
         "note": "more if using pot",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -95,33 +95,33 @@
       }
     },
     {
-      "raw": "½ tablespoon ginger  minced/grated (6 grams from ¾ inch root)",
+      "raw": "½ tablespoon ginger, minced/grated (6 grams from ¾ inch root)",
       "expected": {
-        "item": "ginger minced/grated",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "6 grams from 3/4 inch root",
+        "note": "6 grams from 3/4 inch root, minced/grated",
         "section": "To Make Onion Tomato Masala",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon garlic  minced/ grated (11 grams from 4 to 5 medium cloves)",
+      "raw": "1 tablespoon garlic, minced/ grated (11 grams from 4 to 5 medium cloves)",
       "expected": {
-        "item": "garlic minced/",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "11 grams from 4 to 5 medium cloves, grated",
+        "note": "11 grams from 4 to 5 medium cloves, minced/ grated",
         "section": "To Make Onion Tomato Masala",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -362,9 +362,9 @@
       }
     },
     {
-      "raw": "2 green chilies  deseed & slit or dried red chilies (or both, omit if making for kids)",
+      "raw": "2 green chilies, deseed & slit or dried red chilies (or both, omit if making for kids)",
       "expected": {
-        "item": "green chilies deseed & slit or dried red chilies",
+        "item": "green chilies, deseed & slit or dried red chilies",
         "measurements": [
           {
             "amount": "2",
@@ -373,11 +373,11 @@
         ],
         "note": "or both, omit if making for kids",
         "section": "To Temper /tadka (Read Notes)",
-        "category": "Spices & Seasonings"
+        "category": "Produce"
       }
     },
     {
-      "raw": "2 garlic cloves  chopped (4 grams)",
+      "raw": "2 garlic cloves, chopped (4 grams)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -396,9 +396,9 @@
       }
     },
     {
-      "raw": "½ inch ginger  juliennes (4 grams)",
+      "raw": "½ inch ginger, juliennes (4 grams)",
       "expected": {
-        "item": "inch ginger juliennes",
+        "item": "inch ginger, juliennes",
         "measurements": [
           {
             "amount": "0.5",
@@ -411,7 +411,7 @@
         ],
         "note": null,
         "section": "To Temper /tadka (Read Notes)",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

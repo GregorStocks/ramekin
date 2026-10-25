@@ -7,33 +7,37 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pound ground beef 453.3 g",
+      "raw": "1 pound ground beef (453.3 g)",
       "expected": {
-        "item": "ground beef 453.3 g",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "453.3",
+            "unit": "g"
           }
         ],
         "note": null,
         "section": "Salisbury Steak",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "½ cup bread crumbs 4.19 oz | 119 g",
+      "raw": "½ cup bread crumbs (4.19 oz | 119 g)",
       "expected": {
-        "item": "bread crumbs 4.19 oz | 119 g",
+        "item": "bread crumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "4.19 oz | 119 g",
         "section": "Salisbury Steak",
-        "category": "Other"
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -121,22 +125,22 @@
       "is_section_header": true
     },
     {
-      "raw": "2 tablespoons butter unsalted",
+      "raw": "2 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter unsalted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 large onion peeled and sliced",
+      "raw": "1 large onion (peeled and sliced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -151,7 +155,7 @@
       }
     },
     {
-      "raw": "1 garlic clove peeled and minced",
+      "raw": "1 garlic clove (peeled and minced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -166,18 +170,22 @@
       }
     },
     {
-      "raw": "8.81 oz mushrooms 250 g, thinly sliced",
+      "raw": "8.81 oz mushrooms (250 g, thinly sliced)",
       "expected": {
-        "item": "mushrooms 250 g",
+        "item": "mushrooms",
         "measurements": [
           {
             "amount": "8.81",
             "unit": "oz"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "250 g, thinly sliced",
         "section": "Gravy",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -211,33 +219,33 @@
       }
     },
     {
-      "raw": "1 ½ cups beef broth 12 fl. oz | 375 ml",
+      "raw": "1 ½ cups beef broth (12 fl. oz | 375 ml)",
       "expected": {
-        "item": "beef broth 12 fl. oz | 375 ml",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "12 fl. oz | 375 ml",
         "section": "Gravy",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {
-      "raw": "¼ cup red wine 2 fl. oz | 60 ml",
+      "raw": "¼ cup red wine (2 fl. oz | 60 ml)",
       "expected": {
-        "item": "red wine 2 fl. oz | 60 ml",
+        "item": "red wine",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "2 fl. oz | 60 ml",
         "section": "Gravy",
-        "category": "Other"
+        "category": "Beverages"
       }
     }
   ]

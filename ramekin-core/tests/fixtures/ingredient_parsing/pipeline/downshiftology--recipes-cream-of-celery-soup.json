@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/2 medium onion, diced",
+      "raw": "1/2 medium onion, (diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 leek, cleaned, with white and light green parts diced",
+      "raw": "1 leek, (cleaned, with white and light green parts diced)",
       "expected": {
         "item": "leek",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "8 stalks celery, diced",
+      "raw": "8 stalks celery, (diced)",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3 garlic cloves, minced",
+      "raw": "3 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

@@ -7,63 +7,63 @@
       "is_section_header": true
     },
     {
-      "raw": "1 ¾ cups milk any kind you like (I use unsweetened almond milk)",
+      "raw": "1 ¾ cups milk, any kind you like (I use unsweetened almond milk)",
       "expected": {
-        "item": "milk any kind you like",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": "I use unsweetened almond milk",
+        "note": "I use unsweetened almond milk, any kind you like",
         "section": "Overnight Steel Cut Oats—base Recipe",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 ½ tablespoons honey  or maple syrup",
+      "raw": "1 ½ tablespoons honey (or maple syrup)",
       "expected": {
-        "item": "honey or maple syrup",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or maple syrup",
         "section": "Overnight Steel Cut Oats—base Recipe",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 ½ tablespoons peanut butter  or other nut butter of choice, optional but delicious",
+      "raw": "1 ½ tablespoons peanut butter (or other nut butter of choice, optional but delicious)",
       "expected": {
-        "item": "peanut butter or other nut butter of choice, optional but delicious",
+        "item": "peanut butter",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or other nut butter of choice, optional but delicious",
         "section": "Overnight Steel Cut Oats—base Recipe",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 cup uncooked steel cut oats you can also use quick-cooking steel cut oats; the final oatmeal will have a softer, less chewy texture",
+      "raw": "1 cup uncooked steel cut oats (you can also use quick-cooking steel cut oats; the final oatmeal will have a softer, less chewy texture)",
       "expected": {
-        "item": "uncooked steel cut oats you can also use quick-cooking steel cut oats; the final oatmeal will have a softer, less chewy texture",
+        "item": "uncooked steel cut oats",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you can also use quick-cooking steel cut oats; the final oatmeal will have a softer, less chewy texture",
         "section": "Overnight Steel Cut Oats—base Recipe",
-        "category": "Other"
+        "category": "Snacks"
       }
     },
     {
@@ -86,11 +86,11 @@
       "is_section_header": true
     },
     {
-      "raw": "Chia seeds flaxseeds, or hemp seeds",
+      "raw": "Chia seeds (flaxseeds, or hemp seeds)",
       "expected": {
-        "item": "Chia seeds flaxseeds, or hemp seeds",
+        "item": "Chia seeds",
         "measurements": [],
-        "note": null,
+        "note": "flaxseeds, or hemp seeds",
         "section": "Optional Additions",
         "category": "Nuts & Dried Fruit"
       }
@@ -116,39 +116,39 @@
       }
     },
     {
-      "raw": "Citrus zest I love orange zest with honey and cinnamon!",
+      "raw": "Citrus zest (I love orange zest with honey and cinnamon!)",
       "expected": {
-        "item": "Citrus zest I love orange zest with honey and cinnamon!",
+        "item": "Citrus zest",
         "measurements": [],
-        "note": null,
+        "note": "I love orange zest with honey and cinnamon!",
         "section": "Optional Additions",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "Dried fruit favorites: reduced-sugar dried cranberries, raisins, chopped dates",
+      "raw": "Dried fruit (favorites: reduced-sugar dried cranberries, raisins, chopped dates)",
       "expected": {
-        "item": "Dried fruit favorites: reduced-sugar dried cranberries, raisins",
+        "item": "Dried fruit",
         "measurements": [],
-        "note": "chopped dates",
+        "note": "favorites: reduced-sugar dried cranberries, raisins, chopped dates",
         "section": "Optional Additions",
-        "category": "Other"
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "Fresh fruit or frozen and thawed fruit",
+      "raw": "Fresh fruit (or frozen and thawed fruit)",
       "expected": {
-        "item": "Fresh fruit or frozen and thawed fruit",
+        "item": "Fresh fruit",
         "measurements": [],
-        "note": null,
+        "note": "or frozen and thawed fruit",
         "section": "Optional Additions",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "Toasted almonds walnuts, or pecans (add just before serving to maintain the most crunch)",
+      "raw": "Toasted almonds, walnuts, or pecans (add just before serving to maintain the most crunch)",
       "expected": {
-        "item": "Toasted almonds walnuts, or pecans",
+        "item": "Toasted almonds, walnuts, or pecans",
         "measurements": [],
         "note": "add just before serving to maintain the most crunch",
         "section": "Optional Additions",
@@ -156,13 +156,13 @@
       }
     },
     {
-      "raw": "An extra drizzle of honey  or maple syrup",
+      "raw": "An extra drizzle of honey (or maple syrup)",
       "expected": {
-        "item": "An extra drizzle of honey or maple syrup",
+        "item": "An extra drizzle of honey",
         "measurements": [],
-        "note": null,
+        "note": "or maple syrup",
         "section": "Optional Additions",
-        "category": "Baking"
+        "category": "Other"
       }
     }
   ]

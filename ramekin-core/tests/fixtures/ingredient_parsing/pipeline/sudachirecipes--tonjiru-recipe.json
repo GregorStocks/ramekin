@@ -3,21 +3,21 @@
   "recipe_slug": "tonjiru-recipe",
   "ingredients": [
     {
-      "raw": "200 g slab skinless pork belly or thinly sliced pork belly, or pork shoulder",
+      "raw": "200 g slab skinless pork belly (or thinly sliced pork belly, or pork shoulder)",
       "expected": {
-        "item": "slab skinless pork belly or thinly sliced pork belly, or pork shoulder",
+        "item": "slab skinless pork belly",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or thinly sliced pork belly, or pork shoulder",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "75 g burdock root (gobo) scraped, sliced on the diagonal",
+      "raw": "75 g burdock root (gobo) (scraped, sliced on the diagonal)",
       "expected": {
         "item": "burdock root",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "300 g daikon radish peeled, cut into 1.5cm half-moons",
+      "raw": "300 g daikon radish (peeled, cut into 1.5cm half-moons)",
       "expected": {
         "item": "daikon radish",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "150 g carrot peeled, cut into 1.5cm half-moons",
+      "raw": "150 g carrot (peeled, cut into 1.5cm half-moons)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "50 g fresh shiitake mushrooms stems removed, sliced",
+      "raw": "50 g fresh shiitake mushrooms (stems removed, sliced)",
       "expected": {
         "item": "fresh shiitake mushrooms",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "400 g konjac (konnyaku) torn into bite-sized pieces with a spoon",
+      "raw": "400 g konjac (konnyaku) (torn into bite-sized pieces with a spoon)",
       "expected": {
         "item": "konjac",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "60 g fried tofu pouch (aburaage) sliced into strips",
+      "raw": "60 g fried tofu pouch (aburaage) (sliced into strips)",
       "expected": {
         "item": "fried tofu pouch",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "50 g Japanese leek (naganegi) sliced on the diagonal",
+      "raw": "50 g Japanese leek (naganegi) (sliced on the diagonal)",
       "expected": {
         "item": "Japanese leek",
         "measurements": [
@@ -119,18 +119,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1500 ml dashi stock homemade, homemade dashi packets, or store-bought dashi packets recommended",
+      "raw": "1500 ml dashi stock (homemade, homemade dashi packets, or store-bought dashi packets recommended)",
       "expected": {
-        "item": "dashi stock homemade, homemade dashi packets, or store-bought dashi packets recommended",
+        "item": "dashi stock",
         "measurements": [
           {
             "amount": "1500",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "homemade, homemade dashi packets, or store-bought dashi packets recommended",
         "section": "Seasonings",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {
@@ -164,31 +164,31 @@
       }
     },
     {
-      "raw": "6-7 tbsp yellow miso paste (awase) adjust to taste",
+      "raw": "6-7 tbsp yellow miso paste (awase) (adjust to taste)",
       "expected": {
-        "item": "yellow miso paste adjust",
+        "item": "yellow miso paste",
         "measurements": [
           {
             "amount": "6-7",
             "unit": "tbsp"
           }
         ],
-        "note": "awase, to taste",
+        "note": "awase, adjust to taste",
         "section": "Seasonings",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ tbsp grated ginger root or ginger paste",
+      "raw": "½ tbsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root or ginger paste",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "section": "Seasonings",
         "category": "Produce"
       }
@@ -213,7 +213,7 @@
       "is_section_header": true
     },
     {
-      "raw": "finely chopped green onions to taste",
+      "raw": "finely chopped green onions (to taste)",
       "expected": {
         "item": "finely chopped green onions",
         "measurements": [],
@@ -223,7 +223,7 @@
       }
     },
     {
-      "raw": "Japanese chili powder (shichimi togarashi) to taste",
+      "raw": "Japanese chili powder (shichimi togarashi) (to taste)",
       "expected": {
         "item": "Japanese chili powder",
         "measurements": [],

@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "2 shallots, diced",
+      "raw": "2 shallots, (diced)",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "6 garlic cloves, minced",
+      "raw": "6 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -116,16 +116,16 @@
       }
     },
     {
-      "raw": "¼ cup vodka, I like Tito’s",
+      "raw": "¼ cup vodka, (I like Tito’s)",
       "expected": {
-        "item": "vodka, I like Tito’s",
+        "item": "vodka",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like Tito’s",
         "section": "Beans",
         "category": "Beverages"
       }
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "⅔ cup finely grated parmesan cheese, plus more for topping",
+      "raw": "⅔ cup finely grated parmesan cheese, (plus more for topping)",
       "expected": {
         "item": "finely grated parmesan cheese",
         "measurements": [
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "4 cans cannellini beans, drained and rinsed",
+      "raw": "4 cans cannellini beans, (drained and rinsed)",
       "expected": {
         "item": "cannellini beans",
         "measurements": [

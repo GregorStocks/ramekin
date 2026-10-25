@@ -7,9 +7,9 @@
       "is_section_header": true
     },
     {
-      "raw": "2 boneless pork chops rib-end/loin (2-2.5cm, 3/4-1 inch thick), fat-on",
+      "raw": "2 boneless pork chops, rib-end/loin (2-2.5cm, 3/4-1 inch thick), fat-on",
       "expected": {
-        "item": "boneless pork chops rib-end/loin, fat-on",
+        "item": "boneless pork chops, rib-end/loin, fat-on",
         "measurements": [
           {
             "amount": "2",
@@ -18,7 +18,7 @@
         ],
         "note": "2-2.5cm, 3/4-1 inch thick",
         "section": "Tonkatsu",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -37,17 +37,17 @@
       }
     },
     {
-      "raw": "cooking oil neutral, high smoke point",
+      "raw": "cooking oil (neutral, high smoke point)",
       "expected": {
-        "item": "cooking oil neutral, high smoke point",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "neutral, high smoke point",
         "section": "Tonkatsu",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "all-purpose flour for dusting",
+      "raw": "all-purpose flour (for dusting)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [],
@@ -87,33 +87,33 @@
       }
     },
     {
-      "raw": "1 tsp cooking oil for egg wash",
+      "raw": "1 tsp cooking oil (for egg wash)",
       "expected": {
-        "item": "cooking oil for egg wash",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "for egg wash",
         "section": "Tonkatsu",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "100 g panko breadcrumbs coarse flakes or coarse homemade crumbs",
+      "raw": "100 g panko breadcrumbs (coarse flakes or coarse homemade crumbs)",
       "expected": {
-        "item": "panko breadcrumbs coarse flakes or coarse homemade crumbs",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "coarse flakes or coarse homemade crumbs",
         "section": "Tonkatsu",
-        "category": "Other"
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -121,18 +121,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1 tbsp Worcestershire sauce Japanese or regular brands",
+      "raw": "1 tbsp Worcestershire sauce (Japanese or regular brands)",
       "expected": {
-        "item": "Worcestershire sauce Japanese or regular brands",
+        "item": "Worcestershire sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Japanese or regular brands",
         "section": "Tonkatsu Sauce",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -166,16 +166,16 @@
       }
     },
     {
-      "raw": "1 pinch light brown sugar or white sugar/honey",
+      "raw": "1 pinch light brown sugar (or white sugar/honey)",
       "expected": {
-        "item": "light brown sugar or white sugar/honey",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "or white sugar/honey",
         "section": "Tonkatsu Sauce",
         "category": "Baking"
       }
@@ -215,7 +215,7 @@
       }
     },
     {
-      "raw": "200 g green cabbage shredded",
+      "raw": "200 g green cabbage (shredded)",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -230,18 +230,18 @@
       }
     },
     {
-      "raw": "2 slices lemon to garnish",
+      "raw": "2 slices lemon (to garnish)",
       "expected": {
-        "item": "lemon to garnish",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "section": "Serving Suggestions",
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "15 oz canned chickpeas drained + rinsed",
+      "raw": "15 oz canned chickpeas (drained + rinsed)",
       "expected": {
         "item": "canned chickpeas",
         "measurements": [
@@ -187,16 +187,16 @@
       }
     },
     {
-      "raw": "4 onion roll buns see post for GF swaps",
+      "raw": "4 onion roll buns (see post for GF swaps)",
       "expected": {
-        "item": "onion roll buns see post for GF swaps",
+        "item": "onion roll buns",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see post for GF swaps",
         "section": "For the Burgers",
         "category": "Other"
       }
@@ -216,22 +216,22 @@
       "is_section_header": true
     },
     {
-      "raw": "1 heaping cup cabbage finely chopped/shredded",
+      "raw": "1 heaping cup cabbage (finely chopped/shredded)",
       "expected": {
-        "item": "cabbage finely chopped/shredded",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaping cup"
           }
         ],
-        "note": null,
+        "note": "finely chopped/shredded",
         "section": "For the Slaw",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "½ a fresh jalapeño sliced thin (optional)",
+      "raw": "½ a fresh jalapeño, sliced thin (optional)",
       "expected": {
         "item": "a fresh jalapeño",
         "measurements": [
@@ -276,7 +276,7 @@
       }
     },
     {
-      "raw": "juice of 1 lime or to taste",
+      "raw": "juice of 1 lime (or to taste)",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -301,11 +301,11 @@
       }
     },
     {
-      "raw": "fresh cilantro optional + to taste",
+      "raw": "fresh cilantro (optional + to taste)",
       "expected": {
-        "item": "fresh cilantro optional +",
+        "item": "fresh cilantro",
         "measurements": [],
-        "note": "to taste",
+        "note": "optional + to taste",
         "section": "For the Slaw",
         "category": "Produce"
       }
@@ -345,7 +345,7 @@
       }
     },
     {
-      "raw": "1-2 TBSP Sriracha or to taste",
+      "raw": "1-2 TBSP Sriracha (or to taste)",
       "expected": {
         "item": "Sriracha",
         "measurements": [

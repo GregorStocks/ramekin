@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 garlic clove  finely diced",
+      "raw": "1 garlic clove (finely diced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -37,22 +37,22 @@
       }
     },
     {
-      "raw": "200 g shrimp or mixed seafood cut into bitesize pieces",
+      "raw": "200 g shrimp or mixed seafood (cut into bitesize pieces)",
       "expected": {
-        "item": "shrimp or mixed seafood cut into bitesize pieces",
+        "item": "shrimp or mixed seafood",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bitesize pieces",
         "section": "Pilaf (Seasoned Rice)",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3 button mushrooms  finely sliced",
+      "raw": "3 button mushrooms (finely sliced)",
       "expected": {
         "item": "button mushrooms",
         "measurements": [
@@ -112,7 +112,7 @@
       }
     },
     {
-      "raw": "1 tbsp fresh parsley  finely chopped",
+      "raw": "1 tbsp fresh parsley (finely chopped)",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "100 g onion finely diced",
+      "raw": "100 g onion (finely diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -172,16 +172,16 @@
       }
     },
     {
-      "raw": "½ knorr chicken bouillon cube use the other half for béchamel sauce",
+      "raw": "½ knorr chicken bouillon cube (use the other half for béchamel sauce)",
       "expected": {
-        "item": "knorr chicken bouillon cube use the other half for béchamel sauce",
+        "item": "knorr chicken bouillon cube",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "use the other half for béchamel sauce",
         "section": "Pilaf (Seasoned Rice)",
         "category": "Other"
       }
@@ -360,13 +360,13 @@
       "is_section_header": true
     },
     {
-      "raw": "preferred shredded melting cheese cheddar, gouda, mozzarella, etc.",
+      "raw": "preferred shredded melting cheese (cheddar, gouda, mozzarella, etc.)",
       "expected": {
-        "item": "preferred shredded melting cheese cheddar, gouda, mozzarella, etc.",
+        "item": "preferred shredded melting cheese",
         "measurements": [],
-        "note": null,
+        "note": "cheddar, gouda, mozzarella, etc.",
         "section": "Topping",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
@@ -380,13 +380,13 @@
       }
     },
     {
-      "raw": "fresh parsley dried or fresh, optional garnish",
+      "raw": "fresh parsley (dried or fresh, optional garnish)",
       "expected": {
-        "item": "fresh parsley dried or fresh, optional garnish",
+        "item": "fresh parsley",
         "measurements": [],
-        "note": null,
+        "note": "dried or fresh, optional garnish",
         "section": "Topping",
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

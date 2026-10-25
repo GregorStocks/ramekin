@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3 cups plain flour plus extra for dusting",
+      "raw": "3 cups plain flour (plus extra for dusting)",
       "expected": {
         "item": "plain flour",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "1 teaspoon garlic powder optional",
+      "raw": "1 teaspoon garlic powder (optional)",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -67,37 +67,37 @@
       }
     },
     {
-      "raw": "3/4 cup plain Greek yogurt or natural plain yogurt",
+      "raw": "3/4 cup plain Greek yogurt (or natural plain yogurt)",
       "expected": {
-        "item": "plain Greek yogurt or natural plain yogurt",
+        "item": "plain Greek yogurt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or natural plain yogurt",
         "section": "Flatbreads",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup vegetable oil or olive oil,  plus extra for cooking",
+      "raw": "1/4 cup vegetable oil (or olive oil, plus extra for cooking)",
       "expected": {
-        "item": "vegetable oil or olive oil",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "plus extra for cooking",
+        "note": "or olive oil, plus extra for cooking",
         "section": "Flatbreads",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3/4 cup milk divided",
+      "raw": "3/4 cup milk (divided)",
       "expected": {
         "item": "milk",
         "measurements": [

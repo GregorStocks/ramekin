@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 cups flat leaf parsley finely chopped",
+      "raw": "2 cups flat leaf parsley (finely chopped)",
       "expected": {
         "item": "flat leaf parsley",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "¼ cup fresh mint finely chopped",
+      "raw": "¼ cup fresh mint (finely chopped)",
       "expected": {
         "item": "fresh mint",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 Roma tomatoes finely diced",
+      "raw": "2 Roma tomatoes (finely diced)",
       "expected": {
         "item": "Roma tomatoes",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "4 green onions finely sliced (1/2 cup)",
+      "raw": "4 green onions, finely sliced (1/2 cup)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "1 cucumber peeled and finely diced (about 1 cup)",
+      "raw": "1 cucumber, peeled and finely diced (about 1 cup)",
       "expected": {
         "item": "cucumber",
         "measurements": [

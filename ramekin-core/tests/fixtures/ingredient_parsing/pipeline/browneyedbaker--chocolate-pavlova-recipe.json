@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "6   egg whites, at room temperature",
+      "raw": "6 egg whites, (at room temperature)",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -56,7 +56,7 @@
       }
     },
     {
-      "raw": "¼ cup  (21.5 g) cocoa powder, sifted",
+      "raw": "¼ cup (21.5 g) cocoa powder, (sifted)",
       "expected": {
         "item": "cocoa powder",
         "measurements": [
@@ -75,7 +75,7 @@
       }
     },
     {
-      "raw": "2 ounces  (56.7 g) bittersweet chocolate, finely chopped",
+      "raw": "2 ounces (56.7 g) bittersweet chocolate, (finely chopped)",
       "expected": {
         "item": "bittersweet chocolate",
         "measurements": [

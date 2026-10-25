@@ -22,16 +22,16 @@
       }
     },
     {
-      "raw": "1 bell pepper, red, yellow, or orange, sliced into thin strips",
+      "raw": "1 bell pepper, (red, yellow, or orange, sliced into thin strips)",
       "expected": {
-        "item": "bell pepper, red, yellow, or orange",
+        "item": "bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced into thin strips",
+        "note": "red, yellow, or orange, sliced into thin strips",
         "section": "Salad Ingredients",
         "category": "Produce"
       }
@@ -56,16 +56,16 @@
       }
     },
     {
-      "raw": "1/3 cup craisins, dried cranberries",
+      "raw": "1/3 cup craisins, (dried cranberries)",
       "expected": {
-        "item": "craisins, dried cranberries",
+        "item": "craisins",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "dried cranberries",
         "section": "Salad Ingredients",
         "category": "Nuts & Dried Fruit"
       }

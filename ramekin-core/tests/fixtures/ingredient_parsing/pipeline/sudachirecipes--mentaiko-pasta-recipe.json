@@ -3,17 +3,17 @@
   "recipe_slug": "mentaiko-pasta-recipe",
   "ingredients": [
     {
-      "raw": "200 g dry spaghetti 1.6-1.8mm thickness recommended",
+      "raw": "200 g dry spaghetti (1.6-1.8mm thickness recommended)",
       "expected": {
-        "item": "dry spaghetti 1.6-1.8mm thickness recommended",
+        "item": "dry spaghetti",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "1.6-1.8mm thickness recommended",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -49,33 +49,33 @@
       "is_section_header": true
     },
     {
-      "raw": "80 g spicy cod roe (mentaiko) or plain tarako for non spicy option",
+      "raw": "80 g spicy cod roe (mentaiko) (or plain tarako for non spicy option)",
       "expected": {
-        "item": "spicy cod roe or plain tarako for non spicy option",
+        "item": "spicy cod roe",
         "measurements": [
           {
             "amount": "80",
             "unit": "g"
           }
         ],
-        "note": "mentaiko",
+        "note": "mentaiko, or plain tarako for non spicy option",
         "section": "Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "20 g unsalted butter room temperature/soft",
+      "raw": "20 g unsalted butter (room temperature/soft)",
       "expected": {
-        "item": "unsalted butter room temperature/soft",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "20",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "room temperature/soft",
         "section": "Sauce",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -139,16 +139,16 @@
       }
     },
     {
-      "raw": "1 tsp grated parmesan cheese or other hard cheese",
+      "raw": "1 tsp grated parmesan cheese (or other hard cheese)",
       "expected": {
-        "item": "grated parmesan cheese or other hard cheese",
+        "item": "grated parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or other hard cheese",
         "section": "Sauce",
         "category": "Cheese"
       }
@@ -169,18 +169,18 @@
       }
     },
     {
-      "raw": "⅛ tsp smoked paprika powder optional, can omit",
+      "raw": "⅛ tsp smoked paprika powder (optional, can omit)",
       "expected": {
-        "item": "smoked paprika powder optional, can omit",
+        "item": "smoked paprika powder",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "optional, can omit",
         "section": "Sauce",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -188,7 +188,7 @@
       "is_section_header": true
     },
     {
-      "raw": "perilla leaves (shiso) shredded, or substitute with kizami nori",
+      "raw": "perilla leaves (shiso) (shredded, or substitute with kizami nori)",
       "expected": {
         "item": "perilla leaves",
         "measurements": [],
@@ -198,7 +198,7 @@
       }
     },
     {
-      "raw": "lemon optional",
+      "raw": "lemon (optional)",
       "expected": {
         "item": "lemon",
         "measurements": [],
@@ -208,7 +208,7 @@
       }
     },
     {
-      "raw": "lemon zest optional",
+      "raw": "lemon zest (optional)",
       "expected": {
         "item": "lemon zest",
         "measurements": [],

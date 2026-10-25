@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup unsalted butter room temperature",
+      "raw": "½ cup unsalted butter (room temperature)",
       "expected": {
-        "item": "unsalted butter room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "For the Cookies",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -191,7 +191,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup confectioners’ sugar sifted",
+      "raw": "1 cup confectioners’ sugar (sifted)",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [

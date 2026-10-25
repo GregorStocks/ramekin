@@ -149,18 +149,18 @@
       }
     },
     {
-      "raw": "6 pieces roasted seaweed for sushi (nori) cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri",
+      "raw": "6 pieces roasted seaweed for sushi (nori) (cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri)",
       "expected": {
-        "item": "roasted seaweed for sushi cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri",
+        "item": "roasted seaweed for sushi",
         "measurements": [
           {
             "amount": "6",
             "unit": "piece"
           }
         ],
-        "note": "nori",
+        "note": "nori, cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri",
         "section": "For Making the Onigiri",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     }
   ]

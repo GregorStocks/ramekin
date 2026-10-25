@@ -37,18 +37,18 @@
       }
     },
     {
-      "raw": "1 large egg  room temperature",
+      "raw": "1 large egg (room temperature)",
       "expected": {
-        "item": "egg room temperature",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Meatballs",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -67,18 +67,18 @@
       }
     },
     {
-      "raw": "1 tablespoon minced garlic fresh is best",
+      "raw": "1 tablespoon minced garlic (fresh is best)",
       "expected": {
-        "item": "minced garlic fresh is best",
+        "item": "minced garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "fresh is best",
         "section": "Meatballs",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -127,7 +127,7 @@
       }
     },
     {
-      "raw": "3 green onions sliced",
+      "raw": "3 green onions (sliced)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "2 green onions thinly sliced, optional",
+      "raw": "2 green onions (thinly sliced, optional)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "2 tablespoons sesame seeds optional",
+      "raw": "2 tablespoons sesame seeds (optional)",
       "expected": {
         "item": "sesame seeds",
         "measurements": [

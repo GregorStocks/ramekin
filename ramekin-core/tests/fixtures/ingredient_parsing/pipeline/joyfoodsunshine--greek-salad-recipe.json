@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 pint cherry tomatoes halved",
+      "raw": "1 pint cherry tomatoes (halved)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1 cucumber peeled and diced (about 1 cup)",
+      "raw": "1 cucumber, peeled and diced (about 1 cup)",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -56,7 +56,7 @@
       }
     },
     {
-      "raw": "½ cup red onion finely sliced or diced",
+      "raw": "½ cup red onion (finely sliced or diced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "½ cup Kalamata olives roughly chopped",
+      "raw": "½ cup Kalamata olives (roughly chopped)",
       "expected": {
         "item": "Kalamata olives",
         "measurements": [
@@ -105,7 +105,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 pita rounds sliced into 1” pieces (1 pita = 85 g)",
+      "raw": "2 pita rounds, sliced into 1” pieces (1 pita = 85 g)",
       "expected": {
         "item": "pita rounds",
         "measurements": [

@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2 whole eggs at room temperature",
+      "raw": "2 whole eggs (at room temperature)",
       "expected": {
-        "item": "whole eggs at room temperature",
+        "item": "whole eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -255,7 +255,7 @@
       }
     },
     {
-      "raw": "Edible gold leaf optional",
+      "raw": "Edible gold leaf (optional)",
       "expected": {
         "item": "Edible gold leaf",
         "measurements": [],
@@ -269,7 +269,7 @@
       "is_section_header": true
     },
     {
-      "raw": "9 Jordan almonds for mini cakes or 18 for petit fours",
+      "raw": "9 Jordan almonds for mini cakes (or 18 for petit fours)",
       "expected": {
         "item": "Jordan almonds for mini cakes",
         "measurements": [
@@ -284,7 +284,7 @@
       }
     },
     {
-      "raw": "2 oz. semisweet chocolate melted",
+      "raw": "2 oz. semisweet chocolate (melted)",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [

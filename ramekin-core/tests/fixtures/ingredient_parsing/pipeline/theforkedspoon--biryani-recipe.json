@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3 medium  yellow onions, peeled and thinly sliced",
+      "raw": "3 medium yellow onions, (peeled and thinly sliced)",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -135,16 +135,16 @@
       "is_section_header": true
     },
     {
-      "raw": "5 chicken drumsticks, or chicken thighs",
+      "raw": "5 chicken drumsticks, (or chicken thighs)",
       "expected": {
-        "item": "chicken drumsticks, or chicken thighs",
+        "item": "chicken drumsticks",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or chicken thighs",
         "section": "Chicken and Lamb + Marinade",
         "category": "Meat & Seafood"
       }
@@ -165,7 +165,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh ginger, minced",
+      "raw": "1 tablespoon fresh ginger, (minced)",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -180,7 +180,7 @@
       }
     },
     {
-      "raw": "6 cloves garlic, minced",
+      "raw": "6 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -240,7 +240,7 @@
       }
     },
     {
-      "raw": "2 Serrano peppers, seeded and diced",
+      "raw": "2 Serrano peppers, (seeded and diced)",
       "expected": {
         "item": "Serrano peppers",
         "measurements": [
@@ -274,7 +274,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2½ cups long-grain white basmati rice, divided",
+      "raw": "2½ cups long-grain white basmati rice, (divided)",
       "expected": {
         "item": "long-grain white basmati rice",
         "measurements": [
@@ -383,7 +383,7 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup cilantro, chopped",
+      "raw": "½ cup cilantro, (chopped)",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -398,7 +398,7 @@
       }
     },
     {
-      "raw": "¼ cup fresh mint leaves, chopped",
+      "raw": "¼ cup fresh mint leaves, (chopped)",
       "expected": {
         "item": "fresh mint leaves",
         "measurements": [
@@ -413,7 +413,7 @@
       }
     },
     {
-      "raw": "1 lemon, juiced",
+      "raw": "1 lemon, (juiced)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -428,16 +428,16 @@
       }
     },
     {
-      "raw": "1 teaspoon good-quality saffron, soaked in 3 tbsp of hot water or warm milk",
+      "raw": "1 teaspoon good-quality saffron, (soaked in 3 tbsp of hot water or warm milk)",
       "expected": {
-        "item": "saffron, soaked in 3 tbsp of hot water or warm milk",
+        "item": "saffron",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "good-quality",
+        "note": "soaked in 3 tbsp of hot water or warm milk, good-quality",
         "section": "Biryani",
         "category": "Spices & Seasonings"
       }

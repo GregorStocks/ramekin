@@ -59,16 +59,16 @@
       }
     },
     {
-      "raw": "1/2 tsp Tabasco or hot sauce of choice",
+      "raw": "1/2 tsp Tabasco (or hot sauce of choice)",
       "expected": {
-        "item": "Tabasco or hot sauce of choice",
+        "item": "Tabasco",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or hot sauce of choice",
         "category": "Condiments & Sauces"
       }
     },
@@ -101,16 +101,16 @@
       }
     },
     {
-      "raw": "20 Ritz crackers or Saltines",
+      "raw": "20 Ritz crackers (or Saltines)",
       "expected": {
-        "item": "Ritz crackers or Saltines",
+        "item": "Ritz crackers",
         "measurements": [
           {
             "amount": "20",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or Saltines",
         "category": "Snacks"
       }
     },
@@ -133,7 +133,7 @@
       "is_section_header": true
     },
     {
-      "raw": "Lemon wedges for serving",
+      "raw": "Lemon wedges (for serving)",
       "expected": {
         "item": "Lemon wedges",
         "measurements": [],

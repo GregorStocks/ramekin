@@ -67,16 +67,16 @@
       }
     },
     {
-      "raw": "100 grams  gailan or other green vegetable, such as broccoli florets or Chinese broccoli",
+      "raw": "100 grams gailan (or other green vegetable, such as broccoli florets or Chinese broccoli)",
       "expected": {
-        "item": "gailan or other green vegetable",
+        "item": "gailan",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": "such as broccoli florets or Chinese broccoli",
+        "note": "or other green vegetable, such as broccoli florets or Chinese broccoli",
         "section": "For Stir-Fry",
         "category": "Other"
       }

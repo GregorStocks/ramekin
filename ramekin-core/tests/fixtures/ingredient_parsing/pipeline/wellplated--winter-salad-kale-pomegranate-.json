@@ -37,33 +37,33 @@
       }
     },
     {
-      "raw": "10 ounces kale stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces)",
+      "raw": "10 ounces kale, stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces)",
       "expected": {
-        "item": "kale stems removed and chopped into ribbons",
+        "item": "kale",
         "measurements": [
           {
             "amount": "10",
             "unit": "oz"
           }
         ],
-        "note": "if using bagged, pre-cut kale, use 8 ounces",
+        "note": "if using bagged, pre-cut kale, use 8 ounces, stems removed and chopped into ribbons",
         "section": "For the Winter Salad",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 small pomegranate to yield 1/2 cup seeds",
+      "raw": "1 small pomegranate (to yield 1/2 cup seeds)",
       "expected": {
-        "item": "pomegranate to yield 1/2 cup seeds",
+        "item": "pomegranate",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "to yield 1/2 cup seeds",
         "section": "For the Winter Salad",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

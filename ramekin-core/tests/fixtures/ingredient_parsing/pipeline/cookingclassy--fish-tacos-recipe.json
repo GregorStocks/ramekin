@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 garlic clove, minced",
+      "raw": "1 garlic clove, (minced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -128,7 +128,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 corn tortillas**,  warmed",
+      "raw": "8 corn tortillas**, (warmed)",
       "expected": {
         "item": "corn tortillas",
         "measurements": [
@@ -158,7 +158,7 @@
       }
     },
     {
-      "raw": "1 avocado, sliced",
+      "raw": "1 avocado, (sliced)",
       "expected": {
         "item": "avocado",
         "measurements": [

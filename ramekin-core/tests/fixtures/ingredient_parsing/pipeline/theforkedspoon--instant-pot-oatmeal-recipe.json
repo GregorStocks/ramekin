@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4 cups water, see notes",
+      "raw": "4 cups water, (see notes)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 tablespoon butter, optional",
+      "raw": "2 tablespoon butter, (optional)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -73,13 +73,13 @@
       }
     },
     {
-      "raw": "Sweetener, honey, maple syrup, brown sugar",
+      "raw": "Sweetener, (honey, maple syrup, brown sugar)",
       "expected": {
-        "item": "Sweetener, honey, maple syrup, brown sugar",
+        "item": "Sweetener",
         "measurements": [],
-        "note": null,
+        "note": "honey, maple syrup, brown sugar",
         "section": "Optional Toppings",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -93,21 +93,21 @@
       }
     },
     {
-      "raw": "Nut Butter, peanut butter, almond butter",
+      "raw": "Nut Butter, (peanut butter, almond butter)",
       "expected": {
-        "item": "Nut Butter, peanut butter, almond butter",
+        "item": "Nut Butter",
         "measurements": [],
-        "note": null,
+        "note": "peanut butter, almond butter",
         "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "Milk, almond milk, oat milk, soy milk, cow milk, etc.",
+      "raw": "Milk, (almond milk, oat milk, soy milk, cow milk, etc.)",
       "expected": {
-        "item": "Milk, almond milk, oat milk, soy milk, cow milk, etc.",
+        "item": "Milk",
         "measurements": [],
-        "note": null,
+        "note": "almond milk, oat milk, soy milk, cow milk, etc.",
         "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }

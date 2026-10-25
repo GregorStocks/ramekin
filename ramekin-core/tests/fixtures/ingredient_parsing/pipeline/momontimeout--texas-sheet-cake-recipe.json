@@ -127,18 +127,18 @@
       }
     },
     {
-      "raw": "2 eggs room temperature",
+      "raw": "2 eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Cake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "1 cup chopped pecans optional",
+      "raw": "1 cup chopped pecans (optional)",
       "expected": {
         "item": "chopped pecans",
         "measurements": [

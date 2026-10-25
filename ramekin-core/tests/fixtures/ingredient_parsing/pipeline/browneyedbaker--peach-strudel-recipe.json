@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "20 ounces   fresh peaches, peeled, pitted and cut into 1/8-inch slices",
+      "raw": "20 ounces fresh peaches, (peeled, pitted and cut into 1/8-inch slices)",
       "expected": {
         "item": "fresh peaches",
         "measurements": [
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "5 tablespoons   unsalted butter, melted",
+      "raw": "5 tablespoons unsalted butter, (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

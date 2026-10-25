@@ -45,7 +45,7 @@
       "is_section_header": true
     },
     {
-      "raw": "24 oz   (3 pkgs) cream cheese, softened",
+      "raw": "24 oz (3 pkgs) cream cheese, (softened)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -215,7 +215,7 @@
       }
     },
     {
-      "raw": "1 tsp   ground cinnamon for dusting, if desired",
+      "raw": "1 tsp ground cinnamon for dusting, (if desired)",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -224,7 +224,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "for dusting, if desired",
+        "note": "if desired, for dusting",
         "section": "Topping",
         "category": "Spices & Seasonings"
       }

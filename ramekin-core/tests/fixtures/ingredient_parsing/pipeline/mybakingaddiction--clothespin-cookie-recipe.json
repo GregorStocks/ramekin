@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup unsalted butter cold",
+      "raw": "1 cup unsalted butter (cold)",
       "expected": {
-        "item": "unsalted butter cold",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cold",
         "section": "For the Dough",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -101,7 +101,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup unsalted butter softened",
+      "raw": "1 cup unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -126,7 +126,7 @@
       }
     },
     {
-      "raw": "1 pound powdered sugar sifted",
+      "raw": "1 pound powdered sugar (sifted)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [

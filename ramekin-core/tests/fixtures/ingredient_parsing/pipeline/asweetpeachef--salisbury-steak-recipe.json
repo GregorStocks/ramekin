@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "½ cup yellow onion, finely diced",
+      "raw": "½ cup yellow onion, (finely diced)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic, minced",
+      "raw": "3 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -210,16 +210,16 @@
       }
     },
     {
-      "raw": "2-4 tbsp. low sodium beef broth, as needed, to thin",
+      "raw": "2-4 tbsp. low sodium beef broth, (as needed, to thin)",
       "expected": {
-        "item": "low sodium beef broth, as needed, to thin",
+        "item": "low sodium beef broth",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "as needed, to thin",
         "section": "For the Mashed Red Potatoes",
         "category": "Canned Goods"
       }
@@ -244,7 +244,7 @@
       }
     },
     {
-      "raw": "3 tbsp. yellow onion, minced",
+      "raw": "3 tbsp. yellow onion, (minced)",
       "expected": {
         "item": "yellow onion",
         "measurements": [

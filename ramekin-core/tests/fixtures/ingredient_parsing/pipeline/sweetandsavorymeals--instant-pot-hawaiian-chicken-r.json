@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 lbs chicken thighs boneless and skinless - cut into 1-2 inch pieces, or chicken breasts",
+      "raw": "2 lbs chicken thighs (boneless and skinless - cut into 1-2 inch pieces, or chicken breasts)",
       "expected": {
-        "item": "chicken thighs boneless and skinless - cut into 1-2 inch pieces, or chicken breasts",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "boneless and skinless - cut into 1-2 inch pieces, or chicken breasts",
         "section": "Dump & Cook",
         "category": "Meat & Seafood"
       }
@@ -97,22 +97,22 @@
       }
     },
     {
-      "raw": "1 20 oz can pineapple chunks do NOT drain",
+      "raw": "1 20 oz can pineapple chunks (do NOT drain)",
       "expected": {
-        "item": "pineapple chunks do NOT drain",
+        "item": "pineapple chunks",
         "measurements": [
           {
             "amount": "1",
             "unit": "20 oz can"
           }
         ],
-        "note": null,
+        "note": "do NOT drain",
         "section": "Dump & Cook",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 red bell pepper cut into 1-inch chunks",
+      "raw": "1 red bell pepper (cut into 1-inch chunks)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -127,7 +127,7 @@
       }
     },
     {
-      "raw": "1 yellow bell pepper cut into 1-inch chunks",
+      "raw": "1 yellow bell pepper (cut into 1-inch chunks)",
       "expected": {
         "item": "yellow bell pepper",
         "measurements": [
@@ -202,7 +202,7 @@
       }
     },
     {
-      "raw": "1 teaspoon red pepper flakes optional",
+      "raw": "1 teaspoon red pepper flakes (optional)",
       "expected": {
         "item": "red pepper flakes",
         "measurements": [

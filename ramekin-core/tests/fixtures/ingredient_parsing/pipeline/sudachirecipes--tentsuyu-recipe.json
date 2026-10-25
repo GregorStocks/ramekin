@@ -3,17 +3,17 @@
   "recipe_slug": "tentsuyu-recipe",
   "ingredients": [
     {
-      "raw": "100 ml dashi stock use shiitake and kombu dashi to make it vegetarian/vegan",
+      "raw": "100 ml dashi stock (use shiitake and kombu dashi to make it vegetarian/vegan)",
       "expected": {
-        "item": "dashi stock use shiitake and kombu dashi to make it vegetarian/vegan",
+        "item": "dashi stock",
         "measurements": [
           {
             "amount": "100",
             "unit": "ml"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "use shiitake and kombu dashi to make it vegetarian/vegan",
+        "category": "Canned Goods"
       }
     },
     {

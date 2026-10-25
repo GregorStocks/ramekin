@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "½ onion, diced",
+      "raw": "½ onion, (diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "1 teaspoon  salt, or to taste",
+      "raw": "1 teaspoon salt, (or to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon pepper, or to taste",
+      "raw": "¼ teaspoon pepper, (or to taste)",
       "expected": {
         "item": "pepper",
         "measurements": [
@@ -142,16 +142,16 @@
       }
     },
     {
-      "raw": "2 tablespoons red wine vinegar , or apple cider vinegar",
+      "raw": "2 tablespoons red wine vinegar , (or apple cider vinegar)",
       "expected": {
-        "item": "red wine vinegar, or apple cider vinegar",
+        "item": "red wine vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or apple cider vinegar",
         "section": "Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }

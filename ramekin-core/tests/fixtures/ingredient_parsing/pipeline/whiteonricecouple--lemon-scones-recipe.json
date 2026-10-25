@@ -170,17 +170,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons   optional melted butter or heavy cream for brushing tops of scones",
+      "raw": "2 Tablespoons optional melted butter (or heavy cream for brushing tops of scones)",
       "expected": {
-        "item": "optional melted butter or heavy cream",
+        "item": "optional melted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "for brushing tops of scones",
-        "category": "Dairy & Eggs"
+        "note": "or heavy cream for brushing tops of scones",
+        "category": "Other"
       }
     },
     {

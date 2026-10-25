@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "Butter for greasing the pan",
+      "raw": "Butter (for greasing the pan)",
       "expected": {
         "item": "Butter",
         "measurements": [],
@@ -32,16 +32,16 @@
       }
     },
     {
-      "raw": "¼ cup whole wheat pastry flour plus 2 tablespoons",
+      "raw": "¼ cup whole wheat pastry flour (plus 2 tablespoons)",
       "expected": {
-        "item": "whole wheat pastry flour plus 2 tablespoons",
+        "item": "whole wheat pastry flour",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus 2 tablespoons",
         "section": "For the Cake",
         "category": "Baking"
       }
@@ -62,16 +62,16 @@
       }
     },
     {
-      "raw": "¼ cup unsweetened cocoa powder plus 2 tablespoons, plus extra for the pan",
+      "raw": "¼ cup unsweetened cocoa powder (plus 2 tablespoons, plus extra for the pan)",
       "expected": {
-        "item": "unsweetened cocoa powder plus 2 tablespoons",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "plus extra for the pan",
+        "note": "plus 2 tablespoons, plus extra for the pan",
         "section": "For the Cake",
         "category": "Baking"
       }
@@ -152,33 +152,33 @@
       }
     },
     {
-      "raw": "¼ cup coconut oil melted and cooloed",
+      "raw": "¼ cup coconut oil (melted and cooloed)",
       "expected": {
-        "item": "coconut oil melted and cooloed",
+        "item": "coconut oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "melted and cooloed",
         "section": "For the Cake",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 large egg at room temperature",
+      "raw": "1 large egg (at room temperature)",
       "expected": {
-        "item": "egg at room temperature",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "For the Cake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -216,48 +216,48 @@
       "is_section_header": true
     },
     {
-      "raw": "4 ounces reduced fat cream cheese at room temperature",
+      "raw": "4 ounces reduced fat cream cheese (at room temperature)",
       "expected": {
-        "item": "reduced fat cream cheese at room temperature",
+        "item": "reduced fat cream cheese",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "For the Frosting",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
-      "raw": "3 tablespoons unsalted butter at room temperature",
+      "raw": "3 tablespoons unsalted butter (at room temperature)",
       "expected": {
-        "item": "unsalted butter at room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon brewed coffee at room temperature or cold",
+      "raw": "1 tablespoon brewed coffee (at room temperature or cold)",
       "expected": {
-        "item": "brewed coffee at room temperature or cold",
+        "item": "brewed coffee",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "at room temperature or cold",
         "section": "For the Frosting",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -336,7 +336,7 @@
       }
     },
     {
-      "raw": "Chopped chocolate covered espresso beans for decorating",
+      "raw": "Chopped chocolate covered espresso beans (for decorating)",
       "expected": {
         "item": "Chopped chocolate covered espresso beans",
         "measurements": [],

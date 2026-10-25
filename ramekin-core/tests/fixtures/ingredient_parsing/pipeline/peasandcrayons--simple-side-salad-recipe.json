@@ -95,16 +95,16 @@
       }
     },
     {
-      "raw": "¼-⅓ cup grated Parmesan cheese or crumbled feta (optional)",
+      "raw": "¼-⅓ cup grated Parmesan cheese, or crumbled feta (optional)",
       "expected": {
-        "item": "grated Parmesan cheese or crumbled feta",
+        "item": "grated Parmesan cheese",
         "measurements": [
           {
             "amount": "1/4-1/3",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional; or crumbled feta",
         "category": "Cheese"
       }
     },
@@ -128,16 +128,16 @@
       }
     },
     {
-      "raw": "1 TBSP white wine vinegar or red wine vinegar",
+      "raw": "1 TBSP white wine vinegar (or red wine vinegar)",
       "expected": {
-        "item": "white wine vinegar or red wine vinegar",
+        "item": "white wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or red wine vinegar",
         "section": "Italian Dressing",
         "category": "Oils & Vinegars"
       }
@@ -173,7 +173,7 @@
       }
     },
     {
-      "raw": "½ tsp garlic powder or 1 small clove garlic, minced",
+      "raw": "½ tsp garlic powder (or 1 small clove garlic, minced)",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -182,22 +182,22 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1 small clove garlic; minced",
+        "note": "or 1 small clove garlic, minced",
         "section": "Italian Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ tsp salt or season to taste",
+      "raw": "¼ tsp salt (or season to taste)",
       "expected": {
-        "item": "salt or season",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "to taste",
+        "note": "or season to taste",
         "section": "Italian Dressing",
         "category": "Spices & Seasonings"
       }
@@ -222,16 +222,16 @@
       "is_section_header": true
     },
     {
-      "raw": "¼ cup quality olive oil or avocado oil",
+      "raw": "¼ cup quality olive oil (or avocado oil)",
       "expected": {
-        "item": "quality olive oil or avocado oil",
+        "item": "quality olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or avocado oil",
         "section": "Greek Dressing",
         "category": "Oils & Vinegars"
       }
@@ -267,7 +267,7 @@
       }
     },
     {
-      "raw": "½ tsp dried parsley or 1 tsp fresh",
+      "raw": "½ tsp dried parsley (or 1 tsp fresh)",
       "expected": {
         "item": "dried parsley",
         "measurements": [
@@ -282,7 +282,7 @@
       }
     },
     {
-      "raw": "½ tsp garlic powder or one super small clove garlic, minced",
+      "raw": "½ tsp garlic powder (or one super small clove garlic, minced)",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -291,7 +291,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "or one super small clove garlic; minced",
+        "note": "or one super small clove garlic, minced",
         "section": "Greek Dressing",
         "category": "Spices & Seasonings"
       }
@@ -361,22 +361,22 @@
       "is_section_header": true
     },
     {
-      "raw": "¼ cup quality olive oil or avocado oil",
+      "raw": "¼ cup quality olive oil (or avocado oil)",
       "expected": {
-        "item": "quality olive oil or avocado oil",
+        "item": "quality olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or avocado oil",
         "section": "Balsamic Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 TBSP balsamic vinegar plus extra to taste",
+      "raw": "2 TBSP balsamic vinegar (plus extra to taste)",
       "expected": {
         "item": "balsamic vinegar",
         "measurements": [
@@ -421,16 +421,16 @@
       }
     },
     {
-      "raw": "2 tsp honey or sweetener or choice if vegan",
+      "raw": "2 tsp honey (or sweetener or choice if vegan)",
       "expected": {
-        "item": "honey or sweetener or choice if vegan",
+        "item": "honey",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or sweetener or choice if vegan",
         "section": "Balsamic Dressing",
         "category": "Baking"
       }

@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 package 9 oz. chocolate wafer cookies (such as Nabisco)",
+      "raw": "1 package, 9 oz. chocolate wafer cookies (such as Nabisco)",
       "expected": {
         "item": "9 oz. chocolate wafer cookies",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter melted",
+      "raw": "1/2 cup unsalted butter (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -146,7 +146,7 @@
       }
     },
     {
-      "raw": "1 tablespoon hazelnut liqueur or 2 teaspoons vanilla extract",
+      "raw": "1 tablespoon hazelnut liqueur (or 2 teaspoons vanilla extract)",
       "expected": {
         "item": "hazelnut liqueur",
         "measurements": [
@@ -180,7 +180,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3/4 cup chocolate-hazelnut spread such as Nutella",
+      "raw": "3/4 cup chocolate-hazelnut spread (such as Nutella)",
       "expected": {
         "item": "chocolate-hazelnut spread",
         "measurements": [
@@ -195,18 +195,18 @@
       }
     },
     {
-      "raw": "3/4 cup heavy cream whipped to stiff peaks",
+      "raw": "3/4 cup heavy cream (whipped to stiff peaks)",
       "expected": {
-        "item": "heavy cream whipped to stiff peaks",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "whipped to stiff peaks",
         "section": "Toppings",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

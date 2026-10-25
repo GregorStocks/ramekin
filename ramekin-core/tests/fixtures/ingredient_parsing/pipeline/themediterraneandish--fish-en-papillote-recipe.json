@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "1/2  tomato thinly sliced into 4 rounds",
+      "raw": "1/2 tomato (thinly sliced into 4 rounds)",
       "expected": {
         "item": "tomato",
         "measurements": [
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "½ green bell pepper cored, thinly sliced into 4 rounds",
+      "raw": "½ green bell pepper (cored, thinly sliced into 4 rounds)",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "½ lemon thinly sliced into rings",
+      "raw": "½ lemon (thinly sliced into rings)",
       "expected": {
         "item": "lemon",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "Handful pitted green olives optional",
+      "raw": "Handful pitted green olives (optional)",
       "expected": {
         "item": "pitted green olives",
         "measurements": [
@@ -86,18 +86,18 @@
       "is_section_header": true
     },
     {
-      "raw": "¼ cup extra virgin olive oil I used Private Reserve Greek EVOO",
+      "raw": "¼ cup extra virgin olive oil (I used Private Reserve Greek EVOO)",
       "expected": {
-        "item": "extra virgin olive oil I used Private Reserve Greek EVOO",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used Private Reserve Greek EVOO",
         "section": "For the Sauce",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "1 shallot chopped",
+      "raw": "1 shallot (chopped)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "2 garlic cloves chopped",
+      "raw": "2 garlic cloves (chopped)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

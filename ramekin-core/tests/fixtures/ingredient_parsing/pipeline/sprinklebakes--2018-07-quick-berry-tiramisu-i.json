@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "12 ounces fresh strawberries or frozen, thawed",
+      "raw": "12 ounces fresh strawberries (or frozen, thawed)",
       "expected": {
-        "item": "fresh strawberries or frozen",
+        "item": "fresh strawberries",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "thawed",
+        "note": "or frozen, thawed",
         "section": "Strawberry Puree",
         "category": "Produce"
       }
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "3 ounces mascarpone cheese softened",
+      "raw": "3 ounces mascarpone cheese (softened)",
       "expected": {
         "item": "mascarpone cheese",
         "measurements": [
@@ -120,7 +120,7 @@
       "is_section_header": true
     },
     {
-      "raw": "12 crisp lady fingers chopped into 1-inch pieces",
+      "raw": "12 crisp lady fingers (chopped into 1-inch pieces)",
       "expected": {
         "item": "crisp lady fingers",
         "measurements": [

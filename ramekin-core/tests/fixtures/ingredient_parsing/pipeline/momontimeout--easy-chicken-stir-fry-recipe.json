@@ -3,21 +3,21 @@
   "recipe_slug": "easy-chicken-stir-fry-recipe",
   "ingredients": [
     {
-      "raw": "1 lb boneless, skinless chicken breast cut into 1 inch cubes",
+      "raw": "1 lb boneless, skinless chicken breast (cut into 1 inch cubes)",
       "expected": {
-        "item": "boneless, skinless chicken breast cut into 1 inch cubes",
+        "item": "boneless, skinless chicken breast",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "cut into 1 inch cubes",
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "salt and pepper to taste",
+      "raw": "salt and pepper (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "2 tbsp olive oil divided",
+      "raw": "2 tbsp olive oil (divided)",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "1/2 yellow bell pepper cut into 1 inch pieces",
+      "raw": "1/2 yellow bell pepper (cut into 1 inch pieces)",
       "expected": {
         "item": "yellow bell pepper",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "1/2 red bell pepper cut into 1 inch pieces",
+      "raw": "1/2 red bell pepper (cut into 1 inch pieces)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "1/2 cup baby carrots sliced",
+      "raw": "1/2 cup baby carrots (sliced)",
       "expected": {
         "item": "baby carrots",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "2 garlic cloves minced",
+      "raw": "2 garlic cloves (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

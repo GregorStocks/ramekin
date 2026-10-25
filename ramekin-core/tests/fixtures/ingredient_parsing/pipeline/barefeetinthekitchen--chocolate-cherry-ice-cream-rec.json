@@ -87,17 +87,17 @@
       }
     },
     {
-      "raw": "1 cup roasted cherries directions below, roughly chopped to 1/4″ size",
+      "raw": "1 cup roasted cherries (directions below, roughly chopped to 1/4″ size)",
       "expected": {
-        "item": "roasted cherries directions below",
+        "item": "roasted cherries",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "roughly chopped to 1/4″ size",
-        "category": "Other"
+        "note": "directions below, roughly chopped to 1/4″ size",
+        "category": "Produce"
       }
     },
     {
@@ -105,18 +105,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pound cherries about 3 cups pitted and halved",
+      "raw": "1 pound cherries (about 3 cups pitted and halved)",
       "expected": {
-        "item": "cherries about 3 cups",
+        "item": "cherries",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "pitted and halved",
+        "note": "about 3 cups pitted and halved",
         "section": "Saucy Roasted Cherries",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

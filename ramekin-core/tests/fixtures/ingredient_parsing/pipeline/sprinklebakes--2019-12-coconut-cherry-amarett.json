@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "6 tablespoons unsalted butter at room temperature",
+      "raw": "6 tablespoons unsalted butter (at room temperature)",
       "expected": {
-        "item": "unsalted butter at room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
@@ -176,18 +176,18 @@
       "is_section_header": true
     },
     {
-      "raw": "3 cans coconut milk full fat, chilled overnight",
+      "raw": "3 cans coconut milk (full fat, chilled overnight)",
       "expected": {
-        "item": "coconut milk full fat",
+        "item": "coconut milk",
         "measurements": [
           {
             "amount": "3",
             "unit": "can"
           }
         ],
-        "note": "chilled overnight",
+        "note": "full fat, chilled overnight",
         "section": "Whipped Coconut Frosting",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {

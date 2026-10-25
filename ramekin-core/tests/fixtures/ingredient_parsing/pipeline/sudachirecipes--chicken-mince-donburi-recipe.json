@@ -116,18 +116,18 @@
       }
     },
     {
-      "raw": "1 tbsp sake see note",
+      "raw": "1 tbsp sake (see note)",
       "expected": {
-        "item": "sake see note",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "section": "Chicken Soboro",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -274,7 +274,7 @@
       }
     },
     {
-      "raw": "1 tsp red pickled ginger (benishoga) optional",
+      "raw": "1 tsp red pickled ginger (benishoga) (optional)",
       "expected": {
         "item": "red pickled ginger",
         "measurements": [

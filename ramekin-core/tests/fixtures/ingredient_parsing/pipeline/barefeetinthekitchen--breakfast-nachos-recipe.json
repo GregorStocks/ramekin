@@ -3,17 +3,17 @@
   "recipe_slug": "breakfast-nachos-recipe",
   "ingredients": [
     {
-      "raw": "12 ounces tortilla chips * see note regarding recommended brands",
+      "raw": "12 ounces tortilla chips (* see note regarding recommended brands)",
       "expected": {
-        "item": "tortilla chips * see note regarding recommended brands",
+        "item": "tortilla chips",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "* see note regarding recommended brands",
+        "category": "Snacks"
       }
     },
     {
@@ -129,21 +129,21 @@
       }
     },
     {
-      "raw": "16 ounces freshly shredded pepper jack Colby jack or Monterey jack cheese",
+      "raw": "16 ounces freshly shredded pepper jack (Colby jack or Monterey jack cheese)",
       "expected": {
-        "item": "freshly shredded pepper jack Colby jack or Monterey jack cheese",
+        "item": "freshly shredded pepper jack",
         "measurements": [
           {
             "amount": "16",
             "unit": "oz"
           }
         ],
-        "note": null,
-        "category": "Cheese"
+        "note": "Colby jack or Monterey jack cheese",
+        "category": "Other"
       }
     },
     {
-      "raw": "¼ cup fresh cilantro finely chopped",
+      "raw": "¼ cup fresh cilantro (finely chopped)",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "4 green onions sliced thin",
+      "raw": "4 green onions (sliced thin)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -195,7 +195,7 @@
       }
     },
     {
-      "raw": "avocado sliced thin",
+      "raw": "avocado (sliced thin)",
       "expected": {
         "item": "avocado",
         "measurements": [],

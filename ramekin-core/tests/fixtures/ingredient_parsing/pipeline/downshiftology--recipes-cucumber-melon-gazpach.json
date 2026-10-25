@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "12 large shrimp, peeled and deveined",
+      "raw": "12 large shrimp, (peeled and deveined)",
       "expected": {
         "item": "shrimp",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "1 tbsp fresh ginger, finely chopped",
+      "raw": "1 tbsp fresh ginger, (finely chopped)",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "1 1/2 cup honeydew melon, diced",
+      "raw": "1 1/2 cup honeydew melon, (diced)",
       "expected": {
         "item": "honeydew melon",
         "measurements": [
@@ -131,16 +131,16 @@
       }
     },
     {
-      "raw": "3 scallions, white and green parts, chopped",
+      "raw": "3 scallions, (white and green parts, chopped)",
       "expected": {
-        "item": "scallions, white and green parts",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "white and green parts, chopped",
         "section": "Gazpacho",
         "category": "Produce"
       }
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "1 garlic clove, chopped",
+      "raw": "1 garlic clove, (chopped)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "1/4 avocado, peeled",
+      "raw": "1/4 avocado, (peeled)",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -296,7 +296,7 @@
       }
     },
     {
-      "raw": "1 tbsp hemp hearts, for garnish",
+      "raw": "1 tbsp hemp hearts, (for garnish)",
       "expected": {
         "item": "hemp hearts",
         "measurements": [

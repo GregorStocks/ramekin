@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3 cups  (375 g) bread flour, plus more for work surface",
+      "raw": "3 cups (375 g) bread flour, (plus more for work surface)",
       "expected": {
         "item": "bread flour",
         "measurements": [
@@ -41,9 +41,9 @@
       }
     },
     {
-      "raw": "½ teaspoon  (0.5 teaspoon) instant, rapid-rise yeast",
+      "raw": "½ teaspoon (0.5 teaspoon) instant, (rapid-rise yeast)",
       "expected": {
-        "item": "instant, rapid-rise yeast",
+        "item": "instant",
         "measurements": [
           {
             "amount": "0.5",
@@ -54,7 +54,7 @@
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "rapid-rise yeast",
         "section": "For the Dough",
         "category": "Other"
       }
@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "1 tablespoon   vegetable oil, plus more for work surface",
+      "raw": "1 tablespoon vegetable oil, (plus more for work surface)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -166,7 +166,7 @@
       }
     },
     {
-      "raw": "2   garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

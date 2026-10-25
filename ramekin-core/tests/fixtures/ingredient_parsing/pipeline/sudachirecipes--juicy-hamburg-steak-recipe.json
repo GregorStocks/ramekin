@@ -22,31 +22,31 @@
       }
     },
     {
-      "raw": "½ onion finely minced to ~5mm, 100-150g per 300g meat",
+      "raw": "½ onion (finely minced to ~5mm, 100-150g per 300g meat)",
       "expected": {
-        "item": "onion finely minced to ~5mm, 100-150g per 300g meat",
+        "item": "onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely minced to ~5mm, 100-150g per 300g meat",
         "section": "Hambagu Patties",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "4 tbsp panko breadcrumbs or Western breadcrumbs, avoid seasoned types",
+      "raw": "4 tbsp panko breadcrumbs (or Western breadcrumbs, avoid seasoned types)",
       "expected": {
-        "item": "panko breadcrumbs or Western breadcrumbs, avoid seasoned types",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or Western breadcrumbs, avoid seasoned types",
         "section": "Hambagu Patties",
         "category": "Bakery & Bread"
       }
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "200 g ground beef or 50% beef and 50% pork, ~20% fat content recommended",
+      "raw": "200 g ground beef (or 50% beef and 50% pork, ~20% fat content recommended)",
       "expected": {
         "item": "ground beef",
         "measurements": [
@@ -97,18 +97,18 @@
       }
     },
     {
-      "raw": "½ tsp salt 0.8-1.0% of meat weight",
+      "raw": "½ tsp salt (0.8-1.0% of meat weight)",
       "expected": {
-        "item": "salt 0.8-1.0% of meat weight",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "0.8-1.0% of meat weight",
         "section": "Hambagu Patties",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -127,7 +127,7 @@
       }
     },
     {
-      "raw": "1 pinch nutmeg powder optional",
+      "raw": "1 pinch nutmeg powder (optional)",
       "expected": {
         "item": "nutmeg powder",
         "measurements": [
@@ -142,18 +142,18 @@
       }
     },
     {
-      "raw": "½ tbsp lard optional, use if meat is lean",
+      "raw": "½ tbsp lard (optional, use if meat is lean)",
       "expected": {
-        "item": "lard optional, use if meat is lean",
+        "item": "lard",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "optional, use if meat is lean",
         "section": "Hambagu Patties",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -251,18 +251,18 @@
       }
     },
     {
-      "raw": "½ tsp smooth Dijon mustard avoid whole-grain",
+      "raw": "½ tsp smooth Dijon mustard (avoid whole-grain)",
       "expected": {
-        "item": "smooth Dijon mustard avoid whole-grain",
+        "item": "smooth Dijon mustard",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "avoid whole-grain",
         "section": "Hamburger Sauce",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -335,11 +335,11 @@
       }
     },
     {
-      "raw": "steamed vegetables or fresh salad",
+      "raw": "steamed vegetables (or fresh salad)",
       "expected": {
-        "item": "steamed vegetables or fresh salad",
+        "item": "steamed vegetables",
         "measurements": [],
-        "note": null,
+        "note": "or fresh salad",
         "section": "Serving Suggestions (Optional)",
         "category": "Other"
       }

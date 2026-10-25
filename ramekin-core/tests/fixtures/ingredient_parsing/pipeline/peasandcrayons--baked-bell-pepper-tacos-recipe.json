@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "¾ cup shredded cheese extra as desired",
+      "raw": "¾ cup shredded cheese (extra as desired)",
       "expected": {
-        "item": "shredded cheese extra as desired",
+        "item": "shredded cheese",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "extra as desired",
+        "category": "Cheese"
       }
     },
     {
@@ -73,12 +73,12 @@
       }
     },
     {
-      "raw": "cilantro and lime as a tasty garnish",
+      "raw": "cilantro and lime (as a tasty garnish)",
       "expected": {
-        "item": "cilantro and lime as a tasty garnish",
+        "item": "cilantro and lime",
         "measurements": [],
-        "note": null,
-        "category": "Other"
+        "note": "as a tasty garnish",
+        "category": "Produce"
       }
     },
     {
@@ -86,9 +86,9 @@
       "is_section_header": true
     },
     {
-      "raw": "a. 1lb ground beef, chicken, or turkey seasoned your favorite way and browned on the stove-top! I use a combination of enchilada sauce (homemade or store bought) and homemade taco seasoning to flavor mine, plus a little mexican hot sacue for a kick! You can also make your protein option in advance and keep in the fridge for 2-3 days or freezer for emergency taco night filling. This also works with my lentil-veggie taco filling too!",
+      "raw": "a. 1lb ground beef, chicken, or turkey, seasoned your favorite way and browned on the stove-top! I use a combination of enchilada sauce (homemade or store bought) and homemade taco seasoning to flavor mine, plus a little mexican hot sacue for a kick! You can also make your protein option in advance and keep in the fridge for 2-3 days or freezer for emergency taco night filling. This also works with my lentil-veggie taco filling too!",
       "expected": {
-        "item": "a. 1lb ground beef, chicken, or turkey seasoned your favorite way and browned on the stove-top! I use a combination of enchilada sauce and homemade taco seasoning to flavor mine",
+        "item": "a. 1lb ground beef, chicken, or turkey, seasoned your favorite way and browned on the stove-top! I use a combination of enchilada sauce and homemade taco seasoning to flavor mine",
         "measurements": [],
         "note": "homemade or store bought, plus a little mexican hot sacue for a kick! You can also make your protein option in advance and keep in the fridge for 2-3 days or freezer for emergency taco night filling. This also works with my lentil-veggie taco filling too!",
         "section": "Feisty Filling Options",
@@ -106,16 +106,16 @@
       }
     },
     {
-      "raw": "c. 3-4 cups Seasoned tofu like chipotle-style sofritos",
+      "raw": "c. 3-4 cups Seasoned tofu (like chipotle-style sofritos)",
       "expected": {
-        "item": "3-4 cups Seasoned tofu like chipotle-style sofritos",
+        "item": "3-4 cups Seasoned tofu",
         "measurements": [
           {
             "amount": null,
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "like chipotle-style sofritos",
         "section": "Feisty Filling Options",
         "category": "Other"
       }

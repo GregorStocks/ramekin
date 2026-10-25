@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "3 tablespoons vegetable oil divided use",
+      "raw": "3 tablespoons vegetable oil (divided use)",
       "expected": {
-        "item": "vegetable oil divided use",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "divided use",
         "section": "Stir Fry",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 small onion diced",
+      "raw": "1 small onion (diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1 cup zucchini quartered lengthwise and sliced",
+      "raw": "1 cup zucchini (quartered lengthwise and sliced)",
       "expected": {
         "item": "zucchini",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "1 cup mushrooms sliced",
+      "raw": "1 cup mushrooms (sliced)",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "1 green bell pepper diced",
+      "raw": "1 green bell pepper (diced)",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "2 pounds boneless skinless chicken thighs cut into 1 inch pieces",
+      "raw": "2 pounds boneless skinless chicken thighs (cut into 1 inch pieces)",
       "expected": {
         "item": "boneless skinless chicken thighs",
         "measurements": [
@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic minced",
+      "raw": "4 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -112,7 +112,7 @@
       }
     },
     {
-      "raw": "1 teaspoon ginger minced",
+      "raw": "1 teaspoon ginger (minced)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -127,7 +127,7 @@
       }
     },
     {
-      "raw": "1/2 cup blanched almonds sliced or slivered",
+      "raw": "1/2 cup blanched almonds (sliced or slivered)",
       "expected": {
         "item": "blanched almonds",
         "measurements": [

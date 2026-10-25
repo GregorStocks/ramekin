@@ -22,18 +22,18 @@
       }
     },
     {
-      "raw": "8 tbsp butter cold and cubed",
+      "raw": "8 tbsp butter (cold and cubed)",
       "expected": {
-        "item": "butter cold and cubed",
+        "item": "butter",
         "measurements": [
           {
             "amount": "8",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cold and cubed",
         "section": "Pie Crust",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -67,22 +67,26 @@
       }
     },
     {
-      "raw": "3 tbsp ice water 3 to 4 tbsp",
+      "raw": "3 tbsp ice water (3 to 4 tbsp)",
       "expected": {
-        "item": "ice water 3 to 4 tbsp",
+        "item": "ice water",
         "measurements": [
           {
             "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3 to 4",
             "unit": "tbsp"
           }
         ],
         "note": null,
         "section": "Pie Crust",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
-      "raw": "1 egg white lightly beaten",
+      "raw": "1 egg white (lightly beaten)",
       "expected": {
         "item": "egg white",
         "measurements": [
@@ -255,7 +259,7 @@
       }
     },
     {
-      "raw": "6 tbsp cold butter cut into small piece",
+      "raw": "6 tbsp cold butter (cut into small piece)",
       "expected": {
         "item": "cold butter",
         "measurements": [

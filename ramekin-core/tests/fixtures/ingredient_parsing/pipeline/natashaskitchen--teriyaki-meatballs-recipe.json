@@ -22,22 +22,22 @@
       }
     },
     {
-      "raw": "1/3 cup panko bread crumbs, or use GF crumbs",
+      "raw": "1/3 cup panko bread crumbs, (or use GF crumbs)",
       "expected": {
-        "item": "panko bread crumbs, or use GF crumbs",
+        "item": "panko bread crumbs",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or use GF crumbs",
         "section": "For the Meatballs",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "1/4 cup green onion, finely chopped",
+      "raw": "1/4 cup green onion, (finely chopped)",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "1 garlic clove, pressed or grated",
+      "raw": "1 garlic clove, (pressed or grated)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -146,7 +146,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1/4 cup light brown sugar, lightly packed",
+      "raw": "1/4 cup light brown sugar, (lightly packed)",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -161,31 +161,31 @@
       }
     },
     {
-      "raw": "2 Tbsp hoisin sauce, or use GF hoisin",
+      "raw": "2 Tbsp hoisin sauce, (or use GF hoisin)",
       "expected": {
-        "item": "hoisin sauce, or use GF hoisin",
+        "item": "hoisin sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or use GF hoisin",
         "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 Tbsp soy sauce, or use GF tamari",
+      "raw": "1 Tbsp soy sauce, (or use GF tamari)",
       "expected": {
-        "item": "soy sauce, or use GF tamari",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or use GF tamari",
         "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
@@ -206,7 +206,7 @@
       }
     },
     {
-      "raw": "1 medium garlic clove, minced",
+      "raw": "1 medium garlic clove, (minced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [

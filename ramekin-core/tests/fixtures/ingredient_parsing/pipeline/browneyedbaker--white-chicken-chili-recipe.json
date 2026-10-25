@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2   medium yellow onions, finely chopped",
+      "raw": "2 medium yellow onions, (finely chopped)",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2   jalapeño peppers, seeded and finely chopped",
+      "raw": "2 jalapeño peppers, (seeded and finely chopped)",
       "expected": {
         "item": "jalapeño peppers",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2   poblano peppers, seeded and finely chopped",
+      "raw": "2 poblano peppers, (seeded and finely chopped)",
       "expected": {
         "item": "poblano peppers",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2   Anaheim peppers, seeded and finely chopped",
+      "raw": "2 Anaheim peppers, (seeded and finely chopped)",
       "expected": {
         "item": "Anaheim peppers",
         "measurements": [
@@ -141,7 +141,7 @@
       }
     },
     {
-      "raw": "1 teaspoon   salt, divided",
+      "raw": "1 teaspoon salt, (divided)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -155,7 +155,7 @@
       }
     },
     {
-      "raw": "6   garlic cloves, minced",
+      "raw": "6 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -201,7 +201,7 @@
       }
     },
     {
-      "raw": "45 oz  (1.28 kg) can cannelini beans, rinsed, drained, and divided",
+      "raw": "45 oz (1.28 kg) can cannelini beans, (rinsed, drained, and divided)",
       "expected": {
         "item": "can cannelini beans",
         "measurements": [

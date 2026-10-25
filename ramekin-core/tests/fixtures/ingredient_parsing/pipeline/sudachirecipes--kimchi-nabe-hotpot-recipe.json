@@ -3,17 +3,17 @@
   "recipe_slug": "kimchi-nabe-hotpot-recipe",
   "ingredients": [
     {
-      "raw": "200 g slab skinless pork belly sliced into 5 mm, or shabu-shabu style/pork shoulder",
+      "raw": "200 g slab skinless pork belly (sliced into 5 mm, or shabu-shabu style/pork shoulder)",
       "expected": {
-        "item": "slab skinless pork belly sliced into 5 mm, or shabu-shabu style/pork shoulder",
+        "item": "slab skinless pork belly",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "sliced into 5 mm, or shabu-shabu style/pork shoulder",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tbsp all-purpose flour for dusting",
+      "raw": "1 tbsp all-purpose flour (for dusting)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 tsp garlic clove finely diced",
+      "raw": "1 tsp garlic clove (finely diced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 tsp ginger root finely diced",
+      "raw": "1 tsp ginger root (finely diced)",
       "expected": {
         "item": "ginger root",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "50 g onion thinly sliced",
+      "raw": "50 g onion (thinly sliced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "200 g cabbage kimchi napa cabbage kimchi, mild if possible",
+      "raw": "200 g cabbage kimchi (napa cabbage kimchi, mild if possible)",
       "expected": {
-        "item": "cabbage kimchi napa cabbage kimchi, mild if possible",
+        "item": "cabbage kimchi",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "napa cabbage kimchi, mild if possible",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -237,46 +237,46 @@
       }
     },
     {
-      "raw": "150 g firm tofu or silken if you prefer",
+      "raw": "150 g firm tofu (or silken if you prefer)",
       "expected": {
-        "item": "firm tofu or silken if you prefer",
+        "item": "firm tofu",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or silken if you prefer",
         "section": "Broth",
         "category": "Produce"
       }
     },
     {
-      "raw": "100 g enoki mushrooms or mushroom of your choice",
+      "raw": "100 g enoki mushrooms (or mushroom of your choice)",
       "expected": {
-        "item": "enoki mushrooms or mushroom of your choice",
+        "item": "enoki mushrooms",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or mushroom of your choice",
         "section": "Broth",
         "category": "Produce"
       }
     },
     {
-      "raw": "100 g green cabbage or napa cabbage",
+      "raw": "100 g green cabbage (or napa cabbage)",
       "expected": {
-        "item": "green cabbage or napa cabbage",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or napa cabbage",
         "section": "Broth",
         "category": "Produce"
       }
@@ -286,7 +286,7 @@
       "is_section_header": true
     },
     {
-      "raw": "30 g garlic chive(s) cut into 5 cm",
+      "raw": "30 g garlic chive(s) (cut into 5 cm)",
       "expected": {
         "item": "garlic chive",
         "measurements": [
@@ -301,7 +301,7 @@
       }
     },
     {
-      "raw": "½ tsp dried red chili pepper thinly sliced",
+      "raw": "½ tsp dried red chili pepper (thinly sliced)",
       "expected": {
         "item": "dried red chili pepper",
         "measurements": [
@@ -316,7 +316,7 @@
       }
     },
     {
-      "raw": "1 tsp garlic chips optional",
+      "raw": "1 tsp garlic chips (optional)",
       "expected": {
         "item": "garlic chips",
         "measurements": [
@@ -346,9 +346,9 @@
       }
     },
     {
-      "raw": "2 portions cooked ramen noodles or udon noodles (optional)",
+      "raw": "2 portions cooked ramen noodles, or udon noodles (optional)",
       "expected": {
-        "item": "cooked ramen noodles or udon noodles",
+        "item": "cooked ramen noodles, or udon noodles",
         "measurements": [
           {
             "amount": "2",

@@ -95,9 +95,9 @@
       }
     },
     {
-      "raw": "1 dried red chilli broken (optional)",
+      "raw": "1 dried red chilli, broken (optional)",
       "expected": {
-        "item": "dried red chilli broken",
+        "item": "dried red chilli, broken",
         "measurements": [
           {
             "amount": "1",
@@ -106,7 +106,7 @@
         ],
         "note": "optional",
         "section": "To Temper",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -245,7 +245,7 @@
       }
     },
     {
-      "raw": "1 teaspoon kasuri methi crushed (dried fenugreek leaves)",
+      "raw": "1 teaspoon kasuri methi, crushed (dried fenugreek leaves)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [
@@ -260,7 +260,7 @@
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves finely chopped",
+      "raw": "2 tablespoons coriander leaves (finely chopped)",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -279,7 +279,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 to 2 tablespoons lemon juice  or as needed (optional)",
+      "raw": "1 to 2 tablespoons lemon juice, or as needed (optional)",
       "expected": {
         "item": "lemon juice",
         "measurements": [

@@ -3,21 +3,21 @@
   "recipe_slug": "bread-machine-pizza-dough-reci",
   "ingredients": [
     {
-      "raw": "2 cup flour I like to use bread flour but all purpose and even a combination of AP and wheat flour works",
+      "raw": "2 cup flour (I like to use bread flour but all purpose and even a combination of AP and wheat flour works)",
       "expected": {
-        "item": "flour I like to use bread flour but all purpose and even a combination of AP and wheat flour works",
+        "item": "flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "I like to use bread flour but all purpose and even a combination of AP and wheat flour works",
+        "category": "Baking"
       }
     },
     {
-      "raw": "1 tbsp butter softened",
+      "raw": "1 tbsp butter (softened)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -73,31 +73,31 @@
       }
     },
     {
-      "raw": "1/2 cup water 105-110 degrees",
+      "raw": "1/2 cup water (105-110 degrees)",
       "expected": {
-        "item": "water 105-110 degrees",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "105-110 degrees",
+        "category": "Beverages"
       }
     },
     {
-      "raw": "2 tbsp water additional",
+      "raw": "2 tbsp water (additional)",
       "expected": {
-        "item": "water additional",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "additional",
+        "category": "Beverages"
       }
     },
     {
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "2 tbsp butter softened",
+      "raw": "2 tbsp butter (softened)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -180,17 +180,17 @@
       }
     },
     {
-      "raw": "1 1/3 cups water 105-110 degrees",
+      "raw": "1 1/3 cups water (105-110 degrees)",
       "expected": {
-        "item": "water 105-110 degrees",
+        "item": "water",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "105-110 degrees",
+        "category": "Beverages"
       }
     }
   ]

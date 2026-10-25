@@ -112,7 +112,7 @@
       }
     },
     {
-      "raw": "cooking oil for frying",
+      "raw": "cooking oil (for frying)",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
@@ -201,18 +201,18 @@
       }
     },
     {
-      "raw": "1 tsp Chinese-style chicken bouillon powder I use youki garasupu",
+      "raw": "1 tsp Chinese-style chicken bouillon powder (I use youki garasupu)",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder I use youki garasupu",
+        "item": "Chinese-style chicken bouillon powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I use youki garasupu",
         "section": "Katsudon",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -231,18 +231,18 @@
       }
     },
     {
-      "raw": "3 eggs room temperature",
+      "raw": "3 eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Katsudon",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -261,13 +261,13 @@
       }
     },
     {
-      "raw": "Japanese wild parsley (mitsuba) optional to garnish",
+      "raw": "Japanese wild parsley (mitsuba) (optional to garnish)",
       "expected": {
-        "item": "Japanese wild parsley optional to garnish",
+        "item": "Japanese wild parsley",
         "measurements": [],
-        "note": "mitsuba",
+        "note": "mitsuba, optional to garnish",
         "section": "Katsudon",
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

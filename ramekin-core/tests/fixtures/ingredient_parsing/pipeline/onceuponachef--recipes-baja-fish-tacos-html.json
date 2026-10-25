@@ -105,22 +105,22 @@
       "is_section_header": true
     },
     {
-      "raw": "¾ cup mayonnaise, best quality such as Hellmann's",
+      "raw": "¾ cup mayonnaise, (best quality such as Hellmann's)",
       "expected": {
-        "item": "mayonnaise, best quality",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "such as Hellmann's",
+        "note": "best quality such as Hellmann's",
         "section": "For the Chipotle Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 tablespoons lime juice, from one lime",
+      "raw": "2 tablespoons lime juice, (from one lime)",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -150,7 +150,7 @@
       }
     },
     {
-      "raw": "1 large clove garlic, roughly chopped",
+      "raw": "1 large clove garlic, (roughly chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -248,7 +248,7 @@
       }
     },
     {
-      "raw": "Vegetable oil, for frying",
+      "raw": "Vegetable oil, (for frying)",
       "expected": {
         "item": "Vegetable oil",
         "measurements": [],
@@ -273,7 +273,7 @@
       }
     },
     {
-      "raw": "Lime wedges, for serving",
+      "raw": "Lime wedges, (for serving)",
       "expected": {
         "item": "Lime wedges",
         "measurements": [],

@@ -73,17 +73,17 @@
       }
     },
     {
-      "raw": "Dash of cinnamon up to 1/8 tsp",
+      "raw": "Dash of cinnamon (up to 1/8 tsp)",
       "expected": {
-        "item": "cinnamon up to 1/8 tsp",
+        "item": "cinnamon",
         "measurements": [
           {
             "amount": null,
             "unit": "dash"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "up to 1/8 tsp",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "½ banana sliced or diced",
+      "raw": "½ banana (sliced or diced)",
       "expected": {
         "item": "banana",
         "measurements": [
@@ -172,18 +172,18 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup fresh berries strawberries, raspberries, blueberries, etc.",
+      "raw": "½ cup fresh berries (strawberries, raspberries, blueberries, etc.)",
       "expected": {
-        "item": "fresh berries strawberries, raspberries, blueberries, etc.",
+        "item": "fresh berries",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "strawberries, raspberries, blueberries, etc.",
         "section": "Berry",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

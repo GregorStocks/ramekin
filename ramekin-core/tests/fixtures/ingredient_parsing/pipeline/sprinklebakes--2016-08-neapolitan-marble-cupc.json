@@ -139,18 +139,18 @@
       }
     },
     {
-      "raw": "3 ounces semisweet chocolate melted and cooled slightly",
+      "raw": "3 ounces semisweet chocolate (melted and cooled slightly)",
       "expected": {
-        "item": "semisweet chocolate melted and cooled slightly",
+        "item": "semisweet chocolate",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "melted and cooled slightly",
         "section": "Marbled Cupcakes",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -207,7 +207,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon strawberry extract or 1/4 teaspoon strawberry flavoring oil",
+      "raw": "1/2 teaspoon strawberry extract (or 1/4 teaspoon strawberry flavoring oil)",
       "expected": {
         "item": "strawberry extract",
         "measurements": [

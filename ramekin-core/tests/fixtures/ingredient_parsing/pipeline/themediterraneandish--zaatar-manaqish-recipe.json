@@ -37,33 +37,33 @@
       }
     },
     {
-      "raw": "2 1/4 tsp active dry yeast one package active dry yeast",
+      "raw": "2 1/4 tsp active dry yeast (one package active dry yeast)",
       "expected": {
-        "item": "active dry yeast one package active dry yeast",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "one package active dry yeast",
         "section": "For Dough",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "3 cups unbleached all-purpose flour more for dusting",
+      "raw": "3 cups unbleached all-purpose flour (more for dusting)",
       "expected": {
-        "item": "unbleached all-purpose flour more",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "for dusting",
+        "note": "more for dusting",
         "section": "For Dough",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -131,11 +131,11 @@
       }
     },
     {
-      "raw": "Fresh garden vegetables tomato, cucumbers, radish",
+      "raw": "Fresh garden vegetables (tomato, cucumbers, radish)",
       "expected": {
-        "item": "Fresh garden vegetables tomato, cucumbers, radish",
+        "item": "Fresh garden vegetables",
         "measurements": [],
-        "note": null,
+        "note": "tomato, cucumbers, radish",
         "section": "For Za'atar Topping",
         "category": "Other"
       }
@@ -151,13 +151,13 @@
       }
     },
     {
-      "raw": "Homemade labneh or feta cheese omit if vegan",
+      "raw": "Homemade labneh or feta cheese (omit if vegan)",
       "expected": {
-        "item": "Homemade labneh or feta cheese omit if vegan",
+        "item": "Homemade labneh or feta cheese",
         "measurements": [],
-        "note": null,
+        "note": "omit if vegan",
         "section": "For Za'atar Topping",
-        "category": "Other"
+        "category": "Cheese"
       }
     }
   ]

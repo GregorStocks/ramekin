@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "4 Tbsp unsalted butter, softened",
+      "raw": "4 Tbsp unsalted butter, (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -116,16 +116,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 sticks, 16 Tbsp butter, softened at room temp",
+      "raw": "2 sticks, (16 Tbsp butter, softened at room temp)",
       "expected": {
-        "item": "16 Tbsp butter",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
           }
         ],
-        "note": "softened at room temp",
+        "note": "16 Tbsp butter, softened at room temp",
         "section": "Ingredients for Spartak Cream",
         "category": "Dairy & Eggs"
       }
@@ -150,16 +150,16 @@
       }
     },
     {
-      "raw": "8 oz package cream cheese, soft at room temp",
+      "raw": "8 oz package cream cheese, (soft at room temp)",
       "expected": {
-        "item": "package cream cheese, soft at room temp",
+        "item": "package cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "soft at room temp",
         "section": "Ingredients for Spartak Cream",
         "category": "Cheese"
       }

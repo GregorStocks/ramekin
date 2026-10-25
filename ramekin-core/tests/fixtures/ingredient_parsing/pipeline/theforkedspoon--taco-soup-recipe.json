@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 medium yellow onions, diced",
+      "raw": "2 medium yellow onions, (diced)",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 red bell pepper, seeded and diced",
+      "raw": "1 red bell pepper, (seeded and diced)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "5 cloves garlic, minced",
+      "raw": "5 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -239,7 +239,7 @@
       }
     },
     {
-      "raw": "1 (15 ounce) can black beans, drained",
+      "raw": "1 (15 ounce) can black beans, (drained)",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -257,7 +257,7 @@
       }
     },
     {
-      "raw": "1 (15 ounce) can red kidney beans, drained",
+      "raw": "1 (15 ounce) can red kidney beans, (drained)",
       "expected": {
         "item": "red kidney beans",
         "measurements": [
@@ -275,7 +275,7 @@
       }
     },
     {
-      "raw": "2 limes, juiced, plus more for serving",
+      "raw": "2 limes, (juiced, plus more for serving)",
       "expected": {
         "item": "lime juice",
         "measurements": [

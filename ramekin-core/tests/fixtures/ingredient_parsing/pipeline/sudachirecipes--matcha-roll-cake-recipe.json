@@ -37,18 +37,18 @@
       }
     },
     {
-      "raw": "20 ml cooking oil neutral flavor like canola etc.",
+      "raw": "20 ml cooking oil (neutral flavor like canola etc.)",
       "expected": {
-        "item": "cooking oil neutral flavor like canola etc.",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "20",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "neutral flavor like canola etc.",
         "section": "Sponge Ingredients",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -131,18 +131,18 @@
       "is_section_header": true
     },
     {
-      "raw": "150 ml heavy cream 36% or higher",
+      "raw": "150 ml heavy cream (36% or higher)",
       "expected": {
-        "item": "heavy cream 36% or higher",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "150",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "36% or higher",
         "section": "Filling and Toppings",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -176,26 +176,26 @@
       }
     },
     {
-      "raw": "12 strawberries half for filling, half for decorating",
+      "raw": "12 strawberries (half for filling, half for decorating)",
       "expected": {
-        "item": "strawberries half for filling, half",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": "for decorating",
+        "note": "half for filling, half for decorating",
         "section": "Filling and Toppings",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "powdered sugar or matcha powder for dusting",
+      "raw": "powdered sugar (or matcha powder for dusting)",
       "expected": {
-        "item": "powdered sugar or matcha powder",
+        "item": "powdered sugar",
         "measurements": [],
-        "note": "for dusting",
+        "note": "or matcha powder for dusting",
         "section": "Filling and Toppings",
         "category": "Baking"
       }

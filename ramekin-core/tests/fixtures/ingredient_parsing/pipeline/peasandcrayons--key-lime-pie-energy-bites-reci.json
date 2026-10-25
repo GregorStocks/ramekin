@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "⅓ cup shredded unsweetened coconut plus extra for topping",
+      "raw": "⅓ cup shredded unsweetened coconut (plus extra for topping)",
       "expected": {
         "item": "shredded unsweetened coconut",
         "measurements": [
@@ -105,7 +105,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1-2 TBSP honey or maple syrup to sweeten if desired",
+      "raw": "1-2 TBSP honey or maple syrup to sweeten (if desired)",
       "expected": {
         "item": "honey or maple syrup to sweeten",
         "measurements": [
@@ -120,7 +120,7 @@
       }
     },
     {
-      "raw": "extra lime zest if desired",
+      "raw": "extra lime zest (if desired)",
       "expected": {
         "item": "extra lime zest",
         "measurements": [],

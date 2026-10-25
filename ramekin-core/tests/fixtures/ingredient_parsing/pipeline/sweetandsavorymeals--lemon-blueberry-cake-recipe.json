@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup unsalted butter softened to room temperature",
+      "raw": "1 cup unsalted butter (softened to room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -37,16 +37,16 @@
       }
     },
     {
-      "raw": "4 large eggs at room temperature",
+      "raw": "4 large eggs (at room temperature)",
       "expected": {
-        "item": "eggs at room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
@@ -142,46 +142,46 @@
       }
     },
     {
-      "raw": "1/2 cup lemon juice from about 3 lemons",
+      "raw": "1/2 cup lemon juice (from about 3 lemons)",
       "expected": {
-        "item": "lemon juice from about 3 lemons",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 3 lemons",
         "section": "Cake Layers",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "2 cups blueberries fresh or frozen - if frozen do NOT Thaw",
+      "raw": "2 cups blueberries (fresh or frozen - if frozen do NOT Thaw)",
       "expected": {
-        "item": "blueberries fresh or frozen - if frozen do NOT Thaw",
+        "item": "blueberries",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "fresh or frozen - if frozen do NOT Thaw",
         "section": "Cake Layers",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon all-purpose flour or cornstarch",
+      "raw": "1 tablespoon all-purpose flour (or cornstarch)",
       "expected": {
-        "item": "all-purpose flour or cornstarch",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or cornstarch",
         "section": "Cake Layers",
         "category": "Baking"
       }
@@ -191,7 +191,7 @@
       "is_section_header": true
     },
     {
-      "raw": "12 ounces full-fat cream cheese softened to room temperature",
+      "raw": "12 ounces full-fat cream cheese (softened to room temperature)",
       "expected": {
         "item": "full-fat cream cheese",
         "measurements": [
@@ -206,7 +206,7 @@
       }
     },
     {
-      "raw": "1 1/2 cup unsalted butter softened to room temperature",
+      "raw": "1 1/2 cup unsalted butter (softened to room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -221,16 +221,16 @@
       }
     },
     {
-      "raw": "4 1/2 - 5 cups confectioners sugar or more if needed",
+      "raw": "4 1/2 - 5 cups confectioners sugar (or more if needed)",
       "expected": {
-        "item": "confectioners sugar or more if needed",
+        "item": "confectioners sugar",
         "measurements": [
           {
             "amount": "4.5-5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or more if needed",
         "section": "Cream Cheese Frosting",
         "category": "Baking"
       }

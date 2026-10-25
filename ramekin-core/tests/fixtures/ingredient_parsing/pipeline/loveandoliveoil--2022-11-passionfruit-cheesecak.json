@@ -60,7 +60,7 @@
       }
     },
     {
-      "raw": "4 tablespoons  / 57 g unsalted butter, melted",
+      "raw": "4 tablespoons / 57 g unsalted butter, (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -83,7 +83,7 @@
       "is_section_header": true
     },
     {
-      "raw": "12 ounces  / 340 g full fat cream cheese, at room temperature",
+      "raw": "12 ounces / 340 g full fat cream cheese, (at room temperature)",
       "expected": {
         "item": "full fat cream cheese",
         "measurements": [
@@ -102,7 +102,7 @@
       }
     },
     {
-      "raw": "½ cup  / 120 g sour cream, at room temperature",
+      "raw": "½ cup / 120 g sour cream, (at room temperature)",
       "expected": {
         "item": "sour cream",
         "measurements": [
@@ -159,7 +159,7 @@
       }
     },
     {
-      "raw": "2 large   eggs, at room temperature",
+      "raw": "2 large eggs, (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [

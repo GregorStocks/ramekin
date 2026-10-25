@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup cooked white beans, drained and rinsed",
+      "raw": "1 cup cooked white beans, (drained and rinsed)",
       "expected": {
         "item": "cooked white beans",
         "measurements": [
@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "3 canned artichokes, halved",
+      "raw": "3 canned artichokes, (halved)",
       "expected": {
         "item": "canned artichokes",
         "measurements": [
@@ -235,7 +235,7 @@
       }
     },
     {
-      "raw": "4 canned artichokes, quartered",
+      "raw": "4 canned artichokes, (quartered)",
       "expected": {
         "item": "canned artichokes",
         "measurements": [
@@ -295,7 +295,7 @@
       }
     },
     {
-      "raw": "Red pepper flakes, optional",
+      "raw": "Red pepper flakes, (optional)",
       "expected": {
         "item": "Red pepper flakes",
         "measurements": [],

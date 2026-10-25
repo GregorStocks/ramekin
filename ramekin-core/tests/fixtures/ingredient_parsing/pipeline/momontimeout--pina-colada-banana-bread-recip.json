@@ -45,21 +45,21 @@
       }
     },
     {
-      "raw": "1 egg room temperature",
+      "raw": "1 egg (room temperature)",
       "expected": {
-        "item": "egg room temperature",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 tbsp butter softened",
+      "raw": "6 tbsp butter (softened)",
       "expected": {
         "item": "butter",
         "measurements": [

@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "half an english cucumber, sliced thin on the bias",
+      "raw": "half an english cucumber, (sliced thin on the bias)",
       "expected": {
         "item": "an english cucumber",
         "measurements": [
@@ -226,7 +226,7 @@
       }
     },
     {
-      "raw": "1-2 jalapeños, sliced thin",
+      "raw": "1-2 jalapeños, (sliced thin)",
       "expected": {
         "item": "jalapeños",
         "measurements": [
@@ -241,11 +241,11 @@
       }
     },
     {
-      "raw": "cilantro and/or mint if you like",
+      "raw": "cilantro (and/or mint if you like)",
       "expected": {
-        "item": "cilantro and/or mint if you like",
+        "item": "cilantro",
         "measurements": [],
-        "note": null,
+        "note": "and/or mint if you like",
         "section": "For the Sandwich",
         "category": "Produce"
       }

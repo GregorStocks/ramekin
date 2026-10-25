@@ -26,20 +26,16 @@
       }
     },
     {
-      "raw": "1 cup plus 2 tablespoons 225g granulated sugar",
+      "raw": "1 cup plus 2 tablespoons (225g granulated sugar)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 cup plus 2 tablespoons",
             "unit": null
-          },
-          {
-            "amount": "225",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "225g granulated sugar",
         "section": "Sugar Cookies",
         "category": "Baking"
       }
@@ -113,61 +109,61 @@
       "is_section_header": true
     },
     {
-      "raw": "3 bags 12 ounces each green candy melting wafers",
+      "raw": "3 bags (12 ounces each green candy melting wafers)",
       "expected": {
-        "item": "12 ounces each green candy melting wafers",
+        "item": "green candy melting wafers",
         "measurements": [
           {
             "amount": "3",
             "unit": "bag"
           }
         ],
-        "note": null,
+        "note": "12 ounces each green candy melting wafers",
         "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "1 bag 12 ounces bright white candy melting wafers",
+      "raw": "1 bag (12 ounces bright white candy melting wafers)",
       "expected": {
-        "item": "12 ounces bright white candy melting wafers",
+        "item": "bright white candy melting wafers",
         "measurements": [
           {
             "amount": "1",
             "unit": "bag"
           }
         ],
-        "note": null,
+        "note": "12 ounces bright white candy melting wafers",
         "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup ready-made frosting or homemade buttercream",
+      "raw": "1/2 cup ready-made frosting (or homemade buttercream)",
       "expected": {
-        "item": "ready-made frosting or homemade buttercream",
+        "item": "ready-made frosting",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or homemade buttercream",
         "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "4 ornate frame candy molds 4×6-inches each",
+      "raw": "4 ornate frame candy molds (4×6-inches each)",
       "expected": {
-        "item": "ornate frame candy molds 4×6-inches each",
+        "item": "ornate frame candy molds",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "4×6-inches each",
         "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
@@ -198,11 +194,11 @@
       }
     },
     {
-      "raw": "Soft bristle art brushes 3-4",
+      "raw": "Soft bristle art brushes (3-4)",
       "expected": {
-        "item": "Soft bristle art brushes 3-4",
+        "item": "Soft bristle art brushes",
         "measurements": [],
-        "note": null,
+        "note": "3-4",
         "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
@@ -218,11 +214,11 @@
       }
     },
     {
-      "raw": "Rubber stamp with script motif new, unused",
+      "raw": "Rubber stamp with script motif (new, unused)",
       "expected": {
-        "item": "Rubber stamp with script motif new, unused",
+        "item": "Rubber stamp with script motif",
         "measurements": [],
-        "note": null,
+        "note": "new, unused",
         "section": "Botanical Decors and Supplies",
         "category": "Other"
       }

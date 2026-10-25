@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2-3 pounds pork tenderloin These are often sold in packs of 2, weighing a combined 2-3 pounds. I cook both at the same time. You can also cook a single pork loin with this recipe.",
+      "raw": "2-3 pounds pork tenderloin (These are often sold in packs of 2, weighing a combined 2-3 pounds. I cook both at the same time. You can also cook a single pork loin with this recipe.)",
       "expected": {
-        "item": "pork tenderloin These are often sold in packs of 2",
+        "item": "pork tenderloin",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "lb"
           }
         ],
-        "note": "weighing a combined 2-3 pounds. I cook both at the same time. You can also cook a single pork loin with this recipe.",
+        "note": "These are often sold in packs of 2, weighing a combined 2-3 pounds. I cook both at the same time. You can also cook a single pork loin with this recipe.",
         "section": "For the Pork Loin",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {

@@ -17,23 +17,23 @@
       }
     },
     {
-      "raw": "2 tablespoon ghee  or oil or butter",
+      "raw": "2 tablespoon ghee (or oil or butter)",
       "expected": {
-        "item": "ghee or oil or butter",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or oil or butter",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 green chili  slit and deseeded (optional)",
+      "raw": "1 green chili, slit and deseeded (optional)",
       "expected": {
-        "item": "green chili slit and deseeded",
+        "item": "green chili, slit and deseeded",
         "measurements": [
           {
             "amount": "1",
@@ -41,13 +41,13 @@
           }
         ],
         "note": "optional",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "2½ cups water to pressure cook or (1¾ cups + 2 tbsps for instant pot) or (3 cups for regular pot, Cut down if not using aged rice)",
+      "raw": "2½ cups water to pressure cook, or (1¾ cups + 2 tbsps for instant pot) or (3 cups for regular pot, Cut down if not using aged rice)",
       "expected": {
-        "item": "water to pressure cook or or",
+        "item": "water to pressure cook, or or",
         "measurements": [
           {
             "amount": "2.5",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "½ to ¾ teaspoon salt  as needed",
+      "raw": "½ to ¾ teaspoon salt (as needed)",
       "expected": {
         "item": "salt",
         "measurements": [

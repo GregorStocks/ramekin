@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 bananas,, sliced and frozen",
+      "raw": "2 bananas,, (sliced and frozen)",
       "expected": {
         "item": "bananas",
         "measurements": [
@@ -63,7 +63,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 kiwi fruit,, peeled and sliced",
+      "raw": "2 kiwi fruit,, (peeled and sliced)",
       "expected": {
         "item": "kiwi fruit",
         "measurements": [

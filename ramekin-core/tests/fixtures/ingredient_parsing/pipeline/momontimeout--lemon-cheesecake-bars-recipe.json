@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 tbsp unsalted butter softened",
+      "raw": "8 tbsp unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -82,18 +82,18 @@
       }
     },
     {
-      "raw": "1 tbsp lemon juice up to 2",
+      "raw": "1 tbsp lemon juice (up to 2)",
       "expected": {
-        "item": "lemon juice up to 2",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "up to 2",
         "section": "Crust",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +101,7 @@
       "is_section_header": true
     },
     {
-      "raw": "16 oz cream cheese softened",
+      "raw": "16 oz cream cheese (softened)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -131,31 +131,31 @@
       }
     },
     {
-      "raw": "2 eggs room temperature",
+      "raw": "2 eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Lemon Cheesecake",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp vanilla extract or lemon extract",
+      "raw": "1 tsp vanilla extract (or lemon extract)",
       "expected": {
-        "item": "vanilla extract or lemon extract",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or lemon extract",
         "section": "Lemon Cheesecake",
         "category": "Baking"
       }

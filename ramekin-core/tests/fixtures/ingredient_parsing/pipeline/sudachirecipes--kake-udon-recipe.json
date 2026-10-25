@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "10 g dried sardines (niboshi) substitute for dried shiitake mushrooms for plant-based diets",
+      "raw": "10 g dried sardines (niboshi) (substitute for dried shiitake mushrooms for plant-based diets)",
       "expected": {
-        "item": "dried sardines substitute for dried shiitake mushrooms for plant-based diets",
+        "item": "dried sardines",
         "measurements": [
           {
             "amount": "10",
             "unit": "g"
           }
         ],
-        "note": "niboshi",
+        "note": "niboshi, substitute for dried shiitake mushrooms for plant-based diets",
         "section": "Dashi Broth",
         "category": "Other"
       }
@@ -146,11 +146,11 @@
       }
     },
     {
-      "raw": "toppings of your choice see in post",
+      "raw": "toppings of your choice (see in post)",
       "expected": {
-        "item": "toppings of your choice see in post",
+        "item": "toppings of your choice",
         "measurements": [],
-        "note": null,
+        "note": "see in post",
         "section": "Contents",
         "category": "Other"
       }

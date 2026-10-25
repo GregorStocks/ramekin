@@ -3,13 +3,17 @@
   "recipe_slug": "easy-overnight-sauerkraut-reci",
   "ingredients": [
     {
-      "raw": "2 medium heads of cabbage, 4lb",
+      "raw": "2 medium heads of cabbage, (4lb)",
       "expected": {
-        "item": "cabbage, 4lb",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium head"
+          },
+          {
+            "amount": "4",
+            "unit": "lb"
           }
         ],
         "note": null,
@@ -154,16 +158,16 @@
       }
     },
     {
-      "raw": "2/3 cup white vinegar, 5%",
+      "raw": "2/3 cup white vinegar, (5%)",
       "expected": {
-        "item": "white vinegar, 5%",
+        "item": "white vinegar",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "5%",
         "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }

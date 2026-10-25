@@ -149,7 +149,7 @@
       }
     },
     {
-      "raw": "1 TBSP lime juice plus extra to taste",
+      "raw": "1 TBSP lime juice (plus extra to taste)",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -209,16 +209,16 @@
       }
     },
     {
-      "raw": "¼ tsp salt or season to taste",
+      "raw": "¼ tsp salt (or season to taste)",
       "expected": {
-        "item": "salt or season",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "to taste",
+        "note": "or season to taste",
         "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }

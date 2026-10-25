@@ -3,9 +3,9 @@
   "recipe_slug": "gobi-manchurian-recipe",
   "ingredients": [
     {
-      "raw": "1 small head (500 grams) cauliflower /gobi (250 grams cleaned florets)",
+      "raw": "1 small head (500 grams) cauliflower, /gobi (250 grams cleaned florets)",
       "expected": {
-        "item": "cauliflower /gobi",
+        "item": "cauliflower, /gobi",
         "measurements": [
           {
             "amount": "1",
@@ -17,11 +17,11 @@
           }
         ],
         "note": "250 grams cleaned florets",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "Oil for deep frying as needed",
+      "raw": "Oil (for deep frying as needed)",
       "expected": {
         "item": "Oil",
         "measurements": [],
@@ -72,9 +72,9 @@
       }
     },
     {
-      "raw": "½ to 1 teaspoon Kashmiri red chili powder or paste (less spicy variety) (optional)",
+      "raw": "½ to 1 teaspoon Kashmiri red chili powder, or paste (less spicy variety) (optional)",
       "expected": {
-        "item": "Kashmiri red chili powder or paste",
+        "item": "Kashmiri red chili powder, or paste",
         "measurements": [
           {
             "amount": "0.5 to 1",
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon black pepper crushed or ground",
+      "raw": "¼ teaspoon black pepper (crushed or ground)",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -151,7 +151,7 @@
       }
     },
     {
-      "raw": "1 tablespoon garlic fine chopped",
+      "raw": "1 tablespoon garlic (fine chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -166,7 +166,7 @@
       }
     },
     {
-      "raw": "½ tablespoon ginger fine chopped",
+      "raw": "½ tablespoon ginger (fine chopped)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -181,7 +181,7 @@
       }
     },
     {
-      "raw": "1 green chili chopped (optional)",
+      "raw": "1 green chili, chopped (optional)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -196,16 +196,16 @@
       }
     },
     {
-      "raw": "⅓ cup onions or spring onions/ scallions fine chopped – green & white separated",
+      "raw": "⅓ cup onions (or spring onions/ scallions fine chopped – green & white separated)",
       "expected": {
-        "item": "onions or spring onions/ scallions",
+        "item": "onions",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "fine chopped - green & white separated",
+        "note": "or spring onions/ scallions fine chopped - green & white separated",
         "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
@@ -316,7 +316,7 @@
       }
     },
     {
-      "raw": "salt as needed",
+      "raw": "salt (as needed)",
       "expected": {
         "item": "salt",
         "measurements": [],
@@ -341,7 +341,7 @@
       }
     },
     {
-      "raw": "½ to ¾ teaspoon black pepper crushed or ground",
+      "raw": "½ to ¾ teaspoon black pepper (crushed or ground)",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -371,7 +371,7 @@
       }
     },
     {
-      "raw": "2 tablespoons spring onion greens chopped for garnish",
+      "raw": "2 tablespoons spring onion greens (chopped for garnish)",
       "expected": {
         "item": "spring onion greens",
         "measurements": [
@@ -380,7 +380,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped, for garnish",
+        "note": "chopped for garnish",
         "section": "To Make Gobi Manchurian Sauce",
         "category": "Other"
       }

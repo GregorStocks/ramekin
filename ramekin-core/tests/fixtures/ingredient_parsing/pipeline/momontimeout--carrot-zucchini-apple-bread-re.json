@@ -3,7 +3,7 @@
   "recipe_slug": "carrot-zucchini-apple-bread-re",
   "ingredients": [
     {
-      "raw": "1 cup unsalted butter melted",
+      "raw": "1 cup unsalted butter (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "3 eggs room temperature",
+      "raw": "3 eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1 cup shredded zucchini unpeeled",
+      "raw": "1 cup shredded zucchini (unpeeled)",
       "expected": {
         "item": "shredded zucchini",
         "measurements": [
@@ -199,21 +199,21 @@
       }
     },
     {
-      "raw": "1 cup apple peeled/diced",
+      "raw": "1 cup apple (peeled/diced)",
       "expected": {
-        "item": "apple peeled/diced",
+        "item": "apple",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "peeled/diced",
+        "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup pecans chopped (optional)",
+      "raw": "1/2 cup pecans, chopped (optional)",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -231,7 +231,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup cream cheese softened (I use light)",
+      "raw": "1/2 cup cream cheese, softened (I use light)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -246,7 +246,7 @@
       }
     },
     {
-      "raw": "1/4 cup unsalted butter softened",
+      "raw": "1/4 cup unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

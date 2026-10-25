@@ -114,7 +114,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 large egg whites,, room temperature",
+      "raw": "4 large egg whites,, (room temperature)",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -159,7 +159,7 @@
       }
     },
     {
-      "raw": "1 1/2 cups palm shortening or butter,, room temperature or slightly chilled",
+      "raw": "1 1/2 cups palm shortening or butter,, (room temperature or slightly chilled)",
       "expected": {
         "item": "palm shortening or butter",
         "measurements": [
@@ -204,16 +204,16 @@
       }
     },
     {
-      "raw": "1 cup finely shredded coconut,, unsweetened",
+      "raw": "1 cup finely shredded coconut,, (unsweetened)",
       "expected": {
-        "item": "finely shredded coconut,, unsweetened",
+        "item": "finely shredded coconut",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "unsweetened",
         "section": "Coconut Amaretto Buttercream",
         "category": "Produce"
       }
@@ -223,7 +223,7 @@
       "is_section_header": true
     },
     {
-      "raw": "13.5 oz full fat coconut milk,, chilled overnight",
+      "raw": "13.5 oz full fat coconut milk,, (chilled overnight)",
       "expected": {
         "item": "full fat coconut milk",
         "measurements": [

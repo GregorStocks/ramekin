@@ -143,31 +143,31 @@
       }
     },
     {
-      "raw": "1 cup blueberries fresh or frozen",
+      "raw": "1 cup blueberries (fresh or frozen)",
       "expected": {
-        "item": "blueberries fresh or frozen",
+        "item": "blueberries",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "fresh or frozen",
+        "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup sliced almonds pre-toasting optional",
+      "raw": "¼ cup sliced almonds (pre-toasting optional)",
       "expected": {
-        "item": "sliced almonds pre-toasting",
+        "item": "sliced almonds",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "optional",
-        "category": "Other"
+        "note": "pre-toasting optional",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

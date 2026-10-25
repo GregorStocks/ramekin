@@ -3,7 +3,7 @@
   "recipe_slug": "potato-latkes-recipe",
   "ingredients": [
     {
-      "raw": "3 pounds  (1.36 kg) russet potatoes, about 5 large",
+      "raw": "3 pounds (1.36 kg) russet potatoes, (about 5 large)",
       "expected": {
         "item": "russet potatoes",
         "measurements": [
@@ -14,6 +14,10 @@
           {
             "amount": "1.36",
             "unit": "kg"
+          },
+          {
+            "amount": "5",
+            "unit": "large"
           }
         ],
         "note": "about 5 large",

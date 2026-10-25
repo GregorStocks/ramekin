@@ -3,16 +3,16 @@
   "recipe_slug": "stuffed-french-toast-with-brie",
   "ingredients": [
     {
-      "raw": "8 slices of bread-brioche white, or French",
+      "raw": "8 slices of bread-brioche (white, or French)",
       "expected": {
-        "item": "bread-brioche white, or French",
+        "item": "bread-brioche",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "white, or French",
         "category": "Other"
       }
     },
@@ -87,12 +87,12 @@
       }
     },
     {
-      "raw": "Brie cheese sliced and rind removed, 4 slices per French toast \"sandwich\"",
+      "raw": "Brie cheese (sliced and rind removed, 4 slices per French toast \"sandwich\")",
       "expected": {
-        "item": "Brie cheese sliced and rind removed, 4 slices per French toast \"sandwich\"",
+        "item": "Brie cheese",
         "measurements": [],
-        "note": null,
-        "category": "Other"
+        "note": "sliced and rind removed, 4 slices per French toast \"sandwich\"",
+        "category": "Cheese"
       }
     },
     {

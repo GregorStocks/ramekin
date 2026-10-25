@@ -56,7 +56,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup carrots, diced",
+      "raw": "1 cup carrots, (diced)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "½ cup celery, diced",
+      "raw": "½ cup celery, (diced)",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "3 cloves  garlic, minced",
+      "raw": "3 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -191,22 +191,22 @@
       }
     },
     {
-      "raw": "1 cup milk, or cream or half-and-half",
+      "raw": "1 cup milk, (or cream or half-and-half)",
       "expected": {
-        "item": "milk, or cream or half-and-half",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or cream or half-and-half",
         "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 cups chicken , cooked and shredded",
+      "raw": "3 cups chicken , (cooked and shredded)",
       "expected": {
         "item": "chicken",
         "measurements": [

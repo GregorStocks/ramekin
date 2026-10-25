@@ -71,16 +71,16 @@
       }
     },
     {
-      "raw": "¾ to 1 teaspoon garam masala  or korma masala",
+      "raw": "¾ to 1 teaspoon garam masala (or korma masala)",
       "expected": {
-        "item": "garam masala or korma masala",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or korma masala",
         "section": "Marinade",
         "category": "Spices & Seasonings"
       }
@@ -150,7 +150,7 @@
       }
     },
     {
-      "raw": "1 cup onions sliced (2 medium yellow onions)",
+      "raw": "1 cup onions, sliced (2 medium yellow onions)",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -165,9 +165,9 @@
       }
     },
     {
-      "raw": "10 whole cashew nuts or almonds (or use 5 each)",
+      "raw": "10 whole cashew nuts, or almonds (or use 5 each)",
       "expected": {
-        "item": "whole cashew nuts or almonds",
+        "item": "whole cashew nuts, or almonds",
         "measurements": [
           {
             "amount": "10",
@@ -274,18 +274,18 @@
       }
     },
     {
-      "raw": "1 to 2  green chilies slit or chopped (optional, Thai/Indian or serrano peppers)",
+      "raw": "1 to 2 green chilies, slit or chopped (optional, Thai/Indian or serrano peppers)",
       "expected": {
-        "item": "green chilies slit or chopped",
+        "item": "green chilies",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "optional, Thai/Indian or serrano peppers",
+        "note": "optional, Thai/Indian or serrano peppers, slit or chopped",
         "section": "For Korma Curry",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 large egg, whisked",
+      "raw": "1 large egg, (whisked)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "2 tablespoon teriyaki sauce, store-bought or homemade",
+      "raw": "2 tablespoon teriyaki sauce, (store-bought or homemade)",
       "expected": {
         "item": "teriyaki sauce",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "½ cup green onion, finely chopped",
+      "raw": "½ cup green onion, (finely chopped)",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "½ cup white onion, minced",
+      "raw": "½ cup white onion, (minced)",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -165,7 +165,7 @@
       }
     },
     {
-      "raw": "¼ cup teriyaki sauce, homemade or store-bought",
+      "raw": "¼ cup teriyaki sauce, (homemade or store-bought)",
       "expected": {
         "item": "teriyaki sauce",
         "measurements": [

@@ -7,43 +7,43 @@
       "is_section_header": true
     },
     {
-      "raw": "water for boiling",
+      "raw": "water (for boiling)",
       "expected": {
-        "item": "water for boiling",
+        "item": "water",
         "measurements": [],
-        "note": null,
+        "note": "for boiling",
         "section": "Dango",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
-      "raw": "100 g glutinous rice flour shiratamako or mochiko",
+      "raw": "100 g glutinous rice flour (shiratamako or mochiko)",
       "expected": {
-        "item": "glutinous rice flour shiratamako or mochiko",
+        "item": "glutinous rice flour",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shiratamako or mochiko",
         "section": "Dango",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "125 g silken tofu + 1-2 tsp extra if dough seems dry",
+      "raw": "125 g silken tofu (+ 1-2 tsp extra if dough seems dry)",
       "expected": {
-        "item": "silken tofu + 1-2 tsp extra if dough seems dry",
+        "item": "silken tofu",
         "measurements": [
           {
             "amount": "125",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "+ 1-2 tsp extra if dough seems dry",
         "section": "Dango",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

@@ -67,16 +67,16 @@
       }
     },
     {
-      "raw": "5 tbsp cold butter, or organic palm shortening for dairy-free",
+      "raw": "5 tbsp cold butter, (or organic palm shortening for dairy-free)",
       "expected": {
-        "item": "cold butter, or organic palm shortening for dairy-free",
+        "item": "cold butter",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or organic palm shortening for dairy-free",
         "section": "Crust",
         "category": "Dairy & Eggs"
       }
@@ -146,7 +146,7 @@
       }
     },
     {
-      "raw": "8 oz frozen spinach, thawed and drained",
+      "raw": "8 oz frozen spinach, (thawed and drained)",
       "expected": {
         "item": "frozen spinach",
         "measurements": [
@@ -161,13 +161,17 @@
       }
     },
     {
-      "raw": "3-4 whole artichoke hearts, about 1/2 14-ounce can, drained and diced",
+      "raw": "3-4 whole artichoke hearts, (about 1/2 14-ounce can, drained and diced)",
       "expected": {
         "item": "whole artichoke hearts",
         "measurements": [
           {
             "amount": "3-4",
             "unit": null
+          },
+          {
+            "amount": "0.5",
+            "unit": "14-ounce can"
           }
         ],
         "note": "about 1/2 14-ounce can, drained and diced",
@@ -176,7 +180,7 @@
       }
     },
     {
-      "raw": "2 medium shallots, finely diced and sauteed",
+      "raw": "2 medium shallots, (finely diced and sauteed)",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -206,7 +210,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste",
+      "raw": "salt and pepper, (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],

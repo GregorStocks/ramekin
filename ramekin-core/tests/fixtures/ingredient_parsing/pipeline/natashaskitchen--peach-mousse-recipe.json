@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 lb ripe peaches, peeled, diced",
+      "raw": "1 lb ripe peaches, (peeled, diced)",
       "expected": {
         "item": "ripe peaches",
         "measurements": [
@@ -52,16 +52,16 @@
       }
     },
     {
-      "raw": "1 Tbsp unflavored gelatin, I used Knox brand",
+      "raw": "1 Tbsp unflavored gelatin, (I used Knox brand)",
       "expected": {
-        "item": "unflavored gelatin, I used Knox brand",
+        "item": "unflavored gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used Knox brand",
         "section": "For the Peach Mousse",
         "category": "Baking"
       }
@@ -101,7 +101,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 ripe peach, peeled and thinly sliced",
+      "raw": "1 ripe peach, (peeled and thinly sliced)",
       "expected": {
         "item": "ripe peach",
         "measurements": [
@@ -146,7 +146,7 @@
       }
     },
     {
-      "raw": "mint leaves, optional",
+      "raw": "mint leaves, (optional)",
       "expected": {
         "item": "mint leaves",
         "measurements": [],

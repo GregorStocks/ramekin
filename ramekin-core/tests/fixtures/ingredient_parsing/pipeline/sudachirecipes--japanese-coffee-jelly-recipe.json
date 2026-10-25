@@ -12,31 +12,31 @@
       }
     },
     {
-      "raw": "15 g gelatin powder or",
+      "raw": "15 g gelatin powder (or)",
       "expected": {
-        "item": "gelatin powder or",
+        "item": "gelatin powder",
         "measurements": [
           {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or",
         "category": "Other"
       }
     },
     {
-      "raw": "15 g agar agar powder or",
+      "raw": "15 g agar agar powder (or)",
       "expected": {
-        "item": "agar agar powder or",
+        "item": "agar agar powder",
         "measurements": [
           {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "or",
+        "category": "Baking"
       }
     },
     {
@@ -58,9 +58,9 @@
       "is_section_header": true
     },
     {
-      "raw": "500 ml water if using espresso shots, reduce the water by 30ml for each shot used (see note)",
+      "raw": "500 ml water, if using espresso shots, reduce the water by 30ml for each shot used (see note)",
       "expected": {
-        "item": "water if using espresso shots, reduce the water by 30ml for each shot used",
+        "item": "water, if using espresso shots, reduce the water by 30ml for each shot used",
         "measurements": [
           {
             "amount": "500",
@@ -69,26 +69,26 @@
         ],
         "note": "see note",
         "section": "Other Ingredients",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
-      "raw": "2 tbsp instant coffee powder preferably instant espresso powder or espresso shots",
+      "raw": "2 tbsp instant coffee powder (preferably instant espresso powder or espresso shots)",
       "expected": {
-        "item": "instant coffee powder preferably instant espresso powder or espresso shots",
+        "item": "instant coffee powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "preferably instant espresso powder or espresso shots",
         "section": "Other Ingredients",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
-      "raw": "2-3 tbsp sugar or to taste",
+      "raw": "2-3 tbsp sugar (or to taste)",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -103,11 +103,11 @@
       }
     },
     {
-      "raw": "toppings of your choice cream, ice cream, flavored syrups, chopped nuts etc",
+      "raw": "toppings of your choice (cream, ice cream, flavored syrups, chopped nuts etc)",
       "expected": {
-        "item": "toppings of your choice cream, ice cream, flavored syrups",
+        "item": "toppings of your choice",
         "measurements": [],
-        "note": "chopped nuts etc",
+        "note": "cream, ice cream, flavored syrups, chopped nuts etc",
         "section": "Other Ingredients",
         "category": "Other"
       }

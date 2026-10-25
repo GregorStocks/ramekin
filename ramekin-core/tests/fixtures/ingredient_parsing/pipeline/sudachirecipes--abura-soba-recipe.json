@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "2 pinches Chinese-style chicken bouillon powder optional",
+      "raw": "2 pinches Chinese-style chicken bouillon powder (optional)",
       "expected": {
         "item": "Chinese-style chicken bouillon powder",
         "measurements": [
@@ -146,18 +146,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2 portions ramen noodles fresh or spaghetti hack",
+      "raw": "2 portions ramen noodles (fresh or spaghetti hack)",
       "expected": {
-        "item": "ramen noodles fresh or spaghetti hack",
+        "item": "ramen noodles",
         "measurements": [
           {
             "amount": "2",
             "unit": "portion"
           }
         ],
-        "note": null,
+        "note": "fresh or spaghetti hack",
         "section": "Abura Soba",
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -206,33 +206,33 @@
       }
     },
     {
-      "raw": "4 pieces pork chashu or easy oven baked alternative",
+      "raw": "4 pieces pork chashu (or easy oven baked alternative)",
       "expected": {
-        "item": "pork chashu or easy oven baked alternative",
+        "item": "pork chashu",
         "measurements": [
           {
             "amount": "4",
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "or easy oven baked alternative",
         "section": "Abura Soba",
         "category": "Other"
       }
     },
     {
-      "raw": "2 ramen egg or soft boiled egg",
+      "raw": "2 ramen egg (or soft boiled egg)",
       "expected": {
-        "item": "ramen egg or soft boiled egg",
+        "item": "ramen egg",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or soft boiled egg",
         "section": "Abura Soba",
-        "category": "Dairy & Eggs"
+        "category": "Other"
       }
     },
     {
@@ -246,7 +246,7 @@
       }
     },
     {
-      "raw": "narutomaki fish cake optional",
+      "raw": "narutomaki fish cake (optional)",
       "expected": {
         "item": "narutomaki fish cake",
         "measurements": [],
@@ -256,33 +256,33 @@
       }
     },
     {
-      "raw": "roasted seaweed for sushi (nori) to garnish",
+      "raw": "roasted seaweed for sushi (nori) (to garnish)",
       "expected": {
-        "item": "roasted seaweed for sushi to garnish",
+        "item": "roasted seaweed for sushi",
         "measurements": [],
-        "note": "nori",
+        "note": "nori, to garnish",
         "section": "Abura Soba",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "chili oil (rayu) to garnish",
+      "raw": "chili oil (rayu) (to garnish)",
       "expected": {
-        "item": "chili oil to garnish",
+        "item": "chili oil",
         "measurements": [],
-        "note": "rayu",
+        "note": "rayu, to garnish",
         "section": "Abura Soba",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "rice vinegar to garnish",
+      "raw": "rice vinegar (to garnish)",
       "expected": {
-        "item": "rice vinegar to garnish",
+        "item": "rice vinegar",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "Abura Soba",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     }
   ]

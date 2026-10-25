@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "24   Oreo cookies, crushed into crumbs",
+      "raw": "24 Oreo cookies, (crushed into crumbs)",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "3 tablespoons   butter, melted and cooled",
+      "raw": "3 tablespoons butter, (melted and cooled)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -41,7 +41,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
+      "raw": "8 ounces (226.8 g) cream cheese, (at room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -132,7 +132,7 @@
       }
     },
     {
-      "raw": "8   Fun Size Butterfinger candy bars, coarsely chopped",
+      "raw": "8 Fun Size Butterfinger candy bars, (coarsely chopped)",
       "expected": {
         "item": "Fun Size Butterfinger candy bars",
         "measurements": [
@@ -180,7 +180,7 @@
       }
     },
     {
-      "raw": "2   Fun Size Butterfinger candy bars, coarsely chopped",
+      "raw": "2 Fun Size Butterfinger candy bars, (coarsely chopped)",
       "expected": {
         "item": "Fun Size Butterfinger candy bars",
         "measurements": [

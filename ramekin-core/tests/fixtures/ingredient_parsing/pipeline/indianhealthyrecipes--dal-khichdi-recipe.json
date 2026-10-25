@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 bay leaf  or 1 sprig of curry leaves (optional)",
+      "raw": "1 bay leaf, or 1 sprig of curry leaves (optional)",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -45,21 +45,21 @@
       }
     },
     {
-      "raw": "¾ to 1 teaspoon ginger grated or ginger paste (1 inch piece)",
+      "raw": "¾ to 1 teaspoon ginger, grated or ginger paste (1 inch piece)",
       "expected": {
-        "item": "ginger grated or ginger paste",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "1 inch piece",
-        "category": "Other"
+        "note": "1 inch piece, grated or ginger paste",
+        "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup onion finely chopped (1 very small, optional)",
+      "raw": "¼ cup onion, finely chopped (1 very small, optional)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -73,23 +73,23 @@
       }
     },
     {
-      "raw": "1 green chili slit or ½ tsp red chili powder",
+      "raw": "1 green chili (slit or ½ tsp red chili powder)",
       "expected": {
-        "item": "green chili slit",
+        "item": "green chili",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 1/2 tsp red chili powder",
-        "category": "Other"
+        "note": "slit or 1/2 tsp red chili powder",
+        "category": "Produce"
       }
     },
     {
-      "raw": "½ cup tomatoes deseeded & fine chopped or pureed (1 medium)",
+      "raw": "½ cup tomatoes, deseeded & fine chopped or pureed (1 medium)",
       "expected": {
-        "item": "tomatoes deseeded & fine chopped or pureed",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "0.5",
@@ -100,8 +100,8 @@
             "unit": "medium"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "deseeded & fine chopped or pureed",
+        "category": "Produce"
       }
     },
     {
@@ -189,7 +189,7 @@
       }
     },
     {
-      "raw": "½ tablespoon ghee for topping",
+      "raw": "½ tablespoon ghee (for topping)",
       "expected": {
         "item": "ghee",
         "measurements": [
@@ -207,7 +207,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 medium carrot cubed",
+      "raw": "1 medium carrot (cubed)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -222,7 +222,7 @@
       }
     },
     {
-      "raw": "8 french beans cut to 1 inch length",
+      "raw": "8 french beans (cut to 1 inch length)",
       "expected": {
         "item": "french beans",
         "measurements": [
@@ -237,7 +237,7 @@
       }
     },
     {
-      "raw": "1 small potato cubed",
+      "raw": "1 small potato (cubed)",
       "expected": {
         "item": "potato",
         "measurements": [

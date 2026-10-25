@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pound ground beef, 80/20 ground chuck recommended",
+      "raw": "1 pound ground beef, (80/20 ground chuck recommended)",
       "expected": {
         "item": "ground beef",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "1 large yellow onion, sliced",
+      "raw": "1 large yellow onion, (sliced)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "8 ounces baby portabella mushrooms, sliced",
+      "raw": "8 ounces baby portabella mushrooms, (sliced)",
       "expected": {
         "item": "baby portabella mushrooms",
         "measurements": [
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic, minced",
+      "raw": "2 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -304,22 +304,22 @@
       }
     },
     {
-      "raw": "1 tablespoon  olive oil, or butter",
+      "raw": "1 tablespoon olive oil, (or butter)",
       "expected": {
-        "item": "olive oil, or butter",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or butter",
         "section": "For the Eggs",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "salt and black pepper, to taste",
+      "raw": "salt and black pepper, (to taste)",
       "expected": {
         "item": "salt and black pepper",
         "measurements": [],

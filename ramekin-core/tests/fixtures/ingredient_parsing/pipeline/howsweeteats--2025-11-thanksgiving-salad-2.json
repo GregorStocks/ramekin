@@ -68,9 +68,9 @@
       }
     },
     {
-      "raw": "¼ cup roasted, salted pepitas",
+      "raw": "¼ cup roasted, (salted pepitas)",
       "expected": {
-        "item": "roasted, salted pepitas",
+        "item": "roasted salted pepitas",
         "measurements": [
           {
             "amount": "0.25",
@@ -78,7 +78,7 @@
           }
         ],
         "note": null,
-        "category": "Snacks"
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "1 garlic clove, finely minced or pressed",
+      "raw": "1 garlic clove, (finely minced or pressed)",
       "expected": {
         "item": "garlic clove",
         "measurements": [

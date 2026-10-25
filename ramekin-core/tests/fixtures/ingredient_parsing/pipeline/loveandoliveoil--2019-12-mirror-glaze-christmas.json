@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "2 tablespoons  / 28 g butter, cut into small pieces",
+      "raw": "2 tablespoons / 28 g butter, (cut into small pieces)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -98,7 +98,7 @@
       }
     },
     {
-      "raw": "12 g   caramelized white chocolate, like Valhrona dulcey, optional",
+      "raw": "12 g caramelized white chocolate, (like Valhrona dulcey, optional)",
       "expected": {
         "item": "caramelized white chocolate",
         "measurements": [
@@ -155,7 +155,7 @@
       }
     },
     {
-      "raw": "1   large egg yolk, at room temperature",
+      "raw": "1 large egg yolk, (at room temperature)",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -295,7 +295,7 @@
       }
     },
     {
-      "raw": "5 tablespoons  / 70 g cold unsalted butter, cut into cubes",
+      "raw": "5 tablespoons / 70 g cold unsalted butter, (cut into cubes)",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
@@ -314,7 +314,7 @@
       }
     },
     {
-      "raw": "1 to 2 teaspoons   whole milk, as needed",
+      "raw": "1 to 2 teaspoons whole milk, (as needed)",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -348,9 +348,9 @@
       }
     },
     {
-      "raw": "¼ cup  / 60 g caramel, store bought or measured out from the batch you made earlier",
+      "raw": "¼ cup / 60 g caramel, (store bought or measured out from the batch you made earlier)",
       "expected": {
-        "item": "caramel, store bought or measured out from the batch you made earlier",
+        "item": "caramel",
         "measurements": [
           {
             "amount": "0.25",
@@ -361,7 +361,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "store bought or measured out from the batch you made earlier",
         "section": "Caramel Mousse",
         "category": "Condiments & Sauces"
       }
@@ -386,7 +386,7 @@
       }
     },
     {
-      "raw": "1   large egg yolk, at room temperature",
+      "raw": "1 large egg yolk, (at room temperature)",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -401,7 +401,7 @@
       }
     },
     {
-      "raw": "40 g   caramelized white chocolate (like Valhrona dulcey or regular white chocolate), finely chopped",
+      "raw": "40 g caramelized white chocolate (like Valhrona dulcey or regular white chocolate), (finely chopped)",
       "expected": {
         "item": "caramelized white chocolate",
         "measurements": [
@@ -416,7 +416,7 @@
       }
     },
     {
-      "raw": "⅔ cup  / 160 g heavy whipping cream, cold",
+      "raw": "⅔ cup / 160 g heavy whipping cream, (cold)",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
@@ -530,7 +530,7 @@
       }
     },
     {
-      "raw": "7 oz  / 200 g good quality white chocolate , finely chopped",
+      "raw": "7 oz / 200 g good quality white chocolate , (finely chopped)",
       "expected": {
         "item": "white chocolate",
         "measurements": [
@@ -559,7 +559,7 @@
       }
     },
     {
-      "raw": "6 pieces   Rolo candies, unwrapped and dusted with gold luster, for decoration",
+      "raw": "6 pieces Rolo candies, (unwrapped and dusted with gold luster, for decoration)",
       "expected": {
         "item": "Rolo candies",
         "measurements": [
