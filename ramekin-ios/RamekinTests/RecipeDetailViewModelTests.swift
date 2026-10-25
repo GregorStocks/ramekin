@@ -185,66 +185,6 @@ final class RecipeDetailViewModelTests: XCTestCase {
         viewModel.setRecipeScale(1_000_000)
         XCTAssertEqual(viewModel.recipeScale, 1_000_000)
     }
-
-    @MainActor
-    func testApplyEnrichmentUpdatesRecipeAndClearsPreview() async {
-        let recipeId = UUID()
-        let original = makeRecipe(id: recipeId, title: "Original")
-        let updated = makeRecipe(id: recipeId, title: "Updated")
-        let modified = RecipeContent(
-            ingredients: [],
-            instructions: "Updated instructions",
-            tags: ["dinner"],
-            title: "Updated"
-        )
-        var updateRequest: UpdateRecipeRequest?
-        var loadCount = 0
-
-        let viewModel = RecipeDetailViewModel(
-            recipeId: recipeId,
-            api: makeAPI(
-                getRecipe: { _, _ in
-                    loadCount += 1
-                    return loadCount == 1 ? original : updated
-                },
-                updateRecipe: { id, request in
-                    XCTAssertEqual(id, recipeId)
-                    updateRequest = request
-                }
-            )
-        )
-        viewModel.enrichResult = modified
-
-        await viewModel.loadRecipe()
-        await viewModel.applyEnrichment(modified)
-
-        XCTAssertEqual(updateRequest?.title, "Updated")
-        XCTAssertEqual(updateRequest?.instructions, "Updated instructions")
-        XCTAssertEqual(updateRequest?.expectedVersionId, original.versionId)
-        XCTAssertEqual(viewModel.recipe?.title, "Updated")
-        XCTAssertNil(viewModel.enrichResult)
-    }
-
-    @MainActor
-    func testFailedEnrichmentApplyReturnsErrorAndKeepsReview() async {
-        let recipeId = UUID()
-        let original = makeRecipe(id: recipeId, versionId: UUID())
-        let modified = RecipeContent(ingredients: [], instructions: "New", title: "New")
-        let viewModel = RecipeDetailViewModel(
-            recipeId: recipeId,
-            api: makeAPI(
-                getRecipe: { _, _ in original },
-                updateRecipe: { _, _ in throw URLError(.timedOut) }
-            )
-        )
-        viewModel.enrichResult = modified
-
-        await viewModel.loadRecipe()
-        let failure = await viewModel.applyEnrichment(modified)
-
-        XCTAssertNotNil(failure, "The review sheet needs the reason to show it")
-        XCTAssertNotNil(viewModel.enrichResult, "The review stays open to retry")
-    }
 }
 
 private enum UnexpectedAPICall: Error {
@@ -258,8 +198,7 @@ private func makeAPI(
     generatePhoto: @escaping (UUID) async throws -> GeneratePhotoResponse = { _ in throw UnexpectedAPICall.unexpected },
     getRecipe: @escaping (UUID, UUID?) async throws -> RecipeResponse = { _, _ in throw UnexpectedAPICall.unexpected },
     listVersions: @escaping (UUID) async throws -> VersionListResponse = { _ in throw UnexpectedAPICall.unexpected },
-    revertRecipe: @escaping (UUID, RecipeResponse, UUID) async throws -> Void = { _, _, _ in throw UnexpectedAPICall.unexpected },
-    updateRecipe: @escaping (UUID, UpdateRecipeRequest) async throws -> Void = { _, _ in throw UnexpectedAPICall.unexpected }
+    revertRecipe: @escaping (UUID, RecipeResponse, UUID) async throws -> Void = { _, _, _ in throw UnexpectedAPICall.unexpected }
 ) -> RecipeDetailViewAPIClient {
     RecipeDetailViewAPIClient(
         deleteRecipe: deleteRecipe,
@@ -268,8 +207,7 @@ private func makeAPI(
         generatePhoto: generatePhoto,
         getRecipe: getRecipe,
         listVersions: listVersions,
-        revertRecipe: revertRecipe,
-        updateRecipe: updateRecipe
+        revertRecipe: revertRecipe
     )
 }
 

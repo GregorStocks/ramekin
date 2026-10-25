@@ -10,7 +10,6 @@ struct RecipeDetailViewAPIClient {
     var getRecipe: (UUID, UUID?) async throws -> RecipeResponse
     var listVersions: (UUID) async throws -> VersionListResponse
     var revertRecipe: (UUID, RecipeResponse, UUID) async throws -> Void
-    var updateRecipe: (UUID, UpdateRecipeRequest) async throws -> Void
 
     static let live = RecipeDetailViewAPIClient(
         deleteRecipe: { try await RecipesAPI.deleteRecipe(id: $0) },
@@ -40,8 +39,7 @@ struct RecipeDetailViewAPIClient {
         generatePhoto: { try await RecipesAPI.generatePhoto(id: $0) },
         getRecipe: { try await RecipesAPI.getRecipe(id: $0, versionId: $1) },
         listVersions: { try await RecipesAPI.listVersions(id: $0) },
-        revertRecipe: { try await RecipeVersionSupport.revertRecipe(id: $0, from: $1, expectedVersionId: $2) },
-        updateRecipe: { try await RecipesAPI.updateRecipe(id: $0, updateRecipeRequest: $1) }
+        revertRecipe: { try await RecipeVersionSupport.revertRecipe(id: $0, from: $1, expectedVersionId: $2) }
     )
 }
 
@@ -68,7 +66,6 @@ final class RecipeDetailViewModel: ObservableObject {
     @Published var showingReNormalize = false
     @Published var showingEdit = false
     @Published var showingCompareSheet = false
-    @Published var enrichResult: RecipeContent?
     @Published var comparedOlderVersion: RecipeResponse?
     @Published var comparedNewerVersion: RecipeResponse?
     @Published var showingDeleteConfirmation = false
@@ -91,10 +88,6 @@ final class RecipeDetailViewModel: ObservableObject {
 }
 
 extension RecipeDetailViewModel {
-    func submitUpdate(_ request: UpdateRecipeRequest) async throws {
-        try await api.updateRecipe(recipeId, request)
-    }
-
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
             displayedVersionId: recipe?.versionId,

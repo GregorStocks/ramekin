@@ -1,25 +1,40 @@
 import SwiftUI
 
-struct ReNormalizeAPIClient {
+struct ProposalJobAPIClient {
     var listOps: (UUID) async throws -> NormalizeOpsResponse
     var start: (UUID, [String]) async throws -> NormalizeJobResponse
+    var startEdit: (UUID, String, [UUID]) async throws -> NormalizeJobResponse
     var getScrape: (UUID) async throws -> ScrapeJobResponse
     var getProposal: (UUID, UUID) async throws -> NormalizeProposalResponse
     var accept: (UUID, UUID) async throws -> AcceptNormalizeResponse
 
-    static let live = ReNormalizeAPIClient(
+    static let live = ProposalJobAPIClient(
         listOps: { try await NormalizeAPI.listNormalizeOps(recipeId: $0) },
         start: { try await NormalizeAPI.normalizeRecipe(id: $0, normalizeRequest: NormalizeRequest(ops: $1)) },
+        startEdit: { recipeId, instruction, photoIds in
+            try await EditRecipeAPI.editRecipeWithAi(
+                id: recipeId,
+                editRecipeRequest: EditRecipeRequest(instruction: instruction, photoIds: photoIds)
+            )
+        },
         getScrape: { try await ScrapeAPI.getScrape(id: $0) },
         getProposal: { try await NormalizeAPI.getNormalizeProposal(id: $0, jobId: $1) },
         accept: { try await NormalizeAPI.acceptNormalizeProposal(id: $0, jobId: $1) }
     )
 }
 
-/// Re-normalize one recipe: pick ops, run them as a job, then review the
-/// proposed version against the one it started from.
+/// What a proposal job does: normalize ops the user picks, or an Edit with
+/// AI run on the user's instruction, with the recipe's photos as context.
+enum ProposalJobMode: Equatable {
+    case normalize
+    case edit(photoIds: [UUID])
+}
+
+/// Re-normalize or Edit with AI on one recipe: pick ops (or describe the
+/// change), run them as a job, then review the proposed version against the
+/// one it started from.
 @MainActor
-final class ReNormalizeViewModel: ObservableObject {
+final class ProposalJobViewModel: ObservableObject {
     enum Phase: Equatable {
         case loading
         case choose
@@ -29,7 +44,9 @@ final class ReNormalizeViewModel: ObservableObject {
     }
 
     let recipeId: UUID
+    let mode: ProposalJobMode
     @Published var ops: [NormalizeOpInfo] = []
+    @Published var instruction = ""
     @Published var selected: Set<String> = []
     @Published var phase: Phase = .loading
     @Published var steps: [StepState] = []
@@ -39,11 +56,21 @@ final class ReNormalizeViewModel: ObservableObject {
     private(set) var jobId: UUID?
     var pollIntervalNanoseconds: UInt64 = 1_000_000_000
 
-    private let api: ReNormalizeAPIClient
+    private let api: ProposalJobAPIClient
 
-    init(recipeId: UUID, api: ReNormalizeAPIClient = .live) {
+    init(recipeId: UUID, mode: ProposalJobMode, api: ProposalJobAPIClient = .live) {
         self.recipeId = recipeId
+        self.mode = mode
         self.api = api
+    }
+
+    var canRun: Bool {
+        switch mode {
+        case .normalize:
+            return !effectiveOps.isEmpty
+        case .edit:
+            return !instruction.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
     }
 
     var effectiveOps: [String] {
@@ -78,8 +105,12 @@ final class ReNormalizeViewModel: ObservableObject {
     }
 
     func load() async {
-        phase = .loading
         error = nil
+        if case .edit = mode {
+            phase = .choose
+            return
+        }
+        phase = .loading
         do {
             let response = try await api.listOps(recipeId)
             ops = response.ops
@@ -96,18 +127,28 @@ final class ReNormalizeViewModel: ObservableObject {
         selected = NormalizeSelection.toggle(ops, selected: selected, id: id)
     }
 
-    /// Starts a job with the checked ops and follows it to its proposal.
+    private func startJob() async throws -> UUID {
+        switch mode {
+        case .normalize:
+            return try await api.start(recipeId, effectiveOps).jobId
+        case .edit(let photoIds):
+            let instruction = instruction.trimmingCharacters(in: .whitespacesAndNewlines)
+            return try await api.startEdit(recipeId, instruction, photoIds).jobId
+        }
+    }
+
+    /// Starts the job and follows it to its proposal.
     func run() async {
         isBusy = true
         error = nil
         let jobId: UUID
         do {
-            jobId = try await api.start(recipeId, effectiveOps).jobId
+            jobId = try await startJob()
         } catch is CancellationError {
             isBusy = false
             return
         } catch {
-            self.error = APIErrorFormatter.userMessage(from: error, fallback: "Failed to start normalizing")
+            self.error = APIErrorFormatter.userMessage(from: error, fallback: "Failed to start")
             isBusy = false
             return
         }
@@ -117,7 +158,7 @@ final class ReNormalizeViewModel: ObservableObject {
         phase = .running
 
         do {
-            // AI ops can be slow, so there's no deadline; closing the sheet
+            // AI can be slow, so there's no deadline; closing the sheet
             // cancels the task.
             while true {
                 try Task.checkCancellation()
@@ -129,7 +170,7 @@ final class ReNormalizeViewModel: ObservableObject {
                     return
                 }
                 if job.status == "failed" {
-                    phase = .failed(job.error ?? "Normalizing failed")
+                    phase = .failed(job.error ?? "The job failed")
                     return
                 }
                 try await Task.sleep(nanoseconds: pollIntervalNanoseconds)
@@ -137,7 +178,7 @@ final class ReNormalizeViewModel: ObservableObject {
         } catch is CancellationError {
             return
         } catch {
-            phase = .failed(APIErrorFormatter.userMessage(from: error, fallback: "Lost track of the normalize job"))
+            phase = .failed(APIErrorFormatter.userMessage(from: error, fallback: "Lost track of the job"))
         }
     }
 
@@ -159,8 +200,8 @@ final class ReNormalizeViewModel: ObservableObject {
     }
 }
 
-struct ReNormalizeSheet: View {
-    @StateObject private var viewModel: ReNormalizeViewModel
+struct ProposalJobSheet: View {
+    @StateObject private var viewModel: ProposalJobViewModel
     @Binding var isPresented: Bool
     /// The proposal was saved as the recipe's new version.
     let onAccepted: () async -> Void
@@ -168,11 +209,12 @@ struct ReNormalizeSheet: View {
 
     init(
         recipeId: UUID,
+        mode: ProposalJobMode,
         isPresented: Binding<Bool>,
-        api: ReNormalizeAPIClient = .live,
+        api: ProposalJobAPIClient = .live,
         onAccepted: @escaping () async -> Void
     ) {
-        _viewModel = StateObject(wrappedValue: ReNormalizeViewModel(recipeId: recipeId, api: api))
+        _viewModel = StateObject(wrappedValue: ProposalJobViewModel(recipeId: recipeId, mode: mode, api: api))
         _isPresented = isPresented
         self.onAccepted = onAccepted
     }
@@ -187,7 +229,7 @@ struct ReNormalizeSheet: View {
                 }
                 content
             }
-            .navigationTitle("Re-normalize")
+            .navigationTitle(viewModel.mode == .normalize ? "Re-normalize" : "Edit with AI")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { toolbar }
             .interactiveDismissDisabled(viewModel.isBusy)
@@ -203,6 +245,21 @@ struct ReNormalizeSheet: View {
         case .loading:
             Section {
                 ProgressView().frame(maxWidth: .infinity)
+            }
+        case .choose where viewModel.mode != .normalize:
+            Section("What would you like to change?") {
+                TextField(
+                    "e.g., make this vegan, convert to grams, cut it to 500 kcal a serving…",
+                    text: $viewModel.instruction,
+                    axis: .vertical
+                )
+                .lineLimit(2...5)
+                .disabled(viewModel.isBusy)
+            }
+            Section {
+                Text("The AI looks up ingredient weights and calories as it works. You review the result before it's saved.")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
             }
         case .choose:
             Section {
@@ -222,6 +279,11 @@ struct ReNormalizeSheet: View {
                 }
             }
         case .review:
+            if let summary = viewModel.proposal?.summary, !summary.isEmpty {
+                Section("Summary") {
+                    Text(summary)
+                }
+            }
             if viewModel.photosChange {
                 Section {
                     Text("The recipe's photos change.")
@@ -317,7 +379,7 @@ struct ReNormalizeSheet: View {
                 Button("Run") {
                     runTask = Task { await viewModel.run() }
                 }
-                .disabled(viewModel.effectiveOps.isEmpty || viewModel.isBusy)
+                .disabled(!viewModel.canRun || viewModel.isBusy)
             case .review where viewModel.hasChanges:
                 if viewModel.isBusy {
                     ProgressView().accessibilityLabel("Saving")

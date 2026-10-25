@@ -70,7 +70,7 @@ pub const TAG_VOCABULARY: &[&str] = &[
 ];
 
 /// Recipe edit cases: a snapshot and an instruction that suits it.
-const EDIT_CASES: [(&str, &str); 10] = [
+const EDIT_CASES: [(&str, &str); 13] = [
     (
         "americastestkitchen-com_recipes-5027-best-beef-stew",
         "Make this vegetarian.",
@@ -110,6 +110,19 @@ const EDIT_CASES: [(&str, &str); 10] = [
     (
         "smittenkitchen-com_2007-11-curried-lentils-and-sweet-potatoes",
         "Split the instructions into short numbered steps.",
+    ),
+    // These need the tools: catalog weights and calories, and scaling.
+    (
+        "altonbrown-com_recipes-semi-instant-pancake-mix",
+        "Convert the dry ingredients to grams.",
+    ),
+    (
+        "americastestkitchen-com_recipes-8564-best-ground-beef-chili",
+        "It serves 8. Add a note with the calories per serving.",
+    ),
+    (
+        "smittenkitchen-com_2008-11-cottage-cheese-pancakes",
+        "Make enough for 3 people; it makes about 15 pancakes, which feeds 5.",
     ),
 ];
 

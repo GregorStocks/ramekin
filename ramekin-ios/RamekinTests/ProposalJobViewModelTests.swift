@@ -1,7 +1,7 @@
 import XCTest
 @testable import Ramekin
 
-final class ReNormalizeViewModelTests: XCTestCase {
+final class ProposalJobViewModelTests: XCTestCase {
     @MainActor
     func testRunFollowsTheJobToItsProposalAndAcceptSavesIt() async {
         let recipeId = UUID()
@@ -12,9 +12,10 @@ final class ReNormalizeViewModelTests: XCTestCase {
         let base = makeNormalized(title: "Soup!!! The Best")
         let proposed = makeNormalized(title: "Soup")
 
-        let viewModel = ReNormalizeViewModel(
+        let viewModel = ProposalJobViewModel(
             recipeId: recipeId,
-            api: ReNormalizeAPIClient(
+            mode: .normalize,
+            api: ProposalJobAPIClient(
                 listOps: { id in
                     XCTAssertEqual(id, recipeId)
                     return NormalizeOpsResponse(ops: normalizeTestOps)
@@ -24,6 +25,7 @@ final class ReNormalizeViewModelTests: XCTestCase {
                     startedOps = ops
                     return NormalizeJobResponse(jobId: jobId, status: "pending")
                 },
+                startEdit: { _, _, _ in throw URLError(.badServerResponse) },
                 getScrape: { id in
                     XCTAssertEqual(id, jobId)
                     let status = statuses.removeFirst()
@@ -72,11 +74,13 @@ final class ReNormalizeViewModelTests: XCTestCase {
     @MainActor
     func testFailedJobShowsItsError() async {
         let jobId = UUID()
-        let viewModel = ReNormalizeViewModel(
+        let viewModel = ProposalJobViewModel(
             recipeId: UUID(),
-            api: ReNormalizeAPIClient(
+            mode: .normalize,
+            api: ProposalJobAPIClient(
                 listOps: { _ in NormalizeOpsResponse(ops: normalizeTestOps) },
                 start: { _, _ in NormalizeJobResponse(jobId: jobId, status: "pending") },
+                startEdit: { _, _, _ in throw URLError(.badServerResponse) },
                 getScrape: { _ in
                     makeJob(id: jobId, recipeId: nil, status: "failed", error: "Page not found")
                 },
@@ -95,11 +99,13 @@ final class ReNormalizeViewModelTests: XCTestCase {
     @MainActor
     func testFailedAcceptKeepsTheReviewOpen() async {
         let jobId = UUID()
-        let viewModel = ReNormalizeViewModel(
+        let viewModel = ProposalJobViewModel(
             recipeId: UUID(),
-            api: ReNormalizeAPIClient(
+            mode: .normalize,
+            api: ProposalJobAPIClient(
                 listOps: { _ in NormalizeOpsResponse(ops: normalizeTestOps) },
                 start: { _, _ in NormalizeJobResponse(jobId: jobId, status: "pending") },
+                startEdit: { _, _, _ in throw URLError(.badServerResponse) },
                 getScrape: { _ in makeJob(id: jobId, recipeId: nil, status: "completed") },
                 getProposal: { _, _ in
                     NormalizeProposalResponse(
@@ -122,6 +128,55 @@ final class ReNormalizeViewModelTests: XCTestCase {
         XCTAssertFalse(saved)
         XCTAssertEqual(viewModel.phase, .review)
         XCTAssertNotNil(viewModel.error)
+    }
+}
+
+extension ProposalJobViewModelTests {
+    @MainActor
+    func testEditModeSendsTheInstructionAndPhotosAndShowsTheSummary() async {
+        let recipeId = UUID()
+        let jobId = UUID()
+        let photoId = UUID()
+        var sent: (String, [UUID])?
+        let viewModel = ProposalJobViewModel(
+            recipeId: recipeId,
+            mode: .edit(photoIds: [photoId]),
+            api: ProposalJobAPIClient(
+                listOps: { _ in throw URLError(.badServerResponse) },
+                start: { _, _ in throw URLError(.badServerResponse) },
+                startEdit: { id, instruction, photoIds in
+                    XCTAssertEqual(id, recipeId)
+                    sent = (instruction, photoIds)
+                    return NormalizeJobResponse(jobId: jobId, status: "pending")
+                },
+                getScrape: { _ in makeJob(id: jobId, recipeId: recipeId, status: "completed") },
+                getProposal: { _, _ in
+                    NormalizeProposalResponse(
+                        base: makeNormalized(title: "Soup"),
+                        baseVersionId: UUID(),
+                        ops: [],
+                        proposed: makeNormalized(title: "Vegan Soup"),
+                        status: "completed",
+                        summary: "Made it vegan."
+                    )
+                },
+                accept: { _, _ in AcceptNormalizeResponse(versionId: UUID()) }
+            )
+        )
+        viewModel.pollIntervalNanoseconds = 0
+
+        await viewModel.load()
+        XCTAssertEqual(viewModel.phase, .choose)
+        XCTAssertFalse(viewModel.canRun)
+        viewModel.instruction = "  make it vegan  "
+        XCTAssertTrue(viewModel.canRun)
+        await viewModel.run()
+
+        XCTAssertEqual(sent?.0, "make it vegan")
+        XCTAssertEqual(sent?.1, [photoId])
+        XCTAssertEqual(viewModel.phase, .review)
+        XCTAssertEqual(viewModel.proposal?.summary, "Made it vegan.")
+        XCTAssertTrue(viewModel.hasChanges)
     }
 }
 

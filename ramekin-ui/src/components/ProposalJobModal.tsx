@@ -10,6 +10,7 @@ import {
 } from "solid-js";
 import { A } from "@solidjs/router";
 import type {
+  EditRecipeApi,
   NormalizeApi,
   NormalizeOpInfo,
   NormalizeProposalResponse,
@@ -35,10 +36,23 @@ import {
 } from "../utils/pollScrapeJob";
 import { extractApiError } from "../utils/recipeFormHelpers";
 
-interface ReNormalizeModalProps {
+/**
+ * What the job does: normalize ops the user picks, or an Edit with AI run on
+ * the user's instruction, with the recipe's photos as context.
+ */
+export type ProposalJobMode =
+  | { kind: "normalize" }
+  | {
+      kind: "edit";
+      getEditRecipeApi: () => EditRecipeApi;
+      photoIds: string[];
+    };
+
+interface ProposalJobModalProps {
   isOpen: () => boolean;
   onClose: () => void;
   recipeId: string;
+  mode: ProposalJobMode;
   getNormalizeApi: () => NormalizeApi;
   getScrapeApi: () => ScrapeApi;
   /** The proposal was saved as the recipe's new version. */
@@ -60,11 +74,13 @@ const STEP_MARKS: Record<string, string> = {
 };
 
 /**
- * Re-normalize one recipe: pick ops, run them as a job, then review the
- * proposed version against the one it started from and accept or discard it.
+ * Re-normalize or Edit with AI on one recipe: pick ops (or describe the
+ * change), run them as a job, then review the proposed version against the
+ * one it started from and accept or discard it.
  */
-export default function ReNormalizeModal(props: ReNormalizeModalProps) {
+export default function ProposalJobModal(props: ProposalJobModalProps) {
   const [ops, setOps] = createSignal<NormalizeOpInfo[]>([]);
+  const [instruction, setInstruction] = createSignal("");
   const [selected, setSelected] = createSignal<Set<string>>(new Set());
   const [phase, setPhase] = createSignal<Phase>({ kind: "loading" });
   const [error, setError] = createSignal<string | null>(null);
@@ -87,6 +103,11 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
       if (!open) return;
       const opened = session;
       setError(null);
+      if (props.mode.kind === "edit") {
+        setInstruction("");
+        setPhase({ kind: "choose" });
+        return;
+      }
       setPhase({ kind: "loading" });
       void props
         .getNormalizeApi()
@@ -110,6 +131,29 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
   );
 
   const chosenOps = () => effectiveNormalizeOps(ops(), selected());
+  const canRun = () =>
+    props.mode.kind === "edit"
+      ? instruction().trim().length > 0
+      : chosenOps().length > 0;
+
+  const startJob = async (): Promise<string> => {
+    const mode = props.mode;
+    if (mode.kind === "edit") {
+      const job = await mode.getEditRecipeApi().editRecipeWithAi({
+        id: props.recipeId,
+        editRecipeRequest: {
+          instruction: instruction().trim(),
+          photoIds: mode.photoIds,
+        },
+      });
+      return job.jobId;
+    }
+    const job = await props.getNormalizeApi().normalizeRecipe({
+      id: props.recipeId,
+      normalizeRequest: { ops: chosenOps() },
+    });
+    return job.jobId;
+  };
 
   const start = async () => {
     setBusy(true);
@@ -119,13 +163,9 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
     controller = run;
     let jobId: string;
     try {
-      const job = await props.getNormalizeApi().normalizeRecipe({
-        id: props.recipeId,
-        normalizeRequest: { ops: chosenOps() },
-      });
-      jobId = job.jobId;
+      jobId = await startJob();
     } catch (err) {
-      const message = await extractApiError(err, "Failed to start normalizing");
+      const message = await extractApiError(err, "Failed to start");
       setBusy(false);
       // Closing the modal aborts the run; its answer belongs to no one.
       if (!run.signal.aborted) setError(message);
@@ -137,7 +177,7 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
     try {
       const result = await pollScrapeJob(props.getScrapeApi(), jobId, {
         signal: run.signal,
-        // AI ops can be slow; closing the modal aborts the poll.
+        // AI can be slow; closing the modal aborts the poll.
         timeoutMs: null,
         onUpdate: (job) =>
           setPhase({ kind: "running", jobId, steps: job.steps }),
@@ -157,7 +197,7 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
       setPhase({
         kind: "failed",
         jobId,
-        error: await extractApiError(err, "Lost track of the normalize job"),
+        error: await extractApiError(err, "Lost track of the job"),
       });
     }
   };
@@ -198,7 +238,7 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
               type="button"
               class="btn btn-primary"
               onClick={start}
-              disabled={busy() || chosenOps().length === 0}
+              disabled={busy() || !canRun()}
             >
               {busy() ? "Starting..." : "Run"}
             </button>
@@ -240,7 +280,9 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
     <Modal
       isOpen={props.isOpen}
       onClose={props.onClose}
-      title="Re-normalize recipe"
+      title={
+        props.mode.kind === "edit" ? "Edit with AI" : "Re-normalize recipe"
+      }
       actions={actions()}
     >
       <div class="renormalize">
@@ -250,6 +292,30 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
         <Switch>
           <Match when={phase().kind === "loading"}>
             <p class="loading-text">Loading...</p>
+          </Match>
+          <Match when={phase().kind === "choose" && props.mode.kind === "edit"}>
+            <label class="edit-with-ai-label" for="edit-with-ai-instruction">
+              What would you like to change?
+            </label>
+            <textarea
+              id="edit-with-ai-instruction"
+              class="edit-with-ai-instruction"
+              rows={3}
+              placeholder="e.g., make this vegan, convert to grams, cut it to 500 kcal a serving..."
+              value={instruction()}
+              onInput={(e) => setInstruction(e.currentTarget.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey && canRun() && !busy()) {
+                  e.preventDefault();
+                  void start();
+                }
+              }}
+              disabled={busy()}
+            />
+            <p class="renormalize-hint">
+              The AI looks up ingredient weights and calories as it works. You
+              review the result before it's saved.
+            </p>
           </Match>
           <Match when={phase().kind === "choose"}>
             <p class="renormalize-hint">
@@ -298,7 +364,10 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
             })()}
           >
             {(review) => (
-              <div class="enrich-preview">
+              <div class="proposal-review">
+                <Show when={review().proposal.summary}>
+                  {(summary) => <p class="proposal-summary">{summary()}</p>}
+                </Show>
                 <Show when={proposalPhotosChanged(review().proposal)}>
                   <p class="renormalize-hint">The recipe's photos change.</p>
                 </Show>
