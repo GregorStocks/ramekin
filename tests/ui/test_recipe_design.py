@@ -39,9 +39,9 @@ def test_slow_recipe_action_keeps_progress_visible(logged_in_page: Page):
     page.locator(".recipe-card").first.click()
     page.locator(".recipe-more-actions > summary").click()
     pending: list[Route] = []
-    page.route("**/generate-description", lambda route: pending.append(route))
-    page.get_by_role("button", name="Generate Description", exact=True).click()
-    progress = page.get_by_role("button", name="Generating...", exact=True)
+    page.route("**/generate-photo", lambda route: pending.append(route))
+    page.get_by_role("button", name="Generate AI Photo", exact=True).click()
+    progress = page.get_by_role("button", name="Generating Photo...", exact=True)
     expect(progress).to_be_visible()
     expect(progress).to_be_disabled()
     expect(page.locator(".recipe-more-actions")).to_have_attribute("open", "")
@@ -52,7 +52,7 @@ def test_slow_recipe_action_keeps_progress_visible(logged_in_page: Page):
         body='{"error":"Generation unavailable"}',
     )
     expect(
-        page.get_by_role("button", name="Generate Description", exact=True)
+        page.get_by_role("button", name="Generate AI Photo", exact=True)
     ).to_be_enabled()
 
 

@@ -848,6 +848,11 @@ pub(super) fn is_package_word(word: &str) -> bool {
     is_one_of(word, PACKAGE_WORDS)
 }
 
+/// A piece cut to a size in inches ("piece", "knobs", "chunk").
+pub(super) fn is_inch_piece_noun(word: &str) -> bool {
+    is_one_of(word, INCH_PIECE_NOUNS)
+}
+
 /// A word in `words`, or its plural ("cans", "bunches").
 fn is_one_of(word: &str, words: &[&str]) -> bool {
     let word = word.to_lowercase();
@@ -1042,6 +1047,9 @@ pub(super) struct NotedWeight {
 
 /// Read a weight that is a whole part of a note: "about 1 1/2 pounds", "6
 /// oz each", "2 1/2 lbs (1.1 k) each", "8 ounce packages", "7- to 9-ounce".
+/// What a noted weight can be "per": one of the line's count.
+const PER_ITEM: &[&str] = &["person", "serving", "portion", "piece"];
+
 pub(super) fn read_noted_weight(part: &str) -> Option<NotedWeight> {
     let part = ascii_amounts(part);
     let mut c = Cursor::size(&part);
@@ -1068,6 +1076,12 @@ pub(super) fn read_noted_weight(part: &str) -> Option<NotedWeight> {
     }
     let word = c.take_if(|t| {
         t.space_before && (t.is_word("each") || t.is_word("total") || is_package_word(t.text))
+    });
+    // "150 g per person": one of a counted line's portions.
+    let word = word.or_else(|| {
+        let per = c.take_if(|t| t.space_before && t.is_word("per"))?;
+        c.take_if(|t| t.space_before && PER_ITEM.iter().any(|word| t.is_word(word)))?;
+        Some(per)
     });
     if !c.at_end() {
         return None;
@@ -1334,5 +1348,8 @@ mod tests {
         assert_eq!(weighs("2 1/2 lbs (1.1 k) each"), Some(Weighs::Each));
         assert_eq!(weighs("8 oz"), Some(Weighs::Unsaid));
         assert_eq!(weighs("about 8 ounces after peeling"), None);
+        assert_eq!(weighs("approx. 150 g per person"), Some(Weighs::Each));
+        assert_eq!(weighs("100 g per serving"), Some(Weighs::Each));
+        assert_eq!(weighs("100 g per pound"), None);
     }
 }

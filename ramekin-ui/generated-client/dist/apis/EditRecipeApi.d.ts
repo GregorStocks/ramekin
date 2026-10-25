@@ -10,8 +10,9 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { EditRecipeRequest, RecipeContent } from '../models/index';
+import type { EditRecipeRequest, NormalizeJobResponse } from '../models/index';
 export interface EditRecipeWithAiRequest {
+    id: string;
     editRecipeRequest: EditRecipeRequest;
 }
 /**
@@ -19,13 +20,13 @@ export interface EditRecipeWithAiRequest {
  */
 export declare class EditRecipeApi extends runtime.BaseAPI {
     /**
-     * Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     * Starts a job that edits the recipe\'s current version the way the instruction says, looking up catalog weights and calories and the user\'s tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
      * Edit a recipe with AI
      */
-    editRecipeWithAiRaw(requestParameters: EditRecipeWithAiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RecipeContent>>;
+    editRecipeWithAiRaw(requestParameters: EditRecipeWithAiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<NormalizeJobResponse>>;
     /**
-     * Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     * Starts a job that edits the recipe\'s current version the way the instruction says, looking up catalog weights and calories and the user\'s tags and recipes as it goes. Poll it with `GET /api/scrape/{id}`; once it completes, `GET /api/recipes/{id}/normalize/{job_id}` returns the proposed version and a summary of the changes, and `POST /api/recipes/{id}/normalize/{job_id}/accept` saves it.
      * Edit a recipe with AI
      */
-    editRecipeWithAi(requestParameters: EditRecipeWithAiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RecipeContent>;
+    editRecipeWithAi(requestParameters: EditRecipeWithAiRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NormalizeJobResponse>;
 }

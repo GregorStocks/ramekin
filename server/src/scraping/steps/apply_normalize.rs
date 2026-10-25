@@ -13,7 +13,9 @@ use serde_json::Value as JsonValue;
 
 use crate::db::DbPool;
 use crate::ids::Uuid;
-use crate::normalize::{added_tags, apply_op_outputs, load_version_blocking, write_version};
+use crate::normalize::{
+    added_tags, apply_op_outputs, load_version_blocking, write_version, VersionOrigin,
+};
 use crate::schema::step_outputs;
 
 use super::helpers::{
@@ -126,7 +128,7 @@ impl PipelineStep for ApplyNormalizeStep {
                 base_version_id,
                 &normalized,
                 &added,
-                &ops,
+                VersionOrigin::Normalize(&ops),
             )
         })
         .await

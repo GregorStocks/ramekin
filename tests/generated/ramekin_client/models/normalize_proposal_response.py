@@ -33,7 +33,8 @@ class NormalizeProposalResponse(BaseModel):
     ops: List[StrictStr] = Field(description="The ops the job runs, in run order.")
     proposed: Optional[NormalizedRecipe] = Field(default=None, description="What accepting saves; absent until the job completes.")
     status: StrictStr = Field(description="The job's status, as `GET /api/scrape/{id}` reports it.")
-    __properties: ClassVar[List[str]] = ["base", "base_version_id", "ops", "proposed", "status"]
+    summary: Optional[StrictStr] = Field(default=None, description="What an Edit with AI run says it changed, once it completes.")
+    __properties: ClassVar[List[str]] = ["base", "base_version_id", "ops", "proposed", "status", "summary"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +86,11 @@ class NormalizeProposalResponse(BaseModel):
         if self.proposed is None and "proposed" in self.model_fields_set:
             _dict['proposed'] = None
 
+        # set to None if summary (nullable) is None
+        # and model_fields_set contains the field
+        if self.summary is None and "summary" in self.model_fields_set:
+            _dict['summary'] = None
+
         return _dict
 
     @classmethod
@@ -101,7 +107,8 @@ class NormalizeProposalResponse(BaseModel):
             "base_version_id": obj.get("base_version_id"),
             "ops": obj.get("ops"),
             "proposed": NormalizedRecipe.from_dict(obj["proposed"]) if obj.get("proposed") is not None else None,
-            "status": obj.get("status")
+            "status": obj.get("status"),
+            "summary": obj.get("summary")
         })
         return _obj
 

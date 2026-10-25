@@ -26,6 +26,9 @@ const SNAPSHOTS_DIR: &str = "data/pipeline-snapshots";
 const SHOPPING_CORPUS: &str = "data/shopping-list-categories.json";
 const COMMITTED_REPORT: &str = "data/ingredient-catalog-audit.md";
 const LOCAL_REPORT: &str = "logs/ingredient-catalog-audit-local.md";
+/// Every nutrition failure line per corpus, as "reason: name" with its count,
+/// for diffing a catalog change's full effect (the reports show the top 30).
+const FAILURES_DUMP: &str = "logs/ingredient-catalog-failures.json";
 const UNRESOLVED_QUEUE: &str = "logs/catalog-unresolved.json";
 const UNCATEGORIZED_QUEUE: &str = "logs/catalog-uncategorized.json";
 const MAX_EXAMPLES: usize = 3;
@@ -824,6 +827,27 @@ pub fn run(
     fs::write(&local_path, out)
         .with_context(|| format!("Failed to write {}", local_path.display()))?;
     tracing::info!("Local audit with unrecognized names saved to: {LOCAL_REPORT}");
+
+    let failures: std::collections::BTreeMap<&str, std::collections::BTreeMap<&str, usize>> =
+        committed
+            .recipes
+            .iter()
+            .map(|(name, stats)| {
+                let lines = stats
+                    .nutrition_failures
+                    .iter()
+                    .map(|(line, count)| (line.as_str(), *count))
+                    .collect();
+                (name.as_str(), lines)
+            })
+            .collect();
+    let failures_path = root.join(FAILURES_DUMP);
+    fs::write(
+        &failures_path,
+        serde_json::to_string_pretty(&failures)? + "\n",
+    )
+    .with_context(|| format!("Failed to write {}", failures_path.display()))?;
+    tracing::info!("Every nutrition failure saved to: {FAILURES_DUMP}");
     Ok(())
 }
 

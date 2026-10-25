@@ -949,7 +949,7 @@ fn spec(suite: &str) -> SuiteSpec {
         "edit-recipe" => SuiteSpec {
             title: "Edit with AI",
             about: concat!(
-                "A recipe changed by a user's instruction (`edit_recipe`), for 10 pipeline snapshots each paired with an instruction that suits it (`EDIT_CASES`: make it vegetarian, halve it, convert to metric…). An answer that doesn't parse as the server's recipe shape is invalid, as in production. ",
+                "A recipe changed by a user's instruction (`edit_recipe`), for 13 pipeline snapshots each paired with an instruction that suits it (`EDIT_CASES`: make it vegetarian, halve it, convert to metric…; three need its tools: catalog weights, calories, scaling). The model edits with tools in a bounded loop (`MAX_EDIT_TURNS`), seeing no user tags or other recipes; answers end with its summary. An answer that doesn't parse as the server's recipe shape is invalid, as in production. ",
                 judging!(),
                 " ",
                 verdicts!()

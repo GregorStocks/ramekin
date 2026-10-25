@@ -315,6 +315,9 @@ pub struct ScrapeJob {
     /// The ops of a manual normalize job, as a JSON array of op ids. Such a
     /// job proposes a version instead of saving one.
     pub normalize_ops: Option<serde_json::Value>,
+    /// An Edit with AI job's request (`EditRequest`). Such a job proposes a
+    /// version too.
+    pub edit_request: Option<serde_json::Value>,
 }
 
 #[derive(Insertable)]

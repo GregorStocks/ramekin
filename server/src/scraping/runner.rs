@@ -13,7 +13,8 @@ use ramekin_core::pipeline::steps::{
 };
 use ramekin_core::pipeline::{
     op_for_step, NormalizeOp, PipelineStep, StepContext, StepOutputStore, StepRegistry, StepResult,
-    APPLY_NORMALIZE_STEP, LOAD_RECIPE_STEP, PROPOSE_NORMALIZE_STEP, RESOLVE_INGREDIENT_NAMES_STEP,
+    APPLY_NORMALIZE_STEP, EDIT_WITH_AI_STEP, LOAD_RECIPE_STEP, PROPOSE_NORMALIZE_STEP,
+    RESOLVE_INGREDIENT_NAMES_STEP,
 };
 
 use crate::db::DbPool;
@@ -28,8 +29,8 @@ use super::output_store::{latest_output, DbOutputStore};
 use super::photo_import::PHOTO_EXTRACT_STEP;
 use super::plan::JobPlan;
 use super::steps::{
-    ApplyNormalizeStep, FetchHtmlStep, FetchImagesStep, LoadRecipeStep, ProposeNormalizeStep,
-    ResolveIngredientNamesStep, SaveRecipeStep,
+    ApplyNormalizeStep, EditRequest, EditWithAiStep, FetchHtmlStep, FetchImagesStep,
+    LoadRecipeStep, ProposeNormalizeStep, ResolveIngredientNamesStep, SaveRecipeStep,
 };
 use super::{
     run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_FAILED,
@@ -84,7 +85,29 @@ pub async fn build_registry(
                 pool.clone(),
                 base_version_id()?,
                 plan.ops.clone(),
+                job.edit_request.is_some(),
             )),
+            EDIT_WITH_AI_STEP => {
+                let request: EditRequest = job
+                    .edit_request
+                    .clone()
+                    .map(serde_json::from_value)
+                    .transpose()
+                    .map_err(|e| ScrapeError::InvalidState(format!("bad edit request: {e}")))?
+                    .ok_or_else(|| {
+                        ScrapeError::InvalidState("edit job has no request".to_string())
+                    })?;
+                let recipe_id = job.recipe_id.ok_or_else(|| {
+                    ScrapeError::InvalidState("edit job has no recipe".to_string())
+                })?;
+                Box::new(EditWithAiStep::new(
+                    pool.clone(),
+                    user_id,
+                    recipe_id,
+                    base_version_id()?,
+                    request,
+                ))
+            }
             APPLY_NORMALIZE_STEP => Box::new(ApplyNormalizeStep::new(
                 pool.clone(),
                 job.id,

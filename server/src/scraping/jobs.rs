@@ -15,7 +15,7 @@ use crate::models::{NewImportJob, NewScrapeJob, ScrapeJob};
 use crate::schema::{scrape_jobs, step_outputs};
 
 use super::output_store::{copy_output, latest_output, PreparedOutput};
-use super::steps::FetchHtmlStep;
+use super::steps::{EditRequest, FetchHtmlStep};
 use super::{
     run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_FAILED,
     STATUS_PARSING,
@@ -33,31 +33,6 @@ pub async fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<Scrap
 
         diesel::insert_into(scrape_jobs::table)
             .values(&new_job)
-            .get_result::<ScrapeJob>(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))
-    })
-    .await
-}
-
-/// Create a rescrape job for an existing recipe.
-/// This pre-populates recipe_id so save_recipe knows to update instead of create.
-pub async fn create_rescrape_job(
-    pool: &DbPool,
-    user_id: Uuid,
-    recipe_id: Uuid,
-    expected_version_id: Uuid,
-    url: &str,
-) -> Result<ScrapeJob, ScrapeError> {
-    let url = url.to_string();
-    run_scrape_db_write(pool, move |conn| {
-        diesel::insert_into(scrape_jobs::table)
-            .values((
-                scrape_jobs::id.eq(Uuid::now_v7()),
-                scrape_jobs::user_id.eq(user_id),
-                scrape_jobs::url.eq(url.as_str()),
-                scrape_jobs::recipe_id.eq(Some(recipe_id)),
-                scrape_jobs::expected_version_id.eq(Some(expected_version_id)),
-            ))
             .get_result::<ScrapeJob>(conn)
             .map_err(|e| ScrapeError::Database(e.to_string()))
     })
@@ -184,6 +159,37 @@ pub async fn create_normalize_job(
             }
         }
         Ok(job)
+    })
+    .await
+}
+
+/// Create an Edit with AI job proposing a new version of `recipe_id`: it
+/// edits `base_version_id` the way `request` says.
+pub async fn create_edit_job(
+    pool: &DbPool,
+    user_id: Uuid,
+    recipe_id: Uuid,
+    base_version_id: Uuid,
+    request: &EditRequest,
+) -> Result<ScrapeJob, ScrapeError> {
+    let request =
+        serde_json::to_value(request).map_err(|e| ScrapeError::Database(e.to_string()))?;
+    run_scrape_db_write(pool, move |conn| {
+        let now = Utc::now();
+        diesel::insert_into(scrape_jobs::table)
+            .values((
+                scrape_jobs::id.eq(Uuid::now_v7()),
+                scrape_jobs::user_id.eq(user_id),
+                scrape_jobs::recipe_id.eq(Some(recipe_id)),
+                scrape_jobs::expected_version_id.eq(Some(base_version_id)),
+                // No normalize ops, but a proposal like a normalize job's.
+                scrape_jobs::normalize_ops.eq(Some(crate::normalize::ops_json(&[]))),
+                scrape_jobs::edit_request.eq(Some(request)),
+                scrape_jobs::current_step.eq(Some(LOAD_RECIPE_STEP)),
+                scrape_jobs::current_step_started_at.eq(Some(now)),
+            ))
+            .get_result(conn)
+            .map_err(|e| ScrapeError::Database(e.to_string()))
     })
     .await
 }

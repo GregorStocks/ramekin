@@ -239,6 +239,52 @@ final class RecipeFlowTests: XCTestCase {
         leaveRecipeListAsRestoredPlace()
     }
 
+    func testRelaunchAfterTerminationRestoresShoppingListScroll() throws {
+        try launchSignedIn()
+        app.tabBars.buttons["Shopping"].tap()
+        XCTAssertTrue(app.navigationBars["Shopping List"].waitForExistence(timeout: slowSimulatorTimeout))
+        app.navigationBars.buttons["Add Item"].tap()
+        let field = app.textFields["Ingredient"]
+        XCTAssertTrue(field.waitForExistence(timeout: slowSimulatorTimeout))
+        // Enough rows to scroll, named for this run so earlier runs' rows
+        // don't match.
+        let run = Int.random(in: 1000...9999)
+        let names = (1...25).map { String(format: "scroll %d item %02d", run, $0) }
+        for name in names {
+            field.typeText(name + "\n")
+        }
+        // The list's Done, not the keyboard's return key; the keyboard would
+        // take the swipes below.
+        app.collectionViews.buttons["Done"].tap()
+        let first = app.buttons[names[0]]
+        XCTAssertTrue(first.waitForExistence(timeout: slowSimulatorTimeout))
+        for _ in 0..<8 where first.isHittable {
+            swipe(.towardEnd)
+        }
+        XCTAssertFalse(first.isHittable, "25 items should be enough to scroll past the first")
+        let top = try XCTUnwrap(
+            names.first { app.buttons[$0].isHittable },
+            "Some of the added items should be on screen"
+        )
+
+        terminateInBackgroundAndRelaunch()
+
+        XCTAssertTrue(
+            app.navigationBars["Shopping List"].waitForExistence(timeout: slowSimulatorTimeout),
+            "Relaunch should restore the shopping tab"
+        )
+        let restoredTop = app.buttons[top]
+        XCTAssertTrue(restoredTop.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(restoredTop.isHittable, "Relaunch should restore the topmost item in view")
+        XCTAssertTrue(
+            waitUntilNotHittable(first),
+            "Relaunch should restore how far down the shopping list was scrolled"
+        )
+        attachScreenshot(named: "12-RestoredShoppingScroll")
+
+        leaveRecipeListAsRestoredPlace()
+    }
+
     /// Edits the app was terminated on are offered for resuming on the
     /// recipe's screen and come back as typed.
     func testRelaunchAfterTerminationRestoresUnsavedEdit() throws {

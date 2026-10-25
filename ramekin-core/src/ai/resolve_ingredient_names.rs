@@ -72,6 +72,7 @@ pub async fn resolve_ingredient_names(
         json_response: true,
         max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
+        ..Default::default()
     };
     let (parsed, response): (Response, _) =
         complete_json(ai_client, RESOLVE_INGREDIENT_NAMES_PROMPT_NAME, &request).await?;

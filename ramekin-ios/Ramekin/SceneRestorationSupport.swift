@@ -84,6 +84,13 @@ enum SceneRestoration {
             .key
     }
 
+    /// The shopping list item to restore its scroll position to: the first,
+    /// in the order the list shows them, of the rows on screen. A row shows
+    /// as soon as any of it is in view, so restoring never skips past one.
+    static func topVisibleItem(in order: [UUID], visible: Set<UUID>) -> UUID? {
+        order.first(where: visible.contains)
+    }
+
     static func encodeDrafts(_ drafts: [RecipeFormDraft]) -> Data {
         (try? JSONEncoder().encode(drafts)) ?? Data()
     }

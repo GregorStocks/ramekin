@@ -13,20 +13,19 @@ import AnyCodable
 /** Request body for Edit with AI. */
 public struct EditRecipeRequest: Codable, JSONEncodable, Hashable {
 
+    /** The change the user wants, in their words. */
     public var instruction: String
+    /** Photos of the dish to give the model as context. */
     public var photoIds: [UUID]?
-    public var recipe: RecipeContent
 
-    public init(instruction: String, photoIds: [UUID]? = nil, recipe: RecipeContent) {
+    public init(instruction: String, photoIds: [UUID]? = nil) {
         self.instruction = instruction
         self.photoIds = photoIds
-        self.recipe = recipe
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case instruction
         case photoIds = "photo_ids"
-        case recipe
     }
 
     // Encodable protocol methods
@@ -35,7 +34,6 @@ public struct EditRecipeRequest: Codable, JSONEncodable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(instruction, forKey: .instruction)
         try container.encodeIfPresent(photoIds, forKey: .photoIds)
-        try container.encode(recipe, forKey: .recipe)
     }
 }
 

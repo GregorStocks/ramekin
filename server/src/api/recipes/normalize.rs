@@ -19,7 +19,9 @@ use crate::api::{run_db, run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
-use crate::normalize::{load_version, ops_from_json, write_version, NormalizedRecipe};
+use crate::normalize::{
+    load_version, ops_from_json, write_version, NormalizedRecipe, VersionOrigin,
+};
 use crate::recipes::VersionWriteError;
 use crate::schema::scrape_jobs;
 use crate::scraping::output_store::latest_output;
@@ -116,6 +118,9 @@ pub struct NormalizeProposalResponse {
     /// What accepting saves; absent until the job completes.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub proposed: Option<NormalizedRecipe>,
+    /// What an Edit with AI run says it changed, once it completes.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -143,14 +148,18 @@ fn parse_ops(ids: &[String]) -> Result<Vec<NormalizeOp>, ApiError> {
 }
 
 /// A recipe's current version and what its source ops could run from.
-struct RecipeSource {
+pub(super) struct RecipeSource {
     recipe_id: Uuid,
-    current_version_id: Uuid,
+    pub(super) current_version_id: Uuid,
     source_url: Option<String>,
 }
 
 impl RecipeSource {
-    async fn load(pool: &DbPool, user_id: Uuid, recipe_id: Uuid) -> Result<Self, ApiError> {
+    pub(super) async fn load(
+        pool: &DbPool,
+        user_id: Uuid,
+        recipe_id: Uuid,
+    ) -> Result<Self, ApiError> {
         run_db(pool, move |conn| {
             let recipe = fetch_current_recipe_with_version(conn, user_id, recipe_id).map_err(
                 |e| match e {
@@ -365,15 +374,23 @@ pub async fn normalize_recipes(
     Ok(Json(BulkNormalizeResponse { results }))
 }
 
-/// The user's normalize job `job_id` on `recipe_id`: its status, ops and
-/// base version.
+/// A normalize or Edit with AI job, as the proposal endpoints read it.
+struct ProposingJob {
+    status: String,
+    ops: Vec<NormalizeOp>,
+    base_version_id: Uuid,
+    /// An Edit with AI job.
+    edit: bool,
+}
+
+/// The user's normalize (or Edit with AI) job `job_id` on `recipe_id`.
 async fn load_normalize_job(
     pool: &DbPool,
     user_id: Uuid,
     recipe_id: Uuid,
     job_id: Uuid,
-) -> Result<(String, Vec<NormalizeOp>, Uuid), ApiError> {
-    let (status, ops, base_version_id) = run_db(pool, move |conn| {
+) -> Result<ProposingJob, ApiError> {
+    let (status, ops, base_version_id, edit_request) = run_db(pool, move |conn| {
         scrape_jobs::table
             .find(job_id)
             .filter(scrape_jobs::user_id.eq(user_id))
@@ -382,8 +399,14 @@ async fn load_normalize_job(
                 scrape_jobs::status,
                 scrape_jobs::normalize_ops,
                 scrape_jobs::expected_version_id,
+                scrape_jobs::edit_request,
             ))
-            .first::<(String, Option<serde_json::Value>, Option<Uuid>)>(conn)
+            .first::<(
+                String,
+                Option<serde_json::Value>,
+                Option<Uuid>,
+                Option<serde_json::Value>,
+            )>(conn)
             .map_err(|e| match e {
                 diesel::NotFound => ApiError::not_found("Normalize job not found"),
                 _ => ApiError::internal("Failed to fetch normalize job"),
@@ -394,7 +417,12 @@ async fn load_normalize_job(
         return Err(ApiError::not_found("Normalize job not found"));
     };
     let ops = ops_from_json(&ops).map_err(ApiError::internal)?;
-    Ok((status, ops, base_version_id))
+    Ok(ProposingJob {
+        status,
+        ops,
+        base_version_id,
+        edit: edit_request.is_some(),
+    })
 }
 
 async fn load_proposal(pool: &DbPool, job_id: Uuid) -> Result<Option<NormalizeProposal>, ApiError> {
@@ -430,22 +458,27 @@ pub async fn get_normalize_proposal(
     State(pool): State<Arc<DbPool>>,
     Path((recipe_id, job_id)): Path<(Uuid, Uuid)>,
 ) -> Result<impl IntoResponse, ApiError> {
-    let (status, ops, base_version_id) =
-        load_normalize_job(&pool, user.id, recipe_id, job_id).await?;
+    let job = load_normalize_job(&pool, user.id, recipe_id, job_id).await?;
+    let base_version_id = job.base_version_id;
     let base = run_db(&pool, move |conn| {
         load_version(conn, base_version_id).map_err(ApiError::internal)
     })
     .await?;
-    let proposed = match status.as_str() {
-        scraping::STATUS_COMPLETED => load_proposal(&pool, job_id).await?.map(|p| p.proposed),
+    let proposal = match job.status.as_str() {
+        scraping::STATUS_COMPLETED => load_proposal(&pool, job_id).await?,
         _ => None,
     };
+    let (proposed, summary) = match proposal {
+        Some(proposal) => (Some(proposal.proposed), proposal.summary),
+        None => (None, None),
+    };
     Ok(Json(NormalizeProposalResponse {
-        status,
-        ops: op_ids(&ops),
+        status: job.status,
+        ops: op_ids(&job.ops),
         base_version_id,
         base,
         proposed,
+        summary,
     }))
 }
 
@@ -472,8 +505,12 @@ pub async fn accept_normalize_proposal(
     Path((recipe_id, job_id)): Path<(Uuid, Uuid)>,
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
-    let (status, ops, base_version_id) =
-        load_normalize_job(&pool, user_id, recipe_id, job_id).await?;
+    let ProposingJob {
+        status,
+        ops,
+        base_version_id,
+        edit,
+    } = load_normalize_job(&pool, user_id, recipe_id, job_id).await?;
     let proposal = match status.as_str() {
         scraping::STATUS_COMPLETED => load_proposal(&pool, job_id).await?,
         _ => None,
@@ -488,7 +525,11 @@ pub async fn accept_normalize_proposal(
             base_version_id,
             &proposal.proposed,
             &proposal.added_tags,
-            &ops,
+            if edit {
+                VersionOrigin::AiEdit
+            } else {
+                VersionOrigin::Normalize(&ops)
+            },
         )
         .map_err(|e| match e {
             VersionWriteError::Stale => ApiError::conflict(

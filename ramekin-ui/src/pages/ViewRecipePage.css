@@ -103,17 +103,6 @@
   background: var(--surface-2);
 }
 
-.edit-with-ai-input {
-  display: flex;
-  gap: 0.5rem;
-  flex-basis: 100%;
-}
-
-.edit-with-ai-input input {
-  flex: 1;
-  min-width: 0;
-}
-
 .recipe-header-compact {
   margin-bottom: 1.5rem;
   overflow-wrap: anywhere;

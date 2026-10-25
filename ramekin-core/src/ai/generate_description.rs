@@ -37,6 +37,7 @@ pub async fn generate_description(
         json_response: true,
         max_tokens: Some(SHORT_JSON_ANSWER_MAX_TOKENS),
         temperature: Some(0.0),
+        ..Default::default()
     };
 
     let (parsed, response): (GenerateDescriptionResponse, _) =

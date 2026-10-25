@@ -89,11 +89,11 @@
     {
       "raw": "2 servings cooked Japanese short-grain rice",
       "expected": {
-        "item": "servings cooked Japanese short-grain rice",
+        "item": "cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "serving"
           }
         ],
         "note": null,
