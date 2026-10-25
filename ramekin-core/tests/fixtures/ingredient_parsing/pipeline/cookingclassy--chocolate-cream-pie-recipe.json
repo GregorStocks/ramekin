@@ -163,6 +163,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (295 ml)  heavy cream",
       "expected": {
         "item": "heavy cream",
@@ -177,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

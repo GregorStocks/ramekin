@@ -3,6 +3,10 @@
   "recipe_slug": "2024-07-summer-steak-with-corn",
   "ingredients": [
     {
+      "raw": "Steak:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4- to 1 1/2-pound skirt steak",
       "expected": {
         "item": "skirt steak",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,8 +72,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Salad:",
+      "is_section_header": true
     },
     {
       "raw": "2 ears fresh corn",
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +146,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": "minced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": "white and green, thinly sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": "halved or quartered",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": "seeds removed, finely chopped",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -199,6 +221,7 @@
           }
         ],
         "note": "such as parsley, mint, basil, chives, or a mix thereof",
+        "section": "Salad",
         "category": "Other"
       }
     }

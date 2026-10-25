@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "800 ml dashi stock",
       "expected": {
         "item": "dashi stock",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": "awase, yellow",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Beverages"
       }
     },
@@ -237,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -251,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -265,8 +277,13 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "30 g garlic chive(s) cut into 5 cm",
@@ -279,6 +296,7 @@
           }
         ],
         "note": "s, cut into 5 cm",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -293,6 +311,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,6 +326,7 @@
           }
         ],
         "note": "optional",
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -321,6 +341,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -335,6 +356,7 @@
           }
         ],
         "note": "optional",
+        "section": "Toppings",
         "category": "Other"
       }
     }

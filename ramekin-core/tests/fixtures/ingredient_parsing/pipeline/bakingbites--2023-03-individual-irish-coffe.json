@@ -152,6 +152,10 @@
       }
     },
     {
+      "raw": "Topping",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tbsp brown sugar",
       "expected": {
         "item": "brown sugar",
@@ -162,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -180,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -194,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Beverages"
       }
     },
@@ -208,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Beverages"
       }
     }

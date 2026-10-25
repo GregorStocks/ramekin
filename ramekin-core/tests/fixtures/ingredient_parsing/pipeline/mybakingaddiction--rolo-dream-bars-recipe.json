@@ -3,6 +3,10 @@
   "recipe_slug": "rolo-dream-bars-recipe",
   "ingredients": [
     {
+      "raw": "For the Shortbread Base",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup butter (2 sticks), room temperature",
       "expected": {
         "item": "butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Shortbread Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shortbread Base",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shortbread Base",
         "category": "Baking"
       }
     },
@@ -59,8 +66,13 @@
           }
         ],
         "note": "I used King Arthur",
+        "section": "For the Shortbread Base",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Dream Bar Topping",
+      "is_section_header": true
     },
     {
       "raw": "2 cups dark brown sugar",
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dream Bar Topping",
         "category": "Baking"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": "I used King Arthur",
+        "section": "For the Dream Bar Topping",
         "category": "Baking"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dream Bar Topping",
         "category": "Baking"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": "well-beaten",
+        "section": "For the Dream Bar Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": "toasting is optional, toasted",
+        "section": "For the Dream Bar Topping",
         "category": "Baking"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dream Bar Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": "frozen and unwrapped",
+        "section": "For the Dream Bar Topping",
         "category": "Snacks"
       }
     }

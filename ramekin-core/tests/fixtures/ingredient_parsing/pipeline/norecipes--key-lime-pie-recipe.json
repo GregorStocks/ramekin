@@ -3,6 +3,10 @@
   "recipe_slug": "key-lime-pie-recipe",
   "ingredients": [
     {
+      "raw": "For Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "130 grams  graham crackers",
       "expected": {
         "item": "graham crackers",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": "melted",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups  heavy cream 45% butterfat",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -97,8 +111,13 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  whipping cream 35% butterfat",
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Other"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Baking"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Baking"
       }
     }

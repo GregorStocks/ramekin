@@ -3,6 +3,10 @@
   "recipe_slug": "beef-sukiyaki-hot-pot-recipe",
   "ingredients": [
     {
+      "raw": "For Sukiyaki Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups  (480 ml) Dashi , or water",
       "expected": {
         "item": "Dashi, or water",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Sukiyaki Broth",
         "category": "Canned Goods"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "if using water instead of dashi, add a bit more soy sauce and adjust to taste",
+        "section": "For Sukiyaki Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Sukiyaki Broth",
         "category": "Beverages"
       }
     },
@@ -71,8 +78,13 @@
           }
         ],
         "note": "or to taste",
+        "section": "For Sukiyaki Broth",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Sukiyaki Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 Tablespoon  (15 ml) Vegetable Oil , or beef fat trimmings",
@@ -89,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Sukiyaki Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -107,6 +120,7 @@
           }
         ],
         "note": "sliced 1/8″ thick *see note 1 below",
+        "section": "Sukiyaki Ingredients",
         "category": "Other"
       }
     },
@@ -125,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Sukiyaki Ingredients",
         "category": "Produce"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": "sliced *see note 2 below",
+        "section": "Sukiyaki Ingredients",
         "category": "Other"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": "Japanese Leek, sliced on angle in 2\" pieces",
+        "section": "Sukiyaki Ingredients",
         "category": "Produce"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Sukiyaki Ingredients",
         "category": "Produce"
       }
     },
@@ -193,6 +211,7 @@
           }
         ],
         "note": "about 1/2 package, cut into 1/2″ sticks",
+        "section": "Sukiyaki Ingredients",
         "category": "Other"
       }
     },
@@ -211,6 +230,7 @@
           }
         ],
         "note": "drained & rinsed",
+        "section": "Sukiyaki Ingredients",
         "category": "Pasta & Rice"
       }
     },
@@ -229,6 +249,7 @@
           }
         ],
         "note": "a type of chrysanthemum leaf",
+        "section": "Sukiyaki Ingredients",
         "category": "Produce"
       }
     },
@@ -238,6 +259,7 @@
         "item": "Shime - stuff to eat with the sukiyaki and to finish off the broth:",
         "measurements": [],
         "note": null,
+        "section": "Sukiyaki Ingredients",
         "category": "Other"
       }
     },
@@ -247,6 +269,7 @@
         "item": "cooked short grain rice",
         "measurements": [],
         "note": null,
+        "section": "Sukiyaki Ingredients",
         "category": "Other"
       }
     },
@@ -261,6 +284,7 @@
           }
         ],
         "note": "optional, beaten",
+        "section": "Sukiyaki Ingredients",
         "category": "Other"
       }
     }

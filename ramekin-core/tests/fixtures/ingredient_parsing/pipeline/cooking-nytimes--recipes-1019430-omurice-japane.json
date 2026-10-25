@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-1019430-omurice-japane",
   "ingredients": [
     {
+      "raw": "For the Rice:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons butter",
       "expected": {
         "item": "butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rice",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "about 3/4 cup, cut in 1/2-inch dice",
+        "section": "For the Rice",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "about 3/4 cup, peeled, cut in 1/4-inch dice",
+        "section": "For the Rice",
         "category": "Produce"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "cut into 1/2-inch pieces",
+        "section": "For the Rice",
         "category": "Meat & Seafood"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "preferably day-old or cooked a little dry",
+        "section": "For the Rice",
         "category": "Pasta & Rice"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "plus more for serving",
+        "section": "For the Rice",
         "category": "Condiments & Sauces"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rice",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rice",
         "category": "Frozen"
       }
     },
@@ -133,6 +145,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Rice",
         "category": "Canned Goods"
       }
     },
@@ -142,6 +155,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -151,8 +165,13 @@
         "item": "Canola or safflower oil, or other neutral oil",
         "measurements": [],
         "note": null,
+        "section": "For the Rice",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Omelet:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon canola or safflower oil, or other neutral oil",
@@ -165,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For the Omelet",
         "category": "Oils & Vinegars"
       }
     },
@@ -179,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Omelet",
         "category": "Dairy & Eggs"
       }
     },
@@ -193,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Omelet",
         "category": "Canned Goods"
       }
     },
@@ -202,6 +224,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Omelet",
         "category": "Spices & Seasonings"
       }
     }

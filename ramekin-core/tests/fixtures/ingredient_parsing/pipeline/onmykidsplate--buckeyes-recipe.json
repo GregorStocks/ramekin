@@ -3,6 +3,10 @@
   "recipe_slug": "buckeyes-recipe",
   "ingredients": [
     {
+      "raw": "For The Peanut Butter Balls:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup butter  unsalted, softened",
       "expected": {
         "item": "butter unsalted",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Peanut Butter Balls",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Butter Balls",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Butter Balls",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Butter Balls",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For The Chocolate Dip:",
+      "is_section_header": true
     },
     {
       "raw": "3 cups chocolate chips about 20 ounces",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Dip",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Dip",
         "category": "Oils & Vinegars"
       }
     }

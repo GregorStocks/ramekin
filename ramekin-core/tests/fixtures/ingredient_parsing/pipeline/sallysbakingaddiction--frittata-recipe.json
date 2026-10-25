@@ -3,6 +3,10 @@
   "recipe_slug": "frittata-recipe",
   "ingredients": [
     {
+      "raw": "Base Frittata Recipe:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 large eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Base Frittata Recipe",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Base Frittata Recipe",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "plus more for cooking vegetables",
+        "section": "Base Frittata Recipe",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "plus more for cooking vegetables",
+        "section": "Base Frittata Recipe",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "about 100-120g, divided",
+        "section": "Base Frittata Recipe",
         "category": "Cheese"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Base Frittata Recipe",
         "category": "Oils & Vinegars"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": "minced",
+        "section": "Base Frittata Recipe",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Version #1: Garden Vegetable:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 small red onion, thinly sliced",
@@ -119,6 +134,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Version #1: Garden Vegetable",
         "category": "Produce"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": "about 150g, no need to peel",
+        "section": "Version #1: Garden Vegetable",
         "category": "Produce"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Version #1: Garden Vegetable",
         "category": "Produce"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": "about 80g",
+        "section": "Version #1: Garden Vegetable",
         "category": "Produce"
       }
     },
@@ -182,8 +201,13 @@
         "item": "optional for topping: chopped fresh parsley",
         "measurements": [],
         "note": null,
+        "section": "Version #1: Garden Vegetable",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Version #2: Mediterranean-Inspired:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (30g) roughly chopped fresh spinach",
@@ -200,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Version #2: Mediterranean-Inspired",
         "category": "Produce"
       }
     },
@@ -218,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "Version #2: Mediterranean-Inspired",
         "category": "Produce"
       }
     },
@@ -236,6 +262,7 @@
           }
         ],
         "note": "about 160g, drained",
+        "section": "Version #2: Mediterranean-Inspired",
         "category": "Other"
       }
     },
@@ -258,6 +285,7 @@
           }
         ],
         "note": "optional",
+        "section": "Version #2: Mediterranean-Inspired",
         "category": "Meat & Seafood"
       }
     }

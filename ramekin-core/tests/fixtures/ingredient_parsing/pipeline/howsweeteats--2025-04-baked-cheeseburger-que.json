@@ -127,6 +127,10 @@
       }
     },
     {
+      "raw": "how sweet eats house sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup mayonnaise",
       "expected": {
         "item": "mayonnaise",
@@ -137,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "How Sweet Eats House Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -151,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "How Sweet Eats House Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -165,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "How Sweet Eats House Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -179,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "How Sweet Eats House Sauce",
         "category": "Baking"
       }
     },
@@ -193,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "How Sweet Eats House Sauce",
         "category": "Condiments & Sauces"
       }
     }

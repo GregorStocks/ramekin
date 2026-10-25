@@ -3,6 +3,10 @@
   "recipe_slug": "2007-06-strawberry-chiffon-sho",
   "ingredients": [
     {
+      "raw": "Cake layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/4 cups sifted cake flour",
       "expected": {
         "item": "sifted cake flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Beverages"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups heavy cream",
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "I sliced mine very thinly, but would do so more thickly next time, or double-layer the strawberries so that you get a higher fruit-to-bite ratio., hulled and sliced",
+        "section": "Filling",
         "category": "Produce"
       }
     }

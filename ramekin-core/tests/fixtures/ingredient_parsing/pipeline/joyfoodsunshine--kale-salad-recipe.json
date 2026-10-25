@@ -3,6 +3,10 @@
   "recipe_slug": "kale-salad-recipe",
   "ingredients": [
     {
+      "raw": "Kale Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 bunch  kale stems removed, chopped thin (8 cups)",
       "expected": {
         "item": "kale",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "stems removed, chopped thin",
+        "section": "Kale Salad",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Kale Salad",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "julienned",
+        "section": "Kale Salad",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "julienned",
+        "section": "Kale Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "diced",
+        "section": "Kale Salad",
         "category": "Produce"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Other"
       }
     },
@@ -129,8 +141,13 @@
           }
         ],
         "note": "cubed",
+        "section": "Kale Salad",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3 Tablespoons olive oil",
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -222,6 +245,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

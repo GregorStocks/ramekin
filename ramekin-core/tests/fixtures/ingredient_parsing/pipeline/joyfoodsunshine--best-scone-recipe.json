@@ -129,6 +129,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 Tablespoon half and half",
       "expected": {
         "item": "half and half",
@@ -139,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,8 +158,13 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Glaze (optional):",
+      "is_section_header": true
     },
     {
       "raw": "½ cup powdered sugar",
@@ -167,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze (Optional)",
         "category": "Baking"
       }
     },
@@ -181,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze (Optional)",
         "category": "Baking"
       }
     }

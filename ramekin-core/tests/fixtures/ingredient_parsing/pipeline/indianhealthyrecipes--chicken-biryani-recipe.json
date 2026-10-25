@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-biryani-recipe",
   "ingredients": [
     {
+      "raw": "Marinade for chicken biryani:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ kg (1.1 lbs) chicken (skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or mix of all)",
       "expected": {
         "item": "chicken",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or mix of all",
+        "section": "Marinade for Chicken Biryani",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "curd or dahi",
+        "section": "Marinade for Chicken Biryani",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "1 inch ginger & 4 garlic cloves crushed",
+        "section": "Marinade for Chicken Biryani",
         "category": "Condiments & Sauces"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "adjust to tase",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "or paprika, use less spicy variety",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": "or biryani masala, Refer notes",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": "optional",
+        "section": "Marinade for Chicken Biryani",
         "category": "Produce"
       }
     },
@@ -124,6 +136,7 @@
         "item": "Whole spices :",
         "measurements": [],
         "note": "skip if you don’t have any",
+        "section": "Marinade for Chicken Biryani",
         "category": "Other"
       }
     },
@@ -138,6 +151,7 @@
           }
         ],
         "note": "tej patta",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -152,6 +166,7 @@
           }
         ],
         "note": "choti elaichi",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -166,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Chicken Biryani",
         "category": "Other"
       }
     },
@@ -180,6 +196,7 @@
           }
         ],
         "note": "dalchini",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -194,6 +211,7 @@
           }
         ],
         "note": "chakri phool",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +226,7 @@
           }
         ],
         "note": "caraway seeds, substitute with cumin",
+        "section": "Marinade for Chicken Biryani",
         "category": "Other"
       }
     },
@@ -222,8 +241,13 @@
           }
         ],
         "note": "javitri, omit if you don't like",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Other ingredients for chicken biryani:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups basmati rice (aged rice only)",
@@ -236,6 +260,7 @@
           }
         ],
         "note": "aged rice only",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Pasta & Rice"
       }
     },
@@ -250,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Dairy & Eggs"
       }
     },
@@ -264,6 +290,7 @@
           }
         ],
         "note": "sliced thinly",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Produce"
       }
     },
@@ -282,6 +309,7 @@
           }
         ],
         "note": "about 15 leaves, chopped fine",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Produce"
       }
     },
@@ -296,6 +324,7 @@
           }
         ],
         "note": "slit or chopped",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Produce"
       }
     },
@@ -310,6 +339,7 @@
           }
         ],
         "note": "Indian curd",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Dairy & Eggs"
       }
     },
@@ -324,6 +354,7 @@
           }
         ],
         "note": "optional, for heat",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -338,6 +369,7 @@
           }
         ],
         "note": "or biryani masala",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -352,6 +384,7 @@
           }
         ],
         "note": "3 1/2 cups for pot, refer notes, more if needed",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Beverages"
       }
     },
@@ -366,6 +399,7 @@
           }
         ],
         "note": "to stir in water",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -380,6 +414,7 @@
           }
         ],
         "note": "optional",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Canned Goods"
       }
     },
@@ -394,8 +429,13 @@
           }
         ],
         "note": "optional, soaked in 2 tbsps hot milk",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To make fried onions:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup oil or ghee  (I use organic steam refined coconut oil)",
@@ -408,6 +448,7 @@
           }
         ],
         "note": "I use organic steam refined coconut oil",
+        "section": "To Make Fried Onions",
         "category": "Oils & Vinegars"
       }
     },
@@ -430,8 +471,13 @@
           }
         ],
         "note": "sliced; or use small red onions",
+        "section": "To Make Fried Onions",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To Marinate:",
+      "is_section_header": true
     },
     {
       "raw": "1.1 pound (½ kg) chicken  (skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or breast)",
@@ -448,6 +494,7 @@
           }
         ],
         "note": "skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or breast",
+        "section": "To Marinate",
         "category": "Meat & Seafood"
       }
     },
@@ -462,6 +509,7 @@
           }
         ],
         "note": "curd, fresh, not sour",
+        "section": "To Marinate",
         "category": "Dairy & Eggs"
       }
     },
@@ -476,6 +524,7 @@
           }
         ],
         "note": null,
+        "section": "To Marinate",
         "category": "Produce"
       }
     },
@@ -490,6 +539,7 @@
           }
         ],
         "note": null,
+        "section": "To Marinate",
         "category": "Other"
       }
     },
@@ -504,6 +554,7 @@
           }
         ],
         "note": null,
+        "section": "To Marinate",
         "category": "Other"
       }
     },
@@ -518,6 +569,7 @@
           }
         ],
         "note": "optional, leave out for low heat",
+        "section": "To Marinate",
         "category": "Other"
       }
     },
@@ -532,6 +584,7 @@
           }
         ],
         "note": "may use fried onion ghee/oil",
+        "section": "To Marinate",
         "category": "Oils & Vinegars"
       }
     },
@@ -546,6 +599,7 @@
           }
         ],
         "note": null,
+        "section": "To Marinate",
         "category": "Spices & Seasonings"
       }
     },
@@ -560,6 +614,7 @@
           }
         ],
         "note": null,
+        "section": "To Marinate",
         "category": "Spices & Seasonings"
       }
     },
@@ -574,6 +629,7 @@
           }
         ],
         "note": null,
+        "section": "To Marinate",
         "category": "Spices & Seasonings"
       }
     },
@@ -588,6 +644,7 @@
           }
         ],
         "note": "recipe in the post intro, or use store bought biryani/garam masala",
+        "section": "To Marinate",
         "category": "Other"
       }
     },
@@ -602,6 +659,7 @@
           }
         ],
         "note": null,
+        "section": "To Marinate",
         "category": "Spices & Seasonings"
       }
     },
@@ -616,6 +674,7 @@
           }
         ],
         "note": "leave out if using homemade biryani masala",
+        "section": "To Marinate",
         "category": "Spices & Seasonings"
       }
     },
@@ -630,6 +689,7 @@
           }
         ],
         "note": "fine chopped",
+        "section": "To Marinate",
         "category": "Produce"
       }
     },
@@ -644,8 +704,13 @@
           }
         ],
         "note": "optional, fine chopped",
+        "section": "To Marinate",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To cook rice:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups water",
@@ -658,6 +723,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook Rice",
         "category": "Beverages"
       }
     },
@@ -676,6 +742,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook Rice",
         "category": "Other"
       }
     },
@@ -690,6 +757,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook Rice",
         "category": "Oils & Vinegars"
       }
     },
@@ -704,6 +772,7 @@
           }
         ],
         "note": "adjust to taste preference",
+        "section": "To Cook Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -718,6 +787,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -732,6 +802,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -746,6 +817,7 @@
           }
         ],
         "note": "omit if you don't have, Tej patta",
+        "section": "To Cook Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -760,6 +832,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -774,6 +847,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -788,6 +862,7 @@
           }
         ],
         "note": "Indian caraway seeds, omit if you don't have",
+        "section": "To Cook Rice",
         "category": "Other"
       }
     },
@@ -802,8 +877,13 @@
           }
         ],
         "note": "omit if you don't have",
+        "section": "To Cook Rice",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To Layer:",
+      "is_section_header": true
     },
     {
       "raw": "1 pinch (10 to 12)  saffron strands  or natural orange food color as needed",
@@ -816,6 +896,7 @@
           }
         ],
         "note": "10 to 12, as needed",
+        "section": "To Layer",
         "category": "Other"
       }
     },
@@ -830,6 +911,7 @@
           }
         ],
         "note": null,
+        "section": "To Layer",
         "category": "Other"
       }
     },
@@ -844,6 +926,7 @@
           }
         ],
         "note": null,
+        "section": "To Layer",
         "category": "Spices & Seasonings"
       }
     },
@@ -858,6 +941,7 @@
           }
         ],
         "note": null,
+        "section": "To Layer",
         "category": "Produce"
       }
     },
@@ -872,6 +956,7 @@
           }
         ],
         "note": "may use onion fried ghee",
+        "section": "To Layer",
         "category": "Dairy & Eggs"
       }
     }

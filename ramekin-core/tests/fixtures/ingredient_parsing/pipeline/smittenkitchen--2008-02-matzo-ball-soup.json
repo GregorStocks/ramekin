@@ -161,6 +161,14 @@
       }
     },
     {
+      "raw": "Matzo Ball Soup:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Matzo Balls:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup matzo meal",
       "expected": {
         "item": "matzo meal",
@@ -171,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Matzo Balls",
         "category": "Bakery & Bread"
       }
     },
@@ -185,6 +194,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Matzo Balls",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Matzo Balls",
         "category": "Meat & Seafood"
       }
     },
@@ -213,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Matzo Balls",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Matzo Balls",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,8 +254,13 @@
           }
         ],
         "note": "which both of our mothers swear by for making the balls extra light",
+        "section": "Matzo Balls",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "For soup:",
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 quarts prepared chicken stock (recipe above)",
@@ -255,6 +273,7 @@
           }
         ],
         "note": "recipe above",
+        "section": "For Soup",
         "category": "Canned Goods"
       }
     },
@@ -269,6 +288,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For Soup",
         "category": "Produce"
       }
     },
@@ -278,6 +298,7 @@
         "item": "A few sprigs of dill",
         "measurements": [],
         "note": null,
+        "section": "For Soup",
         "category": "Produce"
       }
     }

@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "salted maple vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup apple cider vinegar",
       "expected": {
         "item": "apple cider vinegar",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -120,6 +126,7 @@
           }
         ],
         "note": "finely minced or pressed",
+        "section": "Salted Maple Vinaigrette",
         "category": "Produce"
       }
     },
@@ -134,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "candied walnuts:",
+      "is_section_header": true
     },
     {
       "raw": "⅓ cup walnuts",
@@ -190,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Candied Walnuts",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -204,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Candied Walnuts",
         "category": "Baking"
       }
     },
@@ -218,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Candied Walnuts",
         "category": "Dairy & Eggs"
       }
     }

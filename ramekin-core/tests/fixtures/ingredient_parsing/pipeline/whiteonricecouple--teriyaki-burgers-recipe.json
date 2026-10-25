@@ -3,6 +3,10 @@
   "recipe_slug": "teriyaki-burgers-recipe",
   "ingredients": [
     {
+      "raw": "For the burgers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound  (454 g) ground beef",
       "expected": {
         "item": "ground beef",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Meat & Seafood"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Burgers",
         "category": "Condiments & Sauces"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "optional, crushed or minced",
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Burgers",
         "category": "Baking"
       }
     },
@@ -76,6 +84,7 @@
         "item": "fresh cracked black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Bakery & Bread"
       }
     },
@@ -99,6 +109,7 @@
         "item": "kosher salt or sea salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -108,8 +119,13 @@
         "item": "lettuce, tomato, pickles and other desired trimmings",
         "measurements": [],
         "note": null,
+        "section": "For the Burgers",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Teriyaki Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup  (60 ml) soy sauce",
@@ -126,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -144,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Beverages"
       }
     },
@@ -162,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Baking"
       }
     },
@@ -180,6 +199,7 @@
           }
         ],
         "note": "or apple cider",
+        "section": "For the Teriyaki Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -198,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Baking"
       }
     },
@@ -216,8 +237,13 @@
           }
         ],
         "note": "or 1/2 teaspoon ground ginger",
+        "section": "For the Teriyaki Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Mango Salsa:",
+      "is_section_header": true
     },
     {
       "raw": "1 large   ripe mango , peeled and cut into small dice",
@@ -230,6 +256,7 @@
           }
         ],
         "note": "peeled and cut into small dice",
+        "section": "For the Mango Salsa",
         "category": "Produce"
       }
     },
@@ -244,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mango Salsa",
         "category": "Produce"
       }
     },
@@ -262,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mango Salsa",
         "category": "Produce"
       }
     },
@@ -280,6 +309,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mango Salsa",
         "category": "Produce"
       }
     },
@@ -298,6 +328,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mango Salsa",
         "category": "Produce"
       }
     },
@@ -316,6 +347,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "For the Mango Salsa",
         "category": "Produce"
       }
     },
@@ -325,6 +357,7 @@
         "item": "salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Mango Salsa",
         "category": "Spices & Seasonings"
       }
     }

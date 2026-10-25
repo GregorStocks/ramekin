@@ -60,35 +60,6 @@
       "expanded": true
     },
     {
-      "raw": "1  lime (juiced and zested)",
-      "expected": {
-        "item": "lime zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lime"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1  lime (juiced and zested)",
-      "expected": {
-        "item": "lime juice",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lime"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
       "raw": "1 cup of coconut cream (not coconut milk*)",
       "expected": {
         "item": "coconut cream",

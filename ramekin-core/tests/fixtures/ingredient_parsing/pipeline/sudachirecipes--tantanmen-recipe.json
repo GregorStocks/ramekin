@@ -3,6 +3,10 @@
   "recipe_slug": "tantanmen-recipe",
   "ingredients": [
     {
+      "raw": "Meat:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ tbsp cooking oil neutral",
       "expected": {
         "item": "cooking oil neutral",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meat",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "rayu",
+        "section": "Meat",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "toban djan",
+        "section": "Meat",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Meat",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "or 70/30 pork-beef mix, chicken, turkey; vegetarian ground meat alternative",
+        "section": "Meat",
         "category": "Meat & Seafood"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meat",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meat",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "naganegi",
+        "section": "Meat",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meat",
         "category": "Beverages"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Meat",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Tare (Base Sauce):",
+      "is_section_header": true
     },
     {
       "raw": "3 tbsp sesame paste (nerigoma) or Chinese sesame paste, tahini",
@@ -153,6 +171,7 @@
           }
         ],
         "note": "nerigoma",
+        "section": "Tare (Base Sauce)",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Base Sauce)",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Base Sauce)",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Tare (Base Sauce)",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "rayu",
+        "section": "Tare (Base Sauce)",
         "category": "Oils & Vinegars"
       }
     },
@@ -223,8 +246,13 @@
           }
         ],
         "note": null,
+        "section": "Tare (Base Sauce)",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Broth:",
+      "is_section_header": true
     },
     {
       "raw": "500 ml kombu dashi stock or plain water",
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Other"
       }
     },
@@ -279,8 +310,13 @@
           }
         ],
         "note": "optional",
+        "section": "Broth",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Noodles and Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "3 portions ramen noodles",
@@ -293,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "Noodles and Toppings",
         "category": "Pasta & Rice"
       }
     },
@@ -307,6 +344,7 @@
           }
         ],
         "note": "pak choy",
+        "section": "Noodles and Toppings",
         "category": "Produce"
       }
     },
@@ -316,6 +354,7 @@
         "item": "finely chopped green onions",
         "measurements": [],
         "note": null,
+        "section": "Noodles and Toppings",
         "category": "Produce"
       }
     },
@@ -325,6 +364,7 @@
         "item": "roasted peanuts",
         "measurements": [],
         "note": "crushed, optional",
+        "section": "Noodles and Toppings",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -334,6 +374,7 @@
         "item": "chili oil",
         "measurements": [],
         "note": "rayu, to taste",
+        "section": "Noodles and Toppings",
         "category": "Oils & Vinegars"
       }
     }

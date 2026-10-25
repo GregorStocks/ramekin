@@ -3,6 +3,10 @@
   "recipe_slug": "2013-12-eggnog-florentines",
   "ingredients": [
     {
+      "raw": "Pecan florentines:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup plus 2 tablespoons (6 tablespoons or 45 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Florentines",
         "category": "Baking"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "about 55 grams",
+        "section": "Pecan Florentines",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "I halved this, found it to be just-enough",
+        "section": "Pecan Florentines",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "I recommend doubling this",
+        "section": "Pecan Florentines",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Pecan Florentines",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "65, oops, sorry, it is 130 grams, I would drop this by a tablespoon or two next time",
+        "section": "Pecan Florentines",
         "category": "Baking"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Florentines",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Florentines",
         "category": "Baking"
       }
     },
@@ -141,8 +153,13 @@
           }
         ],
         "note": null,
+        "section": "Pecan Florentines",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Eggnog filling:",
+      "is_section_header": true
     },
     {
       "raw": "4 large eggs, hard-boiled",
@@ -155,6 +172,7 @@
           }
         ],
         "note": "hard-boiled",
+        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Baking"
       }
     },
@@ -205,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -219,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Baking"
       }
     },
@@ -233,6 +255,7 @@
           }
         ],
         "note": "I halved this because I’m a spice wimp",
+        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -247,6 +270,7 @@
           }
         ],
         "note": "I halved this too",
+        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -261,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -275,6 +300,7 @@
           }
         ],
         "note": "can be skipped or reduced",
+        "section": "Eggnog Filling",
         "category": "Beverages"
       }
     }

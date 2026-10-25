@@ -3,6 +3,10 @@
   "recipe_slug": "2010-02-chocolate-souffle-cupc",
   "ingredients": [
     {
+      "raw": "Chocolate Soufflé Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 ounces (170 grams) bittersweet or semisweet chocolate, chopped (I preferred this with bittersweet)",
       "expected": {
         "item": "bittersweet or semisweet chocolate",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "I preferred this with bittersweet, chopped",
+        "section": "Chocolate Soufflé Cupcakes",
         "category": "Baking"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "Chocolate Soufflé Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Soufflé Cupcakes",
         "category": "Beverages"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "separated",
+        "section": "Chocolate Soufflé Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": "divided",
+        "section": "Chocolate Soufflé Cupcakes",
         "category": "Baking"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Soufflé Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,8 +127,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Soufflé Cupcakes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "White Chocolate Mint Cream:",
+      "is_section_header": true
     },
     {
       "raw": "2 ounces (55 grams) white chocolate, finely chopped",
@@ -135,6 +150,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "White Chocolate Mint Cream",
         "category": "Baking"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "White Chocolate Mint Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "White Chocolate Mint Cream",
         "category": "Baking"
       }
     }

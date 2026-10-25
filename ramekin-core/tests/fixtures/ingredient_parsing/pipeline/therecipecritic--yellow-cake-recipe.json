@@ -3,6 +3,10 @@
   "recipe_slug": "yellow-cake-recipe",
   "ingredients": [
     {
+      "raw": "Dry Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 ¼ Cups Cake Flour",
       "expected": {
         "item": "Cake Flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Ingredients",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Ingredients",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Ingredients",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Ingredients",
         "category": "Baking"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Dry Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Wet Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1  Cup Buttermilk",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Wet Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Wet Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Wet Ingredients",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Wet Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Wet Ingredients",
         "category": "Dairy & Eggs"
       }
     }

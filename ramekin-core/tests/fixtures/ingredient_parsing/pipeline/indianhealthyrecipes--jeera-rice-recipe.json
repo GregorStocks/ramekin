@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "Whole spices:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 teaspoons cumin seeds (jeera)",
       "expected": {
         "item": "cumin seeds",
@@ -83,6 +87,7 @@
           }
         ],
         "note": "jeera",
+        "section": "Whole Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": "tej patta",
+        "section": "Whole Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +117,7 @@
           }
         ],
         "note": "elaichi",
+        "section": "Whole Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +132,7 @@
           }
         ],
         "note": "dalchini",
+        "section": "Whole Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Whole Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +162,7 @@
           }
         ],
         "note": "javitri, optional",
+        "section": "Whole Spices",
         "category": "Spices & Seasonings"
       }
     }

@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp honey",
       "expected": {
         "item": "honey",
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": "See Note 2",
+        "section": "Glaze",
         "category": "Other"
       }
     },
@@ -111,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     }

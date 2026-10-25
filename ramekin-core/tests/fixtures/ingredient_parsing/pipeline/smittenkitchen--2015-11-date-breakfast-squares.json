@@ -3,6 +3,10 @@
   "recipe_slug": "2015-11-date-breakfast-squares",
   "ingredients": [
     {
+      "raw": "For the filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups (8 ounces) pitted dates, chopped",
       "expected": {
         "item": "pitted dates",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
@@ -45,8 +51,13 @@
           }
         ],
         "note": "or mandarin or clementine",
+        "section": "For the Filling",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the crumbs:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons packed brown sugar",
@@ -59,6 +70,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Crumbs",
         "category": "Baking"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumbs",
         "category": "Baking"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": "melted butter or a mix of the above",
+        "section": "For the Crumbs",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumbs",
         "category": "Snacks"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumbs",
         "category": "Baking"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -138,6 +155,7 @@
         "item": "A few gratings of fresh nutmeg",
         "measurements": [],
         "note": null,
+        "section": "For the Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -147,6 +165,7 @@
         "item": "A pinch or two of ground cloves",
         "measurements": [],
         "note": null,
+        "section": "For the Crumbs",
         "category": "Other"
       }
     },
@@ -161,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumbs",
         "category": "Baking"
       }
     },
@@ -175,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumbs",
         "category": "Spices & Seasonings"
       }
     }

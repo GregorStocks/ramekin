@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "Optional Serving Suggestion:",
+      "is_section_header": true
+    },
+    {
       "raw": "2-4 tablespoons parmesan cheese fresh grated",
       "expected": {
         "item": "parmesan cheese fresh",
@@ -83,6 +87,7 @@
           }
         ],
         "note": "grated",
+        "section": "Optional Serving Suggestion",
         "category": "Other"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Serving Suggestion",
         "category": "Other"
       }
     }

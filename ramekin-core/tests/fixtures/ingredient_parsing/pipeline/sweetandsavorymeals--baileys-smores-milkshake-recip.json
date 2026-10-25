@@ -73,11 +73,16 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Mini marshmallow",
       "expected": {
         "item": "Mini marshmallow",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Baking"
       }
     },
@@ -87,6 +92,7 @@
         "item": "Chocolate fudge",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     },
@@ -96,6 +102,7 @@
         "item": "Whipped cream",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,6 +112,7 @@
         "item": "Chocolate squares",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Snacks"
       }
     },
@@ -114,6 +122,7 @@
         "item": "Graham crackers",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Snacks"
       }
     },
@@ -123,6 +132,7 @@
         "item": "Graham cracker crumbs",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Snacks"
       }
     },
@@ -132,6 +142,7 @@
         "item": "Chocolate sauce",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Condiments & Sauces"
       }
     }

@@ -124,6 +124,10 @@
       }
     },
     {
+      "raw": "Stir Fry Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp corn starch",
       "expected": {
         "item": "corn starch",
@@ -134,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry Sauce",
         "category": "Baking"
       }
     },
@@ -148,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry Sauce",
         "category": "Beverages"
       }
     },
@@ -162,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry Sauce",
         "category": "Canned Goods"
       }
     },
@@ -176,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -190,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry Sauce",
         "category": "Baking"
       }
     },
@@ -204,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -218,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry Sauce",
         "category": "Spices & Seasonings"
       }
     }

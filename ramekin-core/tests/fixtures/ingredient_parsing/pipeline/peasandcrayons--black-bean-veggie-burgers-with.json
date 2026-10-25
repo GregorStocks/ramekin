@@ -213,6 +213,10 @@
       }
     },
     {
+      "raw": "CHIPOTLE HONEY MUSTARD:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 TBSP yellow mustard",
       "expected": {
         "item": "yellow mustard",
@@ -223,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Condiments & Sauces"
       }
     },
@@ -237,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Baking"
       }
     },
@@ -279,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Canned Goods"
       }
     },
@@ -293,6 +302,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Chipotle Honey Mustard",
         "category": "Other"
       }
     },
@@ -307,8 +317,13 @@
           }
         ],
         "note": "to taste",
+        "section": "Chipotle Honey Mustard",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "EXTRAS:",
+      "is_section_header": true
     },
     {
       "raw": "Burger buns or lettuce wraps",
@@ -316,6 +331,7 @@
         "item": "Burger buns or lettuce wraps",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Bakery & Bread"
       }
     },
@@ -325,6 +341,7 @@
         "item": "Cheddar or Pepper Jack cheese",
         "measurements": [],
         "note": "optional",
+        "section": "Extras",
         "category": "Cheese"
       }
     },
@@ -334,6 +351,7 @@
         "item": "arugula or lettuce",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
@@ -343,6 +361,7 @@
         "item": "sliced ripe tomato",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
@@ -352,6 +371,7 @@
         "item": "sliced or mashed avocado",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
@@ -361,6 +381,7 @@
         "item": "PLUS all your favorite veggie burger add-ons!",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Other"
       }
     }

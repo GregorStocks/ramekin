@@ -96,11 +96,16 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Mixed berries",
       "expected": {
         "item": "Mixed berries",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -110,6 +115,7 @@
         "item": "Maple syrup",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,6 +125,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Baking"
       }
     }

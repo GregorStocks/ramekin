@@ -3,6 +3,10 @@
   "recipe_slug": "veg-cutlet-recipe-vegetable-cu",
   "ingredients": [
     {
+      "raw": "Veggies for cutlet:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups potatoes peel & cube to ¾ inch (2 large) (or sweet potatoes)",
       "expected": {
         "item": "potatoes peel & cube to 3/4 inch",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "or sweet potatoes",
+        "section": "Veggies for Cutlet",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "frozen or fresh",
+        "section": "Veggies for Cutlet",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "diced",
+        "section": "Veggies for Cutlet",
         "category": "Produce"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "6 to 8, chopped",
+        "section": "Veggies for Cutlet",
         "category": "Canned Goods"
       }
     },
@@ -77,8 +85,13 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Veggies for Cutlet",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Other ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "½ teaspoon salt  (adjust to taste)",
@@ -91,6 +104,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": "skip for kids, finely chopped",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": "read notes; or 1/2 cup thick poha powdered or roasted besan",
+        "section": "Other Ingredients",
         "category": "Bakery & Bread"
       }
     },
@@ -161,8 +179,13 @@
           }
         ],
         "note": "or as needed",
+        "section": "Other Ingredients",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For crumb coating:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoon besan or gram flour or rice flour or corn flour",
@@ -175,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For Crumb Coating",
         "category": "Baking"
       }
     },
@@ -189,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For Crumb Coating",
         "category": "Bakery & Bread"
       }
     }

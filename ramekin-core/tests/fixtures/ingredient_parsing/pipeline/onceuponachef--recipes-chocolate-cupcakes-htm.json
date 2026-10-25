@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-chocolate-cupcakes-htm",
   "ingredients": [
     {
+      "raw": "For the Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ cups all-purpose flour, spooned into measuring cup and leveled-off",
       "expected": {
         "item": "all-purpose flour, spooned into measuring cup and leveled-off",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "such as Hershey’s",
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces milk or semi-sweet chocolate, broken into small pieces (see note)",
@@ -167,6 +186,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": "softened but still cool",
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": "such as Hershey's",
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -227,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -255,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     }

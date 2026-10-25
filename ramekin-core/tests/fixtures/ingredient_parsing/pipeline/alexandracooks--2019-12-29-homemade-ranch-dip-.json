@@ -110,11 +110,16 @@
       }
     },
     {
+      "raw": "For serving (see notes above):",
+      "is_section_header": true
+    },
+    {
       "raw": "endive, quartered through the core or cut into sixths",
       "expected": {
         "item": "endive",
         "measurements": [],
         "note": "quartered through the core or cut into sixths",
+        "section": "For Serving (See Notes Above)",
         "category": "Produce"
       }
     },
@@ -124,6 +129,7 @@
         "item": "Romaine leaves",
         "measurements": [],
         "note": null,
+        "section": "For Serving (See Notes Above)",
         "category": "Produce"
       }
     },
@@ -133,6 +139,7 @@
         "item": "radishes",
         "measurements": [],
         "note": "quartered",
+        "section": "For Serving (See Notes Above)",
         "category": "Produce"
       }
     },
@@ -142,6 +149,7 @@
         "item": "carrots",
         "measurements": [],
         "note": "cut into sticks",
+        "section": "For Serving (See Notes Above)",
         "category": "Produce"
       }
     },
@@ -151,6 +159,7 @@
         "item": "chips or crackers",
         "measurements": [],
         "note": null,
+        "section": "For Serving (See Notes Above)",
         "category": "Other"
       }
     }

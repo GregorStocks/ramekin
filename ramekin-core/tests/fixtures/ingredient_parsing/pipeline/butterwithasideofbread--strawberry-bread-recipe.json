@@ -157,6 +157,10 @@
       }
     },
     {
+      "raw": "for glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cup powdered sugar",
       "expected": {
         "item": "powdered sugar",
@@ -167,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -181,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     }

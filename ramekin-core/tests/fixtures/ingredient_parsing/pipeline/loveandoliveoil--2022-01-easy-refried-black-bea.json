@@ -137,11 +137,16 @@
       }
     },
     {
+      "raw": "Optional toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Sour cream",
       "expected": {
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,6 +156,7 @@
         "item": "Shredded cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -160,6 +166,7 @@
         "item": "Fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -169,6 +176,7 @@
         "item": "Romaine or iceberg lettuce",
         "measurements": [],
         "note": "finely shredded",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -178,6 +186,7 @@
         "item": "Hot sauce or salsa",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -187,6 +196,7 @@
         "item": "Shaved red onion or thinly sliced radish",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

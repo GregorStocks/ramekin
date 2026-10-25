@@ -185,6 +185,10 @@
       }
     },
     {
+      "raw": "Coating:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -195,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     }

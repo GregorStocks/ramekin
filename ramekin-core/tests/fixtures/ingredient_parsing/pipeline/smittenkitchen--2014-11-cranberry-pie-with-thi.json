@@ -3,6 +3,10 @@
   "recipe_slug": "2014-11-cranberry-pie-with-thi",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (155 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -93,8 +101,13 @@
           }
         ],
         "note": "plus an additional tablespoon if needed",
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "4 1/2 cups fresh or frozen cranberries (from 1 1/2 12-ounce bags)",
@@ -107,6 +120,7 @@
           }
         ],
         "note": "from 1 1/2 12-ounce bags",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": "plus 1 to 2 more tablespoons, if desired, to taste",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -130,6 +145,7 @@
         "item": "A few gratings of orange zest",
         "measurements": [],
         "note": "yes, clementine zest works great here too",
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -139,6 +155,7 @@
         "item": "A pinch of salt",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,8 +170,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Streusel:",
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup rolled oats or 1/2 cup oat flour",
@@ -167,6 +189,7 @@
           }
         ],
         "note": "or 1/2 cup oat flour",
+        "section": "Streusel",
         "category": "Snacks"
       }
     },
@@ -181,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -195,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -209,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -223,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +279,7 @@
           }
         ],
         "note": "toasted if you have the time",
+        "section": "Streusel",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -265,6 +294,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2009-05-broccoli-slaw",
   "ingredients": [
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons finely chopped shallot or red onion",
       "expected": {
         "item": "finely chopped shallot or red onion",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "well-shaken",
+        "section": "Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -98,8 +107,13 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Slaw:",
+      "is_section_header": true
     },
     {
       "raw": "2 heads of broccoli (1.75 to 2 pounds or 800 to 900 grams)",
@@ -120,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -138,6 +153,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Slaw",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -156,6 +172,7 @@
           }
         ],
         "note": "chopped tiny if you wish",
+        "section": "Slaw",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -170,6 +187,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Slaw",
         "category": "Produce"
       }
     }

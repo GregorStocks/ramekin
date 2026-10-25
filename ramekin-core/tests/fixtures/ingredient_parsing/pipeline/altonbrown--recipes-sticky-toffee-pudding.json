@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-sticky-toffee-pudding",
   "ingredients": [
     {
+      "raw": "Toffee Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "11 tablespoons unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Beverages"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Pudding:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup  all-purpose flour",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "divided",
+        "section": "Pudding",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Beverages"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "plus 1 large yolk",
+        "section": "Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "melted",
+        "section": "Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Baking"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Baking"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Baking"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding",
         "category": "Beverages"
       }
     }

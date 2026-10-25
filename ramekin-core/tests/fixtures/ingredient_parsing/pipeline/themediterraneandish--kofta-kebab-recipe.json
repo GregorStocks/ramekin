@@ -189,11 +189,16 @@
       }
     },
     {
+      "raw": "For the Fixings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Tahini Sauce",
       "expected": {
         "item": "Tahini Sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Fixings",
         "category": "Other"
       }
     },
@@ -203,6 +208,7 @@
         "item": "Tomato wedges",
         "measurements": [],
         "note": null,
+        "section": "For the Fixings",
         "category": "Other"
       }
     },
@@ -212,6 +218,7 @@
         "item": "Onion wedges",
         "measurements": [],
         "note": null,
+        "section": "For the Fixings",
         "category": "Other"
       }
     },
@@ -221,6 +228,7 @@
         "item": "parsley",
         "measurements": [],
         "note": null,
+        "section": "For the Fixings",
         "category": "Produce"
       }
     }

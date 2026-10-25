@@ -3,6 +3,10 @@
   "recipe_slug": "2018-05-white-rose-tea-and-coc",
   "ingredients": [
     {
+      "raw": "Panna cotta:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups 300ml boiling water",
       "expected": {
         "item": "boiling water",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Beverages"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Other"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Beverages"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Canned Goods"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Baking"
       }
     },
@@ -109,8 +119,13 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Grenadine layer:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon cold water",
@@ -123,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Grenadine Layer",
         "category": "Beverages"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Grenadine Layer",
         "category": "Baking"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Grenadine Layer",
         "category": "Beverages"
       }
     },
@@ -169,8 +187,13 @@
           }
         ],
         "note": null,
+        "section": "Grenadine Layer",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Coconut whipped cream:",
+      "is_section_header": true
     },
     {
       "raw": "15 ounce can full fat coconut milk unshaken and well chilled",
@@ -183,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Other"
       }
     },
@@ -197,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Baking"
       }
     },
@@ -211,8 +236,13 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Garnish",
+      "is_section_header": true
     },
     {
       "raw": "Cream puffs",
@@ -220,6 +250,7 @@
         "item": "Cream puffs",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Bakery & Bread"
       }
     },
@@ -229,6 +260,7 @@
         "item": "Edible organic rose petals",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     }

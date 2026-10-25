@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
@@ -97,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": "or water or 1 tablespoon water plus 1 tablespoon lemon juice (I did this to make the glaze more interesting)",
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     }

@@ -114,6 +114,10 @@
       }
     },
     {
+      "raw": "quick guacamole:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 avocados",
       "expected": {
         "item": "avocados",
@@ -124,6 +128,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Guacamole",
         "category": "Produce"
       }
     },
@@ -138,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Guacamole",
         "category": "Produce"
       }
     },
@@ -152,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Guacamole",
         "category": "Produce"
       }
     },
@@ -166,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Guacamole",
         "category": "Produce"
       }
     },
@@ -175,6 +183,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Quick Guacamole",
         "category": "Spices & Seasonings"
       }
     }

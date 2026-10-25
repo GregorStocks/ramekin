@@ -3,6 +3,14 @@
   "recipe_slug": "to-die-for-carrot-cake-recipe",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "One:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ¼ cups unsweetened applesauce or oil, this is what my Nana used",
       "expected": {
         "item": "unsweetened applesauce or oil, this is what my Nana used",
@@ -13,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "One",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "One",
         "category": "Baking"
       }
     },
@@ -41,8 +51,13 @@
           }
         ],
         "note": null,
+        "section": "One",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Two:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups all-purpose flour",
@@ -55,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Baking"
       }
     },
@@ -69,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Baking"
       }
     },
@@ -83,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Baking"
       }
     },
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +130,13 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Three:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups grated carrots",
@@ -125,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Three",
         "category": "Produce"
       }
     },
@@ -139,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Three",
         "category": "Baking"
       }
     },
@@ -153,6 +179,7 @@
           }
         ],
         "note": "optional",
+        "section": "Three",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -167,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Three",
         "category": "Baking"
       }
     },
@@ -181,8 +209,13 @@
           }
         ],
         "note": null,
+        "section": "Three",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Cream Cheese Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup butter softened",
@@ -195,6 +228,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +243,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
@@ -223,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -237,6 +273,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -246,6 +283,7 @@
         "item": "top with toasted pecans or coconut",
         "measurements": [],
         "note": "if desired",
+        "section": "Cream Cheese Frosting",
         "category": "Nuts & Dried Fruit"
       }
     }

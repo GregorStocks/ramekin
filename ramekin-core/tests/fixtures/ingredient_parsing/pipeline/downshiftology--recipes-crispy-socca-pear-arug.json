@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-crispy-socca-pear-arug",
   "ingredients": [
     {
+      "raw": "Socca:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup chickpea flour, also known as garbanzo bean flour or besan flour",
       "expected": {
         "item": "chickpea flour, also known as garbanzo bean flour or besan flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Socca",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "plus extra for thinning if needed",
+        "section": "Socca",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Socca",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
         "item": "pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Socca",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "divided",
+        "section": "Socca",
         "category": "Oils & Vinegars"
       }
     },
@@ -82,6 +91,7 @@
           }
         ],
         "note": "approx 1/4 cup, thinly sliced",
+        "section": "Socca",
         "category": "Produce"
       }
     },
@@ -96,8 +106,13 @@
           }
         ],
         "note": "minced",
+        "section": "Socca",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 pear, thinly sliced",
@@ -110,6 +125,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -124,6 +140,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -138,6 +155,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -152,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -161,6 +180,7 @@
         "item": "shaved parmesan",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Cheese"
       }
     },
@@ -170,6 +190,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     }

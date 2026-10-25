@@ -3,6 +3,10 @@
   "recipe_slug": "2013-12-linzer-torte",
   "ingredients": [
     {
+      "raw": "Base and lattice:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 1/2 cups (1 pound or 455 grams) shelled walnuts",
       "expected": {
         "item": "shelled walnuts",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Base and Lattice",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Base and Lattice",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Base and Lattice",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "I halved this, using only 1/4 teaspoon",
+        "section": "Base and Lattice",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "Heatter says 1/4, I really prefer this with 1/2",
+        "section": "Base and Lattice",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "Base and Lattice",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Base and Lattice",
         "category": "Baking"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": "plus 1 egg yolk",
+        "section": "Base and Lattice",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,8 +161,13 @@
           }
         ],
         "note": "finely grated",
+        "section": "Base and Lattice",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (about 20 to 25 grams) fine, dry breadcrumbs",
@@ -167,6 +184,7 @@
           }
         ],
         "note": "about 20 to 25 grams",
+        "section": "Filling",
         "category": "Bakery & Bread"
       }
     },
@@ -185,8 +203,13 @@
           }
         ],
         "note": "about 575 grams",
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg yolk",
@@ -199,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Beverages"
       }
     },
@@ -231,6 +256,7 @@
           }
         ],
         "note": "julienne-shaped pieces, optional",
+        "section": "To Finish",
         "category": "Other"
       }
     }

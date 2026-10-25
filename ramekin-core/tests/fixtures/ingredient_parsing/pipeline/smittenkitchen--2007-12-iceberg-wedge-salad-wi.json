@@ -3,6 +3,10 @@
   "recipe_slug": "2007-12-iceberg-wedge-salad-wi",
   "ingredients": [
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup buttermilk, well-shaken",
       "expected": {
         "item": "buttermilk",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "well-shaken",
+        "section": "Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +102,7 @@
         "item": "Many grinds of black pepper",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -110,6 +121,7 @@
           }
         ],
         "note": "about, plus more for garnish",
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -124,8 +136,13 @@
           }
         ],
         "note": "plus more for garnish",
+        "section": "Dressing",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 medium head iceberg lettuce (about 1 pound)",
@@ -142,6 +159,7 @@
           }
         ],
         "note": "about 1 pound",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -151,6 +169,7 @@
         "item": "Red wine vinegar",
         "measurements": [],
         "note": "to taste",
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -160,6 +179,7 @@
         "item": "Blue cheese dressing",
         "measurements": [],
         "note": "from above",
+        "section": "Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -174,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -188,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     }

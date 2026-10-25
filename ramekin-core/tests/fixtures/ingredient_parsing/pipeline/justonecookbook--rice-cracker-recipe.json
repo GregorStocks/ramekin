@@ -26,11 +26,16 @@
       }
     },
     {
+      "raw": "For the Seasoning Options:",
+      "is_section_header": true
+    },
+    {
       "raw": "Diamond Crystal kosher salt (I used Himalayan Pink Salt)",
       "expected": {
         "item": "Diamond Crystal kosher salt",
         "measurements": [],
         "note": "I used Himalayan Pink Salt",
+        "section": "For the Seasoning Options",
         "category": "Spices & Seasonings"
       }
     },
@@ -40,6 +45,7 @@
         "item": "furikake",
         "measurements": [],
         "note": "rice seasoning, you can make homemade Japanese Rice Seasoning",
+        "section": "For the Seasoning Options",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
         "item": "soy sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Seasoning Options",
         "category": "Condiments & Sauces"
       }
     }

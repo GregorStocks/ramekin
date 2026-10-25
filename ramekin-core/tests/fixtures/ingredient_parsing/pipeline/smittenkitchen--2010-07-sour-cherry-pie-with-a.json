@@ -3,6 +3,10 @@
   "recipe_slug": "2010-07-sour-cherry-pie-with-a",
   "ingredients": [
     {
+      "raw": "For the almond crumble:",
+      "is_section_header": true
+    },
+    {
       "raw": "2/3 cup whole oats, ground to a flour in a food processor (yielding 1/2 cup oat flour)",
       "expected": {
         "item": "whole oats",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "yielding 1/2 cup oat flour, ground to a flour in a food processor",
+        "section": "For the Almond Crumble",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Almond Crumble",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Almond Crumble",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Almond Crumble",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "you might want to first read up on kosher salts",
+        "section": "For the Almond Crumble",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For the Almond Crumble",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the sour cherry filling:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup sugar",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sour Cherry Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sour Cherry Filling",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sour Cherry Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "pitted, or 2 pounds frozen sour cherries, partially thawed",
+        "section": "For the Sour Cherry Filling",
         "category": "Produce"
       }
     }

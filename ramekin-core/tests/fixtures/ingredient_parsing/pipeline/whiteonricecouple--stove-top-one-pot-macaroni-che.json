@@ -143,11 +143,16 @@
       }
     },
     {
+      "raw": "additional toppings:(optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "bacon bits",
       "expected": {
         "item": "bacon bits",
         "measurements": [],
         "note": null,
+        "section": "Additional Toppings:(Optional)",
         "category": "Meat & Seafood"
       }
     },
@@ -157,6 +162,7 @@
         "item": "bread crumbs",
         "measurements": [],
         "note": null,
+        "section": "Additional Toppings:(Optional)",
         "category": "Bakery & Bread"
       }
     },
@@ -166,6 +172,7 @@
         "item": "chopped parsley",
         "measurements": [],
         "note": null,
+        "section": "Additional Toppings:(Optional)",
         "category": "Produce"
       }
     },
@@ -175,6 +182,7 @@
         "item": "diced tomatoes",
         "measurements": [],
         "note": null,
+        "section": "Additional Toppings:(Optional)",
         "category": "Canned Goods"
       }
     },
@@ -184,6 +192,7 @@
         "item": "black pepper",
         "measurements": [],
         "note": "optional, to taste",
+        "section": "Additional Toppings:(Optional)",
         "category": "Spices & Seasonings"
       }
     }

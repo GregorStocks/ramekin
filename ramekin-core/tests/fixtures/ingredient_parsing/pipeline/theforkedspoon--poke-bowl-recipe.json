@@ -3,6 +3,10 @@
   "recipe_slug": "poke-bowl-recipe",
   "ingredients": [
     {
+      "raw": "Poke Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup low-sodium soy sauce",
       "expected": {
         "item": "low-sodium soy sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Poke Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Poke Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "grated",
+        "section": "Poke Ingredients",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "Poke Ingredients",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "cut into 1/2-inch cubes",
+        "section": "Poke Ingredients",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Spicy Sriracha Mayonnaise:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup mayonnaise",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Sriracha Mayonnaise",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Spicy Sriracha Mayonnaise",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,8 +126,13 @@
           }
         ],
         "note": null,
+        "section": "Spicy Sriracha Mayonnaise",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups cooked rice, sushi rice, white rice, or brown rice",
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": "peeled, pitted, and sliced",
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": "peeled, pitted, and sliced",
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     }

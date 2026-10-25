@@ -63,6 +63,10 @@
       }
     },
     {
+      "raw": "For Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 to 4 tbsp extra virgin olive oil I used Early Harvest Greek extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil I used Early Harvest Greek extra virgin olive oil",
@@ -73,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Other"
       }
     },
@@ -87,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -115,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,6 +132,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     }

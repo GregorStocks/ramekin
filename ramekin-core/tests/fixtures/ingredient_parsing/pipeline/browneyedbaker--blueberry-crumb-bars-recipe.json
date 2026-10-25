@@ -3,6 +3,10 @@
   "recipe_slug": "blueberry-crumb-bars-recipe",
   "ingredients": [
     {
+      "raw": "For the Crumb:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups  (375 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "cut into small cubes",
+        "section": "For the Crumb",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Blueberry Filling:",
+      "is_section_header": true
     },
     {
       "raw": "4 cups  (592 g) fresh blueberries, (20 ounces)",
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blueberry Filling",
         "category": "Produce"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blueberry Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blueberry Filling",
         "category": "Baking"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": "about 3 tablespoons",
+        "section": "For the Blueberry Filling",
         "category": "Produce"
       }
     }

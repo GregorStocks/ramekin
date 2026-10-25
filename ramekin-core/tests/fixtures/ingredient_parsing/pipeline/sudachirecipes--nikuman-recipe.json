@@ -3,6 +3,10 @@
   "recipe_slug": "nikuman-recipe",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "100 g cake flour",
       "expected": {
         "item": "cake flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Other"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "100 g ground pork",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "diced",
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": "awase",
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": "kurozu",
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -307,6 +336,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -321,6 +351,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -335,6 +366,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -349,6 +381,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -363,6 +396,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -377,6 +411,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -391,6 +426,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -405,6 +441,7 @@
           }
         ],
         "note": "katakuriko",
+        "section": "Filling",
         "category": "Other"
       }
     }

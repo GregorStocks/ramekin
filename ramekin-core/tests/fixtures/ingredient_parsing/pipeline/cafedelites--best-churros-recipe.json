@@ -3,6 +3,10 @@
   "recipe_slug": "best-churros-recipe",
   "ingredients": [
     {
+      "raw": "COATING:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup sugar",
       "expected": {
         "item": "sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "CHURROS:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces butter",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Beverages"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Dairy & Eggs"
       }
     }

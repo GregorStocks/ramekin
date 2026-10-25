@@ -3,6 +3,10 @@
   "recipe_slug": "2012-05-rhubarb-snacking-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 pound (565 grams) rhubarb, trimmed and cut into 1/2-inch lengths on the diagonal",
       "expected": {
         "item": "rhubarb",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "trimmed and cut into 1/2-inch lengths on the diagonal",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "psst, skip ahead and zest it for the cake before you cut it",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,8 +195,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Crumb:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (125 grams) all-purpose flour",
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb",
         "category": "Baking"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb",
         "category": "Baking"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -245,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -271,6 +294,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crumb",
         "category": "Dairy & Eggs"
       }
     }

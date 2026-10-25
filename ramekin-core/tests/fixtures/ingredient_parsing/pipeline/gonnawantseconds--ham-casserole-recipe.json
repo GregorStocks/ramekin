@@ -3,6 +3,10 @@
   "recipe_slug": "ham-casserole-recipe",
   "ingredients": [
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups panko crumbs",
       "expected": {
         "item": "panko crumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Bakery & Bread"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "melted",
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Casserole:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces dried egg noodles",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Casserole",
         "category": "Other"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": "about 4 1/2-5 cups cubed, cut into 1/2 cubes",
+        "section": "Casserole",
         "category": "Meat & Seafood"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "plus 2 tablespoons butter, divided",
+        "section": "Casserole",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Casserole",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "Casserole",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "minced",
+        "section": "Casserole",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Casserole",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Casserole",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Casserole",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Casserole",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Casserole",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Casserole",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Casserole",
         "category": "Produce"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Casserole",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Casserole",
         "category": "Cheese"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "softened",
+        "section": "Casserole",
         "category": "Cheese"
       }
     },
@@ -265,8 +291,13 @@
           }
         ],
         "note": "thawed and drained",
+        "section": "Casserole",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "thyme leaves",
@@ -274,6 +305,7 @@
         "item": "thyme leaves",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -283,6 +315,7 @@
         "item": "sage leaves",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }

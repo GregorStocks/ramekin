@@ -3,6 +3,10 @@
   "recipe_slug": "peach-and-blueberry-crumble-re",
   "ingredients": [
     {
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds  (907.18 g) fresh peaches, peeled, pitted and cut into wedges ½-inch to ¾-inch-thick",
       "expected": {
         "item": "fresh peaches",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "peeled, pitted and cut into wedges 1/2-inch to 3/4-inch-thick",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,8 +131,13 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Crumble:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  (125 g) all-purpose flour",
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumble",
         "category": "Baking"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Crumble",
         "category": "Baking"
       }
     },
@@ -175,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumble",
         "category": "Baking"
       }
     },
@@ -193,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumble",
         "category": "Spices & Seasonings"
       }
     },
@@ -211,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumble",
         "category": "Spices & Seasonings"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumble",
         "category": "Baking"
       }
     },
@@ -239,6 +260,7 @@
           }
         ],
         "note": "at room temperature, cut into pieces",
+        "section": "For the Crumble",
         "category": "Dairy & Eggs"
       }
     }

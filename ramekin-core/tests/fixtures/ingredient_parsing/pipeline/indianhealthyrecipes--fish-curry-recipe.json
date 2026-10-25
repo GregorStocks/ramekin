@@ -3,6 +3,10 @@
   "recipe_slug": "fish-curry-recipe",
   "ingredients": [
     {
+      "raw": "Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1.1 lbs (½ kg) Fish (any firm fish)",
       "expected": {
         "item": "Fish",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "any firm fish",
+        "section": "Marinade",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,8 +81,13 @@
           }
         ],
         "note": "or as needed",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To saute & puree:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp oil  (adjust as needed)",
@@ -87,6 +100,7 @@
           }
         ],
         "note": "adjust as needed",
+        "section": "To Saute & Puree",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": "jeera",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Other"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Other"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": "3/4 to 1 cup chopped",
+        "section": "To Saute & Puree",
         "category": "Other"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": "adjust as needed",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": "optional, saunf",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,8 +235,13 @@
           }
         ],
         "note": "grated or 1/4 cup coconut milk or 12 cashew nuts",
+        "section": "To Saute & Puree",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For curry:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp oil (+1 tbsp to fry the fish)",
@@ -227,6 +254,7 @@
           }
         ],
         "note": "+1 tbsp to fry the fish",
+        "section": "For Curry",
         "category": "Oils & Vinegars"
       }
     },
@@ -241,6 +269,7 @@
           }
         ],
         "note": "pat dry or use a small bay leaf",
+        "section": "For Curry",
         "category": "Produce"
       }
     },
@@ -255,6 +284,7 @@
           }
         ],
         "note": "chopped or slit",
+        "section": "For Curry",
         "category": "Produce"
       }
     },
@@ -269,6 +299,7 @@
           }
         ],
         "note": "refer notes, as needed",
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -283,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Beverages"
       }
     }

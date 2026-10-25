@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-korma-recipe",
   "ingredients": [
     {
+      "raw": "Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ kg (1.2 lbs) chicken  (bone-in preferred but boneless is ok)",
       "expected": {
         "item": "chicken",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "bone-in preferred but boneless is ok",
+        "section": "Marinade",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "plain yogurt or coconut milk",
+        "section": "Marinade",
         "category": "Dairy & Eggs"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "or 1/2 tbsps. each fine grated",
+        "section": "Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "less spicy variety, minimum 1/2 tsp",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,8 +111,13 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To saute & blend:",
+      "is_section_header": true
     },
     {
       "raw": "1½ tablespoon oil or ghee",
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Blend",
         "category": "Oils & Vinegars"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Blend",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": "2 medium yellow onions, sliced",
+        "section": "To Saute & Blend",
         "category": "Produce"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": "or use 5 each",
+        "section": "To Saute & Blend",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -171,8 +190,13 @@
           }
         ],
         "note": "plain yogurt or coconut milk",
+        "section": "To Saute & Blend",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For korma curry:",
+      "is_section_header": true
     },
     {
       "raw": "1 to 2 tablespoon oil or ghee (use as per your preference)",
@@ -185,6 +209,7 @@
           }
         ],
         "note": "use as per your preference",
+        "section": "For Korma Curry",
         "category": "Oils & Vinegars"
       }
     },
@@ -199,6 +224,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +239,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Korma Curry",
         "category": "Other"
       }
     },
@@ -227,6 +254,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +269,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -255,6 +284,7 @@
           }
         ],
         "note": "optional, Thai/Indian or serrano peppers",
+        "section": "For Korma Curry",
         "category": "Other"
       }
     },
@@ -269,6 +299,7 @@
           }
         ],
         "note": "more if needed",
+        "section": "For Korma Curry",
         "category": "Beverages"
       }
     },
@@ -283,6 +314,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -297,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -311,6 +344,7 @@
           }
         ],
         "note": "ground coriander",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -325,6 +359,7 @@
           }
         ],
         "note": "optional, for color",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -339,6 +374,7 @@
           }
         ],
         "note": "cilantro, fine chopped to garnish",
+        "section": "For Korma Curry",
         "category": "Produce"
       }
     }

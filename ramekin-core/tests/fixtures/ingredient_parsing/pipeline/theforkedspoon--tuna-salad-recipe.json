@@ -60,35 +60,6 @@
       "expanded": true
     },
     {
-      "raw": "½  lemon (zested and juiced)",
-      "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "½  lemon (zested and juiced)",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
       "raw": "½ teaspoon salt (plus more to taste)",
       "expected": {
         "item": "salt",

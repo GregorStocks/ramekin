@@ -3,6 +3,10 @@
   "recipe_slug": "cinnamon-babka-recipe",
   "ingredients": [
     {
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  (220 g) light brown sugar",
       "expected": {
         "item": "light brown sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,8 +104,13 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Dough:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  (122 ml) whole milk, heated to 110 degrees F",
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,8 +248,13 @@
           }
         ],
         "note": "cut into 8 pieces and softened",
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Egg Wash:",
+      "is_section_header": true
     },
     {
       "raw": "1   egg, lightly beaten",
@@ -241,6 +267,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Egg Wash",
         "category": "Dairy & Eggs"
       }
     }

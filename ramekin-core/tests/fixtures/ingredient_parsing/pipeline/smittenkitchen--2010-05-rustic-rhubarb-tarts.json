@@ -133,6 +133,10 @@
       }
     },
     {
+      "raw": "Rhubarb Vanilla Compote:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 pounds rhubarb stalks",
       "expected": {
         "item": "rhubarb stalks",
@@ -143,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Rhubarb Vanilla Compote",
         "category": "Produce"
       }
     },
@@ -157,6 +162,7 @@
           }
         ],
         "note": "i.e. 15 tablespoons, if you want to drive yourself mad",
+        "section": "Rhubarb Vanilla Compote",
         "category": "Other"
       }
     },
@@ -171,6 +177,7 @@
           }
         ],
         "note": "split and seeds scraped",
+        "section": "Rhubarb Vanilla Compote",
         "category": "Spices & Seasonings"
       }
     }

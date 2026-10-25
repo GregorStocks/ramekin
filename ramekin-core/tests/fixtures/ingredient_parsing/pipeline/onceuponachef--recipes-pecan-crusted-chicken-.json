@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-pecan-crusted-chicken-",
   "ingredients": [
     {
+      "raw": "For Pecan Crusted Chicken Tenders:",
+      "is_section_header": true
+    },
+    {
       "raw": "1¼ cups pecans",
       "expected": {
         "item": "pecans",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Bakery & Bread"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Baking"
       }
     },
@@ -120,8 +132,13 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": "for cooking",
+        "section": "For Pecan Crusted Chicken Tenders",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For Honey Mustard Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup mayonnaise, best quality such as Hellmann's",
@@ -134,6 +151,7 @@
           }
         ],
         "note": "such as Hellmann's",
+        "section": "For Honey Mustard Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For Honey Mustard Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For Honey Mustard Sauce",
         "category": "Baking"
       }
     }

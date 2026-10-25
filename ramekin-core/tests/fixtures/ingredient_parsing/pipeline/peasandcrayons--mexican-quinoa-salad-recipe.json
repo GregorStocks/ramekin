@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "CHILI LIME DRESSING:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup avocado oil",
       "expected": {
         "item": "avocado oil",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": "plus extra to taste",
+        "section": "Chili Lime Dressing",
         "category": "Produce"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": "peeled and minced",
+        "section": "Chili Lime Dressing",
         "category": "Produce"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +219,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }
     }

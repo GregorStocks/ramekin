@@ -3,6 +3,10 @@
   "recipe_slug": "moms-pryaniki-with-mint-glaze-",
   "ingredients": [
     {
+      "raw": "Praniki Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 large egg yolks, reserve whites for frosting",
       "expected": {
         "item": "egg yolks, reserve whites for frosting",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Praniki Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Praniki Ingredients",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Praniki Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Praniki Ingredients",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Praniki Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Praniki Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Praniki Ingredients",
         "category": "Baking"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": "plus more flour for hands; or 4 1/2 cups if using Canadian flour",
+        "section": "Praniki Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Mint Glaze Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "2 large egg whites",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Glaze Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Glaze Ingredients",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Glaze Ingredients",
         "category": "Baking"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Mint Glaze Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "What you will need:",
+      "is_section_header": true
     },
     {
       "raw": "Parchment paper to line cookie sheets",
@@ -176,6 +200,7 @@
         "item": "Parchment paper to line cookie sheets",
         "measurements": [],
         "note": null,
+        "section": "What You Will Need",
         "category": "Other"
       }
     }

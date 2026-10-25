@@ -59,6 +59,14 @@
       }
     },
     {
+      "raw": "Fillings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Vegetables:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon olive oil",
       "expected": {
         "item": "olive oil",
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "bell pepper, zucchini, onion, etc., diced small",
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -106,8 +117,13 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Vegetables",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Onion bacon, garlic:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon minced garlic",
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Onion Bacon, Garlic",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Onion Bacon, Garlic",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "diced",
+        "section": "Onion Bacon, Garlic",
         "category": "Meat & Seafood"
       }
     }

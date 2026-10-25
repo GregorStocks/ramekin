@@ -3,6 +3,10 @@
   "recipe_slug": "us-easy-millionaires-shortbrea",
   "ingredients": [
     {
+      "raw": "For the shortbread:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups all purpose flour",
       "expected": {
         "item": "all purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shortbread",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shortbread",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": "softened",
+        "section": "For the Shortbread",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the caramel:",
+      "is_section_header": true
     },
     {
       "raw": "7 tbsp butter or margarine",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Baking"
       }
     },
@@ -83,8 +96,13 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "For the topping:",
+      "is_section_header": true
     },
     {
       "raw": "7 oz bittersweet or milk chocolate melts or bar broken into pieces",
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Other"
       }
     }

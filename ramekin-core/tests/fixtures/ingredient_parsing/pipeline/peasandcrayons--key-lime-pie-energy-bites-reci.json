@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "OPTIONAL EXTRAS:",
+      "is_section_header": true
+    },
+    {
       "raw": "1-2 TBSP honey or maple syrup to sweeten if desired",
       "expected": {
         "item": "honey or maple syrup to sweeten",
@@ -111,6 +115,7 @@
           }
         ],
         "note": "if desired",
+        "section": "Optional Extras",
         "category": "Baking"
       }
     },
@@ -120,6 +125,7 @@
         "item": "extra lime zest",
         "measurements": [],
         "note": "if desired",
+        "section": "Optional Extras",
         "category": "Other"
       }
     }

@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "Cajun Seasoning:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon paprika",
       "expected": {
         "item": "paprika",
@@ -27,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Cajun Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Cajun Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Cajun Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Cajun Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Cajun Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Cajun Seasoning",
         "category": "Other"
       }
     },
@@ -111,8 +121,13 @@
           }
         ],
         "note": null,
+        "section": "Cajun Seasoning",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Salad:",
+      "is_section_header": true
     },
     {
       "raw": "4 cups romaine lettuce cos lettuce",
@@ -125,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -139,6 +155,7 @@
           }
         ],
         "note": "quartered",
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -153,6 +170,7 @@
           }
         ],
         "note": "halved",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -167,6 +185,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -181,8 +200,13 @@
           }
         ],
         "note": "sliced thinly",
+        "section": "Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon cajun seasoning",
@@ -195,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Other"
       }
     },
@@ -223,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "argentinian-chimichurri-recipe",
   "ingredients": [
     {
+      "raw": "Chimichurri Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  cilantro",
       "expected": {
         "item": "cilantro",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "diced",
+        "section": "Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }
     }

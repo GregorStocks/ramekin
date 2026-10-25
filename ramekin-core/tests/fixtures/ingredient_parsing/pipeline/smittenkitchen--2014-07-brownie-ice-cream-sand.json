@@ -3,6 +3,10 @@
   "recipe_slug": "2014-07-brownie-ice-cream-sand",
   "ingredients": [
     {
+      "raw": "For the brownies:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 ounces (85 grams) unsweetened chocolate, roughly chopped",
       "expected": {
         "item": "unsweetened chocolate",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Brownies",
         "category": "Baking"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "plus extra for pan",
+        "section": "For the Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Baking"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": "or 1/4 teaspoon table salt (about 2 grams)",
+        "section": "For the Brownies",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Baking"
       }
     }

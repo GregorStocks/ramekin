@@ -3,6 +3,10 @@
   "recipe_slug": "2026-01-green-goddess-turkey-b",
   "ingredients": [
     {
+      "raw": "green goddess dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup plain greek yogurt",
       "expected": {
         "item": "plain greek yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Produce"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Green Goddess Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "slaw:",
+      "is_section_header": true
     },
     {
       "raw": "1 small head green cabbage",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -195,8 +216,13 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "burgers:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound lean ground turkey",
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Burgers",
         "category": "Meat & Seafood"
       }
     },
@@ -218,6 +245,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Burgers",
         "category": "Produce"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": "minced",
+        "section": "Burgers",
         "category": "Produce"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Burgers",
         "category": "Dairy & Eggs"
       }
     },
@@ -274,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Burgers",
         "category": "Bakery & Bread"
       }
     },
@@ -288,6 +320,7 @@
           }
         ],
         "note": null,
+        "section": "Burgers",
         "category": "Oils & Vinegars"
       }
     },
@@ -302,6 +335,7 @@
           }
         ],
         "note": "for serving",
+        "section": "Burgers",
         "category": "Bakery & Bread"
       }
     }

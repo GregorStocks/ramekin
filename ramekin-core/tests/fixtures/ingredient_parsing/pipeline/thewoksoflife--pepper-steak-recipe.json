@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "For the rest of the dish:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup low-sodium chicken stock",
       "expected": {
         "item": "low-sodium chicken stock",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Canned Goods"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Baking"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Beverages"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Baking"
       }
     },
@@ -209,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Oils & Vinegars"
       }
     },
@@ -223,6 +235,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Rest of the Dish",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -251,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -265,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -279,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Oils & Vinegars"
       }
     },
@@ -293,6 +310,7 @@
           }
         ],
         "note": "minced, optional",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -307,6 +325,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     }

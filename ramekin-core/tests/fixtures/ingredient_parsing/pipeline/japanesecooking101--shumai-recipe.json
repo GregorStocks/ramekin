@@ -194,6 +194,10 @@
       }
     },
     {
+      "raw": "Vinegar Soy Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 Tbsp soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -204,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Vinegar Soy Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -218,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Vinegar Soy Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -227,6 +233,7 @@
         "item": "Japanese yellow mustard",
         "measurements": [],
         "note": null,
+        "section": "Vinegar Soy Sauce",
         "category": "Condiments & Sauces"
       }
     }

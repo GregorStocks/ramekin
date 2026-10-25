@@ -184,6 +184,10 @@
       }
     },
     {
+      "raw": "Lemon Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup  (60 ml) Fresh Meyer Lemon Juice (@ 2 meyer lemons)",
       "expected": {
         "item": "Fresh Meyer Lemon Juice",
@@ -198,6 +202,7 @@
           }
         ],
         "note": "@ 2 meyer lemons",
+        "section": "Lemon Glaze",
         "category": "Produce"
       }
     },
@@ -216,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Glaze",
         "category": "Baking"
       }
     },
@@ -225,6 +231,7 @@
         "item": "extra zest from 1 meyer lemon zest",
         "measurements": [],
         "note": "optional",
+        "section": "Lemon Glaze",
         "category": "Other"
       }
     }

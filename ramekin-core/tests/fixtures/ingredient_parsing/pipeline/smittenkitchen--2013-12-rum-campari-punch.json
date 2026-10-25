@@ -3,6 +3,10 @@
   "recipe_slug": "2013-12-rum-campari-punch",
   "ingredients": [
     {
+      "raw": "Punch:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups sugar",
       "expected": {
         "item": "sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Punch",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Punch",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Punch",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Punch",
         "category": "Beverages"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "or less, to taste",
+        "section": "Punch",
         "category": "Other"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "about 3 1/4 cups",
+        "section": "Punch",
         "category": "Beverages"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": "about 3 1/4 cups",
+        "section": "Punch",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "1 giant ice cube",
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -156,6 +174,7 @@
         "item": "or thick peels of zest from 1 lime and 1 orange",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     }

@@ -49,6 +49,10 @@
       }
     },
     {
+      "raw": "Caramel:",
+      "is_section_header": true
+    },
+    {
       "raw": "60 g white caster sugar or granulated",
       "expected": {
         "item": "white caster sugar or granulated",
@@ -59,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -73,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Condiments & Sauces"
       }
     },
@@ -87,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Beverages"
       }
     },
@@ -101,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +123,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Caramel",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Spices & Seasonings"
       }
     }

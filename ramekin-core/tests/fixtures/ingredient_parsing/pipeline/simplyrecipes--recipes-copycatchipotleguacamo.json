@@ -101,11 +101,16 @@
       }
     },
     {
+      "raw": "To Serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "Tortilla chips, store-bought or homemade",
       "expected": {
         "item": "Tortilla chips",
         "measurements": [],
         "note": "store-bought or homemade",
+        "section": "To Serve",
         "category": "Snacks"
       }
     }

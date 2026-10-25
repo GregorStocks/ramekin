@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-mince-donburi-recipe",
   "ingredients": [
     {
+      "raw": "Scrambled Egg:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 egg",
       "expected": {
         "item": "egg",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Scrambled Egg",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Scrambled Egg",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Scrambled Egg",
         "category": "Beverages"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Scrambled Egg",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Chicken Soboro:",
+      "is_section_header": true
     },
     {
       "raw": "150 g ground chicken",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Soboro",
         "category": "Meat & Seafood"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Chicken Soboro",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Soboro",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Soboro",
         "category": "Other"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Soboro",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "Chicken Soboro",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Greens:",
+      "is_section_header": true
     },
     {
       "raw": "60 g Oriental spinach",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Greens",
         "category": "Produce"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Greens",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "For the Greens",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Greens",
         "category": "Baking"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Greens",
         "category": "Oils & Vinegars"
       }
     },
@@ -223,8 +250,13 @@
           }
         ],
         "note": null,
+        "section": "For the Greens",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 portions cooked Japanese short-grain rice",
@@ -237,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -251,6 +284,7 @@
           }
         ],
         "note": "benishoga, optional",
+        "section": "Assembly",
         "category": "Condiments & Sauces"
       }
     }

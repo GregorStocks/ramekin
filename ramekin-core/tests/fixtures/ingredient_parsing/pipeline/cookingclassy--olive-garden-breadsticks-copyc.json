@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 Tbsp butter",
       "expected": {
         "item": "butter",
@@ -97,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

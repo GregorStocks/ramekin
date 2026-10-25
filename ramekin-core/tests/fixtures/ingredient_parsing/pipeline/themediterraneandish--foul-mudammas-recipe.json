@@ -133,11 +133,16 @@
       }
     },
     {
+      "raw": "To Serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "Warm pita bread",
       "expected": {
         "item": "Warm pita bread",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -147,6 +152,7 @@
         "item": "Sliced tomatoes",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -156,6 +162,7 @@
         "item": "Sliced cucumbers",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -165,6 +172,7 @@
         "item": "Green onions",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -174,6 +182,7 @@
         "item": "Olives",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Canned Goods"
       }
     }

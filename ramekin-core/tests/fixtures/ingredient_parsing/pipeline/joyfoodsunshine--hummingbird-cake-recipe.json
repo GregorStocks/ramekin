@@ -189,11 +189,16 @@
       }
     },
     {
+      "raw": "Frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "cream cheese frosting",
       "expected": {
         "item": "cream cheese frosting",
         "measurements": [],
         "note": null,
+        "section": "Frosting",
         "category": "Other"
       }
     }

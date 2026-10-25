@@ -3,6 +3,10 @@
   "recipe_slug": "2016-12-gift-this-spirograph-s",
   "ingredients": [
     {
+      "raw": "Fondant rounds:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 lb. ready-made white fondant",
       "expected": {
         "item": "ready-made white fondant",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Fondant Rounds",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": null,
+        "section": "Fondant Rounds",
         "category": "Baking"
       }
     },
@@ -31,6 +37,7 @@
         "item": "Parchment paper",
         "measurements": [],
         "note": null,
+        "section": "Fondant Rounds",
         "category": "Other"
       }
     },
@@ -45,8 +52,13 @@
           }
         ],
         "note": null,
+        "section": "Fondant Rounds",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Sugar cookie dough:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 lb. two US sticks unsalted butter",
@@ -63,6 +75,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +94,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Baking"
       }
     },
@@ -95,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Baking"
       }
     },
@@ -127,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Baking"
       }
     },
@@ -141,8 +158,13 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Decoration:",
+      "is_section_header": true
     },
     {
       "raw": "Fondant rounds dry",
@@ -150,6 +172,7 @@
         "item": "Fondant rounds dry",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     },
@@ -159,6 +182,7 @@
         "item": "Spirograph drawing tool ring and circle",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     },
@@ -168,6 +192,7 @@
         "item": "Fine-tipped food color markers I recommend fine-tipped Foodoodlers",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     },
@@ -177,6 +202,7 @@
         "item": "Corn syrup",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Baking"
       }
     },
@@ -186,6 +212,7 @@
         "item": "Buttercream frosting optional but tasty",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     },
@@ -195,6 +222,7 @@
         "item": "Dragee",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     }

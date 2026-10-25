@@ -3,6 +3,10 @@
   "recipe_slug": "ebi-mayo-recipe",
   "ingredients": [
     {
+      "raw": "Batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "70 g cake flour lower protein content for lighter batter",
       "expected": {
         "item": "cake flour lower protein content for lighter batter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "must be very cold",
+        "section": "Batter",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Mayonnaise Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "4 tbsp Japanese mayonnaise",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Mayonnaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Mayonnaise Sauce",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Mayonnaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Mayonnaise Sauce",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Mayonnaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "freshly squeezed best",
+        "section": "Mayonnaise Sauce",
         "category": "Produce"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Mayonnaise Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Ebi Mayo:",
+      "is_section_header": true
     },
     {
       "raw": "250 g shrimp medium to large size, deshelled and deveined, black tiger or white shrimp",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Mayo",
         "category": "Meat & Seafood"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Mayo",
         "category": "Other"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Mayo",
         "category": "Other"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Mayo",
         "category": "Baking"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": "peeled, whole",
+        "section": "Ebi Mayo",
         "category": "Produce"
       }
     },
@@ -246,6 +275,7 @@
         "item": "cooking oil neutral with high smoke point",
         "measurements": [],
         "note": null,
+        "section": "Ebi Mayo",
         "category": "Other"
       }
     },
@@ -255,6 +285,7 @@
         "item": "dried parsley to garnish",
         "measurements": [],
         "note": null,
+        "section": "Ebi Mayo",
         "category": "Other"
       }
     }

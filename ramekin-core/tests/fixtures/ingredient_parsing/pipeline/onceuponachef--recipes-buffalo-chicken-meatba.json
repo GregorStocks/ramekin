@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-buffalo-chicken-meatba",
   "ingredients": [
     {
+      "raw": "For the Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large egg",
       "expected": {
         "item": "egg",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "or 1 teaspoon dried",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "or similar brand",
+        "section": "For the Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "avoid the one that is 98% lean, preferably Purdue \"Fresh & Lean\"",
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Cheese"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Bakery & Bread"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1⅓ cups heavy cream",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "or 1/4 teaspoon dried",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -223,8 +246,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Serving (optional):",
+      "is_section_header": true
     },
     {
       "raw": "2 scallions, dark green parts only, thinly sliced",
@@ -237,6 +265,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For Serving (Optional)",
         "category": "Produce"
       }
     }

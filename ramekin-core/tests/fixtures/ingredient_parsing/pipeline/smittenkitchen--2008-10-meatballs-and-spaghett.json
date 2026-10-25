@@ -3,6 +3,10 @@
   "recipe_slug": "2008-10-meatballs-and-spaghett",
   "ingredients": [
     {
+      "raw": "For the meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 pound ground veal",
       "expected": {
         "item": "ground veal",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "about 5 slices, crusts removed",
+        "section": "For the Meatballs",
         "category": "Other"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Cheese"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": "beaten",
+        "section": "For the Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,6 +166,7 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -161,8 +176,13 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon good olive oil",
@@ -175,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -189,6 +210,7 @@
           }
         ],
         "note": "1 onion",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -203,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -217,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -231,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -245,6 +270,7 @@
           }
         ],
         "note": "14-ounce",
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -259,6 +285,7 @@
           }
         ],
         "note": "14-ounce",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -273,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -287,6 +315,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -301,6 +330,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     }

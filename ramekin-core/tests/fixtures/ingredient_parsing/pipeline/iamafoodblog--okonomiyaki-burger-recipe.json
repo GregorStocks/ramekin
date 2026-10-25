@@ -3,6 +3,10 @@
   "recipe_slug": "okonomiyaki-burger-recipe",
   "ingredients": [
     {
+      "raw": "Burgers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb ground beef",
       "expected": {
         "item": "ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Burgers",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,8 +42,13 @@
           }
         ],
         "note": "or buns of your choice",
+        "section": "Burgers",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "Kewpie mayo",
@@ -45,6 +56,7 @@
         "item": "Kewpie mayo",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -54,6 +66,7 @@
         "item": "okonomiyaki sauce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -63,6 +76,7 @@
         "item": "bonito flakes",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -72,6 +86,7 @@
         "item": "aonori flakes or seaweed strips",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -81,6 +96,7 @@
         "item": "tempura bits or rice krispies",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Snacks"
       }
     }

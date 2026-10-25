@@ -3,6 +3,10 @@
   "recipe_slug": "french-toast-recipe",
   "ingredients": [
     {
+      "raw": "sweet ricotta:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups whole milk ricotta",
       "expected": {
         "item": "whole milk ricotta",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Ricotta",
         "category": "Cheese"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Ricotta",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Sweet Ricotta",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "French toast:",
+      "is_section_header": true
     },
     {
       "raw": "4 tablespoons salted butter divided",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "divided",
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "1 1/2\" thick",
+        "section": "French Toast",
         "category": "Other"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "garnishes:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup honey divided",
@@ -181,6 +205,7 @@
           }
         ],
         "note": "divided",
+        "section": "Garnishes",
         "category": "Baking"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Garnishes",
         "category": "Other"
       }
     }

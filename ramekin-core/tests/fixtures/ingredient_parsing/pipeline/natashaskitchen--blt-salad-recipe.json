@@ -3,6 +3,10 @@
   "recipe_slug": "blt-salad-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients for the BLT Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "12 oz sliced cooked bacon*",
       "expected": {
         "item": "sliced cooked bacon",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Blt Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Blt Salad",
         "category": "Bakery & Bread"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "any kind, sliced",
+        "section": "Ingredients for the Blt Salad",
         "category": "Produce"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "** chopped, rinsed, dried",
+        "section": "Ingredients for the Blt Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Creamy BLT Salad Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3 Tbsp mayonnaise",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "pressed",
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Dairy & Eggs"
       }
     }

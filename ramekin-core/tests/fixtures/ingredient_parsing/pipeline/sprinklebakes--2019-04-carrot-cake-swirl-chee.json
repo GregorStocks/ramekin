@@ -160,6 +160,10 @@
       }
     },
     {
+      "raw": "Cheesecake Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "16 oz. cream cheese (at room temperature)",
       "expected": {
         "item": "cream cheese",
@@ -170,6 +174,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cheesecake Ingredients",
         "category": "Cheese"
       }
     },
@@ -188,6 +193,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Ingredients",
         "category": "Baking"
       }
     },
@@ -202,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -216,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Ingredients",
         "category": "Baking"
       }
     },
@@ -230,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Ingredients",
         "category": "Baking"
       }
     },
@@ -244,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,8 +272,13 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Ingredients",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Icing Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup 240g sour cream",
@@ -280,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Icing Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -298,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Icing Ingredients",
         "category": "Baking"
       }
     },
@@ -312,6 +329,7 @@
           }
         ],
         "note": "for garnish",
+        "section": "Icing Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -321,6 +339,7 @@
         "item": "Carrot ribbons or grated carrots",
         "measurements": [],
         "note": "for garnish (optional)",
+        "section": "Icing Ingredients",
         "category": "Produce"
       }
     }

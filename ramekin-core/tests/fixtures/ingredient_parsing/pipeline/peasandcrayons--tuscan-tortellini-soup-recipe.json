@@ -213,11 +213,16 @@
       }
     },
     {
+      "raw": "TASTY TOPPINGS:",
+      "is_section_header": true
+    },
+    {
       "raw": "grated parmesan cheese",
       "expected": {
         "item": "grated parmesan cheese",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings",
         "category": "Cheese"
       }
     },
@@ -227,6 +232,7 @@
         "item": "red pepper flakes",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,6 +242,7 @@
         "item": "freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -245,6 +252,7 @@
         "item": "fresh chopped basil",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings",
         "category": "Produce"
       }
     }

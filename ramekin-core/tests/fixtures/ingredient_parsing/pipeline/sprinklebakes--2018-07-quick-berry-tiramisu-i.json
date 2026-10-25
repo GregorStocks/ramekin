@@ -3,6 +3,10 @@
   "recipe_slug": "2018-07-quick-berry-tiramisu-i",
   "ingredients": [
     {
+      "raw": "Strawberry Puree:",
+      "is_section_header": true
+    },
+    {
       "raw": "12 ounces fresh strawberries or frozen, thawed",
       "expected": {
         "item": "fresh strawberries or frozen",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "thawed",
+        "section": "Strawberry Puree",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Puree",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Puree",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Whipped mascarpone cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy whipping cream",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Mascarpone Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Mascarpone Cream",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "softened",
+        "section": "Whipped Mascarpone Cream",
         "category": "Cheese"
       }
     },
@@ -97,8 +111,13 @@
           }
         ],
         "note": null,
+        "section": "Whipped Mascarpone Cream",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "12 crisp lady fingers chopped into 1-inch pieces",
@@ -111,6 +130,7 @@
           }
         ],
         "note": "chopped into 1-inch pieces",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     }

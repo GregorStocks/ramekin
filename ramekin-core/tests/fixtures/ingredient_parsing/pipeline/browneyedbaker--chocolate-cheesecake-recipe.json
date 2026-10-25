@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "24   Oreo cookies",
       "expected": {
         "item": "Oreo cookies",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -45,8 +51,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "32 ounces  (907.19 g) cream cheese, at room temperature",
@@ -63,6 +74,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
@@ -81,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,8 +146,13 @@
           }
         ],
         "note": "melted and cooled to lukewarm",
+        "section": "For the Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Topping:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup  (178.5 ml) heavy cream",
@@ -149,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +188,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     }

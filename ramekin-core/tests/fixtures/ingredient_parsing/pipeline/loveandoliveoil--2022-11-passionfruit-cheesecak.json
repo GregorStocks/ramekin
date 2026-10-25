@@ -3,6 +3,10 @@
   "recipe_slug": "2022-11-passionfruit-cheesecak",
   "ingredients": [
     {
+      "raw": "For Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 oz  / 142 g vanilla wafer cookies, finely ground (1 cup crumbs)",
       "expected": {
         "item": "vanilla wafer cookies",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "1 cup crumbs, finely ground",
+        "section": "For Crust",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,8 +74,13 @@
           }
         ],
         "note": "melted",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Filling:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces  / 340 g full fat cream cheese, at room temperature",
@@ -85,6 +97,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Filling",
         "category": "Cheese"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -195,8 +214,13 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Passionfruit Layer:",
+      "is_section_header": true
     },
     {
       "raw": "4 teaspoons  / 12 g powdered gelatin",
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For Passionfruit Layer",
         "category": "Baking"
       }
     },
@@ -227,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "For Passionfruit Layer",
         "category": "Beverages"
       }
     },
@@ -245,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For Passionfruit Layer",
         "category": "Other"
       }
     },
@@ -263,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For Passionfruit Layer",
         "category": "Baking"
       }
     },
@@ -281,6 +309,7 @@
           }
         ],
         "note": null,
+        "section": "For Passionfruit Layer",
         "category": "Beverages"
       }
     }

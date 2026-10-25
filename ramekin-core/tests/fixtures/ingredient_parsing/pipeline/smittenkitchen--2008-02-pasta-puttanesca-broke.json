@@ -171,6 +171,10 @@
       }
     },
     {
+      "raw": "Artichoke prep:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 to 4 artichokes",
       "expected": {
         "item": "artichokes",
@@ -181,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "Artichoke Prep",
         "category": "Produce"
       }
     },
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Artichoke Prep",
         "category": "Beverages"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": "smashed",
+        "section": "Artichoke Prep",
         "category": "Produce"
       }
     },
@@ -218,6 +225,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "Artichoke Prep",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,8 +240,13 @@
           }
         ],
         "note": null,
+        "section": "Artichoke Prep",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon olive oil",
@@ -246,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -260,6 +274,7 @@
           }
         ],
         "note": null,
+        "section": "Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -269,6 +284,7 @@
         "item": "Few drops of honey",
         "measurements": [],
         "note": null,
+        "section": "Vinaigrette",
         "category": "Other"
       }
     },
@@ -283,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -297,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

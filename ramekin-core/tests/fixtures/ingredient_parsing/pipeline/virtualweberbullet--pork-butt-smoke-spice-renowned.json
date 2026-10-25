@@ -3,6 +3,10 @@
   "recipe_slug": "pork-butt-smoke-spice-renowned",
   "ingredients": [
     {
+      "raw": "Southern Succor Rub:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup ground black pepper",
       "expected": {
         "item": "ground black pepper",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Succor Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Succor Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Succor Rub",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Succor Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Succor Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Southern Succor Rub",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Southern Sop:",
+      "is_section_header": true
     },
     {
       "raw": "Remaining Southern Succor Rub (See note)",
@@ -92,6 +106,7 @@
         "item": "Remaining Southern Succor Rub",
         "measurements": [],
         "note": "See note",
+        "section": "Southern Sop",
         "category": "Other"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Sop",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Sop",
         "category": "Beverages"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Sop",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Sop",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Sop",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Southern Sop",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,8 +211,13 @@
           }
         ],
         "note": null,
+        "section": "Southern Sop",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Carolina Red:",
+      "is_section_header": true
     },
     {
       "raw": "1-1/2 cups apple cider vinegar",
@@ -204,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Carolina Red",
         "category": "Oils & Vinegars"
       }
     },
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Carolina Red",
         "category": "Condiments & Sauces"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Carolina Red",
         "category": "Spices & Seasonings"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Carolina Red",
         "category": "Baking"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Carolina Red",
         "category": "Spices & Seasonings"
       }
     }

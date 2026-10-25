@@ -3,6 +3,10 @@
   "recipe_slug": "2010-07-cornmeal-drop-biscuit-",
   "ingredients": [
     {
+      "raw": "For the fruit:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 (about 4 cups) pounds peaches, pitted and cut into slices*",
       "expected": {
         "item": "peaches",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 4 cups, pitted and cut into slices",
+        "section": "For the Fruit",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "about 2 cups, rinsed and dried",
+        "section": "For the Fruit",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Fruit",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit",
         "category": "Produce"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the biscuit topping:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (3 1/4 ounces) all-purpose flour",
@@ -123,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuit Topping",
         "category": "Baking"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": "yellow or white",
+        "section": "For the Biscuit Topping",
         "category": "Other"
       }
     },
@@ -151,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuit Topping",
         "category": "Baking"
       }
     },
@@ -165,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuit Topping",
         "category": "Baking"
       }
     },
@@ -179,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuit Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -193,6 +213,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "For the Biscuit Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -207,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuit Topping",
         "category": "Dairy & Eggs"
       }
     }

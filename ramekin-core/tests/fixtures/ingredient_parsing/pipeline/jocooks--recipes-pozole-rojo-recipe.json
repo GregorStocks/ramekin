@@ -199,11 +199,16 @@
       }
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "shredded cabbage",
       "expected": {
         "item": "shredded cabbage",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -213,6 +218,7 @@
         "item": "radishes",
         "measurements": [],
         "note": "sliced",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -222,6 +228,7 @@
         "item": "onion",
         "measurements": [],
         "note": "chopped",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -231,6 +238,7 @@
         "item": "lime wedges",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

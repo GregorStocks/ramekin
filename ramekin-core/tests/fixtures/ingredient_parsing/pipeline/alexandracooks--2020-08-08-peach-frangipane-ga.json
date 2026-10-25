@@ -3,6 +3,10 @@
   "recipe_slug": "2020-08-08-peach-frangipane-ga",
   "ingredients": [
     {
+      "raw": "For the tart dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (160g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Other"
       }
     },
@@ -85,8 +93,13 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the frangipane:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (54 g) almond flour",
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Baking"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": "small if possible",
+        "section": "For the Frangipane",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,8 +199,13 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 peaches, sliced thinly (1/4-inch or smaller)",
@@ -195,6 +218,7 @@
           }
         ],
         "note": "1/4-inch or smaller, sliced thinly",
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -209,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Baking"
       }
     },
@@ -232,6 +258,7 @@
         "item": "vanilla ice cream",
         "measurements": [],
         "note": "for serving",
+        "section": "For Assembly",
         "category": "Frozen"
       }
     }

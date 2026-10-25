@@ -45,6 +45,10 @@
       }
     },
     {
+      "raw": "for gravy:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons  cultured unsalted butter",
       "expected": {
         "item": "cultured unsalted butter",
@@ -55,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +74,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Gravy",
         "category": "Produce"
       }
     },
@@ -83,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For Gravy",
         "category": "Baking"
       }
     },
@@ -97,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For Gravy",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "For Gravy",
         "category": "Beverages"
       }
     },
@@ -125,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For Gravy",
         "category": "Other"
       }
     },
@@ -139,6 +149,7 @@
           }
         ],
         "note": "stems removed, leaves chopped",
+        "section": "For Gravy",
         "category": "Produce"
       }
     }

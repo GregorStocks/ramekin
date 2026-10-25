@@ -3,11 +3,16 @@
   "recipe_slug": "recipe-cassata-slab-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "Nonstick vegetable oil spray (for pan)",
       "expected": {
         "item": "Nonstick vegetable oil spray",
         "measurements": [],
         "note": "for pan",
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -54,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -68,6 +76,7 @@
           }
         ],
         "note": "or 1/2 tsp. Morton kosher salt",
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -82,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -100,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -114,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -128,10 +140,15 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "Zest and juice of 1 small orange",
       "expected": {
         "item": "orange zest",
@@ -142,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -156,35 +174,7 @@
           }
         ],
         "note": null,
-        "category": "Beverages"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Zest and juice of 1 small orange",
-      "expected": {
-        "item": "orange zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "small orange"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "Zest and juice of 1 small orange",
-      "expected": {
-        "item": "orange juice",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "small orange"
-          }
-        ],
-        "note": null,
+        "section": "Filling",
         "category": "Beverages"
       },
       "expanded": true
@@ -200,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -214,35 +205,7 @@
           }
         ],
         "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Zest and juice of 1 medium lemon",
-      "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "medium lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "Zest and juice of 1 medium lemon",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "medium lemon"
-          }
-        ],
-        "note": null,
+        "section": "Filling",
         "category": "Produce"
       },
       "expanded": true
@@ -258,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -272,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -290,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -304,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -318,8 +285,13 @@
           }
         ],
         "note": "or 1/4 tsp. Morton kosher salt",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Soak and Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "Juice of 1 medium lemon",
@@ -332,6 +304,7 @@
           }
         ],
         "note": null,
+        "section": "Soak and Assembly",
         "category": "Produce"
       }
     },
@@ -346,6 +319,7 @@
           }
         ],
         "note": null,
+        "section": "Soak and Assembly",
         "category": "Other"
       }
     },
@@ -364,6 +338,7 @@
           }
         ],
         "note": null,
+        "section": "Soak and Assembly",
         "category": "Baking"
       }
     },
@@ -378,6 +353,7 @@
           }
         ],
         "note": null,
+        "section": "Soak and Assembly",
         "category": "Baking"
       }
     },
@@ -387,6 +363,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Soak and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -401,6 +378,7 @@
           }
         ],
         "note": null,
+        "section": "Soak and Assembly",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -410,6 +388,7 @@
         "item": "Green food coloring",
         "measurements": [],
         "note": "for marzipan",
+        "section": "Soak and Assembly",
         "category": "Baking"
       }
     },
@@ -428,6 +407,7 @@
           }
         ],
         "note": "220 g; or more, plus more for dusting",
+        "section": "Soak and Assembly",
         "category": "Baking"
       }
     },
@@ -437,6 +417,7 @@
         "item": "Candied fruit and/or silver dragées",
         "measurements": [],
         "note": "for decorating; optional",
+        "section": "Soak and Assembly",
         "category": "Baking"
       }
     }

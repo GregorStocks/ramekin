@@ -177,6 +177,10 @@
       }
     },
     {
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/3 cups (160g) powdered sugar",
       "expected": {
         "item": "powdered sugar",
@@ -191,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -209,6 +214,7 @@
           }
         ],
         "note": "melted",
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +233,7 @@
           }
         ],
         "note": "as needed",
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     }

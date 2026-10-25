@@ -3,6 +3,10 @@
   "recipe_slug": "2025-02-flourless-hazelnut-cak",
   "ingredients": [
     {
+      "raw": "For Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups  / 300 g lightly packed hazelnut flour*",
       "expected": {
         "item": "hazelnut flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "lightly packed",
+        "section": "For Cake",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": "separated, at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Other"
       }
     },
@@ -127,8 +138,13 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Ganache Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 oz  / 56 g 55-60% semisweet chocolate, finely chopped",
@@ -145,6 +161,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Ganache Topping",
         "category": "Other"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Ganache Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache Topping",
         "category": "Baking"
       }
     },
@@ -226,6 +247,7 @@
         "item": "candied hazelnuts",
         "measurements": [],
         "note": "optional, for decoration",
+        "section": "For Ganache Topping",
         "category": "Other"
       }
     }

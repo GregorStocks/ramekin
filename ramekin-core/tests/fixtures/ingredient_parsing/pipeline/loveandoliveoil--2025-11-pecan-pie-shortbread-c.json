@@ -3,6 +3,10 @@
   "recipe_slug": "2025-11-pecan-pie-shortbread-c",
   "ingredients": [
     {
+      "raw": "For Shortbread Layer:",
+      "is_section_header": true
+    },
+    {
       "raw": "scant 1 ¼ cups   / 150 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Shortbread Layer",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Shortbread Layer",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Shortbread Layer",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Shortbread Layer",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "cold, cut into cubes",
+        "section": "For Shortbread Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "For Shortbread Layer",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Pecan Topping:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  / 100 g packed light brown sugar",
@@ -117,6 +131,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Pecan Topping",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Topping",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Topping",
         "category": "Baking"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "For Pecan Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": "lightly toasted",
+        "section": "For Pecan Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

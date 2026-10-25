@@ -3,6 +3,10 @@
   "recipe_slug": "2012-07-flag-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 sticks (1 cup, 1/2 pound or 225 grams) unsalted butter, softened",
       "expected": {
         "item": "unsalted butter",
@@ -25,6 +29,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -43,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -101,6 +109,7 @@
           }
         ],
         "note": "or 3 2/3 cups all-purpose flour plus 1/3 cup cornstarch",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -119,6 +128,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -137,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -155,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -173,8 +185,13 @@
           }
         ],
         "note": "well-shaken",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "8-ounce (225 gram) block cream cheese, at room temperature",
@@ -191,6 +208,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -213,6 +231,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -231,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -249,8 +269,13 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Decoration:",
+      "is_section_header": true
     },
     {
       "raw": "Powdered sugar",
@@ -258,6 +283,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Baking"
       }
     },
@@ -280,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Decoration",
         "category": "Produce"
       }
     },
@@ -302,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "Decoration",
         "category": "Produce"
       }
     }

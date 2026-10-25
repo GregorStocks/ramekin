@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 oz bittersweet chocolate",
       "expected": {
         "item": "bittersweet chocolate",
@@ -97,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

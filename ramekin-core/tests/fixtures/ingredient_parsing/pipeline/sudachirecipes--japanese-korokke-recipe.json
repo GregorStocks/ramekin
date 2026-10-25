@@ -166,6 +166,10 @@
       }
     },
     {
+      "raw": "Batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "50 ml cold water",
       "expected": {
         "item": "cold water",
@@ -176,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Beverages"
       }
     },
@@ -190,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -204,6 +210,7 @@
           }
         ],
         "note": "plus extra for dusting",
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -218,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Bakery & Bread"
       }
     },
@@ -227,6 +235,7 @@
         "item": "cooking oil neutral, high smoke point",
         "measurements": [],
         "note": "for deep frying",
+        "section": "Batter",
         "category": "Oils & Vinegars"
       }
     }

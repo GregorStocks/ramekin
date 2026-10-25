@@ -3,6 +3,10 @@
   "recipe_slug": "2012-06-triple-berry-summer-bu",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 cups (355 grams) plus 2 tablespoons (20 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -93,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,8 +184,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (240 grams) powdered or confections’ sugar",
@@ -189,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Produce"
       }
     },
@@ -221,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     }

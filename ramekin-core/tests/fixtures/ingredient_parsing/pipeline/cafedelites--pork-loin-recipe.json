@@ -3,6 +3,10 @@
   "recipe_slug": "pork-loin-recipe",
   "ingredients": [
     {
+      "raw": "PORK LOIN:",
+      "is_section_header": true
+    },
+    {
       "raw": "4-5 pound pork loin roast trimmed of skin and fat",
       "expected": {
         "item": "pork loin roast trimmed of skin and fat",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Loin",
         "category": "Other"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "divided",
+        "section": "Pork Loin",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "RUB:",
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons paprika mild or smoked",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Other"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "optional",
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "HONEY GARLIC BUTTER SAUCE:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup honey",
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Honey Garlic Butter Sauce",
         "category": "Baking"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Honey Garlic Butter Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Honey Garlic Butter Sauce",
         "category": "Other"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Honey Garlic Butter Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Honey Garlic Butter Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Honey Garlic Butter Sauce",
         "category": "Other"
       }
     },
@@ -223,8 +250,13 @@
           }
         ],
         "note": null,
+        "section": "Honey Garlic Butter Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "ADDITIONAL:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup low sodium beef stock or chicken stock/broth, FOR OVEN METHOD ONLY",
@@ -237,6 +269,7 @@
           }
         ],
         "note": "FOR OVEN METHOD ONLY",
+        "section": "Additional",
         "category": "Canned Goods"
       }
     },
@@ -251,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "Additional",
         "category": "Other"
       }
     },
@@ -265,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Additional",
         "category": "Baking"
       }
     }

@@ -133,6 +133,10 @@
       }
     },
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons extra-virgin olive oil",
       "expected": {
         "item": "extra-virgin olive oil",
@@ -143,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -171,6 +177,7 @@
           }
         ],
         "note": "plus 1 teaspoon zest",
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -185,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -199,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -255,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -264,6 +277,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

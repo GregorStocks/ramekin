@@ -3,6 +3,10 @@
   "recipe_slug": "naan-bread-recipe",
   "ingredients": [
     {
+      "raw": "Naan Bread:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup warm water",
       "expected": {
         "item": "warm water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Bread",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Bread",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Bread",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Naan Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Naan Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Bread",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Bread",
         "category": "Baking"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Naan Bread",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup salted butter melted (for brushing)",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "for brushing, melted",
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -148,6 +166,7 @@
         "item": "Garlic salt",
         "measurements": [],
         "note": "for sprinkling",
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +176,7 @@
         "item": "Fresh cilantro",
         "measurements": [],
         "note": "Optional garnish, chopped",
+        "section": "Topping",
         "category": "Produce"
       }
     }

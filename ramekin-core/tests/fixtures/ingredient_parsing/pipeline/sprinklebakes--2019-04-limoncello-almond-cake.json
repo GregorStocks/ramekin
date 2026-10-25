@@ -3,6 +3,10 @@
   "recipe_slug": "2019-04-limoncello-almond-cake",
   "ingredients": [
     {
+      "raw": "Sponge Roll:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 eggs at room temperature",
       "expected": {
         "item": "eggs at room temperature",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Oils & Vinegars"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Baking"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Baking"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Baking"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Spices & Seasonings"
       }
     },
@@ -128,6 +140,7 @@
         "item": "Lemon yellow gel food color",
         "measurements": [],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Other"
       }
     },
@@ -142,8 +155,13 @@
           }
         ],
         "note": null,
+        "section": "Sponge Roll",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling and frosting:",
+      "is_section_header": true
     },
     {
       "raw": "8 oz. cream cheese at room temperature",
@@ -156,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Frosting",
         "category": "Cheese"
       }
     },
@@ -174,6 +193,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Filling and Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -192,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Frosting",
         "category": "Baking"
       }
     },
@@ -206,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Frosting",
         "category": "Baking"
       }
     },
@@ -220,8 +242,13 @@
           }
         ],
         "note": "chopped",
+        "section": "Filling and Frosting",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Speckled candy Almond Eggs:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons dark cocoa powder",
@@ -234,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Speckled Candy Almond Eggs",
         "category": "Baking"
       }
     },
@@ -243,6 +271,7 @@
         "item": "Limoncello or vodka",
         "measurements": [],
         "note": null,
+        "section": "Speckled Candy Almond Eggs",
         "category": "Beverages"
       }
     },
@@ -252,8 +281,13 @@
         "item": "Sconza Lemoncello Chocolate Almonds",
         "measurements": [],
         "note": null,
+        "section": "Speckled Candy Almond Eggs",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Candy egg shells:",
+      "is_section_header": true
     },
     {
       "raw": "3-4 large eggs",
@@ -266,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "Candy Egg Shells",
         "category": "Dairy & Eggs"
       }
     },
@@ -280,6 +315,7 @@
           }
         ],
         "note": null,
+        "section": "Candy Egg Shells",
         "category": "Other"
       }
     },
@@ -294,8 +330,13 @@
           }
         ],
         "note": "plus more for greasing egg shells",
+        "section": "Candy Egg Shells",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup limoncello liqueur",
@@ -308,6 +349,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Beverages"
       }
     },
@@ -317,6 +359,7 @@
         "item": "Reserved frosting in piping bag",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -326,6 +369,7 @@
         "item": "Speckled candy almond eggs",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -335,6 +379,7 @@
         "item": "Candy eggshells",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -344,6 +389,7 @@
         "item": "Several sprigs of fresh mint",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     }

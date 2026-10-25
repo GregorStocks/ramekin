@@ -171,11 +171,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "salsa or pico de gallo",
       "expected": {
         "item": "salsa or pico de gallo",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -185,6 +190,7 @@
         "item": "sliced jalapeños",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -194,6 +200,7 @@
         "item": "avocado",
         "measurements": [],
         "note": "sliced thin",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -203,6 +210,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     }

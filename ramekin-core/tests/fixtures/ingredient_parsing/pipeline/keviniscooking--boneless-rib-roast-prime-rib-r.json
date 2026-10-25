@@ -3,6 +3,10 @@
   "recipe_slug": "boneless-rib-roast-prime-rib-r",
   "ingredients": [
     {
+      "raw": "Roast Rub:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 lb boneless beef rib roast visible fat trimmed to 1/2-inch (See Note 1)",
       "expected": {
         "item": "boneless beef rib roast visible fat",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "See Note 1, trimmed to 1/2-inch",
+        "section": "Roast Rub",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Roast Rub",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Roast Rub",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "See Note 2",
+        "section": "Roast Rub",
         "category": "Beverages"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "divided",
+        "section": "Roast Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Roast Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Roast Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": "unpeeled, tops trimmed",
+        "section": "Roast Rub",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Coffee Cream Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup beef broth",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Cream Gravy",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Cream Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Cream Gravy",
         "category": "Beverages"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Cream Gravy",
         "category": "Other"
       }
     },
@@ -176,6 +196,7 @@
         "item": "salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Coffee Cream Gravy",
         "category": "Spices & Seasonings"
       }
     }

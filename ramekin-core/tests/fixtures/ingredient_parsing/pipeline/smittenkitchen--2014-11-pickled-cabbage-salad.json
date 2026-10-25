@@ -3,6 +3,10 @@
   "recipe_slug": "2014-11-pickled-cabbage-salad",
   "ingredients": [
     {
+      "raw": "Brine:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups white vinegar",
       "expected": {
         "item": "white vinegar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Brine",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 small head (2 pounds) green cabbage",
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": "I used only 1/2 my very thick one",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     }

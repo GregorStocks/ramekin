@@ -133,6 +133,10 @@
       }
     },
     {
+      "raw": "FILLING:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons butter, softened",
       "expected": {
         "item": "butter",
@@ -143,6 +147,7 @@
           }
         ],
         "note": "softened",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -171,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -185,8 +192,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "GLAZE:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup semisweet chocolate chips",
@@ -199,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -213,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     }

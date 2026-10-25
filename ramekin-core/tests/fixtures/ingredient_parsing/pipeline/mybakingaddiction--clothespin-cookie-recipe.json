@@ -3,6 +3,10 @@
   "recipe_slug": "clothespin-cookie-recipe",
   "ingredients": [
     {
+      "raw": "For the Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup unsalted butter cold",
       "expected": {
         "item": "unsalted butter cold",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup unsalted butter softened",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -106,6 +121,7 @@
         "item": "Tiny pinch of fine sea salt",
         "measurements": [],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     }

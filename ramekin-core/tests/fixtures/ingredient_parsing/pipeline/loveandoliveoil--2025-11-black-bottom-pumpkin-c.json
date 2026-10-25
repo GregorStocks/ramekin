@@ -3,6 +3,10 @@
   "recipe_slug": "2025-11-black-bottom-pumpkin-c",
   "ingredients": [
     {
+      "raw": "For Chocolate Graham Cracker Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ cups  / 200 g graham cracker crumbs, from about 26 squares",
       "expected": {
         "item": "graham cracker crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "from about 26 squares",
+        "section": "For Chocolate Graham Cracker Crust",
         "category": "Snacks"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Chocolate Graham Cracker Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Chocolate Graham Cracker Crust",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Chocolate Graham Cracker Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "cut into small cubes",
+        "section": "For Chocolate Graham Cracker Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "For Chocolate Graham Cracker Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Chocolate Ganache Layer:",
+      "is_section_header": true
     },
     {
       "raw": "4 oz  / 113 g dark chocolate (50-70%), finely chopped",
@@ -121,6 +135,7 @@
           }
         ],
         "note": "50-70%, finely chopped",
+        "section": "For Chocolate Ganache Layer",
         "category": "Baking"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For Chocolate Ganache Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "For Chocolate Ganache Layer",
         "category": "Baking"
       }
     },
@@ -175,8 +192,13 @@
           }
         ],
         "note": null,
+        "section": "For Chocolate Ganache Layer",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Pumpkin Cream Layer:",
+      "is_section_header": true
     },
     {
       "raw": "⅔ cup  / 135 g light brown sugar",
@@ -193,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Baking"
       }
     },
@@ -211,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Baking"
       }
     },
@@ -229,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Baking"
       }
     },
@@ -243,6 +268,7 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Spices & Seasonings"
       }
     },
@@ -257,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Spices & Seasonings"
       }
     },
@@ -275,6 +302,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Pumpkin Cream Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Canned Goods"
       }
     },
@@ -307,6 +336,7 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -325,6 +355,7 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -339,6 +370,7 @@
           }
         ],
         "note": "increase vanilla to 1 tablespoon if omitting, optional",
+        "section": "For Pumpkin Cream Layer",
         "category": "Beverages"
       }
     },
@@ -353,8 +385,13 @@
           }
         ],
         "note": null,
+        "section": "For Pumpkin Cream Layer",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Whipped Cream & Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  / 240 g heavy cream*",
@@ -371,6 +408,7 @@
           }
         ],
         "note": null,
+        "section": "For Whipped Cream & Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -389,6 +427,7 @@
           }
         ],
         "note": null,
+        "section": "For Whipped Cream & Garnish",
         "category": "Baking"
       }
     },
@@ -403,6 +442,7 @@
           }
         ],
         "note": null,
+        "section": "For Whipped Cream & Garnish",
         "category": "Baking"
       }
     },
@@ -417,6 +457,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Whipped Cream & Garnish",
         "category": "Baking"
       }
     },
@@ -426,6 +467,7 @@
         "item": "chocolate curls or grated chocolate",
         "measurements": [],
         "note": "optional, for garnish",
+        "section": "For Whipped Cream & Garnish",
         "category": "Other"
       }
     }

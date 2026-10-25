@@ -35,11 +35,16 @@
       }
     },
     {
+      "raw": "To Serve (optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "Extra virgin olive oil",
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "To Serve (Optional)",
         "category": "Oils & Vinegars"
       }
     },
@@ -49,6 +54,7 @@
         "item": "Za’atar or chopped fresh herbs",
         "measurements": [],
         "note": null,
+        "section": "To Serve (Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -58,6 +64,7 @@
         "item": "Warm pita bread",
         "measurements": [],
         "note": null,
+        "section": "To Serve (Optional)",
         "category": "Bakery & Bread"
       }
     },
@@ -67,6 +74,7 @@
         "item": "Sliced vegetables",
         "measurements": [],
         "note": null,
+        "section": "To Serve (Optional)",
         "category": "Produce"
       }
     }

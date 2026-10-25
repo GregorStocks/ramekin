@@ -3,6 +3,10 @@
   "recipe_slug": "okonomiyaki-recipe",
   "ingredients": [
     {
+      "raw": "Batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "100 g cake flour or all-purpose in a pinch",
       "expected": {
         "item": "cake flour or all-purpose in a pinch",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "cooled",
+        "section": "Batter",
         "category": "Canned Goods"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Batter",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Okonomiyaki Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp tomato ketchup",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Okonomiyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Okonomiyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Okonomiyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Okonomiyaki Sauce",
         "category": "Baking"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Okonomiyaki Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Fillings (see in post for more ideas):",
+      "is_section_header": true
     },
     {
       "raw": "150 g green cabbage or spring/pointed cabbage",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Fillings (See in Post for More Ideas)",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": "tenkasu, optional, or crushed plain potato chips",
+        "section": "Fillings (See in Post for More Ideas)",
         "category": "Other"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": "benishoga, optional",
+        "section": "Fillings (See in Post for More Ideas)",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Fillings (See in Post for More Ideas)",
         "category": "Meat & Seafood"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Fillings (See in Post for More Ideas)",
         "category": "Other"
       }
     },
@@ -251,8 +280,13 @@
           }
         ],
         "note": null,
+        "section": "Fillings (See in Post for More Ideas)",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Toppings (see in post for more ideas):",
+      "is_section_header": true
     },
     {
       "raw": "Japanese mayonnaise to taste",
@@ -260,6 +294,7 @@
         "item": "Japanese mayonnaise",
         "measurements": [],
         "note": "to taste",
+        "section": "Toppings (See in Post for More Ideas)",
         "category": "Condiments & Sauces"
       }
     },
@@ -269,6 +304,7 @@
         "item": "bonito flakes",
         "measurements": [],
         "note": "katsuobushi, to taste",
+        "section": "Toppings (See in Post for More Ideas)",
         "category": "Spices & Seasonings"
       }
     },
@@ -278,6 +314,7 @@
         "item": "aonori",
         "measurements": [],
         "note": "dried green seaweed powder, to taste",
+        "section": "Toppings (See in Post for More Ideas)",
         "category": "Spices & Seasonings"
       }
     }

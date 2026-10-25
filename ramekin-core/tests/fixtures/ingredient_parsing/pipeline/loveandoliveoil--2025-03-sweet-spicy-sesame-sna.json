@@ -3,6 +3,10 @@
   "recipe_slug": "2025-03-sweet-spicy-sesame-sna",
   "ingredients": [
     {
+      "raw": "Dry mix:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups  / 74 g corn chex cereal",
       "expected": {
         "item": "corn chex cereal",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Mix",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Mix",
         "category": "Snacks"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Mix",
         "category": "Snacks"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Mix",
         "category": "Other"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Mix",
         "category": "Other"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Mix",
         "category": "Other"
       }
     },
@@ -109,8 +119,13 @@
           }
         ],
         "note": null,
+        "section": "Dry Mix",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons  / 84 g vegetable oil",
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -209,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +274,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

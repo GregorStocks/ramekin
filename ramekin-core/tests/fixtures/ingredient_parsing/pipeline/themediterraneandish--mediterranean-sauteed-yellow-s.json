@@ -118,6 +118,10 @@
       }
     },
     {
+      "raw": "Spice Mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tsp za'atar, more for later",
       "expected": {
         "item": "za'atar",
@@ -128,6 +132,7 @@
           }
         ],
         "note": "more for later",
+        "section": "Spice Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -142,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Spice Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -156,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Spice Mixture",
         "category": "Spices & Seasonings"
       }
     }

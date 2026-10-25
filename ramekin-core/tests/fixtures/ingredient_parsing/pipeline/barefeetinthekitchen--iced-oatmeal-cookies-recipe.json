@@ -227,6 +227,10 @@
       }
     },
     {
+      "raw": "Icing/Glaze Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups powdered sugar",
       "expected": {
         "item": "powdered sugar",
@@ -237,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Icing/glaze Ingredients",
         "category": "Baking"
       }
     },
@@ -251,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Icing/glaze Ingredients",
         "category": "Dairy & Eggs"
       }
     }

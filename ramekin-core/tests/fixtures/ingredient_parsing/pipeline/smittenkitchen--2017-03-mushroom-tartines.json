@@ -3,6 +3,10 @@
   "recipe_slug": "2017-03-mushroom-tartines",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons (30 grams) unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "ideally whole but lowfat should work",
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,6 +69,7 @@
         "item": "A few gratings fresh nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -71,6 +79,7 @@
         "item": "Salt and black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,8 +98,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Mushrooms:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds (680 grams) fresh mushrooms (cremini, white or a mix of wild all work), thinly sliced",
@@ -107,6 +121,7 @@
           }
         ],
         "note": "cremini, white or a mix of wild all work, thinly sliced",
+        "section": "Mushrooms",
         "category": "Produce"
       }
     },
@@ -116,6 +131,7 @@
         "item": "Olive oil and butter",
         "measurements": [],
         "note": "as needed",
+        "section": "Mushrooms",
         "category": "Oils & Vinegars"
       }
     },
@@ -130,6 +146,7 @@
           }
         ],
         "note": "such as rosemary, thyme and sage",
+        "section": "Mushrooms",
         "category": "Other"
       }
     },
@@ -139,8 +156,13 @@
         "item": "Salt and black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Mushrooms",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound loaf of a hearty white or whole wheat sourdough bread, in 3/4-inch slices",
@@ -153,6 +175,7 @@
           }
         ],
         "note": "in 3/4-inch slices",
+        "section": "Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -171,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -180,6 +204,7 @@
         "item": "Chopped fresh flat-leaf parsley, to garnish",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     }

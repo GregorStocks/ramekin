@@ -3,6 +3,10 @@
   "recipe_slug": "2014-12-gingerbread-biscotti",
   "ingredients": [
     {
+      "raw": "Cookie:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups plus 2 tablespoons (265 grams) all-purpose flour, plus extra for flouring hands",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "plus extra for flouring hands",
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -94,6 +103,7 @@
         "item": "A few grinds of black pepper",
         "measurements": [],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -108,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -126,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -144,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -162,6 +175,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -176,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -194,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -208,6 +224,7 @@
           }
         ],
         "note": "optional, I kept mine plain",
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -222,8 +239,13 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Cinnamon-sugar:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup (65 grams) granulated sugar",
@@ -240,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon-Sugar",
         "category": "Baking"
       }
     },
@@ -258,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon-Sugar",
         "category": "Spices & Seasonings"
       }
     }

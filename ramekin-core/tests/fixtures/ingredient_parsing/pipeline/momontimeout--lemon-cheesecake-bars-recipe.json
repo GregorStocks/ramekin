@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-cheesecake-bars-recipe",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 tbsp unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Lemon Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "16 oz cream cheese softened",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "softened",
+        "section": "Lemon Cheesecake",
         "category": "Cheese"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Baking"
       }
     }

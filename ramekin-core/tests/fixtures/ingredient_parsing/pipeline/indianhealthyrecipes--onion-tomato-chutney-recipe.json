@@ -203,6 +203,10 @@
       }
     },
     {
+      "raw": "To Temper:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ teaspoon oil",
       "expected": {
         "item": "oil",
@@ -213,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Oils & Vinegars"
       }
     },
@@ -227,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +247,7 @@
           }
         ],
         "note": "skinned black gram, optional",
+        "section": "To Temper",
         "category": "Canned Goods"
       }
     },
@@ -255,6 +262,7 @@
           }
         ],
         "note": "break if you want",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,6 +277,7 @@
           }
         ],
         "note": "pat dry",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -283,6 +292,7 @@
           }
         ],
         "note": "hing, optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     }

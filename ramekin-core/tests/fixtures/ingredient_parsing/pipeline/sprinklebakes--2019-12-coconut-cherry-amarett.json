@@ -3,6 +3,10 @@
   "recipe_slug": "2019-12-coconut-cherry-amarett",
   "ingredients": [
     {
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons unsalted butter at room temperature",
       "expected": {
         "item": "unsalted butter at room temperature",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Beverages"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Whipped coconut frosting:",
+      "is_section_header": true
     },
     {
       "raw": "3 cans coconut milk full fat, chilled overnight",
@@ -167,6 +186,7 @@
           }
         ],
         "note": "chilled overnight",
+        "section": "Whipped Coconut Frosting",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Coconut Frosting",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Coconut Frosting",
         "category": "Baking"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Coconut Frosting",
         "category": "Other"
       }
     }

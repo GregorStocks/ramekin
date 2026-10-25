@@ -3,11 +3,16 @@
   "recipe_slug": "easy-tofu-mitarashi-dango-reci",
   "ingredients": [
     {
+      "raw": "Dango:",
+      "is_section_header": true
+    },
+    {
       "raw": "water for boiling",
       "expected": {
         "item": "water for boiling",
         "measurements": [],
         "note": null,
+        "section": "Dango",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": null,
+        "section": "Dango",
         "category": "Other"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Dango",
         "category": "Other"
       }
     },
@@ -45,8 +52,13 @@
         "item": "ice water",
         "measurements": [],
         "note": null,
+        "section": "Dango",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
@@ -59,6 +71,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -87,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     }

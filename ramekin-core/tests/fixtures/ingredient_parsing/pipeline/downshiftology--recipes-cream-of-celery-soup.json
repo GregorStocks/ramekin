@@ -115,11 +115,16 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Celery leaves, black pepper and paprika",
       "expected": {
         "item": "Celery leaves",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -129,6 +134,7 @@
         "item": "black pepper",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -139,64 +145,7 @@
         "item": "paprika",
         "measurements": [],
         "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Celery leaves, black pepper and paprika",
-      "expected": {
-        "item": "Celery leaves",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "Celery leaves, black pepper and paprika",
-      "expected": {
-        "item": "black pepper",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Celery leaves, black pepper and paprika",
-      "expected": {
-        "item": "paprika",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Celery leaves, black pepper and paprika",
-      "expected": {
-        "item": "Celery leaves",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "Celery leaves, black pepper and paprika",
-      "expected": {
-        "item": "black pepper",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Celery leaves, black pepper and paprika",
-      "expected": {
-        "item": "paprika",
-        "measurements": [],
-        "note": null,
+        "section": "Garnish",
         "category": "Spices & Seasonings"
       },
       "expanded": true

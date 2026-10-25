@@ -185,6 +185,10 @@
       }
     },
     {
+      "raw": "For the peanut sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons creamy peanut butter",
       "expected": {
         "item": "creamy peanut butter",
@@ -195,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Produce"
       }
     },
@@ -237,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Baking"
       }
     },
@@ -251,6 +259,7 @@
           }
         ],
         "note": "or more, to taste",
+        "section": "For the Peanut Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,6 +274,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Produce"
       }
     }

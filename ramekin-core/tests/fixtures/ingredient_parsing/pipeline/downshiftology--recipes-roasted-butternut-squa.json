@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-roasted-butternut-squa",
   "ingredients": [
     {
+      "raw": "Roasted Butternut Squash Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 pounds butternut squash",
       "expected": {
         "item": "butternut squash",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Butternut Squash Salad",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Butternut Squash Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -36,6 +42,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Roasted Butternut Squash Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Butternut Squash Salad",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "I used onion sprouts",
+        "section": "Roasted Butternut Squash Salad",
         "category": "Other"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Butternut Squash Salad",
         "category": "Cheese"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Roasted Butternut Squash Salad",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "Champagne Vinaigrette",
@@ -101,6 +116,7 @@
         "item": "Champagne Vinaigrette",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Other"
       }
     }

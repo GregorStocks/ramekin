@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-howtomakedumpcakefroms",
   "ingredients": [
     {
+      "raw": "For the fruit:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 pounds (1.36 kilograms) fresh or frozen fruit (like berries, sliced peaches, sliced apples, sliced plums, etc.)",
       "expected": {
         "item": "fresh or frozen fruit",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "like berries, sliced peaches, sliced apples, sliced plums, etc.",
+        "section": "For the Fruit",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Fruit",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit",
         "category": "Baking"
       }
     },
@@ -63,8 +70,13 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the cake:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 cups (175g) all-purpose flour",
@@ -81,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -154,6 +171,7 @@
         "item": "Vanilla ice cream",
         "measurements": [],
         "note": "to serve",
+        "section": "For the Cake",
         "category": "Frozen"
       }
     }

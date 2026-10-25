@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-roasted-broccoli-with-",
   "ingredients": [
     {
+      "raw": "Roasted Broccoli:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 head of broccoli",
       "expected": {
         "item": "broccoli",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Broccoli",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Broccoli",
         "category": "Oils & Vinegars"
       }
     },
@@ -36,8 +42,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Roasted Broccoli",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Hollandaise Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 egg yolks",
@@ -50,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -64,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Produce"
       }
     },
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "melted and hot",
+        "section": "Hollandaise Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Produce"
       }
     }

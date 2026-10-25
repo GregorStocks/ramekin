@@ -3,6 +3,10 @@
   "recipe_slug": "2022-02-sour-cream-chocolate-c",
   "ingredients": [
     {
+      "raw": "For Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅞ cup  / 110 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -145,6 +157,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -177,8 +191,13 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "⅓ cup  / 80 g heavy cream",
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": "60-70%, finely chopped, good quality",
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -249,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -285,6 +309,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -299,6 +324,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -313,6 +339,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Spices & Seasonings"
       }
     }

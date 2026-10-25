@@ -3,6 +3,10 @@
   "recipe_slug": "2010-01-new-york-deli-rye-brea",
   "ingredients": [
     {
+      "raw": "Sponge:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup (4 ounces, 117 grams) bread flour",
       "expected": {
         "item": "bread flour",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -43,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -61,6 +67,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -101,6 +109,7 @@
           }
         ],
         "note": "or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams)",
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -123,8 +132,13 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Sponge",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Flour Mixture:",
+      "is_section_header": true
     },
     {
       "raw": "2 1/4 cups (12.5 ounces, 351 grams) bread flour",
@@ -145,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Flour Mixture",
         "category": "Baking"
       }
     },
@@ -163,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Flour Mixture",
         "category": "Baking"
       }
     },
@@ -185,6 +201,7 @@
           }
         ],
         "note": "you can grind these if you want to avoid the crunch",
+        "section": "Flour Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Flour Mixture",
         "category": "Spices & Seasonings"
       }
     }

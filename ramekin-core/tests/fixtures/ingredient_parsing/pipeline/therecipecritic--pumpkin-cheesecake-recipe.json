@@ -3,6 +3,10 @@
   "recipe_slug": "pumpkin-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "Gingersnap Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups finely ground gingersnap crumbs about 10 ounces",
       "expected": {
         "item": "finely ground gingersnap crumbs about 10 ounces",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Gingersnap Crust",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Gingersnap Crust",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": "melted",
+        "section": "Gingersnap Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Pumpkin Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup granulated sugar",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Cheesecake",
         "category": "Baking"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": "room temperature!",
+        "section": "Pumpkin Cheesecake",
         "category": "Cheese"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Cheesecake",
         "category": "Baking"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Cheesecake",
         "category": "Canned Goods"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Cheesecake",
         "category": "Other"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Cheesecake",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Cheesecake",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Cheesecake",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Cheesecake",
         "category": "Spices & Seasonings"
       }
     },
@@ -180,6 +200,7 @@
         "item": "whipped cream",
         "measurements": [],
         "note": "for topping",
+        "section": "Pumpkin Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,6 +210,7 @@
         "item": "caramel sauce",
         "measurements": [],
         "note": "for topping",
+        "section": "Pumpkin Cheesecake",
         "category": "Condiments & Sauces"
       }
     }

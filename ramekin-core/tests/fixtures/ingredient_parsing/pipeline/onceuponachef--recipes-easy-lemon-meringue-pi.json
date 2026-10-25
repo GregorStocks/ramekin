@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-easy-lemon-meringue-pi",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ cups graham cracker crumbs, from about 12 whole crackers",
       "expected": {
         "item": "graham cracker crumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "from about 12 whole crackers",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -45,8 +51,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "4 large egg yolks (reserve the whites for the meringue)",
@@ -59,6 +70,7 @@
           }
         ],
         "note": "reserve the whites for the meringue",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": "14-oz, see note",
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": "from 1 lemon, packed",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -101,8 +115,13 @@
           }
         ],
         "note": "from about 3 lemons",
+        "section": "For the Filling",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Meringue:",
+      "is_section_header": true
     },
     {
       "raw": "4 large egg whites",
@@ -115,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meringue",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meringue",
         "category": "Baking"
       }
     },
@@ -143,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meringue",
         "category": "Baking"
       }
     }

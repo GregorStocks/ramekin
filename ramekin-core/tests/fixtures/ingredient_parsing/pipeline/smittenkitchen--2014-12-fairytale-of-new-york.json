@@ -3,6 +3,10 @@
   "recipe_slug": "2014-12-fairytale-of-new-york",
   "ingredients": [
     {
+      "raw": "Winter Warmth Syrup:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Winter Warmth Syrup",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "granulated will do just fine if you do not have them",
+        "section": "Winter Warmth Syrup",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "peeled, cored, and diced",
+        "section": "Winter Warmth Syrup",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "peeled, cored, and diced",
+        "section": "Winter Warmth Syrup",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Winter Warmth Syrup",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Winter Warmth Syrup",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Winter Warmth Syrup",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Winter Warmth Syrup",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Each Cocktail:",
+      "is_section_header": true
     },
     {
       "raw": "1 piece of orange peel (about 1 by 2 inches)",
@@ -125,6 +141,7 @@
           }
         ],
         "note": "about 1 by 2 inches",
+        "section": "For Each Cocktail",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "recipe above",
+        "section": "For Each Cocktail",
         "category": "Other"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "Fee Brothers black walnut bitters are recommended, I used orange bitters",
+        "section": "For Each Cocktail",
         "category": "Beverages"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For Each Cocktail",
         "category": "Beverages"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2007-11-simplest-apple-tart",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (125 grams) unbleached all-purpose flour",
       "expected": {
         "item": "unbleached all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "cut in 1/2-inch pieces",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,8 +97,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds (910 grams) apples (Golden Delicious or another tart, firm variety), peeled, cored (save peels and cores), and sliced",
@@ -107,6 +120,7 @@
           }
         ],
         "note": "Golden Delicious or another tart, firm variety, save peels and cores, peeled, cored, and sliced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -125,6 +139,7 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -143,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

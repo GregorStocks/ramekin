@@ -3,6 +3,10 @@
   "recipe_slug": "2024-05-grilled-feta-with-aspa",
   "ingredients": [
     {
+      "raw": "Chimichurri:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 large or 4 regular cloves garlic",
       "expected": {
         "item": "cloves garlic",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "or 1 1/2 tablespoons fresh oregano leaves",
+        "section": "Chimichurri",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "or 1/4 to 1/2 teaspoon red pepper flakes",
+        "section": "Chimichurri",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "or 1/2 cup finely-chopped leaves",
+        "section": "Chimichurri",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Oils & Vinegars"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,6 +106,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Chimichurri",
         "category": "Spices & Seasonings"
       }
     },
@@ -110,8 +121,13 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 baguette, sliced 1/2-inch-thick on an angle",
@@ -124,6 +140,7 @@
           }
         ],
         "note": "sliced 1/2-inch-thick on an angle",
+        "section": "Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -138,6 +155,7 @@
           }
         ],
         "note": "cut into thin wedges",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -152,6 +170,7 @@
           }
         ],
         "note": "trimmed",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -161,6 +180,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -170,6 +190,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -184,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     }

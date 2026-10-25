@@ -3,6 +3,10 @@
   "recipe_slug": "turkey-crepes-savory-nalesniki",
   "ingredients": [
     {
+      "raw": "Ingredients for the Crepes Batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup lukewarm water",
       "expected": {
         "item": "lukewarm water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Crepes Batter",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Crepes Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Crepes Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "melted., Plus more to sauté.",
+        "section": "Ingredients for the Crepes Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -64,6 +72,7 @@
         "item": "I have made crepes with extra light olive oil in leu of butter with good results",
         "measurements": [],
         "note": null,
+        "section": "Ingredients for the Crepes Batter",
         "category": "Other"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": "or use 1/2 cup whole wheat flour and 1/2 cup all-purpose",
+        "section": "Ingredients for the Crepes Batter",
         "category": "Baking"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Crepes Batter",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Ingredients for the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 lb leftover turkey meat, dark and/or white meat",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Ingredients for the Filling",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Ingredients for the Filling",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": "finely grated; or 4 tiny awkward ones from the garden",
+        "section": "Ingredients for the Filling",
         "category": "Produce"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Filling",
         "category": "Beverages"
       }
     }

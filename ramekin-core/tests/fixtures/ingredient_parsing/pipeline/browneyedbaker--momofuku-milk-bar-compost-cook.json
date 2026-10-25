@@ -3,6 +3,10 @@
   "recipe_slug": "momofuku-milk-bar-compost-cook",
   "ingredients": [
     {
+      "raw": "For the Graham Crumb Mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup   graham cracker crumbs",
       "expected": {
         "item": "graham cracker crumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Graham Crumb Mixture",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Cookies:",
+      "is_section_header": true
     },
     {
       "raw": "1⅓ cups   bread flour",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Other"
       }
     },
@@ -260,6 +286,7 @@
         "item": "Prepared graham mixture",
         "measurements": [],
         "note": null,
+        "section": "For the Cookies",
         "category": "Other"
       }
     },
@@ -274,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Snacks"
       }
     },
@@ -288,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Beverages"
       }
     },
@@ -302,6 +331,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Snacks"
       }
     },
@@ -316,6 +346,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Snacks"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "cinnamon-rolls-recipe",
   "ingredients": [
     {
+      "raw": "Cinnamon Roll Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup whole milk (warm, 105 degrees F)",
       "expected": {
         "item": "whole milk",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "warm, 105 degrees F",
+        "section": "Cinnamon Roll Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cinnamon Roll Dough",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Cinnamon Roll Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "melted",
+        "section": "Cinnamon Roll Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Cinnamon Sugar Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup brown sugar (packed)",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cinnamon Sugar Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Sugar Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": "softened",
+        "section": "Cinnamon Sugar Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Cream Cheese Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces cream cheese (softened)",
@@ -181,6 +205,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Spices & Seasonings"
       }
     }

@@ -237,11 +237,16 @@
       }
     },
     {
+      "raw": "For serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Sliced avocado",
       "expected": {
         "item": "Sliced avocado",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -251,6 +256,7 @@
         "item": "Chopped fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -260,6 +266,7 @@
         "item": "Plain nonfat Greek yogurt or sour cream",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     }

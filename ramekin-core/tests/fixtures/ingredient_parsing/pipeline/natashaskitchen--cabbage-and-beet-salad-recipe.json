@@ -3,6 +3,10 @@
   "recipe_slug": "cabbage-and-beet-salad-recipe",
   "ingredients": [
     {
+      "raw": "Salad Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 medium heads of cabbage, 5-6 lb total",
       "expected": {
         "item": "cabbage, 5-6 lb total",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups filtered water",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2018-07-mini-blueberry-mousse-",
   "ingredients": [
     {
+      "raw": "For Blueberry Gelée:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 oz  / 226 g (1 1/2 cups) fresh or frozen blueberries",
       "expected": {
         "item": "fresh or frozen blueberries",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "For Blueberry Gelée",
         "category": "Produce"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Blueberry Gelée",
         "category": "Baking"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Blueberry Gelée",
         "category": "Produce"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For Blueberry Gelée",
         "category": "Baking"
       }
     },
@@ -89,8 +97,13 @@
           }
         ],
         "note": "plus more for blooming gelatin",
+        "section": "For Blueberry Gelée",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Cake:",
+      "is_section_header": true
     },
     {
       "raw": "2   large eggs, separated, at room temperature",
@@ -103,6 +116,7 @@
           }
         ],
         "note": "separated, at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -203,8 +222,13 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Mousse:",
+      "is_section_header": true
     },
     {
       "raw": "3   sheets leaf gelatin",
@@ -217,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Baking"
       }
     },
@@ -235,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Other"
       }
     },
@@ -253,6 +279,7 @@
           }
         ],
         "note": "chilled",
+        "section": "For Mousse",
         "category": "Cheese"
       }
     },
@@ -271,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Baking"
       }
     },
@@ -289,6 +317,7 @@
           }
         ],
         "note": "chilled",
+        "section": "For Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -303,6 +332,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Baking"
       }
     },
@@ -317,6 +347,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Baking"
       }
     },
@@ -331,8 +362,13 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Mirror Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "6   sheets leaf gelatin*",
@@ -345,6 +381,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -363,6 +400,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -381,6 +419,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -399,6 +438,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Beverages"
       }
     },
@@ -417,6 +457,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Canned Goods"
       }
     },
@@ -435,6 +476,7 @@
           }
         ],
         "note": "finely chopped, good quality",
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "wasabi-cucumber-avocado-dressi",
   "ingredients": [
     {
+      "raw": "FOR THE DRESSING:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 avocado",
       "expected": {
         "item": "avocado",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "FOR THE SALAD:",
+      "is_section_header": true
     },
     {
       "raw": "2-4 cups greens (I used spring mix)",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "I used spring mix",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     }

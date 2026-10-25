@@ -3,6 +3,10 @@
   "recipe_slug": "2019-01-25-what-to-do-with-lef",
   "ingredients": [
     {
+      "raw": "for the vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup finely minced shallots",
       "expected": {
         "item": "finely minced shallots",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Vinaigrette",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "for the salad:",
+      "is_section_header": true
     },
     {
       "raw": "a mix of greens, whatever you like: arugula, endive (thinly sliced), kale (thinly sliced), etc",
@@ -64,6 +76,7 @@
         "item": "a mix of greens, whatever you like: arugula, endive, kale, etc",
         "measurements": [],
         "note": "thinly sliced, thinly sliced",
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -73,6 +86,7 @@
         "item": "leftover roasted chicken",
         "measurements": [],
         "note": "shredded",
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -82,6 +96,7 @@
         "item": "shaved parmesan or Manchego",
         "measurements": [],
         "note": "optional",
+        "section": "For the Salad",
         "category": "Cheese"
       }
     },
@@ -91,6 +106,7 @@
         "item": "toasted pine nuts or other toasted nuts",
         "measurements": [],
         "note": null,
+        "section": "For the Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -100,6 +116,7 @@
         "item": "orange segments or diced apple or pear",
         "measurements": [],
         "note": "optional",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -109,6 +126,7 @@
         "item": "freshly cracked pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     }

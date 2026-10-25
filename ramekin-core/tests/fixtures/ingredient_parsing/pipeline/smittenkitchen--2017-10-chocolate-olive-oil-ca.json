@@ -3,6 +3,10 @@
   "recipe_slug": "2017-10-chocolate-olive-oil-ca",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups (195 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "any variety, sifted if lumpy",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Beverages"
       }
     },
@@ -153,8 +165,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (135 grams) semisweet chocolate chips",
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -207,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Oils & Vinegars"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": "for shine",
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -234,6 +255,7 @@
         "item": "A pinch or two of flaky sea salt",
         "measurements": [],
         "note": null,
+        "section": "Glaze",
         "category": "Other"
       }
     }

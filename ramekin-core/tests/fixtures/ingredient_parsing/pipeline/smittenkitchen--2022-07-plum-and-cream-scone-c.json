@@ -3,6 +3,10 @@
   "recipe_slug": "2022-07-plum-and-cream-scone-c",
   "ingredients": [
     {
+      "raw": "Fruit:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 pounds (1.15 kg) unpitted fresh, ripe plums, any variety, or other stone fruit",
       "expected": {
         "item": "unpitted fresh, ripe plums, any variety, or other stone fruit",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "see Note",
+        "section": "Fruit",
         "category": "Baking"
       }
     },
@@ -71,8 +78,13 @@
           }
         ],
         "note": "or 3 tablespoons tapioca flour/starch",
+        "section": "Fruit",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Scone topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (260 grams) all-purpose flour, plus more for counter",
@@ -89,6 +101,7 @@
           }
         ],
         "note": "plus more for counter",
+        "section": "Scone Topping",
         "category": "Baking"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Scone Topping",
         "category": "Baking"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Scone Topping",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Scone Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -161,6 +177,7 @@
           }
         ],
         "note": "cubed",
+        "section": "Scone Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,6 +192,7 @@
           }
         ],
         "note": "or 1 teaspoon vanilla extract",
+        "section": "Scone Topping",
         "category": "Baking"
       }
     },
@@ -193,6 +211,7 @@
           }
         ],
         "note": "divided",
+        "section": "Scone Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -211,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Scone Topping",
         "category": "Baking"
       }
     }

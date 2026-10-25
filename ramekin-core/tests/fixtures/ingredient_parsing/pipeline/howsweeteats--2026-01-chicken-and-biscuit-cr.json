@@ -124,6 +124,10 @@
       }
     },
     {
+      "raw": "crumble topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ¾ cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -134,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Baking"
       }
     },
@@ -148,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Baking"
       }
     },
@@ -162,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +183,7 @@
           }
         ],
         "note": "cut into tiny pieces",
+        "section": "Crumble Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Dairy & Eggs"
       }
     }

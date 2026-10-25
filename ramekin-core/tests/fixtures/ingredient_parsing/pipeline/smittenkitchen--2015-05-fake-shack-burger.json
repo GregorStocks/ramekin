@@ -3,6 +3,10 @@
   "recipe_slug": "2015-05-fake-shack-burger",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup mayonnaise",
       "expected": {
         "item": "mayonnaise",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons unsalted butter, plus more if needed",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "plus more if needed",
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "see Note",
+        "section": "Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -148,6 +166,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +176,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": "if you’re making cheeseburgers",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -194,6 +216,7 @@
         "item": "Thinly sliced pickles",
         "measurements": [],
         "note": "if desired",
+        "section": "Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -208,6 +231,7 @@
           }
         ],
         "note": "I used curly green leaf lettuce",
+        "section": "Assembly",
         "category": "Other"
       }
     }

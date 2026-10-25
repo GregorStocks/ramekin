@@ -231,6 +231,10 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "2-3 tablespoons Italian parsley roughly chopped, optional",
       "expected": {
         "item": "Italian parsley",
@@ -241,6 +245,7 @@
           }
         ],
         "note": "roughly chopped, optional",
+        "section": "Garnish",
         "category": "Produce"
       }
     }

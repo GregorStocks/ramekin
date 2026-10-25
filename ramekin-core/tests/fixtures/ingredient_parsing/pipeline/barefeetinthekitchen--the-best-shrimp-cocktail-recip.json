@@ -3,6 +3,10 @@
   "recipe_slug": "the-best-shrimp-cocktail-recip",
   "ingredients": [
     {
+      "raw": "Shrimp Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds deveined ((shells removed and tails left on) jumbo shrimp (16-20 per pound))",
       "expected": {
         "item": "deveined jumbo shrimp",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "shells removed and tails left on, 16-20 per pound",
+        "section": "Shrimp Ingredients",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp Ingredients",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp Ingredients",
         "category": "Produce"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Shrimp Ingredients",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Cocktail Sauce Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup ketchup",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce Ingredients",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
     }

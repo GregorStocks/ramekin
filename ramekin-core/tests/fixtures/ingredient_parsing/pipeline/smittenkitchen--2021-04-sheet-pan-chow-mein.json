@@ -142,6 +142,10 @@
       }
     },
     {
+      "raw": "Soy seasoning:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon toasted sesame oil",
       "expected": {
         "item": "toasted sesame oil",
@@ -152,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Soy Seasoning",
         "category": "Oils & Vinegars"
       }
     },
@@ -166,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Soy Seasoning",
         "category": "Condiments & Sauces"
       }
     },
@@ -180,6 +186,7 @@
           }
         ],
         "note": "optional, such as vegetarian oyster or hoisin sauce",
+        "section": "Soy Seasoning",
         "category": "Other"
       }
     },
@@ -194,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Soy Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +216,7 @@
           }
         ],
         "note": "grated or minced",
+        "section": "Soy Seasoning",
         "category": "Produce"
       }
     }

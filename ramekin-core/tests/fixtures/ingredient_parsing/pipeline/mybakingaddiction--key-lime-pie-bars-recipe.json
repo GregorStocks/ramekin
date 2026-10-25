@@ -3,6 +3,10 @@
   "recipe_slug": "key-lime-pie-bars-recipe",
   "ingredients": [
     {
+      "raw": "For the crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2/3 cup unsweetened shredded coconut (not flaked coconut)",
       "expected": {
         "item": "unsweetened shredded coconut",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "not flaked coconut",
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "or 1-to-1 gluten-free baking flour",
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 (14-ounce) cans sweetened condensed milk",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "14-ounce",
+        "section": "For the Filling",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     }

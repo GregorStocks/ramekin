@@ -138,6 +138,10 @@
       }
     },
     {
+      "raw": "Sriracha mayo:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 teaspoons mayonnaise",
       "expected": {
         "item": "mayonnaise",
@@ -148,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Sriracha Mayo",
         "category": "Condiments & Sauces"
       }
     },
@@ -162,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "Sriracha Mayo",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For serving:",
+      "is_section_header": true
     },
     {
       "raw": "Cilantro Lime Rice or Cauliflower Rice",
@@ -171,6 +181,7 @@
         "item": "Cilantro Lime Rice or Cauliflower Rice",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -185,6 +196,7 @@
           }
         ],
         "note": "steamed and chopped",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -199,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Frozen"
       }
     },
@@ -213,6 +226,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -222,6 +236,7 @@
         "item": "tamari",
         "measurements": [],
         "note": "for drizzling",
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     }

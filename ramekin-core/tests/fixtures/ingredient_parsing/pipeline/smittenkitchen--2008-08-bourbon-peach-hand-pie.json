@@ -3,6 +3,10 @@
   "recipe_slug": "2008-08-bourbon-peach-hand-pie",
   "ingredients": [
     {
+      "raw": "For the pastry:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Other"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Produce"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds of peaches",
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -161,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
@@ -189,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     }

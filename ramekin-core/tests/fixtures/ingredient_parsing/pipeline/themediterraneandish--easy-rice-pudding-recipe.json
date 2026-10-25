@@ -143,11 +143,16 @@
       }
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Ground cinnamon",
       "expected": {
         "item": "Ground cinnamon",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +162,7 @@
         "item": "Honey",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Baking"
       }
     },
@@ -166,6 +172,7 @@
         "item": "Crushed pistachios and/or walnuts",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Nuts & Dried Fruit"
       }
     }

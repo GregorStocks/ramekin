@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "For cooking:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons salted butter",
       "expected": {
         "item": "salted butter",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For Cooking",
         "category": "Dairy & Eggs"
       }
     }

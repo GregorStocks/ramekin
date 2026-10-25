@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-spartak-cake-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients for Cake Layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 egg",
       "expected": {
         "item": "egg",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "softened",
+        "section": "Ingredients for Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Other"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Ingredients for Spartak Cream:",
+      "is_section_header": true
     },
     {
       "raw": "2 sticks, 16 Tbsp butter, softened at room temp",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "softened at room temp",
+        "section": "Ingredients for Spartak Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Spartak Cream",
         "category": "Other"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Spartak Cream",
         "category": "Cheese"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Spartak Cream",
         "category": "Other"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Spartak Cream",
         "category": "Baking"
       }
     }

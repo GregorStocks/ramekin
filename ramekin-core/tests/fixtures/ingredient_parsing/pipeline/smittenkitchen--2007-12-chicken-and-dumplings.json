@@ -3,6 +3,10 @@
   "recipe_slug": "2007-12-chicken-and-dumplings",
   "ingredients": [
     {
+      "raw": "Stew:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 pounds bone-in, skin-on chicken thighs",
       "expected": {
         "item": "bone-in, skin-on chicken thighs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "Table salt and ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Oils & Vinegars"
       }
     },
@@ -54,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Dairy & Eggs"
       }
     },
@@ -68,6 +76,7 @@
           }
         ],
         "note": "cut in half lengthwise and then into 1-inch pieces",
+        "section": "Stew",
         "category": "Produce"
       }
     },
@@ -82,6 +91,7 @@
           }
         ],
         "note": "minced",
+        "section": "Stew",
         "category": "Produce"
       }
     },
@@ -96,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Baking"
       }
     },
@@ -110,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Beverages"
       }
     },
@@ -124,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Canned Goods"
       }
     },
@@ -138,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Produce"
       }
     },
@@ -166,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -180,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Frozen"
       }
     },
@@ -194,8 +211,13 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dumplings:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups unbleached all-purpose flour",
@@ -208,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Baking"
       }
     },
@@ -222,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Baking"
       }
     },
@@ -236,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Spices & Seasonings"
       }
     },
@@ -250,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Dairy & Eggs"
       }
     },
@@ -264,6 +290,7 @@
           }
         ],
         "note": "or unsalted butter",
+        "section": "Dumplings",
         "category": "Meat & Seafood"
       }
     }

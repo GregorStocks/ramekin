@@ -3,6 +3,10 @@
   "recipe_slug": "2015-02-spaghetti-pangrattato-",
   "ingredients": [
     {
+      "raw": "Crumbs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoon olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Oils & Vinegars"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "minced",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "panko worked great here",
+        "section": "Crumbs",
         "category": "Bakery & Bread"
       }
     },
@@ -54,6 +61,7 @@
         "item": "Salt and red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -68,6 +76,7 @@
           }
         ],
         "note": "minced",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -77,8 +86,13 @@
         "item": "Few fine gratings fresh lemon zest",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Crispy Egg:",
+      "is_section_header": true
     },
     {
       "raw": "1 glug of olive oil per egg",
@@ -91,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Egg",
         "category": "Other"
       }
     },
@@ -105,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Egg",
         "category": "Dairy & Eggs"
       }
     },
@@ -114,8 +130,13 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Crispy Egg",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Pasta and Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces dried spaghetti",
@@ -128,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -142,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -156,6 +179,7 @@
           }
         ],
         "note": "rinsed if salted, drained, chopped",
+        "section": "Pasta and Assembly",
         "category": "Canned Goods"
       }
     },
@@ -170,6 +194,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Pasta and Assembly",
         "category": "Produce"
       }
     },
@@ -184,6 +209,7 @@
           }
         ],
         "note": "optional",
+        "section": "Pasta and Assembly",
         "category": "Cheese"
       }
     }

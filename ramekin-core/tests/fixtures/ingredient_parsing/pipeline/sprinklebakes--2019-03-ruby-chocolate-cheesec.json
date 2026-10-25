@@ -3,6 +3,10 @@
   "recipe_slug": "2019-03-ruby-chocolate-cheesec",
   "ingredients": [
     {
+      "raw": "Cheesecake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups 255g, or 9 oz. cookies shortbread cookie crumbs",
       "expected": {
         "item": "2 cups 255g, or 9 oz. cookies shortbread cookie crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "or 9 oz. cookies shortbread cookie crumbs",
+        "section": "Cheesecake",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "melted",
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "or bars finely chopped",
+        "section": "Cheesecake",
         "category": "Other"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Cheese"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Canned Goods"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -137,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Beverages"
       }
     },
@@ -146,8 +159,13 @@
         "item": "Deep pink gel food color",
         "measurements": [],
         "note": "optional",
+        "section": "Cheesecake",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Ruby chocolate ganache truffles:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup 120 ml heavy cream",
@@ -160,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Ruby Chocolate Ganache Truffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -174,6 +193,7 @@
           }
         ],
         "note": null,
+        "section": "Ruby Chocolate Ganache Truffles",
         "category": "Other"
       }
     },
@@ -183,8 +203,13 @@
         "item": "Tiny drop of pink gel food color",
         "measurements": [],
         "note": "optional",
+        "section": "Ruby Chocolate Ganache Truffles",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Whipped cream and décors:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup 120 ml heavy whipping cream",
@@ -197,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream and Décors",
         "category": "Dairy & Eggs"
       }
     },
@@ -211,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream and Décors",
         "category": "Baking"
       }
     },
@@ -225,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream and Décors",
         "category": "Baking"
       }
     },
@@ -234,6 +262,7 @@
         "item": "Dried sea lavender petals and whole dried globe amaranth see post for links",
         "measurements": [],
         "note": null,
+        "section": "Whipped Cream and Décors",
         "category": "Other"
       }
     },
@@ -248,6 +277,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream and Décors",
         "category": "Other"
       }
     }

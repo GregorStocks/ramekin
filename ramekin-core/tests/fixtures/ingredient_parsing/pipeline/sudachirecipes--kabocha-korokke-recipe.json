@@ -171,6 +171,10 @@
       }
     },
     {
+      "raw": "Coating:",
+      "is_section_header": true
+    },
+    {
       "raw": "50 ml cold water",
       "expected": {
         "item": "cold water",
@@ -181,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Beverages"
       }
     },
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Other"
       }
     },
@@ -223,6 +230,7 @@
           }
         ],
         "note": "for coating",
+        "section": "Coating",
         "category": "Baking"
       }
     },
@@ -237,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Bakery & Bread"
       }
     },
@@ -246,6 +255,7 @@
         "item": "cooking oil",
         "measurements": [],
         "note": "for deep frying",
+        "section": "Coating",
         "category": "Oils & Vinegars"
       }
     },
@@ -255,8 +265,13 @@
         "item": "dried parsley optional garnish",
         "measurements": [],
         "note": null,
+        "section": "Coating",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp Worcestershire sauce",
@@ -269,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -283,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     }

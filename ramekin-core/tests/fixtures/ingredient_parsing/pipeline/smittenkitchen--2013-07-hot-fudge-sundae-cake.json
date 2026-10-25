@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "Chocolate Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -213,6 +223,7 @@
           }
         ],
         "note": "cut into small chunks",
+        "section": "Chocolate Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -255,6 +268,7 @@
           }
         ],
         "note": "honey should work as well, but I didn’t test it this time",
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -269,6 +283,7 @@
           }
         ],
         "note": "packed",
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -283,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -297,6 +313,7 @@
           }
         ],
         "note": "or level 1/4 teaspoon table salt",
+        "section": "Chocolate Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -311,6 +328,7 @@
           }
         ],
         "note": "or, about 1 cup bittersweet chocolate chips, chopped, divided",
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -325,6 +343,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -339,6 +358,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -353,6 +373,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -367,6 +388,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     },
@@ -376,6 +398,7 @@
         "item": "Maraschino cherries",
         "measurements": [],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Canned Goods"
       }
     },
@@ -385,6 +408,7 @@
         "item": "Colored sprinkles",
         "measurements": [],
         "note": null,
+        "section": "Chocolate Cookies",
         "category": "Baking"
       }
     }

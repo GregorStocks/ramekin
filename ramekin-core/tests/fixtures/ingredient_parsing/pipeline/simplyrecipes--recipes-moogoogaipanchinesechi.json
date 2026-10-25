@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-moogoogaipanchinesechi",
   "ingredients": [
     {
+      "raw": "For the chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 pounds boneless, skinless chicken breasts",
       "expected": {
         "item": "boneless, skinless chicken breasts",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the stir fry sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups chicken stock",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Canned Goods"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Other"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the vegetables:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon vegetable oil",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": "peeled and sliced thinly on a diagonal",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -185,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -199,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -213,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -231,6 +258,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -249,6 +277,7 @@
           }
         ],
         "note": "drained",
+        "section": "For the Vegetables",
         "category": "Canned Goods"
       }
     },
@@ -267,6 +296,7 @@
           }
         ],
         "note": "drained",
+        "section": "For the Vegetables",
         "category": "Canned Goods"
       }
     },
@@ -276,8 +306,13 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Vegetables",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups cooked jasmine rice",
@@ -290,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Pasta & Rice"
       }
     }

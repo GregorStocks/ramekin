@@ -3,6 +3,10 @@
   "recipe_slug": "2022-12-persimmon-pie-html",
   "ingredients": [
     {
+      "raw": "For Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ cups  / 187 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Oils & Vinegars"
       }
     },
@@ -95,8 +104,13 @@
           }
         ],
         "note": "as needed",
+        "section": "For Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Pie Filling:",
+      "is_section_header": true
     },
     {
       "raw": "8   large ripe Fuyu* persimmons, enough to make 2 cups of puree",
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Other"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Canned Goods"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Pie Filling",
         "category": "Baking"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Baking"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -187,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -215,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -229,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -257,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Filling",
         "category": "Baking"
       }
     }

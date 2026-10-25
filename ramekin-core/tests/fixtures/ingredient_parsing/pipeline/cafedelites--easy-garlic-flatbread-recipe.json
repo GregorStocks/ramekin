@@ -3,6 +3,10 @@
   "recipe_slug": "easy-garlic-flatbread-recipe",
   "ingredients": [
     {
+      "raw": "FLATBREADS:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups plain flour plus extra for dusting",
       "expected": {
         "item": "plain flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "plus extra for dusting",
+        "section": "Flatbreads",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Flatbreads",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Flatbreads",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "optional",
+        "section": "Flatbreads",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Flatbreads",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "plus extra for cooking",
+        "section": "Flatbreads",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "divided",
+        "section": "Flatbreads",
         "category": "Dairy & Eggs"
       }
     }

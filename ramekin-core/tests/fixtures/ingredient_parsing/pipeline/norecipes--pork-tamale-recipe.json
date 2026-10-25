@@ -3,6 +3,10 @@
   "recipe_slug": "pork-tamale-recipe",
   "ingredients": [
     {
+      "raw": "For filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large  onion (sliced crosswise into 3 rounds)",
       "expected": {
         "item": "onion",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sliced crosswise into 3 rounds",
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +227,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -223,6 +242,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -237,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Canned Goods"
       }
     },
@@ -265,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -279,6 +302,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -293,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,6 +332,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -321,8 +347,13 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For tamales:",
+      "is_section_header": true
     },
     {
       "raw": "1 package  hoja de maíz para tamale (dried corn husks)",
@@ -335,6 +366,7 @@
           }
         ],
         "note": "dried corn husks",
+        "section": "For Tamales",
         "category": "Other"
       }
     },
@@ -349,6 +381,7 @@
           }
         ],
         "note": null,
+        "section": "For Tamales",
         "category": "Other"
       }
     },
@@ -363,6 +396,7 @@
           }
         ],
         "note": null,
+        "section": "For Tamales",
         "category": "Baking"
       }
     },
@@ -377,6 +411,7 @@
           }
         ],
         "note": null,
+        "section": "For Tamales",
         "category": "Spices & Seasonings"
       }
     },
@@ -391,6 +426,7 @@
           }
         ],
         "note": "lard",
+        "section": "For Tamales",
         "category": "Other"
       }
     },
@@ -405,8 +441,13 @@
           }
         ],
         "note": "cooled to room temperature",
+        "section": "For Tamales",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 large  tomatoes",
@@ -419,6 +460,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Produce"
       }
     }

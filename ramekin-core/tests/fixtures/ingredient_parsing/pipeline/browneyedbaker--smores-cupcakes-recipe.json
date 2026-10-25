@@ -3,6 +3,10 @@
   "recipe_slug": "smores-cupcakes-recipe",
   "ingredients": [
     {
+      "raw": "For the Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ cups  (187.5 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Other"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -143,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -157,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,8 +184,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Chocolate Ganache Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces  (113.4 g) semisweet chocolate, finely chopped",
@@ -189,6 +207,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Chocolate Ganache Glaze",
         "category": "Baking"
       }
     },
@@ -207,8 +226,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache Glaze",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Marshmallow Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1   envelope unflavored gelatin, 1 tablespoon",
@@ -221,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Frosting",
         "category": "Baking"
       }
     },
@@ -239,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Frosting",
         "category": "Beverages"
       }
     },
@@ -257,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Frosting",
         "category": "Baking"
       }
     }

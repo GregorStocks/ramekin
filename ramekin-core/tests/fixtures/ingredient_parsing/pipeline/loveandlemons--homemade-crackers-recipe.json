@@ -129,11 +129,16 @@
       }
     },
     {
+      "raw": "Serve with:",
+      "is_section_header": true
+    },
+    {
       "raw": "figs and grapes",
       "expected": {
         "item": "figs and grapes",
         "measurements": [],
         "note": null,
+        "section": "Serve with",
         "category": "Produce"
       }
     },
@@ -143,6 +148,7 @@
         "item": "Alouette Petit Fromage",
         "measurements": [],
         "note": null,
+        "section": "Serve with",
         "category": "Other"
       }
     }

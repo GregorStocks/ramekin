@@ -161,6 +161,10 @@
       }
     },
     {
+      "raw": "Buttercream Frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup salted butter softened",
       "expected": {
         "item": "salted butter",
@@ -171,6 +175,7 @@
           }
         ],
         "note": "softened",
+        "section": "Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Buttercream Frosting",
         "category": "Baking"
       }
     },
@@ -199,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Buttercream Frosting",
         "category": "Baking"
       }
     },
@@ -213,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "kaya-toast-coconut-jam-on-toas",
   "ingredients": [
     {
+      "raw": "Kaya Jam:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 large eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Kaya Jam",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Kaya Jam",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Kaya Jam",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Kaya Jam",
         "category": "Canned Goods"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Kaya Jam",
         "category": "Other"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Kaya Jam",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Toast:",
+      "is_section_header": true
     },
     {
       "raw": "2 slices thick cut bread",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Toast",
         "category": "Bakery & Bread"
       }
     },
@@ -106,6 +121,7 @@
         "item": "salted butter",
         "measurements": [],
         "note": null,
+        "section": "Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -115,6 +131,7 @@
         "item": "kaya",
         "measurements": [],
         "note": null,
+        "section": "Toast",
         "category": "Other"
       }
     },
@@ -124,6 +141,7 @@
         "item": "soft boiled eggs",
         "measurements": [],
         "note": "if desired",
+        "section": "Toast",
         "category": "Other"
       }
     },
@@ -133,6 +151,7 @@
         "item": "dark soy sauce and white pepper",
         "measurements": [],
         "note": "if desired",
+        "section": "Toast",
         "category": "Other"
       }
     }

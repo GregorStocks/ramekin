@@ -3,6 +3,10 @@
   "recipe_slug": "2019-05-potato-vareniki",
   "ingredients": [
     {
+      "raw": "Simple potato filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 pounds (680 grams) yukon gold potatoes, peeled and diced (weight is for whole potatoes)",
       "expected": {
         "item": "yukon gold potatoes",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "weight is for whole potatoes, peeled and diced",
+        "section": "Simple Potato Filling",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "any variety",
+        "section": "Simple Potato Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Simple Potato Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Simple Potato Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -68,8 +76,13 @@
         "item": "A few grinds of black pepper",
         "measurements": [],
         "note": null,
+        "section": "Simple Potato Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Luxurious potato filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds (680 grams) yukon gold potatoes, peeled and diced (weight is for whole potatoes)",
@@ -86,6 +99,7 @@
           }
         ],
         "note": "weight is for whole potatoes, peeled and diced",
+        "section": "Luxurious Potato Filling",
         "category": "Produce"
       }
     },
@@ -95,6 +109,7 @@
         "item": "Whole milk",
         "measurements": [],
         "note": "as needed",
+        "section": "Luxurious Potato Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,6 +128,7 @@
           }
         ],
         "note": null,
+        "section": "Luxurious Potato Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Luxurious Potato Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,6 +158,7 @@
           }
         ],
         "note": "plus 1 yolk, whisked until uniform",
+        "section": "Luxurious Potato Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Luxurious Potato Filling",
         "category": "Baking"
       }
     },
@@ -173,8 +192,13 @@
           }
         ],
         "note": "optional",
+        "section": "Luxurious Potato Filling",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dumpling dough:",
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 cups (450 grams) all-purpose flour, plus more for counter",
@@ -191,6 +215,7 @@
           }
         ],
         "note": "plus more for counter",
+        "section": "Dumpling Dough",
         "category": "Baking"
       }
     },
@@ -205,6 +230,7 @@
           }
         ],
         "note": "Diamond brand, use half for any other brand",
+        "section": "Dumpling Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -219,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Dumpling Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -233,8 +260,13 @@
           }
         ],
         "note": null,
+        "section": "Dumpling Dough",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream (bonus if you find the extra-rich stuff from a Russian store). Shown up top is Kachka’s sauerkraut powder (their own recipe, dehydrated and ground) and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
@@ -242,6 +274,7 @@
         "item": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream . Shown up top is Kachka’s sauerkraut powder and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
         "measurements": [],
         "note": "bonus if you find the extra-rich stuff from a Russian store, their own recipe, dehydrated and ground",
+        "section": "To Serve",
         "category": "Other"
       }
     }

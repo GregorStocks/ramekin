@@ -3,6 +3,10 @@
   "recipe_slug": "lamingtons-recipe",
   "ingredients": [
     {
+      "raw": "cake ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups   (340g) cake flour (not self-rising), plus additional for dusting pans",
       "expected": {
         "item": "cake flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "not self-rising, plus additional for dusting pans",
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "2 sticks - 227g, room temperature, plus additional for greasing pans",
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,8 +134,13 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "chocolate icing ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (240ml) milk",
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing Ingredients",
         "category": "Baking"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Chocolate Icing Ingredients",
         "category": "Baking"
       }
     },
@@ -213,8 +233,13 @@
           }
         ],
         "note": "sifted",
+        "section": "Chocolate Icing Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "additional ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (240ml) jam  (we used our homemade strawberry peach jam, but use whichever flavor you'd like)",
@@ -231,6 +256,7 @@
           }
         ],
         "note": "we used our homemade strawberry peach jam, but use whichever flavor you'd like",
+        "section": "Additional Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -249,6 +275,7 @@
           }
         ],
         "note": "or shredded sweetened coconut if you can't get desiccated coconut",
+        "section": "Additional Ingredients",
         "category": "Baking"
       }
     }

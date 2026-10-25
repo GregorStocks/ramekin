@@ -3,6 +3,10 @@
   "recipe_slug": "dirty-rice-recipe",
   "ingredients": [
     {
+      "raw": "Rice:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups long-grain rice",
       "expected": {
         "item": "long-grain rice",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Pasta & Rice"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Beverages"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Beef Mixture:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon vegetable oil",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Mixture",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Mixture",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Mixture",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "seeded and chopped",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "minced",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Beef Mixture",
         "category": "Spices & Seasonings"
       }
     }

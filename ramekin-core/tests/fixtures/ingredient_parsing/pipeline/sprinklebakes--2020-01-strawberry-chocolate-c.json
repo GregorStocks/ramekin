@@ -3,6 +3,10 @@
   "recipe_slug": "2020-01-strawberry-chocolate-c",
   "ingredients": [
     {
+      "raw": "Cake layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 cups cake flour sifted",
       "expected": {
         "item": "cake flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Vanilla Simple Syrup:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups water",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Simple Syrup",
         "category": "Beverages"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Simple Syrup",
         "category": "Baking"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Simple Syrup",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Boiled milk frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup flour",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Boiled Milk Frosting",
         "category": "Baking"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Boiled Milk Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Boiled Milk Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +254,7 @@
           }
         ],
         "note": "softened",
+        "section": "Boiled Milk Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Boiled Milk Frosting",
         "category": "Baking"
       }
     },
@@ -255,8 +284,13 @@
           }
         ],
         "note": null,
+        "section": "Boiled Milk Frosting",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 pint strawberries sliced",
@@ -269,6 +303,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -283,6 +318,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -292,6 +328,7 @@
         "item": "Decors and powder coating see blog post for decor instructions",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -306,6 +343,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -320,6 +358,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -334,6 +373,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -348,6 +388,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     }

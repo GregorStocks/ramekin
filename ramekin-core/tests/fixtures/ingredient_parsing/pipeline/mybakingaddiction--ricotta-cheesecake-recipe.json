@@ -3,6 +3,10 @@
   "recipe_slug": "ricotta-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cups graham cracker crumbs",
       "expected": {
         "item": "graham cracker crumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup granulated sugar",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1-1/2 cups fresh strawberry slices and/or fresh whole raspberries",
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Produce"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Produce"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Other"
       }
     }

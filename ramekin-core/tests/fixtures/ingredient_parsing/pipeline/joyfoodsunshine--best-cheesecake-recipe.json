@@ -3,6 +3,10 @@
   "recipe_slug": "best-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "Graham Cracker Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ cups graham cracker crumbs (12 full sheets of grahams processed in the food processor until fine)",
       "expected": {
         "item": "graham cracker crumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "12 full sheets of grahams processed in the food processor until fine",
+        "section": "Graham Cracker Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "melted",
+        "section": "Graham Cracker Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "24 ounces cream cheese room temperature",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -153,8 +171,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "Homemade whipped cream",
@@ -162,6 +185,7 @@
         "item": "Homemade whipped cream",
         "measurements": [],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     }

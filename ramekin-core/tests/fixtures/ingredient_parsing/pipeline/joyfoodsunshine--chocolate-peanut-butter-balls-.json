@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-peanut-butter-balls-",
   "ingredients": [
     {
+      "raw": "Peanut Butter Balls:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup salted butter softened",
       "expected": {
         "item": "salted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened",
+        "section": "Peanut Butter Balls",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Balls",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Balls",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "10-11 full graham crackers-4 piece sheets",
+        "section": "Peanut Butter Balls",
         "category": "Snacks"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Balls",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Balls",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the chocolate coating:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces chocolate chips (2 cups)",
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Coating",
         "category": "Baking"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Coating",
         "category": "Condiments & Sauces"
       }
     }

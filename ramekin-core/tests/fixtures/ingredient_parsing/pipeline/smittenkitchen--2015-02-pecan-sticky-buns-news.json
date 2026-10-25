@@ -3,6 +3,10 @@
   "recipe_slug": "2015-02-pecan-sticky-buns-news",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 packet (7 grams or 2 1/4 teaspoons) instant or active dry yeast",
       "expected": {
         "item": "instant or active dry yeast",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": "melted and cooled to lukewarm",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": "plus more for dusting counter",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -144,8 +156,13 @@
         "item": "Oil or butter to coat bowl",
         "measurements": [],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Caramel:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (1 stick, 4 ounces or 113 grams) unsalted butter",
@@ -170,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -188,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -206,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -224,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -238,8 +259,13 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (50 grams) packed dark brown sugar",
@@ -256,6 +282,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -274,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -288,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -302,6 +331,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -320,6 +350,7 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -334,6 +365,7 @@
           }
         ],
         "note": "divided, chopped pecans",
+        "section": "Filling",
         "category": "Other"
       }
     }

@@ -54,11 +54,16 @@
       }
     },
     {
+      "raw": "For the garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "lemon peel",
       "expected": {
         "item": "lemon peel",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Produce"
       }
     }

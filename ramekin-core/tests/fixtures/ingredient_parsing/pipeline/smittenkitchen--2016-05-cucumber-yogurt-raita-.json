@@ -3,6 +3,10 @@
   "recipe_slug": "2016-05-cucumber-yogurt-raita-",
   "ingredients": [
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (227 grams) plain, full-fat yogurt",
       "expected": {
         "item": "plain, full-fat yogurt",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "about 2 tablespoons",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "I used a jalapeno",
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": "I used black mustard seeds",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": "divided",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -133,6 +145,7 @@
           }
         ],
         "note": "divided",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -142,8 +155,13 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 long, English-style cucumbers (2 pounds total)",
@@ -160,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -174,6 +193,7 @@
           }
         ],
         "note": "diced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -188,6 +208,7 @@
           }
         ],
         "note": "chopped small",
+        "section": "Assembly",
         "category": "Produce"
       }
     }

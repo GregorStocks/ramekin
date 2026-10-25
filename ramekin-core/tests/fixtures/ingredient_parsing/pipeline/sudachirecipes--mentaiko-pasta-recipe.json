@@ -45,6 +45,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "80 g spicy cod roe (mentaiko) or plain tarako for non spicy option",
       "expected": {
         "item": "spicy cod roe or plain tarako for non spicy option",
@@ -55,6 +59,7 @@
           }
         ],
         "note": "mentaiko",
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -69,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -83,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +104,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Cheese"
       }
     },
@@ -153,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -167,8 +179,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "perilla leaves (shiso) shredded, or substitute with kizami nori",
@@ -176,6 +193,7 @@
         "item": "perilla leaves",
         "measurements": [],
         "note": "shiso, shredded, or substitute with kizami nori",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -185,6 +203,7 @@
         "item": "lemon",
         "measurements": [],
         "note": "optional",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -194,6 +213,7 @@
         "item": "lemon zest",
         "measurements": [],
         "note": "optional",
+        "section": "Toppings",
         "category": "Produce"
       }
     }

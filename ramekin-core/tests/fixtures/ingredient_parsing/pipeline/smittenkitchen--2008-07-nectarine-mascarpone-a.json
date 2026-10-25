@@ -3,6 +3,10 @@
   "recipe_slug": "2008-07-nectarine-mascarpone-a",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "37 gingersnap cookies, coarsely broken (about 9 ounces; about 3 1/4 cups plus 2 tablespoons of pieces)",
       "expected": {
         "item": "gingersnap cookies, coarsely broken",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 9 ounces; about 3 1/4 cups plus 2 tablespoons of pieces",
+        "section": "Crust",
         "category": "Other"
       }
     },
@@ -31,8 +36,13 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 8-ounce container mascarpone cheese",
@@ -45,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -59,6 +70,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -129,8 +145,13 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "4 to 5 small nectarines, halved, pitted, cut into thin slices",
@@ -143,6 +164,7 @@
           }
         ],
         "note": "halved, pitted, cut into thin slices",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -157,6 +179,7 @@
           }
         ],
         "note": "warmed",
+        "section": "Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,6 +194,7 @@
           }
         ],
         "note": "optional",
+        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

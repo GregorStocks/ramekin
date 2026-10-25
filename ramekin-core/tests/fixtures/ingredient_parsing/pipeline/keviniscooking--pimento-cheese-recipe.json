@@ -129,6 +129,10 @@
       }
     },
     {
+      "raw": "Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 box of crackers of choice or toasted baguette slices",
       "expected": {
         "item": "crackers of choice or toasted baguette slices",
@@ -139,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Serving",
         "category": "Bakery & Bread"
       }
     }

@@ -31,6 +31,10 @@
       }
     },
     {
+      "raw": "Dressing Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 teaspoon   soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -41,6 +45,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +60,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +75,7 @@
           }
         ],
         "note": "minced and peeled",
+        "section": "Dressing Ingredients",
         "category": "Produce"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": "I also like to use whole grain mustard",
+        "section": "Dressing Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +115,7 @@
         "item": "fresh thyme or other herbs",
         "measurements": [],
         "note": "optional",
+        "section": "Dressing Ingredients",
         "category": "Produce"
       }
     }

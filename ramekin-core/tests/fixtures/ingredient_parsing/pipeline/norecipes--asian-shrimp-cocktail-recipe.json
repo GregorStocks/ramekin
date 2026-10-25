@@ -3,6 +3,10 @@
   "recipe_slug": "asian-shrimp-cocktail-recipe",
   "ingredients": [
     {
+      "raw": "for shrimp:",
+      "is_section_header": true
+    },
+    {
       "raw": "450 grams  large shrimp (about 18 16/20 shrimp)",
       "expected": {
         "item": "large shrimp",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "about 18 16/20 shrimp",
+        "section": "For Shrimp",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "leaves, stems and root",
+        "section": "For Shrimp",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "For Shrimp",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Produce"
       }
     },
@@ -106,6 +117,7 @@
         "item": "lime peel",
         "measurements": [],
         "note": null,
+        "section": "For Shrimp",
         "category": "Other"
       }
     },
@@ -120,8 +132,13 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "for cocktail sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 small  tomato (cut into ¼\" cubes)",
@@ -134,6 +151,7 @@
           }
         ],
         "note": "cut into 1/4\" cubes",
+        "section": "For Cocktail Sauce",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "pureed stewed tomatoes",
+        "section": "For Cocktail Sauce",
         "category": "Canned Goods"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": "freshly squeezed",
+        "section": "For Cocktail Sauce",
         "category": "Produce"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     }

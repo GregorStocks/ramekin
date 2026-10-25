@@ -3,6 +3,10 @@
   "recipe_slug": "pierogi-recipe",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2½ cups all-purpose flour, plus more for rolling",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "plus more for rolling",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds russet potatoes, peeled and cut into 1-inch pieces",
@@ -69,6 +81,7 @@
           }
         ],
         "note": "peeled and cut into 1-inch pieces",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Serving:",
+      "is_section_header": true
     },
     {
       "raw": "1 medium yellow onion, diced",
@@ -139,6 +160,7 @@
           }
         ],
         "note": "diced",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For Serving",
         "category": "Meat & Seafood"
       }
     },
@@ -162,6 +185,7 @@
         "item": "Cottage cheese",
         "measurements": [],
         "note": "optional, for serving",
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +195,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": "optional, for serving",
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     }

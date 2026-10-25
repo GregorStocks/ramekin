@@ -3,6 +3,10 @@
   "recipe_slug": "2012-06-cold-rice-noodles-with",
   "ingredients": [
     {
+      "raw": "Dipping sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons Asian fish sauce",
       "expected": {
         "item": "Asian fish sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "finely grated or minced",
+        "section": "Dipping Sauce",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "thinly sliced, to taste",
+        "section": "Dipping Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Peanut dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons Asian fish sauce",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Dressing",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "peeled and sliced",
+        "section": "Peanut Dressing",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "Peanut Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Chicken and noodle salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 pounds boneless skinless chicken thighs (about 6)",
@@ -195,6 +220,7 @@
           }
         ],
         "note": "about 6",
+        "section": "Chicken and Noodle Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken and Noodle Salad",
         "category": "Pasta & Rice"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": "cut in 1/4-inch half moons",
+        "section": "Chicken and Noodle Salad",
         "category": "Produce"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": "cut in thin julienne",
+        "section": "Chicken and Noodle Salad",
         "category": "Produce"
       }
     },
@@ -246,6 +275,7 @@
         "item": "Additional vegetables, as suggested above",
         "measurements": [],
         "note": null,
+        "section": "Chicken and Noodle Salad",
         "category": "Produce"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": "torn or roughly chopped; or your favorite of the three",
+        "section": "Chicken and Noodle Salad",
         "category": "Produce"
       }
     },
@@ -274,6 +305,7 @@
           }
         ],
         "note": "slivered",
+        "section": "Chicken and Noodle Salad",
         "category": "Produce"
       }
     },
@@ -288,6 +320,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken and Noodle Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -297,6 +330,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": "to serve",
+        "section": "Chicken and Noodle Salad",
         "category": "Produce"
       }
     }

@@ -91,6 +91,10 @@
       }
     },
     {
+      "raw": "For the Seasoning:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 jar nori komi furikake (nori & sesame rice seasoning)",
       "expected": {
         "item": "nori komi furikake",
@@ -101,6 +105,7 @@
           }
         ],
         "note": "nori & sesame rice seasoning",
+        "section": "For the Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,8 +120,13 @@
           }
         ],
         "note": "Japanese seven spice, optional",
+        "section": "For the Seasoning",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Syrup:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup unsalted butter (1 stick, 8 Tbsp)",
@@ -137,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "For the Syrup",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,6 +162,7 @@
           }
         ],
         "note": "most recipes use corn syrup, but I use brown rice syrup for a healthier option with more neutral flavor",
+        "section": "For the Syrup",
         "category": "Baking"
       }
     },
@@ -165,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "For the Syrup",
         "category": "Baking"
       }
     },
@@ -179,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "For the Syrup",
         "category": "Condiments & Sauces"
       }
     },
@@ -193,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For the Syrup",
         "category": "Oils & Vinegars"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2006-09-lime-curd-tart",
   "ingredients": [
     {
+      "raw": "Tart shell:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 3/4 cups (230 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Tart Shell",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Tart Shell",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Tart Shell",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Tart Shell",
         "category": "Baking"
       }
     },
@@ -85,8 +93,13 @@
           }
         ],
         "note": "cold, cut into cubes",
+        "section": "Tart Shell",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "4 medium/large limes",
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": "cold, cut into cubes",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -176,6 +194,7 @@
         "item": "Whipped cream",
         "measurements": [],
         "note": "optional, to serve",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

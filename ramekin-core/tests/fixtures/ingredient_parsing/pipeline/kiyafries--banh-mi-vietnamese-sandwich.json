@@ -3,6 +3,10 @@
   "recipe_slug": "banh-mi-vietnamese-sandwich",
   "ingredients": [
     {
+      "raw": "For The Pickled Vegetables:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup rice wine vinegar",
       "expected": {
         "item": "rice wine vinegar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickled Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickled Vegetables",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickled Vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickled Vegetables",
         "category": "Beverages"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickled Vegetables",
         "category": "Produce"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "Japanese black radish will also work, or regular radishes if you can’t find either!",
+        "section": "For the Pickled Vegetables",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For The Sandwich:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp canola oil (or other high smoke point oil)",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "or other high smoke point oil",
+        "section": "For the Sandwich",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich",
         "category": "Meat & Seafood"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "any structured, crusty, long bread will do, sliced in half lengthwise",
+        "section": "For the Sandwich",
         "category": "Bakery & Bread"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "sliced thin on the bias",
+        "section": "For the Sandwich",
         "category": "Produce"
       }
     },
@@ -190,6 +211,7 @@
         "item": "soy sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Sandwich",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,6 +221,7 @@
         "item": "kewpie mayonnaise",
         "measurements": [],
         "note": "or regular mayonnaise mixed with a little lime juice",
+        "section": "For the Sandwich",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +236,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "For the Sandwich",
         "category": "Produce"
       }
     },
@@ -222,6 +246,7 @@
         "item": "cilantro and/or mint if you like",
         "measurements": [],
         "note": null,
+        "section": "For the Sandwich",
         "category": "Produce"
       }
     },
@@ -231,6 +256,7 @@
         "item": "sriracha",
         "measurements": [],
         "note": null,
+        "section": "For the Sandwich",
         "category": "Condiments & Sauces"
       }
     }

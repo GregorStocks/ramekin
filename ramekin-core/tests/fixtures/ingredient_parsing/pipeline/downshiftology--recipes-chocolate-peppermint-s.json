@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-chocolate-peppermint-s",
   "ingredients": [
     {
+      "raw": "base layer:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup almonds",
       "expected": {
         "item": "almonds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Base Layer",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Base Layer",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Base Layer",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "pitted",
+        "section": "Base Layer",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "melted",
+        "section": "Base Layer",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "mint layer:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups raw cashews, soaked overnight and drained",
@@ -83,6 +96,7 @@
           }
         ],
         "note": "soaked overnight and drained",
+        "section": "Mint Layer",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "melted",
+        "section": "Mint Layer",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "melted",
+        "section": "Mint Layer",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Layer",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "Mint Layer",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "top chocolate layer:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup dark chocolate chips",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Top Chocolate Layer",
         "category": "Baking"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": "melted",
+        "section": "Top Chocolate Layer",
         "category": "Oils & Vinegars"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "teriyaki-meatballs-recipe",
   "ingredients": [
     {
+      "raw": "Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound lean ground beef",
       "expected": {
         "item": "lean ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Canned Goods"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup teriyaki sauce",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "thinly sliced, optional",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "optional",
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     }

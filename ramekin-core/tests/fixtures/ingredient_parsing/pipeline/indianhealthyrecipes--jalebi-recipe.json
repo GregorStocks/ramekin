@@ -3,6 +3,10 @@
   "recipe_slug": "jalebi-recipe",
   "ingredients": [
     {
+      "raw": "For jalebi:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup all-purpose flour (organic maida) 125 grams",
       "expected": {
         "item": "all-purpose flour 125 grams",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "organic maida",
+        "section": "For Jalebi",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "or besan if fermenting batter",
+        "section": "For Jalebi",
         "category": "Other"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Jalebi",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "plain yogurt, or water if fermenting batter",
+        "section": "For Jalebi",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "more if needed",
+        "section": "For Jalebi",
         "category": "Beverages"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": "or 1 large pinch for fermented batter",
+        "section": "For Jalebi",
         "category": "Baking"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "For Jalebi",
         "category": "Produce"
       }
     },
@@ -118,8 +129,13 @@
         "item": "oil or ghee",
         "measurements": [],
         "note": "as needed",
+        "section": "For Jalebi",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For sugar syrup:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup sugar (use organic) (200 grams)",
@@ -136,6 +152,7 @@
           }
         ],
         "note": "use organic",
+        "section": "For Sugar Syrup",
         "category": "Baking"
       }
     },
@@ -150,6 +167,7 @@
           }
         ],
         "note": "I used 1/2 + 2 tbsps, 120 ml to 180 ml",
+        "section": "For Sugar Syrup",
         "category": "Beverages"
       }
     },
@@ -164,6 +182,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Sugar Syrup",
         "category": "Spices & Seasonings"
       }
     },
@@ -178,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "For Sugar Syrup",
         "category": "Other"
       }
     },
@@ -192,8 +212,13 @@
           }
         ],
         "note": null,
+        "section": "For Sugar Syrup",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Equipment needed:",
+      "is_section_header": true
     },
     {
       "raw": "1 sauce bottle or Zip lock bag or cloth bag",
@@ -206,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Equipment Needed",
         "category": "Other"
       }
     }

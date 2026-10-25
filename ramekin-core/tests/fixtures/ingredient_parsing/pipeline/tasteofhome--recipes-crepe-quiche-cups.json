@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "FILLING :",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 pound bulk pork sausage",
       "expected": {
         "item": "bulk pork sausage",
@@ -83,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -111,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     }

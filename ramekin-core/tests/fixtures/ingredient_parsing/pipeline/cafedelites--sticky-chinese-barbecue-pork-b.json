@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Additional Glaze (Optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup hoisin sauce",
       "expected": {
         "item": "hoisin sauce",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Glaze (Optional)",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Glaze (Optional)",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Glaze (Optional)",
         "category": "Beverages"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Glaze (Optional)",
         "category": "Baking"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Glaze (Optional)",
         "category": "Baking"
       }
     },
@@ -223,6 +232,7 @@
           }
         ],
         "note": "minced",
+        "section": "Additional Glaze (Optional)",
         "category": "Produce"
       }
     },
@@ -237,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Glaze (Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Glaze (Optional)",
         "category": "Baking"
       }
     }

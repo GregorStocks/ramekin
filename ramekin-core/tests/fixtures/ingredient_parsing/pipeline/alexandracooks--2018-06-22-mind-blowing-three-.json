@@ -3,6 +3,10 @@
   "recipe_slug": "2018-06-22-mind-blowing-three-",
   "ingredients": [
     {
+      "raw": "For the Trader Joe’s version:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups cooked lentils, see notes",
       "expected": {
         "item": "cooked lentils",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "see notes",
+        "section": "For the Trader Joe’s Version",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Trader Joe’s Version",
         "category": "Other"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "For the Trader Joe’s Version",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "For the from-scratch version:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup dried black lentils or French green lentils",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the From-Scratch Version",
         "category": "Canned Goods"
       }
     },
@@ -64,6 +76,7 @@
         "item": "kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the From-Scratch Version",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "For the From-Scratch Version",
         "category": "Other"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "For the From-Scratch Version",
         "category": "Cheese"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "ciabatta-bread-recipe",
   "ingredients": [
     {
+      "raw": "Biga/Preferment:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (130g) bread flour (I use this), spooned & leveled",
       "expected": {
         "item": "bread flour, spooned & leveled",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "I use this",
+        "section": "Biga/preferment",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Biga/preferment",
         "category": "Baking"
       }
     },
@@ -45,8 +51,13 @@
           }
         ],
         "note": "120g/ml, about 70°F (21°C)",
+        "section": "Biga/preferment",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Ciabatta Rolls:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon (3g) active-dry or instant yeast",
@@ -63,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Ciabatta Rolls",
         "category": "Baking"
       }
     },
@@ -77,6 +89,7 @@
           }
         ],
         "note": "240g/ml, about 100-110°F (38°-43°C)",
+        "section": "Ciabatta Rolls",
         "category": "Beverages"
       }
     },
@@ -95,6 +108,7 @@
           }
         ],
         "note": "spooned & leveled, plus more as needed",
+        "section": "Ciabatta Rolls",
         "category": "Baking"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Ciabatta Rolls",
         "category": "Spices & Seasonings"
       }
     },
@@ -122,6 +137,7 @@
         "item": "olive oil, as needed",
         "measurements": [],
         "note": "for coating hands and spatula",
+        "section": "Ciabatta Rolls",
         "category": "Oils & Vinegars"
       }
     }

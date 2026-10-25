@@ -3,6 +3,10 @@
   "recipe_slug": "teriyaki-salmon-recipe",
   "ingredients": [
     {
+      "raw": "For the Teriyaki Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 Tbsp sake (or substitute Chinese rice wine, dry sherry, or water)",
       "expected": {
         "item": "sake",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "or substitute Chinese rice wine, dry sherry, or water",
+        "section": "For the Teriyaki Sauce",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "or substitute 1 Tbsp sake or water + 1 tsp sugar",
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Salmon:",
+      "is_section_header": true
     },
     {
       "raw": "2 skin-on salmon fillets (¾ lb, 340 g; ¾ inch (2 cm) thick)",
@@ -77,6 +89,7 @@
           }
         ],
         "note": "3/4 lb, 340 g; 3/4 inch (2 cm) thick",
+        "section": "For the Salmon",
         "category": "Meat & Seafood"
       }
     },
@@ -91,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": "plain flour, use cornstarch or potato starch for gluten-free",
+        "section": "For the Salmon",
         "category": "Baking"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": "for cooking",
+        "section": "For the Salmon",
         "category": "Oils & Vinegars"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": "for cooking",
+        "section": "For the Salmon",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,6 +179,7 @@
           }
         ],
         "note": "for steaming; you can substitute Chinese rice wine, dry sherry, or water",
+        "section": "For the Salmon",
         "category": "Beverages"
       }
     }

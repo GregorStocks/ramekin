@@ -3,6 +3,10 @@
   "recipe_slug": "2020-07-almond-genoise-mini-ca",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 whole eggs at room temperature",
       "expected": {
         "item": "whole eggs at room temperature",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cream filling:",
+      "is_section_header": true
     },
     {
       "raw": "5 cups confectioners’ sugar",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Filling",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cream Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Filling",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Filling",
         "category": "Beverages"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "Cream Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups confectioners’ sugar",
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -232,8 +260,13 @@
         "item": "Edible gold leaf",
         "measurements": [],
         "note": "optional",
+        "section": "Glaze",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Décor:",
+      "is_section_header": true
     },
     {
       "raw": "9 Jordan almonds for mini cakes or 18 for petit fours",
@@ -246,6 +279,7 @@
           }
         ],
         "note": "or 18 for petit fours",
+        "section": "Décor",
         "category": "Other"
       }
     },
@@ -260,6 +294,7 @@
           }
         ],
         "note": "melted",
+        "section": "Décor",
         "category": "Baking"
       }
     }

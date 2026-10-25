@@ -3,6 +3,10 @@
   "recipe_slug": "2023-07-buffalo-chicken-cobb-s",
   "ingredients": [
     {
+      "raw": "Creamy dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup buttermilk, shaken",
       "expected": {
         "item": "buttermilk, shaken",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "about 1 1/2 tablespoons",
+        "section": "Creamy Dressing",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "minced",
+        "section": "Creamy Dressing",
         "category": "Produce"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Creamy Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,6 +106,7 @@
         "item": "Many grinds of black pepper",
         "measurements": [],
         "note": null,
+        "section": "Creamy Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -110,8 +121,13 @@
           }
         ],
         "note": "divided",
+        "section": "Creamy Dressing",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Buffalo sauce:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons hot sauce, ideally Franks",
@@ -124,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "Buffalo Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,8 +155,13 @@
           }
         ],
         "note": null,
+        "section": "Buffalo Sauce",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Salad and assembly:",
+      "is_section_header": true
     },
     {
       "raw": "6 to 6 1/2 cups diced fresh vegetables, such as celery, carrots, bell pepper, cucumber, and tomatoes",
@@ -152,6 +174,7 @@
           }
         ],
         "note": "such as celery, carrots, bell pepper, cucumber, and tomatoes",
+        "section": "Salad and Assembly",
         "category": "Produce"
       }
     },
@@ -166,6 +189,7 @@
           }
         ],
         "note": "from 1 small",
+        "section": "Salad and Assembly",
         "category": "Produce"
       }
     },
@@ -180,6 +204,7 @@
           }
         ],
         "note": "such as a Danish blue",
+        "section": "Salad and Assembly",
         "category": "Cheese"
       }
     },
@@ -194,6 +219,7 @@
           }
         ],
         "note": "sliced or torn",
+        "section": "Salad and Assembly",
         "category": "Produce"
       }
     },
@@ -208,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "Salad and Assembly",
         "category": "Meat & Seafood"
       }
     }

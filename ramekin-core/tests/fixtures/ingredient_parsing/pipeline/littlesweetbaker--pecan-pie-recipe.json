@@ -3,6 +3,10 @@
   "recipe_slug": "pecan-pie-recipe",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups   (250g) all-purpose flour, twice sifted",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "twice sifted",
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Oils & Vinegars"
       }
     },
@@ -67,8 +74,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Pecan filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (200g) granulated sugar",
@@ -85,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Filling",
         "category": "Baking"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Filling",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Filling",
         "category": "Baking"
       }
     },
@@ -167,8 +184,13 @@
           }
         ],
         "note": "chopped or halves",
+        "section": "Pecan Filling",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Chocolate whipped cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (250ml) whipping cream",
@@ -185,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Whipped Cream",
         "category": "Baking"
       }
     },
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Whipped Cream",
         "category": "Baking"
       }
     }

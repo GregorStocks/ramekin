@@ -3,6 +3,10 @@
   "recipe_slug": "2018-11-ginger-molasses-stout-",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups 500ml Guinness extra stout",
       "expected": {
         "item": "Guinness extra stout",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Beverages"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -181,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,8 +240,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Whipped cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup 240ml heavy whipping cream",
@@ -241,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -259,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Baking"
       }
     },
@@ -273,8 +297,13 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Beer Ganache Icing ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup Guinness extra stout",
@@ -287,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "Beer Ganache Icing Ingredients",
         "category": "Beverages"
       }
     },
@@ -305,6 +335,7 @@
           }
         ],
         "note": null,
+        "section": "Beer Ganache Icing Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -319,6 +350,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Beer Ganache Icing Ingredients",
         "category": "Baking"
       }
     },
@@ -328,6 +360,7 @@
         "item": "Coarse sea salt",
         "measurements": [],
         "note": "for garnish",
+        "section": "Beer Ganache Icing Ingredients",
         "category": "Spices & Seasonings"
       }
     }

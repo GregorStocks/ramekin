@@ -3,6 +3,10 @@
   "recipe_slug": "crepes-suzette-recipe-11876712",
   "ingredients": [
     {
+      "raw": "For the Orange Sugar:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup plus 1 tablespoon granulated sugar (about 2 1/4 ounces; 65 g)",
       "expected": {
         "item": "granulated sugar",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 2 1/4 ounces; 65 g",
+        "section": "For the Orange Sugar",
         "category": "Baking"
       }
     },
@@ -35,8 +40,13 @@
           }
         ],
         "note": null,
+        "section": "For the Orange Sugar",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Batter:",
+      "is_section_header": true
     },
     {
       "raw": "2 large eggs",
@@ -49,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": "about 1/2 ounce; 14 g, melted and cooled slightly",
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Baking"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": "see above",
+        "section": "For the Batter",
         "category": "Other"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,8 +169,13 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "8 tablespoons unsalted butter (4 ounces; 113 g)",
@@ -175,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,6 +211,7 @@
           }
         ],
         "note": "see above",
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
@@ -203,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
@@ -239,6 +264,7 @@
           }
         ],
         "note": "such as Cointreau or Grand Marnier",
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     }

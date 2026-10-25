@@ -109,6 +109,10 @@
       }
     },
     {
+      "raw": "ITALIAN DRESSING:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 TBSP quality olive oil",
       "expected": {
         "item": "quality olive oil",
@@ -119,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Italian Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -133,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Italian Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -147,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Italian Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -161,6 +168,7 @@
           }
         ],
         "note": "I love using Mrs. Dash’s salt-free blend",
+        "section": "Italian Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,6 +183,7 @@
           }
         ],
         "note": "or 1 small clove garlic; minced",
+        "section": "Italian Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +198,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Italian Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,8 +213,13 @@
           }
         ],
         "note": null,
+        "section": "Italian Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "GREEK DRESSING:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup quality olive oil or avocado oil",
@@ -217,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -231,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -245,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -259,6 +277,7 @@
           }
         ],
         "note": "or 1 tsp fresh",
+        "section": "Greek Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,6 +292,7 @@
           }
         ],
         "note": "or one super small clove garlic; minced",
+        "section": "Greek Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,6 +307,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -301,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -315,6 +337,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -329,8 +352,13 @@
           }
         ],
         "note": null,
+        "section": "Greek Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "BALSAMIC DRESSING:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup quality olive oil or avocado oil",
@@ -343,6 +371,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -357,6 +386,7 @@
           }
         ],
         "note": "plus extra to taste",
+        "section": "Balsamic Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -371,6 +401,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -385,6 +416,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -399,6 +431,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Baking"
       }
     },
@@ -413,6 +446,7 @@
           }
         ],
         "note": "minced",
+        "section": "Balsamic Dressing",
         "category": "Produce"
       }
     },
@@ -427,6 +461,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -441,6 +476,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Spices & Seasonings"
       }
     }

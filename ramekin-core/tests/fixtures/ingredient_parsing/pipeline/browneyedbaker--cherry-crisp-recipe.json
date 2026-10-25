@@ -3,6 +3,10 @@
   "recipe_slug": "cherry-crisp-recipe",
   "ingredients": [
     {
+      "raw": "For the Crisp Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons   all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "cut into 1/2-inch pieces",
+        "section": "For the Crisp Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,8 +127,13 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Crisp Topping",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the Cherries:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups  (828 g) fresh cherries, pitted",
@@ -135,6 +150,7 @@
           }
         ],
         "note": "pitted",
+        "section": "For the Cherries",
         "category": "Produce"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherries",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherries",
         "category": "Baking"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherries",
         "category": "Other"
       }
     }

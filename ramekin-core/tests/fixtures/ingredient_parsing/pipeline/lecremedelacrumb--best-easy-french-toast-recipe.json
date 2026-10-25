@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "Maple Whipped Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  chilled heavy cream",
       "expected": {
         "item": "chilled heavy cream",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Maple Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Maple Whipped Cream",
         "category": "Condiments & Sauces"
       }
     }

@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "Optional:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 – 1 clove garlic (or 1/4 tsp garlic powder)",
       "expected": {
         "item": "garlic",
@@ -83,6 +87,7 @@
           }
         ],
         "note": "or 1/4 tsp garlic powder",
+        "section": "Optional",
         "category": "Produce"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Optional",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +112,7 @@
         "item": "sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "Optional",
         "category": "Spices & Seasonings"
       }
     }

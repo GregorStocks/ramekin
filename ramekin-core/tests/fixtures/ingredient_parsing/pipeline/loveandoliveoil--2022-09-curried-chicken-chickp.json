@@ -58,6 +58,10 @@
       }
     },
     {
+      "raw": "To Assemble:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup   drained canned chickpeas, coarsely chopped",
       "expected": {
         "item": "drained canned chickpeas",
@@ -68,6 +72,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "To Assemble",
         "category": "Other"
       }
     },
@@ -86,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -100,6 +106,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -114,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Other"
       }
     },
@@ -132,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Canned Goods"
       }
     },
@@ -146,6 +155,7 @@
           }
         ],
         "note": "cut into 1/4-inch square strips",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -160,6 +170,7 @@
           }
         ],
         "note": "or 3-4 small sweet peppers; cored, seeded and thinly sliced",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -178,6 +189,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "To Assemble",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -196,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -210,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Produce"
       }
     }

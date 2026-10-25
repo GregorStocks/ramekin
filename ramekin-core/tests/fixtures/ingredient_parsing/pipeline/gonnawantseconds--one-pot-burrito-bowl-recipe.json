@@ -269,11 +269,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "shredded lettuce or shredded cabbage",
       "expected": {
         "item": "shredded lettuce or shredded cabbage",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -283,6 +288,7 @@
         "item": "cheddar cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -292,6 +298,7 @@
         "item": "Monterey jack cheese",
         "measurements": [],
         "note": "shredded",
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -301,6 +308,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -315,6 +323,7 @@
           }
         ],
         "note": "diced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -324,6 +333,7 @@
         "item": "red onions",
         "measurements": [],
         "note": "sliced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -333,6 +343,7 @@
         "item": "fresh cilantro",
         "measurements": [],
         "note": "roughly chopped",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -342,6 +353,7 @@
         "item": "avocado",
         "measurements": [],
         "note": "sliced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

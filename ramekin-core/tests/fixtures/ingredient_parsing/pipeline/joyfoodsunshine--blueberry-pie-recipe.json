@@ -3,6 +3,10 @@
   "recipe_slug": "blueberry-pie-recipe",
   "ingredients": [
     {
+      "raw": "Pie Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 ½ cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "chilled, and cut into 1” pieces",
+        "section": "Pie Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Blueberry Pie Filling:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups fresh blueberries",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Blueberry Pie Filling",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Blueberry Pie Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Blueberry Pie Filling",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Blueberry Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Blueberry Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Blueberry Pie Filling",
         "category": "Produce"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Blueberry Pie Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Egg Wash:",
+      "is_section_header": true
     },
     {
       "raw": "1 large egg yolk",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
     }

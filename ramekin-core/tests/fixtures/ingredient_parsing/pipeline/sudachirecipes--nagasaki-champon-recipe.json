@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "400 ml dashi stock",
       "expected": {
         "item": "dashi stock",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -223,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -237,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Other"
       }
     },
@@ -260,6 +272,7 @@
         "item": "ground white pepper sprinkle at the end",
         "measurements": [],
         "note": "optional",
+        "section": "Broth",
         "category": "Other"
       }
     }

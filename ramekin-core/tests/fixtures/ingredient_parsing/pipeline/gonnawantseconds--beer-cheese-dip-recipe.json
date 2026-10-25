@@ -157,11 +157,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "shredded cheddar",
       "expected": {
         "item": "shredded cheddar",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -171,6 +176,7 @@
         "item": "chives",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -180,6 +186,7 @@
         "item": "crumbled bacon",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     }

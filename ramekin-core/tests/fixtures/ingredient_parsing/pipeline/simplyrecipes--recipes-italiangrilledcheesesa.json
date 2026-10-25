@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-italiangrilledcheesesa",
   "ingredients": [
     {
+      "raw": "For the sandwiches:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 slices sandwich bread",
       "expected": {
         "item": "sandwich bread",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Bakery & Bread"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Cheese"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Meat & Seafood"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Meat & Seafood"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Meat & Seafood"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "For the Sandwiches",
         "category": "Produce"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the DAD ADD: Olive and cauliflower giardiniera:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup hot pickled cauliflower, chopped",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Dad Add: Olive and Cauliflower Giardiniera",
         "category": "Other"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "Castelvetrano, chopped",
+        "section": "For the Dad Add: Olive and Cauliflower Giardiniera",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dad Add: Olive and Cauliflower Giardiniera",
         "category": "Other"
       }
     }

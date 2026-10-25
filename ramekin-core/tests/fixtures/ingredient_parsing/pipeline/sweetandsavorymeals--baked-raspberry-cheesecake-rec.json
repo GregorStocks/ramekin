@@ -3,6 +3,10 @@
   "recipe_slug": "baked-raspberry-cheesecake-rec",
   "ingredients": [
     {
+      "raw": "Cheesecake crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/4 cups graham cracker crumbs or finely crushed digestive biscuits",
       "expected": {
         "item": "graham cracker crumbs or finely crushed digestive biscuits",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Crust",
         "category": "Snacks"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "melted",
+        "section": "Cheesecake Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Raspberry cheesecake filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 cups raspberries fresh or frozen",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Cheesecake Filling",
         "category": "Other"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Cheesecake Filling",
         "category": "Other"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Cheesecake Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Raspberry sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups raspberries fresh or frozen",
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Sauce",
         "category": "Other"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Sauce",
         "category": "Baking"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Sauce",
         "category": "Produce"
       }
     }

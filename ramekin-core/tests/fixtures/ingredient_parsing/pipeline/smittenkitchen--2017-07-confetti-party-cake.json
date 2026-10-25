@@ -3,6 +3,10 @@
   "recipe_slug": "2017-07-confetti-party-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (115 grams or 4 ounces) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -163,8 +176,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (115 grams or 4 ounces) unsalted butter, at room temperature",
@@ -185,6 +203,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": "sifted if lumpy",
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -245,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -254,6 +277,7 @@
         "item": "Rainbow sprinkles for decoration",
         "measurements": [],
         "note": null,
+        "section": "Frosting",
         "category": "Other"
       }
     }

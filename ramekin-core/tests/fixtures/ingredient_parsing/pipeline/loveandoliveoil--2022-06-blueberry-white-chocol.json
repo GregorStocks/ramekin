@@ -217,6 +217,10 @@
       }
     },
     {
+      "raw": "For Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup  / 35 g fresh or frozen blueberries",
       "expected": {
         "item": "fresh or frozen blueberries",
@@ -231,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Produce"
       }
     },
@@ -245,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Produce"
       }
     },
@@ -259,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Beverages"
       }
     },
@@ -277,6 +284,7 @@
           }
         ],
         "note": "preferably organic, sifted",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -291,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Condiments & Sauces"
       }
     }

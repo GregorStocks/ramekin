@@ -3,6 +3,10 @@
   "recipe_slug": "2025-09-chicken-meatball-noodl",
   "ingredients": [
     {
+      "raw": "chicken meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound lean ground chicken, I like to use 94% lean",
       "expected": {
         "item": "lean ground chicken, I like to use 94% lean",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Cheese"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "soup:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons unsalted butter",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "diced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "diced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": "minced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
     },
@@ -213,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -227,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Pasta & Rice"
       }
     },
@@ -236,6 +261,7 @@
         "item": "lemon wedges",
         "measurements": [],
         "note": "for spritzing",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -245,6 +271,7 @@
         "item": "fresh parsley",
         "measurements": [],
         "note": "for topping",
+        "section": "Soup",
         "category": "Produce"
       }
     }

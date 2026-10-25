@@ -3,6 +3,10 @@
   "recipe_slug": "2006-10-wild-mushroom-stilton-",
   "ingredients": [
     {
+      "raw": "For the pastry:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "For the Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Produce"
       }
     },
@@ -95,8 +104,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 ounce dried wild mushrooms, such as chanterelles, porcini or shiitakes",
@@ -109,6 +123,7 @@
           }
         ],
         "note": "such as chanterelles, porcini or shiitakes",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -123,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -165,6 +183,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -179,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -193,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -207,6 +228,7 @@
           }
         ],
         "note": "such as chanterelles, porcini and shiitakes, brushed clean and large mushrooms thinly sliced",
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -221,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -230,6 +253,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -244,8 +268,13 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "1 large egg yolk, whisked with 1/2 teaspoon water (optional)",
@@ -258,6 +287,7 @@
           }
         ],
         "note": "optional, whisked with 1/2 teaspoon water",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     }

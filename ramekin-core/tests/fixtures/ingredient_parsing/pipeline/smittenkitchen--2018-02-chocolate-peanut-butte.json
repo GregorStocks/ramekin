@@ -3,6 +3,10 @@
   "recipe_slug": "2018-02-chocolate-peanut-butte",
   "ingredients": [
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2/3 cup (170 grams) creamy peanut butter",
       "expected": {
         "item": "creamy peanut butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -49,8 +55,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Cookie:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (115 grams or 4 ounces) unsalted butter, at room temperature for a mixer, cold is fine for food processor",
@@ -71,6 +82,7 @@
           }
         ],
         "note": "cold is fine for food processor",
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": "plus more to coat cookies",
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -107,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -125,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -175,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -193,6 +211,7 @@
           }
         ],
         "note": "see note",
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -207,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -221,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     }

@@ -161,6 +161,10 @@
       }
     },
     {
+      "raw": "TOPPING:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup finely shredded cheddar cheese",
       "expected": {
         "item": "finely shredded cheddar cheese",
@@ -171,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Cheese"
       }
     },
@@ -185,6 +190,7 @@
           }
         ],
         "note": "minced",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -199,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

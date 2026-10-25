@@ -3,6 +3,10 @@
   "recipe_slug": "hiyashi-chuka-ramen-recipe",
   "ingredients": [
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons  water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Ramen Salad:",
+      "is_section_header": true
     },
     {
       "raw": "240 grams  fresh ramen noodles",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Ramen Salad",
         "category": "Pasta & Rice"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "julienned",
+        "section": "Ramen Salad",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "sliced into wedges",
+        "section": "Ramen Salad",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "sliced into thin strips",
+        "section": "Ramen Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "sliced into thin threads",
+        "section": "Ramen Salad",
         "category": "Other"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Ramen Salad",
         "category": "Spices & Seasonings"
       }
     }

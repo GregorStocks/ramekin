@@ -206,6 +206,10 @@
       }
     },
     {
+      "raw": "Syrup:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup (50 grams) granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -220,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Baking"
       }
     },
@@ -238,8 +243,13 @@
           }
         ],
         "note": "from about 2 oranges",
+        "section": "Syrup",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Ganache:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces (225 grams) semisweet chocolate chips or chopped semisweet chocolate",
@@ -256,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache",
         "category": "Baking"
       }
     },
@@ -274,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -288,6 +300,7 @@
           }
         ],
         "note": "optional",
+        "section": "Ganache",
         "category": "Beverages"
       }
     }

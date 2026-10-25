@@ -3,6 +3,10 @@
   "recipe_slug": "juicy-hamburg-steak-recipe",
   "ingredients": [
     {
+      "raw": "Hambagu patties:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tsp unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Bakery & Bread"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "or 50% beef and 50% pork, ~20% fat content recommended",
+        "section": "Hambagu Patties",
         "category": "Meat & Seafood"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "optional",
+        "section": "Hambagu Patties",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Other"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,8 +182,13 @@
           }
         ],
         "note": null,
+        "section": "Hambagu Patties",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Hamburger Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp red wine",
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Beverages"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Baking"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Other"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Hamburger Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,8 +306,13 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Serving Suggestions (optional):",
+      "is_section_header": true
     },
     {
       "raw": "fried egg",
@@ -288,6 +320,7 @@
         "item": "fried egg",
         "measurements": [],
         "note": null,
+        "section": "Serving Suggestions (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -297,6 +330,7 @@
         "item": "cooked Japanese white rice",
         "measurements": [],
         "note": null,
+        "section": "Serving Suggestions (Optional)",
         "category": "Other"
       }
     },
@@ -306,6 +340,7 @@
         "item": "steamed vegetables or fresh salad",
         "measurements": [],
         "note": null,
+        "section": "Serving Suggestions (Optional)",
         "category": "Other"
       }
     }

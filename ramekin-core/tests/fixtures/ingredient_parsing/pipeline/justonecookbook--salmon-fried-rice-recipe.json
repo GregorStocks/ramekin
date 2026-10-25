@@ -3,6 +3,10 @@
   "recipe_slug": "salmon-fried-rice-recipe",
   "ingredients": [
     {
+      "raw": "For the Salted Salmon:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 skin-on salmon fillet (4 oz, 120 g; I use salmon from a Japanese grocery store, so it‘s a thinner cut; leftover salted salmon (shiojake) works well)",
       "expected": {
         "item": "skin-on salmon fillet",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "4 oz, 120 g; I use salmon from a Japanese grocery store, so it‘s a thinner cut; leftover salted salmon (shiojake) works well",
+        "section": "For the Salted Salmon",
         "category": "Meat & Seafood"
       }
     },
@@ -35,8 +40,13 @@
           }
         ],
         "note": null,
+        "section": "For the Salted Salmon",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Fried Rice:",
+      "is_section_header": true
     },
     {
       "raw": "1 green onion/scallion",
@@ -49,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Rice",
         "category": "Produce"
       }
     },
@@ -63,6 +74,7 @@
           }
         ],
         "note": "50 g w/o shell",
+        "section": "For the Fried Rice",
         "category": "Dairy & Eggs"
       }
     },
@@ -77,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Rice",
         "category": "Oils & Vinegars"
       }
     },
@@ -91,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Rice",
         "category": "Oils & Vinegars"
       }
     },
@@ -105,6 +119,7 @@
           }
         ],
         "note": "typically 150 g per serving; cooled or preferably day-old; frozen cooked rice works well",
+        "section": "For the Fried Rice",
         "category": "Pasta & Rice"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Rice",
         "category": "Condiments & Sauces"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": "to taste",
+        "section": "For the Fried Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": "to taste",
+        "section": "For the Fried Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -161,6 +179,7 @@
           }
         ],
         "note": "to taste",
+        "section": "For the Fried Rice",
         "category": "Spices & Seasonings"
       }
     }

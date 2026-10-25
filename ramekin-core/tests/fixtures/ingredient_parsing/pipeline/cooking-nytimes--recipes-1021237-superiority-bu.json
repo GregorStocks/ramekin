@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-1021237-superiority-bu",
   "ingredients": [
     {
+      "raw": "For the Marinated Tofu:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (14-ounce) package extra-firm tofu, drained",
       "expected": {
         "item": "extra-firm tofu",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "14-ounce, drained",
+        "section": "For the Marinated Tofu",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Tofu",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Tofu",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Tofu",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Tofu",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Tofu",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Fried Tofu:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup Dijon mustard",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Tofu",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Tofu",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Tofu",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Tofu",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Tofu",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Tofu",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Tofu",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "For the Fried Tofu",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fried Tofu",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,8 +241,13 @@
         "item": "Grapeseed oil or other neutral oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Fried Tofu",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "6 potato buns or other soft rolls",
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -241,6 +270,7 @@
         "item": "Vegan mayonnaise and hot sauce",
         "measurements": [],
         "note": "as needed",
+        "section": "For Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -250,6 +280,7 @@
         "item": "Thinly shredded green cabbage and dill pickles",
         "measurements": [],
         "note": "for serving",
+        "section": "For Assembly",
         "category": "Produce"
       }
     }

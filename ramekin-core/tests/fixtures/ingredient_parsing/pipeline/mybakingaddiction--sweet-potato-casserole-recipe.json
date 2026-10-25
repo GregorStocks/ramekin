@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "FOR THE TOPPING:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup packed light brown sugar",
       "expected": {
         "item": "light brown sugar",
@@ -125,6 +129,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Topping",
         "category": "Baking"
       }
     }

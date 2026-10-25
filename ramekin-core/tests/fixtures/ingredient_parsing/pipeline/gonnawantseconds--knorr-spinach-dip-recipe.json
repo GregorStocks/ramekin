@@ -3,6 +3,10 @@
   "recipe_slug": "knorr-spinach-dip-recipe",
   "ingredients": [
     {
+      "raw": "Dip:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (10-ounce) box frozen spinach, thawed and well-drained",
       "expected": {
         "item": "frozen spinach",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "10-ounce, thawed and well-drained",
+        "section": "Dip",
         "category": "Frozen"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "well-drained and coarsely chopped",
+        "section": "Dip",
         "category": "Other"
       }
     },
@@ -87,8 +96,13 @@
           }
         ],
         "note": "plus extra for garnish green onions thinly sliced",
+        "section": "Dip",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For Serving:",
+      "is_section_header": true
     },
     {
       "raw": "1 round loaf of bread",
@@ -101,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Serve With:",
+      "is_section_header": true
     },
     {
       "raw": "sliced vegetables",
@@ -110,6 +129,7 @@
         "item": "sliced vegetables",
         "measurements": [],
         "note": null,
+        "section": "Serve with",
         "category": "Produce"
       }
     },
@@ -119,6 +139,7 @@
         "item": "sliced baguette",
         "measurements": [],
         "note": null,
+        "section": "Serve with",
         "category": "Bakery & Bread"
       }
     },
@@ -128,6 +149,7 @@
         "item": "Hawaiian rolls",
         "measurements": [],
         "note": "cut into cubes",
+        "section": "Serve with",
         "category": "Bakery & Bread"
       }
     }

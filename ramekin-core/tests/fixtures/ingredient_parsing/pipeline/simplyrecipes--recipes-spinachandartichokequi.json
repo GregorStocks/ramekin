@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-spinachandartichokequi",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,8 +74,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Quiche:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup, packed, finely chopped artichoke hearts (cooked fresh or canned artichoke hearts packed in water)",
@@ -81,6 +93,7 @@
           }
         ],
         "note": "cooked fresh or canned artichoke hearts packed in water",
+        "section": "Quiche",
         "category": "Canned Goods"
       }
     },
@@ -95,6 +108,7 @@
           }
         ],
         "note": "if using frozen, thaw first, wrap in clean tea towel or several layers of paper towels and squeeze, squeezed to remove excess water, finely chopped",
+        "section": "Quiche",
         "category": "Produce"
       }
     },
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Produce"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Produce"
       }
     },
@@ -151,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Dairy & Eggs"
       }
     },
@@ -179,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Dairy & Eggs"
       }
     },
@@ -193,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Cheese"
       }
     },
@@ -207,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Spices & Seasonings"
       }
     },
@@ -235,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "Quiche",
         "category": "Produce"
       }
     }

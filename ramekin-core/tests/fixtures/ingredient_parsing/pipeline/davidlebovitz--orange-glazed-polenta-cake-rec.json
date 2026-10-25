@@ -3,6 +3,10 @@
   "recipe_slug": "orange-glazed-polenta-cake-rec",
   "ingredients": [
     {
+      "raw": "For the cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces (225g) unsalted butter, cubed, at room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "cubed, at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "Grand Marnier or Cointreau, such as orange liqueur , kirsch or grappa",
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": "plus additional for preparing the pan",
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -145,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -159,6 +172,7 @@
           }
         ],
         "note": "preferably aluminium-free",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -173,8 +187,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 cups (170g) powdered sugar",
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -205,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Beverages"
       }
     },
@@ -219,6 +240,7 @@
           }
         ],
         "note": "such as Grand Marnier or Cointreau",
+        "section": "For the Glaze",
         "category": "Beverages"
       }
     }

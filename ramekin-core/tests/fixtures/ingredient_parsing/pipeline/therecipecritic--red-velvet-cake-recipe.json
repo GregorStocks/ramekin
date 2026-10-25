@@ -3,6 +3,10 @@
   "recipe_slug": "red-velvet-cake-recipe",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 ½ cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -167,8 +182,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "2 (8-ounce) blocks room-temperature cream cheese",
@@ -181,6 +201,7 @@
           }
         ],
         "note": "8-ounce",
+        "section": "Frosting",
         "category": "Other"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Other"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

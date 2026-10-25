@@ -3,6 +3,10 @@
   "recipe_slug": "2025-08-chicken-meatballs-and-",
   "ingredients": [
     {
+      "raw": "basil chicken meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound lean ground chicken, I like to use 94% lean",
       "expected": {
         "item": "lean ground chicken, I like to use 94% lean",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Chicken Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Basil Chicken Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": "minced",
+        "section": "Basil Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Chicken Meatballs",
         "category": "Cheese"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Chicken Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Chicken Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -120,8 +132,13 @@
           }
         ],
         "note": null,
+        "section": "Basil Chicken Meatballs",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "couscous:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups uncooked couscous",
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Pasta & Rice"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Cheese"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "reeses-peanut-butter-banana-ca",
   "ingredients": [
     {
+      "raw": "Peanut Butter Banana Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Banana Cake",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Banana Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "optional",
+        "section": "Peanut Butter Banana Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Banana Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "softened",
+        "section": "Peanut Butter Banana Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Banana Cake",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Banana Cake",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Banana Cake",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Banana Cake",
         "category": "Baking"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": "mashed",
+        "section": "Peanut Butter Banana Cake",
         "category": "Produce"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Banana Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Peanut Butter Chocolate Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups semi-sweet chocolate chips",
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Chocolate Glaze",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Chocolate Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Peanut Butter Chocolate Glaze",
         "category": "Other"
       }
     }

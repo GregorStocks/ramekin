@@ -131,6 +131,10 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 Tablespoons confectioners’ sugar, for sifting",
       "expected": {
         "item": "confectioners’ sugar",
@@ -141,6 +145,7 @@
           }
         ],
         "note": "for sifting",
+        "section": "Toppings",
         "category": "Baking"
       }
     },
@@ -150,6 +155,7 @@
         "item": "optional toppings: berries, whipped cream, maple syrup, and/or strawberry sauce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-arugula-apples-mancheg",
   "ingredients": [
     {
+      "raw": "For the Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 ounces arugula or baby arugula",
       "expected": {
         "item": "arugula or baby arugula",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "such as Fuji or Honeycrisp",
+        "section": "For the Salad",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Cheese"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "lightly toasted if desired",
+        "section": "For the Salad",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the Vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons cider vinegar",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "from 1 shallot",
+        "section": "For the Vinaigrette",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

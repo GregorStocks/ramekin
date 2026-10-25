@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "For the Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup extra virgin olive oil I used Private Reserve Greek EVOO",
       "expected": {
         "item": "extra virgin olive oil I used Private Reserve Greek EVOO",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -120,6 +126,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -134,6 +141,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -148,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     }

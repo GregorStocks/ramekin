@@ -3,6 +3,10 @@
   "recipe_slug": "2014-08-raspberry-swirl-cheese",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups (about 250 grams) finely ground chocolate cookie crumbs (from about 1 9-ounce sleeve chocolate wafers; see more suggestions below)",
       "expected": {
         "item": "finely ground chocolate cookie crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 250 grams, from about 1 9-ounce sleeve chocolate wafers; see more suggestions below",
+        "section": "Crust",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -67,8 +74,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Raspberry Swirl:",
+      "is_section_header": true
     },
     {
       "raw": "6 ounces (170 grams) fresh or frozen raspberries (which have been thawed or they will not puree easily)",
@@ -85,6 +97,7 @@
           }
         ],
         "note": "which have been thawed or they will not puree easily",
+        "section": "Raspberry Swirl",
         "category": "Produce"
       }
     },
@@ -103,8 +116,13 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Swirl",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "32 ounces (905 grams) cream cheese, very soft at room temperature",
@@ -121,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Cheese"
       }
     },
@@ -139,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -153,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -181,8 +203,13 @@
           }
         ],
         "note": "room temperature",
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Chocolate sauce for serving:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) heavy or whipping cream",
@@ -199,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Sauce for Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Sauce for Serving",
         "category": "Baking"
       }
     }

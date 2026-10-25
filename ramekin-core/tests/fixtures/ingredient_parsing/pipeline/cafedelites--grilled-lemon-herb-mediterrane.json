@@ -3,6 +3,10 @@
   "recipe_slug": "grilled-lemon-herb-mediterrane",
   "ingredients": [
     {
+      "raw": "Marinade/Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade/dressing",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +147,7 @@
         "item": "cracked pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Marinade/dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,8 +162,13 @@
           }
         ],
         "note": null,
+        "section": "Marinade/dressing",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Salad:",
+      "is_section_header": true
     },
     {
       "raw": "4 cups Romaine lettuce or Cos lettuce leaves, washed and dried",
@@ -162,6 +181,7 @@
           }
         ],
         "note": "washed and dried",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": "diced",
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": "diced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": "sliced - optional",
+        "section": "Salad",
         "category": "Canned Goods"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Other"
       }
     }

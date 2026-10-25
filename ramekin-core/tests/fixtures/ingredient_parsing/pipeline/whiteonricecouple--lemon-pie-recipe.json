@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-pie-recipe",
   "ingredients": [
     {
+      "raw": "Graham crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups  (170 g) graham cracker crumbs",
       "expected": {
         "item": "graham cracker crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Crust",
         "category": "Snacks"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "melted *see head note",
+        "section": "Graham Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,8 +55,13 @@
           }
         ],
         "note": "if using unsalted butter or you like desserts with a sweet/salty contrast like salted caramel",
+        "section": "Graham Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Pie Filling:",
+      "is_section_header": true
     },
     {
       "raw": "28 ounces  (792 g) sweetened condensed milk (two 14 oz. cans) (not evaporated milk)",
@@ -67,6 +78,7 @@
           }
         ],
         "note": "two 14 oz. cans, not evaporated milk",
+        "section": "Pie Filling",
         "category": "Canned Goods"
       }
     },
@@ -81,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -90,6 +103,7 @@
         "item": "finely grated zest from about 4 meyer lemons",
         "measurements": [],
         "note": "or 3 large lemons",
+        "section": "Pie Filling",
         "category": "Other"
       }
     },
@@ -108,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Filling",
         "category": "Other"
       }
     },
@@ -126,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Filling",
         "category": "Baking"
       }
     },
@@ -140,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "Pie Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Whipped Cream Topping & Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  (240 ml) heavy whipping cream",
@@ -158,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -176,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Baking"
       }
     },
@@ -194,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Baking"
       }
     },
@@ -203,6 +227,7 @@
         "item": "fresh mint",
         "measurements": [],
         "note": "optional for garnish",
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Produce"
       }
     },
@@ -212,6 +237,7 @@
         "item": "lemon slices",
         "measurements": [],
         "note": "optional for garnish",
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Produce"
       }
     }

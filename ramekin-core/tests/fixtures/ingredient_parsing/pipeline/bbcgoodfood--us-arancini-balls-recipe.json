@@ -152,6 +152,10 @@
       }
     },
     {
+      "raw": "For the coating:",
+      "is_section_header": true
+    },
+    {
       "raw": "1¼ cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -162,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coating",
         "category": "Baking"
       }
     },
@@ -176,6 +181,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Coating",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coating",
         "category": "Other"
       }
     }

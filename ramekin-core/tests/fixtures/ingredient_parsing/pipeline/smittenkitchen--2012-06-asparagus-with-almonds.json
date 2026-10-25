@@ -3,6 +3,10 @@
   "recipe_slug": "2012-06-asparagus-with-almonds",
   "ingredients": [
     {
+      "raw": "Yogurt dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup plain yogurt (strained or Greek-style if you can find it)",
       "expected": {
         "item": "plain yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "strained or Greek-style if you can find it",
+        "section": "Yogurt Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Yogurt Dressing",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Yogurt Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "Yogurt Dressing",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Yogurt Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Asparagus:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon olive oil",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Asparagus",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "tough ends trimmed or peeled",
+        "section": "Asparagus",
         "category": "Produce"
       }
     },
@@ -106,6 +121,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Asparagus",
         "category": "Spices & Seasonings"
       }
     }

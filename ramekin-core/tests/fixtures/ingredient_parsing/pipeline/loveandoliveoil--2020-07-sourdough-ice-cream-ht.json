@@ -3,6 +3,10 @@
   "recipe_slug": "2020-07-sourdough-ice-cream-ht",
   "ingredients": [
     {
+      "raw": "For Sourdough Ice Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ cups  / 360 g heavy cream",
       "expected": {
         "item": "heavy cream",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Ice Cream",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Ice Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "lightly toasted",
+        "section": "For Sourdough Ice Cream",
         "category": "Bakery & Bread"
       }
     },
@@ -95,8 +104,13 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Sourdough Ice Cream",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Sourdough Crumbs:",
+      "is_section_header": true
     },
     {
       "raw": "2 slices   stale sourdough bread",
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Crumbs",
         "category": "Other"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Crumbs",
         "category": "Baking"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Crumbs",
         "category": "Spices & Seasonings"
       }
     }

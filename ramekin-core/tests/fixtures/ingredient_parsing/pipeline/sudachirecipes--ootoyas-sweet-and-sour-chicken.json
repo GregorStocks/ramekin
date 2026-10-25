@@ -3,6 +3,10 @@
   "recipe_slug": "ootoyas-sweet-and-sour-chicken",
   "ingredients": [
     {
+      "raw": "For the chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "250 g boneless chicken thigh boneless, skin-on",
       "expected": {
         "item": "boneless chicken thigh boneless, skin-on",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "For the Chicken",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "katakuriko",
+        "section": "For the Chicken",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 ½ tbsp light brown sugar",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "kurozu, kurozu",
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -195,8 +216,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Vegetables:",
+      "is_section_header": true
     },
     {
       "raw": "cooking oil for shallow frying",
@@ -204,6 +230,7 @@
         "item": "cooking oil",
         "measurements": [],
         "note": "for shallow frying",
+        "section": "Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": "renkon, renkon, optional",
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -274,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     }

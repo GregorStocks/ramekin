@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups corn flakes crushed",
       "expected": {
         "item": "corn flakes",
@@ -153,6 +157,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Topping",
         "category": "Snacks"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": "melted",
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": "grated",
+        "section": "Topping",
         "category": "Cheese"
       }
     }

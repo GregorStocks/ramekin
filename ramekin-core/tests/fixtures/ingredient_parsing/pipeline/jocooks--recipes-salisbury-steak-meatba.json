@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-salisbury-steak-meatba",
   "ingredients": [
     {
+      "raw": "For Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ pound ground beef (lean)",
       "expected": {
         "item": "ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "lean",
+        "section": "For Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "I used Panko",
+        "section": "For Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "coarse grain",
+        "section": "For Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": "for frying",
+        "section": "For Meatballs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons butter (unsalted)",
@@ -153,6 +171,7 @@
           }
         ],
         "note": "unsalted",
+        "section": "For Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Gravy",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "or cornstarch",
+        "section": "For Gravy",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "or chicken broth, low sodium or no sodium added",
+        "section": "For Gravy",
         "category": "Canned Goods"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For Gravy",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For Gravy",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For Gravy",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "chopped, for garnish",
+        "section": "For Gravy",
         "category": "Produce"
       }
     }

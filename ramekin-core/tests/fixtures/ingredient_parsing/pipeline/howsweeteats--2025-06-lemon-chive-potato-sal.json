@@ -54,6 +54,10 @@
       }
     },
     {
+      "raw": "lemon chive vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons lemon juice",
       "expected": {
         "item": "lemon juice",
@@ -64,6 +68,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Chive Vinaigrette",
         "category": "Produce"
       }
     },
@@ -78,6 +83,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Chive Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,6 +98,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Chive Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -106,6 +113,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Chive Vinaigrette",
         "category": "Baking"
       }
     },
@@ -120,6 +128,7 @@
           }
         ],
         "note": "finely minced or pressed",
+        "section": "Lemon Chive Vinaigrette",
         "category": "Produce"
       }
     },
@@ -134,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Chive Vinaigrette",
         "category": "Produce"
       }
     },
@@ -143,6 +153,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Lemon Chive Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Chive Vinaigrette",
         "category": "Oils & Vinegars"
       }
     }

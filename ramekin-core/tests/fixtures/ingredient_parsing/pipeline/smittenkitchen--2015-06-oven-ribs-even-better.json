@@ -105,6 +105,10 @@
       }
     },
     {
+      "raw": "Let’s Talk About Timing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 to 3 hours at 300°F.",
       "expected": {
         "item": "hours at 300°F.",
@@ -115,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Let’s Talk About Timing",
         "category": "Other"
       }
     },
@@ -129,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Let’s Talk About Timing",
         "category": "Other"
       }
     },
@@ -143,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Let’s Talk About Timing",
         "category": "Other"
       }
     }

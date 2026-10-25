@@ -3,6 +3,10 @@
   "recipe_slug": "2023-03-pistachio-meyer-lemon-",
   "ingredients": [
     {
+      "raw": "For Lemon Curd:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon   Meyer lemon zest, from 1 lemon (save the rest of the zest for the mousse layer later)",
       "expected": {
         "item": "Meyer lemon zest",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "save the rest of the zest for the mousse layer later, from 1 lemon",
+        "section": "For Lemon Curd",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "from about 3 lemons",
+        "section": "For Lemon Curd",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Beverages"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Baking"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": "cut into small cubes",
+        "section": "For Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,8 +133,13 @@
         "item": "yellow food coloring",
         "measurements": [],
         "note": "optional",
+        "section": "For Lemon Curd",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Pistachio Dacquoise:",
+      "is_section_header": true
     },
     {
       "raw": "1 ¾ oz  / 50 g raw shelled pistachios",
@@ -140,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For Pistachio Dacquoise",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -158,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For Pistachio Dacquoise",
         "category": "Baking"
       }
     },
@@ -176,6 +194,7 @@
           }
         ],
         "note": "plus more for dusting",
+        "section": "For Pistachio Dacquoise",
         "category": "Baking"
       }
     },
@@ -190,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "For Pistachio Dacquoise",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "For Pistachio Dacquoise",
         "category": "Dairy & Eggs"
       }
     },
@@ -226,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "For Pistachio Dacquoise",
         "category": "Baking"
       }
     },
@@ -240,6 +262,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Pistachio Dacquoise",
         "category": "Baking"
       }
     },
@@ -254,8 +277,13 @@
           }
         ],
         "note": "for sprinkling",
+        "section": "For Pistachio Dacquoise",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For Mousse:",
+      "is_section_header": true
     },
     {
       "raw": "2 sheets   leaf gelatin",
@@ -268,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Baking"
       }
     },
@@ -282,6 +311,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -300,6 +330,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Baking"
       }
     },
@@ -318,6 +349,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -336,6 +368,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -350,6 +383,7 @@
           }
         ],
         "note": "from 2 large lemons",
+        "section": "For Mousse",
         "category": "Produce"
       }
     },
@@ -364,6 +398,7 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Baking"
       }
     },
@@ -382,8 +417,13 @@
           }
         ],
         "note": null,
+        "section": "For Mousse",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Mirror Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "6 sheets   leaf gelatin",
@@ -396,6 +436,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -414,6 +455,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -432,6 +474,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -450,6 +493,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Beverages"
       }
     },
@@ -468,6 +512,7 @@
           }
         ],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Canned Goods"
       }
     },
@@ -486,6 +531,7 @@
           }
         ],
         "note": "finely chopped, good quality",
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -495,6 +541,7 @@
         "item": "food coloring, as desired",
         "measurements": [],
         "note": null,
+        "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -504,6 +551,7 @@
         "item": "chopped pistachios",
         "measurements": [],
         "note": "for garnish",
+        "section": "For Mirror Glaze",
         "category": "Nuts & Dried Fruit"
       }
     }

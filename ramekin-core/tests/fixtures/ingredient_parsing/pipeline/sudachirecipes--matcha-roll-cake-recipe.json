@@ -3,6 +3,10 @@
   "recipe_slug": "matcha-roll-cake-recipe",
   "ingredients": [
     {
+      "raw": "Sponge Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 egg",
       "expected": {
         "item": "egg",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Ingredients",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Ingredients",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Ingredients",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Ingredients",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge Ingredients",
         "category": "Beverages"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Sponge Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling and Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "150 ml heavy cream 36% or higher",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Toppings",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Toppings",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Toppings",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "for decorating",
+        "section": "Filling and Toppings",
         "category": "Other"
       }
     },
@@ -176,6 +196,7 @@
         "item": "powdered sugar or matcha powder",
         "measurements": [],
         "note": "for dusting",
+        "section": "Filling and Toppings",
         "category": "Baking"
       }
     }

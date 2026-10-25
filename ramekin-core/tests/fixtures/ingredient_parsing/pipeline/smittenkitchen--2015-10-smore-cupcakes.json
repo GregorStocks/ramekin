@@ -3,6 +3,10 @@
   "recipe_slug": "2015-10-smore-cupcakes",
   "ingredients": [
     {
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (125 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "from about 7 rectangular crackers",
+        "section": "Cupcakes",
         "category": "Snacks"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Other"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -141,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -155,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -169,8 +183,13 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 pound (4 ounces) milk or semi-sweet chocolate, chopped small or in chips",
@@ -187,6 +206,7 @@
           }
         ],
         "note": "chopped small or in chips",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -201,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -215,8 +236,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "2 large egg whites",
@@ -229,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -257,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -271,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

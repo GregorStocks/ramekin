@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Grits:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups water",
       "expected": {
         "item": "water",
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Grits",
         "category": "Beverages"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Grits",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Grits",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Grits",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Grits",
         "category": "Other"
       }
     }

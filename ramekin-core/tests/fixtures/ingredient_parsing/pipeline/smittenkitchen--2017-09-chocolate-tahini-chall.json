@@ -3,6 +3,10 @@
   "recipe_slug": "2017-09-chocolate-tahini-chall",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "or melted butter",
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "plus an additional tablespoon if needed",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "plus more for the counter",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -144,8 +156,13 @@
         "item": "Butter or nonstick spray for baking pan",
         "measurements": [],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling and assembly:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces (115 grams) dark (semi- or bittersweet) chocolate (or approximately 3/4 cup chocolate chips)",
@@ -162,6 +179,7 @@
           }
         ],
         "note": "semi- or bittersweet, or approximately 3/4 cup chocolate chips",
+        "section": "Filling and Assembly",
         "category": "Baking"
       }
     },
@@ -180,6 +198,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Filling and Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -198,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Assembly",
         "category": "Baking"
       }
     },
@@ -216,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Assembly",
         "category": "Baking"
       }
     },
@@ -234,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -248,6 +270,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Filling and Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -257,8 +280,13 @@
         "item": "Sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "Filling and Assembly",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Glaze (optional):",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (240 grams) powdered sugar",
@@ -275,6 +303,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze (Optional)",
         "category": "Baking"
       }
     },
@@ -289,6 +318,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze (Optional)",
         "category": "Produce"
       }
     }

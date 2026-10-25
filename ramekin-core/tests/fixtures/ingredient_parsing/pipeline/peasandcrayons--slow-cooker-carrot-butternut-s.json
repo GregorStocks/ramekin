@@ -87,11 +87,16 @@
       }
     },
     {
+      "raw": "TASTY TOPPING OPTIONS – choose your favorites!:",
+      "is_section_header": true
+    },
+    {
       "raw": "grated gouda or cheddar cheese (skip for vegan/dairy-free)",
       "expected": {
         "item": "grated gouda or cheddar cheese",
         "measurements": [],
         "note": "skip for vegan/dairy-free",
+        "section": "Tasty Topping Options – Choose Your Favorites!",
         "category": "Cheese"
       }
     },
@@ -101,6 +106,7 @@
         "item": "chopped bacon or vegan bacon bits",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options – Choose Your Favorites!",
         "category": "Meat & Seafood"
       }
     },
@@ -110,6 +116,7 @@
         "item": "roasted pepitas",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options – Choose Your Favorites!",
         "category": "Snacks"
       }
     },
@@ -119,6 +126,7 @@
         "item": "sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options – Choose Your Favorites!",
         "category": "Spices & Seasonings"
       }
     },
@@ -128,6 +136,7 @@
         "item": "a dash of ground cinnamon",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options – Choose Your Favorites!",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,6 +146,7 @@
         "item": "fresh chives",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options – Choose Your Favorites!",
         "category": "Produce"
       }
     }

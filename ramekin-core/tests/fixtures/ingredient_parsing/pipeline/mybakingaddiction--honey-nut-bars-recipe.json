@@ -3,6 +3,10 @@
   "recipe_slug": "honey-nut-bars-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup whole blanched almonds, toasted",
       "expected": {
         "item": "whole blanched almonds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "toasted",
+        "section": "For the Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "cut into 1/2-inch pieces",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Topping:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup packed light brown sugar",
@@ -119,6 +134,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -165,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -179,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -193,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -207,6 +228,7 @@
           }
         ],
         "note": "toasted",
+        "section": "For the Topping",
         "category": "Other"
       }
     }

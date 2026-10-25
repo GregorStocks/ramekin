@@ -49,6 +49,10 @@
       }
     },
     {
+      "raw": "Tahini sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup roasted sesame tahini",
       "expected": {
         "item": "roasted sesame tahini",
@@ -59,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Sauce",
         "category": "Other"
       }
     },
@@ -73,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Sauce",
         "category": "Beverages"
       }
     },
@@ -87,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Sauce",
         "category": "Produce"
       }
     },
@@ -101,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Sauce",
         "category": "Produce"
       }
     },
@@ -115,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Sauce",
         "category": "Produce"
       }
     },
@@ -129,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Sauce",
         "category": "Baking"
       }
     },
@@ -143,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -152,6 +163,7 @@
         "item": "Thai basil",
         "measurements": [],
         "note": "for garnish",
+        "section": "Tahini Sauce",
         "category": "Produce"
       }
     }

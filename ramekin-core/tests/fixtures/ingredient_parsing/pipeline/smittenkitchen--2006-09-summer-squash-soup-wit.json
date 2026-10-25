@@ -3,6 +3,10 @@
   "recipe_slug": "2006-09-summer-squash-soup-wit",
   "ingredients": [
     {
+      "raw": "For squash soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 stick (6 tablespoons) unsalted butter, cut into pieces",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "For Squash Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "halved lengthwise and thinly sliced crosswise",
+        "section": "For Squash Soup",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Squash Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "halved and thinly sliced",
+        "section": "For Squash Soup",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For Squash Soup",
         "category": "Produce"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "peeled, halved, and thinly sliced",
+        "section": "For Squash Soup",
         "category": "Other"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For Squash Soup",
         "category": "Canned Goods"
       }
     },
@@ -114,6 +125,7 @@
         "item": "For pistou",
         "measurements": [],
         "note": null,
+        "section": "For Squash Soup",
         "category": "Other"
       }
     },
@@ -128,6 +140,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "For Squash Soup",
         "category": "Produce"
       }
     },
@@ -142,6 +155,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "For Squash Soup",
         "category": "Produce"
       }
     },
@@ -160,6 +174,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Squash Soup",
         "category": "Produce"
       }
     },
@@ -174,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For Squash Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -188,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For Squash Soup",
         "category": "Beverages"
       }
     },
@@ -202,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "For Squash Soup",
         "category": "Spices & Seasonings"
       }
     }

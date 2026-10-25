@@ -3,6 +3,10 @@
   "recipe_slug": "2015-01-fried-egg-salad",
   "ingredients": [
     {
+      "raw": "Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup lightly-packed torn green leaf lettuce (approximately 2-inch pieces)",
       "expected": {
         "item": "lightly-packed torn green leaf lettuce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "approximately 2-inch pieces",
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "lightly packed",
+        "section": "Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 tablespoons lime juice (Key limes are recommended, but don’t fuss if you can’t find them)",
@@ -83,6 +96,7 @@
           }
         ],
         "note": "Key limes are recommended, but don’t fuss if you can’t find them",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "see Note up top or 1 tablespoon water + 1 teaspoon dark brown sugar",
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "1 large clove",
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "more or less to taste, preferably green, thinly sliced",
+        "section": "Dressing",
         "category": "Other"
       }
     }

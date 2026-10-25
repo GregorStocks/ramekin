@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Cinnamon Sugar Coating:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 Tablespoons granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Sugar Coating",
         "category": "Baking"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Sugar Coating",
         "category": "Spices & Seasonings"
       }
     }

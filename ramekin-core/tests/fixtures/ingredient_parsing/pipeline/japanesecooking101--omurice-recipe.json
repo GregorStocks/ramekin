@@ -124,6 +124,10 @@
       }
     },
     {
+      "raw": "egg crepe:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 eggs",
       "expected": {
         "item": "eggs",
@@ -134,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Crepe",
         "category": "Dairy & Eggs"
       }
     },
@@ -143,6 +148,7 @@
         "item": "salt",
         "measurements": [],
         "note": null,
+        "section": "Egg Crepe",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Crepe",
         "category": "Oils & Vinegars"
       }
     }

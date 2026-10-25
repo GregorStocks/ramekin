@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-parmesan-recipe",
   "ingredients": [
     {
+      "raw": "For the Homemade Marinara Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoon olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Homemade Marinara Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Homemade Marinara Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "28-ounce, with juice",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Canned Goods"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Chicken Parmesan:",
+      "is_section_header": true
     },
     {
       "raw": "1½ pounds chicken breasts, or 3 large chicken breasts",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "or 3 large chicken breasts",
+        "section": "For the Chicken Parmesan",
         "category": "Meat & Seafood"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "divided 3 ways",
+        "section": "For the Chicken Parmesan",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "divided 3 ways",
+        "section": "For the Chicken Parmesan",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "approximately 1-2 cups, like canola oil; for frying",
+        "section": "For the Chicken Parmesan",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Parmesan",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "plus 1/4 cup water, whisked",
+        "section": "For the Chicken Parmesan",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Parmesan",
         "category": "Other"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "freshly grated, divided",
+        "section": "For the Chicken Parmesan",
         "category": "Cheese"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "freshly shredded, plus more if desired",
+        "section": "For the Chicken Parmesan",
         "category": "Cheese"
       }
     },
@@ -232,6 +256,7 @@
         "item": "fresh basil",
         "measurements": [],
         "note": "for garnish",
+        "section": "For the Chicken Parmesan",
         "category": "Produce"
       }
     }

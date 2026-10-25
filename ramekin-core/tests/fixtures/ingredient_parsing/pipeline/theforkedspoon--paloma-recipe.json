@@ -3,6 +3,10 @@
   "recipe_slug": "paloma-recipe",
   "ingredients": [
     {
+      "raw": "For the Chili Salt Rim:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoon kosher salt",
       "expected": {
         "item": "kosher salt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chili Salt Rim",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chili Salt Rim",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chili Salt Rim",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Paloma:",
+      "is_section_header": true
     },
     {
       "raw": "Chili Salt, (or just kosher salt)",
@@ -50,6 +61,7 @@
         "item": "Chili Salt",
         "measurements": [],
         "note": "or just kosher salt",
+        "section": "For the Paloma",
         "category": "Other"
       }
     },
@@ -59,6 +71,7 @@
         "item": "Ice",
         "measurements": [],
         "note": null,
+        "section": "For the Paloma",
         "category": "Frozen"
       }
     },
@@ -73,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "For the Paloma",
         "category": "Beverages"
       }
     },
@@ -87,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For the Paloma",
         "category": "Beverages"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Paloma",
         "category": "Produce"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Paloma",
         "category": "Baking"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Paloma",
         "category": "Beverages"
       }
     },
@@ -138,6 +156,7 @@
         "item": "Grapefruit and lime wedges",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Paloma",
         "category": "Produce"
       }
     }

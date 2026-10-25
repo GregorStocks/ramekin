@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-pho-with-zucchini-nood",
   "ingredients": [
     {
+      "raw": "Chicken Pho:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 whole chicken legs (drumstick and thigh)",
       "expected": {
         "item": "whole chicken legs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "drumstick and thigh",
+        "section": "Chicken Pho",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Pho",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "halved",
+        "section": "Chicken Pho",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Pho",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Pho",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Pho",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Pho",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Pho",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Chicken Pho",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Chicken Pho",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "1 small zucchini per person for zoodles* or pho noodles",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
         "item": "sliced green onions",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
         "item": "roughly chopped cilantro",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -180,6 +201,7 @@
         "item": "bean sprouts",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -189,6 +211,7 @@
         "item": "Thai chilis",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -198,6 +221,7 @@
         "item": "sliced limes",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -207,6 +231,7 @@
         "item": "hoisin sauce",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Condiments & Sauces"
       }
     },
@@ -216,6 +241,7 @@
         "item": "sriracha",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Condiments & Sauces"
       }
     }

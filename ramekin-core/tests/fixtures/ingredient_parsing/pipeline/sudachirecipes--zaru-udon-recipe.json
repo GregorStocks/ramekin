@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "Additions:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tsp wasabi paste",
       "expected": {
         "item": "wasabi paste",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Additions",
         "category": "Condiments & Sauces"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": "grated",
+        "section": "Additions",
         "category": "Produce"
       }
     },
@@ -120,6 +126,7 @@
           }
         ],
         "note": "tenkasu",
+        "section": "Additions",
         "category": "Other"
       }
     },
@@ -134,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Additions",
         "category": "Produce"
       }
     }

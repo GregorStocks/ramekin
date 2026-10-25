@@ -3,6 +3,10 @@
   "recipe_slug": "2018-01-10-crispy-tofu-broccol",
   "ingredients": [
     {
+      "raw": "For the tofu and broccoli:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 block (12- to 15-oz) firm or extra-firm tofu",
       "expected": {
         "item": "firm or extra-firm tofu",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "12- to 15-oz",
+        "section": "For the Tofu and Broccoli",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tofu and Broccoli",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tofu and Broccoli",
         "category": "Oils & Vinegars"
       }
     },
@@ -50,6 +57,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Tofu and Broccoli",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tofu and Broccoli",
         "category": "Condiments & Sauces"
       }
     },
@@ -78,8 +87,13 @@
           }
         ],
         "note": null,
+        "section": "For the Tofu and Broccoli",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "for the pesto:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon toasted (or not) sesame seeds",
@@ -92,6 +106,7 @@
           }
         ],
         "note": "or not",
+        "section": "For the Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": "salted are fine, roasted",
+        "section": "For the Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Condiments & Sauces"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Oils & Vinegars"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Oils & Vinegars"
       }
     },
@@ -190,8 +211,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "to finish:",
+      "is_section_header": true
     },
     {
       "raw": "3 scallions, thinly sliced",
@@ -204,6 +230,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -213,6 +240,7 @@
         "item": "chili-garlic or other hot sauce",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Condiments & Sauces"
       }
     }

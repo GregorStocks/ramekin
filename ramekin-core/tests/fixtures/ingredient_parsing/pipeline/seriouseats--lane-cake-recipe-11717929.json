@@ -3,11 +3,16 @@
   "recipe_slug": "lane-cake-recipe-11717929",
   "ingredients": [
     {
+      "raw": "For the Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "Baking spray with flour",
       "expected": {
         "item": "Baking spray with flour",
         "measurements": [],
         "note": null,
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -30,6 +35,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -52,6 +58,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -74,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -96,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -110,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -132,6 +142,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -150,6 +161,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -168,6 +180,7 @@
           }
         ],
         "note": "such as canola",
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -186,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -200,8 +214,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "12 large egg yolks (7 ounces; 200 g)",
@@ -222,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -244,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -266,6 +287,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -288,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -310,6 +333,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -332,6 +356,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -354,6 +379,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -372,6 +398,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
@@ -386,6 +413,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -400,6 +428,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -414,8 +443,13 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "4 large egg whites (4 1/4 ounces; 120 g)",
@@ -436,6 +470,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -458,6 +493,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -472,6 +508,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -486,6 +523,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -508,6 +546,7 @@
           }
         ],
         "note": "softened cut into 1-inch size pieces",
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     }

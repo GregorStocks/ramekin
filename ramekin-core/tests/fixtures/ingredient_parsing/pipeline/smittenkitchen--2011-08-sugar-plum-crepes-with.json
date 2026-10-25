@@ -3,6 +3,10 @@
   "recipe_slug": "2011-08-sugar-plum-crepes-with",
   "ingredients": [
     {
+      "raw": "Crepes:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons butter, melted and cooled slightly (I browned this first, which probably won’t surprise you)",
       "expected": {
         "item": "butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "I browned this first, which probably won’t surprise you, melted and cooled slightly",
+        "section": "Crepes",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "fat level shouldn’t matter, but I use whole",
+        "section": "Crepes",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Crepes",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Crepes",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Crepes",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +87,7 @@
         "item": "Few gratings fresh nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Crepes",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Crepes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Plums:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound sugar or other plums, pitted and cut into quarters if tiny, eighths if larger",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Baking"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Dairy & Eggs"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Baking"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,8 +181,13 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup ricotta (ever wanted to make your own?)",
@@ -176,6 +200,7 @@
           }
         ],
         "note": "ever wanted to make your own?",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -190,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -199,6 +225,7 @@
         "item": "Toasted and chopped pistachios or almonds",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -208,6 +235,7 @@
         "item": "Additional honey",
         "measurements": [],
         "note": "if desired",
+        "section": "Assembly",
         "category": "Other"
       }
     }

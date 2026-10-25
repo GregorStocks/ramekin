@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "For the topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tbsp granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     }

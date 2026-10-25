@@ -199,11 +199,16 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Powdered sugar or chocolate ganache",
       "expected": {
         "item": "Powdered sugar or chocolate ganache",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Baking"
       }
     }

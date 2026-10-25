@@ -98,6 +98,10 @@
       }
     },
     {
+      "raw": "Optional garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -108,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Garnish",
         "category": "Oils & Vinegars"
       }
     },
@@ -122,6 +127,7 @@
           }
         ],
         "note": "dried very well",
+        "section": "Optional Garnish",
         "category": "Canned Goods"
       }
     },
@@ -136,6 +142,7 @@
           }
         ],
         "note": "such as cayenne, smoked paprika, or cumin, etc.",
+        "section": "Optional Garnish",
         "category": "Spices & Seasonings"
       }
     }

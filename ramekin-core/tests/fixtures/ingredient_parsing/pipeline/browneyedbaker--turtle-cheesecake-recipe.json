@@ -3,6 +3,10 @@
   "recipe_slug": "turtle-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "24   Oreo cookies, finely crushed into crumbs",
       "expected": {
         "item": "Oreo cookies",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "finely crushed into crumbs",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Caramel-Pecan Layer:",
+      "is_section_header": true
     },
     {
       "raw": "1½ cups  (339 ml) caramel sauce, omit the salt for a sweeter version",
@@ -59,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel-Pecan Layer",
         "category": "Condiments & Sauces"
       }
     },
@@ -77,8 +89,13 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel-Pecan Layer",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "32 ounces  (907.19 g) cream cheese, at room temperature",
@@ -95,6 +112,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Cheese"
       }
     },
@@ -113,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
@@ -127,6 +146,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,8 +180,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Chocolate Ganache:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup  (178.5 ml) heavy cream",
@@ -177,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache",
         "category": "Baking"
       }
     },
@@ -213,6 +241,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Chocolate Ganache",
         "category": "Baking"
       }
     },
@@ -231,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache",
         "category": "Baking"
       }
     }

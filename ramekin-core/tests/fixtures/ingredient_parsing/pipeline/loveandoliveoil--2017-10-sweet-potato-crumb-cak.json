@@ -3,6 +3,10 @@
   "recipe_slug": "2017-10-sweet-potato-crumb-cak",
   "ingredients": [
     {
+      "raw": "For Swirl/Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Swirl/topping",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Swirl/topping",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Swirl/topping",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Swirl/topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Swirl/topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "For Swirl/topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": "divided",
+        "section": "For Swirl/topping",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For Cake:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (8.5 oz) all-purpose flour",
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Canned Goods"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +250,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Condiments & Sauces"
       }
     },
@@ -255,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -273,6 +299,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     }

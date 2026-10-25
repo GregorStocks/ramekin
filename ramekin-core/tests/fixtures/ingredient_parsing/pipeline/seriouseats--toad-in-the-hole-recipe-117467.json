@@ -3,6 +3,10 @@
   "recipe_slug": "toad-in-the-hole-recipe-117467",
   "ingredients": [
     {
+      "raw": "For the Yorkshire Pudding Batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 large eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Yorkshire Pudding Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "113 g; 3/4 cups plus 2 tablespoons",
+        "section": "For the Yorkshire Pudding Batter",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "135 g; 1/2 cup plus 1 tablespoon",
+        "section": "For the Yorkshire Pudding Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Yorkshire Pudding Batter",
         "category": "Beverages"
       }
     },
@@ -85,8 +93,13 @@
           }
         ],
         "note": null,
+        "section": "For the Yorkshire Pudding Batter",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Red Onion Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons beef drippings or ghee (1 ounce; 28 g)",
@@ -107,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "For the Red Onion Gravy",
         "category": "Meat & Seafood"
       }
     },
@@ -129,6 +143,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Red Onion Gravy",
         "category": "Produce"
       }
     },
@@ -143,6 +158,7 @@
           }
         ],
         "note": "plus more to taste; for table salt, use half as much by volume",
+        "section": "For the Red Onion Gravy",
         "category": "Spices & Seasonings"
       }
     },
@@ -165,6 +181,7 @@
           }
         ],
         "note": "such as Cabernet Sauvignon or Merlot",
+        "section": "For the Red Onion Gravy",
         "category": "Beverages"
       }
     },
@@ -187,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Red Onion Gravy",
         "category": "Baking"
       }
     },
@@ -209,6 +227,7 @@
           }
         ],
         "note": "homemade or store-bought, see notes",
+        "section": "For the Red Onion Gravy",
         "category": "Canned Goods"
       }
     },
@@ -231,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Red Onion Gravy",
         "category": "Oils & Vinegars"
       }
     },
@@ -240,8 +260,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Red Onion Gravy",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To Assemble:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound (454 g) pork sausages",
@@ -258,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Meat & Seafood"
       }
     },
@@ -272,6 +298,7 @@
           }
         ],
         "note": "see above",
+        "section": "To Assemble",
         "category": "Other"
       }
     },
@@ -294,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Meat & Seafood"
       }
     }

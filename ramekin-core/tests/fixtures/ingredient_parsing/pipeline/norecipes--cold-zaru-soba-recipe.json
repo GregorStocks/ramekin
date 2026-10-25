@@ -3,6 +3,10 @@
   "recipe_slug": "cold-zaru-soba-recipe",
   "ingredients": [
     {
+      "raw": "For dipping sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  dashi stock",
       "expected": {
         "item": "dashi stock",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Dipping Sauce",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Dipping Sauce",
         "category": "Beverages"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For Dipping Sauce",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For serving:",
+      "is_section_header": true
     },
     {
       "raw": "2 servings  soba noodles",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "grated and drained",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "cut into thin strips with scissors",
+        "section": "For Serving",
         "category": "Spices & Seasonings"
       }
     }

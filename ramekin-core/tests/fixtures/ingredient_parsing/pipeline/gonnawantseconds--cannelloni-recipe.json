@@ -3,6 +3,10 @@
   "recipe_slug": "cannelloni-recipe",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "28-ounce",
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound ricotta cheese",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "grated",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "10-ounce",
+        "section": "Filling",
         "category": "Frozen"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,8 +261,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Pasta:",
+      "is_section_header": true
     },
     {
       "raw": "16 ounces Barilla No Boil Lasagna Noodles",
@@ -251,8 +280,13 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups Mozzarella shredded",
@@ -265,6 +299,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Topping",
         "category": "Cheese"
       }
     }

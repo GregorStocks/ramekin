@@ -3,6 +3,10 @@
   "recipe_slug": "mexican-casserole-recipe",
   "ingredients": [
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground beef,  80/20",
       "expected": {
         "item": "ground beef, 80/20",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "16-ounce",
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "undrained",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "thawed and drained",
+        "section": "Filling",
         "category": "Frozen"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "6 inch",
+        "section": "Filling",
         "category": "Bakery & Bread"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "divided shredded",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "2.25-ounce, drained",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": "sliced~divided",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": "seeded and chopped",
+        "section": "Filling",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup cilantro,  chopped",
@@ -167,6 +186,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Garnish",
         "category": "Produce"
       }
     }

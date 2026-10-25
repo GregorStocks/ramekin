@@ -3,6 +3,10 @@
   "recipe_slug": "coconut-rice-with-brussels-spr",
   "ingredients": [
     {
+      "raw": "Coconut rice and Brussels sprouts:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup brown jasmine rice or regular jasmine rice*, rinsed",
       "expected": {
         "item": "brown jasmine rice or regular jasmine rice",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "rinsed",
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Pasta & Rice"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "pitted and diced",
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Produce"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,8 +162,13 @@
         "item": "Sriracha and lime wedges",
         "measurements": [],
         "note": "for serving",
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon tamari or soy sauce",
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": "pressed or minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": "diced, or 1/2 teaspoon red pepper flakes",
+        "section": "Sauce",
         "category": "Produce"
       }
     }

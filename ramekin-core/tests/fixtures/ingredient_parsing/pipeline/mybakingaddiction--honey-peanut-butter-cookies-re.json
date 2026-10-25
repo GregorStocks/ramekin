@@ -157,6 +157,10 @@
       }
     },
     {
+      "raw": "For rolling dough balls:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -167,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Rolling Dough Balls",
         "category": "Baking"
       }
     }

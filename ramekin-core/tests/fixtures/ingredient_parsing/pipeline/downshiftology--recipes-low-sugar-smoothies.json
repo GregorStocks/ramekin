@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-low-sugar-smoothies",
   "ingredients": [
     {
+      "raw": "Pineapple Coconut Smoothie:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple Coconut Smoothie",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple Coconut Smoothie",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple Coconut Smoothie",
         "category": "Frozen"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "approx 1 teaspoon minced or chopped",
+        "section": "Pineapple Coconut Smoothie",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Pineapple Coconut Smoothie",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Blackberry Cream Smoothie:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  water",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Cream Smoothie",
         "category": "Beverages"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Cream Smoothie",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Cream Smoothie",
         "category": "Frozen"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Cream Smoothie",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": "optional",
+        "section": "Blackberry Cream Smoothie",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Orange Carrot Smoothie:",
+      "is_section_header": true
     },
     {
       "raw": "1.5  cups  unsweetened almond milk",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Produce"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Other"
       }
     },
@@ -237,8 +265,13 @@
           }
         ],
         "note": "optional",
+        "section": "Orange Carrot Smoothie",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Cucumber Kiwi Smoothie:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  water",
@@ -251,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Beverages"
       }
     },
@@ -265,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Produce"
       }
     },
@@ -279,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Produce"
       }
     },
@@ -293,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Produce"
       }
     },
@@ -307,6 +344,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Produce"
       }
     },
@@ -321,6 +359,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Condiments & Sauces"
       }
     },
@@ -335,8 +374,13 @@
           }
         ],
         "note": "optional",
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Berry Spinach Smoothie:",
+      "is_section_header": true
     },
     {
       "raw": "1  cup  water",
@@ -349,6 +393,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Spinach Smoothie",
         "category": "Beverages"
       }
     },
@@ -363,6 +408,7 @@
           }
         ],
         "note": "strawberries, raspberries, blueberries",
+        "section": "Berry Spinach Smoothie",
         "category": "Frozen"
       }
     },
@@ -377,6 +423,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Spinach Smoothie",
         "category": "Produce"
       }
     },
@@ -391,6 +438,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Spinach Smoothie",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -405,6 +453,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Spinach Smoothie",
         "category": "Produce"
       }
     },
@@ -419,6 +468,7 @@
           }
         ],
         "note": "optional",
+        "section": "Berry Spinach Smoothie",
         "category": "Other"
       }
     }

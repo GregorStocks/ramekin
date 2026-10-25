@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "Gravy:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large onion sliced",
       "expected": {
         "item": "onion",
@@ -125,6 +129,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Canned Goods"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Spices & Seasonings"
       }
     }

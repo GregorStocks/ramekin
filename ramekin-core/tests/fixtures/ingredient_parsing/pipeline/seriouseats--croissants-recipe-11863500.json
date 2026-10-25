@@ -3,6 +3,10 @@
   "recipe_slug": "croissants-recipe-11863500",
   "ingredients": [
     {
+      "raw": "For the Détrempe:",
+      "is_section_header": true
+    },
+    {
       "raw": "752 g all-purpose flour (26 1/2 ounces; 5 3/4 cups plus 2 tablespoons), see notes",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "26 1/2 ounces; 5 3/4 cups plus 2 tablespoons, see notes",
+        "section": "For the Détrempe",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "3 ounces; 1/4 cup plus 3 tablespoons",
+        "section": "For the Détrempe",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "1/2 ounce; 1 tablespoon plus 2 teaspoons",
+        "section": "For the Détrempe",
         "category": "Spices & Seasonings"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "For the Détrempe",
         "category": "Baking"
       }
     },
@@ -97,6 +105,7 @@
           }
         ],
         "note": "about 2 1/2 ounces; 5 tablespoons, cut into 1/4-inch slices, at room temperature",
+        "section": "For the Détrempe",
         "category": "Dairy & Eggs"
       }
     },
@@ -119,6 +128,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Détrempe",
         "category": "Dairy & Eggs"
       }
     },
@@ -141,8 +151,13 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Détrempe",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Laminating:",
+      "is_section_header": true
     },
     {
       "raw": "2 (8-ounce) packages European-style butter (16 ounces; 454 g total), such as Kerrygold or Plugra, divided",
@@ -163,6 +178,7 @@
           }
         ],
         "note": "8-ounce, such as Kerrygold or Plugra, divided",
+        "section": "For Laminating",
         "category": "Dairy & Eggs"
       }
     },
@@ -172,8 +188,13 @@
         "item": "Flour",
         "measurements": [],
         "note": "for dusting",
+        "section": "For Laminating",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Proofing and Baking:",
+      "is_section_header": true
     },
     {
       "raw": "Nonstick cooking spray, for greasing",
@@ -181,6 +202,7 @@
         "item": "Nonstick cooking spray",
         "measurements": [],
         "note": "for greasing",
+        "section": "For Proofing and Baking",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +217,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For Proofing and Baking",
         "category": "Dairy & Eggs"
       }
     }

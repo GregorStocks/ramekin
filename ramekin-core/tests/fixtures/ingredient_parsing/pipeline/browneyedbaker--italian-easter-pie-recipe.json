@@ -3,6 +3,10 @@
   "recipe_slug": "italian-easter-pie-recipe",
   "ingredients": [
     {
+      "raw": "For the Pie Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2½ cups  (312.5 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "cold, cut into 1/4-inch cubes",
+        "section": "For the Pie Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "cold, cut into pieces",
+        "section": "For the Pie Dough",
         "category": "Baking"
       }
     },
@@ -87,8 +96,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Pie Filling:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces  (226.8 g) sweet Italian sausage",
@@ -105,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Pie Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Pie Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Pie Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": "drained and cut into bite-size pieces",
+        "section": "For the Pie Filling",
         "category": "Other"
       }
     },
@@ -209,6 +229,7 @@
           }
         ],
         "note": "drained",
+        "section": "For the Pie Filling",
         "category": "Cheese"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": "about 1 cup, shredded",
+        "section": "For the Pie Filling",
         "category": "Cheese"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": "about 1 cup, shredded",
+        "section": "For the Pie Filling",
         "category": "Cheese"
       }
     },
@@ -271,6 +294,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Cheese"
       }
     },
@@ -285,6 +309,7 @@
           }
         ],
         "note": "lightly beaten with a fork",
+        "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -294,8 +319,13 @@
         "item": "Freshly grated black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Egg Wash:",
+      "is_section_header": true
     },
     {
       "raw": "1   egg yolk",
@@ -308,6 +338,7 @@
           }
         ],
         "note": null,
+        "section": "For the Egg Wash",
         "category": "Dairy & Eggs"
       }
     },
@@ -322,6 +353,7 @@
           }
         ],
         "note": null,
+        "section": "For the Egg Wash",
         "category": "Dairy & Eggs"
       }
     }

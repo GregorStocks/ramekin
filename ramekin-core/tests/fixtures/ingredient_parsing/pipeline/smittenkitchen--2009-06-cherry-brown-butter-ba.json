@@ -3,6 +3,10 @@
   "recipe_slug": "2009-06-cherry-brown-butter-ba",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "7 tablespoons (100 grams) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -81,8 +89,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (100 grams) granulated sugar",
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": "diced",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": "alternately, you can use 12 ounces of the berry of your choice",
+        "section": "Filling",
         "category": "Other"
       }
     }

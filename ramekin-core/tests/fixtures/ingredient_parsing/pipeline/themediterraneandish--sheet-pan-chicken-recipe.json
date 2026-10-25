@@ -171,35 +171,6 @@
       "expanded": true
     },
     {
-      "raw": "1  lemon (zested and juiced)",
-      "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1  lemon (zested and juiced)",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
       "raw": "1 tsp white vinegar",
       "expected": {
         "item": "white vinegar",

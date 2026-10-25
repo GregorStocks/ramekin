@@ -3,6 +3,10 @@
   "recipe_slug": "2024-02-flourless-pistachio-ca",
   "ingredients": [
     {
+      "raw": "For Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups  / 220 g pistachio flour*",
       "expected": {
         "item": "pistachio flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Produce"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -163,8 +176,13 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Ganache Topping:",
+      "is_section_header": true
     },
     {
       "raw": "5 oz  / 140 g 60-70% dark chocolate, finely chopped",
@@ -181,6 +199,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Ganache Topping",
         "category": "Baking"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Ganache Topping",
         "category": "Baking"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache Topping",
         "category": "Dairy & Eggs"
       }
     }

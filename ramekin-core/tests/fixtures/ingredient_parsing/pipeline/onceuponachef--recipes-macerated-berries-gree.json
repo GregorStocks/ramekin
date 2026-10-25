@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-macerated-berries-gree",
   "ingredients": [
     {
+      "raw": "For the Berries:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb strawberries, hulled and halved (or quartered if very large)",
       "expected": {
         "item": "strawberries",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "hulled and halved; or quartered if very large",
+        "section": "For the Berries",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Berries",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Berries",
         "category": "Produce"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For the Berries",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Greek Yogurt Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup granulated sugar",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Greek Yogurt Whipped Cream",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Greek Yogurt Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Greek Yogurt Whipped Cream",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "Gina recommends 0%; I used 2%",
+        "section": "For the Greek Yogurt Whipped Cream",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "magic-bars-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  (227 g) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -67,8 +74,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Bars:",
+      "is_section_header": true
     },
     {
       "raw": "14 ounce  (396.89 ml) can sweetened condensed milk",
@@ -85,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Canned Goods"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Produce"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Baking"
       }
     }

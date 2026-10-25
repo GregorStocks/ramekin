@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-bars-recipe",
   "ingredients": [
     {
+      "raw": "Shortbread Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (16 Tbsp; 226g) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "melted",
+        "section": "Shortbread Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread Crust",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,8 +93,13 @@
           }
         ],
         "note": "spooned & leveled",
+        "section": "Shortbread Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Lemon Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (400g) granulated sugar",
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Filling",
         "category": "Baking"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Filling",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": "about 4 lemons",
+        "section": "Lemon Filling",
         "category": "Produce"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": "optional",
+        "section": "Lemon Filling",
         "category": "Produce"
       }
     },
@@ -176,6 +194,7 @@
         "item": "confectioners’ sugar",
         "measurements": [],
         "note": "optional, for dusting",
+        "section": "Lemon Filling",
         "category": "Baking"
       }
     }

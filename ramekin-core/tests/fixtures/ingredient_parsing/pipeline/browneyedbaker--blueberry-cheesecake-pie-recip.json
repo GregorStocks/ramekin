@@ -3,6 +3,10 @@
   "recipe_slug": "blueberry-cheesecake-pie-recip",
   "ingredients": [
     {
+      "raw": "For the Graham Cracker Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups  (168 g) graham cracker crumbs, about 9 whole graham crackers",
       "expected": {
         "item": "graham cracker crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 9 whole graham crackers",
+        "section": "For the Graham Cracker Crust",
         "category": "Snacks"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Cracker Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Cracker Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Cracker Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,8 +89,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Graham Cracker Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Cheesecake Filling:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
@@ -99,6 +112,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake Filling",
         "category": "Cheese"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Produce"
       }
     },
@@ -159,8 +176,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Blueberry Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups  (296 g) fresh blueberries",
@@ -177,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blueberry Topping",
         "category": "Produce"
       }
     },
@@ -195,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blueberry Topping",
         "category": "Beverages"
       }
     },
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blueberry Topping",
         "category": "Baking"
       }
     },
@@ -231,6 +256,7 @@
           }
         ],
         "note": "whisked into 2 tablespoons water",
+        "section": "For the Blueberry Topping",
         "category": "Baking"
       }
     }

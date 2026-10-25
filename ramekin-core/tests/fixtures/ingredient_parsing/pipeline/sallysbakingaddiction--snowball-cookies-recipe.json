@@ -107,6 +107,10 @@
       }
     },
     {
+      "raw": "Coating:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 and 1/4 cups (150g) confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
@@ -121,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     }

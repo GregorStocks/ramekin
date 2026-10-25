@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-white-bread-recipe",
   "ingredients": [
     {
+      "raw": "Yeast:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ ounce instant yeast (2 ¼ tsp)",
       "expected": {
         "item": "instant yeast",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Yeast",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "lukewarm",
+        "section": "Yeast",
         "category": "Beverages"
       }
     },
@@ -45,8 +51,13 @@
           }
         ],
         "note": null,
+        "section": "Yeast",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Dough:",
+      "is_section_header": true
     },
     {
       "raw": "1 ⅓ cups water (lukewarm)",
@@ -59,6 +70,7 @@
           }
         ],
         "note": "lukewarm",
+        "section": "Dough",
         "category": "Beverages"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": "unsalted, at room temperature, cut into cubes",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": "up to 5 cups",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": "unsalted, melted",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-cake-recipe",
   "ingredients": [
     {
+      "raw": "butterscotch ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup   unsalted Butter (60 g)",
       "expected": {
         "item": "unsalted Butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Baking"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Beverages"
       }
     },
@@ -98,8 +107,13 @@
         "item": "Sea Salt",
         "measurements": [],
         "note": "@ 1 teaspoon (5 g), to taste",
+        "section": "Butterscotch Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "chocolate cake ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups   Sugar (400g)",
@@ -116,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -134,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -152,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -170,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -188,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -206,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -220,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -238,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Other"
       }
     },
@@ -256,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Beverages"
       }
     },
@@ -274,6 +297,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -292,8 +316,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "cream cheese frosting ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup   unsalted Butter (115 g) , room temp.",
@@ -310,6 +339,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -328,6 +358,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Cheese"
       }
     },
@@ -346,6 +377,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Baking"
       }
     },
@@ -364,6 +396,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Baking"
       }
     },
@@ -373,8 +406,13 @@
         "item": "few dashes Orange Bitters",
         "measurements": [],
         "note": "optional",
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Other"
       }
+    },
+    {
+      "raw": "additional ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup   Roasted Peanuts (65g) , roughly chopped",
@@ -391,6 +429,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Additional Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "old-fashioned-salisbury-steak-",
   "ingredients": [
     {
+      "raw": "Salisbury Steak:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground beef 453.3 g",
       "expected": {
         "item": "ground beef 453.3 g",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Salisbury Steak",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Salisbury Steak",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Salisbury Steak",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Salisbury Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Salisbury Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +87,7 @@
         "item": "Sea salt",
         "measurements": [],
         "note": null,
+        "section": "Salisbury Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +97,7 @@
         "item": "Ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Salisbury Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "Salisbury Steak",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons butter unsalted",
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": "peeled and sliced",
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": "peeled and minced",
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Gravy",
         "category": "Other"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Canned Goods"
       }
     },
@@ -199,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Other"
       }
     },
@@ -213,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Other"
       }
     }

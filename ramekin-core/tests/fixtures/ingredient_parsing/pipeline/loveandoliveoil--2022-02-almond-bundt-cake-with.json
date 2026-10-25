@@ -3,6 +3,10 @@
   "recipe_slug": "2022-02-almond-bundt-cake-with",
   "ingredients": [
     {
+      "raw": "For Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 ¼ cups  / 450 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Produce"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -163,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +195,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,8 +214,13 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Amaretto Ganache:",
+      "is_section_header": true
     },
     {
       "raw": "6 oz  / 170 g good quality dark chocolate, finely chopped",
@@ -217,6 +237,7 @@
           }
         ],
         "note": "finely chopped, good quality",
+        "section": "For Amaretto Ganache",
         "category": "Baking"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "For Amaretto Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For Amaretto Ganache",
         "category": "Beverages"
       }
     }

@@ -30,6 +30,10 @@
       }
     },
     {
+      "raw": "To Make Batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup (65 grams) all-purpose flour ( prefer organic or at least unbleached)",
       "expected": {
         "item": "all-purpose flour",
@@ -44,6 +48,7 @@
           }
         ],
         "note": "prefer organic or at least unbleached",
+        "section": "To Make Batter",
         "category": "Baking"
       }
     },
@@ -62,6 +67,7 @@
           }
         ],
         "note": "white corn flour or yellow corn flour",
+        "section": "To Make Batter",
         "category": "Baking"
       }
     },
@@ -76,6 +82,7 @@
           }
         ],
         "note": "less spicy variety, optional",
+        "section": "To Make Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,6 +97,7 @@
           }
         ],
         "note": "crushed or ground",
+        "section": "To Make Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -104,6 +112,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -118,8 +127,13 @@
           }
         ],
         "note": "more if needed",
+        "section": "To Make Batter",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "To Make Gobi Manchurian Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1½ tablespoons oil (for sauce)",
@@ -132,6 +146,7 @@
           }
         ],
         "note": "for sauce",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -146,6 +161,7 @@
           }
         ],
         "note": "fine chopped",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
@@ -160,6 +176,7 @@
           }
         ],
         "note": "fine chopped",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
@@ -174,6 +191,7 @@
           }
         ],
         "note": "optional, chopped",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
@@ -188,6 +206,7 @@
           }
         ],
         "note": "fine chopped - green & white separated",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
@@ -202,6 +221,7 @@
           }
         ],
         "note": "capsicum chopped fine, optional",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
@@ -216,6 +236,7 @@
           }
         ],
         "note": "organic or naturally brewed, or tamari",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -230,6 +251,7 @@
           }
         ],
         "note": "or 2 tbsps hot & sweet sauce, adjust to taste, maggi/chings brand",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Other"
       }
     },
@@ -244,6 +266,7 @@
           }
         ],
         "note": "optional, use if using hot sauce",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -258,6 +281,7 @@
           }
         ],
         "note": "or paprika optional",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -272,6 +296,7 @@
           }
         ],
         "note": "I used apple cider vinegar",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -286,6 +311,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Baking"
       }
     },
@@ -295,6 +321,7 @@
         "item": "salt",
         "measurements": [],
         "note": "as needed",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -309,6 +336,7 @@
           }
         ],
         "note": null,
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Beverages"
       }
     },
@@ -323,6 +351,7 @@
           }
         ],
         "note": "crushed or ground",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -337,6 +366,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -351,6 +381,7 @@
           }
         ],
         "note": "chopped, for garnish",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Other"
       }
     }

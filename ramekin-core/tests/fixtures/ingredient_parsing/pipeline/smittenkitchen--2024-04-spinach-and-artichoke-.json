@@ -3,6 +3,10 @@
   "recipe_slug": "2024-04-spinach-and-artichoke-",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups (260 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "I use Diamond brand kosher salt; use half of other brands",
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "100° to 115°F",
+        "section": "Dough",
         "category": "Beverages"
       }
     },
@@ -77,8 +85,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Spinach Pesto:",
+      "is_section_header": true
     },
     {
       "raw": "2 thick or 3 thin scallions, thinly sliced",
@@ -91,6 +104,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Spinach Pesto",
         "category": "Other"
       }
     },
@@ -105,6 +119,7 @@
           }
         ],
         "note": "minced",
+        "section": "Spinach Pesto",
         "category": "Produce"
       }
     },
@@ -123,6 +138,7 @@
           }
         ],
         "note": "baby spinach is fine",
+        "section": "Spinach Pesto",
         "category": "Produce"
       }
     },
@@ -132,6 +148,7 @@
         "item": "Red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Spinach Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,8 +158,13 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Spinach Pesto",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 14-ounce can quartered artichoke hearts, drained and patted dry",
@@ -155,6 +177,7 @@
           }
         ],
         "note": "drained and patted dry",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -164,6 +187,7 @@
         "item": "Zest and juice from half a lemon",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -182,6 +206,7 @@
           }
         ],
         "note": "as shown here, diced from a block or perlini",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -200,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -218,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     }

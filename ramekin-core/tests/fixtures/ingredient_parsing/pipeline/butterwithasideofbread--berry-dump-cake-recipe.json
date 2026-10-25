@@ -3,6 +3,10 @@
   "recipe_slug": "berry-dump-cake-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 20- oz can Berry pie filling",
       "expected": {
         "item": "Berry pie filling",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "melted",
+        "section": "Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     }

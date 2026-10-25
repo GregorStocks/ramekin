@@ -3,6 +3,10 @@
   "recipe_slug": "tonkotsu-ramen-recipe",
   "ingredients": [
     {
+      "raw": "Tonkotsu Base ( makes 10-12 cups of stock):",
+      "is_section_header": true
+    },
+    {
       "raw": "2  pig trotters (cut in half lengthwise)",
       "expected": {
         "item": "pig trotters",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cut in half lengthwise",
+        "section": "Tonkotsu Base ( Makes 10-12 Cups of Stock)",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "cut into several pieces",
+        "section": "Tonkotsu Base ( Makes 10-12 Cups of Stock)",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkotsu Base ( Makes 10-12 Cups of Stock)",
         "category": "Meat & Seafood"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "Tonkotsu Base ( Makes 10-12 Cups of Stock)",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "trimmed but whole",
+        "section": "Tonkotsu Base ( Makes 10-12 Cups of Stock)",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "sliced thinly",
+        "section": "Tonkotsu Base ( Makes 10-12 Cups of Stock)",
         "category": "Produce"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Tonkotsu Base ( Makes 10-12 Cups of Stock)",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Mayu (black garlic oil):",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup  toasted sesame oil",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Mayu (Black Garlic Oil)",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": "grated",
+        "section": "Mayu (Black Garlic Oil)",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For soup:",
+      "is_section_header": true
     },
     {
       "raw": "3 cups  Tonkotsu base (from recipe above)",
@@ -139,6 +160,7 @@
           }
         ],
         "note": "from recipe above",
+        "section": "For Soup",
         "category": "Other"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For Soup",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For Soup",
         "category": "Other"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": "not pressed, finely grated",
+        "section": "For Soup",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": "to taste",
+        "section": "For Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For Soup",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": "coarsely ground",
+        "section": "For Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,8 +280,13 @@
           }
         ],
         "note": "salted pork fat, finely minced",
+        "section": "For Soup",
         "category": "Other"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "½ batch  fresh ramen noodles",
@@ -265,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Pasta & Rice"
       }
     },
@@ -279,6 +314,7 @@
           }
         ],
         "note": "from recipe above",
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -288,6 +324,7 @@
         "item": "sliced chashu",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -302,6 +339,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "To Serve",
         "category": "Produce"
       }
     }

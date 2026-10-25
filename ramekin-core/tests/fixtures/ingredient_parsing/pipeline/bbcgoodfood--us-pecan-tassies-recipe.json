@@ -3,6 +3,10 @@
   "recipe_slug": "us-pecan-tassies-recipe",
   "ingredients": [
     {
+      "raw": "For the pastry:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup whole pecans",
       "expected": {
         "item": "whole pecans",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pastry",
         "category": "Cheese"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "plus extra for dusting",
+        "section": "For the Pastry",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup whole pecans",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     }

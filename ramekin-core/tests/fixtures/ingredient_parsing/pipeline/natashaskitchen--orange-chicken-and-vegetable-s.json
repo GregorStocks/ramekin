@@ -3,6 +3,10 @@
   "recipe_slug": "orange-chicken-and-vegetable-s",
   "ingredients": [
     {
+      "raw": "Stir-Fry Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 Tbsp cooking Oil, I used extra light olive oil",
       "expected": {
         "item": "cooking Oil, I used extra light olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Stir-Fry Ingredients",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "trimmed and cut into 1\" pieces",
+        "section": "Stir-Fry Ingredients",
         "category": "Meat & Seafood"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "from 1 large head of broccoli",
+        "section": "Stir-Fry Ingredients",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "bases trimmed and cut into 1\" pieces",
+        "section": "Stir-Fry Ingredients",
         "category": "Produce"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "sliced into matchsticks",
+        "section": "Stir-Fry Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup cold water",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "from the same orange",
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "grated",
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
@@ -209,8 +231,13 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Serving/Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Toasted sesame seeds, medium heat 2 minutes, tossing frequently",
@@ -218,6 +245,7 @@
         "item": "Toasted sesame seeds, medium heat 2 minutes, tossing frequently",
         "measurements": [],
         "note": null,
+        "section": "Serving/garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Serving/garnish",
         "category": "Other"
       }
     }

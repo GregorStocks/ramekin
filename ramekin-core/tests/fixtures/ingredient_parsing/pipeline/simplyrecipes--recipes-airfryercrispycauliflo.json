@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-airfryercrispycauliflo",
   "ingredients": [
     {
+      "raw": "For the blue cheese dip:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup Greek yogurt",
       "expected": {
         "item": "Greek yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blue Cheese Dip",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blue Cheese Dip",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blue Cheese Dip",
         "category": "Cheese"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blue Cheese Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For the Blue Cheese Dip",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For the crispy cauliflower:",
+      "is_section_header": true
     },
     {
       "raw": "1 head cauliflower",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Cauliflower",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Cauliflower",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Cauliflower",
         "category": "Beverages"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Cauliflower",
         "category": "Bakery & Bread"
       }
     },
@@ -176,6 +196,7 @@
         "item": "Nonstick spray",
         "measurements": [],
         "note": "for air fryer",
+        "section": "For the Crispy Cauliflower",
         "category": "Oils & Vinegars"
       }
     }

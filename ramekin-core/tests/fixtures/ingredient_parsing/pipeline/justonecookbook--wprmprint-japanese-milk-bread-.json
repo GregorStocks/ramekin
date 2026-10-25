@@ -3,6 +3,10 @@
   "recipe_slug": "wprmprint-japanese-milk-bread-",
   "ingredients": [
     {
+      "raw": "For 1 Rectangular Shokupan Loaf (1.5 kin size):",
+      "is_section_header": true
+    },
+    {
       "raw": "250 g lukewarm water (104ºF / 40ºC; use room temp or cold water in summer; see the Desired Dough Temperature FAQ for details)",
       "expected": {
         "item": "lukewarm water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "104ºF / 40ºC; use room temp or cold water in summer; see the Desired Dough Temperature FAQ for details",
+        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "1 packet (7 g each). I use bread machine yeast stored in the freezer; Do not use yeast more than 6 months old-if in doubt, proof it first; to substitute active dry yeast, use 25% more, proofed in some of the warm water listed above",
+        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "I use King Arthur; do not use organic-see Notes below",
+        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "I use Bob’s Red Mill; for vegan, use coconut milk powder; avoid soy milk powder as the dough does not rise well",
+        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Baking"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": "at room temperature; for vegan, use Miyoko’s",
+        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Greasing:",
+      "is_section_header": true
     },
     {
       "raw": "½ tsp neutral oil (for the bowl)",
@@ -125,6 +141,7 @@
           }
         ],
         "note": "for the bowl",
+        "section": "For Greasing",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": "at room temperature; for the shokupan mold; or use cooking oil spray",
+        "section": "For Greasing",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For 1 Square Shokupan Loaf (1 kin size):",
+      "is_section_header": true
     },
     {
       "raw": "167 g warm water",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Square Shokupan Loaf (1 Kin Size)",
         "category": "Beverages"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Square Shokupan Loaf (1 Kin Size)",
         "category": "Baking"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Square Shokupan Loaf (1 Kin Size)",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Square Shokupan Loaf (1 Kin Size)",
         "category": "Baking"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Square Shokupan Loaf (1 Kin Size)",
         "category": "Baking"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Square Shokupan Loaf (1 Kin Size)",
         "category": "Baking"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Square Shokupan Loaf (1 Kin Size)",
         "category": "Baking"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For 1 Square Shokupan Loaf (1 Kin Size)",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "instant-pot-cinnamon-apple-por",
   "ingredients": [
     {
+      "raw": "Meat and Veggies:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Other"
       }
     },
@@ -36,6 +42,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Meat and Veggies",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Other"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "thickly sliced or chopped",
+        "section": "Meat and Veggies",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meat and Veggies",
         "category": "Produce"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Canned Goods"
       }
     },
@@ -120,8 +132,13 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Rub:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon dried rosemary",
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Baking"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -204,8 +226,13 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon cornstarch",
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

@@ -142,11 +142,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "green onions (chopped)",
       "expected": {
         "item": "green onions",
         "measurements": [],
         "note": "chopped",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -156,6 +161,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,6 +171,7 @@
         "item": "tomatoes",
         "measurements": [],
         "note": "diced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -174,6 +181,7 @@
         "item": "black olives",
         "measurements": [],
         "note": "sliced",
+        "section": "Optional Toppings",
         "category": "Canned Goods"
       }
     }

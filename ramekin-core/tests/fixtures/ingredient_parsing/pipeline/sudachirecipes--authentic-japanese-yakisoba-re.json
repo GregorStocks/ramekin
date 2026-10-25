@@ -3,6 +3,10 @@
   "recipe_slug": "authentic-japanese-yakisoba-re",
   "ingredients": [
     {
+      "raw": "Yakisoba:",
+      "is_section_header": true
+    },
+    {
       "raw": "140 g thinly sliced pork belly leaner option: pork loin",
       "expected": {
         "item": "thinly sliced pork belly leaner option: pork loin",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Yakisoba",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Yakisoba",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,6 +102,7 @@
         "item": "red pickled ginger optional topping",
         "measurements": [],
         "note": "benishoga",
+        "section": "Yakisoba",
         "category": "Other"
       }
     },
@@ -101,6 +112,7 @@
         "item": "bonito flakes optional topping",
         "measurements": [],
         "note": "katsuobushi",
+        "section": "Yakisoba",
         "category": "Other"
       }
     },
@@ -110,8 +122,13 @@
         "item": "aonori optional topping",
         "measurements": [],
         "note": "dried green seaweed powder",
+        "section": "Yakisoba",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Yakisoba Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
@@ -124,6 +141,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -152,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -166,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Beverages"
       }
     },
@@ -180,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -194,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -208,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Baking"
       }
     },
@@ -222,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Spices & Seasonings"
       }
     }

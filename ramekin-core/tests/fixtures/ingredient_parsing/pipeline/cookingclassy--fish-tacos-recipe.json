@@ -124,6 +124,10 @@
       }
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 corn tortillas**,  warmed",
       "expected": {
         "item": "corn tortillas",
@@ -134,6 +138,7 @@
           }
         ],
         "note": "warmed",
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     },
@@ -148,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -162,6 +168,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -176,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -190,8 +198,13 @@
           }
         ],
         "note": "optional",
+        "section": "For Serving",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Fish Taco Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup sour cream",
@@ -204,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Fish Taco Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -218,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Fish Taco Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -232,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Fish Taco Sauce",
         "category": "Produce"
       }
     },
@@ -246,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Fish Taco Sauce",
         "category": "Spices & Seasonings"
       }
     }

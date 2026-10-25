@@ -3,6 +3,10 @@
   "recipe_slug": "pork-katsu-recipe",
   "ingredients": [
     {
+      "raw": "Tonkatsu:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 boneless pork chops rib-end/loin (2-2.5cm, 3/4-1 inch thick), fat-on",
       "expected": {
         "item": "boneless pork chops rib-end/loin, fat-on",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "2-2.5cm, 3/4-1 inch thick",
+        "section": "Tonkatsu",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
         "item": "cooking oil neutral, high smoke point",
         "measurements": [],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Oils & Vinegars"
       }
     },
@@ -45,6 +52,7 @@
         "item": "all-purpose flour",
         "measurements": [],
         "note": "for dusting",
+        "section": "Tonkatsu",
         "category": "Baking"
       }
     },
@@ -59,6 +67,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -87,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Other"
       }
     },
@@ -101,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Tonkatsu Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp Worcestershire sauce Japanese or regular brands",
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu Sauce",
         "category": "Other"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Tonkatsu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu Sauce",
         "category": "Baking"
       }
     },
@@ -171,8 +191,13 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Serving Suggestions:",
+      "is_section_header": true
     },
     {
       "raw": "2 portions cooked Japanese short-grain rice",
@@ -185,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "Serving Suggestions",
         "category": "Pasta & Rice"
       }
     },
@@ -199,6 +225,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Serving Suggestions",
         "category": "Produce"
       }
     },
@@ -213,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Serving Suggestions",
         "category": "Other"
       }
     }

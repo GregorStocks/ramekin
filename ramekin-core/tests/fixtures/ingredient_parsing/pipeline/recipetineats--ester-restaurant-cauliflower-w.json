@@ -3,6 +3,10 @@
   "recipe_slug": "ester-restaurant-cauliflower-w",
   "ingredients": [
     {
+      "raw": "Almond Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup almond meal",
       "expected": {
         "item": "almond meal",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Sauce",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Sauce",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "separated",
+        "section": "Almond Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "or rice vinegar or apple cider vinegar",
+        "section": "Almond Sauce",
         "category": "Other"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Almond Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,8 +102,13 @@
         "item": "Black pepper",
         "measurements": [],
         "note": null,
+        "section": "Almond Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Roasted Cauliflower:",
+      "is_section_header": true
     },
     {
       "raw": "1 large head of cauliflower (Note 1)",
@@ -106,6 +121,7 @@
           }
         ],
         "note": "Note 1",
+        "section": "Roasted Cauliflower",
         "category": "Produce"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Cauliflower",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Cauliflower",
         "category": "Produce"
       }
     },
@@ -143,6 +161,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Roasted Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": "roughly chopped and lightly toasted in a dry frypan",
+        "section": "Roasted Cauliflower",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": "packed",
+        "section": "Roasted Cauliflower",
         "category": "Produce"
       }
     }

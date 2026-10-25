@@ -3,6 +3,10 @@
   "recipe_slug": "bbq-rub-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons brown sugar",
       "expected": {
         "item": "brown sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Spices & Seasonings"
       }
     }

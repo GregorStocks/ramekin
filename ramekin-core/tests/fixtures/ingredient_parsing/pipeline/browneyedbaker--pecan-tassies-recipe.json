@@ -3,6 +3,10 @@
   "recipe_slug": "pecan-tassies-recipe",
   "ingredients": [
     {
+      "raw": "For the Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  (227 g) unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Cheese"
       }
     },
@@ -53,8 +59,13 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1½ cups  (330 g) light brown sugar",
@@ -71,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": "plus more for sprinkling on top",
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     }

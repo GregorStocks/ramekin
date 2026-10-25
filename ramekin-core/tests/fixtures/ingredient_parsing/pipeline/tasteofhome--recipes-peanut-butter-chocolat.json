@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "FILLING:",
+      "is_section_header": true
+    },
+    {
       "raw": "1-3/4 cups half-and-half cream",
       "expected": {
         "item": "half-and-half cream",
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -87,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -101,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,6 +126,7 @@
           }
         ],
         "note": "thawed",
+        "section": "Filling",
         "category": "Frozen"
       }
     },
@@ -133,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -142,6 +151,7 @@
         "item": "Baking cocoa",
         "measurements": [],
         "note": "optional",
+        "section": "Filling",
         "category": "Baking"
       }
     }

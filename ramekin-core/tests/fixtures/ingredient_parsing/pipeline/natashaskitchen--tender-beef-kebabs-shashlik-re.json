@@ -3,6 +3,10 @@
   "recipe_slug": "tender-beef-kebabs-shashlik-re",
   "ingredients": [
     {
+      "raw": "Ingredients for Steak Kabobs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 lbs good quality beef, I used top sirloin, cut into 1 1/2\" pieces",
       "expected": {
         "item": "beef, I used top sirloin",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cut into 1 1/2\" pieces, good quality",
+        "section": "Ingredients for Steak Kabobs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "any color, sliced into 1 1/2\" wide pieces",
+        "section": "Ingredients for Steak Kabobs",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "sliced into 1 1/2\" wide pieces",
+        "section": "Ingredients for Steak Kabobs",
         "category": "Produce"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Kabobs",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Ingredients for Steak Marinade:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup mild olive oil",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "from 2 medium lemons",
+        "section": "Ingredients for Steak Marinade",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "pressed",
+        "section": "Ingredients for Steak Marinade",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "chopped; or 1 Tbsp dry dill weed",
+        "section": "Ingredients for Steak Marinade",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Marinade",
         "category": "Spices & Seasonings"
       }
     }

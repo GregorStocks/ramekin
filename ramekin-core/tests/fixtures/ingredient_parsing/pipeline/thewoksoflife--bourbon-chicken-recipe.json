@@ -3,6 +3,10 @@
   "recipe_slug": "bourbon-chicken-recipe",
   "ingredients": [
     {
+      "raw": "For the chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 pounds boneless skinless chicken thighs or chicken breast (cut into 1-inch chunks)",
       "expected": {
         "item": "boneless skinless chicken thighs or chicken breast",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cut into 1-inch chunks",
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons soy sauce",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "1/4 inch thick and smashed with knife or cleaver",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "mixed with 2 tablespoons water",
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     }

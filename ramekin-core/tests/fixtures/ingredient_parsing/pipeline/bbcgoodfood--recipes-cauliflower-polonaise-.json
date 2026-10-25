@@ -68,6 +68,10 @@
       }
     },
     {
+      "raw": "For the polonaise garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "3  medium eggs",
       "expected": {
         "item": "eggs",
@@ -78,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "For the Polonaise Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -92,6 +97,7 @@
           }
         ],
         "note": "crusts removed",
+        "section": "For the Polonaise Garnish",
         "category": "Other"
       }
     },
@@ -106,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Polonaise Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -120,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Polonaise Garnish",
         "category": "Other"
       }
     }

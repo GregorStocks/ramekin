@@ -3,6 +3,10 @@
   "recipe_slug": "cabbage-carrot-and-cranberry-s",
   "ingredients": [
     {
+      "raw": "Salad Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 medium cabbage",
       "expected": {
         "item": "cabbage",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "sliced into thin strips",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -59,8 +66,13 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups water",
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Other"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": "I used the olive oil",
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     }

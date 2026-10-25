@@ -3,6 +3,10 @@
   "recipe_slug": "2014-03-kale-and-quinoa-salad-",
   "ingredients": [
     {
+      "raw": "Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup uncooked quinoa (or 1 1/2 cups cooked)",
       "expected": {
         "item": "uncooked quinoa",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "or 1 1/2 cups cooked",
+        "section": "Salad",
         "category": "Pasta & Rice"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "very well toasted and cooled",
+        "section": "Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "chopped a bit",
+        "section": "Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "crumbled or finely grated",
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -106,8 +117,13 @@
         "item": "Few gratings of fresh lemon zest",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons olive oil",
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,6 +191,7 @@
         "item": "Just shy of 1 teaspoon honey",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -180,6 +201,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

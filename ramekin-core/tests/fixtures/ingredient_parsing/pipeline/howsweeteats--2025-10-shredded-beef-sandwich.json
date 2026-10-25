@@ -86,6 +86,10 @@
       }
     },
     {
+      "raw": "horseradish sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup sour cream",
       "expected": {
         "item": "sour cream",
@@ -96,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -110,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -124,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -152,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -166,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Produce"
       }
     },
@@ -175,6 +185,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Horseradish Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "caramel-apple-cheesecake-pie-r",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ cup  (126 g) graham cracker crumbs, about 12 full graham crackers",
       "expected": {
         "item": "graham cracker crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 12 full graham crackers",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,8 +74,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Caramel-Pecan Layer:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup  (169.5 g) salted caramel sauce",
@@ -85,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel-Pecan Layer",
         "category": "Condiments & Sauces"
       }
     },
@@ -103,8 +116,13 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel-Pecan Layer",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the Apples:",
+      "is_section_header": true
     },
     {
       "raw": "5 tablespoons   unsalted butter",
@@ -117,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Baking"
       }
     },
@@ -149,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,8 +203,13 @@
           }
         ],
         "note": "peeled, cored and thinly sliced",
+        "section": "For the Apples",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
@@ -199,6 +226,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Cheese"
       }
     },
@@ -217,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
@@ -231,6 +260,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Produce"
       }
     },
@@ -259,8 +290,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup  (178.5 ml) heavy cream",
@@ -277,6 +313,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -291,8 +328,13 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Salted caramel sauce",
@@ -300,6 +342,7 @@
         "item": "Salted caramel sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Condiments & Sauces"
       }
     },
@@ -309,6 +352,7 @@
         "item": "Chopped pecans",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Nuts & Dried Fruit"
       }
     }

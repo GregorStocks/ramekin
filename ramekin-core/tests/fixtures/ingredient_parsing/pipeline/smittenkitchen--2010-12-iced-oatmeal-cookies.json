@@ -240,6 +240,10 @@
       }
     },
     {
+      "raw": "Icing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/4 (9 1/2 ounces or 270 grams) cups powdered sugar",
       "expected": {
         "item": "powdered sugar",
@@ -258,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Baking"
       }
     },
@@ -276,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Dairy & Eggs"
       }
     },
@@ -294,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Spices & Seasonings"
       }
     },
@@ -308,6 +315,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Spices & Seasonings"
       }
     }

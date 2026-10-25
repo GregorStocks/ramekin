@@ -89,11 +89,16 @@
       }
     },
     {
+      "raw": "To serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "Baguette, crackers or chips, for serving",
       "expected": {
         "item": "Baguette, crackers or chips",
         "measurements": [],
         "note": "for serving",
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     }

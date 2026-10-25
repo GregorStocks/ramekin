@@ -3,6 +3,10 @@
   "recipe_slug": "massaman-beef-curry-recipe",
   "ingredients": [
     {
+      "raw": "Massaman Curry Paste:",
+      "is_section_header": true
+    },
+    {
       "raw": "25 grams  dried guajillo chiles (4 chilies)",
       "expected": {
         "item": "dried guajillo chiles",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "4 chilies",
+        "section": "Massaman Curry Paste",
         "category": "Spices & Seasonings"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Massaman Curry Paste",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "1 stalk, finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "1-inch piece, finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "4 leaves, finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "2 very large cloves, finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": "peeled and finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
@@ -127,8 +138,13 @@
           }
         ],
         "note": "3 roots cleaned and finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For curry:",
+      "is_section_header": true
     },
     {
       "raw": "25 grams  tamarind pulp (about 1 tablespoon)",
@@ -145,6 +161,7 @@
           }
         ],
         "note": "about 1 tablespoon",
+        "section": "For Curry",
         "category": "Other"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Beverages"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -187,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -215,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -229,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Oils & Vinegars"
       }
     },
@@ -243,6 +266,7 @@
           }
         ],
         "note": "cut into 1.5-inch cubes",
+        "section": "For Curry",
         "category": "Meat & Seafood"
       }
     },
@@ -257,6 +281,7 @@
           }
         ],
         "note": "13.5 ounce can",
+        "section": "For Curry",
         "category": "Canned Goods"
       }
     },
@@ -271,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Canned Goods"
       }
     },
@@ -285,6 +311,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Condiments & Sauces"
       }
     },
@@ -303,6 +330,7 @@
           }
         ],
         "note": "~2 tablespoons",
+        "section": "For Curry",
         "category": "Baking"
       }
     },
@@ -321,6 +349,7 @@
           }
         ],
         "note": "~1/2 cup",
+        "section": "For Curry",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -335,6 +364,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Produce"
       }
     },
@@ -349,6 +379,7 @@
           }
         ],
         "note": "scrubbed",
+        "section": "For Curry",
         "category": "Produce"
       }
     }

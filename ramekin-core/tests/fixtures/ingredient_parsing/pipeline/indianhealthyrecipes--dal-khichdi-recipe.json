@@ -203,6 +203,10 @@
       }
     },
     {
+      "raw": "optional ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 medium carrot cubed",
       "expected": {
         "item": "carrot",
@@ -213,6 +217,7 @@
           }
         ],
         "note": "cubed",
+        "section": "Optional Ingredients",
         "category": "Produce"
       }
     },
@@ -227,6 +232,7 @@
           }
         ],
         "note": "cut to 1 inch length",
+        "section": "Optional Ingredients",
         "category": "Produce"
       }
     },
@@ -241,6 +247,7 @@
           }
         ],
         "note": "cubed",
+        "section": "Optional Ingredients",
         "category": "Produce"
       }
     }

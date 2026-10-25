@@ -85,6 +85,10 @@
       }
     },
     {
+      "raw": "To Temper:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 to 2 tablespoon ghee or (1 tbsp oil or 2 tbsps butter)",
       "expected": {
         "item": "ghee or",
@@ -95,6 +99,7 @@
           }
         ],
         "note": "1 tbsp oil or 2 tbsps butter",
+        "section": "To Temper",
         "category": "Other"
       }
     },
@@ -109,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Other"
       }
     },
@@ -123,6 +129,7 @@
           }
         ],
         "note": "chopped",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -137,6 +144,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -151,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -165,6 +174,7 @@
           }
         ],
         "note": "hing",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -179,6 +189,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -193,6 +204,7 @@
           }
         ],
         "note": "use up to 3/4 for heat, adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,6 +234,7 @@
           }
         ],
         "note": "more if you want",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -235,6 +249,7 @@
           }
         ],
         "note": "dried fenugreek leaves",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -249,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Other"
       }
     },
@@ -263,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Other"
       }
     }

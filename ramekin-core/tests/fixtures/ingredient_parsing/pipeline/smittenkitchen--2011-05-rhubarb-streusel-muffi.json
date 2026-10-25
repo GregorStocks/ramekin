@@ -3,6 +3,10 @@
   "recipe_slug": "2011-05-rhubarb-streusel-muffi",
   "ingredients": [
     {
+      "raw": "Streusel:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup (31 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,8 +142,13 @@
           }
         ],
         "note": "melted",
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Muffin:",
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": "melted and cooled to lukewarm",
+        "section": "Muffin",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin",
         "category": "Dairy & Eggs"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": "approx. 120 grams, see Note",
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -281,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -295,6 +320,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin",
         "category": "Spices & Seasonings"
       }
     },
@@ -309,6 +335,7 @@
           }
         ],
         "note": "from about 6 to 8 ounces of stalks, in 1/2-inch pieces",
+        "section": "Muffin",
         "category": "Produce"
       }
     }

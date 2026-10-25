@@ -114,6 +114,10 @@
       }
     },
     {
+      "raw": "crunchy cheddar toasts:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -124,6 +128,7 @@
           }
         ],
         "note": null,
+        "section": "Crunchy Cheddar Toasts",
         "category": "Dairy & Eggs"
       }
     },
@@ -138,6 +143,7 @@
           }
         ],
         "note": "sliced into rounds",
+        "section": "Crunchy Cheddar Toasts",
         "category": "Bakery & Bread"
       }
     },
@@ -152,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Crunchy Cheddar Toasts",
         "category": "Cheese"
       }
     }

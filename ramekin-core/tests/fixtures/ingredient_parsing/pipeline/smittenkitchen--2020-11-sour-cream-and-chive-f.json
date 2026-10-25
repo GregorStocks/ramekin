@@ -3,6 +3,10 @@
   "recipe_slug": "2020-11-sour-cream-and-chive-f",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons (90 grams) warm water (about 115°F)",
       "expected": {
         "item": "warm water",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 115°F",
+        "section": "Dough",
         "category": "Beverages"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "from a 1/4-ounce or 7-gram packet",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "melted",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -131,8 +142,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "4 tablespoons (60 grams) unsalted butter, melted",
@@ -149,6 +165,7 @@
           }
         ],
         "note": "melted",
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,6 +220,7 @@
         "item": "Flour",
         "measurements": [],
         "note": "for dusting",
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -214,6 +235,7 @@
           }
         ],
         "note": "plus 1 teaspoon for garnish",
+        "section": "Assembly",
         "category": "Produce"
       }
     }

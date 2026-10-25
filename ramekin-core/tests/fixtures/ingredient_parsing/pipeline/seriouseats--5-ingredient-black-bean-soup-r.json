@@ -129,11 +129,16 @@
       }
     },
     {
+      "raw": "For Serving (Optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "Lime wedges",
       "expected": {
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Produce"
       }
     },
@@ -143,6 +148,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,6 +158,7 @@
         "item": "Cilantro leaves",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Produce"
       }
     },
@@ -161,6 +168,7 @@
         "item": "Sliced scallion",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Produce"
       }
     },
@@ -170,6 +178,7 @@
         "item": "Crumbled cotija cheese",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Cheese"
       }
     }

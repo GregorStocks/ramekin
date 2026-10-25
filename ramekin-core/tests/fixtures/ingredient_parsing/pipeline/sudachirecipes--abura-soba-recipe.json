@@ -3,6 +3,10 @@
   "recipe_slug": "abura-soba-recipe",
   "ingredients": [
     {
+      "raw": "Tare (sauce):",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tsp water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Sauce)",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Sauce)",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Tare (Sauce)",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Sauce)",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Sauce)",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "optional",
+        "section": "Tare (Sauce)",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Sauce)",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Sauce)",
         "category": "Produce"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Tare (Sauce)",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Abura Soba:",
+      "is_section_header": true
     },
     {
       "raw": "2 portions ramen noodles fresh or spaghetti hack",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Abura Soba",
         "category": "Other"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Abura Soba",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Abura Soba",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Abura Soba",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Abura Soba",
         "category": "Other"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Abura Soba",
         "category": "Dairy & Eggs"
       }
     },
@@ -218,6 +241,7 @@
         "item": "seasoned bamboo shoots",
         "measurements": [],
         "note": "menma",
+        "section": "Abura Soba",
         "category": "Other"
       }
     },
@@ -227,6 +251,7 @@
         "item": "narutomaki fish cake",
         "measurements": [],
         "note": "optional",
+        "section": "Abura Soba",
         "category": "Other"
       }
     },
@@ -236,6 +261,7 @@
         "item": "roasted seaweed for sushi to garnish",
         "measurements": [],
         "note": "nori",
+        "section": "Abura Soba",
         "category": "Other"
       }
     },
@@ -245,6 +271,7 @@
         "item": "chili oil to garnish",
         "measurements": [],
         "note": "rayu",
+        "section": "Abura Soba",
         "category": "Other"
       }
     },
@@ -254,6 +281,7 @@
         "item": "rice vinegar to garnish",
         "measurements": [],
         "note": null,
+        "section": "Abura Soba",
         "category": "Other"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "easter-paska-bread-recipe",
   "ingredients": [
     {
+      "raw": "For the Starter:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 envelope Instant Yeast 7 grams",
       "expected": {
         "item": "Instant Yeast 7 grams",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Starter",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Starter",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Starter",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Starter",
         "category": "Other"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For the Starter",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Dough:",
+      "is_section_header": true
     },
     {
       "raw": "6 egg yolks",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "ground",
+        "section": "For the Dough",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,8 +261,13 @@
           }
         ],
         "note": "for brushing",
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg white",
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -279,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Produce"
       }
     }

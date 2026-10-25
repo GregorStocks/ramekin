@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "For making the onigiri:",
+      "is_section_header": true
+    },
+    {
       "raw": "600 g cooked Japanese short-grain rice",
       "expected": {
         "item": "cooked Japanese short-grain rice",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "For Making the Onigiri",
         "category": "Pasta & Rice"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "For Making the Onigiri",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": "nori",
+        "section": "For Making the Onigiri",
         "category": "Other"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2017-11-14-fall-salad-cabbage-",
   "ingredients": [
     {
+      "raw": "For the dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup finely minced shallot",
       "expected": {
         "item": "finely minced shallot",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the salad:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 to 1/2 head of cabbage, thinly sliced",
@@ -83,6 +96,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -120,6 +136,7 @@
         "item": "a few handfuls of other greens: baby kale, arugula, whatever looks good",
         "measurements": [],
         "note": null,
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -129,6 +146,7 @@
         "item": "candied pepitas",
         "measurements": [],
         "note": "optional",
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -138,6 +156,7 @@
         "item": "shaved Manchego",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -147,6 +166,7 @@
         "item": "fresh cracked pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     }

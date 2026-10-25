@@ -3,6 +3,10 @@
   "recipe_slug": "2022-04-blood-orange-brownies-",
   "ingredients": [
     {
+      "raw": "For Blood Orange Curd:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  / 240 g freshly squeezed blood orange juice",
       "expected": {
         "item": "freshly squeezed blood orange juice",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Blood Orange Curd",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "or 2 tablespoons lemon juice",
+        "section": "For Blood Orange Curd",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Blood Orange Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Blood Orange Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "very finely grated/chopped",
+        "section": "For Blood Orange Curd",
         "category": "Produce"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For Blood Orange Curd",
         "category": "Baking"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "For Blood Orange Curd",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Brownies:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  / 113 g (1 stick) unsalted butter",
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownies",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownies",
         "category": "Oils & Vinegars"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -205,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownies",
         "category": "Baking"
       }
     },
@@ -223,6 +244,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Brownies",
         "category": "Baking"
       }
     },
@@ -241,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownies",
         "category": "Baking"
       }
     },
@@ -255,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownies",
         "category": "Spices & Seasonings"
       }
     }

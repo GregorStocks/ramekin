@@ -3,6 +3,10 @@
   "recipe_slug": "2025-09-salmon-aglio-olio",
   "ingredients": [
     {
+      "raw": "lemon parmesan orzo:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Parmesan Orzo",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Parmesan Orzo",
         "category": "Pasta & Rice"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Parmesan Orzo",
         "category": "Canned Goods"
       }
     },
@@ -50,6 +57,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Lemon Parmesan Orzo",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Parmesan Orzo",
         "category": "Cheese"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Parmesan Orzo",
         "category": "Produce"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Lemon Parmesan Orzo",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "salmon:",
+      "is_section_header": true
     },
     {
       "raw": "1 ½ tablespoons dried parsley",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Meat & Seafood"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Oils & Vinegars"
       }
     },
@@ -213,6 +236,7 @@
         "item": "chopped fresh parsley",
         "measurements": [],
         "note": "for topping",
+        "section": "Salmon",
         "category": "Produce"
       }
     }

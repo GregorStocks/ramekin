@@ -138,6 +138,10 @@
       }
     },
     {
+      "raw": "Hamburger Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup ketchup",
       "expected": {
         "item": "ketchup",
@@ -148,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -162,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Hamburger Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +182,7 @@
           }
         ],
         "note": "or wine",
+        "section": "Hamburger Sauce",
         "category": "Beverages"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "hummus-b-tahini-hummus-tahini-",
   "ingredients": [
     {
+      "raw": "For the Hummus:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (14-ounce) can or jar of chickpeas, drained and rinsed well",
       "expected": {
         "item": "or jar of chickpeas",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "14-ounce, drained and rinsed well",
+        "section": "For the Hummus",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "see notes",
+        "section": "For the Hummus",
         "category": "Beverages"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hummus",
         "category": "Condiments & Sauces"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "For the Hummus",
         "category": "Produce"
       }
     },
@@ -81,8 +89,13 @@
           }
         ],
         "note": "plus more as needed; if using table salt, use half as much by volume",
+        "section": "For the Hummus",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Serving:",
+      "is_section_header": true
     },
     {
       "raw": "Cooked chickpeas, toasted pine nuts, finely chopped parsley, paprika, ground cumin (optional)",
@@ -90,6 +103,7 @@
         "item": "Cooked chickpeas, toasted pine nuts, finely chopped parsley, paprika",
         "measurements": [],
         "note": "optional, ground cumin",
+        "section": "For Serving",
         "category": "Canned Goods"
       }
     },
@@ -99,6 +113,7 @@
         "item": "Extra-virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Oils & Vinegars"
       }
     },
@@ -108,6 +123,7 @@
         "item": "Pita",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     },
@@ -117,6 +133,7 @@
         "item": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving",
         "category": "Produce"
       }
     }

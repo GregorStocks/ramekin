@@ -3,6 +3,10 @@
   "recipe_slug": "hummingbird-cupcakes-recipe",
   "ingredients": [
     {
+      "raw": "Dried Pineapple Flowers (garnish):",
+      "is_section_header": true
+    },
+    {
       "raw": "1   whole fresh pineapple",
       "expected": {
         "item": "whole fresh pineapple",
@@ -13,8 +17,13 @@
           }
         ],
         "note": null,
+        "section": "Dried Pineapple Flowers (Garnish)",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Cupcakes:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups  (250 g) all-purpose flour",
@@ -31,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -49,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -67,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Produce"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": "about half of a 20-ounce can, drained",
+        "section": "Cupcakes",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": "toasted and chopped",
+        "section": "Cupcakes",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Produce"
       }
     },
@@ -175,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -207,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -221,8 +241,13 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces  (340.2 g) cream cheese",
@@ -239,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -257,6 +283,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -271,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -289,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

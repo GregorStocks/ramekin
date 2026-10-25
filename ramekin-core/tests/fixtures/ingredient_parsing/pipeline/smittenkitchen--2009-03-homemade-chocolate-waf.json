@@ -127,6 +127,10 @@
       }
     },
     {
+      "raw": "Icebox Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 batch of Chocolate Wafers (recipe above)",
       "expected": {
         "item": "Chocolate Wafers",
@@ -137,6 +141,7 @@
           }
         ],
         "note": "recipe above",
+        "section": "Icebox Cupcakes",
         "category": "Snacks"
       }
     },
@@ -151,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Icebox Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,6 +171,7 @@
           }
         ],
         "note": "adjusted to your preferred sweetness; I like my whipped cream barely sweetened",
+        "section": "Icebox Cupcakes",
         "category": "Other"
       }
     },
@@ -174,6 +181,7 @@
         "item": "A dash of your favorite flavoring or extract",
         "measurements": [],
         "note": "I use about 1/2 teaspoon vanilla",
+        "section": "Icebox Cupcakes",
         "category": "Other"
       }
     }

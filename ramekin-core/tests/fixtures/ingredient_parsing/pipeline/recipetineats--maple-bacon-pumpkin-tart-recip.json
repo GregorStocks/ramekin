@@ -3,6 +3,10 @@
   "recipe_slug": "maple-bacon-pumpkin-tart-recip",
   "ingredients": [
     {
+      "raw": "Tart:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 sheet store bought frozen puff pastry , thawed (25 cm x 25cm / 10\" x 10\")",
       "expected": {
         "item": "store bought frozen puff pastry",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "25 cm x 25cm / 10\" x 10\", thawed",
+        "section": "Tart",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "Note 1",
+        "section": "Tart",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "Note 2",
+        "section": "Tart",
         "category": "Condiments & Sauces"
       }
     },
@@ -50,8 +57,13 @@
         "item": "Oil spray",
         "measurements": [],
         "note": null,
+        "section": "Tart",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Pumpkin:",
+      "is_section_header": true
     },
     {
       "raw": "7 oz / 200g  butternut or Jap pumpkin , peeled and roughly diced into 1.5cm/0.5\" cubes",
@@ -68,6 +80,7 @@
           }
         ],
         "note": "peeled and roughly diced into 1.5cm/0.5\" cubes",
+        "section": "Pumpkin",
         "category": "Produce"
       }
     },
@@ -82,6 +95,7 @@
           }
         ],
         "note": "only required if roasting the pumpkin",
+        "section": "Pumpkin",
         "category": "Oils & Vinegars"
       }
     },
@@ -96,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,6 +120,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Pumpkin",
         "category": "Spices & Seasonings"
       }
     }

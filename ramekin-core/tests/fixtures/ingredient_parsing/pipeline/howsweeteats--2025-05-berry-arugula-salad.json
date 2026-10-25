@@ -133,6 +133,10 @@
       }
     },
     {
+      "raw": "goat cheese vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons red wine vinegar",
       "expected": {
         "item": "red wine vinegar",
@@ -143,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Produce"
       }
     },
@@ -171,6 +177,7 @@
           }
         ],
         "note": "minced",
+        "section": "Goat Cheese Vinaigrette",
         "category": "Produce"
       }
     },
@@ -185,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Produce"
       }
     },
@@ -199,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Baking"
       }
     },
@@ -213,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -222,6 +232,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -250,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Cheese"
       }
     }

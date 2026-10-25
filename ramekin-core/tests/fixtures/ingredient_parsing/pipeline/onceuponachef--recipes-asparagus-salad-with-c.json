@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-asparagus-salad-with-c",
   "ingredients": [
     {
+      "raw": "For the Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 large eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "bottom ends trimmed",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": "for garnish",
+        "section": "For the Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup mayonnaise, best quality such as Hellmann's or Duke's",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "such as Hellmann's or Duke's",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,6 +136,7 @@
         "item": "A few grinds freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Sauce",
         "category": "Other"
       }
     }

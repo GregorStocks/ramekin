@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-raw-coconut-macadamia-",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups raw macadamia nuts",
       "expected": {
         "item": "raw macadamia nuts",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "divided",
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "pitted",
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 cups raw cashews, soaked overnight",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Beverages"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Produce"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": "scraped",
+        "section": "Cheesecake",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 mango, peeled and sliced",
@@ -181,6 +205,7 @@
           }
         ],
         "note": "peeled and sliced",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -246,6 +275,7 @@
         "item": "Coconut flakes",
         "measurements": [],
         "note": "for garnish",
+        "section": "Topping",
         "category": "Baking"
       }
     }

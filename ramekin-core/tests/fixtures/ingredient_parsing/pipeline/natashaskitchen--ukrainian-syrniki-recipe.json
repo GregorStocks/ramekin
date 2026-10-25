@@ -129,11 +129,16 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Fresh fruit or jam, sour cream, powdered sugar; whatever you like!",
       "expected": {
         "item": "Fresh fruit or jam, sour cream, powdered sugar; whatever you like!",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     }

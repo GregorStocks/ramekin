@@ -245,11 +245,16 @@
       }
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Chopped white onion",
       "expected": {
         "item": "Chopped white onion",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -259,6 +264,7 @@
         "item": "Chopped cilantro",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -268,6 +274,7 @@
         "item": "Corn or flour tortillas",
         "measurements": [],
         "note": "warmed",
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     }

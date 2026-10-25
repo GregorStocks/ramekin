@@ -3,6 +3,10 @@
   "recipe_slug": "buttery-garlic-naan-recipe",
   "ingredients": [
     {
+      "raw": "NAAN BREADS:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup warm water",
       "expected": {
         "item": "warm water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Breads",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Breads",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Breads",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Breads",
         "category": "Other"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Breads",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Breads",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "minced",
+        "section": "Naan Breads",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "plus extra for dusting",
+        "section": "Naan Breads",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Naan Breads",
         "category": "Baking"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Naan Breads",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "GARLIC BUTTER TOPPING:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons butter melted",
@@ -153,6 +171,7 @@
           }
         ],
         "note": "melted",
+        "section": "Garlic Butter Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "minced",
+        "section": "Garlic Butter Topping",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Garlic Butter Topping",
         "category": "Produce"
       }
     }

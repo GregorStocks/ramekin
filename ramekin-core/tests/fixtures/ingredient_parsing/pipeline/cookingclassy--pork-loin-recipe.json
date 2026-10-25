@@ -3,6 +3,10 @@
   "recipe_slug": "pork-loin-recipe",
   "ingredients": [
     {
+      "raw": "Roast:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 - 4 lb pork loin*",
       "expected": {
         "item": "pork loin",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Roast",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Roast",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": "divided",
+        "section": "Roast",
         "category": "Oils & Vinegars"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "or 3/4 tsp dried",
+        "section": "Roast",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "or 3/4 tsp dried",
+        "section": "Roast",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": "or 3/4 tsp dried",
+        "section": "Roast",
         "category": "Produce"
       }
     },
@@ -96,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Roast",
         "category": "Produce"
       }
     },
@@ -110,8 +121,13 @@
           }
         ],
         "note": "optional",
+        "section": "Roast",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tbsp butter or olive oil",
@@ -124,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -138,6 +155,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Baking"
       }
     },
@@ -147,6 +165,7 @@
         "item": "Pan drippings from roasting pan",
         "measurements": [],
         "note": null,
+        "section": "Gravy",
         "category": "Other"
       }
     },
@@ -161,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Canned Goods"
       }
     },
@@ -175,6 +195,7 @@
           }
         ],
         "note": "optional",
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     }

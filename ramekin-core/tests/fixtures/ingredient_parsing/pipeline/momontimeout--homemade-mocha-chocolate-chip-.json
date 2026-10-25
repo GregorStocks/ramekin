@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "Mocha Glaze (optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tsp instant coffee",
       "expected": {
         "item": "instant coffee",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Mocha Glaze (Optional)",
         "category": "Beverages"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Mocha Glaze (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Mocha Glaze (Optional)",
         "category": "Baking"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Mocha Glaze (Optional)",
         "category": "Baking"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": "optional",
+        "section": "Mocha Glaze (Optional)",
         "category": "Baking"
       }
     }

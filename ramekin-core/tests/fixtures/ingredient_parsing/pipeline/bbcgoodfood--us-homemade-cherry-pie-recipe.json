@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "For the filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 lbs sweet cherries pitted",
       "expected": {
         "item": "sweet cherries",
@@ -83,6 +87,7 @@
           }
         ],
         "note": "pitted",
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +117,7 @@
           }
         ],
         "note": "plus extra for sprinkling",
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -125,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -139,6 +147,7 @@
           }
         ],
         "note": "beaten",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     }

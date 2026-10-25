@@ -3,6 +3,10 @@
   "recipe_slug": "2019-05-exceptional-grilled-ch",
   "ingredients": [
     {
+      "raw": "Brine:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 quarts cold water",
       "expected": {
         "item": "cold water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "use 2 tablespoons if any other brand",
+        "section": "Brine",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Meat & Seafood"
       }
     },
@@ -64,8 +72,13 @@
         "item": "Oil for grill",
         "measurements": [],
         "note": null,
+        "section": "Brine",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "One of the three vinaigrettes, below",
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Other"
       }
     }

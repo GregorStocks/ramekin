@@ -71,6 +71,10 @@
       }
     },
     {
+      "raw": "My New Favorite Margherita Pizza:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 12-inch round or 9×13 rectangular pizza doughs",
       "expected": {
         "item": "12-inch round or 9×13 rectangular pizza doughs",
@@ -81,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "My New Favorite Margherita Pizza",
         "category": "Other"
       }
     },
@@ -95,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "My New Favorite Margherita Pizza",
         "category": "Canned Goods"
       }
     },
@@ -109,6 +115,7 @@
           }
         ],
         "note": "minced",
+        "section": "My New Favorite Margherita Pizza",
         "category": "Produce"
       }
     },
@@ -123,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "My New Favorite Margherita Pizza",
         "category": "Spices & Seasonings"
       }
     },
@@ -132,6 +140,7 @@
         "item": "Red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "My New Favorite Margherita Pizza",
         "category": "Spices & Seasonings"
       }
     },
@@ -146,6 +155,7 @@
           }
         ],
         "note": "if desired",
+        "section": "My New Favorite Margherita Pizza",
         "category": "Baking"
       }
     },
@@ -160,6 +170,7 @@
           }
         ],
         "note": "sold in plastic, not water, use more if you like your pizza with extra cheese",
+        "section": "My New Favorite Margherita Pizza",
         "category": "Cheese"
       }
     },
@@ -174,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "My New Favorite Margherita Pizza",
         "category": "Cheese"
       }
     },
@@ -188,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "My New Favorite Margherita Pizza",
         "category": "Oils & Vinegars"
       }
     },
@@ -197,6 +210,7 @@
         "item": "Few leaves of fresh basil",
         "measurements": [],
         "note": "torn or sliced",
+        "section": "My New Favorite Margherita Pizza",
         "category": "Produce"
       }
     }

@@ -49,6 +49,10 @@
       }
     },
     {
+      "raw": "For filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 eggs beaten",
       "expected": {
         "item": "eggs",
@@ -59,6 +63,7 @@
           }
         ],
         "note": "beaten",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Cheese"
       }
     },
@@ -87,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -101,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Cheese"
       }
     },
@@ -115,6 +123,7 @@
           }
         ],
         "note": "more for later",
+        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -129,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     }

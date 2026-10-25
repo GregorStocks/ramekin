@@ -3,6 +3,10 @@
   "recipe_slug": "easy-homemade-quiche-recipe",
   "ingredients": [
     {
+      "raw": "Pie Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 & 1/2 cups   (188g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Oils & Vinegars"
       }
     },
@@ -63,8 +70,13 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   cooked broccoli florets",
@@ -77,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -91,6 +104,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -105,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -160,6 +178,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

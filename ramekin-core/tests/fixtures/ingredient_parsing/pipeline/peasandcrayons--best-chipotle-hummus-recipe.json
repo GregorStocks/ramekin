@@ -115,11 +115,16 @@
       }
     },
     {
+      "raw": "TASTY TOPPING OPTIONS: choose your favorites:",
+      "is_section_header": true
+    },
+    {
       "raw": "a hearty drizzle of olive oil  (I used a spicy chili oil one!)",
       "expected": {
         "item": "a hearty drizzle of olive oil",
         "measurements": [],
         "note": "I used a spicy chili oil one!",
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Other"
       }
     },
@@ -129,6 +134,7 @@
         "item": "a light sprinkling of paprika",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Other"
       }
     },
@@ -138,6 +144,7 @@
         "item": "extra chickpeas as a fun garnish",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Other"
       }
     },
@@ -147,6 +154,7 @@
         "item": "minced chipotle pepper for the chipotle lovers out there!",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Other"
       }
     },
@@ -156,6 +164,7 @@
         "item": "hot honey for sweetness and spice",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Other"
       }
     }

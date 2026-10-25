@@ -3,6 +3,10 @@
   "recipe_slug": "2022-11-caramel-apple-entremet",
   "ingredients": [
     {
+      "raw": "For Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ cups  / 190 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": "cold and cut into cubes",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": "cold",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,8 +127,13 @@
           }
         ],
         "note": "as needed",
+        "section": "For Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Caramel Apple layer:",
+      "is_section_header": true
     },
     {
       "raw": "2 large   apples (about 12oz or 340g), peeled, cored, and cut into small 3/8-inch cubes (I recommend one granny smith and one softer, sweeter variety like Gala)",
@@ -139,6 +154,7 @@
           }
         ],
         "note": "about 12oz or 340g, I recommend one granny smith and one softer, sweeter variety like Gala",
+        "section": "For Caramel Apple Layer",
         "category": "Produce"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Produce"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": "gold strength, cut into strips and softened in cold water for at least 5 minutes",
+        "section": "For Caramel Apple Layer",
         "category": "Baking"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Baking"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Baking"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Beverages"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Caramel Apple Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -249,6 +271,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Caramel Apple Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -263,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Spices & Seasonings"
       }
     },
@@ -277,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Spices & Seasonings"
       }
     },
@@ -291,8 +316,13 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Vanilla-Almond Crémeux:",
+      "is_section_header": true
     },
     {
       "raw": "2 sheets   leaf gelatin* (gold strength), cut into strips and softened in cold water for at least 5 minutes",
@@ -305,6 +335,7 @@
           }
         ],
         "note": "gold strength, cut into strips and softened in cold water for at least 5 minutes",
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Baking"
       }
     },
@@ -323,6 +354,7 @@
           }
         ],
         "note": null,
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Dairy & Eggs"
       }
     },
@@ -341,6 +373,7 @@
           }
         ],
         "note": null,
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Dairy & Eggs"
       }
     },
@@ -355,6 +388,7 @@
           }
         ],
         "note": "split and seeds scraped out; or substitute 1 teaspoon vanilla bean paste or extract-add at the end with the almond",
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Spices & Seasonings"
       }
     },
@@ -369,6 +403,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Dairy & Eggs"
       }
     },
@@ -387,6 +422,7 @@
           }
         ],
         "note": "finely chopped, good quality",
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Baking"
       }
     },
@@ -401,8 +437,13 @@
           }
         ],
         "note": null,
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Mascarpone Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup   heavy whipping cream",
@@ -415,6 +456,7 @@
           }
         ],
         "note": null,
+        "section": "For Mascarpone Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -433,6 +475,7 @@
           }
         ],
         "note": null,
+        "section": "For Mascarpone Whipped Cream",
         "category": "Baking"
       }
     },
@@ -447,8 +490,13 @@
           }
         ],
         "note": null,
+        "section": "For Mascarpone Whipped Cream",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "For Apple Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "1   apple, I recommend a softer red variety like Gala, very thinly sliced",
@@ -461,6 +509,7 @@
           }
         ],
         "note": "very thinly sliced",
+        "section": "For Apple Garnish",
         "category": "Produce"
       }
     },
@@ -475,6 +524,7 @@
           }
         ],
         "note": null,
+        "section": "For Apple Garnish",
         "category": "Beverages"
       }
     },
@@ -489,6 +539,7 @@
           }
         ],
         "note": null,
+        "section": "For Apple Garnish",
         "category": "Baking"
       }
     },
@@ -503,6 +554,7 @@
           }
         ],
         "note": null,
+        "section": "For Apple Garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -517,6 +569,7 @@
           }
         ],
         "note": "or use 2 teaspoons lemon juice",
+        "section": "For Apple Garnish",
         "category": "Baking"
       }
     }

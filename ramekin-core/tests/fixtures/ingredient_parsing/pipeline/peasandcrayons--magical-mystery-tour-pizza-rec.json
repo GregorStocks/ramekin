@@ -115,11 +115,16 @@
       }
     },
     {
+      "raw": "OPTIONAL TOPPINGS:",
+      "is_section_header": true
+    },
+    {
       "raw": "crushed red pepper flakes",
       "expected": {
         "item": "crushed red pepper flakes",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +134,7 @@
         "item": "Sriracha chili sauce",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,6 +144,7 @@
         "item": "extra Pesto",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     },
@@ -147,6 +154,7 @@
         "item": "fresh parsley",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

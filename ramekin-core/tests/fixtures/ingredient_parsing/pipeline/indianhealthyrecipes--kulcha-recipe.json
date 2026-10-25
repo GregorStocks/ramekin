@@ -3,6 +3,10 @@
   "recipe_slug": "kulcha-recipe",
   "ingredients": [
     {
+      "raw": "To make the dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2¼ cups (280 grams) organic all-purpose flour   (or 1¼ cup whole wheat flour + 1 cup all-purpose flour)",
       "expected": {
         "item": "organic all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "or 1 1/4 cup whole wheat flour + 1 cup all-purpose flour",
+        "section": "To Make the Dough",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "curd, at room temperature",
+        "section": "To Make the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "+ more as required",
+        "section": "To Make the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Dough",
         "category": "Oils & Vinegars"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Dough",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make the Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Dough",
         "category": "Baking"
       }
     },
@@ -127,8 +138,13 @@
           }
         ],
         "note": "or 1/2 tsp baking powder + 1/2 tsp instant yeast, read notes",
+        "section": "To Make the Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To make the filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon ghee or oil",
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": "2 medium, boiled & grated",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": "grated or crumbled",
+        "section": "To Make the Filling",
         "category": "Cheese"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": "fine chopped",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
@@ -205,6 +225,7 @@
           }
         ],
         "note": "1 medium carrot, grated",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
@@ -219,6 +240,7 @@
           }
         ],
         "note": "fine chopped, omit for kids",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
@@ -233,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
@@ -247,6 +270,7 @@
           }
         ],
         "note": "optional + 1 teaspoon kalonji/ onion seeds",
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -261,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -275,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -289,6 +315,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -303,6 +330,7 @@
           }
         ],
         "note": "omit if you don’t like",
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -317,6 +345,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -331,6 +360,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Make the Filling",
         "category": "Other"
       }
     },
@@ -345,8 +375,13 @@
           }
         ],
         "note": "divided 2+ 2, fine chopped",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To toast:",
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 tablespoons butter  softened or melted",
@@ -359,6 +394,7 @@
           }
         ],
         "note": "softened or melted",
+        "section": "To Toast",
         "category": "Dairy & Eggs"
       }
     }

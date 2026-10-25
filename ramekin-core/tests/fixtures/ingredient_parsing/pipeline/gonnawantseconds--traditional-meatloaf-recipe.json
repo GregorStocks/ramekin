@@ -3,6 +3,10 @@
   "recipe_slug": "traditional-meatloaf-recipe",
   "ingredients": [
     {
+      "raw": "Meatloaf:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 teaspoons vegetable oil",
       "expected": {
         "item": "vegetable oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "chopped fine",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "about 17 crackers, coarsely crushed",
+        "section": "Meatloaf",
         "category": "Snacks"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Other"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -190,8 +207,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup ketchup",
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": "firmly packed",
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -269,6 +296,7 @@
         "item": "hot sauce",
         "measurements": [],
         "note": "to taste",
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     }

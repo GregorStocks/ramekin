@@ -3,6 +3,10 @@
   "recipe_slug": "2023-04-carrot-cake-with-cocon",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "or 2.75 cups, gently packed; start with more to account for trimming and peeling (about 15 ounces)",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": "Diamond brand; use 1 teaspoon of other brands",
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -181,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,8 +210,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (8 ounces or 225 grams) non-dairy or regular cream cheese [see Note]",
@@ -217,6 +237,7 @@
           }
         ],
         "note": "see Note",
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -249,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -263,6 +286,7 @@
           }
         ],
         "note": "replace with additional extract if you don’t have",
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -277,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

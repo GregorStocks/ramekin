@@ -3,6 +3,10 @@
   "recipe_slug": "2021-06-chocolate-covered-stra",
   "ingredients": [
     {
+      "raw": "For Brownie:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons  / 42 g unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Brownie",
         "category": "Other"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
@@ -145,8 +157,13 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Strawberry Mousse:",
+      "is_section_header": true
     },
     {
       "raw": "1¼ teaspoon   unflavored powdered gelatin",
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Baking"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Beverages"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -205,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Baking"
       }
     },
@@ -241,6 +263,7 @@
           }
         ],
         "note": "washed and hulled",
+        "section": "For Strawberry Mousse",
         "category": "Produce"
       }
     },
@@ -255,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Produce"
       }
     },
@@ -273,8 +297,13 @@
           }
         ],
         "note": "cold",
+        "section": "For Strawberry Mousse",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Ganache Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  / 240 g heavy cream",
@@ -291,6 +320,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -309,6 +339,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache Glaze",
         "category": "Baking"
       }
     },
@@ -327,6 +358,7 @@
           }
         ],
         "note": "very finely chopped",
+        "section": "For Ganache Glaze",
         "category": "Other"
       }
     }

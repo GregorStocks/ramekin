@@ -3,6 +3,10 @@
   "recipe_slug": "mongolian-beef-recipe",
   "ingredients": [
     {
+      "raw": "For marinating the beef:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound flank steak (sliced against the grain into 1/4-inch/6mm thick slices)",
       "expected": {
         "item": "flank steak",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sliced against the grain into 1/4-inch/6mm thick slices",
+        "section": "For Marinating the Beef",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "such as vegetable, canola, or avocado oil",
+        "section": "For Marinating the Beef",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "or dry cooking sherry, optional",
+        "section": "For Marinating the Beef",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinating the Beef",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinating the Beef",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinating the Beef",
         "category": "Beverages"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For Marinating the Beef",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup light brown sugar",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "or hot low sodium chicken or beef stock",
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,8 +171,13 @@
           }
         ],
         "note": "optional",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For coating and searing the beef:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup cornstarch",
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For Coating and Searing the Beef",
         "category": "Baking"
       }
     },
@@ -181,8 +205,13 @@
           }
         ],
         "note": null,
+        "section": "For Coating and Searing the Beef",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the rest of the dish:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon ginger (minced)",
@@ -195,6 +224,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -209,6 +239,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Rest of the Dish",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +254,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -237,6 +269,7 @@
           }
         ],
         "note": "white and green parts separated, cut on the diagonal into 2-inch/5cm pieces",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -251,6 +284,7 @@
           }
         ],
         "note": "mixed with 2 tablespoons/30ml water to make a slurry",
+        "section": "For the Rest of the Dish",
         "category": "Baking"
       }
     }

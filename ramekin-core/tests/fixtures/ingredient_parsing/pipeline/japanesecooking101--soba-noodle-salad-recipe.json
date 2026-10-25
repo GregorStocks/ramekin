@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup rice vinegar (60ml)",
       "expected": {
         "item": "rice vinegar",
@@ -101,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -157,6 +165,7 @@
           }
         ],
         "note": "neutral flavored oil",
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -171,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

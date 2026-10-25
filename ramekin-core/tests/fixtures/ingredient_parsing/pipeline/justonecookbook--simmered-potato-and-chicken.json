@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "For the Seasonings:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 Tbsp sake",
       "expected": {
         "item": "sake",
@@ -83,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "For the Seasonings",
         "category": "Beverages"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "For the Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "For the Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "For the Seasonings",
         "category": "Baking"
       }
     },
@@ -139,8 +147,13 @@
           }
         ],
         "note": null,
+        "section": "For the Seasonings",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Slurry:",
+      "is_section_header": true
     },
     {
       "raw": "2 tsp potato starch or cornstarch",
@@ -153,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Slurry",
         "category": "Baking"
       }
     },
@@ -167,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Slurry",
         "category": "Beverages"
       }
     }

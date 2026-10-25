@@ -128,11 +128,16 @@
       }
     },
     {
+      "raw": "Optional ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "dried herbs",
       "expected": {
         "item": "dried herbs",
         "measurements": [],
         "note": null,
+        "section": "Optional Ingredients",
         "category": "Other"
       }
     },
@@ -142,6 +147,7 @@
         "item": "lemon zest or lemon juice",
         "measurements": [],
         "note": null,
+        "section": "Optional Ingredients",
         "category": "Produce"
       }
     },
@@ -151,6 +157,7 @@
         "item": "red pepper chili flakes",
         "measurements": [],
         "note": null,
+        "section": "Optional Ingredients",
         "category": "Other"
       }
     }

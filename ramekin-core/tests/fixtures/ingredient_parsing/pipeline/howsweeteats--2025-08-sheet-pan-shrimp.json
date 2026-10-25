@@ -3,6 +3,10 @@
   "recipe_slug": "2025-08-sheet-pan-shrimp",
   "ingredients": [
     {
+      "raw": "cilantro lime dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons freshly squeezed lime juice",
       "expected": {
         "item": "freshly squeezed lime juice",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced or pressed",
+        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "shrimp and veg:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound peeled and deveined raw jumbo shrimp thawed if frozen",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp and Veg",
         "category": "Other"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp and Veg",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp and Veg",
         "category": "Other"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Shrimp and Veg",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +176,7 @@
         "item": "jasmine rice",
         "measurements": [],
         "note": "for serving",
+        "section": "Shrimp and Veg",
         "category": "Pasta & Rice"
       }
     }

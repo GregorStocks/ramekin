@@ -213,6 +213,10 @@
       }
     },
     {
+      "raw": "Custard Sauce – optional:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups whole milk",
       "expected": {
         "item": "whole milk",
@@ -223,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Sauce – Optional",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Sauce – Optional",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Sauce – Optional",
         "category": "Baking"
       }
     },
@@ -265,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Sauce – Optional",
         "category": "Baking"
       }
     }

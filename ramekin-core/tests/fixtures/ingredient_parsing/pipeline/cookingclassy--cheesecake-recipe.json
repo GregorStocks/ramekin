@@ -3,6 +3,10 @@
   "recipe_slug": "cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups (240g) graham cracker crumbs* (from about 16 sheets)",
       "expected": {
         "item": "graham cracker crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "from about 16 sheets",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -53,8 +59,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Cheesecake Filling:",
+      "is_section_header": true
     },
     {
       "raw": "4 (8 oz) pkgs. cream cheese, softened through or at room temperature (preferably Philadelphia)",
@@ -71,6 +82,7 @@
           }
         ],
         "note": "preferably Philadelphia, softened through or at room temperature",
+        "section": "For the Cheesecake Filling",
         "category": "Cheese"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Baking"
       }
     }

@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "For the sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup chicken stock",
       "expected": {
         "item": "chicken stock",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +219,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -223,6 +234,7 @@
           }
         ],
         "note": "cut into florets and steamed - optional",
+        "section": "For the Sauce",
         "category": "Other"
       }
     }

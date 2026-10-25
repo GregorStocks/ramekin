@@ -3,6 +3,10 @@
   "recipe_slug": "2015-03-cornmeal-fried-pork-ch",
   "ingredients": [
     {
+      "raw": "For the pork chops:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 boneless pork chops (about 3 ounces each)",
       "expected": {
         "item": "boneless pork chops",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 3 ounces each",
+        "section": "For the Pork Chops",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "about",
+        "section": "For the Pork Chops",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,6 +46,7 @@
         "item": "Kosher salt and freshly cracked black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -54,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Baking"
       }
     },
@@ -63,6 +71,7 @@
         "item": "Cayenne pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -72,8 +81,13 @@
         "item": "Canola oil for shallow-frying",
         "measurements": [],
         "note": "or high heat safflower or sunflower, what I used",
+        "section": "For the Pork Chops",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the potatoes:",
+      "is_section_header": true
     },
     {
       "raw": "3 pounds small-to-medium red potatoes",
@@ -86,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Other"
       }
     },
@@ -95,6 +110,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -109,6 +125,7 @@
           }
         ],
         "note": "or 1/2 cup milk plus 1/2 cup heavy cream",
+        "section": "For the Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Cheese"
       }
     },
@@ -149,6 +167,7 @@
           }
         ],
         "note": "diced and chilled",
+        "section": "For the Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Produce"
       }
     },
@@ -172,6 +192,7 @@
         "item": "Freshly ground black or white pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Spices & Seasonings"
       }
     }

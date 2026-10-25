@@ -3,6 +3,10 @@
   "recipe_slug": "2018-12-chocolate-caramel-tart",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup plus 1 tablespoon (70 grams) powdered sugar",
       "expected": {
         "item": "powdered sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "diced",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Caramel filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (400 grams) granulated sugar",
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Filling",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Filling",
         "category": "Beverages"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Filling",
         "category": "Baking"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": "cut into tablespoons",
+        "section": "Caramel Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -207,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -221,8 +241,13 @@
           }
         ],
         "note": null,
+        "section": "Caramel Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Ganache topping:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 grams) heavy cream",
@@ -239,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -257,6 +283,7 @@
           }
         ],
         "note": "Fleming requests your “best quality”, finely chopped",
+        "section": "Ganache Topping",
         "category": "Baking"
       }
     },
@@ -271,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache Topping",
         "category": "Spices & Seasonings"
       }
     }

@@ -49,6 +49,10 @@
       }
     },
     {
+      "raw": "Brown Butter Lime Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -59,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Produce"
       }
     },
@@ -87,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Baking"
       }
     },
@@ -101,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Produce"
       }
     },
@@ -115,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,8 +138,13 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Avocado Salsa:",
+      "is_section_header": true
     },
     {
       "raw": "1 large diced avocado  about 1 cup",
@@ -143,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Other"
       }
     },
@@ -157,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Other"
       }
     },
@@ -171,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Produce"
       }
     },
@@ -185,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Produce"
       }
     },
@@ -199,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Produce"
       }
     },
@@ -213,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Produce"
       }
     },
@@ -227,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Spices & Seasonings"
       }
     }

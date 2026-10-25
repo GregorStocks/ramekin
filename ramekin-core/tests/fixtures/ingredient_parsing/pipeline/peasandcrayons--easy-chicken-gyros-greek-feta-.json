@@ -73,11 +73,16 @@
       }
     },
     {
+      "raw": "EXTRAS:",
+      "is_section_header": true
+    },
+    {
       "raw": "diced or thinly sliced onion",
       "expected": {
         "item": "diced or thinly sliced onion",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
@@ -87,6 +92,7 @@
         "item": "diced or thinly sliced bell pepper",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
@@ -96,6 +102,7 @@
         "item": "sliced olives",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Canned Goods"
       }
     },
@@ -105,6 +112,7 @@
         "item": "fresh parsley to garnish",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
@@ -114,8 +122,13 @@
         "item": "extra crumbled feta cheese I’m guilty of this one! Yum!",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Other"
       }
+    },
+    {
+      "raw": "GREEK FETA SAUCE:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup extra virgin olive oil",
@@ -128,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -142,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -156,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Cheese"
       }
     },
@@ -170,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -184,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Other"
       }
     },
@@ -198,6 +216,7 @@
           }
         ],
         "note": "or 1 tsp fresh",
+        "section": "Greek Feta Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -212,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -226,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -240,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -254,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -268,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Feta Sauce",
         "category": "Other"
       }
     },
@@ -277,6 +301,7 @@
         "item": "black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Greek Feta Sauce",
         "category": "Spices & Seasonings"
       }
     }

@@ -180,6 +180,10 @@
       }
     },
     {
+      "raw": "yogurt blue cheese:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup plain greek yogurt",
       "expected": {
         "item": "plain greek yogurt",
@@ -190,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Yogurt Blue Cheese",
         "category": "Dairy & Eggs"
       }
     },
@@ -204,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Yogurt Blue Cheese",
         "category": "Produce"
       }
     },
@@ -218,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Yogurt Blue Cheese",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Yogurt Blue Cheese",
         "category": "Cheese"
       }
     },
@@ -246,6 +254,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Yogurt Blue Cheese",
         "category": "Produce"
       }
     }

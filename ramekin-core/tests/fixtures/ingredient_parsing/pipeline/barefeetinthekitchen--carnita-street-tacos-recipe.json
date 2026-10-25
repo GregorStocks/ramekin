@@ -87,11 +87,16 @@
       }
     },
     {
+      "raw": "OPTIONAL TOPPINGS:",
+      "is_section_header": true
+    },
+    {
       "raw": "sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,6 +106,7 @@
         "item": "crumbled cotija cheese or shredded cheese of your choice",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -110,6 +116,7 @@
         "item": "hot sauce or salsa",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     }

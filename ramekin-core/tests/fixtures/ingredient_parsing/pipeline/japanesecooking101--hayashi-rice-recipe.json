@@ -3,6 +3,10 @@
   "recipe_slug": "hayashi-rice-recipe",
   "ingredients": [
     {
+      "raw": "Beef Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tsp oil",
       "expected": {
         "item": "oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Broth",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Broth",
         "category": "Meat & Seafood"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Beef Broth",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Beef Broth",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Beef Broth",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Beef Broth",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Beef Broth",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Roux:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup all purpose flour",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Roux",
         "category": "Baking"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "Roux",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Seasonings:",
+      "is_section_header": true
     },
     {
       "raw": "3 Tbsp Worcester sauce",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings",
         "category": "Canned Goods"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings",
         "category": "Beverages"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,8 +280,13 @@
           }
         ],
         "note": null,
+        "section": "Seasonings",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 Tbsp butter",
@@ -265,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -279,6 +314,7 @@
           }
         ],
         "note": "thinly sliced and cut bite size pieces",
+        "section": "Ingredients",
         "category": "Meat & Seafood"
       }
     },
@@ -293,6 +329,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Ingredients",
         "category": "Produce"
       }
     },
@@ -307,6 +344,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Ingredients",
         "category": "Produce"
       }
     },
@@ -316,6 +354,7 @@
         "item": "Steamed Rice",
         "measurements": [],
         "note": null,
+        "section": "Ingredients",
         "category": "Pasta & Rice"
       }
     },
@@ -330,6 +369,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Other"
       }
     }

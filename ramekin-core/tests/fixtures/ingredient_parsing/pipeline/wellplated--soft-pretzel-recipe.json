@@ -3,6 +3,10 @@
   "recipe_slug": "soft-pretzel-recipe",
   "ingredients": [
     {
+      "raw": "For the Soft Pretzels:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ cups warm water 100-110 degrees F",
       "expected": {
         "item": "warm water 100-110 degrees F",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soft Pretzels",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soft Pretzels",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soft Pretzels",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soft Pretzels",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Soft Pretzels",
         "category": "Baking"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Soft Pretzels",
         "category": "Baking"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "For the Soft Pretzels",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For Topping (optional):",
+      "is_section_header": true
     },
     {
       "raw": "1 ½ tablespoons unsalted butter melted",
@@ -119,6 +134,7 @@
           }
         ],
         "note": "melted",
+        "section": "For Topping (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -128,6 +144,7 @@
         "item": "Pretzel salt",
         "measurements": [],
         "note": null,
+        "section": "For Topping (Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,6 +154,7 @@
         "item": "Cinnamon Sugar",
         "measurements": [],
         "note": "I use 1/4 teaspoon cinnamon for each tablespoon sugar",
+        "section": "For Topping (Optional)",
         "category": "Baking"
       }
     },
@@ -146,6 +164,7 @@
         "item": "Finely grated Parmesan + Italian herbs",
         "measurements": [],
         "note": null,
+        "section": "For Topping (Optional)",
         "category": "Other"
       }
     },
@@ -155,6 +174,7 @@
         "item": "Everything bagel seasoning",
         "measurements": [],
         "note": null,
+        "section": "For Topping (Optional)",
         "category": "Other"
       }
     }

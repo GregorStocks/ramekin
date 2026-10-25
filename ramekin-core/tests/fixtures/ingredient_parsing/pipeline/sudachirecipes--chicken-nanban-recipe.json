@@ -77,6 +77,10 @@
       }
     },
     {
+      "raw": "Japanese Tartar Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 small pickled gherkin or fresh cucumber",
       "expected": {
         "item": "pickled gherkin or fresh cucumber",
@@ -87,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Produce"
       }
     },
@@ -101,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Other"
       }
     },
@@ -115,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -143,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Produce"
       }
     },
@@ -157,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Baking"
       }
     },
@@ -185,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Tartar Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,8 +221,13 @@
         "item": "parsley dried or finely chopped fresh",
         "measurements": [],
         "note": "for color",
+        "section": "Japanese Tartar Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Nanbanzu:",
+      "is_section_header": true
     },
     {
       "raw": "3 tbsp Japanese soy sauce (koikuchi shoyu)",
@@ -222,6 +240,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Nanbanzu",
         "category": "Condiments & Sauces"
       }
     },
@@ -236,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Nanbanzu",
         "category": "Oils & Vinegars"
       }
     },
@@ -250,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Nanbanzu",
         "category": "Baking"
       }
     },
@@ -264,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Nanbanzu",
         "category": "Condiments & Sauces"
       }
     },
@@ -278,6 +300,7 @@
           }
         ],
         "note": "deseeded",
+        "section": "Nanbanzu",
         "category": "Other"
       }
     }

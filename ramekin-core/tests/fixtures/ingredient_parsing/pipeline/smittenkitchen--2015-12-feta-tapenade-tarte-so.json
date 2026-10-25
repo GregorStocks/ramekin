@@ -3,6 +3,10 @@
   "recipe_slug": "2015-12-feta-tapenade-tarte-so",
   "ingredients": [
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup sundried tomatoes in oil, drained",
       "expected": {
         "item": "sundried tomatoes in oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "drained",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "or 2 teaspoons chopped fresh oregano leaves; thyme and rosemary would work too",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "plus more to loosen if needed",
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -78,8 +87,13 @@
         "item": "Salt and freshly ground black pepper or red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 packages puffed pastry (leave in fridge overnight to thaw)",
@@ -92,6 +106,7 @@
           }
         ],
         "note": "leave in fridge overnight to thaw",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": "for egg wash, beaten with 1 teaspoon water",
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -120,8 +136,13 @@
           }
         ],
         "note": "optional",
+        "section": "Assembly",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Dip:",
+      "is_section_header": true
     },
     {
       "raw": "6 ounces feta, crumbled",
@@ -134,6 +155,7 @@
           }
         ],
         "note": "crumbled",
+        "section": "Dip",
         "category": "Cheese"
       }
     },
@@ -148,6 +170,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Dip",
         "category": "Cheese"
       }
     },
@@ -162,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Oils & Vinegars"
       }
     },
@@ -176,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Produce"
       }
     },
@@ -185,6 +210,7 @@
         "item": "Coarse or kosher salt",
         "measurements": [],
         "note": "changed from 1/2 teaspoon, which could be overkill if your feta is very salty, to taste",
+        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -194,6 +220,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     }

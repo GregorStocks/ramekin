@@ -3,6 +3,10 @@
   "recipe_slug": "cherry-upside-down-cake-recipe",
   "ingredients": [
     {
+      "raw": "For the Cherry Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 Tbsp unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherry Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Cherry Topping",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": "pitted and halved",
+        "section": "For the Cherry Topping",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Cake:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups all-purpose flour, spoon into measuring cup and scrape off the top",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "softened at room temp",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "separated",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "What you'll need:",
+      "is_section_header": true
     }
   ]
 }

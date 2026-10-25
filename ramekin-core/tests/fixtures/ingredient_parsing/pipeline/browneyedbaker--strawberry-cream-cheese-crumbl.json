@@ -3,6 +3,10 @@
   "recipe_slug": "strawberry-cream-cheese-crumbl",
   "ingredients": [
     {
+      "raw": "Cookie Dough Tart Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons   slivered almonds",
       "expected": {
         "item": "slivered almonds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough Tart Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Cookie Dough Tart Crust",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough Tart Crust",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough Tart Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "cold, cut into 8 pieces",
+        "section": "Cookie Dough Tart Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough Tart Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,8 +119,13 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough Tart Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Almond Crumb Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1¼ cups  (156.25 g) all-purpose flour",
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Crumb Topping",
         "category": "Baking"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Crumb Topping",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Crumb Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Crumb Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Crumb Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Almond Crumb Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -231,8 +252,13 @@
           }
         ],
         "note": "melted",
+        "section": "Almond Crumb Topping",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Strawberry Cream Cheese Filling:",
+      "is_section_header": true
     },
     {
       "raw": "16 ounces  (453.59 g) cream cheese, at room temperature",
@@ -249,6 +275,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Strawberry Cream Cheese Filling",
         "category": "Cheese"
       }
     },
@@ -267,6 +294,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Strawberry Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -285,6 +313,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -303,6 +332,7 @@
           }
         ],
         "note": "quartered if large, rinsed, hulled and halved",
+        "section": "Strawberry Cream Cheese Filling",
         "category": "Produce"
       }
     }

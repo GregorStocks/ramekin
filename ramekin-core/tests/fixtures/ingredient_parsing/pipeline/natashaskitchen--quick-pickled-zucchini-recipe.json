@@ -3,6 +3,10 @@
   "recipe_slug": "quick-pickled-zucchini-recipe",
   "ingredients": [
     {
+      "raw": "Pickled Zucchini Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 - 2 1/4 lb zucchini, 4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
       "expected": {
         "item": "zucchini, 4 medium",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "green zucchini, yellow squash, or light green Mexican zucchini will work",
+        "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "halved",
+        "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Zucchini Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Zucchini Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "3 cups of boiling hot water",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
@@ -153,8 +171,13 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "What you will need:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 gallon jar with lid or heat-proof bowl with tightly fitting lid",
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "What You Will Need",
         "category": "Other"
       }
     }

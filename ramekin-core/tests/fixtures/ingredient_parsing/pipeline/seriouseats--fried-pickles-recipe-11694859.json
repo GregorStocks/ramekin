@@ -3,6 +3,10 @@
   "recipe_slug": "fried-pickles-recipe-11694859",
   "ingredients": [
     {
+      "raw": "For the Bacon Ranch:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 slices thick-cut bacon (about 4 1/2 ounces; 130 g), finely chopped",
       "expected": {
         "item": "thick-cut bacon",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 4 1/2 ounces; 130 g, finely chopped",
+        "section": "For the Bacon Ranch",
         "category": "Meat & Seafood"
       }
     },
@@ -43,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bacon Ranch",
         "category": "Condiments & Sauces"
       }
     },
@@ -65,6 +71,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bacon Ranch",
         "category": "Dairy & Eggs"
       }
     },
@@ -79,6 +86,7 @@
           }
         ],
         "note": "from one 16-ounce jar",
+        "section": "For the Bacon Ranch",
         "category": "Condiments & Sauces"
       }
     },
@@ -93,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bacon Ranch",
         "category": "Produce"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bacon Ranch",
         "category": "Produce"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": "mashed to a paste",
+        "section": "For the Bacon Ranch",
         "category": "Produce"
       }
     },
@@ -135,8 +146,13 @@
           }
         ],
         "note": null,
+        "section": "For the Bacon Ranch",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Pickles:",
+      "is_section_header": true
     },
     {
       "raw": "1 (16-ounce) jar dill pickle chips, drained (see notes)",
@@ -149,6 +165,7 @@
           }
         ],
         "note": "16-ounce, see notes, drained",
+        "section": "For the Pickles",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickles",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickles",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickles",
         "category": "Baking"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": "about 1 ounce; 32 g",
+        "section": "For the Pickles",
         "category": "Baking"
       }
     },
@@ -239,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickles",
         "category": "Spices & Seasonings"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickles",
         "category": "Spices & Seasonings"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickles",
         "category": "Spices & Seasonings"
       }
     },
@@ -281,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickles",
         "category": "Spices & Seasonings"
       }
     },
@@ -295,6 +320,7 @@
           }
         ],
         "note": "plus more as needed; for table salt, use half as much by volume",
+        "section": "For the Pickles",
         "category": "Spices & Seasonings"
       }
     },
@@ -304,6 +330,7 @@
         "item": "Neutral oil",
         "measurements": [],
         "note": "such as peanut or canola, for frying",
+        "section": "For the Pickles",
         "category": "Oils & Vinegars"
       }
     }

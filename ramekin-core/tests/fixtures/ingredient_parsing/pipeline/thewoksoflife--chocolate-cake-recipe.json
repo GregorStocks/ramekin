@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-cake-recipe",
   "ingredients": [
     {
+      "raw": "For the cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons unsalted butter (for greasing the pans)",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "for greasing the pans",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "plus more for pans",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "Hershey's Special Dark is especially good for this recipe!",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "shaken; If you don't have buttermilk, feel free to substitute 1 cup milk plus 1 tablespoon distilled white vinegar or lemon juice. I've gotten great results creating this substitution with skim milk, 2%, whole, or even half and half!",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -167,8 +182,13 @@
           }
         ],
         "note": "the stronger the better",
+        "section": "For the Cake",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the chocolate frosting:",
+      "is_section_header": true
     },
     {
       "raw": "6 ounces semisweet or bittersweet chocolate (baking chocolate or chocolate chips are both fine)",
@@ -181,6 +201,7 @@
           }
         ],
         "note": "baking chocolate or chocolate chips are both fine",
+        "section": "For the Chocolate Frosting",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Chocolate Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Chocolate Frosting",
         "category": "Other"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Frosting",
         "category": "Baking"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Frosting",
         "category": "Baking"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Chocolate Frosting",
         "category": "Beverages"
       }
     }

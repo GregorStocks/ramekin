@@ -3,6 +3,10 @@
   "recipe_slug": "2015-03-red-bean-and-green-gra",
   "ingredients": [
     {
+      "raw": "Grains:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 fresh poblano chile peppers, seeded and roughly chopped",
       "expected": {
         "item": "fresh poblano chile peppers",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "seeded and roughly chopped",
+        "section": "Grains",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "picked from 1 bunch",
+        "section": "Grains",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "I save the last 1/4 to finely mince as a topping, roughly chopped",
+        "section": "Grains",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Grains",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "amount needed for wheat berries, adjust if needed",
+        "section": "Grains",
         "category": "Beverages"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Grains",
         "category": "Other"
       }
     },
@@ -92,8 +102,13 @@
         "item": "Salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Grains",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Beans:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon olive oil",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "minced",
+        "section": "Beans",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Beans",
         "category": "Other"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Canned Goods"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Beverages"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": "from a 15-ounce can, or cooked from about 1/4 pound dried",
+        "section": "Beans",
         "category": "Other"
       }
     },
@@ -213,6 +236,7 @@
         "item": "Kosher or coarse salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Beans",
         "category": "Spices & Seasonings"
       }
     }

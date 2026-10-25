@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-sugar-cookies-recipe-118",
   "ingredients": [
     {
+      "raw": "For the Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "270g granulated sugar (9 1/2 ounces; 1 1/4 cups)",
       "expected": {
         "item": "granulated sugar",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "divided, packed",
+        "section": "For the Cookies",
         "category": "Produce"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -111,6 +120,7 @@
           }
         ],
         "note": "about 11 1/4 ounces; 2 1/2 cups",
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -139,8 +150,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "140g sifted powdered sugar (about 5 ounces; 1 1/2 cups)",
@@ -161,6 +177,7 @@
           }
         ],
         "note": "about 5 ounces; 1 1/2 cups",
+        "section": "For the Glaze",
         "category": "Other"
       }
     },
@@ -175,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Other"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -198,6 +217,7 @@
         "item": "Lemon zest",
         "measurements": [],
         "note": "for garnish",
+        "section": "For the Glaze",
         "category": "Produce"
       }
     }

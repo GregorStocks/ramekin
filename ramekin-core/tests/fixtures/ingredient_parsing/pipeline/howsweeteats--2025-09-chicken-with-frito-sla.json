@@ -3,6 +3,10 @@
   "recipe_slug": "2025-09-chicken-with-frito-sla",
   "ingredients": [
     {
+      "raw": "frito slaw:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 small head green cabbage, very thinly sliced",
       "expected": {
         "item": "green cabbage",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "very thinly sliced",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "diced",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "diced",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Frito Slaw",
         "category": "Canned Goods"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "I use a steamfresh bag, cooked if frozen",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
@@ -115,8 +126,13 @@
           }
         ],
         "note": null,
+        "section": "Frito Slaw",
         "category": "Other"
       }
+    },
+    {
+      "raw": "creamy cilantro lime dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups fresh cilantro",
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Baking"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -208,8 +230,13 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "chicken:",
+      "is_section_header": true
     },
     {
       "raw": "1 ½ pounds chicken thighs",
@@ -222,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -236,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -245,6 +274,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -259,6 +289,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,6 +304,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,6 +319,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     }

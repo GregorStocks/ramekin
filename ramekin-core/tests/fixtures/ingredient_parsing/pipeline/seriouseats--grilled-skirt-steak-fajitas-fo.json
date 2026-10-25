@@ -3,6 +3,10 @@
   "recipe_slug": "grilled-skirt-steak-fajitas-fo",
   "ingredients": [
     {
+      "raw": "For the Steak Fajita Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (120 ml) soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak Fajita Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "from 6 to 8 limes",
+        "section": "For the Steak Fajita Marinade",
         "category": "Produce"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak Fajita Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Steak Fajita Marinade",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Steak Fajita Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": "about 1 tablespoon, finely minced",
+        "section": "For the Steak Fajita Marinade",
         "category": "Produce"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak Fajita Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak Fajita Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,8 +161,13 @@
           }
         ],
         "note": "about 1 whole steak; see note",
+        "section": "For the Steak Fajita Marinade",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For the Fajitas:",
+      "is_section_header": true
     },
     {
       "raw": "1 large red bell pepper, stemmed, seeded, and cut into 1/2-inch-wide strips",
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fajitas",
         "category": "Produce"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fajitas",
         "category": "Produce"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fajitas",
         "category": "Produce"
       }
     },
@@ -205,6 +225,7 @@
           }
         ],
         "note": "cut into 1/2-inch slices",
+        "section": "For the Fajitas",
         "category": "Produce"
       }
     },
@@ -219,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fajitas",
         "category": "Bakery & Bread"
       }
     },
@@ -233,6 +255,7 @@
           }
         ],
         "note": "for serving, if desired",
+        "section": "For the Fajitas",
         "category": "Condiments & Sauces"
       }
     },
@@ -247,6 +270,7 @@
           }
         ],
         "note": "for serving, if desired",
+        "section": "For the Fajitas",
         "category": "Condiments & Sauces"
       }
     },
@@ -256,6 +280,7 @@
         "item": "Sour cream, shredded cheese, and salsa",
         "measurements": [],
         "note": "for serving, if desired",
+        "section": "For the Fajitas",
         "category": "Dairy & Eggs"
       }
     }

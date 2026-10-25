@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "For shrimp & pork:",
+      "is_section_header": true
+    },
+    {
       "raw": "130 grams  small shrimp (peeled and deveined)",
       "expected": {
         "item": "small shrimp",
@@ -27,6 +31,7 @@
           }
         ],
         "note": "peeled and deveined",
+        "section": "For Shrimp & Pork",
         "category": "Meat & Seafood"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": "sliced into strips",
+        "section": "For Shrimp & Pork",
         "category": "Meat & Seafood"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp & Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp & Pork",
         "category": "Beverages"
       }
     },
@@ -83,8 +91,13 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp & Pork",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For sauce:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup  low sodium chicken stock",
@@ -97,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,8 +140,13 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For eggs:",
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons  vegetable oil",
@@ -139,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "For Eggs",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,8 +174,13 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For Eggs",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For stir-fry:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons  vegetable oil",
@@ -167,6 +193,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +208,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -195,6 +223,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -213,6 +242,7 @@
           }
         ],
         "note": "1/2 medium, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -227,6 +257,7 @@
           }
         ],
         "note": "1/2 pepper, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -241,6 +272,7 @@
           }
         ],
         "note": "1/2 pepper, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -255,6 +287,7 @@
           }
         ],
         "note": "julienned",
+        "section": "For Stir-Fry",
         "category": "Canned Goods"
       }
     },
@@ -269,6 +302,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -283,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -297,6 +332,7 @@
           }
         ],
         "note": "finely chopped, for garnish",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     }

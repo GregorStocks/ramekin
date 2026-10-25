@@ -3,6 +3,10 @@
   "recipe_slug": "green-bean-stir-fry-recipe",
   "ingredients": [
     {
+      "raw": "For Pork:",
+      "is_section_header": true
+    },
+    {
       "raw": "200 grams  ground pork",
       "expected": {
         "item": "ground pork",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Baking"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For green beans:",
+      "is_section_header": true
     },
     {
       "raw": "vegetable oil (for frying)",
@@ -78,6 +91,7 @@
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For Green Beans",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,8 +106,13 @@
           }
         ],
         "note": "trimmed and cut into 2-inch pieces",
+        "section": "For Green Beans",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Stir-fry:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon  vegetable oil",
@@ -106,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +140,7 @@
           }
         ],
         "note": "2 large cloves minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -134,6 +155,7 @@
           }
         ],
         "note": "fermented black beans, finely minced",
+        "section": "For Stir-Fry",
         "category": "Other"
       }
     },
@@ -148,6 +170,7 @@
           }
         ],
         "note": "chili bean paste",
+        "section": "For Stir-Fry",
         "category": "Condiments & Sauces"
       }
     },
@@ -162,6 +185,7 @@
           }
         ],
         "note": "thinly sliced for garnish",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     }

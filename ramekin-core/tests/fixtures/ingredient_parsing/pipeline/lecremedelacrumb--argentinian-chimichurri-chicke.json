@@ -31,6 +31,10 @@
       }
     },
     {
+      "raw": "marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup  olive oil",
       "expected": {
         "item": "olive oil",
@@ -41,6 +45,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +60,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -69,6 +75,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-skirtsteakwithavocadoc",
   "ingredients": [
     {
+      "raw": "For the avocado chimichurri sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup cilantro leaves, packed",
       "expected": {
         "item": "cilantro leaves",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": "diced, about 1 cup",
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the skirt steak:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound skirt steak",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skirt Steak",
         "category": "Meat & Seafood"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skirt Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skirt Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skirt Steak",
         "category": "Oils & Vinegars"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2024-12-chicken-meatball-and-n",
   "ingredients": [
     {
+      "raw": "Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large egg",
       "expected": {
         "item": "egg",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Beverages"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,6 +106,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -114,6 +125,7 @@
           }
         ],
         "note": "such as panko",
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -128,8 +140,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Soup and assembly:",
+      "is_section_header": true
     },
     {
       "raw": "6 ounces (170 grams) soup noodles of your choice (I choose these)",
@@ -146,6 +163,7 @@
           }
         ],
         "note": "I choose these",
+        "section": "Soup and Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -164,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Soup and Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -178,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Soup and Assembly",
         "category": "Produce"
       }
     },
@@ -192,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Soup and Assembly",
         "category": "Produce"
       }
     },
@@ -206,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Soup and Assembly",
         "category": "Produce"
       }
     },
@@ -220,6 +242,7 @@
           }
         ],
         "note": "950ml to 1.4l",
+        "section": "Soup and Assembly",
         "category": "Canned Goods"
       }
     },
@@ -229,6 +252,7 @@
         "item": "Minced parsley and/or dill to finish",
         "measurements": [],
         "note": null,
+        "section": "Soup and Assembly",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "spaghetti-and-meatballs-recipe",
   "ingredients": [
     {
+      "raw": "Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "torn into small pieces",
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "grated",
+        "section": "Meatballs",
         "category": "Cheese"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -167,8 +182,13 @@
           }
         ],
         "note": "beaten",
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons olive oil",
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "28-ounce",
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,8 +336,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Pasta:",
+      "is_section_header": true
     },
     {
       "raw": "16 ounces spaghetti, cooked per package instructions",
@@ -321,6 +355,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Pasta & Rice"
       }
     }

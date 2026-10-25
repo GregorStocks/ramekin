@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 Tbsp green onions",
       "expected": {
         "item": "green onions",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": "optional",
+        "section": "Garnish",
         "category": "Spices & Seasonings"
       }
     }

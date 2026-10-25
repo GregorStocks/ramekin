@@ -3,6 +3,10 @@
   "recipe_slug": "berry-chantilly-cake-recipe",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "12 tablespoons unsalted butter at room temperature",
       "expected": {
         "item": "unsalted butter at room temperature",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Simple Syrup:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons vanilla simple syrup",
@@ -153,8 +171,13 @@
           }
         ],
         "note": null,
+        "section": "Simple Syrup",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Jelly Layer:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup seedless raspberry jam",
@@ -167,8 +190,13 @@
           }
         ],
         "note": null,
+        "section": "Jelly Layer",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Fruit for Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup strawberries hulled, cut into chunks the size of the raspberries",
@@ -181,6 +209,7 @@
           }
         ],
         "note": "hulled, cut into chunks the size of the raspberries",
+        "section": "Fruit for Filling",
         "category": "Produce"
       }
     },
@@ -195,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit for Filling",
         "category": "Produce"
       }
     },
@@ -209,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit for Filling",
         "category": "Produce"
       }
     },
@@ -223,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit for Filling",
         "category": "Beverages"
       }
     },
@@ -237,8 +269,13 @@
           }
         ],
         "note": null,
+        "section": "Fruit for Filling",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Apricot Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup apricot jam",
@@ -251,6 +288,7 @@
           }
         ],
         "note": null,
+        "section": "Apricot Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,8 +303,13 @@
           }
         ],
         "note": null,
+        "section": "Apricot Glaze",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Chantilly Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "2  cups heavy cream",
@@ -279,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -293,6 +337,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Frosting",
         "category": "Baking"
       }
     },
@@ -307,6 +352,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Frosting",
         "category": "Cheese"
       }
     },
@@ -321,6 +367,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Frosting",
         "category": "Other"
       }
     },
@@ -335,6 +382,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Frosting",
         "category": "Baking"
       }
     }

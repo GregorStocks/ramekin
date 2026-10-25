@@ -32,64 +32,6 @@
       "expanded": true
     },
     {
-      "raw": "2 large limes (zested and juiced (about ¼ cup juice and 1 teaspoon zest))",
-      "expected": {
-        "item": "lime zest",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "large limes"
-          }
-        ],
-        "note": "about 1/4 cup juice and 1 teaspoon zest",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "2 large limes (zested and juiced (about ¼ cup juice and 1 teaspoon zest))",
-      "expected": {
-        "item": "lime juice",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "large limes"
-          }
-        ],
-        "note": "about 1/4 cup juice and 1 teaspoon zest",
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1-2 large lemons (zested and juiced (about ¼ cup juice and 1 teaspoon zest))",
-      "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "1-2",
-            "unit": "large lemons"
-          }
-        ],
-        "note": "about 1/4 cup juice and 1 teaspoon zest",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1-2 large lemons (zested and juiced (about ¼ cup juice and 1 teaspoon zest))",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "1-2",
-            "unit": "large lemons"
-          }
-        ],
-        "note": "about 1/4 cup juice and 1 teaspoon zest",
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
       "raw": "1-2 large lemons (zested and juiced (about ¼ cup juice and 1 teaspoon zest))",
       "expected": {
         "item": "lemon zest",

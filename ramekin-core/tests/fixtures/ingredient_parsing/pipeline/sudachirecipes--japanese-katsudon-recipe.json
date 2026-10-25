@@ -3,6 +3,10 @@
   "recipe_slug": "japanese-katsudon-recipe",
   "ingredients": [
     {
+      "raw": "For the Katsu:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 boneless pork chop",
       "expected": {
         "item": "boneless pork chop",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Bakery & Bread"
       }
     },
@@ -106,8 +117,13 @@
         "item": "cooking oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Katsu",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Katsudon:",
+      "is_section_header": true
     },
     {
       "raw": "5 g dried kelp (kombu)",
@@ -120,6 +136,7 @@
           }
         ],
         "note": "kombu",
+        "section": "Katsudon",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Beverages"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Baking"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Other"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Katsudon",
         "category": "Condiments & Sauces"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Other"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Pasta & Rice"
       }
     },
@@ -241,6 +266,7 @@
         "item": "Japanese wild parsley optional to garnish",
         "measurements": [],
         "note": "mitsuba",
+        "section": "Katsudon",
         "category": "Other"
       }
     }

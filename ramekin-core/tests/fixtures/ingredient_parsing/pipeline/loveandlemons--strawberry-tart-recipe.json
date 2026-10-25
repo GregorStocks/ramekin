@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Strawberry Tart:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons coconut oil, solid, plus more for greasing the pan",
       "expected": {
         "item": "coconut oil, solid",
@@ -97,6 +101,7 @@
           }
         ],
         "note": "plus more for greasing the pan",
+        "section": "Strawberry Tart",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Tart",
         "category": "Baking"
       }
     },
@@ -125,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Tart",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Tart",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Tart",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +176,7 @@
           }
         ],
         "note": "recipe above",
+        "section": "Strawberry Tart",
         "category": "Other"
       }
     },
@@ -181,6 +191,7 @@
           }
         ],
         "note": "halved",
+        "section": "Strawberry Tart",
         "category": "Produce"
       }
     }

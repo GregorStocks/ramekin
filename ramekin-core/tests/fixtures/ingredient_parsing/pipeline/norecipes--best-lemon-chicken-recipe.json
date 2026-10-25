@@ -3,6 +3,10 @@
   "recipe_slug": "best-lemon-chicken-recipe",
   "ingredients": [
     {
+      "raw": "for chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "350 grams  boneless skin-on chicken thighs (cut into 1 ½-inch pieces)",
       "expected": {
         "item": "boneless skin-on chicken thighs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cut into 1 1/2-inch pieces",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
         "item": "ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Baking"
       }
     },
@@ -73,8 +82,13 @@
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "for sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon  lemon zest (from 1 lemon)",
@@ -87,6 +101,7 @@
           }
         ],
         "note": "from 1 lemon",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": "or water",
+        "section": "For Sauce",
         "category": "Beverages"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
@@ -171,8 +191,13 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "for garnish:",
+      "is_section_header": true
     },
     {
       "raw": "sesame seeds",
@@ -180,6 +205,7 @@
         "item": "sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "For Garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +215,7 @@
         "item": "scallions",
         "measurements": [],
         "note": null,
+        "section": "For Garnish",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2014-11-pretzel-parker-house-r",
   "ingredients": [
     {
+      "raw": "Rolls:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup plus 2 tablespoons (205 ml) milk",
       "expected": {
         "item": "milk",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Rolls",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Rolls",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "half a 1/4-ounce or 7-gram packet",
+        "section": "Rolls",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "melted, plus extra to coat bowl",
+        "section": "Rolls",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "plus extra for dusting",
+        "section": "Rolls",
         "category": "Baking"
       }
     },
@@ -103,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "Rolls",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) water",
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Beverages"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": "see Notes below",
+        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": "beaten with 1 teaspoon water",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -158,6 +175,7 @@
         "item": "Pretzel salt, coarse salt or sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-black-forest-sundaes-b",
   "ingredients": [
     {
+      "raw": "For the ice cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "568ml pot  single cream",
       "expected": {
         "item": "pot single cream",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Baking"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "70% cocoa, plus extra to decorate",
+        "section": "For the Ice Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the cherry sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1⁄2 400g can  cherries",
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherry Sauce",
         "category": "Produce"
       }
     },
@@ -101,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cherry Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "148ml double cream",
@@ -115,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Baking"
       }
     },
@@ -143,8 +164,13 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the brownies:",
+      "is_section_header": true
     },
     {
       "raw": "200g butter",
@@ -157,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Baking"
       }
     },
@@ -185,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Baking"
       }
     },
@@ -199,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Baking"
       }
     },
@@ -227,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Baking"
       }
     },
@@ -241,6 +273,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownies",
         "category": "Baking"
       }
     }

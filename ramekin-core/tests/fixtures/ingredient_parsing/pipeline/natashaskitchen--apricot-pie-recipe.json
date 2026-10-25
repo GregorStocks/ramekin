@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "For the Pie Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 lbs fresh ripe apricots, pitted and sliced into 1/2\" thick slices",
       "expected": {
         "item": "fresh ripe apricots",
@@ -27,6 +31,7 @@
           }
         ],
         "note": "pitted and sliced into 1/2\" thick slices",
+        "section": "For the Pie Filling",
         "category": "Other"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Baking"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Baking"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +106,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Egg wash:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg whisked together with 1 Tbsp cold water",
@@ -111,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "For the Egg Wash",
         "category": "Other"
       }
     }

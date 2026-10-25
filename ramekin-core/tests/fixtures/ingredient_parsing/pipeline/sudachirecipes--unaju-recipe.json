@@ -3,6 +3,10 @@
   "recipe_slug": "unaju-recipe",
   "ingredients": [
     {
+      "raw": "Unagi Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tbsp turbinado sugar (zarame) light brown with coarse texture",
       "expected": {
         "item": "turbinado sugar light brown with coarse texture",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "zarame",
+        "section": "Unagi Sauce",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Sauce",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Sauce",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Unagi Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Unagi don:",
+      "is_section_header": true
     },
     {
       "raw": "300 g filleted eels 1 fillet is approx 150g",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Don",
         "category": "Other"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Don",
         "category": "Beverages"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Don",
         "category": "Other"
       }
     },
@@ -120,6 +136,7 @@
         "item": "Japanese sansho pepper",
         "measurements": [],
         "note": "optional",
+        "section": "Unagi Don",
         "category": "Other"
       }
     }

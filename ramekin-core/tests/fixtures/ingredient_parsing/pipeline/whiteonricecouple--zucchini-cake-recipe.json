@@ -3,6 +3,10 @@
   "recipe_slug": "zucchini-cake-recipe",
   "ingredients": [
     {
+      "raw": "Zucchini Cake Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound   (455g) zucchini , grated",
       "expected": {
         "item": "zucchini",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "grated",
+        "section": "Zucchini Cake Ingredients",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,6 +188,7 @@
           }
         ],
         "note": "packed",
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -193,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -211,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -220,6 +236,7 @@
         "item": "finely grated zest from 2 medium lemons",
         "measurements": [],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Other"
       }
     },
@@ -238,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Produce"
       }
     },
@@ -256,8 +274,13 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Lemon Frosting Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces   (340g) cream cheese , at room temperature",
@@ -274,6 +297,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Lemon Frosting Ingredients",
         "category": "Cheese"
       }
     },
@@ -296,6 +320,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Lemon Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -314,6 +339,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Frosting Ingredients",
         "category": "Baking"
       }
     },
@@ -323,6 +349,7 @@
         "item": "finely grated zest from 1 medium lemon",
         "measurements": [],
         "note": null,
+        "section": "Lemon Frosting Ingredients",
         "category": "Produce"
       }
     },
@@ -337,6 +364,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Frosting Ingredients",
         "category": "Produce"
       }
     },
@@ -351,6 +379,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Frosting Ingredients",
         "category": "Baking"
       }
     }

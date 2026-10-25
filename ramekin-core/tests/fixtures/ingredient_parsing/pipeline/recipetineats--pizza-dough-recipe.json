@@ -111,6 +111,10 @@
       }
     },
     {
+      "raw": "For Working:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp Extra Flour",
       "expected": {
         "item": "Extra Flour",
@@ -121,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "For Working",
         "category": "Other"
       }
     },
@@ -135,8 +140,13 @@
           }
         ],
         "note": null,
+        "section": "For Working",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "130g / 1 1/3 cups tightly packed  mozzarella cheese, freshly grated per pizza, (Note 8)",
@@ -153,6 +163,7 @@
           }
         ],
         "note": "Note 8, freshly grated per pizza, tightly packed",
+        "section": "Toppings",
         "category": "Cheese"
       }
     },
@@ -167,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -176,6 +188,7 @@
         "item": "Toppings of choice",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -194,6 +207,7 @@
           }
         ],
         "note": "Note 1",
+        "section": "Toppings",
         "category": "Baking"
       }
     },
@@ -212,6 +226,7 @@
           }
         ],
         "note": "Note 2",
+        "section": "Toppings",
         "category": "Baking"
       }
     },
@@ -230,6 +245,7 @@
           }
         ],
         "note": "Note 3",
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -248,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Baking"
       }
     },
@@ -262,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Oils & Vinegars"
       }
     },
@@ -284,8 +302,13 @@
           }
         ],
         "note": "375g, Note 4",
+        "section": "Toppings",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Bowl:",
+      "is_section_header": true
     },
     {
       "raw": "2 tsp Extra Olive Oil",
@@ -298,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "For Bowl",
         "category": "Oils & Vinegars"
       }
     }

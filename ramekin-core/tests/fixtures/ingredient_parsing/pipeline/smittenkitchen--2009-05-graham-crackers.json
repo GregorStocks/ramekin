@@ -151,6 +151,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons (43 grams) granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -165,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -183,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

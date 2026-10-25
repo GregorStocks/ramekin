@@ -194,6 +194,10 @@
       }
     },
     {
+      "raw": "To finish [Gratinée]:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon grated raw onion",
       "expected": {
         "item": "grated raw onion",
@@ -204,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish [gratinée]",
         "category": "Produce"
       }
     },
@@ -218,6 +223,7 @@
           }
         ],
         "note": "to taste, I often use Gruyere",
+        "section": "To Finish [gratinée]",
         "category": "Cheese"
       }
     },
@@ -232,6 +238,7 @@
           }
         ],
         "note": "melted",
+        "section": "To Finish [gratinée]",
         "category": "Dairy & Eggs"
       }
     },
@@ -246,6 +253,7 @@
           }
         ],
         "note": "toasted until hard",
+        "section": "To Finish [gratinée]",
         "category": "Bakery & Bread"
       }
     }

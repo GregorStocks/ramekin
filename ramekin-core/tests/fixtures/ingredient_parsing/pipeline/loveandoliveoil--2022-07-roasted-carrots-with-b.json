@@ -39,6 +39,10 @@
       }
     },
     {
+      "raw": "For Pesto:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ cups  / 50 g lightly packed carrot greens, large stems removed",
       "expected": {
         "item": "carrot greens",
@@ -53,6 +57,7 @@
           }
         ],
         "note": "large stems removed, lightly packed",
+        "section": "For Pesto",
         "category": "Other"
       }
     },
@@ -71,6 +76,7 @@
           }
         ],
         "note": "lightly packed",
+        "section": "For Pesto",
         "category": "Produce"
       }
     },
@@ -85,6 +91,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For Pesto",
         "category": "Produce"
       }
     },
@@ -99,6 +106,7 @@
           }
         ],
         "note": "plus more for topping, if desired, lightly toasted",
+        "section": "For Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -113,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For Pesto",
         "category": "Oils & Vinegars"
       }
     },
@@ -127,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For Pesto",
         "category": "Baking"
       }
     },
@@ -141,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "For Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -159,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "For Pesto",
         "category": "Oils & Vinegars"
       }
     }

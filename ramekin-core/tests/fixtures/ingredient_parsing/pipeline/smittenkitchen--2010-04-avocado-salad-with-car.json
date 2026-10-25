@@ -3,6 +3,10 @@
   "recipe_slug": "2010-04-avocado-salad-with-car",
   "ingredients": [
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large carrot, peeled and roughly chopped",
       "expected": {
         "item": "carrot",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "peeled and roughly chopped",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "peeled and roughly chopped",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 small/medium head of lettuce (I used Bibb)",
@@ -125,6 +141,7 @@
           }
         ],
         "note": "I used Bibb",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "quartered and thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     }

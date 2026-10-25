@@ -3,6 +3,10 @@
   "recipe_slug": "2011-09-red-wine-chocolate-cak",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons (85 grams) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "firmly packed",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "any kind you like",
+        "section": "Cake",
         "category": "Beverages"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -139,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -167,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -181,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,8 +210,13 @@
           }
         ],
         "note": "this is a great place for that fancy Vietnamese stuff you stashed away",
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup mascarpone cheese",
@@ -209,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Cheese"
       }
     },
@@ -227,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -259,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2017-06-easy-drop-berry-shortc",
   "ingredients": [
     {
+      "raw": "Shortcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/4 cups (295 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Shortcakes",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Shortcakes",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Shortcakes",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Shortcakes",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Shortcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "cold, cut into chunks",
+        "section": "Shortcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Shortcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Shortcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,8 +161,13 @@
           }
         ],
         "note": null,
+        "section": "Shortcakes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) strawberries or mixed berries, hulled and halved if large",
@@ -167,6 +184,7 @@
           }
         ],
         "note": "hulled and halved if large",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -221,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     }

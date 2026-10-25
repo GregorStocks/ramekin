@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "Turkish Tomato Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 onion finely diced",
       "expected": {
         "item": "onion",
@@ -27,6 +31,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Turkish Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": "minced",
+        "section": "Turkish Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Canned Goods"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Baking"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,8 +181,13 @@
           }
         ],
         "note": null,
+        "section": "Turkish Tomato Sauce",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Lamb Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup Turkish tomato sauce or regular tomato sauce",
@@ -181,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Canned Goods"
       }
     },
@@ -195,6 +215,7 @@
           }
         ],
         "note": "minced",
+        "section": "Lamb Filling",
         "category": "Produce"
       }
     },
@@ -209,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Other"
       }
     },
@@ -223,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Other"
       }
     },
@@ -237,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -293,6 +320,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,6 +335,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -321,6 +350,7 @@
           }
         ],
         "note": "optional",
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -335,6 +365,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -349,6 +380,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -363,6 +395,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Lamb Filling",
         "category": "Produce"
       }
     },
@@ -377,6 +410,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Lamb Filling",
         "category": "Produce"
       }
     },
@@ -391,6 +425,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -405,8 +440,13 @@
           }
         ],
         "note": "very finely chopped",
+        "section": "Lamb Filling",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Mint Yogurt Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup Greek yogurt full fat",
@@ -419,6 +459,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Yogurt Sauce",
         "category": "Other"
       }
     },
@@ -433,6 +474,7 @@
           }
         ],
         "note": "minced",
+        "section": "Mint Yogurt Sauce",
         "category": "Produce"
       }
     },
@@ -447,6 +489,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Yogurt Sauce",
         "category": "Produce"
       }
     },
@@ -461,6 +504,7 @@
           }
         ],
         "note": "very finely chopped",
+        "section": "Mint Yogurt Sauce",
         "category": "Produce"
       }
     },
@@ -475,6 +519,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Yogurt Sauce",
         "category": "Other"
       }
     },
@@ -484,8 +529,13 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Mint Yogurt Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Chopped fresh parsley dill, or mint",
@@ -493,6 +543,7 @@
         "item": "Chopped fresh parsley dill, or mint",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -502,6 +553,7 @@
         "item": "Toasted pine nuts",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Nuts & Dried Fruit"
       }
     }

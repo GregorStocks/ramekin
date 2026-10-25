@@ -100,11 +100,16 @@
       }
     },
     {
+      "raw": "For the Vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "Same 6 garlic cloves roasted earlier with the artichoke (see above ingredients)",
       "expected": {
         "item": "Same 6 garlic cloves roasted earlier with the artichoke",
         "measurements": [],
         "note": "see above ingredients",
+        "section": "For the Vinaigrette",
         "category": "Other"
       }
     },
@@ -119,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Produce"
       }
     },
@@ -133,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Produce"
       }
     },
@@ -147,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Baking"
       }
     },
@@ -156,6 +164,7 @@
         "item": "Salt and Black Pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

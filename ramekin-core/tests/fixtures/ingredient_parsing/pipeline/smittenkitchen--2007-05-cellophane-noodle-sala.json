@@ -3,6 +3,10 @@
   "recipe_slug": "2007-05-cellophane-noodle-sala",
   "ingredients": [
     {
+      "raw": "For pork:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound solid piece boneless pork butt (shoulder) or pork tenderloin",
       "expected": {
         "item": "solid piece boneless pork butt or pork tenderloin",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "shoulder",
+        "section": "For Pork",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "low-sodium is best here",
+        "section": "For Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Beverages"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Produce"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": "see Note below",
+        "section": "For Pork",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup seasoned rice vinegar",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Other"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": "seeded and minced",
+        "section": "For Dressing",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For salad:",
+      "is_section_header": true
     },
     {
       "raw": "8 oz very thin bean-thread noodles (also known as cellophane, glass, or mung bean noodles)",
@@ -181,6 +205,7 @@
           }
         ],
         "note": "also known as cellophane, glass, or mung bean noodles",
+        "section": "For Salad",
         "category": "Other"
       }
     },
@@ -199,6 +224,7 @@
           }
         ],
         "note": "trimmed and cut into 3-inch pieces",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -217,6 +243,7 @@
           }
         ],
         "note": "usually plastic-wrapped; about 1 lb, halved lengthwise and sliced diagonally 1/8 inch thick",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -231,6 +258,7 @@
           }
         ],
         "note": "cut into matchsticks",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -245,6 +273,7 @@
           }
         ],
         "note": "peeled, pitted, and thinly sliced",
+        "section": "For Salad",
         "category": "Other"
       }
     },
@@ -259,6 +288,7 @@
           }
         ],
         "note": "cut into 1/8-inch-thick matchsticks",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -273,6 +303,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -287,6 +318,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -301,6 +333,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "For Salad",
         "category": "Produce"
       }
     }

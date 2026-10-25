@@ -147,6 +147,10 @@
       }
     },
     {
+      "raw": "FROSTING:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 ounces cream cheese, softened",
       "expected": {
         "item": "cream cheese",
@@ -157,6 +161,7 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -171,6 +176,7 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -199,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -222,6 +231,7 @@
         "item": "Optional decorations: candy eyeballs, M&M's minis, milk chocolate M&M's, Life Savers hard candies and gummies, regular and mini peanut butter cups, licorice twists, shoestring licorice, Starburst fruit chews, mega and regular Smarties, Nerds, Runts, Snaps chewy candies, candy corn, tiny-size Chiclets gum, butterscotch hard candies, Rolo candies, Caramel Creams and PayDay candy bar",
         "measurements": [],
         "note": null,
+        "section": "Frosting",
         "category": "Other"
       }
     }

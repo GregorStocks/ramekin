@@ -3,6 +3,10 @@
   "recipe_slug": "2013-01-gnocchi-in-tomato-brot",
   "ingredients": [
     {
+      "raw": "Tomato broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons (30 ml) olive oil",
       "expected": {
         "item": "olive oil",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Broth",
         "category": "Oils & Vinegars"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Tomato Broth",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Tomato Broth",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Tomato Broth",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "peeled and smashed",
+        "section": "Tomato Broth",
         "category": "Produce"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Broth",
         "category": "Beverages"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Broth",
         "category": "Canned Goods"
       }
     },
@@ -123,6 +134,7 @@
           }
         ],
         "note": "plus more for garnish",
+        "section": "Tomato Broth",
         "category": "Produce"
       }
     },
@@ -141,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Broth",
         "category": "Canned Goods"
       }
     },
@@ -150,8 +163,13 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Tomato Broth",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Gnocchi:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds (905 grams) Russet potatoes (3 to 4)",
@@ -168,6 +186,7 @@
           }
         ],
         "note": "3 to 4",
+        "section": "Gnocchi",
         "category": "Produce"
       }
     },
@@ -182,6 +201,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Gnocchi",
         "category": "Dairy & Eggs"
       }
     },
@@ -196,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Gnocchi",
         "category": "Spices & Seasonings"
       }
     },
@@ -214,6 +235,7 @@
           }
         ],
         "note": "plus more for dusting surface",
+        "section": "Gnocchi",
         "category": "Baking"
       }
     }

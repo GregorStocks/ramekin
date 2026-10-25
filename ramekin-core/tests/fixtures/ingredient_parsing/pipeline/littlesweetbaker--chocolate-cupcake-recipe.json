@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-cupcake-recipe",
   "ingredients": [
     {
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup   (125g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -145,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -177,8 +191,13 @@
           }
         ],
         "note": "cooled",
+        "section": "Cupcakes",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Whipped Chocolate Ganache Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (240ml) whipping cream",
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Chocolate Ganache Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "see notes below*, good quality",
+        "section": "Whipped Chocolate Ganache Frosting",
         "category": "Baking"
       }
     }

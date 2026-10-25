@@ -3,6 +3,10 @@
   "recipe_slug": "2025-08-vanilla-bean-peach-pie",
   "ingredients": [
     {
+      "raw": "For Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups  / 375 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "cut into 1/4-inch pieces",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -103,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1   plump vanilla bean",
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": "about 5-6 medium peaches or 5 cups sliced",
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": "cut into small pieces",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,8 +237,13 @@
           }
         ],
         "note": "for egg wash, lightly beaten",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  / 240 g cold heavy whipping cream",
@@ -235,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -249,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Other"
       }
     }

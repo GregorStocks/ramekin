@@ -44,11 +44,16 @@
       }
     },
     {
+      "raw": "To Flavor Roasted Carrots:",
+      "is_section_header": true
+    },
+    {
       "raw": "Spices  of your choice  (I used 1/2 teaspoon ground turmeric and 3/4 teaspoon of harissa spice blend)",
       "expected": {
         "item": "Spices of your choice",
         "measurements": [],
         "note": "I used 1/2 teaspoon ground turmeric and 3/4 teaspoon of harissa spice blend",
+        "section": "To Flavor Roasted Carrots",
         "category": "Other"
       }
     },
@@ -63,6 +68,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "To Flavor Roasted Carrots",
         "category": "Produce"
       }
     },
@@ -77,6 +83,7 @@
           }
         ],
         "note": null,
+        "section": "To Flavor Roasted Carrots",
         "category": "Other"
       }
     },
@@ -86,6 +93,7 @@
         "item": "Parsley",
         "measurements": [],
         "note": "for garnish",
+        "section": "To Flavor Roasted Carrots",
         "category": "Produce"
       }
     }

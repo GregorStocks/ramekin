@@ -3,6 +3,10 @@
   "recipe_slug": "greek-grilled-chicken-salad-re",
   "ingredients": [
     {
+      "raw": "For the Chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup Greek yogurt",
       "expected": {
         "item": "Greek yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
         "item": "Kosher salt generous pinch",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Chicken",
         "category": "Other"
       }
     },
@@ -87,6 +97,7 @@
         "item": "Black pepper generous pinch",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Chicken",
         "category": "Other"
       }
     },
@@ -101,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +172,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,8 +187,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For the Salad:",
+      "is_section_header": true
     },
     {
       "raw": "Homemade Greek dressing,  use this Greek dressing recipe",
@@ -180,6 +201,7 @@
         "item": "Homemade Greek dressing, use this Greek dressing recipe",
         "measurements": [],
         "note": null,
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -194,6 +216,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -208,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -222,6 +246,7 @@
           }
         ],
         "note": "cored and chopped",
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -236,6 +261,7 @@
           }
         ],
         "note": "sliced into rounds, diced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -250,6 +276,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -259,6 +286,7 @@
         "item": "Pitted Kalamata olives, to your liking",
         "measurements": [],
         "note": null,
+        "section": "For the Salad",
         "category": "Canned Goods"
       }
     },
@@ -268,6 +296,7 @@
         "item": "Quality Greek feta blocks, to your liking",
         "measurements": [],
         "note": null,
+        "section": "For the Salad",
         "category": "Other"
       }
     }

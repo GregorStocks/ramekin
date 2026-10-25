@@ -124,11 +124,16 @@
       }
     },
     {
+      "raw": "for topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "buttered popcorn",
       "expected": {
         "item": "buttered popcorn",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Snacks"
       }
     },
@@ -138,6 +143,7 @@
         "item": "sliced green onions",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Produce"
       }
     }

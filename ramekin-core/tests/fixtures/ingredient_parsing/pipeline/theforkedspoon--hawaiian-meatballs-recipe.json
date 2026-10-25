@@ -3,6 +3,10 @@
   "recipe_slug": "hawaiian-meatballs-recipe",
   "ingredients": [
     {
+      "raw": "For the Turkey Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground turkey",
       "expected": {
         "item": "ground turkey",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Turkey Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "whisked",
+        "section": "For the Turkey Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "store-bought or homemade",
+        "section": "For the Turkey Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Turkey Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Turkey Meatballs",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Turkey Meatballs",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Turkey Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "For the Turkey Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Sweet Pineapple Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "20 ounces pineapple chunks in syrup, (1 can)",
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Other"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Baking"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": "homemade or store-bought",
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Baking"
       }
     },
@@ -227,8 +250,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Lettuce Wraps (optional):",
+      "is_section_header": true
     },
     {
       "raw": "1 head butter lettuce",
@@ -241,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lettuce Wraps (Optional)",
         "category": "Produce"
       }
     },
@@ -250,6 +279,7 @@
         "item": "chopped green onion",
         "measurements": [],
         "note": null,
+        "section": "For the Lettuce Wraps (Optional)",
         "category": "Produce"
       }
     },
@@ -259,6 +289,7 @@
         "item": "diced red onion",
         "measurements": [],
         "note": null,
+        "section": "For the Lettuce Wraps (Optional)",
         "category": "Produce"
       }
     },
@@ -268,6 +299,7 @@
         "item": "fresh micro greens",
         "measurements": [],
         "note": null,
+        "section": "For the Lettuce Wraps (Optional)",
         "category": "Other"
       }
     }

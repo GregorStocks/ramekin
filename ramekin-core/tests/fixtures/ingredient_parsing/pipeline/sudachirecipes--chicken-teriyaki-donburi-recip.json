@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-teriyaki-donburi-recip",
   "ingredients": [
     {
+      "raw": "Teriyaki Don:",
+      "is_section_header": true
+    },
+    {
       "raw": "500 g boneless chicken thigh preferably skin-on",
       "expected": {
         "item": "boneless chicken thigh preferably skin-on",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Don",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Don",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Don",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "katakuriko",
+        "section": "Teriyaki Don",
         "category": "Baking"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Don",
         "category": "Pasta & Rice"
       }
+    },
+    {
+      "raw": "Garlic Teriyaki Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
@@ -83,6 +96,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Garlic Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Teriyaki Sauce",
         "category": "Beverages"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Teriyaki Sauce",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Teriyaki Sauce",
         "category": "Produce"
       }
     },
@@ -153,8 +171,13 @@
           }
         ],
         "note": "liquid, not powder",
+        "section": "Garlic Teriyaki Sauce",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "100 g green cabbage shredded",
@@ -167,6 +190,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -176,6 +200,7 @@
         "item": "finely chopped green onions",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -185,6 +210,7 @@
         "item": "Japanese mayonnaise",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -194,6 +220,7 @@
         "item": "kizami nori",
         "measurements": [],
         "note": "shredded nori",
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,6 +230,7 @@
         "item": "chili threads",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,6 +245,7 @@
           }
         ],
         "note": "boiled for 6 1/2-8 minutes depending on preferred doneness.",
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     }

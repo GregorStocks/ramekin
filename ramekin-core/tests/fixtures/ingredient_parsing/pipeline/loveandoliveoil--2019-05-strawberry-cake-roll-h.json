@@ -3,6 +3,10 @@
   "recipe_slug": "2019-05-strawberry-cake-roll-h",
   "ingredients": [
     {
+      "raw": "For Paste:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons  / 30 g unsalted butter, softened (softer than room temp, but not melted)",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "softer than room temp, but not melted, softened",
+        "section": "For Paste",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Paste",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Paste",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For Paste",
         "category": "Dairy & Eggs"
       }
     },
@@ -80,8 +88,13 @@
         "item": "food coloring",
         "measurements": [],
         "note": null,
+        "section": "For Paste",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Cake:",
+      "is_section_header": true
     },
     {
       "raw": "3   large eggs, separated",
@@ -94,6 +107,7 @@
           }
         ],
         "note": "separated",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -112,6 +126,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -126,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -144,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -158,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -172,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +209,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -199,8 +219,13 @@
         "item": "food coloring",
         "measurements": [],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  / 240 g heavy whipping cream",
@@ -217,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -231,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -249,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -267,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -285,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     }

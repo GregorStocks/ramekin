@@ -3,6 +3,10 @@
   "recipe_slug": "old-fashioned-million-dollar-p",
   "ingredients": [
     {
+      "raw": "Pie:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (9-inch) prepared graham cracker crust",
       "expected": {
         "item": "prepared graham cracker crust",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "9-inch",
+        "section": "Pie",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "14-ounce",
+        "section": "Pie",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pie",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "8-ounce, well drained",
+        "section": "Pie",
         "category": "Canned Goods"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "20-ounce",
+        "section": "Pie",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "divided, and chopped",
+        "section": "Pie",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Pie",
         "category": "Baking"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": "8-ounce, thawed",
+        "section": "Pie",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 (8-ounce) container  frozen whipped topping thawed",
@@ -125,6 +141,7 @@
           }
         ],
         "note": "8-ounce, thawed",
+        "section": "Topping",
         "category": "Frozen"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Canned Goods"
       }
     }

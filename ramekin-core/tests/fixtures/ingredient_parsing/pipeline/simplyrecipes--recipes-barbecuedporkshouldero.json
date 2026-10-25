@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-barbecuedporkshouldero",
   "ingredients": [
     {
+      "raw": "For the BBQ rub (enough for a 4-pound roast):",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons brown sugar, packed",
       "expected": {
         "item": "brown sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Bbq Rub (Enough for a 4-Pound Roast)",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bbq Rub (Enough for a 4-Pound Roast)",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bbq Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bbq Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bbq Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bbq Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bbq Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "For the Bbq Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Santa Maria rub (enough for a 4-pound roast):",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon salt",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "or fresh, finely minced",
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,8 +261,13 @@
           }
         ],
         "note": null,
+        "section": "For the Santa Maria Rub (Enough for a 4-Pound Roast)",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the pork shoulder:",
+      "is_section_header": true
     },
     {
       "raw": "1 (4-pound) pork shoulder roast, preferably Boston butt, boneless or bone-in (you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both)",
@@ -251,6 +280,7 @@
           }
         ],
         "note": "4-pound, you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both",
+        "section": "For the Pork Shoulder",
         "category": "Other"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": "such as hickory, oak, apple, or other fruit wood",
+        "section": "For the Pork Shoulder",
         "category": "Other"
       }
     }

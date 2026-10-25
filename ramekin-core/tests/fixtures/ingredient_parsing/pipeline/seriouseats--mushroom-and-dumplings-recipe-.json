@@ -3,6 +3,10 @@
   "recipe_slug": "mushroom-and-dumplings-recipe-",
   "ingredients": [
     {
+      "raw": "For the Stew:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 tablespoons unsalted butter (2 ounces; 56 g), divided",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Stew",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "stemmed and cut into 1/4-inch thick slices",
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -61,6 +67,7 @@
           }
         ],
         "note": "about 1 pound; 454 g, finely chopped",
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -101,6 +109,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -115,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -133,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Baking"
       }
     },
@@ -151,6 +162,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "For the Stew",
         "category": "Canned Goods"
       }
     },
@@ -169,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -187,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Condiments & Sauces"
       }
     },
@@ -196,6 +210,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -214,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Dairy & Eggs"
       }
     },
@@ -228,8 +244,13 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Stew",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Dumplings:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups all-purpose flour (6 3/4 ounces; 192 g)",
@@ -250,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Baking"
       }
     },
@@ -264,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Spices & Seasonings"
       }
     },
@@ -278,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Baking"
       }
     },
@@ -292,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Baking"
       }
     },
@@ -306,6 +331,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Produce"
       }
     },
@@ -324,6 +350,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Dairy & Eggs"
       }
     },
@@ -338,6 +365,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Dairy & Eggs"
       }
     },
@@ -360,6 +388,7 @@
           }
         ],
         "note": "melted and slightly cooled",
+        "section": "For the Dumplings",
         "category": "Dairy & Eggs"
       }
     }

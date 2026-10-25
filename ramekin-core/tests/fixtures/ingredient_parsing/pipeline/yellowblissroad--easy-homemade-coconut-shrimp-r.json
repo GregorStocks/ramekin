@@ -96,6 +96,10 @@
       }
     },
     {
+      "raw": "Dipping Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup pineapple preserves",
       "expected": {
         "item": "pineapple preserves",
@@ -106,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Other"
       }
     },
@@ -120,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -134,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Other"
       }
     }

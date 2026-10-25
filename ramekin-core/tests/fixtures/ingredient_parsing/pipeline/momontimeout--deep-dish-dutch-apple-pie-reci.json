@@ -3,6 +3,10 @@
   "recipe_slug": "deep-dish-dutch-apple-pie-reci",
   "ingredients": [
     {
+      "raw": "Pie Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Other"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Pie Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Apple Pie Filling:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups apple pie filling",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Apple Pie Filling",
         "category": "Baking"
       }
     },
@@ -111,8 +126,13 @@
           }
         ],
         "note": null,
+        "section": "Apple Pie Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Streusel topping:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup all purpose flour",
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Baking"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Baking"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Baking"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Snacks"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": "cut into small piece",
+        "section": "Streusel Topping",
         "category": "Dairy & Eggs"
       }
     }

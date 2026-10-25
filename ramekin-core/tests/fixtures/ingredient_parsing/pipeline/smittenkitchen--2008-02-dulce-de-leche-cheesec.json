@@ -3,6 +3,10 @@
   "recipe_slug": "2008-02-dulce-de-leche-cheesec",
   "ingredients": [
     {
+      "raw": "For crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 1/2 ounces (100 grams or 1 cup) graham crackers, crumbled",
       "expected": {
         "item": "graham crackers",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "crumbled",
+        "section": "For Crust",
         "category": "Snacks"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -57,8 +63,13 @@
           }
         ],
         "note": "melted",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon unflavored gelatin (from a 1/4-ounce or 7-gram envelope, will be just about half an envelope)",
@@ -71,6 +82,7 @@
           }
         ],
         "note": "from a 1/4-ounce or 7-gram envelope, will be just about half an envelope",
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -107,6 +120,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Filling",
         "category": "Cheese"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,8 +169,13 @@
           }
         ],
         "note": "12 1/2-ounce or 355-gram can, recipe follows",
+        "section": "For Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For glaze:",
+      "is_section_header": true
     },
     {
       "raw": "3 ounces (85 grams) fine-quality bittersweet chocolate (not unsweetened), coarsely chopped",
@@ -171,6 +192,7 @@
           }
         ],
         "note": "not unsweetened, coarsely chopped",
+        "section": "For Glaze",
         "category": "Other"
       }
     },
@@ -193,6 +215,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -207,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Baking"
       }
     }

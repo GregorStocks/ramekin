@@ -63,6 +63,10 @@
       }
     },
     {
+      "raw": "COATING:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -73,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     },
@@ -87,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
     },
@@ -152,6 +162,7 @@
         "item": "Oil for deep-fat frying",
         "measurements": [],
         "note": null,
+        "section": "Coating",
         "category": "Other"
       }
     }

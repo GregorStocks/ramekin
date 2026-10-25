@@ -3,6 +3,10 @@
   "recipe_slug": "tenshinhan-recipe",
   "ingredients": [
     {
+      "raw": "Prep:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 dried shiitake mushroom",
       "expected": {
         "item": "dried shiitake mushroom",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Prep",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Prep",
         "category": "Beverages"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Prep",
         "category": "Pasta & Rice"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp butter",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -153,8 +171,13 @@
           }
         ],
         "note": "katakuriko",
+        "section": "Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Tenshinhan:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp Japanese leek (naganegi) white part, finely diced",
@@ -167,6 +190,7 @@
           }
         ],
         "note": "naganegi, finely diced",
+        "section": "Tenshinhan",
         "category": "Other"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Other"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Other"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Produce"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Oils & Vinegars"
       }
     },
@@ -293,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Oils & Vinegars"
       }
     },
@@ -302,6 +335,7 @@
         "item": "green peas to garnish",
         "measurements": [],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Other"
       }
     }

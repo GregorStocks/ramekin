@@ -179,11 +179,16 @@
       }
     },
     {
+      "raw": "Garnishes:",
+      "is_section_header": true
+    },
+    {
       "raw": "Additional Thai or other chile flakes or chili powder",
       "expected": {
         "item": "Additional Thai or other chile flakes or chili powder",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Spices & Seasonings"
       }
     },
@@ -193,6 +198,7 @@
         "item": "Remaining garlic chives and bean sprouts",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Other"
       }
     },
@@ -207,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -221,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Garnishes",
         "category": "Nuts & Dried Fruit"
       }
     }

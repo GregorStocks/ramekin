@@ -3,6 +3,10 @@
   "recipe_slug": "2025-07-italian-chopped-salad-",
   "ingredients": [
     {
+      "raw": "sourdough pizza:",
+      "is_section_header": true
+    },
+    {
       "raw": "325 grams water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "chopped italian salad:",
+      "is_section_header": true
     },
     {
       "raw": "½ head iceberg lettuce, thinly sliced",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Chopped Italian Salad",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Chopped Italian Salad",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Chopped Italian Salad",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chopped Italian Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chopped Italian Salad",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Chopped Italian Salad",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Chopped Italian Salad",
         "category": "Canned Goods"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Chopped Italian Salad",
         "category": "Cheese"
       }
     },
@@ -209,8 +231,13 @@
           }
         ],
         "note": "diced",
+        "section": "Chopped Italian Salad",
         "category": "Other"
       }
+    },
+    {
+      "raw": "zesty vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons red wine vinegar",
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": "minced",
+        "section": "Zesty Vinaigrette",
         "category": "Produce"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Baking"
       }
     },
@@ -279,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -293,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,6 +340,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -321,6 +355,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Oils & Vinegars"
       }
     }

@@ -54,6 +54,10 @@
       }
     },
     {
+      "raw": "Other ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "500 ml water if using espresso shots, reduce the water by 30ml for each shot used (see note)",
       "expected": {
         "item": "water if using espresso shots, reduce the water by 30ml for each shot used",
@@ -64,6 +68,7 @@
           }
         ],
         "note": "see note",
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -78,6 +83,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -92,6 +98,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Other Ingredients",
         "category": "Baking"
       }
     },
@@ -101,6 +108,7 @@
         "item": "toppings of your choice cream, ice cream, flavored syrups",
         "measurements": [],
         "note": "chopped nuts etc",
+        "section": "Other Ingredients",
         "category": "Other"
       }
     }

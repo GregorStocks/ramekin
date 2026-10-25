@@ -3,6 +3,10 @@
   "recipe_slug": "5-minute-sticky-toffee-pudding",
   "ingredients": [
     {
+      "raw": "Toffee Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon  cultured unsalted butter",
       "expected": {
         "item": "cultured unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Toffee Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Sticky Toffee Pudding:",
+      "is_section_header": true
     },
     {
       "raw": "1 large  egg (beaten)",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Sticky Toffee Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "35%+ fat",
+        "section": "Sticky Toffee Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Sticky Toffee Pudding",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Sticky Toffee Pudding",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Sticky Toffee Pudding",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Sticky Toffee Pudding",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Sticky Toffee Pudding",
         "category": "Baking"
       }
     }

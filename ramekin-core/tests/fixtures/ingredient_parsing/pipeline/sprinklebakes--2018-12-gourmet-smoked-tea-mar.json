@@ -3,6 +3,10 @@
   "recipe_slug": "2018-12-gourmet-smoked-tea-mar",
   "ingredients": [
     {
+      "raw": "Double strength lapsang souchong tea:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cup 300 ml water",
       "expected": {
         "item": "300 ml water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Double Strength Lapsang Souchong Tea",
         "category": "Beverages"
       }
     },
@@ -27,8 +32,17 @@
           }
         ],
         "note": null,
+        "section": "Double Strength Lapsang Souchong Tea",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Marshmallows:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Marshmallow coating:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups 284 grams powdered sugar",
@@ -41,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Marshmallow Coating",
         "category": "Baking"
       }
     },
@@ -55,8 +70,13 @@
           }
         ],
         "note": null,
+        "section": "Marshmallow Coating",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Gelatin bloom:",
+      "is_section_header": true
     },
     {
       "raw": "4 teaspoons unflavored powdered gelatin",
@@ -69,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Gelatin Bloom",
         "category": "Baking"
       }
     },
@@ -83,8 +104,13 @@
           }
         ],
         "note": null,
+        "section": "Gelatin Bloom",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Sugar syrup:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup 200 grams sugar",
@@ -97,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Syrup",
         "category": "Baking"
       }
     },
@@ -111,6 +138,7 @@
           }
         ],
         "note": "divided",
+        "section": "Sugar Syrup",
         "category": "Baking"
       }
     },
@@ -125,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Syrup",
         "category": "Other"
       }
     },
@@ -139,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Syrup",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2025-12-winter-cabbage-salad-w",
   "ingredients": [
     {
+      "raw": "Spiced cashews:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (115 grams) cashews",
       "expected": {
         "item": "cashews",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cashews",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cashews",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cashews",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cashews",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,8 +85,13 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cashews",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) red cabbage, thinly sliced or shredded (about 4 cups)",
@@ -99,6 +112,7 @@
           }
         ],
         "note": "about 4 cups, thinly sliced or shredded",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": "about 1 cup, halved and sliced thin",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": "green and white parts, thinly sliced",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -140,6 +156,7 @@
         "item": "A small handful fresh mint leaves",
         "measurements": [],
         "note": "thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -154,6 +171,7 @@
           }
         ],
         "note": "clementines and other small oranges work here, divided",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -172,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -190,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -204,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +234,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +249,7 @@
           }
         ],
         "note": "plus more for finishing",
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,6 +259,7 @@
         "item": "Spiced cashews",
         "measurements": [],
         "note": "from above",
+        "section": "Assembly",
         "category": "Other"
       }
     }

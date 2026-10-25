@@ -3,6 +3,10 @@
   "recipe_slug": "2008-04-peanut-sesame-noodles",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup smooth peanut butter",
       "expected": {
         "item": "smooth peanut butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced or grated",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Noodles and Vegetables:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 pound dried buckwheat soba noodles or another noodle of your choice",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Noodles and Vegetables",
         "category": "Other"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Noodles and Vegetables",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "cut into matchsticks",
+        "section": "Noodles and Vegetables",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "cut into matchsticks",
+        "section": "Noodles and Vegetables",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "cut into matchsticks",
+        "section": "Noodles and Vegetables",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "cut into matchsticks",
+        "section": "Noodles and Vegetables",
         "category": "Other"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "cut into thicker matchsticks",
+        "section": "Noodles and Vegetables",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "white, black, or a mix thereof, toasted",
+        "section": "Noodles and Vegetables",
         "category": "Spices & Seasonings"
       }
     }

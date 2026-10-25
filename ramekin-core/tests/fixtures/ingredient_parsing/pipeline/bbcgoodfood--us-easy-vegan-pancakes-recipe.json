@@ -87,11 +87,16 @@
       }
     },
     {
+      "raw": "To serve (optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "banana slices, blueberries, maple syrup, vegan chocolate chips or plant-based yogurt, to serve",
       "expected": {
         "item": "banana slices, blueberries, maple syrup, vegan chocolate chips or plant-based yogurt",
         "measurements": [],
         "note": "to serve",
+        "section": "To Serve (Optional)",
         "category": "Produce"
       }
     }

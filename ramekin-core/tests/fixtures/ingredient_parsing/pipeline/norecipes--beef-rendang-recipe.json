@@ -3,6 +3,10 @@
   "recipe_slug": "beef-rendang-recipe",
   "ingredients": [
     {
+      "raw": "For the spice paste:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon  salt",
       "expected": {
         "item": "salt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Spice Paste",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Spice Paste",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Spice Paste",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Spice Paste",
         "category": "Other"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Spice Paste",
         "category": "Produce"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "4 large roughly chopped",
+        "section": "For the Spice Paste",
         "category": "Produce"
       }
     },
@@ -101,8 +111,13 @@
           }
         ],
         "note": "to taste",
+        "section": "For the Spice Paste",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For cooking the Rendang:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons  vegetable oil",
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For Cooking the Rendang",
         "category": "Oils & Vinegars"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": "cut into large cubes",
+        "section": "For Cooking the Rendang",
         "category": "Other"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": "white part only, smashed",
+        "section": "For Cooking the Rendang",
         "category": "Produce"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": "or 1 teaspoon Makrut lime zest",
+        "section": "For Cooking the Rendang",
         "category": "Produce"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": "sliced into coins",
+        "section": "For Cooking the Rendang",
         "category": "Other"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": "or 1 can coconut milk",
+        "section": "For Cooking the Rendang",
         "category": "Other"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": "brown sugar or palm sugar can be substituted",
+        "section": "For Cooking the Rendang",
         "category": "Baking"
       }
     }

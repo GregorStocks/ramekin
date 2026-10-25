@@ -157,6 +157,10 @@
       }
     },
     {
+      "raw": "For the Frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces cream cheese room temperature",
       "expected": {
         "item": "cream cheese room temperature",
@@ -167,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Other"
       }
     },
@@ -181,6 +186,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -209,6 +216,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Frosting",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-curly-sweet-potato-fri",
   "ingredients": [
     {
+      "raw": "Curly Sweet Potato Fries:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 sweet potato",
       "expected": {
         "item": "sweet potato",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Curly Sweet Potato Fries",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Curly Sweet Potato Fries",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Curly Sweet Potato Fries",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Curly Sweet Potato Fries",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,8 +72,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Curly Sweet Potato Fries",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Garlic Aioli:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp mayonnaise",
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Aioli",
         "category": "Condiments & Sauces"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": "minced",
+        "section": "Garlic Aioli",
         "category": "Produce"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Aioli",
         "category": "Produce"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Aioli",
         "category": "Spices & Seasonings"
       }
     }

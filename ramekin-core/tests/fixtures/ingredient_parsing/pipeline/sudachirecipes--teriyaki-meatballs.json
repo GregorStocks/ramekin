@@ -3,6 +3,10 @@
   "recipe_slug": "teriyaki-meatballs",
   "ingredients": [
     {
+      "raw": "Meatball Mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tbsp panko breadcrumbs or regular breadcrumbs",
       "expected": {
         "item": "panko breadcrumbs or regular breadcrumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Bakery & Bread"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "increase lard if leaner; or ground chicken thigh",
+        "section": "Meatball Mixture",
         "category": "Meat & Seafood"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "katakuriko",
+        "section": "Meatball Mixture",
         "category": "Baking"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Teriyaki Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1½ tbsp Japanese soy sauce (koikuchi shoyu)",
@@ -153,6 +171,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Teriyaki Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Beverages"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Baking"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Produce"
       }
     },
@@ -223,8 +246,13 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "toasted white sesame seeds to taste",
@@ -232,6 +260,7 @@
         "item": "toasted white sesame seeds",
         "measurements": [],
         "note": "to taste",
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +270,7 @@
         "item": "finely chopped green onions",
         "measurements": [],
         "note": "to taste",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -250,6 +280,7 @@
         "item": "grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Cheese"
       }
     }

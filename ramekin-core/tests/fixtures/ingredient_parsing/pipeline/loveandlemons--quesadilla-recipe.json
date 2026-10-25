@@ -115,11 +115,16 @@
       }
     },
     {
+      "raw": "For serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Homemade Salsa or Salsa Verde",
       "expected": {
         "item": "Homemade Salsa or Salsa Verde",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,6 +134,7 @@
         "item": "Pico de Gallo",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,6 +144,7 @@
         "item": "Guacamole",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -147,6 +154,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -156,6 +164,7 @@
         "item": "Chopped fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

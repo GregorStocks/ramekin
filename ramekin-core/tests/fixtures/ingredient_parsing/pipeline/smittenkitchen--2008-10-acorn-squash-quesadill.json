@@ -142,6 +142,10 @@
       }
     },
     {
+      "raw": "Tomatilla Salsa:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 tomatillos, husked and well washed, quartered",
       "expected": {
         "item": "tomatillos",
@@ -152,6 +156,7 @@
           }
         ],
         "note": "husked and well washed, quartered",
+        "section": "Tomatilla Salsa",
         "category": "Produce"
       }
     },
@@ -166,6 +171,7 @@
           }
         ],
         "note": "roots and green ends trimmed, cut into big segements",
+        "section": "Tomatilla Salsa",
         "category": "Produce"
       }
     },
@@ -180,6 +186,7 @@
           }
         ],
         "note": "smashed",
+        "section": "Tomatilla Salsa",
         "category": "Produce"
       }
     },
@@ -194,6 +201,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Tomatilla Salsa",
         "category": "Produce"
       }
     },
@@ -208,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Tomatilla Salsa",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,6 +226,7 @@
         "item": "Salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Tomatilla Salsa",
         "category": "Spices & Seasonings"
       }
     }

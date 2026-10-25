@@ -3,6 +3,10 @@
   "recipe_slug": "2008-09-summers-last-hurrah-pa",
   "ingredients": [
     {
+      "raw": "Croutons:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Croutons",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "from a small boule",
+        "section": "Croutons",
         "category": "Other"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Croutons",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1 medium clove garlic, minced",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,8 +136,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 large ripe tomatoes, cut into 1-inch cubes",
@@ -134,6 +155,7 @@
           }
         ],
         "note": "cut into 1-inch cubes",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -148,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -162,6 +185,7 @@
           }
         ],
         "note": "purple, orange, or yellow are nice for aesthetics if you can find them, seeded and cut into 1-inch cubes",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -176,6 +200,7 @@
           }
         ],
         "note": "cut in half and thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -190,6 +215,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -204,6 +230,7 @@
           }
         ],
         "note": "drained",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     }

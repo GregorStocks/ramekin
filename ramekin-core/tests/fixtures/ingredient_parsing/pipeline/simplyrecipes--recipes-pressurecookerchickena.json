@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-pressurecookerchickena",
   "ingredients": [
     {
+      "raw": "For the sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup dry sherry",
       "expected": {
         "item": "dry sherry",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the casserole:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon olive oil",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Casserole",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Casserole",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Casserole",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "5 to 6, cut into 1 1/2-inch pieces",
+        "section": "For the Casserole",
         "category": "Meat & Seafood"
       }
     },
@@ -195,8 +216,13 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Pasta & Rice"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup chopped parsley",
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "perfect-sushi-rice-recipe",
   "ingredients": [
     {
+      "raw": "Rice:",
+      "is_section_header": true
+    },
+    {
       "raw": "300 g uncooked Japanese rice I used koshihikari",
       "expected": {
         "item": "uncooked Japanese rice I used koshihikari",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "kombu, optional",
+        "section": "Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "optional",
+        "section": "Rice",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Seasoning:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp rice vinegar",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     }

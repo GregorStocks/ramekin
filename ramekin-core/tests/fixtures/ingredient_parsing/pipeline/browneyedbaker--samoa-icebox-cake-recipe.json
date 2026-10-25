@@ -3,6 +3,10 @@
   "recipe_slug": "samoa-icebox-cake-recipe",
   "ingredients": [
     {
+      "raw": "For the Graham Cracker Layer:",
+      "is_section_header": true
+    },
+    {
       "raw": "24   full-size graham crackers",
       "expected": {
         "item": "full-size graham crackers",
@@ -13,8 +17,13 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Cracker Layer",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Coconut Pudding Layer:",
+      "is_section_header": true
     },
     {
       "raw": "6.8 ounce  (192.78 g) boxed instant coconut cream pudding",
@@ -31,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Pudding Layer",
         "category": "Other"
       }
     },
@@ -49,8 +59,13 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Pudding Layer",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Caramel Cheesecake Layer:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces  (340.2 g) cream cheese, at room temperature",
@@ -67,6 +82,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Caramel Cheesecake Layer",
         "category": "Cheese"
       }
     },
@@ -85,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel Cheesecake Layer",
         "category": "Baking"
       }
     },
@@ -103,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel Cheesecake Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,6 +135,7 @@
           }
         ],
         "note": "homemade or store-bought",
+        "section": "For the Caramel Cheesecake Layer",
         "category": "Condiments & Sauces"
       }
     },
@@ -135,8 +154,13 @@
           }
         ],
         "note": "homemade or store-bought",
+        "section": "For the Caramel Cheesecake Layer",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For the Whipped Cream Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1¼ cups  (297.5 ml) heavy cream",
@@ -153,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,8 +196,13 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream Topping",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Additional Garnishes:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups  (160 g) shredded coconut, toasted",
@@ -189,6 +219,7 @@
           }
         ],
         "note": "toasted",
+        "section": "For the Additional Garnishes",
         "category": "Produce"
       }
     },
@@ -198,6 +229,7 @@
         "item": "Caramel sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Additional Garnishes",
         "category": "Condiments & Sauces"
       }
     },
@@ -207,6 +239,7 @@
         "item": "Hot fudge sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Additional Garnishes",
         "category": "Condiments & Sauces"
       }
     }

@@ -146,6 +146,10 @@
       }
     },
     {
+      "raw": "Shiitake Taco “Meat”:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon extra-virgin olive oil",
       "expected": {
         "item": "extra-virgin olive oil",
@@ -156,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Shiitake Taco “meat”",
         "category": "Oils & Vinegars"
       }
     },
@@ -170,6 +175,7 @@
           }
         ],
         "note": "stemmed and diced",
+        "section": "Shiitake Taco “meat”",
         "category": "Produce"
       }
     },
@@ -184,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Shiitake Taco “meat”",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -198,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Shiitake Taco “meat”",
         "category": "Condiments & Sauces"
       }
     },
@@ -212,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Shiitake Taco “meat”",
         "category": "Spices & Seasonings"
       }
     },
@@ -226,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Shiitake Taco “meat”",
         "category": "Oils & Vinegars"
       }
     },
@@ -235,6 +245,7 @@
         "item": "Sea salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Shiitake Taco “meat”",
         "category": "Spices & Seasonings"
       }
     }

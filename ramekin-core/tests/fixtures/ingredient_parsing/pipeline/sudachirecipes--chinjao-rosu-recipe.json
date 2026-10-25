@@ -3,6 +3,10 @@
   "recipe_slug": "chinjao-rosu-recipe",
   "ingredients": [
     {
+      "raw": "Chinjao Rosu:",
+      "is_section_header": true
+    },
+    {
       "raw": "150 g bell pepper I used green piman and red bell pepper",
       "expected": {
         "item": "bell pepper I used green piman and red bell pepper",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Rosu",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Rosu",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Chinjao Rosu",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Rosu",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Rosu",
         "category": "Meat & Seafood"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Rosu",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Chinjao Rosu",
         "category": "Condiments & Sauces"
       }
     },
@@ -106,8 +117,13 @@
         "item": "toasted sesame oil a few drops to finish",
         "measurements": [],
         "note": null,
+        "section": "Chinjao Rosu",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Marinade for velveting:",
+      "is_section_header": true
     },
     {
       "raw": "¼ tsp salt fine",
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Velveting",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Velveting",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Velveting",
         "category": "Beverages"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Marinade for Velveting",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Velveting",
         "category": "Other"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": "katakuriko",
+        "section": "Marinade for Velveting",
         "category": "Baking"
       }
     },
@@ -204,8 +226,13 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Velveting",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Chinjao Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tsp oyster sauce",
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Chinjao Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Sauce",
         "category": "Baking"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -274,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Chinjao Sauce",
         "category": "Beverages"
       }
     },
@@ -288,6 +320,7 @@
           }
         ],
         "note": "katakuriko",
+        "section": "Chinjao Sauce",
         "category": "Baking"
       }
     }

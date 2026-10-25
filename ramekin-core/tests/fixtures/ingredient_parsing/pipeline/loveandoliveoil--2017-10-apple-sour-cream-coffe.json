@@ -3,6 +3,10 @@
   "recipe_slug": "2017-10-apple-sour-cream-coffe",
   "ingredients": [
     {
+      "raw": "For topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  / 100 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,8 +55,13 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For cake:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  / 113 g (1 stick) unsalted butter, at room temperature",
@@ -71,6 +82,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "about 1 1/2 cups diced, peeled, cored, and finely diced",
+        "section": "For Cake",
         "category": "Produce"
       }
     }

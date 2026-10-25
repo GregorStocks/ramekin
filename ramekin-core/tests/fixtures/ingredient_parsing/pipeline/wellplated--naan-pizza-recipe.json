@@ -115,11 +115,16 @@
       }
     },
     {
+      "raw": "Other topping ideas:",
+      "is_section_header": true
+    },
+    {
       "raw": "Pepperoni and/or Italian chicken or turkey sausage",
       "expected": {
         "item": "Pepperoni and/or Italian chicken or turkey sausage",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Meat & Seafood"
       }
     },
@@ -129,6 +134,7 @@
         "item": "Sautéed Mushrooms",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Other"
       }
     },
@@ -138,6 +144,7 @@
         "item": "Roasted Garlic",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Produce"
       }
     },
@@ -147,6 +154,7 @@
         "item": "Roasted Red Peppers",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Canned Goods"
       }
     },
@@ -156,6 +164,7 @@
         "item": "Burrata",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Cheese"
       }
     },
@@ -165,6 +174,7 @@
         "item": "Ricotta",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Cheese"
       }
     },
@@ -174,6 +184,7 @@
         "item": "Carbonara",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Other"
       }
     },
@@ -183,6 +194,7 @@
         "item": "Brussels Sprouts and Bacon",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Produce"
       }
     },
@@ -192,6 +204,7 @@
         "item": "Asparagus",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Produce"
       }
     },
@@ -201,6 +214,7 @@
         "item": "Arugula and prosciutto add after the pizza comes out of the oven",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Other"
       }
     }

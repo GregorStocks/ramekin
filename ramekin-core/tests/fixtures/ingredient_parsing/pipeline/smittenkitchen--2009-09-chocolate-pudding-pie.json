@@ -3,6 +3,10 @@
   "recipe_slug": "2009-09-chocolate-pudding-pie",
   "ingredients": [
     {
+      "raw": "Pudding filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup cornstarch",
       "expected": {
         "item": "cornstarch",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding Filling",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "Pudding Filling",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding Filling",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "not more than 60% cacao, finely chopped",
+        "section": "Pudding Filling",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Pudding Filling",
         "category": "Dairy & Eggs"
       }
     }

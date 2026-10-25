@@ -96,6 +96,10 @@
       }
     },
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (155 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -110,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -128,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -146,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -168,6 +175,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -186,8 +194,13 @@
           }
         ],
         "note": "plus an additional tablespoon if needed",
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons unsalted butter",
@@ -200,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -214,6 +228,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -228,6 +243,7 @@
           }
         ],
         "note": "see Note up top",
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -237,6 +253,7 @@
         "item": "A pinch or two of sea salt",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -255,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -269,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -283,6 +302,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -297,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -311,6 +332,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

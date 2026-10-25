@@ -3,6 +3,10 @@
   "recipe_slug": "zucchini-cookies-recipe",
   "ingredients": [
     {
+      "raw": "For the Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup unsalted butter room temperature",
       "expected": {
         "item": "unsalted butter room temperature",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,8 +182,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the Lemon Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup confectioners’ sugar sifted",
@@ -181,6 +201,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Lemon Glaze",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Glaze",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Glaze",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "cabbage-and-bell-pepper-salad-",
   "ingredients": [
     {
+      "raw": "Salad Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 large or 1 small cabbage",
       "expected": {
         "item": "cabbage",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "or 5-6 mini peppers",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Other"
       }
     },
@@ -59,8 +66,13 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dressing Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "Juice of 1 small lemon",
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Produce"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Baking"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": "or use 1 tsp of garlic salt instead of garlic powder and salt",
+        "section": "Dressing Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": "fresh or frozen",
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": "optional",
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     }

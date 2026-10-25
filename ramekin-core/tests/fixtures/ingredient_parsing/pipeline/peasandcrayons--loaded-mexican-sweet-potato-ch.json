@@ -3,6 +3,10 @@
   "recipe_slug": "loaded-mexican-sweet-potato-ch",
   "ingredients": [
     {
+      "raw": "FOR THE FRIES:",
+      "is_section_header": true
+    },
+    {
       "raw": "20 oz crinkle-cut sweet potato fries",
       "expected": {
         "item": "crinkle-cut sweet potato fries",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fries",
         "category": "Other"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "Pepper Jack or Mexican Blend are my fav",
+        "section": "For the Fries",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "TASTY TOPPING OPTIONS: CHOOSE YOUR FAVORITES:",
+      "is_section_header": true
     },
     {
       "raw": "Queso",
@@ -36,6 +46,7 @@
         "item": "Queso",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Cheese"
       }
     },
@@ -45,6 +56,7 @@
         "item": "Black Beans or Pinto Beans",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Canned Goods"
       }
     },
@@ -54,6 +66,7 @@
         "item": "Pickled or Sliced Jalapeño Peppers",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Produce"
       }
     },
@@ -63,6 +76,7 @@
         "item": "Fresh Cilantro and/or chopped green onion",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Produce"
       }
     },
@@ -72,6 +86,7 @@
         "item": "Diced Bell Peppers",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Produce"
       }
     },
@@ -81,6 +96,7 @@
         "item": "Chopped Tomato",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Produce"
       }
     },
@@ -90,6 +106,7 @@
         "item": "Pico de Gallo",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Condiments & Sauces"
       }
     },
@@ -99,6 +116,7 @@
         "item": "Salsa",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Condiments & Sauces"
       }
     },
@@ -108,6 +126,7 @@
         "item": "Guacamole",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Condiments & Sauces"
       }
     },
@@ -117,6 +136,7 @@
         "item": "Chopped Avocado",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Produce"
       }
     },
@@ -126,6 +146,7 @@
         "item": "Shredded Lettuce",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Produce"
       }
     },
@@ -135,6 +156,7 @@
         "item": "Sour Cream or Greek Yogurt",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,8 +166,13 @@
         "item": "Jalapeno Ranch",
         "measurements": [],
         "note": null,
+        "section": "Tasty Topping Options: Choose Your Favorites",
         "category": "Other"
       }
+    },
+    {
+      "raw": "SPICE IT UP:",
+      "is_section_header": true
     },
     {
       "raw": "Season the fries with chili powder, paprika, and garlic powder before baking",
@@ -153,6 +180,7 @@
         "item": "Season the fries with chili powder, paprika, and garlic powder before baking",
         "measurements": [],
         "note": null,
+        "section": "Spice It Up",
         "category": "Other"
       }
     },
@@ -162,6 +190,7 @@
         "item": "Feeling the heat? You can even add cayenne pepper too!",
         "measurements": [],
         "note": "I always do",
+        "section": "Spice It Up",
         "category": "Other"
       }
     }

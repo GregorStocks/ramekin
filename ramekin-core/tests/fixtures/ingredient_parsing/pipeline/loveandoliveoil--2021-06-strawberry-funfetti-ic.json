@@ -3,6 +3,10 @@
   "recipe_slug": "2021-06-strawberry-funfetti-ic",
   "ingredients": [
     {
+      "raw": "For Strawberry Buttermilk Ice Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 oz  / 227 g fresh or frozen strawberries, hulled",
       "expected": {
         "item": "fresh or frozen strawberries",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "hulled",
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Produce"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Baking"
       }
     },
@@ -113,8 +123,13 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Funfetti Cake Layers:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  / 113 g unsalted butter, at room temperature",
@@ -131,6 +146,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Funfetti Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Funfetti Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Funfetti Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Oils & Vinegars"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Baking"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Funfetti Cake Layers",
         "category": "Baking"
       }
     },
@@ -245,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Baking"
       }
     },
@@ -259,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -277,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Other"
       }
     },
@@ -286,6 +311,7 @@
         "item": "whipped topping and fresh strawberries",
         "measurements": [],
         "note": "optional, for decoration",
+        "section": "For Funfetti Cake Layers",
         "category": "Frozen"
       }
     },
@@ -300,6 +326,7 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Frozen"
       }
     }

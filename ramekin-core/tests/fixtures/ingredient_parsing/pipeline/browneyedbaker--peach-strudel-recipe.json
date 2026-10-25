@@ -3,6 +3,10 @@
   "recipe_slug": "peach-strudel-recipe",
   "ingredients": [
     {
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "20 ounces   fresh peaches, peeled, pitted and cut into 1/8-inch slices",
       "expected": {
         "item": "fresh peaches",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "peeled, pitted and cut into 1/8-inch slices",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Strudel Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "5   sheets phyllo dough, thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels)",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels, thawed",
+        "section": "For the Strudel Assembly",
         "category": "Frozen"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Strudel Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Strudel Assembly",
         "category": "Baking"
       }
     }

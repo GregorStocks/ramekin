@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "blue cheese vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons white wine vinegar",
       "expected": {
         "item": "white wine vinegar",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Blue Cheese Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": "minced",
+        "section": "Blue Cheese Vinaigrette",
         "category": "Produce"
       }
     },
@@ -120,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Blue Cheese Vinaigrette",
         "category": "Produce"
       }
     },
@@ -134,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Blue Cheese Vinaigrette",
         "category": "Produce"
       }
     },
@@ -148,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Blue Cheese Vinaigrette",
         "category": "Baking"
       }
     },
@@ -162,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Blue Cheese Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Blue Cheese Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Blue Cheese Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -204,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Blue Cheese Vinaigrette",
         "category": "Cheese"
       }
     }

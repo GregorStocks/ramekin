@@ -3,6 +3,10 @@
   "recipe_slug": "moon-pies-recipe",
   "ingredients": [
     {
+      "raw": "For the Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces  (226.8 g)  unsalted butter, at room temperature, (1 cup)",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -103,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Marshmallow Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2   egg whites",
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Baking"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Baking"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Baking"
       }
     },
@@ -195,8 +214,13 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Marshmallow Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Chocolate Coating:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces  (340.2 g) semisweet chocolate",
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Coating",
         "category": "Baking"
       }
     },
@@ -231,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Coating",
         "category": "Oils & Vinegars"
       }
     }

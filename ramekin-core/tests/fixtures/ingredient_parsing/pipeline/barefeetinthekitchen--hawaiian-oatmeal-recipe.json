@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "Topping Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 - 4 teaspoons light brown sugar (optional)",
       "expected": {
         "item": "light brown sugar",
@@ -83,6 +87,7 @@
           }
         ],
         "note": "optional",
+        "section": "Topping Ingredients",
         "category": "Baking"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +117,7 @@
           }
         ],
         "note": "plain or toasted",
+        "section": "Topping Ingredients",
         "category": "Other"
       }
     },
@@ -125,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2011-06-dobos-torte",
   "ingredients": [
     {
+      "raw": "Cake layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "7 large eggs, separated",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "separated",
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "plus extra for dusting racks",
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Produce"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Frosting and filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 pound (8 ounces or 227 grams) semi- or bittersweet chocolate, coarsely chopped",
@@ -121,6 +135,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Frosting and Filling",
         "category": "Baking"
       }
     },
@@ -143,6 +158,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "Frosting and Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting and Filling",
         "category": "Baking"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting and Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,8 +203,13 @@
           }
         ],
         "note": null,
+        "section": "Frosting and Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Caramel layer:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup granulated sugar",
@@ -199,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Layer",
         "category": "Baking"
       }
     },
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Layer",
         "category": "Beverages"
       }
     },
@@ -227,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Layer",
         "category": "Nuts & Dried Fruit"
       }
     }

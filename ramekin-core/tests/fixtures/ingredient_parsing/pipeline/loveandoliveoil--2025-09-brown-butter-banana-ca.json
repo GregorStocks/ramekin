@@ -3,6 +3,10 @@
   "recipe_slug": "2025-09-brown-butter-banana-ca",
   "ingredients": [
     {
+      "raw": "For Banana Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  / 113 g salted butter, ideally European style",
       "expected": {
         "item": "salted butter, ideally European style",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "about 1 cup mashed, mashed",
+        "section": "For Banana Cake",
         "category": "Produce"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Baking"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Banana Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Other"
       }
     },
@@ -167,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,8 +195,13 @@
           }
         ],
         "note": null,
+        "section": "For Banana Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Fudge Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "6 oz  / 170 g 60-70% dark chocolate, finely chopped",
@@ -199,6 +218,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Fudge Frosting",
         "category": "Baking"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For Fudge Frosting",
         "category": "Baking"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Fudge Frosting",
         "category": "Baking"
       }
     },
@@ -249,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For Fudge Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For Fudge Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -285,6 +309,7 @@
           }
         ],
         "note": "or substitute corn syrup or golden syrup",
+        "section": "For Fudge Frosting",
         "category": "Baking"
       }
     },
@@ -303,6 +328,7 @@
           }
         ],
         "note": null,
+        "section": "For Fudge Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -321,6 +347,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Fudge Frosting",
         "category": "Dairy & Eggs"
       }
     }

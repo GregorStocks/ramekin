@@ -3,6 +3,10 @@
   "recipe_slug": "2010-03-st-louis-gooey-butter-",
   "ingredients": [
     {
+      "raw": "For the cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons milk at room temperature",
       "expected": {
         "item": "milk at room temperature",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the topping:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons plus 1 teaspoon light corn syrup",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     }

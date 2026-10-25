@@ -3,6 +3,10 @@
   "recipe_slug": "2011-02-pina-colada-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups (250 grams or 8 3/4 ounces) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Beverages"
       }
     },
@@ -139,6 +150,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -179,8 +192,13 @@
           }
         ],
         "note": "or pineapple from a can, strained, juice reserved",
+        "section": "Cake",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To brush over the cake:",
+      "is_section_header": true
     },
     {
       "raw": "1 to 2 tablespoons rum (optional)",
@@ -193,6 +211,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Brush Over the Cake",
         "category": "Beverages"
       }
     },
@@ -207,8 +226,13 @@
           }
         ],
         "note": "optional",
+        "section": "To Brush Over the Cake",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (120 grams or 4 ounces) powdered sugar",
@@ -229,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -243,6 +268,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -257,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Beverages"
       }
     }

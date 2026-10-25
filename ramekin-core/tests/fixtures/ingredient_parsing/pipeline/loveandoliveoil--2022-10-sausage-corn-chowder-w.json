@@ -3,6 +3,10 @@
   "recipe_slug": "2022-10-sausage-corn-chowder-w",
   "ingredients": [
     {
+      "raw": "For Toasted Pepitas:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  / 64 g raw pepitas",
       "expected": {
         "item": "raw pepitas",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Toasted Pepitas",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For Toasted Pepitas",
         "category": "Oils & Vinegars"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Toasted Pepitas",
         "category": "Condiments & Sauces"
       }
     },
@@ -59,8 +66,13 @@
           }
         ],
         "note": null,
+        "section": "For Toasted Pepitas",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Chowder:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons   olive oil",
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Oils & Vinegars"
       }
     },
@@ -91,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Meat & Seafood"
       }
     },
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Beverages"
       }
     },
@@ -123,6 +138,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
@@ -151,6 +168,7 @@
           }
         ],
         "note": "diced",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
@@ -165,6 +183,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
@@ -179,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
@@ -197,6 +217,7 @@
           }
         ],
         "note": "peeled and cut into 1/2-inch pieces",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
@@ -215,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Canned Goods"
       }
     },
@@ -233,6 +255,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "For Chowder",
         "category": "Beverages"
       }
     },
@@ -247,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Spices & Seasonings"
       }
     },
@@ -256,6 +280,7 @@
         "item": "salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For Chowder",
         "category": "Spices & Seasonings"
       }
     },
@@ -270,6 +295,7 @@
           }
         ],
         "note": "more or less to taste",
+        "section": "For Chowder",
         "category": "Oils & Vinegars"
       }
     },
@@ -279,6 +305,7 @@
         "item": "chopped fresh cilantro",
         "measurements": [],
         "note": "for topping",
+        "section": "For Chowder",
         "category": "Produce"
       }
     }

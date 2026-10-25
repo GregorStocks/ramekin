@@ -3,11 +3,16 @@
   "recipe_slug": "cream-puffs-recipe",
   "ingredients": [
     {
+      "raw": "Whipped Meyer Lemon Curd:",
+      "is_section_header": true
+    },
+    {
       "raw": "finely grated zest from 1-2 meyer lemons",
       "expected": {
         "item": "finely grated zest from 1-2 meyer lemons",
         "measurements": [],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Other"
       }
     },
@@ -26,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Baking"
       }
     },
@@ -44,6 +50,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Produce"
       }
     },
@@ -58,6 +65,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -76,6 +84,7 @@
           }
         ],
         "note": "cut into small pieces",
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -90,6 +99,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Spices & Seasonings"
       }
     },
@@ -108,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -126,8 +137,13 @@
           }
         ],
         "note": "to stabilize the whipped cream - you don't have to add this if piping and serving right away",
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Puffs:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  (240 ml) water",
@@ -144,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Beverages"
       }
     },
@@ -162,6 +179,7 @@
           }
         ],
         "note": "one stick",
+        "section": "Puffs",
         "category": "Dairy & Eggs"
       }
     },
@@ -180,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
@@ -198,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Spices & Seasonings"
       }
     },
@@ -216,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
@@ -230,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Dairy & Eggs"
       }
     },
@@ -239,6 +261,7 @@
         "item": "powdered sugar",
         "measurements": [],
         "note": "for dusting the cream puffs",
+        "section": "Puffs",
         "category": "Baking"
       }
     }

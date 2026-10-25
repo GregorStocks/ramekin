@@ -3,11 +3,16 @@
   "recipe_slug": "sauteed-asparagus-recipe",
   "ingredients": [
     {
+      "raw": "For the Sautéed Asparagus:",
+      "is_section_header": true
+    },
+    {
       "raw": "Extra virgin olive oil",
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Sautéed Asparagus",
         "category": "Oils & Vinegars"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": "trimmed and sliced into 3-inch pieces",
+        "section": "For the Sautéed Asparagus",
         "category": "Produce"
       }
     },
@@ -31,6 +37,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Sautéed Asparagus",
         "category": "Spices & Seasonings"
       }
     },
@@ -40,8 +47,13 @@
         "item": "Black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Sautéed Asparagus",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "3 garlic cloves, minced",
@@ -54,6 +66,7 @@
           }
         ],
         "note": "minced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -68,6 +81,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -82,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -96,35 +111,7 @@
           }
         ],
         "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1 lemon, zested and juiced",
-      "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1 lemon, zested and juiced",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       },
       "expanded": true
@@ -140,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -154,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -168,6 +157,7 @@
           }
         ],
         "note": "drained and chopped",
+        "section": "Optional Toppings",
         "category": "Canned Goods"
       }
     },
@@ -182,6 +172,7 @@
           }
         ],
         "note": "crumbled; or more to your liking",
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     }

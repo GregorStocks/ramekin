@@ -157,11 +157,16 @@
       }
     },
     {
+      "raw": "For serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Greek yogurt",
       "expected": {
         "item": "Greek yogurt",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +176,7 @@
         "item": "Lemon wedges",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

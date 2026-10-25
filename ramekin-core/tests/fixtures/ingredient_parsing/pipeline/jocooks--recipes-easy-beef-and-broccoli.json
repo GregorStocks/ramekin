@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-easy-beef-and-broccoli",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup soy sauce (low sodium )",
       "expected": {
         "item": "soy sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "low sodium",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "such as Shaoxing",
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": "or chicken broth, low sodium or no sodium",
+        "section": "Sauce",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Beef and Broccoli:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon olive oil",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Beef and Broccoli",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "trimmed of fat and sliced thin against the grain",
+        "section": "Beef and Broccoli",
         "category": "Meat & Seafood"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "cut into small florets",
+        "section": "Beef and Broccoli",
         "category": "Produce"
       }
     }

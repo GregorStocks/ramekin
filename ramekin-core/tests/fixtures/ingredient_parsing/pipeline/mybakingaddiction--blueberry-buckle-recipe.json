@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "For the Streusel Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Baking"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Streusel Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": "cut into small pieces",
+        "section": "For the Streusel Topping",
         "category": "Dairy & Eggs"
       }
     }

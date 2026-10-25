@@ -3,6 +3,10 @@
   "recipe_slug": "eton-mess-recipe",
   "ingredients": [
     {
+      "raw": "for meringue:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 large  egg whites",
       "expected": {
         "item": "egg whites",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Meringue",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Meringue",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Meringue",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For Meringue",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "for whipped cream:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup  heavy cream (42% butterfat)",
@@ -69,6 +81,7 @@
           }
         ],
         "note": "42% butterfat",
+        "section": "For Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,8 +96,13 @@
           }
         ],
         "note": "I used Valrhona Ivoire",
+        "section": "For Whipped Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "for serving:",
+      "is_section_header": true
     },
     {
       "raw": "300 grams  strawberries (hulled and quartered)",
@@ -97,6 +115,7 @@
           }
         ],
         "note": "hulled and quartered",
+        "section": "For Serving",
         "category": "Produce"
       }
     }

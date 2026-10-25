@@ -3,6 +3,10 @@
   "recipe_slug": "2022-08-blueberry-cream-cheese",
   "ingredients": [
     {
+      "raw": "For cream cheese layer:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 oz  / 170 g full fat cream cheese, at room temperature",
       "expected": {
         "item": "full fat cream cheese",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cream Cheese Layer",
         "category": "Cheese"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Cream Cheese Layer",
         "category": "Baking"
       }
     },
@@ -49,8 +55,13 @@
           }
         ],
         "note": null,
+        "section": "For Cream Cheese Layer",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For cake base:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  / 113 g (1 stick) unsalted butter, at room temperature",
@@ -71,6 +82,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": "plus more for topping",
+        "section": "For Cake Base",
         "category": "Baking"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake Base",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake Base",
         "category": "Baking"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake Base",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake Base",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake Base",
         "category": "Baking"
       }
     },
@@ -209,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake Base",
         "category": "Baking"
       }
     },
@@ -227,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake Base",
         "category": "Produce"
       }
     }

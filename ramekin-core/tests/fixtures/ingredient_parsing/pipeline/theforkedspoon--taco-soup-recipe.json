@@ -321,11 +321,16 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Tortilla chips, sliced avocado, green onion, shredded cheese",
       "expected": {
         "item": "Tortilla chips, sliced avocado, green onion",
         "measurements": [],
         "note": "shredded cheese",
+        "section": "Toppings",
         "category": "Snacks"
       }
     }

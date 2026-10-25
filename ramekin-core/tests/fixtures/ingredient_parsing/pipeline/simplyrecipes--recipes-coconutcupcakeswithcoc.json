@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-coconutcupcakeswithcoc",
   "ingredients": [
     {
+      "raw": "For the coconut cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup unsalted butter, room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Coconut Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Cupcakes",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Coconut Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Cupcakes",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Cupcakes",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Cupcakes",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Cupcakes",
         "category": "Baking"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "For the Coconut Cupcakes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the coconut cream cheese frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (1 stick) unsalted butter, room temperature",
@@ -143,6 +160,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Coconut Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,6 +179,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Coconut Cream Cheese Frosting",
         "category": "Other"
       }
     },
@@ -175,6 +194,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Coconut Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -189,6 +209,7 @@
           }
         ],
         "note": "plus more for decorating",
+        "section": "For the Coconut Cream Cheese Frosting",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "coffee-cake-recipe",
   "ingredients": [
     {
+      "raw": "Cinnamon Crumb Mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "2/3 cup (135g) packed dark or light brown sugar",
       "expected": {
         "item": "dark or light brown sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cinnamon Crumb Mixture",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "spooned & leveled",
+        "section": "Cinnamon Crumb Mixture",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Crumb Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,8 +74,13 @@
           }
         ],
         "note": "cold and cubed",
+        "section": "Cinnamon Crumb Mixture",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "1 and 1/3 cups (166g) all-purpose flour (spooned & leveled)",
@@ -85,6 +97,7 @@
           }
         ],
         "note": "spooned & leveled",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -231,8 +252,13 @@
           }
         ],
         "note": "any kind, dairy or nondairy, is fine",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Vanilla Icing (Optional):",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (120g) confectioners’ sugar, sifted",
@@ -249,6 +275,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Vanilla Icing (Optional)",
         "category": "Baking"
       }
     },
@@ -263,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Icing (Optional)",
         "category": "Baking"
       }
     },
@@ -281,6 +309,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Icing (Optional)",
         "category": "Dairy & Eggs"
       }
     }

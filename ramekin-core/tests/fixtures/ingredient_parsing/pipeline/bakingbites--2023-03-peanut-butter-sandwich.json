@@ -3,6 +3,10 @@
   "recipe_slug": "2023-03-peanut-butter-sandwich",
   "ingredients": [
     {
+      "raw": "Crispy Salted Peanut Butter Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups all purpose flour",
       "expected": {
         "item": "all purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "national brand",
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Baking"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": "approximately",
+        "section": "Crispy Salted Peanut Butter Cookies",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Chocolate Peanut Butter Ganache:",
+      "is_section_header": true
     },
     {
       "raw": "3 oz dark chocolate*, chopped",
@@ -153,6 +171,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Peanut Butter Ganache",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "national brand",
+        "section": "Chocolate Peanut Butter Ganache",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Peanut Butter Ganache",
         "category": "Spices & Seasonings"
       }
     }

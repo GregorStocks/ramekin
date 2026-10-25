@@ -3,6 +3,10 @@
   "recipe_slug": "2018-12-chocolate-tahini-fudge",
   "ingredients": [
     {
+      "raw": "Tahini layer:",
+      "is_section_header": true
+    },
+    {
       "raw": "20 oz. 1 1/4 lb. package vanilla almond bark",
       "expected": {
         "item": "1 1/4 lb. package vanilla almond bark",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Layer",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Tahini Layer",
         "category": "Canned Goods"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Tahini Layer",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Chocolate layer:",
+      "is_section_header": true
     },
     {
       "raw": "12 oz. 1 bag semisweet chocolate chips",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Layer",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Layer",
         "category": "Canned Goods"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Layer",
         "category": "Spices & Seasonings"
       }
     }

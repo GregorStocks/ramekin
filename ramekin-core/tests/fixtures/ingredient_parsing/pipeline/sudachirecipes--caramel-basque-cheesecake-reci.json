@@ -3,6 +3,10 @@
   "recipe_slug": "caramel-basque-cheesecake-reci",
   "ingredients": [
     {
+      "raw": "Caramel sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "25 g white sugar caster or granulated",
       "expected": {
         "item": "white sugar caster or granulated",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Sauce",
         "category": "Other"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "Caramel Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Baschee:",
+      "is_section_header": true
     },
     {
       "raw": "3 slices processed cheese",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Cheese"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Baschee",
         "category": "Dairy & Eggs"
       }
     }

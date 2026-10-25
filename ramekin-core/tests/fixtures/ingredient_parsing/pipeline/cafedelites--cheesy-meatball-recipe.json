@@ -3,6 +3,10 @@
   "recipe_slug": "cheesy-meatball-recipe",
   "ingredients": [
     {
+      "raw": "MEATBALLS:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 slices white bread crust removed",
       "expected": {
         "item": "white bread crust",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "removed",
+        "section": "Meatballs",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Other"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "grated",
+        "section": "Meatballs",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Other"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,8 +212,13 @@
           }
         ],
         "note": "to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Tomato Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons olive oil divided",
@@ -209,6 +231,7 @@
           }
         ],
         "note": "divided",
+        "section": "Tomato Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "minced",
+        "section": "Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Canned Goods"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Beverages"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Canned Goods"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,6 +336,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -321,6 +351,7 @@
           }
         ],
         "note": "optional",
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -335,6 +366,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -349,6 +381,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -363,6 +396,7 @@
           }
         ],
         "note": "optional",
+        "section": "Tomato Sauce",
         "category": "Baking"
       }
     },
@@ -377,6 +411,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Cheese"
       }
     },
@@ -391,6 +426,7 @@
           }
         ],
         "note": "chopped to garnish",
+        "section": "Tomato Sauce",
         "category": "Produce"
       }
     }

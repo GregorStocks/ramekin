@@ -171,6 +171,10 @@
       }
     },
     {
+      "raw": "eggnog frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces cream cheese, softened",
       "expected": {
         "item": "cream cheese",
@@ -181,6 +185,7 @@
           }
         ],
         "note": "softened",
+        "section": "Eggnog Frosting",
         "category": "Cheese"
       }
     },
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Frosting",
         "category": "Baking"
       }
     },
@@ -223,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Frosting",
         "category": "Baking"
       }
     },
@@ -246,6 +255,7 @@
         "item": "white sparkle sugar",
         "measurements": [],
         "note": "for topping",
+        "section": "Eggnog Frosting",
         "category": "Other"
       }
     },
@@ -260,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Frosting",
         "category": "Spices & Seasonings"
       }
     }

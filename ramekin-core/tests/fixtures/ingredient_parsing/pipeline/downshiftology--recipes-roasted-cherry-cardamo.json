@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-roasted-cherry-cardamo",
   "ingredients": [
     {
+      "raw": "Ice Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup raw cashews, (soaked overnight)",
       "expected": {
         "item": "raw cashews",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "soaked overnight",
+        "section": "Ice Cream",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Roasted Cherries:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups pitted cherries",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Cherries",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Cherries",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Cherries",
         "category": "Spices & Seasonings"
       }
     }

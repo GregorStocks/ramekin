@@ -3,6 +3,10 @@
   "recipe_slug": "2021-10-05-simple-potato-leek-",
   "ingredients": [
     {
+      "raw": "For the soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 leeks, thinly sliced, to yield 4 to 6 cups",
       "expected": {
         "item": "leeks, thinly sliced, to yield 4 to 6 cups",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -36,6 +42,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "such as Yukon Gold or whatever variety you have on hand, peeled and cut into 1-inch pieces",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Soup",
         "category": "Canned Goods"
       }
     },
@@ -73,6 +82,7 @@
         "item": "Freshly cracked black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,8 +97,13 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the herby bread crumbs (optional):",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons olive oil",
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Herby Bread Crumbs (Optional)",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Herby Bread Crumbs (Optional)",
         "category": "Bakery & Bread"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Herby Bread Crumbs (Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -138,6 +156,7 @@
         "item": "A few tablespoons of minced chives or parsley",
         "measurements": [],
         "note": null,
+        "section": "For the Herby Bread Crumbs (Optional)",
         "category": "Produce"
       }
     },
@@ -152,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Herby Bread Crumbs (Optional)",
         "category": "Produce"
       }
     }

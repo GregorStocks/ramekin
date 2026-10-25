@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-1014734-adobo-fried-ch",
   "ingredients": [
     {
+      "raw": "For the Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Broth:",
+      "is_section_header": true
     },
     {
       "raw": "2 1/2 cups distilled white vinegar",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broth",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Broth",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broth",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "For the Broth",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Chicken:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds chicken pieces with skin, thighs and/or drumsticks, plus wings if desired (do not use breasts)",
@@ -195,6 +220,7 @@
           }
         ],
         "note": "do not use breasts, plus wings if desired",
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -204,6 +230,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Baking"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -274,6 +305,7 @@
           }
         ],
         "note": "about",
+        "section": "For the Chicken",
         "category": "Oils & Vinegars"
       }
     }

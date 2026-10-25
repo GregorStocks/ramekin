@@ -21,6 +21,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 tbsp tamarind puree , NOT concentrate (Note 2)",
       "expected": {
         "item": "tamarind puree, NOT concentrate",
@@ -31,6 +35,7 @@
           }
         ],
         "note": "Note 2",
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -45,6 +50,7 @@
           }
         ],
         "note": "packed",
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -59,6 +65,7 @@
           }
         ],
         "note": "Note 3",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,8 +80,13 @@
           }
         ],
         "note": "Note 4",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Stir Fry:",
+      "is_section_header": true
     },
     {
       "raw": "2 – 3 tbsp vegetable or canola oil",
@@ -87,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,6 +114,7 @@
           }
         ],
         "note": "brown, yellow, sliced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -115,6 +129,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -133,6 +148,7 @@
           }
         ],
         "note": "thinly sliced; or thigh",
+        "section": "Stir Fry",
         "category": "Meat & Seafood"
       }
     },
@@ -147,6 +163,7 @@
           }
         ],
         "note": "lightly whisked",
+        "section": "Stir Fry",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -175,6 +193,7 @@
           }
         ],
         "note": "see photo, cut into 3cm / 1 1/4″ batons",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -189,6 +208,7 @@
           }
         ],
         "note": "cut into 3cm / 1 1/4″ pieces",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -203,8 +223,13 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For serving:",
+      "is_section_header": true
     },
     {
       "raw": "Lime wedges (essential)",
@@ -212,6 +237,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": "essential",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -221,6 +247,7 @@
         "item": "Ground chilli or cayenne pepper",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving",
         "category": "Spices & Seasonings"
       }
     },
@@ -230,6 +257,7 @@
         "item": "beansprouts",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

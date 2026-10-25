@@ -3,6 +3,10 @@
   "recipe_slug": "2018-10-even-more-perfect-appl",
   "ingredients": [
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (95 grams) light or dark brown sugar",
       "expected": {
         "item": "light or dark brown sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -72,6 +80,7 @@
         "item": "Freshly grated nutmeg",
         "measurements": [],
         "note": "to taste, or about 1/4 teaspoon ground",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -86,6 +95,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -100,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -114,6 +125,7 @@
           }
         ],
         "note": "which is like a mix of Granny Smith and Golden Delicious",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -128,8 +140,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Crust:",
+      "is_section_header": true
     },
     {
       "raw": "1 recipe All Butter, Really Flaky Pie Dough, or your favorite recipe, or a storebought dough",
@@ -142,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -156,6 +174,7 @@
           }
         ],
         "note": "optional, lightly beaten",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,6 +184,7 @@
         "item": "Coarse or raw sugar",
         "measurements": [],
         "note": "optional, for sprinkling",
+        "section": "Crust",
         "category": "Baking"
       }
     }

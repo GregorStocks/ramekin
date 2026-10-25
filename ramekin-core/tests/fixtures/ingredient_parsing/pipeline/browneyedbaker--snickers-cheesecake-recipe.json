@@ -3,6 +3,10 @@
   "recipe_slug": "snickers-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "24   Oreo cookies, whole",
       "expected": {
         "item": "Oreo cookies",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "whole",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "32 ounces  (907.19 g) cream cheese, at room temperature",
@@ -45,6 +55,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Cheese"
       }
     },
@@ -63,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
@@ -77,6 +89,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
@@ -123,8 +138,13 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For the Cheesecake",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Whipped cream",
@@ -132,6 +152,7 @@
         "item": "Whipped cream",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -141,6 +162,7 @@
         "item": "Chopped Snickers bars",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Other"
       }
     },
@@ -150,6 +172,7 @@
         "item": "Hot fudge sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Condiments & Sauces"
       }
     },
@@ -159,6 +182,7 @@
         "item": "Caramel sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Condiments & Sauces"
       }
     }

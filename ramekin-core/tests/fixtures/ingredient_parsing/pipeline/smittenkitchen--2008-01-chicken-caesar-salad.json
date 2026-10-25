@@ -3,6 +3,10 @@
   "recipe_slug": "2008-01-chicken-caesar-salad",
   "ingredients": [
     {
+      "raw": "For the chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound boneless, skinless chicken breasts",
       "expected": {
         "item": "boneless, skinless chicken breasts",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "plus more for seasoning",
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Chicken",
         "category": "Baking"
       }
     },
@@ -64,6 +72,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +82,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -82,8 +92,13 @@
         "item": "A squeeze of lemon juice",
         "measurements": [],
         "note": null,
+        "section": "For the Chicken",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the croutons:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons olive oil",
@@ -96,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Croutons",
         "category": "Oils & Vinegars"
       }
     },
@@ -110,6 +126,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Croutons",
         "category": "Produce"
       }
     },
@@ -119,6 +136,7 @@
         "item": "A few fine gratings of lemon zest",
         "measurements": [],
         "note": null,
+        "section": "For the Croutons",
         "category": "Other"
       }
     },
@@ -133,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "For the Croutons",
         "category": "Spices & Seasonings"
       }
     },
@@ -142,6 +161,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Croutons",
         "category": "Spices & Seasonings"
       }
     },
@@ -156,6 +176,7 @@
           }
         ],
         "note": "sourdough, ciabatta, or a white country bread work well here, cubed",
+        "section": "For the Croutons",
         "category": "Bakery & Bread"
       }
     },
@@ -170,8 +191,13 @@
           }
         ],
         "note": "optional",
+        "section": "For the Croutons",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "For the dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons (25 grams) mayonnaise",
@@ -188,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -202,6 +229,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -216,6 +244,7 @@
           }
         ],
         "note": "or 1 to 2 anchovies; minced",
+        "section": "For the Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -230,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -248,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -266,6 +297,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -275,8 +307,13 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "3 “hearts” or 2 full heads of romaine, chopped to the size you like",
@@ -289,6 +326,7 @@
           }
         ],
         "note": "chopped to the size you like",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -298,6 +336,7 @@
         "item": "Additional grated parmesan",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     }

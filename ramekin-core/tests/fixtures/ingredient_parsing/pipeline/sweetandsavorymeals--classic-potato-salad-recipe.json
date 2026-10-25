@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cloves garlic minced",
       "expected": {
         "item": "garlic",
@@ -153,6 +157,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -223,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -237,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -246,6 +257,7 @@
         "item": "Kosher salt and ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

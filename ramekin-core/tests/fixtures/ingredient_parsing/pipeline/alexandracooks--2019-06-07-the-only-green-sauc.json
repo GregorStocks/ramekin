@@ -3,6 +3,10 @@
   "recipe_slug": "2019-06-07-the-only-green-sauc",
   "ingredients": [
     {
+      "raw": "For the green sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 bunch (about 3 cups, 3 ounces) fresh parsley, cilantro, arugula, mustard greens or a mix, roughly chopped",
       "expected": {
         "item": "fresh parsley, cilantro, arugula, mustard greens or a mix",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 3 cups, 3 ounces, roughly chopped",
+        "section": "For the Green Sauce",
         "category": "Produce"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "about 1 ounce, roughly chopped",
+        "section": "For the Green Sauce",
         "category": "Produce"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": "or lime, about 2 tablespoons, plus more to taste",
+        "section": "For the Green Sauce",
         "category": "Produce"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "peeled",
+        "section": "For the Green Sauce",
         "category": "Produce"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Green Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Green Sauce",
         "category": "Produce"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For the Green Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,8 +138,13 @@
           }
         ],
         "note": null,
+        "section": "For the Green Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the eggs + toast:",
+      "is_section_header": true
     },
     {
       "raw": "eggs, however many you need",
@@ -136,6 +152,7 @@
         "item": "eggs, however many you need",
         "measurements": [],
         "note": null,
+        "section": "For the Eggs + Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +162,7 @@
         "item": "extra-virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Eggs + Toast",
         "category": "Oils & Vinegars"
       }
     },
@@ -159,6 +177,7 @@
           }
         ],
         "note": "sliced thickly",
+        "section": "For the Eggs + Toast",
         "category": "Bakery & Bread"
       }
     },
@@ -168,6 +187,7 @@
         "item": "flaky sea salt",
         "measurements": [],
         "note": null,
+        "section": "For the Eggs + Toast",
         "category": "Spices & Seasonings"
       }
     }

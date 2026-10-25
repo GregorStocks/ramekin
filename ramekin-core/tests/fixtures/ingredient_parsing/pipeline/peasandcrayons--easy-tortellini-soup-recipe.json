@@ -166,11 +166,16 @@
       }
     },
     {
+      "raw": "TASTY TOPPINGS: CHOOSE YOUR FAVORITES:",
+      "is_section_header": true
+    },
+    {
       "raw": "freshly grated Parmesan cheese",
       "expected": {
         "item": "freshly grated Parmesan cheese",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings: Choose Your Favorites",
         "category": "Cheese"
       }
     },
@@ -180,6 +185,7 @@
         "item": "crushed red pepper flakes",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings: Choose Your Favorites",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +195,7 @@
         "item": "fresh torn basil",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings: Choose Your Favorites",
         "category": "Other"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2017-01-chicken-wonton-soup",
   "ingredients": [
     {
+      "raw": "Wontons:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 pound ground chicken",
       "expected": {
         "item": "ground chicken",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Produce"
       }
     },
@@ -92,6 +102,7 @@
         "item": "Ground white pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Wontons",
         "category": "Spices & Seasonings"
       }
     },
@@ -110,6 +121,7 @@
           }
         ],
         "note": "about 12 ounces",
+        "section": "Wontons",
         "category": "Frozen"
       }
     },
@@ -119,8 +131,13 @@
         "item": "Cornstarch, to prevent sticking",
         "measurements": [],
         "note": null,
+        "section": "Wontons",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Broth:",
+      "is_section_header": true
     },
     {
       "raw": "8 cups prepared chicken stock or broth, storebought or homemade",
@@ -133,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -147,6 +165,7 @@
           }
         ],
         "note": "peeled and sliced",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -161,6 +180,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -175,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -184,8 +205,13 @@
         "item": "Soy sauce or salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "3 ounces baby spinach leaves (a few handfuls)",
@@ -198,6 +224,7 @@
           }
         ],
         "note": "a few handfuls",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -207,6 +234,7 @@
         "item": "Toasted sesame oil and soy sauce",
         "measurements": [],
         "note": "to taste",
+        "section": "To Finish",
         "category": "Oils & Vinegars"
       }
     }

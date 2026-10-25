@@ -3,6 +3,10 @@
   "recipe_slug": "beef-udon-recipe",
   "ingredients": [
     {
+      "raw": "Marinating the beef and onions:",
+      "is_section_header": true
+    },
+    {
       "raw": "150 g thinly sliced beef or thinly sliced pork",
       "expected": {
         "item": "thinly sliced beef or thinly sliced pork",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Marinating the Beef and Onions",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Beverages"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Produce"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Niku Udon Broth:",
+      "is_section_header": true
     },
     {
       "raw": "500 ml dashi stock (from step 1) or instant dashi",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "from step 1",
+        "section": "Niku Udon Broth",
         "category": "Canned Goods"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Niku Udon Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Niku Udon Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "Niku Udon Broth",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cooking / Serving:",
+      "is_section_header": true
     },
     {
       "raw": "1 tsp beef suet (fat) or beef tallow, lard, cooking oil",
@@ -195,6 +220,7 @@
           }
         ],
         "note": "fat",
+        "section": "Cooking / Serving",
         "category": "Meat & Seafood"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Cooking / Serving",
         "category": "Pasta & Rice"
       }
     },
@@ -218,6 +245,7 @@
         "item": "finely chopped green onions to garnish",
         "measurements": [],
         "note": null,
+        "section": "Cooking / Serving",
         "category": "Other"
       }
     },
@@ -227,6 +255,7 @@
         "item": "Japanese chili powder",
         "measurements": [],
         "note": "shichimi togarashi, optional",
+        "section": "Cooking / Serving",
         "category": "Spices & Seasonings"
       }
     }

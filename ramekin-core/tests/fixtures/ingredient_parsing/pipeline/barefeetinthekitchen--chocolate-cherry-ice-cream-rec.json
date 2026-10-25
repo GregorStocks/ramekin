@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "Saucy Roasted Cherries:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound cherries about 3 cups pitted and halved",
       "expected": {
         "item": "cherries about 3 cups",
@@ -111,6 +115,7 @@
           }
         ],
         "note": "pitted and halved",
+        "section": "Saucy Roasted Cherries",
         "category": "Other"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Saucy Roasted Cherries",
         "category": "Baking"
       }
     }

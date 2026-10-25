@@ -157,11 +157,16 @@
       }
     },
     {
+      "raw": "Serve with:",
+      "is_section_header": true
+    },
+    {
       "raw": "toasted pepitas or almonds, cilantro, avocado, salted yogurt (use non-dairy to keep it vegan), lime wedges",
       "expected": {
         "item": "toasted pepitas or almonds, cilantro, avocado, salted yogurt, lime wedges",
         "measurements": [],
         "note": "use non-dairy to keep it vegan",
+        "section": "Serve with",
         "category": "Nuts & Dried Fruit"
       }
     }

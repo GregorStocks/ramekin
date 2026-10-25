@@ -40,11 +40,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "goat cheese",
       "expected": {
         "item": "goat cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -54,6 +59,7 @@
         "item": "cilantro",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -63,6 +69,7 @@
         "item": "bacon",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Meat & Seafood"
       }
     },
@@ -72,6 +79,7 @@
         "item": "chives",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

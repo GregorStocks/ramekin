@@ -3,6 +3,10 @@
   "recipe_slug": "2008-09-raspberry-breakfast-ba",
   "ingredients": [
     {
+      "raw": "For the crust and crumb:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups (190 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumb",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "firmly packed",
+        "section": "For the Crust and Crumb",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumb",
         "category": "Snacks"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumb",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumb",
         "category": "Baking"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,8 +142,13 @@
           }
         ],
         "note": "cut into 1-inch pieces",
+        "section": "For the Crust and Crumb",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the raspberry filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (50 grams) firmly packed dark brown sugar",
@@ -149,6 +165,7 @@
           }
         ],
         "note": "firmly packed",
+        "section": "For the Raspberry Filling",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Raspberry Filling",
         "category": "Produce"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Raspberry Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Raspberry Filling",
         "category": "Baking"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "fresh or frozen",
+        "section": "For the Raspberry Filling",
         "category": "Produce"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "For the Raspberry Filling",
         "category": "Produce"
       }
     },
@@ -249,6 +271,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For the Raspberry Filling",
         "category": "Dairy & Eggs"
       }
     }

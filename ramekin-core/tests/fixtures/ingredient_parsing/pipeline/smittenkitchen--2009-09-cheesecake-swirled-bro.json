@@ -3,6 +3,10 @@
   "recipe_slug": "2009-09-cheesecake-swirled-bro",
   "ingredients": [
     {
+      "raw": "Brownie batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 stick (1/2 cup or 4 ounces) unsalted butter, cut into pieces",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -91,8 +100,13 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cheesecake batter:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces cream cheese, well softened",
@@ -105,6 +119,7 @@
           }
         ],
         "note": "well softened",
+        "section": "Cheesecake Batter",
         "category": "Cheese"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Batter",
         "category": "Baking"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Batter",
         "category": "Baking"
       }
     }

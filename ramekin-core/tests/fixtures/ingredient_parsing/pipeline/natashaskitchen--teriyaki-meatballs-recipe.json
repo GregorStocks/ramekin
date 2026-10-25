@@ -3,6 +3,10 @@
   "recipe_slug": "teriyaki-meatballs-recipe",
   "ingredients": [
     {
+      "raw": "For the Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "16 oz lean ground turkey",
       "expected": {
         "item": "lean ground turkey",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "or 1/4 tsp ground ginger",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "pressed or grated",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Teriyaki Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup light brown sugar, lightly packed",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "lightly packed",
+        "section": "For the Teriyaki Sauce",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Teriyaki Sauce",
         "category": "Produce"
       }
     },
@@ -209,8 +231,13 @@
           }
         ],
         "note": "or 1/8 tsp ground ginger",
+        "section": "For the Teriyaki Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "Sesame seeds and green onion for garnish",
@@ -218,6 +245,7 @@
         "item": "Sesame seeds and green onion",
         "measurements": [],
         "note": "for garnish",
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     }

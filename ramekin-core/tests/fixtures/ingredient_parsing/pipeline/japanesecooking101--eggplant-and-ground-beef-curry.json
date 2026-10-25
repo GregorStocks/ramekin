@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Optional Seasonings:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 Tbsp ketchup",
       "expected": {
         "item": "ketchup",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Spices & Seasonings"
       }
     }

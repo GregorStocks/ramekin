@@ -3,6 +3,10 @@
   "recipe_slug": "2013-01-carrot-soup-with-tahin",
   "ingredients": [
     {
+      "raw": "Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons (30 ml) olive oil",
       "expected": {
         "item": "olive oil",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "peeled, diced or thinly sliced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "peeled and smashed",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": "plus more if needed",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,8 +149,13 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Crisped chickpeas:",
+      "is_section_header": true
     },
     {
       "raw": "1 3/4 cups cooked chickpeas, or 1 15-ounce (425-gram) can, drained, patted dry on paper towels",
@@ -155,6 +172,7 @@
           }
         ],
         "note": "or 1 15-ounce can, drained, patted dry on paper towels",
+        "section": "Crisped Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": "15 ml or so",
+        "section": "Crisped Chickpeas",
         "category": "Oils & Vinegars"
       }
     },
@@ -187,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Crisped Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,8 +221,13 @@
           }
         ],
         "note": null,
+        "section": "Crisped Chickpeas",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Lemon-tahini dollop:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (25 grams) tahini paste",
@@ -219,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon-Tahini Dollop",
         "category": "Condiments & Sauces"
       }
     },
@@ -237,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon-Tahini Dollop",
         "category": "Produce"
       }
     },
@@ -251,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon-Tahini Dollop",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,8 +297,13 @@
           }
         ],
         "note": null,
+        "section": "Lemon-Tahini Dollop",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Pita wedges, garnish:",
+      "is_section_header": true
     },
     {
       "raw": "A few large pitas, cut into 8 wedges",
@@ -278,6 +311,7 @@
         "item": "A few large pitas",
         "measurements": [],
         "note": "cut into 8 wedges",
+        "section": "Pita Wedges, Garnish",
         "category": "Other"
       }
     },
@@ -287,6 +321,7 @@
         "item": "Olive oil, to brush pitas",
         "measurements": [],
         "note": null,
+        "section": "Pita Wedges, Garnish",
         "category": "Oils & Vinegars"
       }
     },
@@ -296,6 +331,7 @@
         "item": "Za’atar or sesame seeds and sea salt to sprinkle",
         "measurements": [],
         "note": "a Middle Eastern spice-herb blend",
+        "section": "Pita Wedges, Garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -310,6 +346,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Pita Wedges, Garnish",
         "category": "Produce"
       }
     }

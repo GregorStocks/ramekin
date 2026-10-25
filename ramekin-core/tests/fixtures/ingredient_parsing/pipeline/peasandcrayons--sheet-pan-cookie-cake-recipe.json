@@ -159,6 +159,10 @@
       }
     },
     {
+      "raw": "CHOCOLATE PEANUT BUTTER FROSTING:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 TBSP 1 stick butter, softened",
       "expected": {
         "item": "butter",
@@ -173,6 +177,7 @@
           }
         ],
         "note": "softened",
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -187,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Other"
       }
     },
@@ -201,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Baking"
       }
     },
@@ -215,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Baking"
       }
     },
@@ -229,6 +237,7 @@
           }
         ],
         "note": "milk works too + extra if needed",
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,8 +252,13 @@
           }
         ],
         "note": "to taste",
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "TOOLS USED:",
+      "is_section_header": true
     },
     {
       "raw": "parchment paper",
@@ -252,6 +266,7 @@
         "item": "parchment paper",
         "measurements": [],
         "note": null,
+        "section": "Tools Used",
         "category": "Other"
       }
     },
@@ -266,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "Tools Used",
         "category": "Other"
       }
     }

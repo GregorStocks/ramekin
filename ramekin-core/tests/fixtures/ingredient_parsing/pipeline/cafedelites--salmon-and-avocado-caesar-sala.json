@@ -3,6 +3,10 @@
   "recipe_slug": "salmon-and-avocado-caesar-sala",
   "ingredients": [
     {
+      "raw": "Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup cubed ciabatta or sourdough",
       "expected": {
         "item": "cubed ciabatta or sourdough",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "washed and dried",
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons whole egg mayo full fat or reduced fat",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Dressing",
         "category": "Meat & Seafood"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Cheese"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Other"
       }
     }

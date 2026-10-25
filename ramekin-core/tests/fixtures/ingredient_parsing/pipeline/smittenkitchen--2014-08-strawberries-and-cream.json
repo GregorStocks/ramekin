@@ -3,6 +3,10 @@
   "recipe_slug": "2014-08-strawberries-and-cream",
   "ingredients": [
     {
+      "raw": "Crumbles:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 tablespoons (2 ounces or 55 grams) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crumbles",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbles",
         "category": "Baking"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbles",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbles",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbles",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbles",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbles",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbles",
         "category": "Baking"
       }
     },
@@ -149,8 +161,13 @@
           }
         ],
         "note": null,
+        "section": "Crumbles",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cream:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) heavy or whipping cream",
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Cream",
         "category": "Baking"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "optional",
+        "section": "Cream",
         "category": "Baking"
       }
     }

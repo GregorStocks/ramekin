@@ -3,6 +3,10 @@
   "recipe_slug": "2018-12-04-stamped-christmas-c",
   "ingredients": [
     {
+      "raw": "For the cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "24 tablespoons (344 g) unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -139,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Produce"
       }
     },
@@ -195,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,8 +225,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the glaze:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (260 g) powdered sugar",
@@ -227,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -245,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -259,6 +282,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -277,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Dairy & Eggs"
       }
     }

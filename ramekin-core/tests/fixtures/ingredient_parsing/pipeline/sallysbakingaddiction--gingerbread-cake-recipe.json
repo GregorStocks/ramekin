@@ -199,6 +199,10 @@
       }
     },
     {
+      "raw": "Spiced Cream Cheese Frosting (optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces (226g) full-fat brick cream cheese, softened to room temperature",
       "expected": {
         "item": "full-fat brick cream cheese",
@@ -213,6 +217,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Cheese"
       }
     },
@@ -231,6 +236,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -249,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Baking"
       }
     },
@@ -263,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Baking"
       }
     },
@@ -277,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -291,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Produce"
       },
       "expanded": true
@@ -306,94 +316,7 @@
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
-      "expected": {
-        "item": "ground cinnamon",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "small pinch"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
-      "expected": {
-        "item": "ginger",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "small pinch"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
-      "expected": {
-        "item": "cloves",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "small pinch"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
-      "expected": {
-        "item": "ground cinnamon",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "small pinch"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
-      "expected": {
-        "item": "ginger",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "small pinch"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
-      "expected": {
-        "item": "cloves",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "small pinch"
-          }
-        ],
-        "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -404,6 +327,7 @@
         "item": "sprinkles and/or sugared cranberries",
         "measurements": [],
         "note": "optional, for garnish",
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Baking"
       }
     }

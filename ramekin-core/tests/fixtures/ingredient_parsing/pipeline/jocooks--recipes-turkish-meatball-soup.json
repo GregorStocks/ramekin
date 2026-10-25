@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-turkish-meatball-soup",
   "ingredients": [
     {
+      "raw": "For the Tiny Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground beef",
       "expected": {
         "item": "ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tiny Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Tiny Meatballs",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Tiny Meatballs",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Tiny Meatballs",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tiny Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tiny Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For the Tiny Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Soup:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons olive oil",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Canned Goods"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "low sodium or no sodium added",
+        "section": "For the Soup",
         "category": "Canned Goods"
       }
     },
@@ -227,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Canned Goods"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": "uncooked",
+        "section": "For the Soup",
         "category": "Pasta & Rice"
       }
     },
@@ -255,6 +280,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -283,6 +310,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -292,6 +320,7 @@
         "item": "lemon wedges",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Soup",
         "category": "Produce"
       }
     }

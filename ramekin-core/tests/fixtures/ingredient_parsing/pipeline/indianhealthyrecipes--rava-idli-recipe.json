@@ -3,6 +3,10 @@
   "recipe_slug": "rava-idli-recipe",
   "ingredients": [
     {
+      "raw": "To Temper:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup semolina (bombay rava/ suji/ chiroti rava)",
       "expected": {
         "item": "semolina",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "bombay rava/ suji/ chiroti rava",
+        "section": "To Temper",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "optional, chopped",
+        "section": "To Temper",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "skip if making for kids, chopped",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Other ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "⅓ teaspoon sea salt  (or use as needed)",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "or use as needed",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "chopped finely",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "or 1/2 cup Greek yogurt/ thick yogurt diluted with 1/4 cup water",
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "+ 2 to 3 tbsps to adjust the consistency",
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "omit if using eno",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "or fruit salt or 1/4 tsp Soda bicarbonate",
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "or 8 split",
+        "section": "Other Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "grated, optional",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     }

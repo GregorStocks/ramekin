@@ -3,6 +3,10 @@
   "recipe_slug": "cranberry-trifle-recipe",
   "ingredients": [
     {
+      "raw": "Cranberry Layer:",
+      "is_section_header": true
+    },
+    {
       "raw": "24 ounces fresh cranberries 2 packages",
       "expected": {
         "item": "fresh cranberries 2 packages",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Layer",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Layer",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Layer",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Layer",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Custard Layer:",
+      "is_section_header": true
     },
     {
       "raw": "1 ⅓ cups granulated sugar",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Layer",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Layer",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Layer",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Layer",
         "category": "Baking"
       }
     },
@@ -153,8 +171,13 @@
           }
         ],
         "note": null,
+        "section": "Custard Layer",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "14.25 ounces white cake mix 1 box, baked, cooled and cubed",
@@ -167,6 +190,7 @@
           }
         ],
         "note": "cooled and cubed",
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -176,6 +200,7 @@
         "item": "whipped cream",
         "measurements": [],
         "note": "for decorating",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,6 +210,7 @@
         "item": "Sugared Cranberries",
         "measurements": [],
         "note": "for decorating",
+        "section": "Cake",
         "category": "Other"
       }
     }

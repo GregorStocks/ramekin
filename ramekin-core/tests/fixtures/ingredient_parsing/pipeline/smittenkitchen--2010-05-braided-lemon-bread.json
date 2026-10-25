@@ -3,6 +3,10 @@
   "recipe_slug": "2010-05-braided-lemon-bread",
   "ingredients": [
     {
+      "raw": "Sponge:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons (3 ounces) warm water",
       "expected": {
         "item": "warm water",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Beverages"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -63,8 +70,13 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Dough:",
+      "is_section_header": true
     },
     {
       "raw": "Sponge (above)",
@@ -72,6 +84,7 @@
         "item": "Sponge",
         "measurements": [],
         "note": "above",
+        "section": "Dough",
         "category": "Other"
       }
     },
@@ -90,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -112,6 +126,7 @@
           }
         ],
         "note": "softened",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -126,6 +141,7 @@
           }
         ],
         "note": "1 beaten with 1 teaspoon water for brushing bread",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -158,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -172,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -190,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -199,8 +219,13 @@
         "item": "Pearl sugar* or sparkling white sugar",
         "measurements": [],
         "note": "for sprinkling",
+        "section": "Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Lemon cream cheese filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup (2 1/2 ounces) cream cheese, softened",
@@ -217,6 +242,7 @@
           }
         ],
         "note": "softened",
+        "section": "Lemon Cream Cheese Filling",
         "category": "Cheese"
       }
     },
@@ -235,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -253,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cream Cheese Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -267,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cream Cheese Filling",
         "category": "Produce"
       }
     },
@@ -285,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -303,8 +333,13 @@
           }
         ],
         "note": "recipe below",
+        "section": "Lemon Cream Cheese Filling",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Lemon Curd:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons fresh lemon juice",
@@ -317,6 +352,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Curd",
         "category": "Produce"
       }
     },
@@ -331,6 +367,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Lemon Curd",
         "category": "Produce"
       }
     },
@@ -345,6 +382,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Curd",
         "category": "Baking"
       }
     },
@@ -359,6 +397,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -373,6 +412,7 @@
           }
         ],
         "note": "cut into small pieces",
+        "section": "Lemon Curd",
         "category": "Dairy & Eggs"
       }
     }

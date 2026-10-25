@@ -3,11 +3,16 @@
   "recipe_slug": "2018-09-wicked-espresso-cake-h",
   "ingredients": [
     {
+      "raw": "Espresso cake layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "Flour based cooking spray recommend Baker’s Joy",
       "expected": {
         "item": "Flour based cooking spray recommend Baker’s Joy",
         "measurements": [],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Other"
       }
     },
@@ -40,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Beverages"
       }
     },
@@ -62,6 +69,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -76,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -90,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -134,6 +145,7 @@
           }
         ],
         "note": "packed",
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -156,6 +168,7 @@
           }
         ],
         "note": "softened",
+        "section": "Espresso Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -170,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -184,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Other"
       }
     },
@@ -206,8 +221,13 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Coffee crème légère:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons instant espresso powder",
@@ -220,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Beverages"
       }
     },
@@ -234,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Beverages"
       }
     },
@@ -248,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Baking"
       }
     },
@@ -270,6 +293,7 @@
           }
         ],
         "note": "cold",
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
@@ -284,6 +308,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
@@ -298,6 +323,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
@@ -312,6 +338,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Baking"
       }
     },
@@ -326,6 +353,7 @@
           }
         ],
         "note": "melted",
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
@@ -340,6 +368,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Baking"
       }
     },
@@ -362,6 +391,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
@@ -384,8 +414,13 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Espresso French buttercream frosting:",
+      "is_section_header": true
     },
     {
       "raw": "10 large egg yolks",
@@ -398,6 +433,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -420,6 +456,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Beverages"
       }
     },
@@ -438,6 +475,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Baking"
       }
     },
@@ -456,6 +494,7 @@
           }
         ],
         "note": "softened",
+        "section": "Espresso French Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -470,6 +509,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -484,6 +524,7 @@
           }
         ],
         "note": "melted",
+        "section": "Espresso French Buttercream Frosting",
         "category": "Other"
       }
     },
@@ -498,6 +539,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Beverages"
       }
     },
@@ -512,8 +554,13 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "10 ounces semisweet chocolate chips",
@@ -526,6 +573,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -540,6 +588,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -554,6 +603,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -563,6 +613,7 @@
         "item": "Buttercream orbs see blog post for details",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     }

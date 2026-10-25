@@ -3,6 +3,10 @@
   "recipe_slug": "2015-03-wild-mushroom-pate",
   "ingredients": [
     {
+      "raw": "Pâté:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ounce dried porcini or cepe mushrooms",
       "expected": {
         "item": "dried porcini or cepe mushrooms",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pâté",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pâté",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pâté",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "divided",
+        "section": "Pâté",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "I used 1 cup onion, 1/2 cup shallots",
+        "section": "Pâté",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
         "item": "Coarse salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Pâté",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": "any tough stems discarded and roughly chopped",
+        "section": "Pâté",
         "category": "Produce"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": "use half if dry",
+        "section": "Pâté",
         "category": "Produce"
       }
     },
@@ -120,6 +132,7 @@
           }
         ],
         "note": "or 1/2 cup white wine",
+        "section": "Pâté",
         "category": "Beverages"
       }
     }

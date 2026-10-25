@@ -3,6 +3,10 @@
   "recipe_slug": "crispy-chicken-katsu-recipe",
   "ingredients": [
     {
+      "raw": "Katsu Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tbsp toasted white sesame seeds",
       "expected": {
         "item": "toasted white sesame seeds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Katsu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Chicken Katsu:",
+      "is_section_header": true
     },
     {
       "raw": "600 g boneless chicken thigh skin-on (or chicken breast)",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "or chicken breast",
+        "section": "Chicken Katsu",
         "category": "Meat & Seafood"
       }
     },
@@ -106,6 +121,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "for coating",
+        "section": "Chicken Katsu",
         "category": "Baking"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Other"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Beverages"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Other"
       }
     },
@@ -185,6 +206,7 @@
         "item": "cooking oil neutral, high smoke point",
         "measurements": [],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Oils & Vinegars"
       }
     }

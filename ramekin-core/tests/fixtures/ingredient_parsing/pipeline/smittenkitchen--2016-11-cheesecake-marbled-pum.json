@@ -3,6 +3,10 @@
   "recipe_slug": "2016-11-cheesecake-marbled-pum",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 cups (315 grams) flour",
       "expected": {
         "item": "flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -75,8 +82,13 @@
           }
         ],
         "note": "8 ounces, 225 grams tablespoons or 1 cup, very cold",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Pumpkin Filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 cups pumpkin puree, from 2 15-ounce (425 gram) cans or homemade",
@@ -93,6 +105,7 @@
           }
         ],
         "note": "from 2 15-ounce cans or homemade",
+        "section": "Pumpkin Filling",
         "category": "Canned Goods"
       }
     },
@@ -107,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Filling",
         "category": "Baking"
       }
     },
@@ -125,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +194,7 @@
         "item": "A few gratings of fresh nutmeg",
         "measurements": [],
         "note": "or a pinch of ground nutmeg",
+        "section": "Pumpkin Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -204,8 +224,13 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces cream cheese, softened",
@@ -218,6 +243,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cheesecake",
         "category": "Cheese"
       }
     },
@@ -232,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -246,6 +273,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -260,6 +288,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -274,6 +303,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     }

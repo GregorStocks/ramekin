@@ -3,6 +3,10 @@
   "recipe_slug": "black-bottom-cupcakes-recipe",
   "ingredients": [
     {
+      "raw": "For the Cheesecake Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "16 ounces  (453.59 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake Filling",
         "category": "Cheese"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Cupcake Batter:",
+      "is_section_header": true
     },
     {
       "raw": "1½ cups  (187.5 g) all-purpose flour",
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Beverages"
       }
     },
@@ -239,6 +260,7 @@
           }
         ],
         "note": "melted and slightly cooled",
+        "section": "For the Cupcake Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     }

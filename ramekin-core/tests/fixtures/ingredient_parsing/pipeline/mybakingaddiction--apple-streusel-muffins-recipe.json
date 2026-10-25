@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "For the streusel topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup packed brown sugar",
       "expected": {
         "item": "brown sugar",
@@ -153,6 +157,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Streusel Topping",
         "category": "Baking"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Snacks"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Streusel Topping",
         "category": "Dairy & Eggs"
       }
     }

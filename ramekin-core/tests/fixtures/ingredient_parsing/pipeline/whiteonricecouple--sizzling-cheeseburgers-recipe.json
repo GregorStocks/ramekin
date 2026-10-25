@@ -3,6 +3,10 @@
   "recipe_slug": "sizzling-cheeseburgers-recipe",
   "ingredients": [
     {
+      "raw": "For the Cheese Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup  (57 g) butter",
       "expected": {
         "item": "butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheese Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheese Sauce",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheese Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheese Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheese Sauce",
         "category": "Cheese"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheese Sauce",
         "category": "Cheese"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheese Sauce",
         "category": "Cheese"
       }
     },
@@ -134,8 +145,13 @@
         "item": "salt, to personal taste",
         "measurements": [],
         "note": null,
+        "section": "For the Cheese Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Cheese Burgers:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds  (907 g) ground beef",
@@ -152,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheese Burgers",
         "category": "Meat & Seafood"
       }
     },
@@ -170,6 +187,7 @@
           }
         ],
         "note": "for more daring, savory depth, use 2 tablespoons",
+        "section": "For the Cheese Burgers",
         "category": "Condiments & Sauces"
       }
     },
@@ -184,6 +202,7 @@
           }
         ],
         "note": "minced; or 1 teaspoon garlic powder",
+        "section": "For the Cheese Burgers",
         "category": "Produce"
       }
     },
@@ -193,6 +212,7 @@
         "item": "fresh ground black pepper and salt, to personal taste",
         "measurements": [],
         "note": null,
+        "section": "For the Cheese Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,6 +227,7 @@
           }
         ],
         "note": "optional, sliced",
+        "section": "For the Cheese Burgers",
         "category": "Produce"
       }
     },
@@ -221,6 +242,7 @@
           }
         ],
         "note": "preferably brioche buns",
+        "section": "For the Cheese Burgers",
         "category": "Bakery & Bread"
       }
     },
@@ -230,6 +252,7 @@
         "item": "condiments of choice, pickles, burger sauce, ketchup, mustard",
         "measurements": [],
         "note": null,
+        "section": "For the Cheese Burgers",
         "category": "Other"
       }
     }

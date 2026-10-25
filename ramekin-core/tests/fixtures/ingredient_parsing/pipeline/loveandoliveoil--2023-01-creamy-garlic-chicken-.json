@@ -3,6 +3,10 @@
   "recipe_slug": "2023-01-creamy-garlic-chicken-",
   "ingredients": [
     {
+      "raw": "For Chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound  / 453 g chicken tenders, or chicken breasts cut into 1-inch strips",
       "expected": {
         "item": "chicken tenders",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "or chicken breasts cut into 1-inch strips",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,8 +111,13 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "8 oz  /  227 g farfalle pasta",
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Pasta & Rice"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -165,6 +183,7 @@
           }
         ],
         "note": "about 3 tablespoons, finely chopped",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
@@ -179,6 +198,7 @@
           }
         ],
         "note": "more or less to taste",
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -193,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
@@ -221,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Beverages"
       }
     },
@@ -239,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Canned Goods"
       }
     },
@@ -257,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -271,6 +296,7 @@
           }
         ],
         "note": "more or less to taste",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
@@ -280,6 +306,7 @@
         "item": "salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -294,6 +321,7 @@
           }
         ],
         "note": "for topping",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
@@ -303,6 +331,7 @@
         "item": "parmesan cheese",
         "measurements": [],
         "note": "for topping",
+        "section": "For Sauce",
         "category": "Cheese"
       }
     }

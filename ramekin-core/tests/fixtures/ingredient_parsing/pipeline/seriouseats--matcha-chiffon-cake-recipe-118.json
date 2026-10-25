@@ -3,6 +3,10 @@
   "recipe_slug": "matcha-chiffon-cake-recipe-118",
   "ingredients": [
     {
+      "raw": "For the Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 ounces (113 g) egg whites from 4 large eggs",
       "expected": {
         "item": "egg whites from 4 large eggs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Beverages"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -147,6 +158,7 @@
           }
         ],
         "note": "such as vegetable",
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -169,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Beverages"
       }
     },
@@ -187,8 +200,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To Assemble:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup mascarpone (4 ounces; 113 g)",
@@ -209,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Cheese"
       }
     },
@@ -227,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Baking"
       }
     },
@@ -255,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -277,6 +299,7 @@
           }
         ],
         "note": "about 1 1/2 ounces; 3 tablespoons, plus more as needed",
+        "section": "To Assemble",
         "category": "Baking"
       }
     },
@@ -295,8 +318,13 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "To Serve:",
+      "is_section_header": true
     },
     {
       "raw": "Powdered sugar, for dusting",
@@ -304,6 +332,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "To Serve",
         "category": "Baking"
       }
     }

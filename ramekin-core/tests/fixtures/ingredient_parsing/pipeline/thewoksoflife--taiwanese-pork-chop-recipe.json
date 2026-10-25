@@ -3,6 +3,10 @@
   "recipe_slug": "taiwanese-pork-chop-recipe",
   "ingredients": [
     {
+      "raw": "For the pork chops:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 bone-in pork chops (about 2.5 lbs/1kg; we used bone-in pork loin end chops because they're fattier than center cut pork chops)",
       "expected": {
         "item": "bone-in pork chops",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 2.5 lbs/1kg; we used bone-in pork loin end chops because they're fattier than center cut pork chops",
+        "section": "For the Pork Chops",
         "category": "Meat & Seafood"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Pork Chops",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "plus 1/2 cup, divided",
+        "section": "For the Pork Chops",
         "category": "Beverages"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Baking"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Condiments & Sauces"
       }
     },
@@ -133,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Beverages"
       }
     },
@@ -147,6 +160,7 @@
           }
         ],
         "note": "Plus 1/2 cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch",
+        "section": "For the Pork Chops",
         "category": "Baking"
       }
     },
@@ -156,8 +170,13 @@
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Pork Chops",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the mustard greens:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon vegetable oil",
@@ -170,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Greens",
         "category": "Oils & Vinegars"
       }
     },
@@ -184,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Greens",
         "category": "Spices & Seasonings"
       }
     },
@@ -198,6 +219,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Mustard Greens",
         "category": "Produce"
       }
     },
@@ -212,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Greens",
         "category": "Baking"
       }
     },
@@ -226,8 +249,13 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Mustard Greens",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the cabbage:",
+      "is_section_header": true
     },
     {
       "raw": "1 small head napa cabbage (washed and roughly chopped); can substitute any other leafy green)",
@@ -240,6 +268,7 @@
           }
         ],
         "note": "washed and roughly chopped",
+        "section": "For the Cabbage",
         "category": "Produce"
       }
     },
@@ -254,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cabbage",
         "category": "Oils & Vinegars"
       }
     },
@@ -268,6 +298,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Cabbage",
         "category": "Produce"
       }
     },
@@ -282,6 +313,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Cabbage",
         "category": "Produce"
       }
     },
@@ -291,8 +323,13 @@
         "item": "salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Cabbage",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "4-6 tea eggs (See our tea egg recipe. Note, they should be made the night before you plan to serve for optimal flavor. You can also substitute with plain hard-boiled eggs.)",
@@ -305,6 +342,7 @@
           }
         ],
         "note": "See our tea egg recipe. Note, they should be made the night before you plan to serve for optimal flavor. You can also substitute with plain hard-boiled eggs.",
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -319,6 +357,7 @@
           }
         ],
         "note": "See our guide on perfect stovetop rice! Otherwise, be sure to time your rice cooker appropriately before you start frying the pork chops",
+        "section": "To Serve",
         "category": "Pasta & Rice"
       }
     }

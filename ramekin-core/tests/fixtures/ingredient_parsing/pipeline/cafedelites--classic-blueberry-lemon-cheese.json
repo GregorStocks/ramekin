@@ -3,6 +3,10 @@
   "recipe_slug": "classic-blueberry-lemon-cheese",
   "ingredients": [
     {
+      "raw": "Waffles:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "or 2%",
+        "section": "Waffles",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "about 1/4 cup",
+        "section": "Waffles",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Other"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Cheesecake Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup light cream cheese",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Topping",
         "category": "Cheese"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Topping",
         "category": "Baking"
       }
     }

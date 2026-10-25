@@ -3,6 +3,10 @@
   "recipe_slug": "snickerdoodle-cookies-recipe",
   "ingredients": [
     {
+      "raw": "Cookie dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 & 3/4 cups   (345g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "see notes for substitution",
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Cookie Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": "lightly packed",
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -141,8 +153,13 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Coating:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup   (50g) granulated sugar",
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
     }

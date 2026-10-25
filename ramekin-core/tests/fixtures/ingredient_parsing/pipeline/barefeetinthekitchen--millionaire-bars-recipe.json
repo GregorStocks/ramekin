@@ -3,6 +3,10 @@
   "recipe_slug": "millionaire-bars-recipe",
   "ingredients": [
     {
+      "raw": "Shortbread:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup cold butter cut into pieces",
       "expected": {
         "item": "cold butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "Shortbread",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Caramel Layer:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup butter",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Layer",
         "category": "Canned Goods"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Layer",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Layer",
         "category": "Baking"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "Caramel Layer",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Chocolate Layer:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups semi sweet or dark chocolate chips",
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Layer",
         "category": "Baking"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -218,6 +245,7 @@
         "item": "kosher course sea salt, or Maldon salt",
         "measurements": [],
         "note": "optional, if you have it",
+        "section": "Chocolate Layer",
         "category": "Spices & Seasonings"
       }
     }

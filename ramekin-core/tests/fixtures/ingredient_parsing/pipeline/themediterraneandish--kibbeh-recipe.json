@@ -133,11 +133,16 @@
       }
     },
     {
+      "raw": "For the Meat Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "Olive oil",
       "expected": {
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -152,6 +157,7 @@
           }
         ],
         "note": "finely chopped or grated",
+        "section": "For the Meat Filling",
         "category": "Produce"
       }
     },
@@ -166,6 +172,7 @@
           }
         ],
         "note": "I used beef here, cold",
+        "section": "For the Meat Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -180,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -194,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -222,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Spices & Seasonings"
       }
     }

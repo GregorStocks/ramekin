@@ -3,6 +3,10 @@
   "recipe_slug": "nut-roll-recipe",
   "ingredients": [
     {
+      "raw": "For the Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon   sugar",
       "expected": {
         "item": "sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Beverages"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "or 3 packets active dry yeast",
+        "section": "For the Dough",
         "category": "Other"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,8 +184,13 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 pounds  (1.36 kg) walnuts, finely ground",
@@ -189,6 +207,7 @@
           }
         ],
         "note": "finely ground",
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -207,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Canned Goods"
       }
     },
@@ -261,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -279,6 +302,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     }

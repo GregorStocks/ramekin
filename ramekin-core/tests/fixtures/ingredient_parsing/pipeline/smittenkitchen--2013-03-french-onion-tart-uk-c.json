@@ -3,6 +3,10 @@
   "recipe_slug": "2013-03-french-onion-tart-uk-c",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups (250 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": "in cubes",
+        "section": "Crust",
         "category": "Other"
       }
     },
@@ -71,8 +78,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds yellow onions (about 4 medium), halved and thinly sliced",
@@ -89,6 +101,7 @@
           }
         ],
         "note": "about 4 medium, halved and thinly sliced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -182,6 +201,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -204,6 +224,7 @@
           }
         ],
         "note": "about 2 ounces or 60 grams",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -218,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -232,6 +254,7 @@
           }
         ],
         "note": "half-and-half and milk work too, but cream tastes best",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2019-02-classic-mont-blanc-des",
   "ingredients": [
     {
+      "raw": "Meringues:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup 200g granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Dairy & Eggs"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Condiments & Sauces"
       }
     },
@@ -91,8 +100,13 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Chestnut cream:",
+      "is_section_header": true
     },
     {
       "raw": "7 oz. 200g chestnut puree",
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Chestnut Cream",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Chestnut Cream",
         "category": "Condiments & Sauces"
       }
     },
@@ -141,8 +157,13 @@
           }
         ],
         "note": null,
+        "section": "Chestnut Cream",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Chantilly cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 cups 300ml heavy whipping cream",
@@ -159,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -177,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Cream",
         "category": "Baking"
       }
     },
@@ -191,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Cream",
         "category": "Baking"
       }
     },
@@ -209,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "Chantilly Cream",
         "category": "Baking"
       }
     }

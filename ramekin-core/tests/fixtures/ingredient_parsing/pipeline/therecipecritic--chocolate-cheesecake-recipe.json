@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "Oreo Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 ounces oreo cookies",
       "expected": {
         "item": "oreo cookies",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Oreo Crust",
         "category": "Snacks"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "melted",
+        "section": "Oreo Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Cheesecake Filling:",
+      "is_section_header": true
     },
     {
       "raw": "10 ounces bittersweet chocolate melted",
@@ -41,6 +51,7 @@
           }
         ],
         "note": "melted",
+        "section": "Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": "8 ounce packages",
+        "section": "Cheesecake Filling",
         "category": "Cheese"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -97,8 +111,13 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Chocolate Ganache:",
+      "is_section_header": true
     },
     {
       "raw": "6 ounces semisweet chocolate chopped",
@@ -111,6 +130,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Ganache",
         "category": "Baking"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Ganache",
         "category": "Baking"
       }
     }

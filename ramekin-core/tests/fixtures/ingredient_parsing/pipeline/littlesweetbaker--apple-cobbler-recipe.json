@@ -3,6 +3,10 @@
   "recipe_slug": "apple-cobbler-recipe",
   "ingredients": [
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 cups   apples, peeled and sliced 1/4″ thick (about 6 large apples)",
       "expected": {
         "item": "apples",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "about 6 large apples, peeled and sliced 1/4″ thick",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,8 +66,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 & 1/2 cups   (188g) all-purpose flour",
@@ -77,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -95,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -123,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": "melted",
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     }

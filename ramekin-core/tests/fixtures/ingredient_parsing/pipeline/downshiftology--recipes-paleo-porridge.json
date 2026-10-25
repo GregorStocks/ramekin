@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "Caramelized Bananas:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 bananas",
       "expected": {
         "item": "bananas",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Bananas",
         "category": "Produce"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Bananas",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Bananas",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Bananas",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Bananas",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -181,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Bananas",
         "category": "Canned Goods"
       }
     }

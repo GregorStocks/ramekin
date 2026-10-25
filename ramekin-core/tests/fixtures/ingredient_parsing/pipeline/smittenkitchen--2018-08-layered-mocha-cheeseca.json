@@ -3,6 +3,10 @@
   "recipe_slug": "2018-08-layered-mocha-cheeseca",
   "ingredients": [
     {
+      "raw": "Wafers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups (195 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "just use more Dutched cocoa powder if you don’t have it",
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": "cold is fine if using a food processor",
+        "section": "Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,8 +161,13 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds (3 8-ounce packages) cream cheese, at room temperature",
@@ -167,6 +184,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cheesecake",
         "category": "Cheese"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -257,6 +279,7 @@
           }
         ],
         "note": "(melted and cooled slightly",
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -271,6 +294,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Beverages"
       }
     },
@@ -285,8 +309,13 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "3 ounces semi- or bittersweet chocolate, chopped, or chips (1/2 cup)",
@@ -303,6 +332,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -321,6 +351,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -339,6 +370,7 @@
           }
         ],
         "note": "optional, but makes it glossier",
+        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -353,6 +385,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -362,6 +395,7 @@
         "item": "Gold dragees",
         "measurements": [],
         "note": "if you wish",
+        "section": "To Finish",
         "category": "Other"
       }
     }

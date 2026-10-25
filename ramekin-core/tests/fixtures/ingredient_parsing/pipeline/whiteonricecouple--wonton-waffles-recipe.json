@@ -3,6 +3,10 @@
   "recipe_slug": "wonton-waffles-recipe",
   "ingredients": [
     {
+      "raw": "For the Wonton Waffles:",
+      "is_section_header": true
+    },
+    {
       "raw": "24-30   Wonton Wrappers or Skins",
       "expected": {
         "item": "Wonton Wrappers or Skins",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Wonton Waffles",
         "category": "Frozen"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "or chicken, beef, shrimp, or vegan meat",
+        "section": "For the Wonton Waffles",
         "category": "Meat & Seafood"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Wonton Waffles",
         "category": "Produce"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Wonton Waffles",
         "category": "Produce"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Wonton Waffles",
         "category": "Produce"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Wonton Waffles",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Wonton Waffles",
         "category": "Condiments & Sauces"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Wonton Waffles",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Wonton Waffles",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,8 +175,13 @@
         "item": "cooking oil",
         "measurements": [],
         "note": "for spraying or brushing",
+        "section": "For the Wonton Waffles",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the 5 minute Wonton Dipping Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup  (60 ml) soy sauce",
@@ -180,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the 5 Minute Wonton Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -194,6 +213,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the 5 Minute Wonton Dipping Sauce",
         "category": "Produce"
       }
     },
@@ -212,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "For the 5 Minute Wonton Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -230,6 +251,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the 5 Minute Wonton Dipping Sauce",
         "category": "Baking"
       }
     },
@@ -248,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "For the 5 Minute Wonton Dipping Sauce",
         "category": "Beverages"
       }
     },
@@ -266,6 +289,7 @@
           }
         ],
         "note": null,
+        "section": "For the 5 Minute Wonton Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -284,6 +308,7 @@
           }
         ],
         "note": "or your choice of hot sauce",
+        "section": "For the 5 Minute Wonton Dipping Sauce",
         "category": "Other"
       }
     }

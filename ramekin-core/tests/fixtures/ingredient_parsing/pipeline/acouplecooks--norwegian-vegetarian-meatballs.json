@@ -3,6 +3,10 @@
   "recipe_slug": "norwegian-vegetarian-meatballs",
   "ingredients": [
     {
+      "raw": "For the meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil, plus more for brushing",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "plus more for brushing",
+        "section": "For the Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "corn, carrots, peas and green beans",
+        "section": "For the Meatballs",
         "category": "Frozen"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Canned Goods"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": "for gluten free, try Gluten Free 1 for 1 flour",
+        "section": "For the Meatballs",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "Perfect Vegetarian Gravy or Easy Vegan Gravy (double recipe)",
@@ -134,6 +151,7 @@
         "item": "Perfect Vegetarian Gravy or Easy Vegan Gravy",
         "measurements": [],
         "note": "double recipe",
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -143,6 +161,7 @@
         "item": "Chopped Italian parsley",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     }

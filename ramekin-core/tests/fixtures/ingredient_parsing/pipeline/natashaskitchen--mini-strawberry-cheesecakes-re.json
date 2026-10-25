@@ -3,6 +3,10 @@
   "recipe_slug": "mini-strawberry-cheesecakes-re",
   "ingredients": [
     {
+      "raw": "Ingredients for Strawberry Cheesecakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups graham cracker crumbs, from 12 whole crackers",
       "expected": {
         "item": "graham cracker crumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "from 12 whole crackers",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "melted",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "from two 8 oz packages, softened",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Cheese"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "room temperature",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Ingredients for Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy whipping cream, chilled",
@@ -83,6 +96,7 @@
           }
         ],
         "note": "chilled",
+        "section": "Ingredients for Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Toppings",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Toppings",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "halved",
+        "section": "Ingredients for Toppings",
         "category": "Produce"
       }
     }

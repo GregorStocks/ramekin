@@ -3,6 +3,10 @@
   "recipe_slug": "cranberry-bars-recipe",
   "ingredients": [
     {
+      "raw": "For the streusel:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup all-purpose flour  or a gluten-free 1-to-1 baking flour",
       "expected": {
         "item": "all-purpose flour or a gluten-free 1-to-1 baking flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the base:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup unsalted butter melted",
@@ -83,6 +96,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Other"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup powdered sugar",
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Glaze",
         "category": "Nuts & Dried Fruit"
       }
     }

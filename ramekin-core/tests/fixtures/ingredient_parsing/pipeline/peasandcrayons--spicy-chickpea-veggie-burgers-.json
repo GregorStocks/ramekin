@@ -3,6 +3,10 @@
   "recipe_slug": "spicy-chickpea-veggie-burgers-",
   "ingredients": [
     {
+      "raw": "FOR THE BURGERS:",
+      "is_section_header": true
+    },
+    {
       "raw": "1.5 cup old-fashioned rolled oats (not instant)",
       "expected": {
         "item": "old-fashioned rolled oats",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "not instant",
+        "section": "For the Burgers",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "drained + rinsed",
+        "section": "For the Burgers",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "any color",
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "white + green portions",
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Other"
       }
     },
@@ -190,8 +207,13 @@
         "item": "leafy green lettuce of choice",
         "measurements": [],
         "note": "for topping",
+        "section": "For the Burgers",
         "category": "Other"
       }
+    },
+    {
+      "raw": "FOR THE SLAW:",
+      "is_section_header": true
     },
     {
       "raw": "1 heaping cup cabbage finely chopped/shredded",
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Slaw",
         "category": "Other"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": "optional, sliced thin",
+        "section": "For the Slaw",
         "category": "Other"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "For the Slaw",
         "category": "Baking"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For the Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -260,6 +286,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Slaw",
         "category": "Produce"
       }
     },
@@ -269,6 +296,7 @@
         "item": "a pinch of salt",
         "measurements": [],
         "note": null,
+        "section": "For the Slaw",
         "category": "Spices & Seasonings"
       }
     },
@@ -278,8 +306,13 @@
         "item": "fresh cilantro optional +",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Slaw",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "FOR THE SRIRACHA AIOLI:",
+      "is_section_header": true
     },
     {
       "raw": "⅓ cup quality mayo",
@@ -292,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sriracha Aioli",
         "category": "Other"
       }
     },
@@ -306,6 +340,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sriracha Aioli",
         "category": "Produce"
       }
     },
@@ -320,6 +355,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Sriracha Aioli",
         "category": "Condiments & Sauces"
       }
     },
@@ -334,6 +370,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sriracha Aioli",
         "category": "Spices & Seasonings"
       }
     }

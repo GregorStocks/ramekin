@@ -3,6 +3,10 @@
   "recipe_slug": "ham-nut-mooncake-recipe",
   "ingredients": [
     {
+      "raw": "PART I: Inverted sugar syrup:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ pound granulated sugar (226g, or 1 cup plus 2 tablespoons; I used organic sugar, so my syrup is slightly darker in color compared with syrup made with regular granulated white sugar.)",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "226g, or 1 cup plus 2 tablespoons; I used organic sugar, so my syrup is slightly darker in color compared with syrup made with regular granulated white sugar.",
+        "section": "Part I: Inverted Sugar Syrup",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Part I: Inverted Sugar Syrup",
         "category": "Beverages"
       }
     },
@@ -45,8 +51,13 @@
           }
         ],
         "note": null,
+        "section": "Part I: Inverted Sugar Syrup",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "PART II: The dough:",
+      "is_section_header": true
     },
     {
       "raw": "140 ml inverted sugar syrup (which you bought or made in Part I)",
@@ -59,6 +70,7 @@
           }
         ],
         "note": "which you bought or made in Part I",
+        "section": "Part Ii: the Dough",
         "category": "Baking"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Part Ii: the Dough",
         "category": "Oils & Vinegars"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": "available at your Chinese grocery store",
+        "section": "Part Ii: the Dough",
         "category": "Other"
       }
     },
@@ -105,8 +119,13 @@
           }
         ],
         "note": "about 250 grams, plus more for dusting",
+        "section": "Part Ii: the Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "PART III: The ham and nut filling:",
+      "is_section_header": true
     },
     {
       "raw": "100 grams jinhua ham (京华火腿)",
@@ -119,6 +138,7 @@
           }
         ],
         "note": "京华火腿",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -133,6 +153,7 @@
           }
         ],
         "note": "from steaming the ham--see instructions below",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Other"
       }
     },
@@ -147,6 +168,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -161,6 +183,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -175,6 +198,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -189,6 +213,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -203,6 +228,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -217,6 +243,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -231,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Baking"
       }
     },
@@ -249,6 +277,7 @@
           }
         ],
         "note": "or corn oil, about 75 ml",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -263,6 +292,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -277,6 +307,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Baking"
       }
     },
@@ -291,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -305,6 +337,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -319,6 +352,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Other"
       }
     },
@@ -337,8 +371,13 @@
           }
         ],
         "note": "about 120 ml",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Part IV: Assembling the mooncakes:",
+      "is_section_header": true
     },
     {
       "raw": "[no additional ingredients needed for this step]",
@@ -346,8 +385,13 @@
         "item": "[no additional ingredients needed for this step]",
         "measurements": [],
         "note": null,
+        "section": "Part Iv: Assembling the Mooncakes",
         "category": "Other"
       }
+    },
+    {
+      "raw": "PART V: Baking the mooncakes:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg yolk",
@@ -360,6 +404,7 @@
           }
         ],
         "note": null,
+        "section": "Part V: Baking the Mooncakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -374,6 +419,7 @@
           }
         ],
         "note": null,
+        "section": "Part V: Baking the Mooncakes",
         "category": "Beverages"
       }
     }

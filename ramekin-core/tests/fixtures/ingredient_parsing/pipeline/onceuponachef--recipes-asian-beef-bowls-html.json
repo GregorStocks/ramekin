@@ -171,11 +171,16 @@
       }
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Rice",
       "expected": {
         "item": "Rice",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Pasta & Rice"
       }
     },
@@ -185,6 +190,7 @@
         "item": "Chopped cashews",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -194,6 +200,7 @@
         "item": "Sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,6 +210,7 @@
         "item": "Shredded veggies, such as carrots, lettuce or bell peppers",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

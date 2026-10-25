@@ -213,11 +213,16 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Fresh thyme",
       "expected": {
         "item": "Fresh thyme",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -227,6 +232,7 @@
         "item": "Chopped Parsley",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }

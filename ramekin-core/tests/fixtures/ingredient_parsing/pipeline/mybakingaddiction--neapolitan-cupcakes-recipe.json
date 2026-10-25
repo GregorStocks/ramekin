@@ -3,6 +3,10 @@
   "recipe_slug": "neapolitan-cupcakes-recipe",
   "ingredients": [
     {
+      "raw": "For the Cupcakes",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/4 cups cake flour",
       "expected": {
         "item": "cake flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For the Frosting",
+      "is_section_header": true
     },
     {
       "raw": "2 sticks butter, softened",
@@ -153,6 +171,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Condiments & Sauces"
       }
     }

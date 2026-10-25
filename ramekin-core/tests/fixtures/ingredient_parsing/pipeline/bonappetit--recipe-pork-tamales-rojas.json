@@ -3,6 +3,10 @@
   "recipe_slug": "recipe-pork-tamales-rojas",
   "ingredients": [
     {
+      "raw": "Pork Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon lard or vegetable oil",
       "expected": {
         "item": "lard or vegetable oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Pork Filling",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "stems and seeds removed",
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "stems and seeds removed",
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "stems and seeds removed",
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Pork Filling",
         "category": "Produce"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": "Boston butt, fat trimmed, cut into 1-inch pieces",
+        "section": "Pork Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": "cut into 1-inch pieces",
+        "section": "Pork Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -195,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,8 +242,13 @@
           }
         ],
         "note": null,
+        "section": "Pork Filling",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Using Fresh Masa:",
+      "is_section_header": true
     },
     {
       "raw": "3 pounds fresh coarse-grind corn masa for tamales (unprepared)",
@@ -237,6 +261,7 @@
           }
         ],
         "note": "unprepared",
+        "section": "Using Fresh Masa",
         "category": "Other"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "melted; or more",
+        "section": "Using Fresh Masa",
         "category": "Baking"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Using Fresh Masa",
         "category": "Canned Goods"
       }
     },
@@ -279,8 +306,13 @@
           }
         ],
         "note": null,
+        "section": "Using Fresh Masa",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Using Instant Dry Masa:",
+      "is_section_header": true
     },
     {
       "raw": "3¾ cups instant corn masa flour (such as Maseca Tamal Instant Corn Masa Mix)",
@@ -293,6 +325,7 @@
           }
         ],
         "note": "such as Maseca Tamal Instant Corn Masa Mix",
+        "section": "Using Instant Dry Masa",
         "category": "Baking"
       }
     },
@@ -307,6 +340,7 @@
           }
         ],
         "note": null,
+        "section": "Using Instant Dry Masa",
         "category": "Canned Goods"
       }
     },
@@ -321,6 +355,7 @@
           }
         ],
         "note": "melted, plus more if needed",
+        "section": "Using Instant Dry Masa",
         "category": "Baking"
       }
     },
@@ -335,6 +370,7 @@
           }
         ],
         "note": null,
+        "section": "Using Instant Dry Masa",
         "category": "Spices & Seasonings"
       }
     },
@@ -349,8 +385,13 @@
           }
         ],
         "note": null,
+        "section": "Using Instant Dry Masa",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "30 dried corn husks (from a 1-pound bag)",
@@ -363,6 +404,7 @@
           }
         ],
         "note": "from a 1-pound bag",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -377,6 +419,7 @@
           }
         ],
         "note": "or more",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -386,6 +429,7 @@
         "item": "Fresh salsa and lime wedges",
         "measurements": [],
         "note": "for serving",
+        "section": "Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -395,6 +439,7 @@
         "item": "A spice mill or mortar and pestle",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     }

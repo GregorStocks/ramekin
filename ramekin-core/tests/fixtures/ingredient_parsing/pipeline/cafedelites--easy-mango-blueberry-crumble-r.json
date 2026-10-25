@@ -3,6 +3,10 @@
   "recipe_slug": "easy-mango-blueberry-crumble-r",
   "ingredients": [
     {
+      "raw": "Fruit Mix:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups fresh blueberries",
       "expected": {
         "item": "fresh blueberries",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit Mix",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Fruit Mix",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit Mix",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit Mix",
         "category": "Baking"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Fruit Mix",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Crumble:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup rolled oats",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Snacks"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "optional",
+        "section": "Crumble",
         "category": "Other"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Spices & Seasonings"
       }
     }

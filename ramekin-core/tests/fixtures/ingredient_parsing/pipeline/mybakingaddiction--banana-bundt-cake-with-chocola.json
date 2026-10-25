@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "For the ganache:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 ounces semisweet chocolate chopped",
       "expected": {
         "item": "semisweet chocolate",
@@ -153,6 +157,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Ganache",
         "category": "Baking"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ganache",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-alton-brown-shepherds-",
   "ingredients": [
     {
+      "raw": "For the potatoes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 pounds russet potatoes",
       "expected": {
         "item": "russet potatoes",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the meat filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons canola oil",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "peeled and diced small",
+        "section": "For the Meat Filling",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Meat Filling",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Baking"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Canned Goods"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Canned Goods"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Produce"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Produce"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Produce"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Filling",
         "category": "Produce"
       }
     }

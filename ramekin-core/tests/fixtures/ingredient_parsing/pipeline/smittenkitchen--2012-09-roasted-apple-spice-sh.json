@@ -3,6 +3,10 @@
   "recipe_slug": "2012-09-roasted-apple-spice-sh",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 medium apples, any variety you like to bake with, peeled, halved and cored",
       "expected": {
         "item": "apples",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "any variety you like to bake with, peeled, halved and cored",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -185,6 +199,7 @@
           }
         ],
         "note": "585 grams updated: 1170 grams",
+        "section": "Cake",
         "category": "Canned Goods"
       }
     },
@@ -203,6 +218,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -221,6 +237,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -235,8 +252,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "3 8-ounce (675 grams total) blocks cream cheese, at room temperature",
@@ -253,6 +275,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -279,6 +302,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -297,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -315,6 +340,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Frosting",
         "category": "Baking"
       }
     }

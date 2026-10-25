@@ -3,6 +3,10 @@
   "recipe_slug": "2007-01-grapefruit-yogurt-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups (195 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -104,6 +114,7 @@
         "item": "Finely grated zest from one large grapefruit",
         "measurements": [],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -118,6 +129,7 @@
           }
         ],
         "note": "optional",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -136,8 +148,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Syrup:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup (80 ml) freshly-squeezed grapefruit juice",
@@ -154,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Other"
       }
     },
@@ -172,8 +190,13 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (120 grams) powdered sugar",
@@ -190,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -208,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Beverages"
       }
     }

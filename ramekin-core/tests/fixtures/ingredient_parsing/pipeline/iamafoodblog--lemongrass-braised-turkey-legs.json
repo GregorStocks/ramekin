@@ -3,6 +3,10 @@
   "recipe_slug": "lemongrass-braised-turkey-legs",
   "ingredients": [
     {
+      "raw": "Turkey:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 bone-in turkey leg (thigh and drumstick)",
       "expected": {
         "item": "bone-in turkey leg",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "thigh and drumstick",
+        "section": "Turkey",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
         "item": "salt and freshly ground pepper",
         "measurements": [],
         "note": null,
+        "section": "Turkey",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey",
         "category": "Oils & Vinegars"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Turkey",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Turkey",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": "quartered",
+        "section": "Turkey",
         "category": "Produce"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": "quartered",
+        "section": "Turkey",
         "category": "Produce"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Turkey",
         "category": "Produce"
       }
     },
@@ -120,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey",
         "category": "Produce"
       }
     },
@@ -134,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey",
         "category": "Produce"
       }
     },
@@ -148,8 +162,13 @@
           }
         ],
         "note": null,
+        "section": "Turkey",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup stock from braised lemongrass legs",
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Other"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Baking"
       }
     },
@@ -199,6 +221,7 @@
         "item": "salt and freshly ground pepper",
         "measurements": [],
         "note": "if needed",
+        "section": "Gravy",
         "category": "Spices & Seasonings"
       }
     }

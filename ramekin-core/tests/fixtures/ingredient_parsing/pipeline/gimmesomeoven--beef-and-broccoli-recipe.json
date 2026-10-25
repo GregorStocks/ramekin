@@ -3,6 +3,10 @@
   "recipe_slug": "beef-and-broccoli-recipe",
   "ingredients": [
     {
+      "raw": "Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound flank steak",
       "expected": {
         "item": "flank steak",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup beef stock",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Stir-Fry:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons neutral oil",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": "12-ounce",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": "sliced into 2-inch pieces",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": "grated or minced",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Oils & Vinegars"
       }
     }

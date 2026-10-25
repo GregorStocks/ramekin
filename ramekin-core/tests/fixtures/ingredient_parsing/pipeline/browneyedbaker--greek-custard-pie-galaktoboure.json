@@ -3,6 +3,10 @@
   "recipe_slug": "greek-custard-pie-galaktoboure",
   "ingredients": [
     {
+      "raw": "Custard:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 cups  (1.46 l) whole milk",
       "expected": {
         "item": "whole milk",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Other"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "divided",
+        "section": "Custard",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,8 +119,13 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Pie Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1   package phyllo dough, about 12 to 16 sheets",
@@ -123,6 +138,7 @@
           }
         ],
         "note": "about 12 to 16 sheets",
+        "section": "Pie Assembly",
         "category": "Frozen"
       }
     },
@@ -141,8 +157,13 @@
           }
         ],
         "note": null,
+        "section": "Pie Assembly",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Citrus Syrup:",
+      "is_section_header": true
     },
     {
       "raw": "1½ cups  (300 g) granulated sugar",
@@ -159,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Syrup",
         "category": "Baking"
       }
     },
@@ -177,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Syrup",
         "category": "Beverages"
       }
     },
@@ -195,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Syrup",
         "category": "Beverages"
       }
     },
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Syrup",
         "category": "Baking"
       }
     }

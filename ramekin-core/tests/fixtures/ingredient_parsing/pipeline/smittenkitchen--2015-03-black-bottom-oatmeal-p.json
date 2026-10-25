@@ -3,6 +3,10 @@
   "recipe_slug": "2015-03-black-bottom-oatmeal-p",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (155 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -93,8 +101,13 @@
           }
         ],
         "note": "plus an additional tablespoon if needed",
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (120 grams) rolled oats",
@@ -111,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Snacks"
       }
     },
@@ -129,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +162,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -165,6 +181,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -179,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -193,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -211,6 +230,7 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": "see Note below for replacements",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -239,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

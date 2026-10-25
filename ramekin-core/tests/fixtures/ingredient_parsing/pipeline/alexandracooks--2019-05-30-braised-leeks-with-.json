@@ -3,6 +3,10 @@
   "recipe_slug": "2019-05-30-braised-leeks-with-",
   "ingredients": [
     {
+      "raw": "For the braised leeks:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 to 5 large leeks, white and light green parts only",
       "expected": {
         "item": "leeks, white and light green parts only",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braised Leeks",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braised Leeks",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braised Leeks",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braised Leeks",
         "category": "Other"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "cut into bits",
+        "section": "For the Braised Leeks",
         "category": "Dairy & Eggs"
       }
     },
@@ -78,6 +87,7 @@
         "item": "a few sprigs thyme",
         "measurements": [],
         "note": null,
+        "section": "For the Braised Leeks",
         "category": "Produce"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braised Leeks",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Braised Leeks",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,8 +132,13 @@
           }
         ],
         "note": "optional",
+        "section": "For the Braised Leeks",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the pasta:",
+      "is_section_header": true
     },
     {
       "raw": "12-oz pasta, such as pappardelle",
@@ -134,6 +151,7 @@
           }
         ],
         "note": "such as pappardelle",
+        "section": "For the Pasta",
         "category": "Pasta & Rice"
       }
     },
@@ -143,6 +161,7 @@
         "item": "shaved Parmigiano Reggiano",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Pasta",
         "category": "Other"
       }
     },
@@ -152,6 +171,7 @@
         "item": "freshly cracked black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Pasta",
         "category": "Spices & Seasonings"
       }
     },
@@ -161,6 +181,7 @@
         "item": "optional herbs: finely chopped parsley or chives",
         "measurements": [],
         "note": "this is mostly for color, to taste",
+        "section": "For the Pasta",
         "category": "Produce"
       }
     },
@@ -170,6 +191,7 @@
         "item": "flaky sea salt",
         "measurements": [],
         "note": "such as Maldon, to taste",
+        "section": "For the Pasta",
         "category": "Spices & Seasonings"
       }
     }

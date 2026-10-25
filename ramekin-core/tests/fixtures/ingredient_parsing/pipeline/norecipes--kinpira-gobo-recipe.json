@@ -3,6 +3,10 @@
   "recipe_slug": "kinpira-gobo-recipe",
   "ingredients": [
     {
+      "raw": "for the chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "140 grams  boneless skin-on chicken thighs",
       "expected": {
         "item": "boneless skin-on chicken thighs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Beverages"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "for the kinpira:",
+      "is_section_header": true
     },
     {
       "raw": "80 grams  carrot (1 small , peeled)",
@@ -73,6 +85,7 @@
           }
         ],
         "note": "1 small , peeled",
+        "section": "For the Kinpira",
         "category": "Produce"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": "anything acidic will work",
+        "section": "For the Kinpira",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": "2 medium roots",
+        "section": "For the Kinpira",
         "category": "Produce"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Beverages"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Condiments & Sauces"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Baking"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": "to garnish",
+        "section": "For the Kinpira",
         "category": "Spices & Seasonings"
       }
     }

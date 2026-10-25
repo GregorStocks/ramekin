@@ -3,6 +3,10 @@
   "recipe_slug": "pizza-margherita-recipe",
   "ingredients": [
     {
+      "raw": "for dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ cups  water (luke warm)",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "luke warm",
+        "section": "For Dough",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,8 +66,13 @@
           }
         ],
         "note": "~3 cups",
+        "section": "For Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "for topping:",
+      "is_section_header": true
     },
     {
       "raw": "3  tomatoes (very ripe)",
@@ -73,6 +85,7 @@
           }
         ],
         "note": "very ripe",
+        "section": "For Topping",
         "category": "Produce"
       }
     },
@@ -82,6 +95,7 @@
         "item": "olive oil",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Oils & Vinegars"
       }
     },
@@ -96,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Cheese"
       }
     },
@@ -110,6 +125,7 @@
           }
         ],
         "note": "leaves only",
+        "section": "For Topping",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "ceviche-recipe",
   "ingredients": [
     {
+      "raw": "For the Fish:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds white fish fillet, (cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces",
       "expected": {
         "item": "white fish fillet chopped into small, bite-size square pieces",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cod, halibut, mahi mahi, tilapia, snapper, sea bass",
+        "section": "For the Fish",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "For the Fish",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "smashed",
+        "section": "For the Fish",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Fish",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "enough to fully cover the fish in lime juice",
+        "section": "For the Fish",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Beverages"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Ceviche:",
+      "is_section_header": true
     },
     {
       "raw": "2-3 shallots, thinly sliced",
@@ -125,6 +141,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Ceviche",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
         "item": "warm water",
         "measurements": [],
         "note": null,
+        "section": "For the Ceviche",
         "category": "Beverages"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ceviche",
         "category": "Oils & Vinegars"
       }
     },
@@ -227,6 +251,7 @@
         "item": "hot sauce",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Ceviche",
         "category": "Condiments & Sauces"
       }
     }

@@ -203,6 +203,10 @@
       }
     },
     {
+      "raw": "dijon croutons:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups sourdough bread cubes",
       "expected": {
         "item": "sourdough bread cubes",
@@ -213,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Dijon Croutons",
         "category": "Bakery & Bread"
       }
     },
@@ -227,6 +232,7 @@
           }
         ],
         "note": "melted",
+        "section": "Dijon Croutons",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Dijon Croutons",
         "category": "Condiments & Sauces"
       }
     }

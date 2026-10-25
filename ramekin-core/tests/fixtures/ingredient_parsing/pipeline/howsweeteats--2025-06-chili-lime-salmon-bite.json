@@ -91,6 +91,10 @@
       }
     },
     {
+      "raw": "mango slaw:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 small cabbage, thinly sliced",
       "expected": {
         "item": "cabbage",
@@ -101,6 +105,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Mango Slaw",
         "category": "Produce"
       }
     },
@@ -115,6 +120,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Mango Slaw",
         "category": "Produce"
       }
     },
@@ -129,6 +135,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Mango Slaw",
         "category": "Produce"
       }
     },
@@ -143,6 +150,7 @@
           }
         ],
         "note": "plus more for sprinkling",
+        "section": "Mango Slaw",
         "category": "Produce"
       }
     },
@@ -157,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Mango Slaw",
         "category": "Produce"
       }
     },
@@ -171,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Mango Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -180,6 +190,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Mango Slaw",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2006-12-short-ribs-bourguignon",
   "ingredients": [
     {
+      "raw": "For short ribs:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 (8-oz) pieces bone-in beef short ribs",
       "expected": {
         "item": "bone-in beef short ribs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "8-oz",
+        "section": "For Short Ribs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Short Ribs",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Short Ribs",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Short Ribs",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "14-oz",
+        "section": "For Short Ribs",
         "category": "Other"
       }
     },
@@ -120,6 +132,7 @@
         "item": "in a blender with juice",
         "measurements": [],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Other"
       }
     },
@@ -134,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Beverages"
       }
     },
@@ -148,6 +162,7 @@
           }
         ],
         "note": "or 1/2 cup Demi-Glace Gold concentrate * (concentrate requires a dilution ratio of 1:8; 1/2 cup concentrate to 4 cups water)",
+        "section": "For Short Ribs",
         "category": "Other"
       }
     },
@@ -162,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Produce"
       }
     },
@@ -176,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Oils & Vinegars"
       }
     },
@@ -204,8 +222,13 @@
           }
         ],
         "note": null,
+        "section": "For Short Ribs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For vegetables:",
+      "is_section_header": true
     },
     {
       "raw": "20 pearl onions (5 oz)",
@@ -222,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For Vegetables",
         "category": "Produce"
       }
     },
@@ -236,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For Vegetables",
         "category": "Dairy & Eggs"
       }
     },
@@ -250,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -268,6 +294,7 @@
           }
         ],
         "note": null,
+        "section": "For Vegetables",
         "category": "Canned Goods"
       }
     },
@@ -282,6 +309,7 @@
           }
         ],
         "note": null,
+        "section": "For Vegetables",
         "category": "Produce"
       }
     },
@@ -300,6 +328,7 @@
           }
         ],
         "note": "preferably applewood-smoked; 1/4 lb total",
+        "section": "For Vegetables",
         "category": "Meat & Seafood"
       }
     },
@@ -314,6 +343,7 @@
           }
         ],
         "note": "trimmed and quartered lengthwise",
+        "section": "For Vegetables",
         "category": "Produce"
       }
     }

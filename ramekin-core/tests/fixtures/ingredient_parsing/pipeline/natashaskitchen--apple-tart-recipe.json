@@ -3,6 +3,10 @@
   "recipe_slug": "apple-tart-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients for Apple Tart Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Baking"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "chilled",
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "chilled",
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,8 +111,13 @@
           }
         ],
         "note": "chilled",
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Ingredients for Apple Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 lb granny smith apples , (3 medium apples)",
@@ -115,6 +130,7 @@
           }
         ],
         "note": "3 medium apples",
+        "section": "Ingredients for Apple Filling",
         "category": "Produce"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Filling",
         "category": "Baking"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": "to dot the top",
+        "section": "Ingredients for Apple Filling",
         "category": "Dairy & Eggs"
       }
     }

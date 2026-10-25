@@ -3,6 +3,10 @@
   "recipe_slug": "cosmic-brownies-copycat-recipe",
   "ingredients": [
     {
+      "raw": "Brownie Batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup butter melted",
       "expected": {
         "item": "butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "melted",
+        "section": "Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup heavy cream",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Other"
       }
     }

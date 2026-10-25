@@ -3,6 +3,10 @@
   "recipe_slug": "2021-09-19-spicy-chickpeas-wit",
   "ingredients": [
     {
+      "raw": "For the chickpeas:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons grapeseed, olive, or other neutral oil",
       "expected": {
         "item": "grapeseed, olive, or other neutral oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "finely chopped, about 1/2 cup",
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "peeled and minced",
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
         "item": "crushed red pepper flakes",
         "measurements": [],
         "note": "I use 1/2 teaspoon or less, to taste",
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +82,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -115,6 +127,7 @@
           }
         ],
         "note": "or two 15-oz cans; drained and rinsed",
+        "section": "For the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -133,6 +146,7 @@
           }
         ],
         "note": "or 1 lb. diced fresh tomatoes (about 2 cups)",
+        "section": "For the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -147,6 +161,7 @@
           }
         ],
         "note": "I always use water",
+        "section": "For the Chickpeas",
         "category": "Beverages"
       }
     },
@@ -161,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Other"
       }
     },
@@ -175,6 +191,7 @@
           }
         ],
         "note": "optional, see notes above",
+        "section": "For the Chickpeas",
         "category": "Condiments & Sauces"
       }
     },
@@ -189,8 +206,13 @@
           }
         ],
         "note": "or more",
+        "section": "For the Chickpeas",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "For serving:",
+      "is_section_header": true
     },
     {
       "raw": "coconut rice, see notes above",
@@ -198,6 +220,7 @@
         "item": "coconut rice",
         "measurements": [],
         "note": "see notes above",
+        "section": "For Serving",
         "category": "Other"
       }
     },
@@ -207,6 +230,7 @@
         "item": "naan",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     },
@@ -216,6 +240,7 @@
         "item": "cilantro",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -225,6 +250,7 @@
         "item": "lime",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "gluten-free-pizza-crust-recipe",
   "ingredients": [
     {
+      "raw": "To activate the yeast:",
+      "is_section_header": true
+    },
+    {
       "raw": "7 g (2.5 tsp) Bob's Red Mill active dry yeast",
       "expected": {
         "item": "Bob's Red Mill active dry yeast",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "To Activate the Yeast",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "To Activate the Yeast",
         "category": "Beverages"
       }
     },
@@ -45,8 +51,13 @@
           }
         ],
         "note": null,
+        "section": "To Activate the Yeast",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For the loaf:",
+      "is_section_header": true
     },
     {
       "raw": "12 g whole psyllium husk",
@@ -59,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Loaf",
         "category": "Other"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Loaf",
         "category": "Beverages"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Loaf",
         "category": "Baking"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Loaf",
         "category": "Baking"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Loaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,6 +140,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Loaf",
         "category": "Oils & Vinegars"
       }
     }

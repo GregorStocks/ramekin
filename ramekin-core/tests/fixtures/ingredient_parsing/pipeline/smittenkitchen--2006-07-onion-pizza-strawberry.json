@@ -91,6 +91,10 @@
       }
     },
     {
+      "raw": "Strawberry Sorbet:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lemon, seeded and roughly chopped",
       "expected": {
         "item": "lemon",
@@ -101,6 +105,7 @@
           }
         ],
         "note": "seeded and roughly chopped",
+        "section": "Strawberry Sorbet",
         "category": "Produce"
       }
     },
@@ -115,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Sorbet",
         "category": "Baking"
       }
     },
@@ -129,6 +135,7 @@
           }
         ],
         "note": "hulled",
+        "section": "Strawberry Sorbet",
         "category": "Produce"
       }
     },
@@ -143,6 +150,7 @@
           }
         ],
         "note": "I always use 2",
+        "section": "Strawberry Sorbet",
         "category": "Produce"
       }
     }

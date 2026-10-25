@@ -59,11 +59,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Fresh fruit",
       "expected": {
         "item": "Fresh fruit",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -73,6 +78,7 @@
         "item": "Sweetener, honey, maple syrup, brown sugar",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     },
@@ -82,6 +88,7 @@
         "item": "Nuts & Seeds",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     },
@@ -91,6 +98,7 @@
         "item": "Nut Butter, peanut butter, almond butter",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -100,6 +108,7 @@
         "item": "Milk, almond milk, oat milk, soy milk, cow milk, etc.",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +118,7 @@
         "item": "Ground cinnamon or Nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     }

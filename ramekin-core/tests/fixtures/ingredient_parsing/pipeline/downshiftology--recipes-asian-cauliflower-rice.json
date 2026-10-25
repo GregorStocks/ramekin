@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup tamari, or coconut aminos",
       "expected": {
         "item": "tamari, or coconut aminos",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

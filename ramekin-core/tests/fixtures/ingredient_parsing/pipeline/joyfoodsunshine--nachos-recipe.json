@@ -3,6 +3,10 @@
   "recipe_slug": "nachos-recipe",
   "ingredients": [
     {
+      "raw": "Ground Beef:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground beef",
       "expected": {
         "item": "ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "about 1 small onion, diced & divided",
+        "section": "Ground Beef",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "optional",
+        "section": "Ground Beef",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Nachos:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces tortilla chips",
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Nachos",
         "category": "Snacks"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Nachos",
         "category": "Cheese"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Nachos",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Nachos",
         "category": "Canned Goods"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "halved",
+        "section": "Nachos",
         "category": "Other"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": "about 1/2 cup",
+        "section": "Nachos",
         "category": "Canned Goods"
       }
     },
@@ -250,6 +275,7 @@
         "item": "fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "Nachos",
         "category": "Produce"
       }
     },
@@ -259,6 +285,7 @@
         "item": "avocado slices",
         "measurements": [],
         "note": null,
+        "section": "Nachos",
         "category": "Other"
       }
     },
@@ -268,6 +295,7 @@
         "item": "salsa guacamole, sour cream, etc.",
         "measurements": [],
         "note": null,
+        "section": "Nachos",
         "category": "Other"
       }
     }

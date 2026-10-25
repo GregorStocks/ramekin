@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
         "item": "Japanese soy sauce",
@@ -69,6 +73,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +118,7 @@
           }
         ],
         "note": "awase",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     }

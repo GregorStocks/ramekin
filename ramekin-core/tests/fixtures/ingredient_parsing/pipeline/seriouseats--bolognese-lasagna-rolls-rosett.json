@@ -3,6 +3,10 @@
   "recipe_slug": "bolognese-lasagna-rolls-rosett",
   "ingredients": [
     {
+      "raw": "For the Bolognese:",
+      "is_section_header": true
+    },
+    {
       "raw": "One 1/4-ounce (7g) packet unflavored gelatin (about 1 1/2 teaspoons)",
       "expected": {
         "item": "unflavored gelatin",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 1 1/2 teaspoons",
+        "section": "For the Bolognese",
         "category": "Baking"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bolognese",
         "category": "Canned Goods"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bolognese",
         "category": "Dairy & Eggs"
       }
     },
@@ -79,6 +86,7 @@
           }
         ],
         "note": "about 6 ounces; 188g, see notes, peeled and finely minced",
+        "section": "For the Bolognese",
         "category": "Produce"
       }
     },
@@ -101,6 +109,7 @@
           }
         ],
         "note": "about 4 ounces; 120g, see notes",
+        "section": "For the Bolognese",
         "category": "Produce"
       }
     },
@@ -123,6 +132,7 @@
           }
         ],
         "note": "about 8 ounces; 240g, see notes, finely minced",
+        "section": "For the Bolognese",
         "category": "Produce"
       }
     },
@@ -141,6 +151,7 @@
           }
         ],
         "note": "or 1 pound beef with 1/2 pound each ground pork and veal (see notes); divided",
+        "section": "For the Bolognese",
         "category": "Meat & Seafood"
       }
     },
@@ -159,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bolognese",
         "category": "Canned Goods"
       }
     },
@@ -177,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bolognese",
         "category": "Beverages"
       }
     },
@@ -191,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bolognese",
         "category": "Spices & Seasonings"
       }
     },
@@ -205,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bolognese",
         "category": "Spices & Seasonings"
       }
     },
@@ -219,6 +234,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Bolognese",
         "category": "Condiments & Sauces"
       }
     },
@@ -228,6 +244,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Bolognese",
         "category": "Spices & Seasonings"
       }
     },
@@ -246,8 +263,13 @@
           }
         ],
         "note": null,
+        "section": "For the Bolognese",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Besciamella:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons unsalted butter (3 ounces; 84g)",
@@ -268,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For the Besciamella",
         "category": "Dairy & Eggs"
       }
     },
@@ -286,6 +309,7 @@
           }
         ],
         "note": null,
+        "section": "For the Besciamella",
         "category": "Baking"
       }
     },
@@ -304,6 +328,7 @@
           }
         ],
         "note": null,
+        "section": "For the Besciamella",
         "category": "Dairy & Eggs"
       }
     },
@@ -313,6 +338,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Besciamella",
         "category": "Spices & Seasonings"
       }
     },
@@ -327,8 +353,13 @@
           }
         ],
         "note": "optional",
+        "section": "For the Besciamella",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Tomato Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons (30ml) extra-virgin olive oil",
@@ -345,6 +376,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tomato Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -359,6 +391,7 @@
           }
         ],
         "note": "lightly smashed",
+        "section": "For the Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -373,6 +406,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -395,6 +429,7 @@
           }
         ],
         "note": "or one 24-ounce bottle tomato passata",
+        "section": "For the Tomato Sauce",
         "category": "Other"
       }
     },
@@ -404,8 +439,13 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Tomato Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds (900g) store-bought fresh lasagna noodles or fresh homemade (follow the recipe and instructions here through step 10, doubling the quantity to yield 2 pounds total), cut into 6- by 12-inch-long rectangles",
@@ -422,6 +462,7 @@
           }
         ],
         "note": "follow the recipe and instructions here through step 10, doubling the quantity to yield 2 pounds total, cut into 6- by 12-inch-long rectangles",
+        "section": "For the Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -431,6 +472,7 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": "for greasing pan and pasta",
+        "section": "For the Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -449,6 +491,7 @@
           }
         ],
         "note": "cut into 1/4-inch pieces",
+        "section": "For the Assembly",
         "category": "Cheese"
       }
     },
@@ -471,6 +514,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Assembly",
         "category": "Cheese"
       }
     }

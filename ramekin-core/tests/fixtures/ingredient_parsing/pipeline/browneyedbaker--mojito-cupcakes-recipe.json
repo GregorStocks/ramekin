@@ -3,6 +3,10 @@
   "recipe_slug": "mojito-cupcakes-recipe",
   "ingredients": [
     {
+      "raw": "For the Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  (120 ml) buttermilk",
       "expected": {
         "item": "buttermilk",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Produce"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -139,6 +150,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Produce"
       }
     },
@@ -167,35 +180,7 @@
           }
         ],
         "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Zest and juice of 1½ limes",
-      "expected": {
-        "item": "lime zest",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": "limes"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "Zest and juice of 1½ limes",
-      "expected": {
-        "item": "lime juice",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": "limes"
-          }
-        ],
-        "note": null,
+        "section": "For the Cupcakes",
         "category": "Produce"
       },
       "expanded": true
@@ -211,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Beverages"
       }
     },
@@ -229,8 +215,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To Brush the Cupcakes:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons   white rum",
@@ -243,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "To Brush the Cupcakes",
         "category": "Beverages"
       }
     },
@@ -257,8 +249,13 @@
           }
         ],
         "note": null,
+        "section": "To Brush the Cupcakes",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1½ cups  (340.5 g) unsalted butter, at room temperature",
@@ -275,6 +272,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -293,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -311,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Produce"
       }
     },
@@ -325,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Beverages"
       }
     }

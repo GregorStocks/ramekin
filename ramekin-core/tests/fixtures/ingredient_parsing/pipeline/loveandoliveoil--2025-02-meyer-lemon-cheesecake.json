@@ -3,6 +3,10 @@
   "recipe_slug": "2025-02-meyer-lemon-cheesecake",
   "ingredients": [
     {
+      "raw": "For Lemon Curd:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup  / 66 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "freshly squeezed, from 1-2 juicy lemons",
+        "section": "For Lemon Curd",
         "category": "Produce"
       }
     },
@@ -109,8 +119,13 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Crust:",
+      "is_section_header": true
     },
     {
       "raw": "6 oz  / 170 g lemon or vanilla wafer cookies, finely ground",
@@ -127,6 +142,7 @@
           }
         ],
         "note": "finely ground",
+        "section": "For Crust",
         "category": "Produce"
       }
     },
@@ -145,8 +161,13 @@
           }
         ],
         "note": "melted",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Filling:",
+      "is_section_header": true
     },
     {
       "raw": "⅓ cup  / 66 g granulated sugar",
@@ -163,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -177,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -195,6 +218,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Filling",
         "category": "Cheese"
       }
     },
@@ -213,6 +237,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -245,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -259,6 +286,7 @@
           }
         ],
         "note": "or 1 teaspoon vanilla extract",
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -273,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,6 +316,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -301,6 +331,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Condiments & Sauces"
       }
     }

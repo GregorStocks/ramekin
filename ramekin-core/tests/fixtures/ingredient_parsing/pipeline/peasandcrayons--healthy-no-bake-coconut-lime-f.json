@@ -110,11 +110,16 @@
       }
     },
     {
+      "raw": "FRUITY FAVORITES:",
+      "is_section_header": true
+    },
+    {
       "raw": "strawberries",
       "expected": {
         "item": "strawberries",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -124,6 +129,7 @@
         "item": "blueberries",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -133,6 +139,7 @@
         "item": "raspberries",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -142,6 +149,7 @@
         "item": "mandarin oranges",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -151,6 +159,7 @@
         "item": "pineapple",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -160,6 +169,7 @@
         "item": "peaches",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -169,6 +179,7 @@
         "item": "banana",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -178,6 +189,7 @@
         "item": "kiwi",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     }

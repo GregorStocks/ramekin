@@ -3,6 +3,10 @@
   "recipe_slug": "strawberry-snap-pea-and-mixed-",
   "ingredients": [
     {
+      "raw": "For the Strawberry Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 oz spring mix salad greens, 142 grams",
       "expected": {
         "item": "spring mix salad greens, 142 grams",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Strawberry Salad",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "hulled and sliced",
+        "section": "For the Strawberry Salad",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Strawberry Salad",
         "category": "Cheese"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Strawberry Salad",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "toasted",
+        "section": "For the Strawberry Salad",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For Honey Vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup extra virgin olive oil",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Honey Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "or added to taste",
+        "section": "For Honey Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Honey Vinaigrette",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Honey Vinaigrette",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For Honey Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "or added to taste",
+        "section": "For Honey Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "kung-pao-tofu-recipe",
   "ingredients": [
     {
+      "raw": "For marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "400 grams  firm tofu (cut into 1-inch cubes)",
       "expected": {
         "item": "firm tofu",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cut into 1-inch cubes",
+        "section": "For Marinade",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon  Chinese dark soy sauce",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Other"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Beverages"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": "to taste",
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For stir-fry:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons  vegetable oil",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -199,6 +224,7 @@
           }
         ],
         "note": "~1/3 cup",
+        "section": "For Stir-Fry",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -213,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Other"
       }
     },
@@ -227,6 +254,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -241,6 +269,7 @@
           }
         ],
         "note": "~1 large clove, minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -255,6 +284,7 @@
           }
         ],
         "note": "~ 1/2 pepper, chopped",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -269,6 +299,7 @@
           }
         ],
         "note": "~ 1/2 pepper, chopped",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -283,6 +314,7 @@
           }
         ],
         "note": "chopped for garnish",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2010-03-romesco-potatoes",
   "ingredients": [
     {
+      "raw": "Romesco Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 ancho chiles*",
       "expected": {
         "item": "ancho chiles",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Romesco Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Romesco Sauce",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "or, you can rub their skins off once they are toasted and cooled",
+        "section": "Romesco Sauce",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Romesco Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "about 1-inch thick",
+        "section": "Romesco Sauce",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "I bought whole tomatoes, not sure why; I’d use purée next time",
+        "section": "Romesco Sauce",
         "category": "Canned Goods"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Romesco Sauce",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Romesco Sauce",
         "category": "Produce"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "for juicing",
+        "section": "Romesco Sauce",
         "category": "Produce"
       }
     },
@@ -134,6 +147,7 @@
         "item": "A splash of sherry vinegar",
         "measurements": [],
         "note": "can’t find it? Use a mild wine or balsamic vinegar instead",
+        "section": "Romesco Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -143,8 +157,13 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Romesco Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Potatoes:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds Yukon Gold potatoes (full size or minis work)",
@@ -157,6 +176,7 @@
           }
         ],
         "note": "full size or minis work",
+        "section": "Potatoes",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": "unpeeled",
+        "section": "Potatoes",
         "category": "Produce"
       }
     },
@@ -199,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +236,7 @@
           }
         ],
         "note": "I left this out, accidentally; it was fine without it, plus 2 teaspoons thyme leaves",
+        "section": "Potatoes",
         "category": "Other"
       }
     },
@@ -227,6 +251,7 @@
           }
         ],
         "note": "from above",
+        "section": "Potatoes",
         "category": "Condiments & Sauces"
       }
     },
@@ -241,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Produce"
       }
     },
@@ -250,6 +276,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     }

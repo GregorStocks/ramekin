@@ -26,6 +26,10 @@
       }
     },
     {
+      "raw": "Grapefruit Soda:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 ounces grapefruit soda",
       "expected": {
         "item": "grapefruit soda",
@@ -36,8 +40,13 @@
           }
         ],
         "note": null,
+        "section": "Grapefruit Soda",
         "category": "Other"
       }
+    },
+    {
+      "raw": "OR:",
+      "is_section_header": true
     },
     {
       "raw": "3 ounces fresh grapefruit juice freshly squeezed",
@@ -50,6 +59,7 @@
           }
         ],
         "note": "freshly squeezed",
+        "section": "Or",
         "category": "Beverages"
       }
     },
@@ -64,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Or",
         "category": "Beverages"
       }
     },
@@ -78,6 +89,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Or",
         "category": "Beverages"
       }
     }

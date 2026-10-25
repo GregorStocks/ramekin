@@ -3,6 +3,10 @@
   "recipe_slug": "whole-wheat-noodles-with-peanu",
   "ingredients": [
     {
+      "raw": "For  Peanut Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1  small piece of lemon grass (chopped)",
       "expected": {
         "item": "piece of lemon grass",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For  Peanut Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -22,6 +27,7 @@
         "item": "Freshly grated ginger-to taste",
         "measurements": [],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Other"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Beverages"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Baking"
       }
     },
@@ -87,6 +97,7 @@
         "item": "Whole Wheat Spaghetti",
         "measurements": [],
         "note": "Soba noodles would work too",
+        "section": "For  Peanut Sauce",
         "category": "Pasta & Rice"
       }
     },
@@ -96,6 +107,7 @@
         "item": "Broccoli",
         "measurements": [],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Produce"
       }
     },
@@ -105,6 +117,7 @@
         "item": "Red Pepper Strips",
         "measurements": [],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Other"
       }
     },
@@ -114,6 +127,7 @@
         "item": "Green Pepper Strips",
         "measurements": [],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Other"
       }
     },
@@ -123,6 +137,7 @@
         "item": "Carrot Strips",
         "measurements": [],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Other"
       }
     },
@@ -132,6 +147,7 @@
         "item": "Cilantro",
         "measurements": [],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Produce"
       }
     },
@@ -141,6 +157,7 @@
         "item": "Sesame Seeds",
         "measurements": [],
         "note": null,
+        "section": "For  Peanut Sauce",
         "category": "Spices & Seasonings"
       }
     }

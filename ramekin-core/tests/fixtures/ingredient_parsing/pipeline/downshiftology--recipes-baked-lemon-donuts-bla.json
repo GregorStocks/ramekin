@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-baked-lemon-donuts-bla",
   "ingredients": [
     {
+      "raw": "Lemon Donuts:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 egg white, room temperature",
       "expected": {
         "item": "egg white",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Lemon Donuts",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Produce"
       }
     },
@@ -139,38 +152,14 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Produce"
       },
       "expanded": true
     },
     {
-      "raw": "1 lemon, juiced and zested",
-      "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1 lemon, juiced and zested",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
+      "raw": "Blackberry Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups blackberries",
@@ -183,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Glaze",
         "category": "Produce"
       }
     },
@@ -197,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Glaze",
         "category": "Produce"
       }
     },
@@ -211,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Glaze",
         "category": "Other"
       }
     },
@@ -225,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -239,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Glaze",
         "category": "Beverages"
       }
     },
@@ -253,6 +247,7 @@
           }
         ],
         "note": "for topping",
+        "section": "Blackberry Glaze",
         "category": "Produce"
       }
     }

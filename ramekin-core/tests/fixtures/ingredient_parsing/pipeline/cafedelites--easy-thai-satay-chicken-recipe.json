@@ -3,6 +3,10 @@
   "recipe_slug": "easy-thai-satay-chicken-recipe",
   "ingredients": [
     {
+      "raw": "For The Chicken Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 tablespoons coconut milk",
       "expected": {
         "item": "coconut milk",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Marinade",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Marinade",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Marinade",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Marinade",
         "category": "Other"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": "for frying",
+        "section": "For the Chicken Marinade",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Peanut Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/3 cup coconut milk all remaining milk from the tin",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Other"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Other"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Other"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Peanut Sauce",
         "category": "Other"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Peanut Sauce",
         "category": "Produce"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": "freshly squeezed",
+        "section": "For the Peanut Sauce",
         "category": "Produce"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Other"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut Sauce",
         "category": "Other"
       }
     },
@@ -307,6 +336,7 @@
           }
         ],
         "note": "sliced to garnish",
+        "section": "For the Peanut Sauce",
         "category": "Other"
       }
     }

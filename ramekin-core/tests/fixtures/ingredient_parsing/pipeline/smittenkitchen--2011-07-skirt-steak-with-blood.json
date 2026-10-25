@@ -3,6 +3,10 @@
   "recipe_slug": "2011-07-skirt-steak-with-blood",
   "ingredients": [
     {
+      "raw": "Steak:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1 1/2 pound skirt steaks",
       "expected": {
         "item": "1 1/2 pound skirt steaks",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": "packed",
+        "section": "Steak",
         "category": "Baking"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,8 +97,13 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": "for brushing",
+        "section": "Steak",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup finely chopped red onion",
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": "divided",
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": "from about 3 pints or 10 ounce containers, halved",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": "inner stalks and leaves; from 1 bunch",
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Canned Goods"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -236,6 +261,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     }

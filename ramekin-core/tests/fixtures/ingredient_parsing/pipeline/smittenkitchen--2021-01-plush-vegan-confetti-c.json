@@ -3,6 +3,10 @@
   "recipe_slug": "2021-01-plush-vegan-confetti-c",
   "ingredients": [
     {
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cups plus 7 tablespoons (190 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "such as soy, almond, or oat",
+        "section": "Cupcakes",
         "category": "Other"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Produce"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -145,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -159,8 +172,13 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces (1 cup) non-dairy cream cheese",
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": "sifted if lumpy",
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

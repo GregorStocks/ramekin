@@ -166,6 +166,10 @@
       }
     },
     {
+      "raw": "To Serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 pita pockets",
       "expected": {
         "item": "pita pockets",
@@ -176,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -185,6 +190,7 @@
         "item": "Tahini sauce or Greek Tzatziki sauce",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -194,6 +200,7 @@
         "item": "Baby arugula",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -208,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -217,6 +225,7 @@
         "item": "Pickles or kalmata olives",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Condiments & Sauces"
       }
     }

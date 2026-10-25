@@ -3,6 +3,10 @@
   "recipe_slug": "homemade-omelette-recipe",
   "ingredients": [
     {
+      "raw": "Omelette:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Omelette",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Omelette",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Omelette",
         "category": "Dairy & Eggs"
       }
     },
@@ -50,6 +57,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Omelette",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,8 +72,13 @@
           }
         ],
         "note": "shredded",
+        "section": "Omelette",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Ham & Veggie Filling (optional):",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon unsalted butter  or olive oil",
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Meat & Seafood"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "diced",
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "minced",
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     }

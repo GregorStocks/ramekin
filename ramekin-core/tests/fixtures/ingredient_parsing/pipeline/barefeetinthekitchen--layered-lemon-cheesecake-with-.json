@@ -3,6 +3,10 @@
   "recipe_slug": "layered-lemon-cheesecake-with-",
   "ingredients": [
     {
+      "raw": "Crust Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups almond flour",
       "expected": {
         "item": "almond flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crust Ingredients",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crust Ingredients",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Crust Ingredients",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "24 ounces cream cheese (room temperature)",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Filling Ingredients",
         "category": "Cheese"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Produce"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": "finely minced, this was the zest from 1 large lemon",
+        "section": "Filling Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Sour Cream Topping Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups sour cream",
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Sour Cream Topping Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,8 +175,13 @@
           }
         ],
         "note": null,
+        "section": "Sour Cream Topping Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Glaze Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup sugar",
@@ -167,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze Ingredients",
         "category": "Baking"
       }
     },
@@ -181,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze Ingredients",
         "category": "Baking"
       }
     },
@@ -195,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze Ingredients",
         "category": "Beverages"
       }
     },
@@ -209,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze Ingredients",
         "category": "Produce"
       }
     }

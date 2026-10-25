@@ -3,6 +3,10 @@
   "recipe_slug": "vietnamese-pho-recipe",
   "ingredients": [
     {
+      "raw": "Aromatics:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 large onions , halved",
       "expected": {
         "item": "onions",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "halved",
+        "section": "Aromatics",
         "category": "Produce"
       }
     },
@@ -31,8 +36,13 @@
           }
         ],
         "note": "sliced down the centre",
+        "section": "Aromatics",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Spices:",
+      "is_section_header": true
     },
     {
       "raw": "10 star anise",
@@ -45,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Other"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Other"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Other"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -110,6 +125,7 @@
         "item": "Beef bones :",
         "measurements": [],
         "note": "Note 1",
+        "section": "Spices",
         "category": "Other"
       }
     },
@@ -128,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Meat & Seafood"
       }
     },
@@ -146,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Other"
       }
     },
@@ -164,6 +182,7 @@
           }
         ],
         "note": "leg, knuckle, cut to reveal marrow",
+        "section": "Spices",
         "category": "Other"
       }
     },
@@ -186,8 +205,13 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Seasoning:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp white sugar",
@@ -200,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Baking"
       }
     },
@@ -214,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,8 +258,13 @@
           }
         ],
         "note": "Note 2",
+        "section": "Seasoning",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Noodle Soup – PER BOWL:",
+      "is_section_header": true
     },
     {
       "raw": "50g / 1.5 oz  dried rice sticks (or 120g/4oz fresh) (Note 3)",
@@ -250,6 +281,7 @@
           }
         ],
         "note": "or 120g/4oz fresh, Note 3",
+        "section": "Noodle Soup – Per Bowl",
         "category": "Other"
       }
     },
@@ -268,6 +300,7 @@
           }
         ],
         "note": "Note 4, raw, very thinly sliced",
+        "section": "Noodle Soup – Per Bowl",
         "category": "Meat & Seafood"
       }
     },
@@ -282,8 +315,13 @@
           }
         ],
         "note": "used for broth",
+        "section": "Noodle Soup – Per Bowl",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "Beansprouts, handful",
@@ -291,6 +329,7 @@
         "item": "Beansprouts, handful",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -300,6 +339,7 @@
         "item": "Thai basil, 3 - 5 sprigs",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -309,6 +349,7 @@
         "item": "Coriander/cilantro, 3 - 5 sprigs",
         "measurements": [],
         "note": "or more basil",
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -318,6 +359,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -327,6 +369,7 @@
         "item": "Finely sliced red chilli",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -336,6 +379,7 @@
         "item": "Hoisin sauce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -345,6 +389,7 @@
         "item": "Sriracha",
         "measurements": [],
         "note": "for spiciness",
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     }

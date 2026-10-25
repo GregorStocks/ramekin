@@ -3,6 +3,10 @@
   "recipe_slug": "cherry-pie-recipe",
   "ingredients": [
     {
+      "raw": "Pie Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 ⅓ cups all purpose flour sifted",
       "expected": {
         "item": "all purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Pie Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Other"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Pie Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Cherry Pie Filling:",
+      "is_section_header": true
     },
     {
       "raw": "5 cups cherries  pitted",
@@ -83,6 +96,7 @@
           }
         ],
         "note": "pitted",
+        "section": "Cherry Pie Filling",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Pie Filling",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Pie Filling",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Pie Filling",
         "category": "Baking"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "Cherry Pie Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Egg Wash:",
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,8 +190,13 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon coarse sugar optional",
@@ -181,6 +209,7 @@
           }
         ],
         "note": "optional",
+        "section": "Garnish",
         "category": "Baking"
       }
     }

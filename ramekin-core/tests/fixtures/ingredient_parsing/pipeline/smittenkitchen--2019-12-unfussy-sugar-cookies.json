@@ -3,6 +3,10 @@
   "recipe_slug": "2019-12-unfussy-sugar-cookies",
   "ingredients": [
     {
+      "raw": "Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups (390 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "if using unsalted butter only",
+        "section": "Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,8 +127,13 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Icing:",
+      "is_section_header": true
     },
     {
       "raw": "1 large egg white, ideally pasteurized (or use meringue or egg white powder as per label instructions)",
@@ -131,6 +146,7 @@
           }
         ],
         "note": "or use meringue or egg white powder as per label instructions",
+        "section": "Icing",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Spices & Seasonings"
       }
     },
@@ -172,6 +190,7 @@
         "item": "A few drops of a flavoring of your choice",
         "measurements": [],
         "note": "optional, lemon, almond, vanilla",
+        "section": "Icing",
         "category": "Other"
       }
     },
@@ -181,6 +200,7 @@
         "item": "Food coloring and sprinkles, as you wish",
         "measurements": [],
         "note": null,
+        "section": "Icing",
         "category": "Baking"
       }
     }

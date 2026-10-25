@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "for serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup guacamole",
       "expected": {
         "item": "guacamole",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -120,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2025-06-jalapeno-cheddar-chick",
   "ingredients": [
     {
+      "raw": "meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound lean ground chicken, I like to use 94% lean",
       "expected": {
         "item": "lean ground chicken, I like to use 94% lean",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Cheese"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": "like parsley or chives",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -106,8 +117,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "herby summer sauce:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup yogurt",
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Herby Summer Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Herby Summer Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "juice freshly squeezed",
+        "section": "Herby Summer Sauce",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Herby Summer Sauce",
         "category": "Produce"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Herby Summer Sauce",
         "category": "Produce"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Herby Summer Sauce",
         "category": "Produce"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Herby Summer Sauce",
         "category": "Spices & Seasonings"
       }
     }

@@ -110,11 +110,16 @@
       }
     },
     {
+      "raw": "Optional toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Sliced Red Onion",
       "expected": {
         "item": "Sliced Red Onion",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -124,6 +129,7 @@
         "item": "Pickles",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -133,6 +139,7 @@
         "item": "Lettuce",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -142,6 +149,7 @@
         "item": "Tomato",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

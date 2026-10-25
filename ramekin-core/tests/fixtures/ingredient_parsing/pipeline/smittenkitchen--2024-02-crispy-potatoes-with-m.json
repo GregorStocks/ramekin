@@ -3,6 +3,10 @@
   "recipe_slug": "2024-02-crispy-potatoes-with-m",
   "ingredients": [
     {
+      "raw": "Potatoes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 pounds (680 grams) Yukon gold potatoes, peeled if you wish, cut into 1/4-inch slices",
       "expected": {
         "item": "Yukon gold potatoes, peeled if you wish",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "cut into 1/4-inch slices",
+        "section": "Potatoes",
         "category": "Produce"
       }
     },
@@ -26,6 +31,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Potatoes",
         "category": "Oils & Vinegars"
       }
     },
@@ -35,6 +41,7 @@
         "item": "Kosher Salt",
         "measurements": [],
         "note": null,
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -44,8 +51,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Mushrooms:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45 grams) unsalted butter, divided",
@@ -62,6 +74,7 @@
           }
         ],
         "note": "divided",
+        "section": "Mushrooms",
         "category": "Dairy & Eggs"
       }
     },
@@ -80,6 +93,7 @@
           }
         ],
         "note": "diced",
+        "section": "Mushrooms",
         "category": "Produce"
       }
     },
@@ -89,6 +103,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Mushrooms",
         "category": "Spices & Seasonings"
       }
     },
@@ -98,6 +113,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Mushrooms",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +128,7 @@
           }
         ],
         "note": "minced",
+        "section": "Mushrooms",
         "category": "Produce"
       }
     },
@@ -130,8 +147,13 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Mushrooms",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "Sour cream",
@@ -139,6 +161,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Dairy & Eggs"
       }
     },
@@ -148,6 +171,7 @@
         "item": "A handful of fresh dill",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     }

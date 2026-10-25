@@ -3,6 +3,10 @@
   "recipe_slug": "2018-12-03-saffron-carrot-soup",
   "ingredients": [
     {
+      "raw": "for the soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup olive or vegetable oil",
       "expected": {
         "item": "olive or vegetable oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "thinly sliced or finely diced",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -36,6 +42,7 @@
         "item": "kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "about 10 threads",
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "peeled and cut into 1/2-inch chunks",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "for the dukkah:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon coriander seeds",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dukkah",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dukkah",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dukkah",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dukkah",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Dukkah",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dukkah",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dukkah",
         "category": "Spices & Seasonings"
       }
     }

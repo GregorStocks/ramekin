@@ -3,6 +3,10 @@
   "recipe_slug": "chai-tea-latte-recipe",
   "ingredients": [
     {
+      "raw": "For the Chai Tea:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cinnamon sticks, broken into pieces",
       "expected": {
         "item": "cinnamon sticks, broken into pieces",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chai Tea",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chai Tea",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chai Tea",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chai Tea",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chai Tea",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Chai Tea",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chai Tea",
         "category": "Beverages"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "or 6 black tea bags",
+        "section": "For the Chai Tea",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chai Tea",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chai Tea",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Latte:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups chai tea (see recipe above)",
@@ -153,6 +171,7 @@
           }
         ],
         "note": "see recipe above",
+        "section": "For the Latte",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Latte",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Latte",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Latte",
         "category": "Canned Goods"
       }
     }

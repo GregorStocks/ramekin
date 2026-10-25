@@ -3,6 +3,10 @@
   "recipe_slug": "2011-10-pear-cranberry-and-gin",
   "ingredients": [
     {
+      "raw": "Crumble:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (125 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "packed",
+        "section": "Crumble",
         "category": "Baking"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": "4 ounces or 113 grams or about 16 storebought cookies",
+        "section": "Crumble",
         "category": "Snacks"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,8 +154,13 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "Crumble",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds (about 4 to 5) large ripe pears (I used Anjou, suggested in the original recipe) peeled, halved, cored and sliced 1/4 inch thick",
@@ -157,6 +173,7 @@
           }
         ],
         "note": "about 4 to 5, I used Anjou, suggested in the original recipe, peeled, halved, cored and sliced 1/4 inch thick",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -179,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -197,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -211,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -243,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -261,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

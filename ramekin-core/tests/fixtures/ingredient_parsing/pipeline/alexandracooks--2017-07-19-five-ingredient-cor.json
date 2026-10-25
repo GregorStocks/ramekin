@@ -67,6 +67,10 @@
       }
     },
     {
+      "raw": "For the salsa:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons finely diced shallot (about 1 medium)",
       "expected": {
         "item": "finely diced shallot",
@@ -81,6 +85,7 @@
           }
         ],
         "note": "about 1 medium",
+        "section": "For the Salsa",
         "category": "Produce"
       }
     },
@@ -95,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salsa",
         "category": "Produce"
       }
     },
@@ -109,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salsa",
         "category": "Other"
       }
     },
@@ -123,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salsa",
         "category": "Produce"
       }
     },
@@ -137,6 +145,7 @@
           }
         ],
         "note": "green and white parts, see notes above",
+        "section": "For the Salsa",
         "category": "Other"
       }
     },
@@ -151,6 +160,7 @@
           }
         ],
         "note": "I use olive oil",
+        "section": "For the Salsa",
         "category": "Oils & Vinegars"
       }
     },
@@ -160,6 +170,7 @@
         "item": "salt",
         "measurements": [],
         "note": null,
+        "section": "For the Salsa",
         "category": "Spices & Seasonings"
       }
     }

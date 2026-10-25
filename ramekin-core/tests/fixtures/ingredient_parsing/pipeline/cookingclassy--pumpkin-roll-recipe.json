@@ -3,6 +3,10 @@
   "recipe_slug": "pumpkin-roll-recipe",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup (96g) all-purpose flour (spooned and leveled)",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "spooned and leveled",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -116,94 +127,7 @@
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1/4 tsp each ginger, nutmeg and cloves*",
-      "expected": {
-        "item": "ginger",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1/4 tsp each ginger, nutmeg and cloves*",
-      "expected": {
-        "item": "nutmeg",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1/4 tsp each ginger, nutmeg and cloves*",
-      "expected": {
-        "item": "cloves",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1/4 tsp each ginger, nutmeg and cloves*",
-      "expected": {
-        "item": "ginger",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1/4 tsp each ginger, nutmeg and cloves*",
-      "expected": {
-        "item": "nutmeg",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1/4 tsp each ginger, nutmeg and cloves*",
-      "expected": {
-        "item": "cloves",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -219,6 +143,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -251,6 +177,7 @@
           }
         ],
         "note": "at room temperature if refrigerated",
+        "section": "Cake",
         "category": "Canned Goods"
       }
     },
@@ -265,8 +192,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 (8 oz) pkg. cream cheese, at room temperature",
@@ -283,6 +215,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -301,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -319,6 +253,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -333,6 +268,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

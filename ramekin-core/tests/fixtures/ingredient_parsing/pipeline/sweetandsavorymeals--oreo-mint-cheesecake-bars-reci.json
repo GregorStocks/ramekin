@@ -3,6 +3,10 @@
   "recipe_slug": "oreo-mint-cheesecake-bars-reci",
   "ingredients": [
     {
+      "raw": "Oreo crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "20 regular Oreo cookies",
       "expected": {
         "item": "regular Oreo cookies",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Oreo Crust",
         "category": "Snacks"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "melted",
+        "section": "Oreo Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Mint filling:",
+      "is_section_header": true
     },
     {
       "raw": "24 oz cream cheese softened",
@@ -41,6 +51,7 @@
           }
         ],
         "note": "softened",
+        "section": "Mint Filling",
         "category": "Cheese"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Other"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Baking"
       }
     },
@@ -111,8 +126,13 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Whipped cream:",
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup heavy cream cold",
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Other"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Baking"
       }
     }

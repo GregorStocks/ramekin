@@ -3,6 +3,10 @@
   "recipe_slug": "beef-and-broccoli-recipe",
   "ingredients": [
     {
+      "raw": "For the Stir Fry:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds flank steak, sliced against the grain into thin ¼ inch thick slices",
       "expected": {
         "item": "flank steak",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sliced against the grain into thin 1/4 inch thick slices",
+        "section": "For the Stir Fry",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "such as canola oil or peanut oil",
+        "section": "For the Stir Fry",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup low-sodium soy sauce",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "or dry sherry",
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -148,6 +166,7 @@
         "item": "hot water as needed to thin the sauce",
         "measurements": [],
         "note": "see notes",
+        "section": "For the Sauce",
         "category": "Other"
       }
     }

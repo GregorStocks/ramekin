@@ -91,6 +91,10 @@
       }
     },
     {
+      "raw": "Simple + Speedy Italian Dressing Recipe:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
@@ -101,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Oils & Vinegars"
       }
     },
@@ -129,6 +135,7 @@
           }
         ],
         "note": "plus extra to taste",
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Other"
       }
     },
@@ -143,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +165,7 @@
           }
         ],
         "note": "plus extra to taste",
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +180,7 @@
           }
         ],
         "note": "if desired",
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Spices & Seasonings"
       }
     }

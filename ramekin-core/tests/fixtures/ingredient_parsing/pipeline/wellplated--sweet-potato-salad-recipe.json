@@ -3,6 +3,10 @@
   "recipe_slug": "sweet-potato-salad-recipe",
   "ingredients": [
     {
+      "raw": "For the Sweet Potato Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 slices thick-cut bacon cooked*",
       "expected": {
         "item": "thick-cut bacon cooked",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Potato Salad",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "I do a rough 3/4 inch, but you can do any size you like",
+        "section": "For the Sweet Potato Salad",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Sweet Potato Salad",
         "category": "Produce"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Sweet Potato Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Mustard Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1 jalapeño seeded and minced",
@@ -69,6 +81,7 @@
           }
         ],
         "note": "seeded and minced",
+        "section": "For the Mustard Dressing",
         "category": "Produce"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Mustard Dressing",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Spices & Seasonings"
       }
     }

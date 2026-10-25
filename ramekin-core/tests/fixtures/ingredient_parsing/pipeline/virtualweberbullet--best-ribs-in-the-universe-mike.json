@@ -152,6 +152,10 @@
       }
     },
     {
+      "raw": "Ingredients List:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup sugar",
       "expected": {
         "item": "sugar",
@@ -162,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients List",
         "category": "Baking"
       }
     },
@@ -176,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients List",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients List",
         "category": "Baking"
       }
     },
@@ -204,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients List",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients List",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,6 +241,7 @@
           }
         ],
         "note": "MSG",
+        "section": "Ingredients List",
         "category": "Spices & Seasonings"
       }
     },
@@ -246,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients List",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,6 +271,7 @@
           }
         ],
         "note": "freshly ground",
+        "section": "Ingredients List",
         "category": "Spices & Seasonings"
       }
     },
@@ -274,6 +286,7 @@
           }
         ],
         "note": "Important",
+        "section": "Ingredients List",
         "category": "Spices & Seasonings"
       }
     },
@@ -288,6 +301,7 @@
           }
         ],
         "note": "Important",
+        "section": "Ingredients List",
         "category": "Spices & Seasonings"
       }
     }

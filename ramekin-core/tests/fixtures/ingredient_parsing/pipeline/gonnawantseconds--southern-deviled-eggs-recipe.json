@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 tablespoons mayonnaise",
       "expected": {
         "item": "mayonnaise",
@@ -27,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": "minced",
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -97,6 +106,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -111,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +136,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "pimento",
@@ -134,6 +150,7 @@
         "item": "pimento",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Canned Goods"
       }
     },
@@ -143,6 +160,7 @@
         "item": "dill",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }

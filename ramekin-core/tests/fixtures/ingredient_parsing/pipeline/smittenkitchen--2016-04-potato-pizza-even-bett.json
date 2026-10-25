@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Jim Lahey’s Basic Pizza Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups minus 1 tablespoon (250 grams) all-purpose or bread flour",
       "expected": {
         "item": "minus 1 tablespoon all-purpose or bread flour",
@@ -101,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Baking"
       }
     },
@@ -119,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Baking"
       }
     },
@@ -128,6 +134,7 @@
         "item": "A heaped 1/4 teaspoon fine sea or table salt",
         "measurements": [],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,6 +144,7 @@
         "item": "A heaped 1/4 teaspoon granulated sugar",
         "measurements": [],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Other"
       }
     },
@@ -155,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Beverages"
       }
     }

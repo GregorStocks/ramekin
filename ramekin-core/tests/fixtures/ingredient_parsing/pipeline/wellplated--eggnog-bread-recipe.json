@@ -3,6 +3,10 @@
   "recipe_slug": "eggnog-bread-recipe",
   "ingredients": [
     {
+      "raw": "For the Eggnog Bread:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup unsalted butter (1/2 stick), at room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Eggnog Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Eggnog Bread",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Eggnog Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Eggnog Bread",
         "category": "Baking"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Eggnog Bread",
         "category": "Baking"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "or substitute additional all-purpose flour",
+        "section": "For the Eggnog Bread",
         "category": "Baking"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Eggnog Bread",
         "category": "Baking"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": "it’s an amazing flavor upgrade to grate your own nutmeg. I use this zester to do it",
+        "section": "For the Eggnog Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Eggnog Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": "I used Trader Joe’s light eggnog",
+        "section": "For the Eggnog Bread",
         "category": "Other"
       }
     },
@@ -157,8 +171,13 @@
           }
         ],
         "note": "or substitute an additional tablespoon eggnog",
+        "section": "For the Eggnog Bread",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup powdered sugar (4 ounces)",
@@ -175,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -189,6 +209,7 @@
           }
         ],
         "note": "whichever you used in the loaf",
+        "section": "For the Glaze",
         "category": "Beverages"
       }
     }

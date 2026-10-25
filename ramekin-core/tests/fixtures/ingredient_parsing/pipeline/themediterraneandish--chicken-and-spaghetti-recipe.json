@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-and-spaghetti-recipe",
   "ingredients": [
     {
+      "raw": "For Chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1.5 lb boneless chicken breast pieces",
       "expected": {
         "item": "boneless chicken breast pieces",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Other"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +112,7 @@
         "item": "Extra virgin olive oil",
         "measurements": [],
         "note": "see our olive oil options here",
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Beverages"
       }
     },
@@ -129,8 +142,13 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Pasta:",
+      "is_section_header": true
     },
     {
       "raw": "1 lb spaghetti",
@@ -143,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For Pasta",
         "category": "Pasta & Rice"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Pasta",
         "category": "Spices & Seasonings"
       }
     },
@@ -166,6 +186,7 @@
         "item": "Extra virgin olive oil",
         "measurements": [],
         "note": "see our olive oil options here",
+        "section": "For Pasta",
         "category": "Oils & Vinegars"
       }
     },
@@ -180,6 +201,7 @@
           }
         ],
         "note": "you can leave some whole, halved",
+        "section": "For Pasta",
         "category": "Produce"
       }
     },
@@ -194,6 +216,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Pasta",
         "category": "Produce"
       }
     },
@@ -208,6 +231,7 @@
           }
         ],
         "note": "both white and green parts, trimmed and finely chopped",
+        "section": "For Pasta",
         "category": "Produce"
       }
     },
@@ -222,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For Pasta",
         "category": "Beverages"
       }
     },
@@ -236,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For Pasta",
         "category": "Produce"
       }
     },
@@ -245,6 +271,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For Pasta",
         "category": "Spices & Seasonings"
       }
     },
@@ -259,6 +286,7 @@
           }
         ],
         "note": "roughly torn",
+        "section": "For Pasta",
         "category": "Produce"
       }
     },
@@ -268,6 +296,7 @@
         "item": "Freshly grated Parmesan",
         "measurements": [],
         "note": null,
+        "section": "For Pasta",
         "category": "Cheese"
       }
     },
@@ -282,6 +311,7 @@
           }
         ],
         "note": "optional, for garnish",
+        "section": "For Pasta",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2016-11-apple-strudel",
   "ingredients": [
     {
+      "raw": "Raisins:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (80 grams) raisins",
       "expected": {
         "item": "raisins",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Raisins",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -35,8 +40,13 @@
           }
         ],
         "note": null,
+        "section": "Raisins",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Dough:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup plus 3 tablespoons (150 grams) all-purpose flour, plus more for dusting",
@@ -53,6 +63,7 @@
           }
         ],
         "note": "plus more for dusting",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -67,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
     },
@@ -103,8 +116,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Apple filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds (905 grams) firm apples (about 5 to 6)",
@@ -121,6 +139,7 @@
           }
         ],
         "note": "about 5 to 6",
+        "section": "Apple Filling",
         "category": "Other"
       }
     },
@@ -135,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Apple Filling",
         "category": "Produce"
       }
     },
@@ -153,6 +173,7 @@
           }
         ],
         "note": "see note above",
+        "section": "Apple Filling",
         "category": "Baking"
       }
     },
@@ -167,6 +188,7 @@
           }
         ],
         "note": "optional",
+        "section": "Apple Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +207,7 @@
           }
         ],
         "note": "divided",
+        "section": "Apple Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,6 +226,7 @@
           }
         ],
         "note": "I used, and recommend, panko, see note above",
+        "section": "Apple Filling",
         "category": "Other"
       }
     },
@@ -217,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Apple Filling",
         "category": "Baking"
       }
     },
@@ -231,8 +256,13 @@
           }
         ],
         "note": null,
+        "section": "Apple Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "Confectioners’ sugar, for dusting",
@@ -240,6 +270,7 @@
         "item": "Confectioners’ sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -249,6 +280,7 @@
         "item": "Lightly sweetened whipped cream or vanilla ice cream",
         "measurements": [],
         "note": "for serving",
+        "section": "To Finish",
         "category": "Other"
       }
     }

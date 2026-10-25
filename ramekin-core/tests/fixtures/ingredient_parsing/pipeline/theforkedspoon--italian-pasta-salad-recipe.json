@@ -3,6 +3,10 @@
   "recipe_slug": "italian-pasta-salad-recipe",
   "ingredients": [
     {
+      "raw": "For the Italian Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup good-quality olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "good-quality",
+        "section": "For the Italian Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Italian Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Italian Dressing",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Italian Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Italian Dressing",
         "category": "Produce"
       }
     },
@@ -78,8 +87,13 @@
         "item": "salt + black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Italian Dressing",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Pasta Salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound fusilli pasta, cooked to al dente (may also use rotini pasta or bowtie pasta)",
@@ -92,6 +106,7 @@
           }
         ],
         "note": "may also use rotini pasta or bowtie pasta, cooked to al dente",
+        "section": "For the Pasta Salad",
         "category": "Other"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": "drained and sliced in half",
+        "section": "For the Pasta Salad",
         "category": "Cheese"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "sliced and quartered",
+        "section": "For the Pasta Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "or arugula",
+        "section": "For the Pasta Salad",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "halved; or grape tomatoes",
+        "section": "For the Pasta Salad",
         "category": "Produce"
       }
     },
@@ -166,6 +185,7 @@
           }
         ],
         "note": "drained and chopped",
+        "section": "For the Pasta Salad",
         "category": "Canned Goods"
       }
     },
@@ -184,6 +204,7 @@
           }
         ],
         "note": "drained and chopped",
+        "section": "For the Pasta Salad",
         "category": "Canned Goods"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "sopa-de-albondigas-de-pollo-ni",
   "ingredients": [
     {
+      "raw": "For the Chicken Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (4-pound; 1.8 kg) chicken, cut into 8 pieces (backbone reserved)",
       "expected": {
         "item": "chicken",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "4-pound; 1.8 kg, backbone reserved, cut into 8 pieces",
+        "section": "For the Chicken Soup",
         "category": "Meat & Seafood"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "peeled and quartered",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
@@ -61,6 +67,7 @@
           }
         ],
         "note": "stemmed, seeded, and quartered",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": "peeled and smashed",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": "see notes, split in half",
+        "section": "For the Chicken Soup",
         "category": "Other"
       }
     },
@@ -111,6 +120,7 @@
           }
         ],
         "note": "3/4 ounce; 21 g; see notes, packed",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
@@ -143,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Soup",
         "category": "Beverages"
       }
     },
@@ -161,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,8 +188,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Soup",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Chicken Meatballs:",
+      "is_section_header": true
     },
     {
       "raw": "1 medium yellow onion (8 ounces; 227 g), coarsely chopped (about 1 3/4 cups)",
@@ -201,6 +219,7 @@
           }
         ],
         "note": "about 1 3/4 cups, coarsely chopped",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -219,6 +238,7 @@
           }
         ],
         "note": "about 3/4 cup, coarsely chopped",
+        "section": "For the Chicken Meatballs",
         "category": "Other"
       }
     },
@@ -233,6 +253,7 @@
           }
         ],
         "note": "peeled",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -247,6 +268,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -287,6 +310,7 @@
           }
         ],
         "note": "such as Maseca",
+        "section": "For the Chicken Meatballs",
         "category": "Other"
       }
     },
@@ -301,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -323,6 +348,7 @@
           }
         ],
         "note": "see notes, finely chopped",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -337,6 +363,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -355,6 +382,7 @@
           }
         ],
         "note": "see notes",
+        "section": "For the Chicken Meatballs",
         "category": "Beverages"
       }
     },
@@ -364,6 +392,7 @@
         "item": "Fresh herbs",
         "measurements": [],
         "note": "such as torn culantro, cilantro, and/or mint, for ganish",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     }

@@ -97,6 +97,14 @@
       }
     },
     {
+      "raw": "Pear and Almond Tart:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Pears:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 cups (950 ml) water",
       "expected": {
         "item": "water",
@@ -111,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Pears",
         "category": "Beverages"
       }
     },
@@ -129,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Pears",
         "category": "Baking"
       }
     },
@@ -147,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Pears",
         "category": "Produce"
       }
     },
@@ -165,8 +176,13 @@
           }
         ],
         "note": "each about 7 ounces or 200 grams, peeled",
+        "section": "Pears",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Almond Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup (75 grams) blanched slivered almonds",
@@ -183,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -201,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Filling",
         "category": "Baking"
       }
     },
@@ -219,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Filling",
         "category": "Baking"
       }
     },
@@ -241,6 +260,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Almond Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -255,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -273,6 +294,7 @@
           }
         ],
         "note": "or 2 teaspoons brandy (optional)",
+        "section": "Almond Filling",
         "category": "Baking"
       }
     }

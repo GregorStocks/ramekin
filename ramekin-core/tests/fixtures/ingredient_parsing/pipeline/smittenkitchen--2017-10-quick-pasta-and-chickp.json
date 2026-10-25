@@ -122,6 +122,10 @@
       }
     },
     {
+      "raw": "To finish:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 to 3 tablespoons olive oil (estimate 1 per serving)",
       "expected": {
         "item": "olive oil",
@@ -132,6 +136,7 @@
           }
         ],
         "note": "estimate 1 per serving",
+        "section": "To Finish",
         "category": "Oils & Vinegars"
       }
     },
@@ -146,6 +151,7 @@
           }
         ],
         "note": "peeled and finely chopped",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -160,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -169,6 +176,7 @@
         "item": "Salt and red pepper flakes",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     }

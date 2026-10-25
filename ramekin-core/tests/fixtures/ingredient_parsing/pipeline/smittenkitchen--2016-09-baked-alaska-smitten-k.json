@@ -3,11 +3,16 @@
   "recipe_slug": "2016-09-baked-alaska-smitten-k",
   "ingredients": [
     {
+      "raw": "Ice Cream Center:",
+      "is_section_header": true
+    },
+    {
       "raw": "Nonstick spray oil, to coat the bowl",
       "expected": {
         "item": "Nonstick spray oil, to coat the bowl",
         "measurements": [],
         "note": null,
+        "section": "Ice Cream Center",
         "category": "Other"
       }
     },
@@ -22,8 +27,13 @@
           }
         ],
         "note": "from 3 pints",
+        "section": "Ice Cream Center",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Brownie Base:",
+      "is_section_header": true
     },
     {
       "raw": "3 ounces (85 grams) unsweetened chocolate, roughly chopped",
@@ -40,6 +50,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Brownie Base",
         "category": "Baking"
       }
     },
@@ -62,6 +73,7 @@
           }
         ],
         "note": "plus extra for pan",
+        "section": "Brownie Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -80,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Base",
         "category": "Baking"
       }
     },
@@ -94,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -112,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Base",
         "category": "Baking"
       }
     },
@@ -130,6 +145,7 @@
           }
         ],
         "note": "or 1/4 teaspoon table salt (about 2 grams)",
+        "section": "Brownie Base",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,8 +164,13 @@
           }
         ],
         "note": null,
+        "section": "Brownie Base",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Meringue Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "3 large egg whites",
@@ -162,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -176,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue Frosting",
         "category": "Baking"
       }
     },
@@ -190,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue Frosting",
         "category": "Baking"
       }
     },
@@ -204,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue Frosting",
         "category": "Baking"
       }
     },
@@ -218,8 +243,13 @@
           }
         ],
         "note": null,
+        "section": "Meringue Frosting",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Flambé Finish (optional):",
+      "is_section_header": true
     },
     {
       "raw": "1 ounce (2 tablespoons) brandy or kirsch",
@@ -236,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Flambé Finish (Optional)",
         "category": "Beverages"
       }
     }

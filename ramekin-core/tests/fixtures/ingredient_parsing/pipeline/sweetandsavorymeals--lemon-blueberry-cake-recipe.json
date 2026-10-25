@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-blueberry-cake-recipe",
   "ingredients": [
     {
+      "raw": "Cake layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup unsalted butter softened to room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Produce"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -167,8 +182,13 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cream Cheese Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces full-fat cream cheese softened to room temperature",
@@ -181,6 +201,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Spices & Seasonings"
       }
     }

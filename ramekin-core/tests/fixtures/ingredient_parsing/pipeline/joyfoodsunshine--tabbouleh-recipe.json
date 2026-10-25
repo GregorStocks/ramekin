@@ -95,6 +95,10 @@
       }
     },
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -105,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -119,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -133,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -147,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -156,6 +164,7 @@
         "item": "Pepper",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

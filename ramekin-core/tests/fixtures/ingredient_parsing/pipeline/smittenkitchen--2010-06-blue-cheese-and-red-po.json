@@ -86,6 +86,10 @@
       }
     },
     {
+      "raw": "Savory Tart Shell:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 (5 1/2 ounces) cups flour",
       "expected": {
         "item": "flour",
@@ -100,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Tart Shell",
         "category": "Baking"
       }
     },
@@ -114,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Tart Shell",
         "category": "Baking"
       }
     },
@@ -128,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Tart Shell",
         "category": "Spices & Seasonings"
       }
     },
@@ -146,6 +153,7 @@
           }
         ],
         "note": "diced",
+        "section": "Savory Tart Shell",
         "category": "Dairy & Eggs"
       }
     },
@@ -160,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Tart Shell",
         "category": "Dairy & Eggs"
       }
     }

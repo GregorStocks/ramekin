@@ -161,6 +161,10 @@
       }
     },
     {
+      "raw": "Chocolate Sour Cream Frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "15 ounces semisweet or bittersweet chocolate, chopped",
       "expected": {
         "item": "semisweet or bittersweet chocolate",
@@ -171,6 +175,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Sour Cream Frosting",
         "category": "Baking"
       }
     },
@@ -185,6 +190,7 @@
           }
         ],
         "note": "optional, but can be used to pick up the flavor of average chocolate",
+        "section": "Chocolate Sour Cream Frosting",
         "category": "Other"
       }
     },
@@ -199,6 +205,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Chocolate Sour Cream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Sour Cream Frosting",
         "category": "Baking"
       }
     },
@@ -227,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Sour Cream Frosting",
         "category": "Baking"
       }
     }

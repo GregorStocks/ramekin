@@ -3,6 +3,10 @@
   "recipe_slug": "black-bean-tostada-recipe",
   "ingredients": [
     {
+      "raw": "For the Tostadas:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 corn tortillas (6-inch)",
       "expected": {
         "item": "corn tortillas",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "6-inch",
+        "section": "For the Tostadas",
         "category": "Bakery & Bread"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tostadas",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tostadas",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tostadas",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "rinsed and drained",
+        "section": "For the Tostadas",
         "category": "Other"
       }
     },
@@ -87,8 +96,13 @@
           }
         ],
         "note": "plus additional for serving",
+        "section": "For the Tostadas",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "Diced avocado",
@@ -96,6 +110,7 @@
         "item": "Diced avocado",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -105,6 +120,7 @@
         "item": "Diced red onion",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -114,6 +130,7 @@
         "item": "Sliced cabbage",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -123,6 +140,7 @@
         "item": "Shredded cheese",
         "measurements": [],
         "note": "I used queso fresco",
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -132,6 +150,7 @@
         "item": "Sour cream or plain Greek yogurt",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -141,6 +160,7 @@
         "item": "Salsa",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -150,6 +170,7 @@
         "item": "Diced tomatoes",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Canned Goods"
       }
     },
@@ -159,6 +180,7 @@
         "item": "Jalapeño slices",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -168,6 +190,7 @@
         "item": "Fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -177,6 +200,7 @@
         "item": "Freshly squeezed lime juice",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

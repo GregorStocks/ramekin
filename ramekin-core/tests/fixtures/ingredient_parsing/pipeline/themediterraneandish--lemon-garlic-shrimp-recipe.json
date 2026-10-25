@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-garlic-shrimp-recipe",
   "ingredients": [
     {
+      "raw": "For spice mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 tsp (between 2.5 and 3 g) ground coriander",
       "expected": {
         "item": "ground coriander",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "between 2.5 and 3 g",
+        "section": "For Spice Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "between 2.5 and 3 g",
+        "section": "For Spice Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "about 2 g",
+        "section": "For Spice Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,8 +70,13 @@
           }
         ],
         "note": "about 2 g",
+        "section": "For Spice Mixture",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For shrimp:",
+      "is_section_header": true
     },
     {
       "raw": "1 lb (about 454 g) large shrimp or prawns, peeled, deviened, tail-on (if frozen, thaw properly before use)",
@@ -81,6 +93,7 @@
           }
         ],
         "note": "about 454 g, if frozen, thaw properly before use",
+        "section": "For Shrimp",
         "category": "Meat & Seafood"
       }
     },
@@ -90,6 +103,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +113,7 @@
         "item": "Private Reserve Greek extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For Shrimp",
         "category": "Oils & Vinegars"
       }
     },
@@ -113,6 +128,7 @@
           }
         ],
         "note": "halved then sliced",
+        "section": "For Shrimp",
         "category": "Produce"
       }
     },
@@ -127,6 +143,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Shrimp",
         "category": "Produce"
       }
     },
@@ -145,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Beverages"
       }
     },
@@ -163,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Produce"
       }
     },
@@ -177,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Other"
       }
     },
@@ -195,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Canned Goods"
       }
     },
@@ -213,6 +234,7 @@
           }
         ],
         "note": "thawed",
+        "section": "For Shrimp",
         "category": "Frozen"
       }
     },
@@ -231,6 +253,7 @@
           }
         ],
         "note": "about 425 g, drained",
+        "section": "For Shrimp",
         "category": "Other"
       }
     },
@@ -240,6 +263,7 @@
         "item": "Grated Parmesan cheese",
         "measurements": [],
         "note": "to taste",
+        "section": "For Shrimp",
         "category": "Cheese"
       }
     },
@@ -249,6 +273,7 @@
         "item": "Fresh chopped parsley",
         "measurements": [],
         "note": "for garnish",
+        "section": "For Shrimp",
         "category": "Produce"
       }
     }

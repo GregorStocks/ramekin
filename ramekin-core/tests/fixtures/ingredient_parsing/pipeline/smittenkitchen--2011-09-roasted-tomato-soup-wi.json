@@ -3,6 +3,10 @@
   "recipe_slug": "2011-09-roasted-tomato-soup-wi",
   "ingredients": [
     {
+      "raw": "Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 pounds plum tomatoes, halved lengthwise",
       "expected": {
         "item": "plum tomatoes",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "halved lengthwise",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "unpeeled",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "or 1/4 teaspoon dried",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,8 +96,13 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Lid:",
+      "is_section_header": true
     },
     {
       "raw": "4 1-inch slices from a large loaf of rye bread, whole wheat sourdough or bread of your choice (or 16 1-inch slices from a baguette), toasted until hard and lightly buttered on one side",
@@ -101,6 +115,7 @@
           }
         ],
         "note": "toasted until hard and lightly buttered on one side; or 16 1-inch slices from a baguette",
+        "section": "Lid",
         "category": "Bakery & Bread"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Produce"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Lid",
         "category": "Cheese"
       }
     }

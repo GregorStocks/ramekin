@@ -3,6 +3,10 @@
   "recipe_slug": "2012-10-pumpkin-cinnamon-rolls",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "7 tablespoons (100 grams) unsalted butter, to be divided",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "to be divided",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "but not over 116 degrees, warmed",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "from 1 .25-ounce or 7 gram envelope yeast",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Canned Goods"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": "plus extra for rolling out",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": "Diamond brand; use half of others",
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -177,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,6 +206,7 @@
           }
         ],
         "note": "optional",
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -205,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -214,8 +231,13 @@
         "item": "Oil",
         "measurements": [],
         "note": "for coating rising bowl",
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 packed cup (215 grams) light or dark brown sugar",
@@ -232,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -241,6 +264,7 @@
         "item": "A couple pinches of kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -255,8 +279,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces (115 grams) cream cheese, softened",
@@ -273,6 +302,7 @@
           }
         ],
         "note": "softened",
+        "section": "Glaze",
         "category": "Cheese"
       }
     },
@@ -291,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -309,6 +340,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -318,6 +350,7 @@
         "item": "Few drops vanilla extract",
         "measurements": [],
         "note": "optional",
+        "section": "Glaze",
         "category": "Other"
       }
     }

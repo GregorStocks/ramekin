@@ -131,11 +131,16 @@
       }
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Sour cream",
       "expected": {
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +150,7 @@
         "item": "Parsley",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -154,6 +160,7 @@
         "item": "Applesauce",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Canned Goods"
       }
     }

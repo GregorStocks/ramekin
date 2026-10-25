@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-pavlova-recipe",
   "ingredients": [
     {
+      "raw": "For the Pavlova:",
+      "is_section_header": true
+    },
+    {
       "raw": "6   egg whites, at room temperature",
       "expected": {
         "item": "egg whites",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Pavlova",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pavlova",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pavlova",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Pavlova",
         "category": "Baking"
       }
     },
@@ -81,8 +89,13 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Pavlova",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups  (450 g) mascarpone cheese",
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Cheese"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -158,6 +175,7 @@
         "item": "Fresh raspberries",
         "measurements": [],
         "note": null,
+        "section": "For the Topping",
         "category": "Produce"
       }
     }

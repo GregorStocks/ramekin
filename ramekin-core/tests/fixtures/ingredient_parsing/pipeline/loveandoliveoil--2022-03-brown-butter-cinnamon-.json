@@ -3,6 +3,10 @@
   "recipe_slug": "2022-03-brown-butter-cinnamon-",
   "ingredients": [
     {
+      "raw": "For Brown Butter:",
+      "is_section_header": true
+    },
+    {
       "raw": "1¼ cup  / 282 g (2½ sticks) unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -21,8 +25,13 @@
           }
         ],
         "note": null,
+        "section": "For Brown Butter",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Tangzhong:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons  / 42 g water",
@@ -39,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "For Tangzhong",
         "category": "Beverages"
       }
     },
@@ -57,6 +67,7 @@
           }
         ],
         "note": null,
+        "section": "For Tangzhong",
         "category": "Dairy & Eggs"
       }
     },
@@ -75,8 +86,13 @@
           }
         ],
         "note": null,
+        "section": "For Tangzhong",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Dough:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup  / 56 g brown butter",
@@ -93,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +128,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +143,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -143,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Baking"
       }
     },
@@ -161,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Baking"
       }
     },
@@ -179,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Baking"
       }
     },
@@ -193,8 +215,13 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Filling:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  / 113 g brown butter, melted",
@@ -211,6 +238,7 @@
           }
         ],
         "note": "melted",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -229,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -247,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,8 +310,13 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons  / 42 g brown butter, softened",
@@ -297,6 +333,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -315,6 +352,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Frosting",
         "category": "Cheese"
       }
     },
@@ -333,6 +371,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -347,6 +386,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -361,6 +401,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Spices & Seasonings"
       }
     }

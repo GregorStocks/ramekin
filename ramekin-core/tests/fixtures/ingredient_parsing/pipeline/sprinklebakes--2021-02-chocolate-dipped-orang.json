@@ -3,6 +3,10 @@
   "recipe_slug": "2021-02-chocolate-dipped-orang",
   "ingredients": [
     {
+      "raw": "Cakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cakes",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cakes",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Cakes",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cakes",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cakes",
         "category": "Baking"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Cakes",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup semisweet chocolate chips chopped",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Oils & Vinegars"
       }
     }

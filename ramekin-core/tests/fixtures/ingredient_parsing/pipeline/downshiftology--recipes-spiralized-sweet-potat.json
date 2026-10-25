@@ -45,11 +45,16 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "salt and pepper",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +64,7 @@
         "item": "fresh herbs",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -68,6 +74,7 @@
         "item": "microgreens",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     },
@@ -77,6 +84,7 @@
         "item": "scallions or red onion",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -86,6 +94,7 @@
         "item": "sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -95,6 +104,7 @@
         "item": "hemp seeds",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -104,6 +114,7 @@
         "item": "red pepper flakes or other spices",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Spices & Seasonings"
       }
     }

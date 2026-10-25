@@ -3,6 +3,10 @@
   "recipe_slug": "spicy-wontons-chili-oil-recipe",
   "ingredients": [
     {
+      "raw": "for sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup  homemade chili oil",
       "expected": {
         "item": "homemade chili oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "Kecap Manis will work",
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Other"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "grated",
+        "section": "For Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "for wontons:",
+      "is_section_header": true
     },
     {
       "raw": "250 grams  ground pork",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Beverages"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Beverages"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,8 +231,13 @@
           }
         ],
         "note": "depends on the size of the wrapper",
+        "section": "For Wontons",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "to serve:",
+      "is_section_header": true
     },
     {
       "raw": "scallions (chopped, for garnish)",
@@ -218,6 +245,7 @@
         "item": "scallions",
         "measurements": [],
         "note": "chopped, for garnish",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -227,6 +255,7 @@
         "item": "cilantro",
         "measurements": [],
         "note": "leaves, for garnish",
+        "section": "To Serve",
         "category": "Produce"
       }
     }

@@ -54,6 +54,10 @@
       }
     },
     {
+      "raw": "For the garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 orange slice",
       "expected": {
         "item": "orange slice",
@@ -64,6 +68,7 @@
           }
         ],
         "note": null,
+        "section": "For the Garnish",
         "category": "Produce"
       }
     }

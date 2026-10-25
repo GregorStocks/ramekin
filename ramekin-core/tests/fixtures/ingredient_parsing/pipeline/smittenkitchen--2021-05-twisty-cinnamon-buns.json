@@ -3,6 +3,10 @@
   "recipe_slug": "2021-05-twisty-cinnamon-buns",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (235 ml) milk, any kind, lightly warmed",
       "expected": {
         "item": "milk",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "any kind, lightly warmed",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "I’m using Diamond; use 1.5t of other brands",
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": "diced",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,8 +135,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45 grams) butter, salted or unsalted, melted",
@@ -143,6 +158,7 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": "if butter is unsalted",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -189,8 +207,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Icing:",
+      "is_section_header": true
     },
     {
       "raw": "1 8-ounce (225-grams) block cream cheese, at room temperature",
@@ -207,6 +230,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Icing",
         "category": "Cheese"
       }
     },
@@ -225,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Baking"
       }
     },
@@ -239,6 +264,7 @@
           }
         ],
         "note": "or 1/4 teaspoon vanilla bean paste",
+        "section": "Icing",
         "category": "Baking"
       }
     },
@@ -257,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Dairy & Eggs"
       }
     }

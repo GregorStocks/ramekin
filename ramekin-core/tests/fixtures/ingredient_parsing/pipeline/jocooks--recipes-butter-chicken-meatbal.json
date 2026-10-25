@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-butter-chicken-meatbal",
   "ingredients": [
     {
+      "raw": "For the meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ onion (grated)",
       "expected": {
         "item": "onion",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "freshly chopped",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": "for frying the meatballs",
+        "section": "For the Meatballs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Butter chicken sauce:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup butter (unsalted)",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "unsalted",
+        "section": "Butter Chicken Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "minced",
+        "section": "Butter Chicken Sauce",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "minced",
+        "section": "Butter Chicken Sauce",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "or tomato sauce",
+        "section": "Butter Chicken Sauce",
         "category": "Canned Goods"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Butter Chicken Sauce",
         "category": "Canned Goods"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Butter Chicken Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Butter Chicken Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Butter Chicken Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": "ground",
+        "section": "Butter Chicken Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": "ground",
+        "section": "Butter Chicken Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": "low sodium",
+        "section": "Butter Chicken Sauce",
         "category": "Canned Goods"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Butter Chicken Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -307,6 +336,7 @@
           }
         ],
         "note": "freshly chopped",
+        "section": "Butter Chicken Sauce",
         "category": "Produce"
       }
     }

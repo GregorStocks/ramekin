@@ -3,6 +3,10 @@
   "recipe_slug": "2014-01-parmesan-broth-with-ka",
   "ingredients": [
     {
+      "raw": "Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces cheese rinds, any paper at the ends removed",
       "expected": {
         "item": "cheese rinds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "any paper at the ends removed",
+        "section": "Broth",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "peeled and quartered",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "peeled and smashed",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -92,8 +102,13 @@
         "item": "Salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 ounces tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety), washed and patted dry (updated measurement)",
@@ -106,6 +121,7 @@
           }
         ],
         "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety, updated measurement, washed and patted dry",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "from about 1/4 pound dried, usually about 1 1/2 cups, updated measurement, with their cooking liquid if fresh",
+        "section": "To Serve",
         "category": "Canned Goods"
       }
     },
@@ -129,6 +146,7 @@
         "item": "Thin slices of baguette",
         "measurements": [],
         "note": "toasted",
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -138,6 +156,7 @@
         "item": "Olive oil and parmesan",
         "measurements": [],
         "note": "for serving",
+        "section": "To Serve",
         "category": "Oils & Vinegars"
       }
     }

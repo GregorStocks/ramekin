@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Streusel Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Baking"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Baking"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

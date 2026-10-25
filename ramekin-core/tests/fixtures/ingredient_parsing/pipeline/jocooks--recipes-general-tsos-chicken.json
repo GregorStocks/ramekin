@@ -110,6 +110,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup hoisin sauce",
       "expected": {
         "item": "hoisin sauce",
@@ -120,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -134,6 +139,7 @@
           }
         ],
         "note": "low sodium",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -148,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -162,6 +169,7 @@
           }
         ],
         "note": "packed",
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -176,6 +184,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -190,6 +199,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -204,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -218,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -232,6 +244,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

@@ -163,6 +163,10 @@
       }
     },
     {
+      "raw": "Chocolate Ganache Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 oz. bittersweet chocolate or semi-sweet chocolate",
       "expected": {
         "item": "bittersweet chocolate or semi-sweet chocolate",
@@ -173,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Ganache Topping",
         "category": "Baking"
       }
     },
@@ -187,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Ganache Topping",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2012-08-pink-lemonade-bars",
   "ingredients": [
     {
+      "raw": "For the crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (130 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "or the finely grated zest of 1/4 of a lemon",
+        "section": "For the Crust",
         "category": "Produce"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "or 1/4 teaspoon kosher salt",
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,8 +93,13 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the pink lemon layer:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (about 5 ounces or 140 grams) raspberries",
@@ -107,6 +120,7 @@
           }
         ],
         "note": "about 5 ounces or 140 grams",
+        "section": "For the Pink Lemon Layer",
         "category": "Produce"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pink Lemon Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pink Lemon Layer",
         "category": "Baking"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pink Lemon Layer",
         "category": "Baking"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pink Lemon Layer",
         "category": "Produce"
       }
     },
@@ -180,6 +198,7 @@
         "item": "Confectioners’ sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "For the Pink Lemon Layer",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-strawberryrhubarbcrumb",
   "ingredients": [
     {
+      "raw": "For the crust and crumble dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups (420g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumble Dough",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumble Dough",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumble Dough",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumble Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumble Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "cold",
+        "section": "For the Crust and Crumble Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,8 +123,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crust and Crumble Dough",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the fruit filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (250g) diced 1/4-inch chunks) rhubarb (2 to 3 thick stalks or 5 to 6 thin stalks or a little over 1/2 pounds)",
@@ -131,6 +146,7 @@
           }
         ],
         "note": "2 to 3 thick stalks or 5 to 6 thin stalks or a little over 1/2 pounds",
+        "section": "For the Fruit Filling",
         "category": "Other"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": "1/4-inch chunks",
+        "section": "For the Fruit Filling",
         "category": "Produce"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit Filling",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit Filling",
         "category": "Baking"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit Filling",
         "category": "Produce"
       }
     }

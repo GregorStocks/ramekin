@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-chocolate-bundt-cake-h",
   "ingredients": [
     {
+      "raw": "For the Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup coffee (any temperature is fine)",
       "expected": {
         "item": "coffee",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "any temperature is fine",
+        "section": "For the Cake",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "such as Hershey's",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -171,8 +186,13 @@
           }
         ],
         "note": "softened",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Soaking Syrup:",
+      "is_section_header": true
     },
     {
       "raw": "4 tablespoons unsalted butter",
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soaking Syrup",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soaking Syrup",
         "category": "Baking"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soaking Syrup",
         "category": "Beverages"
       }
     },
@@ -227,8 +250,13 @@
           }
         ],
         "note": null,
+        "section": "For the Soaking Syrup",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Chocolate Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons unsalted butter",
@@ -241,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -255,6 +284,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For the Chocolate Glaze",
         "category": "Baking"
       }
     },
@@ -269,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Glaze",
         "category": "Baking"
       }
     },
@@ -283,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Glaze",
         "category": "Beverages"
       }
     }

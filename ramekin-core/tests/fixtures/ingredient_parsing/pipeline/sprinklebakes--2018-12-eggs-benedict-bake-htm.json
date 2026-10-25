@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Hollandaise sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 large egg yolks",
       "expected": {
         "item": "egg yolks",
@@ -97,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Produce"
       }
     },
@@ -139,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +165,7 @@
           }
         ],
         "note": "melted",
+        "section": "Hollandaise Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -166,6 +175,7 @@
         "item": "Salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Hollandaise Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,6 +185,7 @@
         "item": "Freshly cracked pepper",
         "measurements": [],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Other"
       }
     }

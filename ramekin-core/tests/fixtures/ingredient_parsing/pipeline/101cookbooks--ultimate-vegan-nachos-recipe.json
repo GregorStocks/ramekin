@@ -59,13 +59,22 @@
       }
     },
     {
+      "raw": "Variation #1 toppings (classic-ish):",
+      "is_section_header": true
+    },
+    {
       "raw": "any/all of the following - sliced olives, chopped scallions, cilantro, chopped red onions, pickled serranos chiles*, favorite salsa",
       "expected": {
         "item": "any/all of the following - sliced olives, chopped scallions, cilantro, chopped red onions, pickled serranos chiles*, favorite salsa",
         "measurements": [],
         "note": null,
+        "section": "Variation #1 Toppings (Classic-Ish)",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Variation #2 toppings (hippie-ish):",
+      "is_section_header": true
     },
     {
       "raw": "swap chickpeas for the black beans, roasted broccoli, guacamole, cilantro, hemp seeds, pickled serrano chiles*",
@@ -73,6 +82,7 @@
         "item": "swap chickpeas for the black beans, roasted broccoli, guacamole, cilantro, hemp seeds, pickled serrano chiles",
         "measurements": [],
         "note": null,
+        "section": "Variation #2 Toppings (Hippie-Ish)",
         "category": "Other"
       }
     }

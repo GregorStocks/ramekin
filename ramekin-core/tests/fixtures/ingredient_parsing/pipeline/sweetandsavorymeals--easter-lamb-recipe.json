@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Stuffing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Stuffing",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Stuffing",
         "category": "Produce"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Stuffing",
         "category": "Produce"
       }
     },
@@ -111,6 +118,7 @@
           }
         ],
         "note": "diced",
+        "section": "Stuffing",
         "category": "Produce"
       }
     },
@@ -125,6 +133,7 @@
           }
         ],
         "note": "minced",
+        "section": "Stuffing",
         "category": "Produce"
       }
     },
@@ -139,6 +148,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Stuffing",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -153,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Stuffing",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Stuffing",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +193,7 @@
           }
         ],
         "note": null,
+        "section": "Stuffing",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +208,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Stuffing",
         "category": "Produce"
       }
     },
@@ -209,8 +223,13 @@
           }
         ],
         "note": "chopped",
+        "section": "Stuffing",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup olive oil",
@@ -223,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -237,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -251,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     }

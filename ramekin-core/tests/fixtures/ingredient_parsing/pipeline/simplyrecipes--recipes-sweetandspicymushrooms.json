@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-sweetandspicymushrooms",
   "ingredients": [
     {
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup chicken or vegetable stock (use vegetable stock for vegetarian option)",
       "expected": {
         "item": "chicken or vegetable stock",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "use vegetable stock for vegetarian option",
+        "section": "Glaze",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": "use gluten-free soy sauce if cooking gluten free",
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup chicken or vegetable stock (use vegetable stock for vegetarian option)",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "use vegetable stock for vegetarian option",
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "use gluten-free soy sauce if cooking gluten free",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Stir-Fry:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons sesame, grapeseed, or other high smoke-point oil",
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": "oyster, cremini, button, shiitake, and/or enoki, you want bite-sized pieces, roughly chopped or quartered",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": "roughly chopped, or 1/4 to 1/2 teaspoon dried chili flakes",
+        "section": "Stir-Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -232,6 +260,7 @@
         "item": "Cooked rice",
         "measurements": [],
         "note": "for serving, optional",
+        "section": "Stir-Fry",
         "category": "Pasta & Rice"
       }
     },
@@ -241,6 +270,7 @@
         "item": "Toasted sesame seeds",
         "measurements": [],
         "note": "for optional garnish",
+        "section": "Stir-Fry",
         "category": "Spices & Seasonings"
       }
     }

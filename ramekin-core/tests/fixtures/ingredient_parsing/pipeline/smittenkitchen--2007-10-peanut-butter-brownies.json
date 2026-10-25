@@ -156,6 +156,10 @@
       }
     },
     {
+      "raw": "For ganache",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups (9 ounces or 255 grams) semisweet chocolate chips**",
       "expected": {
         "item": "semisweet chocolate chips",
@@ -174,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache",
         "category": "Baking"
       }
     },
@@ -192,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -210,6 +216,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Ganache",
         "category": "Dairy & Eggs"
       }
     }

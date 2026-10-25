@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "For the Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 lemons, juice of",
       "expected": {
         "item": "lemons, juice of",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +126,7 @@
           }
         ],
         "note": "more for later",
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +171,7 @@
           }
         ],
         "note": "more for later",
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +186,7 @@
           }
         ],
         "note": "lightly crushed",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -190,6 +201,7 @@
           }
         ],
         "note": "sliced or roughly chopped",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -204,6 +216,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "beef-braciole-recipe-7561806",
   "ingredients": [
     {
+      "raw": "For the Braciole:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup panko breadcrumbs (about 1 1/4 ounces; 40 g)",
       "expected": {
         "item": "panko breadcrumbs",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 1 1/4 ounces; 40 g",
+        "section": "For the Braciole",
         "category": "Bakery & Bread"
       }
     },
@@ -43,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braciole",
         "category": "Cheese"
       }
     },
@@ -65,6 +71,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Braciole",
         "category": "Produce"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": "lightly toasted and roughly chopped",
+        "section": "For the Braciole",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -101,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braciole",
         "category": "Oils & Vinegars"
       }
     },
@@ -119,6 +128,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Braciole",
         "category": "Produce"
       }
     },
@@ -133,6 +143,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Braciole",
         "category": "Spices & Seasonings"
       }
     },
@@ -147,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braciole",
         "category": "Spices & Seasonings"
       }
     },
@@ -173,6 +185,7 @@
           }
         ],
         "note": "1/4- to 1/8-inch-thick, about 1 1/2 pounds; 675 g; or 6 store-bought pre-sliced thin top round steaks (see notes)",
+        "section": "For the Braciole",
         "category": "Other"
       }
     },
@@ -187,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For the Braciole",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,8 +223,13 @@
           }
         ],
         "note": "about 4 ounces; 115 g",
+        "section": "For the Braciole",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons (30 ml) extra virgin olive oil",
@@ -227,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -249,6 +269,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -263,6 +284,7 @@
           }
         ],
         "note": "plus more for seasoning; for table salt, use half as much by volume",
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -281,6 +303,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -299,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -317,6 +341,7 @@
           }
         ],
         "note": "crushed by hand into 1/2-inch chunks",
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -335,6 +360,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     }

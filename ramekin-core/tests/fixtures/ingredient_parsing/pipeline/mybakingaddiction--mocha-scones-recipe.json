@@ -3,6 +3,10 @@
   "recipe_slug": "mocha-scones-recipe",
   "ingredients": [
     {
+      "raw": "For the Scones",
+      "is_section_header": true
+    },
+    {
       "raw": "2 ¼ cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "frozen",
+        "section": "For the Scones",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Scones",
         "category": "Beverages"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Mocha Glaze",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup strong coffee",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mocha Glaze",
         "category": "Beverages"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mocha Glaze",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Mocha Glaze",
         "category": "Baking"
       }
     }

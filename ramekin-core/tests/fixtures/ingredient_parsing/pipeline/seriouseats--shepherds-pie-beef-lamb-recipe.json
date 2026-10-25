@@ -3,6 +3,10 @@
   "recipe_slug": "shepherds-pie-beef-lamb-recipe",
   "ingredients": [
     {
+      "raw": "For the Mashed Potatoes:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 1/2 pounds (1.6 kg) russet potatoes (about 4 large), peeled and cut into 1-inch pieces",
       "expected": {
         "item": "russet potatoes",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 4 large, peeled and cut into 1-inch pieces",
+        "section": "For the Mashed Potatoes",
         "category": "Produce"
       }
     },
@@ -30,6 +35,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Mashed Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -48,8 +54,13 @@
           }
         ],
         "note": "cubed",
+        "section": "For the Mashed Potatoes",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Meat Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (360 ml) homemade or store-bought low-sodium chicken stock",
@@ -66,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Canned Goods"
       }
     },
@@ -92,6 +104,7 @@
           }
         ],
         "note": "about 5 teaspoons; 1/2 ounce; 14 g",
+        "section": "For the Meat Sauce",
         "category": "Baking"
       }
     },
@@ -110,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -128,6 +142,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Meat Sauce",
         "category": "Meat & Seafood"
       }
     },
@@ -150,6 +165,7 @@
           }
         ],
         "note": "about 14 ounces; 400 g, diced",
+        "section": "For the Meat Sauce",
         "category": "Produce"
       }
     },
@@ -172,6 +188,7 @@
           }
         ],
         "note": "about 8 ounces; 225 g, diced",
+        "section": "For the Meat Sauce",
         "category": "Produce"
       }
     },
@@ -194,6 +211,7 @@
           }
         ],
         "note": "about 4 ounces; 110 g, diced",
+        "section": "For the Meat Sauce",
         "category": "Produce"
       }
     },
@@ -208,6 +226,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Meat Sauce",
         "category": "Produce"
       }
     },
@@ -226,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Canned Goods"
       }
     },
@@ -244,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Beverages"
       }
     },
@@ -258,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Produce"
       }
     },
@@ -272,6 +294,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -290,6 +313,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -308,6 +332,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Meat Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -326,6 +351,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Baking"
       }
     },
@@ -344,6 +370,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Frozen"
       }
     },
@@ -353,8 +380,13 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To Assemble:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (360 ml) heavy cream",
@@ -371,6 +403,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -380,6 +413,7 @@
         "item": "Grated Parmigiano-Reggiano cheese",
         "measurements": [],
         "note": "optional, for topping",
+        "section": "To Assemble",
         "category": "Cheese"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "peanut-butter-pie-recipe",
   "ingredients": [
     {
+      "raw": "For the crust",
+      "is_section_header": true
+    },
+    {
       "raw": "16 Oreo cookies",
       "expected": {
         "item": "Oreo cookies",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the filling",
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy cream",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     }

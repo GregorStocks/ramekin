@@ -3,6 +3,10 @@
   "recipe_slug": "2015-05-pasta-salad-with-roast",
   "ingredients": [
     {
+      "raw": "Oregano dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 big clove or 2 small cloves garlic",
       "expected": {
         "item": "garlic",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "if you can find it, Sicilian is my favorite",
+        "section": "Oregano Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Oregano Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -54,6 +61,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -68,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Produce"
       }
     },
@@ -82,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -96,8 +106,13 @@
           }
         ],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) dried pasta, a bite-sized shape of your choosing (I used reginetti), cooked until 1 to 2 minutes before doneness and drained",
@@ -114,6 +129,7 @@
           }
         ],
         "note": "I used reginetti, cooked until 1 to 2 minutes before doneness and drained",
+        "section": "Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -132,6 +148,7 @@
           }
         ],
         "note": "such as ricotta salata, feta, queso fresco",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -150,6 +167,7 @@
           }
         ],
         "note": "well-toasted and cooled",
+        "section": "Assembly",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -168,6 +186,7 @@
           }
         ],
         "note": "I used gaeta here, but like them even more when oil-cured",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -177,6 +196,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,6 +211,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Assembly",
         "category": "Produce"
       }
     }

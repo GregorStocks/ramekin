@@ -3,6 +3,10 @@
   "recipe_slug": "blt-potato-salad-recipe",
   "ingredients": [
     {
+      "raw": "Potatoes:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 pounds Yukon Gold potatoes or Tri-Color potatoes washed, peeled and cut into 1 inch pieces*",
       "expected": {
         "item": "Yukon Gold potatoes or Tri-Color potatoes",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "washed, peeled and cut into 1 inch pieces",
+        "section": "Potatoes",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Other Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "12 slices thick cut bacon cut into 1 inch pieces",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "cut into 1 inch pieces",
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "halved",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "thinly chopped",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
@@ -111,8 +126,13 @@
           }
         ],
         "note": "chopped",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup mayo",
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,8 +235,13 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Pickle slices optional",
@@ -218,6 +249,7 @@
         "item": "Pickle slices",
         "measurements": [],
         "note": "optional",
+        "section": "Garnish",
         "category": "Condiments & Sauces"
       }
     },
@@ -227,6 +259,7 @@
         "item": "chopped chives",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -236,6 +269,7 @@
         "item": "chopped green onions",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }

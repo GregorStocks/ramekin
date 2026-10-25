@@ -3,6 +3,10 @@
   "recipe_slug": "squirrel-fish-recipe",
   "ingredients": [
     {
+      "raw": "For the vinegar mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons sugar",
       "expected": {
         "item": "sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinegar Mixture",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinegar Mixture",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinegar Mixture",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinegar Mixture",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinegar Mixture",
         "category": "Beverages"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinegar Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For the Vinegar Mixture",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the tomato mixture:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon ketchup",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tomato Mixture",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tomato Mixture",
         "category": "Canned Goods"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "For the Tomato Mixture",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the fish:",
+      "is_section_header": true
     },
     {
       "raw": "1 whole freshwater bass, sea bass, or branzino (about 1 1/2 to 2 pounds/680-900g; scaled, cleaned, and gutted)",
@@ -161,6 +183,7 @@
           }
         ],
         "note": "about 1 1/2 to 2 pounds/680-900g; scaled, cleaned, and gutted",
+        "section": "For the Fish",
         "category": "Other"
       }
     },
@@ -175,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Other"
       }
     },
@@ -217,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Oils & Vinegars"
       }
     },
@@ -231,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,6 +273,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Baking"
       }
     },
@@ -259,6 +288,7 @@
           }
         ],
         "note": "for frying",
+        "section": "For the Fish",
         "category": "Oils & Vinegars"
       }
     },
@@ -273,6 +303,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -287,6 +318,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Frozen"
       }
     },
@@ -301,6 +333,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Fish",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-semi-instant-pancake-m",
   "ingredients": [
     {
+      "raw": "SEMI-INSTANT PANCAKE MIX:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Baking"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "SEMI-INSTANT PANCAKES:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups semi-instant pancake mix",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancakes",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Semi-Instant Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "such as blueberries, optional",
+        "section": "Semi-Instant Pancakes",
         "category": "Produce"
       }
     }

@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "FILLING:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
@@ -153,6 +157,7 @@
           }
         ],
         "note": "softened",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "FILLING:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup unsalted butter, cubed",
       "expected": {
         "item": "unsalted butter",
@@ -83,6 +87,7 @@
           }
         ],
         "note": "cubed",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -125,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -181,6 +192,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     }

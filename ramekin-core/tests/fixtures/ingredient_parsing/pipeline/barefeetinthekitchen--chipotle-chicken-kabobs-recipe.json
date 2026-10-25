@@ -3,6 +3,10 @@
   "recipe_slug": "chipotle-chicken-kabobs-recipe",
   "ingredients": [
     {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup light olive oil",
       "expected": {
         "item": "light olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "about 1/4 cup's worth",
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "seeded and minced",
+        "section": "Marinade Ingredients",
         "category": "Canned Goods"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": "thighs and/or breasts, cut into 1 1/2\" pieces",
+        "section": "Marinade Ingredients",
         "category": "Meat & Seafood"
       }
     },
@@ -166,6 +181,7 @@
         "item": "Avocado Cream Sauce",
         "measurements": [],
         "note": "for serving",
+        "section": "Marinade Ingredients",
         "category": "Other"
       }
     },
@@ -175,6 +191,7 @@
         "item": "Optional topping: fresh cilantro",
         "measurements": [],
         "note": "chopped",
+        "section": "Marinade Ingredients",
         "category": "Other"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-easy-pepper-steak",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup soy sauce (low sodium)",
       "expected": {
         "item": "soy sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "low sodium",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "or less, if you don't like the vinegar taste",
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "packed",
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Stir Fry:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons vegetable oil",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "sliced thinly against the grain",
+        "section": "Stir Fry",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Stir Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "freshly ground",
+        "section": "Stir Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "minced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     }

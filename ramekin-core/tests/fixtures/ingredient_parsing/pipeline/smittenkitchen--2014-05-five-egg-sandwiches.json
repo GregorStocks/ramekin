@@ -217,6 +217,10 @@
       }
     },
     {
+      "raw": "Pickled shallots:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup red or white wine vinegar",
       "expected": {
         "item": "red or white wine vinegar",
@@ -227,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Shallots",
         "category": "Oils & Vinegars"
       }
     },
@@ -241,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Shallots",
         "category": "Spices & Seasonings"
       }
     },
@@ -255,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Shallots",
         "category": "Baking"
       }
     },
@@ -269,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Shallots",
         "category": "Beverages"
       }
     },
@@ -283,8 +291,13 @@
           }
         ],
         "note": "peeled and thinly sliced",
+        "section": "Pickled Shallots",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Asparagus pesto:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 pound asparagus spears, trimmed of tough ends",
@@ -297,6 +310,7 @@
           }
         ],
         "note": "trimmed of tough ends",
+        "section": "Asparagus Pesto",
         "category": "Produce"
       }
     },
@@ -311,6 +325,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "Asparagus Pesto",
         "category": "Produce"
       }
     },
@@ -325,6 +340,7 @@
           }
         ],
         "note": null,
+        "section": "Asparagus Pesto",
         "category": "Cheese"
       }
     },
@@ -339,6 +355,7 @@
           }
         ],
         "note": "toasted and cooled, divided",
+        "section": "Asparagus Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -353,6 +370,7 @@
           }
         ],
         "note": null,
+        "section": "Asparagus Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -367,8 +385,13 @@
           }
         ],
         "note": null,
+        "section": "Asparagus Pesto",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "To assemble:",
+      "is_section_header": true
     },
     {
       "raw": "6 large slices whole-wheat sourdough bread, miche, or another sliced country bread of your choice, toasted",
@@ -381,6 +404,7 @@
           }
         ],
         "note": "toasted",
+        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -395,6 +419,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -409,8 +434,13 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Runny Egg Blt Sandwich:",
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 slices of bacon, halved to approximate sandwich lengths",
@@ -423,6 +453,7 @@
           }
         ],
         "note": "halved to approximate sandwich lengths",
+        "section": "Runny Egg Blt Sandwich",
         "category": "Meat & Seafood"
       }
     },
@@ -437,6 +468,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Runny Egg Blt Sandwich",
         "category": "Bakery & Bread"
       }
     },
@@ -451,6 +483,7 @@
           }
         ],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Produce"
       }
     },
@@ -460,6 +493,7 @@
         "item": "A few leaves of iceberg lettuce",
         "measurements": [],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Other"
       }
     },
@@ -474,6 +508,7 @@
           }
         ],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Condiments & Sauces"
       }
     },
@@ -488,6 +523,7 @@
           }
         ],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Dairy & Eggs"
       }
     },
@@ -502,6 +538,7 @@
           }
         ],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Dairy & Eggs"
       }
     },
@@ -511,6 +548,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Runny Egg Blt Sandwich",
         "category": "Spices & Seasonings"
       }
     },
@@ -525,6 +563,7 @@
           }
         ],
         "note": "about 1/2-inch, cut into small cubes",
+        "section": "Runny Egg Blt Sandwich",
         "category": "Produce"
       }
     },
@@ -539,6 +578,7 @@
           }
         ],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Oils & Vinegars"
       }
     },
@@ -553,6 +593,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Runny Egg Blt Sandwich",
         "category": "Produce"
       }
     },
@@ -567,6 +608,7 @@
           }
         ],
         "note": "casings removed",
+        "section": "Runny Egg Blt Sandwich",
         "category": "Other"
       }
     },
@@ -576,6 +618,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Spices & Seasonings"
       }
     },
@@ -585,6 +628,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Spices & Seasonings"
       }
     },
@@ -599,6 +643,7 @@
           }
         ],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Dairy & Eggs"
       }
     },
@@ -613,8 +658,17 @@
           }
         ],
         "note": null,
+        "section": "Runny Egg Blt Sandwich",
         "category": "Bakery & Bread"
       }
+    },
+    {
+      "raw": "Cheddar Cornbread Waffle Sandwich with Creamed Greens and a Poached Egg:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Waffles:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cups all-purpose flour",
@@ -627,6 +681,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -641,6 +696,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -655,6 +711,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -669,6 +726,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -683,6 +741,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Spices & Seasonings"
       }
     },
@@ -697,6 +756,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -711,6 +771,7 @@
           }
         ],
         "note": "melted and cooled slightly",
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -725,6 +786,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -739,6 +801,7 @@
           }
         ],
         "note": null,
+        "section": "Waffles",
         "category": "Cheese"
       }
     },
@@ -748,8 +811,13 @@
         "item": "Spray cooking oil to coat waffle iron",
         "measurements": [],
         "note": null,
+        "section": "Waffles",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Creamed greens:",
+      "is_section_header": true
     },
     {
       "raw": "5 ounces baby spinach or another fairly quick-cooking green of your choice, stemmed if stems are heavy",
@@ -762,6 +830,7 @@
           }
         ],
         "note": null,
+        "section": "Creamed Greens",
         "category": "Produce"
       }
     },
@@ -771,6 +840,7 @@
         "item": "Butter",
         "measurements": [],
         "note": null,
+        "section": "Creamed Greens",
         "category": "Dairy & Eggs"
       }
     },
@@ -785,6 +855,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Creamed Greens",
         "category": "Produce"
       }
     },
@@ -799,6 +870,7 @@
           }
         ],
         "note": null,
+        "section": "Creamed Greens",
         "category": "Dairy & Eggs"
       }
     }

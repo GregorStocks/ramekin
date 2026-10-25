@@ -3,6 +3,10 @@
   "recipe_slug": "2021-05-chickpea-pan-bagnat",
   "ingredients": [
     {
+      "raw": "Chickpeas:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 15-ounce can chickpeas, drained and rinsed",
       "expected": {
         "item": "chickpeas",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Produce"
       }
     },
@@ -55,35 +62,7 @@
           }
         ],
         "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Zest and juice of half a lemon",
-      "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "Zest and juice of half a lemon",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "lemon"
-          }
-        ],
-        "note": null,
+        "section": "Chickpeas",
         "category": "Produce"
       },
       "expanded": true
@@ -99,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Produce"
       }
     },
@@ -113,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -122,6 +103,7 @@
         "item": "Pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,8 +113,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 8-inch ciabatta rolls, baguettes, or 1 round pan de champagne",
@@ -145,6 +132,7 @@
           }
         ],
         "note": "or 1 round pan de champagne",
+        "section": "Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -154,6 +142,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -168,6 +157,7 @@
           }
         ],
         "note": "very thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -177,6 +167,7 @@
         "item": "Red wine vinegar",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -191,6 +182,7 @@
           }
         ],
         "note": "optional, peeled and thinly sliced",
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -200,6 +192,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -214,6 +207,7 @@
           }
         ],
         "note": "drained, chopped if they’re large",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -228,6 +222,7 @@
           }
         ],
         "note": "pitted or unpitted",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -242,6 +237,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -256,6 +252,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -265,6 +262,7 @@
         "item": "A few basil leaves",
         "measurements": [],
         "note": "optional",
+        "section": "Assembly",
         "category": "Produce"
       }
     }

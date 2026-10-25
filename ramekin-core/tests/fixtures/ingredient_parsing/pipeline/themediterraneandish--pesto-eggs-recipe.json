@@ -68,6 +68,10 @@
       }
     },
     {
+      "raw": "To serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pieces of toasted bread,  optional",
       "expected": {
         "item": "toasted bread",
@@ -78,6 +82,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     }

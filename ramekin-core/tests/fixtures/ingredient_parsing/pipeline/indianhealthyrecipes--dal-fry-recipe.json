@@ -31,6 +31,10 @@
       }
     },
     {
+      "raw": "To Temper:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons ghee  (or oil or butter)",
       "expected": {
         "item": "ghee",
@@ -41,6 +45,7 @@
           }
         ],
         "note": "or oil or butter",
+        "section": "To Temper",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +60,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +75,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": "asafoetida",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +105,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Other"
       }
     },
@@ -111,6 +120,7 @@
           }
         ],
         "note": "slit or chopped, optional",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": "1/4 cup chopped finely",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -139,6 +150,7 @@
           }
         ],
         "note": "or 1/2 inch ginger & 2 garlic cloves fine chopped",
+        "section": "To Temper",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": "1/2 cup chopped or pureed",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -167,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +195,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +210,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +225,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +240,7 @@
           }
         ],
         "note": "to use for consistency",
+        "section": "To Temper",
         "category": "Beverages"
       }
     },
@@ -237,6 +255,7 @@
           }
         ],
         "note": "dried fenugreek leaves, crushed",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,8 +270,13 @@
           }
         ],
         "note": "finely chopped",
+        "section": "To Temper",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To Serve:",
+      "is_section_header": true
     },
     {
       "raw": "1 to 2 tablespoons lemon juice  or as needed (optional)",
@@ -265,6 +289,7 @@
           }
         ],
         "note": "optional; or as needed",
+        "section": "To Serve",
         "category": "Produce"
       }
     }

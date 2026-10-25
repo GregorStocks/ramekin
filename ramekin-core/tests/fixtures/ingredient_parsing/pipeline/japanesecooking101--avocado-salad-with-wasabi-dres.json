@@ -26,6 +26,10 @@
       }
     },
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 tsp Wasabi paste",
       "expected": {
         "item": "Wasabi paste",
@@ -36,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -50,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -64,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -78,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     }

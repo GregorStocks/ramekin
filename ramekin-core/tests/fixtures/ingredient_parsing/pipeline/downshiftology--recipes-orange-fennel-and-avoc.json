@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "White Wine Vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Produce"
       }
     },
@@ -134,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Baking"
       }
     },
@@ -148,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +166,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "White Wine Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

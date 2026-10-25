@@ -3,6 +3,10 @@
   "recipe_slug": "maple-pecan-sticky-buns-recipe",
   "ingredients": [
     {
+      "raw": "For the dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons unsalted butter, cubed",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cubed",
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the topping:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons (3 ounces, 85g) unsalted butter",
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": "dark amber",
+        "section": "For the Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,8 +214,13 @@
           }
         ],
         "note": "lightly toasted and coarsely chopped",
+        "section": "For the Topping",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (45g) dark brown sugar",
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -227,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -263,6 +290,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     }

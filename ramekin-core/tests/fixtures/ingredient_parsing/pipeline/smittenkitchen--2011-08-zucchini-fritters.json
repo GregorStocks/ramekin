@@ -109,6 +109,10 @@
       }
     },
     {
+      "raw": "To serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup sour cream or plain, full-fat yogurt",
       "expected": {
         "item": "sour cream or plain, full-fat yogurt",
@@ -119,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Dairy & Eggs"
       }
     },
@@ -133,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -147,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -161,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     }

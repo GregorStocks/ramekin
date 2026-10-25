@@ -167,6 +167,10 @@
       }
     },
     {
+      "raw": "For Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  / 120 g powdered sugar, sifted",
       "expected": {
         "item": "powdered sugar",
@@ -181,6 +185,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": "plus 1-3 teaspoons more as needed",
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -237,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Beverages"
       }
     },
@@ -251,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Spices & Seasonings"
       }
     }

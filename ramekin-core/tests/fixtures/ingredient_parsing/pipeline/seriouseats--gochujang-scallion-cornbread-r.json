@@ -3,6 +3,10 @@
   "recipe_slug": "gochujang-scallion-cornbread-r",
   "ingredients": [
     {
+      "raw": "For the Cornbread:",
+      "is_section_header": true
+    },
+    {
       "raw": "142 g cornmeal (5 ounces; 1 cup)",
       "expected": {
         "item": "cornmeal",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Baking"
       }
     },
@@ -43,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Baking"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": "about 2 1/4 ounces; 1/3 cup",
+        "section": "For the Cornbread",
         "category": "Baking"
       }
     },
@@ -143,6 +154,7 @@
           }
         ],
         "note": "melted and cooled slightly, plus more for greasing",
+        "section": "For the Cornbread",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Oils & Vinegars"
       }
     },
@@ -179,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Baking"
       }
     },
@@ -197,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Dairy & Eggs"
       }
     },
@@ -219,6 +234,7 @@
           }
         ],
         "note": "about 1/2 ounce; 16 g",
+        "section": "For the Cornbread",
         "category": "Condiments & Sauces"
       }
     },
@@ -233,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cornbread",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,8 +268,13 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Cornbread",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "28 g unsalted butter (1 ounce; 2 tablespoons)",
@@ -273,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -291,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -305,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -319,6 +344,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -328,6 +354,7 @@
         "item": "Roasted white sesame seeds",
         "measurements": [],
         "note": "optional, for serving",
+        "section": "For the Glaze",
         "category": "Other"
       }
     }

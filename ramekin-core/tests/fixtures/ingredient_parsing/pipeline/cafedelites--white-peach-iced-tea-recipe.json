@@ -3,6 +3,10 @@
   "recipe_slug": "white-peach-iced-tea-recipe",
   "ingredients": [
     {
+      "raw": "Peach Simple Syrup:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 peaches ripe white, sliced",
       "expected": {
         "item": "peaches ripe white",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Peach Simple Syrup",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Peach Simple Syrup",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Peach Simple Syrup",
         "category": "Beverages"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Peach Simple Syrup",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Tea:",
+      "is_section_header": true
     },
     {
       "raw": "8 cups water",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Tea",
         "category": "Beverages"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Tea",
         "category": "Other"
       }
     }

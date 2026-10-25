@@ -3,6 +3,10 @@
   "recipe_slug": "filet-o-fish-and-fries-burger-",
   "ingredients": [
     {
+      "raw": "Homemade Tartar Sauce Recipe:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup mayo",
       "expected": {
         "item": "mayo",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Tartar Sauce Recipe",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Tartar Sauce Recipe",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Tartar Sauce Recipe",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Tartar Sauce Recipe",
         "category": "Other"
       }
     },
@@ -64,8 +72,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Homemade Tartar Sauce Recipe",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filet o’ Fish:",
+      "is_section_header": true
     },
     {
       "raw": "1-2 tilapia filets, trimmed into 2 squares",
@@ -78,6 +91,7 @@
           }
         ],
         "note": "trimmed into 2 squares",
+        "section": "Filet O’ Fish",
         "category": "Other"
       }
     },
@@ -87,6 +101,7 @@
         "item": "salt and freshly ground pepper",
         "measurements": [],
         "note": null,
+        "section": "Filet O’ Fish",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Filet O’ Fish",
         "category": "Baking"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Filet O’ Fish",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Filet O’ Fish",
         "category": "Bakery & Bread"
       }
     },
@@ -138,6 +156,7 @@
         "item": "oil",
         "measurements": [],
         "note": null,
+        "section": "Filet O’ Fish",
         "category": "Oils & Vinegars"
       }
     },
@@ -152,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Filet O’ Fish",
         "category": "Cheese"
       }
     },
@@ -166,6 +186,7 @@
           }
         ],
         "note": "I used potato rolls",
+        "section": "Filet O’ Fish",
         "category": "Other"
       }
     },
@@ -180,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Filet O’ Fish",
         "category": "Condiments & Sauces"
       }
     },
@@ -194,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Filet O’ Fish",
         "category": "Other"
       }
     }

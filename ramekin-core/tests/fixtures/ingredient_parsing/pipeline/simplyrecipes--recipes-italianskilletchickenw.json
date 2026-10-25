@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-italianskilletchickenw",
   "ingredients": [
     {
+      "raw": "For the marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 pounds boneless skinless chicken tenders, tenderloin, or thinly sliced chicken breasts",
       "expected": {
         "item": "boneless skinless chicken tenders, tenderloin",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "or thinly sliced chicken breasts",
+        "section": "For the Marinade",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +102,7 @@
         "item": "Zest from 1 lemon",
         "measurements": [],
         "note": null,
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": "from about 1 lemon",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -120,6 +132,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -134,8 +147,13 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the vegetables:",
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons olive oil",
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": "about 2 packed cups",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Canned Goods"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +251,7 @@
         "item": "Crusty bread",
         "measurements": [],
         "note": "to serve",
+        "section": "For the Vegetables",
         "category": "Bakery & Bread"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-oat-muffins-pecan-stre",
   "ingredients": [
     {
+      "raw": "For the Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup old-fashioned rolled oats",
       "expected": {
         "item": "old-fashioned rolled oats",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Muffins:",
+      "is_section_header": true
     },
     {
       "raw": "8 tablespoons (1 stick) unsalted butter, divided",
@@ -115,6 +130,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Muffins",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Muffins",
         "category": "Snacks"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Muffins",
         "category": "Baking"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Muffins",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Muffins",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Muffins",
         "category": "Baking"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Muffins",
         "category": "Baking"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Muffins",
         "category": "Baking"
       }
     },
@@ -227,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Muffins",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For the Muffins",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "almond-chicken-recipe",
   "ingredients": [
     {
+      "raw": "Stir Fry:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons vegetable oil divided use",
       "expected": {
         "item": "vegetable oil divided use",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "diced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "quartered lengthwise and sliced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "diced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "cut into 1 inch pieces",
+        "section": "Stir Fry",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "minced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "minced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "sliced or slivered",
+        "section": "Stir Fry",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -148,8 +162,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Stir Fry",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup chicken broth",
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -260,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     }

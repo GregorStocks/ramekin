@@ -3,6 +3,10 @@
   "recipe_slug": "pumpkin-gingerbread-trifle-rec",
   "ingredients": [
     {
+      "raw": "For the Gingerbread:",
+      "is_section_header": true
+    },
+    {
       "raw": "2⅓ cups  (291.67 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Spices & Seasonings"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Baking"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Baking"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Baking"
       }
     },
@@ -145,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,8 +176,13 @@
           }
         ],
         "note": null,
+        "section": "For the Gingerbread",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Pumpkin Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups  (488 ml) cold milk",
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Filling",
         "category": "Baking"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Filling",
         "category": "Canned Goods"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Filling",
         "category": "Baking"
       }
     },
@@ -249,8 +271,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups  (476 ml) heavy cream",
@@ -267,6 +294,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -285,6 +313,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Baking"
       }
     },
@@ -299,6 +328,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Baking"
       }
     }

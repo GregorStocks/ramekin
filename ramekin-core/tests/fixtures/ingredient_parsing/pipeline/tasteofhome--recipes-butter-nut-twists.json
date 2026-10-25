@@ -119,6 +119,10 @@
       }
     },
     {
+      "raw": "FILLING:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces ground walnuts (about 2 cups)",
       "expected": {
         "item": "ground walnuts",
@@ -133,6 +137,7 @@
           }
         ],
         "note": "about 2 cups",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -147,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -161,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -175,6 +182,7 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

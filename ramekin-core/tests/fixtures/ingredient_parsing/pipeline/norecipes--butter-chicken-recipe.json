@@ -3,6 +3,10 @@
   "recipe_slug": "butter-chicken-recipe",
   "ingredients": [
     {
+      "raw": "For chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "30 grams  garlic (~ 5 large cloves, peeled)",
       "expected": {
         "item": "garlic",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "~ 5 large cloves, peeled",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "~ 1-inch piece, peeled and sliced",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,8 +126,13 @@
           }
         ],
         "note": "threads crushed",
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For curry:",
+      "is_section_header": true
     },
     {
       "raw": "600 grams  whole stewed tomatoes (1 ½ small cans)",
@@ -129,6 +145,7 @@
           }
         ],
         "note": "1 1/2 small cans",
+        "section": "For Curry",
         "category": "Canned Goods"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Canned Goods"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Other"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Produce"
       }
     },
@@ -259,6 +284,7 @@
           }
         ],
         "note": "about 1/4 cup",
+        "section": "For Curry",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -273,6 +299,7 @@
           }
         ],
         "note": "to taste",
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,6 +314,7 @@
           }
         ],
         "note": "kasuri methi",
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -301,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -315,6 +344,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Dairy & Eggs"
       }
     }

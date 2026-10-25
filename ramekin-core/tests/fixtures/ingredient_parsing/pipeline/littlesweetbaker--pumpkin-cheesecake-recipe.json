@@ -3,6 +3,10 @@
   "recipe_slug": "pumpkin-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 & 1/2 cups   (170g) Oreo cookie crumbs",
       "expected": {
         "item": "Oreo cookie crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -31,8 +36,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "24 oz   (3 pkgs) cream cheese, softened",
@@ -49,6 +59,7 @@
           }
         ],
         "note": "softened",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -67,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -81,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -123,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -141,8 +157,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (250ml) heavy cream",
@@ -159,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -173,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -187,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -201,6 +225,7 @@
           }
         ],
         "note": "for dusting, if desired",
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-ultimateturkeyclubwith",
   "ingredients": [
     {
+      "raw": "For the sandwich fillings:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (2 to 3) pound turkey breast, bone-in and skin-on",
       "expected": {
         "item": "turkey breast, bone-in and skin-on",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "2 to 3",
+        "section": "For the Sandwich Fillings",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Meat & Seafood"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Bakery & Bread"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Cheese"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": "pitted and sliced",
+        "section": "For the Sandwich Fillings",
         "category": "Produce"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Produce"
       }
     },
@@ -143,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the garlic aioli:",
+      "is_section_header": true
     },
     {
       "raw": "1 head garlic",
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Garlic Aioli",
         "category": "Produce"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Garlic Aioli",
         "category": "Condiments & Sauces"
       }
     },
@@ -180,6 +200,7 @@
         "item": "Juice from 1/2 lemon",
         "measurements": [],
         "note": null,
+        "section": "For the Garlic Aioli",
         "category": "Other"
       }
     },
@@ -194,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For the Garlic Aioli",
         "category": "Spices & Seasonings"
       }
     }

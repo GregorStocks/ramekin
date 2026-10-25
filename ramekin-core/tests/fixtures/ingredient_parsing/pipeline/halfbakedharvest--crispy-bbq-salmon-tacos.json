@@ -137,6 +137,10 @@
       }
     },
     {
+      "raw": "Jalapeño Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 ounces cream cheese at room temperature",
       "expected": {
         "item": "cream cheese at room temperature",
@@ -147,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Cream",
         "category": "Cheese"
       }
     },
@@ -161,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Cream",
         "category": "Canned Goods"
       }
     },
@@ -175,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -184,8 +191,13 @@
         "item": "sea salt",
         "measurements": [],
         "note": null,
+        "section": "Jalapeño Cream",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Mango Salsa:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups diced mango",
@@ -198,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -212,6 +225,7 @@
           }
         ],
         "note": "cubed",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -226,6 +240,7 @@
           }
         ],
         "note": "seeded, if desired and chopped",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -240,6 +255,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -254,6 +270,7 @@
           }
         ],
         "note": "plus 1/4 cup lime juice",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -268,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Mango Salsa",
         "category": "Condiments & Sauces"
       }
     }

@@ -91,11 +91,16 @@
       }
     },
     {
+      "raw": "Add ins/Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Chia seeds",
       "expected": {
         "item": "Chia seeds",
         "measurements": [],
         "note": null,
+        "section": "Add Ins/toppings",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -105,6 +110,7 @@
         "item": "Protein powder",
         "measurements": [],
         "note": null,
+        "section": "Add Ins/toppings",
         "category": "Other"
       }
     },
@@ -114,6 +120,7 @@
         "item": "Nut butter",
         "measurements": [],
         "note": null,
+        "section": "Add Ins/toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -123,6 +130,7 @@
         "item": "Acai powder",
         "measurements": [],
         "note": null,
+        "section": "Add Ins/toppings",
         "category": "Other"
       }
     },
@@ -132,6 +140,7 @@
         "item": "Fresh Fruit",
         "measurements": [],
         "note": null,
+        "section": "Add Ins/toppings",
         "category": "Produce"
       }
     }

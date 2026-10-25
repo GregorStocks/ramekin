@@ -185,11 +185,16 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Chopped fresh basil finely minced",
       "expected": {
         "item": "Chopped fresh basil",
         "measurements": [],
         "note": "finely minced",
+        "section": "Garnish",
         "category": "Produce"
       }
     }

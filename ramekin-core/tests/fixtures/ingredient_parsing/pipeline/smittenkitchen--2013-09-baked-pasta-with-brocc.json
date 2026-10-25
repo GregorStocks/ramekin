@@ -3,6 +3,10 @@
   "recipe_slug": "2013-09-baked-pasta-with-brocc",
   "ingredients": [
     {
+      "raw": "Pasta and assembly:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound chunky pasta of your choice (I love bell shapes; see above for details)",
       "expected": {
         "item": "chunky pasta of your choice",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "I love bell shapes; see above for details",
+        "section": "Pasta and Assembly",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "see above for options",
+        "section": "Pasta and Assembly",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "sweet or spicy pork or chicken, casings removed",
+        "section": "Pasta and Assembly",
         "category": "Meat & Seafood"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Cheese"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "cut into small cubes",
+        "section": "Pasta and Assembly",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Bechamel:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups milk, full fat is ideal",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Bechamel",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Bechamel",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Bechamel",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Bechamel",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +151,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Bechamel",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "minced",
+        "section": "Bechamel",
         "category": "Produce"
       }
     },
@@ -157,6 +176,7 @@
         "item": "Few gratings fresh nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Bechamel",
         "category": "Spices & Seasonings"
       }
     }

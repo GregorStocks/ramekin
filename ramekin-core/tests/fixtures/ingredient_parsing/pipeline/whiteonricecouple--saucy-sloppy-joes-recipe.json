@@ -206,6 +206,10 @@
       }
     },
     {
+      "raw": "FOR THE SANDWICH:",
+      "is_section_header": true
+    },
+    {
       "raw": "8   burger buns , warmed or toasted",
       "expected": {
         "item": "burger buns",
@@ -216,6 +220,7 @@
           }
         ],
         "note": "warmed or toasted",
+        "section": "For the Sandwich",
         "category": "Bakery & Bread"
       }
     },
@@ -225,6 +230,7 @@
         "item": "shredded cheese",
         "measurements": [],
         "note": "if you didn’t add to sloppy Joe mixture already, optional",
+        "section": "For the Sandwich",
         "category": "Cheese"
       }
     },
@@ -234,6 +240,7 @@
         "item": "Pickles",
         "measurements": [],
         "note": "optional",
+        "section": "For the Sandwich",
         "category": "Condiments & Sauces"
       }
     }

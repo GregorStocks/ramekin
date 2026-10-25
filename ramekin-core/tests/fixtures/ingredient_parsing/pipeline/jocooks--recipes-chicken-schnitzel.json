@@ -124,11 +124,16 @@
       }
     },
     {
+      "raw": "Serve with:",
+      "is_section_header": true
+    },
+    {
       "raw": "lemon wedges",
       "expected": {
         "item": "lemon wedges",
         "measurements": [],
         "note": null,
+        "section": "Serve with",
         "category": "Produce"
       }
     },
@@ -138,6 +143,7 @@
         "item": "Dijon mustard",
         "measurements": [],
         "note": null,
+        "section": "Serve with",
         "category": "Condiments & Sauces"
       }
     }

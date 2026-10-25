@@ -3,6 +3,10 @@
   "recipe_slug": "strawberry-ice-cream-cone-pie-",
   "ingredients": [
     {
+      "raw": "Ice Cream Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb fresh strawberries* (washed with the tops removed)",
       "expected": {
         "item": "fresh strawberries",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "washed with the tops removed",
+        "section": "Ice Cream Ingredients",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream Ingredients",
         "category": "Canned Goods"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream Ingredients",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Crust Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "8  ice cream sugar cones (broken into pieces)",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "broken into pieces",
+        "section": "Crust Ingredients",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Crust Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Crust Ingredients",
         "category": "Baking"
       }
     }

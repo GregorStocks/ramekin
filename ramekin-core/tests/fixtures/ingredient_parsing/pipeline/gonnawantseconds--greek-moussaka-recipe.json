@@ -3,6 +3,10 @@
   "recipe_slug": "greek-moussaka-recipe",
   "ingredients": [
     {
+      "raw": "Eggplant:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 large or 3 Medium Eggplant Cut into 1/2 Rounds",
       "expected": {
         "item": "Eggplant",
@@ -17,8 +21,13 @@
           }
         ],
         "note": "Cut into 1/2 Rounds",
+        "section": "Eggplant",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Tomato Meat Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tablespoons Butter",
@@ -31,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Produce"
       }
     },
@@ -59,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Produce"
       }
     },
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Meat & Seafood"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Baking"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Canned Goods"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Beverages"
       }
     },
@@ -213,8 +235,13 @@
           }
         ],
         "note": null,
+        "section": "Tomato Meat Sauce",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Cheese Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 1/2 Cups Whole Milk",
@@ -227,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -255,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Baking"
       }
     },
@@ -269,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -283,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -297,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -311,6 +344,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Cheese"
       }
     },
@@ -325,8 +359,13 @@
           }
         ],
         "note": "Beaten",
+        "section": "Cheese Sauce",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 Cups Grated Parmesan Cheese",
@@ -339,8 +378,13 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup Flat Leaf Parsley Chopped",
@@ -353,6 +397,7 @@
           }
         ],
         "note": "Chopped",
+        "section": "Garnish",
         "category": "Produce"
       }
     }

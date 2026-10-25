@@ -3,6 +3,10 @@
   "recipe_slug": "2007-07-pearl-couscous-with-ol",
   "ingredients": [
     {
+      "raw": "Tomatoes and Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pints (1 1/2 pounds) grape or cherry tomatoes (1 1/2 lb)",
       "expected": {
         "item": "grape or cherry tomatoes",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Tomatoes and Dressing",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "left unpeeled",
+        "section": "Tomatoes and Dressing",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "plus more for tomatoes",
+        "section": "Tomatoes and Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Tomatoes and Dressing",
         "category": "Beverages"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Tomatoes and Dressing",
         "category": "Produce"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Tomatoes and Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "Tomatoes and Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Couscous:",
+      "is_section_header": true
     },
     {
       "raw": "2 3/4 cups vegetable broth",
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Canned Goods"
       }
     },
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Pasta & Rice"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": "pitted and chopped",
+        "section": "Couscous",
         "category": "Canned Goods"
       }
     },
@@ -169,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Produce"
       }
     },
@@ -183,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Produce"
       }
     },
@@ -197,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Couscous",
         "category": "Produce"
       }
     }

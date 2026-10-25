@@ -125,6 +125,10 @@
       }
     },
     {
+      "raw": "Coating (Choose Any):",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup desiccated unsweetened coconut (100g) OR finely chopped pecans (130g) (see Note)",
       "expected": {
         "item": "desiccated unsweetened coconut OR finely chopped pecans",
@@ -143,6 +147,7 @@
           }
         ],
         "note": "see Note",
+        "section": "Coating (Choose Any)",
         "category": "Nuts & Dried Fruit"
       }
     }

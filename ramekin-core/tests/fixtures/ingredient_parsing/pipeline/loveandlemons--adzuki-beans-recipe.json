@@ -133,6 +133,10 @@
       }
     },
     {
+      "raw": "Sesame Miso Dressing (makes extra):",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup white miso",
       "expected": {
         "item": "white miso",
@@ -143,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Sesame Miso Dressing (Makes Extra)",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Sesame Miso Dressing (Makes Extra)",
         "category": "Oils & Vinegars"
       }
     },
@@ -171,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Sesame Miso Dressing (Makes Extra)",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Sesame Miso Dressing (Makes Extra)",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Sesame Miso Dressing (Makes Extra)",
         "category": "Oils & Vinegars"
       }
     }

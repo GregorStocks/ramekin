@@ -3,6 +3,10 @@
   "recipe_slug": "2019-10-ultimate-chocolate-cup",
   "ingredients": [
     {
+      "raw": "For cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (200 grams) sugar",
       "expected": {
         "item": "sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "I used mostly Dutch processed, except 1 tablespoon black cocoa for color - do not use all black cocoa",
+        "section": "For Cake",
         "category": "Other"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -137,6 +149,7 @@
           }
         ],
         "note": "or use plain hot water",
+        "section": "For Cake",
         "category": "Other"
       }
     },
@@ -151,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -165,8 +179,13 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Fudge Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1 cups (2 sticks) unsalted butter, softened",
@@ -183,6 +202,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Fudge Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -201,6 +221,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Fudge Frosting",
         "category": "Baking"
       }
     },
@@ -219,6 +240,7 @@
           }
         ],
         "note": "I used 2 tablespoons black cocoa and Dutch-processed for the rest, sifted",
+        "section": "For Fudge Frosting",
         "category": "Baking"
       }
     },
@@ -233,6 +255,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Fudge Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -247,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "For Fudge Frosting",
         "category": "Beverages"
       }
     },
@@ -261,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "For Fudge Frosting",
         "category": "Baking"
       }
     },
@@ -275,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "For Fudge Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -289,6 +315,7 @@
           }
         ],
         "note": "60-70%, melted and cooled to lukewarm",
+        "section": "For Fudge Frosting",
         "category": "Baking"
       }
     }

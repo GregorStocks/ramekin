@@ -3,6 +3,10 @@
   "recipe_slug": "general-tsos-chickpeas-recipe",
   "ingredients": [
     {
+      "raw": "For the Chickpeas and Vegetables:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 can chickpeas (15 ounces)",
       "expected": {
         "item": "chickpeas",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas and Vegetables",
         "category": "Canned Goods"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas and Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "cut into florets",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "cored and sliced",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas and Vegetables",
         "category": "Produce"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "thinly sliced, white and green parts divided",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Produce"
       }
     },
@@ -96,6 +106,7 @@
         "item": "Toasted sesame seeds optional",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,8 +116,13 @@
         "item": "Prepared brown rice quinoa, sorghum, or other whole grain",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the General Tso’s Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 ½ cups water",
@@ -119,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Beverages"
       }
     },
@@ -133,6 +150,7 @@
           }
         ],
         "note": "or tamari for gluten free",
+        "section": "For the General Tso’s Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -147,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -161,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -175,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -189,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Baking"
       }
     },
@@ -203,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Produce"
       }
     },
@@ -217,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Condiments & Sauces"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "cheesecake-factory-chocolate-b",
   "ingredients": [
     {
+      "raw": "Chocolate pudding:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Pudding",
         "category": "Other"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cake layers:",
+      "is_section_header": true
     },
     {
       "raw": "1-1/2 cups all-purpose flour",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "cubed",
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "melted",
+        "section": "Cake Layers",
         "category": "Snacks"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -279,8 +306,13 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Chocolate frosting:",
+      "is_section_header": true
     },
     {
       "raw": "16 ounces Belgian semisweet chocolate chopped",
@@ -293,6 +325,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Frosting",
         "category": "Other"
       }
     },
@@ -307,6 +340,7 @@
           }
         ],
         "note": "cubed",
+        "section": "Chocolate Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -321,6 +355,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Frosting",
         "category": "Beverages"
       }
     },
@@ -335,6 +370,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Frosting",
         "category": "Baking"
       }
     },
@@ -349,8 +385,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Frosting",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Cake crumbs",
@@ -358,6 +399,7 @@
         "item": "Cake crumbs",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     },
@@ -372,6 +414,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish",
         "category": "Nuts & Dried Fruit"
       }
     }

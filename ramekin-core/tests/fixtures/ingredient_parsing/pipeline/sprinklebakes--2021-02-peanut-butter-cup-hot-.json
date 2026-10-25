@@ -110,6 +110,10 @@
       }
     },
     {
+      "raw": "Chocolate Shell and Bomb Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups semisweet chocolate chips",
       "expected": {
         "item": "semisweet chocolate chips",
@@ -120,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Shell and Bomb Ingredients",
         "category": "Baking"
       }
     },
@@ -129,6 +134,7 @@
         "item": "Instant peanut butter cup hot cocoa mix from recipe above",
         "measurements": [],
         "note": null,
+        "section": "Chocolate Shell and Bomb Ingredients",
         "category": "Other"
       }
     },
@@ -143,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Shell and Bomb Ingredients",
         "category": "Baking"
       }
     },
@@ -157,8 +164,13 @@
           }
         ],
         "note": "unwrapped",
+        "section": "Chocolate Shell and Bomb Ingredients",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Peanut Butter Drizzle:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup Reese's peanut butter chips",
@@ -171,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Drizzle",
         "category": "Baking"
       }
     },
@@ -185,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Drizzle",
         "category": "Oils & Vinegars"
       }
     }

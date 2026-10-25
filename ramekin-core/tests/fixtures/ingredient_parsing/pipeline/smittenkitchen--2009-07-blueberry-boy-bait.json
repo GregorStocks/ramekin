@@ -161,6 +161,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (about 85 grams) blueberries, fresh or frozen (do not defrost)",
       "expected": {
         "item": "blueberries",
@@ -175,6 +179,7 @@
           }
         ],
         "note": "about 85 grams, do not defrost, fresh or frozen",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -193,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -207,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

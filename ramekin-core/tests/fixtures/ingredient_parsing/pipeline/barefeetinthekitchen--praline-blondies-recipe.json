@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "Praline Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons butter",
       "expected": {
         "item": "butter",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     },
@@ -195,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     }

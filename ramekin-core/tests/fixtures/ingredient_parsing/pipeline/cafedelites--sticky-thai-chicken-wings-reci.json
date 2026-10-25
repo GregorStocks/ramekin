@@ -31,6 +31,10 @@
       }
     },
     {
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup Thai sweet chili sauce",
       "expected": {
         "item": "Thai sweet chili sauce",
@@ -41,6 +45,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +60,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -69,6 +75,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Produce"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": "minced",
+        "section": "Glaze",
         "category": "Produce"
       }
     },
@@ -139,6 +150,7 @@
           }
         ],
         "note": "minced",
+        "section": "Glaze",
         "category": "Produce"
       }
     },
@@ -153,8 +165,13 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup cilantro chopped",
@@ -167,6 +184,7 @@
           }
         ],
         "note": "chopped",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": "thinly sliced to serve",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -209,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     }

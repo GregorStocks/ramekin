@@ -3,6 +3,10 @@
   "recipe_slug": "teriyaki-salmon-recipe",
   "ingredients": [
     {
+      "raw": "For the Teriyaki Salmon:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 lbs salmon filet sliced into 2\" wide slices, *",
       "expected": {
         "item": "salmon filet sliced into 2\" wide slices,",
@@ -13,8 +17,13 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Salmon",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Teriyaki Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 Tbsp teriyaki sauce",
@@ -27,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Teriyaki Sauce",
         "category": "Baking"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Teriyaki Sauce",
         "category": "Produce"
       }
     },
@@ -129,8 +145,13 @@
           }
         ],
         "note": "or 1/2 tsp ground ginger",
+        "section": "For the Teriyaki Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "Sesame seeds to garnish, optional",
@@ -138,6 +159,7 @@
         "item": "Sesame seeds to garnish",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -147,6 +169,7 @@
         "item": "Green onion",
         "measurements": [],
         "note": "chopped, optional",
+        "section": "To Serve",
         "category": "Produce"
       }
     }

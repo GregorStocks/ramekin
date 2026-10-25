@@ -3,6 +3,10 @@
   "recipe_slug": "thai-tea-recipe",
   "ingredients": [
     {
+      "raw": "option #1 – thai tea mix ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  (80 g) Thai Tea Mix",
       "expected": {
         "item": "Thai Tea Mix",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Option #1 – Thai Tea Mix Ingredients",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Option #1 – Thai Tea Mix Ingredients",
         "category": "Beverages"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Option #1 – Thai Tea Mix Ingredients",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "approximately, some folks also use coconut milk, whole milk, sweetened condensed milk",
+        "section": "Option #1 – Thai Tea Mix Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -80,8 +88,13 @@
         "item": "ice",
         "measurements": [],
         "note": null,
+        "section": "Option #1 – Thai Tea Mix Ingredients",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "option #2 – using organic tea bags ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "4 cups  (960 ml) water",
@@ -98,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Option #2 – Using Organic Tea Bags Ingredients",
         "category": "Beverages"
       }
     },
@@ -112,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Option #2 – Using Organic Tea Bags Ingredients",
         "category": "Beverages"
       }
     },
@@ -130,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Option #2 – Using Organic Tea Bags Ingredients",
         "category": "Baking"
       }
     },
@@ -144,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Option #2 – Using Organic Tea Bags Ingredients",
         "category": "Other"
       }
     },
@@ -158,6 +175,7 @@
           }
         ],
         "note": "smashed",
+        "section": "Option #2 – Using Organic Tea Bags Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -172,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Option #2 – Using Organic Tea Bags Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +209,7 @@
           }
         ],
         "note": "approximately, some folks also use coconut milk, whole milk, sweetened condensed milk",
+        "section": "Option #2 – Using Organic Tea Bags Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +219,7 @@
         "item": "ice",
         "measurements": [],
         "note": null,
+        "section": "Option #2 – Using Organic Tea Bags Ingredients",
         "category": "Frozen"
       }
     }

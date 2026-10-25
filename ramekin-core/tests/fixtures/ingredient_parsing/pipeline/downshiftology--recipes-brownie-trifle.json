@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-brownie-trifle",
   "ingredients": [
     {
+      "raw": "Brownies:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 simple mills brownie mix",
       "expected": {
         "item": "simple mills brownie mix",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "melted",
+        "section": "Brownies",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Beverages"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Chocolate Chia Pudding Mousse:",
+      "is_section_header": true
     },
     {
       "raw": "3 cup milk, any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Coconut Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "4 13.5 ounce cans full-fat coconut milk , chilled 24-48 hours",
@@ -139,6 +160,7 @@
           }
         ],
         "note": "chilled 24-48 hours",
+        "section": "Coconut Whipped Cream",
         "category": "Canned Goods"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,8 +190,13 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "chocolate shavings",
@@ -176,6 +204,7 @@
         "item": "chocolate shavings",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "ketchup-spaghetti-recipe",
   "ingredients": [
     {
+      "raw": "For the Sauce Seasonings:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup ketchup (for an authentic flavor, use Kagome Tomato Ketchup from the Japanese grocery store)",
       "expected": {
         "item": "ketchup",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "for an authentic flavor, use Kagome Tomato Ketchup from the Japanese grocery store",
+        "section": "For the Sauce Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "optional; for a creamier taste",
+        "section": "For the Sauce Seasonings",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "optional; for an authentic Japanese taste",
+        "section": "For the Sauce Seasonings",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Sauce Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "½ onion (3.5 oz, 100 g)",
@@ -77,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Produce"
       }
     },
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Produce"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Produce"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": "I use 4-6 kurobuta or arabiki sausages from the Japanese market; you can substitute another type of sausage, ham, bacon, etc.",
+        "section": "For the Sauce Ingredients",
         "category": "Meat & Seafood"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Produce"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,8 +210,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Pasta:",
+      "is_section_header": true
     },
     {
       "raw": "7 oz spaghetti",
@@ -205,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Pasta & Rice"
       }
     },
@@ -219,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Spices & Seasonings"
       }
     },
@@ -233,6 +259,7 @@
           }
         ],
         "note": "you may not need it; check your sauce and add gradually",
+        "section": "For the Pasta",
         "category": "Beverages"
       }
     },
@@ -247,8 +274,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Serving:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tbsp Parmigiano-Reggiano or Parmesan cheese",
@@ -261,6 +293,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Cheese"
       }
     }

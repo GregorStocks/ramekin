@@ -3,6 +3,10 @@
   "recipe_slug": "2025-10-chocolate-banana-cream",
   "ingredients": [
     {
+      "raw": "For Pie Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ cups  / 187 g all purpose flour",
       "expected": {
         "item": "all purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Crust",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Pie Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "For Pie Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": "chilled and cut into cubes",
+        "section": "For Pie Crust",
         "category": "Baking"
       }
     },
@@ -117,8 +127,13 @@
           }
         ],
         "note": null,
+        "section": "For Pie Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Filling:",
+      "is_section_header": true
     },
     {
       "raw": "⅔ cup  / 133 g granulated sugar",
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -249,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": "50-70%, finely chopped",
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -281,6 +305,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -299,6 +324,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -317,6 +343,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -331,6 +358,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -345,6 +373,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -354,6 +383,7 @@
         "item": "chocolate curls",
         "measurements": [],
         "note": "optional, for garnish",
+        "section": "For Filling",
         "category": "Other"
       }
     }

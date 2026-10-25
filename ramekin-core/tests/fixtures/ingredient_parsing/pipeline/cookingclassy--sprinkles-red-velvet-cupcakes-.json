@@ -157,6 +157,10 @@
       }
     },
     {
+      "raw": "Cream Cheese Frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup salted butter , firm but not cold (if using unsalted add 1/8 tsp salt)",
       "expected": {
         "item": "salted butter",
@@ -167,6 +171,7 @@
           }
         ],
         "note": "if using unsalted add 1/8 tsp salt, firm but not cold",
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +186,7 @@
           }
         ],
         "note": "I recommend using Philadelphia brand in this recipe, cold",
+        "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
@@ -195,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -209,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -218,6 +226,7 @@
         "item": "Red and blue food coloring",
         "measurements": [],
         "note": "optional, for decor",
+        "section": "Cream Cheese Frosting",
         "category": "Other"
       }
     }

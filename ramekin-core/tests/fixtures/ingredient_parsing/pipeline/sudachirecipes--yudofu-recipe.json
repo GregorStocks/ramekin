@@ -68,6 +68,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ tbsp sesame paste (nerigoma)",
       "expected": {
         "item": "sesame paste",
@@ -78,6 +82,7 @@
           }
         ],
         "note": "nerigoma",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -92,6 +97,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -106,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -120,6 +127,7 @@
           }
         ],
         "note": "rayu",
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -148,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     }

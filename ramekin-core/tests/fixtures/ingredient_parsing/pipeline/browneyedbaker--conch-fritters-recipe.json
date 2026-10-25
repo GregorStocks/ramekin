@@ -3,6 +3,10 @@
   "recipe_slug": "conch-fritters-recipe",
   "ingredients": [
     {
+      "raw": "For the Conch Fritters:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  (125 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Conch Fritters",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Conch Fritters",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Conch Fritters",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Conch Fritters",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Conch Fritters",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Conch Fritters",
         "category": "Other"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Conch Fritters",
         "category": "Produce"
       }
     },
@@ -123,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For the Conch Fritters",
         "category": "Produce"
       }
     },
@@ -141,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "For the Conch Fritters",
         "category": "Produce"
       }
     },
@@ -159,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For the Conch Fritters",
         "category": "Produce"
       }
     },
@@ -173,6 +187,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Conch Fritters",
         "category": "Produce"
       }
     },
@@ -191,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For the Conch Fritters",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,8 +216,13 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Conch Fritters",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Dipping Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  (130 g) salsa",
@@ -218,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -236,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -250,6 +273,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -268,6 +292,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -286,6 +311,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -304,6 +330,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -322,6 +349,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Spices & Seasonings"
       }
     }

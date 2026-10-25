@@ -3,6 +3,10 @@
   "recipe_slug": "2014-07-blue-and-red-berry-ric",
   "ingredients": [
     {
+      "raw": "Pastry:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (160 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Produce"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Cheese"
       }
     },
@@ -109,8 +119,13 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups berries or chopped fruit (I used raspberries and cherries on the red one, blueberries for on the blue)",
@@ -123,6 +138,7 @@
           }
         ],
         "note": "I used raspberries and cherries on the red one, blueberries for on the blue",
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": "use the lower amount if your fruit is especially sweet",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -151,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -165,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -179,8 +198,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg yolk beaten with 1 teaspoon water",
@@ -193,6 +217,7 @@
           }
         ],
         "note": "beaten with 1 teaspoon water",
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -207,6 +232,7 @@
           }
         ],
         "note": "for sprinkling",
+        "section": "Glaze",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2017-06-crispy-spiced-lamb-and",
   "ingredients": [
     {
+      "raw": "Crispy lamb and lentils:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon vegetable oil",
       "expected": {
         "item": "vegetable oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Lamb and Lentils",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Lamb and Lentils",
         "category": "Meat & Seafood"
       }
     },
@@ -36,6 +42,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Crispy Lamb and Lentils",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "minced",
+        "section": "Crispy Lamb and Lentils",
         "category": "Produce"
       }
     },
@@ -59,6 +67,7 @@
         "item": "Red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Crispy Lamb and Lentils",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +82,7 @@
           }
         ],
         "note": "or a heaped 1/2 teaspoon ground",
+        "section": "Crispy Lamb and Lentils",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Lamb and Lentils",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,8 +112,13 @@
           }
         ],
         "note": "from a scant 1 cup dried",
+        "section": "Crispy Lamb and Lentils",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "8 to 10 cup-shaped leaves from 1 medium head bibb or butter lettuce",
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -124,6 +141,7 @@
         "item": "Tomato-cucumber “relish” salad",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -133,6 +151,7 @@
         "item": "Lemon-tahini dressing, with or without yogurt, or 1 cup plain yogurt, seasoned with salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -142,6 +161,7 @@
         "item": "A couple tablespoons chopped fresh herbs",
         "measurements": [],
         "note": "such as parsley, cilantro, and mint, or a mixture thereof",
+        "section": "Assembly",
         "category": "Other"
       }
     }

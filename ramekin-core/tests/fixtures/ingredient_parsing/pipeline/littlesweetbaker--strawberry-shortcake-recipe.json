@@ -3,6 +3,10 @@
   "recipe_slug": "strawberry-shortcake-recipe",
   "ingredients": [
     {
+      "raw": "For the biscuits:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups   (250g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "cubed",
+        "section": "For the Biscuits",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the macerated strawberries:",
+      "is_section_header": true
     },
     {
       "raw": "1 pint   (454g) strawberries, sliced",
@@ -121,6 +135,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Macerated Strawberries",
         "category": "Produce"
       }
     },
@@ -139,8 +154,13 @@
           }
         ],
         "note": null,
+        "section": "For the Macerated Strawberries",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the sweetened whipped cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (250ml) heavy cream",
@@ -157,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweetened Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweetened Whipped Cream",
         "category": "Baking"
       }
     },
@@ -189,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweetened Whipped Cream",
         "category": "Baking"
       }
     }

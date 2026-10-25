@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "jalapeno ranch:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 jalapeno pepper, seeded and diced",
       "expected": {
         "item": "jalapeno pepper",
@@ -111,6 +115,7 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": "or 1 tablespoon dried chives",
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -181,6 +190,7 @@
           }
         ],
         "note": "or 2 teaspoons dried dill weed",
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -195,6 +205,7 @@
           }
         ],
         "note": "or 1 teaspoon dried parsley",
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -209,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -223,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Spices & Seasonings"
       }
     }

@@ -143,11 +143,16 @@
       }
     },
     {
+      "raw": "Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Queso Fresca or shredded Oaxacan",
       "expected": {
         "item": "Queso Fresca or shredded Oaxacan",
         "measurements": [],
         "note": null,
+        "section": "Serving",
         "category": "Other"
       }
     },
@@ -157,6 +162,7 @@
         "item": "Warm tortillas",
         "measurements": [],
         "note": null,
+        "section": "Serving",
         "category": "Bakery & Bread"
       }
     }

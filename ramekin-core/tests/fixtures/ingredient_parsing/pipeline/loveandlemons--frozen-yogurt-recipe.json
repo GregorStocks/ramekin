@@ -101,11 +101,16 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "extra tart cherries",
       "expected": {
         "item": "extra tart cherries",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -115,6 +120,7 @@
         "item": "toasted sliced almonds",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Nuts & Dried Fruit"
       }
     }

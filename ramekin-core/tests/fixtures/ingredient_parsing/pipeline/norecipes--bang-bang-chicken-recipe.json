@@ -3,6 +3,10 @@
   "recipe_slug": "bang-bang-chicken-recipe",
   "ingredients": [
     {
+      "raw": "For salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "32 grams  scallion (2-3 scallions, white parts only)",
       "expected": {
         "item": "scallion",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "2-3 scallions, white parts only",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Salad",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": "2 Japanese cucumbers",
+        "section": "For Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon  black vinegar",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "tahini will work",
+        "section": "For Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "2 large cloves, finely minced",
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "to taste",
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For chicken:",
+      "is_section_header": true
     },
     {
       "raw": "460 grams  chicken tenders",
@@ -195,8 +220,13 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons  roasted black sesame seeds",
@@ -209,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Other"
       }
     },
@@ -218,6 +249,7 @@
         "item": "cilantro",
         "measurements": [],
         "note": "for garnish",
+        "section": "For Assembly",
         "category": "Produce"
       }
     }

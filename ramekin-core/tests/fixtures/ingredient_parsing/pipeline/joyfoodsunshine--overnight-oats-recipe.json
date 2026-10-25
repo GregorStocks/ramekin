@@ -101,6 +101,14 @@
       }
     },
     {
+      "raw": "Flavor Combinations:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Peanut butter & banana:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 Tablespoon peanut butter",
       "expected": {
         "item": "peanut butter",
@@ -111,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter & Banana",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,8 +134,13 @@
           }
         ],
         "note": "sliced or diced",
+        "section": "Peanut Butter & Banana",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Apple Cinnamon:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup diced apples",
@@ -139,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Apple Cinnamon",
         "category": "Produce"
       }
     },
@@ -148,8 +163,13 @@
         "item": "Sprinkle of cinnamon",
         "measurements": [],
         "note": null,
+        "section": "Apple Cinnamon",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Berry:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup fresh berries strawberries, raspberries, blueberries, etc.",
@@ -162,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Berry",
         "category": "Other"
       }
     },
@@ -176,8 +197,13 @@
           }
         ],
         "note": null,
+        "section": "Berry",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Chocolate:",
+      "is_section_header": true
     },
     {
       "raw": "1 Tablespoon cocoa powder",
@@ -190,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate",
         "category": "Baking"
       }
     },
@@ -204,8 +231,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Almond:",
+      "is_section_header": true
     },
     {
       "raw": "1 Tablespoon almond butter",
@@ -218,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Almond",
         "category": "Condiments & Sauces"
       }
     },
@@ -232,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Almond",
         "category": "Nuts & Dried Fruit"
       }
     }

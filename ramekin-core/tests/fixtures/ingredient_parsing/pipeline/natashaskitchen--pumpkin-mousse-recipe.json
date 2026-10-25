@@ -3,6 +3,10 @@
   "recipe_slug": "pumpkin-mousse-recipe",
   "ingredients": [
     {
+      "raw": "Pumpkin Mousse Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 oz unflavored gelatin , (2 packets or 14 grams total)",
       "expected": {
         "item": "unflavored gelatin",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Mousse Ingredients",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "any kind",
+        "section": "Pumpkin Mousse Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Mousse Ingredients",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Mousse Ingredients",
         "category": "Canned Goods"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Mousse Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Mousse Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": "thawed in the refrigerator",
+        "section": "Pumpkin Mousse Ingredients",
         "category": "Frozen"
       }
     },
@@ -119,8 +130,13 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Mousse Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Rum Whipped Cream Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy whipping cream",
@@ -133,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Rum Whipped Cream Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Rum Whipped Cream Ingredients",
         "category": "Other"
       }
     },
@@ -161,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Rum Whipped Cream Ingredients",
         "category": "Baking"
       }
     }

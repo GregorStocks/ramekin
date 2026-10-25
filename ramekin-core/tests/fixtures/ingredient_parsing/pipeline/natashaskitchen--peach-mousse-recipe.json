@@ -3,6 +3,10 @@
   "recipe_slug": "peach-mousse-recipe",
   "ingredients": [
     {
+      "raw": "For the Peach Mousse:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb ripe peaches, peeled, diced",
       "expected": {
         "item": "ripe peaches",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "peeled, diced",
+        "section": "For the Peach Mousse",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Garnish/ Peach Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 ripe peach, peeled and thinly sliced",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "peeled and thinly sliced",
+        "section": "Garnish/ Peach Topping",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish/ Peach Topping",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish/ Peach Topping",
         "category": "Baking"
       }
     },
@@ -134,6 +151,7 @@
         "item": "mint leaves",
         "measurements": [],
         "note": "optional",
+        "section": "Garnish/ Peach Topping",
         "category": "Produce"
       }
     }

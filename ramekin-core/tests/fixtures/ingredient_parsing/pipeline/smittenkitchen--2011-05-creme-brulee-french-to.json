@@ -3,6 +3,10 @@
   "recipe_slug": "2011-05-creme-brulee-french-to",
   "ingredients": [
     {
+      "raw": "Toasts:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 loaf unsliced white bread, brioche or rich bread of your choice",
       "expected": {
         "item": "unsliced white bread, brioche or rich bread of your choice",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Toasts",
         "category": "Bakery & Bread"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Toasts",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Toasts",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Toasts",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Toasts",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Toasts",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "or another orange liqueur or 1/4 teaspoon orange zest",
+        "section": "Toasts",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "or 2 teaspoons vanilla extract",
+        "section": "Toasts",
         "category": "Spices & Seasonings"
       }
     }

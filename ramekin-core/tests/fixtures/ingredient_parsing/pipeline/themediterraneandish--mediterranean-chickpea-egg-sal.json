@@ -3,6 +3,10 @@
   "recipe_slug": "mediterranean-chickpea-egg-sal",
   "ingredients": [
     {
+      "raw": "For dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 tsp Dijon mustard",
       "expected": {
         "item": "Dijon mustard",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -41,35 +47,7 @@
           }
         ],
         "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1 large lemon, zested and juiced",
-      "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "large lemon"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1 large lemon, zested and juiced",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "large lemon"
-          }
-        ],
-        "note": null,
+        "section": "For Dressing",
         "category": "Produce"
       },
       "expanded": true
@@ -85,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -99,6 +78,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -113,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -150,8 +133,13 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Egg Salad:",
+      "is_section_header": true
     },
     {
       "raw": "2 cans chickpeas, rinsed and drained",
@@ -164,6 +152,7 @@
           }
         ],
         "note": "rinsed and drained",
+        "section": "For Egg Salad",
         "category": "Canned Goods"
       }
     },
@@ -178,6 +167,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -192,6 +182,7 @@
           }
         ],
         "note": "or 1/2 seedless English cucumber, diced",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -206,6 +197,7 @@
           }
         ],
         "note": "both white and green parts, trimmed, and chopped",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -220,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -234,6 +227,7 @@
           }
         ],
         "note": "optional, chopped",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -248,6 +242,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -262,6 +257,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -276,6 +272,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For Egg Salad",
         "category": "Dairy & Eggs"
       }
     }

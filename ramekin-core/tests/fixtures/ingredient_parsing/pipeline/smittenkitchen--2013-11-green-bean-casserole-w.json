@@ -3,6 +3,10 @@
   "recipe_slug": "2013-11-green-bean-casserole-w",
   "ingredients": [
     {
+      "raw": "Crispy Onions:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 medium yellow onions, halved and thinly sliced",
       "expected": {
         "item": "yellow onions",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "halved and thinly sliced",
+        "section": "Crispy Onions",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Onions",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Onions",
         "category": "Bakery & Bread"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Onions",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Crispy Onions",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,8 +82,13 @@
         "item": "Canola, safflower, peanut or other high-heat oil",
         "measurements": [],
         "note": "for deep-frying",
+        "section": "Crispy Onions",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Mushroom Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons butter",
@@ -87,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Mushroom Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": "thinly sliced or coarsely chopped",
+        "section": "Mushroom Sauce",
         "category": "Produce"
       }
     },
@@ -110,6 +126,7 @@
         "item": "Few gratings fresh nutmeg",
         "measurements": [],
         "note": "optional",
+        "section": "Mushroom Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +136,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Mushroom Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -133,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Mushroom Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -147,6 +166,7 @@
           }
         ],
         "note": "minced",
+        "section": "Mushroom Sauce",
         "category": "Produce"
       }
     },
@@ -161,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Mushroom Sauce",
         "category": "Baking"
       }
     },
@@ -175,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Mushroom Sauce",
         "category": "Canned Goods"
       }
     },
@@ -189,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Mushroom Sauce",
         "category": "Dairy & Eggs"
       }
     }

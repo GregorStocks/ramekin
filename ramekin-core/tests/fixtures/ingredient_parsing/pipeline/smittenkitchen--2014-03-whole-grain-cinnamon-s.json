@@ -3,6 +3,10 @@
   "recipe_slug": "2014-03-whole-grain-cinnamon-s",
   "ingredients": [
     {
+      "raw": "Bread:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 cups (635 grams) white whole-wheat or regular whole-wheat flour",
       "expected": {
         "item": "white whole-wheat or regular whole-wheat flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "approximately, see suggestions at end",
+        "section": "Bread",
         "category": "Other"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "or 1 tablespoon kosher salt",
+        "section": "Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "about 50 grams; or 2 1/2 tablespoons honey or agave nectar",
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": "cooled to lukewarm",
+        "section": "Bread",
         "category": "Oils & Vinegars"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": "about 95 degrees; err on cool side if you don’t have a thermometer",
+        "section": "Bread",
         "category": "Beverages"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,8 +165,13 @@
           }
         ],
         "note": "about 13 grams",
+        "section": "Bread",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (100 grams) granulated sugar",
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -221,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": "beaten with 1 tablespoon water",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

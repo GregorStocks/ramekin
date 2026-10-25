@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Ponzu sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Ponzu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Ponzu Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": "such as lemon or Yuzu",
+        "section": "Ponzu Sauce",
         "category": "Beverages"
       }
     }

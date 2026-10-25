@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "For Grilling Pineapple:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups pineapple (See Note 2)",
       "expected": {
         "item": "pineapple",
@@ -69,6 +73,7 @@
           }
         ],
         "note": "See Note 2",
+        "section": "For Grilling Pineapple",
         "category": "Produce"
       }
     },
@@ -83,8 +88,13 @@
           }
         ],
         "note": null,
+        "section": "For Grilling Pineapple",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Marinade/Jerk Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup pineapple chunks",
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Other"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +302,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -293,8 +317,13 @@
           }
         ],
         "note": "See Note 3",
+        "section": "Marinade/jerk Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "2 green onions tops only, chopped",
@@ -307,6 +336,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Garnish",
         "category": "Other"
       }
     }

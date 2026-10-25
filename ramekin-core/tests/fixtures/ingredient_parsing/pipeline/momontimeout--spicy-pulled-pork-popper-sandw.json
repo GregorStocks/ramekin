@@ -30,6 +30,10 @@
       }
     },
     {
+      "raw": "Slow Cooker Pulled Pork:",
+      "is_section_header": true
+    },
+    {
       "raw": "4-6 lb bone-in pork shoulder roast",
       "expected": {
         "item": "bone-in pork shoulder roast",
@@ -40,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Other"
       }
     },
@@ -54,6 +59,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Slow Cooker Pulled Pork",
         "category": "Produce"
       }
     },
@@ -68,6 +74,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Slow Cooker Pulled Pork",
         "category": "Produce"
       }
     },
@@ -82,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Oils & Vinegars"
       }
     },
@@ -96,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Baking"
       }
     },
@@ -110,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,6 +149,7 @@
           }
         ],
         "note": "divided",
+        "section": "Slow Cooker Pulled Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -152,8 +164,13 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Caramelized Onions:",
+      "is_section_header": true
     },
     {
       "raw": "4 onions sliced",
@@ -166,6 +183,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Caramelized Onions",
         "category": "Produce"
       }
     },
@@ -180,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Onions",
         "category": "Oils & Vinegars"
       }
     },
@@ -194,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Onions",
         "category": "Spices & Seasonings"
       }
     }

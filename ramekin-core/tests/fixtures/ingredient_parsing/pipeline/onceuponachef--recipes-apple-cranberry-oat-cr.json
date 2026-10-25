@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-apple-cranberry-oat-cr",
   "ingredients": [
     {
+      "raw": "For the Dish:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -13,8 +17,13 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Dish",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups rolled oats",
@@ -27,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Snacks"
       }
     },
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Other"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,8 +100,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Fruit Filling:",
+      "is_section_header": true
     },
     {
       "raw": "8 large baking apples, peeled, cored and sliced ¼-inch (6-mm) thick",
@@ -101,6 +119,7 @@
           }
         ],
         "note": "6-mm, peeled, cored and sliced 1/4-inch thick",
+        "section": "For the Fruit Filling",
         "category": "Produce"
       }
     },
@@ -119,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit Filling",
         "category": "Produce"
       }
     },
@@ -133,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit Filling",
         "category": "Baking"
       }
     },
@@ -147,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit Filling",
         "category": "Baking"
       }
     },
@@ -161,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit Filling",
         "category": "Spices & Seasonings"
       }
     }

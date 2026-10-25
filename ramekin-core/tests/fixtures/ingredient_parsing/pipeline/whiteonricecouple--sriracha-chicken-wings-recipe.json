@@ -3,6 +3,10 @@
   "recipe_slug": "sriracha-chicken-wings-recipe",
   "ingredients": [
     {
+      "raw": "For the Wings:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds  (907 g) chicken wings , rinsed & patted dry",
       "expected": {
         "item": "chicken wings",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "rinsed & patted dry",
+        "section": "For the Wings",
         "category": "Meat & Seafood"
       }
     },
@@ -26,6 +31,7 @@
         "item": "kosher salt, to season wings",
         "measurements": [],
         "note": null,
+        "section": "For the Wings",
         "category": "Spices & Seasonings"
       }
     },
@@ -35,8 +41,13 @@
         "item": "ground black pepper, to season wings",
         "measurements": [],
         "note": null,
+        "section": "For the Wings",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tablespoons  (30 ml) vegetable oil",
@@ -53,6 +64,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -71,6 +83,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -93,6 +106,7 @@
           }
         ],
         "note": "@ 1/2 cup, minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -111,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,6 +144,7 @@
           }
         ],
         "note": "or more for a spicier sauce",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -147,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -165,6 +182,7 @@
           }
         ],
         "note": "choose fish sauce, it tastes better!",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -183,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     }

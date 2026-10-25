@@ -3,6 +3,10 @@
   "recipe_slug": "apple-pie-bars-recipe",
   "ingredients": [
     {
+      "raw": "For the crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½  cups unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons unsalted butter",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "cored and thinly sliced",
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the topping:",
+      "is_section_header": true
     },
     {
       "raw": "3 cups quick-cooking oats",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Snacks"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": "cut into 1/2-inch cubes and chilled",
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

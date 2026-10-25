@@ -3,6 +3,10 @@
   "recipe_slug": "sweet-potato-bars-chocolate-re",
   "ingredients": [
     {
+      "raw": "Crust Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups   graham cracker crumbs (150g)  (from about 9 whole graham crackers)",
       "expected": {
         "item": "graham cracker crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "from about 9 whole graham crackers",
+        "section": "Crust Ingredients",
         "category": "Snacks"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "or 1/2 teaspoon ground ginger",
+        "section": "Crust Ingredients",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "packed",
+        "section": "Crust Ingredients",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Crust Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,8 +89,13 @@
           }
         ],
         "note": "113g - or 1 stick, melted",
+        "section": "Crust Ingredients",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Chocolate Layer Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup   heavy cream (80ml)",
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Layer Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,8 +131,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Layer Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Sweet Potato Filling Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   sweet potato puree (see note below recipe)",
@@ -131,6 +150,7 @@
           }
         ],
         "note": "see note below recipe",
+        "section": "Sweet Potato Filling Ingredients",
         "category": "Canned Goods"
       }
     },
@@ -145,6 +165,7 @@
           }
         ],
         "note": "slightly beaten",
+        "section": "Sweet Potato Filling Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Potato Filling Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -173,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Potato Filling Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -187,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Potato Filling Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -205,6 +229,7 @@
           }
         ],
         "note": "packed",
+        "section": "Sweet Potato Filling Ingredients",
         "category": "Baking"
       }
     },
@@ -223,8 +248,13 @@
           }
         ],
         "note": null,
+        "section": "Sweet Potato Filling Ingredients",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Optional Topping Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "whipped cream",
@@ -232,6 +262,7 @@
         "item": "whipped cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Topping Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +272,7 @@
         "item": "pecan halves",
         "measurements": [],
         "note": "for garnish",
+        "section": "Optional Topping Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -142,6 +142,10 @@
       }
     },
     {
+      "raw": "For the balsamic vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
@@ -152,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Balsamic Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -166,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Balsamic Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -180,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Balsamic Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -194,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Balsamic Vinaigrette",
         "category": "Baking"
       }
     },
@@ -208,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Balsamic Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,6 +226,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Balsamic Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

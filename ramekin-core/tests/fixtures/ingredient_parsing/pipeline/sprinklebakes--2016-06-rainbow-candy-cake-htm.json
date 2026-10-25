@@ -3,6 +3,10 @@
   "recipe_slug": "2016-06-rainbow-candy-cake-htm",
   "ingredients": [
     {
+      "raw": "Rainbow cake layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 1/2 cups/790 g cake flour not self-rising, sifted",
       "expected": {
         "item": "cake flour not self-rising",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Rainbow Cake Layers",
         "category": "Other"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Other"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Baking"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -136,8 +148,13 @@
         "item": "Wilton or Americolor gel food colors: red orange, yellow, green, blue, purple",
         "measurements": [],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Vanilla Swiss meringue buttercream:",
+      "is_section_header": true
     },
     {
       "raw": "12 egg whites",
@@ -150,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -168,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Baking"
       }
     },
@@ -182,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Spices & Seasonings"
       }
     },
@@ -196,6 +216,7 @@
           }
         ],
         "note": "softened",
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -210,8 +231,13 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Décor:",
+      "is_section_header": true
     },
     {
       "raw": "2 packages 12.4 ounces each Twizzler Rainbow Candy Twists",
@@ -224,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Décor",
         "category": "Other"
       }
     },
@@ -238,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Décor",
         "category": "Other"
       }
     },
@@ -252,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Décor",
         "category": "Snacks"
       }
     }

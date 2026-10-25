@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 & 1/2 cups   (170g) Oreo cookie crumbs",
       "expected": {
         "item": "Oreo cookie crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -31,8 +36,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 & 1/2 cups   (270g) semi-sweet chocolate chips",
@@ -49,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -67,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +97,7 @@
           }
         ],
         "note": "softened",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,8 +146,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Ganache:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (180g) semi-sweet chocolate chips",
@@ -149,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache",
         "category": "Baking"
       }
     },
@@ -167,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache",
         "category": "Dairy & Eggs"
       }
     }

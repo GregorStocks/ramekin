@@ -3,6 +3,10 @@
   "recipe_slug": "2007-06-gateau-de-crepes",
   "ingredients": [
     {
+      "raw": "For the crepe batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons butter",
       "expected": {
         "item": "butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crepe Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crepe Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crepe Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crepe Batter",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crepe Batter",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crepe Batter",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the vanilla pastry cream:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups milk",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vanilla Pastry Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "halved and scraped",
+        "section": "For the Vanilla Pastry Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vanilla Pastry Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vanilla Pastry Cream",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Vanilla Pastry Cream",
         "category": "Baking"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "For the Vanilla Pastry Cream",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For assembly:",
+      "is_section_header": true
     },
     {
       "raw": "Corn oil",
@@ -176,6 +200,7 @@
         "item": "Corn oil",
         "measurements": [],
         "note": null,
+        "section": "For Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -190,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -204,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Baking"
       }
     },
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Beverages"
       }
     },
@@ -227,6 +255,7 @@
         "item": "Confectioners’ sugar.",
         "measurements": [],
         "note": null,
+        "section": "For Assembly",
         "category": "Baking"
       }
     }

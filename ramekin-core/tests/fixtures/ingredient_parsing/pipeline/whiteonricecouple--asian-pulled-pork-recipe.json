@@ -85,6 +85,10 @@
       }
     },
     {
+      "raw": "For the sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces  (227 g) tomato sauce",
       "expected": {
         "item": "tomato sauce",
@@ -99,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -117,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -135,6 +141,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
@@ -171,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -189,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -207,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     }

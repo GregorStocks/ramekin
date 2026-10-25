@@ -72,11 +72,16 @@
       }
     },
     {
+      "raw": "For serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "toasted burger buns",
       "expected": {
         "item": "toasted burger buns",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     },
@@ -86,6 +91,7 @@
         "item": "favorite barbecue sauce",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Other"
       }
     },
@@ -95,6 +101,7 @@
         "item": "thinly sliced red onion",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -104,6 +111,7 @@
         "item": "sliced tomatoes",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -113,6 +121,7 @@
         "item": "sliced pickles",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -122,6 +131,7 @@
         "item": "crisp lettuce",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Other"
       }
     }

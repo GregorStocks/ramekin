@@ -3,6 +3,10 @@
   "recipe_slug": "salted-caramel-cupcakes-recipe",
   "ingredients": [
     {
+      "raw": "For the Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  (43 g) plus 1 tablespoon Dutch-process cocoa powder",
       "expected": {
         "item": "Dutch-process cocoa powder",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Beverages"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -143,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -157,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -189,8 +203,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Salted Caramel Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  (227 g) unsalted butter, at room temperature",
@@ -207,6 +226,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Salted Caramel Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Salted Caramel Frosting",
         "category": "Cheese"
       }
     },
@@ -243,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salted Caramel Frosting",
         "category": "Condiments & Sauces"
       }
     },
@@ -261,8 +283,13 @@
           }
         ],
         "note": null,
+        "section": "For the Salted Caramel Frosting",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Salted Caramel Sauce",
@@ -270,6 +297,7 @@
         "item": "Salted Caramel Sauce",
         "measurements": [],
         "note": null,
+        "section": "To Garnish",
         "category": "Condiments & Sauces"
       }
     },
@@ -279,6 +307,7 @@
         "item": "Fleur de Sel, or other flaky sea salt",
         "measurements": [],
         "note": null,
+        "section": "To Garnish",
         "category": "Spices & Seasonings"
       }
     }

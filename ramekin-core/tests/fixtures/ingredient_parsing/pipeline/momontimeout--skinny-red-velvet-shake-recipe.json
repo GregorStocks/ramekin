@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Cream Cheese Whipped Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 oz light cream cheese softened",
       "expected": {
         "item": "light cream cheese",
@@ -69,6 +73,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Whipped Cream",
         "category": "Cheese"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Whipped Cream",
         "category": "Baking"
       }
     },
@@ -111,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Whipped Cream",
         "category": "Baking"
       }
     }

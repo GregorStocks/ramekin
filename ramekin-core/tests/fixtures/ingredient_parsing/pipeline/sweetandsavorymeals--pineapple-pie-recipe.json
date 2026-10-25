@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "20 oz canned crushed pineapple",
       "expected": {
         "item": "canned crushed pineapple",
@@ -27,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -97,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -111,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -125,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -139,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -153,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

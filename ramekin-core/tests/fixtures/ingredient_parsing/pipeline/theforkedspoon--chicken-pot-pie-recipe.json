@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-pot-pie-recipe",
   "ingredients": [
     {
+      "raw": "For the pie crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon salt",
       "expected": {
         "item": "salt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Crust",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the pie filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup carrots, diced",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "about 1/2 a medium-sized onion, diced",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Canned Goods"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "cooked and shredded",
+        "section": "For the Pie Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Frozen"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Frozen"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "optional, beaten, for egg wash",
+        "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }
     }

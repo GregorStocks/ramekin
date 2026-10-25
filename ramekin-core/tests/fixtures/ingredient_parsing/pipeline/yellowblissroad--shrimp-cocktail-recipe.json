@@ -119,6 +119,10 @@
       }
     },
     {
+      "raw": "Cocktail Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  ketchup",
       "expected": {
         "item": "ketchup",
@@ -129,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -143,6 +148,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Cocktail Sauce",
         "category": "Produce"
       }
     },
@@ -185,6 +193,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Cocktail Sauce",
         "category": "Spices & Seasonings"
       }
     }

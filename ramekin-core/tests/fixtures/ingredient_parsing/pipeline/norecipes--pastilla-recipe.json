@@ -3,6 +3,10 @@
   "recipe_slug": "pastilla-recipe",
   "ingredients": [
     {
+      "raw": "For almonds:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  clarified butter",
       "expected": {
         "item": "clarified butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Almonds",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Almonds",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Almonds",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For Almonds",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For chicken:",
+      "is_section_header": true
     },
     {
       "raw": "1 large  sweet onion (chopped)",
@@ -69,6 +81,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "crushed",
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "beaten",
+        "section": "For Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,8 +246,13 @@
           }
         ],
         "note": "minced",
+        "section": "For Chicken",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Pastilla:",
+      "is_section_header": true
     },
     {
       "raw": "1 package  phyllo dough",
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For Pastilla",
         "category": "Frozen"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For Pastilla",
         "category": "Dairy & Eggs"
       }
     },
@@ -260,6 +290,7 @@
         "item": "powdered sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "For Pastilla",
         "category": "Baking"
       }
     },
@@ -269,6 +300,7 @@
         "item": "ground cinnamon",
         "measurements": [],
         "note": "for dusting",
+        "section": "For Pastilla",
         "category": "Spices & Seasonings"
       }
     }

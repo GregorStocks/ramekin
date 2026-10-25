@@ -3,6 +3,10 @@
   "recipe_slug": "shumai-recipe",
   "ingredients": [
     {
+      "raw": "For velveted shrimp:",
+      "is_section_header": true
+    },
+    {
       "raw": "250 grams  large shrimp shelled",
       "expected": {
         "item": "large shrimp",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "shelled",
+        "section": "For Velveted Shrimp",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "about 1 egg",
+        "section": "For Velveted Shrimp",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Velveted Shrimp",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For Velveted Shrimp",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Shumai:",
+      "is_section_header": true
     },
     {
       "raw": "50 grams  pork fat",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Meat & Seafood"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "shelled",
+        "section": "For Shumai",
         "category": "Meat & Seafood"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "white part only, minced",
+        "section": "For Shumai",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "about 1 egg",
+        "section": "For Shumai",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "ginger grated and juice squeezed out",
+        "section": "For Shumai",
         "category": "Beverages"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Beverages"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Oils & Vinegars"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Condiments & Sauces"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "For Shumai",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": "or 24 wonton wrappers",
+        "section": "For Shumai",
         "category": "Other"
       }
     },
@@ -274,6 +301,7 @@
         "item": "napa cabbage",
         "measurements": [],
         "note": "or lettuce, for lining steamer",
+        "section": "For Shumai",
         "category": "Produce"
       }
     }

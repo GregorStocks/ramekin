@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Citrus Vinaigrette Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -97,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Vinaigrette Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Vinaigrette Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Vinaigrette Dressing",
         "category": "Beverages"
       }
     },
@@ -139,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Vinaigrette Dressing",
         "category": "Produce"
       }
     },
@@ -153,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Citrus Vinaigrette Dressing",
         "category": "Produce"
       }
     },
@@ -162,6 +171,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Citrus Vinaigrette Dressing",
         "category": "Spices & Seasonings"
       }
     }

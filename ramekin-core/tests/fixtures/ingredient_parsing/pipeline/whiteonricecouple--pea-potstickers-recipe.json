@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "For the Ginger Soy Dip:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup   soy sauce ( or 1/2 cup low sodium soy sauce)",
       "expected": {
         "item": "soy sauce",
@@ -125,6 +129,7 @@
           }
         ],
         "note": "or 1/2 cup low sodium soy sauce",
+        "section": "For the Ginger Soy Dip",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ginger Soy Dip",
         "category": "Beverages"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ginger Soy Dip",
         "category": "Produce"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Ginger Soy Dip",
         "category": "Produce"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ginger Soy Dip",
         "category": "Oils & Vinegars"
       }
     }

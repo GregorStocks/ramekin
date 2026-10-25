@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-caramel-tart-recipe",
   "ingredients": [
     {
+      "raw": "FOR THE CRUST",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1⁄2 cups flour",
       "expected": {
         "item": "flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Other"
       }
     },
@@ -36,6 +42,7 @@
         "item": "cocoa powder",
         "measurements": [],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "cubed and softened",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -106,8 +117,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "FOR THE CARAMEL",
+      "is_section_header": true
     },
     {
       "raw": "1 1⁄2 cups sugar",
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Baking"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Baking"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Beverages"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -218,8 +241,13 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "FOR THE GANACHE",
+      "is_section_header": true
     },
     {
       "raw": "1⁄2 cup heavy cream",
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Ganache",
         "category": "Other"
       }
     },
@@ -255,6 +285,7 @@
         "item": "Vanilla Fleur de Sel",
         "measurements": [],
         "note": "optional, for garnish",
+        "section": "For the Ganache",
         "category": "Other"
       }
     }

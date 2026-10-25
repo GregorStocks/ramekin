@@ -3,6 +3,10 @@
   "recipe_slug": "sesame-chicken-recipe",
   "ingredients": [
     {
+      "raw": "For the Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  (240 ml) chicken stock",
       "expected": {
         "item": "chicken stock",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Canned Goods"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Beverages"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Baking"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Baking"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -149,8 +161,13 @@
           }
         ],
         "note": "cut into 1-inch chunks",
+        "section": "For the Marinade",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon   sesame oil",
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -205,8 +225,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For Coating & Frying:",
+      "is_section_header": true
     },
     {
       "raw": "3   egg whites",
@@ -219,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Baking"
       }
     },
@@ -255,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Baking"
       }
     },
@@ -273,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Baking"
       }
     },
@@ -291,6 +320,7 @@
           }
         ],
         "note": "for frying",
+        "section": "For Coating & Frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -300,6 +330,7 @@
         "item": "Sesame seeds, to garnish",
         "measurements": [],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Spices & Seasonings"
       }
     },
@@ -309,6 +340,7 @@
         "item": "Scallions, sliced, to garnish",
         "measurements": [],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Produce"
       }
     }

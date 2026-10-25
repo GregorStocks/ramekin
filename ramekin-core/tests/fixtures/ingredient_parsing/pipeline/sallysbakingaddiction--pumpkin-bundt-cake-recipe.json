@@ -228,11 +228,16 @@
       }
     },
     {
+      "raw": "Optional Topping Ideas:",
+      "is_section_header": true
+    },
+    {
       "raw": "optional topping: salted caramel, maple icing, or any listed below",
       "expected": {
         "item": "optional topping: salted caramel, maple icing, or any listed below",
         "measurements": [],
         "note": null,
+        "section": "Optional Topping Ideas",
         "category": "Condiments & Sauces"
       }
     },
@@ -242,6 +247,7 @@
         "item": "optional garnish: sprinkle of pumpkin pie spice",
         "measurements": [],
         "note": null,
+        "section": "Optional Topping Ideas",
         "category": "Other"
       }
     }

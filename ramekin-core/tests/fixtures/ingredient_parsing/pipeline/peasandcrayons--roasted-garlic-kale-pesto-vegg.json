@@ -3,6 +3,10 @@
   "recipe_slug": "roasted-garlic-kale-pesto-vegg",
   "ingredients": [
     {
+      "raw": "FOR THE PESTO:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups kale",
       "expected": {
         "item": "kale",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Cheese"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Beverages"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": "approx. 6 cloves",
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
@@ -124,6 +136,7 @@
         "item": "salt",
         "measurements": [],
         "note": "don’t skip, but season to taste",
+        "section": "For the Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -138,8 +151,13 @@
           }
         ],
         "note": "if desired",
+        "section": "For the Pesto",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "FOR THE PASTA:",
+      "is_section_header": true
     },
     {
       "raw": "8 oz pasta (choose one with ridges + grooves)",
@@ -152,6 +170,7 @@
           }
         ],
         "note": "choose one with ridges + grooves",
+        "section": "For the Pasta",
         "category": "Pasta & Rice"
       }
     },
@@ -166,6 +185,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Pasta",
         "category": "Produce"
       }
     },
@@ -180,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Produce"
       }
     },
@@ -194,8 +215,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Other"
       }
+    },
+    {
+      "raw": "TOOLS NEEDED:",
+      "is_section_header": true
     }
   ]
 }

@@ -119,6 +119,10 @@
       }
     },
     {
+      "raw": "Finishes:",
+      "is_section_header": true
+    },
+    {
       "raw": "30g / 2 tbsp tbsp ghee or butter , melted (Note 4)",
       "expected": {
         "item": "tbsp ghee or butter",
@@ -133,6 +137,7 @@
           }
         ],
         "note": "Note 4, melted",
+        "section": "Finishes",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +152,7 @@
           }
         ],
         "note": "Note 5, for Garlic Butter option",
+        "section": "Finishes",
         "category": "Produce"
       }
     },
@@ -156,6 +162,7 @@
         "item": "Nigella seeds",
         "measurements": [],
         "note": null,
+        "section": "Finishes",
         "category": "Other"
       }
     },
@@ -165,8 +172,13 @@
         "item": "Coriander/cilantro",
         "measurements": [],
         "note": "finely chopped",
+        "section": "Finishes",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Cheese Naan:",
+      "is_section_header": true
     },
     {
       "raw": "Shredded cheese (for cheese naan) – Monterey Jack, cheddar, tasty, colby, anything that melts (shred yourself) (Note 6)",
@@ -174,6 +186,7 @@
         "item": "Shredded cheese - Monterey Jack, cheddar, tasty, colby, anything that melts",
         "measurements": [],
         "note": "for cheese naan, shred yourself, Note 6",
+        "section": "Cheese Naan",
         "category": "Other"
       }
     }

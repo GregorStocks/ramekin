@@ -3,6 +3,10 @@
   "recipe_slug": "2012-04-classic-ice-cream-sand",
   "ingredients": [
     {
+      "raw": "Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 2/3 cups (335 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     }

@@ -79,6 +79,10 @@
       }
     },
     {
+      "raw": "Slurry For Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 Tablespoons  (30 ml) water",
       "expected": {
         "item": "water",
@@ -93,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Slurry for Filling",
         "category": "Beverages"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Slurry for Filling",
         "category": "Baking"
       }
     }

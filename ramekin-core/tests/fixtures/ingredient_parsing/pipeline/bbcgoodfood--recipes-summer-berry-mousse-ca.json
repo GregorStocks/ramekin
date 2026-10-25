@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-summer-berry-mousse-ca",
   "ingredients": [
     {
+      "raw": "For the biscuit base:",
+      "is_section_header": true
+    },
+    {
       "raw": "200g digestive biscuit",
       "expected": {
         "item": "digestive biscuit",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuit Base",
         "category": "Other"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Biscuit Base",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the mousse cake:",
+      "is_section_header": true
     },
     {
       "raw": "4 sheets leaf  gelatine",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mousse Cake",
         "category": "Other"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mousse Cake",
         "category": "Other"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mousse Cake",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mousse Cake",
         "category": "Baking"
       }
     },
@@ -92,6 +106,7 @@
         "item": "finely grated zest 1 small orange",
         "measurements": [],
         "note": null,
+        "section": "For the Mousse Cake",
         "category": "Other"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mousse Cake",
         "category": "Beverages"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mousse Cake",
         "category": "Produce"
       }
     },
@@ -134,8 +151,13 @@
           }
         ],
         "note": null,
+        "section": "For the Mousse Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the sauce:",
+      "is_section_header": true
     },
     {
       "raw": "250g mixture of  strawberries (chopped) and raspberries",
@@ -148,6 +170,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
@@ -162,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -176,8 +200,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To decorate:",
+      "is_section_header": true
     },
     {
       "raw": "mixture of  strawberries (some halved), raspberries and blueberries",
@@ -185,6 +214,7 @@
         "item": "mixture of strawberries, raspberries and blueberries",
         "measurements": [],
         "note": "some halved",
+        "section": "To Decorate",
         "category": "Other"
       }
     },
@@ -194,6 +224,7 @@
         "item": "icing sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "To Decorate",
         "category": "Baking"
       }
     }

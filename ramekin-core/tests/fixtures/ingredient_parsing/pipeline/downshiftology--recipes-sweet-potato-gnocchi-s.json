@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-sweet-potato-gnocchi-s",
   "ingredients": [
     {
+      "raw": "Sweet Potato Gnocchi:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 medium sweet potatoes, approx 1.5 lbs",
       "expected": {
         "item": "sweet potatoes, approx 1.5 lbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Potato Gnocchi",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "Sweet Potato Gnocchi",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "Sweet Potato Gnocchi",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Potato Gnocchi",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Sweet Potato Gnocchi",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Sage Walnut Pesto:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup olive oil, divided",
@@ -83,6 +96,7 @@
           }
         ],
         "note": "divided",
+        "section": "Sage Walnut Pesto",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Sage Walnut Pesto",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Sage Walnut Pesto",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Sage Walnut Pesto",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Sage Walnut Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Sage Walnut Pesto",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Sage Walnut Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Sage Walnut Pesto",
         "category": "Spices & Seasonings"
       }
     }

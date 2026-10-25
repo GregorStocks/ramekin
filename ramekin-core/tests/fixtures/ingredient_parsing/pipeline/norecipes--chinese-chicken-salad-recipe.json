@@ -3,6 +3,10 @@
   "recipe_slug": "chinese-chicken-salad-recipe",
   "ingredients": [
     {
+      "raw": "For Crunch:",
+      "is_section_header": true
+    },
+    {
       "raw": "40 grams  sliced almonds",
       "expected": {
         "item": "sliced almonds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Crunch",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Crunch",
         "category": "Frozen"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Crunch",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For Crunch",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons  hoisin sauce",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Other"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "or syrup from mandarins",
+        "section": "For Dressing",
         "category": "Beverages"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Chicken:",
+      "is_section_header": true
     },
     {
       "raw": "4 cups  water",
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Beverages"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,8 +250,13 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Salad Base:",
+      "is_section_header": true
     },
     {
       "raw": "230 grams  napa cabbage (shredded)",
@@ -237,6 +269,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Salad Base",
         "category": "Produce"
       }
     },
@@ -251,8 +284,13 @@
           }
         ],
         "note": "chopped",
+        "section": "Salad Base",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Other Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "100 grams  red cabbage (shredded)",
@@ -265,6 +303,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Other Toppings",
         "category": "Produce"
       }
     },
@@ -279,6 +318,7 @@
           }
         ],
         "note": "drained",
+        "section": "Other Toppings",
         "category": "Other"
       }
     },
@@ -293,6 +333,7 @@
           }
         ],
         "note": "peeled and julienned",
+        "section": "Other Toppings",
         "category": "Produce"
       }
     },
@@ -307,6 +348,7 @@
           }
         ],
         "note": "leaves picked from stems",
+        "section": "Other Toppings",
         "category": "Produce"
       }
     }

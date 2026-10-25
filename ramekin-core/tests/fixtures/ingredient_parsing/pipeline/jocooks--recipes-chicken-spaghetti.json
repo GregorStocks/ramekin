@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-chicken-spaghetti",
   "ingredients": [
     {
+      "raw": "For the Casserole:",
+      "is_section_header": true
+    },
+    {
       "raw": "12 ounces spaghetti",
       "expected": {
         "item": "spaghetti",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Pasta & Rice"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "for tossing the pasta",
+        "section": "For the Casserole",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Casserole",
         "category": "Cheese"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Casserole",
         "category": "Cheese"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Casserole",
         "category": "Cheese"
       }
     },
@@ -78,8 +87,13 @@
         "item": "fresh parsley",
         "measurements": [],
         "note": "for garnish",
+        "section": "For the Casserole",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 cups cooked chicken (shredded, rotisserie chicken works well)",
@@ -92,6 +106,7 @@
           }
         ],
         "note": "shredded, rotisserie chicken works well",
+        "section": "For the Sauce",
         "category": "Meat & Seafood"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -166,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -184,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -198,6 +219,7 @@
           }
         ],
         "note": "like Rotel",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -212,6 +234,7 @@
           }
         ],
         "note": "low sodium or no sodium added",
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -226,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -240,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -254,6 +279,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -268,6 +294,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -277,6 +304,7 @@
         "item": "salt and black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     }

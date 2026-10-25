@@ -3,6 +3,10 @@
   "recipe_slug": "2025-08-grilled-chicken-salad-",
   "ingredients": [
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 2-ounce bundle cilantro, leaves and stems (trim brown ends)",
       "expected": {
         "item": "2-ounce bundle cilantro, leaves and stems",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "trim brown ends",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "seeded and roughly chopped",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
         "item": "Finely grated zest and juice of 2 medium/large limes",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Other"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Salad:",
+      "is_section_header": true
     },
     {
       "raw": "Oil for brushing grill",
@@ -101,6 +116,7 @@
         "item": "Oil",
         "measurements": [],
         "note": "for brushing grill",
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": "shucked",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Other"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -194,6 +216,7 @@
         "item": "A bowl of Fritos",
         "measurements": [],
         "note": "I don’t consider this optional",
+        "section": "Salad",
         "category": "Other"
       }
     }

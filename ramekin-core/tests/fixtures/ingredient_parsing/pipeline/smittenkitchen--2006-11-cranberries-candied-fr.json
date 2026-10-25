@@ -63,6 +63,10 @@
       }
     },
     {
+      "raw": "Alex’s Mother’s Cranberry Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 15-ounce can jellied cranberry sauce",
       "expected": {
         "item": "jellied cranberry sauce",
@@ -73,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Alex’s Mother’s Cranberry Sauce",
         "category": "Canned Goods"
       }
     },
@@ -87,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Alex’s Mother’s Cranberry Sauce",
         "category": "Canned Goods"
       }
     },
@@ -101,6 +107,7 @@
           }
         ],
         "note": "not defrosted",
+        "section": "Alex’s Mother’s Cranberry Sauce",
         "category": "Frozen"
       }
     },
@@ -115,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Alex’s Mother’s Cranberry Sauce",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Cranberry Sauce with Port and Dried Figs:",
+      "is_section_header": true
     },
     {
       "raw": "1 2/3 cups ruby Port",
@@ -129,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Sauce with Port and Dried Figs",
         "category": "Other"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Sauce with Port and Dried Figs",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cranberry Sauce with Port and Dried Figs",
         "category": "Baking"
       }
     },
@@ -171,6 +186,7 @@
           }
         ],
         "note": "stemmed, chopped",
+        "section": "Cranberry Sauce with Port and Dried Figs",
         "category": "Other"
       }
     },
@@ -185,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Sauce with Port and Dried Figs",
         "category": "Other"
       }
     },
@@ -199,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Sauce with Port and Dried Figs",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Sauce with Port and Dried Figs",
         "category": "Produce"
       }
     },
@@ -227,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Sauce with Port and Dried Figs",
         "category": "Baking"
       }
     }

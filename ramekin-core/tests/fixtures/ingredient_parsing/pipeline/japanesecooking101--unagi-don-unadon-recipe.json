@@ -40,6 +40,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -50,6 +54,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -64,6 +69,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -78,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -92,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -101,6 +109,7 @@
         "item": "Sansyo",
         "measurements": [],
         "note": "optional",
+        "section": "Sauce",
         "category": "Other"
       }
     }

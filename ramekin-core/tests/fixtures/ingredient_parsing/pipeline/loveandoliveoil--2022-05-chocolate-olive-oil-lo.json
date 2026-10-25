@@ -3,6 +3,10 @@
   "recipe_slug": "2022-05-chocolate-olive-oil-lo",
   "ingredients": [
     {
+      "raw": "For cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ¼ cups  / 156 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
@@ -141,6 +153,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -173,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -187,8 +202,13 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  / 120 g powdered sugar, sifted",
@@ -205,6 +225,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -223,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -255,6 +278,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -273,6 +297,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Oils & Vinegars"
       }
     }

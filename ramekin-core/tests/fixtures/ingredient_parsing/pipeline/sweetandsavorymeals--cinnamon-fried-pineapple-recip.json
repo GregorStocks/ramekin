@@ -87,11 +87,16 @@
       }
     },
     {
+      "raw": "Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "toasted coconut",
       "expected": {
         "item": "toasted coconut",
         "measurements": [],
         "note": null,
+        "section": "Serving",
         "category": "Baking"
       }
     },
@@ -101,6 +106,7 @@
         "item": "ice cream",
         "measurements": [],
         "note": null,
+        "section": "Serving",
         "category": "Frozen"
       }
     },
@@ -110,6 +116,7 @@
         "item": "whipped cream",
         "measurements": [],
         "note": null,
+        "section": "Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -119,6 +126,7 @@
         "item": "maraschino cherries",
         "measurements": [],
         "note": null,
+        "section": "Serving",
         "category": "Canned Goods"
       }
     }

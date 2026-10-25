@@ -3,6 +3,10 @@
   "recipe_slug": "greek-salad-recipe",
   "ingredients": [
     {
+      "raw": "Greek Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "2.5 ounces spring mix",
       "expected": {
         "item": "spring mix",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "halved",
+        "section": "Greek Salad",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "about 1 cup, peeled and diced",
+        "section": "Greek Salad",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "finely sliced or diced",
+        "section": "Greek Salad",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Greek Salad",
         "category": "Canned Goods"
       }
     },
@@ -87,8 +96,13 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Pita “croutons”:",
+      "is_section_header": true
     },
     {
       "raw": "2 pita rounds sliced into 1” pieces (1 pita = 85 g)",
@@ -101,6 +115,7 @@
           }
         ],
         "note": "1 pita = 85 g, sliced into 1” pieces",
+        "section": "Pita “croutons”",
         "category": "Other"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Pita “croutons”",
         "category": "Oils & Vinegars"
       }
     },
@@ -129,8 +145,13 @@
           }
         ],
         "note": null,
+        "section": "Pita “croutons”",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Greek Salad Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tablespoons red wine vinegar",
@@ -143,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Produce"
       }
     },
@@ -171,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Produce"
       }
     },
@@ -199,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +239,7 @@
           }
         ],
         "note": "or honey",
+        "section": "Greek Salad Dressing",
         "category": "Baking"
       }
     },
@@ -227,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -255,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "p-a-thanksgiving-sidecar-with-",
   "ingredients": [
     {
+      "raw": "Cranberry Jelly:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup sugar",
       "expected": {
         "item": "sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Jelly",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Jelly",
         "category": "Beverages"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Jelly",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Pumpkin Pie Sugar:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon pumpkin pie spice, such as McCormick",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "such as McCormick",
+        "section": "Pumpkin Pie Sugar",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +81,13 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Pie Sugar",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Thanksgiving Sidecar:",
+      "is_section_header": true
     },
     {
       "raw": "1 dash Angostura Aromatic bitters",
@@ -83,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Thanksgiving Sidecar",
         "category": "Beverages"
       }
     },
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Thanksgiving Sidecar",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Thanksgiving Sidecar",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Thanksgiving Sidecar",
         "category": "Beverages"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Thanksgiving Sidecar",
         "category": "Produce"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": "preferably Old Overholt",
+        "section": "Thanksgiving Sidecar",
         "category": "Pasta & Rice"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Thanksgiving Sidecar",
         "category": "Beverages"
       }
     },
@@ -176,6 +200,7 @@
         "item": "Pumpkin pie sugar, to sprinkle on top",
         "measurements": [],
         "note": null,
+        "section": "Thanksgiving Sidecar",
         "category": "Other"
       }
     }

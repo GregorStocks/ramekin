@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-gyro-recipe",
   "ingredients": [
     {
+      "raw": "Chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound boneless skinless chicken breasts cut into 1 inch pieces",
       "expected": {
         "item": "boneless skinless chicken breasts",
@@ -13,8 +17,13 @@
           }
         ],
         "note": "cut into 1 inch pieces",
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Brine:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons salt",
@@ -27,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,8 +51,13 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Marinade:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup olive oil",
@@ -55,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +85,7 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -83,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Baking"
       }
     },
@@ -125,8 +145,13 @@
           }
         ],
         "note": "crumbled",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Fresh Vegetables:",
+      "is_section_header": true
     },
     {
       "raw": "2 large tomatoes seeded and chopped",
@@ -139,6 +164,7 @@
           }
         ],
         "note": "seeded and chopped",
+        "section": "Fresh Vegetables",
         "category": "Produce"
       }
     },
@@ -153,6 +179,7 @@
           }
         ],
         "note": "diced",
+        "section": "Fresh Vegetables",
         "category": "Produce"
       }
     },
@@ -167,6 +194,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Fresh Vegetables",
         "category": "Produce"
       }
     },
@@ -181,8 +209,13 @@
           }
         ],
         "note": "cut into strips",
+        "section": "Fresh Vegetables",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Other Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup feta cheese crumbled",
@@ -195,6 +228,7 @@
           }
         ],
         "note": "crumbled",
+        "section": "Other Ingredients",
         "category": "Cheese"
       }
     },
@@ -204,6 +238,7 @@
         "item": "tzatziki sauce",
         "measurements": [],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Condiments & Sauces"
       }
     }

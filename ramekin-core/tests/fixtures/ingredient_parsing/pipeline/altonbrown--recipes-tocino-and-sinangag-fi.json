@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-tocino-and-sinangag-fi",
   "ingredients": [
     {
+      "raw": "For the Tocino:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup dark brown sugar",
       "expected": {
         "item": "dark brown sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tocino",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tocino",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tocino",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tocino",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tocino",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tocino",
         "category": "Beverages"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": "tough skin removed, sliced 1/4 inch thick",
+        "section": "For the Tocino",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For the Sinangag and Fried Eggs:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons vegetable oil",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sinangag and Fried Eggs",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sinangag and Fried Eggs",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Sinangag and Fried Eggs",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sinangag and Fried Eggs",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Sinangag and Fried Eggs",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sinangag and Fried Eggs",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,6 +211,7 @@
         "item": "soy sauce",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Sinangag and Fried Eggs",
         "category": "Condiments & Sauces"
       }
     }

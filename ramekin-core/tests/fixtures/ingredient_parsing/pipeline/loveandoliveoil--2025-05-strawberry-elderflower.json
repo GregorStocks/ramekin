@@ -3,6 +3,10 @@
   "recipe_slug": "2025-05-strawberry-elderflower",
   "ingredients": [
     {
+      "raw": "For Strawberry Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb   fresh strawberries, hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed)",
       "expected": {
         "item": "fresh strawberries",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 1 1/2 cups mashed, hulled, coarsely chopped, and mashed",
+        "section": "For Strawberry Sauce",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Sauce",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Sauce",
         "category": "Produce"
       }
     },
@@ -59,8 +66,13 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For Mascarpone Cream:",
+      "is_section_header": true
     },
     {
       "raw": "8 oz   mascarpone, cold",
@@ -73,6 +85,7 @@
           }
         ],
         "note": "cold",
+        "section": "For Mascarpone Cream",
         "category": "Cheese"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For Mascarpone Cream",
         "category": "Baking"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": "or the seeds of 1/2 a vanilla bean",
+        "section": "For Mascarpone Cream",
         "category": "Baking"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For Mascarpone Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,8 +145,13 @@
           }
         ],
         "note": "cold",
+        "section": "For Mascarpone Cream",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "7 oz   ladyfinger cookies, from 1 package (24 cookies)",
@@ -143,6 +164,7 @@
           }
         ],
         "note": "24 cookies, from 1 package",
+        "section": "For Assembly",
         "category": "Snacks"
       }
     },
@@ -157,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Other"
       }
     },
@@ -166,6 +189,7 @@
         "item": "freeze dried strawberry powder",
         "measurements": [],
         "note": "optional, for topping",
+        "section": "For Assembly",
         "category": "Other"
       }
     }

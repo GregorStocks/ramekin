@@ -3,6 +3,10 @@
   "recipe_slug": "salisbury-steak-recipe",
   "ingredients": [
     {
+      "raw": "For the Healthy Salisbury Steak:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ lbs. lean ground beef",
       "expected": {
         "item": "lean ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Healthy Salisbury Steak",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "For the Healthy Salisbury Steak",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Healthy Salisbury Steak",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Healthy Salisbury Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Healthy Salisbury Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Healthy Salisbury Steak",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "approx. 15 mushrooms, quartered",
+        "section": "For the Healthy Salisbury Steak",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Healthy Salisbury Steak",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Healthy Salisbury Steak",
         "category": "Canned Goods"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "For the Healthy Salisbury Steak",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Mashed Red Potatoes:",
+      "is_section_header": true
     },
     {
       "raw": "1 lb. red potatoes,  diced (approx. 1 lb)",
@@ -157,6 +175,7 @@
           }
         ],
         "note": "approx. 1 lb, diced",
+        "section": "For the Mashed Red Potatoes",
         "category": "Produce"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mashed Red Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mashed Red Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,8 +220,13 @@
           }
         ],
         "note": null,
+        "section": "For the Mashed Red Potatoes",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "For the Sautéed Peas:",
+      "is_section_header": true
     },
     {
       "raw": "1 tsp. olive oil",
@@ -213,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sautéed Peas",
         "category": "Oils & Vinegars"
       }
     },
@@ -227,6 +254,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sautéed Peas",
         "category": "Produce"
       }
     },
@@ -241,6 +269,7 @@
           }
         ],
         "note": "fresh or frozen",
+        "section": "For the Sautéed Peas",
         "category": "Produce"
       }
     },
@@ -255,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sautéed Peas",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sautéed Peas",
         "category": "Spices & Seasonings"
       }
     }

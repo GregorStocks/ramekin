@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1  limes (juiced)",
       "expected": {
         "item": "lime juice",
@@ -27,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": "to taste, minced",
+        "section": "Marinade",
         "category": "Other"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -97,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Baking"
       }
     },
@@ -111,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +166,7 @@
           }
         ],
         "note": "less if using table salt",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +176,7 @@
         "item": "ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,8 +191,13 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Other"
       }
+    },
+    {
+      "raw": "garnish:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup  sweet onions (minced)",
@@ -190,6 +210,7 @@
           }
         ],
         "note": "minced",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -204,6 +225,7 @@
           }
         ],
         "note": "minced",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -218,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish",
         "category": "Bakery & Bread"
       }
     }

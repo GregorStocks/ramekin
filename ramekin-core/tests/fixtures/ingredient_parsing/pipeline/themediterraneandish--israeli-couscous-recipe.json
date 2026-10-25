@@ -3,6 +3,10 @@
   "recipe_slug": "israeli-couscous-recipe",
   "ingredients": [
     {
+      "raw": "For the Lemon-Dill Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large lemon, juice of",
       "expected": {
         "item": "lemon, juice of",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon-Dill Dressing",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon-Dill Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "or 2 tablespoons fresh minced dill",
+        "section": "For the Lemon-Dill Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Lemon-Dill Dressing",
         "category": "Produce"
       }
     },
@@ -64,8 +72,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Lemon-Dill Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Pearl Couscous:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups Pearl Couscous",
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pearl Couscous",
         "category": "Pasta & Rice"
       }
     },
@@ -87,6 +101,7 @@
         "item": "Private Reserve extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Pearl Couscous",
         "category": "Oils & Vinegars"
       }
     },
@@ -96,6 +111,7 @@
         "item": "Water",
         "measurements": [],
         "note": null,
+        "section": "For the Pearl Couscous",
         "category": "Beverages"
       }
     },
@@ -110,6 +126,7 @@
           }
         ],
         "note": "halved",
+        "section": "For the Pearl Couscous",
         "category": "Produce"
       }
     },
@@ -124,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pearl Couscous",
         "category": "Produce"
       }
     },
@@ -138,6 +156,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Pearl Couscous",
         "category": "Produce"
       }
     },
@@ -156,6 +175,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "For the Pearl Couscous",
         "category": "Canned Goods"
       }
     },
@@ -174,6 +194,7 @@
           }
         ],
         "note": "drained and roughly chopped if needed",
+        "section": "For the Pearl Couscous",
         "category": "Canned Goods"
       }
     },
@@ -188,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pearl Couscous",
         "category": "Canned Goods"
       }
     },
@@ -202,6 +224,7 @@
           }
         ],
         "note": "roughly chopped or torn; more for garnish",
+        "section": "For the Pearl Couscous",
         "category": "Produce"
       }
     },
@@ -216,6 +239,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Pearl Couscous",
         "category": "Cheese"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2012-01-carrot-soup-with-miso-",
   "ingredients": [
     {
+      "raw": "Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "peeled, thinly sliced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "peeled and smashed",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "it could easily be doubled; or more to taste",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Soup",
         "category": "Condiments & Sauces"
       }
     }

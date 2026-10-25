@@ -227,6 +227,10 @@
       }
     },
     {
+      "raw": "Frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup cream cheese softened (I use light)",
       "expected": {
         "item": "cream cheese",
@@ -237,6 +241,7 @@
           }
         ],
         "note": "I use light, softened",
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -251,6 +256,7 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -265,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -279,6 +286,7 @@
           }
         ],
         "note": "as needed",
+        "section": "Frosting",
         "category": "Beverages"
       }
     }

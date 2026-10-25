@@ -142,6 +142,10 @@
       }
     },
     {
+      "raw": "Green Onion Slaw:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup green onions, coarsely chopped",
       "expected": {
         "item": "green onions",
@@ -152,6 +156,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Green Onion Slaw",
         "category": "Produce"
       }
     },
@@ -166,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Green Onion Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -180,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Green Onion Slaw",
         "category": "Produce"
       }
     },
@@ -194,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Green Onion Slaw",
         "category": "Condiments & Sauces"
       }
     },
@@ -203,6 +211,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Green Onion Slaw",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Green Onion Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -231,6 +241,7 @@
           }
         ],
         "note": "finely shredded",
+        "section": "Green Onion Slaw",
         "category": "Produce"
       }
     },
@@ -245,6 +256,7 @@
           }
         ],
         "note": "halved and thinly sliced",
+        "section": "Green Onion Slaw",
         "category": "Produce"
       }
     },
@@ -259,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Green Onion Slaw",
         "category": "Produce"
       }
     }

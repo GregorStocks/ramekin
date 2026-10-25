@@ -3,6 +3,10 @@
   "recipe_slug": "healthy-banana-split-parfaits-",
   "ingredients": [
     {
+      "raw": "FOR THE GRANOLA:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups old fashioned rolled oats",
       "expected": {
         "item": "old fashioned rolled oats",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "FOR THE PARFAITS:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup nonfat or whole milk vanilla yogurt",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "peeled and sliced",
+        "section": "For the Parfaits",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "see above for recipe",
+        "section": "For the Parfaits",
         "category": "Snacks"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Other"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "fresh or jarred",
+        "section": "For the Parfaits",
         "category": "Produce"
       }
     }

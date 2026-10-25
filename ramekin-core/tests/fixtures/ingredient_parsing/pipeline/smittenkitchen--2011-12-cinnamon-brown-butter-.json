@@ -3,6 +3,10 @@
   "recipe_slug": "2011-12-cinnamon-brown-butter-",
   "ingredients": [
     {
+      "raw": "Coating:",
+      "is_section_header": true
+    },
+    {
       "raw": "2/3 cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Puffs:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups all-purpose flour",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "5 tablespoons plus 1 teaspoon, at room temperature, plus extra for greasing muffin cups",
+        "section": "Puffs",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Dairy & Eggs"
       }
     }

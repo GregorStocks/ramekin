@@ -3,6 +3,10 @@
   "recipe_slug": "zucchini-noodle-pad-thai-recip",
   "ingredients": [
     {
+      "raw": "for the zucchini noodle pad thai:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 medium   zucchini",
       "expected": {
         "item": "zucchini",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Oils & Vinegars"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Meat & Seafood"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "minced or crushed",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "seeded and sliced thin",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
@@ -141,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -155,6 +168,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
@@ -164,8 +178,13 @@
         "item": "Few lime wedges",
         "measurements": [],
         "note": "optional, for serving",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Other"
       }
+    },
+    {
+      "raw": "for the sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tablespoons   rice vinegar  or distilled white vinegar (30ml)",
@@ -182,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -200,6 +220,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -218,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -236,6 +258,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -250,6 +273,7 @@
           }
         ],
         "note": "or 1 small red chili; sliced",
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -264,6 +288,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     }

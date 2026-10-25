@@ -3,6 +3,10 @@
   "recipe_slug": "classic-lasagna-recipe",
   "ingredients": [
     {
+      "raw": "For the Ricotta Mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "1¾ cups  (430.5 g) ricotta cheese",
       "expected": {
         "item": "ricotta cheese",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Cheese"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Cheese"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Produce"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Lasagna:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups  (900 g) your favorite meat sauce",
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Other"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Pasta & Rice"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Lasagna",
         "category": "Cheese"
       }
     },
@@ -175,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Cheese"
       }
     }

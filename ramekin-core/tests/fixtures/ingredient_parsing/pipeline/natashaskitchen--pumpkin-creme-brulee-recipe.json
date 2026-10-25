@@ -73,11 +73,16 @@
       }
     },
     {
+      "raw": "What you will need:",
+      "is_section_header": true
+    },
+    {
       "raw": "-Ovenproof ramekins or custard cups",
       "expected": {
         "item": "-Ovenproof ramekins or custard cups",
         "measurements": [],
         "note": null,
+        "section": "What You Will Need",
         "category": "Other"
       }
     },
@@ -87,6 +92,7 @@
         "item": "-A handheld torch.",
         "measurements": [],
         "note": null,
+        "section": "What You Will Need",
         "category": "Other"
       }
     }

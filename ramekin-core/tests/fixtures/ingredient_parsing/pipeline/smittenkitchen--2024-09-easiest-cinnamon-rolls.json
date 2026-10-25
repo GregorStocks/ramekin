@@ -3,6 +3,10 @@
   "recipe_slug": "2024-09-easiest-cinnamon-rolls",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups (475 ml) milk, dairy or non-dairy (i.e. oat, almond, soy, etc.), warmed",
       "expected": {
         "item": "milk, dairy or non-dairy",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "i.e. oat, almond, soy, etc., warmed",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "i.e. margarine, melted and warm",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -107,8 +116,13 @@
           }
         ],
         "note": "divided",
+        "section": "Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (115 grams) butter, dairy or non-dairy (i.e. margarine), softened",
@@ -125,6 +139,7 @@
           }
         ],
         "note": "i.e. margarine, softened",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -143,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -161,8 +177,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 8-ounce (225-gram) block cream cheese or 1 8-ounce tub non-dairy cream cheese, at room temperature",
@@ -179,6 +200,7 @@
           }
         ],
         "note": "or 1 8-ounce tub non-dairy cream cheese; at room temperature",
+        "section": "Glaze",
         "category": "Cheese"
       }
     },
@@ -197,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -211,6 +234,7 @@
           }
         ],
         "note": "or 1/4 teaspoon vanilla bean paste",
+        "section": "Glaze",
         "category": "Baking"
       }
     }

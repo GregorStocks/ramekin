@@ -96,6 +96,10 @@
       }
     },
     {
+      "raw": "For the sesame coating:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup sesame seeds I used raw white sesame seeds",
       "expected": {
         "item": "sesame seeds I used raw white sesame seeds",
@@ -106,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Coating",
         "category": "Other"
       }
     },
@@ -120,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Coating",
         "category": "Baking"
       }
     }

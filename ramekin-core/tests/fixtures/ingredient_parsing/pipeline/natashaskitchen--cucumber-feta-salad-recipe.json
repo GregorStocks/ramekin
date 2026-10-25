@@ -3,6 +3,10 @@
   "recipe_slug": "cucumber-feta-salad-recipe",
   "ingredients": [
     {
+      "raw": "Salad Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 English Cucumber, sliced into rings",
       "expected": {
         "item": "English Cucumber",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sliced into rings",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "any color, sliced into strips",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "or to taste",
+        "section": "Salad Ingredients",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Balsamic Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tbsp Extra Virgin Olive Oil",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Balsamic Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Balsamic Dressing",
         "category": "Spices & Seasonings"
       }
     }

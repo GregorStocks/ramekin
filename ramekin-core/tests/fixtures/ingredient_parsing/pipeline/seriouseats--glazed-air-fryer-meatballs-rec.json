@@ -3,6 +3,10 @@
   "recipe_slug": "glazed-air-fryer-meatballs-rec",
   "ingredients": [
     {
+      "raw": "For the Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 medium shallots (80 g total), peeled",
       "expected": {
         "item": "shallots",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "peeled",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "peeled and grated on a rasp grater such as a Microplane or finely chopped",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Other"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -123,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,8 +149,13 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Pomegranate-Miso Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (240 ml) pomegranate juice",
@@ -155,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pomegranate-Miso Sauce",
         "category": "Beverages"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pomegranate-Miso Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pomegranate-Miso Sauce",
         "category": "Baking"
       }
     },
@@ -209,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pomegranate-Miso Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pomegranate-Miso Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pomegranate-Miso Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -246,6 +269,7 @@
         "item": "Chopped fresh mint",
         "measurements": [],
         "note": "for garnish",
+        "section": "For the Pomegranate-Miso Sauce",
         "category": "Produce"
       }
     },
@@ -255,6 +279,7 @@
         "item": "Pomegranate seeds",
         "measurements": [],
         "note": "arils, for garnish",
+        "section": "For the Pomegranate-Miso Sauce",
         "category": "Produce"
       }
     }

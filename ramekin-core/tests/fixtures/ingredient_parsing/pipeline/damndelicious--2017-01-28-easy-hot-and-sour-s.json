@@ -227,6 +227,10 @@
       }
     },
     {
+      "raw": "For the crispy wonton strips:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup vegetable oil",
       "expected": {
         "item": "vegetable oil",
@@ -237,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Wonton Strips",
         "category": "Oils & Vinegars"
       }
     },
@@ -251,6 +256,7 @@
           }
         ],
         "note": "12-ounce, cut into strips",
+        "section": "For the Crispy Wonton Strips",
         "category": "Frozen"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2019-12-mirror-glaze-christmas",
   "ingredients": [
     {
+      "raw": "Salted Caramel:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  / 100 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "cut into small pieces",
+        "section": "Salted Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": "like Valhrona dulcey, optional",
+        "section": "Salted Caramel",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Chocolate Crémeux:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup  / 60 g heavy cream",
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Crémeux",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Crémeux",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Chocolate Crémeux",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": "I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate, finely chopped",
+        "section": "Chocolate Crémeux",
         "category": "Baking"
       }
     },
@@ -177,8 +195,13 @@
           }
         ],
         "note": "or 1 teaspoon powdered gelatin",
+        "section": "Chocolate Crémeux",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Chocolate Pecan Crumb Crust:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons  / 25 g finely ground pecans",
@@ -195,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Other"
       }
     },
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Baking"
       }
     },
@@ -231,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Baking"
       }
     },
@@ -249,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Baking"
       }
     },
@@ -263,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -281,6 +309,7 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -295,8 +324,13 @@
           }
         ],
         "note": "as needed",
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Caramel Mousse:",
+      "is_section_header": true
     },
     {
       "raw": "1 sheet   leaf gelatin or 1 teaspoon powdered gelatin",
@@ -309,6 +343,7 @@
           }
         ],
         "note": "or 1 teaspoon powdered gelatin",
+        "section": "Caramel Mousse",
         "category": "Baking"
       }
     },
@@ -327,6 +362,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Mousse",
         "category": "Condiments & Sauces"
       }
     },
@@ -345,6 +381,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -359,6 +396,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Caramel Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -373,6 +411,7 @@
           }
         ],
         "note": "like Valhrona dulcey or regular white chocolate, finely chopped",
+        "section": "Caramel Mousse",
         "category": "Baking"
       }
     },
@@ -391,8 +430,13 @@
           }
         ],
         "note": "cold",
+        "section": "Caramel Mousse",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Mirror Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "6 sheets   leaf gelatin or 2 tablespoons powdered gelatin",
@@ -405,6 +449,7 @@
           }
         ],
         "note": "or 2 tablespoons powdered gelatin",
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -423,6 +468,7 @@
           }
         ],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -441,6 +487,7 @@
           }
         ],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -459,6 +506,7 @@
           }
         ],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Beverages"
       }
     },
@@ -477,6 +525,7 @@
           }
         ],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Canned Goods"
       }
     },
@@ -495,6 +544,7 @@
           }
         ],
         "note": "finely chopped, good quality",
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -504,6 +554,7 @@
         "item": "gel or powdered food coloring",
         "measurements": [],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -518,6 +569,7 @@
           }
         ],
         "note": "unwrapped and dusted with gold luster, for decoration",
+        "section": "Mirror Glaze",
         "category": "Other"
       }
     }

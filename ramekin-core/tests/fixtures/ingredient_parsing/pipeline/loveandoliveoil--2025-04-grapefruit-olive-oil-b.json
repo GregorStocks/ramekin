@@ -3,6 +3,10 @@
   "recipe_slug": "2025-04-grapefruit-olive-oil-b",
   "ingredients": [
     {
+      "raw": "For Grapefruit Cordial:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  / 120 g freshly squeezed grapefruit juice, from 1 large grapefruit",
       "expected": {
         "item": "freshly squeezed grapefruit juice",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "from 1 large grapefruit",
+        "section": "For Grapefruit Cordial",
         "category": "Beverages"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Grapefruit Cordial",
         "category": "Baking"
       }
     },
@@ -49,8 +55,13 @@
           }
         ],
         "note": "from 1 large grapefruit",
+        "section": "For Grapefruit Cordial",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Cake:",
+      "is_section_header": true
     },
     {
       "raw": "2 ½ cups  / 312 g all-purpose flour",
@@ -67,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -85,6 +97,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": "from 1 large grapefruit",
+        "section": "For Cake",
         "category": "Produce"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "from 1/2 large grapefruit",
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
@@ -227,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -241,6 +263,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Cake",
         "category": "Other"
       }
     },
@@ -255,8 +278,13 @@
           }
         ],
         "note": "for brushing",
+        "section": "For Cake",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 ½ cups  / 180 g powdered sugar, sifted",
@@ -273,6 +301,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -287,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Other"
       }
     },
@@ -301,6 +331,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -310,6 +341,7 @@
         "item": "pink food coloring",
         "measurements": [],
         "note": "optional",
+        "section": "For Glaze",
         "category": "Baking"
       }
     }

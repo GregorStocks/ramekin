@@ -3,6 +3,10 @@
   "recipe_slug": "healthy-taco-salad-recipe",
   "ingredients": [
     {
+      "raw": "For The Taco Meat:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp. olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Taco Meat",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Taco Meat",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Meat & Seafood"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Taco Salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup grape tomatoes, whole",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "whole",
+        "section": "For the Taco Salad",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "see recipe above, cooled",
+        "section": "For the Taco Salad",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Taco Salad",
         "category": "Cheese"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Salad",
         "category": "Other"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": "optional, when serving, diced",
+        "section": "For the Taco Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For The Creamy Cilantro Lime Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup plain greek yogurt",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "skinny-baked-popcorn-chicken-r",
   "ingredients": [
     {
+      "raw": "For the Popcorn Chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1.5 pounds chicken breast, cut into small bite-size chunks",
       "expected": {
         "item": "chicken breast",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cut into small bite-size chunks",
+        "section": "For the Popcorn Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Popcorn Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Popcorn Chicken",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Popcorn Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "beaten",
+        "section": "For the Popcorn Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Popcorn Chicken",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Popcorn Chicken",
         "category": "Bakery & Bread"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Popcorn Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Popcorn Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Popcorn Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "For the Popcorn Chicken",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Creamy Garlic Aioli:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup mayonnaise",
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Garlic Aioli",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Garlic Aioli",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Creamy Garlic Aioli",
         "category": "Cheese"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Garlic Aioli",
         "category": "Produce"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Garlic Aioli",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Garlic Aioli",
         "category": "Produce"
       }
     },
@@ -246,6 +271,7 @@
         "item": "salt + pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Creamy Garlic Aioli",
         "category": "Other"
       }
     }

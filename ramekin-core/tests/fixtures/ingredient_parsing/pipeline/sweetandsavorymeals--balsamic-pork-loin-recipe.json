@@ -40,6 +40,10 @@
       }
     },
     {
+      "raw": "Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup dry white wine",
       "expected": {
         "item": "dry white wine",
@@ -50,6 +54,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Beverages"
       }
     },
@@ -64,6 +69,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -78,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Other"
       }
     },
@@ -92,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -120,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Baking"
       }
     },
@@ -134,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Baking"
       }
     },
@@ -148,6 +159,7 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -162,6 +174,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -176,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -204,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     }

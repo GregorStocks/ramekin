@@ -192,11 +192,16 @@
       }
     },
     {
+      "raw": "for topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "shredded cheddar cheese",
       "expected": {
         "item": "shredded cheddar cheese",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Cheese"
       }
     },
@@ -206,6 +211,7 @@
         "item": "tortilla chips",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Snacks"
       }
     },
@@ -215,6 +221,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -224,6 +231,7 @@
         "item": "green onions",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Produce"
       }
     },
@@ -233,6 +241,7 @@
         "item": "fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Produce"
       }
     }

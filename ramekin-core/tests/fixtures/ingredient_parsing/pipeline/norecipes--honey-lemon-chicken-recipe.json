@@ -3,6 +3,10 @@
   "recipe_slug": "honey-lemon-chicken-recipe",
   "ingredients": [
     {
+      "raw": "For honey lemon sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup  white wine",
       "expected": {
         "item": "white wine",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Honey Lemon Sauce",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Honey Lemon Sauce",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Honey Lemon Sauce",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "save the rinds to zest",
+        "section": "For Honey Lemon Sauce",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For Honey Lemon Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For chicken:",
+      "is_section_header": true
     },
     {
       "raw": "700 grams  boneless skin-on chicken thighs",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -92,6 +106,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +116,7 @@
         "item": "Black pepper",
         "measurements": [],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Baking"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": "1 large clove, minced",
+        "section": "For Chicken",
         "category": "Produce"
       }
     }

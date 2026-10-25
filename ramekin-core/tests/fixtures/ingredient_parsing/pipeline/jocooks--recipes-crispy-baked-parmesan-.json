@@ -40,6 +40,10 @@
       }
     },
     {
+      "raw": "Parmesan mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup Parmesan cheese (grated)",
       "expected": {
         "item": "Parmesan cheese",
@@ -50,6 +54,7 @@
           }
         ],
         "note": "grated",
+        "section": "Parmesan Mixture",
         "category": "Cheese"
       }
     },
@@ -64,6 +69,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Parmesan Mixture",
         "category": "Produce"
       }
     },
@@ -78,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "Parmesan Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Parmesan Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +109,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Parmesan Mixture",
         "category": "Spices & Seasonings"
       }
     }

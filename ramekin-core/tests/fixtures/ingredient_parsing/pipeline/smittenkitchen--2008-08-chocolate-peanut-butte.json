@@ -181,6 +181,10 @@
       }
     },
     {
+      "raw": "Peanut Butter Frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 ounces (285 grams) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
@@ -195,6 +199,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Peanut Butter Frosting",
         "category": "Cheese"
       }
     },
@@ -221,6 +226,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Peanut Butter Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -239,6 +245,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Peanut Butter Frosting",
         "category": "Baking"
       }
     },
@@ -257,8 +264,13 @@
           }
         ],
         "note": "because oil doesn’t separate out, preferably a commercial brand",
+        "section": "Peanut Butter Frosting",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Chocolate-Peanut Butter Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces (225 grams) semisweet chocolate, coarsely chopped",
@@ -275,6 +287,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Chocolate-Peanut Butter Glaze",
         "category": "Baking"
       }
     },
@@ -293,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate-Peanut Butter Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -311,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate-Peanut Butter Glaze",
         "category": "Baking"
       }
     },
@@ -329,6 +344,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate-Peanut Butter Glaze",
         "category": "Dairy & Eggs"
       }
     }

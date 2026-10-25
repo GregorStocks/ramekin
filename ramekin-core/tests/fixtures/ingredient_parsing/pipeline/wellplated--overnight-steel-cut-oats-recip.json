@@ -3,6 +3,10 @@
   "recipe_slug": "overnight-steel-cut-oats-recip",
   "ingredients": [
     {
+      "raw": "Overnight Steel Cut Oats—Base Recipe:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ¾ cups milk any kind you like (I use unsweetened almond milk)",
       "expected": {
         "item": "milk any kind you like",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "I use unsweetened almond milk",
+        "section": "Overnight Steel Cut Oats—base Recipe",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Overnight Steel Cut Oats—base Recipe",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Overnight Steel Cut Oats—base Recipe",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Overnight Steel Cut Oats—base Recipe",
         "category": "Other"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Overnight Steel Cut Oats—base Recipe",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Optional Additions:",
+      "is_section_header": true
     },
     {
       "raw": "Chia seeds flaxseeds, or hemp seeds",
@@ -78,6 +91,7 @@
         "item": "Chia seeds flaxseeds, or hemp seeds",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -87,6 +101,7 @@
         "item": "Protein powder",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Other"
       }
     },
@@ -96,6 +111,7 @@
         "item": "Ground cinnamon",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,6 +121,7 @@
         "item": "Citrus zest I love orange zest with honey and cinnamon!",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Other"
       }
     },
@@ -114,6 +131,7 @@
         "item": "Dried fruit favorites: reduced-sugar dried cranberries, raisins",
         "measurements": [],
         "note": "chopped dates",
+        "section": "Optional Additions",
         "category": "Other"
       }
     },
@@ -123,6 +141,7 @@
         "item": "Fresh fruit or frozen and thawed fruit",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Other"
       }
     },
@@ -132,6 +151,7 @@
         "item": "Toasted almonds walnuts, or pecans",
         "measurements": [],
         "note": "add just before serving to maintain the most crunch",
+        "section": "Optional Additions",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -141,6 +161,7 @@
         "item": "An extra drizzle of honey or maple syrup",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Baking"
       }
     }

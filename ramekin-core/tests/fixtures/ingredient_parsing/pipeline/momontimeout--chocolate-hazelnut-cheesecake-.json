@@ -129,6 +129,10 @@
       }
     },
     {
+      "raw": "Ganache:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 oz bittersweet chocolate",
       "expected": {
         "item": "bittersweet chocolate",
@@ -139,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache",
         "category": "Baking"
       }
     },
@@ -153,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache",
         "category": "Other"
       }
     },
@@ -167,6 +173,7 @@
           }
         ],
         "note": "chopped, optional",
+        "section": "Ganache",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -181,6 +188,7 @@
           }
         ],
         "note": "optional",
+        "section": "Ganache",
         "category": "Baking"
       }
     }

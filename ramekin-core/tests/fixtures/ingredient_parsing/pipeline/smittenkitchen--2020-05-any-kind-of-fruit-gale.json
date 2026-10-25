@@ -3,6 +3,10 @@
   "recipe_slug": "2020-05-any-kind-of-fruit-gale",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (165 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -107,8 +116,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 cups berries, stone fruit, or other fruit, chopped or thinly sliced, or any combination thereof",
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": "or lime, optional",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -181,8 +199,13 @@
           }
         ],
         "note": "see Note, below",
+        "section": "Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg beaten with 1 teaspoon water (optional)",
@@ -195,6 +218,7 @@
           }
         ],
         "note": "optional, beaten with 1 teaspoon water",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -204,6 +228,7 @@
         "item": "Turbinado or coarse sugar",
         "measurements": [],
         "note": "for sprinkling",
+        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -213,6 +238,7 @@
         "item": "Softly whipped cream or vanilla ice cream",
         "measurements": [],
         "note": "to serve",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     }

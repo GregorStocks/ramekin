@@ -3,6 +3,10 @@
   "recipe_slug": "gobi-65-cauliflower-65-recipe",
   "ingredients": [
     {
+      "raw": "for cauliflower:",
+      "is_section_header": true
+    },
+    {
       "raw": "500 grams  cauliflower (1 head, florets separated)",
       "expected": {
         "item": "cauliflower",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "1 head, florets separated",
+        "section": "For Cauliflower",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For Cauliflower",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Cauliflower",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Cauliflower",
         "category": "Produce"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": "cold",
+        "section": "For Cauliflower",
         "category": "Beverages"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For Cauliflower",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Cauliflower",
         "category": "Other"
       }
     },
@@ -166,8 +181,13 @@
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For Cauliflower",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "for tempered spices:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons  vegetable oil",
@@ -180,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For Tempered Spices",
         "category": "Oils & Vinegars"
       }
     },
@@ -194,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For Tempered Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +230,7 @@
           }
         ],
         "note": "aka nigella",
+        "section": "For Tempered Spices",
         "category": "Other"
       }
     },
@@ -222,6 +245,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Tempered Spices",
         "category": "Produce"
       }
     },
@@ -236,6 +260,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Tempered Spices",
         "category": "Produce"
       }
     },
@@ -250,6 +275,7 @@
           }
         ],
         "note": "1/2 large onion, chopped",
+        "section": "For Tempered Spices",
         "category": "Produce"
       }
     },
@@ -264,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For Tempered Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,6 +300,7 @@
         "item": "Cilantro",
         "measurements": [],
         "note": null,
+        "section": "For Tempered Spices",
         "category": "Produce"
       }
     },
@@ -282,6 +310,7 @@
         "item": "salt",
         "measurements": [],
         "note": null,
+        "section": "For Tempered Spices",
         "category": "Spices & Seasonings"
       }
     }

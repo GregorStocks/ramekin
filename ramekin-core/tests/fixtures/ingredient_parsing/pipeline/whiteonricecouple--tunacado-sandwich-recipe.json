@@ -3,6 +3,10 @@
   "recipe_slug": "tunacado-sandwich-recipe",
   "ingredients": [
     {
+      "raw": "For the Tuna Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 ounces  (284 g) tuna drained (preferably a good chunky tuna in olive oil),  (usually 2 cans that are 5 oz each)",
       "expected": {
         "item": "tuna",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "preferably a good chunky tuna in olive oil, usually 2 cans that are 5 oz each, drained",
+        "section": "For the Tuna Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "or 2 shallots chopped",
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": "sweet or dill depending on your preference",
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": "or 1 teaspoon dried dill",
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
@@ -153,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
@@ -171,6 +184,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -180,6 +194,7 @@
         "item": "fresh cracked black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Tuna Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +204,7 @@
         "item": "zest from 1 medium lemon",
         "measurements": [],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Other"
       }
     },
@@ -207,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
@@ -225,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -243,6 +261,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -257,8 +276,13 @@
           }
         ],
         "note": "sliced - optional",
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Tunacado Sandwich:",
+      "is_section_header": true
     },
     {
       "raw": "8 slices   sourdough bread or bread of choice",
@@ -271,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tunacado Sandwich",
         "category": "Bakery & Bread"
       }
     },
@@ -289,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tunacado Sandwich",
         "category": "Oils & Vinegars"
       }
     },
@@ -307,6 +333,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tunacado Sandwich",
         "category": "Condiments & Sauces"
       }
     },
@@ -321,6 +348,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Tunacado Sandwich",
         "category": "Produce"
       }
     },
@@ -335,6 +363,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Tunacado Sandwich",
         "category": "Produce"
       }
     },
@@ -349,6 +378,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Tunacado Sandwich",
         "category": "Other"
       }
     }

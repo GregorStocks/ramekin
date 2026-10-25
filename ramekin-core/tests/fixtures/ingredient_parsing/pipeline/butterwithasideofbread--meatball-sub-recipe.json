@@ -3,6 +3,10 @@
   "recipe_slug": "meatball-sub-recipe",
   "ingredients": [
     {
+      "raw": "Meatball Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb ground beef",
       "expected": {
         "item": "ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Ingredients",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Meatball Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Ingredients",
         "category": "Cheese"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Ingredients",
         "category": "Bakery & Bread"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatball Ingredients",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Ingredients",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": "if you'd like)",
+        "section": "Meatball Ingredients",
         "category": "Other"
       }
+    },
+    {
+      "raw": "You'll also need the following~:",
+      "is_section_header": true
     },
     {
       "raw": "5 rolls I like to use French Rolls",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "You'll Also Need the Following~",
         "category": "Other"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "You'll Also Need the Following~",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "You'll Also Need the Following~",
         "category": "Cheese"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "shredded",
+        "section": "You'll Also Need the Following~",
         "category": "Cheese"
       }
     }

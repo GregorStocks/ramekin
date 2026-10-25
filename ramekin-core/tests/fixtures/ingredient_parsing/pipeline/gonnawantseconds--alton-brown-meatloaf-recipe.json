@@ -185,6 +185,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup ketchup",
       "expected": {
         "item": "ketchup",
@@ -195,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -237,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

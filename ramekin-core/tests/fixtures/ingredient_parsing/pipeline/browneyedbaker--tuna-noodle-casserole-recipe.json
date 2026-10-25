@@ -3,6 +3,10 @@
   "recipe_slug": "tuna-noodle-casserole-recipe",
   "ingredients": [
     {
+      "raw": "For the Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "½  ounce  (14.17 g) Monterey Jack cheese, shredded",
       "expected": {
         "item": "Monterey Jack cheese",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Topping",
         "category": "Cheese"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Topping",
         "category": "Cheese"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "crushed",
+        "section": "For the Topping",
         "category": "Snacks"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "torn into 1-inch pieces",
+        "section": "For the Topping",
         "category": "Bakery & Bread"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,8 +127,13 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Casserole:",
+      "is_section_header": true
     },
     {
       "raw": "3   (3 140g) 5-ounce cans solid white albacore tuna packed in water",
@@ -131,6 +146,7 @@
           }
         ],
         "note": "3 140g",
+        "section": "For the Casserole",
         "category": "Other"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Oils & Vinegars"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Produce"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Casserole",
         "category": "Spices & Seasonings"
       }
     },
@@ -187,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Spices & Seasonings"
       }
     },
@@ -205,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Pasta & Rice"
       }
     },
@@ -219,6 +240,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Casserole",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +259,7 @@
           }
         ],
         "note": "sliced 1/4-inch thick",
+        "section": "For the Casserole",
         "category": "Produce"
       }
     },
@@ -251,6 +274,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Casserole",
         "category": "Produce"
       }
     },
@@ -265,6 +289,7 @@
           }
         ],
         "note": "stemmed, seeded, and finely chopped",
+        "section": "For the Casserole",
         "category": "Produce"
       }
     },
@@ -279,6 +304,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Baking"
       }
     },
@@ -297,6 +323,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Dairy & Eggs"
       }
     },
@@ -315,6 +342,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Canned Goods"
       }
     },
@@ -333,6 +361,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Casserole",
         "category": "Cheese"
       }
     },
@@ -351,6 +380,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Casserole",
         "category": "Cheese"
       }
     },
@@ -369,6 +399,7 @@
           }
         ],
         "note": null,
+        "section": "For the Casserole",
         "category": "Frozen"
       }
     }

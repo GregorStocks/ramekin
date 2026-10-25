@@ -3,6 +3,10 @@
   "recipe_slug": "2009-01-chicken-milanese-an-es",
   "ingredients": [
     {
+      "raw": "For the Pickled Onions:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup red wine vinegar (I swapped half with white vinegar; I was feeling stingy with my fancy red wine stuff)",
       "expected": {
         "item": "red wine vinegar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "I swapped half with white vinegar; I was feeling stingy with my fancy red wine stuff",
+        "section": "For the Pickled Onions",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickled Onions",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "updated: 1 heaped tablespoon is a better amount here",
+        "section": "For the Pickled Onions",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickled Onions",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pickled Onions",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "sliced into very thin rings",
+        "section": "For the Pickled Onions",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Chicken Milanese:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup all-purpose flour",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Milanese",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "beaten with 1 tablespoon of water",
+        "section": "For the Chicken Milanese",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Milanese",
         "category": "Bakery & Bread"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Milanese",
         "category": "Cheese"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "no need to tenderize; a good organic chicken breast will already be tender, says Burrell",
+        "section": "For the Chicken Milanese",
         "category": "Meat & Seafood"
       }
     },
@@ -162,6 +181,7 @@
         "item": "Kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Chicken Milanese",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,8 +191,13 @@
         "item": "Extra-virgin olive oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Chicken Milanese",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Escarole Salad:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup grated pecorino romano",
@@ -185,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Escarole Salad",
         "category": "Cheese"
       }
     },
@@ -199,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "For the Escarole Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -213,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "For the Escarole Salad",
         "category": "Produce"
       }
     },
@@ -227,6 +255,7 @@
           }
         ],
         "note": "washed, spun dry, cut into bite size pieces",
+        "section": "For the Escarole Salad",
         "category": "Produce"
       }
     },
@@ -236,6 +265,7 @@
         "item": "extra-virgin olive oil",
         "measurements": [],
         "note": "High-quality",
+        "section": "For the Escarole Salad",
         "category": "Oils & Vinegars"
       }
     }

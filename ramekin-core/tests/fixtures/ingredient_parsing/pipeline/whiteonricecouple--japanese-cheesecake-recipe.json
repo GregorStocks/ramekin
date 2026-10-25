@@ -3,6 +3,10 @@
   "recipe_slug": "japanese-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "Japanese Cheesecake Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "6   eggs , whites and yolks separated",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "whites and yolks separated",
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Cheese"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -108,6 +118,7 @@
         "item": "finely grated zest from one medium lemon",
         "measurements": [],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Other"
       }
     },
@@ -126,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Produce"
       }
     },
@@ -144,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Baking"
       }
     },
@@ -162,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Baking"
       }
     },
@@ -180,8 +194,13 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Berry Sauce Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup   (240ml or 150g) berries  (blueberries, raspberries and/or strawberries cut into 1/2-inch pieces)",
@@ -202,6 +221,7 @@
           }
         ],
         "note": "blueberries, raspberries and/or strawberries cut into 1/2-inch pieces",
+        "section": "Berry Sauce Ingredients",
         "category": "Produce"
       }
     },
@@ -220,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce Ingredients",
         "category": "Baking"
       }
     },
@@ -238,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce Ingredients",
         "category": "Produce"
       }
     }

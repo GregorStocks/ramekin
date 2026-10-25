@@ -199,6 +199,10 @@
       }
     },
     {
+      "raw": "Cucumber Scallion Raita:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup finely chopped English (seedless cucumber)",
       "expected": {
         "item": "finely chopped English",
@@ -209,6 +213,7 @@
           }
         ],
         "note": "seedless cucumber",
+        "section": "Cucumber Scallion Raita",
         "category": "Produce"
       }
     },
@@ -223,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Scallion Raita",
         "category": "Produce"
       }
     },
@@ -237,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Scallion Raita",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,8 +258,13 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Scallion Raita",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Red Split Lentils with Cabbage:",
+      "is_section_header": true
     },
     {
       "raw": "200 grams (1 1/4 cups) red split lentils (masoor dal), picked over, washed and drained",
@@ -269,6 +281,7 @@
           }
         ],
         "note": "masoor dal, picked over, washed and drained",
+        "section": "Red Split Lentils with Cabbage",
         "category": "Canned Goods"
       }
     },
@@ -287,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "Red Split Lentils with Cabbage",
         "category": "Beverages"
       }
     },
@@ -301,6 +315,7 @@
           }
         ],
         "note": null,
+        "section": "Red Split Lentils with Cabbage",
         "category": "Spices & Seasonings"
       }
     },
@@ -315,6 +330,7 @@
           }
         ],
         "note": null,
+        "section": "Red Split Lentils with Cabbage",
         "category": "Oils & Vinegars"
       }
     },
@@ -329,6 +345,7 @@
           }
         ],
         "note": null,
+        "section": "Red Split Lentils with Cabbage",
         "category": "Spices & Seasonings"
       }
     },
@@ -343,6 +360,7 @@
           }
         ],
         "note": "peeled and finely chopped",
+        "section": "Red Split Lentils with Cabbage",
         "category": "Produce"
       }
     },
@@ -357,6 +375,7 @@
           }
         ],
         "note": "peeled and cut into fine slices",
+        "section": "Red Split Lentils with Cabbage",
         "category": "Produce"
       }
     },
@@ -375,6 +394,7 @@
           }
         ],
         "note": null,
+        "section": "Red Split Lentils with Cabbage",
         "category": "Produce"
       }
     },
@@ -389,6 +409,7 @@
           }
         ],
         "note": "finely sliced",
+        "section": "Red Split Lentils with Cabbage",
         "category": "Produce"
       }
     },
@@ -403,6 +424,7 @@
           }
         ],
         "note": null,
+        "section": "Red Split Lentils with Cabbage",
         "category": "Spices & Seasonings"
       }
     },
@@ -417,6 +439,7 @@
           }
         ],
         "note": "ahem, Deb did not peel her tomato, peeled and finely chopped",
+        "section": "Red Split Lentils with Cabbage",
         "category": "Produce"
       }
     },
@@ -431,6 +454,7 @@
           }
         ],
         "note": null,
+        "section": "Red Split Lentils with Cabbage",
         "category": "Produce"
       }
     }

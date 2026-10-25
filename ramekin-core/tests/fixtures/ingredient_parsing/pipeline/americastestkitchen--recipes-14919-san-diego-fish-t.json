@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-14919-san-diego-fish-t",
   "ingredients": [
     {
+      "raw": "Pickled Red Onion:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 red onion , halved and sliced thin",
       "expected": {
         "item": "red onion",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "halved and sliced thin",
+        "section": "Pickled Red Onion",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Red Onion",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Red Onion",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Pickled Red Onion",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Zarandeado Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "⅔ cup mayonnaise",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "seeded",
+        "section": "Zarandeado Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Beverages"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Zarandeado Sauce",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,8 +261,13 @@
           }
         ],
         "note": null,
+        "section": "Zarandeado Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Fish:",
+      "is_section_header": true
     },
     {
       "raw": "4 (6- to 8-ounce) cod fillets , each cut lengthwise into 3 pieces",
@@ -251,6 +280,7 @@
           }
         ],
         "note": "6- to 8-ounce, each cut lengthwise into 3 pieces",
+        "section": "Fish",
         "category": "Meat & Seafood"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Fish",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Fish",
         "category": "Spices & Seasonings"
       }
     },
@@ -293,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "Fish",
         "category": "Baking"
       }
     },
@@ -307,6 +340,7 @@
           }
         ],
         "note": "divided",
+        "section": "Fish",
         "category": "Oils & Vinegars"
       }
     },
@@ -321,8 +355,13 @@
           }
         ],
         "note": "divided",
+        "section": "Fish",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Tacos:",
+      "is_section_header": true
     },
     {
       "raw": "1½ cups finely shredded red cabbage",
@@ -335,6 +374,7 @@
           }
         ],
         "note": null,
+        "section": "Tacos",
         "category": "Produce"
       }
     },
@@ -349,6 +389,7 @@
           }
         ],
         "note": null,
+        "section": "Tacos",
         "category": "Produce"
       }
     },
@@ -363,6 +404,7 @@
           }
         ],
         "note": "warmed",
+        "section": "Tacos",
         "category": "Bakery & Bread"
       }
     },
@@ -377,6 +419,7 @@
           }
         ],
         "note": "chopped fine",
+        "section": "Tacos",
         "category": "Produce"
       }
     },
@@ -391,6 +434,7 @@
           }
         ],
         "note": null,
+        "section": "Tacos",
         "category": "Produce"
       }
     },
@@ -405,6 +449,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "Tacos",
         "category": "Produce"
       }
     }

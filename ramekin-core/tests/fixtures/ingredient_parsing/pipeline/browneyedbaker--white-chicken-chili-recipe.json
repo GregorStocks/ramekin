@@ -269,11 +269,16 @@
       }
     },
     {
+      "raw": "Garnishes:",
+      "is_section_header": true
+    },
+    {
       "raw": "Lime wedges",
       "expected": {
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -283,6 +288,7 @@
         "item": "Monterey Jack cheese",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Cheese"
       }
     },
@@ -292,6 +298,7 @@
         "item": "Cilantro",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -301,6 +308,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Dairy & Eggs"
       }
     }

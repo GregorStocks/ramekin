@@ -146,15 +146,19 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
             continue;
         }
 
-        // Look for parse_ingredients output
-        let parse_output = url_dir.join("parse_ingredients").join("output.json");
-        if !parse_output.exists() {
+        // Only recipes the run got as far as parsing
+        if !url_dir
+            .join("parse_ingredients")
+            .join("output.json")
+            .exists()
+        {
             continue;
         }
 
-        // Read the parsed ingredients
-        let content = fs::read_to_string(&parse_output)?;
-        let output: ParseIngredientsOutput =
+        // The extracted ingredient lines, before the parser's "each" and
+        // citrus expansions, which fixture_cases redoes.
+        let content = fs::read_to_string(url_dir.join("extract_recipe").join("output.json"))?;
+        let output: ExtractRecipeOutput =
             serde_json::from_str(&content).context("Failed to parse output.json")?;
 
         // Extract site name from URL directory name
@@ -163,10 +167,11 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
         let recipe_slug = extract_recipe_slug(&url_name);
 
         let raw_lines: Vec<String> = output
+            .raw_recipe
             .ingredients
-            .iter()
-            .filter_map(|ingredient| ingredient.raw.clone())
-            .filter(|raw| !raw.is_empty())
+            .lines()
+            .filter(|line| !line.trim().is_empty())
+            .map(str::to_string)
             .collect();
         let ingredients = fixture_cases(&raw_lines, false);
         if ingredients.is_empty() {
@@ -463,22 +468,15 @@ fn extract_recipe_slug(url: &str) -> String {
     }
 }
 
-/// ParseIngredientsOutput structure from pipeline
+/// The extract_recipe step's output, as far as fixtures need it.
 #[derive(Debug, Deserialize)]
-struct ParseIngredientsOutput {
-    ingredients: Vec<PipelineParsedIngredient>,
+struct ExtractRecipeOutput {
+    raw_recipe: ExtractedIngredients,
 }
 
-/// Parsed ingredient from pipeline output
 #[derive(Debug, Deserialize)]
-struct PipelineParsedIngredient {
-    #[allow(dead_code)]
-    item: String,
-    #[allow(dead_code)]
-    measurements: Vec<Measurement>,
-    #[allow(dead_code)]
-    note: Option<String>,
-    raw: Option<String>,
+struct ExtractedIngredients {
+    ingredients: String,
 }
 
 /// Minimal Paprika recipe structure for ingredient extraction
@@ -752,24 +750,20 @@ pub fn migrate_curated(fixtures_dir: Option<&Path>) -> Result<()> {
 mod tests {
     use super::*;
 
-    /// A run directory holding one recipe's parse_ingredients output.
+    /// A run directory holding one recipe's extracted and parsed ingredients.
     fn write_run(runs: &Path, url_dir: &str, raw_lines: &[&str]) {
-        let step = runs
-            .join("2026-01-01_00-00-00.000/urls")
-            .join(url_dir)
-            .join("parse_ingredients");
-        fs::create_dir_all(&step).unwrap();
-        let ingredients: Vec<_> = raw_lines
-            .iter()
-            .map(
-                |raw| serde_json::json!({"item": "", "measurements": [], "note": null, "raw": raw}),
-            )
-            .collect();
+        let url = runs.join("2026-01-01_00-00-00.000/urls").join(url_dir);
+        for step in ["extract_recipe", "parse_ingredients"] {
+            fs::create_dir_all(url.join(step)).unwrap();
+        }
+        let extracted =
+            serde_json::json!({ "raw_recipe": { "ingredients": raw_lines.join("\n") } });
         fs::write(
-            step.join("output.json"),
-            serde_json::json!({ "ingredients": ingredients }).to_string(),
+            url.join("extract_recipe/output.json"),
+            extracted.to_string(),
         )
         .unwrap();
+        fs::write(url.join("parse_ingredients/output.json"), "{}").unwrap();
     }
 
     fn fixture_raw(fixtures: &Path, name: &str) -> Vec<String> {
@@ -801,6 +795,24 @@ mod tests {
             fixture_raw(&fixtures, "example--cake.json"),
             ["2 cups flour"]
         );
+
+        // A line the parser expands into several ingredients stays one line.
+        fs::remove_dir_all(&runs).unwrap();
+        write_run(
+            &runs,
+            "example-com_cake",
+            &["2 cups flour", "Zest and juice of 1 lemon"],
+        );
+        generate_from_pipeline(&runs, Some(&fixtures)).unwrap();
+        let raw = fixture_raw(&fixtures, "example--cake.json");
+        assert_eq!(
+            raw.iter().filter(|raw| raw.contains("lemon")).count(),
+            2,
+            "{raw:?}"
+        );
+        fs::remove_dir_all(&runs).unwrap();
+        write_run(&runs, "example-com_cake", &["2 cups flour"]);
+        generate_from_pipeline(&runs, Some(&fixtures)).unwrap();
 
         // A recipe missing from the run (a failed fetch) keeps its fixture.
         fs::remove_dir_all(&runs).unwrap();

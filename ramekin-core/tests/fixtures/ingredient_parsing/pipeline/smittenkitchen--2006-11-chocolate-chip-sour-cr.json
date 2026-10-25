@@ -3,6 +3,10 @@
   "recipe_slug": "2006-11-chocolate-chip-sour-cr",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup unsalted butter (4 ounces or 115 grams) at room temperature",
       "expected": {
         "item": "unsalted butter at room temperature",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "separated",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -145,8 +157,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling and Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups or 12 ounces semi- or bittersweet chocolate chips",
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Topping",
         "category": "Baking"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Topping",
         "category": "Spices & Seasonings"
       }
     }

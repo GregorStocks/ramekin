@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-swedish-meatballs",
   "ingredients": [
     {
+      "raw": "Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 slices bread (cut up into cubes)",
       "expected": {
         "item": "bread",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cut up into cubes",
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "or mixed with ground chicken",
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "grated or chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "ground",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "ground",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": "unsalted",
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons butter (unsalted)",
@@ -167,6 +186,7 @@
           }
         ],
         "note": "unsalted",
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "low sodium, or beef broth",
+        "section": "Gravy",
         "category": "Canned Goods"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Gravy",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Gravy",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     }

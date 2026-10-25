@@ -203,6 +203,10 @@
       }
     },
     {
+      "raw": "To Temper:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon ghee  or oil or butter",
       "expected": {
         "item": "ghee or oil or butter",
@@ -213,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +232,7 @@
           }
         ],
         "note": "crushed",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -241,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -255,6 +262,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,6 +277,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -283,6 +292,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -297,6 +307,7 @@
           }
         ],
         "note": "asafoetida, optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -311,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     }

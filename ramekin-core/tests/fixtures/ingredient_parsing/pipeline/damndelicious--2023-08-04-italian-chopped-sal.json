@@ -175,6 +175,10 @@
       }
     },
     {
+      "raw": "for the dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
@@ -185,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -199,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -213,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -227,6 +234,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -241,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -255,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -264,6 +274,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     }

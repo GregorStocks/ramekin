@@ -3,6 +3,10 @@
   "recipe_slug": "2017-08-cheesecake-bars-with-a",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups (220 grams) graham or digestive cracker crumbs",
       "expected": {
         "item": "graham or digestive cracker crumbs",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,6 +69,7 @@
         "item": "A pinch or two of salt",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -76,8 +84,13 @@
           }
         ],
         "note": "optional",
+        "section": "Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds (3 8-ounce packages) cream cheese, at room temperature",
@@ -94,6 +107,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cheesecake",
         "category": "Cheese"
       }
     },
@@ -112,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -126,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,8 +160,13 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (455 grams) sour cream",
@@ -162,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -180,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -198,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -212,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     }

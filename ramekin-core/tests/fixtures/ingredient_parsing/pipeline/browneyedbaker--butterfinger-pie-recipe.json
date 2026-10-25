@@ -3,6 +3,10 @@
   "recipe_slug": "butterfinger-pie-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "24   Oreo cookies, crushed into crumbs",
       "expected": {
         "item": "Oreo cookies",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "crushed into crumbs",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
@@ -45,6 +55,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
@@ -63,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -81,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -95,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Frozen"
       }
     },
@@ -127,8 +142,13 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For the Filling",
         "category": "Snacks"
       }
+    },
+    {
+      "raw": "For the Topping:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces  (113.4 g) Cool Whip",
@@ -145,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Frozen"
       }
     },
@@ -154,6 +175,7 @@
         "item": "Chocolate syrup",
         "measurements": [],
         "note": null,
+        "section": "For the Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -168,6 +190,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For the Topping",
         "category": "Snacks"
       }
     }

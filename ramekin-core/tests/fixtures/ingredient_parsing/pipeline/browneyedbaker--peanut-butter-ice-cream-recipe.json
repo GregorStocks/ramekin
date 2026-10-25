@@ -3,6 +3,10 @@
   "recipe_slug": "peanut-butter-ice-cream-recipe",
   "ingredients": [
     {
+      "raw": "For the Ice Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup  (244 ml) whole milk",
       "expected": {
         "item": "whole milk",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Condiments & Sauces"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,8 +123,13 @@
           }
         ],
         "note": null,
+        "section": "For the Ice Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Peanut Butter Swirl:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  (129 g) creamy peanut butter, melted and cooled slightly",
@@ -131,6 +146,7 @@
           }
         ],
         "note": "melted and cooled slightly",
+        "section": "For the Peanut Butter Swirl",
         "category": "Condiments & Sauces"
       }
     }

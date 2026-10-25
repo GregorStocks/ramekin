@@ -3,6 +3,10 @@
   "recipe_slug": "roasted-cauliflower-soup-curry",
   "ingredients": [
     {
+      "raw": "For the Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 heads cauliflower (about 2 pounds/900g each), trimmed and cut into roughly 1-inch-thick florets",
       "expected": {
         "item": "cauliflower",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 2 pounds/900g each, trimmed and cut into roughly 1-inch-thick florets",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -48,6 +54,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -70,6 +77,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -92,6 +100,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -106,6 +115,7 @@
           }
         ],
         "note": "smashed",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -120,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -138,6 +149,7 @@
           }
         ],
         "note": "see notes, plus more as needed",
+        "section": "For the Soup",
         "category": "Canned Goods"
       }
     },
@@ -156,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,8 +178,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Curry Cream:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (118ml) heavy cream",
@@ -183,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Curry Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -201,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Curry Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -219,6 +239,7 @@
           }
         ],
         "note": "see notes",
+        "section": "For the Curry Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -228,6 +249,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Curry Cream",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "master-muffin-recipe",
   "ingredients": [
     {
+      "raw": "Optional Crumb Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/3 cup (67g) packed light or dark brown sugar",
       "expected": {
         "item": "light or dark brown sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "packed",
+        "section": "Optional Crumb Topping",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Crumb Topping",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Crumb Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "melted",
+        "section": "Optional Crumb Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,8 +89,13 @@
           }
         ],
         "note": null,
+        "section": "Optional Crumb Topping",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Muffin Batter:",
+      "is_section_header": true
     },
     {
       "raw": "1 and 3/4 cups (219g) all-purpose flour (spooned & leveled)",
@@ -99,6 +112,7 @@
           }
         ],
         "note": "spooned & leveled",
+        "section": "Muffin Batter",
         "category": "Baking"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin Batter",
         "category": "Baking"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin Batter",
         "category": "Baking"
       }
     },
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": "optional, depending on your add-ins",
+        "section": "Muffin Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Muffin Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin Batter",
         "category": "Baking"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "packed",
+        "section": "Muffin Batter",
         "category": "Baking"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Muffin Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,6 +267,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Muffin Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -259,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "Muffin Batter",
         "category": "Baking"
       }
     },
@@ -277,6 +301,7 @@
           }
         ],
         "note": "any kind, at room temperature",
+        "section": "Muffin Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -286,6 +311,7 @@
         "item": "add-ins of your choice",
         "measurements": [],
         "note": "see Notes",
+        "section": "Muffin Batter",
         "category": "Other"
       }
     },
@@ -295,6 +321,7 @@
         "item": "optional if not using crumb topping: 2 Tablespoons coarse sugar",
         "measurements": [],
         "note": "for sprinkling",
+        "section": "Muffin Batter",
         "category": "Other"
       }
     }

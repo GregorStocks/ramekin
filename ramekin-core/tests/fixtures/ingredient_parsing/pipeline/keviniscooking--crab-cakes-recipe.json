@@ -129,11 +129,16 @@
       }
     },
     {
+      "raw": "Serving options:",
+      "is_section_header": true
+    },
+    {
       "raw": "Lemon wedges for serving",
       "expected": {
         "item": "Lemon wedges",
         "measurements": [],
         "note": "for serving",
+        "section": "Serving Options",
         "category": "Produce"
       }
     },
@@ -143,6 +148,7 @@
         "item": "Tartar Sauce",
         "measurements": [],
         "note": null,
+        "section": "Serving Options",
         "category": "Condiments & Sauces"
       }
     },
@@ -152,6 +158,7 @@
         "item": "Cajun Remoulade",
         "measurements": [],
         "note": null,
+        "section": "Serving Options",
         "category": "Other"
       }
     }

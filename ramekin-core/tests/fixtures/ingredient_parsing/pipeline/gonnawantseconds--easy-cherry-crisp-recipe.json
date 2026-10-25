@@ -3,6 +3,10 @@
   "recipe_slug": "easy-cherry-crisp-recipe",
   "ingredients": [
     {
+      "raw": "Cherry Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "3  pounds fresh cherries, pitted",
       "expected": {
         "item": "fresh cherries",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "pitted",
+        "section": "Cherry Filling",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Filling",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Filling",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Cherry Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup all-purpose flour",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "Topping",
         "category": "Other"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

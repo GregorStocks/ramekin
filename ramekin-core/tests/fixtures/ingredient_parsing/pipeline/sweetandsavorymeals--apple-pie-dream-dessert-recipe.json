@@ -3,6 +3,10 @@
   "recipe_slug": "apple-pie-dream-dessert-recipe",
   "ingredients": [
     {
+      "raw": "Crumble topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 ounces box lime flavored Jell-o or pistachio Jell-o",
       "expected": {
         "item": "box lime flavored Jell-o or pistachio Jell-o",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "Crumble Topping",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Baking"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Crust:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups graham cracker crumbs",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "finely chopped in a food processor - or use more crackers if you are allergic to nuts",
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces cream cheese softened to room temperature",
@@ -153,6 +175,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": "thawed",
+        "section": "Filling",
         "category": "Frozen"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

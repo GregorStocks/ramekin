@@ -3,6 +3,10 @@
   "recipe_slug": "greek-pasta-salad-recipe",
   "ingredients": [
     {
+      "raw": "For the Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound rotini pasta cooked to al dente according to package directions and drained",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "you can sub in grape tomatoes, cut in half",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "seeded and chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "halved or quartered, if desired",
+        "section": "For the Salad",
         "category": "Canned Goods"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Cheese"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "7-ounce, sliced",
+        "section": "For the Salad",
         "category": "Other"
       }
     }

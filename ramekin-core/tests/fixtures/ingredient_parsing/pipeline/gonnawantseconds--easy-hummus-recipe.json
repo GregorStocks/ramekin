@@ -101,11 +101,16 @@
       }
     },
     {
+      "raw": "Topping-Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Olive Oil",
       "expected": {
         "item": "Olive Oil",
         "measurements": [],
         "note": null,
+        "section": "Topping-Garnish",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +120,7 @@
         "item": "Sprinkle Sumac-Optional",
         "measurements": [],
         "note": null,
+        "section": "Topping-Garnish",
         "category": "Other"
       }
     },
@@ -129,6 +135,7 @@
           }
         ],
         "note": "Chopped",
+        "section": "Topping-Garnish",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2023-12-brown-butter-brown-sug",
   "ingredients": [
     {
+      "raw": "Shortbread:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (225 grams or 8 ounces) unsalted butter, cut into chunks",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "Shortbread",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Beverages"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": "packed",
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Icing (optional):",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (60 grams) powdered sugar",
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Icing (Optional)",
         "category": "Baking"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Icing (Optional)",
         "category": "Produce"
       }
     }

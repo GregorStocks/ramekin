@@ -3,11 +3,16 @@
   "recipe_slug": "mocha-cake-recipe",
   "ingredients": [
     {
+      "raw": "For the Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "Butter for greasing the pan",
       "expected": {
         "item": "Butter",
         "measurements": [],
         "note": "for greasing the pan",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "plus extra for the pan",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Beverages"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -120,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -148,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -162,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -176,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -190,8 +207,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces reduced fat cream cheese at room temperature",
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Other"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Other"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Beverages"
       }
     },
@@ -260,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -274,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -288,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -302,6 +331,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -311,6 +341,7 @@
         "item": "Chopped chocolate covered espresso beans",
         "measurements": [],
         "note": "for decorating",
+        "section": "For the Frosting",
         "category": "Other"
       }
     }

@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Pickled spring onions:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 spring onions (about 6 ounces)",
       "expected": {
         "item": "spring onions",
@@ -73,6 +77,7 @@
           }
         ],
         "note": "about 6 ounces",
+        "section": "Pickled Spring Onions",
         "category": "Produce"
       }
     },
@@ -87,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Spring Onions",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Spring Onions",
         "category": "Beverages"
       }
     },
@@ -115,6 +122,7 @@
           }
         ],
         "note": "I use Diamond brand; use less if you’re using Morton or table salt",
+        "section": "Pickled Spring Onions",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Pickled Spring Onions",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Sharp mustard vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup olive oil",
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Sharp Mustard Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": "both Roland and Maille make a whole seed one I’m tremendously fond of",
+        "section": "Sharp Mustard Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Sharp Mustard Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -185,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Sharp Mustard Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -194,6 +211,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Sharp Mustard Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

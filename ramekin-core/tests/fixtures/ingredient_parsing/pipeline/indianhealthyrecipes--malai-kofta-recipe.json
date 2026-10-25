@@ -3,6 +3,10 @@
   "recipe_slug": "malai-kofta-recipe",
   "ingredients": [
     {
+      "raw": "For malai kofta:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 heaped cup  paneer  crumbled (about 150 grams)",
       "expected": {
         "item": "paneer",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 150 grams, crumbled",
+        "section": "For Malai Kofta",
         "category": "Cheese"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "about 2 large, boiled & crumbled",
+        "section": "For Malai Kofta",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "same as white refined corn flour",
+        "section": "For Malai Kofta",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For Malai Kofta",
         "category": "Other"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "chopped finely",
+        "section": "For Malai Kofta",
         "category": "Produce"
       }
     },
@@ -86,6 +95,7 @@
         "item": "salt",
         "measurements": [],
         "note": "as needed",
+        "section": "For Malai Kofta",
         "category": "Spices & Seasonings"
       }
     },
@@ -100,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "For Malai Kofta",
         "category": "Spices & Seasonings"
       }
     },
@@ -114,6 +125,7 @@
           }
         ],
         "note": "optional, chopped",
+        "section": "For Malai Kofta",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -128,6 +140,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Malai Kofta",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -137,8 +150,13 @@
         "item": "Oil",
         "measurements": [],
         "note": "for deep frying",
+        "section": "For Malai Kofta",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "To saute & puree:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon oil",
@@ -151,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Oils & Vinegars"
       }
     },
@@ -165,6 +184,7 @@
           }
         ],
         "note": "cubed",
+        "section": "To Saute & Puree",
         "category": "Produce"
       }
     },
@@ -179,6 +199,7 @@
           }
         ],
         "note": "cubed",
+        "section": "To Saute & Puree",
         "category": "Produce"
       }
     },
@@ -193,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -207,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,6 +244,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
@@ -235,8 +259,13 @@
           }
         ],
         "note": "optional",
+        "section": "To Saute & Puree",
         "category": "Other"
       }
+    },
+    {
+      "raw": "other ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons oil (or 2 tbsp butter)",
@@ -249,6 +278,7 @@
           }
         ],
         "note": "or 2 tbsp butter",
+        "section": "Other Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -263,6 +293,7 @@
           }
         ],
         "note": "optional",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -277,6 +308,7 @@
           }
         ],
         "note": "optional",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -291,6 +323,7 @@
           }
         ],
         "note": "optional",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -305,6 +338,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -319,6 +353,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -333,6 +368,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -347,6 +383,7 @@
           }
         ],
         "note": "ground coriander seeds",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -361,6 +398,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -375,6 +413,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Baking"
       }
     },
@@ -389,6 +428,7 @@
           }
         ],
         "note": "1/4 cup more if needed",
+        "section": "Other Ingredients",
         "category": "Beverages"
       }
     },
@@ -403,6 +443,7 @@
           }
         ],
         "note": "fenugreek leaves",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -417,6 +458,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Dairy & Eggs"
       }
     }

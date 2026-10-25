@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "For assembly:",
+      "is_section_header": true
+    },
+    {
       "raw": "16-20 corn tortillas",
       "expected": {
         "item": "corn tortillas",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -134,6 +139,7 @@
         "item": "cotija cheese",
         "measurements": [],
         "note": "crumbled",
+        "section": "For Assembly",
         "category": "Cheese"
       }
     },
@@ -143,6 +149,7 @@
         "item": "thinly sliced red onion",
         "measurements": [],
         "note": "pickled or raw",
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -152,6 +159,7 @@
         "item": "fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -161,6 +169,7 @@
         "item": "lime wedges",
         "measurements": [],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     }

@@ -17,11 +17,16 @@
       }
     },
     {
+      "raw": "For Serving (Optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "Kosher salt and black pepper",
       "expected": {
         "item": "Kosher salt and black pepper",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -31,6 +36,7 @@
         "item": "Unsalted butter",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,6 +46,7 @@
         "item": "Brown sugar or pure maple syrup",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Baking"
       }
     }

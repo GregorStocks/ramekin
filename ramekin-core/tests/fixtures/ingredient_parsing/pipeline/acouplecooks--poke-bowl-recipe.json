@@ -3,6 +3,10 @@
   "recipe_slug": "poke-bowl-recipe",
   "ingredients": [
     {
+      "raw": "For the poke:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 pounds ahi tuna, sushi or sashimi grade (3 steaks, 6 to 8 ounces each)",
       "expected": {
         "item": "ahi tuna, sushi or sashimi grade",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "3 steaks, 6 to 8 ounces each",
+        "section": "For the Poke",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Poke",
         "category": "Other"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Poke",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Poke",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "not toasted",
+        "section": "For the Poke",
         "category": "Oils & Vinegars"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Poke",
         "category": "Produce"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Poke",
         "category": "Produce"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Poke",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "For the Poke",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the poke bowl:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup dry short grain white rice or brown rice",
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Poke Bowl",
         "category": "Other"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Poke Bowl",
         "category": "Produce"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": "or 2 radishes",
+        "section": "For the Poke Bowl",
         "category": "Produce"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Poke Bowl",
         "category": "Produce"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": "thawed",
+        "section": "For the Poke Bowl",
         "category": "Produce"
       }
     },
@@ -208,6 +230,7 @@
         "item": "Rice vinegar and kosher salt",
         "measurements": [],
         "note": "for seasoning",
+        "section": "For the Poke Bowl",
         "category": "Oils & Vinegars"
       }
     },
@@ -217,6 +240,7 @@
         "item": "For the garnish: Sesame seeds, microgreens or sprouts",
         "measurements": [],
         "note": null,
+        "section": "For the Poke Bowl",
         "category": "Spices & Seasonings"
       }
     },
@@ -226,6 +250,7 @@
         "item": "Spicy Mayo",
         "measurements": [],
         "note": "optional",
+        "section": "For the Poke Bowl",
         "category": "Other"
       }
     }

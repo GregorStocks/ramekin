@@ -3,6 +3,10 @@
   "recipe_slug": "black-forest-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "24   Oreo cookies, whole",
       "expected": {
         "item": "Oreo cookies",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "whole",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -45,8 +51,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "10 ounces  (283.5 g) bittersweet chocolate, finely chopped",
@@ -63,6 +74,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
@@ -81,6 +93,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Cheese"
       }
     },
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
@@ -131,8 +146,13 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Cherry Topping:",
+      "is_section_header": true
     },
     {
       "raw": "24 ounces  (680.39 g) frozen dark sweet cherries, thawed",
@@ -149,6 +169,7 @@
           }
         ],
         "note": "thawed",
+        "section": "For the Cherry Topping",
         "category": "Frozen"
       }
     },
@@ -167,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherry Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherry Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherry Topping",
         "category": "Baking"
       }
     },
@@ -209,8 +233,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cherry Topping",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces  (113.4 g) cream cheese, at room temperature",
@@ -227,6 +256,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Whipped Cream",
         "category": "Cheese"
       }
     },
@@ -245,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Baking"
       }
     },
@@ -263,6 +294,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Baking"
       }
     },
@@ -281,6 +313,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Dairy & Eggs"
       }
     }

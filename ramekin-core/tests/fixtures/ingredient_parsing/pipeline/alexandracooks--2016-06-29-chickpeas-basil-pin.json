@@ -3,6 +3,10 @@
   "recipe_slug": "2016-06-29-chickpeas-basil-pin",
   "ingredients": [
     {
+      "raw": "soaking and cooking the chickpeas:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons + 1 teaspoon salt",
       "expected": {
         "item": "salt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Soaking and Cooking the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Soaking and Cooking the Chickpeas",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Soaking and Cooking the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "peeled and halved through the core",
+        "section": "Soaking and Cooking the Chickpeas",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
         "item": "a few sprigs thyme",
         "measurements": [],
         "note": null,
+        "section": "Soaking and Cooking the Chickpeas",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": "smashed",
+        "section": "Soaking and Cooking the Chickpeas",
         "category": "Produce"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Soaking and Cooking the Chickpeas",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "for the sauté:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup pine nuts",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauté",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauté",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "minced or thinly sliced",
+        "section": "For the Sauté",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "drained",
+        "section": "For the Sauté",
         "category": "Canned Goods"
       }
     },
@@ -157,6 +176,7 @@
         "item": "nice sea salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Sauté",
         "category": "Other"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "For the Sauté",
         "category": "Produce"
       }
     },
@@ -180,6 +201,7 @@
         "item": "a few tablespoons finely minced parsley",
         "measurements": [],
         "note": "or more to taste, optional",
+        "section": "For the Sauté",
         "category": "Other"
       }
     },
@@ -189,6 +211,7 @@
         "item": "bread",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Sauté",
         "category": "Bakery & Bread"
       }
     }

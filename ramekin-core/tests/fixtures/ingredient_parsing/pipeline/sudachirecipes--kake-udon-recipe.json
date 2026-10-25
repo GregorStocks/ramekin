@@ -3,6 +3,10 @@
   "recipe_slug": "kake-udon-recipe",
   "ingredients": [
     {
+      "raw": "Dashi Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 g dried sardines (niboshi) substitute for dried shiitake mushrooms for plant-based diets",
       "expected": {
         "item": "dried sardines substitute for dried shiitake mushrooms for plant-based diets",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "niboshi",
+        "section": "Dashi Broth",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "kombu",
+        "section": "Dashi Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "katsuobushi, katsuobushi",
+        "section": "Dashi Broth",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dashi Broth",
         "category": "Beverages"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Dashi Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Dashi Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Dashi Broth",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Contents:",
+      "is_section_header": true
     },
     {
       "raw": "5 portions udon noodles",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Contents",
         "category": "Pasta & Rice"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Contents",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
         "item": "toppings of your choice see in post",
         "measurements": [],
         "note": null,
+        "section": "Contents",
         "category": "Other"
       }
     }

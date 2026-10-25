@@ -3,6 +3,10 @@
   "recipe_slug": "2007-05-homemade-oreoes",
   "ingredients": [
     {
+      "raw": "Chocolate wafers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1¼ cups (155 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "45 grams, but cocoa weights can vary greatly",
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Spices & Seasonings"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": "see Note",
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,8 +142,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup (4 tablespoons or 55 grams) unsalted butter at room temperature*",
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": "or you can swap with additional butter, see Note",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -207,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -221,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

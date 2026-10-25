@@ -3,6 +3,10 @@
   "recipe_slug": "creole-shrimp-and-grits-recipe",
   "ingredients": [
     {
+      "raw": "For the Creole Shrimp:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds  (907.18 g) unpeeled medium-size raw shrimp , (26/30 count)",
       "expected": {
         "item": "unpeeled medium-size raw shrimp",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "26/30 count",
+        "section": "For the Creole Shrimp",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creole Shrimp",
         "category": "Beverages"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creole Shrimp",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creole Shrimp",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Creole Shrimp",
         "category": "Produce"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Creole Shrimp",
         "category": "Produce"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Creole Shrimp",
         "category": "Produce"
       }
     },
@@ -123,6 +134,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Creole Shrimp",
         "category": "Produce"
       }
     },
@@ -141,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creole Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -155,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creole Shrimp",
         "category": "Produce"
       }
     },
@@ -173,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creole Shrimp",
         "category": "Condiments & Sauces"
       }
     },
@@ -191,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creole Shrimp",
         "category": "Other"
       }
     },
@@ -205,8 +221,13 @@
           }
         ],
         "note": null,
+        "section": "For the Creole Shrimp",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Grits:",
+      "is_section_header": true
     },
     {
       "raw": "2½ cups  (610 ml) milk",
@@ -223,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "For the Grits",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "For the Grits",
         "category": "Beverages"
       }
     },
@@ -255,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "For the Grits",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,6 +297,7 @@
           }
         ],
         "note": null,
+        "section": "For the Grits",
         "category": "Other"
       }
     }

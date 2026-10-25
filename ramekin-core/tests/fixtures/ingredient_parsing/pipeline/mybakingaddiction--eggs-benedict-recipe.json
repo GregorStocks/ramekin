@@ -3,6 +3,10 @@
   "recipe_slug": "eggs-benedict-recipe",
   "ingredients": [
     {
+      "raw": "For the hollandaise:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup salted butter",
       "expected": {
         "item": "salted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hollandaise",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hollandaise",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Hollandaise",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hollandaise",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For the Hollandaise",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the eggs benedict:",
+      "is_section_header": true
     },
     {
       "raw": "6 poached eggs",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Eggs Benedict",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Eggs Benedict",
         "category": "Bakery & Bread"
       }
     },
@@ -106,6 +121,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Eggs Benedict",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,8 +131,13 @@
         "item": "Smoked paprika",
         "measurements": [],
         "note": null,
+        "section": "For the Eggs Benedict",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Optional additions:",
+      "is_section_header": true
     },
     {
       "raw": "Sliced ham or Canadian bacon",
@@ -124,6 +145,7 @@
         "item": "Sliced ham or Canadian bacon",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Meat & Seafood"
       }
     },
@@ -133,6 +155,7 @@
         "item": "Cooked American bacon",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Other"
       }
     },
@@ -142,6 +165,7 @@
         "item": "Lump crab meat",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Meat & Seafood"
       }
     },
@@ -151,6 +175,7 @@
         "item": "Smoked salmon",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Meat & Seafood"
       }
     },
@@ -160,6 +185,7 @@
         "item": "Sautéed spinach",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Other"
       }
     },
@@ -169,6 +195,7 @@
         "item": "Fresh arugula",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Produce"
       }
     },
@@ -178,6 +205,7 @@
         "item": "Steamed asparagus",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Other"
       }
     },
@@ -187,6 +215,7 @@
         "item": "Seasoned tomato slices",
         "measurements": [],
         "note": null,
+        "section": "Optional Additions",
         "category": "Other"
       }
     }

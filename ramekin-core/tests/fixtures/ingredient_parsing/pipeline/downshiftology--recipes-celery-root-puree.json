@@ -119,6 +119,10 @@
       }
     },
     {
+      "raw": "Celery Root Puree:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp olive oil",
       "expected": {
         "item": "olive oil",
@@ -129,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Celery Root Puree",
         "category": "Oils & Vinegars"
       }
     },
@@ -143,6 +148,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Celery Root Puree",
         "category": "Produce"
       }
     },
@@ -157,6 +163,7 @@
           }
         ],
         "note": "peeled and diced into 1/2 inch cubes",
+        "section": "Celery Root Puree",
         "category": "Produce"
       }
     },
@@ -171,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Celery Root Puree",
         "category": "Canned Goods"
       }
     },
@@ -185,6 +193,7 @@
           }
         ],
         "note": null,
+        "section": "Celery Root Puree",
         "category": "Beverages"
       }
     },
@@ -194,8 +203,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Celery Root Puree",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups microgreens",
@@ -208,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     }

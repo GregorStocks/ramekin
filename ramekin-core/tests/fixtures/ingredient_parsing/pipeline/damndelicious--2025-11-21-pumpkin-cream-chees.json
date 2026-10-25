@@ -171,6 +171,10 @@
       }
     },
     {
+      "raw": "for the cream cheese filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (8-ounce) package cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
@@ -181,6 +185,7 @@
           }
         ],
         "note": "8-ounce, at room temperature",
+        "section": "For the Cream Cheese Filling",
         "category": "Cheese"
       }
     },
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -223,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -251,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Spices & Seasonings"
       }
     }

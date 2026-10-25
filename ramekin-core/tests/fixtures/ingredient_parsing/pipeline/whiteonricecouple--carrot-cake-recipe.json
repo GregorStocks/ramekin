@@ -3,6 +3,10 @@
   "recipe_slug": "carrot-cake-recipe",
   "ingredients": [
     {
+      "raw": "cake ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups   (250g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "or 1/2 teaspoon freshly grated nutmeg",
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -137,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -155,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -169,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -187,8 +202,13 @@
           }
         ],
         "note": "about 2-3 large carrots worth",
+        "section": "Cake Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "frosting ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup   (1 stick or 113g) unsalted butter , softened",
@@ -209,6 +229,7 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting Ingredients",
         "category": "Cheese"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting Ingredients",
         "category": "Baking"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting Ingredients",
         "category": "Baking"
       }
     },
@@ -281,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     }

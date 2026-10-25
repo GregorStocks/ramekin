@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "For chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "200 grams  boneless skinless chicken breast (thinly sliced)",
       "expected": {
         "item": "boneless skinless chicken breast",
@@ -27,6 +31,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,8 +61,13 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Pad Kee Mao sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon  fish sauce",
@@ -69,6 +80,7 @@
           }
         ],
         "note": null,
+        "section": "For Pad Kee Mao Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +95,7 @@
           }
         ],
         "note": null,
+        "section": "For Pad Kee Mao Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "For Pad Kee Mao Sauce",
         "category": "Baking"
       }
     },
@@ -111,8 +125,13 @@
           }
         ],
         "note": null,
+        "section": "For Pad Kee Mao Sauce",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For stir-fry:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons  vegetable oil",
@@ -125,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +159,7 @@
           }
         ],
         "note": "3 large cloves, finely minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -153,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +193,7 @@
           }
         ],
         "note": "1/2 small , sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -189,6 +212,7 @@
           }
         ],
         "note": "5 ears, sliced in half at an angle",
+        "section": "For Stir-Fry",
         "category": "Canned Goods"
       }
     },
@@ -203,6 +227,7 @@
           }
         ],
         "note": "1/2 small pepper, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -217,6 +242,7 @@
           }
         ],
         "note": "8 thin slices",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -231,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Other"
       }
     },
@@ -245,6 +272,7 @@
           }
         ],
         "note": "optional, finely minced",
+        "section": "For Stir-Fry",
         "category": "Other"
       }
     },
@@ -259,6 +287,7 @@
           }
         ],
         "note": "1/2 medium tomato, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -273,6 +302,7 @@
           }
         ],
         "note": "leaves only",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     }

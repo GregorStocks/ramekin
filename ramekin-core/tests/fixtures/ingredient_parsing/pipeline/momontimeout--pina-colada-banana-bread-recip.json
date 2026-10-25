@@ -171,6 +171,10 @@
       }
     },
     {
+      "raw": "Pineapple-Rum Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup powdered sugar",
       "expected": {
         "item": "powdered sugar",
@@ -181,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple-Rum Glaze",
         "category": "Baking"
       }
     },
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple-Rum Glaze",
         "category": "Beverages"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple-Rum Glaze",
         "category": "Baking"
       }
     },
@@ -223,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple-Rum Glaze",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "grilling-pork-souvlaki-with-pi",
   "ingredients": [
     {
+      "raw": "For the Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (120 ml) extra-virgin olive oil",
       "expected": {
         "item": "extra-virgin olive oil",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": "from 1 small onion",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Other"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -130,6 +141,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,8 +160,13 @@
           }
         ],
         "note": "trimmed of silver skin and excess fat, cut into 1-inch cubes",
+        "section": "For the Marinade",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For the Tzatziki:",
+      "is_section_header": true
     },
     {
       "raw": "1 medium English cucumber (12 ounces; 340 g), peeled (1 cup)",
@@ -174,6 +191,7 @@
           }
         ],
         "note": "peeled",
+        "section": "For the Tzatziki",
         "category": "Produce"
       }
     },
@@ -196,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tzatziki",
         "category": "Dairy & Eggs"
       }
     },
@@ -214,6 +233,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Tzatziki",
         "category": "Produce"
       }
     },
@@ -232,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tzatziki",
         "category": "Produce"
       }
     },
@@ -250,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tzatziki",
         "category": "Oils & Vinegars"
       }
     },
@@ -264,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tzatziki",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,6 +296,7 @@
         "item": "Pocketless Pita",
         "measurements": [],
         "note": null,
+        "section": "For the Tzatziki",
         "category": "Other"
       }
     }

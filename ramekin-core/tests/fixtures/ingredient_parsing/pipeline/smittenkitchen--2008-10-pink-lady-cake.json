@@ -3,6 +3,10 @@
   "recipe_slug": "2008-10-pink-lady-cake",
   "ingredients": [
     {
+      "raw": "Cake Layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups pureed frozen strawberries (from a 16-ounce bag or 16 ounces of trimmed strawberries) (455 grams)",
       "expected": {
         "item": "pureed frozen strawberries",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "from a 16-ounce bag or 16 ounces of trimmed strawberries",
+        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "any kind",
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": "ground into a powder",
+        "section": "Cake Layers",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": "about 21 grams",
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": "Diamond brand; use half of others",
+        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +184,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -180,8 +194,13 @@
         "item": "A few drops of pink/red food coloring",
         "measurements": [],
         "note": "if you wish",
+        "section": "Cake Layers",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Frosting and Filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 (8 ounce or 226-gram) packages cream cheese, softened",
@@ -202,6 +221,7 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting and Filling",
         "category": "Cheese"
       }
     },
@@ -224,6 +244,7 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting and Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -242,6 +263,7 @@
           }
         ],
         "note": "sifted if lumpy",
+        "section": "Frosting and Filling",
         "category": "Baking"
       }
     },
@@ -260,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting and Filling",
         "category": "Baking"
       }
     }

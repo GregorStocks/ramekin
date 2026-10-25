@@ -3,6 +3,10 @@
   "recipe_slug": "frosted-maple-snickerdoodle-re",
   "ingredients": [
     {
+      "raw": "Snickerdoodles:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup butter softened",
       "expected": {
         "item": "butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened",
+        "section": "Snickerdoodles",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodles",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodles",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodles",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodles",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodles",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodles",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodles",
         "category": "Baking"
       }
     },
@@ -120,8 +132,13 @@
         "item": "cinnamon and sugar",
         "measurements": [],
         "note": null,
+        "section": "Snickerdoodles",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Maple Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup butter softened",
@@ -134,6 +151,7 @@
           }
         ],
         "note": "softened",
+        "section": "Maple Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Maple Frosting",
         "category": "Baking"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Maple Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Maple Frosting",
         "category": "Baking"
       }
     }

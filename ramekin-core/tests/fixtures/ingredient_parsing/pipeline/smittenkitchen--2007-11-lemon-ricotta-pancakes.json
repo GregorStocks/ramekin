@@ -3,6 +3,10 @@
   "recipe_slug": "2007-11-lemon-ricotta-pancakes",
   "ingredients": [
     {
+      "raw": "For the apples:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 medium-large lemons",
       "expected": {
         "item": "lemons",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "peeled, cored, and sliced",
+        "section": "For the Apples",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Dairy & Eggs"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,8 +100,13 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the pancakes:",
+      "is_section_header": true
     },
     {
       "raw": "4 large eggs, separated",
@@ -105,6 +119,7 @@
           }
         ],
         "note": "separated",
+        "section": "For the Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pancakes",
         "category": "Cheese"
       }
     },
@@ -137,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pancakes",
         "category": "Produce"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pancakes",
         "category": "Baking"
       }
     },
@@ -164,6 +182,7 @@
         "item": "Finely grated lemon zest",
         "measurements": [],
         "note": null,
+        "section": "For the Pancakes",
         "category": "Produce"
       }
     },
@@ -178,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -196,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pancakes",
         "category": "Baking"
       }
     },
@@ -205,6 +226,7 @@
         "item": "Melted butter or neutral oil",
         "measurements": [],
         "note": "for brushing the pan",
+        "section": "For the Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -214,6 +236,7 @@
         "item": "Maple syrup, as an accompaniment",
         "measurements": [],
         "note": null,
+        "section": "For the Pancakes",
         "category": "Condiments & Sauces"
       }
     }

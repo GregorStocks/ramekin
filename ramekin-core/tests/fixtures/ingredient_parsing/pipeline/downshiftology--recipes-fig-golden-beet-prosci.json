@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Fig Vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 figs",
       "expected": {
         "item": "figs",
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Produce"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +118,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Fig Vinaigrette",
         "category": "Produce"
       }
     },
@@ -125,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +148,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

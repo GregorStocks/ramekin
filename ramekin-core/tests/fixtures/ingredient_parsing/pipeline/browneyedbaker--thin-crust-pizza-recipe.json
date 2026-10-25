@@ -3,6 +3,10 @@
   "recipe_slug": "thin-crust-pizza-recipe",
   "ingredients": [
     {
+      "raw": "For the Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups  (375 g) bread flour, plus more for work surface",
       "expected": {
         "item": "bread flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "plus more for work surface",
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Other"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Beverages"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "plus more for work surface",
+        "section": "For the Dough",
         "category": "Oils & Vinegars"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "28 ounce  (793.79 g) can whole peeled tomatoes, drained",
@@ -117,6 +131,7 @@
           }
         ],
         "note": "drained",
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -187,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -205,8 +225,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup  (50 g) grated Parmesan cheese",
@@ -223,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "For the Toppings",
         "category": "Cheese"
       }
     },
@@ -245,6 +271,7 @@
           }
         ],
         "note": "about 2 cups shredded, shredded",
+        "section": "For the Toppings",
         "category": "Cheese"
       }
     },
@@ -254,6 +281,7 @@
         "item": "Pepperoni slices",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings",
         "category": "Meat & Seafood"
       }
     }

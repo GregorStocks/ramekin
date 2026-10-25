@@ -3,6 +3,10 @@
   "recipe_slug": "cranberry-apple-tart-recipe",
   "ingredients": [
     {
+      "raw": "Crust Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ bag of Bob's Red Mill Pie Crust 12 ounces",
       "expected": {
         "item": "Bob's Red Mill Pie Crust 12 ounces",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crust Ingredients",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "cut into 1/2″ pieces",
+        "section": "Crust Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Crust Ingredients",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1½ cups fresh or frozen cranberries",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Produce"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "about 3 1/2 cups worth",
+        "section": "Filling Ingredients",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Spices & Seasonings"
       }
     }

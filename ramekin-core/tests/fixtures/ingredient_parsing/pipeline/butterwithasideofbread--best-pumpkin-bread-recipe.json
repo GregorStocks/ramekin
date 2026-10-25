@@ -3,6 +3,10 @@
   "recipe_slug": "best-pumpkin-bread-recipe",
   "ingredients": [
     {
+      "raw": "Streusel:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup flour",
       "expected": {
         "item": "flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "packed",
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Pumpkin Bread:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups all-purpose flour",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "packed",
+        "section": "Pumpkin Bread",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Canned Goods"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,8 +246,13 @@
           }
         ],
         "note": null,
+        "section": "Pumpkin Bread",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Icing:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup powdered sugar",
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Baking"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Dairy & Eggs"
       }
     },
@@ -260,6 +290,7 @@
         "item": "fresh nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Icing",
         "category": "Other"
       }
     }

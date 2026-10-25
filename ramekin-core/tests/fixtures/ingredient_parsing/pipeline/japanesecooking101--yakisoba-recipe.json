@@ -142,6 +142,10 @@
       }
     },
     {
+      "raw": "Yakisoba Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 Tbsp Tonkatsu sauce",
       "expected": {
         "item": "Tonkatsu sauce",
@@ -152,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -166,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -180,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -194,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     }

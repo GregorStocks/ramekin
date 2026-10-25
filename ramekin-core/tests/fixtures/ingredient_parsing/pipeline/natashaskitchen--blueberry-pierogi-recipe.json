@@ -3,6 +3,10 @@
   "recipe_slug": "blueberry-pierogi-recipe",
   "ingredients": [
     {
+      "raw": "For the Pierogi Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup warm water",
       "expected": {
         "item": "warm water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pierogi Dough",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pierogi Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pierogi Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pierogi Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pierogi Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pierogi Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Blueberry Pierogi Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 lb blueberrie",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Blueberry Pierogi Filling",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "plus more to sprinkle the top",
+        "section": "For the Blueberry Pierogi Filling",
         "category": "Baking"
       }
     }

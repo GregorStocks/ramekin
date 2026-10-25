@@ -124,6 +124,10 @@
       }
     },
     {
+      "raw": "spiced shallot vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons red wine vinegar",
       "expected": {
         "item": "red wine vinegar",
@@ -134,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Shallot Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -148,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Shallot Vinaigrette",
         "category": "Baking"
       }
     },
@@ -162,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Shallot Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +183,7 @@
           }
         ],
         "note": "diced",
+        "section": "Spiced Shallot Vinaigrette",
         "category": "Produce"
       }
     },
@@ -190,6 +198,7 @@
           }
         ],
         "note": "minced",
+        "section": "Spiced Shallot Vinaigrette",
         "category": "Produce"
       }
     },
@@ -204,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Shallot Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +223,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Spiced Shallot Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Shallot Vinaigrette",
         "category": "Oils & Vinegars"
       }
     }

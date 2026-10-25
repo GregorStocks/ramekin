@@ -3,6 +3,10 @@
   "recipe_slug": "flatbread-pizza-recipe",
   "ingredients": [
     {
+      "raw": "Creamy Artichoke Spread (makes a little extra):",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup cooked white beans, drained and rinsed",
       "expected": {
         "item": "cooked white beans",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Creamy Artichoke Spread (Makes a Little Extra)",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "halved",
+        "section": "Creamy Artichoke Spread (Makes a Little Extra)",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Artichoke Spread (Makes a Little Extra)",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Artichoke Spread (Makes a Little Extra)",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Artichoke Spread (Makes a Little Extra)",
         "category": "Produce"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Creamy Artichoke Spread (Makes a Little Extra)",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Spinach Pesto:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup pepitas",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Spinach Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Spinach Pesto",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Spinach Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Spinach Pesto",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Spinach Pesto",
         "category": "Other"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Spinach Pesto",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the pizza:",
+      "is_section_header": true
     },
     {
       "raw": "1 Angelic Bakehouse Flatzza™ Crust",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pizza",
         "category": "Other"
       }
     },
@@ -190,6 +215,7 @@
         "item": "Several handfuls of fresh spinach",
         "measurements": [],
         "note": null,
+        "section": "For the Pizza",
         "category": "Other"
       }
     },
@@ -204,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pizza",
         "category": "Cheese"
       }
     },
@@ -218,6 +245,7 @@
           }
         ],
         "note": "quartered",
+        "section": "For the Pizza",
         "category": "Canned Goods"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pizza",
         "category": "Produce"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pizza",
         "category": "Produce"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pizza",
         "category": "Other"
       }
     },
@@ -269,6 +300,7 @@
         "item": "Red pepper flakes",
         "measurements": [],
         "note": "optional",
+        "section": "For the Pizza",
         "category": "Spices & Seasonings"
       }
     }

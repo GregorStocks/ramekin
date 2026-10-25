@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "Cheese Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "16 ounces ricotta cheese",
       "expected": {
         "item": "ricotta cheese",
@@ -27,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Filling",
         "category": "Cheese"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Filling",
         "category": "Cheese"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Filling",
         "category": "Cheese"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": "finely chopped, measured before chopping",
+        "section": "Cheese Filling",
         "category": "Produce"
       }
     },
@@ -97,6 +106,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Cheese Filling",
         "category": "Produce"
       }
     },
@@ -111,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +136,13 @@
           }
         ],
         "note": null,
+        "section": "Cheese Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "24 ounces marinara sauce (about 3 cups)",
@@ -143,8 +159,13 @@
           }
         ],
         "note": "about 3 cups",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup shredded mozzarella cheese",
@@ -157,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Cheese"
       }
     },
@@ -171,8 +193,13 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Optional: additional parsley or basil to garnish.:",
+      "is_section_header": true
     }
   ]
 }

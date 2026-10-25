@@ -250,6 +250,10 @@
       }
     },
     {
+      "raw": "For serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups cooked basmati rice",
       "expected": {
         "item": "cooked basmati rice",
@@ -260,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Pasta & Rice"
       }
     },
@@ -269,6 +274,7 @@
         "item": "Fresh basil or cilantro leaves",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -278,6 +284,7 @@
         "item": "Naan bread",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     }

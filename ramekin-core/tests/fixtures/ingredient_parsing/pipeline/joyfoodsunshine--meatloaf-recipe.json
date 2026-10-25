@@ -3,6 +3,10 @@
   "recipe_slug": "meatloaf-recipe",
   "ingredients": [
     {
+      "raw": "Meatloaf:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds ground beef",
       "expected": {
         "item": "ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "1 slice of bread made into bread crumbs",
+        "section": "Meatloaf",
         "category": "Bakery & Bread"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup ketchup",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Condiments & Sauces"
       }
     }

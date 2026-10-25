@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-baja-fish-tacos-html",
   "ingredients": [
     {
+      "raw": "For the Cabbage Slaw:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 cups (or one 10-oz/283-g bag) shredded red cabbage",
       "expected": {
         "item": "shredded red cabbage",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "or one 10-oz/283-g bag",
+        "section": "For the Cabbage Slaw",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cabbage Slaw",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cabbage Slaw",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cabbage Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cabbage Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -87,8 +96,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cabbage Slaw",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Chipotle Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup mayonnaise, best quality such as Hellmann's",
@@ -101,6 +115,7 @@
           }
         ],
         "note": "such as Hellmann's",
+        "section": "For the Chipotle Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -115,6 +130,7 @@
           }
         ],
         "note": "from one lime",
+        "section": "For the Chipotle Sauce",
         "category": "Produce"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": "see note below, roughly chopped, plus 1 to 2 teaspoons sauce",
+        "section": "For the Chipotle Sauce",
         "category": "Other"
       }
     },
@@ -143,8 +160,13 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Chipotle Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Beer Batter:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup all-purpose flour",
@@ -157,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "For the Beer Batter",
         "category": "Baking"
       }
     },
@@ -171,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "For the Beer Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "For the Beer Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,8 +224,13 @@
           }
         ],
         "note": null,
+        "section": "For the Beer Batter",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Fish and Tortillas:",
+      "is_section_header": true
     },
     {
       "raw": "1½ pounds skinless cod, cut into 1-inch (2.5-cm) wide x 4-inch (10-cm) long strips",
@@ -213,6 +243,7 @@
           }
         ],
         "note": "2.5-cm, 10-cm, cut into 1-inch wide x 4-inch long strips",
+        "section": "For the Fish and Tortillas",
         "category": "Meat & Seafood"
       }
     },
@@ -222,6 +253,7 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Fish and Tortillas",
         "category": "Oils & Vinegars"
       }
     },
@@ -236,6 +268,7 @@
           }
         ],
         "note": "6-in/15-cm, warmed",
+        "section": "For the Fish and Tortillas",
         "category": "Bakery & Bread"
       }
     },
@@ -245,6 +278,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Fish and Tortillas",
         "category": "Produce"
       }
     }

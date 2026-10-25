@@ -73,11 +73,16 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Strawberries (sliced)",
       "expected": {
         "item": "Strawberries",
         "measurements": [],
         "note": "sliced",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -87,6 +92,7 @@
         "item": "Banana",
         "measurements": [],
         "note": "slices",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -96,6 +102,7 @@
         "item": "Blackberries",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     }

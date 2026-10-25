@@ -3,6 +3,10 @@
   "recipe_slug": "2013-11-cranberry-orange-break",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 large egg yolks",
       "expected": {
         "item": "egg yolks",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "melted, plus additional to grease pan",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": "to be used in dough and filling, below, finely grated",
+        "section": "Dough",
         "category": "Produce"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": "plus more for dusting counter",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,8 +176,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 tablespoons (20 grams) butter",
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -217,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -226,8 +247,13 @@
         "item": "Orange zest leftover from above",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Icing:",
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 tablespoons (55 ml) orange juice",
@@ -244,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Beverages"
       }
     },
@@ -262,6 +289,7 @@
           }
         ],
         "note": null,
+        "section": "Icing",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "vegan-burger-recipe",
   "ingredients": [
     {
+      "raw": "FOR THE BURGERS:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large red pepper cored and roughly chopped",
       "expected": {
         "item": "red pepper",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "cored and roughly chopped",
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Other"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Other"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +186,7 @@
           }
         ],
         "note": "rinsed and drained",
+        "section": "For the Burgers",
         "category": "Canned Goods"
       }
     },
@@ -185,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Other"
       }
     },
@@ -194,8 +211,13 @@
         "item": "Whole grain buns",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Burgers",
         "category": "Other"
       }
+    },
+    {
+      "raw": "TOPPING IDEAS:",
+      "is_section_header": true
     },
     {
       "raw": "Sliced tomatoes, avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard",
@@ -203,6 +225,7 @@
         "item": "Sliced tomatoes, avocado, arugula, sliced red onions, avocado, plain yogurt, mustard",
         "measurements": [],
         "note": "dairy-free if needed",
+        "section": "Topping Ideas",
         "category": "Produce"
       }
     }

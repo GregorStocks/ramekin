@@ -3,6 +3,10 @@
   "recipe_slug": "best-buttermilk-fried-chicken-",
   "ingredients": [
     {
+      "raw": "For The Buttermilk Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups buttermilk",
       "expected": {
         "item": "buttermilk",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Buttermilk Marinade",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Buttermilk Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Buttermilk Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Buttermilk Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Buttermilk Marinade",
         "category": "Other"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "For the Buttermilk Marinade",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For The Batter:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups all-purpose flour",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Frying:",
+      "is_section_header": true
     },
     {
       "raw": "5-8 cups peanut oil or enough to fill a deep stock pot or deep fryer",
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For Frying",
         "category": "Oils & Vinegars"
       }
     }

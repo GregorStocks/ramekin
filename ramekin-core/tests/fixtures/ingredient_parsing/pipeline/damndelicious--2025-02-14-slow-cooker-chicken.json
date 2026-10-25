@@ -236,11 +236,16 @@
       }
     },
     {
+      "raw": "for serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Tortilla strips",
       "expected": {
         "item": "Tortilla strips",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Snacks"
       }
     },
@@ -250,6 +255,7 @@
         "item": "Sliced avocado",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -259,6 +265,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -268,6 +275,7 @@
         "item": "Cilantro",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

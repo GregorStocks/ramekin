@@ -3,6 +3,10 @@
   "recipe_slug": "2025-09-vodka-sauce-chicken-pa",
   "ingredients": [
     {
+      "raw": "chicken meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound lean ground chicken, I like to use 94% lean",
       "expected": {
         "item": "lean ground chicken, I like to use 94% lean",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Cheese"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "vodka sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons unsalted butter",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Vodka Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "diced",
+        "section": "Vodka Sauce",
         "category": "Produce"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "minced",
+        "section": "Vodka Sauce",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Vodka Sauce",
         "category": "Canned Goods"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Vodka Sauce",
         "category": "Beverages"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Vodka Sauce",
         "category": "Beverages"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Vodka Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": "plus more for topping",
+        "section": "Vodka Sauce",
         "category": "Cheese"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": "torn or sliced",
+        "section": "Vodka Sauce",
         "category": "Cheese"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": "for topping",
+        "section": "Vodka Sauce",
         "category": "Cheese"
       }
     },
@@ -241,6 +266,7 @@
         "item": "crushed red pepper",
         "measurements": [],
         "note": "for topping",
+        "section": "Vodka Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -250,8 +276,13 @@
         "item": "fresh basil",
         "measurements": [],
         "note": "for topping",
+        "section": "Vodka Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "buttery garlic toasts:",
+      "is_section_header": true
     },
     {
       "raw": "1 baguette, cut into rounds",
@@ -264,6 +295,7 @@
           }
         ],
         "note": "cut into rounds",
+        "section": "Buttery Garlic Toasts",
         "category": "Bakery & Bread"
       }
     },
@@ -278,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Buttery Garlic Toasts",
         "category": "Dairy & Eggs"
       }
     },
@@ -292,6 +325,7 @@
           }
         ],
         "note": "minced",
+        "section": "Buttery Garlic Toasts",
         "category": "Produce"
       }
     },
@@ -301,6 +335,7 @@
         "item": "flakey salt",
         "measurements": [],
         "note": null,
+        "section": "Buttery Garlic Toasts",
         "category": "Spices & Seasonings"
       }
     }

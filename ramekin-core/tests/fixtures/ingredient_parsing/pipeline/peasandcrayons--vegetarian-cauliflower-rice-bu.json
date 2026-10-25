@@ -208,11 +208,16 @@
       }
     },
     {
+      "raw": "OPTIONAL EXTRAS:",
+      "is_section_header": true
+    },
+    {
       "raw": "guacamole or sliced avocado",
       "expected": {
         "item": "guacamole or sliced avocado",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Condiments & Sauces"
       }
     },
@@ -222,6 +227,7 @@
         "item": "sliced jalapeno peppers",
         "measurements": [],
         "note": "fresh or pickled",
+        "section": "Optional Extras",
         "category": "Produce"
       }
     },
@@ -231,6 +237,7 @@
         "item": "salsa",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Condiments & Sauces"
       }
     },
@@ -240,6 +247,7 @@
         "item": "salsa verde",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Condiments & Sauces"
       }
     },
@@ -249,6 +257,7 @@
         "item": "pickled red onion",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Condiments & Sauces"
       }
     },
@@ -258,6 +267,7 @@
         "item": "sliced black olives",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Canned Goods"
       }
     },
@@ -267,8 +277,13 @@
         "item": "crushed tortilla chips",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Snacks"
       }
+    },
+    {
+      "raw": "HOMEMADE PICO DE GALLO:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup finely diced tomato",
@@ -281,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pico De Gallo",
         "category": "Canned Goods"
       }
     },
@@ -295,6 +311,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pico De Gallo",
         "category": "Produce"
       }
     },
@@ -309,6 +326,7 @@
           }
         ],
         "note": "seeds and stem removed",
+        "section": "Homemade Pico De Gallo",
         "category": "Produce"
       }
     },
@@ -323,6 +341,7 @@
           }
         ],
         "note": "plus extra to taste",
+        "section": "Homemade Pico De Gallo",
         "category": "Produce"
       }
     },
@@ -332,6 +351,7 @@
         "item": "fresh squeezed lime juice",
         "measurements": [],
         "note": "approx 1/4 a lime, to taste",
+        "section": "Homemade Pico De Gallo",
         "category": "Produce"
       }
     },
@@ -346,6 +366,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Homemade Pico De Gallo",
         "category": "Spices & Seasonings"
       }
     }

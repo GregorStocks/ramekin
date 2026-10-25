@@ -124,6 +124,10 @@
       }
     },
     {
+      "raw": "for the stock mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 cups chicken stock",
       "expected": {
         "item": "chicken stock",
@@ -134,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stock Mixture",
         "category": "Canned Goods"
       }
     },
@@ -143,6 +148,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Stock Mixture",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "turkey-gravy-recipe",
   "ingredients": [
     {
+      "raw": "Gravy Base:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 cups turkey broth  or stock mixed with drippings",
       "expected": {
         "item": "turkey broth or stock",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "mixed with drippings",
+        "section": "Gravy Base",
         "category": "Canned Goods"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "Gravy Base",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For Thickening:",
+      "is_section_header": true
     },
     {
       "raw": "⅓ cup cornstarch",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For Thickening",
         "category": "Baking"
       }
     },
@@ -55,8 +66,13 @@
           }
         ],
         "note": null,
+        "section": "For Thickening",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "OR:",
+      "is_section_header": true
     },
     {
       "raw": "⅔ cup  all-purpose flour",
@@ -69,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Or",
         "category": "Baking"
       }
     },
@@ -83,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Or",
         "category": "Beverages"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2018-06-dark-chocolate-coconut",
   "ingredients": [
     {
+      "raw": "Brownies:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/4 bars 164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
       "expected": {
         "item": "164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Baking"
       }
     },
@@ -122,8 +133,13 @@
         "item": "Flour based cooking spray",
         "measurements": [],
         "note": "recommended Baker’s Joy}",
+        "section": "Brownies",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Ganache and topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups 231 g semisweet chocolate chips",
@@ -136,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache and Topping",
         "category": "Baking"
       }
     },
@@ -154,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache and Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -168,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache and Topping",
         "category": "Other"
       }
     }

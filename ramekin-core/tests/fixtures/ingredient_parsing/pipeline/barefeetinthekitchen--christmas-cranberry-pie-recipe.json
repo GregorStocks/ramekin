@@ -3,6 +3,10 @@
   "recipe_slug": "christmas-cranberry-pie-recipe",
   "ingredients": [
     {
+      "raw": "Filling Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups fresh or frozen cranberries",
       "expected": {
         "item": "fresh or frozen cranberries",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Filling Ingredients",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Topping Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup butter softened",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "softened",
+        "section": "Topping Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Baking"
       }
     }

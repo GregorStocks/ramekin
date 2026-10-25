@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-moquecabrazilianfishst",
   "ingredients": [
     {
+      "raw": "Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 to 2 pounds of fillets of firm white fish such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
       "expected": {
         "item": "fillets of firm white fish",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +82,7 @@
         "item": "Extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -87,6 +97,7 @@
           }
         ],
         "note": "or 1 medium yellow onion, chopped or sliced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -101,6 +112,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -115,6 +127,7 @@
           }
         ],
         "note": "chopped; or sliced",
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -129,6 +142,7 @@
           }
         ],
         "note": "or sliced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -143,6 +157,7 @@
           }
         ],
         "note": "Hungarian sweet",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +187,7 @@
           }
         ],
         "note": "chopped with some set aside for garnish",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -185,8 +202,13 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Rice:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon extra virgin olive oil",
@@ -199,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Oils & Vinegars"
       }
     },
@@ -213,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Produce"
       }
     },
@@ -227,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Produce"
       }
     },
@@ -241,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Pasta & Rice"
       }
     },
@@ -255,6 +281,7 @@
           }
         ],
         "note": "check your rice package for the appropriate ratio of liquid to rice for the type of rice you are using",
+        "section": "Rice",
         "category": "Beverages"
       }
     },
@@ -269,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Spices & Seasonings"
       }
     }
