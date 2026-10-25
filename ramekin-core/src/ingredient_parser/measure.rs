@@ -299,13 +299,22 @@ fn amount(c: &mut Cursor) -> Option<Amount> {
         return Some(Amount::single(low));
     }
     // "1 1/4- to 1 1/2-pound": a dash before "to" repeats the unit to come.
-    if c.peek(0).is_some_and(|t| t.kind == Kind::Dash) && c.peek(1).is_some_and(|t| t.is_word("to"))
-    {
+    let dashed = c.peek(0).is_some_and(|t| t.kind == Kind::Dash)
+        && c.peek(1).is_some_and(|t| t.is_word("to"));
+    if dashed {
         c.pos += 1;
     }
     if let Some(connector) = c.take_word(&["to", "or"]) {
+        // "10-to-12-ounce": the range hyphenated through sizes what follows
+        // as a whole ("10-to-12-ounce bag").
+        let hyphenated = dashed
+            && c.peek(0)
+                .is_some_and(|t| t.kind == Kind::Dash && !t.space_before);
+        if hyphenated {
+            c.pos += 1;
+        }
         // "1/4 to 1/2-inch pieces" sizes the pieces; it doesn't count them.
-        if !sizes_what_follows(c) {
+        if hyphenated || !sizes_what_follows(c) {
             if let Some(high) = number(c) {
                 return Some(Amount::range(
                     &low,
@@ -816,6 +825,18 @@ const PACKAGE_MASSES: &[&str] = &[
     "kg",
 ];
 
+/// Volumes a container may state instead of a weight ("750-ml bottle").
+const PACKAGE_VOLUMES: &[&str] = &[
+    "ml",
+    "milliliter",
+    "milliliters",
+    "l",
+    "liter",
+    "liters",
+    "litre",
+    "litres",
+];
+
 /// Containers whose weight a recipe may state ("15-ounce can").
 pub(super) const PACKAGE_WORDS: &[&str] = &[
     "can",
@@ -957,8 +978,8 @@ fn weight(c: &mut Cursor, masses: &[&str]) -> Option<(Range, String, bool)> {
 
 /// Read a container or piece that states its weight: "15-ounce can",
 /// "(28-oz.) can", "14 1/2-ounce can", "12- to 18-ounce package", "400g
-/// cans", "8-ounce wheel", "14-ounce each cans". Returns the weight of one
-/// and its mass unit.
+/// cans", "8-ounce wheel", "14-ounce each cans", or its volume, "750-ml
+/// bottle". Returns the weight or volume of one and its unit.
 pub(super) fn read_package(s: &str) -> Option<(Range, String)> {
     read_weighed_piece(s, true)
 }
@@ -974,7 +995,7 @@ fn read_weighed_piece(s: &str, noun_required: bool) -> Option<(Range, String)> {
     let s = ascii_amounts(s);
     let mut c = Cursor::size(&s);
     c.take_if(|t| t.kind == Kind::Open);
-    let (amount, mass, _) = weight(&mut c, PACKAGE_MASSES)?;
+    let (amount, mass, _) = weight(&mut c, &[PACKAGE_MASSES, PACKAGE_VOLUMES].concat())?;
     c.take_if(|t| t.kind == Kind::Close);
     c.take_if(|t| t.kind == Kind::Dash);
     c.take_word(&["each"]);
@@ -1309,6 +1330,20 @@ mod tests {
             Some((Range::exact(14.0), "ounce".to_string()))
         );
         assert_eq!(read_package("15-ounce"), None);
+        assert_eq!(
+            read_package("750-ml bottle"),
+            Some((Range::exact(750.0), "ml".to_string()))
+        );
+        assert_eq!(
+            read_package("10-to-12-ounce bag"),
+            Some((
+                Range {
+                    min: 10.0,
+                    max: 12.0
+                },
+                "ounce".to_string()
+            ))
+        );
         assert_eq!(
             read_leading_weight("15-ounce"),
             Some((Range::exact(15.0), "ounce".to_string()))

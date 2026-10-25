@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60115 | 92 | 54399/60023 (90.6%) | 52075/60023 (86.8%) | 1705/5408 (31.5%) | n/a (no servings) | 32070/37466 (85.6%) | 55730/60115 (92.7%) |
+| Pipeline fixtures | 5408 | 60115 | 92 | 54399/60023 (90.6%) | 52082/60023 (86.8%) | 1705/5408 (31.5%) | n/a (no servings) | 32070/37466 (85.6%) | 55730/60115 (92.7%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5178/5357 (96.7%) | 4851/5357 (90.6%) | 200/462 (43.3%) | n/a (no servings) | 2552/2893 (88.2%) | 5280/5379 (98.2%) |
 | Pipeline snapshots | 445 | 5177 | 17 | 5010/5160 (97.1%) | 4752/5160 (92.1%) | 205/445 (46.1%) | 100/445 (22.5%) | 2528/2853 (88.6%) | 5098/5177 (98.5%) |
 
@@ -32,30 +32,30 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | No supported nutrition match | 5113 | 8.5% |
 | Several ingredients share one amount | 56 | 0.1% |
 | Unsupported or missing quantity | 79 | 0.1% |
-| Unsupported quantity unit | 134 | 0.2% |
+| Unsupported quantity unit | 127 | 0.2% |
 
 ### Uncounted ingredients per recipe
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
 | 0 | 2475 | 45.8% |
-| 1 | 1720 | 31.8% |
-| 2 | 754 | 13.9% |
-| 3 | 311 | 5.8% |
+| 1 | 1724 | 31.9% |
+| 2 | 753 | 13.9% |
+| 3 | 308 | 5.7% |
 | 4-5 | 122 | 2.3% |
 | 6+ | 26 | 0.5% |
 
-Estimate status with at most 3 uncounted: Complete 45.6%, Insufficient 3.7%, Partial 50.8%
+Estimate status with at most 3 uncounted: Complete 45.6%, Insufficient 3.6%, Partial 50.8%
 
-Weights to estimate (distinct food and unit pairs the catalog can't weigh): 24
+Weights to estimate (distinct food and unit pairs the catalog can't weigh): 23
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 6174 | `adf1884cc74e` |
+| Nutrition (all failures) | 6167 | `35b2e4391857` |
 | Density | 2634 | `a80773c1fa0a` |
-| Shopping category | 4243 | `201878be5ec8` |
+| Shopping category | 4243 | `a04e477f83ac` |
 
 ## Paprika fixtures
 

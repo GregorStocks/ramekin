@@ -1946,3 +1946,53 @@ fn counted_olives_pickles_and_artichoke_hearts_weigh_by_their_piece() {
         );
     }
 }
+
+#[test]
+fn containers_and_hedged_weights_read_their_stated_size() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+    };
+    for (stated, weighed) in [
+        // A metric volume on the container.
+        ("1 750-ml bottle red wine", "750 ml red wine"),
+        // A space typed after the hyphen.
+        (
+            "1 12- ounce beer, or equivalent amount of broth",
+            "12 oz beer",
+        ),
+        // A range hyphenated through.
+        (
+            "10-to-12-ounce (285-to-340-gram) bag semisweet chocolate chips",
+            "10 to 12 oz semisweet chocolate chips",
+        ),
+        // A weight leading the item after a package.
+        (
+            "1 package, 9 oz. chocolate wafer cookies (such as Nabisco)",
+            "9 oz chocolate wafer cookies",
+        ),
+        // A noted weight that runs on into the item.
+        (
+            "1  package (.25 ounce powdered gelatin)",
+            "0.25 oz powdered gelatin",
+        ),
+        (
+            "6  packets (.25 oz. each powdered gelatin)",
+            "1.5 oz powdered gelatin",
+        ),
+        // "roughly" hedges a weight like "about".
+        (
+            "1 kabocha squash, roughly 2.5 – 3 pounds",
+            "2.5 to 3 pounds kabocha squash",
+        ),
+    ] {
+        let (stated_kcal, weighed_kcal) = (calories(stated), calories(weighed));
+        let (stated_kcal, weighed_kcal) = (stated_kcal.expect(stated), weighed_kcal.unwrap());
+        assert!(
+            (stated_kcal.min - weighed_kcal.min).abs() < 1e-6
+                && (stated_kcal.max - weighed_kcal.max).abs() < 1e-6,
+            "{stated}: {stated_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
