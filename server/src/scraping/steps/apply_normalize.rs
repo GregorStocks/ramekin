@@ -13,7 +13,7 @@ use serde_json::Value as JsonValue;
 
 use crate::db::DbPool;
 use crate::ids::Uuid;
-use crate::normalize::{apply_op_outputs, load_version_blocking, write_version};
+use crate::normalize::{added_tags, apply_op_outputs, load_version_blocking, write_version};
 use crate::schema::step_outputs;
 
 use super::helpers::{
@@ -115,10 +115,19 @@ impl PipelineStep for ApplyNormalizeStep {
             };
         }
 
+        let added = added_tags(&base.content.tags, &normalized.content.tags);
         let user_id = self.user_id;
         let ops = self.ops.clone();
         let written = crate::db::run_blocking_write(&self.pool, move |conn| {
-            write_version(conn, recipe_id, user_id, base_version_id, &normalized, &ops)
+            write_version(
+                conn,
+                recipe_id,
+                user_id,
+                base_version_id,
+                &normalized,
+                &added,
+                &ops,
+            )
         })
         .await
         .map_err(|e| e.to_string())

@@ -487,6 +487,7 @@ pub async fn accept_normalize_proposal(
             user_id,
             base_version_id,
             &proposal.proposed,
+            &proposal.added_tags,
             &ops,
         )
         .map_err(|e| match e {

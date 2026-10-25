@@ -52,6 +52,19 @@ pub fn merge_tags(tags: &mut Vec<String>, suggested: Vec<String>) {
     }
 }
 
+/// The tags in `proposed` that `base` doesn't have, ignoring case.
+pub fn added_tags(base: &[String], proposed: &[String]) -> Vec<String> {
+    proposed
+        .iter()
+        .filter(|tag| {
+            !base
+                .iter()
+                .any(|existing| existing.eq_ignore_ascii_case(tag))
+        })
+        .cloned()
+        .collect()
+}
+
 /// A recipe's content and photos: what a normalize run starts from, and what
 /// it proposes.
 #[derive(Debug, Clone, Serialize, Deserialize, ToSchema)]
@@ -135,7 +148,9 @@ pub async fn load_version_blocking(
 }
 
 /// Save `recipe` as the recipe's new current version, recording `ops`, if
-/// its current version is still `expected_version_id`. Queues its unknown
+/// its current version is still `expected_version_id`. Its tags are that
+/// version's tag links, so tags renamed or deleted since keep that change,
+/// plus `added_tags`. Queues its unknown
 /// ingredient names; call `ingredient_names::wake` once this commits. Call
 /// inside `db::write`.
 pub fn write_version(
@@ -144,6 +159,7 @@ pub fn write_version(
     user_id: Uuid,
     expected_version_id: Uuid,
     recipe: &NormalizedRecipe,
+    added_tags: &[String],
     ops: &[NormalizeOp],
 ) -> Result<Uuid, VersionWriteError> {
     let content = &recipe.content;
@@ -175,9 +191,10 @@ pub fn write_version(
         conn,
         &new_version,
         Some(expected_version_id),
-        TagSource::Names {
+        TagSource::CopyAndNames {
+            from_version: expected_version_id,
             user_id,
-            names: &content.tags,
+            names: added_tags,
         },
     )?;
     crate::ingredient_names::enqueue_items(

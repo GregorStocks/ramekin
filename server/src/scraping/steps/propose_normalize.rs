@@ -11,7 +11,9 @@ use ramekin_core::pipeline::{
 
 use crate::db::DbPool;
 use crate::ids::Uuid;
-use crate::normalize::{apply_op_outputs, load_version_blocking, source_recipe, NormalizedRecipe};
+use crate::normalize::{
+    added_tags, apply_op_outputs, load_version_blocking, source_recipe, NormalizedRecipe,
+};
 
 use super::helpers::step_failure;
 
@@ -20,6 +22,8 @@ use super::helpers::step_failure;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NormalizeProposal {
     pub proposed: NormalizedRecipe,
+    /// The tags `proposed` adds to the base version's.
+    pub added_tags: Vec<String>,
 }
 
 /// Builds the recipe a manual normalize job proposes: the source ops'
@@ -58,6 +62,7 @@ impl PipelineStep for ProposeNormalizeStep {
             Err(error) => return step_failure(PROPOSE_NORMALIZE_STEP, start, error),
         };
 
+        let base_tags = base.content.tags.clone();
         let mut proposed = if self
             .ops
             .iter()
@@ -74,7 +79,11 @@ impl PipelineStep for ProposeNormalizeStep {
             return step_failure(PROPOSE_NORMALIZE_STEP, start, error);
         }
 
-        let proposal = NormalizeProposal { proposed };
+        let added_tags = added_tags(&base_tags, &proposed.content.tags);
+        let proposal = NormalizeProposal {
+            proposed,
+            added_tags,
+        };
         StepResult {
             step_name: PROPOSE_NORMALIZE_STEP.to_string(),
             success: true,

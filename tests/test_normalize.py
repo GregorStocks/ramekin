@@ -8,13 +8,14 @@ from uuid import uuid4
 import pytest
 
 from conftest import make_ingredient, wait_for_job_completion
-from ramekin_client.api import ImportApi, NormalizeApi, RecipesApi, ScrapeApi
+from ramekin_client.api import ImportApi, NormalizeApi, RecipesApi, ScrapeApi, TagsApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
     BulkNormalizeRequest,
     CreateRecipeRequest,
     CreateScrapeRequest,
     NormalizeRequest,
+    RenameTagRequest,
     UpdateRecipeRequest,
 )
 
@@ -340,3 +341,25 @@ def test_refetch_needs_only_a_source_url(authed_api_client):
     finally:
         path.unlink(missing_ok=True)
     assert proposal.proposed.content.title == "Linked Page Tart"
+
+
+def test_accept_keeps_tag_changes_made_after_the_run(authed_api_client):
+    """Accepting copies the base version's tag links, so a tag renamed after
+    the run stays renamed instead of coming back under its old name."""
+    client, _ = authed_api_client
+    recipes_api = RecipesApi(client)
+    tags_api = TagsApi(client)
+    create_typed_recipe(client, "Tag Seed", tags=["test-auto-tag"])
+    recipe_id = create_typed_recipe(client, "Herb  Shrimp", tags=["weeknight"])
+
+    job_id, proposal = run(client, recipe_id, ["normalize_title", "auto_tag"])
+    assert sorted(proposal.proposed.content.tags) == ["test-auto-tag", "weeknight"]
+
+    tag = next(t for t in tags_api.list_all_tags().tags if t.name == "weeknight")
+    tags_api.rename_tag(tag.id, RenameTagRequest(name="busy-night"))
+    NormalizeApi(client).accept_normalize_proposal(recipe_id, str(job_id))
+
+    recipe = recipes_api.get_recipe(recipe_id)
+    assert recipe.title == "Herb Shrimp"
+    assert sorted(recipe.tags) == ["busy-night", "test-auto-tag"]
+    assert "weeknight" not in [t.name for t in tags_api.list_all_tags().tags]

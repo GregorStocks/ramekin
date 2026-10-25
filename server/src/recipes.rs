@@ -17,6 +17,12 @@ pub enum TagSource<'a> {
     CopyFrom(Uuid),
     /// Upsert `user_tags` by name and link them.
     Names { user_id: Uuid, names: &'a [String] },
+    /// Copy from an existing version, then upsert and link additional names.
+    CopyAndNames {
+        from_version: Uuid,
+        user_id: Uuid,
+        names: &'a [String],
+    },
 }
 
 #[derive(Debug)]
@@ -120,6 +126,14 @@ fn apply_tags(
             copy_recipe_version_tags(conn, from_version, version_id)?;
         }
         TagSource::Names { user_id, names } => {
+            link_tags_by_name(conn, version_id, user_id, names)?;
+        }
+        TagSource::CopyAndNames {
+            from_version,
+            user_id,
+            names,
+        } => {
+            copy_recipe_version_tags(conn, from_version, version_id)?;
             link_tags_by_name(conn, version_id, user_id, names)?;
         }
     }
