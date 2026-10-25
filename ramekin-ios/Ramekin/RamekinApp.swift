@@ -164,7 +164,8 @@ enum Tab: String, Hashable {
 
 /// Where the user is lives in scene storage, so relaunching after iOS
 /// terminates the app in the background comes back to the same tab, stack,
-/// recipe scale and scroll position, and unsaved recipe form. Scene storage keys must be unique within a scene and a
+/// recipe scale and scroll position, shopping list scroll position, and
+/// unsaved recipe form. Scene storage keys must be unique within a scene and a
 /// recipe can be open on both stacks, so this view owns every key and hands
 /// the tabs bindings.
 struct ContentView: View {
@@ -174,6 +175,7 @@ struct ContentView: View {
     @SceneStorage("mealPlanPath") private var mealPlanPathData = Data()
     @SceneStorage("recipePlaces") private var recipePlacesData = Data()
     @SceneStorage("recipeFormDrafts") private var recipeFormDraftsData = Data()
+    @SceneStorage("shoppingScrollItem") private var shoppingScrollItem = ""
 
     var body: some View {
         Group {
@@ -191,7 +193,7 @@ struct ContentView: View {
                         }
                         .tag(Tab.mealPlan)
 
-                    ShoppingListView()
+                    ShoppingListView(scrollItemId: $shoppingScrollItem)
                         .tabItem {
                             Label("Shopping", systemImage: "cart")
                         }
