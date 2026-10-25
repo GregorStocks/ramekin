@@ -948,6 +948,16 @@ pub fn is_size(unit: &str) -> bool {
     SIZES.contains(&piece_unit(unit).as_str())
 }
 
+/// A sized counted unit without its size, as a portion key ("large handful"
+/// -> "handful"), or None when it has no size.
+pub fn unsized_unit(unit: &str) -> Option<String> {
+    let key = piece_unit(unit);
+    let rest = SIZES
+        .iter()
+        .find_map(|size| key.strip_prefix(size)?.strip_prefix(' '))?;
+    Some(piece_unit(rest))
+}
+
 /// Normalize a counted unit to a portion key: lowercase, "extra-large" ->
 /// "extra large", and the first word singular ("cloves" -> "clove"). Matches
 /// the importer's `portion_key`.

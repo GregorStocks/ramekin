@@ -109,8 +109,8 @@ pub(super) const UNITS_RAW: &[&str] = &[
     "pkg",
     "pc",
     // Counts of a container, a shape or a serving: "1 envelope taco
-    // seasoning", "2 ears corn", "1 ball burrata". All but "splash" and
-    // "dollop" need an amount (`needs_amount`), so a food that starts with
+    // seasoning", "2 ears corn", "1 ball burrata". All but "splash", "glug"
+    // and "dollop" need an amount (`needs_amount`), so a food that starts with
     // one ("bar cookies") keeps it.
     "envelopes",
     "envelope",
@@ -168,11 +168,14 @@ pub(super) const UNITS_RAW: &[&str] = &[
     "splash",
     "shots",
     "shot",
+    "glugs",
+    "glug",
     // Size descriptors that act like units
     "extra-large",
     "medium",
     "small",
     "large",
+    "big",
     "xl",
 ];
 
@@ -184,15 +187,15 @@ pub(super) fn needs_amount(unit: &str) -> bool {
 }
 
 /// Whether `unit` counts a container, shape or serving ("envelope", "ear",
-/// "splash"): a whole word, never attached to the next one ("bartlett",
+/// "splash", "glug"): a whole word, never attached to the next one ("bartlett",
 /// "tinned").
 pub(super) fn is_count_noun(unit: &str) -> bool {
     let unit = normalize_unit(&unit.to_lowercase());
-    needs_amount(&unit) || unit == "splash" || unit == "dollop"
+    needs_amount(&unit) || ["splash", "glug", "dollop"].contains(&unit.as_str())
 }
 
 /// The canonical count units added for containers, shapes and servings,
-/// except the amount-less "splash" and "dollop" ("splash of milk").
+/// except the amount-less "splash", "glug" and "dollop" ("splash of milk").
 const COUNT_UNITS_NEEDING_AMOUNT: &[&str] = &[
     "envelope",
     "packet",
@@ -343,12 +346,14 @@ pub(super) static UNIT_CANONICAL_MAP: LazyLock<HashMap<&'static str, &'static st
             ("dollops", "dollop"),
             ("splashes", "splash"),
             ("shots", "shot"),
+            ("glugs", "glug"),
         ] {
             map.insert(plural, singular);
         }
 
-        // Size - normalize xl
+        // Size - normalize xl, and "big" is "large"
         map.insert("xl", "extra-large");
+        map.insert("big", "large");
 
         map
     });

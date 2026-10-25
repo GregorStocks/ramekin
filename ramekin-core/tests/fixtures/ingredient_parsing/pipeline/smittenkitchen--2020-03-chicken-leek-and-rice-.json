@@ -135,8 +135,13 @@
     {
       "raw": "Big handful chopped fresh herbs (parsley, chives, and dill are favorites here)",
       "expected": {
-        "item": "Big handful chopped fresh herbs",
-        "measurements": [],
+        "item": "chopped fresh herbs",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large handful"
+          }
+        ],
         "note": "parsley, chives, and dill are favorites here",
         "category": "Produce"
       }

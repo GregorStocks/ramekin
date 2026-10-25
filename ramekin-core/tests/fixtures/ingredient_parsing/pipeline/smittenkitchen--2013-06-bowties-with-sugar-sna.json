@@ -60,8 +60,13 @@
     {
       "raw": "Glug, then drizzle, of olive oil",
       "expected": {
-        "item": "Glug, then drizzle, of olive oil",
-        "measurements": [],
+        "item": "then drizzle, of olive oil",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "glug"
+          }
+        ],
         "note": null,
         "category": "Other"
       }

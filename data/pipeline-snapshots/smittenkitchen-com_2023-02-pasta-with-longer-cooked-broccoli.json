@@ -88,8 +88,13 @@
       "section": null
     },
     {
-      "item": "Glug of white wine",
-      "measurements": [],
+      "item": "white wine",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "glug"
+        }
+      ],
       "note": "optional",
       "raw": "Glug of white wine (optional)",
       "section": null

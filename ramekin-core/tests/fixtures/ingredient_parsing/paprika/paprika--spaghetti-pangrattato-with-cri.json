@@ -97,16 +97,16 @@
     {
       "raw": "1 glug of olive oil per egg",
       "expected": {
-        "item": "glug of olive oil per egg",
+        "item": "olive oil per egg",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "glug"
           }
         ],
         "note": null,
         "section": "Crispy Egg",
-        "category": "Oils & Vinegars"
+        "category": "Other"
       }
     },
     {
