@@ -98,13 +98,13 @@ fn grams_per(mass: &str) -> f64 {
 }
 
 /// A normalized unit with any fill word dropped (a heaped or scant spoon is
-/// close enough to a level one, and a packed cup to a plain one, as "1 cup
-/// packed" already reads) and volume names in the catalog's spelling
-/// ("tablespoons" -> "tbsp").
+/// close enough to a level one, a good knob to a knob, and a packed cup to a
+/// plain one, as "1 cup packed" already reads) and volume names in the
+/// catalog's spelling ("tablespoons" -> "tbsp").
 fn canonical_unit(normalized: &str) -> String {
     static FILL: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(
-            r"^(?:(?:slightly )?(?:heaped|heaping|scant|generous|level|rounded)|(?:firmly |lightly |loosely )?packed) ",
+            r"^(?:(?:slightly )?(?:heaped|heaping|scant|generous|good|level|rounded)|(?:firmly |lightly |loosely )?packed) ",
         )
         .unwrap()
     });
@@ -470,6 +470,7 @@ mod tests {
         assert_eq!(unit("heaping tablespoons"), Unit::Cups(1.0 / 16.0));
         assert_eq!(unit("packed cup"), Unit::Cups(1.0));
         assert_eq!(unit("firmly packed tsp"), Unit::Cups(1.0 / 48.0));
+        assert_eq!(unit("good knob"), Unit::Piece("knob".to_string()));
         assert_eq!(unit("lbs"), Unit::Grams(Range::exact(453.59237)));
         assert_eq!(
             unit("12- to 18-ounce package"),

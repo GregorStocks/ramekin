@@ -628,6 +628,7 @@ mod tests {
             image_quality: None,
             ingredient_model: "test-ingredient-model".to_string(),
             extraction_model: "test-extraction-model".to_string(),
+            edit_model: "test-edit-model".to_string(),
             base_url: DEFAULT_BASE_URL.to_string(),
             cache_dir: dir.path().to_path_buf(),
             rate_limit_ms: 0,

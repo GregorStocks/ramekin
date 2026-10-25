@@ -8,8 +8,13 @@
   "source_name": "Smittenkitchen.com",
   "ingredients": [
     {
-      "item": "Glug of olive oil",
-      "measurements": [],
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "glug"
+        }
+      ],
       "note": null,
       "raw": "Glug of olive oil",
       "section": null

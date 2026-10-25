@@ -98,8 +98,13 @@
     {
       "raw": "Glug of white wine (optional)",
       "expected": {
-        "item": "Glug of white wine",
-        "measurements": [],
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "glug"
+          }
+        ],
         "note": "optional",
         "category": "Beverages"
       }

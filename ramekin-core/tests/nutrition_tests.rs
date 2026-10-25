@@ -551,6 +551,51 @@ fn tiny_measures_of_non_trace_foods_use_the_density() {
 }
 
 #[test]
+fn informal_measures_weigh_by_convention() {
+    let kcal = |raw: &str| {
+        let result = estimate(&[parse_ingredient(raw)], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{raw}: {:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap()
+    };
+    let close = |a: f64, b: f64| (a - b).abs() < 1e-9;
+    // A sized handful uses the food's handful weight.
+    for (sized, plain) in [
+        ("1 large handful cilantro", "1 handful cilantro"),
+        ("1 small handful mint leaves", "1 handful mint leaves"),
+        ("2 big handfuls of chopped kale", "2 handfuls chopped kale"),
+    ] {
+        assert_eq!(kcal(sized), kcal(plain), "{sized}");
+        assert!(kcal(sized).min > 0.0, "{sized}");
+    }
+    // A glug or a knob is 1 to 2 tbsp.
+    let oil = kcal("1 tablespoon olive oil").min;
+    let glugs = kcal("2 glugs of olive oil");
+    assert!(close(glugs.min, 2.0 * oil) && close(glugs.max, 4.0 * oil));
+    let butter = kcal("1 tablespoon butter").min;
+    let knobs = kcal("1-2 good knobs butter");
+    assert!(close(knobs.min, butter) && close(knobs.max, 4.0 * butter));
+    // A shot of espresso is 1 fl oz; a scoop of ice cream 1/2 cup.
+    assert!(close(
+        kcal("2 shots espresso").min,
+        kcal("2 fl oz espresso").min
+    ));
+    assert!(close(
+        kcal("2 scoops vanilla ice cream").min,
+        kcal("1 cup vanilla ice cream").min
+    ));
+    // A scoop of powder depends on the brand's scoop.
+    let powder = estimate(&[parse_ingredient("1 scoop protein powder")], None, 1.0).unwrap();
+    assert_eq!(
+        powder.unknown_ingredients[0].reason,
+        "Unsupported quantity unit"
+    );
+}
+
+#[test]
 fn inch_pieces_scale_the_one_inch_piece() {
     let kcal = |unit: &str| {
         let result = estimate(&[ingredient("ginger", "1", unit)], None, 1.0).unwrap();

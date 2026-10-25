@@ -1,12 +1,12 @@
-//! Custom enrichment: apply user-specified changes to recipes via AI.
+//! Edit with AI: apply a user-described change to a recipe.
 
-use crate::ai::prompts::custom_enrich::{
-    render_custom_enrich_system_prompt, render_custom_enrich_user_prompt, CUSTOM_ENRICH_PROMPT_NAME,
+use crate::ai::prompts::edit_recipe::{
+    render_edit_recipe_system_prompt, render_edit_recipe_user_prompt, EDIT_RECIPE_PROMPT_NAME,
 };
 use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, ImageData, Usage};
 
-/// Result of custom enrichment.
-pub struct CustomEnrichResult<T> {
+/// Result of an AI recipe edit.
+pub struct EditRecipeResult<T> {
     /// The modified recipe parsed into the caller's expected shape.
     pub recipe: T,
     pub cached: bool,
@@ -18,14 +18,14 @@ pub struct CustomEnrichResult<T> {
 /// Takes the recipe as a JSON string and the user's instruction describing
 /// what change to make. Returns the complete modified recipe parsed into the
 /// caller's expected shape.
-pub async fn custom_enrich<T: serde::de::DeserializeOwned>(
+pub async fn edit_recipe<T: serde::de::DeserializeOwned>(
     ai_client: &dyn AiClient,
     recipe_json: &str,
     instruction: &str,
     images: Vec<ImageData>,
-) -> Result<CustomEnrichResult<T>, AiError> {
-    let system_prompt = render_custom_enrich_system_prompt();
-    let user_prompt = render_custom_enrich_user_prompt(recipe_json, instruction);
+) -> Result<EditRecipeResult<T>, AiError> {
+    let system_prompt = render_edit_recipe_system_prompt();
+    let user_prompt = render_edit_recipe_user_prompt(recipe_json, instruction);
     let user_message = if images.is_empty() {
         ChatMessage::user(user_prompt)
     } else {
@@ -43,9 +43,9 @@ pub async fn custom_enrich<T: serde::de::DeserializeOwned>(
     };
 
     let (recipe, response): (T, _) =
-        complete_json(ai_client, CUSTOM_ENRICH_PROMPT_NAME, &request).await?;
+        complete_json(ai_client, EDIT_RECIPE_PROMPT_NAME, &request).await?;
 
-    Ok(CustomEnrichResult {
+    Ok(EditRecipeResult {
         recipe,
         cached: response.cached,
         usage: response.usage,
@@ -108,26 +108,26 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn custom_enrich_evicts_fresh_wrong_shape_response() {
+    async fn edit_recipe_evicts_fresh_wrong_shape_response() {
         let client = FakeClient::new(vec![response(r#"{"error": "try again"}"#, false)]);
 
-        let result = custom_enrich::<ExpectedRecipe>(&client, "{}", "fix it", vec![]).await;
+        let result = edit_recipe::<ExpectedRecipe>(&client, "{}", "fix it", vec![]).await;
 
         assert!(matches!(result, Err(AiError::ParseError(_))));
         assert_eq!(
             *client.forgotten.lock().unwrap(),
-            vec![CUSTOM_ENRICH_PROMPT_NAME]
+            vec![EDIT_RECIPE_PROMPT_NAME]
         );
     }
 
     #[tokio::test]
-    async fn custom_enrich_retries_cached_wrong_shape_response() {
+    async fn edit_recipe_retries_cached_wrong_shape_response() {
         let client = FakeClient::new(vec![
             response(r#"{"error": "try again"}"#, true),
             response(r#"{"title": "Fresh title"}"#, false),
         ]);
 
-        let result = custom_enrich::<ExpectedRecipe>(&client, "{}", "fix it", vec![])
+        let result = edit_recipe::<ExpectedRecipe>(&client, "{}", "fix it", vec![])
             .await
             .unwrap();
 
@@ -135,7 +135,7 @@ mod tests {
         assert!(!result.cached);
         assert_eq!(
             *client.forgotten.lock().unwrap(),
-            vec![CUSTOM_ENRICH_PROMPT_NAME]
+            vec![EDIT_RECIPE_PROMPT_NAME]
         );
     }
 }

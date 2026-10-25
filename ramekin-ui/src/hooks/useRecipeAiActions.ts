@@ -1,6 +1,7 @@
 import { createSignal } from "solid-js";
 import type { Accessor } from "solid-js";
 import type {
+  EditRecipeApi,
   EnrichApi,
   RecipeContent,
   RecipeResponse,
@@ -17,6 +18,7 @@ interface UseRecipeAiActionsOptions {
   recipe: Accessor<RecipeResponse | null>;
   getRecipesApi: () => RecipesApi;
   getEnrichApi: () => EnrichApi;
+  getEditRecipeApi: () => EditRecipeApi;
   loadRecipe: () => Promise<void>;
   clearHistoricalVersion: () => void;
   setError: (message: string | null) => void;
@@ -52,8 +54,8 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
   const [enrichmentSourceVersionId, setEnrichmentSourceVersionId] =
     createSignal<string | null>(null);
   const [applyingEnrichment, setApplyingEnrichment] = createSignal(false);
-  const [customInstruction, setCustomInstruction] = createSignal("");
-  const [showCustomEnrichInput, setShowCustomEnrichInput] = createSignal(false);
+  const [editInstruction, setEditInstruction] = createSignal("");
+  const [showEditWithAiInput, setShowEditWithAiInput] = createSignal(false);
   const [generatingPhoto, setGeneratingPhoto] = createSignal(false);
   const [normalizingTitle, setNormalizingTitle] = createSignal(false);
   const [generatingDescription, setGeneratingDescription] = createSignal(false);
@@ -179,16 +181,16 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
     }
   };
 
-  const handleCustomEnrich = async () => {
+  const handleEditWithAi = async () => {
     const currentRecipe = options.recipe();
-    const instruction = customInstruction();
+    const instruction = editInstruction();
     if (!currentRecipe || !instruction.trim()) return;
 
     setEnriching(true);
     options.setError(null);
     try {
-      const enriched = await options.getEnrichApi().customEnrichRecipe({
-        customEnrichRequest: {
+      const edited = await options.getEditRecipeApi().editRecipeWithAi({
+        editRecipeRequest: {
           recipe: recipeToContent(currentRecipe),
           instruction,
           photoIds:
@@ -197,14 +199,11 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
               : undefined,
         },
       });
-      setEnrichmentPreview(enriched, currentRecipe.versionId);
-      setShowCustomEnrichInput(false);
-      setCustomInstruction("");
+      setEnrichmentPreview(edited, currentRecipe.versionId);
+      setShowEditWithAiInput(false);
+      setEditInstruction("");
     } catch (err) {
-      const message = await extractApiError(
-        err,
-        "Failed to apply custom enrichment",
-      );
+      const message = await extractApiError(err, "Failed to edit with AI");
       options.setError(message);
     } finally {
       setEnriching(false);
@@ -239,10 +238,10 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
     enriching,
     enrichedContent,
     applyingEnrichment,
-    customInstruction,
-    setCustomInstruction,
-    showCustomEnrichInput,
-    setShowCustomEnrichInput,
+    editInstruction,
+    setEditInstruction,
+    showEditWithAiInput,
+    setShowEditWithAiInput,
     generatingPhoto,
     normalizingTitle,
     generatingDescription,
@@ -250,7 +249,7 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
     handleApplyEnrichment,
     handleGeneratePhoto,
     handleNormalizeTitle,
-    handleCustomEnrich,
+    handleEditWithAi,
     handleGenerateDescription,
     handleEnrichClose: clearEnrichmentPreview,
   };

@@ -1,7 +1,7 @@
 
-# CustomEnrichRequest
+# EditRecipeRequest
 
-Request body for custom enrichment.
+Request body for Edit with AI.
 
 ## Properties
 
@@ -14,14 +14,14 @@ Name | Type
 ## Example
 
 ```typescript
-import type { CustomEnrichRequest } from ''
+import type { EditRecipeRequest } from ''
 
 // TODO: Update the object below with actual values
 const example = {
   "instruction": null,
   "photoIds": null,
   "recipe": null,
-} satisfies CustomEnrichRequest
+} satisfies EditRecipeRequest
 
 console.log(example)
 
@@ -30,7 +30,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as CustomEnrichRequest
+const exampleParsed = JSON.parse(exampleJSON) as EditRecipeRequest
 console.log(exampleParsed)
 ```
 

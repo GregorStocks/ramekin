@@ -5,8 +5,13 @@
     {
       "raw": "Glug of olive oil",
       "expected": {
-        "item": "Glug of olive oil",
-        "measurements": [],
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "glug"
+          }
+        ],
         "note": null,
         "category": "Oils & Vinegars"
       }

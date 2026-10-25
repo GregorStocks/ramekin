@@ -9,7 +9,7 @@ The owner decided source ops simply replace hand edits: there is no hand-edit wa
 Progress shows per op from the job's steps; when the job completes the client shows the base vs proposed diff (reuse the version compare views) with Accept and Discard; Accept calls the accept endpoint and reloads. \
 The same sheet works on a multi-selection in the web cookbook (and iOS if it gets bulk selection) via the bulk endpoint; decide how bulk previews are reviewed (e.g. accept all, or step through). \
 Once both clients use the new endpoints, delete the old ones and their tests: POST /api/recipes/{id}/normalize-title, /generate-description, /rescrape, /rescrape-photo (unless photo ops join the registry), POST /api/enrich (tag suggestions; auto_tag replaces it) and POST /api/recipes/reparse-ingredients, plus EnrichPreviewModal/EnrichPreviewSheet if nothing else uses them. \
-'Customize with AI' (customize-1) stays a separate action since it takes free text. \
+'Edit with AI' (customize-1) stays a separate action since it takes free text. \
 'Generate AI photo' stays its own menu item unless photo ops join the registry. \
 Both clients; no data/ diffs expected.",
   "status": "open",

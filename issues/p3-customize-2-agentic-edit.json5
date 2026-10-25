@@ -1,7 +1,8 @@
 {
-  "title": "'Customize with AI': make it a small tool-using agent instead of one model call",
-  "description": "Depends on customize-1 (frontier model, rename, likely a background job). \
-Today custom enrich is one JSON-in/JSON-out call that rewrites the whole recipe (ramekin-core/src/ai/custom_enrich.rs), so the model guesses at things the server knows. \
+  "title": "'Edit with AI': make it a small tool-using agent instead of one model call",
+  "description": "customize-1 renamed it (POST /api/edit-recipe, ramekin-core/src/ai/edit_recipe.rs, DEFAULT_EDIT_MODEL anthropic/claude-opus-5.5). \
+Today it is one JSON-in/JSON-out call that rewrites the whole recipe, so the model guesses at things the server knows. \
+Latency: that single Opus call took 17-30 s on the eval's recipes, inside the request's 50 s (EDIT_RECIPE_TIMEOUT_SECS, clients wait 60 s), so it stayed synchronous; a multi-turn tool loop likely won't fit, so this issue should move it to a background job the clients poll (the scrape-job pattern). \
 Make it a bounded tool-calling loop where the model can look things up and then make targeted edits. \
 Keep the scope modest. \
 Tools worth starting with: look up an ingredient in the catalog (density, piece weights, calories) so 'convert to grams' or 'make it 500 kcal per serving' uses real data; scale the recipe with the existing scaling code; list the user's tags; search the user's other recipes (e.g. 'make the sauce like my other one'); and edit operations (replace an ingredient line, rewrite a step, set a field) in place of returning the whole recipe, so unchanged parts stay byte-identical. \
@@ -9,7 +10,7 @@ Cap turns and tool calls, and return the edited recipe as a new version with a s
 Framework: the server is Rust and talks to OpenRouter through openai-api-rs (ramekin-core/Cargo.toml), whose AiClient has no tool-call support yet. \
 Evaluate an existing agent library rather than hand-rolling the loop, e.g. the `rig` crate (tool trait, multi-turn agents, OpenRouter and Anthropic providers), against calling the Anthropic Messages API directly with its tool use. \
 Pick one that keeps the response cache and ai-eval harness working, and document the choice in the PR. \
-Extend the custom-enrich ai-eval suite with a few cases that need tools (unit conversion with catalog weights, calorie targets). \
+Extend the edit-recipe ai-eval suite with a few cases that need tools (unit conversion with catalog weights, calorie targets). \
 Both clients only need progress and summary display changes; no data/ diffs expected.",
   "status": "open",
   "priority": 3,

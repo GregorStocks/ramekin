@@ -6,10 +6,9 @@ use thiserror::Error;
 /// Default OpenRouter base URL.
 pub const DEFAULT_BASE_URL: &str = "https://openrouter.ai/api/v1";
 
-/// Default model for tags, titles, descriptions and custom enrich, chosen
-/// with `make ai-eval` (data/ai-evals/): judged good as often as any model on
-/// titles and descriptions, tied best on custom enrich at under half
-/// claude-sonnet-5.5's cost, and well ahead of gemini-2.5-flash on tags.
+/// Default model for tags, titles and descriptions, chosen with `make ai-eval`
+/// (data/ai-evals/): judged good as often as any model on titles and
+/// descriptions, and well ahead of gemini-2.5-flash on tags.
 pub const DEFAULT_MODEL: &str = "google/gemini-3.8-flash";
 /// Default model for ingredient names and weights, chosen with `make ai-eval`
 /// (data/ai-evals/): the most accurate on all three ingredient suites once its
@@ -24,6 +23,11 @@ pub const DEFAULT_EXTRACTION_MODEL: &str = "anthropic/claude-sonnet-5.5";
 /// over the leaderboard leaders: judged best most often, with no refusals or
 /// timeouts, at about $0.07 a photo.
 pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-3.1-flash-image";
+/// Default model for Edit with AI (`for_recipe_edit`): a frontier model, since
+/// the user asks for arbitrary changes and reviews the whole rewritten recipe.
+/// In `make ai-eval SUITE=edit-recipe` it answered every case validly in
+/// 17-30 s, at about $0.07 an edit.
+pub const DEFAULT_EDIT_MODEL: &str = "anthropic/claude-opus-5.5";
 
 /// Default rate limit between requests in milliseconds.
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 500;
@@ -37,11 +41,11 @@ pub const INGREDIENT_TIMEOUT_SECS: u64 = 120;
 /// normalize ops in the request, so iOS gives that request 180 s and the web
 /// client sets no timeout.
 pub const EXTRACTION_TIMEOUT_SECS: u64 = 60;
-/// The least request timeout for custom enrich, which also writes out a whole
-/// recipe, after the default model's hidden reasoning: a 4096-token answer
-/// took it 25 s. The user waits on it in the request, so it stays inside the
-/// clients' 60 s (URLSession's default included).
-pub const CUSTOM_ENRICH_TIMEOUT_SECS: u64 = 50;
+/// The least request timeout for Edit with AI, which also writes out a whole
+/// recipe: 17-30 s for the edit model on the eval's recipes. The user waits on
+/// it in the request, so it stays inside the clients' 60 s (URLSession's
+/// default included).
+pub const EDIT_RECIPE_TIMEOUT_SECS: u64 = 50;
 /// The least request timeout for generating a recipe photo: 10-30 s for the
 /// current image models (the default about 13 s). The user waits on it in the
 /// request, and the server still processes and stores the image after, so it
@@ -63,7 +67,7 @@ pub enum ConfigError {
 pub struct AiConfig {
     /// API key for OpenRouter.
     pub api_key: String,
-    /// Model name for tags, titles, descriptions and custom enrich.
+    /// Model name for tags, titles and descriptions.
     pub model: String,
     /// Model name for image generation.
     pub image_model: String,
@@ -74,6 +78,8 @@ pub struct AiConfig {
     pub ingredient_model: String,
     /// Model name for recipe extraction from text and photos (`for_extraction`).
     pub extraction_model: String,
+    /// Model name for Edit with AI (`for_recipe_edit`).
+    pub edit_model: String,
     /// Base URL for the API.
     pub base_url: String,
     /// Directory for caching responses.
@@ -96,6 +102,7 @@ impl AiConfig {
     /// - `RAMEKIN_AI_IMAGE_QUALITY`: Image quality, auto/low/medium/high (default: the model's own)
     /// - `RAMEKIN_AI_INGREDIENT_MODEL`: Ingredient names and weights model (default: "anthropic/claude-opus-5.5")
     /// - `RAMEKIN_AI_EXTRACTION_MODEL`: Text and photo extraction model (default: DEFAULT_EXTRACTION_MODEL)
+    /// - `RAMEKIN_AI_EDIT_MODEL`: Edit with AI model (default: DEFAULT_EDIT_MODEL)
     /// - `RAMEKIN_AI_BASE_URL`: API base URL (default: "https://openrouter.ai/api/v1")
     /// - `RAMEKIN_AI_CACHE_DIR`: Cache directory (default: "~/.ramekin/ai-cache")
     /// - `RAMEKIN_AI_RATE_LIMIT_MS`: Rate limit in ms (default: 500)
@@ -113,6 +120,8 @@ impl AiConfig {
             .unwrap_or_else(|_| DEFAULT_INGREDIENT_MODEL.to_string());
         let extraction_model = env::var("RAMEKIN_AI_EXTRACTION_MODEL")
             .unwrap_or_else(|_| DEFAULT_EXTRACTION_MODEL.to_string());
+        let edit_model =
+            env::var("RAMEKIN_AI_EDIT_MODEL").unwrap_or_else(|_| DEFAULT_EDIT_MODEL.to_string());
 
         let base_url =
             env::var("RAMEKIN_AI_BASE_URL").unwrap_or_else(|_| DEFAULT_BASE_URL.to_string());
@@ -138,6 +147,7 @@ impl AiConfig {
             image_quality,
             ingredient_model,
             extraction_model,
+            edit_model,
             base_url,
             cache_dir,
             rate_limit_ms,
@@ -165,11 +175,12 @@ impl AiConfig {
         }
     }
 
-    /// This configuration for custom enrich: the default model, and a timeout
-    /// long enough to write out a whole recipe.
-    pub fn for_custom_enrich(&self) -> Self {
+    /// This configuration for Edit with AI: its model, and a timeout long
+    /// enough to write out a whole recipe.
+    pub fn for_recipe_edit(&self) -> Self {
         Self {
-            request_timeout_secs: self.request_timeout_secs.max(CUSTOM_ENRICH_TIMEOUT_SECS),
+            model: self.edit_model.clone(),
+            request_timeout_secs: self.request_timeout_secs.max(EDIT_RECIPE_TIMEOUT_SECS),
             ..self.clone()
         }
     }
@@ -262,6 +273,7 @@ mod tests {
             image_quality: None,
             ingredient_model: DEFAULT_INGREDIENT_MODEL.to_string(),
             extraction_model: DEFAULT_EXTRACTION_MODEL.to_string(),
+            edit_model: DEFAULT_EDIT_MODEL.to_string(),
             base_url: base_url.to_string(),
             cache_dir: std::path::PathBuf::from("/tmp/ai-cache"),
             rate_limit_ms: 0,
@@ -297,19 +309,16 @@ mod tests {
     }
 
     #[test]
-    fn custom_enrich_calls_use_the_default_model_and_a_recipe_length_timeout() {
+    fn recipe_edit_calls_use_their_model_and_a_recipe_length_timeout() {
         let config = config_with_base_url(DEFAULT_BASE_URL);
-        let custom_enrich = config.for_custom_enrich();
-        assert_eq!(custom_enrich.model, config.model);
-        assert_eq!(
-            custom_enrich.request_timeout_secs,
-            CUSTOM_ENRICH_TIMEOUT_SECS
-        );
+        let edit = config.for_recipe_edit();
+        assert_eq!(edit.model, DEFAULT_EDIT_MODEL);
+        assert_eq!(edit.request_timeout_secs, EDIT_RECIPE_TIMEOUT_SECS);
         let patient = AiConfig {
             request_timeout_secs: 600,
             ..config
         };
-        assert_eq!(patient.for_custom_enrich().request_timeout_secs, 600);
+        assert_eq!(patient.for_recipe_edit().request_timeout_secs, 600);
     }
 
     #[test]

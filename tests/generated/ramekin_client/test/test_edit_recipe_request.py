@@ -14,10 +14,10 @@
 
 import unittest
 
-from ramekin_client.models.custom_enrich_request import CustomEnrichRequest
+from ramekin_client.models.edit_recipe_request import EditRecipeRequest
 
-class TestCustomEnrichRequest(unittest.TestCase):
-    """CustomEnrichRequest unit test stubs"""
+class TestEditRecipeRequest(unittest.TestCase):
+    """EditRecipeRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,16 +25,16 @@ class TestCustomEnrichRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CustomEnrichRequest:
-        """Test CustomEnrichRequest
+    def make_instance(self, include_optional) -> EditRecipeRequest:
+        """Test EditRecipeRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `CustomEnrichRequest`
+        # uncomment below to create an instance of `EditRecipeRequest`
         """
-        model = CustomEnrichRequest()
+        model = EditRecipeRequest()
         if include_optional:
-            return CustomEnrichRequest(
+            return EditRecipeRequest(
                 instruction = '',
                 photo_ids = [
                     ''
@@ -69,7 +69,7 @@ class TestCustomEnrichRequest(unittest.TestCase):
                     total_time = '', )
             )
         else:
-            return CustomEnrichRequest(
+            return EditRecipeRequest(
                 instruction = '',
                 recipe = ramekin_client.models.recipe_content.RecipeContent(
                     cook_time = '', 
@@ -102,8 +102,8 @@ class TestCustomEnrichRequest(unittest.TestCase):
         )
         """
 
-    def testCustomEnrichRequest(self):
-        """Test CustomEnrichRequest"""
+    def testEditRecipeRequest(self):
+        """Test EditRecipeRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -131,10 +131,15 @@
     {
       "raw": "big pinch kosher salt and pepper",
       "expected": {
-        "item": "big pinch kosher salt and pepper",
-        "measurements": [],
+        "item": "kosher salt and pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large pinch"
+          }
+        ],
         "note": null,
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {

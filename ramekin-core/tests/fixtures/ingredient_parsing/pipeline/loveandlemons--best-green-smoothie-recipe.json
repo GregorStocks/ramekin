@@ -19,8 +19,13 @@
     {
       "raw": "big handfuls fresh baby spinach, about 2 cups",
       "expected": {
-        "item": "big handfuls fresh baby spinach",
-        "measurements": [],
+        "item": "fresh baby spinach",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large handful"
+          }
+        ],
         "note": "about 2 cups",
         "category": "Produce"
       }

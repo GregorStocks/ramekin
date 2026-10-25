@@ -134,8 +134,13 @@
     {
       "raw": "Big handful chopped flat-leaf parsley, to finish",
       "expected": {
-        "item": "Big handful chopped flat-leaf parsley",
-        "measurements": [],
+        "item": "chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large handful"
+          }
+        ],
         "note": "to finish",
         "category": "Produce"
       }

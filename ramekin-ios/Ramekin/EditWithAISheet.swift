@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CustomEnrichSheet: View {
+struct EditWithAISheet: View {
     let recipe: RecipeResponse
     @Binding var isPresented: Bool
     let onResult: (RecipeContent) -> Void
@@ -29,13 +29,13 @@ struct CustomEnrichSheet: View {
                     Section {
                         HStack {
                             Spacer()
-                            ProgressView("Customizing recipe…")
+                            ProgressView("Editing recipe…")
                             Spacer()
                         }
                     }
                 }
             }
-            .navigationTitle("Customize with AI")
+            .navigationTitle("Edit with AI")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -80,8 +80,8 @@ struct CustomEnrichSheet: View {
                 title: recipe.title,
                 totalTime: recipe.totalTime
             )
-            let request = CustomEnrichRequest(instruction: instruction, recipe: recipeContent)
-            let result = try await EnrichAPI.customEnrichRecipe(customEnrichRequest: request)
+            let request = EditRecipeRequest(instruction: instruction, recipe: recipeContent)
+            let result = try await EditRecipeAPI.editRecipeWithAi(editRecipeRequest: request)
             guard !Task.isCancelled else { return }
             await MainActor.run {
                 onResult(result)

@@ -66,7 +66,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *ClientLogsApi* | [**create_client_log**](ramekin_client/docs/ClientLogsApi.md#create_client_log) | **POST** /api/client-logs | 
-*EnrichApi* | [**custom_enrich_recipe**](ramekin_client/docs/EnrichApi.md#custom_enrich_recipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
+*EditRecipeApi* | [**edit_recipe_with_ai**](ramekin_client/docs/EditRecipeApi.md#edit_recipe_with_ai) | **POST** /api/edit-recipe | Edit a recipe with AI
 *EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
@@ -139,9 +139,9 @@ Class | Method | HTTP request | Description
  - [CreateScrapeResponse](ramekin_client/docs/CreateScrapeResponse.md)
  - [CreateTagRequest](ramekin_client/docs/CreateTagRequest.md)
  - [CreateTagResponse](ramekin_client/docs/CreateTagResponse.md)
- - [CustomEnrichRequest](ramekin_client/docs/CustomEnrichRequest.md)
  - [DerivedMeasurement](ramekin_client/docs/DerivedMeasurement.md)
  - [Direction](ramekin_client/docs/Direction.md)
+ - [EditRecipeRequest](ramekin_client/docs/EditRecipeRequest.md)
  - [ErrorCode](ramekin_client/docs/ErrorCode.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
  - [EstimateCaloriesRequest](ramekin_client/docs/EstimateCaloriesRequest.md)

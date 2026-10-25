@@ -198,8 +198,13 @@
     {
       "raw": "Big handful of parsley (or a mix of parsley, cilantro and mint would be good too)",
       "expected": {
-        "item": "Big handful of parsley",
-        "measurements": [],
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large handful"
+          }
+        ],
         "note": "or a mix of parsley, cilantro and mint would be good too",
         "section": "Fixings",
         "category": "Produce"

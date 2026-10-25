@@ -79,15 +79,19 @@
     {
       "raw": "1 big clove or 2 small cloves garlic",
       "expected": {
-        "item": "big clove or 2 small cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "large clove"
+          },
+          {
+            "amount": "2",
+            "unit": "small clove"
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "category": "Produce"
       }
     },
     {

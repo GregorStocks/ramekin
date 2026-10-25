@@ -1,6 +1,7 @@
 .openapi-generator-ignore
 apis/AuthApi.ts
 apis/ClientLogsApi.ts
+apis/EditRecipeApi.ts
 apis/EnrichApi.ts
 apis/ImportApi.ts
 apis/IngredientNamesApi.ts
@@ -35,9 +36,10 @@ docs/CreateScrapeRequest.md
 docs/CreateScrapeResponse.md
 docs/CreateTagRequest.md
 docs/CreateTagResponse.md
-docs/CustomEnrichRequest.md
 docs/DerivedMeasurement.md
 docs/Direction.md
+docs/EditRecipeApi.md
+docs/EditRecipeRequest.md
 docs/EnrichApi.md
 docs/ErrorCode.md
 docs/ErrorResponse.md
@@ -146,9 +148,9 @@ models/CreateScrapeRequest.ts
 models/CreateScrapeResponse.ts
 models/CreateTagRequest.ts
 models/CreateTagResponse.ts
-models/CustomEnrichRequest.ts
 models/DerivedMeasurement.ts
 models/Direction.ts
+models/EditRecipeRequest.ts
 models/ErrorCode.ts
 models/ErrorResponse.ts
 models/EstimateCaloriesRequest.ts

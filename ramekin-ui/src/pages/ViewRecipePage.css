@@ -103,13 +103,13 @@
   background: var(--surface-2);
 }
 
-.custom-enrich-input {
+.edit-with-ai-input {
   display: flex;
   gap: 0.5rem;
   flex-basis: 100%;
 }
 
-.custom-enrich-input input {
+.edit-with-ai-input input {
   flex: 1;
   min-width: 0;
 }
