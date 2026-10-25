@@ -2,7 +2,11 @@ import SwiftUI
 import UIKit
 
 struct ShoppingListView: View {
+    /// The topmost item in view, as a UUID string ("" for the top of the
+    /// list); ContentView keeps it in scene storage.
+    @Binding var scrollItemId: String
     @ObservedObject private var store = ShoppingListStore.shared
+    @Environment(\.scenePhase) private var scenePhase
     @State private var isAddingItem = false
     @State private var ingredientName = ""
     @State private var amount = ""
@@ -11,6 +15,15 @@ struct ShoppingListView: View {
     /// The last delete, which the toast offers to undo.
     @State private var pendingUndo: ShoppingListUndo?
     @FocusState private var addFieldFocused: Bool
+    /// Rows on screen, from their onAppear/onDisappear: preferences don't
+    /// reach out of List rows, so the recipe screen's anchor positions can't
+    /// be used here.
+    @State private var visibleItemIds: Set<UUID> = []
+    /// Rows also disappear when another tab is selected; record only while
+    /// the list is shown.
+    @State private var isListShown = false
+    /// Nothing is recorded until the stored item has been scrolled to.
+    @State private var hasRestoredScroll = false
 
     var body: some View {
         NavigationStack {
@@ -214,6 +227,29 @@ struct ShoppingListView: View {
     }
 
     private var itemsList: some View {
+        ScrollViewReader { proxy in
+            itemRows
+                .onAppear {
+                    isListShown = true
+                    restoreScroll(proxy)
+                }
+                .onDisappear { isListShown = false }
+                // Items can arrive after the list (adding to an empty list).
+                .onChange(of: store.items.count) { _ in restoreScroll(proxy) }
+                // Writing scene storage re-renders every tab, so record only
+                // once scrolling settles; leaving the foreground records at once.
+                .task(id: topVisibleItemId) {
+                    try? await Task.sleep(nanoseconds: 500_000_000)
+                    guard !Task.isCancelled else { return }
+                    rememberScroll()
+                }
+                .onChange(of: scenePhase) { phase in
+                    if phase != .active { rememberScroll() }
+                }
+        }
+    }
+
+    private var itemRows: some View {
         List {
             let checked = store.items.filter(\.isChecked)
 
@@ -225,7 +261,7 @@ struct ShoppingListView: View {
             ForEach(groupedUncheckedItems, id: \.category) { group in
                 Section(group.category) {
                     ForEach(group.items, id: \.id) { item in
-                        ShoppingItemRow(item: item, store: store)
+                        itemRow(item)
                     }
                     .onDelete { offsets in
                         deleteItems(offsets.map { group.items[$0] })
@@ -237,7 +273,7 @@ struct ShoppingListView: View {
             if !checked.isEmpty {
                 Section("Checked") {
                     ForEach(checked, id: \.id) { item in
-                        ShoppingItemRow(item: item, store: store)
+                        itemRow(item)
                     }
                     .onDelete { offsets in
                         deleteItems(offsets.map { checked[$0] })
@@ -282,6 +318,42 @@ struct ShoppingListView: View {
         .foregroundColor(.black)
         .clipShape(Capsule())
         .padding(.top, 8)
+    }
+}
+
+/// Shopping list scroll restoration.
+extension ShoppingListView {
+    /// Items in the order the list shows them.
+    private var displayedItemIds: [UUID] {
+        (groupedUncheckedItems.flatMap(\.items) + store.items.filter(\.isChecked))
+            .compactMap(\.id)
+    }
+
+    private var topVisibleItemId: UUID? {
+        SceneRestoration.topVisibleItem(in: displayedItemIds, visible: visibleItemIds)
+    }
+
+    private func restoreScroll(_ proxy: ScrollViewProxy) {
+        guard !hasRestoredScroll, !store.items.isEmpty else { return }
+        hasRestoredScroll = true
+        // An item deleted or cleared since restores as the top of the list.
+        guard let id = UUID(uuidString: scrollItemId),
+              store.items.contains(where: { $0.id == id }) else { return }
+        // Next run loop, once the rows exist. Rows are identified by the
+        // optional Core Data id.
+        DispatchQueue.main.async { proxy.scrollTo(Optional(id), anchor: .top) }
+    }
+
+    private func rememberScroll() {
+        guard hasRestoredScroll, isListShown else { return }
+        let id = topVisibleItemId?.uuidString ?? ""
+        if scrollItemId != id { scrollItemId = id }
+    }
+
+    private func itemRow(_ item: ShoppingItem) -> some View {
+        ShoppingItemRow(item: item, store: store)
+            .onAppear { if let id = item.id { visibleItemIds.insert(id) } }
+            .onDisappear { if let id = item.id { visibleItemIds.remove(id) } }
     }
 }
 
@@ -358,5 +430,5 @@ struct ShoppingItemRow: View {
 }
 
 #Preview {
-    ShoppingListView()
+    ShoppingListView(scrollItemId: .constant(""))
 }

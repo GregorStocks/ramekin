@@ -4,6 +4,7 @@
 //! for storing recipes, fetching images, etc.
 
 mod apply_normalize;
+mod edit_with_ai;
 mod fetch_html;
 mod fetch_images;
 mod helpers;
@@ -13,6 +14,7 @@ mod resolve_ingredient_names;
 mod save_recipe;
 
 pub use apply_normalize::ApplyNormalizeStep;
+pub use edit_with_ai::{EditRequest, EditWithAiStep};
 pub use fetch_html::FetchHtmlStep;
 pub use fetch_images::FetchImagesStep;
 pub use load_recipe::LoadRecipeStep;

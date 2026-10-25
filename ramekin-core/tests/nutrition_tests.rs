@@ -1768,3 +1768,32 @@ fn caramels_are_candies_not_caramel_sauce() {
         calories("caramel sauce", "100", "g")
     );
 }
+
+#[test]
+fn pieces_usda_weighs_under_another_name() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (item, amount, unit, grams) in [
+        // SR names the piece by its alternatives: "wedge or slice".
+        ("lemon", "2", "wedge", 14.0),
+        ("lemon", "3", "slices", 21.0),
+        // A bundle is a bunch.
+        ("scallions", "1", "bundle", 105.0),
+        ("green onion", "2", "bundles", 210.0),
+        // A stick of rhubarb is a stalk.
+        ("rhubarb", "2", "stick", 102.0),
+        // Instant ramen is a package of noodles.
+        ("instant ramen noodles", "1", "package", 81.0),
+        ("instant ramen noodles", "2", "", 162.0),
+        // Canned anchovies are fillets.
+        ("anchovy", "1", "fillet", 4.0),
+    ] {
+        let counted = calories(item, amount, unit).expect(item);
+        let weighed = calories(item, &grams.to_string(), "g").expect(item);
+        assert!((counted - weighed).abs() < 1e-6, "{amount} {unit} {item}");
+    }
+}

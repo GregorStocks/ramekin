@@ -23,6 +23,10 @@ client match it in the same PR.
   while names are still being recognized: doubling from 2 s to 30 s, then
   stopping once the waits reach 5 minutes. The schedule ends after the last
   delay.
+- `normalize-selection.json`: web and iOS Re-normalize sheet logic: which ops
+  start checked, implied ops locking (re-fetch locks re-extract), effective
+  ops in registry order, job step labels, and which fields a proposal changes
+  (re-parsed ingredients that read the same still count).
 - `sync-apply.json`: web and iOS application of a sync response to a cached
   table (doc/sync-design.md): tombstones, full-resync pruning, skipping older
   server rows, and keeping fields with unsent local edits. Web runs the cases

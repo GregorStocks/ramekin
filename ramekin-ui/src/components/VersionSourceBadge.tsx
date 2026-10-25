@@ -11,6 +11,8 @@ export default function VersionSourceBadge(props: VersionSourceBadgeProps) {
         return "Imported";
       case "normalize":
         return "Normalized";
+      case "ai_edit":
+        return "AI Edit";
       case "ai_photo":
         return "AI Photo";
       case "reparse":
@@ -29,6 +31,7 @@ export default function VersionSourceBadge(props: VersionSourceBadgeProps) {
       case "scrape":
         return "version-source-badge version-source-scrape";
       case "normalize":
+      case "ai_edit":
       case "ai_photo":
         return "version-source-badge version-source-ai";
       default:

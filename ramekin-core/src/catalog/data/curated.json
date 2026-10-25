@@ -5836,7 +5836,14 @@
       "default_portion": "large"
     },
     "fish, anchovy, european, canned in oil, drained solids": {
-      "default_portion": "anchovy"
+      "default_portion": "anchovy",
+      "portions": {
+        "fillet": {
+          "source": "USDA SR Legacy 174183 (Fish, anchovy, european, canned in oil, drained solids): 1 anchovy = 4 g; canned anchovies are fillets",
+          "url": "https://fdc.nal.usda.gov/food-details/174183/nutrients",
+          "value": 4.0
+        }
+      }
     },
     "frankfurter, meat": {
       "default_portion": "hot dog",
@@ -5975,6 +5982,15 @@
         }
       }
     },
+    "rhubarb, raw": {
+      "portions": {
+        "stick": {
+          "source": "USDA SR Legacy 167758 (Rhubarb, raw): 1 stalk = 51 g; a stick of rhubarb is a stalk",
+          "url": "https://fdc.nal.usda.gov/food-details/167758/nutrients",
+          "value": 51.0
+        }
+      }
+    },
     "rosemary, fresh": {
       "trace_ok": true
     },
@@ -5990,6 +6006,16 @@
     },
     "soup, chicken broth cubes, dry": {
       "default_portion": "cube"
+    },
+    "soup, ramen noodle, any flavor, dry": {
+      "default_portion": "package",
+      "portions": {
+        "package": {
+          "source": "USDA SR Legacy 171177 (Soup, ramen noodle, any flavor, dry): 1 package without flavor packet = 81 g; a recipe's instant ramen is the noodles (the 5.8 g flavor packet is often discarded or listed apart)",
+          "url": "https://fdc.nal.usda.gov/food-details/171177/nutrients",
+          "value": 81.0
+        }
+      }
     },
     "spearmint, fresh": {
       "trace_ok": true

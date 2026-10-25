@@ -103,7 +103,8 @@ class TestNormalizeProposalResponse(unittest.TestCase):
                     photo_ids = [
                         ''
                         ], ),
-                status = ''
+                status = '',
+                summary = ''
             )
         else:
             return NormalizeProposalResponse(

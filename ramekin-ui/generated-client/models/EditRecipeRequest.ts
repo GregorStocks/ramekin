@@ -13,14 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { RecipeContent } from './RecipeContent';
-import {
-    RecipeContentFromJSON,
-    RecipeContentFromJSONTyped,
-    RecipeContentToJSON,
-    RecipeContentToJSONTyped,
-} from './RecipeContent';
-
 /**
  * Request body for Edit with AI.
  * @export
@@ -28,23 +20,17 @@ import {
  */
 export interface EditRecipeRequest {
     /**
-     * 
+     * The change the user wants, in their words.
      * @type {string}
      * @memberof EditRecipeRequest
      */
     instruction: string;
     /**
-     * 
+     * Photos of the dish to give the model as context.
      * @type {Array<string>}
      * @memberof EditRecipeRequest
      */
     photoIds?: Array<string>;
-    /**
-     * 
-     * @type {RecipeContent}
-     * @memberof EditRecipeRequest
-     */
-    recipe: RecipeContent;
 }
 
 /**
@@ -52,7 +38,6 @@ export interface EditRecipeRequest {
  */
 export function instanceOfEditRecipeRequest(value: object): value is EditRecipeRequest {
     if (!('instruction' in value) || value['instruction'] === undefined) return false;
-    if (!('recipe' in value) || value['recipe'] === undefined) return false;
     return true;
 }
 
@@ -68,7 +53,6 @@ export function EditRecipeRequestFromJSONTyped(json: any, ignoreDiscriminator: b
         
         'instruction': json['instruction'],
         'photoIds': json['photo_ids'] == null ? undefined : json['photo_ids'],
-        'recipe': RecipeContentFromJSON(json['recipe']),
     };
 }
 
@@ -85,7 +69,6 @@ export function EditRecipeRequestToJSONTyped(value?: EditRecipeRequest | null, i
         
         'instruction': value['instruction'],
         'photo_ids': value['photoIds'],
-        'recipe': RecipeContentToJSON(value['recipe']),
     };
 }
 

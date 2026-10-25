@@ -46,6 +46,7 @@ pub async fn suggest_tags(
         json_response: true,
         max_tokens: Some(SHORT_JSON_ANSWER_MAX_TOKENS),
         temperature: Some(0.3),
+        ..Default::default()
     };
 
     let (ai_response, response): (AutoTagResponse, _) =

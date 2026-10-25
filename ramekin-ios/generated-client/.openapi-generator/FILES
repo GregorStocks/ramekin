@@ -10,7 +10,6 @@ RamekinClient/Classes/OpenAPIs/APIs.swift
 RamekinClient/Classes/OpenAPIs/APIs/AuthAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/ClientLogsAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/EditRecipeAPI.swift
-RamekinClient/Classes/OpenAPIs/APIs/EnrichAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/ImportAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/IngredientNamesAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/MealPlansAPI.swift
@@ -52,7 +51,6 @@ RamekinClient/Classes/OpenAPIs/Models/Direction.swift
 RamekinClient/Classes/OpenAPIs/Models/EditRecipeRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ErrorCode.swift
 RamekinClient/Classes/OpenAPIs/Models/EstimateCaloriesRequest.swift
-RamekinClient/Classes/OpenAPIs/Models/GenerateDescriptionResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/GeneratePhotoResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportExtractionMethod.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosRequest.swift
@@ -84,7 +82,6 @@ RamekinClient/Classes/OpenAPIs/Models/NormalizeOpInfo.swift
 RamekinClient/Classes/OpenAPIs/Models/NormalizeOpsResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/NormalizeProposalResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/NormalizeRequest.swift
-RamekinClient/Classes/OpenAPIs/Models/NormalizeTitleResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/NormalizedRecipe.swift
 RamekinClient/Classes/OpenAPIs/Models/OpKind.swift
 RamekinClient/Classes/OpenAPIs/Models/OpResult.swift
@@ -97,7 +94,6 @@ RamekinClient/Classes/OpenAPIs/Models/RecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeSummary.swift
 RamekinClient/Classes/OpenAPIs/Models/RenameTagRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/RenameTagResponse.swift
-RamekinClient/Classes/OpenAPIs/Models/ReparseIngredientsResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RescrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RetryScrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ScrapeJobResponse.swift
@@ -154,10 +150,8 @@ docs/DerivedMeasurement.md
 docs/Direction.md
 docs/EditRecipeAPI.md
 docs/EditRecipeRequest.md
-docs/EnrichAPI.md
 docs/ErrorCode.md
 docs/EstimateCaloriesRequest.md
-docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
 docs/ImportAPI.md
 docs/ImportExtractionMethod.md
@@ -193,7 +187,6 @@ docs/NormalizeOpInfo.md
 docs/NormalizeOpsResponse.md
 docs/NormalizeProposalResponse.md
 docs/NormalizeRequest.md
-docs/NormalizeTitleResponse.md
 docs/NormalizedRecipe.md
 docs/OpKind.md
 docs/OpResult.md
@@ -208,7 +201,6 @@ docs/RecipeSummary.md
 docs/RecipesAPI.md
 docs/RenameTagRequest.md
 docs/RenameTagResponse.md
-docs/ReparseIngredientsResponse.md
 docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeAPI.md
