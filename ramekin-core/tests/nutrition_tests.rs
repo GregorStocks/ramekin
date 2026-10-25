@@ -1725,3 +1725,46 @@ fn every_estimated_weight_is_used() {
     }
     assert!(unused.is_empty(), "unused estimated weights: {unused:#?}");
 }
+
+#[test]
+fn counted_nuts_and_sausages_weigh_by_the_piece() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    // A bare count of nuts is that many nuts (halves, for pecans and
+    // walnuts), of hot dogs or smoked sausages that many links, and of candy
+    // that many pieces.
+    for (item, amount, grams) in [
+        ("cashew nuts", "15", 22.5),
+        ("whole cashewnuts", "4", 6.0),
+        ("pecan halves", "12", 18.0),
+        ("walnut halves", "12", 24.0),
+        ("hot dogs", "8", 416.0),
+        ("hot dog sausages", "3", 156.0),
+        ("smoked sausages", "4", 272.0),
+        ("caramels", "28", 282.8),
+        ("gummy worms", "24", 177.6),
+        ("fun size butterfinger candy bars", "2", 36.0),
+    ] {
+        let counted = calories(item, amount, "").expect(item);
+        let weighed = calories(item, &grams.to_string(), "g").expect(item);
+        assert!((counted - weighed).abs() < 1e-6, "{amount} {item}");
+    }
+}
+
+#[test]
+fn caramels_are_candies_not_caramel_sauce() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    assert_ne!(
+        calories("caramels", "100", "g"),
+        calories("caramel sauce", "100", "g")
+    );
+}
