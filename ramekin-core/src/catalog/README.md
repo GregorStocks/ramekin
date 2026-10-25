@@ -250,6 +250,10 @@ large"). A size with no exact portion uses the food's one sized piece ("2 medium
 potatoes" → "potato medium"), else its default piece ("1 large lemon" → the
 lemon). A sized piece with no exact portion is the piece ("large lemon" →
 "lemon"). A piece with sizes uses its medium ("1 stalk celery" → "stalk medium").
+A size alone never means a leaf either ("1 medium cabbage" is "head medium", not
+"leaf medium"), and a thick or thin slice of a food with only a plain slice is
+that slice. A slice or leaves left in the item ("2 thick slices sourdough
+bread", "4 kale leaves") are the counted piece ("slice thick", "leaf").
 
 Name rules:
 

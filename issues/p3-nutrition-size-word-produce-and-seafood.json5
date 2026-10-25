@@ -1,0 +1,20 @@
+{
+  "title": "Calorie estimates: a size word alone on whole produce and seafood",
+  "description": "20 lines (18 pipeline fixtures, 1 Paprika, 1 snapshot) count a food by size alone (\"1 large savoy cabbage\" x3, \"1 medium kohlrabi\", \"4 medium kohlrabi\", \"1 medium/small butternut squash\", \"1 small sugar pumpkin\", \"12 large shrimp\" x2, \"12 medium shrimp\", \"10 large marshmallows\", \"4 large marshmallows\", \"3 large blackberries\", \"2 small green chiles\", \"1 small ahi tuna steak\", \"1 small zucchini per person\"), and USDA has no sized piece for the food. \
+Bare counts of the same foods fail too and are listed with them here: \"1 butternut squash\" x2, \"1 to 2 pumpkins\", \"1 fresh papaya\", \"3 baby bok choy\", \"2 broccoli crowns\", \"1 broccoli\", \"8 shrimp\", \"4 shrimp\", \"8 shrimps\", \"8 jumbo or s'mores marshmallows\". \
+Needs cited per-size weights (produce weight tables, ATK; shrimp by count per pound: large 31/40, medium 41/50, jumbo 21/25; marshmallows: USDA \"regular\" 7.2 g is the large size, jumbo needs its own). \
+A bare count with no size should mean the medium where a source gives one. \
+Lines that are really another group (\"2 large balls of burrata\", \"1 small piece parmesan cheese\", \"2 large fresh artichoke hearts, cut into slices\") can stay unknown. \
+Measure with make ingredient-catalog-audit (Unsupported quantity unit, all three corpora) and, once blocked-ingredient-burndown-from-prod lands, the prod report; make pipeline should produce only data/ingredient-catalog-audit.md and fixture-category diffs. \
+Server-side only (ramekin-core nutrition), so no web or iOS change. \
+Split out of the retired p3-nutrition-remaining-count-units (owner, 2026-10-24: whole groups per PR, never one ingredient).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "catalog",
+  ],
+  "created_at": "2026-10-24T19:00:00-07:00",
+  "updated_at": "2026-10-24T19:00:00-07:00",
+}
