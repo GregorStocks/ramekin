@@ -3,7 +3,7 @@
   "recipe_slug": "chicken-a-la-king-recipe",
   "ingredients": [
     {
-      "raw": "4 cups cooked chicken (cut into cubes)",
+      "raw": "4 cups cooked chicken (cut into cubes or shredded)",
       "expected": {
         "item": "cooked chicken",
         "measurements": [
@@ -12,18 +12,18 @@
             "unit": "cup"
           }
         ],
-        "note": "cut into cubes",
+        "note": "cut into cubes or shredded",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (divided)",
+      "raw": "4 tablespoons unsalted butter (divided)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "cup"
+            "amount": "4",
+            "unit": "tbsp"
           }
         ],
         "note": "divided",

@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1  onion (finely chopped)",
+      "raw": "1 onion (finely chopped)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1  carrot (finely chopped (optional))",
+      "raw": "1 carrot (finely chopped (optional))",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1  large egg plant (or 4 Japanese eggplants, 1&amp;quot; cubed)",
+      "raw": "1 large egg plant (or 4 Japanese eggplants, 1\" cubed)",
       "expected": {
         "item": "egg plant",
         "measurements": [
@@ -131,16 +131,20 @@
     {
       "raw": "4 servings Steamed Rice",
       "expected": {
-        "item": "servings Steamed Rice",
+        "item": "Steamed Rice",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "serving"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
+    },
+    {
+      "raw": "Optional Seasonings:",
+      "is_section_header": true
     },
     {
       "raw": "1 Tbsp ketchup",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Seasonings",
         "category": "Spices & Seasonings"
       }
     }

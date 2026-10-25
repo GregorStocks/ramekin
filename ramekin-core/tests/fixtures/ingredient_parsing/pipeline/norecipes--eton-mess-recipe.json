@@ -3,7 +3,11 @@
   "recipe_slug": "eton-mess-recipe",
   "ingredients": [
     {
-      "raw": "2 large egg whites",
+      "raw": "for meringue:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 large  egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Meringue",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "100 grams granulated sugar",
+      "raw": "100 grams  granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Meringue",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/8 teaspoon cream of tartar",
+      "raw": "⅛ teaspoon  cream of tartar",
       "expected": {
         "item": "cream of tartar",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Meringue",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon  vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -55,11 +62,16 @@
           }
         ],
         "note": null,
+        "section": "For Meringue",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup heavy cream ((42% butterfat))",
+      "raw": "for whipped cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup  heavy cream (42% butterfat)",
       "expected": {
         "item": "heavy cream",
         "measurements": [
@@ -69,11 +81,12 @@
           }
         ],
         "note": "42% butterfat",
+        "section": "For Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "85 grams white chocolate ((I used Valrhona Ivoire))",
+      "raw": "85 grams  white chocolate (I used Valrhona Ivoire)",
       "expected": {
         "item": "white chocolate",
         "measurements": [
@@ -83,11 +96,16 @@
           }
         ],
         "note": "I used Valrhona Ivoire",
+        "section": "For Whipped Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "300 grams strawberries ((hulled and quartered))",
+      "raw": "for serving:",
+      "is_section_header": true
+    },
+    {
+      "raw": "300 grams  strawberries (hulled and quartered)",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -97,6 +115,7 @@
           }
         ],
         "note": "hulled and quartered",
+        "section": "For Serving",
         "category": "Produce"
       }
     }

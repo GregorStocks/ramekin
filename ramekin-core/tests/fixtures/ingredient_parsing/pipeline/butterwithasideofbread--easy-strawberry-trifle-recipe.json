@@ -3,7 +3,7 @@
   "recipe_slug": "easy-strawberry-trifle-recipe",
   "ingredients": [
     {
-      "raw": "1  prepared angel food cake",
+      "raw": "1 prepared angel food cake",
       "expected": {
         "item": "prepared angel food cake",
         "measurements": [
@@ -17,7 +17,11 @@
       }
     },
     {
-      "raw": "2  8 oz packages of cream cheese, softened",
+      "raw": "Cream cheese layer ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 8 oz packages of cream cheese, softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -27,6 +31,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Layer Ingredients",
         "category": "Cheese"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Layer Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Layer Ingredients",
         "category": "Baking"
       }
     },
@@ -69,11 +76,16 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Layer Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "6  heaping cups of sliced strawberries",
+      "raw": "Strawberries:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 heaping cups of sliced strawberries",
       "expected": {
         "item": "sliced strawberries",
         "measurements": [
@@ -83,6 +95,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberries",
         "category": "Produce"
       }
     },
@@ -97,8 +110,13 @@
           }
         ],
         "note": null,
+        "section": "Strawberries",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Whipping Cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy whipping cream",
@@ -111,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Whipping Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Whipping Cream",
         "category": "Baking"
       }
     },
@@ -139,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Whipping Cream",
         "category": "Baking"
       }
     }

@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "6 ounces pumpkin beer, (for nonalcoholic you can use root beer)",
+      "raw": "6 ounces pumpkin beer, for nonalcoholic you can use root beer",
       "expected": {
         "item": "pumpkin beer",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "kaiser rolls, (for serving)",
+      "raw": "kaiser rolls, for serving",
       "expected": {
         "item": "kaiser rolls",
         "measurements": [],
@@ -77,13 +77,17 @@
       }
     },
     {
-      "raw": "sharp cheddar cheese, (for serving)",
+      "raw": "sharp cheddar cheese, for serving",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [],
         "note": "for serving",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "horseradish sauce:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup sour cream",
@@ -96,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -110,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -124,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -152,11 +160,12 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½  lemon juiced",
+      "raw": "½ lemon juiced",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -166,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Produce"
       }
     },
@@ -175,6 +185,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Horseradish Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Sauce",
         "category": "Produce"
       }
     }

@@ -189,11 +189,16 @@
       }
     },
     {
+      "raw": "Optional chili toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Diced green onions",
       "expected": {
         "item": "Diced green onions",
         "measurements": [],
         "note": null,
+        "section": "Optional Chili Toppings",
         "category": "Produce"
       }
     },
@@ -203,6 +208,7 @@
         "item": "Shredded cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Chili Toppings",
         "category": "Cheese"
       }
     },
@@ -212,6 +218,7 @@
         "item": "Diced avocado",
         "measurements": [],
         "note": null,
+        "section": "Optional Chili Toppings",
         "category": "Produce"
       }
     },
@@ -221,6 +228,7 @@
         "item": "Chopped cilantro",
         "measurements": [],
         "note": null,
+        "section": "Optional Chili Toppings",
         "category": "Produce"
       }
     },
@@ -230,6 +238,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Chili Toppings",
         "category": "Dairy & Eggs"
       }
     }

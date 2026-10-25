@@ -3,13 +3,8 @@
   "recipe_slug": "2013-03-chocolate-hazelnut-mac",
   "ingredients": [
     {
-      "raw": "Macaroons",
-      "expected": {
-        "item": "Macaroons",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Macaroons:",
+      "is_section_header": true
     },
     {
       "raw": "Oil or butter for greasing parchment rounds",
@@ -17,6 +12,7 @@
         "item": "Oil or butter",
         "measurements": [],
         "note": "for greasing parchment rounds",
+        "section": "Macaroons",
         "category": "Oils & Vinegars"
       }
     },
@@ -35,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Macaroons",
         "category": "Baking"
       }
     },
@@ -49,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Macaroons",
         "category": "Dairy & Eggs"
       }
     },
@@ -71,6 +69,7 @@
           }
         ],
         "note": "about 12 ounces or 340 grams",
+        "section": "Macaroons",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -85,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "Macaroons",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,11 +103,12 @@
           }
         ],
         "note": null,
+        "section": "Macaroons",
         "category": "Baking"
       }
     },
     {
-      "raw": "Chocolate filling",
+      "raw": "Chocolate filling:",
       "is_section_header": true
     },
     {
@@ -160,7 +161,7 @@
       }
     },
     {
-      "raw": "Whipped frosting and filling",
+      "raw": "Whipped frosting and filling:",
       "is_section_header": true
     },
     {

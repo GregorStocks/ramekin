@@ -83,11 +83,16 @@
       }
     },
     {
+      "raw": "To finish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Butter",
       "expected": {
         "item": "Butter",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +102,7 @@
         "item": "Sharp orange cheddar",
         "measurements": [],
         "note": "coarsely grated",
+        "section": "To Finish",
         "category": "Other"
       }
     },
@@ -106,6 +112,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -115,6 +122,7 @@
         "item": "Minced fresh chives",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Produce"
       }
     }

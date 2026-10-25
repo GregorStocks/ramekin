@@ -3,11 +3,16 @@
   "recipe_slug": "sweet-corn-hummus-tostada-reci",
   "ingredients": [
     {
+      "raw": "Smoky Sweet Corn Hummus:",
+      "is_section_header": true
+    },
+    {
       "raw": "kernels from 1 ear of fresh corn",
       "expected": {
         "item": "kernels from 1 ear of fresh corn",
         "measurements": [],
         "note": null,
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Canned Goods"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Condiments & Sauces"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": "or chipotle powder",
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Other"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,8 +127,13 @@
         "item": "Sea salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Smoky Sweet Corn Hummus",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Tostadas:",
+      "is_section_header": true
     },
     {
       "raw": "4 corn tortillas",
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Tostadas",
         "category": "Bakery & Bread"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": "for grilling",
+        "section": "Tostadas",
         "category": "Produce"
       }
     },
@@ -152,6 +171,7 @@
         "item": "Smoky Sweet Corn Hummus",
         "measurements": [],
         "note": null,
+        "section": "Tostadas",
         "category": "Other"
       }
     },
@@ -166,6 +186,7 @@
           }
         ],
         "note": "diced",
+        "section": "Tostadas",
         "category": "Produce"
       }
     },
@@ -180,6 +201,7 @@
           }
         ],
         "note": "diced",
+        "section": "Tostadas",
         "category": "Produce"
       }
     },
@@ -189,6 +211,7 @@
         "item": "jalapeño slices",
         "measurements": [],
         "note": "optional",
+        "section": "Tostadas",
         "category": "Produce"
       }
     },
@@ -198,6 +221,7 @@
         "item": "a few sprigs of baby kale or arugula",
         "measurements": [],
         "note": null,
+        "section": "Tostadas",
         "category": "Produce"
       }
     },
@@ -207,6 +231,7 @@
         "item": "serve with tomatillo salsa, store-bought or the one from this recipe",
         "measurements": [],
         "note": null,
+        "section": "Tostadas",
         "category": "Condiments & Sauces"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-nut-free-paleo-pancake",
   "ingredients": [
     {
-      "raw": "4  large eggs (beaten)",
+      "raw": "4 large eggs, beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -129,13 +129,17 @@
       }
     },
     {
-      "raw": "ghee or coconut oil (to coat skillet)",
+      "raw": "ghee or coconut oil, to coat skillet",
       "expected": {
-        "item": "ghee or coconut oil",
+        "item": "ghee or coconut oil, to coat skillet",
         "measurements": [],
-        "note": "to coat skillet",
+        "note": null,
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Triple Berry Compote:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup raspberries",
@@ -148,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Triple Berry Compote",
         "category": "Produce"
       }
     },
@@ -162,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Triple Berry Compote",
         "category": "Produce"
       }
     },
@@ -176,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Triple Berry Compote",
         "category": "Produce"
       }
     },
@@ -190,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Triple Berry Compote",
         "category": "Baking"
       }
     },
@@ -204,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Triple Berry Compote",
         "category": "Baking"
       }
     }

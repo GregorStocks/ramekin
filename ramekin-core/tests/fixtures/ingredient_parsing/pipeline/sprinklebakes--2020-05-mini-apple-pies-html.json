@@ -3,6 +3,10 @@
   "recipe_slug": "2020-05-mini-apple-pies-html",
   "ingredients": [
     {
+      "raw": "Pate sucrée crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups 10oz/284g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Pate Sucrée Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Pate Sucrée Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "cold and cubed",
+        "section": "Pate Sucrée Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Pate Sucrée Crust",
         "category": "Baking"
       }
     },
@@ -77,22 +85,28 @@
           }
         ],
         "note": null,
+        "section": "Pate Sucrée Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg (slightly beaten)",
+      "raw": "1 egg slightly beaten",
       "expected": {
-        "item": "egg",
+        "item": "egg slightly beaten",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "slightly beaten",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Pate Sucrée Crust",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Apple pie filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup 100g granulated sugar",
@@ -109,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Apple Pie Filling",
         "category": "Baking"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": "packed",
+        "section": "Apple Pie Filling",
         "category": "Baking"
       }
     },
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Apple Pie Filling",
         "category": "Baking"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Apple Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -169,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Apple Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -183,21 +202,23 @@
           }
         ],
         "note": null,
+        "section": "Apple Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5  large (tart, firm apples, thinly sliced (tested with Granny Smith))",
+      "raw": "5 large tart, firm apples, thinly sliced (tested with Granny Smith)",
       "expected": {
-        "item": "tart",
+        "item": "tart, firm apples",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": "firm apples, thinly sliced (tested with Granny Smith)",
-        "category": "Bakery & Bread"
+        "note": "tested with Granny Smith, thinly sliced",
+        "section": "Apple Pie Filling",
+        "category": "Other"
       }
     },
     {
@@ -211,16 +232,22 @@
           }
         ],
         "note": null,
+        "section": "Apple Pie Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "Egg wash (1 egg beaten with 1 tbsp. water)",
+      "raw": "Assemble the pies:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Egg wash 1 egg beaten with 1 tbsp. water",
       "expected": {
-        "item": "Egg wash",
+        "item": "Egg wash 1 egg",
         "measurements": [],
-        "note": "1 egg beaten with 1 tbsp. water",
-        "category": "Dairy & Eggs"
+        "note": "beaten with 1 tbsp. water",
+        "section": "Assemble the Pies",
+        "category": "Other"
       }
     },
     {
@@ -229,6 +256,7 @@
         "item": "Coarse crystal sugar",
         "measurements": [],
         "note": null,
+        "section": "Assemble the Pies",
         "category": "Baking"
       }
     }

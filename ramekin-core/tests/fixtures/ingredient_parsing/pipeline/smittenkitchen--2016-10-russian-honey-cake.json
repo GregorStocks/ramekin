@@ -3,6 +3,10 @@
   "recipe_slug": "2016-10-russian-honey-cake",
   "ingredients": [
     {
+      "raw": "Cookie Layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (170 grams) honey",
       "expected": {
         "item": "honey",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Layers",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Layers",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Layers",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie Layers",
         "category": "Baking"
       }
     },
@@ -131,8 +142,13 @@
           }
         ],
         "note": "divided",
+        "section": "Cookie Layers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Frosting and Filling:",
+      "is_section_header": true
     },
     {
       "raw": "32 ounces (just shy of 4 cups or 900 grams) sour cream",
@@ -149,6 +165,7 @@
           }
         ],
         "note": "just shy of 4 cups or 900 grams",
+        "section": "Frosting and Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting and Filling",
         "category": "Canned Goods"
       }
     }

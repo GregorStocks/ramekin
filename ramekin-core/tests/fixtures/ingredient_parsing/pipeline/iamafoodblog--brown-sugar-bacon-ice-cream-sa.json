@@ -3,6 +3,10 @@
   "recipe_slug": "brown-sugar-bacon-ice-cream-sa",
   "ingredients": [
     {
+      "raw": "Brown Sugar Bacon Bits:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 slices of bacon, chopped as finely as possible",
       "expected": {
         "item": "bacon",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "chopped as finely as possible",
+        "section": "Brown Sugar Bacon Bits",
         "category": "Meat & Seafood"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "Brown Sugar Bacon Bits",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Ice Cream Sandwich:",
+      "is_section_header": true
     },
     {
       "raw": "wafers or cookies of your choice",
@@ -36,6 +46,7 @@
         "item": "wafers or cookies of your choice",
         "measurements": [],
         "note": null,
+        "section": "Ice Cream Sandwich",
         "category": "Other"
       }
     },
@@ -45,6 +56,7 @@
         "item": "ice cream of your choice",
         "measurements": [],
         "note": "I used vanilla, slightly softened",
+        "section": "Ice Cream Sandwich",
         "category": "Frozen"
       }
     }

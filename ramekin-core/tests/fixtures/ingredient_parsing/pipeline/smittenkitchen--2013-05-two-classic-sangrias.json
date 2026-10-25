@@ -91,6 +91,10 @@
       }
     },
     {
+      "raw": "Pata Negra’s Sangria:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 bottles dry Spanish red wine (they recommend garnacha)",
       "expected": {
         "item": "dry Spanish red wine",
@@ -101,6 +105,7 @@
           }
         ],
         "note": "they recommend garnacha",
+        "section": "Pata Negra’s Sangria",
         "category": "Other"
       }
     },
@@ -115,6 +120,7 @@
           }
         ],
         "note": "they recommend this to lighten the body of the sangria",
+        "section": "Pata Negra’s Sangria",
         "category": "Other"
       }
     },
@@ -129,6 +135,7 @@
           }
         ],
         "note": "such as Triple Sec or Torres",
+        "section": "Pata Negra’s Sangria",
         "category": "Beverages"
       }
     },
@@ -143,6 +150,7 @@
           }
         ],
         "note": "preferably Spanish, such as Romate",
+        "section": "Pata Negra’s Sangria",
         "category": "Beverages"
       }
     },
@@ -157,6 +165,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Pata Negra’s Sangria",
         "category": "Baking"
       }
     },
@@ -171,6 +180,7 @@
           }
         ],
         "note": "I used one red and one green, for color, cored and diced, for garnish",
+        "section": "Pata Negra’s Sangria",
         "category": "Produce"
       }
     },
@@ -185,6 +195,7 @@
           }
         ],
         "note": "cut into wedges, for garnish",
+        "section": "Pata Negra’s Sangria",
         "category": "Produce"
       }
     },
@@ -203,6 +214,7 @@
           }
         ],
         "note": "they recommend less sweet brands such as San Pellegrino aranciata",
+        "section": "Pata Negra’s Sangria",
         "category": "Beverages"
       }
     }

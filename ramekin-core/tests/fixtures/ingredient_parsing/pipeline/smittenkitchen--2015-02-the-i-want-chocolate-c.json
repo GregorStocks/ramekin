@@ -3,78 +3,8 @@
   "recipe_slug": "2015-02-the-i-want-chocolate-c",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Strawberries and Cream with Graham Crumbles",
-      "expected": {
-        "item": "Months Ago: Strawberries and Cream with Graham Crumbles",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Key Lime Popsicles (still a favorite!)",
-      "expected": {
-        "item": "Years Ago: Key Lime Popsicles",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": "still a favorite!",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Leek Chard and Corn Flatbread",
-      "expected": {
-        "item": "Years Ago: Leek Chard and Corn Flatbread",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Naked Tomato Sauce",
-      "expected": {
-        "item": "Years Ago: Naked Tomato Sauce",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, at room temperature",
@@ -91,6 +21,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +40,7 @@
           }
         ],
         "note": "firmly packed",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -127,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -141,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -155,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -173,6 +108,7 @@
           }
         ],
         "note": "see Notes for other options",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -209,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -227,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -241,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -255,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -269,11 +210,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Frosting",
+      "raw": "Frosting:",
       "is_section_header": true
     },
     {

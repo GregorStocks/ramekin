@@ -3,7 +3,11 @@
   "recipe_slug": "lemon-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "1 and 3/4 cups (210g) graham cracker crumbs (about&nbsp;14 full-sheet graham crackers)",
+      "raw": "Graham Cracker Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 and 3/4 cups (210g) graham cracker crumbs (about 14 full-sheet graham crackers)",
       "expected": {
         "item": "graham cracker crumbs",
         "measurements": [
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 14 full-sheet graham crackers",
+        "section": "Graham Cracker Crust",
         "category": "Snacks"
       }
     },
@@ -35,11 +40,12 @@
           }
         ],
         "note": "melted",
+        "section": "Graham Cracker Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup&nbsp;(50g)&nbsp;granulated sugar",
+      "raw": "1/4 cup (50g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -53,8 +59,13 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cheesecake:",
+      "is_section_header": true
     },
     {
       "raw": "1 and 1/4 cups (250g) granulated sugar",
@@ -71,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -85,11 +97,12 @@
           }
         ],
         "note": "about 1 lemon, packed",
+        "section": "Cheesecake",
         "category": "Produce"
       }
     },
     {
-      "raw": "32 ounces (904g) full-fat brick cream cheese, softened to&nbsp;room temperature",
+      "raw": "32 ounces (904g) full-fat brick cream cheese, softened to room temperature",
       "expected": {
         "item": "full-fat brick cream cheese",
         "measurements": [
@@ -103,6 +116,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Cheesecake",
         "category": "Cheese"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": "about 3-4 lemons, at room temperature",
+        "section": "Cheesecake",
         "category": "Produce"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -167,8 +184,13 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup lemon curd (highly recommended)",
@@ -181,6 +203,7 @@
           }
         ],
         "note": "highly recommended",
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -190,6 +213,7 @@
         "item": "homemade whipped cream",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,6 +223,7 @@
         "item": "lemon slices and/or fresh berries",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     }

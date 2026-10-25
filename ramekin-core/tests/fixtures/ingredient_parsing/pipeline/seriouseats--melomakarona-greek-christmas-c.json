@@ -3,6 +3,10 @@
   "recipe_slug": "melomakarona-greek-christmas-c",
   "ingredients": [
     {
+      "raw": "For the Syrup:",
+      "is_section_header": true
+    },
+    {
       "raw": "7 ounces granulated sugar (400 g; 2 cups)",
       "expected": {
         "item": "granulated sugar",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "For the Syrup",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "unpeeled and quartered",
+        "section": "For the Syrup",
         "category": "Produce"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Syrup",
         "category": "Baking"
       }
     },
@@ -71,13 +78,18 @@
           }
         ],
         "note": "plus 2 whole cinnamon sticks or 1/2 teaspoon pumpkin pie spice",
+        "section": "For the Syrup",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup (240 ml) olive oil or sunflower oil",
+      "raw": "For the Cookies:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup (240 ml) olive oil",
       "expected": {
-        "item": "olive oil or sunflower oil",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
@@ -89,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Oils & Vinegars"
       }
     },
@@ -107,6 +120,7 @@
           }
         ],
         "note": "plus zest, from 2 - 3 medium oranges",
+        "section": "For the Cookies",
         "category": "Other"
       }
     },
@@ -129,11 +143,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "18 ounces all-purpose flour ( 510 g; 4 cups)",
+      "raw": "18 ounces all-purpose flour (510 g; 4 cups)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -151,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -173,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -191,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -205,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -219,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +261,7 @@
           }
         ],
         "note": "finally chopped or gently pulsed in food processor",
+        "section": "For the Cookies",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -259,6 +280,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     }

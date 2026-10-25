@@ -3,6 +3,10 @@
   "recipe_slug": "gyro-meat-recipe",
   "ingredients": [
     {
+      "raw": "Gyro Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup plain Greek yogurt",
       "expected": {
         "item": "plain Greek yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Gyro Marinade",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Gyro Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Gyro Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cloves garlic (minced)",
+      "raw": "2 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "Gyro Marinade",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Gyro Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Gyro Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Gyro Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,11 +122,16 @@
           }
         ],
         "note": null,
+        "section": "Gyro Marinade",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "½  English cucumber (peeled (optional) and grated)",
+      "raw": "Tzatziki Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ English cucumber, peeled (optional) and grated",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -124,26 +140,28 @@
             "unit": null
           }
         ],
-        "note": "peeled (optional) and grated",
+        "note": "optional, peeled and grated",
+        "section": "Tzatziki Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup Greek yogurt (full-fat is recommended)",
+      "raw": "1 cup Greek yogurt, full-fat is recommended",
       "expected": {
-        "item": "Greek yogurt",
+        "item": "Greek yogurt, full-fat is recommended",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "full-fat is recommended",
+        "note": null,
+        "section": "Tzatziki Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1-2 cloves garlic (minced)",
+      "raw": "1-2 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -153,25 +171,27 @@
           }
         ],
         "note": "minced",
+        "section": "Tzatziki Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon fresh lemon juice (or red wine vinegar)",
+      "raw": "1 tablespoon fresh lemon juice, or red wine vinegar",
       "expected": {
-        "item": "fresh lemon juice",
+        "item": "fresh lemon juice, or red wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or red wine vinegar",
+        "note": null,
+        "section": "Tzatziki Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons fresh dill (minced)",
+      "raw": "2 teaspoons fresh dill, minced",
       "expected": {
         "item": "fresh dill",
         "measurements": [
@@ -181,6 +201,7 @@
           }
         ],
         "note": "minced",
+        "section": "Tzatziki Sauce",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Tzatziki Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,25 +231,31 @@
           }
         ],
         "note": null,
+        "section": "Tzatziki Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  homemade pita breads (or flatbreads, slightly warmed)",
+      "raw": "For the Gyro Pitas:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 homemade pita breads, or flatbreads, slightly warmed",
       "expected": {
-        "item": "homemade pita breads",
+        "item": "homemade pita breads, or flatbreads",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "or flatbreads, slightly warmed",
+        "note": "slightly warmed",
+        "section": "For the Gyro Pitas",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "2 ripe tomatoes (quartered)",
+      "raw": "2 ripe tomatoes, quartered",
       "expected": {
         "item": "ripe tomatoes",
         "measurements": [
@@ -237,11 +265,12 @@
           }
         ],
         "note": "quartered",
+        "section": "For the Gyro Pitas",
         "category": "Produce"
       }
     },
     {
-      "raw": "½  English cucumber (thinly sliced)",
+      "raw": "½ English cucumber, thinly sliced",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -251,11 +280,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Gyro Pitas",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼  red onion (thinly sliced)",
+      "raw": "¼ red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -265,15 +295,17 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Gyro Pitas",
         "category": "Produce"
       }
     },
     {
-      "raw": "crumbled feta cheese (optional)",
+      "raw": "crumbled feta cheese, optional",
       "expected": {
         "item": "crumbled feta cheese",
         "measurements": [],
         "note": "optional",
+        "section": "For the Gyro Pitas",
         "category": "Cheese"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2006-12-holding-the-gray-salt",
   "ingredients": [
     {
+      "raw": "For the croutons:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Croutons",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Croutons",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Croutons",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "crust removed, cubed",
+        "section": "For the Croutons",
         "category": "Bakery & Bread"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "plus more for garnish",
+        "section": "For the Croutons",
         "category": "Cheese"
       }
     },
@@ -78,8 +87,13 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Croutons",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 small red onion, sliced thinly lengthwise",
@@ -92,6 +106,7 @@
           }
         ],
         "note": "sliced thinly lengthwise",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +131,7 @@
         "item": "Gray salt",
         "measurements": [],
         "note": null,
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": "1/2-inch dice",
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -166,6 +186,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -180,6 +201,7 @@
           }
         ],
         "note": "ends trimmed, then quartered",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -194,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     }

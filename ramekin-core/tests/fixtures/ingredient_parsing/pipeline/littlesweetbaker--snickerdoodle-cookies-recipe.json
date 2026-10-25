@@ -3,7 +3,11 @@
   "recipe_slug": "snickerdoodle-cookies-recipe",
   "ingredients": [
     {
-      "raw": "2 &amp;amp; 3/4 cups (345g) all-purpose flour",
+      "raw": "Cookie dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 & 3/4 cups   (345g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tsp cream of tartar (see notes for substitution*)",
+      "raw": "2 tsp   cream of tartar, see notes for substitution*",
       "expected": {
         "item": "cream of tartar",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": "see notes for substitution",
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp baking soda*",
+      "raw": "1 tsp   baking soda*",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 tsp salt",
+      "raw": "1/2 tsp   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -59,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup (227g) unsalted butter (room temperature)",
+      "raw": "1 cup   (227g) unsalted butter, room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -77,11 +85,12 @@
           }
         ],
         "note": "room temperature",
+        "section": "Cookie Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup (200g) granulated sugar",
+      "raw": "1 cup   (200g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -95,11 +104,12 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup (50g) brown sugar (lightly packed)",
+      "raw": "1/4 cup   (50g) brown sugar, lightly packed",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -113,11 +123,12 @@
           }
         ],
         "note": "lightly packed",
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -127,11 +138,12 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp vanilla",
+      "raw": "1 tsp   vanilla",
       "expected": {
         "item": "vanilla",
         "measurements": [
@@ -141,11 +153,16 @@
           }
         ],
         "note": null,
+        "section": "Cookie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup (50g) granulated sugar",
+      "raw": "Coating:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/4 cup   (50g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -159,11 +176,12 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tbsp ground cinnamon",
+      "raw": "1 Tbsp   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
     }

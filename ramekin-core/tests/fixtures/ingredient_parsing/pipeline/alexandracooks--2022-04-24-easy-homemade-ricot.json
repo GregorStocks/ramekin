@@ -3,6 +3,10 @@
   "recipe_slug": "2022-04-24-easy-homemade-ricot",
   "ingredients": [
     {
+      "raw": "For the gnocchi:",
+      "is_section_header": true
+    },
+    {
       "raw": "15 oz (430 g) whole milk ricotta, see notes above",
       "expected": {
         "item": "whole milk ricotta",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Gnocchi",
         "category": "Cheese"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "such as the pre-grated Locatelli brand",
+        "section": "For the Gnocchi",
         "category": "Cheese"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gnocchi",
         "category": "Dairy & Eggs"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gnocchi",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "plus more for dusting",
+        "section": "For the Gnocchi",
         "category": "Baking"
       }
     },
@@ -90,8 +99,13 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Gnocchi",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For serving, Option 1, Tomato Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 to 2 cups homemade tomato sauce",
@@ -104,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving, Option 1, Tomato Sauce",
         "category": "Canned Goods"
       }
     },
@@ -113,6 +128,7 @@
         "item": "fresh basil",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving, Option 1, Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -122,8 +138,13 @@
         "item": "Parmigiano Reggiano or pecorino",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving, Option 1, Tomato Sauce",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "For Serving, Option 2: Mushrooms:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons olive oil",
@@ -136,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving, Option 2: Mushrooms",
         "category": "Oils & Vinegars"
       }
     },
@@ -150,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving, Option 2: Mushrooms",
         "category": "Produce"
       }
     },
@@ -164,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving, Option 2: Mushrooms",
         "category": "Dairy & Eggs"
       }
     },
@@ -178,6 +202,7 @@
           }
         ],
         "note": "diced",
+        "section": "For Serving, Option 2: Mushrooms",
         "category": "Produce"
       }
     },
@@ -187,6 +212,7 @@
         "item": "parsley",
         "measurements": [],
         "note": null,
+        "section": "For Serving, Option 2: Mushrooms",
         "category": "Produce"
       }
     },
@@ -196,8 +222,13 @@
         "item": "lemon zest",
         "measurements": [],
         "note": null,
+        "section": "For Serving, Option 2: Mushrooms",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Serving, Option 3: Brown Butter & Pine Nuts:",
+      "is_section_header": true
     },
     {
       "raw": "4 tablespoons butter",
@@ -210,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving, Option 3: Brown Butter & Pine Nuts",
         "category": "Dairy & Eggs"
       }
     },
@@ -224,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving, Option 3: Brown Butter & Pine Nuts",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -233,6 +266,7 @@
         "item": "Parmigiano Reggiano",
         "measurements": [],
         "note": null,
+        "section": "For Serving, Option 3: Brown Butter & Pine Nuts",
         "category": "Cheese"
       }
     },
@@ -242,6 +276,7 @@
         "item": "Black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For Serving, Option 3: Brown Butter & Pine Nuts",
         "category": "Spices & Seasonings"
       }
     }

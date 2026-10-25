@@ -147,6 +147,10 @@
       }
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 oz thin rice noodles",
       "expected": {
         "item": "thin rice noodles",
@@ -157,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Pasta & Rice"
       }
     },
@@ -171,6 +176,7 @@
           }
         ],
         "note": "from a rotisserie chicken",
+        "section": "For Serving",
         "category": "Meat & Seafood"
       }
     },
@@ -185,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -199,6 +206,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -208,6 +216,7 @@
         "item": "Sriracha sauce",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -217,6 +226,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

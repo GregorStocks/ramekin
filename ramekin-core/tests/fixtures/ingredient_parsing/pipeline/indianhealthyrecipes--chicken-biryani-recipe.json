@@ -3,7 +3,11 @@
   "recipe_slug": "chicken-biryani-recipe",
   "ingredients": [
     {
-      "raw": "½ kg (1.1 lbs)  chicken ((skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or mix of all))",
+      "raw": "Marinade for chicken biryani:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ kg (1.1 lbs) chicken (skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or mix of all)",
       "expected": {
         "item": "chicken",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": "skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or mix of all",
+        "section": "Marinade for Chicken Biryani",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3 tablespoons plain yogurt ((curd or dahi))",
+      "raw": "3 tablespoons plain yogurt (curd or dahi)",
       "expected": {
         "item": "plain yogurt",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": "curd or dahi",
+        "section": "Marinade for Chicken Biryani",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1¼ tablespoons ginger garlic paste ((1 inch ginger &amp;amp; 4 garlic cloves crushed))",
+      "raw": "1¼ tablespoons ginger garlic paste (1 inch ginger & 4 garlic cloves crushed)",
       "expected": {
         "item": "ginger garlic paste",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": "1 inch ginger & 4 garlic cloves crushed",
+        "section": "Marinade for Chicken Biryani",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ to ¾ teaspoon salt ((adjust to tase))",
+      "raw": "½ to ¾ teaspoon salt (adjust to tase)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -59,6 +66,7 @@
           }
         ],
         "note": "adjust to tase",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ to 1 teaspoon red chilli powder  ((or paprika) (use less spicy variety))",
+      "raw": "½ to 1 teaspoon red chilli powder  (or paprika) (use less spicy variety)",
       "expected": {
         "item": "red chilli powder",
         "measurements": [
@@ -87,11 +96,12 @@
           }
         ],
         "note": "or paprika, use less spicy variety",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ to 1 tablespoon garam masala ((or biryani masala) (Refer notes))",
+      "raw": "½ to 1 tablespoon garam masala (or biryani masala) (Refer notes)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -101,11 +111,12 @@
           }
         ],
         "note": "or biryani masala, Refer notes",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tablespoon Lemon juice  ((optional))",
+      "raw": "1 tablespoon Lemon juice  (optional)",
       "expected": {
         "item": "Lemon juice",
         "measurements": [
@@ -115,11 +126,22 @@
           }
         ],
         "note": "optional",
+        "section": "Marinade for Chicken Biryani",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  bay leaf  ((tej patta))",
+      "raw": "Whole spices (skip if you don’t have any):",
+      "expected": {
+        "item": "Whole spices :",
+        "measurements": [],
+        "note": "skip if you don’t have any",
+        "section": "Marinade for Chicken Biryani",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 bay leaf  (tej patta)",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -129,11 +151,12 @@
           }
         ],
         "note": "tej patta",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  green cardamoms ((choti elaichi))",
+      "raw": "4 green cardamoms (choti elaichi)",
       "expected": {
         "item": "green cardamoms",
         "measurements": [
@@ -143,11 +166,12 @@
           }
         ],
         "note": "choti elaichi",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6  cloves ((lavang))",
+      "raw": "6 cloves (lavang)",
       "expected": {
         "item": "lavang",
         "measurements": [
@@ -157,11 +181,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade for Chicken Biryani",
         "category": "Other"
       }
     },
     {
-      "raw": "1 inch cinnamon ((dalchini))",
+      "raw": "1 inch cinnamon (dalchini)",
       "expected": {
         "item": "inch cinnamon",
         "measurements": [
@@ -171,11 +196,12 @@
           }
         ],
         "note": "dalchini",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  star anise ((chakri phool ))",
+      "raw": "1 star anise (chakri phool )",
       "expected": {
         "item": "star anise",
         "measurements": [
@@ -185,11 +211,12 @@
           }
         ],
         "note": "chakri phool",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¾ teaspoon shahi jeera ((caraway seeds) (substitute with cumin))",
+      "raw": "¾ teaspoon shahi jeera (caraway seeds) (substitute with cumin)",
       "expected": {
         "item": "shahi jeera",
         "measurements": [
@@ -199,11 +226,12 @@
           }
         ],
         "note": "caraway seeds, substitute with cumin",
+        "section": "Marinade for Chicken Biryani",
         "category": "Other"
       }
     },
     {
-      "raw": "1 strand mace  ((javitri, omit if you don&amp;#39;t like))",
+      "raw": "1 strand mace  (javitri, omit if you don't like)",
       "expected": {
         "item": "strand mace",
         "measurements": [
@@ -213,11 +241,16 @@
           }
         ],
         "note": "javitri, omit if you don't like",
+        "section": "Marinade for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 cups basmati rice ((aged rice only))",
+      "raw": "Other ingredients for chicken biryani:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups basmati rice (aged rice only)",
       "expected": {
         "item": "basmati rice",
         "measurements": [
@@ -227,25 +260,27 @@
           }
         ],
         "note": "aged rice only",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "2 tablespoon ghee (or Oil)",
+      "raw": "2 tablespoon ghee or Oil",
       "expected": {
-        "item": "ghee",
+        "item": "ghee or Oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or Oil",
+        "note": null,
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 large onion  (sliced thinly)",
+      "raw": "1 large onion  sliced thinly",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -255,25 +290,31 @@
           }
         ],
         "note": "sliced thinly",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ to ½ cup mint leaves (chopped fine (about 15 leaves))",
+      "raw": "¼ to ½ cup mint leaves chopped fine (about 15 leaves)",
       "expected": {
         "item": "mint leaves",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "15",
+            "unit": "leaf"
           }
         ],
-        "note": "chopped fine (about 15 leaves)",
+        "note": "about 15 leaves, chopped fine",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  green chili ((slit or chopped))",
+      "raw": "1 green chili (slit or chopped)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -283,11 +324,12 @@
           }
         ],
         "note": "slit or chopped",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup plain yogurt ((Indian curd))",
+      "raw": "¼ cup plain yogurt (Indian curd)",
       "expected": {
         "item": "plain yogurt",
         "measurements": [
@@ -297,11 +339,12 @@
           }
         ],
         "note": "Indian curd",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¼ to ½ teaspoon red chili powder  ((optional, for heat))",
+      "raw": "¼ to ½ teaspoon red chili powder  (optional, for heat)",
       "expected": {
         "item": "red chili powder",
         "measurements": [
@@ -311,11 +354,12 @@
           }
         ],
         "note": "optional, for heat",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon garam masala ((or biryani masala))",
+      "raw": "1 teaspoon garam masala (or biryani masala)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -325,11 +369,12 @@
           }
         ],
         "note": "or biryani masala",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 cups water ((3½ cups for pot) (refer notes, more if needed ))",
+      "raw": "3 cups water (3½ cups for pot) (refer notes, more if needed )",
       "expected": {
         "item": "water",
         "measurements": [
@@ -339,11 +384,12 @@
           }
         ],
         "note": "3 1/2 cups for pot, refer notes, more if needed",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Beverages"
       }
     },
     {
-      "raw": "¾ teaspoon salt ((to stir in water))",
+      "raw": "¾ teaspoon salt (to stir in water)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -353,11 +399,12 @@
           }
         ],
         "note": "to stir in water",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoon fried onions ((optional))",
+      "raw": "2 tablespoon fried onions (optional)",
       "expected": {
         "item": "fried onions",
         "measurements": [
@@ -367,11 +414,12 @@
           }
         ],
         "note": "optional",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 pinch saffron ((optional)(soaked in 2 tbsps hot milk))",
+      "raw": "1 pinch saffron (optional)(soaked in 2 tbsps hot milk)",
       "expected": {
         "item": "saffron",
         "measurements": [
@@ -381,7 +429,535 @@
           }
         ],
         "note": "optional, soaked in 2 tbsps hot milk",
+        "section": "Other Ingredients for Chicken Biryani",
         "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "To make fried onions:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ cup oil or ghee  (I use organic steam refined coconut oil)",
+      "expected": {
+        "item": "oil or ghee",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "I use organic steam refined coconut oil",
+        "section": "To Make Fried Onions",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 cups (200 grams, 2 medium) yellow onions sliced (or use small red onions)",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "sliced; or use small red onions",
+        "section": "To Make Fried Onions",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "To Marinate:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1.1 pound (½ kg) chicken  (skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or breast)",
+      "expected": {
+        "item": "chicken",
+        "measurements": [
+          {
+            "amount": "1.1",
+            "unit": "lb"
+          },
+          {
+            "amount": "0.5",
+            "unit": "kg"
+          }
+        ],
+        "note": "skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or breast",
+        "section": "To Marinate",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "½ cup plain yogurt (curd, fresh, not sour)",
+      "expected": {
+        "item": "plain yogurt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "curd, fresh, not sour",
+        "section": "To Marinate",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "To Marinate",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "¾ tablespoon ginger  grated/ crushed or paste",
+      "expected": {
+        "item": "ginger grated/ crushed or paste",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "To Marinate",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "¾ tablespoon garlic pressed/grated or paste",
+      "expected": {
+        "item": "garlic pressed/grated or paste",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "To Marinate",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 green chili  deseeded and slit (optional, leave out for low heat)",
+      "expected": {
+        "item": "green chili deseeded and slit",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional, leave out for low heat",
+        "section": "To Marinate",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1½ tablespoons oil or ghee (may use fried onion ghee/oil)",
+      "expected": {
+        "item": "oil or ghee",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "may use fried onion ghee/oil",
+        "section": "To Marinate",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "½ teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "To Marinate",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ teaspoon turmeric Powder",
+      "expected": {
+        "item": "turmeric Powder",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "To Marinate",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ to ¾ tablespoon Kashmiri red chili powder",
+      "expected": {
+        "item": "Kashmiri red chili powder",
+        "measurements": [
+          {
+            "amount": "0.5 to 0.75",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "To Marinate",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1¼ tablespoon biryani masala  (recipe in the post intro, or use store bought biryani/garam masala)",
+      "expected": {
+        "item": "biryani masala",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "recipe in the post intro, or use store bought biryani/garam masala",
+        "section": "To Marinate",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "½ tablespoon coriander powder",
+      "expected": {
+        "item": "coriander powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "To Marinate",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ tablespoon roasted cumin powder  (leave out if using homemade biryani masala)",
+      "expected": {
+        "item": "roasted cumin powder",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "leave out if using homemade biryani masala",
+        "section": "To Marinate",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons mint leaves  fine chopped",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "fine chopped",
+        "section": "To Marinate",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons coriander leaves  fine chopped (optional)",
+      "expected": {
+        "item": "coriander leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional, fine chopped",
+        "section": "To Marinate",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "To cook rice:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "section": "To Cook Rice",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1½ cups (275 grams) premium aged basmati rice",
+      "expected": {
+        "item": "premium aged basmati rice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "275",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "section": "To Cook Rice",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "½ tablespoon oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "To Cook Rice",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "½ tablespoon tablespoon sea salt (adjust to taste preference)",
+      "expected": {
+        "item": "tablespoon sea salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "adjust to taste preference",
+        "section": "To Cook Rice",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 green cardamoms",
+      "expected": {
+        "item": "green cardamoms",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "section": "To Cook Rice",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 cloves",
+      "expected": {
+        "item": "4 cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": null,
+        "section": "To Cook Rice",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 Indian bay leaf (omit if you don't have, Tej patta)",
+      "expected": {
+        "item": "Indian bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "omit if you don't have, Tej patta",
+        "section": "To Cook Rice",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 inch cinnamon",
+      "expected": {
+        "item": "inch cinnamon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "section": "To Cook Rice",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 star anise",
+      "expected": {
+        "item": "star anise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "section": "To Cook Rice",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ teaspoon shahi jeera (Indian caraway seeds, omit if you don't have)",
+      "expected": {
+        "item": "shahi jeera",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "Indian caraway seeds, omit if you don't have",
+        "section": "To Cook Rice",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "½ mace (omit if you don't have)",
+      "expected": {
+        "item": "mace",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "omit if you don't have",
+        "section": "To Cook Rice",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "To Layer:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pinch (10 to 12)  saffron strands  or natural orange food color as needed",
+      "expected": {
+        "item": "saffron strands or natural orange food color",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": "10 to 12, as needed",
+        "section": "To Layer",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons hot milk  + 2 tablespoons hot water",
+      "expected": {
+        "item": "hot milk + 2 tablespoons hot water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "To Layer",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 to 2 pinches biryani masala or garam masala",
+      "expected": {
+        "item": "biryani masala or garam masala",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "section": "To Layer",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons mint and coriander leaves",
+      "expected": {
+        "item": "mint and coriander leaves",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "To Layer",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1½ tablespoons melted ghee  (may use onion fried ghee)",
+      "expected": {
+        "item": "melted ghee",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "may use onion fried ghee",
+        "section": "To Layer",
+        "category": "Dairy & Eggs"
       }
     }
   ]

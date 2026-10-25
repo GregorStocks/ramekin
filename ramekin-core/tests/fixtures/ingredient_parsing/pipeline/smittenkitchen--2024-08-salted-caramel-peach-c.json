@@ -3,6 +3,10 @@
   "recipe_slug": "2024-08-salted-caramel-peach-c",
   "ingredients": [
     {
+      "raw": "Filling and caramel sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 pounds (1.8 kg) fresh firm-ripe, juicy peaches",
       "expected": {
         "item": "fresh firm-ripe, juicy peaches",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Caramel Sauce",
         "category": "Other"
       }
     },
@@ -26,6 +31,7 @@
         "item": "Juice of half of a lemon",
         "measurements": [],
         "note": null,
+        "section": "Filling and Caramel Sauce",
         "category": "Other"
       }
     },
@@ -40,6 +46,7 @@
           }
         ],
         "note": "or 3 tablespoons tapioca flour/starch",
+        "section": "Filling and Caramel Sauce",
         "category": "Baking"
       }
     },
@@ -58,6 +65,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Caramel Sauce",
         "category": "Baking"
       }
     },
@@ -76,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Caramel Sauce",
         "category": "Beverages"
       }
     },
@@ -98,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Caramel Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -116,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Caramel Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -130,8 +141,13 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Filling and Caramel Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Crisp topping:",
+      "is_section_header": true
     },
     {
       "raw": "12 tablespoons (170 grams or 6 ounces) salted butter, melted",
@@ -152,6 +168,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crisp Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -166,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Crisp Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -184,6 +202,7 @@
           }
         ],
         "note": "packed",
+        "section": "Crisp Topping",
         "category": "Baking"
       }
     },
@@ -202,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Crisp Topping",
         "category": "Baking"
       }
     },
@@ -216,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Crisp Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -234,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Crisp Topping",
         "category": "Snacks"
       }
     },
@@ -256,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "Crisp Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -274,6 +297,7 @@
           }
         ],
         "note": null,
+        "section": "Crisp Topping",
         "category": "Baking"
       }
     },
@@ -283,6 +307,7 @@
         "item": "Vanilla ice cream",
         "measurements": [],
         "note": "not optional, sorry, to serve",
+        "section": "Crisp Topping",
         "category": "Frozen"
       }
     }

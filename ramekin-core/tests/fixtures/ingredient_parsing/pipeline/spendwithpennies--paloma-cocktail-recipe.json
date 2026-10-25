@@ -17,13 +17,17 @@
       }
     },
     {
-      "raw": "lime wedges (and kosher salt, for serving)",
+      "raw": "lime wedges and kosher salt, for serving",
       "expected": {
-        "item": "lime wedges",
+        "item": "lime wedges and kosher salt",
         "measurements": [],
-        "note": "and kosher salt, for serving",
+        "note": "for serving",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Grapefruit Soda:",
+      "is_section_header": true
     },
     {
       "raw": "6 ounces grapefruit soda",
@@ -36,11 +40,16 @@
           }
         ],
         "note": null,
+        "section": "Grapefruit Soda",
         "category": "Other"
       }
     },
     {
-      "raw": "3 ounces fresh grapefruit juice (freshly squeezed)",
+      "raw": "OR:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 ounces fresh grapefruit juice freshly squeezed",
       "expected": {
         "item": "fresh grapefruit juice",
         "measurements": [
@@ -50,6 +59,7 @@
           }
         ],
         "note": "freshly squeezed",
+        "section": "Or",
         "category": "Beverages"
       }
     },
@@ -64,11 +74,12 @@
           }
         ],
         "note": null,
+        "section": "Or",
         "category": "Beverages"
       }
     },
     {
-      "raw": "½ tablespoon simple syrup (or to taste)",
+      "raw": "½ tablespoon simple syrup or to taste",
       "expected": {
         "item": "simple syrup",
         "measurements": [
@@ -78,6 +89,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Or",
         "category": "Beverages"
       }
     }

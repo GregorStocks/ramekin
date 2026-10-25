@@ -3,21 +3,30 @@
   "recipe_slug": "2024-06-meyer-lemon-curd-extra",
   "ingredients": [
     {
-      "raw": "2/3 cup granulated sugar",
+      "raw": "For lemon curd:",
+      "is_section_header": true
+    },
+    {
+      "raw": "⅔ cup  / 133 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons Meyer lemon zest",
+      "raw": "2 tablespoons   Meyer lemon zest",
       "expected": {
         "item": "Meyer lemon zest",
         "measurements": [
@@ -27,25 +36,31 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 teaspoons cornstarch",
+      "raw": "4 teaspoons  / 8 g cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "4",
             "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Baking"
       }
     },
     {
-      "raw": "pinch fine sea salt",
+      "raw": "pinch   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -55,11 +70,12 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  large egg yolks",
+      "raw": "4   large egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -69,11 +85,12 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1   large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -83,34 +100,45 @@
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup freshly squeezed Meyer lemon juice",
+      "raw": "½ cup  / 120 g freshly squeezed Meyer lemon juice",
       "expected": {
         "item": "freshly squeezed Meyer lemon juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Lemon Curd",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 tablespoons unsalted butter (at room temperature, cut into cubes)",
+      "raw": "3 tablespoons  / 42 g unsalted butter, at room temperature, cut into cubes",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
         "note": "at room temperature, cut into cubes",
+        "section": "For Lemon Curd",
         "category": "Dairy & Eggs"
       }
     }

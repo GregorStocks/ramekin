@@ -35,11 +35,16 @@
       }
     },
     {
+      "raw": "Toppings (optional)*:",
+      "is_section_header": true
+    },
+    {
       "raw": "pepperoni, sausage, olives, vegetables, pineapple, etc.",
       "expected": {
         "item": "pepperoni, sausage, olives, vegetables, pineapple, etc.",
         "measurements": [],
         "note": null,
+        "section": "Toppings (Optional)*",
         "category": "Meat & Seafood"
       }
     }

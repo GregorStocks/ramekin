@@ -45,31 +45,31 @@
       }
     },
     {
-      "raw": "1 ½ cups whole milk (or unsweetened almond milk for vegan option) (warm)",
+      "raw": "1 ½ cups whole milk (or unsweetened almond milk for vegan option) warm",
       "expected": {
-        "item": "whole milk",
+        "item": "whole milk warm",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "or unsweetened almond milk for vegan option, warm",
-        "category": "Dairy & Eggs"
+        "note": "or unsweetened almond milk for vegan option",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon active dry yeast  (fast-action)",
+      "raw": "1 tablespoon active dry yeast  fast-action",
       "expected": {
-        "item": "active dry yeast",
+        "item": "active dry yeast fast-action",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "fast-action",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -96,17 +96,22 @@
       }
     },
     {
-      "raw": "1 cup sesame seeds (I used raw white sesame seeds)",
+      "raw": "For the sesame coating:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup sesame seeds I used raw white sesame seeds",
       "expected": {
-        "item": "sesame seeds",
+        "item": "sesame seeds I used raw white sesame seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "I used raw white sesame seeds",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "For the Sesame Coating",
+        "category": "Other"
       }
     },
     {
@@ -120,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Coating",
         "category": "Baking"
       }
     }

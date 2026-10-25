@@ -3,7 +3,7 @@
   "recipe_slug": "aloo-gobi-recipe",
   "ingredients": [
     {
-      "raw": "1½ cup (2 medium)  potatoes ((cubed to ¾ x ¾ inch))",
+      "raw": "1½ cup (2 medium) potatoes (cubed to ¾ x ¾ inch)",
       "expected": {
         "item": "potatoes",
         "measurements": [
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "2 cups (180 grams)  cauliflower florets ((gobi, chopped to 1½ inch) )",
+      "raw": "2 cups (180 grams) cauliflower florets (gobi, chopped to 1½ inch)",
       "expected": {
         "item": "cauliflower florets",
         "measurements": [
@@ -39,7 +39,7 @@
       }
     },
     {
-      "raw": "¾ to 1 cup (1 medium)  onion ((chopped finely) )",
+      "raw": "¾ to 1 cup (1 medium) onion (chopped finely)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -57,7 +57,7 @@
       }
     },
     {
-      "raw": "¾ to 1 cup (2 medium)  tomatoes ((finely chopped) or ¼ cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
+      "raw": "¾ to 1 cup (2 medium) tomatoes (finely chopped) or ¼ cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -75,7 +75,7 @@
       }
     },
     {
-      "raw": "½ tablespoon (½ inch)  ginger (peeled &amp;amp; minced or grated)",
+      "raw": "½ tablespoon (½ inch) ginger peeled & minced or grated",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -89,35 +89,35 @@
       }
     },
     {
-      "raw": "½ tablespoon (3 to 4)  garlic  (cloves, peeled &amp;amp; minced or pressed)",
+      "raw": "½ tablespoon (3 to 4) garlic  cloves, peeled & minced or pressed",
       "expected": {
-        "item": "garlic",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "3 to 4, cloves, peeled & minced or pressed",
+        "note": "3 to 4, peeled & minced or pressed",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  green chili (slit or chopped (optional))",
+      "raw": "1 green chili slit or chopped (optional)",
       "expected": {
-        "item": "green chili",
+        "item": "green chili slit or chopped",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "slit or chopped (optional)",
-        "category": "Produce"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves  (chopped finely)",
+      "raw": "2 tablespoons coriander leaves  chopped finely",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "½ to ¾ teaspoon salt  ((adjust to taste))",
+      "raw": "½ to ¾ teaspoon salt  (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -159,7 +159,7 @@
       }
     },
     {
-      "raw": "lemon juice to serve ((optional))",
+      "raw": "lemon juice to serve (optional)",
       "expected": {
         "item": "lemon juice to serve",
         "measurements": [],
@@ -168,7 +168,11 @@
       }
     },
     {
-      "raw": "½ teaspoon cumin seeds ((jeera))",
+      "raw": "Spices:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ teaspoon cumin seeds (jeera)",
       "expected": {
         "item": "cumin seeds",
         "measurements": [
@@ -178,11 +182,12 @@
           }
         ],
         "note": "jeera",
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¾ to 1¼ teaspoon Kashmiri red chili powder ((adjust to taste))",
+      "raw": "¾ to 1¼ teaspoon Kashmiri red chili powder (adjust to taste)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -192,6 +197,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -206,11 +212,12 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 to 1½ teaspoon garam masala ((adjust to taste))",
+      "raw": "1 to 1½ teaspoon garam masala (adjust to taste)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -220,6 +227,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
@@ -234,11 +242,12 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ to ¾ teaspoon roasted cumin powder ((jeera powder) (updated))",
+      "raw": "½ to ¾ teaspoon roasted cumin powder (jeera powder) (updated)",
       "expected": {
         "item": "roasted cumin powder",
         "measurements": [
@@ -248,11 +257,12 @@
           }
         ],
         "note": "jeera powder, updated",
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tablespoon kasuri methi  ((dried fenugreek leaves) (skip if you don&amp;#x27;t have))",
+      "raw": "1 tablespoon kasuri methi  (dried fenugreek leaves) (skip if you don't have)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [
@@ -262,11 +272,12 @@
           }
         ],
         "note": "dried fenugreek leaves, skip if you don't have",
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ to 1 teaspoon amchur ((Optional, Dried mango powder))",
+      "raw": "½ to 1 teaspoon amchur (Optional, Dried mango powder)",
       "expected": {
         "item": "amchur",
         "measurements": [
@@ -276,6 +287,372 @@
           }
         ],
         "note": "Optional, Dried mango powder",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "Spices",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "½ teaspoon cumin seeds  (optional)",
+      "expected": {
+        "item": "cumin seeds",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 green cardamoms  (optional, may use bay leaf, cinnamon stick or cloves if you prefer)",
+      "expected": {
+        "item": "green cardamoms",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "optional, may use bay leaf, cinnamon stick or cloves if you prefer",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (135 grams) fine chopped onions (1 large onion)",
+      "expected": {
+        "item": "fine chopped onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "135",
+            "unit": "g"
+          }
+        ],
+        "note": "1 large onion",
+        "section": "Spices",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1¼ cup (265 grams) fresh tomato puree  (3 medium tomatoes/ 2 cups chopped and pureed or 1 cup canned)",
+      "expected": {
+        "item": "fresh tomato puree",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "265",
+            "unit": "g"
+          }
+        ],
+        "note": "3 medium tomatoes/ 2 cups chopped and pureed or 1 cup canned",
+        "section": "Spices",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1½ teaspoon ginger grated",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "grated",
+        "section": "Spices",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1½ teaspoon garlic minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced",
+        "section": "Spices",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "20 cashews (soaked & pureed with ⅓ cup water) or 1½ tbsps. cashew butter or ½ cup thick coconut milk",
+      "expected": {
+        "item": "cashews",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": "soaked & pureed with 1/3 cup water; or 1 1/2 tbsps. cashew butter or 1/2 cup thick coconut milk",
+        "section": "Spices",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "½ to ¾ cup water  (adjust as required, cut down to ¼ for a semi-dry version)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5 to 0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": "adjust as required, cut down to 1/4 for a semi-dry version",
+        "section": "Spices",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "¾ to 1¼ teaspoons Kashmiri red chili powder  (cutdown for low heat or use ½ tsp paprika & ¼ tsp cayenne)",
+      "expected": {
+        "item": "Kashmiri red chili powder",
+        "measurements": [
+          {
+            "amount": "0.75 to 1.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "cutdown for low heat or use 1/2 tsp paprika & 1/4 tsp cayenne",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1½ teaspoons garam masala  (more if required)",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "more if required",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1½ teaspoons coriander powder",
+      "expected": {
+        "item": "coriander powder",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ teaspoon cumin powder  (optional)",
+      "expected": {
+        "item": "cumin powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ teaspoon turmeric",
+      "expected": {
+        "item": "turmeric",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ teaspoon salt  (adjust to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "⅓ teaspoon amchur  (dried mango powder or lemon juice to serve)",
+      "expected": {
+        "item": "amchur",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "tsp"
+          }
+        ],
+        "note": "dried mango powder or lemon juice to serve",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¾ tablespoon kasuri methi  (dried fenugreek leaves)",
+      "expected": {
+        "item": "kasuri methi",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "dried fenugreek leaves",
+        "section": "Spices",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "To roast /stir fry or air fry or steam:",
+      "is_section_header": true
+    },
+    {
+      "raw": "350 grams (¾ pound)  cauliflower florets  (1½ to 2 inch florets, 1 medium head cauliflower)",
+      "expected": {
+        "item": "cauliflower florets",
+        "measurements": [
+          {
+            "amount": "350",
+            "unit": "g"
+          },
+          {
+            "amount": "0.75",
+            "unit": "lb"
+          }
+        ],
+        "note": "1 1/2 to 2 inch florets, 1 medium head cauliflower",
+        "section": "To Roast /stir Fry or Air Fry or Steam",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "350 grams (¾ pound)  potatoes (diced to 1 inch cubes)",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "350",
+            "unit": "g"
+          },
+          {
+            "amount": "0.75",
+            "unit": "lb"
+          }
+        ],
+        "note": "diced to 1 inch cubes",
+        "section": "To Roast /stir Fry or Air Fry or Steam",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "¼ to ½ teaspoon Kashmiri chili powder  (leave out for low heat)",
+      "expected": {
+        "item": "Kashmiri chili powder",
+        "measurements": [
+          {
+            "amount": "0.25 to 0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "leave out for low heat",
+        "section": "To Roast /stir Fry or Air Fry or Steam",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 teaspoons oil  (or 2 tbsps. to stir fry)",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 2 tbsps. to stir fry",
+        "section": "To Roast /stir Fry or Air Fry or Steam",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "¾ teaspoon garam masala",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "To Roast /stir Fry or Air Fry or Steam",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "⅓ teaspoon salt  (adjust to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste",
+        "section": "To Roast /stir Fry or Air Fry or Steam",
         "category": "Spices & Seasonings"
       }
     }

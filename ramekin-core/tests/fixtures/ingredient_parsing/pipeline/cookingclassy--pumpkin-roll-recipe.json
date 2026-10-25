@@ -3,7 +3,11 @@
   "recipe_slug": "pumpkin-roll-recipe",
   "ingredients": [
     {
-      "raw": "3/4 cup (96g) all-purpose flour ((spooned and leveled))",
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3/4 cup (96g) all-purpose flour (spooned and leveled)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -17,6 +21,7 @@
           }
         ],
         "note": "spooned and leveled",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -116,12 +127,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       },
       "expanded": true
     },
     {
-      "raw": "3 large eggs, (at room temperature**)",
+      "raw": "3 large eggs, at room temperature**",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -131,6 +143,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,11 +162,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2/3 cup canned pumpkin ((at room temperature if refrigerated))",
+      "raw": "2/3 cup canned pumpkin (at room temperature if refrigerated)",
       "expected": {
         "item": "canned pumpkin",
         "measurements": [
@@ -163,6 +177,7 @@
           }
         ],
         "note": "at room temperature if refrigerated",
+        "section": "Cake",
         "category": "Canned Goods"
       }
     },
@@ -177,11 +192,16 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 (8 oz) pkg. cream cheese, (at room temperature)",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (8 oz) pkg. cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -195,6 +215,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -213,11 +234,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "6 Tbsp (85g) unsalted butter, (at room temperature)",
+      "raw": "6 Tbsp (85g) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -231,6 +253,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,6 +268,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

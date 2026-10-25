@@ -3,6 +3,15 @@
   "recipe_slug": "beef-and-mushroom-pot-roast-a-",
   "ingredients": [
     {
+      "raw": "Ingredients for Beef and Mushroom Pot Roast:",
+      "expected": {
+        "item": "Ingredients for Beef and Mushroom Pot Roast:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
       "raw": "4 1/2 lbs boneless Beef bottom round roast",
       "expected": {
         "item": "boneless Beef bottom round roast",
@@ -31,7 +40,7 @@
       }
     },
     {
-      "raw": "1 lb fresh mushrooms (thickly sliced)",
+      "raw": "1 lb fresh mushrooms, thickly sliced",
       "expected": {
         "item": "fresh mushrooms",
         "measurements": [
@@ -45,7 +54,7 @@
       }
     },
     {
-      "raw": "1  large onion (finely diced)",
+      "raw": "1 large onion, finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -59,20 +68,16 @@
       }
     },
     {
-      "raw": "1/2  head of garlic (6 cloves, pressed)",
+      "raw": "1/2 head of garlic, 6 cloves, pressed",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, 6 cloves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "head"
-          },
-          {
-            "amount": "6",
-            "unit": "clove"
           }
         ],
-        "note": "6 cloves, pressed",
+        "note": "pressed",
         "category": "Produce"
       }
     },
@@ -105,16 +110,16 @@
       }
     },
     {
-      "raw": "1/2 Tbsp Mrs. Dash (our favorite salt-free seasoning)",
+      "raw": "1/2 Tbsp Mrs. Dash, our favorite salt-free seasoning",
       "expected": {
-        "item": "Mrs. Dash",
+        "item": "Mrs. Dash, our favorite salt-free seasoning",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "our favorite salt-free seasoning",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

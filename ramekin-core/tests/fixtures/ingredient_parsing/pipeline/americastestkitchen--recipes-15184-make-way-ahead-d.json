@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-15184-make-way-ahead-d",
   "ingredients": [
     {
+      "raw": "Flour Paste:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Flour Paste",
         "category": "Beverages"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "Flour Paste",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Dough:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup milk , chilled",
@@ -41,6 +51,7 @@
           }
         ],
         "note": "chilled",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -63,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -77,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -105,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": "softened",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -142,6 +159,7 @@
         "item": "Vegetable oil spray",
         "measurements": [],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
     }

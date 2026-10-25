@@ -3,13 +3,17 @@
   "recipe_slug": "lemon-scones-recipe",
   "ingredients": [
     {
-      "raw": "2 cups All-purpose Flour ((if measuring by volume - spoon and level the flour))",
+      "raw": "2 cups  (250 g) All-purpose Flour (if measuring by volume – spoon and level the flour)",
       "expected": {
         "item": "All-purpose Flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": "if measuring by volume - spoon and level the flour",
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "6 Tablespoons Granulated Sugar",
+      "raw": "6 Tablespoons  (75 g) Granulated Sugar",
       "expected": {
         "item": "Granulated Sugar",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "2 teaspoons Baking Powder",
+      "raw": "2 teaspoons  (10 ml) Baking Powder",
       "expected": {
         "item": "Baking Powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -45,13 +57,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon Kosher Salt",
+      "raw": "1/2 teaspoon  (2.5 ml) Kosher Salt",
       "expected": {
         "item": "Kosher Salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -59,7 +75,7 @@
       }
     },
     {
-      "raw": "grated Zest from 2 Meyer Lemons ((about 1 Tablespoon (30ml)))",
+      "raw": "grated Zest from 2 Meyer Lemons (about 1 Tablespoon (30ml))",
       "expected": {
         "item": "grated Zest from 2 Meyer Lemons",
         "measurements": [],
@@ -68,21 +84,25 @@
       }
     },
     {
-      "raw": "1/2 cup Butter (, cold (if using unsalted butter, add and extra 1/4 teaspoon of salt to the batter))",
+      "raw": "1/2 cup  (114 g) Butter , cold (if using unsalted butter, add and extra 1/4 teaspoon of salt to the batter)",
       "expected": {
         "item": "Butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": "cold (if using unsalted butter, add and extra 1/4 teaspoon of salt to the batter)",
+        "note": "if using unsalted butter, add and extra 1/4 teaspoon of salt to the batter, cold",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 large Egg",
+      "raw": "1 large   Egg",
       "expected": {
         "item": "Egg",
         "measurements": [
@@ -96,27 +116,35 @@
       }
     },
     {
-      "raw": "1/2 cup Heavy Cream ( (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones)",
+      "raw": "1/2 cup  (120 ml) Heavy Cream  (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones",
       "expected": {
-        "item": "Heavy Cream",
+        "item": "Heavy Cream + optional extra",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
           }
         ],
-        "note": "(if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones",
-        "category": "Dairy & Eggs"
+        "note": "if your cream is extra thick you may need a touch more, for brushing tops of scones",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 teaspoons Pure Vanilla Extract",
+      "raw": "2 teaspoons  (10 ml) Pure Vanilla Extract",
       "expected": {
         "item": "Pure Vanilla Extract",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -124,13 +152,17 @@
       }
     },
     {
-      "raw": "1 cup Dried Cranberries ((we used a dried orange-cranberry - delicious))",
+      "raw": "1 cup  (120 g) Dried Cranberries (we used a dried orange-cranberry – delicious)",
       "expected": {
         "item": "Dried Cranberries",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": "we used a dried orange-cranberry - delicious",
@@ -138,53 +170,68 @@
       }
     },
     {
-      "raw": "2 Tablespoons optional melted butter (or heavy cream for brushing tops of scones)",
+      "raw": "2 Tablespoons   optional melted butter or heavy cream for brushing tops of scones",
       "expected": {
-        "item": "optional melted butter",
+        "item": "optional melted butter or heavy cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or heavy cream for brushing tops of scones",
-        "category": "Other"
+        "note": "for brushing tops of scones",
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup Fresh Meyer Lemon Juice ((@ 2 meyer lemons))",
+      "raw": "Lemon Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/4 cup  (60 ml) Fresh Meyer Lemon Juice (@ 2 meyer lemons)",
       "expected": {
         "item": "Fresh Meyer Lemon Juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": "@ 2 meyer lemons",
+        "section": "Lemon Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup Granulated Sugar",
+      "raw": "1/4 cup  (50 g) Granulated Sugar",
       "expected": {
         "item": "Granulated Sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Lemon Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "Optional - extra zest from 1 meyer lemon zest",
+      "raw": "Optional – extra zest from 1 meyer lemon zest",
       "expected": {
         "item": "extra zest from 1 meyer lemon zest",
         "measurements": [],
         "note": "optional",
+        "section": "Lemon Glaze",
         "category": "Other"
       }
     }

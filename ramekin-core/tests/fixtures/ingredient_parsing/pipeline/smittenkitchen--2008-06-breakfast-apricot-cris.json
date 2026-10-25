@@ -3,13 +3,8 @@
   "recipe_slug": "2008-06-breakfast-apricot-cris",
   "ingredients": [
     {
-      "raw": "Fruit Base",
-      "expected": {
-        "item": "Fruit Base",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Fruit Base:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound apricots",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit Base",
         "category": "Produce"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit Base",
         "category": "Baking"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Fruit Base",
         "category": "Baking"
       }
     },
@@ -59,11 +57,12 @@
         "item": "Grated fresh nutmeg, a pinch",
         "measurements": [],
         "note": null,
+        "section": "Fruit Base",
         "category": "Other"
       }
     },
     {
-      "raw": "Crisp Topping",
+      "raw": "Crisp Topping:",
       "is_section_header": true
     },
     {

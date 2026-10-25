@@ -3,13 +3,8 @@
   "recipe_slug": "2010-10-spiced-applesauce-cake",
   "ingredients": [
     {
-      "raw": "For cake",
-      "expected": {
-        "item": "For cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "For cake:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (8 3/4 ounces or 250 grams) all-purpose flour",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -66,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -84,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -102,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -156,6 +158,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -178,6 +181,7 @@
           }
         ],
         "note": "updated weight, packed",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -196,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -210,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -232,6 +238,7 @@
           }
         ],
         "note": "about 13 ounces or 365 grams",
+        "section": "For Cake",
         "category": "Canned Goods"
       }
     },
@@ -254,11 +261,12 @@
           }
         ],
         "note": "about 1 3/4 ounces or 50 grams, optional, toasted, cooled, and chopped",
+        "section": "For Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "For frosting",
+      "raw": "For frosting:",
       "is_section_header": true
     },
     {

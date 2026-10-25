@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-pot-pie-recipe",
   "ingredients": [
     {
+      "raw": "For the pie crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon salt",
       "expected": {
         "item": "salt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Crust",
         "category": "Baking"
       }
     },
@@ -41,11 +47,16 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup carrots (diced)",
+      "raw": "For the pie filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup carrots, diced",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": "diced",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ cup celery (diced)",
+      "raw": "½ cup celery, diced",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -69,6 +81,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup onion (diced (about ½ a medium-sized onion))",
+      "raw": "1 cup onion, diced (about ½ a medium-sized onion)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -96,12 +110,13 @@
             "unit": "cup"
           }
         ],
-        "note": "diced (about 1/2 a medium-sized onion)",
+        "note": "about 1/2 a medium-sized onion, diced",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves  garlic (minced)",
+      "raw": "3 cloves  garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -111,6 +126,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Baking"
       }
     },
@@ -167,25 +186,27 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 cup milk (or cream or half-and-half)",
+      "raw": "1 cup milk, or cream or half-and-half",
       "expected": {
-        "item": "milk",
+        "item": "milk, or cream or half-and-half",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or cream or half-and-half",
+        "note": null,
+        "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 cups chicken  (cooked and shredded)",
+      "raw": "3 cups chicken , cooked and shredded",
       "expected": {
         "item": "chicken",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": "cooked and shredded",
+        "section": "For the Pie Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Frozen"
       }
     },
@@ -223,11 +246,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Frozen"
       }
     },
     {
-      "raw": "1 egg beaten (for egg wash (optional))",
+      "raw": "1 egg beaten, for egg wash (optional)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -236,7 +260,8 @@
             "unit": null
           }
         ],
-        "note": "for egg wash (optional), beaten",
+        "note": "optional, beaten, for egg wash",
+        "section": "For the Pie Filling",
         "category": "Dairy & Eggs"
       }
     }

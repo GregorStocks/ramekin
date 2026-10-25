@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  large egg (50 g each w/o shell) ((at room temperature; beaten))",
+      "raw": "1  large egg (50 g w/o shell) ((at room temperature; beaten))",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -54,7 +54,7 @@
             "unit": "large"
           }
         ],
-        "note": "50 g each w/o shell, at room temperature; beaten",
+        "note": "50 g w/o shell, at room temperature; beaten",
         "category": "Dairy & Eggs"
       }
     },

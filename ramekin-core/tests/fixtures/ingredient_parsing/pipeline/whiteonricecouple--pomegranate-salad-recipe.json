@@ -3,7 +3,7 @@
   "recipe_slug": "pomegranate-salad-recipe",
   "ingredients": [
     {
-      "raw": "1 head lettuce (, washed, drained, torn)",
+      "raw": "1 head   lettuce , washed, drained, torn",
       "expected": {
         "item": "lettuce",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/2 cup pomegranate seeds ((1 small pomegranate))",
+      "raw": "1/2 cup   pomegranate seeds (1 small pomegranate)",
       "expected": {
         "item": "pomegranate seeds",
         "measurements": [
@@ -31,7 +31,11 @@
       }
     },
     {
-      "raw": "3/4 teaspoon soy sauce",
+      "raw": "Dressing Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3/4 teaspoon   soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -41,11 +45,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 1/2 Tablespoons red wine vinegar",
+      "raw": "1 1/2 Tablespoons   red wine vinegar",
       "expected": {
         "item": "red wine vinegar",
         "measurements": [
@@ -55,11 +60,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2  shallot (, minced and peeled)",
+      "raw": "1/2   shallot , minced and peeled",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -69,11 +75,12 @@
           }
         ],
         "note": "minced and peeled",
+        "section": "Dressing Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 teaspoon dijon mustard (( I also like to use whole grain mustard))",
+      "raw": "1/2 teaspoon   dijon mustard ( I also like to use whole grain mustard)",
       "expected": {
         "item": "dijon mustard",
         "measurements": [
@@ -83,11 +90,12 @@
           }
         ],
         "note": "I also like to use whole grain mustard",
+        "section": "Dressing Ingredients",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3 Tablespoons Olive oil",
+      "raw": "3 Tablespoons   Olive oil",
       "expected": {
         "item": "Olive oil",
         "measurements": [
@@ -97,15 +105,17 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "fresh thyme ((optional) or other herbs)",
+      "raw": "fresh thyme (optional) or other herbs",
       "expected": {
         "item": "fresh thyme or other herbs",
         "measurements": [],
         "note": "optional",
+        "section": "Dressing Ingredients",
         "category": "Produce"
       }
     }

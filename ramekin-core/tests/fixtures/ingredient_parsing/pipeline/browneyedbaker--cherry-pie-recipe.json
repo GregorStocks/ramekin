@@ -3,21 +3,30 @@
   "recipe_slug": "cherry-pie-recipe",
   "ingredients": [
     {
-      "raw": "3 cups all-purpose flour",
+      "raw": "For the Pie Dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cups  (375 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon salt",
+      "raw": "1 teaspoon   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -27,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons granulated sugar",
+      "raw": "2 tablespoons   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -41,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "10 tablespoons cold unsalted butter (cut into ¼-inch pieces)",
+      "raw": "10 tablespoons   cold unsalted butter, cut into ¼-inch pieces",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": "cut into 1/4-inch pieces",
+        "section": "For the Pie Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "7 tablespoons vegetable shortening",
+      "raw": "7 tablespoons   vegetable shortening",
       "expected": {
         "item": "vegetable shortening",
         "measurements": [
@@ -69,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "10 tablespoons ice water",
+      "raw": "10 tablespoons   ice water",
       "expected": {
         "item": "ice water",
         "measurements": [
@@ -83,53 +96,73 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Dough",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1¼ cups granulated sugar",
+      "raw": "For the Pie Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1¼ cups  (250 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup cornstarch",
+      "raw": "¼ cup  (32 g) cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ teaspoon ground cinnamon",
+      "raw": "¼ teaspoon  (0.25 teaspoon) ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Pinch salt",
+      "raw": "Pinch   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -139,39 +172,54 @@
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6 cups sour cherries (pitted (See note below.))",
+      "raw": "6 cups  (828 g) sour cherries, pitted (See note below.)",
       "expected": {
         "item": "sour cherries",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
+          },
+          {
+            "amount": "828",
+            "unit": "g"
           }
         ],
-        "note": "pitted (See note below.)",
+        "note": "See note below., pitted",
+        "section": "For the Pie Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ teaspoon almond extract",
+      "raw": "¼ teaspoon  (0.25 teaspoon) almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Pie Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon water",
+      "raw": "For the Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon   water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -181,11 +229,12 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 tablespoon granulated sugar",
+      "raw": "1 tablespoon   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -195,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     }

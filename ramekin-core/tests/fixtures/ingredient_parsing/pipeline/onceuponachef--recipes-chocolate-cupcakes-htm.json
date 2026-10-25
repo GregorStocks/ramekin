@@ -3,16 +3,21 @@
   "recipe_slug": "recipes-chocolate-cupcakes-htm",
   "ingredients": [
     {
-      "raw": "1½ cups all-purpose flour, (spooned into measuring cup and leveled-off)",
+      "raw": "For the Cupcakes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ cups all-purpose flour, spooned into measuring cup and leveled-off",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour, spooned into measuring cup and leveled-off",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "spooned into measuring cup and leveled-off",
+        "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ cup natural unsweetened cocoa powder, (such as Hershey’s)",
+      "raw": "¾ cup natural unsweetened cocoa powder, such as Hershey’s",
       "expected": {
         "item": "natural unsweetened cocoa powder",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "such as Hershey’s",
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  large eggs, (lightly beaten)",
+      "raw": "2 large eggs, lightly beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -153,25 +167,31 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Beverages"
       }
     },
     {
-      "raw": "8 ounces milk or semi-sweet chocolate, (broken into small pieces (see note))",
+      "raw": "For the Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 ounces milk or semi-sweet chocolate, broken into small pieces (see note)",
       "expected": {
-        "item": "milk or semi-sweet chocolate",
+        "item": "milk or semi-sweet chocolate, broken into small pieces",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "broken into small pieces (see note)",
+        "note": "see note",
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "20 tablespoons (2½&nbsp;sticks) unsalted butter, softened but still cool",
+      "raw": "20 tablespoons (2½ sticks) unsalted butter, softened but still cool",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -185,11 +205,12 @@
           }
         ],
         "note": "softened but still cool",
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1¼ cups confectioners&amp;#39; sugar",
+      "raw": "1¼ cups confectioners' sugar",
       "expected": {
         "item": "confectioners' sugar",
         "measurements": [
@@ -199,11 +220,12 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup natural unsweetened cocoa powder, (such as Hershey's)",
+      "raw": "½ cup natural unsweetened cocoa powder, such as Hershey's",
       "expected": {
         "item": "natural unsweetened cocoa powder",
         "measurements": [
@@ -213,11 +235,12 @@
           }
         ],
         "note": "such as Hershey's",
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/8 teaspoon salt",
+      "raw": "⅛ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -227,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -255,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     }

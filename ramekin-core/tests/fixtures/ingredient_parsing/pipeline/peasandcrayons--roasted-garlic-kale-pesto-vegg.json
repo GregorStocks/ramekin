@@ -3,6 +3,10 @@
   "recipe_slug": "roasted-garlic-kale-pesto-vegg",
   "ingredients": [
     {
+      "raw": "FOR THE PESTO:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups kale",
       "expected": {
         "item": "kale",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/3 cup extra virgin olive oil",
+      "raw": "⅓ cup extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2 cup freshly grated parmesan cheese",
+      "raw": "½ cup freshly grated parmesan cheese",
       "expected": {
         "item": "freshly grated parmesan cheese",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Cheese"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Beverages"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  head of roasted garlic ((approx. 6 cloves))",
+      "raw": "½ head of roasted garlic (approx. 6 cloves)",
       "expected": {
         "item": "roasted garlic",
         "measurements": [
@@ -115,20 +126,22 @@
           }
         ],
         "note": "approx. 6 cloves",
+        "section": "For the Pesto",
         "category": "Produce"
       }
     },
     {
-      "raw": "salt (to taste (don't skip, but season to taste))",
+      "raw": "salt to taste (don’t skip, but season to taste)",
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": "to taste (don't skip, but season to taste)",
+        "note": "don’t skip, but season to taste",
+        "section": "For the Pesto",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "pinch of black pepper (if desired)",
+      "raw": "pinch of black pepper if desired",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -138,11 +151,16 @@
           }
         ],
         "note": "if desired",
+        "section": "For the Pesto",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "8 oz pasta ((choose one with ridges + grooves))",
+      "raw": "FOR THE PASTA:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 oz pasta (choose one with ridges + grooves)",
       "expected": {
         "item": "pasta",
         "measurements": [
@@ -152,11 +170,12 @@
           }
         ],
         "note": "choose one with ridges + grooves",
+        "section": "For the Pasta",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "8 oz mushrooms (sliced)",
+      "raw": "8 oz mushrooms sliced",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -166,6 +185,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Pasta",
         "category": "Produce"
       }
     },
@@ -180,22 +200,28 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Produce"
       }
     },
     {
-      "raw": "2-4 oz cheese (I used mozzarella + parmesan)",
+      "raw": "2-4 oz cheese I used mozzarella + parmesan",
       "expected": {
-        "item": "cheese",
+        "item": "cheese I used mozzarella + parmesan",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "oz"
           }
         ],
-        "note": "I used mozzarella + parmesan",
-        "category": "Cheese"
+        "note": null,
+        "section": "For the Pasta",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "TOOLS NEEDED:",
+      "is_section_header": true
     }
   ]
 }

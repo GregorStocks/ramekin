@@ -3,9 +3,9 @@
   "recipe_slug": "recipes-spinachwithsesameandga",
   "ingredients": [
     {
-      "raw": "1 tablespoon toasted sesame seeds",
+      "raw": "1 tablespoon sesame seeds",
       "expected": {
-        "item": "toasted sesame seeds",
+        "item": "sesame seeds",
         "measurements": [
           {
             "amount": "1",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "3 tablespoons toasted (dark) sesame oil",
+      "raw": "3 tablespoons toasted (dark) sesame oil, divided",
       "expected": {
         "item": "toasted sesame oil",
         "measurements": [
@@ -26,7 +26,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "dark",
+        "note": "dark, divided",
         "category": "Oils & Vinegars"
       }
     },
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "Salt to taste",
+      "raw": "Salt, to taste",
       "expected": {
         "item": "Salt",
         "measurements": [],

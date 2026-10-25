@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 medium yellow onions (diced)",
+      "raw": "2 medium yellow onions, diced",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  red bell pepper (seeded and diced)",
+      "raw": "1 red bell pepper, seeded and diced",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 pounds ground meat ((I used 1 pound ground beef and 1 pound ground turkey))",
+      "raw": "2 pounds ground meat, (I used 1 pound ground beef and 1 pound ground turkey)",
       "expected": {
         "item": "ground meat",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "5 cloves garlic (minced)",
+      "raw": "5 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon onion powder",
+      "raw": "½ teaspoon onion powder",
       "expected": {
         "item": "onion powder",
         "measurements": [
@@ -239,7 +239,7 @@
       }
     },
     {
-      "raw": "1 (15 ounce) can black beans (drained)",
+      "raw": "1 (15 ounce) can black beans, drained",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -257,7 +257,7 @@
       }
     },
     {
-      "raw": "1 (15 ounce) can red kidney beans (drained)",
+      "raw": "1 (15 ounce) can red kidney beans, drained",
       "expected": {
         "item": "red kidney beans",
         "measurements": [
@@ -275,7 +275,7 @@
       }
     },
     {
-      "raw": "2  limes (juiced, plus more for serving)",
+      "raw": "2 limes, juiced, plus more for serving",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -289,7 +289,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh cilantro (chopped (optional))",
+      "raw": "½ cup fresh cilantro, chopped (optional)",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -298,7 +298,7 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped (optional)",
+        "note": "optional, chopped",
         "category": "Produce"
       }
     },
@@ -321,11 +321,16 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Tortilla chips, sliced avocado, green onion, shredded cheese",
       "expected": {
         "item": "Tortilla chips, sliced avocado, green onion",
         "measurements": [],
         "note": "shredded cheese",
+        "section": "Toppings",
         "category": "Snacks"
       }
     }

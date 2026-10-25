@@ -3,6 +3,10 @@
   "recipe_slug": "2016-08-neapolitan-marble-cupc",
   "ingredients": [
     {
+      "raw": "Marbled Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups 190g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Marbled Cupcakes",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Marbled Cupcakes",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Marbled Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "softened",
+        "section": "Marbled Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "Marbled Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Marbled Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Marbled Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,22 +134,28 @@
           }
         ],
         "note": null,
+        "section": "Marbled Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 ounces semisweet chocolate (melted and cooled slightly)",
+      "raw": "3 ounces semisweet chocolate melted and cooled slightly",
       "expected": {
-        "item": "semisweet chocolate",
+        "item": "semisweet chocolate melted and cooled slightly",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": "melted and cooled slightly",
-        "category": "Baking"
+        "note": null,
+        "section": "Marbled Cupcakes",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Strawberry Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup 226 g unsalted butter",
@@ -151,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -169,6 +187,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Strawberry Frosting",
         "category": "Baking"
       }
     },
@@ -183,11 +202,12 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 teaspoon strawberry extract (or 1/4 teaspoon strawberry flavoring oil)",
+      "raw": "1/2 teaspoon strawberry extract or 1/4 teaspoon strawberry flavoring oil",
       "expected": {
         "item": "strawberry extract",
         "measurements": [
@@ -197,6 +217,7 @@
           }
         ],
         "note": "or 1/4 teaspoon strawberry flavoring oil",
+        "section": "Strawberry Frosting",
         "category": "Other"
       }
     },
@@ -211,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Frosting",
         "category": "Other"
       }
     }

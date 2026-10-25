@@ -3,7 +3,11 @@
   "recipe_slug": "chocolate-cupcake-recipe",
   "ingredients": [
     {
-      "raw": "1 cup (125g) all-purpose flour",
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup   (125g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (200g) granulated sugar",
+      "raw": "1 cup   (200g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (50g) unsweetened cocoa powder",
+      "raw": "1/2 cup   (50g) unsweetened cocoa powder",
       "expected": {
         "item": "unsweetened cocoa powder",
         "measurements": [
@@ -53,11 +59,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp baking powder",
+      "raw": "1 tsp   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -67,11 +74,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 tsp baking soda",
+      "raw": "1/2 tsp   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -81,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 tsp salt",
+      "raw": "1/2 tsp   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -95,11 +104,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup (120ml) milk",
+      "raw": "1/2 cup   (120ml) milk",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -113,11 +123,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup (60ml) vegetable oil",
+      "raw": "1/4 cup   (60ml) vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -131,11 +142,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1   large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -145,11 +157,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp vanilla",
+      "raw": "1 tsp   vanilla",
       "expected": {
         "item": "vanilla",
         "measurements": [
@@ -159,11 +172,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (120ml) coffee (cooled)",
+      "raw": "1/2 cup   (120ml) coffee, cooled",
       "expected": {
         "item": "coffee",
         "measurements": [
@@ -177,11 +191,16 @@
           }
         ],
         "note": "cooled",
+        "section": "Cupcakes",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 cup (240ml) whipping cream",
+      "raw": "Whipped Chocolate Ganache Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup   (240ml) whipping cream",
       "expected": {
         "item": "whipping cream",
         "measurements": [
@@ -195,11 +214,12 @@
           }
         ],
         "note": null,
+        "section": "Whipped Chocolate Ganache Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 &amp;amp; 1/4 cup (8oz) good quality semi-sweet chocolate chips ((see notes below*))",
+      "raw": "1 & 1/4 cup   (8oz) good quality semi-sweet chocolate chips, (see notes below*)",
       "expected": {
         "item": "semi-sweet chocolate chips",
         "measurements": [
@@ -213,6 +233,7 @@
           }
         ],
         "note": "see notes below*, good quality",
+        "section": "Whipped Chocolate Ganache Frosting",
         "category": "Baking"
       }
     }

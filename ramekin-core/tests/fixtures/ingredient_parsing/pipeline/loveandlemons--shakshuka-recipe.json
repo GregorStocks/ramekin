@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "1 cup chopped yellow onion",
+      "raw": "1  small white onion (diced)",
       "expected": {
-        "item": "chopped yellow onion",
+        "item": "white onion",
         "measurements": [
           {
             "amount": "1",
-            "unit": "cup"
+            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "diced",
         "category": "Produce"
       }
     },
@@ -45,29 +45,6 @@
       }
     },
     {
-      "raw": "¼ teaspoon sea salt (plus more to taste)",
-      "expected": {
-        "item": "sea salt",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": "plus more to taste",
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "Freshly ground black pepper",
-      "expected": {
-        "item": "Freshly ground black pepper",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
       "raw": "3  garlic cloves (minced)",
       "expected": {
         "item": "garlic cloves",
@@ -82,12 +59,12 @@
       }
     },
     {
-      "raw": "½ teaspoon smoked paprika",
+      "raw": "1 teaspoon ground cumin",
       "expected": {
-        "item": "smoked paprika",
+        "item": "ground cumin",
         "measurements": [
           {
-            "amount": "0.5",
+            "amount": "1",
             "unit": "tsp"
           }
         ],
@@ -96,9 +73,9 @@
       }
     },
     {
-      "raw": "½ teaspoon ground cumin",
+      "raw": "½ teaspoon paprika",
       "expected": {
-        "item": "ground cumin",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "0.5",
@@ -124,9 +101,9 @@
       }
     },
     {
-      "raw": "1 (28-ounce) can crushed tomatoes",
+      "raw": "1 (28-ounce) can fire-roasted crushed tomatoes",
       "expected": {
-        "item": "crushed tomatoes",
+        "item": "fire-roasted crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -134,44 +111,39 @@
           }
         ],
         "note": "28-ounce",
-        "category": "Canned Goods"
-      }
-    },
-    {
-      "raw": "2 tablespoons harissa paste* (see note)",
-      "expected": {
-        "item": "harissa paste",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": "see note",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup fresh spinach (chopped)",
+      "raw": "½ teaspoon sea salt (plus more to taste)",
       "expected": {
-        "item": "fresh spinach",
+        "item": "sea salt",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "cup"
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
-        "note": "chopped",
-        "category": "Produce"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 to 5  large eggs",
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6  large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
           {
-            "amount": "3 to 5",
+            "amount": "6",
             "unit": "large"
           }
         ],
@@ -180,23 +152,9 @@
       }
     },
     {
-      "raw": "⅓ cup crumbled feta cheese",
+      "raw": "¼ cup fresh parsley or cilantro leaves",
       "expected": {
-        "item": "crumbled feta cheese",
-        "measurements": [
-          {
-            "amount": "0.33",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Cheese"
-      }
-    },
-    {
-      "raw": "¼ cup fresh parsley leaves",
-      "expected": {
-        "item": "fresh parsley leaves",
+        "item": "fresh parsley or cilantro leaves",
         "measurements": [
           {
             "amount": "0.25",
@@ -208,32 +166,23 @@
       }
     },
     {
-      "raw": "1  avocado (sliced)",
+      "raw": "¼ cup crumbled feta cheese",
       "expected": {
-        "item": "avocado",
+        "item": "crumbled feta cheese",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
-        "note": "sliced",
-        "category": "Produce"
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
-      "raw": "Microgreens (for garnish, optional)",
+      "raw": "Pita (for serving)",
       "expected": {
-        "item": "Microgreens",
-        "measurements": [],
-        "note": "for garnish, optional",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Toasted bread (for serving)",
-      "expected": {
-        "item": "Toasted bread",
+        "item": "Pita",
         "measurements": [],
         "note": "for serving",
         "category": "Bakery & Bread"

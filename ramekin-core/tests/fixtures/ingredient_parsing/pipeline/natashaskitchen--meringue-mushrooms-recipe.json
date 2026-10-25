@@ -3,16 +3,21 @@
   "recipe_slug": "meringue-mushrooms-recipe",
   "ingredients": [
     {
-      "raw": "2  large egg whites (room temp (if you forgot, put them in warm water for 15 min))",
+      "raw": "For the Meringue Mushrooms:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 large egg whites, room temp (if you forgot, put them in warm water for 15 min)",
       "expected": {
-        "item": "egg whites",
+        "item": "egg whites, room temp",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "room temp (if you forgot, put them in warm water for 15 min)",
+        "note": "if you forgot, put them in warm water for 15 min",
+        "section": "For the Meringue Mushrooms",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meringue Mushrooms",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meringue Mushrooms",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Meringue Mushrooms",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup semi-sweet chocolate chips (melted)",
+      "raw": "1/4 cup semi-sweet chocolate chips, melted",
       "expected": {
         "item": "semi-sweet chocolate chips",
         "measurements": [
@@ -69,8 +77,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Meringue Mushrooms",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Tools you'll need:",
+      "is_section_header": true
     },
     {
       "raw": "Parchment Paper",
@@ -78,6 +91,7 @@
         "item": "Parchment Paper",
         "measurements": [],
         "note": null,
+        "section": "Tools You'll Need",
         "category": "Other"
       }
     }

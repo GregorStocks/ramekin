@@ -157,6 +157,10 @@
       }
     },
     {
+      "raw": "Frosting:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup milk",
       "expected": {
         "item": "milk",
@@ -167,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -209,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -223,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -237,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Nuts & Dried Fruit"
       }
     }

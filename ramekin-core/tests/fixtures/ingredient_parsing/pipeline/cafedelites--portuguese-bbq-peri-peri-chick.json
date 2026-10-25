@@ -3,6 +3,10 @@
   "recipe_slug": "portuguese-bbq-peri-peri-chick",
   "ingredients": [
     {
+      "raw": "For The Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup vegetable oil",
       "expected": {
         "item": "vegetable oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -69,21 +77,23 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 teaspoons lemon juice (fresh squeezed, optional)",
+      "raw": "2 teaspoons lemon juice fresh squeezed, optional",
       "expected": {
-        "item": "lemon juice",
+        "item": "lemon juice fresh",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "fresh squeezed, optional",
-        "category": "Produce"
+        "note": "squeezed, optional",
+        "section": "For the Marinade",
+        "category": "Other"
       }
     },
     {
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch cracked pepper (to taste, optional)",
+      "raw": "1 pinch cracked pepper to taste, optional",
       "expected": {
         "item": "cracked pepper",
         "measurements": [
@@ -139,53 +152,65 @@
           }
         ],
         "note": "to taste, optional",
+        "section": "For the Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3-4 pounds whole chicken (Butterflied is preferred)",
+      "raw": "Chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3-4 pounds whole chicken Butterflied is preferred",
       "expected": {
-        "item": "whole chicken",
+        "item": "whole chicken Butterflied is preferred",
         "measurements": [
           {
             "amount": "3-4",
             "unit": "lb"
           }
         ],
-        "note": "Butterflied is preferred",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Chicken",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 pinch salt (to season)",
+      "raw": "1 pinch salt to season",
       "expected": {
-        "item": "salt",
+        "item": "salt to season",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "to season",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "Chicken",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 pinch pepper (to season)",
+      "raw": "1 pinch pepper to season",
       "expected": {
-        "item": "pepper",
+        "item": "pepper to season",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "to season",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "Chicken",
+        "category": "Other"
       }
     },
     {
-      "raw": "6  corn cobs",
+      "raw": "Corn (OPTIONAL):",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 corn cobs",
       "expected": {
         "item": "corn cobs",
         "measurements": [
@@ -195,11 +220,12 @@
           }
         ],
         "note": null,
+        "section": "Corn (Optional)",
         "category": "Other"
       }
     },
     {
-      "raw": "3 teaspoons butter (optional)",
+      "raw": "3 teaspoons butter optional",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -209,6 +235,7 @@
           }
         ],
         "note": "optional",
+        "section": "Corn (Optional)",
         "category": "Dairy & Eggs"
       }
     }

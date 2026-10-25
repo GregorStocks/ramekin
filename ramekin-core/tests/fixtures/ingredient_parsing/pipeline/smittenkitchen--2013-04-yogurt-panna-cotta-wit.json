@@ -3,13 +3,8 @@
   "recipe_slug": "2013-04-yogurt-panna-cotta-wit",
   "ingredients": [
     {
-      "raw": "Panna cotta",
-      "expected": {
-        "item": "Panna cotta",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "raw": "Panna cotta:",
+      "is_section_header": true
     },
     {
       "raw": "Neutral oil such as canola or safflower",
@@ -17,6 +12,7 @@
         "item": "Neutral oil",
         "measurements": [],
         "note": "such as canola or safflower",
+        "section": "Panna Cotta",
         "category": "Oils & Vinegars"
       }
     },
@@ -35,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Beverages"
       }
     },
@@ -61,6 +58,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Baking"
       }
     },
@@ -79,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +96,7 @@
           }
         ],
         "note": "see note up top, divided",
+        "section": "Panna Cotta",
         "category": "Dairy & Eggs"
       }
     },
@@ -115,6 +115,7 @@
           }
         ],
         "note": "see note up top",
+        "section": "Panna Cotta",
         "category": "Baking"
       }
     },
@@ -133,11 +134,12 @@
           }
         ],
         "note": "from about 1/2 lemon",
+        "section": "Panna Cotta",
         "category": "Produce"
       }
     },
     {
-      "raw": "To serve",
+      "raw": "To serve:",
       "is_section_header": true
     },
     {

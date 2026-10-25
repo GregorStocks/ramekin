@@ -3,81 +3,7 @@
   "recipe_slug": "2015-01-key-lime-pie",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Easiest Fridge Dill Pickles",
-      "expected": {
-        "item": "Months Ago: Easiest Fridge Dill Pickles",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: One-Pan Farro with Tomatoes",
-      "expected": {
-        "item": "Years Ago: One-Pan Farro with Tomatoes",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Bacon Corn Hash",
-      "expected": {
-        "item": "Years Ago: Bacon Corn Hash",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Raspberry Ricotta Scones",
-      "expected": {
-        "item": "Years Ago: Raspberry Ricotta Scones",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Plus, since it’s popsicle season where you are: Both last week’s Butterscotch Pudding and this week’s Key Lime Pie have popsicle equivalents in the archives. Make them and send sweltering thoughts our way, please.",
-      "expected": {
-        "item": "Plus, since it’s popsicle season where you are: Both last week’s Butterscotch Pudding and this week’s Key Lime Pie have popsicle equivalents in the archives. Make them and send sweltering thoughts our way, please.",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Crust",
+      "raw": "Crust:",
       "is_section_header": true
     },
     {
@@ -153,7 +79,7 @@
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {
@@ -225,7 +151,7 @@
       }
     },
     {
-      "raw": "To Finish",
+      "raw": "To Finish:",
       "is_section_header": true
     },
     {

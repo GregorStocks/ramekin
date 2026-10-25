@@ -3,6 +3,10 @@
   "recipe_slug": "challah-bread-recipe",
   "ingredients": [
     {
+      "raw": "Bread:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups unbleached bread flour",
       "expected": {
         "item": "unbleached bread flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "plus 1 teaspoon",
+        "section": "Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Egg Wash:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp milk",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Other:",
+      "is_section_header": true
     },
     {
       "raw": "1 tsp white sesame seeds",
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Other",
         "category": "Spices & Seasonings"
       }
     }

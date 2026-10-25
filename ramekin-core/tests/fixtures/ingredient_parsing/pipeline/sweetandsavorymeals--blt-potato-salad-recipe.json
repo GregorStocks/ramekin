@@ -3,7 +3,11 @@
   "recipe_slug": "blt-potato-salad-recipe",
   "ingredients": [
     {
-      "raw": "2 1/2 pounds Yukon Gold potatoes or Tri-Color potatoes (washed, peeled and cut into 1 inch pieces*)",
+      "raw": "Potatoes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 1/2 pounds Yukon Gold potatoes or Tri-Color potatoes washed, peeled and cut into 1 inch pieces*",
       "expected": {
         "item": "Yukon Gold potatoes or Tri-Color potatoes",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "washed, peeled and cut into 1 inch pieces",
+        "section": "Potatoes",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,25 +47,31 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "12 slices thick cut bacon (cut into 1 inch pieces)",
+      "raw": "Other Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 slices thick cut bacon cut into 1 inch pieces",
       "expected": {
-        "item": "thick cut bacon",
+        "item": "thick cut bacon cut into 1 inch pieces",
         "measurements": [
           {
             "amount": "12",
             "unit": "slice"
           }
         ],
-        "note": "cut into 1 inch pieces",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Other Ingredients",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  romaine lettuce heart (cut into 1 inch pieces)",
+      "raw": "1 romaine lettuce heart cut into 1 inch pieces",
       "expected": {
         "item": "romaine lettuce heart",
         "measurements": [
@@ -69,11 +81,12 @@
           }
         ],
         "note": "cut into 1 inch pieces",
+        "section": "Other Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "2 cups cherry tomatoes (halved)",
+      "raw": "2 cups cherry tomatoes halved",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -83,11 +96,12 @@
           }
         ],
         "note": "halved",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "6  scallions (thinly chopped)",
+      "raw": "6 scallions thinly chopped",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": "thinly chopped",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup chives (chopped)",
+      "raw": "1/4 cup chives chopped",
       "expected": {
         "item": "chives",
         "measurements": [
@@ -111,8 +126,13 @@
           }
         ],
         "note": "chopped",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup mayo",
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,15 +235,21 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Pickle slices (optional)",
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Pickle slices optional",
       "expected": {
         "item": "Pickle slices",
         "measurements": [],
         "note": "optional",
+        "section": "Garnish",
         "category": "Condiments & Sauces"
       }
     },
@@ -227,6 +259,7 @@
         "item": "chopped chives",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -236,6 +269,7 @@
         "item": "chopped green onions",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }

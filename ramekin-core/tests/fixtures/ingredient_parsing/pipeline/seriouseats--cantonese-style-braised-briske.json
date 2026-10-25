@@ -107,6 +107,20 @@
       }
     },
     {
+      "raw": "3 star anise pods",
+      "expected": {
+        "item": "star anise pods",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
       "raw": "1 (2-inch) piece cassia bark or cinnamon stick",
       "expected": {
         "item": "cassia bark or cinnamon stick",

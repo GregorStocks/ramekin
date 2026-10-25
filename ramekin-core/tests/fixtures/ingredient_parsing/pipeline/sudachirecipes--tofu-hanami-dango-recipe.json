@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "100 g glutinous rice flour",
+      "raw": "100 g glutinous rice flour (shiratamako or mochiko)",
       "expected": {
         "item": "glutinous rice flour",
         "measurements": [
@@ -26,7 +26,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shiratamako or mochiko",
         "category": "Baking"
       }
     },
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 drop pink food coloring (or a smaller amount of red)",
+      "raw": "1 drop pink food coloring (or small amount of red)",
       "expected": {
         "item": "pink food coloring",
         "measurements": [
@@ -96,7 +96,7 @@
             "unit": "drop"
           }
         ],
-        "note": "or a smaller amount of red",
+        "note": "or small amount of red",
         "category": "Baking"
       }
     },
@@ -111,29 +111,6 @@
           }
         ],
         "note": "or flavoring of your choice (optional)",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "water (for boiling)",
-      "expected": {
-        "item": "water",
-        "measurements": [],
-        "note": "for boiling",
-        "category": "Beverages"
-      }
-    },
-    {
-      "raw": "1 bowl ice water",
-      "expected": {
-        "item": "bowl ice water",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": null,
         "category": "Other"
       }
     }

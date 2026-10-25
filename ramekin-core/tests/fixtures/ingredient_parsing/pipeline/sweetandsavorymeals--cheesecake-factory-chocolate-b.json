@@ -3,6 +3,10 @@
   "recipe_slug": "cheesecake-factory-chocolate-b",
   "ingredients": [
     {
+      "raw": "Chocolate pudding:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -13,21 +17,23 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup brown sugar (packed)",
+      "raw": "1/4 cup brown sugar packed",
       "expected": {
-        "item": "brown sugar",
+        "item": "brown sugar packed",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "packed",
-        "category": "Baking"
+        "note": null,
+        "section": "Chocolate Pudding",
+        "category": "Other"
       }
     },
     {
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 ounces semisweet Belgian chocolate (chopped)",
+      "raw": "6 ounces semisweet Belgian chocolate chopped",
       "expected": {
         "item": "semisweet Belgian chocolate",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Pudding",
         "category": "Other"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cake layers:",
+      "is_section_header": true
     },
     {
       "raw": "1-1/2 cups all-purpose flour",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (cubed)",
+      "raw": "1/2 cup unsalted butter cubed",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": "cubed",
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 ounces Belgian dark chocolate (melted)",
+      "raw": "6 ounces Belgian dark chocolate melted",
       "expected": {
         "item": "Belgian dark chocolate",
         "measurements": [
@@ -181,6 +201,7 @@
           }
         ],
         "note": "melted",
+        "section": "Cake Layers",
         "category": "Snacks"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -209,21 +231,23 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup brown sugar (packed)",
+      "raw": "1 cup brown sugar packed",
       "expected": {
-        "item": "brown sugar",
+        "item": "brown sugar packed",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "packed",
-        "category": "Baking"
+        "note": null,
+        "section": "Cake Layers",
+        "category": "Other"
       }
     },
     {
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -265,25 +291,31 @@
           }
         ],
         "note": null,
+        "section": "Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  large eggs (room temperature)",
+      "raw": "2 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Cake Layers",
+        "category": "Other"
       }
     },
     {
-      "raw": "16 ounces Belgian semisweet chocolate (chopped)",
+      "raw": "Chocolate frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "16 ounces Belgian semisweet chocolate chopped",
       "expected": {
         "item": "Belgian semisweet chocolate",
         "measurements": [
@@ -293,11 +325,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Frosting",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup unsalted butter (cubed)",
+      "raw": "1 cup unsalted butter cubed",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -307,6 +340,7 @@
           }
         ],
         "note": "cubed",
+        "section": "Chocolate Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -321,6 +355,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Frosting",
         "category": "Beverages"
       }
     },
@@ -335,6 +370,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Frosting",
         "category": "Baking"
       }
     },
@@ -349,8 +385,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Frosting",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Cake crumbs",
@@ -358,20 +399,22 @@
         "item": "Cake crumbs",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup toasted peanuts (or almonds)",
+      "raw": "1/2 cup toasted peanuts or almonds",
       "expected": {
-        "item": "toasted peanuts",
+        "item": "toasted peanuts or almonds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or almonds",
+        "note": null,
+        "section": "Garnish",
         "category": "Nuts & Dried Fruit"
       }
     }

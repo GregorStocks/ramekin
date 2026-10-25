@@ -3,16 +3,21 @@
   "recipe_slug": "2019-12-coconut-cherry-amarett",
   "ingredients": [
     {
-      "raw": "6 tablespoons unsalted butter (at room temperature)",
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 tablespoons unsalted butter at room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter at room temperature",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3  egg whites",
+      "raw": "3 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Beverages"
       }
     },
@@ -139,11 +152,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "12  maraschino cherries",
+      "raw": "12 maraschino cherries",
       "expected": {
         "item": "maraschino cherries",
         "measurements": [
@@ -153,21 +167,27 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "3  cans coconut milk (full fat, chilled overnight)",
+      "raw": "Whipped coconut frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cans coconut milk full fat, chilled overnight",
       "expected": {
-        "item": "coconut milk",
+        "item": "coconut milk full fat",
         "measurements": [
           {
             "amount": "3",
             "unit": "can"
           }
         ],
-        "note": "full fat, chilled overnight",
-        "category": "Canned Goods"
+        "note": "chilled overnight",
+        "section": "Whipped Coconut Frosting",
+        "category": "Other"
       }
     },
     {
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Coconut Frosting",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Coconut Frosting",
         "category": "Baking"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Coconut Frosting",
         "category": "Other"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "knorr-spinach-dip-recipe",
   "ingredients": [
     {
-      "raw": "1 (10-ounce) box frozen spinach, (thawed and well-drained)",
+      "raw": "Dip:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (10-ounce) box frozen spinach, thawed and well-drained",
       "expected": {
         "item": "frozen spinach",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "10-ounce, thawed and well-drained",
+        "section": "Dip",
         "category": "Frozen"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 (8 ounces) can water chestnuts, (well-drained and coarsely chopped)",
+      "raw": "1 (8 ounces) can water chestnuts, well-drained and coarsely chopped",
       "expected": {
         "item": "water chestnuts",
         "measurements": [
@@ -73,25 +81,31 @@
           }
         ],
         "note": "well-drained and coarsely chopped",
+        "section": "Dip",
         "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
+      "raw": "1/4 cup, plus extra for garnish green onions thinly sliced",
       "expected": {
-        "item": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
+        "item": "1/4 cup, plus extra for garnish green onions thinly sliced",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "thinly sliced, plus extra for garnish green onions",
+        "note": "plus extra for garnish green onions thinly sliced",
+        "section": "Dip",
         "category": "Other"
       }
     },
     {
-      "raw": "1  round loaf of bread",
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 round loaf of bread",
       "expected": {
         "item": "round loaf of bread",
         "measurements": [
@@ -101,8 +115,13 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Serve With:",
+      "is_section_header": true
     },
     {
       "raw": "sliced vegetables",
@@ -110,6 +129,7 @@
         "item": "sliced vegetables",
         "measurements": [],
         "note": null,
+        "section": "Serve with",
         "category": "Produce"
       }
     },
@@ -119,15 +139,17 @@
         "item": "sliced baguette",
         "measurements": [],
         "note": null,
+        "section": "Serve with",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "Hawaiian rolls, (cut into cubes)",
+      "raw": "Hawaiian rolls, cut into cubes",
       "expected": {
         "item": "Hawaiian rolls",
         "measurements": [],
         "note": "cut into cubes",
+        "section": "Serve with",
         "category": "Bakery & Bread"
       }
     }

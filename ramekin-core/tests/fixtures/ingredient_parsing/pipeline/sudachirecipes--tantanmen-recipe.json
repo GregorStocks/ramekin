@@ -3,16 +3,21 @@
   "recipe_slug": "tantanmen-recipe",
   "ingredients": [
     {
-      "raw": "½ tbsp cooking oil (neutral)",
+      "raw": "Meat:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ tbsp cooking oil neutral",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil neutral",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "neutral",
+        "note": null,
+        "section": "Meat",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "rayu",
+        "section": "Meat",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": "toban djan",
+        "section": "Meat",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp dried red chili pepper (sliced)",
+      "raw": "1 tsp dried red chili pepper sliced",
       "expected": {
         "item": "dried red chili pepper",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "sliced",
+        "section": "Meat",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "150 g ground pork (or 70/30 pork-beef mix, chicken, turkey, vegetarian ground meat alternative)",
+      "raw": "150 g ground pork or 70/30 pork-beef mix, chicken, turkey, vegetarian ground meat alternative",
       "expected": {
         "item": "ground pork",
         "measurements": [
@@ -68,106 +76,118 @@
             "unit": "g"
           }
         ],
-        "note": "or 70/30 pork-beef mix, chicken, turkey, vegetarian ground meat alternative",
+        "note": "or 70/30 pork-beef mix, chicken, turkey; vegetarian ground meat alternative",
+        "section": "Meat",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tsp grated ginger root (or ginger paste)",
+      "raw": "1 tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
+        "section": "Meat",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp grated garlic (or garlic paste)",
+      "raw": "1 tsp grated garlic or garlic paste",
       "expected": {
-        "item": "grated garlic",
+        "item": "grated garlic or garlic paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or garlic paste",
+        "note": null,
+        "section": "Meat",
         "category": "Produce"
       }
     },
     {
-      "raw": "30 g Japanese leek (naganegi) (white part finely diced, or onion/shallot)",
+      "raw": "30 g Japanese leek (naganegi) white part finely diced, or onion/shallot",
       "expected": {
-        "item": "Japanese leek",
+        "item": "Japanese leek white part finely diced, or onion/shallot",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": "naganegi, white part finely diced, or onion/shallot",
-        "category": "Produce"
+        "note": "naganegi",
+        "section": "Meat",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tsp sake (or Shaoxing wine, dry sherry, white wine)",
+      "raw": "1 tsp sake or Shaoxing wine, dry sherry, white wine",
       "expected": {
-        "item": "sake",
+        "item": "sake or Shaoxing wine, dry sherry, white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or Shaoxing wine, dry sherry, white wine",
+        "note": null,
+        "section": "Meat",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 pinch ground white pepper (or black pepper)",
+      "raw": "1 pinch ground white pepper or black pepper",
       "expected": {
-        "item": "ground white pepper",
+        "item": "ground white pepper or black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "or black pepper",
+        "note": null,
+        "section": "Meat",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 tbsp sesame paste (nerigoma) (or Chinese sesame paste, tahini)",
+      "raw": "Tare (Base Sauce):",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 tbsp sesame paste (nerigoma) or Chinese sesame paste, tahini",
       "expected": {
-        "item": "sesame paste",
+        "item": "sesame paste or Chinese sesame paste, tahini",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "nerigoma, or Chinese sesame paste, tahini",
+        "note": "nerigoma",
+        "section": "Tare (Base Sauce)",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tbsp smooth peanut butter (unsweetened without bits)",
+      "raw": "1 tbsp smooth peanut butter unsweetened without bits",
       "expected": {
-        "item": "smooth peanut butter",
+        "item": "smooth peanut butter unsweetened without bits",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "unsweetened without bits",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "section": "Tare (Base Sauce)",
+        "category": "Other"
       }
     },
     {
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Tare (Base Sauce)",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Tare (Base Sauce)",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "rayu",
+        "section": "Tare (Base Sauce)",
         "category": "Oils & Vinegars"
       }
     },
@@ -223,21 +246,27 @@
           }
         ],
         "note": null,
+        "section": "Tare (Base Sauce)",
         "category": "Baking"
       }
     },
     {
-      "raw": "500 ml kombu dashi stock (or plain water)",
+      "raw": "Broth:",
+      "is_section_header": true
+    },
+    {
+      "raw": "500 ml kombu dashi stock or plain water",
       "expected": {
-        "item": "kombu dashi stock",
+        "item": "kombu dashi stock or plain water",
         "measurements": [
           {
             "amount": "500",
             "unit": "ml"
           }
         ],
-        "note": "or plain water",
-        "category": "Other"
+        "note": null,
+        "section": "Broth",
+        "category": "Canned Goods"
       }
     },
     {
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,11 +295,12 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Other"
       }
     },
     {
-      "raw": "½ tsp rice vinegar (optional)",
+      "raw": "½ tsp rice vinegar optional",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -279,8 +310,13 @@
           }
         ],
         "note": "optional",
+        "section": "Broth",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Noodles and Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "3 portions ramen noodles",
@@ -293,20 +329,22 @@
           }
         ],
         "note": null,
+        "section": "Noodles and Toppings",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "1 bunch bok choy (pak choy) (or other greens)",
+      "raw": "1 bunch bok choy (pak choy) or other greens",
       "expected": {
-        "item": "bok choy",
+        "item": "bok choy or other greens",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": "pak choy, or other greens",
+        "note": "pak choy",
+        "section": "Noodles and Toppings",
         "category": "Produce"
       }
     },
@@ -316,24 +354,27 @@
         "item": "finely chopped green onions",
         "measurements": [],
         "note": null,
+        "section": "Noodles and Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "roasted peanuts (crushed, optional)",
+      "raw": "roasted peanuts crushed, optional",
       "expected": {
         "item": "roasted peanuts",
         "measurements": [],
         "note": "crushed, optional",
+        "section": "Noodles and Toppings",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "chili oil (rayu) (to taste)",
+      "raw": "chili oil (rayu) to taste",
       "expected": {
         "item": "chili oil",
         "measurements": [],
         "note": "rayu, to taste",
+        "section": "Noodles and Toppings",
         "category": "Oils & Vinegars"
       }
     }

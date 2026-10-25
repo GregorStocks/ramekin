@@ -3,16 +3,21 @@
   "recipe_slug": "pozole-recipe",
   "ingredients": [
     {
-      "raw": "5 pounds pork shoulder (Boston Butt) (best with bone and well-marbled with fat, cut into large 2-inch cubes)",
+      "raw": "For the Pork and Soup:",
+      "is_section_header": true
+    },
+    {
+      "raw": "5 pounds pork shoulder (Boston Butt), best with bone and well-marbled with fat, cut into large 2-inch cubes",
       "expected": {
-        "item": "pork shoulder",
+        "item": "pork shoulder, best with bone and well-marbled with fat",
         "measurements": [
           {
             "amount": "5",
             "unit": "lb"
           }
         ],
-        "note": "Boston Butt, best with bone and well-marbled with fat, cut into large 2-inch cubes",
+        "note": "Boston Butt, cut into large 2-inch cubes",
+        "section": "For the Pork and Soup",
         "category": "Meat & Seafood"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pork and Soup",
         "category": "Other"
       }
     },
     {
-      "raw": "1  white onion (quartered)",
+      "raw": "1 white onion, quartered",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "quartered",
+        "section": "For the Pork and Soup",
         "category": "Produce"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pork and Soup",
         "category": "Beverages"
       }
     },
     {
-      "raw": "3 teaspoon salt (divided, plus more to taste)",
+      "raw": "3 teaspoon salt, divided, plus more to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -69,6 +77,7 @@
           }
         ],
         "note": "divided, plus more to taste",
+        "section": "For the Pork and Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pork and Soup",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "3  bay leaves",
+      "raw": "3 bay leaves",
       "expected": {
         "item": "bay leaves",
         "measurements": [
@@ -101,8 +111,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pork and Soup",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Red Chili Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 oz dried ancho chili",
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Red Chili Sauce",
         "category": "Other"
       }
     },
@@ -129,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "For the Red Chili Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "4-8  chiles de arbol (optional, if you want a spicier broth)",
+      "raw": "4-8 chiles de arbol, optional, if you want a spicier broth",
       "expected": {
         "item": "chiles de arbol",
         "measurements": [
@@ -143,11 +160,12 @@
           }
         ],
         "note": "optional, if you want a spicier broth",
+        "section": "For the Red Chili Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5 cloves garlic (peeled)",
+      "raw": "5 cloves garlic, peeled",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -157,11 +175,12 @@
           }
         ],
         "note": "peeled",
+        "section": "For the Red Chili Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  white onion (peeled and roughly chopped)",
+      "raw": "1 white onion, peeled and roughly chopped",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -171,6 +190,7 @@
           }
         ],
         "note": "peeled and roughly chopped",
+        "section": "For the Red Chili Sauce",
         "category": "Produce"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Red Chili Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,33 +220,41 @@
           }
         ],
         "note": null,
+        "section": "For the Red Chili Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Thinly shredded cabbage (highly recommended)",
+      "raw": "Garnishes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Thinly shredded cabbage, highly recommended",
       "expected": {
-        "item": "Thinly shredded cabbage",
+        "item": "Thinly shredded cabbage, highly recommended",
         "measurements": [],
-        "note": "highly recommended",
+        "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
     {
-      "raw": "Diced white onion (recommended)",
+      "raw": "Diced white onion, recommended",
       "expected": {
-        "item": "Diced white onion",
+        "item": "Diced white onion, recommended",
         "measurements": [],
-        "note": "recommended",
+        "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
     {
-      "raw": "Chopped cilantro (recommended)",
+      "raw": "Chopped cilantro, recommended",
       "expected": {
-        "item": "Chopped cilantro",
+        "item": "Chopped cilantro, recommended",
         "measurements": [],
-        "note": "recommended",
+        "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -235,6 +264,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -244,6 +274,7 @@
         "item": "Sliced radish",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -253,6 +284,7 @@
         "item": "Avocado",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -262,6 +294,7 @@
         "item": "Salsa",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Condiments & Sauces"
       }
     },
@@ -271,6 +304,7 @@
         "item": "Tostada shells",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Bakery & Bread"
       }
     }

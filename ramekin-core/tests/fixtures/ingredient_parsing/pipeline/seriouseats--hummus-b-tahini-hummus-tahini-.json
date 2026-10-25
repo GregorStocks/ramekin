@@ -3,21 +3,26 @@
   "recipe_slug": "hummus-b-tahini-hummus-tahini-",
   "ingredients": [
     {
-      "raw": "One 14-ounce can or jar of chickpeas, drained and rinsed well (see notes)",
+      "raw": "For the Hummus:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (14-ounce) can or jar of chickpeas, drained and rinsed well",
       "expected": {
         "item": "or jar of chickpeas",
         "measurements": [
           {
             "amount": "1",
-            "unit": "14-ounce can"
+            "unit": "can"
           }
         ],
-        "note": "see notes, drained and rinsed well",
+        "note": "14-ounce, drained and rinsed well",
+        "section": "For the Hummus",
         "category": "Other"
       }
     },
     {
-      "raw": "1/3 cup (90ml) cold water (see notes)",
+      "raw": "1/3 cup (90 ml) cold water (see notes)",
       "expected": {
         "item": "cold water",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": "see notes",
+        "section": "For the Hummus",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/3 cup tahini (3 ounces; 85g), stirred well before measuring",
+      "raw": "1/3 cup tahini (3 ounces; 85 g), stirred well before measuring",
       "expected": {
         "item": "tahini, stirred well before measuring",
         "measurements": [
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hummus",
         "category": "Condiments & Sauces"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "For the Hummus",
         "category": "Produce"
       }
     },
@@ -81,24 +89,31 @@
           }
         ],
         "note": "plus more as needed; if using table salt, use half as much by volume",
+        "section": "For the Hummus",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Cooked chickpeas",
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Cooked chickpeas, toasted pine nuts, finely chopped parsley, paprika, ground cumin (optional)",
       "expected": {
-        "item": "Cooked chickpeas",
+        "item": "Cooked chickpeas, toasted pine nuts, finely chopped parsley, paprika",
         "measurements": [],
-        "note": null,
+        "note": "optional, ground cumin",
+        "section": "For Serving",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "extra-virgin olive oil",
+      "raw": "Extra-virgin olive oil",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Oils & Vinegars"
       }
     },
@@ -108,37 +123,19 @@
         "item": "Pita",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
+      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles (optional)",
       "expected": {
-        "item": "Sliced tomatoes",
+        "item": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
         "measurements": [],
-        "note": null,
+        "note": "optional",
+        "section": "For Serving",
         "category": "Produce"
       }
-    },
-    {
-      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
-      "expected": {
-        "item": "onions",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
-      "expected": {
-        "item": "Middle Eastern cucumber pickles",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      },
-      "expanded": true
     }
   ]
 }

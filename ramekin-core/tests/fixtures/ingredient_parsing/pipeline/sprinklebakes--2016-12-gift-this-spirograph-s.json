@@ -3,6 +3,10 @@
   "recipe_slug": "2016-12-gift-this-spirograph-s",
   "ingredients": [
     {
+      "raw": "Fondant rounds:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 lb. ready-made white fondant",
       "expected": {
         "item": "ready-made white fondant",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Fondant Rounds",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": null,
+        "section": "Fondant Rounds",
         "category": "Baking"
       }
     },
@@ -31,6 +37,7 @@
         "item": "Parchment paper",
         "measurements": [],
         "note": null,
+        "section": "Fondant Rounds",
         "category": "Other"
       }
     },
@@ -45,8 +52,13 @@
           }
         ],
         "note": null,
+        "section": "Fondant Rounds",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Sugar cookie dough:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 lb. two US sticks unsalted butter",
@@ -63,25 +75,31 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup plus 2 tablespoons (225g granulated sugar)",
+      "raw": "1 cup plus 2 tablespoons 225g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 cup plus 2 tablespoons",
             "unit": null
+          },
+          {
+            "amount": "225",
+            "unit": "g"
           }
         ],
-        "note": "225g granulated sugar",
+        "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -91,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Baking"
       }
     },
@@ -123,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Baking"
       }
     },
@@ -137,33 +158,41 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookie Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Fondant rounds (dry)",
+      "raw": "Decoration:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Fondant rounds dry",
       "expected": {
-        "item": "Fondant rounds",
+        "item": "Fondant rounds dry",
         "measurements": [],
-        "note": "dry",
+        "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     },
     {
-      "raw": "Spirograph drawing tool (ring and circle)",
+      "raw": "Spirograph drawing tool ring and circle",
       "expected": {
-        "item": "Spirograph drawing tool",
+        "item": "Spirograph drawing tool ring and circle",
         "measurements": [],
-        "note": "ring and circle",
+        "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     },
     {
-      "raw": "Fine-tipped food color markers (I recommend fine-tipped Foodoodlers)",
+      "raw": "Fine-tipped food color markers I recommend fine-tipped Foodoodlers",
       "expected": {
-        "item": "Fine-tipped food color markers",
+        "item": "Fine-tipped food color markers I recommend fine-tipped Foodoodlers",
         "measurements": [],
-        "note": "I recommend fine-tipped Foodoodlers",
+        "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     },
@@ -173,15 +202,17 @@
         "item": "Corn syrup",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Baking"
       }
     },
     {
-      "raw": "Buttercream frosting (optional but tasty)",
+      "raw": "Buttercream frosting optional but tasty",
       "expected": {
-        "item": "Buttercream frosting",
+        "item": "Buttercream frosting optional but tasty",
         "measurements": [],
-        "note": "optional but tasty",
+        "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     },
@@ -191,6 +222,7 @@
         "item": "Dragee",
         "measurements": [],
         "note": null,
+        "section": "Decoration",
         "category": "Other"
       }
     }

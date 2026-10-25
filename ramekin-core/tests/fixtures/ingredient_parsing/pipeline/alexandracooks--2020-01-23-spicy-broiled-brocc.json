@@ -3,6 +3,10 @@
   "recipe_slug": "2020-01-23-spicy-broiled-brocc",
   "ingredients": [
     {
+      "raw": "For the sizzle:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon sesame oil",
       "expected": {
         "item": "sesame oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sizzle",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sizzle",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sizzle",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sizzle",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sizzle",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Sizzle",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the broccoli:",
+      "is_section_header": true
     },
     {
       "raw": "1.25 lbs (roughly) broccoli",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "roughly",
+        "section": "For the Broccoli",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "such as grapeseed or canola",
+        "section": "For the Broccoli",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +136,7 @@
         "item": "kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Broccoli",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +146,7 @@
         "item": "flaky sea salt",
         "measurements": [],
         "note": "such as Maldon, for finishing, optional",
+        "section": "For the Broccoli",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "carrot-cake-recipe",
   "ingredients": [
     {
-      "raw": "2 cups (250g) all-purpose flour",
+      "raw": "cake ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups   (250g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon kosher or sea salt",
+      "raw": "1/2 teaspoon   kosher or sea salt",
       "expected": {
         "item": "kosher or sea salt",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon baking powder",
+      "raw": "1 teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon baking soda",
+      "raw": "1 teaspoon   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -59,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon ground cinnamon",
+      "raw": "1 teaspoon   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -73,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon ground nutmeg ((or 1/2 teaspoon freshly grated nutmeg))",
+      "raw": "1/4 teaspoon   ground nutmeg (or 1/2 teaspoon freshly grated nutmeg)",
       "expected": {
         "item": "ground nutmeg",
         "measurements": [
@@ -87,11 +96,12 @@
           }
         ],
         "note": "or 1/2 teaspoon freshly grated nutmeg",
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon ground ginger",
+      "raw": "1/4 teaspoon   ground ginger",
       "expected": {
         "item": "ground ginger",
         "measurements": [
@@ -101,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup (200g) sugar",
+      "raw": "1 cup   (200g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -119,11 +130,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (220g) brown sugar",
+      "raw": "1 cup   (220g) brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -137,11 +149,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/4 cups (300ml) vegetable oil",
+      "raw": "1 1/4 cups   (300ml) vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -155,11 +168,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "4 large eggs",
+      "raw": "4 large   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -169,11 +183,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups (480ml) grated carrots (, about 2-3 large carrots worth)",
+      "raw": "2 cups   (480ml) grated carrots , about 2-3 large carrots worth",
       "expected": {
         "item": "grated carrots",
         "measurements": [
@@ -187,11 +202,16 @@
           }
         ],
         "note": "about 2-3 large carrots worth",
+        "section": "Cake Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup (1 stick or 113g) unsalted butter (, softened)",
+      "raw": "frosting ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup   (1 stick or 113g) unsalted butter , softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -209,11 +229,12 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 ounces (225g) cream cheese ((1 package), softened)",
+      "raw": "8 ounces   (225g) cream cheese (1 package), softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -231,11 +252,12 @@
           }
         ],
         "note": "softened",
+        "section": "Frosting Ingredients",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2 cups (240g) confectioners sugar ((1/2 pound))",
+      "raw": "2 cups   (240g) confectioners sugar (1/2 pound)",
       "expected": {
         "item": "confectioners sugar",
         "measurements": [
@@ -253,11 +275,12 @@
           }
         ],
         "note": null,
+        "section": "Frosting Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons vanilla extract",
+      "raw": "2 teaspoons   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -267,20 +290,22 @@
           }
         ],
         "note": null,
+        "section": "Frosting Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 Tablespoons to 1/2 cup milk (, optional if you want a drizzle-able frosting)",
+      "raw": "2 Tablespoons to 1/2 cup   milk , optional if you want a drizzle-able frosting",
       "expected": {
-        "item": "milk",
+        "item": "milk, optional if you want a drizzle-able frosting",
         "measurements": [
           {
             "amount": "2 tablespoons to 1/2 cup",
             "unit": null
           }
         ],
-        "note": "optional if you want a drizzle-able frosting",
+        "note": null,
+        "section": "Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     }

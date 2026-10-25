@@ -3,7 +3,7 @@
   "recipe_slug": "crunchy-brownie-crisps-recipe",
   "ingredients": [
     {
-      "raw": "1  large egg white",
+      "raw": "1 large egg white",
       "expected": {
         "item": "egg white",
         "measurements": [
@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "¼ cup light flavored olive oil (or the cooking oil of your choice)",
+      "raw": "¼ cup light flavored olive oil or the cooking oil of your choice",
       "expected": {
-        "item": "light flavored olive oil",
+        "item": "light flavored olive oil or the cooking oil of your choice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or the cooking oil of your choice",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "½ cup semi-sweet&nbsp;chocolate chips",
+      "raw": "½ cup semi-sweet chocolate chips",
       "expected": {
         "item": "semi-sweet chocolate chips",
         "measurements": [

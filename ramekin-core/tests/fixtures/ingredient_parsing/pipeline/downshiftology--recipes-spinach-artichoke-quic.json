@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-spinach-artichoke-quic",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups almond flour",
       "expected": {
         "item": "almond flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,25 +62,27 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5 tbsp cold butter (or organic palm shortening for dairy-free)",
+      "raw": "5 tbsp cold butter, or organic palm shortening for dairy-free",
       "expected": {
-        "item": "cold butter",
+        "item": "cold butter, or organic palm shortening for dairy-free",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
           }
         ],
-        "note": "or organic palm shortening for dairy-free",
+        "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup full fat coconut milk",
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 oz frozen spinach (thawed and drained)",
+      "raw": "8 oz frozen spinach, thawed and drained",
       "expected": {
         "item": "frozen spinach",
         "measurements": [
@@ -139,29 +156,27 @@
           }
         ],
         "note": "thawed and drained",
+        "section": "Filling",
         "category": "Frozen"
       }
     },
     {
-      "raw": "3-4  whole artichoke hearts (about 1/2 14-ounce can, drained and diced)",
+      "raw": "3-4 whole artichoke hearts, about 1/2 14-ounce can, drained and diced",
       "expected": {
         "item": "whole artichoke hearts",
         "measurements": [
           {
             "amount": "3-4",
             "unit": null
-          },
-          {
-            "amount": "0.5",
-            "unit": "14-ounce can"
           }
         ],
         "note": "about 1/2 14-ounce can, drained and diced",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2  medium shallots (finely diced and sauteed)",
+      "raw": "2 medium shallots, finely diced and sauteed",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -171,11 +186,12 @@
           }
         ],
         "note": "finely diced and sauteed",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  spring onions or garlic scapes",
+      "raw": "2 spring onions or garlic scapes",
       "expected": {
         "item": "spring onions or garlic scapes",
         "measurements": [
@@ -185,15 +201,17 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

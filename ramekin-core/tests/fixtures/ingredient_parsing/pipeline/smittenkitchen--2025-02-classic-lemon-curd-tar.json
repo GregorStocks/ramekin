@@ -3,6 +3,10 @@
   "recipe_slug": "2025-02-classic-lemon-curd-tar",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup plus 2 tablespoons (150 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "or 1/4 cup granulated sugar",
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -75,8 +82,13 @@
           }
         ],
         "note": "cold is fine, diced",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup plus 2 tablespoons (225 grams) granulated sugar",
@@ -93,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -107,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,6 +177,7 @@
           }
         ],
         "note": "cold, cut into pieces",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -170,6 +187,7 @@
         "item": "Whipped cream and berries",
         "measurements": [],
         "note": "optional, to serve",
+        "section": "Filling",
         "category": "Other"
       }
     }

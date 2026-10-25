@@ -3,7 +3,7 @@
   "recipe_slug": "2012-06-chocolate-swirl-buns",
   "ingredients": [
     {
-      "raw": "Dough",
+      "raw": "Dough:",
       "is_section_header": true
     },
     {
@@ -132,7 +132,7 @@
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {
@@ -223,14 +223,8 @@
       }
     },
     {
-      "raw": "Egg wash (optional)",
-      "expected": {
-        "item": "Egg wash",
-        "measurements": [],
-        "note": "optional",
-        "section": "Filling",
-        "category": "Dairy & Eggs"
-      }
+      "raw": "Egg wash:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg",
@@ -243,7 +237,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,7 +256,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
     }

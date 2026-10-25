@@ -3,6 +3,10 @@
   "recipe_slug": "carne-asada-fries-recipe-11887",
   "ingredients": [
     {
+      "raw": "For the Steak and Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 (1 pound; 450 g each) bone-in or boneless ribeye or New York strip steaks, about 1 1/2 inches thick, trimmed",
       "expected": {
         "item": "bone-in or boneless ribeye or New York strip steaks",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "about 1 1/2 inches thick, trimmed",
+        "section": "For the Steak and Sauce",
         "category": "Other"
       }
     },
@@ -30,6 +35,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Steak and Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -44,6 +50,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak and Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -58,6 +65,7 @@
           }
         ],
         "note": "see note, plus more for serving",
+        "section": "For the Steak and Sauce",
         "category": "Other"
       }
     },
@@ -72,6 +80,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak and Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -86,6 +95,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak and Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -104,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak and Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -118,6 +129,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Steak and Sauce",
         "category": "Produce"
       }
     },
@@ -132,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak and Sauce",
         "category": "Baking"
       }
     },
@@ -150,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak and Sauce",
         "category": "Canned Goods"
       }
     },
@@ -168,8 +182,13 @@
           }
         ],
         "note": null,
+        "section": "For the Steak and Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Fries:",
+      "is_section_header": true
     },
     {
       "raw": "2 quarts (1.9 L) neutral oil, such as peanut, vegetable, or canola, for frying",
@@ -186,6 +205,7 @@
           }
         ],
         "note": "such as peanut, vegetable, or canola, for frying",
+        "section": "For the Fries",
         "category": "Oils & Vinegars"
       }
     },
@@ -200,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fries",
         "category": "Frozen"
       }
     },
@@ -214,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fries",
         "category": "Cheese"
       }
     },
@@ -236,6 +258,7 @@
           }
         ],
         "note": "Roma, finely diced",
+        "section": "For the Fries",
         "category": "Produce"
       }
     },
@@ -258,6 +281,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "For the Fries",
         "category": "Produce"
       }
     },
@@ -276,6 +300,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Fries",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-14926-slow-roasted-med",
   "ingredients": [
     {
+      "raw": "Short Ribs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon kosher salt",
       "expected": {
         "item": "kosher salt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Short Ribs",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Short Ribs",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "trimmed",
+        "section": "Short Ribs",
         "category": "Meat & Seafood"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Short Ribs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Browned Butter Steak Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "8 tablespoons unsalted butter",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Browned Butter Steak Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Browned Butter Steak Sauce",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "minced",
+        "section": "Browned Butter Steak Sauce",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Browned Butter Steak Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Browned Butter Steak Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Browned Butter Steak Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "packed",
+        "section": "Browned Butter Steak Sauce",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Browned Butter Steak Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Browned Butter Steak Sauce",
         "category": "Spices & Seasonings"
       }
     }

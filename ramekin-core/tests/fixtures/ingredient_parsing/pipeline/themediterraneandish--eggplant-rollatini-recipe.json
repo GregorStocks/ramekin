@@ -3,7 +3,7 @@
   "recipe_slug": "eggplant-rollatini-recipe",
   "ingredients": [
     {
-      "raw": "2  eggplants",
+      "raw": "2 eggplants",
       "expected": {
         "item": "eggplants",
         "measurements": [
@@ -26,18 +26,18 @@
       }
     },
     {
-      "raw": "Extra virgin olive oil (I used Private Reserve Greek EVOO )",
+      "raw": "Extra virgin olive oil I used Private Reserve Greek EVOO",
       "expected": {
-        "item": "Extra virgin olive oil",
+        "item": "Extra virgin olive oil I used Private Reserve Greek EVOO",
         "measurements": [],
-        "note": "I used Private Reserve Greek EVOO",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "2 cups Store-bought Marinara sauce",
+      "raw": "2 cups Store-bought Marinara sauce  Or homemade pasta sauce",
       "expected": {
-        "item": "Store-bought Marinara sauce",
+        "item": "Store-bought Marinara sauce Or homemade pasta sauce",
         "measurements": [
           {
             "amount": "2",
@@ -49,7 +49,11 @@
       }
     },
     {
-      "raw": "2  eggs (beaten)",
+      "raw": "For filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 eggs beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -59,6 +63,7 @@
           }
         ],
         "note": "beaten",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,20 +78,22 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup part-skim shredded Mozzarella (more for later)",
+      "raw": "1/2 cup part-skim shredded Mozzarella more for later",
       "expected": {
-        "item": "part-skim shredded Mozzarella",
+        "item": "part-skim shredded Mozzarella more for later",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "more for later",
+        "note": null,
+        "section": "For Filling",
         "category": "Other"
       }
     },
@@ -101,21 +108,23 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2 tbsp basil pesto (homemade or store-bought, more for later)",
+      "raw": "2 tbsp basil pesto homemade or store-bought, more for later",
       "expected": {
-        "item": "basil pesto",
+        "item": "basil pesto homemade or store-bought",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "homemade or store-bought, more for later",
-        "category": "Condiments & Sauces"
+        "note": "more for later",
+        "section": "For Filling",
+        "category": "Other"
       }
     },
     {
@@ -129,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Produce"
       }
     }

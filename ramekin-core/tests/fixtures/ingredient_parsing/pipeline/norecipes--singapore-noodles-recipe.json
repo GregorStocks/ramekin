@@ -3,21 +3,25 @@
   "recipe_slug": "singapore-noodles-recipe",
   "ingredients": [
     {
-      "raw": "160 grams rice vermicelli (dried (a.k.a. mai fun or bee hoon))",
+      "raw": "160 grams  rice vermicelli dried (a.k.a. mai fun or bee hoon)",
       "expected": {
-        "item": "rice vermicelli",
+        "item": "rice vermicelli dried",
         "measurements": [
           {
             "amount": "160",
             "unit": "g"
           }
         ],
-        "note": "dried (a.k.a. mai fun or bee hoon)",
-        "category": "Pasta & Rice"
+        "note": "a.k.a. mai fun or bee hoon",
+        "category": "Other"
       }
     },
     {
-      "raw": "130 grams small shrimp ((peeled and deveined))",
+      "raw": "For shrimp & pork:",
+      "is_section_header": true
+    },
+    {
+      "raw": "130 grams  small shrimp (peeled and deveined)",
       "expected": {
         "item": "small shrimp",
         "measurements": [
@@ -27,11 +31,12 @@
           }
         ],
         "note": "peeled and deveined",
+        "section": "For Shrimp & Pork",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "130 grams pork loin ((sliced into strips))",
+      "raw": "130 grams  pork loin (sliced into strips)",
       "expected": {
         "item": "pork loin",
         "measurements": [
@@ -41,11 +46,12 @@
           }
         ],
         "note": "sliced into strips",
+        "section": "For Shrimp & Pork",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2 teaspoons soy sauce",
+      "raw": "2 teaspoons  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -55,11 +61,12 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp & Pork",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 teaspoons shaoxing wine",
+      "raw": "2 teaspoons  shaoxing wine",
       "expected": {
         "item": "shaoxing wine",
         "measurements": [
@@ -69,11 +76,12 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp & Pork",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 teaspoon potato starch",
+      "raw": "1 teaspoon  potato starch",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -83,11 +91,16 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp & Pork",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup low sodium chicken stock",
+      "raw": "For sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup  low sodium chicken stock",
       "expected": {
         "item": "low sodium chicken stock",
         "measurements": [
@@ -97,11 +110,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 tablespoons fish sauce",
+      "raw": "2 tablespoons  fish sauce",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -111,11 +125,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon oyster sauce",
+      "raw": "1 tablespoon  oyster sauce",
       "expected": {
         "item": "oyster sauce",
         "measurements": [
@@ -125,11 +140,16 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 teaspoons vegetable oil",
+      "raw": "For eggs:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 teaspoons  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -139,11 +159,12 @@
           }
         ],
         "note": null,
+        "section": "For Eggs",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 large eggs ((lightly beaten))",
+      "raw": "2 large  eggs (lightly beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -153,11 +174,16 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For Eggs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons vegetable oil",
+      "raw": "For stir-fry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -167,11 +193,12 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "10 grams garlic ((minced))",
+      "raw": "10 grams  garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -181,11 +208,12 @@
           }
         ],
         "note": "minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "10 grams ginger ((minced))",
+      "raw": "10 grams  ginger (minced)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -195,11 +223,12 @@
           }
         ],
         "note": "minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "85 grams onion ((1/2 medium, sliced))",
+      "raw": "85 grams  onion (½ medium, sliced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -213,11 +242,12 @@
           }
         ],
         "note": "1/2 medium, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "85 grams red bell pepper ((1/2 pepper, sliced))",
+      "raw": "85 grams  red bell pepper (½ pepper, sliced)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -227,11 +257,12 @@
           }
         ],
         "note": "1/2 pepper, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "85 grams green bell pepper ((1/2 pepper, sliced))",
+      "raw": "85 grams  green bell pepper (½ pepper, sliced)",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -241,11 +272,12 @@
           }
         ],
         "note": "1/2 pepper, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "140 grams bamboo shoots ((julienned))",
+      "raw": "140 grams  bamboo shoots (julienned)",
       "expected": {
         "item": "bamboo shoots",
         "measurements": [
@@ -255,11 +287,12 @@
           }
         ],
         "note": "julienned",
+        "section": "For Stir-Fry",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "110 grams bean sprouts",
+      "raw": "110 grams  bean sprouts",
       "expected": {
         "item": "bean sprouts",
         "measurements": [
@@ -269,11 +302,12 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons curry powder",
+      "raw": "2 tablespoons  curry powder",
       "expected": {
         "item": "curry powder",
         "measurements": [
@@ -283,11 +317,12 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  scallions ((finely chopped, for garnish))",
+      "raw": "2  scallions (finely chopped, for garnish)",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -297,6 +332,7 @@
           }
         ],
         "note": "finely chopped, for garnish",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     }

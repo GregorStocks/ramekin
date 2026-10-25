@@ -3,6 +3,10 @@
   "recipe_slug": "2024-04-new-york-crumb-cake",
   "ingredients": [
     {
+      "raw": "Crumbs:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 tablespoons (140 grams) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, softened",
@@ -117,6 +131,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Beverages"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -221,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -249,8 +271,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "Powdered sugar, for dusting",
@@ -258,6 +285,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "Cake",
         "category": "Baking"
       }
     }

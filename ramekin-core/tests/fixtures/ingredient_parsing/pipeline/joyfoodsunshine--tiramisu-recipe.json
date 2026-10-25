@@ -3,21 +3,26 @@
   "recipe_slug": "tiramisu-recipe",
   "ingredients": [
     {
-      "raw": "6  eggs (separated)",
+      "raw": "Ladyfinger Layers:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 eggs separated",
       "expected": {
-        "item": "eggs",
+        "item": "eggs separated",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "separated",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Ladyfinger Layers",
+        "category": "Other"
       }
     },
     {
-      "raw": "¾ cup granulated sugar (divided)",
+      "raw": "¾ cup granulated sugar divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "Ladyfinger Layers",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ladyfinger Layers",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ladyfinger Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,11 +77,16 @@
           }
         ],
         "note": null,
+        "section": "Ladyfinger Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "6  egg yolks",
+      "raw": "Mascarpone Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Mascarpone Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Mascarpone Filling",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Mascarpone Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Mascarpone Filling",
         "category": "Cheese"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Mascarpone Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Mascarpone Filling",
         "category": "Baking"
       }
     },
@@ -167,20 +186,26 @@
           }
         ],
         "note": null,
+        "section": "Mascarpone Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "1 ¾ cups coffee (strong brewed, or espresso)",
+      "raw": "Soaking liquid:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ¾ cups coffee strong brewed, or espresso",
       "expected": {
-        "item": "coffee",
+        "item": "coffee strong brewed, or espresso",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": "strong brewed, or espresso",
+        "note": null,
+        "section": "Soaking Liquid",
         "category": "Beverages"
       }
     },
@@ -195,8 +220,13 @@
           }
         ],
         "note": null,
+        "section": "Soaking Liquid",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 Tablespoon unsweetened cocoa powder",
@@ -209,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

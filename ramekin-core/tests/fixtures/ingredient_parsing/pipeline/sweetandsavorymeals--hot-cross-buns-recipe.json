@@ -31,6 +31,10 @@
       }
     },
     {
+      "raw": "Yeast Mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup warm milk",
       "expected": {
         "item": "warm milk",
@@ -41,6 +45,7 @@
           }
         ],
         "note": null,
+        "section": "Yeast Mixture",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,26 +60,28 @@
           }
         ],
         "note": null,
+        "section": "Yeast Mixture",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  envelope active dry yeast (about 2 1/4 teaspoons)",
+      "raw": "1 envelope active dry yeast about 2 1/4 teaspoons",
       "expected": {
-        "item": "active dry yeast",
+        "item": "active dry yeast about 2 1/4 teaspoons",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
-          },
-          {
-            "amount": "2.25",
-            "unit": "tsp"
           }
         ],
-        "note": "about 2 1/4 teaspoons",
-        "category": "Baking"
+        "note": null,
+        "section": "Yeast Mixture",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Prepare Dough:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup milk",
@@ -87,6 +94,7 @@
           }
         ],
         "note": null,
+        "section": "Prepare Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,11 +109,12 @@
           }
         ],
         "note": null,
+        "section": "Prepare Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup unsalted butter (softened)",
+      "raw": "1/4 cup unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -115,6 +124,7 @@
           }
         ],
         "note": "softened",
+        "section": "Prepare Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,11 +139,12 @@
           }
         ],
         "note": null,
+        "section": "Prepare Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  large eggs (beaten)",
+      "raw": "2 large eggs beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -143,6 +154,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Prepare Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,11 +169,12 @@
           }
         ],
         "note": null,
+        "section": "Prepare Dough",
         "category": "Other"
       }
     },
     {
-      "raw": "1 teaspoon cinnamon powder (optional)",
+      "raw": "1 teaspoon cinnamon powder optional",
       "expected": {
         "item": "cinnamon powder",
         "measurements": [
@@ -171,6 +184,7 @@
           }
         ],
         "note": "optional",
+        "section": "Prepare Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,11 +199,16 @@
           }
         ],
         "note": null,
+        "section": "Prepare Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "Egg Wash:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,8 +233,13 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup powdered sugar",
@@ -227,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -241,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -255,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     }

@@ -3,49 +3,68 @@
   "recipe_slug": "greek-custard-pie-galaktoboure",
   "ingredients": [
     {
-      "raw": "6 cups whole milk",
+      "raw": "Custard:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 cups  (1.46 l) whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
+          },
+          {
+            "amount": "1.46",
+            "unit": "l"
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup fine semolina",
+      "raw": "1 cup  (167 g) fine semolina",
       "expected": {
         "item": "fine semolina",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "167",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Other"
       }
     },
     {
-      "raw": "¾ cup granulated sugar (divided)",
+      "raw": "¾ cup  (150 g) granulated sugar, divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
         "note": "divided",
+        "section": "Custard",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon unsalted butter",
+      "raw": "1 tablespoon   unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -55,11 +74,12 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -69,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Baking"
       }
     },
     {
-      "raw": "3  eggs",
+      "raw": "3   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -83,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,94 +119,125 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  package phyllo dough (about 12 to 16 sheets)",
+      "raw": "Pie Assembly:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1   package phyllo dough, about 12 to 16 sheets",
       "expected": {
         "item": "phyllo dough",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "12 to 16",
-            "unit": "sheet"
           }
         ],
         "note": "about 12 to 16 sheets",
+        "section": "Pie Assembly",
         "category": "Frozen"
       }
     },
     {
-      "raw": "1 cup unsalted butter",
+      "raw": "1 cup  (227 g) unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Pie Assembly",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1½ cups granulated sugar",
+      "raw": "Citrus Syrup:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ cups  (300 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Citrus Syrup",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup water",
+      "raw": "1 cup  (250 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Citrus Syrup",
         "category": "Beverages"
       }
     },
     {
-      "raw": "¼ cup orange juice",
+      "raw": "¼ cup  (62 ml) orange juice",
       "expected": {
         "item": "orange juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Citrus Syrup",
         "category": "Beverages"
       }
     },
     {
-      "raw": "½ teaspoon vanilla extract",
+      "raw": "½ teaspoon  (0.5 teaspoon) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "Citrus Syrup",
         "category": "Baking"
       }
     }

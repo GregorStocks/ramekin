@@ -3,7 +3,11 @@
   "recipe_slug": "wasabi-cucumber-avocado-dressi",
   "ingredients": [
     {
-      "raw": "1  avocado",
+      "raw": "FOR THE DRESSING:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 avocado",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "2-4  stalks of green onion",
+      "raw": "2-4 stalks of green onion",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/3 cup chopped cucumber",
+      "raw": "⅓ cup chopped cucumber",
       "expected": {
         "item": "chopped cucumber",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
@@ -69,20 +77,22 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Other"
       }
     },
     {
-      "raw": "2 TBSP&nbsp; avocado oil (or your favorite healthy oil)",
+      "raw": "2 TBSP  avocado oil or your favorite healthy oil",
       "expected": {
-        "item": "avocado oil",
+        "item": "avocado oil or your favorite healthy oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or your favorite healthy oil",
+        "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 tsp garlic powder",
+      "raw": "½ tsp garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp sea salt",
+      "raw": "¼ tsp sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -125,11 +137,16 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2-4 cups greens ((I used spring mix))",
+      "raw": "FOR THE SALAD:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2-4 cups greens (I used spring mix)",
       "expected": {
         "item": "greens",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": "I used spring mix",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large english cucumber",
+      "raw": "1 large english cucumber",
       "expected": {
         "item": "english cucumber",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     }

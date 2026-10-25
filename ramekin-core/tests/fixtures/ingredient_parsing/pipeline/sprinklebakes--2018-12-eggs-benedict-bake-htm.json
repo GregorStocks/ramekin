@@ -3,7 +3,7 @@
   "recipe_slug": "2018-12-eggs-benedict-bake-htm",
   "ingredients": [
     {
-      "raw": "12 oz. package English Muffins (lightly toasted (about 6 whole))",
+      "raw": "12 oz. package English Muffins lightly toasted (about 6 whole)",
       "expected": {
         "item": "package English Muffins",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "oz"
           }
         ],
-        "note": "lightly toasted (about 6 whole)",
+        "note": "about 6 whole, lightly toasted",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "8 ounces Canadian bacon (diced)",
+      "raw": "8 ounces Canadian bacon diced",
       "expected": {
         "item": "Canadian bacon",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "8  large eggs",
+      "raw": "8 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -87,7 +87,11 @@
       }
     },
     {
-      "raw": "4  large egg yolks",
+      "raw": "Hollandaise sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 large egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -97,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Produce"
       }
     },
@@ -139,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -157,6 +165,7 @@
           }
         ],
         "note": "melted",
+        "section": "Hollandaise Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -166,6 +175,7 @@
         "item": "Salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Hollandaise Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,25 +185,23 @@
         "item": "Freshly cracked pepper",
         "measurements": [],
         "note": null,
+        "section": "Hollandaise Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Handful of chopped chives (about 1/4 cup)",
+      "raw": "Handful of chopped chives about 1/4 cup",
       "expected": {
-        "item": "chopped chives",
+        "item": "chopped chives about 1/4 cup",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
-          },
-          {
-            "amount": "0.25",
-            "unit": "cup"
           }
         ],
-        "note": "about 1/4 cup",
-        "category": "Produce"
+        "note": null,
+        "section": "Hollandaise Sauce",
+        "category": "Other"
       }
     }
   ]

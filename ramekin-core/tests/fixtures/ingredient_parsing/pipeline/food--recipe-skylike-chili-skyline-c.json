@@ -231,11 +231,16 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "chopped onion (optional)",
       "expected": {
         "item": "chopped onion",
         "measurements": [],
         "note": "optional",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -245,6 +250,7 @@
         "item": "finely shredded cheddar cheese",
         "measurements": [],
         "note": "certainly NOT optional",
+        "section": "Toppings",
         "category": "Cheese"
       }
     },
@@ -254,6 +260,7 @@
         "item": "kidney bean",
         "measurements": [],
         "note": "optional",
+        "section": "Toppings",
         "category": "Canned Goods"
       }
     }

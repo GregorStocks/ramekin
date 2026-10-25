@@ -3,6 +3,10 @@
   "recipe_slug": "italian-pasta-salad-recipe",
   "ingredients": [
     {
+      "raw": "For the Italian Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅓ cup good-quality olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "good-quality",
+        "section": "For the Italian Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Italian Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3 cloves garlic (minced)",
+      "raw": "3 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Italian Dressing",
         "category": "Produce"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Italian Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tablespoon fresh parsley (chopped)",
+      "raw": "1 tablespoon fresh parsley, chopped",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -69,20 +77,26 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Italian Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "salt + black pepper (to taste)",
+      "raw": "salt + black pepper, to taste",
       "expected": {
         "item": "salt + black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Italian Dressing",
         "category": "Other"
       }
     },
     {
-      "raw": "1 pound fusilli pasta (cooked to al dente (may also use rotini pasta or bowtie pasta))",
+      "raw": "For the Pasta Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound fusilli pasta, cooked to al dente (may also use rotini pasta or bowtie pasta)",
       "expected": {
         "item": "fusilli pasta",
         "measurements": [
@@ -91,12 +105,13 @@
             "unit": "lb"
           }
         ],
-        "note": "cooked to al dente (may also use rotini pasta or bowtie pasta)",
+        "note": "may also use rotini pasta or bowtie pasta, cooked to al dente",
+        "section": "For the Pasta Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "16 ounces mozzarella balls (drained and sliced in half)",
+      "raw": "16 ounces mozzarella balls, drained and sliced in half",
       "expected": {
         "item": "mozzarella balls",
         "measurements": [
@@ -106,11 +121,12 @@
           }
         ],
         "note": "drained and sliced in half",
+        "section": "For the Pasta Salad",
         "category": "Cheese"
       }
     },
     {
-      "raw": "6 ounces salami (sliced and quartered)",
+      "raw": "6 ounces salami, sliced and quartered",
       "expected": {
         "item": "salami",
         "measurements": [
@@ -120,11 +136,12 @@
           }
         ],
         "note": "sliced and quartered",
+        "section": "For the Pasta Salad",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "5 ounces fresh baby spinach ((or arugula))",
+      "raw": "5 ounces fresh baby spinach, (or arugula)",
       "expected": {
         "item": "fresh baby spinach",
         "measurements": [
@@ -134,11 +151,12 @@
           }
         ],
         "note": "or arugula",
+        "section": "For the Pasta Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "15 ounces cherry tomatoes (halved (or grape tomatoes))",
+      "raw": "15 ounces cherry tomatoes, halved (or grape tomatoes)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -147,12 +165,13 @@
             "unit": "oz"
           }
         ],
-        "note": "halved (or grape tomatoes)",
+        "note": "halved; or grape tomatoes",
+        "section": "For the Pasta Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 (15 ounce) can artichoke hearts (drained and chopped)",
+      "raw": "1 (15 ounce) can artichoke hearts, drained and chopped",
       "expected": {
         "item": "artichoke hearts",
         "measurements": [
@@ -166,11 +185,12 @@
           }
         ],
         "note": "drained and chopped",
+        "section": "For the Pasta Salad",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 (6.5 ounce) can black olives (drained and chopped)",
+      "raw": "1 (6.5 ounce) can black olives, drained and chopped",
       "expected": {
         "item": "black olives",
         "measurements": [
@@ -184,6 +204,7 @@
           }
         ],
         "note": "drained and chopped",
+        "section": "For the Pasta Salad",
         "category": "Canned Goods"
       }
     }

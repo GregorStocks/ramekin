@@ -82,11 +82,16 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "pineapple wedge",
       "expected": {
         "item": "pineapple wedge",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     },
@@ -96,6 +101,7 @@
         "item": "orange slice",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -105,6 +111,7 @@
         "item": "Maraschino cherry",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Canned Goods"
       }
     }

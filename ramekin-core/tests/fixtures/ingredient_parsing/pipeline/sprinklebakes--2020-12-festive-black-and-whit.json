@@ -3,6 +3,10 @@
   "recipe_slug": "2020-12-festive-black-and-whit",
   "ingredients": [
     {
+      "raw": "Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup 226g butter, softened",
       "expected": {
         "item": "butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Produce"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -105,11 +115,12 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "3  large eggs",
+      "raw": "3 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -137,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -155,8 +168,13 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "6 2/3 cups about 27 oz. confectioner’s sugar",
@@ -169,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -183,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -197,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Beverages"
       }
     },
@@ -211,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -225,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Other"
       }
     },
@@ -239,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Other"
       }
     }

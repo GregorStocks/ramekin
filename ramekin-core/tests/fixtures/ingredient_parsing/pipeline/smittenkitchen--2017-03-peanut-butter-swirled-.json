@@ -3,6 +3,10 @@
   "recipe_slug": "2017-03-peanut-butter-swirled-",
   "ingredients": [
     {
+      "raw": "Peanut Butter Batter:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup (190 grams) smooth peanut butter",
       "expected": {
         "item": "smooth peanut butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Batter",
         "category": "Condiments & Sauces"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Batter",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Batter",
         "category": "Baking"
       }
     },
@@ -72,8 +80,13 @@
         "item": "A few pinches of flaky or coarse sea salt",
         "measurements": [],
         "note": null,
+        "section": "Peanut Butter Batter",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Brownie Batter:",
+      "is_section_header": true
     },
     {
       "raw": "3 ounces (85 grams) unsweetened chocolate, roughly chopped",
@@ -90,6 +103,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -112,6 +126,7 @@
           }
         ],
         "note": "plus extra for pan",
+        "section": "Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -130,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -144,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -162,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
     },
@@ -176,6 +194,7 @@
           }
         ],
         "note": "or heaped 1/4 teaspoon of coarse sea salt",
+        "section": "Brownie Batter",
         "category": "Other"
       }
     },
@@ -194,8 +213,13 @@
           }
         ],
         "note": null,
+        "section": "Brownie Batter",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (40 grams) semi- or bittersweet chocolate chips",
@@ -212,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Baking"
       }
     }

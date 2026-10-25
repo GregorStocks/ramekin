@@ -3,6 +3,10 @@
   "recipe_slug": "pad-see-ew-recipe-8784741",
   "ingredients": [
     {
+      "raw": "For the Chile Vinegar:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (240ml) distilled white vinegar",
       "expected": {
         "item": "distilled white vinegar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chile Vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chile Vinegar",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,8 +59,13 @@
           }
         ],
         "note": "see notes, such as Holland, Fresno, or Cayenne, stemmed and thinly sliced crosswise",
+        "section": "For the Chile Vinegar",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Noodles:",
+      "is_section_header": true
     },
     {
       "raw": "20 ounces (568g) fresh rice noodle sheets or 8 ounces (226g) dried wide rice noodles (see notes)",
@@ -75,6 +86,7 @@
           }
         ],
         "note": "or 8 ounces dried wide rice noodles (see notes)",
+        "section": "For the Noodles",
         "category": "Other"
       }
     },
@@ -93,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "For the Noodles",
         "category": "Other"
       }
     },
@@ -111,11 +124,16 @@
           }
         ],
         "note": "such as vegetable or canola oil",
+        "section": "For the Noodles",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "8 ounces (225g) pork shoulder,sliced very thinly into roughly 1- by 1 1/2-inch pieces (see notes)",
+      "raw": "For the Marinated Pork:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 ounces (225g) pork shoulder, sliced very thinly into roughly 1- by 1 1/2-inch pieces (see notes)",
       "expected": {
         "item": "pork shoulder",
         "measurements": [
@@ -129,6 +147,7 @@
           }
         ],
         "note": "see notes, sliced very thinly into roughly 1- by 1 1/2-inch pieces",
+        "section": "For the Marinated Pork",
         "category": "Meat & Seafood"
       }
     },
@@ -147,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -165,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -183,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Baking"
       }
     },
@@ -197,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Spices & Seasonings"
       }
     },
@@ -215,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Oils & Vinegars"
       }
     },
@@ -233,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Baking"
       }
     },
@@ -247,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Baking"
       }
     },
@@ -283,8 +310,13 @@
           }
         ],
         "note": null,
+        "section": "For the Marinated Pork",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Stir-Fry Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45ml) Thai oyster sauce",
@@ -301,6 +333,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir-Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -319,6 +352,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir-Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -337,6 +371,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir-Fry Sauce",
         "category": "Other"
       }
     },
@@ -351,6 +386,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir-Fry Sauce",
         "category": "Baking"
       }
     },
@@ -365,8 +401,13 @@
           }
         ],
         "note": null,
+        "section": "For the Stir-Fry Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Par-Cooking and the Stir Fry:",
+      "is_section_header": true
     },
     {
       "raw": "8 1/2 ounces (240g) Chinese broccoli, sliced on a bias into 1-inch pieces (4 cups)",
@@ -387,6 +428,7 @@
           }
         ],
         "note": "sliced on a bias into 1-inch pieces",
+        "section": "For Par-Cooking and the Stir Fry",
         "category": "Produce"
       }
     },
@@ -405,6 +447,7 @@
           }
         ],
         "note": null,
+        "section": "For Par-Cooking and the Stir Fry",
         "category": "Other"
       }
     },
@@ -423,6 +466,7 @@
           }
         ],
         "note": "such as vegetable or canola oil, divided",
+        "section": "For Par-Cooking and the Stir Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -441,6 +485,7 @@
           }
         ],
         "note": "smashed and roughly chopped, divided",
+        "section": "For Par-Cooking and the Stir Fry",
         "category": "Produce"
       }
     },
@@ -450,6 +495,7 @@
         "item": "Prepared rice noodles from above",
         "measurements": [],
         "note": null,
+        "section": "For Par-Cooking and the Stir Fry",
         "category": "Other"
       }
     },
@@ -468,6 +514,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Par-Cooking and the Stir Fry",
         "category": "Other"
       }
     },
@@ -482,6 +529,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Par-Cooking and the Stir Fry",
         "category": "Dairy & Eggs"
       }
     }

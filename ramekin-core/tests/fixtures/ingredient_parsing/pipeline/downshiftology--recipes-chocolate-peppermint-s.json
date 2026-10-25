@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-chocolate-peppermint-s",
   "ingredients": [
     {
+      "raw": "base layer:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup almonds",
       "expected": {
         "item": "almonds",
@@ -13,20 +17,22 @@
           }
         ],
         "note": null,
+        "section": "Base Layer",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2 cup shredded coconut (unsweetened)",
+      "raw": "1/2 cup shredded coconut, unsweetened",
       "expected": {
-        "item": "shredded coconut",
+        "item": "shredded coconut, unsweetened",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "unsweetened",
+        "note": null,
+        "section": "Base Layer",
         "category": "Produce"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Base Layer",
         "category": "Baking"
       }
     },
     {
-      "raw": "8  Medjool dates (pitted)",
+      "raw": "8 Medjool dates, pitted",
       "expected": {
         "item": "Medjool dates",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "pitted",
+        "section": "Base Layer",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "2 tbsp coconut oil (melted)",
+      "raw": "2 tbsp coconut oil, melted",
       "expected": {
         "item": "coconut oil",
         "measurements": [
@@ -69,11 +77,16 @@
           }
         ],
         "note": "melted",
+        "section": "Base Layer",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 1/2 cups raw cashews (soaked overnight and drained)",
+      "raw": "mint layer:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 1/2 cups raw cashews, soaked overnight and drained",
       "expected": {
         "item": "raw cashews",
         "measurements": [
@@ -83,11 +96,12 @@
           }
         ],
         "note": "soaked overnight and drained",
+        "section": "Mint Layer",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2 cup coconut oil (melted)",
+      "raw": "1/2 cup coconut oil, melted",
       "expected": {
         "item": "coconut oil",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": "melted",
+        "section": "Mint Layer",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 cup cacao butter (melted)",
+      "raw": "1/2 cup cacao butter, melted",
       "expected": {
         "item": "cacao butter",
         "measurements": [
@@ -111,6 +126,7 @@
           }
         ],
         "note": "melted",
+        "section": "Mint Layer",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Layer",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": null,
+        "section": "Mint Layer",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "top chocolate layer:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup dark chocolate chips",
@@ -153,11 +175,12 @@
           }
         ],
         "note": null,
+        "section": "Top Chocolate Layer",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tbsp coconut oil (melted)",
+      "raw": "1 tbsp coconut oil, melted",
       "expected": {
         "item": "coconut oil",
         "measurements": [
@@ -167,6 +190,7 @@
           }
         ],
         "note": "melted",
+        "section": "Top Chocolate Layer",
         "category": "Oils & Vinegars"
       }
     }

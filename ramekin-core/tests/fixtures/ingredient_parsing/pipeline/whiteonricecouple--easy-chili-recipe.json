@@ -3,27 +3,35 @@
   "recipe_slug": "easy-chili-recipe",
   "ingredients": [
     {
-      "raw": "1 lb. lean ground beef ((85-90% lean) (or whatever ground meat you like - chicken, turkey, pork, lamb, etc.)",
+      "raw": "1 lb.  (454 g) lean ground beef (85-90% lean) (or whatever ground meat you like – chicken, turkey, pork, lamb, etc.",
       "expected": {
-        "item": "lean ground beef",
+        "item": "lean ground beef (or whatever ground meat you like - chicken, turkey, pork, lamb, etc.",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
-        "note": "85-90% lean, or whatever ground meat you like - chicken, turkey, pork, lamb, etc.",
+        "note": "85-90% lean",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 Tablespoon olive oil",
+      "raw": "1 Tablespoon  (14.79 ml) olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14.79",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -31,7 +39,7 @@
       }
     },
     {
-      "raw": "1/2 medium onion (, diced)",
+      "raw": "1/2 medium   onion , diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -45,10 +53,14 @@
       }
     },
     {
-      "raw": "4 cloves garlic (, minced or crushed)",
+      "raw": "4 cloves  (4 cloves) garlic , minced or crushed",
       "expected": {
         "item": "garlic",
         "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          },
           {
             "amount": "4",
             "unit": "clove"
@@ -59,27 +71,39 @@
       }
     },
     {
-      "raw": "30 ounces tomato sauce (, (two 15oz. cans or @ 4 cups) crushed, diced or regular depending on what texture you want)",
+      "raw": "30 ounces  (850 g) tomato sauce , (two 15oz. cans or @ 4 cups) crushed, diced or regular depending on what texture you want",
       "expected": {
         "item": "tomato sauce",
         "measurements": [
           {
             "amount": "30",
             "unit": "oz"
+          },
+          {
+            "amount": "850",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "cup"
           }
         ],
-        "note": "(two 15oz. cans or @ 4 cups) crushed, diced or regular depending on what texture you want",
+        "note": "two 15oz. cans or @ 4 cups, crushed, diced or regular depending on what texture you want",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "15 ounces canned beans ((black, pinto, cannellini, etc…), drained and rinsed)",
+      "raw": "15 ounces  (425.24 g) canned beans (black, pinto, cannellini, etc…), drained and rinsed",
       "expected": {
         "item": "canned beans",
         "measurements": [
           {
             "amount": "15",
             "unit": "oz"
+          },
+          {
+            "amount": "425.24",
+            "unit": "g"
           }
         ],
         "note": "black, pinto, cannellini, etc…, drained and rinsed",
@@ -87,13 +111,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons chili powder",
+      "raw": "2 Tablespoons  (30 ml) chili powder",
       "expected": {
         "item": "chili powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -101,13 +129,17 @@
       }
     },
     {
-      "raw": "2 teaspoons ground cumin",
+      "raw": "2 teaspoons  (9.86 ml) ground cumin",
       "expected": {
         "item": "ground cumin",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "9.86",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -115,13 +147,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon dried oregano leaves (, or chopped fresh oregano)",
+      "raw": "1/2 teaspoon  (2.5 ml) dried oregano leaves , or chopped fresh oregano",
       "expected": {
         "item": "dried oregano leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": "or chopped fresh oregano",
@@ -129,13 +165,17 @@
       }
     },
     {
-      "raw": "1/2 teaspoon Kosher salt (, or to taste)",
+      "raw": "1/2 teaspoon  (2.5 ml) Kosher salt , or to taste",
       "expected": {
         "item": "Kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": "or to taste",
@@ -152,11 +192,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "grated cheese",
       "expected": {
         "item": "grated cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -166,6 +211,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,6 +221,7 @@
         "item": "diced red onions",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -184,6 +231,7 @@
         "item": "sliced green onions",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

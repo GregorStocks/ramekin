@@ -3,6 +3,10 @@
   "recipe_slug": "2018-04-strawberry-banana-cupc",
   "ingredients": [
     {
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "3.5 ounces 95g finely chopped fresh strawberries (generous 1/2 cup)",
       "expected": {
         "item": "finely chopped fresh strawberries",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Produce"
       }
     },
@@ -35,20 +40,26 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 tablespoon plus 3/4 cup (170g granulated sugar)",
+      "raw": "1 tablespoon plus 3/4 cup 170g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 tablespoon plus 3/4 cup",
             "unit": null
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
-        "note": "170g granulated sugar",
+        "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -63,11 +74,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -77,25 +89,23 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  ripe banana (109g)",
+      "raw": "1 ripe banana 109g",
       "expected": {
-        "item": "ripe banana",
+        "item": "ripe banana 109g",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "109",
-            "unit": "g"
           }
         ],
         "note": null,
-        "category": "Produce"
+        "section": "Cupcakes",
+        "category": "Other"
       }
     },
     {
@@ -109,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Produce"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -141,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -155,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -169,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -183,11 +198,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2-3  drops pink food color (optional)",
+      "raw": "2-3 drops pink food color optional",
       "expected": {
         "item": "pink food color",
         "measurements": [
@@ -197,8 +213,13 @@
           }
         ],
         "note": "optional",
+        "section": "Cupcakes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Strawberry buttercream:",
+      "is_section_header": true
     },
     {
       "raw": "3.5 ounces 95g finely chopped fresh strawberries (generous 1/2 cup)",
@@ -219,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Buttercream",
         "category": "Produce"
       }
     },
@@ -233,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Buttercream",
         "category": "Other"
       }
     },
@@ -251,6 +274,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Strawberry Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -265,6 +289,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Buttercream",
         "category": "Baking"
       }
     },
@@ -274,11 +299,12 @@
         "item": "Milk or cream",
         "measurements": [],
         "note": null,
+        "section": "Strawberry Buttercream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2-3  drops pink food color",
+      "raw": "2-3 drops pink food color",
       "expected": {
         "item": "pink food color",
         "measurements": [
@@ -288,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Buttercream",
         "category": "Baking"
       }
     },
@@ -297,6 +324,7 @@
         "item": "Multicolor nonpareils and yellow sprinkles",
         "measurements": [],
         "note": null,
+        "section": "Strawberry Buttercream",
         "category": "Other"
       }
     }

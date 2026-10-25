@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "4  eggs (large)",
+      "raw": "4 eggs large",
       "expected": {
-        "item": "eggs",
+        "item": "eggs large",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "large",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -129,17 +129,22 @@
       }
     },
     {
-      "raw": "1/4 cup brown sugar  (packed)",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/4 cup brown sugar  packed",
       "expected": {
-        "item": "brown sugar",
+        "item": "brown sugar packed",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "packed",
-        "category": "Baking"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
@@ -153,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -167,22 +173,28 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 cups blueberries (fresh)",
+      "raw": "2 cups blueberries fresh",
       "expected": {
-        "item": "blueberries",
+        "item": "blueberries fresh",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "fresh",
-        "category": "Produce"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup confectioners sugar",
@@ -195,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -209,11 +222,16 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2  cup  blueberries (optional)",
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2  cup  blueberries optional",
       "expected": {
         "item": "blueberries",
         "measurements": [
@@ -223,6 +241,7 @@
           }
         ],
         "note": "optional",
+        "section": "Garnish",
         "category": "Produce"
       }
     }

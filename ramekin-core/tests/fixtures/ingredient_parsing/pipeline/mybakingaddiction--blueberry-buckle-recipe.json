@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "½ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3/4 cup granulated sugar",
+      "raw": "¾ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/4 cup unsalted butter (softened) or shortening",
+      "raw": "¼ cup unsalted butter (softened) or shortening",
       "expected": {
         "item": "unsalted butter or shortening",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons pure vanilla extract",
+      "raw": "1 ½ teaspoons pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/2 cup milk",
+      "raw": "½ cup milk",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -143,7 +143,11 @@
       }
     },
     {
-      "raw": "1/3 cup all-purpose flour",
+      "raw": "For the Streusel Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "⅓ cup all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -153,11 +157,12 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup packed light brown sugar",
+      "raw": "⅓ cup packed light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -167,11 +172,12 @@
           }
         ],
         "note": "packed",
+        "section": "For the Streusel Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon ground cinnamon",
+      "raw": "½ teaspoon ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -181,11 +187,12 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "¼ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -195,11 +202,12 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 tablespoons cold unsalted butter (cut into small pieces)",
+      "raw": "3 tablespoons cold unsalted butter cut into small pieces",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
@@ -209,6 +217,7 @@
           }
         ],
         "note": "cut into small pieces",
+        "section": "For the Streusel Topping",
         "category": "Dairy & Eggs"
       }
     }

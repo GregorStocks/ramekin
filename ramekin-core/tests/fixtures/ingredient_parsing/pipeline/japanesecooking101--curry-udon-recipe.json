@@ -33,15 +33,15 @@
     {
       "raw": "1 serving Udon noodle (fresh or frozen, or cooked dried noodle)",
       "expected": {
-        "item": "serving Udon noodle",
+        "item": "Udon noodle",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "serving"
           }
         ],
         "note": "fresh or frozen, or cooked dried noodle",
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
     },
     {

@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "4-5  green onions (chopped finely)",
+      "raw": "4-5 green onions (chopped finely)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "30  gyoza wrappers",
+      "raw": "30 gyoza wrappers",
       "expected": {
         "item": "gyoza wrappers",
         "measurements": [
@@ -157,6 +157,10 @@
       }
     },
     {
+      "raw": "Dipping Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 Tbsp soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -167,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +201,7 @@
           }
         ],
         "note": "Rayu or sesame oil",
+        "section": "Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2020-12-baked-brie-with-balsam",
   "ingredients": [
     {
+      "raw": "Pastry:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup plus 2 tablespoons (10 tablespoons total; 85 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "diced",
+        "section": "Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,8 +104,13 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Balsamic onions:",
+      "is_section_header": true
     },
     {
       "raw": "2 small or 1 large red onion, halved and thinly sliced",
@@ -113,6 +127,7 @@
           }
         ],
         "note": "halved and thinly sliced",
+        "section": "Balsamic Onions",
         "category": "Produce"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Onions",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Onions",
         "category": "Baking"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Onions",
         "category": "Spices & Seasonings"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Onions",
         "category": "Oils & Vinegars"
       }
     },
@@ -182,8 +201,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Balsamic Onions",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons smooth Dijon mustard",
@@ -196,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -210,6 +235,7 @@
           }
         ],
         "note": "optional",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -228,6 +254,7 @@
           }
         ],
         "note": "8.5-ounce or 250-gram",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -242,6 +269,7 @@
           }
         ],
         "note": "beaten with 1 teaspoon water",
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,6 +279,7 @@
         "item": "Sesame seeds",
         "measurements": [],
         "note": "optional, ideally toasted",
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     }

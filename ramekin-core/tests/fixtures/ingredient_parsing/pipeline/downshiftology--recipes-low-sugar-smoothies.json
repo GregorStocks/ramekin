@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-low-sugar-smoothies",
   "ingredients": [
     {
+      "raw": "Pineapple Coconut Smoothie:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple Coconut Smoothie",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pineapple Coconut Smoothie",
         "category": "Canned Goods"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Pineapple Coconut Smoothie",
         "category": "Frozen"
       }
     },
     {
-      "raw": "1  small piece fresh ginger  (approx 1 teaspoon minced or chopped)",
+      "raw": "1  small piece fresh ginger , approx 1 teaspoon minced or chopped",
       "expected": {
         "item": "piece fresh ginger",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "approx 1 teaspoon minced or chopped",
+        "section": "Pineapple Coconut Smoothie",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Pineapple Coconut Smoothie",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Blackberry Cream Smoothie:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  water",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Cream Smoothie",
         "category": "Beverages"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Cream Smoothie",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Cream Smoothie",
         "category": "Frozen"
       }
     },
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Cream Smoothie",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2  cup  blanched then frozen cauliflower  (optional)",
+      "raw": "1/2  cup  blanched then frozen cauliflower , optional",
       "expected": {
         "item": "blanched then frozen cauliflower",
         "measurements": [
@@ -139,8 +156,13 @@
           }
         ],
         "note": "optional",
+        "section": "Blackberry Cream Smoothie",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Orange Carrot Smoothie:",
+      "is_section_header": true
     },
     {
       "raw": "1.5  cups  unsweetened almond milk",
@@ -153,11 +175,12 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1   orange",
+      "raw": "1  orange",
       "expected": {
         "item": "orange",
         "measurements": [
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Produce"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,11 +250,12 @@
           }
         ],
         "note": null,
+        "section": "Orange Carrot Smoothie",
         "category": "Other"
       }
     },
     {
-      "raw": "1/4  cup  blanched then frozen cauliflower  (optional)",
+      "raw": "1/4  cup  blanched then frozen cauliflower , optional",
       "expected": {
         "item": "blanched then frozen cauliflower",
         "measurements": [
@@ -237,8 +265,13 @@
           }
         ],
         "note": "optional",
+        "section": "Orange Carrot Smoothie",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Cucumber Kiwi Smoothie:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  water",
@@ -251,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Beverages"
       }
     },
@@ -265,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Produce"
       }
     },
@@ -279,11 +314,12 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  kiwi fruit",
+      "raw": "1 kiwi fruit",
       "expected": {
         "item": "kiwi fruit",
         "measurements": [
@@ -293,11 +329,12 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4   avocado",
+      "raw": "1/4  avocado",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -307,6 +344,7 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Produce"
       }
     },
@@ -321,11 +359,12 @@
           }
         ],
         "note": null,
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/2  cup  blanched then frozen cauliflower  (optional)",
+      "raw": "1/2  cup  blanched then frozen cauliflower , optional",
       "expected": {
         "item": "blanched then frozen cauliflower",
         "measurements": [
@@ -335,8 +374,13 @@
           }
         ],
         "note": "optional",
+        "section": "Cucumber Kiwi Smoothie",
         "category": "Frozen"
       }
+    },
+    {
+      "raw": "Berry Spinach Smoothie:",
+      "is_section_header": true
     },
     {
       "raw": "1  cup  water",
@@ -349,11 +393,12 @@
           }
         ],
         "note": null,
+        "section": "Berry Spinach Smoothie",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1  cup  frozen mixed berries  ((strawberries, raspberries, blueberries))",
+      "raw": "1  cup  frozen mixed berries , (strawberries, raspberries, blueberries)",
       "expected": {
         "item": "frozen mixed berries",
         "measurements": [
@@ -363,6 +408,7 @@
           }
         ],
         "note": "strawberries, raspberries, blueberries",
+        "section": "Berry Spinach Smoothie",
         "category": "Frozen"
       }
     },
@@ -377,6 +423,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Spinach Smoothie",
         "category": "Produce"
       }
     },
@@ -391,11 +438,12 @@
           }
         ],
         "note": null,
+        "section": "Berry Spinach Smoothie",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4  avocado",
+      "raw": "1/4 avocado",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -405,11 +453,12 @@
           }
         ],
         "note": null,
+        "section": "Berry Spinach Smoothie",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  cup  blanched then frozen zucchini  (optional)",
+      "raw": "1/2  cup  blanched then frozen zucchini , optional",
       "expected": {
         "item": "blanched then frozen zucchini",
         "measurements": [
@@ -419,6 +468,7 @@
           }
         ],
         "note": "optional",
+        "section": "Berry Spinach Smoothie",
         "category": "Other"
       }
     }

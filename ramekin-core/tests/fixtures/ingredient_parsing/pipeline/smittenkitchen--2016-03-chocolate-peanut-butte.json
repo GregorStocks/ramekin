@@ -3,86 +3,7 @@
   "recipe_slug": "2016-03-chocolate-peanut-butte",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Caponata",
-      "expected": {
-        "item": "Months Ago: Caponata",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Herbed Tomato and Roasted Garlic Tart",
-      "expected": {
-        "item": "Years Ago: Herbed Tomato and Roasted Garlic Tart",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Baked Pasta with Sausage and Broccoli Rabe",
-      "expected": {
-        "item": "Years Ago: Baked Pasta with Sausage and Broccoli Rabe",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Fig Olive Oil and Sea Salt Challah",
-      "expected": {
-        "item": "Years Ago: Fig Olive Oil and Sea Salt Challah",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "4.5 Years Ago: Roasted Eggplant with Tomatoes and Mint",
-      "expected": {
-        "item": "Years Ago: Roasted Eggplant with Tomatoes and Mint",
-        "measurements": [
-          {
-            "amount": "4.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Crust",
+      "raw": "Crust:",
       "is_section_header": true
     },
     {
@@ -150,7 +71,7 @@
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {
@@ -268,7 +189,7 @@
       }
     },
     {
-      "raw": "Topping",
+      "raw": "Topping:",
       "is_section_header": true
     },
     {

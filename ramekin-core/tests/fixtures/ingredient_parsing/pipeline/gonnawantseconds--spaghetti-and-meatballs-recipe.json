@@ -3,6 +3,10 @@
   "recipe_slug": "spaghetti-and-meatballs-recipe",
   "ingredients": [
     {
+      "raw": "Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  1/2 cups onion, (chopped)",
+      "raw": "1  1/2 cups onion, chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 cloves garlic, (minced)",
+      "raw": "4 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 slices hearty white sandwich bread,  (torn into small pieces)",
+      "raw": "4 slices hearty white sandwich bread,  torn into small pieces",
       "expected": {
         "item": "hearty white sandwich bread",
         "measurements": [
@@ -69,6 +77,7 @@
           }
         ],
         "note": "torn into small pieces",
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup Parmesan cheese, (grated)",
+      "raw": "1 cup Parmesan cheese, grated",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": "grated",
+        "section": "Meatballs",
         "category": "Cheese"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,25 +152,27 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2  1/2 pounds ground beef, (80/20)",
+      "raw": "2  1/2 pounds ground beef, 80/20",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef, 80/20",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": "80/20",
+        "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 large  egg, (beaten)",
+      "raw": "1 large  egg, beaten",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -167,8 +182,13 @@
           }
         ],
         "note": "beaten",
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons olive oil",
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 cup onion, (chopped)",
+      "raw": "1 cup onion, chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -195,11 +216,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon garlic, (minced)",
+      "raw": "1 tablespoon garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -209,11 +231,12 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup carrot,  (finely grated)",
+      "raw": "1/4 cup carrot,  finely grated",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -223,6 +246,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "28-ounce",
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,11 +306,12 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  bay leaves",
+      "raw": "2 bay leaves",
       "expected": {
         "item": "bay leaves",
         "measurements": [
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,20 +336,26 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "16 ounces spaghetti, (cooked per package instructions)",
+      "raw": "Pasta:",
+      "is_section_header": true
+    },
+    {
+      "raw": "16 ounces spaghetti, cooked per package instructions",
       "expected": {
-        "item": "spaghetti",
+        "item": "spaghetti, cooked per package instructions",
         "measurements": [
           {
             "amount": "16",
             "unit": "oz"
           }
         ],
-        "note": "cooked per package instructions",
+        "note": null,
+        "section": "Pasta",
         "category": "Pasta & Rice"
       }
     }

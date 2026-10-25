@@ -3,7 +3,11 @@
   "recipe_slug": "pizza-margherita-recipe",
   "ingredients": [
     {
-      "raw": "1 1/2 cups water ((luke warm))",
+      "raw": "for dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ½ cups  water (luke warm)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "luke warm",
+        "section": "For Dough",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 teaspoon active dry yeast",
+      "raw": "½ teaspoon  active dry yeast",
       "expected": {
         "item": "active dry yeast",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon salt",
+      "raw": "1 teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "375 grams bread flour ((~3 cups))",
+      "raw": "375 grams  bread flour (~3 cups)",
       "expected": {
         "item": "bread flour",
         "measurements": [
@@ -59,11 +66,16 @@
           }
         ],
         "note": "~3 cups",
+        "section": "For Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "3  tomatoes ((very ripe))",
+      "raw": "for topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3  tomatoes (very ripe)",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -73,6 +85,7 @@
           }
         ],
         "note": "very ripe",
+        "section": "For Topping",
         "category": "Produce"
       }
     },
@@ -82,11 +95,12 @@
         "item": "olive oil",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 ball fresh mozzarella",
+      "raw": "1 ball  fresh mozzarella",
       "expected": {
         "item": "fresh mozzarella",
         "measurements": [
@@ -96,11 +110,12 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 bunch basil ((leaves only))",
+      "raw": "1 bunch  basil (leaves only)",
       "expected": {
         "item": "basil",
         "measurements": [
@@ -110,6 +125,7 @@
           }
         ],
         "note": "leaves only",
+        "section": "For Topping",
         "category": "Produce"
       }
     }

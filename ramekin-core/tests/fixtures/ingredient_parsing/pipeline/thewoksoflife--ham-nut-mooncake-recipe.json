@@ -3,16 +3,25 @@
   "recipe_slug": "ham-nut-mooncake-recipe",
   "ingredients": [
     {
-      "raw": "½ pound granulated sugar",
+      "raw": "PART I: Inverted sugar syrup:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ pound granulated sugar (226g, or 1 cup plus 2 tablespoons; I used organic sugar, so my syrup is slightly darker in color compared with syrup made with regular granulated white sugar.)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "226g, or 1 cup plus 2 tablespoons; I used organic sugar, so my syrup is slightly darker in color compared with syrup made with regular granulated white sugar.",
+        "section": "Part I: Inverted Sugar Syrup",
         "category": "Baking"
       }
     },
@@ -27,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Part I: Inverted Sugar Syrup",
         "category": "Beverages"
       }
     },
@@ -41,11 +51,16 @@
           }
         ],
         "note": null,
+        "section": "Part I: Inverted Sugar Syrup",
         "category": "Produce"
       }
     },
     {
-      "raw": "140 ml inverted sugar syrup ((which you bought or made in Part I))",
+      "raw": "PART II: The dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "140 ml inverted sugar syrup (which you bought or made in Part I)",
       "expected": {
         "item": "inverted sugar syrup",
         "measurements": [
@@ -55,6 +70,7 @@
           }
         ],
         "note": "which you bought or made in Part I",
+        "section": "Part Ii: the Dough",
         "category": "Baking"
       }
     },
@@ -69,11 +85,12 @@
           }
         ],
         "note": null,
+        "section": "Part Ii: the Dough",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 teaspoon lye water ((available at your Chinese grocery store))",
+      "raw": "1 teaspoon lye water (available at your Chinese grocery store)",
       "expected": {
         "item": "lye water",
         "measurements": [
@@ -83,11 +100,12 @@
           }
         ],
         "note": "available at your Chinese grocery store",
+        "section": "Part Ii: the Dough",
         "category": "Other"
       }
     },
     {
-      "raw": "1 ⅔ cups all-purpose flour ((about 250 grams, plus more for dusting))",
+      "raw": "1 ⅔ cups all-purpose flour (about 250 grams, plus more for dusting)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -101,11 +119,16 @@
           }
         ],
         "note": "about 250 grams, plus more for dusting",
+        "section": "Part Ii: the Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "100 grams jinhua ham ((京华火腿))",
+      "raw": "PART III: The ham and nut filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "100 grams jinhua ham (京华火腿)",
       "expected": {
         "item": "jinhua ham",
         "measurements": [
@@ -115,11 +138,12 @@
           }
         ],
         "note": "京华火腿",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2 tablespoons ham juice ((from steaming the ham––see instructions below))",
+      "raw": "2 tablespoons ham juice (from steaming the ham––see instructions below)",
       "expected": {
         "item": "ham juice",
         "measurements": [
@@ -129,11 +153,12 @@
           }
         ],
         "note": "from steaming the ham--see instructions below",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "100 grams walnuts ((toasted))",
+      "raw": "100 grams walnuts (toasted)",
       "expected": {
         "item": "walnuts",
         "measurements": [
@@ -143,11 +168,12 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "100 grams cashews ((toasted))",
+      "raw": "100 grams cashews (toasted)",
       "expected": {
         "item": "cashews",
         "measurements": [
@@ -157,11 +183,12 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "100 grams pecans ((toasted))",
+      "raw": "100 grams pecans (toasted)",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -171,11 +198,12 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "75 grams pumpkin seeds ((toasted))",
+      "raw": "75 grams pumpkin seeds (toasted)",
       "expected": {
         "item": "pumpkin seeds",
         "measurements": [
@@ -185,11 +213,12 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "60 grams sunflower seeds ((toasted))",
+      "raw": "60 grams sunflower seeds (toasted)",
       "expected": {
         "item": "sunflower seeds",
         "measurements": [
@@ -199,11 +228,12 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "60 grams sesame seeds ((toasted))",
+      "raw": "60 grams sesame seeds (toasted)",
       "expected": {
         "item": "sesame seeds",
         "measurements": [
@@ -213,6 +243,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,11 +258,12 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "⅓ cup peanut oil ((or corn oil, about 75 ml))",
+      "raw": "⅓ cup peanut oil (or corn oil, about 75 ml)",
       "expected": {
         "item": "peanut oil",
         "measurements": [
@@ -245,6 +277,7 @@
           }
         ],
         "note": "or corn oil, about 75 ml",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -259,6 +292,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -273,6 +307,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Baking"
       }
     },
@@ -287,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -301,6 +337,7 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -315,11 +352,12 @@
           }
         ],
         "note": null,
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "½ cup water ((about 120 ml))",
+      "raw": "½ cup water (about 120 ml)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -333,8 +371,13 @@
           }
         ],
         "note": "about 120 ml",
+        "section": "Part Iii: the Ham and Nut Filling",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Part IV: Assembling the mooncakes:",
+      "is_section_header": true
     },
     {
       "raw": "[no additional ingredients needed for this step]",
@@ -342,11 +385,16 @@
         "item": "[no additional ingredients needed for this step]",
         "measurements": [],
         "note": null,
+        "section": "Part Iv: Assembling the Mooncakes",
         "category": "Other"
       }
     },
     {
-      "raw": "1  egg yolk",
+      "raw": "PART V: Baking the mooncakes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -356,6 +404,7 @@
           }
         ],
         "note": null,
+        "section": "Part V: Baking the Mooncakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -370,6 +419,7 @@
           }
         ],
         "note": null,
+        "section": "Part V: Baking the Mooncakes",
         "category": "Beverages"
       }
     }

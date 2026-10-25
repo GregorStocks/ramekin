@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 cups frozen O&amp;#x27;Brien hash brown potatoes",
+      "raw": "2 cups frozen O'Brien hash brown potatoes",
       "expected": {
         "item": "frozen O'Brien hash brown potatoes",
         "measurements": [
@@ -70,15 +70,15 @@
     {
       "raw": "4  extra large flour tortillas ((10 to 11-inch))",
       "expected": {
-        "item": "extra large flour tortillas",
+        "item": "flour tortillas",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "extra-large"
           }
         ],
         "note": "10 to 11-inch",
-        "category": "Other"
+        "category": "Bakery & Bread"
       }
     },
     {

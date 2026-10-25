@@ -3,6 +3,10 @@
   "recipe_slug": "apple-chestnut-tart-recipe-118",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large egg yolk",
       "expected": {
         "item": "egg yolk",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "plus more for sprinkling",
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": "cut into 1/2-inch pieces and chilled",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -158,8 +171,13 @@
         "item": "Cooking spray",
         "measurements": [],
         "note": null,
+        "section": "For the Crust",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Chestnut Cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (240 ml) heavy cream",
@@ -176,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chestnut Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -194,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chestnut Cream",
         "category": "Baking"
       }
     },
@@ -208,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chestnut Cream",
         "category": "Baking"
       }
     },
@@ -222,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chestnut Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chestnut Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -250,8 +273,13 @@
           }
         ],
         "note": "17 1/2-ounce, such as Clement Faugier",
+        "section": "For the Chestnut Cream",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For the Caramelized Apples:",
+      "is_section_header": true
     },
     {
       "raw": "57 g (4 tablespoons) unsalted butter",
@@ -268,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramelized Apples",
         "category": "Dairy & Eggs"
       }
     },
@@ -290,11 +319,12 @@
           }
         ],
         "note": null,
+        "section": "For the Caramelized Apples",
         "category": "Other"
       }
     },
     {
-      "raw": "71 g packed light brown sugar (2 1/2 ounces; 1/3 cup)",
+      "raw": "71 g light brown sugar (2 1/2 ounces; 1/3 cup)",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -311,8 +341,24 @@
             "unit": "cup"
           }
         ],
-        "note": "packed",
+        "note": null,
+        "section": "For the Caramelized Apples",
         "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For the Caramelized Apples",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -326,6 +372,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramelized Apples",
         "category": "Spices & Seasonings"
       }
     },
@@ -340,6 +387,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramelized Apples",
         "category": "Spices & Seasonings"
       }
     },
@@ -349,6 +397,7 @@
         "item": "Water",
         "measurements": [],
         "note": "as needed",
+        "section": "For the Caramelized Apples",
         "category": "Beverages"
       }
     },
@@ -358,6 +407,7 @@
         "item": "Chopped toasted or candied pecans",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Caramelized Apples",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -367,6 +417,7 @@
         "item": "Flaky sea salt",
         "measurements": [],
         "note": "such as Maldon, for serving",
+        "section": "For the Caramelized Apples",
         "category": "Spices & Seasonings"
       }
     }

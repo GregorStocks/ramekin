@@ -3,7 +3,7 @@
   "recipe_slug": "japanese-egg-sandwich-tamago-s",
   "ingredients": [
     {
-      "raw": "3  large eggs (50 g w/o shell)",
+      "raw": "3  large eggs (50 g each w/o shell)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -12,7 +12,7 @@
             "unit": "large"
           }
         ],
-        "note": "50 g w/o shell",
+        "note": "50 g each w/o shell",
         "category": "Dairy & Eggs"
       }
     },

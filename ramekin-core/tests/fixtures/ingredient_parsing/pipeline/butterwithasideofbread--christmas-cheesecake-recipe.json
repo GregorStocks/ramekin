@@ -3,7 +3,7 @@
   "recipe_slug": "christmas-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "18  mint oreo cookies (crushed)",
+      "raw": "18 mint oreo cookies crushed",
       "expected": {
         "item": "mint oreo cookies",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 tablespoons butter (melted)",
+      "raw": "2 tablespoons butter melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "32 oz cream cheese, softened (four 8-oz blocks)",
+      "raw": "32 oz cream cheese, softened four 8-oz blocks",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -40,7 +40,7 @@
             "unit": "oz"
           }
         ],
-        "note": "four 8-oz blocks, softened",
+        "note": "softened four 8-oz blocks",
         "category": "Cheese"
       }
     },
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "4  eggs",
+      "raw": "4 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -110,7 +110,11 @@
       }
     },
     {
-      "raw": "1 cup butter (softened)",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup butter softened",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -120,6 +124,7 @@
           }
         ],
         "note": "softened",
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -134,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -148,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -157,6 +164,7 @@
         "item": "Assorted holiday candy and sprinkles",
         "measurements": [],
         "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     }

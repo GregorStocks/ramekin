@@ -3,21 +3,21 @@
   "recipe_slug": "stuffed-french-toast-with-brie",
   "ingredients": [
     {
-      "raw": "8 slices of bread-brioche (white, or French)",
+      "raw": "8 slices of bread-brioche white, or French",
       "expected": {
-        "item": "bread-brioche",
+        "item": "bread-brioche white, or French",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": "white, or French",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "5  large eggs",
+      "raw": "5 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -87,13 +87,17 @@
       }
     },
     {
-      "raw": "Brie cheese (sliced and rind removed, 4 slices per French toast \"sandwich\")",
+      "raw": "Brie cheese sliced and rind removed, 4 slices per French toast \"sandwich\"",
       "expected": {
-        "item": "Brie cheese",
+        "item": "Brie cheese sliced and rind removed, 4 slices per French toast \"sandwich\"",
         "measurements": [],
-        "note": "sliced and rind removed, 4 slices per French toast \"sandwich\"",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "Mixed berries",
@@ -101,6 +105,7 @@
         "item": "Mixed berries",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -110,6 +115,7 @@
         "item": "Maple syrup",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,6 +125,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Baking"
       }
     }

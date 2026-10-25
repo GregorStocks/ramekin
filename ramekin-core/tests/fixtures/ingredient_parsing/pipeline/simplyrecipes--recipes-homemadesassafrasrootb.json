@@ -68,16 +68,16 @@
       }
     },
     {
-      "raw": "1-inch of stick cinnamon",
+      "raw": "1 (1-inch) stick cinnamon",
       "expected": {
-        "item": "stick cinnamon",
+        "item": "cinnamon",
         "measurements": [
           {
             "amount": "1",
-            "unit": "inch"
+            "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "1-inch",
         "category": "Spices & Seasonings"
       }
     },

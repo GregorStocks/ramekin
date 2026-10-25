@@ -3,6 +3,10 @@
   "recipe_slug": "frittata-recipe",
   "ingredients": [
     {
+      "raw": "Cilantro Chile Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2  large cloves garlic",
       "expected": {
         "item": "garlic",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Chile Sauce",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Chile Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "freshly squeezed",
+        "section": "Cilantro Chile Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Chile Sauce",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "serrano, seeds removed",
+        "section": "Cilantro Chile Sauce",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Chile Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,8 +102,13 @@
         "item": "a couple big pinches of salt",
         "measurements": [],
         "note": null,
+        "section": "Cilantro Chile Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Frittata:",
+      "is_section_header": true
     },
     {
       "raw": "6  large organic eggs",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Frittata",
         "category": "Dairy & Eggs"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Frittata",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Frittata",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "very very thinly sliced",
+        "section": "Frittata",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Frittata",
         "category": "Produce"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": "crumbled",
+        "section": "Frittata",
         "category": "Cheese"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Frittata",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -199,6 +221,7 @@
         "item": "couple pinches of salt",
         "measurements": [],
         "note": null,
+        "section": "Frittata",
         "category": "Other"
       }
     }

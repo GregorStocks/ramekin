@@ -3,7 +3,7 @@
   "recipe_slug": "2011-02-meatball-sub-with-cara",
   "ingredients": [
     {
-      "raw": "Meatballs",
+      "raw": "Meatballs:",
       "is_section_header": true
     },
     {
@@ -177,14 +177,8 @@
       }
     },
     {
-      "raw": "Caramelized onions",
-      "expected": {
-        "item": "Caramelized onions",
-        "measurements": [],
-        "note": null,
-        "section": "Meatballs",
-        "category": "Produce"
-      }
+      "raw": "Caramelized onions:",
+      "is_section_header": true
     },
     {
       "raw": "2 large yellow onions, thinly sliced",
@@ -197,7 +191,7 @@
           }
         ],
         "note": "thinly sliced",
-        "section": "Meatballs",
+        "section": "Caramelized Onions",
         "category": "Produce"
       }
     },
@@ -212,7 +206,7 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
+        "section": "Caramelized Onions",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,7 +221,7 @@
           }
         ],
         "note": null,
-        "section": "Meatballs",
+        "section": "Caramelized Onions",
         "category": "Oils & Vinegars"
       }
     },
@@ -237,7 +231,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
-        "section": "Meatballs",
+        "section": "Caramelized Onions",
         "category": "Spices & Seasonings"
       }
     }

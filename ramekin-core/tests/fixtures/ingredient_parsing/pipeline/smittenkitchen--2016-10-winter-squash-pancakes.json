@@ -3,6 +3,10 @@
   "recipe_slug": "2016-10-winter-squash-pancakes",
   "ingredients": [
     {
+      "raw": "Pancakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (8 to 8 1/4 ounces) roasted and mashed winter squash",
       "expected": {
         "item": "roasted and mashed winter squash",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "about 30 grams",
+        "section": "Pancakes",
         "category": "Cheese"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,6 +99,7 @@
         "item": "A few grinds of black pepper",
         "measurements": [],
         "note": null,
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -104,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -122,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -131,8 +143,13 @@
         "item": "Butter or olive oil",
         "measurements": [],
         "note": "for frying pan",
+        "section": "Pancakes",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "To Finish:",
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 tablespoons butter",
@@ -145,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -154,6 +172,7 @@
         "item": "A pinch or two of salt",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,6 +182,7 @@
         "item": "A few fresh sage leaves",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Produce"
       }
     }

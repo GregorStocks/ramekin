@@ -3,6 +3,10 @@
   "recipe_slug": "roast-turkey-recipe",
   "ingredients": [
     {
+      "raw": "Roast Turkey:",
+      "is_section_header": true
+    },
+    {
       "raw": "14 to 16 pound turkey",
       "expected": {
         "item": "turkey",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Roast Turkey",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2 Tablespoons salted butter ((cut into ½ Tablespoon portions))",
+      "raw": "2 Tablespoons salted butter (cut into ½ Tablespoon portions)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "cut into 1/2 Tablespoon portions",
+        "section": "Roast Turkey",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Roast Turkey",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Turkey Brine:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup coarse kosher salt",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Brine",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Brine",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Brine",
         "category": "Canned Goods"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Brine",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "Turkey Brine",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ cup chopped candied ginger ((3.5 ounces))",
+      "raw": "½ cup chopped candied ginger (3.5 ounces)",
       "expected": {
         "item": "chopped candied ginger",
         "measurements": [
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Brine",
         "category": "Other"
       }
     },
@@ -143,8 +160,13 @@
           }
         ],
         "note": null,
+        "section": "Turkey Brine",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Turkey Aromatics:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups water",
@@ -157,11 +179,12 @@
           }
         ],
         "note": null,
+        "section": "Turkey Aromatics",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1  red apple ((cut into large pieces))",
+      "raw": "1 red apple (cut into large pieces)",
       "expected": {
         "item": "red apple",
         "measurements": [
@@ -171,11 +194,12 @@
           }
         ],
         "note": "cut into large pieces",
+        "section": "Turkey Aromatics",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  onion ((cut into large pieces))",
+      "raw": "1 onion (cut into large pieces)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -185,11 +209,12 @@
           }
         ],
         "note": "cut into large pieces",
+        "section": "Turkey Aromatics",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  cinnamon stick",
+      "raw": "2 cinnamon stick",
       "expected": {
         "item": "cinnamon stick",
         "measurements": [
@@ -199,11 +224,12 @@
           }
         ],
         "note": null,
+        "section": "Turkey Aromatics",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 sprigs  fresh rosemary ((large))",
+      "raw": "2 sprigs  fresh rosemary (large)",
       "expected": {
         "item": "fresh rosemary",
         "measurements": [
@@ -213,6 +239,7 @@
           }
         ],
         "note": "large",
+        "section": "Turkey Aromatics",
         "category": "Produce"
       }
     },
@@ -227,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Aromatics",
         "category": "Produce"
       }
     }

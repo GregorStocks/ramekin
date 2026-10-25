@@ -3,6 +3,10 @@
   "recipe_slug": "2008-07-blueberry-crumb-bars",
   "ingredients": [
     {
+      "raw": "Crumbs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (200 grams) granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "new; previously this was 1/4 teaspoon",
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "cut into chunks, plus extra for coating pan if desired",
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,8 +123,13 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Berries:",
+      "is_section_header": true
     },
     {
       "raw": "Juice of 1 lemon",
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Berries",
         "category": "Produce"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Berries",
         "category": "Baking"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Berries",
         "category": "Baking"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Berries",
         "category": "Produce"
       }
     }

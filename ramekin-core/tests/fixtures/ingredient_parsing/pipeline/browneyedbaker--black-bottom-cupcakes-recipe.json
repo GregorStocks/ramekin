@@ -3,49 +3,68 @@
   "recipe_slug": "black-bottom-cupcakes-recipe",
   "ingredients": [
     {
-      "raw": "16 ounces cream cheese (at room temperature)",
+      "raw": "For the Cheesecake Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "16 ounces  (453.59 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "16",
             "unit": "oz"
+          },
+          {
+            "amount": "453.59",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "½ cup granulated sugar",
+      "raw": "½ cup  (100 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ teaspoon salt",
+      "raw": "¼ teaspoon  (0.25 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  egg whites (at room temperature)",
+      "raw": "2   egg whites, at room temperature",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -55,11 +74,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons sour cream",
+      "raw": "2 tablespoons   sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [
@@ -69,123 +89,168 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "⅓ cup miniature chocolate chips",
+      "raw": "⅓ cup  (60 g) miniature chocolate chips",
       "expected": {
         "item": "miniature chocolate chips",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1½ cups all-purpose flour",
+      "raw": "For the Cupcake Batter:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ cups  (187.5 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "187.5",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "1¼ cups granulated sugar",
+      "raw": "1¼ cups  (250 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup Dutch-processed cocoa powder",
+      "raw": "½ cup  (43 g) Dutch-processed cocoa powder",
       "expected": {
         "item": "Dutch-processed cocoa powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "1¼ teaspoons baking soda",
+      "raw": "1¼ teaspoons  (1.25 teaspoons) baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.25",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon salt",
+      "raw": "½ teaspoon  (0.5 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¾ cup sour cream",
+      "raw": "¾ cup  (172.5 ml) sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "172.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1⅓ cups water",
+      "raw": "1⅓ cups  (333.33 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
+          },
+          {
+            "amount": "333.33",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Beverages"
       }
     },
     {
-      "raw": "8 tablespoons unsalted butter (melted and slightly cooled)",
+      "raw": "8 tablespoons   unsalted butter, melted and slightly cooled",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -195,11 +260,12 @@
           }
         ],
         "note": "melted and slightly cooled",
+        "section": "For the Cupcake Batter",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -209,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcake Batter",
         "category": "Baking"
       }
     }

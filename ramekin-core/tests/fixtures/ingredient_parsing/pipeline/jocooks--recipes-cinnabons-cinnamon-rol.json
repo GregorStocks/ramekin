@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-cinnabons-cinnamon-rol",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2¼ teaspoon active dry yeast (or instant yeast)",
       "expected": {
         "item": "active dry yeast",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "or instant yeast",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "lukewarm",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "unsalted, softened, or margarine",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup brown sugar (packed)",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "ground",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +156,13 @@
           }
         ],
         "note": "unsalted, softened, or margarine",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Cream cheese icing:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons butter (unsalted, softened, or margarine)",
@@ -153,11 +175,12 @@
           }
         ],
         "note": "unsalted, softened, or margarine",
+        "section": "Cream Cheese Icing",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1½ cups powdered sugar (also known as icing sugar, or confectioner's sugar)",
+      "raw": "1½ cups powdered sugar (also known as icing sugar, or confectioner’s sugar)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -166,7 +189,8 @@
             "unit": "cup"
           }
         ],
-        "note": "also known as icing sugar, or confectioner's sugar",
+        "note": "also known as icing sugar, or confectioner’s sugar",
+        "section": "Cream Cheese Icing",
         "category": "Baking"
       }
     },
@@ -185,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Icing",
         "category": "Cheese"
       }
     },
@@ -199,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Icing",
         "category": "Baking"
       }
     },
@@ -213,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Icing",
         "category": "Spices & Seasonings"
       }
     }

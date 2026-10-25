@@ -3,7 +3,11 @@
   "recipe_slug": "chocolate-spartak-cake-recipe",
   "ingredients": [
     {
-      "raw": "1  egg",
+      "raw": "Ingredients for Cake Layers:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 Tbsp unsalted butter (softened)",
+      "raw": "4 Tbsp unsalted butter, softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "softened",
+        "section": "Ingredients for Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Other"
       }
     },
@@ -97,25 +107,31 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  sticks (16 Tbsp butter, softened at room temp)",
+      "raw": "Ingredients for Spartak Cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 sticks, 16 Tbsp butter, softened at room temp",
       "expected": {
-        "item": "butter",
+        "item": "16 Tbsp butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
           }
         ],
-        "note": "16 Tbsp butter, softened at room temp",
+        "note": "softened at room temp",
+        "section": "Ingredients for Spartak Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "14 oz can sweetened condensed milk ((397 grams) raw/un-cooked)",
+      "raw": "14 oz can sweetened condensed milk, (397 grams) raw/un-cooked",
       "expected": {
         "item": "can sweetened condensed milk raw/un-cooked",
         "measurements": [
@@ -129,20 +145,22 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Spartak Cream",
         "category": "Other"
       }
     },
     {
-      "raw": "8 oz package cream cheese (soft at room temp)",
+      "raw": "8 oz package cream cheese, soft at room temp",
       "expected": {
-        "item": "package cream cheese",
+        "item": "package cream cheese, soft at room temp",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "soft at room temp",
+        "note": null,
+        "section": "Ingredients for Spartak Cream",
         "category": "Cheese"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Spartak Cream",
         "category": "Other"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Spartak Cream",
         "category": "Baking"
       }
     }

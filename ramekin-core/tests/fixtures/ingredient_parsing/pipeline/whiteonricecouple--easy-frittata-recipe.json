@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/4 cup half &amp; half (, or milk)",
+      "raw": "1/4 cup half & half (, or milk)",
       "expected": {
         "item": "half & half",
         "measurements": [
@@ -31,9 +31,9 @@
       }
     },
     {
-      "raw": "1/4 teaspoon kosher or sea salt (, or to taste)",
+      "raw": "1/4 teaspoon kosher salt (, or to taste)",
       "expected": {
-        "item": "kosher or sea salt",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.25",

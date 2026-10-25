@@ -3,6 +3,10 @@
   "recipe_slug": "2025-09-greek-burgers",
   "ingredients": [
     {
+      "raw": "pita:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup warm water",
       "expected": {
         "item": "warm water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pita",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pita",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Pita",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 ½ cups all-purpose flour, (plus extra for your workspace/kneading)",
+      "raw": "2 ½ cups all-purpose flour, plus extra for your workspace/kneading",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "plus extra for your workspace/kneading",
+        "section": "Pita",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pita",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,8 +87,13 @@
         "item": "avocado oil",
         "measurements": [],
         "note": "for brushing",
+        "section": "Pita",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "quick tzatziki:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup plain greek yogurt",
@@ -92,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Tzatziki",
         "category": "Dairy & Eggs"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Tzatziki",
         "category": "Produce"
       }
     },
@@ -120,11 +136,12 @@
           }
         ],
         "note": null,
+        "section": "Quick Tzatziki",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  garlic cloves, (minced)",
+      "raw": "2 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -134,11 +151,12 @@
           }
         ],
         "note": "minced",
+        "section": "Quick Tzatziki",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  lemon, (juiced and zest freshly grated)",
+      "raw": "1 lemon, juiced and zest freshly grated",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -148,11 +166,12 @@
           }
         ],
         "note": "freshly grated",
+        "section": "Quick Tzatziki",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  lemon, (juiced and zest freshly grated)",
+      "raw": "1 lemon, juiced and zest freshly grated",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Tzatziki",
         "category": "Produce"
       },
       "expanded": true
@@ -172,8 +192,13 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Quick Tzatziki",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "burgers:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound lean ground beef",
@@ -186,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Burgers",
         "category": "Meat & Seafood"
       }
     },
@@ -195,6 +221,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,42 +266,47 @@
           }
         ],
         "note": null,
+        "section": "Burgers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "crumbled or sliced feta, (for topping (as much as you want!))",
+      "raw": "crumbled or sliced feta, for topping (as much as you want!)",
       "expected": {
         "item": "crumbled or sliced feta",
         "measurements": [],
-        "note": "for topping (as much as you want!)",
+        "note": "as much as you want!, for topping",
+        "section": "Burgers",
         "category": "Cheese"
       }
     },
     {
-      "raw": "roasted red peppers, (for topping)",
+      "raw": "roasted red peppers, for topping",
       "expected": {
         "item": "roasted red peppers",
         "measurements": [],
         "note": "for topping",
+        "section": "Burgers",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "pickled onions, (for topping)",
+      "raw": "pickled onions, for topping",
       "expected": {
         "item": "pickled onions",
         "measurements": [],
         "note": "for topping",
+        "section": "Burgers",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "lettuce, (for topping)",
+      "raw": "lettuce, for topping",
       "expected": {
         "item": "lettuce",
         "measurements": [],
         "note": "for topping",
+        "section": "Burgers",
         "category": "Produce"
       }
     }

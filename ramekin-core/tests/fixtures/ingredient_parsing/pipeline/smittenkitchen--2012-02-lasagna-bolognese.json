@@ -3,6 +3,10 @@
   "recipe_slug": "2012-02-lasagna-bolognese",
   "ingredients": [
     {
+      "raw": "Bolognese sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 medium onion, coarsely chopped (1-inch pieces are fine)",
       "expected": {
         "item": "onion",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "1-inch pieces are fine, coarsely chopped",
+        "section": "Bolognese Sauce",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Bolognese Sauce",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Bolognese Sauce",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Bolognese Sauce",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Bolognese Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -82,6 +91,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Bolognese Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,6 +101,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Bolognese Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Bolognese Sauce",
         "category": "Meat & Seafood"
       }
     },
@@ -119,6 +131,7 @@
           }
         ],
         "note": "from 2 6-ounce cans",
+        "section": "Bolognese Sauce",
         "category": "Canned Goods"
       }
     },
@@ -133,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Bolognese Sauce",
         "category": "Beverages"
       }
     },
@@ -142,6 +156,7 @@
         "item": "Water",
         "measurements": [],
         "note": "as needed",
+        "section": "Bolognese Sauce",
         "category": "Beverages"
       }
     },
@@ -156,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Bolognese Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -165,8 +181,13 @@
         "item": "A few sprigs thyme, tied in a bundle",
         "measurements": [],
         "note": null,
+        "section": "Bolognese Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Pasta:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups all-purpose flour",
@@ -179,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Baking"
       }
     },
@@ -193,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Dairy & Eggs"
       }
     },
@@ -207,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,8 +245,13 @@
           }
         ],
         "note": "if needed",
+        "section": "Pasta",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Béchamel sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (8 tablespoons) unsalted butter",
@@ -239,6 +268,7 @@
           }
         ],
         "note": null,
+        "section": "Béchamel Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "Béchamel Sauce",
         "category": "Baking"
       }
     },
@@ -267,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "Béchamel Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -281,6 +313,7 @@
           }
         ],
         "note": null,
+        "section": "Béchamel Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -295,6 +328,7 @@
           }
         ],
         "note": null,
+        "section": "Béchamel Sauce",
         "category": "Produce"
       }
     },
@@ -304,6 +338,7 @@
         "item": "Freshly grated nutmeg",
         "measurements": [],
         "note": "to taste",
+        "section": "Béchamel Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -313,8 +348,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Béchamel Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 2/3 cups grated Parmesan cheese",
@@ -327,6 +367,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     }

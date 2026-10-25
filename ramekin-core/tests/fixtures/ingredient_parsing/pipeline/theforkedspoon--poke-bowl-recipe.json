@@ -3,6 +3,10 @@
   "recipe_slug": "poke-bowl-recipe",
   "ingredients": [
     {
+      "raw": "Poke Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup low-sodium soy sauce",
       "expected": {
         "item": "low-sodium soy sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Poke Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Poke Ingredients",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon fresh ginger (grated)",
+      "raw": "1 tablespoon fresh ginger, grated",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "grated",
+        "section": "Poke Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon garlic (minced)",
+      "raw": "1 tablespoon garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "minced",
+        "section": "Poke Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 pound sushi-grade ahi tuna or salmon (cut into 1/2-inch cubes)",
+      "raw": "1 pound sushi-grade ahi tuna or salmon, cut into 1/2-inch cubes",
       "expected": {
         "item": "sushi-grade ahi tuna or salmon",
         "measurements": [
@@ -69,8 +77,13 @@
           }
         ],
         "note": "cut into 1/2-inch cubes",
+        "section": "Poke Ingredients",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Spicy Sriracha Mayonnaise:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup mayonnaise",
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "Spicy Sriracha Mayonnaise",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3 tablespoon Sriracha (plus more to taste)",
+      "raw": "3 tablespoon Sriracha, plus more to taste",
       "expected": {
         "item": "Sriracha",
         "measurements": [
@@ -97,6 +111,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Spicy Sriracha Mayonnaise",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,20 +126,26 @@
           }
         ],
         "note": null,
+        "section": "Spicy Sriracha Mayonnaise",
         "category": "Produce"
       }
     },
     {
-      "raw": "6 cups cooked rice (sushi rice, white rice, or brown rice)",
+      "raw": "For Assembly:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 cups cooked rice, sushi rice, white rice, or brown rice",
       "expected": {
-        "item": "cooked rice",
+        "item": "cooked rice, sushi rice, white rice, or brown rice",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": "sushi rice, white rice, or brown rice",
+        "note": null,
+        "section": "For Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -153,11 +175,12 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  avocado (peeled, pitted, and sliced)",
+      "raw": "1 avocado, peeled, pitted, and sliced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -167,11 +190,12 @@
           }
         ],
         "note": "peeled, pitted, and sliced",
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 large mango (peeled, pitted, and sliced)",
+      "raw": "1 large mango, peeled, pitted, and sliced",
       "expected": {
         "item": "mango",
         "measurements": [
@@ -181,6 +205,7 @@
           }
         ],
         "note": "peeled, pitted, and sliced",
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2016-06-corn-and-black-bean-we",
   "ingredients": [
     {
+      "raw": "Assembly:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 ears corn, husked",
       "expected": {
         "item": "corn",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "husked",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
         "item": "Nonstick spray",
         "measurements": [],
         "note": "or 2 teaspoons oil",
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -68,6 +76,7 @@
           }
         ],
         "note": "about 8 ounces",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -86,6 +95,7 @@
           }
         ],
         "note": "about 8 ounces",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -100,8 +110,13 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Snacks"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "Thinly sliced jalapeno (1 used 1/2 a big one)",
@@ -109,6 +124,7 @@
         "item": "Thinly sliced jalapeno",
         "measurements": [],
         "note": "1 used 1/2 a big one",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -118,6 +134,7 @@
         "item": "Thinly sliced radishes",
         "measurements": [],
         "note": "I used 2 medium",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -132,6 +149,7 @@
           }
         ],
         "note": "you can toss it with a little lime juice and salt to lightly pickle it, if desired, minced",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -146,6 +164,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -155,6 +174,7 @@
         "item": "Diced tomatoes",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Canned Goods"
       }
     },
@@ -164,6 +184,7 @@
         "item": "Shredded lettuce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -173,6 +194,7 @@
         "item": "Sliced avocado",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -182,6 +204,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -191,6 +214,7 @@
         "item": "Hot sauce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     }

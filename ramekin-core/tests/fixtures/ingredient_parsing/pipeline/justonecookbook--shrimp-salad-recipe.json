@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "½ Tbsp potato starch or cornstarch ((to clean the shrimp))",
+      "raw": "½ Tbsp potato starch or cornstarch (to clean the shrimp)",
       "expected": {
         "item": "potato starch or cornstarch",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1  avocado",
+      "raw": "1 avocado",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2  large eggs (50 g each w/o shell)",
+      "raw": "2 large eggs (50 g w/o shell)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -96,12 +96,12 @@
             "unit": "large"
           }
         ],
-        "note": "50 g each w/o shell",
+        "note": "50 g w/o shell",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  Japanese or Persian cucumber ((I use Persian cucumber here))",
+      "raw": "1 Japanese or Persian cucumber (I use Persian cucumber here)",
       "expected": {
         "item": "Japanese or Persian cucumber",
         "measurements": [
@@ -115,7 +115,11 @@
       }
     },
     {
-      "raw": "2–3 Tbsp Japanese Kewpie mayonnaise",
+      "raw": "For the Dressing:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2–3 Tbsp Japanese Kewpie mayonnaise (you can make homemade Kewpie mayo; or for each Tbsp of Kewpie mayo, you can substitute 1 Tbsp of American mayonnaise + ½ tsp rice vinegar + ⅛ tsp sugar)",
       "expected": {
         "item": "Japanese Kewpie mayonnaise",
         "measurements": [
@@ -124,12 +128,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "you can make homemade Kewpie mayo; or for each Tbsp of Kewpie mayo, you can substitute 1 Tbsp of American mayonnaise + 1/2 tsp rice vinegar + 1/8 tsp sugar",
+        "section": "For the Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp milk ((or heavy cream))",
+      "raw": "1 tsp milk (or heavy cream)",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -139,6 +144,7 @@
           }
         ],
         "note": "or heavy cream",
+        "section": "For the Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +169,7 @@
         "item": "freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     }

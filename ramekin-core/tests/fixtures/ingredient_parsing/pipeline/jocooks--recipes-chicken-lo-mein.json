@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-chicken-lo-mein",
   "ingredients": [
     {
+      "raw": "For Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon brown sugar (packed)",
       "expected": {
         "item": "brown sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "low sodium",
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For Chicken:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound chicken breasts (skinless and boneless, cut into small pieces)",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "skinless and boneless, cut into small pieces",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For Veggies:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons olive oil",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For Veggies",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For Veggies",
         "category": "Produce"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For Veggies",
         "category": "Produce"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": "julienned",
+        "section": "For Veggies",
         "category": "Produce"
       }
     },
@@ -237,8 +265,13 @@
           }
         ],
         "note": "chopped",
+        "section": "For Veggies",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Other:",
+      "is_section_header": true
     },
     {
       "raw": "16 ounce lo mein noodles (or any other Asian style noodles)",
@@ -251,11 +284,12 @@
           }
         ],
         "note": "or any other Asian style noodles",
+        "section": "Other",
         "category": "Other"
       }
     },
     {
-      "raw": "3  green onions (chopped)",
+      "raw": "3 green onions (chopped)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -265,6 +299,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Other",
         "category": "Produce"
       }
     }

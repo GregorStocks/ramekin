@@ -3,7 +3,7 @@
   "recipe_slug": "vegan-pumpkin-spice-latte-reci",
   "ingredients": [
     {
-      "raw": "2 shots&nbsp;espresso&nbsp;or freshly-brewed coffee",
+      "raw": "2  shots espresso or freshly-brewed coffee",
       "expected": {
         "item": "espresso or freshly-brewed coffee",
         "measurements": [
@@ -17,21 +17,21 @@
       }
     },
     {
-      "raw": "3/4 cup dairy-free milk of choice, I usually use a combination of unsweetened soy milk and oat milk",
+      "raw": "3/4 cup dairy-free milk of choice (I usually use a combination of unsweetened soy milk and oat milk)",
       "expected": {
-        "item": "dairy-free milk of choice, I usually use a combination of unsweetened soy milk and oat milk",
+        "item": "dairy-free milk of choice",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I usually use a combination of unsweetened soy milk and oat milk",
         "category": "Other"
       }
     },
     {
-      "raw": "2 to 3 tablespoons&nbsp;homemade pumpkin spice syrup or a store-bought pumpkin spice syrup",
+      "raw": "2 to 3 tablespoons homemade pumpkin spice syrup or a store-bought pumpkin spice syrup",
       "expected": {
         "item": "homemade pumpkin spice syrup or a store-bought pumpkin spice syrup",
         "measurements": [

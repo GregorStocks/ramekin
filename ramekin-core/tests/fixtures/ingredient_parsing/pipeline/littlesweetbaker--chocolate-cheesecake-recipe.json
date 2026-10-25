@@ -3,7 +3,11 @@
   "recipe_slug": "chocolate-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "1 &amp;amp; 1/2 cups (170g) Oreo cookie crumbs",
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 & 1/2 cups   (170g) Oreo cookie crumbs",
       "expected": {
         "item": "Oreo cookie crumbs",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "4 Tbsp melted butter",
+      "raw": "4 Tbsp   melted butter",
       "expected": {
         "item": "melted butter",
         "measurements": [
@@ -31,11 +36,16 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 &amp;amp; 1/2 cups (270g) semi-sweet chocolate chips",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 & 1/2 cups   (270g) semi-sweet chocolate chips",
       "expected": {
         "item": "semi-sweet chocolate chips",
         "measurements": [
@@ -49,11 +59,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (125ml) whipping cream",
+      "raw": "1/2 cup   (125ml) whipping cream",
       "expected": {
         "item": "whipping cream",
         "measurements": [
@@ -67,11 +78,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "24 oz (3 blocks) cream cheese (softened)",
+      "raw": "24 oz   (3 blocks) cream cheese, softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -85,11 +97,12 @@
           }
         ],
         "note": "softened",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "3/4 cup (150g) granulated sugar",
+      "raw": "3/4 cup   (150g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -103,11 +116,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "3  large eggs",
+      "raw": "3   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -117,11 +131,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp vanilla extract",
+      "raw": "1 tsp   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -131,11 +146,16 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (180g) semi-sweet chocolate chips",
+      "raw": "Ganache:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup   (180g) semi-sweet chocolate chips",
       "expected": {
         "item": "semi-sweet chocolate chips",
         "measurements": [
@@ -149,11 +169,12 @@
           }
         ],
         "note": null,
+        "section": "Ganache",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (125ml) whipping cream",
+      "raw": "1/2 cup   (125ml) whipping cream",
       "expected": {
         "item": "whipping cream",
         "measurements": [
@@ -167,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache",
         "category": "Dairy & Eggs"
       }
     }

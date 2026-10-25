@@ -3,6 +3,10 @@
   "recipe_slug": "2021-04-spring-asparagus-galet",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (165 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,8 +97,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound asparagus",
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -112,6 +126,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -130,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -148,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -166,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -180,6 +198,7 @@
           }
         ],
         "note": "minced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -189,6 +208,7 @@
         "item": "Red pepper flakes or freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -221,6 +242,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -235,6 +257,7 @@
           }
         ],
         "note": "optional, for shine",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

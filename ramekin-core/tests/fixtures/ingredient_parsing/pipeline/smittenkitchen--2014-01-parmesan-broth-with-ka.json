@@ -3,13 +3,8 @@
   "recipe_slug": "2014-01-parmesan-broth-with-ka",
   "ingredients": [
     {
-      "raw": "Broth",
-      "expected": {
-        "item": "Broth",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "raw": "Broth:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces cheese rinds, any paper at the ends removed",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "any paper at the ends removed",
+        "section": "Broth",
         "category": "Other"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Beverages"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": "peeled and quartered",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -64,6 +62,7 @@
           }
         ],
         "note": "peeled and smashed",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -78,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -101,11 +102,12 @@
         "item": "Salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "To serve",
+      "raw": "To serve:",
       "is_section_header": true
     },
     {

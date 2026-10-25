@@ -3,6 +3,10 @@
   "recipe_slug": "2010-06-zucchini-and-ricotta-g",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (165 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": "cold and cut into cubes",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -93,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -111,8 +120,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 large or 2 small zucchinis (about 1 pound or 455 grams), sliced into 1/4-inch thick rounds",
@@ -137,6 +151,7 @@
           }
         ],
         "note": "about 1 pound or 455 grams, sliced into 1/4-inch thick rounds",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -151,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -165,6 +181,7 @@
           }
         ],
         "note": "minced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -183,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -201,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -219,8 +238,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Finish:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg yolk beaten with 1 teaspoon water",
@@ -233,6 +257,7 @@
           }
         ],
         "note": "beaten with 1 teaspoon water",
+        "section": "Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -247,6 +272,7 @@
           }
         ],
         "note": "to finish, thinly sliced",
+        "section": "Finish",
         "category": "Produce"
       }
     }

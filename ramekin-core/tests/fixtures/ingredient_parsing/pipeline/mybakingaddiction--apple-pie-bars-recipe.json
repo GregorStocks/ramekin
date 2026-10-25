@@ -3,7 +3,11 @@
   "recipe_slug": "apple-pie-bars-recipe",
   "ingredients": [
     {
-      "raw": "1 1/2  cups unsalted butter (softened)",
+      "raw": "For the crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ½  cups unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "softened",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3/4 cup sugar",
+      "raw": "¾ cup sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt",
+      "raw": "½ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons unsalted butter",
@@ -69,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup light brown sugar",
+      "raw": "½ cup light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -83,21 +96,23 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "6 pounds Granny Smith apples (about 12 apples—peeled, cored and thinly sliced)",
+      "raw": "6 pounds Granny Smith apples about 12 apples—peeled, cored and thinly sliced",
       "expected": {
-        "item": "Granny Smith apples",
+        "item": "Granny Smith apples about 12 apples-peeled",
         "measurements": [
           {
             "amount": "6",
             "unit": "lb"
           }
         ],
-        "note": "about 12 apples-peeled, cored and thinly sliced",
-        "category": "Produce"
+        "note": "cored and thinly sliced",
+        "section": "For the Filling",
+        "category": "Other"
       }
     },
     {
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon freshly grated nutmeg",
+      "raw": "¼ teaspoon freshly grated nutmeg",
       "expected": {
         "item": "freshly grated nutmeg",
         "measurements": [
@@ -125,22 +141,28 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup water (if necessary)",
+      "raw": "½ cup water if necessary",
       "expected": {
-        "item": "water",
+        "item": "water if necessary",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "if necessary",
-        "category": "Beverages"
+        "note": null,
+        "section": "For the Filling",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "For the topping:",
+      "is_section_header": true
     },
     {
       "raw": "3 cups quick-cooking oats",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Snacks"
       }
     },
@@ -167,11 +190,12 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 cups light brown sugar",
+      "raw": "1 ½ cups light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -181,11 +205,12 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/4 teaspoons cinnamon",
+      "raw": "1 ¼ teaspoons cinnamon",
       "expected": {
         "item": "cinnamon",
         "measurements": [
@@ -195,11 +220,12 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon baking soda",
+      "raw": "½ teaspoon baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -209,11 +235,12 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt",
+      "raw": "½ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -223,11 +250,12 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/2 cups unsalted butter (cut into 1/2-inch cubes and chilled)",
+      "raw": "1 ½ cups unsalted butter cut into 1/2-inch cubes and chilled",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -237,11 +265,12 @@
           }
         ],
         "note": "cut into 1/2-inch cubes and chilled",
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3/4 cup chopped pecans",
+      "raw": "¾ cup chopped pecans",
       "expected": {
         "item": "chopped pecans",
         "measurements": [
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

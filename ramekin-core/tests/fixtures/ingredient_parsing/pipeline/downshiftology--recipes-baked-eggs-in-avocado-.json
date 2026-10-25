@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-baked-eggs-in-avocado-",
   "ingredients": [
     {
-      "raw": "2  avocados",
+      "raw": "2 avocados",
       "expected": {
         "item": "avocados",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -40,11 +40,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "goat cheese",
       "expected": {
         "item": "goat cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -54,6 +59,7 @@
         "item": "cilantro",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -63,6 +69,7 @@
         "item": "bacon",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Meat & Seafood"
       }
     },
@@ -72,6 +79,7 @@
         "item": "chives",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

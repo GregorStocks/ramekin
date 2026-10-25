@@ -245,6 +245,10 @@
       }
     },
     {
+      "raw": "Vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon olive oil",
       "expected": {
         "item": "olive oil",
@@ -255,7 +259,7 @@
           }
         ],
         "note": null,
-        "section": "Artichoke Prep",
+        "section": "Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -270,7 +274,7 @@
           }
         ],
         "note": null,
-        "section": "Artichoke Prep",
+        "section": "Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -280,7 +284,7 @@
         "item": "Few drops of honey",
         "measurements": [],
         "note": null,
-        "section": "Artichoke Prep",
+        "section": "Vinaigrette",
         "category": "Other"
       }
     },
@@ -295,7 +299,7 @@
           }
         ],
         "note": null,
-        "section": "Artichoke Prep",
+        "section": "Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -310,7 +314,7 @@
           }
         ],
         "note": null,
-        "section": "Artichoke Prep",
+        "section": "Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

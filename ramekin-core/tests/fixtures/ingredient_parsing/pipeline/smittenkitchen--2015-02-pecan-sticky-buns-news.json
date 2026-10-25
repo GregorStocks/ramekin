@@ -3,69 +3,8 @@
   "recipe_slug": "2015-02-pecan-sticky-buns-news",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Raspberry Swirl Cheesecake",
-      "expected": {
-        "item": "Months Ago: Raspberry Swirl Cheesecake",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Kale Salad with Pecorino and Walnuts",
-      "expected": {
-        "item": "Years Ago: Kale Salad with Pecorino and Walnuts",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: My Favorite Brownies",
-      "expected": {
-        "item": "Years Ago: My Favorite Brownies",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Tomato Salad with Crushed Croutons",
-      "expected": {
-        "item": "Years Ago: Tomato Salad with Crushed Croutons",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Dough:",
+      "is_section_header": true
     },
     {
       "raw": "1 packet (7 grams or 2 1/4 teaspoons) instant or active dry yeast",
@@ -86,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -104,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -140,6 +82,7 @@
           }
         ],
         "note": "melted and cooled to lukewarm",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -154,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -168,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -186,6 +131,7 @@
           }
         ],
         "note": "plus more for dusting counter",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -200,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,8 +156,13 @@
         "item": "Oil or butter to coat bowl",
         "measurements": [],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Caramel:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (1 stick, 4 ounces or 113 grams) unsalted butter",
@@ -235,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -271,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -289,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -303,8 +259,13 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (50 grams) packed dark brown sugar",
@@ -321,6 +282,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -339,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -353,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -367,6 +331,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -385,6 +350,7 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -399,6 +365,7 @@
           }
         ],
         "note": "divided, chopped pecans",
+        "section": "Filling",
         "category": "Other"
       }
     }

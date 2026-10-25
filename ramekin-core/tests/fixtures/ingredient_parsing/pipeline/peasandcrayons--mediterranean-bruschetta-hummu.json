@@ -3,7 +3,7 @@
   "recipe_slug": "mediterranean-bruschetta-hummu",
   "ingredients": [
     {
-      "raw": "1/2 cup diced seedless english cucumber",
+      "raw": "½ cup diced seedless english cucumber",
       "expected": {
         "item": "diced seedless english cucumber",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 TBSP crumbled feta cheese ((skip for vegan))",
+      "raw": "2 TBSP crumbled feta cheese (skip for vegan)",
       "expected": {
         "item": "crumbled feta cheese",
         "measurements": [
@@ -73,18 +73,22 @@
       }
     },
     {
-      "raw": "1-2 TBSP sweet balsamic glaze (or homemade balsamic reduction)",
+      "raw": "1-2 TBSP sweet balsamic glaze or homemade balsamic reduction",
       "expected": {
-        "item": "sweet balsamic glaze",
+        "item": "sweet balsamic glaze or homemade balsamic reduction",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": "or homemade balsamic reduction",
-        "category": "Other"
+        "note": null,
+        "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "OPTIONAL EXTRAS:",
+      "is_section_header": true
     },
     {
       "raw": "a splash of red wine or white wine vinegar",
@@ -92,6 +96,7 @@
         "item": "a splash of red wine or white wine vinegar",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,6 +106,7 @@
         "item": "a drizzle of extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Other"
       }
     },
@@ -110,8 +116,13 @@
         "item": "a pinch of salt",
         "measurements": [],
         "note": null,
+        "section": "Optional Extras",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "FOR THE SNACK PLATTER: CHOOSE YOUR FAVORITES!:",
+      "is_section_header": true
     },
     {
       "raw": "roasted garlic hummus with extra virgin olive oil and paprika",
@@ -119,6 +130,7 @@
         "item": "roasted garlic hummus with extra virgin olive oil and paprika",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Other"
       }
     },
@@ -128,6 +140,7 @@
         "item": "classic hummus drizzled with pesto",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Other"
       }
     },
@@ -137,6 +150,7 @@
         "item": "tzatziki dip",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Condiments & Sauces"
       }
     },
@@ -146,6 +160,7 @@
         "item": "fresh warmed pita wedges or pita chips",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Other"
       }
     },
@@ -155,6 +170,7 @@
         "item": "carrot sticks",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Produce"
       }
     },
@@ -164,6 +180,7 @@
         "item": "celery sticks",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Produce"
       }
     },
@@ -173,6 +190,7 @@
         "item": "cucumber slices",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Produce"
       }
     },
@@ -182,6 +200,7 @@
         "item": "tomatoes",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Produce"
       }
     },
@@ -191,6 +210,7 @@
         "item": "sliced bell pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Produce"
       }
     },
@@ -200,6 +220,7 @@
         "item": "sweet mini peppers",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Produce"
       }
     },
@@ -209,6 +230,7 @@
         "item": "Feel free to mix and match different varieties of hummus and any veggies your heart desires!",
         "measurements": [],
         "note": null,
+        "section": "For the Snack Platter: Choose Your Favorites!",
         "category": "Other"
       }
     }

@@ -3,17 +3,22 @@
   "recipe_slug": "zucchini-cookies-recipe",
   "ingredients": [
     {
-      "raw": "1/2 cup unsalted butter (room temperature)",
+      "raw": "For the Cookies:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup unsalted butter room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter room temperature",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Cookies",
+        "category": "Other"
       }
     },
     {
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
@@ -139,11 +152,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt",
+      "raw": "½ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -153,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup raisins",
+      "raw": "½ cup raisins",
       "expected": {
         "item": "raisins",
         "measurements": [
@@ -167,13 +182,18 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1 cup confectioners' sugar (sifted)",
+      "raw": "For the Lemon Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup confectioners’ sugar sifted",
       "expected": {
-        "item": "confectioners' sugar",
+        "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "1",
@@ -181,6 +201,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Lemon Glaze",
         "category": "Baking"
       }
     },
@@ -195,11 +216,12 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 teaspoon pure vanilla extract",
+      "raw": "¼ teaspoon pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Glaze",
         "category": "Baking"
       }
     }

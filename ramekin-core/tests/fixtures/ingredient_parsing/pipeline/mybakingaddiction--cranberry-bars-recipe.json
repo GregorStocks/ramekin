@@ -3,21 +3,26 @@
   "recipe_slug": "cranberry-bars-recipe",
   "ingredients": [
     {
-      "raw": "1 cup all-purpose flour  (or a gluten-free 1-to-1 baking flour)",
+      "raw": "For the streusel:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup all-purpose flour  or a gluten-free 1-to-1 baking flour",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour or a gluten-free 1-to-1 baking flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or a gluten-free 1-to-1 baking flour",
+        "note": null,
+        "section": "For the Streusel",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup granulated sugar",
+      "raw": "½ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 teaspoon salt",
+      "raw": "⅛ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -55,25 +62,31 @@
           }
         ],
         "note": null,
+        "section": "For the Streusel",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (cold)",
+      "raw": "½ cup unsalted butter cold",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter cold",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "cold",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Streusel",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (melted)",
+      "raw": "For the base:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup unsalted butter melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,25 +111,27 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  large eggs (room temperature)",
+      "raw": "2 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Base",
+        "category": "Other"
       }
     },
     {
-      "raw": "3/4 teaspoon almond extract",
+      "raw": "¾ teaspoon almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon pure vanilla extract",
+      "raw": "¼ teaspoon pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "¼ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -153,20 +171,22 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup all-purpose flour  (or gluten-free 1-to-1 baking flour)",
+      "raw": "1 cup all-purpose flour  or gluten-free 1-to-1 baking flour",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour or gluten-free 1-to-1 baking flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or gluten-free 1-to-1 baking flour",
+        "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup powdered sugar",
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -209,11 +235,12 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon pure vanilla extract",
+      "raw": "½ teaspoon pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -237,11 +265,12 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup toasted sliced almonds (optional)",
+      "raw": "½ cup toasted sliced almonds optional",
       "expected": {
         "item": "toasted sliced almonds",
         "measurements": [
@@ -251,6 +280,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Glaze",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "seafood-doria-recipe",
   "ingredients": [
     {
+      "raw": "Pilaf (Seasoned Rice):",
+      "is_section_header": true
+    },
+    {
       "raw": "½ tbsp olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  garlic clove ( finely diced)",
+      "raw": "1 garlic clove  finely diced",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -27,25 +32,27 @@
           }
         ],
         "note": "finely diced",
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Produce"
       }
     },
     {
-      "raw": "200 g shrimp or mixed seafood (cut into bitesize pieces)",
+      "raw": "200 g shrimp or mixed seafood cut into bitesize pieces",
       "expected": {
-        "item": "shrimp or mixed seafood",
+        "item": "shrimp or mixed seafood cut into bitesize pieces",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": "cut into bitesize pieces",
+        "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3  button mushrooms ( finely sliced)",
+      "raw": "3 button mushrooms  finely sliced",
       "expected": {
         "item": "button mushrooms",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "finely sliced",
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Beverages"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Produce"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tbsp fresh parsley  (finely chopped)",
+      "raw": "1 tbsp fresh parsley  finely chopped",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -111,6 +122,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Produce"
       }
     },
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "100 g onion (finely diced)",
+      "raw": "100 g onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -139,6 +152,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Produce"
       }
     },
@@ -153,27 +167,29 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "½  knorr chicken bouillon cube (use the other half for béchamel sauce)",
+      "raw": "½ knorr chicken bouillon cube use the other half for béchamel sauce",
       "expected": {
-        "item": "knorr chicken bouillon cube",
+        "item": "knorr chicken bouillon cube use the other half for béchamel sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "use the other half for béchamel sauce",
+        "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Other"
       }
     },
     {
-      "raw": "⅛ tsp cumin powder",
+      "raw": "⅛ tsp ground cumin",
       "expected": {
-        "item": "cumin powder",
+        "item": "ground cumin",
         "measurements": [
           {
             "amount": "0.13",
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,8 +257,13 @@
           }
         ],
         "note": null,
+        "section": "Pilaf (Seasoned Rice)",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Bechamel Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp butter",
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Bechamel Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Bechamel Sauce",
         "category": "Baking"
       }
     },
@@ -279,11 +306,12 @@
           }
         ],
         "note": null,
+        "section": "Bechamel Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½  chicken bouillon cube",
+      "raw": "½ chicken bouillon cube",
       "expected": {
         "item": "chicken bouillon cube",
         "measurements": [
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Bechamel Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,6 +336,7 @@
           }
         ],
         "note": null,
+        "section": "Bechamel Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -321,34 +351,42 @@
           }
         ],
         "note": null,
+        "section": "Bechamel Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "preferred shredded melting cheese (cheddar, gouda, mozzarella, etc.)",
-      "expected": {
-        "item": "preferred shredded melting cheese",
-        "measurements": [],
-        "note": "cheddar, gouda, mozzarella, etc.",
-        "category": "Cheese"
-      }
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
-      "raw": "hard cheese ((optional) parmesan, pecorino, etc.)",
+      "raw": "preferred shredded melting cheese cheddar, gouda, mozzarella, etc.",
       "expected": {
-        "item": "hard cheese parmesan, pecorino, etc.",
+        "item": "preferred shredded melting cheese cheddar, gouda, mozzarella, etc.",
         "measurements": [],
-        "note": "optional",
+        "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     },
     {
-      "raw": "fresh parsley (dried or fresh, optional garnish)",
+      "raw": "hard cheese (optional) parmesan, pecorino, etc.",
       "expected": {
-        "item": "fresh parsley",
+        "item": "hard cheese parmesan, pecorino, etc.",
         "measurements": [],
-        "note": "dried or fresh, optional garnish",
-        "category": "Produce"
+        "note": "optional",
+        "section": "Topping",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "fresh parsley dried or fresh, optional garnish",
+      "expected": {
+        "item": "fresh parsley dried or fresh, optional garnish",
+        "measurements": [],
+        "note": null,
+        "section": "Topping",
+        "category": "Other"
       }
     }
   ]

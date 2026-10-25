@@ -3,6 +3,10 @@
   "recipe_slug": "2007-05-pineapple-upside-down-",
   "ingredients": [
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 medium pineapple, peeled, quartered lengthwise, and cored",
       "expected": {
         "item": "pineapple",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "peeled, quartered lengthwise, and cored",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,8 +55,13 @@
           }
         ],
         "note": "packed",
+        "section": "Topping",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Batter:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (190 grams) all-purpose flour",
@@ -67,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -81,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -95,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": "softened",
+        "section": "Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Beverages"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Beverages"
       }
     },
@@ -213,6 +233,7 @@
           }
         ],
         "note": "optional, for sprinkling over cake",
+        "section": "Batter",
         "category": "Beverages"
       }
     }

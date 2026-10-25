@@ -3,35 +3,41 @@
   "recipe_slug": "cranberry-cinnamon-rolls-recip",
   "ingredients": [
     {
-      "raw": "12 oz cranberries fresh or frozen (See Note 1)",
+      "raw": "Cranberry Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 oz cranberries fresh or frozen See Note 1",
       "expected": {
-        "item": "cranberries fresh or frozen",
+        "item": "cranberries fresh or frozen See Note 1",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "See Note 1",
+        "note": null,
+        "section": "Cranberry Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup sugar (See Note 2 for substitutions)",
+      "raw": "1 cup sugar See Note 2 for substitutions",
       "expected": {
-        "item": "sugar",
+        "item": "sugar See Note 2 for substitutions",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "See Note 2 for substitutions",
-        "category": "Baking"
+        "note": null,
+        "section": "Cranberry Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  orange (juice and zest)",
+      "raw": "1 orange juice and zest",
       "expected": {
         "item": "orange juice and zest",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Filling",
         "category": "Other"
       }
     },
@@ -55,21 +62,23 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Filling",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 tbsp grated ginger root (See Note 3 for substitutions)",
+      "raw": "1 tbsp grated ginger root See Note 3 for substitutions",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root See Note 3 for substitutions",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "See Note 3 for substitutions",
-        "category": "Produce"
+        "note": null,
+        "section": "Cranberry Filling",
+        "category": "Other"
       }
     },
     {
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  cinnamon stick",
+      "raw": "1 cinnamon stick",
       "expected": {
         "item": "cinnamon stick",
         "measurements": [
@@ -97,11 +107,16 @@
           }
         ],
         "note": null,
+        "section": "Cranberry Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "350 g all-purpose flour ((2 3/4 cup))",
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "350 g all-purpose flour (2 3/4 cup)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -115,65 +130,57 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "50 g sugar (1/4 cup)",
+      "raw": "50 g sugar 1/4 cup",
       "expected": {
-        "item": "sugar",
+        "item": "sugar 1/4 cup",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
-          },
-          {
-            "amount": "0.25",
-            "unit": "cup"
           }
         ],
         "note": null,
-        "category": "Baking"
+        "section": "Dough",
+        "category": "Other"
       }
     },
     {
-      "raw": "4 g salt (1/4 tsp)",
+      "raw": "4 g salt 1/4 tsp",
       "expected": {
-        "item": "salt",
+        "item": "salt 1/4 tsp",
         "measurements": [
           {
             "amount": "4",
             "unit": "g"
-          },
-          {
-            "amount": "0.25",
-            "unit": "tsp"
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "section": "Dough",
+        "category": "Other"
       }
     },
     {
-      "raw": "7 g instant yeast (2 1/4 tsp)",
+      "raw": "7 g instant yeast 2 1/4 tsp",
       "expected": {
-        "item": "instant yeast",
+        "item": "instant yeast 2 1/4 tsp",
         "measurements": [
           {
             "amount": "7",
             "unit": "g"
-          },
-          {
-            "amount": "2.25",
-            "unit": "tsp"
           }
         ],
         "note": null,
-        "category": "Baking"
+        "section": "Dough",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -183,93 +190,91 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "160 g milk (2/3 cup)",
+      "raw": "160 g milk 2/3 cup",
       "expected": {
-        "item": "milk",
+        "item": "milk 2/3 cup",
         "measurements": [
           {
             "amount": "160",
             "unit": "g"
-          },
-          {
-            "amount": "0.67",
-            "unit": "cup"
           }
         ],
         "note": null,
-        "category": "Dairy & Eggs"
+        "section": "Dough",
+        "category": "Other"
       }
     },
     {
-      "raw": "50 g butter (room temperature (1/4 cup))",
+      "raw": "50 g butter room temperature (1/4 cup)",
       "expected": {
-        "item": "butter",
+        "item": "butter room temperature",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
-          }
-        ],
-        "note": "room temperature (1/4 cup)",
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "100 g powdered sugar (1cup)",
-      "expected": {
-        "item": "powdered sugar",
-        "measurements": [
-          {
-            "amount": "100",
-            "unit": "g"
           },
           {
-            "amount": "1",
+            "amount": "0.25",
             "unit": "cup"
           }
         ],
         "note": null,
-        "category": "Baking"
+        "section": "Dough",
+        "category": "Other"
       }
     },
     {
-      "raw": "5 g orange extract or orange water (1 tsp)",
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "100 g powdered sugar 1cup",
       "expected": {
-        "item": "orange extract or orange water",
+        "item": "powdered sugar 1cup",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "section": "Glaze",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "5 g orange extract or orange water 1 tsp",
+      "expected": {
+        "item": "orange extract",
         "measurements": [
           {
             "amount": "5",
             "unit": "g"
-          },
-          {
-            "amount": "1",
-            "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or orange water 1 tsp",
+        "section": "Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "25 g heavy cream (2 tbsp)",
+      "raw": "25 g heavy cream 2 tbsp",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream 2 tbsp",
         "measurements": [
           {
             "amount": "25",
             "unit": "g"
-          },
-          {
-            "amount": "2",
-            "unit": "tbsp"
           }
         ],
         "note": null,
-        "category": "Dairy & Eggs"
+        "section": "Glaze",
+        "category": "Other"
       }
     }
   ]

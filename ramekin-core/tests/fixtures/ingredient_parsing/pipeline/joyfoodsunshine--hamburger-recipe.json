@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 Tablespoons Montreal steak seasoning (divided)",
+      "raw": "2 Tablespoons Montreal steak seasoning divided",
       "expected": {
         "item": "Montreal steak seasoning",
         "measurements": [
@@ -59,11 +59,16 @@
       }
     },
     {
+      "raw": "Toppings/Condiments:",
+      "is_section_header": true
+    },
+    {
       "raw": "Ketchup",
       "expected": {
         "item": "Ketchup",
         "measurements": [],
         "note": null,
+        "section": "Toppings/condiments",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,6 +78,7 @@
         "item": "Mustard",
         "measurements": [],
         "note": null,
+        "section": "Toppings/condiments",
         "category": "Condiments & Sauces"
       }
     },
@@ -82,6 +88,7 @@
         "item": "Lettuce",
         "measurements": [],
         "note": null,
+        "section": "Toppings/condiments",
         "category": "Produce"
       }
     },
@@ -91,6 +98,7 @@
         "item": "Tomato",
         "measurements": [],
         "note": null,
+        "section": "Toppings/condiments",
         "category": "Produce"
       }
     },
@@ -100,6 +108,7 @@
         "item": "Red Onion",
         "measurements": [],
         "note": null,
+        "section": "Toppings/condiments",
         "category": "Produce"
       }
     },
@@ -109,6 +118,7 @@
         "item": "Cheese",
         "measurements": [],
         "note": null,
+        "section": "Toppings/condiments",
         "category": "Cheese"
       }
     },
@@ -118,6 +128,7 @@
         "item": "pickles",
         "measurements": [],
         "note": null,
+        "section": "Toppings/condiments",
         "category": "Condiments & Sauces"
       }
     },
@@ -127,6 +138,7 @@
         "item": "Homemade Hamburger buns",
         "measurements": [],
         "note": null,
+        "section": "Toppings/condiments",
         "category": "Bakery & Bread"
       }
     }

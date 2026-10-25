@@ -3,6 +3,10 @@
   "recipe_slug": "instant-pot-cinnamon-apple-por",
   "ingredients": [
     {
+      "raw": "Meat and Veggies:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,48 +17,52 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "4  bone-in pork chops (1 - 1 1/2 inches thick)",
+      "raw": "4 bone-in pork chops 1 - 1 1/2 inches thick",
       "expected": {
-        "item": "bone-in pork chops",
+        "item": "bone-in pork chops 1 - 1 1/2 inches thick",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "1 - 1 1/2 inches thick",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Meat and Veggies",
+        "category": "Other"
       }
     },
     {
-      "raw": "Kosher salt and freshly ground black pepper (to taste)",
+      "raw": "Kosher salt and freshly ground black pepper to taste",
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Meat and Veggies",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 cups cubed butternut squash (1 inch pieces)",
+      "raw": "2 cups cubed butternut squash 1 inch pieces",
       "expected": {
-        "item": "cubed butternut squash",
+        "item": "cubed butternut squash 1 inch pieces",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "1 inch pieces",
-        "category": "Produce"
+        "note": null,
+        "section": "Meat and Veggies",
+        "category": "Other"
       }
     },
     {
-      "raw": "2  Granny Smith apples (thickly sliced or chopped)",
+      "raw": "2 Granny Smith apples thickly sliced or chopped",
       "expected": {
         "item": "Granny Smith apples",
         "measurements": [
@@ -64,11 +72,12 @@
           }
         ],
         "note": "thickly sliced or chopped",
+        "section": "Meat and Veggies",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  cinnamon stick",
+      "raw": "1 cinnamon stick",
       "expected": {
         "item": "cinnamon stick",
         "measurements": [
@@ -78,11 +87,12 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  Rosemary sprigs (minced)",
+      "raw": "2 Rosemary sprigs minced",
       "expected": {
         "item": "Rosemary sprigs",
         "measurements": [
@@ -92,6 +102,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meat and Veggies",
         "category": "Produce"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Canned Goods"
       }
     },
@@ -120,8 +132,13 @@
           }
         ],
         "note": null,
+        "section": "Meat and Veggies",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Rub:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon dried rosemary",
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Baking"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -204,8 +226,13 @@
           }
         ],
         "note": null,
+        "section": "Rub",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon cornstarch",
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

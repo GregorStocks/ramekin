@@ -3,6 +3,10 @@
   "recipe_slug": "crab-rangoon-dip-recipe",
   "ingredients": [
     {
+      "raw": "Dip:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 Ounces Cream Cheese",
       "expected": {
         "item": "Cream Cheese",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Cheese"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 Cup Mozzarella (Shredded)",
+      "raw": "1 Cup Mozzarella Shredded",
       "expected": {
         "item": "Mozzarella",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "Shredded",
+        "section": "Dip",
         "category": "Cheese"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  Green Onion (Sliced)",
+      "raw": "2 Green Onion Sliced",
       "expected": {
         "item": "Green Onion",
         "measurements": [
@@ -139,11 +152,12 @@
           }
         ],
         "note": "Sliced",
+        "section": "Dip",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  6 Ounce Cans Fancy Crabmeat-Drained",
+      "raw": "2 6 Ounce Cans Fancy Crabmeat-Drained",
       "expected": {
         "item": "Fancy Crabmeat-Drained",
         "measurements": [
@@ -153,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Other"
       }
     },
     {
-      "raw": "1  7 Ounce Jar Duck Sauce or Sweet and Sour Sauce",
+      "raw": "1 7 Ounce Jar Duck Sauce or Sweet and Sour Sauce",
       "expected": {
         "item": "Duck Sauce or Sweet and Sour Sauce",
         "measurements": [
@@ -167,11 +182,16 @@
           }
         ],
         "note": null,
+        "section": "Dip",
         "category": "Other"
       }
     },
     {
-      "raw": "1  14 Ounce Package Wonton Wrappers",
+      "raw": "Wonton Chips:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 14 Ounce Package Wonton Wrappers",
       "expected": {
         "item": "Wonton Wrappers",
         "measurements": [
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Wonton Chips",
         "category": "Frozen"
       }
     }

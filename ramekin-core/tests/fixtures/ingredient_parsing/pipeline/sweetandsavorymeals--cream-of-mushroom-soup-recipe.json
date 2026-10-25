@@ -3,21 +3,21 @@
   "recipe_slug": "cream-of-mushroom-soup-recipe",
   "ingredients": [
     {
-      "raw": "4 tablespoon butter (unsalted)",
+      "raw": "4 tablespoon butter unsalted",
       "expected": {
-        "item": "butter",
+        "item": "butter unsalted",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "unsalted",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  sweet onion (diced)",
+      "raw": "1 sweet onion diced",
       "expected": {
         "item": "sweet onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "5 cups mushrooms (sliced)",
+      "raw": "5 cups mushrooms sliced",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "4 cups chicken broth (vegetable broth or water)",
+      "raw": "4 cups chicken broth vegetable broth or water",
       "expected": {
-        "item": "chicken broth",
+        "item": "chicken broth vegetable broth or water",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "vegetable broth or water",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -101,16 +101,16 @@
       }
     },
     {
-      "raw": "1/2 cup red wine (or use more broth for an alcohol-free version)",
+      "raw": "1/2 cup red wine or use more broth for an alcohol-free version",
       "expected": {
-        "item": "red wine",
+        "item": "red wine or use more broth for an alcohol-free version",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or use more broth for an alcohol-free version",
+        "note": null,
         "category": "Beverages"
       }
     },
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon red pepper flakes (optional)",
+      "raw": "1/4 teaspoon red pepper flakes optional",
       "expected": {
         "item": "red pepper flakes",
         "measurements": [
@@ -213,11 +213,16 @@
       }
     },
     {
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Fresh thyme",
       "expected": {
         "item": "Fresh thyme",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -227,6 +232,7 @@
         "item": "Chopped Parsley",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }

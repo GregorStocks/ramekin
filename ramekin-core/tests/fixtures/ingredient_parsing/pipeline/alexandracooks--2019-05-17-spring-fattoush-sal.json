@@ -3,6 +3,10 @@
   "recipe_slug": "2019-05-17-spring-fattoush-sal",
   "ingredients": [
     {
+      "raw": "for the fattoush dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 small shallot, minced",
       "expected": {
         "item": "shallot",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Fattoush Dressing",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Fattoush Dressing",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fattoush Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fattoush Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fattoush Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fattoush Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For the Fattoush Dressing",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "for the pita:",
+      "is_section_header": true
     },
     {
       "raw": "2 rounds pita, see notes above",
@@ -111,6 +126,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Pita",
         "category": "Other"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pita",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pita",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pita",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,8 +181,13 @@
         "item": "kosher salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Pita",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "for the salad:",
+      "is_section_header": true
     },
     {
       "raw": "2 heads Romaine, finely chopped",
@@ -176,6 +200,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -190,6 +215,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -204,6 +230,7 @@
           }
         ],
         "note": "strings removed, sliced thinly on the bias",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -218,6 +245,7 @@
           }
         ],
         "note": "optional, thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -232,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -246,6 +275,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     }

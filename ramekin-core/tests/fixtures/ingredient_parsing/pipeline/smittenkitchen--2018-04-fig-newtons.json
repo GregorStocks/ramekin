@@ -3,6 +3,10 @@
   "recipe_slug": "2018-04-fig-newtons",
   "ingredients": [
     {
+      "raw": "Cookie:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 tablespoons (140 grams or 5 ounces) unsalted butter, cold is fine, cut into small chunks",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "cold is fine, cut into small chunks",
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -43,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Beverages"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,8 +165,13 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces (about 2 1/2 cups or 340 grams) plump, sticky dried mission figs, stems trimmed",
@@ -175,6 +192,7 @@
           }
         ],
         "note": "about 2 1/2 cups or 340 grams, stems trimmed",
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -197,6 +215,7 @@
           }
         ],
         "note": "any variety",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -211,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     }

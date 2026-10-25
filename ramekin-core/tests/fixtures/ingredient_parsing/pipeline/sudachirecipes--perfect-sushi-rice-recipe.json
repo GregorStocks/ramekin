@@ -3,17 +3,22 @@
   "recipe_slug": "perfect-sushi-rice-recipe",
   "ingredients": [
     {
-      "raw": "300 g uncooked Japanese rice (I used koshihikari)",
+      "raw": "Rice:",
+      "is_section_header": true
+    },
+    {
+      "raw": "300 g uncooked Japanese rice I used koshihikari",
       "expected": {
-        "item": "uncooked Japanese rice",
+        "item": "uncooked Japanese rice I used koshihikari",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": "I used koshihikari",
-        "category": "Pasta & Rice"
+        "note": null,
+        "section": "Rice",
+        "category": "Other"
       }
     },
     {
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Beverages"
       }
     },
     {
-      "raw": "5 g dried kelp (kombu) (optional)",
+      "raw": "5 g dried kelp (kombu) optional",
       "expected": {
         "item": "dried kelp",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "kombu, optional",
+        "section": "Rice",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tbsp sake (optional)",
+      "raw": "1 tbsp sake optional",
       "expected": {
         "item": "sake",
         "measurements": [
@@ -55,8 +62,13 @@
           }
         ],
         "note": "optional",
+        "section": "Rice",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Seasoning:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp rice vinegar",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "2021-01-bread-slice-sugar-cook",
   "ingredients": [
     {
-      "raw": "1 cup unsalted butter (softened)",
+      "raw": "Sugar Cookies:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened",
+        "section": "Sugar Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,20 +107,26 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "egg wash (1 egg beaten with 1 tablespoon water)",
+      "raw": "egg wash 1 egg beaten with 1 tablespoon water",
       "expected": {
-        "item": "egg wash",
+        "item": "egg wash 1 egg",
         "measurements": [],
-        "note": "1 egg beaten with 1 tablespoon water",
-        "category": "Dairy & Eggs"
+        "note": "beaten with 1 tablespoon water",
+        "section": "Sugar Cookies",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (softened)",
+      "raw": "Buttercream Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -120,11 +136,12 @@
           }
         ],
         "note": "softened",
+        "section": "Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 cups confectioners&amp;#039; sugar",
+      "raw": "3 cups confectioners' sugar",
       "expected": {
         "item": "confectioners' sugar",
         "measurements": [
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Buttercream Frosting",
         "category": "Baking"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Buttercream Frosting",
         "category": "Baking"
       }
     },
@@ -157,6 +176,7 @@
         "item": "moss green food color",
         "measurements": [],
         "note": null,
+        "section": "Buttercream Frosting",
         "category": "Other"
       }
     },
@@ -166,8 +186,13 @@
         "item": "yellow food color",
         "measurements": [],
         "note": null,
+        "section": "Buttercream Frosting",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Decors:",
+      "is_section_header": true
     },
     {
       "raw": "coarse crystal sugar",
@@ -175,6 +200,7 @@
         "item": "coarse crystal sugar",
         "measurements": [],
         "note": null,
+        "section": "Decors",
         "category": "Baking"
       }
     },
@@ -184,11 +210,12 @@
         "item": "lemon starburst candies",
         "measurements": [],
         "note": null,
+        "section": "Decors",
         "category": "Other"
       }
     },
     {
-      "raw": "3 oz. white chocolate (melted)",
+      "raw": "3 oz. white chocolate melted",
       "expected": {
         "item": "white chocolate",
         "measurements": [
@@ -198,6 +225,7 @@
           }
         ],
         "note": "melted",
+        "section": "Decors",
         "category": "Baking"
       }
     },
@@ -207,6 +235,7 @@
         "item": "yellow sixlets",
         "measurements": [],
         "note": null,
+        "section": "Decors",
         "category": "Other"
       }
     },
@@ -216,6 +245,7 @@
         "item": "rainbow nonpareils",
         "measurements": [],
         "note": null,
+        "section": "Decors",
         "category": "Baking"
       }
     },
@@ -225,6 +255,7 @@
         "item": "ground cinnamon",
         "measurements": [],
         "note": null,
+        "section": "Decors",
         "category": "Spices & Seasonings"
       }
     }

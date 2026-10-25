@@ -31,6 +31,10 @@
       }
     },
     {
+      "raw": "For the dipping sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 tbsp soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -41,6 +45,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +60,7 @@
           }
         ],
         "note": "grated",
+        "section": "For the Dipping Sauce",
         "category": "Other"
       }
     },
@@ -69,6 +75,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Other"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Dipping Sauce",
         "category": "Produce"
       }
     }

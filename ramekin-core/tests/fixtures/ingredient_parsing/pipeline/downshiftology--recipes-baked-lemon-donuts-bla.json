@@ -3,7 +3,11 @@
   "recipe_slug": "recipes-baked-lemon-donuts-bla",
   "ingredients": [
     {
-      "raw": "1  egg white (room temperature)",
+      "raw": "Lemon Donuts:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 egg white, room temperature",
       "expected": {
         "item": "egg white",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Lemon Donuts",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Baking"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  lemon (juiced and zested)",
+      "raw": "1 lemon, juiced and zested",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  lemon (juiced and zested)",
+      "raw": "1 lemon, juiced and zested",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -139,9 +152,14 @@
           }
         ],
         "note": null,
+        "section": "Lemon Donuts",
         "category": "Produce"
       },
       "expanded": true
+    },
+    {
+      "raw": "Blackberry Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups blackberries",
@@ -154,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Glaze",
         "category": "Produce"
       }
     },
@@ -168,21 +187,23 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup coconut butter (warmed, stirred and pourable)",
+      "raw": "1/4 cup coconut butter, warmed, stirred and pourable",
       "expected": {
-        "item": "coconut butter",
+        "item": "coconut butter, warmed, stirred and pourable",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "warmed, stirred and pourable",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "section": "Blackberry Glaze",
+        "category": "Other"
       }
     },
     {
@@ -196,25 +217,27 @@
           }
         ],
         "note": null,
+        "section": "Blackberry Glaze",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 tbsp water (to thin to desired consistency)",
+      "raw": "2 tbsp water, to thin to desired consistency",
       "expected": {
-        "item": "water",
+        "item": "water, to thin to desired consistency",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "to thin to desired consistency",
+        "note": null,
+        "section": "Blackberry Glaze",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1  lemon (zested for topping)",
+      "raw": "1 lemon, zested for topping",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -224,6 +247,7 @@
           }
         ],
         "note": "for topping",
+        "section": "Blackberry Glaze",
         "category": "Produce"
       }
     }

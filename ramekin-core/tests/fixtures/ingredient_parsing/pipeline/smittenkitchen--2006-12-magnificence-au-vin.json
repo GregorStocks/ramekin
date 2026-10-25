@@ -422,6 +422,10 @@
       }
     },
     {
+      "raw": "For 18 to 24 peeled white onions about 1 inch in diameter:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 tablespoons butter",
       "expected": {
         "item": "butter",
@@ -432,6 +436,7 @@
           }
         ],
         "note": null,
+        "section": "For 18 to 24 Peeled White Onions About 1 Inch in Diameter",
         "category": "Dairy & Eggs"
       }
     },
@@ -446,6 +451,7 @@
           }
         ],
         "note": null,
+        "section": "For 18 to 24 Peeled White Onions About 1 Inch in Diameter",
         "category": "Oils & Vinegars"
       }
     },
@@ -460,6 +466,7 @@
           }
         ],
         "note": null,
+        "section": "For 18 to 24 Peeled White Onions About 1 Inch in Diameter",
         "category": "Canned Goods"
       }
     },
@@ -469,6 +476,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For 18 to 24 Peeled White Onions About 1 Inch in Diameter",
         "category": "Spices & Seasonings"
       }
     },
@@ -478,8 +486,13 @@
         "item": "A medium herb bouquet: 3 parsley springs, 1/2 bay leaf, and 1/4 teaspoon thyme tied in cheesecloth",
         "measurements": [],
         "note": null,
+        "section": "For 18 to 24 Peeled White Onions About 1 Inch in Diameter",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Champignons Sautés Au Buerre:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons butter",
@@ -492,6 +505,7 @@
           }
         ],
         "note": null,
+        "section": "Champignons Sautés Au Buerre",
         "category": "Dairy & Eggs"
       }
     },
@@ -506,6 +520,7 @@
           }
         ],
         "note": null,
+        "section": "Champignons Sautés Au Buerre",
         "category": "Oils & Vinegars"
       }
     },
@@ -520,6 +535,7 @@
           }
         ],
         "note": "sliced or quartered if large",
+        "section": "Champignons Sautés Au Buerre",
         "category": "Produce"
       }
     },
@@ -534,6 +550,7 @@
           }
         ],
         "note": "optional",
+        "section": "Champignons Sautés Au Buerre",
         "category": "Produce"
       }
     },
@@ -543,6 +560,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Champignons Sautés Au Buerre",
         "category": "Spices & Seasonings"
       }
     }

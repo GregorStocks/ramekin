@@ -3,6 +3,10 @@
   "recipe_slug": "2018-05-white-rose-tea-and-coc",
   "ingredients": [
     {
+      "raw": "Panna cotta:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups 300ml boiling water",
       "expected": {
         "item": "boiling water",
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Beverages"
       }
     },
     {
-      "raw": "5  teabags Numi White Rose Tea",
+      "raw": "5 teabags Numi White Rose Tea",
       "expected": {
         "item": "teabags Numi White Rose Tea",
         "measurements": [
@@ -31,20 +36,22 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Other"
       }
     },
     {
-      "raw": "1  envelope (.25 ounce unflavored powdered gelatin)",
+      "raw": "1 envelope .25 ounce unflavored powdered gelatin",
       "expected": {
-        "item": "unflavored powdered gelatin",
+        "item": ".25 ounce unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
           }
         ],
-        "note": ".25 ounce unflavored powdered gelatin",
+        "note": null,
+        "section": "Panna Cotta",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Beverages"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Canned Goods"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Baking"
       }
     },
@@ -109,8 +119,13 @@
           }
         ],
         "note": null,
+        "section": "Panna Cotta",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Grenadine layer:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon cold water",
@@ -123,20 +138,22 @@
           }
         ],
         "note": null,
+        "section": "Grenadine Layer",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2  envelope (about 1 1/2 teaspoons unflavored powdered gelatin)",
+      "raw": "1/2 envelope about 1 1/2 teaspoons unflavored powdered gelatin",
       "expected": {
-        "item": "unflavored powdered gelatin",
+        "item": "about 1 1/2 teaspoons unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "envelope"
           }
         ],
-        "note": "about 1 1/2 teaspoons unflavored powdered gelatin",
+        "note": null,
+        "section": "Grenadine Layer",
         "category": "Baking"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Grenadine Layer",
         "category": "Beverages"
       }
     },
@@ -169,21 +187,27 @@
           }
         ],
         "note": null,
+        "section": "Grenadine Layer",
         "category": "Beverages"
       }
     },
     {
-      "raw": "15 ounce can full fat coconut milk (unshaken and well chilled)",
+      "raw": "Coconut whipped cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "15 ounce can full fat coconut milk unshaken and well chilled",
       "expected": {
-        "item": "can full fat coconut milk",
+        "item": "can full fat coconut milk unshaken and well chilled",
         "measurements": [
           {
             "amount": "15",
             "unit": "oz"
           }
         ],
-        "note": "unshaken and well chilled",
-        "category": "Canned Goods"
+        "note": null,
+        "section": "Coconut Whipped Cream",
+        "category": "Other"
       }
     },
     {
@@ -197,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Baking"
       }
     },
@@ -211,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Baking"
       }
     },

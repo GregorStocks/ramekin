@@ -3,7 +3,11 @@
   "recipe_slug": "zebra-cake-recipe",
   "ingredients": [
     {
-      "raw": "300 g chocolate graham crackers ((or European chocolate digestive biscuits))",
+      "raw": "For the base:",
+      "is_section_header": true
+    },
+    {
+      "raw": "300 g chocolate graham crackers (or European chocolate digestive biscuits)",
       "expected": {
         "item": "chocolate graham crackers",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "or European chocolate digestive biscuits",
+        "section": "For the Base",
         "category": "Other"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "10 g gelatin sheets",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -55,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
     {
-      "raw": "5  egg whites from medium eggs",
+      "raw": "5 egg whites from medium eggs",
       "expected": {
         "item": "egg whites from medium eggs",
         "measurements": [
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "pumpkin-spice-muffin-recipe",
   "ingredients": [
     {
+      "raw": "For The Pumpkin Spice Muffins:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup pumpkin puree",
       "expected": {
         "item": "pumpkin puree",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Canned Goods"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup vegetable oil (plus more if greasing muffin tin)",
+      "raw": "⅓ cup vegetable oil plus more if greasing muffin tin",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "plus more if greasing muffin tin",
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp ground cinnamon",
+      "raw": "1 teaspoon ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 tsp ground nutmeg",
+      "raw": "½ teaspoon ground nutmeg",
       "expected": {
         "item": "ground nutmeg",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp ground cloves",
+      "raw": "¼ teaspoon ground cloves",
       "expected": {
         "item": "ground cloves",
         "measurements": [
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp allspice",
+      "raw": "¼ teaspoon allspice",
       "expected": {
         "item": "allspice",
         "measurements": [
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp kosher salt",
+      "raw": "¼ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 tsp ground ginger",
+      "raw": "⅛ teaspoon ground ginger",
       "expected": {
         "item": "ground ginger",
         "measurements": [
@@ -139,11 +152,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/2 cups all purpose flour",
+      "raw": "1 ½ cups all purpose flour",
       "expected": {
         "item": "all purpose flour",
         "measurements": [
@@ -153,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp baking powder",
+      "raw": "1 teaspoon baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -167,11 +182,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp baking soda",
+      "raw": "1 teaspoon baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -181,11 +197,16 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Spice Muffins",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 tbsp unsalted butter (softened)",
+      "raw": "For The Cream Cheese Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 tablespoon unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -195,29 +216,27 @@
           }
         ],
         "note": "softened",
+        "section": "For the Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4 oz cream cheese (1/2 package, softened)",
+      "raw": "4 oz cream cheese ½ package, softened",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese 1/2 package",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "0.5",
-            "unit": "package"
           }
         ],
-        "note": "1/2 package, softened",
-        "category": "Cheese"
+        "note": "softened",
+        "section": "For the Cream Cheese Frosting",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 tsp pure vanilla extract",
+      "raw": "½ teaspoon pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -227,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -241,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Frosting",
         "category": "Baking"
       }
     }

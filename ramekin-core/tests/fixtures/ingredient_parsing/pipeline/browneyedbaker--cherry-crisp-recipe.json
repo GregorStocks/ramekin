@@ -3,7 +3,11 @@
   "recipe_slug": "cherry-crisp-recipe",
   "ingredients": [
     {
-      "raw": "6 tablespoons all-purpose flour",
+      "raw": "For the Crisp Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 tablespoons   all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -13,67 +17,88 @@
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup light brown sugar",
+      "raw": "¼ cup  (55 g) light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup granulated sugar",
+      "raw": "¼ cup  (50 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ teaspoon ground cinnamon",
+      "raw": "¼ teaspoon  (0.25 teaspoon) ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "¼ teaspoon salt",
-      "expected": {
-        "item": "salt",
-        "measurements": [
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Crisp Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5 tablespoons cold unsalted butter (cut into ½-inch pieces)",
+      "raw": "¼ teaspoon  (0.25 teaspoon) salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For the Crisp Topping",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "5 tablespoons   cold unsalted butter, cut into ½-inch pieces",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
@@ -83,39 +108,54 @@
           }
         ],
         "note": "cut into 1/2-inch pieces",
+        "section": "For the Crisp Topping",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¾ cup pecans (finely chopped)",
+      "raw": "¾ cup  (74.25 g) pecans, finely chopped",
       "expected": {
         "item": "pecans",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "74.25",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
+        "section": "For the Crisp Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "6 cups fresh cherries (pitted)",
+      "raw": "For the Cherries:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 cups  (828 g) fresh cherries, pitted",
       "expected": {
         "item": "fresh cherries",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
+          },
+          {
+            "amount": "828",
+            "unit": "g"
           }
         ],
         "note": "pitted",
+        "section": "For the Cherries",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons granulated sugar",
+      "raw": "2 tablespoons   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -125,11 +165,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cherries",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon cornstarch",
+      "raw": "1 tablespoon   cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -139,11 +180,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cherries",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon Amaretto",
+      "raw": "1 tablespoon   Amaretto",
       "expected": {
         "item": "Amaretto",
         "measurements": [
@@ -153,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cherries",
         "category": "Other"
       }
     }

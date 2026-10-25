@@ -3,6 +3,10 @@
   "recipe_slug": "takoyaki-octopus-balls-recipe",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tbsp Worcestershire sauce",
       "expected": {
         "item": "Worcestershire sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -83,11 +92,16 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "500 ml dashi stock (cooled)",
+      "raw": "Batter:",
+      "is_section_header": true
+    },
+    {
+      "raw": "500 ml dashi stock cooled",
       "expected": {
         "item": "dashi stock",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": "cooled",
+        "section": "Batter",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,43 +141,51 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp Japanese light soy sauce (usukuchi shoyu) (or regular Japanese soy sauce)",
+      "raw": "1 tsp Japanese light soy sauce (usukuchi shoyu) or regular Japanese soy sauce",
       "expected": {
-        "item": "Japanese light soy sauce",
+        "item": "Japanese light soy sauce or regular Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "usukuchi shoyu, or regular Japanese soy sauce",
+        "note": "usukuchi shoyu",
+        "section": "Batter",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "toasted sesame oil (for cooking)",
+      "raw": "toasted sesame oil for cooking",
       "expected": {
-        "item": "toasted sesame oil",
+        "item": "toasted sesame oil for cooking",
         "measurements": [],
-        "note": "for cooking",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "section": "Batter",
+        "category": "Other"
       }
     },
     {
-      "raw": "120 g boiled octopus (or steamed)",
+      "raw": "Fillings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "120 g boiled octopus or steamed",
       "expected": {
-        "item": "boiled octopus",
+        "item": "boiled octopus or steamed",
         "measurements": [
           {
             "amount": "120",
             "unit": "g"
           }
         ],
-        "note": "or steamed",
+        "note": null,
+        "section": "Fillings",
         "category": "Meat & Seafood"
       }
     },
@@ -176,6 +200,7 @@
           }
         ],
         "note": "benishoga",
+        "section": "Fillings",
         "category": "Condiments & Sauces"
       }
     },
@@ -190,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Fillings",
         "category": "Produce"
       }
     },
@@ -204,42 +230,51 @@
           }
         ],
         "note": "tenkasu",
+        "section": "Fillings",
         "category": "Other"
       }
     },
     {
-      "raw": "Japanese mayonnaise (such as Kewpie)",
+      "raw": "Toppings (add according to preference):",
+      "is_section_header": true
+    },
+    {
+      "raw": "Japanese mayonnaise such as Kewpie",
       "expected": {
         "item": "Japanese mayonnaise",
         "measurements": [],
         "note": "such as Kewpie",
+        "section": "Toppings (Add According to Preference)",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "aonori (dried green seaweed powder) (for garnish)",
+      "raw": "aonori (dried green seaweed powder) for garnish",
       "expected": {
         "item": "aonori",
         "measurements": [],
         "note": "dried green seaweed powder, for garnish",
+        "section": "Toppings (Add According to Preference)",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "bonito flakes (katsuobushi) (for garnish)",
+      "raw": "bonito flakes (katsuobushi) for garnish",
       "expected": {
         "item": "bonito flakes",
         "measurements": [],
         "note": "katsuobushi, for garnish",
+        "section": "Toppings (Add According to Preference)",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "finely chopped green onions (for garnish)",
+      "raw": "finely chopped green onions for garnish",
       "expected": {
         "item": "finely chopped green onions",
         "measurements": [],
         "note": "for garnish",
+        "section": "Toppings (Add According to Preference)",
         "category": "Produce"
       }
     }

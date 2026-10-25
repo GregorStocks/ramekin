@@ -30,6 +30,10 @@
       }
     },
     {
+      "raw": "Slow Cooker Pulled Pork:",
+      "is_section_header": true
+    },
+    {
       "raw": "4-6 lb bone-in pork shoulder roast",
       "expected": {
         "item": "bone-in pork shoulder roast",
@@ -40,11 +44,12 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Other"
       }
     },
     {
-      "raw": "2  medium onions (chopped)",
+      "raw": "2 medium onions chopped",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -54,11 +59,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Slow Cooker Pulled Pork",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 cloves garlic (crushed)",
+      "raw": "4 cloves garlic crushed",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -68,6 +74,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Slow Cooker Pulled Pork",
         "category": "Produce"
       }
     },
@@ -82,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Oils & Vinegars"
       }
     },
@@ -96,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Baking"
       }
     },
@@ -110,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,11 +134,12 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "18 oz barbecue sauce (divided)",
+      "raw": "18 oz barbecue sauce divided",
       "expected": {
         "item": "barbecue sauce",
         "measurements": [
@@ -138,6 +149,7 @@
           }
         ],
         "note": "divided",
+        "section": "Slow Cooker Pulled Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -152,11 +164,16 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Pulled Pork",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "4  onions (sliced)",
+      "raw": "Caramelized Onions:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 onions sliced",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -166,6 +183,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Caramelized Onions",
         "category": "Produce"
       }
     },
@@ -180,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Onions",
         "category": "Oils & Vinegars"
       }
     },
@@ -194,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Caramelized Onions",
         "category": "Spices & Seasonings"
       }
     }

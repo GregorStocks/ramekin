@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-meatloaf-reloaded",
   "ingredients": [
     {
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup ketchup",
       "expected": {
         "item": "ketchup",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Canned Goods"
       }
     },
@@ -41,13 +47,14 @@
           }
         ],
         "note": "seeded and finely chopped",
+        "section": "Glaze",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon",
+      "raw": "1 tablespoon  adobe sauce from the chipotles",
       "expected": {
-        "item": "1 tablespoon",
+        "item": "adobe sauce from the chipotles",
         "measurements": [
           {
             "amount": "1",
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Other"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Meatloaf:",
+      "is_section_header": true
     },
     {
       "raw": "3 cups garlic-flavored crutons",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Other"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "optional",
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": "seeded and cut into large pieces",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": "peeled and broken into a few large pieces",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -227,6 +250,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": "trimmed of excess gristle and silver skin, cut into 1 1/2-inch cubes and chilled",
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },
@@ -255,6 +280,7 @@
           }
         ],
         "note": "cut into 1 1/2-inch cubes and chilled",
+        "section": "Meatloaf",
         "category": "Other"
       }
     },
@@ -269,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -283,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     }

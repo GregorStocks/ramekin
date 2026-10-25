@@ -3,7 +3,11 @@
   "recipe_slug": "eclair-paris-brest-recipe-1186",
   "ingredients": [
     {
-      "raw": "1 recipe Choux Pastry (made with milk and water and the optional sugar), transferred to a pastry bag fitted with a 3/4-inch star tip",
+      "raw": "For the Choux Pastry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 recipe Choux Pastry (made with milk and water and the optional sugar), transferred to a pastry bag fitted with a 3/4-inch star tip",
       "expected": {
         "item": "recipe Choux Pastry, transferred to a pastry bag fitted with a 3/4-inch star tip",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "made with milk and water and the optional sugar",
+        "section": "For the Choux Pastry",
         "category": "Other"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Choux Pastry",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon (15ml) water",
+      "raw": "1 tablespoon (15 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -45,11 +51,16 @@
           }
         ],
         "note": null,
+        "section": "For the Choux Pastry",
         "category": "Beverages"
       }
     },
     {
-      "raw": "226g (8 ounces) unsalted butter, softened to about 68°F (20°C)",
+      "raw": "For the Crème Mousseline:",
+      "is_section_header": true
+    },
+    {
+      "raw": "226 g (8 ounces) unsalted butter, softened to about 68°F (20°C)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -63,11 +74,12 @@
           }
         ],
         "note": "20°C, softened to about 68°F",
+        "section": "For the Crème Mousseline",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 recipe Pastry Cream, at room temperature, about 68°F (20°C)",
+      "raw": "1 recipe Pastry Cream, at room temperature, about 68°F (20°C)",
       "expected": {
         "item": "recipe Pastry Cream",
         "measurements": [
@@ -77,13 +89,18 @@
           }
         ],
         "note": "20°C, at room temperature, about 68°F",
+        "section": "For the Crème Mousseline",
         "category": "Other"
       }
     },
     {
-      "raw": "113g chopped semi-sweet chocolate, 56% cacao (4 ounces; 3/4 cup)",
+      "raw": "For the Chocolate Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "113 g chopped semi sweet chocolate, 56% cacao (4 ounces; 3/4 cup)",
       "expected": {
-        "item": "chopped semi-sweet chocolate, 56% cacao",
+        "item": "chopped semi sweet chocolate, 56% cacao",
         "measurements": [
           {
             "amount": "113",
@@ -99,11 +116,12 @@
           }
         ],
         "note": null,
-        "category": "Baking"
+        "section": "For the Chocolate Glaze",
+        "category": "Other"
       }
     },
     {
-      "raw": "60g unsalted butter (2 ounces; 1/4 cup), cut into 1/2-inch cubes",
+      "raw": "60 g unsalted butter (2 ounces; 1/4 cup), cut into 1/2-inch cubes",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -121,11 +139,12 @@
           }
         ],
         "note": "cut into 1/2-inch cubes",
+        "section": "For the Chocolate Glaze",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon (15g) light corn syrup",
+      "raw": "1 tablespoon (15 ml) light corn syrup",
       "expected": {
         "item": "light corn syrup",
         "measurements": [
@@ -135,10 +154,11 @@
           },
           {
             "amount": "15",
-            "unit": "g"
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Chocolate Glaze",
         "category": "Baking"
       }
     },
@@ -153,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Glaze",
         "category": "Spices & Seasonings"
       }
     }

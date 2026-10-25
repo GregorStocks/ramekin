@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-orange-fennel-and-avoc",
   "ingredients": [
     {
-      "raw": "4  cara cara oranges",
+      "raw": "4 cara cara oranges",
       "expected": {
         "item": "cara cara oranges",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  navel oranges",
+      "raw": "4 navel oranges",
       "expected": {
         "item": "navel oranges",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2  avocado (sliced)",
+      "raw": "2 avocado, sliced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2  fennel bulb (thinly sliced)",
+      "raw": "1/2 fennel bulb, thinly sliced",
       "expected": {
         "item": "fennel bulb",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2  red onion (thinly sliced)",
+      "raw": "1/2 red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "White Wine Vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,20 +126,22 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp honey (or maple)",
+      "raw": "1 tsp honey, or maple",
       "expected": {
-        "item": "honey",
+        "item": "honey, or maple",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or maple",
+        "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Baking"
       }
     },
@@ -148,15 +156,17 @@
           }
         ],
         "note": null,
+        "section": "White Wine Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "White Wine Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

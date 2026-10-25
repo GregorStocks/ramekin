@@ -3,35 +3,49 @@
   "recipe_slug": "tunacado-sandwich-recipe",
   "ingredients": [
     {
-      "raw": "10 ounces tuna (drained (preferably a good chunky tuna in olive oil),  (usually 2 cans that are 5 oz each))",
+      "raw": "For the Tuna Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "10 ounces  (284 g) tuna drained (preferably a good chunky tuna in olive oil),  (usually 2 cans that are 5 oz each)",
       "expected": {
         "item": "tuna",
         "measurements": [
           {
             "amount": "10",
             "unit": "oz"
+          },
+          {
+            "amount": "284",
+            "unit": "g"
           }
         ],
-        "note": "drained (preferably a good chunky tuna in olive oil),  (usually 2 cans that are 5 oz each)",
+        "note": "preferably a good chunky tuna in olive oil, usually 2 cans that are 5 oz each, drained",
+        "section": "For the Tuna Salad",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 Tablespoon olive oil ( or butter)",
+      "raw": "1 Tablespoon  (15 ml) olive oil  or butter",
       "expected": {
-        "item": "olive oil",
+        "item": "olive oil or butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
-        "note": "or butter",
+        "note": null,
+        "section": "For the Tuna Salad",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 medium onion (, or 2 shallots chopped)",
+      "raw": "1 medium   onion , or 2 shallots chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -41,39 +55,50 @@
           }
         ],
         "note": "or 2 shallots chopped",
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "1/2 teaspoon  (2.5 ml) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 Tablespoons mayonnaise (, or to personal taste)",
+      "raw": "3 Tablespoons  (45 ml) mayonnaise , or to personal taste",
       "expected": {
-        "item": "mayonnaise",
+        "item": "mayonnaise, or to personal taste",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
           }
         ],
-        "note": "or to personal taste",
+        "note": null,
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 stalk celery (, diced)",
+      "raw": "1 stalk   celery , diced",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -83,71 +108,93 @@
           }
         ],
         "note": "diced",
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 Tablespoons diced pickles or relish ((sweet or dill depending on your preference))",
+      "raw": "2 Tablespoons  (30 ml) diced pickles or relish (sweet or dill depending on your preference)",
       "expected": {
         "item": "diced pickles or relish",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": "sweet or dill depending on your preference",
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 Tablespoons minced fresh dill (, or 1 teaspoon dried dill)",
+      "raw": "2 Tablespoons  (30 ml) minced fresh dill , or 1 teaspoon dried dill",
       "expected": {
         "item": "minced fresh dill",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": "or 1 teaspoon dried dill",
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 Tablespoons minced parsley",
+      "raw": "2 Tablespoons  (30 ml) minced parsley",
       "expected": {
         "item": "minced parsley",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 Tablespoon mustard (, or more to taste)",
+      "raw": "1 Tablespoon  (15 ml) mustard , or more to taste",
       "expected": {
         "item": "mustard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": "or more to taste",
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "fresh cracked black pepper (, to taste)",
+      "raw": "fresh cracked black pepper , to taste",
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Tuna Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,53 +204,69 @@
         "item": "zest from 1 medium lemon",
         "measurements": [],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "2 teaspoons fresh lemon juice",
+      "raw": "2 teaspoons  (10 ml) fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon soy sauce",
+      "raw": "1 teaspoon  (5 ml) soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/2 teaspoon hot sauce ( or Sriracha sauce - optional)",
+      "raw": "1/2 teaspoon  (2.5 ml) hot sauce  or Sriracha sauce – optional",
       "expected": {
-        "item": "hot sauce",
+        "item": "hot sauce or Sriracha sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
-        "note": "or Sriracha sauce - optional",
+        "note": "optional",
+        "section": "For the Tuna Salad",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  jalapeno (, sliced - optional)",
+      "raw": "1   jalapeno , sliced – optional",
       "expected": {
         "item": "jalapeno",
         "measurements": [
@@ -213,53 +276,69 @@
           }
         ],
         "note": "sliced - optional",
+        "section": "For the Tuna Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "8 slices sourdough bread (or bread of choice)",
+      "raw": "For the Tunacado Sandwich:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 slices   sourdough bread or bread of choice",
       "expected": {
-        "item": "sourdough bread",
+        "item": "sourdough bread or bread of choice",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": "or bread of choice",
+        "note": null,
+        "section": "For the Tunacado Sandwich",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "4 Tablespoons olive oil ( or butter)",
+      "raw": "4 Tablespoons  (60 ml) olive oil  or butter",
       "expected": {
-        "item": "olive oil",
+        "item": "olive oil or butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
-        "note": "or butter",
+        "note": null,
+        "section": "For the Tunacado Sandwich",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 cup basil pesto",
+      "raw": "1/2 cup  (120 ml) basil pesto",
       "expected": {
         "item": "basil pesto",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Tunacado Sandwich",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 large avocado (, sliced)",
+      "raw": "1 large   avocado , sliced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -269,11 +348,12 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Tunacado Sandwich",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 large tomato (, sliced )",
+      "raw": "1 large   tomato , sliced",
       "expected": {
         "item": "tomato",
         "measurements": [
@@ -283,11 +363,12 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Tunacado Sandwich",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 slices melting cheese like cheddar  ((optional))",
+      "raw": "4 slices   melting cheese like cheddar  (optional)",
       "expected": {
         "item": "melting cheese like cheddar",
         "measurements": [
@@ -297,6 +378,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Tunacado Sandwich",
         "category": "Other"
       }
     }

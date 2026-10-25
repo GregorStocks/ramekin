@@ -3,16 +3,29 @@
   "recipe_slug": "birds-milk-jello-recipe",
   "ingredients": [
     {
-      "raw": "1  packet unflavored gelatin (1/4 oz (roughly 7 grams or 1 1/2 tsp per packet)",
+      "raw": "(note: this is 1/2 of the original ptichye moloko recipe):",
       "expected": {
-        "item": "unflavored gelatin",
+        "item": ":",
+        "measurements": [],
+        "note": "note: this is 1/2 of the original ptichye moloko recipe",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 packet unflavored gelatin, 1/4 oz (roughly 7 grams or 1 1/2 tsp per packet",
+      "expected": {
+        "item": "unflavored gelatin, 1/4 oz",
         "measurements": [
           {
             "amount": "1",
             "unit": "packet"
+          },
+          {
+            "amount": "7",
+            "unit": "g"
           }
         ],
-        "note": "1/4 oz (roughly 7 grams or 1 1/2 tsp per packet",
+        "note": "roughly 7 grams or 1 1/2 tsp per packet",
         "category": "Baking"
       }
     },
@@ -59,16 +72,16 @@
       }
     },
     {
-      "raw": "8 oz tub cool whip (refrigerated (should be fully thawed, not frozen))",
+      "raw": "8 oz tub cool whip, refrigerated (should be fully thawed, not frozen)",
       "expected": {
-        "item": "tub cool whip",
+        "item": "tub cool whip, refrigerated",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "refrigerated (should be fully thawed, not frozen)",
+        "note": "should be fully thawed, not frozen",
         "category": "Frozen"
       }
     },

@@ -3,6 +3,10 @@
   "recipe_slug": "salmon-wellington-recipe-11870",
   "ingredients": [
     {
+      "raw": "For the Tangy Dill Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (120 ml) Crème fraîche or sour cream",
       "expected": {
         "item": "Crème fraîche or sour cream",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tangy Dill Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tangy Dill Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tangy Dill Sauce",
         "category": "Produce"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tangy Dill Sauce",
         "category": "Produce"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tangy Dill Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tangy Dill Sauce",
         "category": "Produce"
       }
     },
@@ -108,8 +118,13 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Tangy Dill Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Duxelles:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound (453 g) cremini mushrooms, trimmed and quartered",
@@ -126,6 +141,7 @@
           }
         ],
         "note": "trimmed and quartered",
+        "section": "For the Duxelles",
         "category": "Produce"
       }
     },
@@ -140,6 +156,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Duxelles",
         "category": "Produce"
       }
     },
@@ -154,6 +171,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "For the Duxelles",
         "category": "Produce"
       }
     },
@@ -172,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Duxelles",
         "category": "Dairy & Eggs"
       }
     },
@@ -186,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Duxelles",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Duxelles",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,6 +239,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Duxelles",
         "category": "Beverages"
       }
     },
@@ -232,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "For the Duxelles",
         "category": "Produce"
       }
     },
@@ -246,8 +269,13 @@
           }
         ],
         "note": null,
+        "section": "For the Duxelles",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Salmon en Croûte:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons (30 ml) Dijon mustard",
@@ -264,6 +292,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salmon En Croûte",
         "category": "Condiments & Sauces"
       }
     },
@@ -278,6 +307,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salmon En Croûte",
         "category": "Produce"
       }
     },
@@ -292,6 +322,7 @@
           }
         ],
         "note": "2- to 2 1/2-pound, see notes, bones removed",
+        "section": "For the Salmon En Croûte",
         "category": "Meat & Seafood"
       }
     },
@@ -306,6 +337,7 @@
           }
         ],
         "note": "9 1/2- by 9-inch, thawed",
+        "section": "For the Salmon En Croûte",
         "category": "Frozen"
       }
     },
@@ -320,6 +352,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Salmon En Croûte",
         "category": "Dairy & Eggs"
       }
     }

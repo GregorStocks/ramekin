@@ -3,21 +3,26 @@
   "recipe_slug": "tender-beef-kebabs-shashlik-re",
   "ingredients": [
     {
-      "raw": "2 lbs good quality beef (I used top sirloin, cut into 1 1/2\" pieces)",
+      "raw": "Ingredients for Steak Kabobs:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 lbs good quality beef, I used top sirloin, cut into 1 1/2\" pieces",
       "expected": {
-        "item": "beef",
+        "item": "beef, I used top sirloin",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "I used top sirloin, cut into 1 1/2\" pieces, good quality",
+        "note": "cut into 1 1/2\" pieces, good quality",
+        "section": "Ingredients for Steak Kabobs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2  Bell peppers (any color, sliced into 1 1/2\" wide pieces)",
+      "raw": "2 Bell peppers, any color, sliced into 1 1/2\" wide pieces",
       "expected": {
         "item": "Bell peppers",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "any color, sliced into 1 1/2\" wide pieces",
+        "section": "Ingredients for Steak Kabobs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large Purple Onion (sliced into 1 1/2\" wide pieces)",
+      "raw": "1 large Purple Onion, sliced into 1 1/2\" wide pieces",
       "expected": {
         "item": "Purple Onion",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "sliced into 1 1/2\" wide pieces",
+        "section": "Ingredients for Steak Kabobs",
         "category": "Produce"
       }
     },
     {
-      "raw": "15  medium bamboo or wood skewers",
+      "raw": "15 medium bamboo or wood skewers",
       "expected": {
         "item": "bamboo or wood skewers",
         "measurements": [
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Kabobs",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Ingredients for Steak Marinade:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup mild olive oil",
@@ -69,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Marinade",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 cup fresh lemon juice (from 2 medium lemons)",
+      "raw": "1/2 cup fresh lemon juice, from 2 medium lemons",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -83,20 +96,22 @@
           }
         ],
         "note": "from 2 medium lemons",
+        "section": "Ingredients for Steak Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp salt (we love fine sea salt)",
+      "raw": "1 tsp salt, we love fine sea salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, we love fine sea salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "we love fine sea salt",
+        "note": null,
+        "section": "Ingredients for Steak Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  garlic cloves (pressed)",
+      "raw": "4 garlic cloves, pressed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": "pressed",
+        "section": "Ingredients for Steak Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 Tbsp fresh or frozen dill (chopped (or 1 Tbsp dry dill weed))",
+      "raw": "3 Tbsp fresh or frozen dill, chopped (or 1 Tbsp dry dill weed)",
       "expected": {
         "item": "fresh or frozen dill",
         "measurements": [
@@ -138,12 +155,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped (or 1 Tbsp dry dill weed)",
+        "note": "chopped; or 1 Tbsp dry dill weed",
+        "section": "Ingredients for Steak Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  dry bay leaves",
+      "raw": "2 dry bay leaves",
       "expected": {
         "item": "dry bay leaves",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Steak Marinade",
         "category": "Spices & Seasonings"
       }
     }

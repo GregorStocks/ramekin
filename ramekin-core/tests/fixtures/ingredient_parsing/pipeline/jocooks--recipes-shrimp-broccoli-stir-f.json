@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-shrimp-broccoli-stir-f",
   "ingredients": [
     {
+      "raw": "For the Stir-Fry:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound large shrimp (peeled and deveined)",
       "expected": {
         "item": "large shrimp",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "peeled and deveined",
+        "section": "For the Stir-Fry",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir-Fry",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Stir-Fry",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "grated",
+        "section": "For the Stir-Fry",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup soy sauce",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "low sodium or no sodium added",
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "or brown sugar",
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     }

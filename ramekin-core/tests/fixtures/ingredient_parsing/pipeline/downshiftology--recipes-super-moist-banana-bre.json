@@ -3,21 +3,21 @@
   "recipe_slug": "recipes-super-moist-banana-bre",
   "ingredients": [
     {
-      "raw": "2-3  bananas (ripe, approx 1 1/4 cups mashed)",
+      "raw": "2-3 bananas, ripe, approx 1 1/4 cups mashed",
       "expected": {
-        "item": "bananas",
+        "item": "bananas, ripe, approx 1 1/4 cups mashed",
         "measurements": [
           {
             "amount": "2-3",
             "unit": null
           }
         ],
-        "note": "ripe, approx 1 1/4 cups mashed",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "1  banana (fresh)",
+      "raw": "1 banana, fresh",
       "expected": {
         "item": "banana",
         "measurements": [
@@ -101,30 +101,30 @@
       }
     },
     {
-      "raw": "2  eggs (large)",
+      "raw": "2 eggs, large",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, large",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "large",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup butter (or coconut oil, melted)",
+      "raw": "1/4 cup butter, or coconut oil, melted",
       "expected": {
-        "item": "butter",
+        "item": "butter, or coconut oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or coconut oil, melted",
+        "note": "melted",
         "category": "Dairy & Eggs"
       }
     },

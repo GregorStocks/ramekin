@@ -3,6 +3,10 @@
   "recipe_slug": "beef-shish-kabob-recipe",
   "ingredients": [
     {
+      "raw": "For the Skewers:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 tsp garlic powder",
       "expected": {
         "item": "garlic powder",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skewers",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skewers",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skewers",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skewers",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skewers",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,20 +87,22 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "For the Skewers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Freshly ground black pepper (more for later)",
+      "raw": "Freshly ground black pepper more for later",
       "expected": {
-        "item": "Freshly ground black pepper",
+        "item": "Freshly ground black pepper more for later",
         "measurements": [],
-        "note": "more for later",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "For the Skewers",
+        "category": "Other"
       }
     },
     {
-      "raw": "3 lb Top sirloin steak or beef tenderloin fillet, ( cut into 1 1/2-inch cubes)",
+      "raw": "3 lb Top sirloin steak or beef tenderloin fillet,  cut into 1 1/2-inch cubes",
       "expected": {
         "item": "Top sirloin steak or beef tenderloin fillet",
         "measurements": [
@@ -101,11 +112,12 @@
           }
         ],
         "note": "cut into 1 1/2-inch cubes",
+        "section": "For the Skewers",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1  large red onion",
+      "raw": "1 large red onion",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -115,11 +127,12 @@
           }
         ],
         "note": null,
+        "section": "For the Skewers",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  green bell peppers",
+      "raw": "2 green bell peppers",
       "expected": {
         "item": "green bell peppers",
         "measurements": [
@@ -129,11 +142,12 @@
           }
         ],
         "note": null,
+        "section": "For the Skewers",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  red bell or orange bell peppers",
+      "raw": "2 red bell or orange bell peppers",
       "expected": {
         "item": "red bell or orange bell peppers",
         "measurements": [
@@ -143,11 +157,16 @@
           }
         ],
         "note": null,
+        "section": "For the Skewers",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large red onion, (thinly sliced)",
+      "raw": "For the marinade:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 large red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -157,11 +176,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  lemons, (juiced)",
+      "raw": "2 lemons, juiced",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -171,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -199,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Beverages"
       }
     }

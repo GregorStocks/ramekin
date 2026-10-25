@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "3/4 cup Challenge butter (softened)",
+      "raw": "3/4 cup Challenge butter softened",
       "expected": {
         "item": "Challenge butter",
         "measurements": [
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "1/2 cup brown sugar (dark or light)",
+      "raw": "1/2 cup brown sugar dark or light",
       "expected": {
-        "item": "brown sugar",
+        "item": "brown sugar dark or light",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "dark or light",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -143,17 +143,17 @@
       }
     },
     {
-      "raw": "1  egg (room temperature)",
+      "raw": "1 egg room temperature",
       "expected": {
-        "item": "egg",
+        "item": "egg room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -185,6 +185,10 @@
       }
     },
     {
+      "raw": "Coating:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -195,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "cabbage-carrot-and-cranberry-s",
   "ingredients": [
     {
-      "raw": "1  medium cabbage",
+      "raw": "Salad Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 medium cabbage",
       "expected": {
         "item": "cabbage",
         "measurements": [
@@ -13,25 +17,27 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  bell pepper (red, yellow, or orange, sliced into thin strips)",
+      "raw": "1 bell pepper, red, yellow, or orange, sliced into thin strips",
       "expected": {
-        "item": "bell pepper",
+        "item": "bell pepper, red, yellow, or orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "red, yellow, or orange, sliced into thin strips",
+        "note": "sliced into thin strips",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  large or 3 medium carrots",
+      "raw": "2 large or 3 medium carrots",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -45,22 +51,28 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/3 cup craisins (dried cranberries)",
+      "raw": "1/3 cup craisins, dried cranberries",
       "expected": {
-        "item": "craisins",
+        "item": "craisins, dried cranberries",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "dried cranberries",
+        "note": null,
+        "section": "Salad Ingredients",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups water",
@@ -73,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Other"
       }
     },
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
@@ -115,25 +130,27 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/3 cup sunflower (vegetable or extra light olive oil (I used the olive oil))",
+      "raw": "1/3 cup sunflower, vegetable or extra light olive oil (I used the olive oil)",
       "expected": {
-        "item": "sunflower",
+        "item": "sunflower, vegetable or extra light olive oil",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "vegetable or extra light olive oil (I used the olive oil)",
-        "category": "Nuts & Dried Fruit"
+        "note": "I used the olive oil",
+        "section": "Marinade Ingredients",
+        "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  large garlic cloves",
+      "raw": "2 large garlic cloves",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     }

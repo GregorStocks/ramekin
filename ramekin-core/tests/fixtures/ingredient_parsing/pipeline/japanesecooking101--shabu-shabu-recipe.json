@@ -13,7 +13,7 @@
           }
         ],
         "note": "dried sea kelp",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "3  white long onions",
+      "raw": "3 white long onions",
       "expected": {
         "item": "white long onions",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "6  Shiitake mushrooms",
+      "raw": "6 Shiitake mushrooms",
       "expected": {
         "item": "Shiitake mushrooms",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/2  bunch Kikuna or Shungiku (edible chrysanthemum leaves)",
+      "raw": "1/2 bunch Kikuna or Shungiku (edible chrysanthemum leaves)",
       "expected": {
         "item": "Kikuna or Shungiku",
         "measurements": [
@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "Shabu Shabu dipping sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 Tbsp ground sesame seeds",
       "expected": {
         "item": "ground sesame seeds",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Shabu Shabu Dipping Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Shabu Shabu Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Shabu Shabu Dipping Sauce",
         "category": "Baking"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Shabu Shabu Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Shabu Shabu Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Shabu Shabu Dipping Sauce",
         "category": "Beverages"
       }
     }

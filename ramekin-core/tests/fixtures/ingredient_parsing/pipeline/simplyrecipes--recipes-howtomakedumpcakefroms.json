@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-howtomakedumpcakefroms",
   "ingredients": [
     {
+      "raw": "For the fruit:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 pounds (1.36 kilograms) fresh or frozen fruit (like berries, sliced peaches, sliced apples, sliced plums, etc.)",
       "expected": {
         "item": "fresh or frozen fruit",
@@ -17,11 +21,12 @@
           }
         ],
         "note": "like berries, sliced peaches, sliced apples, sliced plums, etc.",
+        "section": "For the Fruit",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup (100 grams) sugar, plus more to taste",
+      "raw": "1/2 cup (100g) sugar, plus more to taste",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -35,6 +40,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Fruit",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit",
         "category": "Baking"
       }
     },
@@ -63,11 +70,16 @@
           }
         ],
         "note": null,
+        "section": "For the Fruit",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/4 cups (175 grams) all-purpose flour",
+      "raw": "For the cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 1/4 cups (175g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -81,11 +93,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (200 grams) sugar",
+      "raw": "1 cup (200g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -127,11 +142,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3/4 cup (170 grams) melted unsalted butter",
+      "raw": "3/4 cup (170g) melted unsalted butter",
       "expected": {
         "item": "melted unsalted butter",
         "measurements": [
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -154,6 +171,7 @@
         "item": "Vanilla ice cream",
         "measurements": [],
         "note": "to serve",
+        "section": "For the Cake",
         "category": "Frozen"
       }
     }

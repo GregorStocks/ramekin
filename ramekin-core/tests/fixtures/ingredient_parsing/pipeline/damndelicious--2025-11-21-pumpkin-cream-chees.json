@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "3/4 cup sugar",
+      "raw": "¾ cup sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/2 cup brown sugar",
+      "raw": "½ cup brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons pumpkin pie spice",
+      "raw": "1 ½ teaspoons pumpkin pie spice",
       "expected": {
         "item": "pumpkin pie spice",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon baking soda",
+      "raw": "½ teaspoon baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon kosher salt",
+      "raw": "¼ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/2 cup vegetable oil",
+      "raw": "½ cup vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "2 tablespoons rolled oats (optional)",
+      "raw": "2 tablespoons rolled oats, optional",
       "expected": {
         "item": "rolled oats",
         "measurements": [
@@ -171,7 +171,11 @@
       }
     },
     {
-      "raw": "1 (8-ounce) package cream cheese (at room temperature)",
+      "raw": "for the cream cheese filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (8-ounce) package cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -181,11 +185,12 @@
           }
         ],
         "note": "8-ounce, at room temperature",
+        "section": "For the Cream Cheese Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/3 cup confectioners&amp;#39; sugar",
+      "raw": "⅓ cup confectioners' sugar",
       "expected": {
         "item": "confectioners' sugar",
         "measurements": [
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -223,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,11 +245,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/8 teaspoon kosher salt",
+      "raw": "⅛ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -251,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Filling",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,13 +3,8 @@
   "recipe_slug": "2012-10-apple-mosaic-tart-with",
   "ingredients": [
     {
-      "raw": "Tart base",
-      "expected": {
-        "item": "Tart base",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Tart base:",
+      "is_section_header": true
     },
     {
       "raw": "14-ounce package puff pastry, defrosted in fridge overnight",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "defrosted in fridge overnight",
+        "section": "Tart Base",
         "category": "Frozen"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": "about 1 1/4 pounds",
+        "section": "Tart Base",
         "category": "Produce"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Tart Base",
         "category": "Baking"
       }
     },
@@ -72,17 +70,13 @@
           }
         ],
         "note": "cold, cut into small bits",
+        "section": "Tart Base",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Salted caramel glaze",
-      "expected": {
-        "item": "Salted caramel glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Salted caramel glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup granulated sugar",
@@ -95,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Glaze",
         "category": "Baking"
       }
     },
@@ -109,6 +104,7 @@
           }
         ],
         "note": "or salted, but then ease up on the sea salt",
+        "section": "Salted Caramel Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,6 +119,7 @@
           }
         ],
         "note": "or half as much table salt",
+        "section": "Salted Caramel Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Glaze",
         "category": "Dairy & Eggs"
       }
     }

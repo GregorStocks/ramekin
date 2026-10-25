@@ -3,49 +3,68 @@
   "recipe_slug": "2019-12-mirror-glaze-christmas",
   "ingredients": [
     {
-      "raw": "1/2 cup granulated sugar",
+      "raw": "Salted Caramel:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup  / 100 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Salted Caramel",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons light corn syrup",
+      "raw": "2 tablespoons  / 42 g light corn syrup",
       "expected": {
         "item": "light corn syrup",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Salted Caramel",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup heavy cream",
+      "raw": "¼ cup  / 60 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Salted Caramel",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/8 teaspoon sea salt or fleur de sel",
+      "raw": "⅛ teaspoon   sea salt or fleur de sel",
       "expected": {
         "item": "sea salt or fleur de sel",
         "measurements": [
@@ -55,25 +74,31 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons butter (cut into small pieces)",
+      "raw": "2 tablespoons  / 28 g butter, cut into small pieces",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": "cut into small pieces",
+        "section": "Salted Caramel",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "12 g caramelized white chocolate (like Valhrona dulcey, optional)",
+      "raw": "12 g   caramelized white chocolate, like Valhrona dulcey, optional",
       "expected": {
         "item": "caramelized white chocolate",
         "measurements": [
@@ -83,39 +108,54 @@
           }
         ],
         "note": "like Valhrona dulcey, optional",
+        "section": "Salted Caramel",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup heavy cream",
+      "raw": "Chocolate Crémeux:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ cup  / 60 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Chocolate Crémeux",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup whole milk",
+      "raw": "¼ cup  / 60 g whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Chocolate Crémeux",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  large egg yolk (at room temperature)",
+      "raw": "1   large egg yolk, at room temperature",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -125,11 +165,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Chocolate Crémeux",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "75 g semisweet chocolate (finely chopped (I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate))",
+      "raw": "75 g   semisweet chocolate, finely chopped (I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate)",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
@@ -138,12 +179,13 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped (I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate)",
+        "note": "I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate, finely chopped",
+        "section": "Chocolate Crémeux",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 sheet leaf gelatin or 1 teaspoon powdered gelatin",
+      "raw": "1 sheet   leaf gelatin or 1 teaspoon powdered gelatin",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -153,67 +195,92 @@
           }
         ],
         "note": "or 1 teaspoon powdered gelatin",
+        "section": "Chocolate Crémeux",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons finely ground pecans",
+      "raw": "Chocolate Pecan Crumb Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons  / 25 g finely ground pecans",
       "expected": {
         "item": "finely ground pecans",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Other"
       }
     },
     {
-      "raw": "2/3 cup all-purpose flour",
+      "raw": "⅔ cup  / 80 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup organic or demerera sugar",
+      "raw": "⅓ cup  / 67 g organic or demerera sugar",
       "expected": {
         "item": "organic or demerera sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "67",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons cocoa powder",
+      "raw": "2 tablespoons  / 14 g cocoa powder",
       "expected": {
         "item": "cocoa powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/8 teaspoon kosher salt",
+      "raw": "⅛ teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -223,25 +290,31 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5 tablespoons cold unsalted butter (cut into cubes)",
+      "raw": "5 tablespoons  / 70 g cold unsalted butter, cut into cubes",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "70",
+            "unit": "g"
           }
         ],
         "note": "cut into cubes",
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 to 2 teaspoons whole milk (as needed)",
+      "raw": "1 to 2 teaspoons   whole milk, as needed",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -251,11 +324,16 @@
           }
         ],
         "note": "as needed",
+        "section": "Chocolate Pecan Crumb Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 sheet leaf gelatin or 1 teaspoon powdered gelatin",
+      "raw": "Caramel Mousse:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 sheet   leaf gelatin or 1 teaspoon powdered gelatin",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -265,39 +343,50 @@
           }
         ],
         "note": "or 1 teaspoon powdered gelatin",
+        "section": "Caramel Mousse",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup caramel (store bought or measured out from the batch you made earlier)",
+      "raw": "¼ cup  / 60 g caramel, store bought or measured out from the batch you made earlier",
       "expected": {
-        "item": "caramel",
+        "item": "caramel, store bought or measured out from the batch you made earlier",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": "store bought or measured out from the batch you made earlier",
+        "note": null,
+        "section": "Caramel Mousse",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/4 cup whole milk",
+      "raw": "¼ cup  / 60 g whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Caramel Mousse",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  large egg yolk (at room temperature)",
+      "raw": "1   large egg yolk, at room temperature",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -307,11 +396,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Caramel Mousse",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "40 g caramelized white chocolate (like Valhrona dulcey or regular white chocolate) (finely chopped)",
+      "raw": "40 g   caramelized white chocolate (like Valhrona dulcey or regular white chocolate), finely chopped",
       "expected": {
         "item": "caramelized white chocolate",
         "measurements": [
@@ -321,25 +411,35 @@
           }
         ],
         "note": "like Valhrona dulcey or regular white chocolate, finely chopped",
+        "section": "Caramel Mousse",
         "category": "Baking"
       }
     },
     {
-      "raw": "2/3 cup heavy whipping cream (cold)",
+      "raw": "⅔ cup  / 160 g heavy whipping cream, cold",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
           }
         ],
         "note": "cold",
+        "section": "Caramel Mousse",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 sheets leaf gelatin or 2 tablespoons powdered gelatin",
+      "raw": "Mirror Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 sheets   leaf gelatin or 2 tablespoons powdered gelatin",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -349,76 +449,102 @@
           }
         ],
         "note": "or 2 tablespoons powdered gelatin",
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  / 200 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "2/3 cup corn syrup or glucose syrup",
+      "raw": "⅔ cup  / 226 g corn syrup or glucose syrup",
       "expected": {
         "item": "corn syrup or glucose syrup",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup water",
+      "raw": "½ cup  / 118 g water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 cup sweetened condensed milk",
+      "raw": "½ cup  / 163 g sweetened condensed milk",
       "expected": {
         "item": "sweetened condensed milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "163",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "7 oz good quality white chocolate  (finely chopped)",
+      "raw": "7 oz  / 200 g good quality white chocolate , finely chopped",
       "expected": {
         "item": "white chocolate",
         "measurements": [
           {
             "amount": "7",
             "unit": "oz"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": "finely chopped, good quality",
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
@@ -428,11 +554,12 @@
         "item": "gel or powdered food coloring",
         "measurements": [],
         "note": null,
+        "section": "Mirror Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "6 pieces Rolo candies (unwrapped and dusted with gold luster, for decoration)",
+      "raw": "6 pieces   Rolo candies, unwrapped and dusted with gold luster, for decoration",
       "expected": {
         "item": "Rolo candies",
         "measurements": [
@@ -442,6 +569,7 @@
           }
         ],
         "note": "unwrapped and dusted with gold luster, for decoration",
+        "section": "Mirror Glaze",
         "category": "Other"
       }
     }

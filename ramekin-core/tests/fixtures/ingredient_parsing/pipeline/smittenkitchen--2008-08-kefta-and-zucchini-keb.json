@@ -3,6 +3,10 @@
   "recipe_slug": "2008-08-kefta-and-zucchini-keb",
   "ingredients": [
     {
+      "raw": "Sauce and assembly:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup plain yogurt (preferably full-fat)",
       "expected": {
         "item": "plain yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "preferably full-fat",
+        "section": "Sauce and Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce and Assembly",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce and Assembly",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Sauce and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "10-inch",
+        "section": "Sauce and Assembly",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Zucchini:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons fresh lemon juice",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "we used about half of this",
+        "section": "Zucchini",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,8 +175,13 @@
           }
         ],
         "note": "don’t skim on their thickness, or you will have difficulty threading them",
+        "section": "Zucchini",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Kefta (meatballs):",
+      "is_section_header": true
     },
     {
       "raw": "2 slices firm white sandwich bread, torn into small pieces",
@@ -171,6 +194,7 @@
           }
         ],
         "note": "torn into small pieces",
+        "section": "Kefta (Meatballs)",
         "category": "Bakery & Bread"
       }
     },
@@ -189,6 +213,7 @@
           }
         ],
         "note": "about 1 cup, roughly chopped",
+        "section": "Kefta (Meatballs)",
         "category": "Produce"
       }
     },
@@ -203,6 +228,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "Kefta (Meatballs)",
         "category": "Produce"
       }
     },
@@ -217,6 +243,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "Kefta (Meatballs)",
         "category": "Produce"
       }
     },
@@ -231,6 +258,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Kefta (Meatballs)",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -245,6 +273,7 @@
           }
         ],
         "note": "preferably dark meat",
+        "section": "Kefta (Meatballs)",
         "category": "Meat & Seafood"
       }
     },
@@ -259,6 +288,7 @@
           }
         ],
         "note": null,
+        "section": "Kefta (Meatballs)",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,6 +303,7 @@
           }
         ],
         "note": null,
+        "section": "Kefta (Meatballs)",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,6 +318,7 @@
           }
         ],
         "note": null,
+        "section": "Kefta (Meatballs)",
         "category": "Spices & Seasonings"
       }
     },
@@ -301,6 +333,7 @@
           }
         ],
         "note": null,
+        "section": "Kefta (Meatballs)",
         "category": "Spices & Seasonings"
       }
     },
@@ -315,6 +348,7 @@
           }
         ],
         "note": null,
+        "section": "Kefta (Meatballs)",
         "category": "Spices & Seasonings"
       }
     }

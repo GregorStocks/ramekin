@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-arugula-asparagus-avoc",
   "ingredients": [
     {
-      "raw": "22  stalks asparagus ((I used asparagus tips as they're thinner))",
+      "raw": "22 stalks asparagus, (I used asparagus tips as they're thinner)",
       "expected": {
         "item": "asparagus",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "1/2  avocado",
+      "raw": "1/2 avocado",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -110,6 +110,10 @@
       }
     },
     {
+      "raw": "Lemon Vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tbsp olive oil",
       "expected": {
         "item": "olive oil",
@@ -120,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,11 +139,12 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 tsp shallot (finely diced)",
+      "raw": "1/2 tsp shallot, finely diced",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -148,6 +154,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Lemon Vinaigrette",
         "category": "Produce"
       }
     },
@@ -162,15 +169,17 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Lemon Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

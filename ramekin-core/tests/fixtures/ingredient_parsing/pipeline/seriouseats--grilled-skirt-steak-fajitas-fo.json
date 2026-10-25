@@ -3,7 +3,11 @@
   "recipe_slug": "grilled-skirt-steak-fajitas-fo",
   "ingredients": [
     {
-      "raw": "1/2 cup (120ml) soy sauce",
+      "raw": "For the Steak Fajita Marinade:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup (120 ml) soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "For the Steak Fajita Marinade",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/2 cup (120ml) lime juice, from 6 to 8 limes",
+      "raw": "1/2 cup (120 ml) lime juice, from 6 to 8 limes",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": "from 6 to 8 limes",
+        "section": "For the Steak Fajita Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup (120ml) canola oil",
+      "raw": "1/2 cup (120 ml) canola oil",
       "expected": {
         "item": "canola oil",
         "measurements": [
@@ -53,11 +59,12 @@
           }
         ],
         "note": null,
+        "section": "For the Steak Fajita Marinade",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/4 cup (55g) packed brown sugar",
+      "raw": "1/4 cup (55 g) packed brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -71,6 +78,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Steak Fajita Marinade",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Steak Fajita Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -103,13 +112,14 @@
           }
         ],
         "note": "about 1 tablespoon, finely minced",
+        "section": "For the Steak Fajita Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons ground cumin seed",
+      "raw": "2 teaspoons ground cumin seeds",
       "expected": {
-        "item": "ground cumin seed",
+        "item": "ground cumin seeds",
         "measurements": [
           {
             "amount": "2",
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Steak Fajita Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,11 +142,12 @@
           }
         ],
         "note": null,
+        "section": "For the Steak Fajita Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 pounds (900g) trimmed skirt steak (about 1 whole steak; see note), cut crosswise into 5- to 6-inch pieces",
+      "raw": "2 pounds (900 g) trimmed skirt steak (about 1 whole steak; see note), cut crosswise into 5- to 6-inch pieces",
       "expected": {
         "item": "trimmed skirt steak, cut crosswise into 5- to 6-inch pieces",
         "measurements": [
@@ -149,8 +161,13 @@
           }
         ],
         "note": "about 1 whole steak; see note",
+        "section": "For the Steak Fajita Marinade",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "For the Fajitas:",
+      "is_section_header": true
     },
     {
       "raw": "1 large red bell pepper, stemmed, seeded, and cut into 1/2-inch-wide strips",
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fajitas",
         "category": "Produce"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fajitas",
         "category": "Produce"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Fajitas",
         "category": "Produce"
       }
     },
@@ -205,6 +225,7 @@
           }
         ],
         "note": "cut into 1/2-inch slices",
+        "section": "For the Fajitas",
         "category": "Produce"
       }
     },
@@ -219,11 +240,12 @@
           }
         ],
         "note": null,
+        "section": "For the Fajitas",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "1 recipe guacamole , for serving, if desired",
+      "raw": "1 recipe guacamole, for serving, if desired",
       "expected": {
         "item": "recipe guacamole",
         "measurements": [
@@ -233,11 +255,12 @@
           }
         ],
         "note": "for serving, if desired",
+        "section": "For the Fajitas",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 recipe pico de gallo , for serving, if desired",
+      "raw": "1 recipe pico de gallo, for serving, if desired",
       "expected": {
         "item": "recipe pico de gallo",
         "measurements": [
@@ -247,6 +270,7 @@
           }
         ],
         "note": "for serving, if desired",
+        "section": "For the Fajitas",
         "category": "Condiments & Sauces"
       }
     },
@@ -256,6 +280,7 @@
         "item": "Sour cream, shredded cheese, and salsa",
         "measurements": [],
         "note": "for serving, if desired",
+        "section": "For the Fajitas",
         "category": "Dairy & Eggs"
       }
     }

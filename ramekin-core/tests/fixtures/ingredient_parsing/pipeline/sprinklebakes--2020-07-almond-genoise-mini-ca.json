@@ -3,52 +3,51 @@
   "recipe_slug": "2020-07-almond-genoise-mini-ca",
   "ingredients": [
     {
-      "raw": "2  whole eggs (at room temperature)",
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 whole eggs at room temperature",
       "expected": {
-        "item": "whole eggs",
+        "item": "whole eggs at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "at room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Cake",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup 56g confectioners’ sugar",
+      "raw": "1/2 cup confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "56",
-            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup 50g almond flour",
+      "raw": "1/2 cup almond flour",
       "expected": {
         "item": "almond flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -63,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  egg whites",
+      "raw": "2 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -77,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -105,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -119,42 +122,41 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "5 cups 570g confectioners’ sugar",
+      "raw": "Cream filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "5 cups confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "5",
             "unit": "cup"
-          },
-          {
-            "amount": "570",
-            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Cream Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup 226g unsalted butter, at room temperature",
+      "raw": "1 cup unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "226",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "Cream Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -169,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Filling",
         "category": "Baking"
       }
     },
@@ -183,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Filling",
         "category": "Beverages"
       }
     },
@@ -197,24 +201,26 @@
           }
         ],
         "note": null,
+        "section": "Cream Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 cups 227g confectioners’ sugar",
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -229,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,20 +250,26 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "Edible gold leaf (optional)",
+      "raw": "Edible gold leaf optional",
       "expected": {
         "item": "Edible gold leaf",
         "measurements": [],
         "note": "optional",
+        "section": "Glaze",
         "category": "Other"
       }
     },
     {
-      "raw": "9  Jordan almonds for mini cakes (or 18 for petit fours)",
+      "raw": "Décor:",
+      "is_section_header": true
+    },
+    {
+      "raw": "9 Jordan almonds for mini cakes or 18 for petit fours",
       "expected": {
         "item": "Jordan almonds for mini cakes",
         "measurements": [
@@ -266,11 +279,12 @@
           }
         ],
         "note": "or 18 for petit fours",
+        "section": "Décor",
         "category": "Other"
       }
     },
     {
-      "raw": "2 oz. semisweet chocolate (melted)",
+      "raw": "2 oz. semisweet chocolate melted",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
@@ -280,6 +294,7 @@
           }
         ],
         "note": "melted",
+        "section": "Décor",
         "category": "Baking"
       }
     }

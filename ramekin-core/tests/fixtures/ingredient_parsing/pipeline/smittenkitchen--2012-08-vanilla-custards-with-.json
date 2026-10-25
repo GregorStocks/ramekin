@@ -3,13 +3,8 @@
   "recipe_slug": "2012-08-vanilla-custards-with-",
   "ingredients": [
     {
-      "raw": "Custards",
-      "expected": {
-        "item": "Custards",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "raw": "Custards:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup whole milk",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Custards",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +27,7 @@
         "item": "Seeds from 1/4 to 1/2 vanilla bean",
         "measurements": [],
         "note": "see Note; or 1 teaspoon pure vanilla extract",
+        "section": "Custards",
         "category": "Other"
       }
     },
@@ -45,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Custards",
         "category": "Dairy & Eggs"
       }
     },
@@ -59,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Custards",
         "category": "Baking"
       }
     },
@@ -73,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Custards",
         "category": "Baking"
       }
     },
@@ -87,17 +87,13 @@
           }
         ],
         "note": "see Note",
+        "section": "Custards",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Berries",
-      "expected": {
-        "item": "Berries",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "raw": "Berries:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup blueberries",
@@ -110,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Berries",
         "category": "Produce"
       }
     },
@@ -124,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Berries",
         "category": "Baking"
       }
     },
@@ -133,6 +131,7 @@
         "item": "Juice from a wedge lemon",
         "measurements": [],
         "note": "or to taste",
+        "section": "Berries",
         "category": "Other"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "hummingbird-cupcakes-recipe",
   "ingredients": [
     {
-      "raw": "1  whole fresh pineapple",
+      "raw": "Dried Pineapple Flowers (garnish):",
+      "is_section_header": true
+    },
+    {
+      "raw": "1   whole fresh pineapple",
       "expected": {
         "item": "whole fresh pineapple",
         "measurements": [
@@ -13,137 +17,187 @@
           }
         ],
         "note": null,
+        "section": "Dried Pineapple Flowers (Garnish)",
         "category": "Other"
       }
     },
     {
-      "raw": "2 cups all-purpose flour",
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups  (250 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon baking soda",
+      "raw": "½ teaspoon  (0.5 teaspoon) baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ teaspoon salt",
+      "raw": "¾ teaspoon  (0.75 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "¾ teaspoon ground cinnamon",
-      "expected": {
-        "item": "ground cinnamon",
-        "measurements": [
+          },
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/3 cups mashed banana (2 to 3 large bananas)",
+      "raw": "¾ teaspoon  (0.75 teaspoon) ground cinnamon",
       "expected": {
-        "item": "mashed banana",
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "Cupcakes",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 ⅓ cups  (200 g) mashed banana, 2 to 3 large bananas",
+      "expected": {
+        "item": "mashed banana, 2 to 3 large bananas",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
-        "note": "2 to 3 large bananas",
+        "note": null,
+        "section": "Cupcakes",
         "category": "Produce"
       }
     },
     {
-      "raw": "2/3 cup crushed pineapple (drained (about half of a 20-ounce can))",
+      "raw": "⅔ cup  (110 g) crushed pineapple, drained (about half of a 20-ounce can)",
       "expected": {
         "item": "crushed pineapple",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
-        "note": "drained (about half of a 20-ounce can)",
+        "note": "about half of a 20-ounce can, drained",
+        "section": "Cupcakes",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2/3 cup walnuts or pecans (toasted and chopped)",
+      "raw": "⅔ cup  (78 g) walnuts or pecans, toasted and chopped",
       "expected": {
         "item": "walnuts or pecans",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "78",
+            "unit": "g"
           }
         ],
         "note": "toasted and chopped",
+        "section": "Cupcakes",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "2/3 cup shredded coconut (sweetened or unsweetened will work)",
+      "raw": "⅔ cup  (53.33 g) shredded coconut, sweetened or unsweetened will work",
       "expected": {
-        "item": "shredded coconut",
+        "item": "shredded coconut, sweetened or unsweetened will work",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "53.33",
+            "unit": "g"
           }
         ],
-        "note": "sweetened or unsweetened will work",
+        "note": null,
+        "section": "Cupcakes",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 1/3 cups granulated sugar",
+      "raw": "1 ⅓ cups  (266.67 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
+          },
+          {
+            "amount": "266.67",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "11 tablespoons unsalted butter (melted and cooled)",
+      "raw": "11 tablespoons   unsalted butter, melted and cooled",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -153,25 +207,31 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1½ teaspoons vanilla extract",
+      "raw": "1½ teaspoons  (1.5 teaspoons) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -181,39 +241,54 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "12 ounces cream cheese",
+      "raw": "Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 ounces  (340.2 g) cream cheese",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
+          },
+          {
+            "amount": "340.2",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
     {
-      "raw": "½ cup unsalted butter (at room temperature)",
+      "raw": "½ cup  (113.5 g) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "113.5",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon vanilla extract",
+      "raw": "1 tablespoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -223,20 +298,26 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 cups powdered sugar",
+      "raw": "4 cups  (480 g) powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

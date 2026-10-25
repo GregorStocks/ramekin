@@ -3,6 +3,10 @@
   "recipe_slug": "2012-09-fig-olive-oil-and-sea-",
   "ingredients": [
     {
+      "raw": "Bread:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/4 teaspoons (1 packet — 1/4 ounce or 7 grams) active dry yeast",
       "expected": {
         "item": "active dry yeast",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "1 packet - 1/4 ounce or 7 grams",
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "110 to 116 degrees F",
+        "section": "Bread",
         "category": "Beverages"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "plus more for the bowl",
+        "section": "Bread",
         "category": "Oils & Vinegars"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": "such as Maldon, or 1 1/2 teaspoons table salt",
+        "section": "Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,8 +123,13 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Fig Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (5 1/2 ounces or 155 grams) stemmed and roughly chopped dried figs",
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Filling",
         "category": "Other"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Filling",
         "category": "Produce"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Filling",
         "category": "Beverages"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Filling",
         "category": "Beverages"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,8 +228,13 @@
         "item": "Few grinds black pepper",
         "measurements": [],
         "note": null,
+        "section": "Fig Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Egg wash:",
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -222,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Wash",
         "category": "Dairy & Eggs"
       }
     },
@@ -231,6 +257,7 @@
         "item": "Coarse or flaky sea salt",
         "measurements": [],
         "note": "for sprinkling",
+        "section": "Egg Wash",
         "category": "Spices & Seasonings"
       }
     }

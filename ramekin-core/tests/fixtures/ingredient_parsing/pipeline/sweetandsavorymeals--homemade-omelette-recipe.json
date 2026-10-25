@@ -3,6 +3,10 @@
   "recipe_slug": "homemade-omelette-recipe",
   "ingredients": [
     {
+      "raw": "Omelette:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -13,48 +17,52 @@
           }
         ],
         "note": null,
+        "section": "Omelette",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3  large eggs (room temperature)",
+      "raw": "3 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Omelette",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons cream (or milk)",
+      "raw": "2 tablespoons cream or milk",
       "expected": {
-        "item": "cream",
+        "item": "cream or milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or milk",
+        "note": null,
+        "section": "Omelette",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Salt and pepper (to taste)",
+      "raw": "Salt and pepper to taste",
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Omelette",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup cheddar cheese (shredded)",
+      "raw": "1/2 cup cheddar cheese shredded",
       "expected": {
         "item": "cheddar cheese",
         "measurements": [
@@ -64,11 +72,16 @@
           }
         ],
         "note": "shredded",
+        "section": "Omelette",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 tablespoon unsalted butter or olive oil",
+      "raw": "Ham & Veggie Filling (optional):",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon unsalted butter  or olive oil",
       "expected": {
         "item": "unsalted butter or olive oil",
         "measurements": [
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     },
@@ -106,11 +121,12 @@
           }
         ],
         "note": null,
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/4 cup red bell pepper (diced)",
+      "raw": "1/4 cup red bell pepper diced",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -120,11 +136,12 @@
           }
         ],
         "note": "diced",
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup mushrooms (sliced)",
+      "raw": "1/2 cup mushrooms sliced",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -134,11 +151,12 @@
           }
         ],
         "note": "sliced",
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 clove garlic (minced)",
+      "raw": "1 clove garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -148,6 +166,7 @@
           }
         ],
         "note": "minced",
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Ham & Veggie Filling (Optional)",
         "category": "Produce"
       }
     }

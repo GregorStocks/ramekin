@@ -3,16 +3,25 @@
   "recipe_slug": "to-die-for-carrot-cake-recipe",
   "ingredients": [
     {
-      "raw": "1 ¼ cups unsweetened applesauce (or oil, this is what my Nana used)",
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "One:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ¼ cups unsweetened applesauce or oil, this is what my Nana used",
       "expected": {
-        "item": "unsweetened applesauce",
+        "item": "unsweetened applesauce or oil, this is what my Nana used",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": "or oil, this is what my Nana used",
+        "note": null,
+        "section": "One",
         "category": "Canned Goods"
       }
     },
@@ -27,22 +36,28 @@
           }
         ],
         "note": null,
+        "section": "One",
         "category": "Baking"
       }
     },
     {
-      "raw": "3  eggs (room temperature)",
+      "raw": "3 eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "One",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Two:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups all-purpose flour",
@@ -55,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Baking"
       }
     },
@@ -69,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Baking"
       }
     },
@@ -83,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Baking"
       }
     },
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +130,13 @@
           }
         ],
         "note": null,
+        "section": "Two",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Three:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups grated carrots",
@@ -125,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Three",
         "category": "Produce"
       }
     },
@@ -139,11 +164,12 @@
           }
         ],
         "note": null,
+        "section": "Three",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup chopped nuts (optional)",
+      "raw": "1 cup chopped nuts optional",
       "expected": {
         "item": "chopped nuts",
         "measurements": [
@@ -153,6 +179,7 @@
           }
         ],
         "note": "optional",
+        "section": "Three",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -167,25 +194,31 @@
           }
         ],
         "note": null,
+        "section": "Three",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup Dole crushed pineapple (not drained! {use the pineapple in JUICE not syrup})",
+      "raw": "1 cup Dole crushed pineapple not drained! {use the pineapple in JUICE not syrup}",
       "expected": {
-        "item": "Dole crushed pineapple",
+        "item": "Dole crushed pineapple not drained! {use the pineapple in JUICE not syrup}",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "not drained! {use the pineapple in JUICE not syrup}",
+        "note": null,
+        "section": "Three",
         "category": "Other"
       }
     },
     {
-      "raw": "½ cup butter (softened)",
+      "raw": "Cream Cheese Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup butter softened",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -195,11 +228,12 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 ounces cream cheese (softened)",
+      "raw": "8 ounces cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -209,6 +243,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
@@ -223,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -237,6 +273,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -246,6 +283,7 @@
         "item": "top with toasted pecans or coconut",
         "measurements": [],
         "note": "if desired",
+        "section": "Cream Cheese Frosting",
         "category": "Nuts & Dried Fruit"
       }
     }

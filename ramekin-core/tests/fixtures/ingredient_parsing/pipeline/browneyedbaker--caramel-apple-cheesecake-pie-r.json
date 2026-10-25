@@ -3,21 +3,30 @@
   "recipe_slug": "caramel-apple-cheesecake-pie-r",
   "ingredients": [
     {
-      "raw": "1½ cup graham cracker crumbs (about 12 full graham crackers)",
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ cup  (126 g) graham cracker crumbs, about 12 full graham crackers",
       "expected": {
         "item": "graham cracker crumbs",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "126",
+            "unit": "g"
           }
         ],
         "note": "about 12 full graham crackers",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "3 tablespoons granulated sugar",
+      "raw": "3 tablespoons   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,67 +36,96 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon ground cinnamon",
+      "raw": "½ teaspoon  (0.5 teaspoon) ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "⅓ cup unsalted butter (melted)",
+      "raw": "⅓ cup  (75.67 g) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "75.67",
+            "unit": "g"
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¾ cup salted caramel sauce",
+      "raw": "For the Caramel-Pecan Layer:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup  (169.5 g) salted caramel sauce",
       "expected": {
         "item": "salted caramel sauce",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "169.5",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Caramel-Pecan Layer",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 cup chopped pecans",
+      "raw": "1 cup  (99 g) chopped pecans",
       "expected": {
         "item": "chopped pecans",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Caramel-Pecan Layer",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "5 tablespoons unsalted butter",
+      "raw": "For the Apples:",
+      "is_section_header": true
+    },
+    {
+      "raw": "5 tablespoons   unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -97,25 +135,31 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ cup light brown sugar",
+      "raw": "½ cup  (110 g) light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon ground cinnamon",
+      "raw": "1 teaspoon   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -125,25 +169,31 @@
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon salt",
+      "raw": "¼ teaspoon  (0.25 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Apples",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5  Granny Smith apples (peeled, cored and thinly sliced)",
+      "raw": "5   Granny Smith apples, peeled, cored and thinly sliced",
       "expected": {
         "item": "Granny Smith apples",
         "measurements": [
@@ -153,39 +203,54 @@
           }
         ],
         "note": "peeled, cored and thinly sliced",
+        "section": "For the Apples",
         "category": "Produce"
       }
     },
     {
-      "raw": "8 ounces cream cheese (at room temperature)",
+      "raw": "For the Cheesecake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Cheese"
       }
     },
     {
-      "raw": "¼ cup granulated sugar",
+      "raw": "¼ cup  (50 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg (at room temperature)",
+      "raw": "1   egg, at room temperature",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -195,11 +260,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon lemon juice",
+      "raw": "1 tablespoon   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -209,11 +275,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -223,25 +290,35 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ cup heavy cream",
+      "raw": "For the Whipped Cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup  (178.5 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "178.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 tablespoons powdered sugar",
+      "raw": "3 tablespoons   powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -251,8 +328,13 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Salted caramel sauce",
@@ -260,6 +342,7 @@
         "item": "Salted caramel sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Condiments & Sauces"
       }
     },
@@ -269,6 +352,7 @@
         "item": "Chopped pecans",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Nuts & Dried Fruit"
       }
     }

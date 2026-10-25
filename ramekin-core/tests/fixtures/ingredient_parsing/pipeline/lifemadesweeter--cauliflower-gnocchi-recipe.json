@@ -3,7 +3,7 @@
   "recipe_slug": "cauliflower-gnocchi-recipe",
   "ingredients": [
     {
-      "raw": "1 16-ounce package of cherry tomatoes  ((about 4 cups))",
+      "raw": "1 16-ounce package of cherry tomatoes  (about 4 cups)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -21,21 +21,21 @@
       }
     },
     {
-      "raw": "2-3 tbsp extra-virgin olive oil (OR avocado oil)",
+      "raw": "2-3 tbsp extra-virgin olive oil OR avocado oil",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "extra-virgin olive oil OR avocado oil",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": "OR avocado oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "fine sea salt + fresly cracked black pepper (, to taste )",
+      "raw": "fine sea salt + fresly cracked black pepper , to taste",
       "expected": {
         "item": "fine sea salt + fresly cracked black pepper",
         "measurements": [],
@@ -58,21 +58,21 @@
       }
     },
     {
-      "raw": "1  7-ounce block Violife Vegan Feta Cheese  (, or use any feta of your choice)",
+      "raw": "1 7-ounce block Violife Vegan Feta Cheese  , or use any feta of your choice",
       "expected": {
-        "item": "7-ounce block Violife Vegan Feta Cheese",
+        "item": "7-ounce block Violife Vegan Feta Cheese, or use any feta of your choice",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or use any feta of your choice",
-        "category": "Other"
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
-      "raw": "1 package Trader Joe&amp;#039;s Cauliflower Gnocchi",
+      "raw": "1 package Trader Joe's Cauliflower Gnocchi",
       "expected": {
         "item": "Trader Joe's Cauliflower Gnocchi",
         "measurements": [
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "2-3  garlic cloves (, minced + divided)",
+      "raw": "2-3 garlic cloves , minced + divided",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -100,7 +100,7 @@
       }
     },
     {
-      "raw": "handful fresh basil (, chopped + more for serving)",
+      "raw": "handful fresh basil , chopped + more for serving",
       "expected": {
         "item": "fresh basil",
         "measurements": [
@@ -109,7 +109,7 @@
             "unit": "handful"
           }
         ],
-        "note": "chopped + more for serving",
+        "note": "chopped, plus more for serving",
         "category": "Produce"
       }
     },
@@ -128,11 +128,16 @@
       }
     },
     {
+      "raw": "Optional ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "dried herbs",
       "expected": {
         "item": "dried herbs",
         "measurements": [],
         "note": null,
+        "section": "Optional Ingredients",
         "category": "Other"
       }
     },
@@ -142,6 +147,7 @@
         "item": "lemon zest or lemon juice",
         "measurements": [],
         "note": null,
+        "section": "Optional Ingredients",
         "category": "Produce"
       }
     },
@@ -151,6 +157,7 @@
         "item": "red pepper chili flakes",
         "measurements": [],
         "note": null,
+        "section": "Optional Ingredients",
         "category": "Other"
       }
     }

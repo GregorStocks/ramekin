@@ -3,13 +3,8 @@
   "recipe_slug": "2011-12-parsnip-latkes-with-ho",
   "ingredients": [
     {
-      "raw": "Pancakes",
-      "expected": {
-        "item": "Pancakes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Pancakes:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 pound (about 1 large) Russet potato",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "about 1 large",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": "about 2 large or 4 medium",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -104,6 +104,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -118,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -132,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -146,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -155,11 +159,12 @@
         "item": "Olive oil",
         "measurements": [],
         "note": "for frying; or a mix of olive and vegetable or peanut oil",
+        "section": "Pancakes",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Sauce",
+      "raw": "Sauce:",
       "is_section_header": true
     },
     {

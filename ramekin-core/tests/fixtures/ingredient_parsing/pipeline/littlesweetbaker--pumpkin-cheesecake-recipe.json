@@ -3,7 +3,11 @@
   "recipe_slug": "pumpkin-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "1 &amp;amp; 1/2 cups (170g) Oreo cookie crumbs",
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 & 1/2 cups   (170g) Oreo cookie crumbs",
       "expected": {
         "item": "Oreo cookie crumbs",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "4 Tbsp melted butter",
+      "raw": "4 Tbsp   melted butter",
       "expected": {
         "item": "melted butter",
         "measurements": [
@@ -31,11 +36,16 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "24 oz (3 pkgs) cream cheese (softened)",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "24 oz   (3 pkgs) cream cheese, softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -49,11 +59,12 @@
           }
         ],
         "note": "softened",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 cup (200g) brown sugar",
+      "raw": "1 cup   (200g) brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -67,11 +78,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -81,11 +93,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 Tbsp all-purpose flour",
+      "raw": "2 Tbsp   all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -95,11 +108,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tsp pumpkin pie spice",
+      "raw": "2 tsp   pumpkin pie spice",
       "expected": {
         "item": "pumpkin pie spice",
         "measurements": [
@@ -109,11 +123,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tsp vanilla extract",
+      "raw": "1 tsp   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -123,11 +138,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 &amp;amp; 3/4 cups (15oz) canned pure pumpkin puree",
+      "raw": "1 & 3/4 cups   (15oz) canned pure pumpkin puree",
       "expected": {
         "item": "canned pure pumpkin puree",
         "measurements": [
@@ -141,11 +157,16 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup (250ml) heavy cream",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup   (250ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
@@ -159,11 +180,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 Tbsp granulated sugar",
+      "raw": "2 Tbsp   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -173,11 +195,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp vanilla",
+      "raw": "1 tsp   vanilla",
       "expected": {
         "item": "vanilla",
         "measurements": [
@@ -187,11 +210,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp ground cinnamon for dusting (if desired)",
+      "raw": "1 tsp   ground cinnamon for dusting, if desired",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -200,7 +224,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "if desired, for dusting",
+        "note": "for dusting, if desired",
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

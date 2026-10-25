@@ -3,6 +3,10 @@
   "recipe_slug": "2019-12-banana-toffee-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, melted and cooled slightly",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "melted and cooled slightly",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": "2 medium bananas, or about 12 ounces unpeeled",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": "well-shaken",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -177,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -195,8 +210,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Sauce and finish:",
+      "is_section_header": true
     },
     {
       "raw": "4 tablespoons (2 ounces or 55 grams) unsalted butter, cold is fine",
@@ -217,6 +237,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Sauce and Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -235,6 +256,7 @@
           }
         ],
         "note": "half for sauce, half for whipping, divided",
+        "section": "Sauce and Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce and Finish",
         "category": "Baking"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": "plus more to finish",
+        "section": "Sauce and Finish",
         "category": "Spices & Seasonings"
       }
     },
@@ -281,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce and Finish",
         "category": "Baking"
       }
     }

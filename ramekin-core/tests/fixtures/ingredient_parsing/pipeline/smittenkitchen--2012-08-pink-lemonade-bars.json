@@ -3,6 +3,29 @@
   "recipe_slug": "2012-08-pink-lemonade-bars",
   "ingredients": [
     {
+      "raw": "For the crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup (130 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "section": "For the Crust",
+        "category": "Baking"
+      }
+    },
+    {
       "raw": "1/4 cup (50 grams) granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,25 +40,27 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon freshly grated lemon zest",
+      "raw": "1/4 teaspoon finely grated lemon zest (or the finely grated zest of 1/4 of a lemon)",
       "expected": {
-        "item": "freshly grated lemon zest",
+        "item": "finely grated lemon zest",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or the finely grated zest of 1/4 of a lemon",
+        "section": "For the Crust",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/8 teaspoon table salt",
+      "raw": "1/8 teaspoon table salt or 1/4 teaspoon kosher salt",
       "expected": {
         "item": "table salt",
         "measurements": [
@@ -44,7 +69,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or 1/4 teaspoon kosher salt",
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,29 +93,12 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup (125 grams) flour",
-      "expected": {
-        "item": "flour",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          },
-          {
-            "amount": "125",
-            "unit": "g"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "For the lemonade layer",
+      "raw": "For the pink lemon layer:",
       "is_section_header": true
     },
     {
@@ -111,7 +120,7 @@
           }
         ],
         "note": "about 5 ounces or 140 grams",
-        "section": "For the Lemonade Layer",
+        "section": "For the Pink Lemon Layer",
         "category": "Produce"
       }
     },
@@ -126,7 +135,7 @@
           }
         ],
         "note": null,
-        "section": "For the Lemonade Layer",
+        "section": "For the Pink Lemon Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,7 +154,26 @@
           }
         ],
         "note": null,
-        "section": "For the Lemonade Layer",
+        "section": "For the Pink Lemon Layer",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (35 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "section": "For the Pink Lemon Layer",
         "category": "Baking"
       }
     },
@@ -160,27 +188,8 @@
           }
         ],
         "note": null,
-        "section": "For the Lemonade Layer",
+        "section": "For the Pink Lemon Layer",
         "category": "Produce"
-      }
-    },
-    {
-      "raw": "1/3 cup (40 grams) all-purpose flour",
-      "expected": {
-        "item": "all-purpose flour",
-        "measurements": [
-          {
-            "amount": "0.33",
-            "unit": "cup"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
-          }
-        ],
-        "note": null,
-        "section": "For the Lemonade Layer",
-        "category": "Baking"
       }
     },
     {
@@ -189,7 +198,7 @@
         "item": "Confectioners’ sugar",
         "measurements": [],
         "note": "for dusting",
-        "section": "For the Lemonade Layer",
+        "section": "For the Pink Lemon Layer",
         "category": "Baking"
       }
     }

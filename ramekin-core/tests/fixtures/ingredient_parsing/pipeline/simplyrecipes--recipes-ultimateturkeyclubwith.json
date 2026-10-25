@@ -3,20 +3,21 @@
   "recipe_slug": "recipes-ultimateturkeyclubwith",
   "ingredients": [
     {
-      "raw": "1 (2-3 pound) turkey breast, bone-in and skin-on",
+      "raw": "For the sandwich fillings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (2 to 3) pound turkey breast, bone-in and skin-on",
       "expected": {
         "item": "turkey breast, bone-in and skin-on",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
-          },
-          {
-            "amount": "2-3",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "2 to 3",
+        "section": "For the Sandwich Fillings",
         "category": "Other"
       }
     },
@@ -31,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Oils & Vinegars"
       }
     },
@@ -45,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,20 +62,22 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "12 strips bacon",
+      "raw": "12 slices bacon",
       "expected": {
-        "item": "strips bacon",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "12",
-            "unit": null
+            "unit": "slice"
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Meat & Seafood"
       }
     },
@@ -91,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Bakery & Bread"
       }
     },
@@ -105,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Cheese"
       }
     },
     {
-      "raw": "3 avocados, sliced",
+      "raw": "3 avocados, pitted and sliced",
       "expected": {
         "item": "avocados",
         "measurements": [
@@ -118,7 +125,8 @@
             "unit": null
           }
         ],
-        "note": "sliced",
+        "note": "pitted and sliced",
+        "section": "For the Sandwich Fillings",
         "category": "Produce"
       }
     },
@@ -133,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Produce"
       }
     },
@@ -147,21 +156,27 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwich Fillings",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 bulb garlic, roasted",
+      "raw": "For the garlic aioli:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 head garlic",
       "expected": {
-        "item": "bulb garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "head"
           }
         ],
-        "note": "roasted",
-        "category": "Other"
+        "note": null,
+        "section": "For the Garlic Aioli",
+        "category": "Produce"
       }
     },
     {
@@ -175,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Garlic Aioli",
         "category": "Condiments & Sauces"
       }
     },
@@ -184,11 +200,12 @@
         "item": "Juice from 1/2 lemon",
         "measurements": [],
         "note": null,
+        "section": "For the Garlic Aioli",
         "category": "Other"
       }
     },
     {
-      "raw": "Pinch of salt",
+      "raw": "Pinch salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -198,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For the Garlic Aioli",
         "category": "Spices & Seasonings"
       }
     }

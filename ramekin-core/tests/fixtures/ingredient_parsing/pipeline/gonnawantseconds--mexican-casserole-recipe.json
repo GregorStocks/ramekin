@@ -3,16 +3,21 @@
   "recipe_slug": "mexican-casserole-recipe",
   "ingredients": [
     {
-      "raw": "1 pound ground beef,  (80/20)",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound ground beef,  80/20",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef, 80/20",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "80/20",
+        "note": null,
+        "section": "Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": "16-ounce",
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 can  chili beans, (undrained)",
+      "raw": "1 can  chili beans, undrained",
       "expected": {
         "item": "chili beans",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "undrained",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 cup frozen corn,  (thawed and drained)",
+      "raw": "1 cup frozen corn,  thawed and drained",
       "expected": {
         "item": "frozen corn",
         "measurements": [
@@ -69,6 +77,7 @@
           }
         ],
         "note": "thawed and drained",
+        "section": "Filling",
         "category": "Frozen"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": "6 inch",
+        "section": "Filling",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "3 cups Jack cheese, divided (shredded)",
+      "raw": "3 cups Jack cheese, divided shredded",
       "expected": {
         "item": "Jack cheese",
         "measurements": [
@@ -96,7 +106,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded, divided",
+        "note": "divided shredded",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 (2.25-ounce) can sliced black olives,  (drained)",
+      "raw": "1 (2.25-ounce) can sliced black olives,  drained",
       "expected": {
         "item": "sliced black olives",
         "measurements": [
@@ -125,11 +137,12 @@
           }
         ],
         "note": "2.25-ounce, drained",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 cup green onion, (sliced~divided)",
+      "raw": "1 cup green onion, sliced~divided",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -139,11 +152,12 @@
           }
         ],
         "note": "sliced~divided",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup fresh tomatoes,  (seeded and chopped)",
+      "raw": "1 cup fresh tomatoes,  seeded and chopped",
       "expected": {
         "item": "fresh tomatoes",
         "measurements": [
@@ -153,11 +167,16 @@
           }
         ],
         "note": "seeded and chopped",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup cilantro,  (chopped)",
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup cilantro,  chopped",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -167,6 +186,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Garnish",
         "category": "Produce"
       }
     }

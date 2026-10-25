@@ -3,7 +3,7 @@
   "recipe_slug": "gingerbread-cake-recipe",
   "ingredients": [
     {
-      "raw": "2 cups (250g) all-purpose flour (spooned &amp;amp; leveled)",
+      "raw": "2 cups (250g) all-purpose flour (spooned & leveled)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "3/4 cup (180ml or 225g) unsulphured or dark molasses (do not use blackstrap; I prefer Grandma&amp;#8217;s brand)",
+      "raw": "3/4 cup (180ml or 225g) unsulphured or dark molasses (do not use blackstrap; I prefer Grandma’s brand)",
       "expected": {
         "item": "unsulphured or dark molasses",
         "measurements": [
@@ -113,7 +113,7 @@
       }
     },
     {
-      "raw": "3/4 cup (180ml) hot water (about&nbsp;100°F (38°C))",
+      "raw": "3/4 cup (180ml) hot water (about 100°F (38°C))",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 large&nbsp;egg, at room temperature",
+      "raw": "1 large egg, at room temperature",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -199,6 +199,10 @@
       }
     },
     {
+      "raw": "Spiced Cream Cheese Frosting (optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces (226g) full-fat brick cream cheese, softened to room temperature",
       "expected": {
         "item": "full-fat brick cream cheese",
@@ -213,6 +217,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Cheese"
       }
     },
@@ -231,11 +236,12 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 and 3/4 cups&nbsp;(210g) confectioners&amp;#8217; sugar",
+      "raw": "1 and 3/4 cups (210g) confectioners’ sugar",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [
@@ -249,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Baking"
       }
     },
@@ -263,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Baking"
       }
     },
@@ -277,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -291,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Produce"
       },
       "expanded": true
@@ -306,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -316,6 +327,7 @@
         "item": "sprinkles and/or sugared cranberries",
         "measurements": [],
         "note": "optional, for garnish",
+        "section": "Spiced Cream Cheese Frosting (Optional)",
         "category": "Baking"
       }
     }

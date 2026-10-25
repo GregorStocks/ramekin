@@ -3,6 +3,10 @@
   "recipe_slug": "hawaiian-meatballs-recipe",
   "ingredients": [
     {
+      "raw": "For the Turkey Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground turkey",
       "expected": {
         "item": "ground turkey",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Turkey Meatballs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 large egg (whisked)",
+      "raw": "1 large egg, whisked",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "whisked",
+        "section": "For the Turkey Meatballs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoon teriyaki sauce (store-bought or homemade)",
+      "raw": "2 tablespoon teriyaki sauce, store-bought or homemade",
       "expected": {
         "item": "teriyaki sauce",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "store-bought or homemade",
+        "section": "For the Turkey Meatballs",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/4 cup panko breadcrumbs",
+      "raw": "¼ cup panko breadcrumbs",
       "expected": {
         "item": "panko breadcrumbs",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Turkey Meatballs",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "1/2 cup green onion (finely chopped)",
+      "raw": "½ cup green onion, finely chopped",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Turkey Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup white onion (minced)",
+      "raw": "½ cup white onion, minced",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Turkey Meatballs",
         "category": "Produce"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "For the Turkey Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon freshly ground black pepper",
+      "raw": "½ teaspoon freshly ground black pepper",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [
@@ -111,11 +122,16 @@
           }
         ],
         "note": null,
+        "section": "For the Turkey Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "20 ounces pineapple chunks in syrup ((1 can))",
+      "raw": "For the Sweet Pineapple Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "20 ounces pineapple chunks in syrup, (1 can)",
       "expected": {
         "item": "pineapple chunks in syrup",
         "measurements": [
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Other"
       }
     },
@@ -143,11 +160,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup teriyaki sauce (homemade or store-bought)",
+      "raw": "¼ cup teriyaki sauce, homemade or store-bought",
       "expected": {
         "item": "teriyaki sauce",
         "measurements": [
@@ -157,6 +175,7 @@
           }
         ],
         "note": "homemade or store-bought",
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,11 +235,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup water",
+      "raw": "¼ cup water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -227,8 +250,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Pineapple Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Lettuce Wraps (optional):",
+      "is_section_header": true
     },
     {
       "raw": "1 head butter lettuce",
@@ -241,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lettuce Wraps (Optional)",
         "category": "Produce"
       }
     },
@@ -250,6 +279,7 @@
         "item": "chopped green onion",
         "measurements": [],
         "note": null,
+        "section": "For the Lettuce Wraps (Optional)",
         "category": "Produce"
       }
     },
@@ -259,6 +289,7 @@
         "item": "diced red onion",
         "measurements": [],
         "note": null,
+        "section": "For the Lettuce Wraps (Optional)",
         "category": "Produce"
       }
     },
@@ -268,6 +299,7 @@
         "item": "fresh micro greens",
         "measurements": [],
         "note": null,
+        "section": "For the Lettuce Wraps (Optional)",
         "category": "Other"
       }
     }

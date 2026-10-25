@@ -3,7 +3,11 @@
   "recipe_slug": "moon-pies-recipe",
   "ingredients": [
     {
-      "raw": "8 ounces  unsalted butter, at room temperature ((1 cup))",
+      "raw": "For the Cookies:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 ounces  (226.8 g)  unsalted butter, at room temperature, (1 cup)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -12,30 +16,40 @@
             "unit": "oz"
           },
           {
+            "amount": "226.8",
+            "unit": "g"
+          },
+          {
             "amount": "1",
             "unit": "cup"
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¾ cup light brown sugar",
+      "raw": "¾ cup  (165 g) light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1   egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -45,11 +59,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -59,39 +74,54 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "2¼ cups all-purpose flour",
+      "raw": "2¼ cups  (281.25 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "cup"
+          },
+          {
+            "amount": "281.25",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon salt",
+      "raw": "½ teaspoon  (0.5 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  egg whites",
+      "raw": "For the Marshmallow Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2   egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -101,11 +131,12 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Pinch cream of tartar",
+      "raw": "Pinch   cream of tartar",
       "expected": {
         "item": "cream of tartar",
         "measurements": [
@@ -115,11 +146,12 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "Pinch salt",
+      "raw": "Pinch   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -129,25 +161,31 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2/3 cup light corn syrup",
+      "raw": "⅔ cup  (227.33 ml) light corn syrup",
       "expected": {
         "item": "light corn syrup",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "227.33",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons vanilla extract",
+      "raw": "2 teaspoons   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -157,48 +195,68 @@
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup powdered sugar (sifted)",
+      "raw": "1 cup  (120 g) powdered sugar, sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For the Marshmallow Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "12 ounces semisweet chocolate",
+      "raw": "For the Chocolate Coating:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 ounces  (340.2 g) semisweet chocolate",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
+          },
+          {
+            "amount": "340.2",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Chocolate Coating",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup vegetable oil",
+      "raw": "¼ cup  (54.5 ml) vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Chocolate Coating",
         "category": "Oils & Vinegars"
       }
     }

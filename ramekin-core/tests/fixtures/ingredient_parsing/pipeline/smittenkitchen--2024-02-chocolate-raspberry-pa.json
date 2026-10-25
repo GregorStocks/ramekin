@@ -3,6 +3,10 @@
   "recipe_slug": "2024-02-chocolate-raspberry-pa",
   "ingredients": [
     {
+      "raw": "Pavlovas:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 large egg whites",
       "expected": {
         "item": "egg whites",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pavlovas",
         "category": "Dairy & Eggs"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Pavlovas",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Pavlovas",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Pavlovas",
         "category": "Oils & Vinegars"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "any kind, sifted if lumpy",
+        "section": "Pavlovas",
         "category": "Baking"
       }
     },
@@ -95,8 +104,13 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Pavlovas",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Raspberry Curd:",
+      "is_section_header": true
     },
     {
       "raw": "12 ounces (about 2 1/2 cups) fresh or defrosted raspberries",
@@ -113,6 +127,7 @@
           }
         ],
         "note": "about 2 1/2 cups",
+        "section": "Raspberry Curd",
         "category": "Produce"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Curd",
         "category": "Produce"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Curd",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,8 +199,13 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Curd",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Assemble and Finish:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces (115 grams) semi- or bittersweet chocolate, finely chopped",
@@ -199,6 +222,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Assemble and Finish",
         "category": "Baking"
       }
     },
@@ -217,6 +241,7 @@
           }
         ],
         "note": "divided",
+        "section": "Assemble and Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -235,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Assemble and Finish",
         "category": "Baking"
       }
     },
@@ -253,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "Assemble and Finish",
         "category": "Baking"
       }
     },
@@ -271,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "Assemble and Finish",
         "category": "Produce"
       }
     },
@@ -280,6 +308,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "Assemble and Finish",
         "category": "Baking"
       }
     }

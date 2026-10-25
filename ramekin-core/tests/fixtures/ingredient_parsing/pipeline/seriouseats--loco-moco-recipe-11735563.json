@@ -3,6 +3,10 @@
   "recipe_slug": "loco-moco-recipe-11735563",
   "ingredients": [
     {
+      "raw": "For The Burger Patties:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound (453 g) ground beef, (80% lean/20% fat)",
       "expected": {
         "item": "ground beef",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "80% lean/20% fat",
+        "section": "For the Burger Patties",
         "category": "Meat & Seafood"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burger Patties",
         "category": "Bakery & Bread"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burger Patties",
         "category": "Condiments & Sauces"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burger Patties",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burger Patties",
         "category": "Oils & Vinegars"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burger Patties",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,8 +123,13 @@
           }
         ],
         "note": null,
+        "section": "For the Burger Patties",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 medium yellow onion (4 ounces; 113 g), thinly sliced",
@@ -135,11 +150,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Gravy",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cups (480 ml) store-bought low-sodium beef stock or 2 teaspoons jarred beef stock base dissolved in 2 cups tap water",
+      "raw": "2 cups (480 ml) store-bought low-sodium beef stock or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water",
       "expected": {
         "item": "store-bought low-sodium beef stock",
         "measurements": [
@@ -152,7 +168,8 @@
             "unit": "ml"
           }
         ],
-        "note": "or 2 teaspoons jarred beef stock base dissolved in 2 cups tap water",
+        "note": "or 2 teaspoons reduced-sodium jarred beef stock base; such as Better Than Bouillon brand dissolved in 2 cups tap water",
+        "section": "For the Gravy",
         "category": "Canned Goods"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gravy",
         "category": "Baking"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gravy",
         "category": "Condiments & Sauces"
       }
     },
@@ -207,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gravy",
         "category": "Condiments & Sauces"
       }
     },
@@ -225,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Gravy",
         "category": "Condiments & Sauces"
       }
     },
@@ -239,21 +260,23 @@
           }
         ],
         "note": null,
+        "section": "For the Gravy",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoonDiamond Crystal kosher salt; for table salt use half as much by volume",
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt use half as much by volume",
       "expected": {
-        "item": "teaspoonDiamond Crystal kosher salt; for table salt use half as much by volume",
+        "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": null
+            "unit": "tsp"
           }
         ],
         "note": null,
-        "category": "Other"
+        "section": "For the Gravy",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -267,6 +290,7 @@
           }
         ],
         "note": "for serving",
+        "section": "For the Gravy",
         "category": "Other"
       }
     },
@@ -281,6 +305,7 @@
           }
         ],
         "note": "for serving",
+        "section": "For the Gravy",
         "category": "Dairy & Eggs"
       }
     }

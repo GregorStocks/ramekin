@@ -146,6 +146,10 @@
       }
     },
     {
+      "raw": "Garlic Croutons:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 garlic clove, peeled and halved",
       "expected": {
         "item": "garlic clove",
@@ -156,6 +160,7 @@
           }
         ],
         "note": "peeled and halved",
+        "section": "Garlic Croutons",
         "category": "Produce"
       }
     },
@@ -170,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Croutons",
         "category": "Other"
       }
     },
@@ -184,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Garlic Croutons",
         "category": "Oils & Vinegars"
       }
     },
@@ -193,6 +200,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "Garlic Croutons",
         "category": "Spices & Seasonings"
       }
     }

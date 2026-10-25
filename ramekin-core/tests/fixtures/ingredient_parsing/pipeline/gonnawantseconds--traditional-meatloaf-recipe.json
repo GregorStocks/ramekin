@@ -3,6 +3,10 @@
   "recipe_slug": "traditional-meatloaf-recipe",
   "ingredients": [
     {
+      "raw": "Meatloaf:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 teaspoons vegetable oil",
       "expected": {
         "item": "vegetable oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  onion (chopped fine)",
+      "raw": "1 onion chopped fine",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "chopped fine",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2 garlic cloves minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "minced",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
     {
-      "raw": "2/3 cup (about 17 crackers) Saltine crackers, (coarsely crushed )",
+      "raw": "2/3 cup (about 17 crackers) Saltine crackers, coarsely crushed",
       "expected": {
         "item": "Saltine crackers",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "about 17 crackers, coarsely crushed",
+        "section": "Meatloaf",
         "category": "Snacks"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,20 +92,22 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 pound ground beef,  (80/20)",
+      "raw": "1 pound ground beef,  80/20",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef, 80/20",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "80/20",
+        "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Other"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -190,8 +207,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup ketchup",
@@ -204,11 +226,12 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/4 cup brown sugar,&nbsp; (firmly packed)",
+      "raw": "1/4 cup brown sugar,  firmly packed",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -218,6 +241,7 @@
           }
         ],
         "note": "firmly packed",
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,15 +286,17 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "hot sauce, (to taste)",
+      "raw": "hot sauce, to taste",
       "expected": {
         "item": "hot sauce",
         "measurements": [],
         "note": "to taste",
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     }

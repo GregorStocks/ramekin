@@ -3,6 +3,10 @@
   "recipe_slug": "chashu-donburi-recipe",
   "ingredients": [
     {
+      "raw": "Chashu:",
+      "is_section_header": true
+    },
+    {
       "raw": "700 g slab skinless pork belly",
       "expected": {
         "item": "slab skinless pork belly",
@@ -13,25 +17,27 @@
           }
         ],
         "note": null,
+        "section": "Chashu",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "50 g Japanese leek (naganegi) (green part)",
+      "raw": "50 g Japanese leek (naganegi) green part",
       "expected": {
-        "item": "Japanese leek",
+        "item": "Japanese leek green part",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": "naganegi, green part",
-        "category": "Produce"
+        "note": "naganegi",
+        "section": "Chashu",
+        "category": "Other"
       }
     },
     {
-      "raw": "50 g ginger root (thickly sliced)",
+      "raw": "50 g ginger root thickly sliced",
       "expected": {
         "item": "ginger root",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "thickly sliced",
+        "section": "Chashu",
         "category": "Produce"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Chashu",
         "category": "Produce"
       }
     },
     {
-      "raw": "100 g onion (roughly cut)",
+      "raw": "100 g onion roughly cut",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -69,6 +77,7 @@
           }
         ],
         "note": "roughly cut",
+        "section": "Chashu",
         "category": "Produce"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Chashu",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Chashu Marinade:",
+      "is_section_header": true
     },
     {
       "raw": "50 ml sake",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Chashu Marinade",
         "category": "Beverages"
       }
     },
@@ -111,20 +126,22 @@
           }
         ],
         "note": null,
+        "section": "Chashu Marinade",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "250 ml pork stock (from part 1)",
+      "raw": "250 ml pork stock from part 1",
       "expected": {
-        "item": "pork stock",
+        "item": "pork stock from part 1",
         "measurements": [
           {
             "amount": "250",
             "unit": "ml"
           }
         ],
-        "note": "from part 1",
+        "note": null,
+        "section": "Chashu Marinade",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Chashu Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "Chashu Marinade",
         "category": "Baking"
       }
     },
     {
-      "raw": "6  soft-boiled egg",
+      "raw": "6 soft-boiled egg",
       "expected": {
         "item": "soft-boiled egg",
         "measurements": [
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Chashu Marinade",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Chashu Donburi:",
+      "is_section_header": true
     },
     {
       "raw": "6 portions cooked Japanese short-grain rice",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Chashu Donburi",
         "category": "Pasta & Rice"
       }
     },
@@ -190,24 +215,27 @@
         "item": "Japanese mayonnaise",
         "measurements": [],
         "note": null,
+        "section": "Chashu Donburi",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "Japanese leek (naganegi) (white part, to make &amp;quot;shiraganegi&amp;quot;)",
+      "raw": "Japanese leek (naganegi) white part, to make \"shiraganegi\"",
       "expected": {
-        "item": "Japanese leek",
+        "item": "Japanese leek white part, to make \"shiraganegi\"",
         "measurements": [],
-        "note": "naganegi, white part, to make \"shiraganegi\"",
-        "category": "Produce"
+        "note": "naganegi",
+        "section": "Chashu Donburi",
+        "category": "Other"
       }
     },
     {
-      "raw": "chili threads (optional)",
+      "raw": "chili threads optional",
       "expected": {
         "item": "chili threads",
         "measurements": [],
         "note": "optional",
+        "section": "Chashu Donburi",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "old-fashioned-apple-crisp-reci",
   "ingredients": [
     {
-      "raw": "4  thinly sliced apples, about 6 cups worth",
+      "raw": "4 thinly sliced apples, about 6 cups worth",
       "expected": {
         "item": "thinly sliced apples",
         "measurements": [
@@ -45,6 +45,10 @@
       }
     },
     {
+      "raw": "Topping Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup all-purpose flour *",
       "expected": {
         "item": "all-purpose flour",
@@ -55,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Baking"
       }
     },
@@ -69,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Snacks"
       }
     },
@@ -83,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Baking"
       }
     },
@@ -97,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Topping Ingredients",
         "category": "Dairy & Eggs"
       }
     }

@@ -45,11 +45,16 @@
       }
     },
     {
+      "raw": "To serve — choose a few!:",
+      "is_section_header": true
+    },
+    {
       "raw": "Brown sugar, maple syrup, honey, or other sweetener",
       "expected": {
         "item": "Brown sugar, maple syrup, honey, or other sweetener",
         "measurements": [],
         "note": null,
+        "section": "To Serve — Choose a Few!",
         "category": "Baking"
       }
     },
@@ -59,6 +64,7 @@
         "item": "Dried fruit, like dried cherries, cranberries, or figs",
         "measurements": [],
         "note": null,
+        "section": "To Serve — Choose a Few!",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -68,6 +74,7 @@
         "item": "Fresh fruit, like raspberries, blue berries, bananas, apples, or pears",
         "measurements": [],
         "note": null,
+        "section": "To Serve — Choose a Few!",
         "category": "Produce"
       }
     },
@@ -77,6 +84,7 @@
         "item": "Chopped nuts, like pecans, pistachios, walnuts, or almonds",
         "measurements": [],
         "note": null,
+        "section": "To Serve — Choose a Few!",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -91,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve — Choose a Few!",
         "category": "Dairy & Eggs"
       }
     }

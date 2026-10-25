@@ -3,6 +3,10 @@
   "recipe_slug": "2007-06-black-bottom-cupcakes",
   "ingredients": [
     {
+      "raw": "For the filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces cream cheese, regular or reduced fat, at room temperature",
       "expected": {
         "item": "cream cheese, regular or reduced fat",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "coarsely chopped, or 1/2 cup chocolate chips",
+        "section": "For the Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the cupcakes:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups all-purpose flour",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "not Dutch-process",
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "firmly packed",
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Beverages"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     }

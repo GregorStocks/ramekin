@@ -3,6 +3,10 @@
   "recipe_slug": "2016-08-chocolate-peanut-butte",
   "ingredients": [
     {
+      "raw": "Wafers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups (195 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "see Note; just use more Dutched cocoa powder if you don’t have it",
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": "cold is fine if using a food processor",
+        "section": "Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,8 +161,13 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Peanut Butter Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (50 grams) smooth peanut butter",
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Whipped Cream",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Whipped Cream",
         "category": "Baking"
       }
     },
@@ -190,6 +209,7 @@
         "item": "A couple pinches salt",
         "measurements": [],
         "note": null,
+        "section": "Peanut Butter Whipped Cream",
         "category": "Other"
       }
     },
@@ -208,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Peanut Butter Whipped Cream",
         "category": "Baking"
       }
     },
@@ -226,8 +247,13 @@
           }
         ],
         "note": "cold",
+        "section": "Peanut Butter Whipped Cream",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "Chocolate sprinkles, shavings, crunchy pearls or chopped chocolate-peanut butter candies",
@@ -235,6 +261,7 @@
         "item": "Chocolate sprinkles, shavings",
         "measurements": [],
         "note": "crunchy pearls or chopped chocolate-peanut butter candies",
+        "section": "To Finish",
         "category": "Baking"
       }
     }

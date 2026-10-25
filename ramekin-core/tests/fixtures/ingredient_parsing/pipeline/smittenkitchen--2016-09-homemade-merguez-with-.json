@@ -3,6 +3,10 @@
   "recipe_slug": "2016-09-homemade-merguez-with-",
   "ingredients": [
     {
+      "raw": "To serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (110 grams) plain yogurt",
       "expected": {
         "item": "plain yogurt",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Dairy & Eggs"
       }
     },
@@ -26,6 +31,7 @@
         "item": "A small handful finely chopped leafy fresh herbs",
         "measurements": [],
         "note": "parsley, cilantro, mint, chives, dill or a mix thereof, plus a few roughly chopped, to serve",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -40,6 +46,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "To Serve",
         "category": "Oils & Vinegars"
       }
     },
@@ -49,6 +56,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     },
@@ -58,6 +66,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Oils & Vinegars"
       }
     },
@@ -67,6 +76,7 @@
         "item": "A handful shredded red cabbage to serve",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -76,8 +86,13 @@
         "item": "Lemon wedges",
         "measurements": [],
         "note": "to serve",
+        "section": "To Serve",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Sausage:",
+      "is_section_header": true
     },
     {
       "raw": "Kosher salt",
@@ -85,6 +100,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +115,7 @@
           }
         ],
         "note": "or a heaped 1/2 teaspoon ground",
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +130,7 @@
           }
         ],
         "note": "or a heaped 1/2 teaspoon ground",
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +145,7 @@
           }
         ],
         "note": "or a heaped 1/2 teaspoon ground",
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -155,6 +175,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -169,6 +190,7 @@
           }
         ],
         "note": "I just used a small squeeze",
+        "section": "Sausage",
         "category": "Condiments & Sauces"
       }
     },
@@ -187,6 +209,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Sausage",
         "category": "Meat & Seafood"
       }
     }

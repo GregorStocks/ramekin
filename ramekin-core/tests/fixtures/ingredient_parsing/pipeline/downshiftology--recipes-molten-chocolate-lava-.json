@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "7 oz dark bittersweet chocolate (chopped)",
+      "raw": "7 oz dark bittersweet chocolate, chopped",
       "expected": {
         "item": "dark bittersweet chocolate",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -115,16 +115,21 @@
       }
     },
     {
-      "raw": "13.5 oz full fat coconut milk (refrigerated overnight)",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "13.5 oz full fat coconut milk, refrigerated overnight",
       "expected": {
-        "item": "full fat coconut milk",
+        "item": "full fat coconut milk, refrigerated overnight",
         "measurements": [
           {
             "amount": "13.5",
             "unit": "oz"
           }
         ],
-        "note": "refrigerated overnight",
+        "note": null,
+        "section": "Topping",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

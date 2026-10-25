@@ -77,6 +77,10 @@
       }
     },
     {
+      "raw": "To finish:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons crème fraîche or mascarpone",
       "expected": {
         "item": "crème fraîche or mascarpone",
@@ -87,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,6 +106,7 @@
           }
         ],
         "note": "more or less to taste",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -110,6 +116,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +126,7 @@
         "item": "A few fresh mint leaves",
         "measurements": [],
         "note": "cut into thin slivers",
+        "section": "To Finish",
         "category": "Other"
       }
     },
@@ -128,6 +136,7 @@
         "item": "Grated parmesan",
         "measurements": [],
         "note": "optional",
+        "section": "To Finish",
         "category": "Cheese"
       }
     }

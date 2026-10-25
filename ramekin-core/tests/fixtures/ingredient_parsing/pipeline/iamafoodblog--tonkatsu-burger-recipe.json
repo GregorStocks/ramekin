@@ -3,6 +3,10 @@
   "recipe_slug": "tonkatsu-burger-recipe",
   "ingredients": [
     {
+      "raw": "Tonkatsu:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 thin boneless pork chops, lightly pounded",
       "expected": {
         "item": "thin boneless pork chops, lightly pounded",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Meat & Seafood"
       }
     },
@@ -22,6 +27,7 @@
         "item": "salt and freshly ground pepper",
         "measurements": [],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Baking"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Tonkatsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -64,8 +72,13 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Bakery & Bread"
       }
+    },
+    {
+      "raw": "Slaw:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups thinly shredded cabbage",
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -129,8 +146,13 @@
         "item": "salt and freshly ground pepper",
         "measurements": [],
         "note": null,
+        "section": "Slaw",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Burger:",
+      "is_section_header": true
     },
     {
       "raw": "4 D’Italiano Brioche Buns, lightly toasted",
@@ -143,6 +165,7 @@
           }
         ],
         "note": "lightly toasted",
+        "section": "Burger",
         "category": "Other"
       }
     },
@@ -152,6 +175,7 @@
         "item": "mayo",
         "measurements": [],
         "note": "to taste",
+        "section": "Burger",
         "category": "Condiments & Sauces"
       }
     },
@@ -161,6 +185,7 @@
         "item": "mustard",
         "measurements": [],
         "note": "to taste",
+        "section": "Burger",
         "category": "Condiments & Sauces"
       }
     },
@@ -170,6 +195,7 @@
         "item": "tonkatsu sauce",
         "measurements": [],
         "note": "to taste",
+        "section": "Burger",
         "category": "Condiments & Sauces"
       }
     }

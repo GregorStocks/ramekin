@@ -3,7 +3,7 @@
   "recipe_slug": "sheet-pan-cookie-cake-recipe",
   "ingredients": [
     {
-      "raw": "4 + ¼ sticks unsalted butter, softened ((2 + 1/8 cups butter or 480.25 grams))",
+      "raw": "4 + ¼ sticks unsalted butter, softened (2 + 1/8 cups butter or 480.25 grams)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "2 + ¼ cups light brown sugar ((450 grams))",
+      "raw": "2 + ¼ cups light brown sugar (450 grams)",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -39,7 +39,7 @@
       }
     },
     {
-      "raw": "¾ cup granulated sugar ((150 grams))",
+      "raw": "¾ cup granulated sugar (150 grams)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -57,7 +57,7 @@
       }
     },
     {
-      "raw": "3  large eggs ((bring to room temperature))",
+      "raw": "3 large eggs (bring to room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -85,7 +85,7 @@
       }
     },
     {
-      "raw": "6 cups all-purpose flour ((720 grams))",
+      "raw": "6 cups all-purpose flour (720 grams)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -159,6 +159,10 @@
       }
     },
     {
+      "raw": "CHOCOLATE PEANUT BUTTER FROSTING:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 TBSP 1 stick butter, softened",
       "expected": {
         "item": "butter",
@@ -173,21 +177,23 @@
           }
         ],
         "note": "softened",
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups confectioner's sugar (powdered sugar)",
+      "raw": "2 cups confectioner’s sugar powdered sugar",
       "expected": {
-        "item": "confectioner's sugar",
+        "item": "confectioner’s sugar powdered sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "powdered sugar",
-        "category": "Baking"
+        "note": null,
+        "section": "Chocolate Peanut Butter Frosting",
+        "category": "Other"
       }
     },
     {
@@ -201,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Baking"
       }
     },
@@ -215,11 +222,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 TBSP half and half ((milk works too + extra if needed))",
+      "raw": "2 TBSP half and half (milk works too + extra if needed)",
       "expected": {
         "item": "half and half",
         "measurements": [
@@ -229,11 +237,12 @@
           }
         ],
         "note": "milk works too + extra if needed",
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½-¾ cup peanut butter (to taste)",
+      "raw": "½-¾ cup peanut butter to taste",
       "expected": {
         "item": "peanut butter",
         "measurements": [
@@ -243,8 +252,13 @@
           }
         ],
         "note": "to taste",
+        "section": "Chocolate Peanut Butter Frosting",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "TOOLS USED:",
+      "is_section_header": true
     },
     {
       "raw": "parchment paper",
@@ -252,11 +266,12 @@
         "item": "parchment paper",
         "measurements": [],
         "note": null,
+        "section": "Tools Used",
         "category": "Other"
       }
     },
     {
-      "raw": "11.38&nbsp;x 16.5 lipped baking&nbsp;pan",
+      "raw": "11.38 x 16.5 lipped baking pan",
       "expected": {
         "item": "x 16.5 lipped baking pan",
         "measurements": [
@@ -266,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "Tools Used",
         "category": "Other"
       }
     }

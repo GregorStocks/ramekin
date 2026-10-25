@@ -3,13 +3,17 @@
   "recipe_slug": "sweet-onion-crack-dip-recipe",
   "ingredients": [
     {
-      "raw": "8 ounces cream cheese (at room temperature)",
+      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -17,13 +21,17 @@
       }
     },
     {
-      "raw": "1 cup mayonnaise",
+      "raw": "1 cup  (224 g) mayonnaise",
       "expected": {
         "item": "mayonnaise",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "224",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -31,13 +39,17 @@
       }
     },
     {
-      "raw": "1 cup small diced sweet onion",
+      "raw": "1 cup  (160 g) small diced sweet onion",
       "expected": {
         "item": "small diced sweet onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,13 +57,17 @@
       }
     },
     {
-      "raw": "1 cup freshly grated Parmesan cheese",
+      "raw": "1 cup  (100 g) freshly grated Parmesan cheese",
       "expected": {
         "item": "freshly grated Parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -59,7 +75,7 @@
       }
     },
     {
-      "raw": "1 tablespoon freshly ground black pepper",
+      "raw": "1 tablespoon   freshly ground black pepper",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [
@@ -73,11 +89,16 @@
       }
     },
     {
-      "raw": "Baguette (crackers or chips, for serving)",
+      "raw": "To serve:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Baguette, crackers or chips, for serving",
       "expected": {
-        "item": "Baguette",
+        "item": "Baguette, crackers or chips",
         "measurements": [],
-        "note": "crackers or chips, for serving",
+        "note": "for serving",
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     }

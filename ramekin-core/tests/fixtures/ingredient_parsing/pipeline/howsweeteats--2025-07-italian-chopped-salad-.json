@@ -3,6 +3,10 @@
   "recipe_slug": "2025-07-italian-chopped-salad-",
   "ingredients": [
     {
+      "raw": "sourdough pizza:",
+      "is_section_header": true
+    },
+    {
       "raw": "325 grams water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Baking"
       }
     },
@@ -83,11 +92,16 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½  head iceberg lettuce, (thinly sliced)",
+      "raw": "chopped italian salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ head iceberg lettuce, thinly sliced",
       "expected": {
         "item": "iceberg lettuce",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Chopped Italian Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "½  red onion, (thinly sliced)",
+      "raw": "½ red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Chopped Italian Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  can chickpeas, (drained and rinsed)",
+      "raw": "1 can chickpeas, drained and rinsed",
       "expected": {
         "item": "chickpeas",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Chopped Italian Salad",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 ounces salami, (chopped)",
+      "raw": "2 ounces salami, chopped",
       "expected": {
         "item": "salami",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Chopped Italian Salad",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 cup cherry tomatoes, (chopped)",
+      "raw": "1 cup cherry tomatoes, chopped",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chopped Italian Salad",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Chopped Italian Salad",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Chopped Italian Salad",
         "category": "Canned Goods"
       }
     },
@@ -195,11 +216,12 @@
           }
         ],
         "note": null,
+        "section": "Chopped Italian Salad",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2 ounces smoked provolone cheese, (diced)",
+      "raw": "2 ounces smoked provolone cheese, diced",
       "expected": {
         "item": "smoked provolone cheese",
         "measurements": [
@@ -209,8 +231,13 @@
           }
         ],
         "note": "diced",
+        "section": "Chopped Italian Salad",
         "category": "Other"
       }
+    },
+    {
+      "raw": "zesty vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons red wine vinegar",
@@ -223,11 +250,12 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  garlic cloves, (minced)",
+      "raw": "2 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -237,6 +265,7 @@
           }
         ],
         "note": "minced",
+        "section": "Zesty Vinaigrette",
         "category": "Produce"
       }
     },
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Baking"
       }
     },
@@ -279,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -293,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,6 +340,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -321,6 +355,7 @@
           }
         ],
         "note": null,
+        "section": "Zesty Vinaigrette",
         "category": "Oils & Vinegars"
       }
     }

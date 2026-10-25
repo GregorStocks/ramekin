@@ -3,7 +3,7 @@
   "recipe_slug": "2023-05-12-chinese-chicken-sal",
   "ingredients": [
     {
-      "raw": "1 head romaine (shredded)",
+      "raw": "1 head romaine, shredded",
       "expected": {
         "item": "romaine",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 (15-ounce) can mandarin oranges (drained)",
+      "raw": "1 (15-ounce) can mandarin oranges, drained",
       "expected": {
         "item": "mandarin oranges",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 cup chopped fresh cilantro leaves",
+      "raw": "½ cup chopped fresh cilantro leaves",
       "expected": {
         "item": "chopped fresh cilantro leaves",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/2 cup roasted salted cashews",
+      "raw": "½ cup roasted salted cashews",
       "expected": {
         "item": "roasted salted cashews",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "3  green onions (thinly sliced)",
+      "raw": "3 green onions, thinly sliced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "2 cups crispy wonton strips",
+      "raw": "2 cups crispy wonton strips, homemade or store-bought",
       "expected": {
         "item": "crispy wonton strips",
         "measurements": [
@@ -110,7 +110,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Other"
       }
     },
@@ -129,7 +129,11 @@
       }
     },
     {
-      "raw": "1/4 cup rice vinegar",
+      "raw": "for the sesame ginger dressing:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ cup rice vinegar",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -139,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Ginger Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,11 +158,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Ginger Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 1/2 tablespoons canola oil",
+      "raw": "2 ½ tablespoons canola oil",
       "expected": {
         "item": "canola oil",
         "measurements": [
@@ -167,11 +173,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Ginger Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 1/2 tablespoons toasted sesame oil",
+      "raw": "2 ½ tablespoons toasted sesame oil",
       "expected": {
         "item": "toasted sesame oil",
         "measurements": [
@@ -181,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Ginger Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Ginger Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Ginger Dressing",
         "category": "Produce"
       }
     },
@@ -223,15 +233,17 @@
           }
         ],
         "note": null,
+        "section": "For the Sesame Ginger Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Kosher salt and freshly ground black pepper (to taste)",
+      "raw": "Kosher salt and freshly ground black pepper, to taste",
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Sesame Ginger Dressing",
         "category": "Spices & Seasonings"
       }
     }

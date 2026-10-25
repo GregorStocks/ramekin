@@ -97,13 +97,12 @@
       }
     },
     {
-      "raw": "Pears",
-      "expected": {
-        "item": "Pears",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "raw": "Pear and Almond Tart:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Pears:",
+      "is_section_header": true
     },
     {
       "raw": "4 cups (950 ml) water",
@@ -120,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Pears",
         "category": "Beverages"
       }
     },
@@ -138,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Pears",
         "category": "Baking"
       }
     },
@@ -156,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Pears",
         "category": "Produce"
       }
     },
@@ -174,11 +176,12 @@
           }
         ],
         "note": "each about 7 ounces or 200 grams, peeled",
+        "section": "Pears",
         "category": "Other"
       }
     },
     {
-      "raw": "Almond Filling",
+      "raw": "Almond Filling:",
       "is_section_header": true
     },
     {

@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-roasted-delicata-squas",
   "ingredients": [
     {
-      "raw": "2  medium delicata squash",
+      "raw": "2 medium delicata squash",
       "expected": {
         "item": "delicata squash",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "freshly ground black pepper (to taste)",
+      "raw": "freshly ground black pepper, to taste",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [],
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "2  pears (thinly sliced)",
+      "raw": "2 pears, thinly sliced",
       "expected": {
         "item": "pears",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "1  medium shallot (finely sliced)",
+      "raw": "1 medium shallot, finely sliced",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "4 tbsp raw pepitas ((pumpkin seeds))",
+      "raw": "4 tbsp raw pepitas, (pumpkin seeds)",
       "expected": {
         "item": "raw pepitas",
         "measurements": [
@@ -124,6 +124,10 @@
       }
     },
     {
+      "raw": "Maple Balsamic Vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tbsp olive oil",
       "expected": {
         "item": "olive oil",
@@ -134,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Maple Balsamic Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -148,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Maple Balsamic Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -162,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Maple Balsamic Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,15 +183,17 @@
           }
         ],
         "note": null,
+        "section": "Maple Balsamic Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Maple Balsamic Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

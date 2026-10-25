@@ -3,21 +3,30 @@
   "recipe_slug": "malai-kofta-recipe",
   "ingredients": [
     {
-      "raw": "1 heaped cup  paneer ( crumbled (about 150 grams))",
+      "raw": "For malai kofta:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 heaped cup  paneer  crumbled (about 150 grams)",
       "expected": {
         "item": "paneer",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaped cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
-        "note": "crumbled (about 150 grams)",
+        "note": "about 150 grams, crumbled",
+        "section": "For Malai Kofta",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 heaped cup  potato boiled &amp;amp; crumbled ((about 2 large))",
+      "raw": "1 heaped cup  potato boiled & crumbled (about 2 large)",
       "expected": {
         "item": "potato",
         "measurements": [
@@ -31,11 +40,12 @@
           }
         ],
         "note": "about 2 large, boiled & crumbled",
+        "section": "For Malai Kofta",
         "category": "Produce"
       }
     },
     {
-      "raw": "2½ tablespoons corn starch ((same as white refined corn flour))",
+      "raw": "2½ tablespoons corn starch (same as white refined corn flour)",
       "expected": {
         "item": "corn starch",
         "measurements": [
@@ -45,6 +55,7 @@
           }
         ],
         "note": "same as white refined corn flour",
+        "section": "For Malai Kofta",
         "category": "Baking"
       }
     },
@@ -59,11 +70,12 @@
           }
         ],
         "note": null,
+        "section": "For Malai Kofta",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves  (chopped finely)",
+      "raw": "2 tablespoons coriander leaves  chopped finely",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -73,6 +85,7 @@
           }
         ],
         "note": "chopped finely",
+        "section": "For Malai Kofta",
         "category": "Produce"
       }
     },
@@ -82,6 +95,7 @@
         "item": "salt",
         "measurements": [],
         "note": "as needed",
+        "section": "For Malai Kofta",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,11 +110,12 @@
           }
         ],
         "note": null,
+        "section": "For Malai Kofta",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tablespoons cashews chopped ( (optional))",
+      "raw": "1 tablespoons cashews chopped  (optional)",
       "expected": {
         "item": "cashews",
         "measurements": [
@@ -109,12 +124,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": "(optional), chopped",
+        "note": "optional, chopped",
+        "section": "For Malai Kofta",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1 tablespoons raisins ( (optional))",
+      "raw": "1 tablespoons raisins  (optional)",
       "expected": {
         "item": "raisins",
         "measurements": [
@@ -123,7 +139,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "(optional)",
+        "note": "optional",
+        "section": "For Malai Kofta",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -133,8 +150,13 @@
         "item": "Oil",
         "measurements": [],
         "note": "for deep frying",
+        "section": "For Malai Kofta",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "To saute & puree:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon oil",
@@ -147,11 +169,12 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 cup onions (cubed )",
+      "raw": "1 cup onions cubed",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -161,11 +184,12 @@
           }
         ],
         "note": "cubed",
+        "section": "To Saute & Puree",
         "category": "Produce"
       }
     },
     {
-      "raw": "1½ cup tomatoes (cubed)",
+      "raw": "1½ cup tomatoes cubed",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -175,11 +199,12 @@
           }
         ],
         "note": "cubed",
+        "section": "To Saute & Puree",
         "category": "Produce"
       }
     },
     {
-      "raw": "15  cashew nuts",
+      "raw": "15 cashew nuts",
       "expected": {
         "item": "cashew nuts",
         "measurements": [
@@ -189,11 +214,12 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "2  green cardamoms",
+      "raw": "2 green cardamoms",
       "expected": {
         "item": "green cardamoms",
         "measurements": [
@@ -203,11 +229,12 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ inch cinnamon stick ((optional))",
+      "raw": "½ inch cinnamon stick (optional)",
       "expected": {
         "item": "inch cinnamon stick",
         "measurements": [
@@ -217,13 +244,14 @@
           }
         ],
         "note": "optional",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3  cloves ((optional))",
+      "raw": "3 cloves (optional)",
       "expected": {
-        "item": "3  cloves ((optional))",
+        "item": "3 cloves (optional)",
         "measurements": [
           {
             "amount": "3",
@@ -231,11 +259,16 @@
           }
         ],
         "note": "optional",
+        "section": "To Saute & Puree",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons oil ((or 2 tbsp butter))",
+      "raw": "other ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons oil (or 2 tbsp butter)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -245,11 +278,12 @@
           }
         ],
         "note": "or 2 tbsp butter",
+        "section": "Other Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  bay leaf ((optional))",
+      "raw": "1 bay leaf (optional)",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -259,11 +293,12 @@
           }
         ],
         "note": "optional",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ inch cinnamon stick ((optional))",
+      "raw": "½ inch cinnamon stick (optional)",
       "expected": {
         "item": "inch cinnamon stick",
         "measurements": [
@@ -273,11 +308,12 @@
           }
         ],
         "note": "optional",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  cardamoms ((optional))",
+      "raw": "2 cardamoms (optional)",
       "expected": {
         "item": "cardamoms",
         "measurements": [
@@ -287,6 +323,7 @@
           }
         ],
         "note": "optional",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -301,11 +338,12 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon red chili powder  ((adjust to taste))",
+      "raw": "1 teaspoon red chili powder  (adjust to taste)",
       "expected": {
         "item": "red chili powder",
         "measurements": [
@@ -315,11 +353,12 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¾ to 1¼  teaspoon garam masala ((adjust to taste))",
+      "raw": "¾ to 1¼  teaspoon garam masala (adjust to taste)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -329,11 +368,12 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon coriander powder ((ground coriander seeds))",
+      "raw": "1 teaspoon coriander powder (ground coriander seeds)",
       "expected": {
         "item": "coriander powder",
         "measurements": [
@@ -343,11 +383,12 @@
           }
         ],
         "note": "ground coriander seeds",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon salt ((adjust to taste))",
+      "raw": "1 teaspoon salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -357,6 +398,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -371,11 +413,12 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup water ((¼ cup more if needed))",
+      "raw": "½ cup water (¼ cup more if needed)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -385,11 +428,12 @@
           }
         ],
         "note": "1/4 cup more if needed",
+        "section": "Other Ingredients",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 teaspoon kasuri methi ((fenugreek leaves))",
+      "raw": "1 teaspoon kasuri methi (fenugreek leaves)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [
@@ -399,6 +443,7 @@
           }
         ],
         "note": "fenugreek leaves",
+        "section": "Other Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -413,6 +458,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Dairy & Eggs"
       }
     }

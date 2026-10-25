@@ -3,7 +3,11 @@
   "recipe_slug": "butterfinger-pie-recipe",
   "ingredients": [
     {
-      "raw": "24  Oreo cookies (crushed into crumbs)",
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "24   Oreo cookies, crushed into crumbs",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "crushed into crumbs",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "3 tablespoons butter (melted and cooled)",
+      "raw": "3 tablespoons   butter, melted and cooled",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -27,53 +32,73 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 ounces cream cheese (at room temperature)",
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "½ cup creamy peanut butter",
+      "raw": "½ cup  (129 g) creamy peanut butter",
       "expected": {
         "item": "creamy peanut butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "129",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "¼ cup granulated sugar",
+      "raw": "¼ cup  (50 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "Pinch of salt",
+      "raw": "Pinch   of salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -83,25 +108,31 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "8 ounces Cool Whip",
+      "raw": "8 ounces  (226.8 g) Cool Whip",
       "expected": {
         "item": "Cool Whip",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Frozen"
       }
     },
     {
-      "raw": "8  Fun Size Butterfinger candy bars (coarsely chopped)",
+      "raw": "8   Fun Size Butterfinger candy bars, coarsely chopped",
       "expected": {
         "item": "Fun Size Butterfinger candy bars",
         "measurements": [
@@ -111,20 +142,30 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For the Filling",
         "category": "Snacks"
       }
     },
     {
-      "raw": "4 ounces Cool Whip",
+      "raw": "For the Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 ounces  (113.4 g) Cool Whip",
       "expected": {
         "item": "Cool Whip",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
+          },
+          {
+            "amount": "113.4",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Frozen"
       }
     },
@@ -134,11 +175,12 @@
         "item": "Chocolate syrup",
         "measurements": [],
         "note": null,
+        "section": "For the Topping",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2  Fun Size Butterfinger candy bars (coarsely chopped)",
+      "raw": "2   Fun Size Butterfinger candy bars, coarsely chopped",
       "expected": {
         "item": "Fun Size Butterfinger candy bars",
         "measurements": [
@@ -148,6 +190,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For the Topping",
         "category": "Snacks"
       }
     }

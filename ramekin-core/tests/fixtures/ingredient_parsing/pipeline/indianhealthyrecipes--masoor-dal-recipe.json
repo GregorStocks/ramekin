@@ -3,7 +3,7 @@
   "recipe_slug": "masoor-dal-recipe",
   "ingredients": [
     {
-      "raw": "½ cup (95 grams)  masoor dal ( (red lentils))",
+      "raw": "½ cup (95 grams) masoor dal  (red lentils)",
       "expected": {
         "item": "masoor dal",
         "measurements": [
@@ -16,12 +16,12 @@
             "unit": "g"
           }
         ],
-        "note": "(red lentils)",
+        "note": "red lentils",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 tablespoons (23 grams)  moong dal ((optional))",
+      "raw": "2 tablespoons (23 grams) moong dal (optional)",
       "expected": {
         "item": "moong dal",
         "measurements": [
@@ -39,7 +39,7 @@
       }
     },
     {
-      "raw": "2 medium (½ to ¾ cup)  tomatoes ((deseeded &amp;amp; chopped))",
+      "raw": "2 medium (½ to ¾ cup) tomatoes (deseeded & chopped)",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -57,7 +57,7 @@
       }
     },
     {
-      "raw": "1  green chili ((optional))",
+      "raw": "1 green chili (optional)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "1¼ to 1½ cup water ((or 1 cup for IP + ¼ cup if using moong dal))",
+      "raw": "1¼ to 1½ cup water (or 1 cup for IP + ¼ cup if using moong dal)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -85,49 +85,56 @@
       }
     },
     {
-      "raw": "1 to 2 tablespoon ghee (or (1 tbsp oil or 2 tbsps butter))",
+      "raw": "To Temper:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 to 2 tablespoon ghee or (1 tbsp oil or 2 tbsps butter)",
       "expected": {
-        "item": "ghee",
+        "item": "ghee or",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": "or (1 tbsp oil or 2 tbsps butter)",
-        "category": "Dairy & Eggs"
+        "note": "1 tbsp oil or 2 tbsps butter",
+        "section": "To Temper",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  dried red chili (broken)",
+      "raw": "1 dried red chili broken",
       "expected": {
-        "item": "dried red chili",
+        "item": "dried red chili broken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "broken",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "To Temper",
+        "category": "Other"
       }
     },
     {
-      "raw": "2  garlic (cloves chopped)",
+      "raw": "2 garlic cloves chopped",
       "expected": {
-        "item": "garlic",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "cloves chopped",
+        "note": "chopped",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ teaspoon mustard seeds ((optional))",
+      "raw": "¼ teaspoon mustard seeds (optional)",
       "expected": {
         "item": "mustard seeds",
         "measurements": [
@@ -137,6 +144,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -151,11 +159,12 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch asafoetida ((hing))",
+      "raw": "1 pinch asafoetida (hing)",
       "expected": {
         "item": "asafoetida",
         "measurements": [
@@ -165,11 +174,12 @@
           }
         ],
         "note": "hing",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon salt  ((adjust to taste))",
+      "raw": "½ teaspoon salt  (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -179,11 +189,12 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ to ½ teaspoon Kashmiri red chili powder ((use up to ¾ for heat, adjust to taste))",
+      "raw": "¼ to ½ teaspoon Kashmiri red chili powder (use up to ¾ for heat, adjust to taste)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -193,6 +204,7 @@
           }
         ],
         "note": "use up to 3/4 for heat, adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,11 +219,12 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "⅛ teaspoon garam masala ((more if you want))",
+      "raw": "⅛ teaspoon garam masala (more if you want)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -221,11 +234,12 @@
           }
         ],
         "note": "more if you want",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon kasuri methi ((dried fenugreek leaves))",
+      "raw": "½ teaspoon kasuri methi (dried fenugreek leaves)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [
@@ -235,35 +249,38 @@
           }
         ],
         "note": "dried fenugreek leaves",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves (fine chopped, to garnish)",
+      "raw": "2 tablespoons coriander leaves fine chopped, to garnish",
       "expected": {
-        "item": "coriander leaves",
+        "item": "coriander leaves fine chopped, to garnish",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "fine chopped, to garnish",
-        "category": "Produce"
+        "note": null,
+        "section": "To Temper",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 to 2 tablespoons lemon juice (to serve)",
+      "raw": "1 to 2 tablespoons lemon juice to serve",
       "expected": {
-        "item": "lemon juice",
+        "item": "lemon juice to serve",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": "to serve",
-        "category": "Produce"
+        "note": null,
+        "section": "To Temper",
+        "category": "Other"
       }
     }
   ]

@@ -3,21 +3,21 @@
   "recipe_slug": "chocolate-cream-pie-recipe",
   "ingredients": [
     {
-      "raw": "1  blind baked pie crust, (recipe here)",
+      "raw": "1 blind baked pie crust, recipe here",
       "expected": {
-        "item": "blind baked pie crust",
+        "item": "blind baked pie crust, recipe here",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "recipe here",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "4 oz. bittersweet chocolate  ((60 to 65 percent), chopped small)",
+      "raw": "4 oz. bittersweet chocolate  (60 to 65 percent), chopped small",
       "expected": {
         "item": "bittersweet chocolate",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "3 Tbsp (42 g) unsalted butter, (cut into 1 Tbsp pieces)",
+      "raw": "3 Tbsp (42 g) unsalted butter, cut into 1 Tbsp pieces",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -81,7 +81,7 @@
       }
     },
     {
-      "raw": "1/4 cup (24 g) Dutch process cocoa powder ((scoop and level to measure))",
+      "raw": "1/4 cup (24 g) Dutch process cocoa powder (scoop and level to measure)",
       "expected": {
         "item": "Dutch process cocoa powder",
         "measurements": [
@@ -99,7 +99,7 @@
       }
     },
     {
-      "raw": "1/4 cup (33 g) cornstarch ((scoop and level to measure))",
+      "raw": "1/4 cup (33 g) cornstarch (scoop and level to measure)",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -145,7 +145,7 @@
       }
     },
     {
-      "raw": "3 cups (710 ml) whole milk, (divided)",
+      "raw": "3 cups (710 ml) whole milk, divided",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -163,6 +163,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (295 ml)  heavy cream",
       "expected": {
         "item": "heavy cream",
@@ -177,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -209,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

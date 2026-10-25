@@ -3,6 +3,10 @@
   "recipe_slug": "2022-04-lemon-cream-meringues",
   "ingredients": [
     {
+      "raw": "Meringues:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 large egg whites",
       "expected": {
         "item": "egg whites",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Oils & Vinegars"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Baking"
       }
     },
@@ -87,8 +96,13 @@
           }
         ],
         "note": null,
+        "section": "Meringues",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Curd:",
+      "is_section_header": true
     },
     {
       "raw": "2 medium/large lemons",
@@ -101,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Curd",
         "category": "Produce"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Curd",
         "category": "Baking"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,8 +168,13 @@
           }
         ],
         "note": null,
+        "section": "Curd",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (225 grams) heavy or whipping cream",
@@ -169,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -183,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -201,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -219,6 +244,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -228,6 +254,7 @@
         "item": "Fresh berries and/or powdered sugar",
         "measurements": [],
         "note": "if you wish",
+        "section": "Assembly",
         "category": "Baking"
       }
     }

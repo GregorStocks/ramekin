@@ -3,6 +3,10 @@
   "recipe_slug": "2015-01-my-ultimate-chicken-no",
   "ingredients": [
     {
+      "raw": "Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 medium-large yellow onions, unpeeled, halved or 1 large onion plus 1 large leek, cleaned and cut lengthwise",
       "expected": {
         "item": "yellow onions, unpeeled, halved",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "or 1 large onion plus 1 large leek; cleaned and cut lengthwise",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "peeled and smashed a little",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "optional",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Beverages"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "from about two carcasses leftover from a roast or rotisserie, my first choice",
+        "section": "Broth",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "or 2 teaspoons chopped fresh",
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -167,8 +182,13 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To Finish:",
+      "is_section_header": true
     },
     {
       "raw": "3 bone-in chicken breast halves, either bone-in skin-on (for deepest flavor) or boneless skinless",
@@ -181,6 +201,7 @@
           }
         ],
         "note": "for deepest flavor",
+        "section": "To Finish",
         "category": "Other"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "peeled and diced or 1 large carrot and 1 large parsnip, diced",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "trimmed and sliced into 1/2-inch segments",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "chopped or diced",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Pasta & Rice"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Other"
       }
     }

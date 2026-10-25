@@ -59,7 +59,11 @@
       }
     },
     {
-      "raw": "4  whole cherries",
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 whole cherries",
       "expected": {
         "item": "whole cherries",
         "measurements": [
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     }

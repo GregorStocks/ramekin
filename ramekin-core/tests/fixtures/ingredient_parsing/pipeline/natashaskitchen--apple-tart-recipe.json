@@ -3,6 +3,10 @@
   "recipe_slug": "apple-tart-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients for Apple Tart Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter, chilled ((8 Tbsp))",
+      "raw": "1/2 cup unsalted butter, chilled, (8 Tbsp)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -73,11 +81,12 @@
           }
         ],
         "note": "chilled",
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  large egg (chilled)",
+      "raw": "1 large egg, chilled",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -87,11 +96,12 @@
           }
         ],
         "note": "chilled",
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/3 cup heavy whipping cream (chilled)",
+      "raw": "1/3 cup heavy whipping cream, chilled",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
@@ -101,11 +111,16 @@
           }
         ],
         "note": "chilled",
+        "section": "Ingredients for Apple Tart Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 lb granny smith apples  ((3 medium apples))",
+      "raw": "Ingredients for Apple Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 lb granny smith apples , (3 medium apples)",
       "expected": {
         "item": "granny smith apples",
         "measurements": [
@@ -115,6 +130,7 @@
           }
         ],
         "note": "3 medium apples",
+        "section": "Ingredients for Apple Filling",
         "category": "Produce"
       }
     },
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Filling",
         "category": "Baking"
       }
     },
@@ -143,11 +160,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Apple Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/2 Tbsp unsalted butter  ((to dot the top))",
+      "raw": "1 1/2 Tbsp unsalted butter , (to dot the top)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -157,6 +175,7 @@
           }
         ],
         "note": "to dot the top",
+        "section": "Ingredients for Apple Filling",
         "category": "Dairy & Eggs"
       }
     }

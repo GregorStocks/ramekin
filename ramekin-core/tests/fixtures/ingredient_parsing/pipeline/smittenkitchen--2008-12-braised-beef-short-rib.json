@@ -222,6 +222,10 @@
       }
     },
     {
+      "raw": "Horseradish Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup créme fraîche",
       "expected": {
         "item": "créme fraîche",
@@ -232,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Cream",
         "category": "Other"
       }
     },
@@ -246,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Horseradish Cream",
         "category": "Condiments & Sauces"
       }
     },
@@ -255,8 +261,13 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Horseradish Cream",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Mashed Potatoes:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds potatoes, scrubbed (I used Yukon Golds)",
@@ -269,6 +280,7 @@
           }
         ],
         "note": "I used Yukon Golds, scrubbed",
+        "section": "Mashed Potatoes",
         "category": "Produce"
       }
     },
@@ -291,6 +303,7 @@
           }
         ],
         "note": "melted",
+        "section": "Mashed Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -305,6 +318,7 @@
           }
         ],
         "note": "warmed",
+        "section": "Mashed Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -319,6 +333,7 @@
           }
         ],
         "note": null,
+        "section": "Mashed Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -328,6 +343,7 @@
         "item": "Ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Mashed Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -337,6 +353,7 @@
         "item": "Chives",
         "measurements": [],
         "note": "optional, for garnish",
+        "section": "Mashed Potatoes",
         "category": "Produce"
       }
     }

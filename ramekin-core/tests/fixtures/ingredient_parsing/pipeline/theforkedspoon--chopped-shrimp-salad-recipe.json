@@ -3,6 +3,10 @@
   "recipe_slug": "chopped-shrimp-salad-recipe",
   "ingredients": [
     {
+      "raw": "For the Cilantro Lime Vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cilantro Lime Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cilantro Lime Vinaigrette",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves garlic (minced)",
+      "raw": "3 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Cilantro Lime Vinaigrette",
         "category": "Produce"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cilantro Lime Vinaigrette",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup fresh cilantro (finely chopped)",
+      "raw": "¼ cup fresh cilantro, finely chopped",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -69,20 +77,26 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Cilantro Lime Vinaigrette",
         "category": "Produce"
       }
     },
     {
-      "raw": "salt + pepper (to taste)",
+      "raw": "salt + pepper, to taste",
       "expected": {
         "item": "salt + pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Cilantro Lime Vinaigrette",
         "category": "Other"
       }
     },
     {
-      "raw": "1 pound large shrimp (peeled and deveined with tail on)",
+      "raw": "FOR THE SHRIMP:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound large shrimp, peeled and deveined with tail on",
       "expected": {
         "item": "large shrimp",
         "measurements": [
@@ -92,11 +106,12 @@
           }
         ],
         "note": "peeled and deveined with tail on",
+        "section": "For the Shrimp",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2 tablespoon olive oil (divided)",
+      "raw": "2 tablespoon olive oil, divided",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -106,6 +121,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Shrimp",
         "category": "Oils & Vinegars"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Other"
       }
     },
@@ -157,11 +176,16 @@
         "item": "salt + pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Other"
       }
     },
     {
-      "raw": "2  heads Romaine lettuce (finely chopped)",
+      "raw": "FOR THE SALAD:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 heads Romaine lettuce, finely chopped",
       "expected": {
         "item": "Romaine lettuce",
         "measurements": [
@@ -171,11 +195,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "10 ounces grape or cherry tomatoes (halved)",
+      "raw": "10 ounces grape or cherry tomatoes, halved",
       "expected": {
         "item": "grape or cherry tomatoes",
         "measurements": [
@@ -185,11 +210,12 @@
           }
         ],
         "note": "halved",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  English cucumber (chopped)",
+      "raw": "½ English cucumber, chopped",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -199,11 +225,12 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  small red onion (diced)",
+      "raw": "½ small red onion, diced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -213,11 +240,12 @@
           }
         ],
         "note": "diced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup green onions (chopped)",
+      "raw": "½ cup green onions, chopped",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -227,11 +255,12 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup fresh cilantro (chopped)",
+      "raw": "½ cup fresh cilantro, chopped",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -241,11 +270,12 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup corn (from a can/ frozen and thawed/ from the cob)",
+      "raw": "1 cup corn, from a can/ frozen and thawed/ from the cob",
       "expected": {
         "item": "corn",
         "measurements": [
@@ -255,11 +285,12 @@
           }
         ],
         "note": "from a can/ frozen and thawed/ from the cob",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 large avocado (peeled, pitted, diced)",
+      "raw": "1 large avocado, peeled, pitted, diced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -269,38 +300,42 @@
           }
         ],
         "note": "peeled, pitted, diced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup Casero Cheese (use feta as a substitute, omit to be dairy free)",
+      "raw": "¼ cup Casero Cheese, use feta as a substitute, omit to be dairy free",
       "expected": {
-        "item": "Casero Cheese",
+        "item": "Casero Cheese, use feta as a substitute, omit to be dairy free",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "use feta as a substitute, omit to be dairy free",
+        "note": null,
+        "section": "For the Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "tortilla chips or wonton chips (for topping, omit to be gluten-free)",
+      "raw": "tortilla chips or wonton chips, for topping, omit to be gluten-free",
       "expected": {
         "item": "tortilla chips or wonton chips",
         "measurements": [],
         "note": "for topping, omit to be gluten-free",
+        "section": "For the Salad",
         "category": "Snacks"
       }
     },
     {
-      "raw": "fresh lime juice (for serving)",
+      "raw": "fresh lime juice, for serving",
       "expected": {
         "item": "fresh lime juice",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Salad",
         "category": "Produce"
       }
     }

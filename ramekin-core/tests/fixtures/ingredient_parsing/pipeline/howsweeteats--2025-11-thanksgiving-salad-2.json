@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "½ cup candied walnuts, (chopped (recipe below))",
+      "raw": "½ cup candied walnuts, chopped (recipe below)",
       "expected": {
         "item": "candied walnuts",
         "measurements": [
@@ -49,7 +49,7 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped (recipe below)",
+        "note": "recipe below, chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -68,9 +68,9 @@
       }
     },
     {
-      "raw": "¼ cup roasted, (salted pepitas)",
+      "raw": "¼ cup roasted, salted pepitas",
       "expected": {
-        "item": "roasted salted pepitas",
+        "item": "roasted, salted pepitas",
         "measurements": [
           {
             "amount": "0.25",
@@ -78,8 +78,12 @@
           }
         ],
         "note": null,
-        "category": "Nuts & Dried Fruit"
+        "category": "Snacks"
       }
+    },
+    {
+      "raw": "salted maple vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup apple cider vinegar",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -106,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  garlic clove, (finely minced or pressed)",
+      "raw": "1 garlic clove, finely minced or pressed",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -120,6 +126,7 @@
           }
         ],
         "note": "finely minced or pressed",
+        "section": "Salted Maple Vinaigrette",
         "category": "Produce"
       }
     },
@@ -134,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "candied walnuts:",
+      "is_section_header": true
     },
     {
       "raw": "⅓ cup walnuts",
@@ -190,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Candied Walnuts",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -204,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Candied Walnuts",
         "category": "Baking"
       }
     },
@@ -218,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Candied Walnuts",
         "category": "Dairy & Eggs"
       }
     }

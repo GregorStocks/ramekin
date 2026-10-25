@@ -175,7 +175,11 @@
       }
     },
     {
-      "raw": "1 Zhoug cilantro pesto recipe&nbsp;",
+      "raw": "Toppings (optional):",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 Zhoug cilantro pesto recipe",
       "expected": {
         "item": "Zhoug cilantro pesto recipe",
         "measurements": [
@@ -185,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings (Optional)",
         "category": "Other"
       }
     },
@@ -199,6 +204,7 @@
           }
         ],
         "note": "toasted in olive oil",
+        "section": "Toppings (Optional)",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -208,6 +214,7 @@
         "item": "Jalapeno slices",
         "measurements": [],
         "note": "optional, for garnish",
+        "section": "Toppings (Optional)",
         "category": "Produce"
       }
     }

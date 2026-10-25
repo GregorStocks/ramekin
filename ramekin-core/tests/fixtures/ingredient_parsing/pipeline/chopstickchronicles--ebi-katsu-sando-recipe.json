@@ -3,6 +3,10 @@
   "recipe_slug": "ebi-katsu-sando-recipe",
   "ingredients": [
     {
+      "raw": "Ebi Katsu (Shrimp Cutlets):",
+      "is_section_header": true
+    },
+    {
       "raw": "400 g fresh shrimps",
       "expected": {
         "item": "fresh shrimps",
@@ -13,20 +17,22 @@
           }
         ],
         "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tbsp katakuriko potato starch  (*1)",
+      "raw": "1 tbsp katakuriko potato starch  *1",
       "expected": {
-        "item": "katakuriko potato starch",
+        "item": "katakuriko potato starch *1",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "*1",
+        "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Other"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Beverages"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Bakery & Bread"
       }
     },
@@ -106,7 +117,18 @@
         "item": "Oil",
         "measurements": [],
         "note": "for deep frying",
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Sandwich (apart from above ebi katsu):",
+      "expected": {
+        "item": "Sandwich :",
+        "measurements": [],
+        "note": "apart from above ebi katsu",
+        "section": "Ebi Katsu (Shrimp Cutlets)",
+        "category": "Frozen"
       }
     },
     {
@@ -120,20 +142,22 @@
           }
         ],
         "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 slices white toast bread  (*2)",
+      "raw": "4 slices white toast bread  *2",
       "expected": {
-        "item": "white toast bread",
+        "item": "white toast bread *2",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": "*2",
+        "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Other"
       }
     },
@@ -148,21 +172,23 @@
           }
         ],
         "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
         "category": "Other"
       }
     },
     {
-      "raw": "4 tbsp tartar sauce (*3)",
+      "raw": "4 tbsp tartar sauce *3",
       "expected": {
-        "item": "tartar sauce",
+        "item": "tartar sauce *3",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "*3",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "section": "Ebi Katsu (Shrimp Cutlets)",
+        "category": "Other"
       }
     }
   ]

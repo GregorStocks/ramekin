@@ -3,6 +3,10 @@
   "recipe_slug": "2019-09-10-israeli-spiced-toma",
   "ingredients": [
     {
+      "raw": "For the yogurt sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup Greek yogurt",
       "expected": {
         "item": "Greek yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Yogurt Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Yogurt Sauce",
         "category": "Produce"
       }
     },
@@ -36,6 +42,7 @@
         "item": "kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Yogurt Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "from about half a lemon",
+        "section": "For the Yogurt Sauce",
         "category": "Produce"
       }
     },
@@ -64,8 +72,13 @@
           }
         ],
         "note": "minced",
+        "section": "For the Yogurt Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon sumac (see notes above)",
@@ -78,6 +91,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +146,7 @@
         "item": "flaky sea salt",
         "measurements": [],
         "note": "such as Maldon, and freshly ground black pepper",
+        "section": "For the Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Canned Goods"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": "halved",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -199,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -213,6 +236,7 @@
           }
         ],
         "note": "white balsamic, red wine, white wine, champagne",
+        "section": "For the Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -227,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -241,6 +266,7 @@
           }
         ],
         "note": "for serving",
+        "section": "For the Salad",
         "category": "Bakery & Bread"
       }
     }

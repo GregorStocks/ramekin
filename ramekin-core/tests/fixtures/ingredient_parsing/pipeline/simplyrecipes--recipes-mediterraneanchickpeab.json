@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-mediterraneanchickpeab",
   "ingredients": [
     {
+      "raw": "For the tahini dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup tahini (at room temperature)",
       "expected": {
         "item": "tahini",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Tahini Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tahini Dressing",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tahini Dressing",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tahini Dressing",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Tahini Dressing",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tahini Dressing",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tahini Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,11 +122,16 @@
           }
         ],
         "note": null,
+        "section": "For the Tahini Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 16-ounce can chickpeas (or 2 cups homemade chickpeas )",
+      "raw": "For the chickpeas:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (16-ounce can chickpeas or 2 cups homemade chickpeas",
       "expected": {
         "item": "chickpeas",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": "or 2 cups homemade chickpeas",
+        "section": "For the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "either sweet or hot",
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Chickpeas",
         "category": "Oils & Vinegars"
       }
     },
@@ -223,11 +246,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon finely minced fresh chili (optional)",
+      "raw": "1 teaspoon finely minced fresh chili, optional",
       "expected": {
         "item": "finely minced fresh chili",
         "measurements": [
@@ -237,11 +261,12 @@
           }
         ],
         "note": "optional",
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup finely chopped fresh herbs (I like the combination of parsley, mint, and cilantro)",
+      "raw": "1/2 cup finely chopped fresh herbs (I like the combination of parsley, mint, and cilantro.)",
       "expected": {
         "item": "finely chopped fresh herbs",
         "measurements": [
@@ -250,9 +275,14 @@
             "unit": "cup"
           }
         ],
-        "note": "I like the combination of parsley, mint, and cilantro",
+        "note": "I like the combination of parsley, mint, and cilantro.",
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the bowls:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups baby spinach",
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bowls",
         "category": "Produce"
       }
     },
@@ -279,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bowls",
         "category": "Pasta & Rice"
       }
     },
@@ -293,6 +325,7 @@
           }
         ],
         "note": "halved",
+        "section": "For the Bowls",
         "category": "Produce"
       }
     },
@@ -307,6 +340,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Bowls",
         "category": "Produce"
       }
     },
@@ -325,6 +359,7 @@
           }
         ],
         "note": "about 2 tablespoons, finely diced",
+        "section": "For the Bowls",
         "category": "Produce"
       }
     },
@@ -334,6 +369,7 @@
         "item": "Fresh mint leaves",
         "measurements": [],
         "note": null,
+        "section": "For the Bowls",
         "category": "Produce"
       }
     }

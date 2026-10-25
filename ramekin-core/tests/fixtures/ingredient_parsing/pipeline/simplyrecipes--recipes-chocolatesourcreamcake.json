@@ -3,9 +3,9 @@
   "recipe_slug": "recipes-chocolatesourcreamcake",
   "ingredients": [
     {
-      "raw": "2 cups all purpose flour (250g)",
+      "raw": "2 cups (250g) all-purpose flour",
       "expected": {
-        "item": "all purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
@@ -21,9 +21,9 @@
       }
     },
     {
-      "raw": "1 3/4 cups granulated sugar (360g)",
+      "raw": "1 3/4 cups (360g) sugar",
       "expected": {
-        "item": "granulated sugar",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1.75",
@@ -39,9 +39,9 @@
       }
     },
     {
-      "raw": "3/4 cup dark cocoa powder (70g)",
+      "raw": "3/4 cup (70g) unsweetened cocoa powder",
       "expected": {
-        "item": "dark cocoa powder",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.75",

@@ -3,32 +3,36 @@
   "recipe_slug": "sticky-thai-chicken-wings-reci",
   "ingredients": [
     {
-      "raw": "3 pounds chicken wings (or nibbles, tip removed, drumettes and flats separated)",
+      "raw": "3 pounds chicken wings or nibbles, tip removed, drumettes and flats separated",
       "expected": {
-        "item": "chicken wings",
+        "item": "chicken wings or nibbles",
         "measurements": [
           {
             "amount": "3",
             "unit": "lb"
           }
         ],
-        "note": "or nibbles, tip removed, drumettes and flats separated",
-        "category": "Meat & Seafood"
+        "note": "tip removed, drumettes and flats separated",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 - 1 tablespoon sea salt flakes (adjust to your taste)",
+      "raw": "1/2 – 1 tablespoon sea salt flakes adjust to your taste",
       "expected": {
-        "item": "sea salt flakes",
+        "item": "sea salt flakes adjust to your taste",
         "measurements": [
           {
             "amount": "0.5-1",
             "unit": "tbsp"
           }
         ],
-        "note": "adjust to your taste",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup Thai sweet chili sauce",
@@ -41,20 +45,22 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "4 tablespoons coconut sugar (or brown sugar)",
+      "raw": "4 tablespoons coconut sugar or brown sugar",
       "expected": {
-        "item": "coconut sugar",
+        "item": "coconut sugar or brown sugar",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "or brown sugar",
+        "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -69,20 +75,22 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "4 tablespoons rice wine vinegar (or white vinegar)",
+      "raw": "4 tablespoons rice wine vinegar or white vinegar",
       "expected": {
-        "item": "rice wine vinegar",
+        "item": "rice wine vinegar or white vinegar",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "or white vinegar",
+        "note": null,
+        "section": "Glaze",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,11 +120,12 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon lemongrass (minced)",
+      "raw": "1 tablespoon lemongrass minced",
       "expected": {
         "item": "lemongrass",
         "measurements": [
@@ -125,11 +135,12 @@
           }
         ],
         "note": "minced",
+        "section": "Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon garlic (minced)",
+      "raw": "1 tablespoon garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -139,25 +150,31 @@
           }
         ],
         "note": "minced",
+        "section": "Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons sesame oil (or peanut oil)",
+      "raw": "2 teaspoons sesame oil or peanut oil",
       "expected": {
-        "item": "sesame oil",
+        "item": "sesame oil or peanut oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "or peanut oil",
+        "note": null,
+        "section": "Glaze",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/4 cup cilantro (chopped)",
+      "raw": "To serve:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/4 cup cilantro chopped",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -167,11 +184,12 @@
           }
         ],
         "note": "chopped",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  green onions (thinly sliced to serve)",
+      "raw": "2 green onions thinly sliced to serve",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -181,6 +199,7 @@
           }
         ],
         "note": "thinly sliced to serve",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -209,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     }

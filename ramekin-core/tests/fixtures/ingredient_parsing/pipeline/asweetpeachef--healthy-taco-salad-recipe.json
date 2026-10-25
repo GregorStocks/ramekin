@@ -3,6 +3,10 @@
   "recipe_slug": "healthy-taco-salad-recipe",
   "ingredients": [
     {
+      "raw": "For The Taco Meat:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp. olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2  yellow onion, (diced)",
+      "raw": "½ yellow onion, diced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "diced",
+        "section": "For the Taco Meat",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cloves garlic, (minced)",
+      "raw": "2 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Taco Meat",
         "category": "Produce"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/2 tsp. sea salt",
+      "raw": "½ tsp. sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp. black pepper",
+      "raw": "¼ tsp. black pepper",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 tsp. cumin",
+      "raw": "½ tsp. cumin",
       "expected": {
         "item": "cumin",
         "measurements": [
@@ -97,11 +107,16 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Meat",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup grape tomatoes, (whole)",
+      "raw": "For the Taco Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup grape tomatoes, whole",
       "expected": {
         "item": "grape tomatoes",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": "whole",
+        "section": "For the Taco Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup taco meat, (cooled (see recipe above))",
+      "raw": "1 cup taco meat, cooled (see recipe above)",
       "expected": {
         "item": "taco meat",
         "measurements": [
@@ -124,12 +140,13 @@
             "unit": "cup"
           }
         ],
-        "note": "cooled (see recipe above)",
+        "note": "see recipe above, cooled",
+        "section": "For the Taco Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup jack cheese, (shredded)",
+      "raw": "¼ cup jack cheese, shredded",
       "expected": {
         "item": "jack cheese",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Taco Salad",
         "category": "Cheese"
       }
     },
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2  avocado, (diced (optional, when serving))",
+      "raw": "½ avocado, diced (optional, when serving)",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -166,12 +185,17 @@
             "unit": null
           }
         ],
-        "note": "diced (optional, when serving)",
+        "note": "optional, when serving, diced",
+        "section": "For the Taco Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup plain greek yogurt",
+      "raw": "For The Creamy Cilantro Lime Dressing:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ cup plain greek yogurt",
       "expected": {
         "item": "plain greek yogurt",
         "measurements": [
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,11 +235,12 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tbsp. cilantro, (minced)",
+      "raw": "1 tbsp. cilantro, minced",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -223,11 +250,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 clove garlic, (minced)",
+      "raw": "1 clove garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -237,11 +265,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 tsp. sea salt",
+      "raw": "¼ tsp. sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
     }

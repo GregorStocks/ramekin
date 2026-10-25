@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-14027-breakfast-burrit",
   "ingredients": [
     {
+      "raw": "Chipotle Sour Cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup sour cream",
       "expected": {
         "item": "sour cream",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Sour Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Sour Cream",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Sour Cream",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chipotle Sour Cream",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Sour Cream",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Sour Cream",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Burritos:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup vegetable oil , divided",
@@ -97,6 +111,7 @@
           }
         ],
         "note": "divided",
+        "section": "Burritos",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "thawed and patted dry",
+        "section": "Burritos",
         "category": "Frozen"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "casings removed",
+        "section": "Burritos",
         "category": "Meat & Seafood"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Burritos",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Burritos",
         "category": "Cheese"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": "10-inch",
+        "section": "Burritos",
         "category": "Bakery & Bread"
       }
     }

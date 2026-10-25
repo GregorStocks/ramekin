@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-fishstewwithgingerandt",
   "ingredients": [
     {
-      "raw": "4 small (15 ounces, 443 g) red potatoes",
+      "raw": "4 small (15 ounces, 443g) red potatoes",
       "expected": {
         "item": "red potatoes",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "1 can (14 to 16 ounces, 400 to 453 g) diced tomatoes",
+      "raw": "1 (14- to 16-ounce, 400- to 453-g) can diced tomatoes",
       "expected": {
         "item": "diced tomatoes",
         "measurements": [
@@ -76,15 +76,11 @@
             "unit": "can"
           },
           {
-            "amount": "14 to 16",
-            "unit": "oz"
-          },
-          {
             "amount": "400 to 453",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14- to 16-ounce, 400- to 453-g",
         "category": "Canned Goods"
       }
     },
@@ -145,7 +141,7 @@
       }
     },
     {
-      "raw": "3 cups (700 ml) chicken stock",
+      "raw": "3 cups (700ml) chicken stock",
       "expected": {
         "item": "chicken stock",
         "measurements": [
@@ -163,7 +159,7 @@
       }
     },
     {
-      "raw": "2 pounds (.90 kg) boneless firm-fleshed white fish, such as haddock, halibut, hake, flounder, pollock, whiting, or other local fish (it’s okay if the skin is still on)",
+      "raw": "2 pounds (0.90kg) boneless firm-fleshed white fish, such as haddock, halibut, hake, flounder, pollock, whiting, or other local fish (it’s OK if the skin is still on)",
       "expected": {
         "item": "boneless firm-fleshed white fish",
         "measurements": [
@@ -172,11 +168,11 @@
             "unit": "lb"
           },
           {
-            "amount": ".90",
+            "amount": "0.9",
             "unit": "kg"
           }
         ],
-        "note": "it’s okay if the skin is still on, such as haddock, halibut, hake, flounder, pollock, whiting, or other local fish",
+        "note": "it’s OK if the skin is still on, such as haddock, halibut, hake, flounder, pollock, whiting, or other local fish",
         "category": "Other"
       }
     },

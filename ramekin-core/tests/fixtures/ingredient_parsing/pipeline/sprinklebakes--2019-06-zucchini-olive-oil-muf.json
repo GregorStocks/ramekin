@@ -3,6 +3,10 @@
   "recipe_slug": "2019-06-zucchini-olive-oil-muf",
   "ingredients": [
     {
+      "raw": "Muffins:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups 360g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Baking"
       }
     },
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2  ground cinnamon",
+      "raw": "1 1/2 ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,20 +96,22 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  large eggs (at room temperature)",
+      "raw": "4 large eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
+        "section": "Muffins",
         "category": "Dairy & Eggs"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Other"
       }
     },
@@ -137,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Baking"
       }
     },
@@ -155,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Oils & Vinegars"
       }
     },
@@ -169,22 +183,32 @@
           }
         ],
         "note": null,
+        "section": "Muffins",
         "category": "Baking"
       }
     },
     {
-      "raw": "3-4  medium zucchini (grated (about 14 oz.))",
+      "raw": "3-4 medium zucchini grated (about 14 oz.)",
       "expected": {
         "item": "zucchini",
         "measurements": [
           {
             "amount": "3-4",
             "unit": "medium"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
           }
         ],
-        "note": "grated (about 14 oz.)",
+        "note": "about 14 oz., grated",
+        "section": "Muffins",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Cinnamon Crunch Streusel:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup 40g all-purpose flour",
@@ -201,6 +225,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Crunch Streusel",
         "category": "Baking"
       }
     },
@@ -219,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Crunch Streusel",
         "category": "Baking"
       }
     },
@@ -233,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Crunch Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -247,6 +274,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Crunch Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,8 +293,13 @@
           }
         ],
         "note": "cold",
+        "section": "Cinnamon Crunch Streusel",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Milk Glaze (optional):",
+      "is_section_header": true
     },
     {
       "raw": "1 cup 120g confectioners’ sugar",
@@ -283,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "Milk Glaze (Optional)",
         "category": "Baking"
       }
     },
@@ -297,6 +331,7 @@
           }
         ],
         "note": null,
+        "section": "Milk Glaze (Optional)",
         "category": "Dairy & Eggs"
       }
     }

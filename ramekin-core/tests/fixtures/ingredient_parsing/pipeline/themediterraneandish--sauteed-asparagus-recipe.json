@@ -3,16 +3,21 @@
   "recipe_slug": "sauteed-asparagus-recipe",
   "ingredients": [
     {
+      "raw": "For the Sautéed Asparagus:",
+      "is_section_header": true
+    },
+    {
       "raw": "Extra virgin olive oil",
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Sautéed Asparagus",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 pound asparagus, (trimmed and sliced into 3-inch pieces)",
+      "raw": "1 pound asparagus, trimmed and sliced into 3-inch pieces",
       "expected": {
         "item": "asparagus",
         "measurements": [
@@ -22,6 +27,7 @@
           }
         ],
         "note": "trimmed and sliced into 3-inch pieces",
+        "section": "For the Sautéed Asparagus",
         "category": "Produce"
       }
     },
@@ -31,6 +37,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Sautéed Asparagus",
         "category": "Spices & Seasonings"
       }
     },
@@ -40,11 +47,16 @@
         "item": "Black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Sautéed Asparagus",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3  garlic cloves, (minced)",
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -54,11 +66,12 @@
           }
         ],
         "note": "minced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  shallot, (chopped)",
+      "raw": "1 shallot, chopped",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -68,11 +81,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  lemon, (zested and juiced)",
+      "raw": "1 lemon, zested and juiced",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -82,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  lemon, (zested and juiced)",
+      "raw": "1 lemon, zested and juiced",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -96,28 +111,15 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       },
       "expanded": true
     },
     {
-      "raw": "1 teaspoon Aleppo pepper (or red pepper flakes)",
+      "raw": "1 teaspoon Aleppo pepper or red pepper flakes",
       "expected": {
-        "item": "Aleppo pepper",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
-          }
-        ],
-        "note": "or red pepper flakes",
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1 teaspoon za'atar",
-      "expected": {
-        "item": "za'atar",
+        "item": "Aleppo pepper or red pepper flakes",
         "measurements": [
           {
             "amount": "1",
@@ -125,11 +127,27 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/3 cup jarred roasted red peppers, (drained and chopped)",
+      "raw": "1 teaspoon za’atar",
+      "expected": {
+        "item": "za’atar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "Optional Toppings",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/3 cup jarred roasted red peppers, drained and chopped",
       "expected": {
         "item": "jarred roasted red peppers",
         "measurements": [
@@ -139,11 +157,12 @@
           }
         ],
         "note": "drained and chopped",
+        "section": "Optional Toppings",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/3 cup feta cheese ((or more to your liking), crumbled)",
+      "raw": "1/3 cup feta cheese (or more to your liking), crumbled",
       "expected": {
         "item": "feta cheese",
         "measurements": [
@@ -153,6 +172,7 @@
           }
         ],
         "note": "crumbled; or more to your liking",
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     }

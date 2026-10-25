@@ -3,7 +3,7 @@
   "recipe_slug": "pressure-cooker-ground-beef-an",
   "ingredients": [
     {
-      "raw": "1 tablespoon (15ml) vegetable oil, plus more if needed",
+      "raw": "1 tablespoon (15 ml) vegetable oil, plus more if needed",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "2 1/2 pounds (1.1kg) ground beef, at least 15% fat",
+      "raw": "2 1/2 pounds (1.1 kg) ground beef, at least 15% fat",
       "expected": {
         "item": "ground beef",
         "measurements": [
@@ -39,7 +39,7 @@
       }
     },
     {
-      "raw": "1 medium (8-ounce; 225g) yellow onion, diced",
+      "raw": "1 medium (8-ounce; 225 g) yellow onion, diced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "8-ounce; 225g, diced",
+        "note": "8-ounce; 225 g, diced",
         "category": "Produce"
       }
     },
@@ -150,7 +150,7 @@
       }
     },
     {
-      "raw": "1 tablespoon (15ml) tomato paste",
+      "raw": "1 tablespoon (15 ml) tomato paste",
       "expected": {
         "item": "tomato paste",
         "measurements": [
@@ -168,25 +168,25 @@
       }
     },
     {
-      "raw": "One 28-ounce (794g) can whole peeled tomatoes, tomatoes crushed by hand, juices drained and reserved",
+      "raw": "1 (28-ounce; 794 g) can whole peeled tomatoes, tomatoes crushed by hand, juices drained and reserved",
       "expected": {
         "item": "whole peeled tomatoes, tomatoes crushed by hand",
         "measurements": [
           {
             "amount": "1",
-            "unit": "28-ounce can"
+            "unit": "can"
           },
           {
             "amount": "794",
             "unit": "g"
           }
         ],
-        "note": "juices drained and reserved",
+        "note": "28-ounce; 794 g, juices drained and reserved",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/4 cup (60ml) strongly brewed coffee or espresso",
+      "raw": "1/4 cup (60 ml) strongly brewed coffee or espresso",
       "expected": {
         "item": "strongly brewed coffee or espresso",
         "measurements": [
@@ -204,7 +204,7 @@
       }
     },
     {
-      "raw": "1/2 ounce (15g) dark chocolate",
+      "raw": "1/2 ounce (15 g) dark chocolate",
       "expected": {
         "item": "dark chocolate",
         "measurements": [
@@ -222,7 +222,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon (3ml) Asian fish sauce",
+      "raw": "1/2 teaspoon (3 ml) Asian fish sauce",
       "expected": {
         "item": "Asian fish sauce",
         "measurements": [
@@ -254,7 +254,7 @@
       }
     },
     {
-      "raw": "4 cups cooked and drained red kidney beans or two 15.5-ounce (439g) cans red kidney beans, drained (see note)",
+      "raw": "4 cups cooked and drained red kidney beans or 2 (15.5-ounce; 439 g) cans red kidney beans, drained (see notes)",
       "expected": {
         "item": "cooked and drained red kidney beans",
         "measurements": [
@@ -267,7 +267,7 @@
             "unit": "g"
           }
         ],
-        "note": "or two 15.5-ounce cans red kidney beans (see note); drained",
+        "note": "15.5-ounce; 439 g; or 2 cans red kidney beans (see notes); drained",
         "category": "Canned Goods"
       }
     },
@@ -281,9 +281,9 @@
       }
     },
     {
-      "raw": "Sour cream, cilantro leaves, thinly sliced fresh chili or jalapeño, grated cheese, thinly sliced scallions, lime wedges, and more, for serving",
+      "raw": "Sour cream, cilantro leaves, thinly sliced fresh chile or jalapeño, grated cheese, thinly sliced scallions, lime wedges, and more, for serving",
       "expected": {
-        "item": "Sour cream, cilantro leaves, thinly sliced fresh chili or jalapeño, grated cheese, thinly sliced scallions, lime wedges, and more",
+        "item": "Sour cream, cilantro leaves, thinly sliced fresh chile or jalapeño, grated cheese, thinly sliced scallions, lime wedges, and more",
         "measurements": [],
         "note": "for serving",
         "category": "Dairy & Eggs"

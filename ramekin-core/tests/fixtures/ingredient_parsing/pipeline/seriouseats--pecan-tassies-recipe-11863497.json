@@ -3,7 +3,11 @@
   "recipe_slug": "pecan-tassies-recipe-11863497",
   "ingredients": [
     {
-      "raw": "142g raw pecan halves (5 ounces; about 1 1/4 cups)",
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "142 g raw pecan halves (5 ounces; about 1 1/4 cups)",
       "expected": {
         "item": "raw pecan halves",
         "measurements": [
@@ -21,11 +25,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "106g dark brown sugar (3 3/4 ounces; 1/2 cup)",
+      "raw": "106 g dark brown sugar (3 3/4 ounces; 1/2 cup)",
       "expected": {
         "item": "dark brown sugar",
         "measurements": [
@@ -43,11 +48,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "70g maple syrup (2 1/2 ounces; about 1/4 cup)",
+      "raw": "70 g maple syrup (2 1/2 ounces; about 1/4 cup)",
       "expected": {
         "item": "maple syrup",
         "measurements": [
@@ -65,11 +71,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "28g unsalted butter, melted (1 ounce; 2 tablespoons)",
+      "raw": "28 g unsalted butter, melted (1 ounce; 2 tablespoons)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -87,11 +94,12 @@
           }
         ],
         "note": "melted",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon (15ml) bourbon",
+      "raw": "1 tablespoon (15 ml) bourbon",
       "expected": {
         "item": "bourbon",
         "measurements": [
@@ -105,6 +113,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
@@ -119,6 +128,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -133,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -161,11 +173,16 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "113g unsalted butter (4 ounces; 1 stick), softened",
+      "raw": "For the Dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "113 g unsalted butter (4 ounces; 1 stick), softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -183,11 +200,12 @@
           }
         ],
         "note": "softened",
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "85g cream cheese (3 ounces; 6 tablespoons), softened",
+      "raw": "85 g cream cheese (3 ounces; 6 tablespoons), softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -205,6 +223,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Dough",
         "category": "Cheese"
       }
     },
@@ -227,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -241,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
     }

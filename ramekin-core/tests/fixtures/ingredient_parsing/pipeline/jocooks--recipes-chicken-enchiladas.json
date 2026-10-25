@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-chicken-enchiladas",
   "ingredients": [
     {
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups cooked chicken (shredded, rotisserie chicken works great!)",
       "expected": {
         "item": "cooked chicken",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "shredded, rotisserie chicken works great!",
+        "section": "For the Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "1 small can",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "shredded",
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
@@ -92,8 +102,13 @@
         "item": "salt and black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "8-10 small flour tortillas (or corn tortillas, if preferred)",
@@ -106,6 +121,7 @@
           }
         ],
         "note": "or corn tortillas, if preferred",
+        "section": "For Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -124,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,8 +155,13 @@
           }
         ],
         "note": "or cheddar cheese, shredded",
+        "section": "For Assembly",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "For Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup red onion (finely diced)",
@@ -152,6 +174,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "For Toppings",
         "category": "Produce"
       }
     },
@@ -166,6 +189,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Toppings",
         "category": "Produce"
       }
     },
@@ -180,6 +204,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Toppings",
         "category": "Produce"
       }
     }

@@ -3,17 +3,13 @@
   "recipe_slug": "easy-overnight-sauerkraut-reci",
   "ingredients": [
     {
-      "raw": "2  medium heads of cabbage (4lb)",
+      "raw": "2 medium heads of cabbage, 4lb",
       "expected": {
-        "item": "cabbage",
+        "item": "cabbage, 4lb",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium head"
-          },
-          {
-            "amount": "4",
-            "unit": "lb"
           }
         ],
         "note": null,
@@ -21,7 +17,7 @@
       }
     },
     {
-      "raw": "3  carrots",
+      "raw": "3 carrots",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -35,7 +31,7 @@
       }
     },
     {
-      "raw": "4-5  large garlic cloves",
+      "raw": "4-5 large garlic cloves",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -49,6 +45,10 @@
       }
     },
     {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 cups water",
       "expected": {
         "item": "water",
@@ -59,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -73,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
@@ -87,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "10  pepper corns",
+      "raw": "10 pepper corns",
       "expected": {
         "item": "pepper corns",
         "measurements": [
@@ -101,11 +104,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5-6  whole cloves",
+      "raw": "5-6 whole cloves",
       "expected": {
         "item": "whole cloves",
         "measurements": [
@@ -115,11 +119,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  bay leaves",
+      "raw": "4 bay leaves",
       "expected": {
         "item": "bay leaves",
         "measurements": [
@@ -129,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,20 +149,22 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2/3 cup white vinegar (5%)",
+      "raw": "2/3 cup white vinegar, 5%",
       "expected": {
-        "item": "white vinegar",
+        "item": "white vinegar, 5%",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "5%",
+        "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     }

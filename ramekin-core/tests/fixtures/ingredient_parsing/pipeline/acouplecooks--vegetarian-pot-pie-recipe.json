@@ -3,6 +3,10 @@
   "recipe_slug": "vegetarian-pot-pie-recipe",
   "ingredients": [
     {
+      "raw": "For the crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/3 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "more as needed",
+        "section": "For the Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the vegetarian pot pie filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 large shallot",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Canned Goods"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Baking"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Canned Goods"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Frozen"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": "large grated",
+        "section": "For the Vegetarian Pot Pie Filling",
         "category": "Cheese"
       }
     }

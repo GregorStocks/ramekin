@@ -3,7 +3,7 @@
   "recipe_slug": "one-pot-burrito-bowl-recipe",
   "ingredients": [
     {
-      "raw": "2-4  tablespoons vegetable oil (divided)",
+      "raw": "2-4  tablespoons vegetable oil divided",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 teaspoons salt (divided)",
+      "raw": "2 teaspoons salt divided",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 cup yellow onion, (chopped)",
+      "raw": "1/2 cup yellow onion, chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic, (Minced)",
+      "raw": "4 cloves garlic, Minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1 (14.5-ounce) can  diced tomatoes, (drained)",
+      "raw": "1 (14.5-ounce) can  diced tomatoes, drained",
       "expected": {
         "item": "diced tomatoes",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1 (15-ounce) can  black beans,  (drained and rinsed)",
+      "raw": "1 (15-ounce) can  black beans,  drained and rinsed",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "1 (4-ounce) can  mild diced green chiles, (drained)",
+      "raw": "1 (4-ounce) can  mild diced green chiles, drained",
       "expected": {
         "item": "mild diced green chiles",
         "measurements": [
@@ -213,7 +213,7 @@
       }
     },
     {
-      "raw": "1/2 cup frozen or canned corn, (thawed and drained)",
+      "raw": "1/2 cup frozen or canned corn, thawed and drained",
       "expected": {
         "item": "frozen or canned corn",
         "measurements": [
@@ -241,7 +241,7 @@
       }
     },
     {
-      "raw": "1 cup extra sharp cheddar cheese (grated)",
+      "raw": "1 cup extra sharp cheddar cheese grated",
       "expected": {
         "item": "extra sharp cheddar cheese",
         "measurements": [
@@ -255,7 +255,7 @@
       }
     },
     {
-      "raw": "1 cup Monterey jack cheese (shredded)",
+      "raw": "1 cup Monterey jack cheese shredded",
       "expected": {
         "item": "Monterey jack cheese",
         "measurements": [
@@ -269,11 +269,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "shredded lettuce or shredded cabbage",
       "expected": {
         "item": "shredded lettuce or shredded cabbage",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -283,15 +288,17 @@
         "item": "cheddar cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
     {
-      "raw": "Monterey jack cheese,  (shredded)",
+      "raw": "Monterey jack cheese,  shredded",
       "expected": {
         "item": "Monterey jack cheese",
         "measurements": [],
         "note": "shredded",
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -301,11 +308,12 @@
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "medium tomatoes, (diced)",
+      "raw": "medium tomatoes, diced",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -315,33 +323,37 @@
           }
         ],
         "note": "diced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "red onions (sliced)",
+      "raw": "red onions sliced",
       "expected": {
         "item": "red onions",
         "measurements": [],
         "note": "sliced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "fresh cilantro, (roughly chopped)",
+      "raw": "fresh cilantro, roughly chopped",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [],
         "note": "roughly chopped",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "avocado, (sliced)",
+      "raw": "avocado, sliced",
       "expected": {
         "item": "avocado",
         "measurements": [],
         "note": "sliced",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "chocolate-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "24  Oreo cookies",
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "24   Oreo cookies",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1 tablespoon granulated sugar",
+      "raw": "1 tablespoon   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,67 +32,92 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup unsalted butter (melted)",
+      "raw": "¼ cup  (56.75 g) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "56.75",
+            "unit": "g"
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "32 ounces cream cheese (at room temperature)",
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "32 ounces  (907.19 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
+          },
+          {
+            "amount": "907.19",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1¼ cups + 2 tablespoons granulated sugar",
+      "raw": "1¼ cups  (250 g) + 2 tablespoons granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 1/4 cups plus 2 tablespoons",
             "unit": null
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup natural unsweetened cocoa powder",
+      "raw": "¼ cup  (21.5 g) natural unsweetened cocoa powder",
       "expected": {
         "item": "natural unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "21.5",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  eggs (at room temperature)",
+      "raw": "4   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -97,53 +127,73 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "10 ounces bittersweet chocolate (melted and cooled to lukewarm)",
+      "raw": "10 ounces  (283.5 g) bittersweet chocolate, melted and cooled to lukewarm",
       "expected": {
         "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "10",
             "unit": "oz"
+          },
+          {
+            "amount": "283.5",
+            "unit": "g"
           }
         ],
         "note": "melted and cooled to lukewarm",
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ cup heavy cream",
+      "raw": "For the Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup  (178.5 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "178.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 ounces bittersweet chocolate (finely chopped)",
+      "raw": "6 ounces  (170.1 g) bittersweet chocolate, finely chopped",
       "expected": {
         "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
+          },
+          {
+            "amount": "170.1",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon granulated sugar",
+      "raw": "1 tablespoon   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -153,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     }

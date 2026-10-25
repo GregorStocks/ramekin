@@ -3,13 +3,13 @@
   "recipe_slug": "recipes-gramercy-tavern-bar-nu",
   "ingredients": [
     {
-      "raw": "¼ cup (packed) dark brown sugar",
+      "raw": "4 tablespoons dark brown sugar, packed",
       "expected": {
         "item": "dark brown sugar",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "4",
+            "unit": "tbsp"
           }
         ],
         "note": "packed",
@@ -31,7 +31,21 @@
       }
     },
     {
-      "raw": "1 teaspoon  ground cinnamon",
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -45,7 +59,21 @@
       }
     },
     {
-      "raw": "¾ teaspoon  ground ginger",
+      "raw": "¼ teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¾ teaspoon ground ginger",
       "expected": {
         "item": "ground ginger",
         "measurements": [
@@ -59,7 +87,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon  ground nutmeg",
+      "raw": "¼ teaspoon ground nutmeg",
       "expected": {
         "item": "ground nutmeg",
         "measurements": [
@@ -73,21 +101,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon  cayenne pepper (optional)",
-      "expected": {
-        "item": "cayenne pepper",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": "optional",
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "2 tablespoons  water",
+      "raw": "2 tablespoons water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -101,7 +115,7 @@
       }
     },
     {
-      "raw": "1 tablespoon  light corn syrup",
+      "raw": "1 tablespoon light corn syrup",
       "expected": {
         "item": "light corn syrup",
         "measurements": [
@@ -115,16 +129,16 @@
       }
     },
     {
-      "raw": "3½ cups  raw unsalted nuts (I use equal parts cashews and pecans, but you can use any combination of cashews, pecans, and almonds)",
+      "raw": "3½ cups roasted, unsalted nuts (such as cashews and pecans)",
       "expected": {
-        "item": "raw unsalted nuts",
+        "item": "roasted, unsalted nuts",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": "I use equal parts cashews and pecans, but you can use any combination of cashews, pecans, and almonds",
+        "note": "such as cashews and pecans",
         "category": "Nuts & Dried Fruit"
       }
     }

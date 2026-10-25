@@ -3,6 +3,10 @@
   "recipe_slug": "ester-restaurant-cauliflower-w",
   "ingredients": [
     {
+      "raw": "Almond Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup almond meal",
       "expected": {
         "item": "almond meal",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Sauce",
         "category": "Baking"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Almond Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "3/4 cup + 1 tbsp   extra virgin olive oil (, separated)",
+      "raw": "3/4 cup + 1 tbsp  extra virgin olive oil , separated",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "separated",
+        "section": "Almond Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 tbsp brown rice vinegar ((or rice vinegar or apple cider vinegar))",
+      "raw": "2 tbsp brown rice vinegar (or rice vinegar or apple cider vinegar)",
       "expected": {
         "item": "brown rice vinegar",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "or rice vinegar or apple cider vinegar",
+        "section": "Almond Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Almond Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp salt ((plus more to taste))",
+      "raw": "1 tsp salt (plus more to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Almond Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,11 +102,16 @@
         "item": "Black pepper",
         "measurements": [],
         "note": null,
+        "section": "Almond Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  large head of cauliflower ((Note 1))",
+      "raw": "Roasted Cauliflower:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 large head of cauliflower (Note 1)",
       "expected": {
         "item": "cauliflower",
         "measurements": [
@@ -106,6 +121,7 @@
           }
         ],
         "note": "Note 1",
+        "section": "Roasted Cauliflower",
         "category": "Produce"
       }
     },
@@ -120,20 +136,22 @@
           }
         ],
         "note": null,
+        "section": "Roasted Cauliflower",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2  lemon (, juice only)",
+      "raw": "1/2 lemon , juice only",
       "expected": {
-        "item": "lemon",
+        "item": "lemon, juice only",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "juice only",
+        "note": null,
+        "section": "Roasted Cauliflower",
         "category": "Produce"
       }
     },
@@ -143,11 +161,12 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Roasted Cauliflower",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup almonds (, roughly chopped and lightly toasted in a dry frypan)",
+      "raw": "1/2 cup almonds , roughly chopped and lightly toasted in a dry frypan",
       "expected": {
         "item": "almonds",
         "measurements": [
@@ -157,11 +176,12 @@
           }
         ],
         "note": "roughly chopped and lightly toasted in a dry frypan",
+        "section": "Roasted Cauliflower",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2 cup fresh mint leaves ((packed))",
+      "raw": "1/2 cup fresh mint leaves (packed)",
       "expected": {
         "item": "fresh mint leaves",
         "measurements": [
@@ -171,6 +191,7 @@
           }
         ],
         "note": "packed",
+        "section": "Roasted Cauliflower",
         "category": "Produce"
       }
     }

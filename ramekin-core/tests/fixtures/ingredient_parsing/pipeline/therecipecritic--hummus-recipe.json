@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3  garlic cloves",
+      "raw": "3 garlic cloves",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -101,11 +101,16 @@
       }
     },
     {
+      "raw": "Optional Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "chopped parsley",
       "expected": {
         "item": "chopped parsley",
         "measurements": [],
         "note": null,
+        "section": "Optional Garnish",
         "category": "Produce"
       }
     },
@@ -115,6 +120,7 @@
         "item": "paprika",
         "measurements": [],
         "note": null,
+        "section": "Optional Garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,6 +130,7 @@
         "item": "red pepper flakes",
         "measurements": [],
         "note": null,
+        "section": "Optional Garnish",
         "category": "Spices & Seasonings"
       }
     }

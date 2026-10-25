@@ -3,21 +3,26 @@
   "recipe_slug": "chanko-nabe-recipe",
   "ingredients": [
     {
-      "raw": "200 g ground chicken (or ground turkey/pork)",
+      "raw": "Homemade Chicken Meatballs:",
+      "is_section_header": true
+    },
+    {
+      "raw": "200 g ground chicken or ground turkey/pork",
       "expected": {
-        "item": "ground chicken",
+        "item": "ground chicken or ground turkey/pork",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": "or ground turkey/pork",
+        "note": null,
+        "section": "Homemade Chicken Meatballs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/2 tsp Japanese soy sauce (koikuchi shoyu)",
+      "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
         "item": "Japanese soy sauce",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Homemade Chicken Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,25 +47,27 @@
           }
         ],
         "note": "awase",
+        "section": "Homemade Chicken Meatballs",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ tsp grated ginger root (or ginger paste)",
+      "raw": "½ tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
+        "section": "Homemade Chicken Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 clove grated garlic (or ½ tsp garlic paste per clove)",
+      "raw": "1 clove grated garlic or ½ tsp garlic paste per clove",
       "expected": {
         "item": "grated garlic",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "or 1/2 tsp garlic paste per clove",
+        "section": "Homemade Chicken Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -83,35 +92,42 @@
           }
         ],
         "note": null,
+        "section": "Homemade Chicken Meatballs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tbsp cornstarch (or potato starch)",
+      "raw": "2 tbsp cornstarch or potato starch",
       "expected": {
-        "item": "cornstarch",
+        "item": "cornstarch or potato starch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or potato starch",
+        "note": null,
+        "section": "Homemade Chicken Meatballs",
         "category": "Baking"
       }
     },
     {
-      "raw": "1000 ml dashi stock (homemade or quality dashi packets)",
+      "raw": "Broth:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1000 ml dashi stock homemade or quality dashi packets",
       "expected": {
-        "item": "dashi stock",
+        "item": "dashi stock homemade or quality dashi packets",
         "measurements": [
           {
             "amount": "1000",
             "unit": "ml"
           }
         ],
-        "note": "homemade or quality dashi packets",
-        "category": "Canned Goods"
+        "note": null,
+        "section": "Broth",
+        "category": "Other"
       }
     },
     {
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,25 +171,27 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp grated ginger root (or ginger paste)",
+      "raw": "1 tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cloves grated garlic (or ½ tsp garlic paste per clove)",
+      "raw": "2 cloves grated garlic or ½ tsp garlic paste per clove",
       "expected": {
         "item": "grated garlic",
         "measurements": [
@@ -181,6 +201,7 @@
           }
         ],
         "note": "or 1/2 tsp garlic paste per clove",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,39 +231,46 @@
           }
         ],
         "note": "awase",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  carrot (peeled and cut into thick rounds)",
+      "raw": "Other Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 carrot peeled and cut into thick rounds",
       "expected": {
-        "item": "carrot",
+        "item": "carrot peeled and cut into thick rounds",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "peeled and cut into thick rounds",
-        "category": "Produce"
+        "note": null,
+        "section": "Other Ingredients",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  Japanese leek (naganegi) (white part, cut into thick diagonal slices)",
+      "raw": "1 Japanese leek (naganegi) white part, cut into thick diagonal slices",
       "expected": {
-        "item": "Japanese leek",
+        "item": "Japanese leek white part",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "naganegi, white part, cut into thick diagonal slices",
-        "category": "Produce"
+        "note": "naganegi, cut into thick diagonal slices",
+        "section": "Other Ingredients",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 bunch enoki mushrooms (stems removed)",
+      "raw": "1 bunch enoki mushrooms stems removed",
       "expected": {
         "item": "enoki mushrooms",
         "measurements": [
@@ -251,11 +280,12 @@
           }
         ],
         "note": "stems removed",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  fresh shiitake mushrooms (stems removed)",
+      "raw": "2 fresh shiitake mushrooms stems removed",
       "expected": {
         "item": "fresh shiitake mushrooms",
         "measurements": [
@@ -265,11 +295,12 @@
           }
         ],
         "note": "stems removed",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "⅛  Napa cabbage (roughly cut)",
+      "raw": "⅛  Napa cabbage roughly cut",
       "expected": {
         "item": "Napa cabbage",
         "measurements": [
@@ -279,11 +310,12 @@
           }
         ],
         "note": "roughly cut",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "150 g firm tofu (cubed)",
+      "raw": "150 g firm tofu cubed",
       "expected": {
         "item": "firm tofu",
         "measurements": [
@@ -293,11 +325,12 @@
           }
         ],
         "note": "cubed",
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 bunch potherb mustard (mizuna) (stems removed)",
+      "raw": "1 bunch potherb mustard (mizuna) stems removed",
       "expected": {
         "item": "potherb mustard",
         "measurements": [
@@ -307,6 +340,7 @@
           }
         ],
         "note": "mizuna, stems removed",
+        "section": "Other Ingredients",
         "category": "Other"
       }
     }

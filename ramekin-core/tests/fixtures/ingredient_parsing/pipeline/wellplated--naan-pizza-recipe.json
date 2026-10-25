@@ -3,21 +3,21 @@
   "recipe_slug": "naan-pizza-recipe",
   "ingredients": [
     {
-      "raw": "2  naan breads",
+      "raw": "2 naan breads about 8-inches each, or 4 mini naan breads (purchased or Homemade Naan)",
       "expected": {
-        "item": "naan breads",
+        "item": "naan breads about 8-inches each",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "purchased or Homemade Naan; or 4 mini naan breads",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup prepared pizza sauce or pesto",
+      "raw": "½ cup prepared pizza sauce or pesto",
       "expected": {
         "item": "prepared pizza sauce or pesto",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon Italian seasoning (optional)",
+      "raw": "¼ teaspoon Italian seasoning optional",
       "expected": {
         "item": "Italian seasoning",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 cup shredded mozzarella cheese ((or fresh mozzarella slices))",
+      "raw": "1 cup shredded mozzarella cheese (or fresh mozzarella slices)",
       "expected": {
         "item": "shredded mozzarella cheese",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "8  fresh basil leaves",
+      "raw": "8 fresh basil leaves",
       "expected": {
         "item": "fresh basil leaves",
         "measurements": [
@@ -115,11 +115,16 @@
       }
     },
     {
+      "raw": "Other topping ideas:",
+      "is_section_header": true
+    },
+    {
       "raw": "Pepperoni and/or Italian chicken or turkey sausage",
       "expected": {
         "item": "Pepperoni and/or Italian chicken or turkey sausage",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Meat & Seafood"
       }
     },
@@ -129,6 +134,7 @@
         "item": "Sautéed Mushrooms",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Other"
       }
     },
@@ -138,6 +144,7 @@
         "item": "Roasted Garlic",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Produce"
       }
     },
@@ -147,6 +154,7 @@
         "item": "Roasted Red Peppers",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Canned Goods"
       }
     },
@@ -156,6 +164,7 @@
         "item": "Burrata",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Cheese"
       }
     },
@@ -165,6 +174,7 @@
         "item": "Ricotta",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Cheese"
       }
     },
@@ -174,6 +184,7 @@
         "item": "Carbonara",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Other"
       }
     },
@@ -183,6 +194,7 @@
         "item": "Brussels Sprouts and Bacon",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Produce"
       }
     },
@@ -192,16 +204,18 @@
         "item": "Asparagus",
         "measurements": [],
         "note": null,
+        "section": "Other Topping Ideas",
         "category": "Produce"
       }
     },
     {
-      "raw": "Arugula and prosciutto (add after the pizza comes out of the oven)",
+      "raw": "Arugula and prosciutto add after the pizza comes out of the oven",
       "expected": {
-        "item": "Arugula and prosciutto",
+        "item": "Arugula and prosciutto add after the pizza comes out of the oven",
         "measurements": [],
-        "note": "add after the pizza comes out of the oven",
-        "category": "Produce"
+        "note": null,
+        "section": "Other Topping Ideas",
+        "category": "Other"
       }
     }
   ]

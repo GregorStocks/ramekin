@@ -3,6 +3,10 @@
   "recipe_slug": "french-toast-recipe",
   "ingredients": [
     {
+      "raw": "sweet ricotta:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups whole milk ricotta",
       "expected": {
         "item": "whole milk ricotta",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Ricotta",
         "category": "Cheese"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Sweet Ricotta",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2  orange zest",
+      "raw": "1/2 orange zest",
       "expected": {
         "item": "orange zest",
         "measurements": [
@@ -41,11 +47,16 @@
           }
         ],
         "note": null,
+        "section": "Sweet Ricotta",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 tablespoons salted butter (divided)",
+      "raw": "French toast:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 tablespoons salted butter divided",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": "divided",
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 slices thick-cut Brioche bread ((1 1/2&amp;quot; thick))",
+      "raw": "4 slices thick-cut Brioche bread (1 1/2\" thick)",
       "expected": {
         "item": "thick-cut Brioche bread",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "1 1/2\" thick",
+        "section": "French Toast",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2  orange zest",
+      "raw": "1/2 orange zest",
       "expected": {
         "item": "orange zest",
         "measurements": [
@@ -167,11 +186,16 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup honey (divided)",
+      "raw": "garnishes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup honey divided",
       "expected": {
         "item": "honey",
         "measurements": [
@@ -181,6 +205,7 @@
           }
         ],
         "note": "divided",
+        "section": "Garnishes",
         "category": "Baking"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Garnishes",
         "category": "Other"
       }
     }

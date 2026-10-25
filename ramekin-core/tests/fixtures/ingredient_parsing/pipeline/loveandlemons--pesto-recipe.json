@@ -3,6 +3,10 @@
   "recipe_slug": "pesto-recipe",
   "ingredients": [
     {
+      "raw": "Basic Basil Pesto:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup toasted pine nuts",
       "expected": {
         "item": "toasted pine nuts",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Basic Basil Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Basic Basil Pesto",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  small garlic clove",
+      "raw": "1 small garlic clove",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Basic Basil Pesto",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Basic Basil Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
         "item": "freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Basic Basil Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,11 +87,12 @@
           }
         ],
         "note": null,
+        "section": "Basic Basil Pesto",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup extra-virgin olive oil (plus more for a smoother pesto)",
+      "raw": "¼ cup extra-virgin olive oil, plus more for a smoother pesto",
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [
@@ -92,11 +102,12 @@
           }
         ],
         "note": "plus more for a smoother pesto",
+        "section": "Basic Basil Pesto",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "¼ cup freshly grated Parmesan cheese (optional)",
+      "raw": "¼ cup freshly grated Parmesan cheese, optional",
       "expected": {
         "item": "freshly grated Parmesan cheese",
         "measurements": [
@@ -106,6 +117,7 @@
           }
         ],
         "note": "optional",
+        "section": "Basic Basil Pesto",
         "category": "Cheese"
       }
     }

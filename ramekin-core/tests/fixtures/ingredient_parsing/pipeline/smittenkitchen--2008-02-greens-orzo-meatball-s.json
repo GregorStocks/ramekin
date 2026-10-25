@@ -3,6 +3,10 @@
   "recipe_slug": "2008-02-greens-orzo-meatball-s",
   "ingredients": [
     {
+      "raw": "Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large egg",
       "expected": {
         "item": "egg",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Cheese"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "8 cups (or more) low-salt chicken broth",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "or more",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -175,6 +194,7 @@
           }
         ],
         "note": "about 4.75 ounces or 135 grams, rice-shaped pasta",
+        "section": "Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -189,6 +209,7 @@
           }
         ],
         "note": "about 1/2 medium head, about 3 ounces of leaves",
+        "section": "Assembly",
         "category": "Produce"
       }
     }

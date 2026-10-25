@@ -3,13 +3,17 @@
   "recipe_slug": "2022-12-glazed-matcha-sugar-co",
   "ingredients": [
     {
-      "raw": "2¾ cups all-purpose flour",
+      "raw": "2¾ cups  / 340 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.75",
             "unit": "cup"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "1 tablespoon Chef&amp;#39;s Choice Organic Culinary Matcha",
+      "raw": "1 tablespoon   Chef's Choice Organic Culinary Matcha",
       "expected": {
         "item": "Chef's Choice Organic Culinary Matcha",
         "measurements": [
@@ -31,13 +35,17 @@
       }
     },
     {
-      "raw": "1 tablespoon cornstarch",
+      "raw": "1 tablespoon  / 8 g cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -45,7 +53,7 @@
       }
     },
     {
-      "raw": "1 teaspoon baking powder",
+      "raw": "1 teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -59,7 +67,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon fine sea salt",
+      "raw": "½ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -73,9 +81,9 @@
       }
     },
     {
-      "raw": "1 cup (2 sticks) unsalted butter (at cool room temperature)",
+      "raw": "1 cup  / 226 g (2 sticks) unsalted butter, at cool room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, at cool room temperature",
         "measurements": [
           {
             "amount": "1",
@@ -84,20 +92,28 @@
           {
             "amount": "2",
             "unit": "stick"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
-        "note": "at cool room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup granulated sugar",
+      "raw": "½ cup  / 100 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -105,13 +121,17 @@
       }
     },
     {
-      "raw": "1/2 cup packed light brown sugar",
+      "raw": "½ cup  / 105 g packed light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "105",
+            "unit": "g"
           }
         ],
         "note": "packed",
@@ -119,7 +139,7 @@
       }
     },
     {
-      "raw": "1  large egg (at room temperature)",
+      "raw": "1   large egg, at room temperature",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -133,7 +153,7 @@
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -147,21 +167,30 @@
       }
     },
     {
-      "raw": "1 cup powdered sugar (sifted)",
+      "raw": "For Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  / 120 g powdered sugar, sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon unsalted butter",
+      "raw": "1 tablespoon   unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -171,11 +200,12 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon milk or cream (plus 1-3 teaspoons more as needed)",
+      "raw": "1 tablespoon   milk or cream, plus 1-3 teaspoons more as needed",
       "expected": {
         "item": "milk or cream",
         "measurements": [
@@ -185,11 +215,12 @@
           }
         ],
         "note": "plus 1-3 teaspoons more as needed",
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 teaspoon vanilla extract",
+      "raw": "½ teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -199,25 +230,27 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon matcha (optional if you want a green glaze)",
+      "raw": "½ teaspoon   matcha, optional if you want a green glaze",
       "expected": {
-        "item": "matcha",
+        "item": "matcha, optional if you want a green glaze",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "optional if you want a green glaze",
+        "note": null,
+        "section": "For Glaze",
         "category": "Beverages"
       }
     },
     {
-      "raw": "pinch fine sea salt",
+      "raw": "pinch   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -227,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Spices & Seasonings"
       }
     }

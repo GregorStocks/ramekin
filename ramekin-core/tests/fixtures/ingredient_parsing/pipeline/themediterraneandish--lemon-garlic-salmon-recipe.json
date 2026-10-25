@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-garlic-salmon-recipe",
   "ingredients": [
     {
+      "raw": "For the Salmon:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds salmon fillet",
       "expected": {
         "item": "salmon fillet",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salmon",
         "category": "Meat & Seafood"
       }
     },
@@ -22,11 +27,12 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Salmon",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  large lemon",
+      "raw": "1 large lemon",
       "expected": {
         "item": "lemon",
         "measurements": [
@@ -36,20 +42,26 @@
           }
         ],
         "note": null,
+        "section": "For the Salmon",
         "category": "Produce"
       }
     },
     {
-      "raw": "Chopped parsley, (for garnish)",
+      "raw": "Chopped parsley, for garnish",
       "expected": {
         "item": "Chopped parsley",
         "measurements": [],
         "note": "for garnish",
+        "section": "For the Salmon",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  large lemons",
+      "raw": "For the Lemon Garlic Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 large lemons",
       "expected": {
         "item": "lemons",
         "measurements": [
@@ -59,6 +71,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Garlic Sauce",
         "category": "Produce"
       }
     },
@@ -73,11 +86,12 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Garlic Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "5  garlic cloves, (chopped)",
+      "raw": "5 garlic cloves, chopped",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -87,6 +101,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Lemon Garlic Sauce",
         "category": "Produce"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Garlic Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Garlic Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemon Garlic Sauce",
         "category": "Spices & Seasonings"
       }
     }

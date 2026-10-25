@@ -49,9 +49,9 @@
       }
     },
     {
-      "raw": "1/4 cup (60ml) lemon juice from 1 lemon",
+      "raw": "1/4 cup (60 ml) lemon juice from 1 whole lemon",
       "expected": {
-        "item": "lemon juice from 1 lemon",
+        "item": "lemon juice from 1 whole lemon",
         "measurements": [
           {
             "amount": "0.25",
@@ -63,11 +63,11 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 1/2 teaspoon Dijon mustard",
+      "raw": "1 1/2 teaspoons Dijon mustard",
       "expected": {
         "item": "Dijon mustard",
         "measurements": [
@@ -81,7 +81,7 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoon Worcestershire sauce",
+      "raw": "1 1/2 teaspoons Worcestershire sauce",
       "expected": {
         "item": "Worcestershire sauce",
         "measurements": [
@@ -95,7 +95,7 @@
       }
     },
     {
-      "raw": "8 ounces (225g) plain, full-fat cream cheese, softened, preferably Philadelphia brand",
+      "raw": "8 ounces (225 g) plain, full-fat cream cheese, softened (see notes)",
       "expected": {
         "item": "plain, full-fat cream cheese",
         "measurements": [
@@ -108,12 +108,12 @@
             "unit": "g"
           }
         ],
-        "note": "softened, preferably Philadelphia brand",
+        "note": "see notes, softened",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/4 cup mayonnaise (2 ounces; 55g)",
+      "raw": "1/4 cup (60 ml) mayonnaise",
       "expected": {
         "item": "mayonnaise",
         "measurements": [
@@ -122,12 +122,8 @@
             "unit": "cup"
           },
           {
-            "amount": "2",
-            "unit": "oz"
-          },
-          {
-            "amount": "55",
-            "unit": "g"
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -135,7 +131,7 @@
       }
     },
     {
-      "raw": "1/4 cup sour cream (2 ounces; 55g)",
+      "raw": "1/4 cup (60 ml) sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [
@@ -144,12 +140,8 @@
             "unit": "cup"
           },
           {
-            "amount": "2",
-            "unit": "oz"
-          },
-          {
-            "amount": "55",
-            "unit": "g"
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -157,7 +149,7 @@
       }
     },
     {
-      "raw": "1/4 cup freshly grated Parmesan cheese (1 ounce; 25g)",
+      "raw": "1/4 cup freshly grated Parmesan cheese (1 ounce; 25 g)",
       "expected": {
         "item": "freshly grated Parmesan cheese",
         "measurements": [

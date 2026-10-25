@@ -141,6 +141,10 @@
       }
     },
     {
+      "raw": "Salted and Honeyed Brown Butter Spread:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 stick (4 ounces or 113 grams) unsalted butter, divided",
       "expected": {
         "item": "unsalted butter",
@@ -159,6 +163,7 @@
           }
         ],
         "note": "divided",
+        "section": "Salted and Honeyed Brown Butter Spread",
         "category": "Dairy & Eggs"
       }
     },
@@ -173,6 +178,7 @@
           }
         ],
         "note": "use less for lightly sweet, more for a more traditional honey butter",
+        "section": "Salted and Honeyed Brown Butter Spread",
         "category": "Baking"
       }
     },
@@ -182,6 +188,7 @@
         "item": "Few pinches flaky sea salt",
         "measurements": [],
         "note": null,
+        "section": "Salted and Honeyed Brown Butter Spread",
         "category": "Other"
       }
     }

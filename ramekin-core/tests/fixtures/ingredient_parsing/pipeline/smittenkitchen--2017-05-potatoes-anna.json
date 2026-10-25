@@ -3,6 +3,10 @@
   "recipe_slug": "2017-05-potatoes-anna",
   "ingredients": [
     {
+      "raw": "Potatoes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (65 grams) finely grated aged Pecorino Romano",
       "expected": {
         "item": "finely grated aged Pecorino Romano",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "or a larger amount coarsely ground",
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": "roughly 1 kg",
+        "section": "Potatoes",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Salad:",
+      "is_section_header": true
     },
     {
       "raw": "8 cups (5 2/3 ounces or 160 grams) loosely packed arugula",
@@ -121,6 +135,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     }

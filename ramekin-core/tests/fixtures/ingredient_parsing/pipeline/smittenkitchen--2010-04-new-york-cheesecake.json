@@ -3,7 +3,7 @@
   "recipe_slug": "2010-04-new-york-cheesecake",
   "ingredients": [
     {
-      "raw": "Crumb crust",
+      "raw": "Crumb crust:",
       "is_section_header": true
     },
     {
@@ -79,6 +79,10 @@
       }
     },
     {
+      "raw": "Very tall cheesecake filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 (8-ounce) packages cream cheese, softened (Philadelphia is recommended for cheesecakes but if you’ve had success with other brands, feel free to use them again)",
       "expected": {
         "item": "cream cheese",
@@ -89,7 +93,7 @@
           }
         ],
         "note": "8-ounce, Philadelphia is recommended for cheesecakes but if you’ve had success with other brands, feel free to use them again, softened",
-        "section": "Crumb Crust",
+        "section": "Very Tall Cheesecake Filling",
         "category": "Cheese"
       }
     },
@@ -104,7 +108,7 @@
           }
         ],
         "note": null,
-        "section": "Crumb Crust",
+        "section": "Very Tall Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -119,7 +123,7 @@
           }
         ],
         "note": null,
-        "section": "Crumb Crust",
+        "section": "Very Tall Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -134,7 +138,7 @@
           }
         ],
         "note": null,
-        "section": "Crumb Crust",
+        "section": "Very Tall Cheesecake Filling",
         "category": "Produce"
       }
     },
@@ -149,7 +153,7 @@
           }
         ],
         "note": null,
-        "section": "Crumb Crust",
+        "section": "Very Tall Cheesecake Filling",
         "category": "Produce"
       }
     },
@@ -164,7 +168,7 @@
           }
         ],
         "note": null,
-        "section": "Crumb Crust",
+        "section": "Very Tall Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -179,7 +183,7 @@
           }
         ],
         "note": null,
-        "section": "Crumb Crust",
+        "section": "Very Tall Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -194,12 +198,12 @@
           }
         ],
         "note": null,
-        "section": "Crumb Crust",
+        "section": "Very Tall Cheesecake Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "Cherry topping",
+      "raw": "Cherry topping:",
       "is_section_header": true
     },
     {

@@ -3,7 +3,16 @@
   "recipe_slug": "recipes-celery-root-puree",
   "ingredients": [
     {
-      "raw": "4  beets",
+      "raw": "Balsamic Roasted Beets and Pearl Onions:",
+      "expected": {
+        "item": "Balsamic Roasted Beets and Pearl Onions:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 beets",
       "expected": {
         "item": "beets",
         "measurements": [
@@ -31,7 +40,7 @@
       }
     },
     {
-      "raw": "3 tbsp olive oil ((divided))",
+      "raw": "3 tbsp olive oil, (divided)",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -45,7 +54,7 @@
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -96,7 +105,7 @@
       }
     },
     {
-      "raw": "1 tbsp fresh tarragon (chopped)",
+      "raw": "1 tbsp fresh tarragon, chopped",
       "expected": {
         "item": "fresh tarragon",
         "measurements": [
@@ -110,6 +119,10 @@
       }
     },
     {
+      "raw": "Celery Root Puree:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp olive oil",
       "expected": {
         "item": "olive oil",
@@ -120,11 +133,12 @@
           }
         ],
         "note": null,
+        "section": "Celery Root Puree",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3 cloves garlic (finely chopped)",
+      "raw": "3 cloves garlic, finely chopped",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -134,11 +148,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Celery Root Puree",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 cups celery root (peeled and diced into 1/2 inch cubes)",
+      "raw": "4 cups celery root, peeled and diced into 1/2 inch cubes",
       "expected": {
         "item": "celery root",
         "measurements": [
@@ -148,6 +163,7 @@
           }
         ],
         "note": "peeled and diced into 1/2 inch cubes",
+        "section": "Celery Root Puree",
         "category": "Produce"
       }
     },
@@ -162,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Celery Root Puree",
         "category": "Canned Goods"
       }
     },
@@ -176,17 +193,23 @@
           }
         ],
         "note": null,
+        "section": "Celery Root Puree",
         "category": "Beverages"
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Celery Root Puree",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups microgreens",
@@ -199,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     }

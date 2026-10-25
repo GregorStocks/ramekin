@@ -3,21 +3,26 @@
   "recipe_slug": "jello-shots-recipe",
   "ingredients": [
     {
-      "raw": "3 ounces box Jello (pick your favorite flavor)",
+      "raw": "For ONE Flavor:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 ounces box Jell-o pick your favorite flavor",
       "expected": {
-        "item": "box Jello",
+        "item": "box Jell-o pick your favorite flavor",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": "pick your favorite flavor",
+        "note": null,
+        "section": "For One Flavor",
         "category": "Other"
       }
     },
     {
-      "raw": "1 1/2 cups water (divided)",
+      "raw": "1 1/2 cups water divided",
       "expected": {
         "item": "water",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "For One Flavor",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For One Flavor",
         "category": "Beverages"
       }
     }

@@ -3,13 +3,8 @@
   "recipe_slug": "2011-07-skirt-steak-with-blood",
   "ingredients": [
     {
-      "raw": "Steak",
-      "expected": {
-        "item": "Steak",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "raw": "Steak:",
+      "is_section_header": true
     },
     {
       "raw": "2 1 1/2 pound skirt steaks",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +27,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +42,7 @@
           }
         ],
         "note": "packed",
+        "section": "Steak",
         "category": "Baking"
       }
     },
@@ -59,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +72,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,11 +97,12 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": "for brushing",
+        "section": "Steak",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Salad",
+      "raw": "Salad:",
       "is_section_header": true
     },
     {

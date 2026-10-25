@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 cup lager-style beer&nbsp;",
+      "raw": "1 cup lager-style beer",
       "expected": {
         "item": "lager-style beer",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 ounces cream cheese, softened&nbsp;",
+      "raw": "2 ounces cream cheese, softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4  gherkin pickles, diced fine&nbsp;",
+      "raw": "4  gherkin pickles, diced fine",
       "expected": {
         "item": "gherkin pickles",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 teaspoon sriracha&nbsp;",
+      "raw": "1 teaspoon sriracha",
       "expected": {
         "item": "sriracha",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "10  sandwich-style pepperoni slices, halved&nbsp;",
+      "raw": "10  sandwich-style pepperoni slices, halved",
       "expected": {
         "item": "sandwich-style pepperoni slices",
         "measurements": [

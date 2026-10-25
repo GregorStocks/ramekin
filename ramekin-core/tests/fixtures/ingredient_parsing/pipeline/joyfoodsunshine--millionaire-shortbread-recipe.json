@@ -3,7 +3,11 @@
   "recipe_slug": "millionaire-shortbread-recipe",
   "ingredients": [
     {
-      "raw": "1 ¼ cups salted butter (softened)",
+      "raw": "Shortbread:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ¼ cups salted butter softened",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened",
+        "section": "Shortbread",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg yolk",
+      "raw": "1 egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Shortbread",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Caramel:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup salted butter",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Canned Goods"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -167,8 +186,13 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Chocolate Topping:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup heavy whipping cream",
@@ -181,11 +205,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Topping",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 ½ cups semisweet chocolate  ((chips, chopped, etc). )",
+      "raw": "1 ½ cups semisweet chocolate  (chips, chopped, etc).",
       "expected": {
         "item": "semisweet chocolate .",
         "measurements": [
@@ -195,6 +220,7 @@
           }
         ],
         "note": "chips, chopped, etc",
+        "section": "Chocolate Topping",
         "category": "Other"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Topping",
         "category": "Baking"
       }
     }

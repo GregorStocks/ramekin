@@ -3,7 +3,11 @@
   "recipe_slug": "ebi-fry-recipe",
   "ingredients": [
     {
-      "raw": "25 g onion (finely diced)",
+      "raw": "Tartar Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "25 g onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "finely diced",
+        "section": "Tartar Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  hard-boiled egg",
+      "raw": "2 hard-boiled egg",
       "expected": {
         "item": "hard-boiled egg",
         "measurements": [
@@ -27,21 +32,23 @@
           }
         ],
         "note": null,
+        "section": "Tartar Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4 tbsp Japanese mayonnaise (I use Kewpie Mayonnaise)",
+      "raw": "4 tbsp Japanese mayonnaise I use Kewpie Mayonnaise",
       "expected": {
-        "item": "Japanese mayonnaise",
+        "item": "Japanese mayonnaise I use Kewpie Mayonnaise",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "I use Kewpie Mayonnaise",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "section": "Tartar Sauce",
+        "category": "Other"
       }
     },
     {
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Tartar Sauce",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Tartar Sauce",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Tartar Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,34 +107,41 @@
           }
         ],
         "note": null,
+        "section": "Tartar Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "6  black tiger shrimp (or similar large prawn)",
+      "raw": "Ebi Fry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 black tiger shrimp or similar large prawn",
       "expected": {
-        "item": "black tiger shrimp",
+        "item": "black tiger shrimp or similar large prawn",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "or similar large prawn",
+        "note": null,
+        "section": "Ebi Fry",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "6  bamboo skewers (longer than the prawns)",
+      "raw": "6 bamboo skewers longer than the prawns",
       "expected": {
-        "item": "bamboo skewers",
+        "item": "bamboo skewers longer than the prawns",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "longer than the prawns",
+        "note": null,
+        "section": "Ebi Fry",
         "category": "Other"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "Ebi Fry",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Fry",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Ebi Fry",
         "category": "Baking"
       }
     },
@@ -195,15 +216,17 @@
           }
         ],
         "note": null,
+        "section": "Ebi Fry",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "cooking oil ( for deep frying)",
+      "raw": "cooking oil  for deep frying",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
         "note": "for deep frying",
+        "section": "Ebi Fry",
         "category": "Oils & Vinegars"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-slow-cooker-waffle-bre",
   "ingredients": [
     {
+      "raw": "Really Good Waffles:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 3/4 ounces all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Really Good Waffles",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Really Good Waffles",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Really Good Waffles",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Really Good Waffles",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Really Good Waffles",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Really Good Waffles",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Really Good Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "melted",
+        "section": "Really Good Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Really Good Waffles",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Slow Cooker Waffle Bread Pudding:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon unsalted butter",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Baking"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Baking"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Spices & Seasonings"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": "optional",
+        "section": "Slow Cooker Waffle Bread Pudding",
         "category": "Baking"
       }
     }

@@ -1,9 +1,9 @@
 {
   "title": "Calorie estimates: ginger and turmeric pieces, knobs and chunks",
-  "description": "17 Unsupported quantity unit lines (15 pipeline fixtures, 1 Paprika, 1 snapshot) are pieces of ginger or turmeric sized somewhere the weigher doesn't look. ginger root, raw already has inch-piece weights (\"1 inch piece\" 7.4 g, \"2 inch piece\" 14.8 g, …), and \"1 2-inch piece ginger\" already weighs. \
-Failing shapes: the size in the note (\"1 piece fresh ginger\" noted \"2-inch-long\" / \"1 1/2 inches, peeled\" / \"approx 1/2 inch\"; 4 lines plus \"1 piece peeled ginger\" noted 2\"); the unit left in the item (\"1 inch knob fresh ginger\", \"0.5 inch ginger\", \"one-and-a-half inch chunk ginger\" with a spelled-out size, \"2 piece 1-inch fresh ginger root\"); a size word with no inches (\"1 small piece fresh ginger\", \"1 small knob ginger\"; treat as a cited 1-inch piece or leave unknown); and \"1 2-inch piece turmeric\" (turmeric root has no piece weights; needs a cited one). \
-Fix in ingredient_parser/quantity.rs next to leading_size/named_piece: read an inch size from the note of a piece/knob/chunk count, and from an item that starts with \"inch knob|chunk|piece\". \
-Measure with make ingredient-catalog-audit (Unsupported quantity unit, all three corpora) and, once blocked-ingredient-burndown-from-prod lands, the prod report; make pipeline should produce only data/ingredient-catalog-audit.md and fixture-category diffs. \
+  "description": "Leftover ginger/turmeric piece lines the weigher still can't size. ginger root, raw has inch-piece weights (\"1 inch piece\" 7.4 g, …); sizes in the note (\"1 piece fresh ginger\" noted \"2-inch-long\"), an inch unit in the item (\"1 inch knob fresh ginger\", \"1/2 inch ginger\") and \"2 piece 1-inch fresh ginger root\" already weigh. \
+Still failing: a spelled-out size (\"one-and-a-half inch chunk ginger\"); a size word with no inches (\"1 small piece fresh ginger\", \"1 small knob ginger\"; treat as a cited 1-inch piece or leave unknown); and \"1 2-inch piece turmeric\" (turmeric root has no piece weights; needs a cited one). \
+Also: an inch length of a food with no 1-inch weight (\"2 inches Daikon\", \"1 (2-inch) piece daikon\") falls back to the food's whole default piece, overcounting; a cited per-inch weight for daikon would fix those. \
+Measure with make ingredient-catalog-audit (Unsupported quantity unit, all three corpora); make pipeline should produce only data/ingredient-catalog-audit.md and fixture-category diffs. \
 Server-side only (ramekin-core nutrition), so no web or iOS change. \
 Split out of the retired p3-nutrition-remaining-count-units (owner, 2026-10-24: whole groups per PR, never one ingredient).",
   "status": "open",
@@ -14,5 +14,5 @@ Split out of the retired p3-nutrition-remaining-count-units (owner, 2026-10-24: 
     "catalog",
   ],
   "created_at": "2026-10-24T19:00:00-07:00",
-  "updated_at": "2026-10-24T19:00:00-07:00",
+  "updated_at": "2026-10-25T04:45:00-07:00",
 }

@@ -3,7 +3,7 @@
   "recipe_slug": "the-best-slow-cooked-italian-a",
   "ingredients": [
     {
-      "raw": "4 (28-ounce) cans whole peeled tomatoes, preferably imported D.O.P. San Marzano tomatoes (see note)",
+      "raw": "4 (28-ounce) cans whole peeled tomatoes, preferably imported D.O.P. San Marzano tomatoes (see notes)",
       "expected": {
         "item": "whole peeled tomatoes",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "can"
           }
         ],
-        "note": "28-ounce, see note, preferably imported D.O.P. San Marzano tomatoes",
+        "note": "28-ounce, see notes, preferably imported D.O.P. San Marzano tomatoes",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/4 cup extra-virgin olive oil, plus more for finishing.",
+      "raw": "1/4 cup extra-virgin olive oil, plus more for finishing",
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [
@@ -26,7 +26,7 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for finishing.",
+        "note": "plus more for finishing",
         "category": "Oils & Vinegars"
       }
     },
@@ -142,7 +142,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fish sauce (optional), such as Red Boat",
+      "raw": "1 tablespoon fish sauce, such as Red Boat (optional)",
       "expected": {
         "item": "fish sauce",
         "measurements": [

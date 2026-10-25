@@ -3,17 +3,22 @@
   "recipe_slug": "cheesy-meatball-recipe",
   "ingredients": [
     {
-      "raw": "3 slices white bread (crust removed)",
+      "raw": "MEATBALLS:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 slices white bread crust removed",
       "expected": {
-        "item": "white bread",
+        "item": "white bread crust",
         "measurements": [
           {
             "amount": "3",
             "unit": "slice"
           }
         ],
-        "note": "crust removed",
-        "category": "Bakery & Bread"
+        "note": "removed",
+        "section": "Meatballs",
+        "category": "Other"
       }
     },
     {
@@ -27,39 +32,42 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "17 oz ground beef (or minced beef)",
+      "raw": "17 oz ground beef or minced beef",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef or minced beef",
         "measurements": [
           {
             "amount": "17",
             "unit": "oz"
           }
         ],
-        "note": "or minced beef",
+        "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "17 oz ground pork (minced pork)",
+      "raw": "17 oz ground pork minced pork",
       "expected": {
-        "item": "ground pork",
+        "item": "ground pork minced pork",
         "measurements": [
           {
             "amount": "17",
             "unit": "oz"
           }
         ],
-        "note": "minced pork",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Meatballs",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  onion (finely chopped)",
+      "raw": "1 onion finely chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  egg",
+      "raw": "2 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -97,21 +107,23 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup parmesan cheese (fresh grated )",
+      "raw": "1/2 cup parmesan cheese fresh grated",
       "expected": {
-        "item": "parmesan cheese",
+        "item": "parmesan cheese fresh",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "fresh grated",
-        "category": "Cheese"
+        "note": "grated",
+        "section": "Meatballs",
+        "category": "Other"
       }
     },
     {
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,11 +152,12 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 cup fresh parsley (finely chopped)",
+      "raw": "1/4 cup fresh parsley finely chopped",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -153,25 +167,27 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon beef bouillon powder (or vegetable stock powder)",
+      "raw": "1 teaspoon beef bouillon powder or vegetable stock powder",
       "expected": {
-        "item": "beef bouillon powder",
+        "item": "beef bouillon powder or vegetable stock powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or vegetable stock powder",
+        "note": null,
+        "section": "Meatballs",
         "category": "Other"
       }
     },
     {
-      "raw": "1 teaspoon salt (to taste)",
+      "raw": "1 teaspoon salt to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -181,11 +197,12 @@
           }
         ],
         "note": "to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch cracked pepper (to taste)",
+      "raw": "1 pinch cracked pepper to taste",
       "expected": {
         "item": "cracked pepper",
         "measurements": [
@@ -195,11 +212,16 @@
           }
         ],
         "note": "to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons olive oil (divided)",
+      "raw": "Tomato Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons olive oil divided",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -209,11 +231,12 @@
           }
         ],
         "note": "divided",
+        "section": "Tomato Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 large onion (finely chopped)",
+      "raw": "1 large onion finely chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -223,11 +246,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Tomato Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -237,20 +261,22 @@
           }
         ],
         "note": "minced",
+        "section": "Tomato Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "24 oz tomato puree (or passata)",
+      "raw": "24 oz tomato puree or passata",
       "expected": {
-        "item": "tomato puree",
+        "item": "tomato puree or passata",
         "measurements": [
           {
             "amount": "24",
             "unit": "oz"
           }
         ],
-        "note": "or passata",
+        "note": null,
+        "section": "Tomato Sauce",
         "category": "Canned Goods"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Beverages"
       }
     },
@@ -279,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Canned Goods"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,11 +336,12 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon red chili flakes (optional)",
+      "raw": "1 teaspoon red chili flakes optional",
       "expected": {
         "item": "red chili flakes",
         "measurements": [
@@ -321,11 +351,12 @@
           }
         ],
         "note": "optional",
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch salt (to taste)",
+      "raw": "1 pinch salt to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -335,11 +366,12 @@
           }
         ],
         "note": "to taste",
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch pepper (to taste)",
+      "raw": "1 pinch pepper to taste",
       "expected": {
         "item": "pepper",
         "measurements": [
@@ -349,11 +381,12 @@
           }
         ],
         "note": "to taste",
+        "section": "Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4-1/2 teaspoon sugar (optional)",
+      "raw": "1/4-1/2 teaspoon sugar optional",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -363,6 +396,7 @@
           }
         ],
         "note": "optional",
+        "section": "Tomato Sauce",
         "category": "Baking"
       }
     },
@@ -377,20 +411,22 @@
           }
         ],
         "note": null,
+        "section": "Tomato Sauce",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 pinch fresh basil (or parsley, chopped to garnish)",
+      "raw": "1 pinch fresh basil or parsley, chopped to garnish",
       "expected": {
-        "item": "fresh basil",
+        "item": "fresh basil or parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "or parsley, chopped to garnish",
+        "note": "chopped to garnish",
+        "section": "Tomato Sauce",
         "category": "Produce"
       }
     }

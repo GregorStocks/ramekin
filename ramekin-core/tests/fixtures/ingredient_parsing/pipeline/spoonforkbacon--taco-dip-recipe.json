@@ -3,6 +3,10 @@
   "recipe_slug": "taco-dip-recipe",
   "ingredients": [
     {
+      "raw": "ground beef:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Meat & Seafood"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Canned Goods"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Canned Goods"
       }
     },
@@ -134,8 +147,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "chipotle sour cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup sour cream",
@@ -148,11 +166,12 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Sour Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2  chipotle peppers in adobo",
+      "raw": "2 chipotle peppers in adobo",
       "expected": {
         "item": "chipotle peppers in adobo",
         "measurements": [
@@ -162,11 +181,12 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Sour Cream",
         "category": "Other"
       }
     },
     {
-      "raw": "1  lime (juiced)",
+      "raw": "1 lime juiced",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -176,8 +196,13 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Sour Cream",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "assembly:",
+      "is_section_header": true
     },
     {
       "raw": "3 ounces shredded cheddar",
@@ -190,11 +215,12 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2  roma tomatoes (seeded and diced)",
+      "raw": "2 roma tomatoes seeded and diced",
       "expected": {
         "item": "roma tomatoes",
         "measurements": [
@@ -204,6 +230,7 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     }

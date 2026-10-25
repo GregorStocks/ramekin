@@ -3,6 +3,10 @@
   "recipe_slug": "flan-recipe",
   "ingredients": [
     {
+      "raw": "Caramel topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup (150g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Topping",
         "category": "Baking"
       }
     },
@@ -31,11 +36,16 @@
           }
         ],
         "note": null,
+        "section": "Caramel Topping",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 (8 oz) pkg. cream cheese, (well softened (see notes))",
+      "raw": "Flan custard mixture:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (8 oz) pkg. cream cheese, well softened (see notes)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -48,7 +58,8 @@
             "unit": "oz"
           }
         ],
-        "note": "well softened (see notes)",
+        "note": "see notes, well softened",
+        "section": "Flan Custard Mixture",
         "category": "Cheese"
       }
     },
@@ -63,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Flan Custard Mixture",
         "category": "Baking"
       }
     },
@@ -77,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Flan Custard Mixture",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Flan Custard Mixture",
         "category": "Canned Goods"
       }
     },
@@ -113,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Flan Custard Mixture",
         "category": "Canned Goods"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Flan Custard Mixture",
         "category": "Baking"
       }
     }

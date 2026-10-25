@@ -3,6 +3,10 @@
   "recipe_slug": "2017-02-broccoli-pizza",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -82,8 +91,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "Olive oil for pan and fingertips",
@@ -91,6 +105,7 @@
         "item": "Olive oil for pan and fingertips",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -105,6 +120,7 @@
           }
         ],
         "note": "below",
+        "section": "Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -119,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -128,6 +145,7 @@
         "item": "Zest and juice from 1/2 a lemon",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -142,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -156,6 +175,7 @@
           }
         ],
         "note": "torn into small clumps",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -170,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -179,6 +200,7 @@
         "item": "Salt and red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     }

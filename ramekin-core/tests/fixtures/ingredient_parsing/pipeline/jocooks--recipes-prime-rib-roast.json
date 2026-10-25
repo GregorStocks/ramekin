@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-prime-rib-roast",
   "ingredients": [
     {
+      "raw": "Compound Butter:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 tablespoons butter (unsalted, room temperature (1/2 cup or 1 stick))",
       "expected": {
         "item": "butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "unsalted, room temperature (1/2 cup or 1 stick)",
+        "section": "Compound Butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "I used a mild chili powder",
+        "section": "Compound Butter",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "ground",
+        "section": "Compound Butter",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "chopped, fresh",
+        "section": "Compound Butter",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "chopped, fresh",
+        "section": "Compound Butter",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "minced",
+        "section": "Compound Butter",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Compound Butter",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Compound Butter",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Compound Butter",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Prime Rib Roast:",
+      "is_section_header": true
     },
     {
       "raw": "2 medium onions (quartered)",
@@ -139,6 +156,7 @@
           }
         ],
         "note": "quartered",
+        "section": "Prime Rib Roast",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Prime Rib Roast",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Prime Rib Roast",
         "category": "Produce"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "Prime Rib Roast",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Gravy:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup dry red wine",
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Beverages"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": "low sodium",
+        "section": "Gravy",
         "category": "Canned Goods"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Baking"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Beverages"
       }
     }

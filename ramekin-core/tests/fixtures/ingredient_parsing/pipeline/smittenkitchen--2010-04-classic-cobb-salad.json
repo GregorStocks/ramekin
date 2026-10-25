@@ -3,23 +3,8 @@
   "recipe_slug": "2010-04-classic-cobb-salad",
   "ingredients": [
     {
-      "raw": "Dressing",
+      "raw": "Dressing:",
       "is_section_header": true
-    },
-    {
-      "raw": "(Heads up: I found I only needed half of this)",
-      "expected": {
-        "item": "up: I found I only needed half of this",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "head"
-          }
-        ],
-        "note": null,
-        "section": "Dressing",
-        "category": "Other"
-      }
     },
     {
       "raw": "3/4 cup canola oil",
@@ -152,7 +137,7 @@
       }
     },
     {
-      "raw": "Salad",
+      "raw": "Salad:",
       "is_section_header": true
     },
     {

@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-kale-salad-recipe",
   "ingredients": [
     {
+      "raw": "Lemon dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons extra-virgin olive oil",
       "expected": {
         "item": "extra-virgin olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Lemon Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon Dijon mustard&nbsp;",
+      "raw": "1 teaspoon Dijon mustard",
       "expected": {
         "item": "Dijon mustard",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "pressed or minced",
+        "section": "Lemon Dressing",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
         "item": "Several twists of freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Lemon Dressing",
         "category": "Other"
       }
     },
@@ -78,8 +87,13 @@
           }
         ],
         "note": "optional",
+        "section": "Lemon Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Kale salad:",
+      "is_section_header": true
     },
     {
       "raw": "1 medium-to-large bunch of Tuscan kale (8 ounces)",
@@ -96,11 +110,12 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "⅛ teaspoon fine salt&nbsp;",
+      "raw": "⅛ teaspoon fine salt",
       "expected": {
         "item": "fine salt",
         "measurements": [
@@ -110,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -128,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Cheese"
       }
     }

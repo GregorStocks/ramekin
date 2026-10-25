@@ -3,6 +3,10 @@
   "recipe_slug": "carrot-cake-roll-recipe",
   "ingredients": [
     {
+      "raw": "Carrot Cake Roll:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3  eggs",
+      "raw": "3 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Baking"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,25 +167,27 @@
           }
         ],
         "note": null,
+        "section": "Carrot Cake Roll",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 cups shredded carrots (about 3 medium carrots)",
+      "raw": "2 cups shredded carrots about 3 medium carrots",
       "expected": {
-        "item": "shredded carrots",
+        "item": "shredded carrots about 3 medium carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "about 3 medium carrots",
-        "category": "Produce"
+        "note": null,
+        "section": "Carrot Cake Roll",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/3 cup very finely ground walnuts (optional)",
+      "raw": "1/3 cup very finely ground walnuts optional",
       "expected": {
         "item": "very finely ground walnuts",
         "measurements": [
@@ -181,11 +197,12 @@
           }
         ],
         "note": "optional",
+        "section": "Carrot Cake Roll",
         "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup powdered sugar (for rolling)",
+      "raw": "1/4 cup powdered sugar for rolling",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -195,11 +212,16 @@
           }
         ],
         "note": "for rolling",
+        "section": "Carrot Cake Roll",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup powdered sugar (sifted)",
+      "raw": "Cream Cheese Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup powdered sugar sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -209,25 +231,27 @@
           }
         ],
         "note": "sifted",
+        "section": "Cream Cheese Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "8 ounces cream cheese (room temperature)",
+      "raw": "8 ounces cream cheese room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese room temperature",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "room temperature",
-        "category": "Cheese"
+        "note": null,
+        "section": "Cream Cheese Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "6 tablespoons unsalted butter (softened)",
+      "raw": "6 tablespoons unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -237,6 +261,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,11 +276,12 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup raisins (optional)",
+      "raw": "1/2 cup raisins optional",
       "expected": {
         "item": "raisins",
         "measurements": [
@@ -265,6 +291,7 @@
           }
         ],
         "note": "optional",
+        "section": "Cream Cheese Filling",
         "category": "Nuts & Dried Fruit"
       }
     }

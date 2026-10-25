@@ -3,49 +3,68 @@
   "recipe_slug": "2022-02-sour-cream-chocolate-c",
   "ingredients": [
     {
-      "raw": "7/8 cup all-purpose flour",
+      "raw": "For Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "⅞ cup  / 110 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.88",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "7/8 cups granulated sugar",
+      "raw": "⅞ cups  / 175 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.88",
             "unit": "cup"
+          },
+          {
+            "amount": "175",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup Dutch-process cocoa powder  (sifted*)",
+      "raw": "½ cup  / 45 g Dutch-process cocoa powder , sifted*",
       "expected": {
         "item": "Dutch-process cocoa powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon baking powder",
+      "raw": "1 teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -55,11 +74,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon baking soda",
+      "raw": "¼ teaspoon   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -69,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon fine sea salt",
+      "raw": "¼ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -83,39 +104,50 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/3 cup full fat sour cream",
+      "raw": "⅓ cup  / 80 g full fat sour cream",
       "expected": {
         "item": "full fat sour cream",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup vegetable oil",
+      "raw": "¼ cup  / 56 g vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  large egg (at room temperature)",
+      "raw": "1   large egg, at room temperature",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -125,11 +157,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 teaspoons vanilla extract",
+      "raw": "2 teaspoons   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -139,109 +172,149 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "scant 1/2 cup  hot brewed coffee or hot water",
+      "raw": "scant ½ cup   / 100 g hot brewed coffee or hot water",
       "expected": {
         "item": "hot brewed coffee or hot water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "scant cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/3 cup heavy cream",
+      "raw": "For Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "⅓ cup  / 80 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup unsalted butter (cut into chunks)",
+      "raw": "¼ cup  / 56 g unsalted butter, cut into chunks",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
           }
         ],
         "note": "cut into chunks",
+        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 oz good quality dark chocolate (60-70%) (finely chopped)",
+      "raw": "2 oz  / 56 g good quality dark chocolate (60-70%), finely chopped",
       "expected": {
         "item": "dark chocolate",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
           }
         ],
         "note": "60-70%, finely chopped, good quality",
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup granulated sugar",
+      "raw": "⅓ cup  / 67 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "67",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup Dutch-process cocoa powder (sifted*)",
+      "raw": "⅓ cup  / 30 g Dutch-process cocoa powder, sifted*",
       "expected": {
         "item": "Dutch-process cocoa powder",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup full fat sour cream (at room temperature)",
+      "raw": "⅓ cup  / 80 g full fat sour cream, at room temperature",
       "expected": {
         "item": "full fat sour cream",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -251,11 +324,12 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "pinch fine sea salt",
+      "raw": "pinch   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -265,6 +339,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Spices & Seasonings"
       }
     }

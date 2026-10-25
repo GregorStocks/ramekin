@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "1 &amp;#8211; 1.5 teaspoons (4 to 6 g) kosher salt&nbsp;",
+      "raw": "1 – 1.5 teaspoons (4 to 6 g) kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -98,6 +98,10 @@
       }
     },
     {
+      "raw": "Optional garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -108,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Garnish",
         "category": "Oils & Vinegars"
       }
     },
@@ -122,11 +127,12 @@
           }
         ],
         "note": "dried very well",
+        "section": "Optional Garnish",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "3/4 teaspoon spices such as cayenne, smoked paprika, or cumin, etc.&nbsp;",
+      "raw": "3/4 teaspoon spices such as cayenne, smoked paprika, or cumin, etc.",
       "expected": {
         "item": "spices",
         "measurements": [
@@ -136,6 +142,7 @@
           }
         ],
         "note": "such as cayenne, smoked paprika, or cumin, etc.",
+        "section": "Optional Garnish",
         "category": "Spices & Seasonings"
       }
     }

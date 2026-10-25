@@ -3,7 +3,11 @@
   "recipe_slug": "recipes-cucumber-melon-gazpach",
   "ingredients": [
     {
-      "raw": "12  large shrimp (peeled and deveined)",
+      "raw": "Ginger Shrimp:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 large shrimp, peeled and deveined",
       "expected": {
         "item": "shrimp",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "peeled and deveined",
+        "section": "Ginger Shrimp",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ginger Shrimp",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ginger Shrimp",
         "category": "Produce"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Ginger Shrimp",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tbsp fresh ginger (finely chopped)",
+      "raw": "1 tbsp fresh ginger, finely chopped",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -69,6 +77,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Ginger Shrimp",
         "category": "Produce"
       }
     },
@@ -83,11 +92,16 @@
           }
         ],
         "note": null,
+        "section": "Ginger Shrimp",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 1/2  large cucumbers (peeled and diced (plus 1/2 large cucumber, peeled, sliced and small diced for garnish))",
+      "raw": "Gazpacho:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 1/2 large cucumbers, peeled and diced (plus 1/2 large cucumber, peeled, sliced and small diced for garnish)",
       "expected": {
         "item": "cucumbers",
         "measurements": [
@@ -96,12 +110,13 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and diced (plus 1/2 large cucumber, peeled, sliced and small diced for garnish)",
+        "note": "plus 1/2 large cucumber, peeled, sliced and small diced for garnish, peeled and diced",
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 1/2 cup honeydew melon (diced)",
+      "raw": "1 1/2 cup honeydew melon, diced",
       "expected": {
         "item": "honeydew melon",
         "measurements": [
@@ -111,25 +126,27 @@
           }
         ],
         "note": "diced",
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  scallions (white and green parts, chopped)",
+      "raw": "3 scallions, white and green parts, chopped",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, white and green parts",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "white and green parts, chopped",
+        "note": "chopped",
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
     {
-      "raw": "12  fresh mint leaves",
+      "raw": "12 fresh mint leaves",
       "expected": {
         "item": "fresh mint leaves",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
     {
-      "raw": "12  fresh basil leaves",
+      "raw": "12 fresh basil leaves",
       "expected": {
         "item": "fresh basil leaves",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 piece fresh ginger ((approx 1/2 inch) peeled and chopped)",
+      "raw": "1 piece fresh ginger, (approx 1/2 inch) peeled and chopped",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": "approx 1/2 inch, peeled and chopped",
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  garlic clove (chopped)",
+      "raw": "1 garlic clove, chopped",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -181,6 +201,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Gazpacho",
         "category": "Oils & Vinegars"
       }
     },
@@ -209,11 +231,12 @@
           }
         ],
         "note": null,
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4  avocado (peeled)",
+      "raw": "1/4 avocado, peeled",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -223,6 +246,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Gazpacho",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,11 +276,12 @@
           }
         ],
         "note": null,
+        "section": "Gazpacho",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tbsp chives (finely chopped (for garnish))",
+      "raw": "1 tbsp chives, finely chopped (for garnish)",
       "expected": {
         "item": "chives",
         "measurements": [
@@ -264,12 +290,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely chopped (for garnish)",
+        "note": "for garnish, finely chopped",
+        "section": "Gazpacho",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tbsp hemp hearts (for garnish)",
+      "raw": "1 tbsp hemp hearts, for garnish",
       "expected": {
         "item": "hemp hearts",
         "measurements": [
@@ -279,6 +306,7 @@
           }
         ],
         "note": "for garnish",
+        "section": "Gazpacho",
         "category": "Nuts & Dried Fruit"
       }
     }

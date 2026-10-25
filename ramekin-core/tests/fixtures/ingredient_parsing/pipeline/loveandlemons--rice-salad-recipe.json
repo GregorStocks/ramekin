@@ -3,7 +3,7 @@
   "recipe_slug": "rice-salad-recipe",
   "ingredients": [
     {
-      "raw": "4 cups cooked long grain rice (any kind - see options below)",
+      "raw": "4 cups cooked long grain rice, any kind - see options below",
       "expected": {
         "item": "cooked long grain rice",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "1  bunch scallions (white and green parts, chopped)",
+      "raw": "1 bunch scallions, white and green parts, chopped",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, white and green parts",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": "white and green parts, chopped",
+        "note": "chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves garlic (minced)",
+      "raw": "3 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -59,9 +59,9 @@
       }
     },
     {
-      "raw": "⅓ cup toasted (chopped pistachios)",
+      "raw": "⅓ cup toasted, chopped pistachios",
       "expected": {
-        "item": "toasted chopped pistachios",
+        "item": "toasted, chopped pistachios",
         "measurements": [
           {
             "amount": "0.33",
@@ -124,13 +124,17 @@
       }
     },
     {
-      "raw": "Roasted Chickpeas (optional)",
+      "raw": "Roasted Chickpeas, optional",
       "expected": {
         "item": "Roasted Chickpeas",
         "measurements": [],
         "note": "optional",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons extra-virgin olive oil",
@@ -143,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,11 +162,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon fresh orange juice (plus 1 teaspoon zest)",
+      "raw": "1 tablespoon fresh orange juice, plus 1 teaspoon zest",
       "expected": {
         "item": "fresh orange juice",
         "measurements": [
@@ -171,6 +177,7 @@
           }
         ],
         "note": "plus 1 teaspoon zest",
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -185,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -199,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -241,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -255,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -264,6 +277,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

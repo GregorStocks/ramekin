@@ -3,7 +3,7 @@
   "recipe_slug": "pad-kee-mao-recipe",
   "ingredients": [
     {
-      "raw": "150 grams dry wide rice noodles ((or 350 grams fresh, sen yai))",
+      "raw": "150 grams  dry wide rice noodles (or 350 grams fresh, sen yai)",
       "expected": {
         "item": "dry wide rice noodles",
         "measurements": [
@@ -17,7 +17,11 @@
       }
     },
     {
-      "raw": "200 grams boneless skinless chicken breast ((thinly sliced))",
+      "raw": "For chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "200 grams  boneless skinless chicken breast (thinly sliced)",
       "expected": {
         "item": "boneless skinless chicken breast",
         "measurements": [
@@ -27,11 +31,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 teaspoon soy sauce",
+      "raw": "1 teaspoon  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -41,11 +46,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon potato starch",
+      "raw": "1 teaspoon  potato starch",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -55,11 +61,16 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon fish sauce",
+      "raw": "For Pad Kee Mao sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon  fish sauce",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -69,11 +80,12 @@
           }
         ],
         "note": null,
+        "section": "For Pad Kee Mao Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon oyster sauce",
+      "raw": "1 tablespoon  oyster sauce",
       "expected": {
         "item": "oyster sauce",
         "measurements": [
@@ -83,11 +95,12 @@
           }
         ],
         "note": null,
+        "section": "For Pad Kee Mao Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon evaporated cane sugar",
+      "raw": "1 tablespoon  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -97,11 +110,12 @@
           }
         ],
         "note": null,
+        "section": "For Pad Kee Mao Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoons rice vinegar",
+      "raw": "1 teaspoons  rice vinegar",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -111,11 +125,16 @@
           }
         ],
         "note": null,
+        "section": "For Pad Kee Mao Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 tablespoons vegetable oil",
+      "raw": "For stir-fry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -125,11 +144,12 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "18 grams garlic ((3 large cloves, finely minced))",
+      "raw": "18 grams  garlic (3 large cloves, finely minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -139,11 +159,12 @@
           }
         ],
         "note": "3 large cloves, finely minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 medium eggs",
+      "raw": "2 medium  eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -153,11 +174,12 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "75 grams onion ((1/2 small , sliced))",
+      "raw": "75 grams  onion (½ small , sliced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -171,11 +193,12 @@
           }
         ],
         "note": "1/2 small , sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "70 grams baby corn ((5 ears, sliced in half at an angle))",
+      "raw": "70 grams  baby corn (5 ears, sliced in half at an angle)",
       "expected": {
         "item": "baby corn",
         "measurements": [
@@ -189,11 +212,12 @@
           }
         ],
         "note": "5 ears, sliced in half at an angle",
+        "section": "For Stir-Fry",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "50 grams red bell pepper ((1/2 small pepper, sliced))",
+      "raw": "50 grams  red bell pepper (½ small pepper, sliced)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -203,11 +227,12 @@
           }
         ],
         "note": "1/2 small pepper, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "30 grams carrot (( 8 thin slices))",
+      "raw": "30 grams  carrot ( 8 thin slices)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -217,11 +242,12 @@
           }
         ],
         "note": "8 thin slices",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon green peppercorns in brine",
+      "raw": "1 tablespoon  green peppercorns in brine",
       "expected": {
         "item": "green peppercorns in brine",
         "measurements": [
@@ -231,11 +257,12 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Other"
       }
     },
     {
-      "raw": "2  bird chillies ((optional, finely minced))",
+      "raw": "2  bird chillies (optional, finely minced)",
       "expected": {
         "item": "bird chillies",
         "measurements": [
@@ -245,11 +272,12 @@
           }
         ],
         "note": "optional, finely minced",
+        "section": "For Stir-Fry",
         "category": "Other"
       }
     },
     {
-      "raw": "70 grams tomatoes ((1/2 medium tomato, sliced))",
+      "raw": "70 grams  tomatoes (½ medium tomato, sliced)",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -259,11 +287,12 @@
           }
         ],
         "note": "1/2 medium tomato, sliced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "20 grams Thai basil* ((leaves only))",
+      "raw": "20 grams  Thai basil* (leaves only)",
       "expected": {
         "item": "Thai basil",
         "measurements": [
@@ -273,6 +302,7 @@
           }
         ],
         "note": "leaves only",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     }

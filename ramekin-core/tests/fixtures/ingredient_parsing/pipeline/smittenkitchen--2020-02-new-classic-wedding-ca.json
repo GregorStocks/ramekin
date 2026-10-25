@@ -3,6 +3,10 @@
   "recipe_slug": "2020-02-new-classic-wedding-ca",
   "ingredients": [
     {
+      "raw": "Brown butter cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (8 ounces or 225 grams) unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Baking"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Baking"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,8 +176,13 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Salted butter caramel filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (200 grams) granulated sugar",
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Butter Caramel Filling",
         "category": "Baking"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": "in 1T slices",
+        "section": "Salted Butter Caramel Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -221,6 +241,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Salted Butter Caramel Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -230,8 +251,13 @@
         "item": "Sea salt flakes",
         "measurements": [],
         "note": "for assembly",
+        "section": "Salted Butter Caramel Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Vanilla bean custard frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup plus 2 tablespoons (225 grams) granulated sugar",
@@ -248,6 +274,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Bean Custard Frosting",
         "category": "Baking"
       }
     },
@@ -266,6 +293,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Bean Custard Frosting",
         "category": "Baking"
       }
     },
@@ -280,6 +308,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Bean Custard Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -294,6 +323,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Vanilla Bean Custard Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -312,6 +342,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Vanilla Bean Custard Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -326,6 +357,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Bean Custard Frosting",
         "category": "Baking"
       }
     },
@@ -344,6 +376,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Bean Custard Frosting",
         "category": "Baking"
       }
     },
@@ -370,6 +403,7 @@
           }
         ],
         "note": "firm-soft, not mushy",
+        "section": "Vanilla Bean Custard Frosting",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-thai-red-curry-turkey-",
   "ingredients": [
     {
+      "raw": "Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground turkey",
       "expected": {
         "item": "ground turkey",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": "or to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Red Curry Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons peanut oil",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Red Curry Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Red Curry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "or 2 stalks of lemongrass",
+        "section": "Red Curry Sauce",
         "category": "Other"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Red Curry Sauce",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "minced",
+        "section": "Red Curry Sauce",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Red Curry Sauce",
         "category": "Canned Goods"
       }
     },
@@ -227,11 +250,12 @@
           }
         ],
         "note": null,
+        "section": "Red Curry Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "5  kaffir lime leaves (fresh or dried)",
+      "raw": "5 kaffir lime leaves (fresh or dried)",
       "expected": {
         "item": "kaffir lime leaves",
         "measurements": [
@@ -241,6 +265,7 @@
           }
         ],
         "note": "fresh or dried",
+        "section": "Red Curry Sauce",
         "category": "Produce"
       }
     },
@@ -255,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Red Curry Sauce",
         "category": "Baking"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "carne-asada-recipe",
   "ingredients": [
     {
-      "raw": "1  skirt steak ((or 2 hanger steaks))",
+      "raw": "1  skirt steak (or 2 hanger steaks)",
       "expected": {
         "item": "skirt steak",
         "measurements": [
@@ -17,7 +17,11 @@
       }
     },
     {
-      "raw": "1  limes ((juiced))",
+      "raw": "marinade:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1  limes (juiced)",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -27,11 +31,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup olive oil",
+      "raw": "¼ cup  olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -41,11 +46,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/4 cup cilantro ((minced))",
+      "raw": "¼ cup  cilantro (minced)",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -55,11 +61,12 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  Serrano chilli (minced (to taste))",
+      "raw": "1  Serrano chilli minced (to taste)",
       "expected": {
         "item": "Serrano chilli",
         "measurements": [
@@ -68,12 +75,13 @@
             "unit": null
           }
         ],
-        "note": "minced (to taste)",
+        "note": "to taste, minced",
+        "section": "Marinade",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoons garlic ((minced))",
+      "raw": "1 tablespoons  garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -83,11 +91,12 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoons granulated sugar",
+      "raw": "1 teaspoons  granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -97,11 +106,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoons ground coriander",
+      "raw": "½ teaspoons  ground coriander",
       "expected": {
         "item": "ground coriander",
         "measurements": [
@@ -111,11 +121,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoons Mexican oregano",
+      "raw": "½ teaspoons  Mexican oregano",
       "expected": {
         "item": "Mexican oregano",
         "measurements": [
@@ -125,11 +136,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoons ground cumin",
+      "raw": "¼ teaspoons  ground cumin",
       "expected": {
         "item": "ground cumin",
         "measurements": [
@@ -139,11 +151,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 teaspoons kosher salt ((less if using table salt))",
+      "raw": "2 teaspoons  kosher salt (less if using table salt)",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -153,34 +166,41 @@
           }
         ],
         "note": "less if using table salt",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "ground black pepper ((to taste))",
+      "raw": "ground black pepper (to taste)",
       "expected": {
         "item": "ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tablespoons kiwi (pureed)",
+      "raw": "1 tablespoons  kiwi pureed",
       "expected": {
-        "item": "kiwi",
+        "item": "kiwi pureed",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "pureed",
-        "category": "Produce"
+        "note": null,
+        "section": "Marinade",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup sweet onions ((minced))",
+      "raw": "garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ cup  sweet onions (minced)",
       "expected": {
         "item": "sweet onions",
         "measurements": [
@@ -190,11 +210,12 @@
           }
         ],
         "note": "minced",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup cilantro ((minced))",
+      "raw": "¼ cup  cilantro (minced)",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -204,11 +225,12 @@
           }
         ],
         "note": "minced",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 batch corn tortillas",
+      "raw": "1 batch  corn tortillas",
       "expected": {
         "item": "corn tortillas",
         "measurements": [
@@ -218,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish",
         "category": "Bakery & Bread"
       }
     }

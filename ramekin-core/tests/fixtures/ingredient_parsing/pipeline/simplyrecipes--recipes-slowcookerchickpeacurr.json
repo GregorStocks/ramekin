@@ -73,9 +73,9 @@
       }
     },
     {
-      "raw": "1 large or two small sweet bell peppers, diced (red or yellow, about 1/2 pound)",
+      "raw": "1 large or 2 small sweet bell peppers, diced (red or yellow, about 1/2 pound)",
       "expected": {
-        "item": "or two small sweet bell peppers",
+        "item": "sweet bell peppers",
         "measurements": [
           {
             "amount": "1",
@@ -84,10 +84,14 @@
           {
             "amount": "0.5",
             "unit": "lb"
+          },
+          {
+            "amount": "2",
+            "unit": "small"
           }
         ],
         "note": "red or yellow, about 1/2 pound, diced",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -105,20 +109,16 @@
       }
     },
     {
-      "raw": "1 (15.5 ounce) can coconut milk",
+      "raw": "1 (15.5-ounce) can coconut milk",
       "expected": {
         "item": "coconut milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "15.5",
-            "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "15.5-ounce",
         "category": "Canned Goods"
       }
     },
@@ -151,7 +151,7 @@
       }
     },
     {
-      "raw": "1 diced serrano, jalapeño, or fresno chili (optional)",
+      "raw": "1 diced serrano, jalapeño, or fresno chili, optional",
       "expected": {
         "item": "diced serrano, jalapeño, or fresno chili",
         "measurements": [
@@ -193,11 +193,11 @@
       }
     },
     {
-      "raw": "Cooked rice , to serve (optional)",
+      "raw": "Cooked rice, to serve, optional",
       "expected": {
         "item": "Cooked rice",
         "measurements": [],
-        "note": "optional, to serve",
+        "note": "to serve, optional",
         "category": "Pasta & Rice"
       }
     },

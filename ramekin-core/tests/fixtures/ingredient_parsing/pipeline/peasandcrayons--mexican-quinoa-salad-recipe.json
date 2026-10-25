@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  + 1/4 cups water",
+      "raw": "2 + 1/4 cups water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1-2  bell peppers ((any color))",
+      "raw": "1-2 bell peppers (any color)",
       "expected": {
         "item": "bell peppers",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2  large ripe tomatoes",
+      "raw": "2 large ripe tomatoes",
       "expected": {
         "item": "ripe tomatoes",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/2-1 cup finely chopped onion ((red or white))",
+      "raw": "1/2-1 cup finely chopped onion (red or white)",
       "expected": {
         "item": "finely chopped onion",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/4 cup fresh chopped cilantro or scallions",
+      "raw": "¼ cup fresh chopped cilantro or scallions",
       "expected": {
         "item": "fresh chopped cilantro or scallions",
         "measurements": [
@@ -115,7 +115,11 @@
       }
     },
     {
-      "raw": "1/3 cup avocado oil",
+      "raw": "CHILI LIME DRESSING:",
+      "is_section_header": true
+    },
+    {
+      "raw": "⅓ cup avocado oil",
       "expected": {
         "item": "avocado oil",
         "measurements": [
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,11 +144,12 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 TBSP lime juice (plus extra to taste)",
+      "raw": "1 TBSP lime juice plus extra to taste",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -153,11 +159,12 @@
           }
         ],
         "note": "plus extra to taste",
+        "section": "Chili Lime Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 clove garlic ((peeled and minced))",
+      "raw": "1 clove garlic (peeled and minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -167,6 +174,7 @@
           }
         ],
         "note": "peeled and minced",
+        "section": "Chili Lime Dressing",
         "category": "Produce"
       }
     },
@@ -181,11 +189,12 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 tsp cumin",
+      "raw": "½ tsp cumin",
       "expected": {
         "item": "cumin",
         "measurements": [
@@ -195,25 +204,27 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp salt (or season to taste)",
+      "raw": "¼ tsp salt or season to taste",
       "expected": {
-        "item": "salt",
+        "item": "salt or season",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "or season to taste",
+        "note": "to taste",
+        "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp pepper",
+      "raw": "¼ tsp pepper",
       "expected": {
         "item": "pepper",
         "measurements": [
@@ -223,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "Chili Lime Dressing",
         "category": "Spices & Seasonings"
       }
     }

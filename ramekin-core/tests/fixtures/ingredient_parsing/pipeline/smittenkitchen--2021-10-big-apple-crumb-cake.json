@@ -3,6 +3,10 @@
   "recipe_slug": "2021-10-big-apple-crumb-cake",
   "ingredients": [
     {
+      "raw": "Apples:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound apples (3 medium or 2 large), peeled if you wish, cored, cut into 1/2-inch wedges",
       "expected": {
         "item": "apples, peeled if you wish",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "cored, cut into 1/2-inch wedges",
+        "section": "Apples",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Apples",
         "category": "Produce"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Apples",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,8 +70,13 @@
           }
         ],
         "note": null,
+        "section": "Apples",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Crumbs:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, melted",
@@ -85,6 +97,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,8 +184,13 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, softened",
@@ -185,6 +207,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -217,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -235,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -271,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -285,6 +313,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -299,8 +328,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Finish:",
+      "is_section_header": true
     },
     {
       "raw": "Powdered sugar, for dusting",
@@ -308,6 +342,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "Finish",
         "category": "Baking"
       }
     }

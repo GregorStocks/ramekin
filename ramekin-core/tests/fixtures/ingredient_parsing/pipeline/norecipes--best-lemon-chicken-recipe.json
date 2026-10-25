@@ -3,7 +3,11 @@
   "recipe_slug": "best-lemon-chicken-recipe",
   "ingredients": [
     {
-      "raw": "350 grams boneless skin-on chicken thighs ((cut into 1 1/2-inch pieces))",
+      "raw": "for chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "350 grams  boneless skin-on chicken thighs (cut into 1 ½-inch pieces)",
       "expected": {
         "item": "boneless skin-on chicken thighs",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "cut into 1 1/2-inch pieces",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tablespoon sake",
+      "raw": "1 tablespoon  sake",
       "expected": {
         "item": "sake",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "¼ teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -41,20 +47,22 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "ground black pepper ((to taste))",
+      "raw": "ground black pepper (to taste)",
       "expected": {
         "item": "ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/3 cup potato starch",
+      "raw": "⅓ cup  potato starch",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -64,34 +72,41 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Baking"
       }
     },
     {
-      "raw": "vegetable oil ((for frying))",
+      "raw": "vegetable oil (for frying)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  lemon zested",
+      "raw": "for sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon  lemon zest (from 1 lemon)",
       "expected": {
         "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": "lemon"
+            "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 tablespoons lemon juice",
+      "raw": "3 tablespoons  lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -101,11 +116,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 tablespoons honey",
+      "raw": "3 tablespoons  honey",
       "expected": {
         "item": "honey",
         "measurements": [
@@ -115,11 +131,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 tablespoons sake ((or water))",
+      "raw": "3 tablespoons  sake (or water)",
       "expected": {
         "item": "sake",
         "measurements": [
@@ -129,11 +146,12 @@
           }
         ],
         "note": "or water",
+        "section": "For Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 teaspoon soy sauce",
+      "raw": "1 teaspoon  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -143,11 +161,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/2 teaspoon potato starch",
+      "raw": "½ teaspoon  potato starch",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -157,11 +176,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "¼ teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -171,8 +191,13 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "for garnish:",
+      "is_section_header": true
     },
     {
       "raw": "sesame seeds",
@@ -180,6 +205,7 @@
         "item": "sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "For Garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,6 +215,7 @@
         "item": "scallions",
         "measurements": [],
         "note": null,
+        "section": "For Garnish",
         "category": "Produce"
       }
     }

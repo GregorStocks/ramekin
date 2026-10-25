@@ -3,6 +3,10 @@
   "recipe_slug": "2020-01-17-sweet-potato-and-bl",
   "ingredients": [
     {
+      "raw": "For the sweet potato filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ cups finely chopped onion",
       "expected": {
         "item": "finely chopped onion",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Potato Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "2&nbsp;garlic cloves, minced",
+      "raw": "2 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sweet Potato Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "3&nbsp;to&nbsp;4 tablespoons olive oil",
+      "raw": "3 to 4 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Potato Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Potato Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon&nbsp;chili powder",
+      "raw": "1 teaspoon chili powder",
       "expected": {
         "item": "chili powder",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Potato Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1&nbsp;to&nbsp;2&nbsp;teaspoons ground cumin",
+      "raw": "1 to 2 teaspoons ground cumin",
       "expected": {
         "item": "ground cumin",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Potato Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Potato Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +117,7 @@
         "item": "salt and ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Sweet Potato Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +127,7 @@
         "item": "a cup or more of finely minced cilantro",
         "measurements": [],
         "note": null,
+        "section": "For the Sweet Potato Filling",
         "category": "Produce"
       }
     },
@@ -124,8 +137,13 @@
         "item": "fresh lime juice",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Sweet Potato Filling",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For assembly:",
+      "is_section_header": true
     },
     {
       "raw": "6 burrito-sized tortillas, homemade are fun",
@@ -138,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Other"
       }
     },
@@ -147,6 +166,7 @@
         "item": "sweet potato filling",
         "measurements": [],
         "note": null,
+        "section": "For Assembly",
         "category": "Other"
       }
     },
@@ -161,6 +181,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For Assembly",
         "category": "Canned Goods"
       }
     },
@@ -170,6 +191,7 @@
         "item": "Boston lettuce or other",
         "measurements": [],
         "note": null,
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -179,6 +201,7 @@
         "item": "grated Cheddar or Monterey Jack",
         "measurements": [],
         "note": "to taste",
+        "section": "For Assembly",
         "category": "Cheese"
       }
     },
@@ -188,6 +211,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": "to taste",
+        "section": "For Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -197,6 +221,7 @@
         "item": "fresh lime",
         "measurements": [],
         "note": "to taste",
+        "section": "For Assembly",
         "category": "Produce"
       }
     }

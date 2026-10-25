@@ -3,6 +3,10 @@
   "recipe_slug": "easy-strawberry-yogurt-smoothi",
   "ingredients": [
     {
+      "raw": "FOR THE SMOOTHIE BOWL:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon chia seeds",
       "expected": {
         "item": "chia seeds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Smoothie Bowl",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Smoothie Bowl",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1/4 cup milk ((cow, almond, soy, etc))",
+      "raw": "¼ cup milk, (cow, almond, soy, etc)",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "cow, almond, soy, etc",
+        "section": "For the Smoothie Bowl",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup strawberries (frozen)",
+      "raw": "1 cup strawberries, frozen",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "frozen",
+        "section": "For the Smoothie Bowl",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup banana (frozen)",
+      "raw": "1 cup banana, frozen",
       "expected": {
         "item": "banana",
         "measurements": [
@@ -69,38 +77,46 @@
           }
         ],
         "note": "frozen",
+        "section": "For the Smoothie Bowl",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup Greek yogurt (plain or flavored)",
+      "raw": "1 cup Greek yogurt, plain or flavored",
       "expected": {
-        "item": "Greek yogurt",
+        "item": "Greek yogurt, plain or flavored",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "plain or flavored",
+        "note": null,
+        "section": "For the Smoothie Bowl",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "additional milk or yogurt (as needed)",
+      "raw": "additional milk or yogurt, as needed",
       "expected": {
         "item": "additional milk or yogurt",
         "measurements": [],
         "note": "as needed",
+        "section": "For the Smoothie Bowl",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "fresh fruit (sliced)",
+      "raw": "FOR THE TOPPINGS (optional):",
+      "is_section_header": true
+    },
+    {
+      "raw": "fresh fruit, sliced",
       "expected": {
         "item": "fresh fruit",
         "measurements": [],
         "note": "sliced",
+        "section": "For the Toppings (Optional)",
         "category": "Produce"
       }
     },
@@ -110,6 +126,7 @@
         "item": "dried fruits",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings (Optional)",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -119,6 +136,7 @@
         "item": "cocoa nibs",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings (Optional)",
         "category": "Other"
       }
     },
@@ -128,6 +146,7 @@
         "item": "coconut chips",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings (Optional)",
         "category": "Snacks"
       }
     },
@@ -137,6 +156,7 @@
         "item": "chia seeds",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings (Optional)",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -146,6 +166,7 @@
         "item": "oats",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings (Optional)",
         "category": "Snacks"
       }
     }

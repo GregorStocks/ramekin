@@ -3,83 +3,41 @@
   "recipe_slug": "fettuccine-alfredo-recipe",
   "ingredients": [
     {
-      "raw": "12 ounces cauliflower florets ((1 small cauliflower))",
+      "raw": "1 pound fettuccine pasta",
       "expected": {
-        "item": "cauliflower florets",
+        "item": "fettuccine pasta",
         "measurements": [
           {
-            "amount": "12",
-            "unit": "oz"
-          }
-        ],
-        "note": "1 small cauliflower",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "½ cup grated Parmesan cheese (more for serving)",
-      "expected": {
-        "item": "grated Parmesan cheese",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": "more for serving",
-        "category": "Cheese"
-      }
-    },
-    {
-      "raw": "¼ cup extra-virgin olive oil",
-      "expected": {
-        "item": "extra-virgin olive oil",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "1",
+            "unit": "lb"
           }
         ],
         "note": null,
-        "category": "Oils & Vinegars"
+        "category": "Other"
       }
     },
     {
-      "raw": "2  garlic cloves",
-      "expected": {
-        "item": "garlic cloves",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "½ teaspoon Dijon mustard",
-      "expected": {
-        "item": "Dijon mustard",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "3 tablespoons unsalted butter",
+      "raw": "6 tablespoons unsalted butter (sliced into pats)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "3",
+            "amount": "6",
             "unit": "tbsp"
+          }
+        ],
+        "note": "sliced into pats",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1½ cups heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
           }
         ],
         "note": null,
@@ -87,31 +45,45 @@
       }
     },
     {
-      "raw": "2 tablespoons fresh lemon juice",
+      "raw": "1  garlic clove (grated)",
       "expected": {
-        "item": "fresh lemon juice",
+        "item": "garlic clove",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "1",
+            "unit": null
           }
         ],
-        "note": null,
+        "note": "grated",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon sea salt",
+      "raw": "½ teaspoon sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
           {
-            "amount": "1",
+            "amount": "0.5",
             "unit": "tsp"
           }
         ],
         "note": null,
         "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup freshly grated Parmesan cheese",
+      "expected": {
+        "item": "freshly grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -124,39 +96,11 @@
       }
     },
     {
-      "raw": "16 ounces fettuccine pasta",
-      "expected": {
-        "item": "fettuccine pasta",
-        "measurements": [
-          {
-            "amount": "16",
-            "unit": "oz"
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1 to 1½ cups reserved pasta cooking water",
-      "expected": {
-        "item": "reserved pasta cooking water",
-        "measurements": [
-          {
-            "amount": "1 to 1.5",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Beverages"
-      }
-    },
-    {
-      "raw": "Chopped fresh parsley",
+      "raw": "Chopped fresh parsley (for garnish)",
       "expected": {
         "item": "Chopped fresh parsley",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     }

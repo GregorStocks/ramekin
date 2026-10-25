@@ -3,25 +3,21 @@
   "recipe_slug": "recipes-skilletchickenputtanes",
   "ingredients": [
     {
-      "raw": "1 can (28 ounces) whole peeled tomatoes, with their juices",
+      "raw": "1 (28-ounce) can whole peeled tomatoes, with their juices",
       "expected": {
         "item": "whole peeled tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
           }
         ],
-        "note": "with their juices",
+        "note": "28-ounce, with their juices",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "4 anchovy fillets, coarsely chopped (optional)",
+      "raw": "4 anchovy fillets, coarsely chopped, optional",
       "expected": {
         "item": "anchovy fillets",
         "measurements": [
@@ -30,7 +26,7 @@
             "unit": null
           }
         ],
-        "note": "optional, coarsely chopped",
+        "note": "coarsely chopped, optional",
         "category": "Meat & Seafood"
       }
     },
@@ -174,11 +170,11 @@
       }
     },
     {
-      "raw": "Crusty bread, to serve (skip if serving gluten-free)",
+      "raw": "Crusty bread, to serve (skip if serving gluten free)",
       "expected": {
         "item": "Crusty bread",
         "measurements": [],
-        "note": "skip if serving gluten-free, to serve",
+        "note": "skip if serving gluten free, to serve",
         "category": "Bakery & Bread"
       }
     }

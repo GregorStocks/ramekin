@@ -3,27 +3,27 @@
   "recipe_slug": "all-about-mushroom-coffee-my-m",
   "ingredients": [
     {
-      "raw": "~ 4 to 8 oz. dairy-free milk of choice, I like using almond or oat milk",
+      "raw": "~ 4 to 8 oz. dairy-free milk of choice (I like using almond or oat milk)",
       "expected": {
-        "item": "~ 4 to 8 oz. dairy-free milk of choice, I like using almond or oat milk",
+        "item": "~ 4 to 8 oz. dairy-free milk of choice",
         "measurements": [],
-        "note": null,
+        "note": "I like using almond or oat milk",
         "category": "Other"
       }
     },
     {
-      "raw": "~ 8 to 10 oz. brewed mushroom coffee,&nbsp;or water if using a mushroom coffee packet",
+      "raw": "~ 8 to 10 oz. brewed mushroom coffee (or water if using a mushroom coffee packet)",
       "expected": {
-        "item": "~ 8 to 10 oz. brewed mushroom coffee, or water if using a mushroom coffee packet",
+        "item": "~ 8 to 10 oz. brewed mushroom coffee",
         "measurements": [],
-        "note": null,
+        "note": "or water if using a mushroom coffee packet",
         "category": "Other"
       }
     },
     {
-      "raw": "1 packet mushroom coffee skip if you&amp;#8217;re using brewed mushroom coffee instead",
+      "raw": "1  packet mushroom coffee skip if you're using brewed mushroom coffee instead",
       "expected": {
-        "item": "mushroom coffee skip if you’re using brewed mushroom coffee instead",
+        "item": "mushroom coffee skip if you're using brewed mushroom coffee instead",
         "measurements": [
           {
             "amount": "1",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "1 tablespoon cacao butter or healthy fat of choice, like coconut oil",
+      "raw": "1 tablespoon cacao butter or healthy fat of choice (like coconut oil)",
       "expected": {
         "item": "cacao butter or healthy fat of choice",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "Cinnamon and spice, to taste, optional",
+      "raw": "Cinnamon and spice (to taste, optional)",
       "expected": {
         "item": "Cinnamon and spice",
         "measurements": [],

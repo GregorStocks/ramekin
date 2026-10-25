@@ -3,7 +3,7 @@
   "recipe_slug": "moong-dal-recipe",
   "ingredients": [
     {
-      "raw": "½ cup moong dal ((yellow mung lentils))",
+      "raw": "½ cup moong dal (yellow mung lentils)",
       "expected": {
         "item": "moong dal",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "¼ cup   onions/ shallots ((optional, 1 small fine chopped))",
+      "raw": "¼ cup  onions/ shallots (optional, 1 small fine chopped)",
       "expected": {
         "item": "onions/ shallots",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "½ cup (1 medium)   tomatoes  ((deseeded &amp;amp; chopped))",
+      "raw": "½ cup (1 medium)  tomatoes  (deseeded & chopped)",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -49,16 +49,16 @@
       }
     },
     {
-      "raw": "1 tablespoon oil  (or ghee)",
+      "raw": "1 tablespoon oil  or ghee",
       "expected": {
-        "item": "oil",
+        "item": "oil or ghee",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or ghee",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "1 teaspoon ginger  ((peeled &amp;amp; fine chopped))",
+      "raw": "1 teaspoon ginger  (peeled & fine chopped)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "1  green chili  ((slit or chopped, deseeded if required))",
+      "raw": "1 green chili  (slit or chopped, deseeded if required)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "4 to 5  curry leaves ((or 1 bay leaf))",
+      "raw": "4 to 5 curry leaves (or 1 bay leaf)",
       "expected": {
         "item": "curry leaves",
         "measurements": [
@@ -175,7 +175,7 @@
       }
     },
     {
-      "raw": "1 teaspoon kasuri methi ( (dried fenugreek leaves, optional))",
+      "raw": "1 teaspoon kasuri methi  (dried fenugreek leaves, optional)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [
@@ -184,12 +184,12 @@
             "unit": "tsp"
           }
         ],
-        "note": "(dried fenugreek leaves, optional)",
+        "note": "dried fenugreek leaves, optional",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon amchur ((optional, dried mango powder or 1 tbsp lemon juice))",
+      "raw": "½ teaspoon amchur (optional, dried mango powder or 1 tbsp lemon juice)",
       "expected": {
         "item": "amchur",
         "measurements": [
@@ -203,21 +203,26 @@
       }
     },
     {
-      "raw": "1 tablespoon ghee  (or oil or butter)",
+      "raw": "To Temper:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon ghee  or oil or butter",
       "expected": {
-        "item": "ghee",
+        "item": "ghee or oil or butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or oil or butter",
+        "note": null,
+        "section": "To Temper",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 to 3  garlic cloves (crushed )",
+      "raw": "2 to 3 garlic cloves crushed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -227,11 +232,12 @@
           }
         ],
         "note": "crushed",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  dried red chilli",
+      "raw": "1 dried red chilli",
       "expected": {
         "item": "dried red chilli",
         "measurements": [
@@ -241,11 +247,12 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon mustard seeds  ((optional))",
+      "raw": "¼ teaspoon mustard seeds  (optional)",
       "expected": {
         "item": "mustard seeds",
         "measurements": [
@@ -255,6 +262,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,11 +277,12 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6 to 8  curry leaves  ((optional))",
+      "raw": "6 to 8 curry leaves  (optional)",
       "expected": {
         "item": "curry leaves",
         "measurements": [
@@ -283,11 +292,12 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
     {
-      "raw": "⅛ teaspoon hing  ((asafoetida, optional))",
+      "raw": "⅛ teaspoon hing  (asafoetida, optional)",
       "expected": {
         "item": "hing",
         "measurements": [
@@ -297,6 +307,7 @@
           }
         ],
         "note": "asafoetida, optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
@@ -311,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     }

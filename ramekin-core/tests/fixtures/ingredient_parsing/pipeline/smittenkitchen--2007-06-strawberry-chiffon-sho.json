@@ -172,6 +172,10 @@
       }
     },
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups heavy cream",
       "expected": {
         "item": "heavy cream",
@@ -182,7 +186,7 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -197,7 +201,7 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -212,7 +216,7 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -227,7 +231,7 @@
           }
         ],
         "note": "I sliced mine very thinly, but would do so more thickly next time, or double-layer the strawberries so that you get a higher fruit-to-bite ratio., hulled and sliced",
-        "section": "Cake Layers",
+        "section": "Filling",
         "category": "Produce"
       }
     }

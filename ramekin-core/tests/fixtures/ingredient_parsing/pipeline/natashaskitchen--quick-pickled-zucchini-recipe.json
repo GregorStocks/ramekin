@@ -3,21 +3,26 @@
   "recipe_slug": "quick-pickled-zucchini-recipe",
   "ingredients": [
     {
-      "raw": "2 - 2 1/4 lb zucchini (4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work))",
+      "raw": "Pickled Zucchini Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 - 2 1/4 lb zucchini, 4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
       "expected": {
-        "item": "zucchini",
+        "item": "zucchini, 4 medium",
         "measurements": [
           {
             "amount": "2-2.25",
             "unit": "lb"
           }
         ],
-        "note": "4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
+        "note": "green zucchini, yellow squash, or light green Mexican zucchini will work",
+        "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves of garlic (halved)",
+      "raw": "3 cloves of garlic, halved",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "halved",
+        "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "2-3  bay leaves",
+      "raw": "2-3 bay leaves",
       "expected": {
         "item": "bay leaves",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Pickled Zucchini Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6-8  pepper corns",
+      "raw": "6-8 pepper corns",
       "expected": {
         "item": "pepper corns",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Zucchini Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "3 cups of boiling hot water",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -111,20 +126,22 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 cup white vinegar (5% acidity)",
+      "raw": "1/2 cup white vinegar, 5% acidity",
       "expected": {
-        "item": "white vinegar",
+        "item": "white vinegar, 5% acidity",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "5% acidity",
+        "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,22 +156,28 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tbsp salt (we used sea salt, non-iodized)",
+      "raw": "1 Tbsp salt, we used sea salt, non-iodized",
       "expected": {
-        "item": "salt",
+        "item": "salt, we used sea salt, non-iodized",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "we used sea salt, non-iodized",
+        "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "What you will need:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 gallon jar with lid or heat-proof bowl with tightly fitting lid",
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "What You Will Need",
         "category": "Other"
       }
     }

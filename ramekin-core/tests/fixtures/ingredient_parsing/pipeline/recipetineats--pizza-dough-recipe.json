@@ -3,7 +3,7 @@
   "recipe_slug": "pizza-dough-recipe",
   "ingredients": [
     {
-      "raw": "600g (4 cups)  bread flour or pizza flour ((or plain/all purpose) (Note 1))",
+      "raw": "600g (4 cups)  bread flour or pizza flour (or plain/all purpose) (Note 1)",
       "expected": {
         "item": "bread flour or pizza flour",
         "measurements": [
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "2 tsp (6g)  rapid rise or instant yeast ((Note 2))",
+      "raw": "2 tsp (6g) rapid rise or instant yeast (Note 2)",
       "expected": {
         "item": "rapid rise or instant yeast",
         "measurements": [
@@ -39,9 +39,9 @@
       }
     },
     {
-      "raw": "2.5 tsp (15g)  salt (, kosher / cooking salt (Note 3))",
+      "raw": "2 1/2 tsp  / 15g salt , kosher / cooking salt (Note 3)",
       "expected": {
-        "item": "salt",
+        "item": "salt, kosher / cooking salt",
         "measurements": [
           {
             "amount": "2.5",
@@ -52,12 +52,12 @@
             "unit": "g"
           }
         ],
-        "note": "kosher / cooking salt (Note 3)",
+        "note": "Note 3",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 tsp (20g)  white sugar",
+      "raw": "4 tsp / 20g white sugar",
       "expected": {
         "item": "white sugar",
         "measurements": [
@@ -89,7 +89,7 @@
       }
     },
     {
-      "raw": "330 ml (1 1/3 cups)  warm tap water ((330g, Note 4))",
+      "raw": "330 ml (1 1/3 cups)  warm tap water (330g, Note 4)",
       "expected": {
         "item": "warm tap water",
         "measurements": [
@@ -111,6 +111,10 @@
       }
     },
     {
+      "raw": "For Working:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp Extra Flour",
       "expected": {
         "item": "Extra Flour",
@@ -121,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "For Working",
         "category": "Other"
       }
     },
@@ -135,11 +140,16 @@
           }
         ],
         "note": null,
+        "section": "For Working",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "130g / 1 1/3 cups  mozzarella cheese, freshly grated (per pizza, (Note 8))",
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "130g / 1 1/3 cups tightly packed  mozzarella cheese, freshly grated per pizza, (Note 8)",
       "expected": {
         "item": "mozzarella cheese",
         "measurements": [
@@ -152,22 +162,24 @@
             "unit": "cup"
           }
         ],
-        "note": "per pizza, (Note 8), freshly grated",
+        "note": "Note 8, freshly grated per pizza, tightly packed",
+        "section": "Toppings",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/4 cup pizza sauce (per pizza)",
+      "raw": "1/4 cup pizza sauce per pizza",
       "expected": {
-        "item": "pizza sauce",
+        "item": "pizza sauce per pizza",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "per pizza",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "section": "Toppings",
+        "category": "Other"
       }
     },
     {
@@ -176,7 +188,141 @@
         "item": "Toppings of choice",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
+      }
+    },
+    {
+      "raw": "600g (4 cups) bread flour , or plain/all purpose (Note 1)",
+      "expected": {
+        "item": "bread flour, or plain/all purpose",
+        "measurements": [
+          {
+            "amount": "600",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "Note 1",
+        "section": "Toppings",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tsp (6g) rapid rise or instant yeast (Note 2)",
+      "expected": {
+        "item": "rapid rise or instant yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
+          }
+        ],
+        "note": "Note 2",
+        "section": "Toppings",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tsp (12g) salt , kosher / cooking salt (Note 3)",
+      "expected": {
+        "item": "salt, kosher / cooking salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": "Note 3",
+        "section": "Toppings",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 tsp (20g) white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "section": "Toppings",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 tbsp extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "Toppings",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "375 ml (1 1/2 cups) warm tap water (375g, Note 4)",
+      "expected": {
+        "item": "warm tap water",
+        "measurements": [
+          {
+            "amount": "375",
+            "unit": "ml"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
+          }
+        ],
+        "note": "375g, Note 4",
+        "section": "Toppings",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "For Bowl:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tsp Extra Olive Oil",
+      "expected": {
+        "item": "Extra Olive Oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For Bowl",
+        "category": "Oils & Vinegars"
       }
     }
   ]

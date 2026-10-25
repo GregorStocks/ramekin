@@ -3,6 +3,10 @@
   "recipe_slug": "recipe-smitten-kitchen-pretzel",
   "ingredients": [
     {
+      "raw": "Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "3½ cups small pretzel twists",
       "expected": {
         "item": "small pretzel twists",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Snacks"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": "cut into medium-sized chunks",
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,8 +138,13 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Caramel and Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup heavy cream",
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel and Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel and Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -169,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -187,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel and Assembly",
         "category": "Baking"
       }
     },
@@ -201,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel and Assembly",
         "category": "Baking"
       }
     },
@@ -210,6 +231,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": "for serving",
+        "section": "Caramel and Assembly",
         "category": "Baking"
       }
     }

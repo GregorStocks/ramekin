@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-15285-kimchi-jeon",
   "ingredients": [
     {
+      "raw": "Dipping Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 tablespoons plus 1 teaspoon sugar",
       "expected": {
         "item": "sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "minced",
+        "section": "Dipping Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Pancake:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup (1¼ ounces/35 grams) all-purpose flour",
@@ -91,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Baking"
       }
     },
@@ -105,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Dairy & Eggs"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": "drained with 2 tablespoons juice reserved, chopped coarse",
+        "section": "Pancake",
         "category": "Condiments & Sauces"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Produce"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": "divided",
+        "section": "Pancake",
         "category": "Oils & Vinegars"
       }
     }

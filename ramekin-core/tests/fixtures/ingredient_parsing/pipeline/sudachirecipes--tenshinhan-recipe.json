@@ -3,7 +3,11 @@
   "recipe_slug": "tenshinhan-recipe",
   "ingredients": [
     {
-      "raw": "2  dried shiitake mushroom",
+      "raw": "Prep:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 dried shiitake mushroom",
       "expected": {
         "item": "dried shiitake mushroom",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Prep",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Prep",
         "category": "Beverages"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Prep",
         "category": "Pasta & Rice"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp butter",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,67 +141,76 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tbsp cold water (for slurry)",
+      "raw": "1 tbsp cold water for slurry",
       "expected": {
-        "item": "cold water",
+        "item": "cold water for slurry",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "for slurry",
-        "category": "Beverages"
+        "note": null,
+        "section": "Sauce",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tsp potato starch (katakuriko) (for slurry)",
+      "raw": "1 tsp potato starch (katakuriko) for slurry",
       "expected": {
-        "item": "potato starch",
+        "item": "potato starch for slurry",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "katakuriko, for slurry",
-        "category": "Baking"
+        "note": "katakuriko",
+        "section": "Sauce",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tbsp Japanese leek (naganegi) (white part, finely diced)",
+      "raw": "Tenshinhan:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tbsp Japanese leek (naganegi) white part, finely diced",
       "expected": {
-        "item": "Japanese leek",
+        "item": "Japanese leek white part",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "naganegi, white part, finely diced",
-        "category": "Produce"
+        "note": "naganegi, finely diced",
+        "section": "Tenshinhan",
+        "category": "Other"
       }
     },
     {
-      "raw": "30 g imitation crab (crab sticks)",
+      "raw": "30 g imitation crab crab sticks",
       "expected": {
-        "item": "imitation crab",
+        "item": "imitation crab crab sticks",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": "crab sticks",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Tenshinhan",
+        "category": "Other"
       }
     },
     {
-      "raw": "4  egg",
+      "raw": "4 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,35 +235,38 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tbsp shiitake mushroom dashi (leftover from soaked shiitake)",
+      "raw": "1 tbsp shiitake mushroom dashi leftover from soaked shiitake",
       "expected": {
-        "item": "shiitake mushroom dashi",
+        "item": "shiitake mushroom dashi leftover from soaked shiitake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "leftover from soaked shiitake",
+        "note": null,
+        "section": "Tenshinhan",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tsp ginger paste (or grated ginger)",
+      "raw": "1 tsp ginger paste or grated ginger",
       "expected": {
-        "item": "ginger paste",
+        "item": "ginger paste or grated ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or grated ginger",
-        "category": "Other"
+        "note": null,
+        "section": "Tenshinhan",
+        "category": "Produce"
       }
     },
     {
@@ -251,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Oils & Vinegars"
       }
     },
@@ -293,16 +325,18 @@
           }
         ],
         "note": null,
+        "section": "Tenshinhan",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "green peas (to garnish)",
+      "raw": "green peas to garnish",
       "expected": {
-        "item": "green peas",
+        "item": "green peas to garnish",
         "measurements": [],
-        "note": "to garnish",
-        "category": "Produce"
+        "note": null,
+        "section": "Tenshinhan",
+        "category": "Other"
       }
     }
   ]

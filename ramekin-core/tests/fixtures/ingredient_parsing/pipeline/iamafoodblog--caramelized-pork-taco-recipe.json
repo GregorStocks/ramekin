@@ -3,6 +3,10 @@
   "recipe_slug": "caramelized-pork-taco-recipe",
   "ingredients": [
     {
+      "raw": "Pork:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb boneless centre cut pork loin cut into thin strips",
       "expected": {
         "item": "boneless centre cut pork loin cut into thin strips",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pork",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "minced",
+        "section": "Pork",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "Pork",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "optional, sliced",
+        "section": "Pork",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pork",
         "category": "Condiments & Sauces"
       }
     },
@@ -78,6 +87,7 @@
         "item": "oil",
         "measurements": [],
         "note": null,
+        "section": "Pork",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Pork",
         "category": "Baking"
       }
     },
@@ -106,8 +117,13 @@
           }
         ],
         "note": null,
+        "section": "Pork",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup crushed pineapple",
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Canned Goods"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -199,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -208,6 +231,7 @@
         "item": "tortillas",
         "measurements": [],
         "note": "as needed, warmed",
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -217,6 +241,7 @@
         "item": "lime wedges",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     }

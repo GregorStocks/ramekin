@@ -3,7 +3,7 @@
   "recipe_slug": "2024-11-honeynut-squash-soup",
   "ingredients": [
     {
-      "raw": "4 slices bacon, (diced)",
+      "raw": "4 slices bacon, diced",
       "expected": {
         "item": "bacon",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  sweet onion, (diced)",
+      "raw": "1 sweet onion, diced",
       "expected": {
         "item": "sweet onion",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "4  garlic cloves, (minced)",
+      "raw": "4 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -124,11 +124,16 @@
       }
     },
     {
+      "raw": "for topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "buttered popcorn",
       "expected": {
         "item": "buttered popcorn",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Snacks"
       }
     },
@@ -138,6 +143,7 @@
         "item": "sliced green onions",
         "measurements": [],
         "note": null,
+        "section": "For Topping",
         "category": "Produce"
       }
     }

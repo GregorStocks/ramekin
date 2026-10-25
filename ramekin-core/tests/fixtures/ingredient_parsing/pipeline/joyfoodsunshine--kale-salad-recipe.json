@@ -3,16 +3,25 @@
   "recipe_slug": "kale-salad-recipe",
   "ingredients": [
     {
-      "raw": "1 bunch  kale (stems removed, chopped thin (8 cups))",
+      "raw": "Kale Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 bunch  kale stems removed, chopped thin (8 cups)",
       "expected": {
         "item": "kale",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
+          },
+          {
+            "amount": "8",
+            "unit": "cup"
           }
         ],
-        "note": "stems removed, chopped thin (8 cups)",
+        "note": "stems removed, chopped thin",
+        "section": "Kale Salad",
         "category": "Produce"
       }
     },
@@ -27,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  carrots (shredded)",
+      "raw": "2 carrots shredded",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -41,11 +51,12 @@
           }
         ],
         "note": "shredded",
+        "section": "Kale Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "½  cucumber (julienned)",
+      "raw": "½ cucumber julienned",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": "julienned",
+        "section": "Kale Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  red pepper (julienned)",
+      "raw": "1 red pepper julienned",
       "expected": {
         "item": "red pepper",
         "measurements": [
@@ -69,11 +81,12 @@
           }
         ],
         "note": "julienned",
+        "section": "Kale Salad",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  avocado (diced)",
+      "raw": "1 avocado diced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": "diced",
+        "section": "Kale Salad",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "Kale Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "1 ounce sharp cheddar cheese (cubed)",
+      "raw": "1 ounce sharp cheddar cheese cubed",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
@@ -125,8 +141,13 @@
           }
         ],
         "note": "cubed",
+        "section": "Kale Salad",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3 Tablespoons olive oil",
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -218,6 +245,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,15 +3,6 @@
   "recipe_slug": "2021-03-blueberry-lavender-muf",
   "ingredients": [
     {
-      "raw": "Blueberry Lavender Muffins",
-      "expected": {
-        "item": "Blueberry Lavender Muffins",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "2 cups all purpose flour",
       "expected": {
         "item": "all purpose flour",
@@ -175,13 +166,8 @@
       }
     },
     {
-      "raw": "Lavender Sugar",
-      "expected": {
-        "item": "Lavender Sugar",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Lavender Sugar:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup sugar",
@@ -194,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Lavender Sugar",
         "category": "Baking"
       }
     },
@@ -208,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Lavender Sugar",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "fish-curry-recipe",
   "ingredients": [
     {
-      "raw": "1.1 lbs (½ kg)  Fish ((any firm fish))",
+      "raw": "Marinade:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1.1 lbs (½ kg) Fish (any firm fish)",
       "expected": {
         "item": "Fish",
         "measurements": [
@@ -17,6 +21,7 @@
           }
         ],
         "note": "any firm fish",
+        "section": "Marinade",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ tsp salt  (or as needed)",
+      "raw": "¼ tsp salt  or as needed",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -73,11 +81,16 @@
           }
         ],
         "note": "or as needed",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tbsp oil  ((adjust as needed))",
+      "raw": "To saute & puree:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tbsp oil  (adjust as needed)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -87,11 +100,12 @@
           }
         ],
         "note": "adjust as needed",
+        "section": "To Saute & Puree",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "½ tsp cumin seeds ((jeera))",
+      "raw": "½ tsp cumin seeds (jeera)",
       "expected": {
         "item": "cumin seeds",
         "measurements": [
@@ -101,53 +115,57 @@
           }
         ],
         "note": "jeera",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 medium  onions  (sliced about 1 cup sliced)",
+      "raw": "2 medium  onions  sliced about 1 cup sliced",
       "expected": {
-        "item": "onions",
+        "item": "onions sliced about 1 cup sliced",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "sliced about 1 cup sliced",
-        "category": "Produce"
+        "note": null,
+        "section": "To Saute & Puree",
+        "category": "Other"
       }
     },
     {
-      "raw": "½ tbsp ginger garlic (minced or paste)",
+      "raw": "½ tbsp ginger garlic minced or paste",
       "expected": {
-        "item": "ginger garlic",
+        "item": "ginger garlic minced or paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "minced or paste",
+        "note": null,
+        "section": "To Saute & Puree",
         "category": "Other"
       }
     },
     {
-      "raw": "2 medium tomatoes (ripe (¾ to 1 cup chopped))",
+      "raw": "2 medium tomatoes ripe (¾ to 1 cup chopped)",
       "expected": {
-        "item": "tomatoes",
+        "item": "tomatoes ripe",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "ripe (3/4 to 1 cup chopped)",
-        "category": "Produce"
+        "note": "3/4 to 1 cup chopped",
+        "section": "To Saute & Puree",
+        "category": "Other"
       }
     },
     {
-      "raw": "½ tsp salt ((adjust to taste))",
+      "raw": "½ tsp salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -157,11 +175,12 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tsp Kashmiri red chilli powder ((adjust as needed))",
+      "raw": "1 tsp Kashmiri red chilli powder (adjust as needed)",
       "expected": {
         "item": "Kashmiri red chilli powder",
         "measurements": [
@@ -171,6 +190,7 @@
           }
         ],
         "note": "adjust as needed",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,11 +205,12 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ tsp fennel seeds ((optional) (saunf))",
+      "raw": "½ tsp fennel seeds (optional) (saunf)",
       "expected": {
         "item": "fennel seeds",
         "measurements": [
@@ -199,11 +220,12 @@
           }
         ],
         "note": "optional, saunf",
+        "section": "To Saute & Puree",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tbsp coconut ((grated or ¼ cup coconut milk or 12 cashew nuts))",
+      "raw": "2 tbsp coconut (grated or ¼ cup coconut milk or 12 cashew nuts)",
       "expected": {
         "item": "coconut",
         "measurements": [
@@ -213,11 +235,16 @@
           }
         ],
         "note": "grated or 1/4 cup coconut milk or 12 cashew nuts",
+        "section": "To Saute & Puree",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tbsp oil ((+1 tbsp to fry the fish))",
+      "raw": "For curry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tbsp oil (+1 tbsp to fry the fish)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -227,11 +254,12 @@
           }
         ],
         "note": "+1 tbsp to fry the fish",
+        "section": "For Curry",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 sprig  curry leaves ((pat dry or use a small bay leaf))",
+      "raw": "1 sprig  curry leaves (pat dry or use a small bay leaf)",
       "expected": {
         "item": "curry leaves",
         "measurements": [
@@ -241,11 +269,12 @@
           }
         ],
         "note": "pat dry or use a small bay leaf",
+        "section": "For Curry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 to 2  green chili  ((chopped or slit))",
+      "raw": "1 to 2 green chili  (chopped or slit)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -255,20 +284,22 @@
           }
         ],
         "note": "chopped or slit",
+        "section": "For Curry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 to 1 ½ tsp garam masala (or curry powder as needed (refer notes))",
+      "raw": "1 to 1 ½ tsp garam masala or curry powder as needed (refer notes)",
       "expected": {
-        "item": "garam masala",
+        "item": "garam masala or curry powder",
         "measurements": [
           {
             "amount": "1 to 1.5",
             "unit": "tsp"
           }
         ],
-        "note": "or curry powder as needed (refer notes)",
+        "note": "refer notes, as needed",
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -283,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Beverages"
       }
     }

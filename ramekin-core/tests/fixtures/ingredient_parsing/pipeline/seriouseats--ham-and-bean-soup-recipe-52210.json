@@ -3,7 +3,7 @@
   "recipe_slug": "ham-and-bean-soup-recipe-52210",
   "ingredients": [
     {
-      "raw": "1 pound (450g) dried navy beans",
+      "raw": "1 pound (450 g) dried navy beans",
       "expected": {
         "item": "dried navy beans",
         "measurements": [
@@ -21,16 +21,16 @@
       }
     },
     {
-      "raw": "5 quarts (4.7L) water, divided",
+      "raw": "5 1/2 quarts (5.2 L) water, divided",
       "expected": {
         "item": "water",
         "measurements": [
           {
-            "amount": "5",
+            "amount": "5.5",
             "unit": "quart"
           },
           {
-            "amount": "4.7",
+            "amount": "5.2",
             "unit": "l"
           }
         ],
@@ -39,7 +39,7 @@
       }
     },
     {
-      "raw": "2 tablespoons (30ml) extra-virgin olive oil",
+      "raw": "2 tablespoons (30 ml) extra-virgin olive oil",
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [
@@ -57,7 +57,7 @@
       }
     },
     {
-      "raw": "1 large yellow onion (12 ounces; 340g), roughly chopped",
+      "raw": "1 large yellow onion (12 ounces; 340 g), roughly chopped (3 cups)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -72,6 +72,10 @@
           {
             "amount": "340",
             "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
           }
         ],
         "note": "roughly chopped",
@@ -79,13 +83,13 @@
       }
     },
     {
-      "raw": "2 small carrots (6 ounces; 170g), peeled and roughly chopped",
+      "raw": "2 medium carrots (6 ounces; 170 g), peeled and roughly chopped (1 cup)",
       "expected": {
         "item": "carrots",
         "measurements": [
           {
             "amount": "2",
-            "unit": "small"
+            "unit": "medium"
           },
           {
             "amount": "6",
@@ -94,6 +98,10 @@
           {
             "amount": "170",
             "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
         "note": "peeled and roughly chopped",
@@ -101,7 +109,7 @@
       }
     },
     {
-      "raw": "2 celery ribs (5 1/2 ounces; 155g), roughly chopped",
+      "raw": "2 celery ribs (5 1/2 ounces; 155 g), roughly chopped (1 1/4 cups)",
       "expected": {
         "item": "celery ribs",
         "measurements": [
@@ -116,6 +124,10 @@
           {
             "amount": "155",
             "unit": "g"
+          },
+          {
+            "amount": "1.25",
+            "unit": "cup"
           }
         ],
         "note": "roughly chopped",
@@ -179,7 +191,7 @@
       }
     },
     {
-      "raw": "2 1/2 pounds (about 2 large; 1.1kg) smoked ham hocks",
+      "raw": "2 1/2 pounds (1.1 kg) smoked ham hocks (about 2 to 3 large hocks)",
       "expected": {
         "item": "smoked ham hocks",
         "measurements": [
@@ -188,33 +200,29 @@
             "unit": "lb"
           },
           {
-            "amount": "2",
-            "unit": "large"
-          },
-          {
             "amount": "1.1",
             "unit": "kg"
           }
         ],
-        "note": "about 2 large; 1.1kg",
+        "note": "about 2 to 3 large hocks",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 to 2 cups (240 to 480ml) homemade chicken stock or water",
+      "raw": "2 cups (473 ml) low-sodium chicken stock (or substitute with water)",
       "expected": {
-        "item": "homemade chicken stock or water",
+        "item": "low-sodium chicken stock",
         "measurements": [
           {
-            "amount": "1 to 2",
+            "amount": "2",
             "unit": "cup"
           },
           {
-            "amount": "240 to 480",
+            "amount": "473",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or substitute with water",
         "category": "Canned Goods"
       }
     },

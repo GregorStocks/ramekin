@@ -3,16 +3,16 @@
   "recipe_slug": "easy-homemade-coconut-shrimp-r",
   "ingredients": [
     {
-      "raw": "1 pound raw extra large/jumbo shrimp (thawed, peeled and deveined, tail-on)",
+      "raw": "1 pound raw extra large/jumbo shrimp thawed, peeled and deveined, tail-on",
       "expected": {
-        "item": "raw extra large/jumbo shrimp",
+        "item": "raw extra large/jumbo shrimp thawed, peeled and deveined, tail-on",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "thawed, peeled and deveined, tail-on",
+        "note": null,
         "category": "Other"
       }
     },
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 ½ cups all-purpose flour (divided)",
+      "raw": "1 ½ cups all-purpose flour divided",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -96,6 +96,10 @@
       }
     },
     {
+      "raw": "Dipping Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup pineapple preserves",
       "expected": {
         "item": "pineapple preserves",
@@ -106,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Other"
       }
     },
@@ -120,6 +125,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -134,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Other"
       }
     }

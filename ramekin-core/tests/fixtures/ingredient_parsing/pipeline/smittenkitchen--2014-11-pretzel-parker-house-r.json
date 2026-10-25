@@ -3,78 +3,8 @@
   "recipe_slug": "2014-11-pretzel-parker-house-r",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Five Egg Sandwiches",
-      "expected": {
-        "item": "Months Ago: Five Egg Sandwiches",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Japanese Vegetable Pancakes",
-      "expected": {
-        "item": "Years Ago: Japanese Vegetable Pancakes",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Chocolate Buckwheat Cake",
-      "expected": {
-        "item": "Years Ago: Chocolate Buckwheat Cake",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Vermontucky Lemonade",
-      "expected": {
-        "item": "Years Ago: Vermontucky Lemonade",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Rolls",
-      "expected": {
-        "item": "Rolls",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Rolls:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup plus 2 tablespoons (205 ml) milk",
@@ -91,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Rolls",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Rolls",
         "category": "Baking"
       }
     },
@@ -123,6 +55,7 @@
           }
         ],
         "note": "half a 1/4-ounce or 7-gram packet",
+        "section": "Rolls",
         "category": "Baking"
       }
     },
@@ -141,6 +74,7 @@
           }
         ],
         "note": "melted, plus extra to coat bowl",
+        "section": "Rolls",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,6 +93,7 @@
           }
         ],
         "note": "plus extra for dusting",
+        "section": "Rolls",
         "category": "Baking"
       }
     },
@@ -177,11 +112,12 @@
           }
         ],
         "note": null,
+        "section": "Rolls",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "To finish",
+      "raw": "To finish:",
       "is_section_header": true
     },
     {

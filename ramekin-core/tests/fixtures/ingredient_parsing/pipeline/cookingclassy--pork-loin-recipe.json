@@ -3,6 +3,10 @@
   "recipe_slug": "pork-loin-recipe",
   "ingredients": [
     {
+      "raw": "Roast:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 - 4 lb pork loin*",
       "expected": {
         "item": "pork loin",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Roast",
         "category": "Meat & Seafood"
       }
     },
@@ -22,11 +27,12 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Roast",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 Tbsp olive oil, (divided)",
+      "raw": "2 Tbsp olive oil, divided",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -36,11 +42,12 @@
           }
         ],
         "note": "divided",
+        "section": "Roast",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 tsp chopped fresh thyme ((or 3/4 tsp dried))",
+      "raw": "2 tsp chopped fresh thyme (or 3/4 tsp dried)",
       "expected": {
         "item": "chopped fresh thyme",
         "measurements": [
@@ -50,11 +57,12 @@
           }
         ],
         "note": "or 3/4 tsp dried",
+        "section": "Roast",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tsp chopped fresh rosemary ((or 3/4 tsp dried))",
+      "raw": "2 tsp chopped fresh rosemary (or 3/4 tsp dried)",
       "expected": {
         "item": "chopped fresh rosemary",
         "measurements": [
@@ -64,11 +72,12 @@
           }
         ],
         "note": "or 3/4 tsp dried",
+        "section": "Roast",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tsp chopped fresh sage ((or 3/4 tsp dried))",
+      "raw": "2 tsp chopped fresh sage (or 3/4 tsp dried)",
       "expected": {
         "item": "chopped fresh sage",
         "measurements": [
@@ -78,11 +87,12 @@
           }
         ],
         "note": "or 3/4 tsp dried",
+        "section": "Roast",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 1/2 tsp minced garlic ((4 cloves))",
+      "raw": "1 1/2 tsp minced garlic (4 cloves)",
       "expected": {
         "item": "minced garlic",
         "measurements": [
@@ -96,34 +106,41 @@
           }
         ],
         "note": null,
+        "section": "Roast",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp lemon zest (or orange zest (optional))",
+      "raw": "1 tsp lemon zest or orange zest (optional)",
       "expected": {
-        "item": "lemon zest",
+        "item": "lemon zest or orange zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or orange zest (optional)",
+        "note": "optional",
+        "section": "Roast",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 Tbsp butter (or olive oil)",
+      "raw": "Gravy:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 Tbsp butter or olive oil",
       "expected": {
-        "item": "butter",
+        "item": "butter or olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil",
+        "note": null,
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -138,6 +155,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Baking"
       }
     },
@@ -147,6 +165,7 @@
         "item": "Pan drippings from roasting pan",
         "measurements": [],
         "note": null,
+        "section": "Gravy",
         "category": "Other"
       }
     },
@@ -161,11 +180,12 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 Tbsp heavy cream, (optional)",
+      "raw": "2 Tbsp heavy cream, optional",
       "expected": {
         "item": "heavy cream",
         "measurements": [
@@ -175,6 +195,7 @@
           }
         ],
         "note": "optional",
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     }

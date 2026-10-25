@@ -63,6 +63,7 @@ pub const ESTIMABLE_UNITS: &[&str] = &[
     "rib",
     "ring",
     "roll",
+    "scoop",
     "sheet",
     "slab",
     "slice",
@@ -103,6 +104,10 @@ impl Food<'_> {
     fn estimated(&self, unit: &str) -> Option<f64> {
         let gaps = self.estimated?;
         if !ESTIMABLE_UNITS.contains(&unit) {
+            return None;
+        }
+        // An ice-cream scoop is a set measure, not a question.
+        if unit == "scoop" && informal_measure_cups(unit, self.entry).is_some() {
             return None;
         }
         catalog::estimated_weight(self.entry, unit).unwrap_or_else(|| {
@@ -385,7 +390,8 @@ fn grams_per_unit(unit: &Unit, food: &Food) -> Result<CalorieRange, &'static str
 ///   knob of butter at 12-25 g).
 /// - A shot is a single espresso shot, 1 fl oz.
 /// - A scoop of ice cream is 1/2 cup; scoops of powders and drink mixes are
-///   whatever the tub's scoop holds, so they stay unknown.
+///   whatever the tub's scoop holds, so they're estimated per food (a whey
+///   scoop is ~30 g by label convention).
 fn informal_measure_cups(unit: &str, entry: &Entry) -> Option<Range> {
     let tsp = |tsp: f64| Range::exact(tsp * catalog::CUPS_PER_TSP);
     let tbsp = |min: f64, max: f64| Range {

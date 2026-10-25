@@ -3,17 +3,22 @@
   "recipe_slug": "beef-udon-recipe",
   "ingredients": [
     {
-      "raw": "150 g thinly sliced beef (or thinly sliced pork)",
+      "raw": "Marinating the beef and onions:",
+      "is_section_header": true
+    },
+    {
+      "raw": "150 g thinly sliced beef or thinly sliced pork",
       "expected": {
-        "item": "thinly sliced beef",
+        "item": "thinly sliced beef or thinly sliced pork",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": "or thinly sliced pork",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Marinating the Beef and Onions",
+        "category": "Other"
       }
     },
     {
@@ -27,6 +32,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Marinating the Beef and Onions",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,20 +77,22 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ tsp grated ginger root (or ginger paste)",
+      "raw": "½ tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Produce"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Beverages"
       }
     },
     {
-      "raw": "¼  onion",
+      "raw": "¼ onion",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Produce"
       }
     },
@@ -125,11 +137,16 @@
           }
         ],
         "note": null,
+        "section": "Marinating the Beef and Onions",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "500 ml dashi stock ((from step 1) or instant dashi)",
+      "raw": "Niku Udon Broth:",
+      "is_section_header": true
+    },
+    {
+      "raw": "500 ml dashi stock (from step 1) or instant dashi",
       "expected": {
         "item": "dashi stock or instant dashi",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": "from step 1",
+        "section": "Niku Udon Broth",
         "category": "Canned Goods"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Niku Udon Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Niku Udon Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,20 +201,26 @@
           }
         ],
         "note": null,
+        "section": "Niku Udon Broth",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp beef suet (fat) (or beef tallow, lard, cooking oil)",
+      "raw": "Cooking / Serving:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tsp beef suet (fat) or beef tallow, lard, cooking oil",
       "expected": {
-        "item": "beef suet",
+        "item": "beef suet or beef tallow, lard, cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "fat, or beef tallow, lard, cooking oil",
+        "note": "fat",
+        "section": "Cooking / Serving",
         "category": "Meat & Seafood"
       }
     },
@@ -209,24 +235,27 @@
           }
         ],
         "note": null,
+        "section": "Cooking / Serving",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "finely chopped green onions (to garnish)",
+      "raw": "finely chopped green onions to garnish",
       "expected": {
-        "item": "finely chopped green onions",
+        "item": "finely chopped green onions to garnish",
         "measurements": [],
-        "note": "to garnish",
-        "category": "Produce"
+        "note": null,
+        "section": "Cooking / Serving",
+        "category": "Other"
       }
     },
     {
-      "raw": "Japanese chili powder (shichimi togarashi) (optional)",
+      "raw": "Japanese chili powder (shichimi togarashi) optional",
       "expected": {
         "item": "Japanese chili powder",
         "measurements": [],
         "note": "shichimi togarashi, optional",
+        "section": "Cooking / Serving",
         "category": "Spices & Seasonings"
       }
     }

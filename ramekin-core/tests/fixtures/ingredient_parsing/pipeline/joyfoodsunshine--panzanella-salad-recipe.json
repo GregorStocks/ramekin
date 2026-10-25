@@ -3,7 +3,11 @@
   "recipe_slug": "panzanella-salad-recipe",
   "ingredients": [
     {
-      "raw": "4  cups sourdough bread* ((about half a loaf - diced or torn into ½&amp;quot; cubes))",
+      "raw": "Toasted Bread:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4  cups sourdough bread* (about half a loaf – diced or torn into ½\" cubes)",
       "expected": {
         "item": "sourdough bread",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "about half a loaf - diced or torn into 1/2\" cubes",
+        "section": "Toasted Bread",
         "category": "Bakery & Bread"
       }
     },
@@ -27,34 +32,41 @@
           }
         ],
         "note": null,
+        "section": "Toasted Bread",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Sea salt &amp; pepper ((or galic salt))",
+      "raw": "Sea salt & pepper (or galic salt)",
       "expected": {
         "item": "Sea salt & pepper",
         "measurements": [],
         "note": "or galic salt",
+        "section": "Toasted Bread",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  tomatoes (vine ripened)",
+      "raw": "Panzanella Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tomatoes vine ripened",
       "expected": {
-        "item": "tomatoes",
+        "item": "tomatoes vine ripened",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "vine ripened",
-        "category": "Produce"
+        "note": null,
+        "section": "Panzanella Salad",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  cucumber (peeled and finely diced)",
+      "raw": "1 cucumber peeled and finely diced",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -64,25 +76,27 @@
           }
         ],
         "note": "peeled and finely diced",
+        "section": "Panzanella Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  bell pepper (red, yellow, orange, or green finely diced)",
+      "raw": "1 bell pepper red, yellow, orange, or green finely diced",
       "expected": {
-        "item": "bell pepper",
+        "item": "bell pepper red, yellow, orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "red, yellow, orange, or green finely diced",
-        "category": "Produce"
+        "note": "or green finely diced",
+        "section": "Panzanella Salad",
+        "category": "Other"
       }
     },
     {
-      "raw": "¼ cup red onion (sliced thin or finely diced)",
+      "raw": "¼ cup red onion sliced thin or finely diced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -92,11 +106,12 @@
           }
         ],
         "note": "sliced thin or finely diced",
+        "section": "Panzanella Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup fresh basil (finely chopped)",
+      "raw": "¼ cup fresh basil finely chopped",
       "expected": {
         "item": "fresh basil",
         "measurements": [
@@ -106,11 +121,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Panzanella Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "8 ounces fresh mozzarella (chopped)",
+      "raw": "8 ounces fresh mozzarella chopped",
       "expected": {
         "item": "fresh mozzarella",
         "measurements": [
@@ -120,11 +136,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Panzanella Salad",
         "category": "Cheese"
       }
     },
     {
-      "raw": "½ teaspoon sea salt (or more to taste)",
+      "raw": "½ teaspoon sea salt or more to taste",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -134,11 +151,12 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Panzanella Salad",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon pepper (or more to taste)",
+      "raw": "¼ teaspoon pepper or more to taste",
       "expected": {
         "item": "pepper",
         "measurements": [
@@ -148,25 +166,26 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Panzanella Salad",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "fresh corn (1 ear)",
+      "raw": "Optional:",
+      "is_section_header": true
+    },
+    {
+      "raw": "fresh corn 1 ear",
       "expected": {
-        "item": "fresh corn",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "ear"
-          }
-        ],
+        "item": "fresh corn 1 ear",
+        "measurements": [],
         "note": null,
-        "category": "Produce"
+        "section": "Optional",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  avocado (diced)",
+      "raw": "1 avocado diced",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -176,8 +195,13 @@
           }
         ],
         "note": "diced",
+        "section": "Optional",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup olive oil",
@@ -190,11 +214,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3 Tablespoons balsamic vinegar ((or white whine vinegar, apple cider, etc.))",
+      "raw": "3 Tablespoons balsamic vinegar (or white whine vinegar, apple cider, etc.)",
       "expected": {
         "item": "balsamic vinegar",
         "measurements": [
@@ -204,6 +229,7 @@
           }
         ],
         "note": "or white whine vinegar, apple cider, etc.",
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -218,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -232,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -246,6 +274,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     }

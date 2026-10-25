@@ -3,9 +3,9 @@
   "recipe_slug": "recipes-momspanfriedlondonbroi",
   "ingredients": [
     {
-      "raw": "2 pounds top round cut of steak",
+      "raw": "2 pounds top round steak",
       "expected": {
-        "item": "top round cut of steak",
+        "item": "top round steak",
         "measurements": [
           {
             "amount": "2",
@@ -13,7 +13,7 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -35,9 +35,9 @@
       }
     },
     {
-      "raw": "Pepper",
+      "raw": "Freshly ground black pepper",
       "expected": {
-        "item": "Pepper",
+        "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

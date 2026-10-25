@@ -3,16 +3,21 @@
   "recipe_slug": "shrimp-risotto-recipe",
   "ingredients": [
     {
+      "raw": "For the Homemade Shrimp Stock (optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "Shells from at least 2 pounds of raw shrimp",
       "expected": {
         "item": "Shells from at least 2 pounds of raw shrimp",
         "measurements": [],
         "note": null,
+        "section": "For the Homemade Shrimp Stock (Optional)",
         "category": "Other"
       }
     },
     {
-      "raw": "1 medium  onion (roughly chopped)",
+      "raw": "1 medium  onion, roughly chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -22,11 +27,12 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Homemade Shrimp Stock (Optional)",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 ribs celery (roughly chopped)",
+      "raw": "2 ribs celery, roughly chopped",
       "expected": {
         "item": "ribs celery",
         "measurements": [
@@ -36,11 +42,12 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Homemade Shrimp Stock (Optional)",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves garlic (peeled and smashed)",
+      "raw": "3 cloves garlic, peeled and smashed",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -50,6 +57,7 @@
           }
         ],
         "note": "peeled and smashed",
+        "section": "For the Homemade Shrimp Stock (Optional)",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "For the Homemade Shrimp Stock (Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,8 +87,13 @@
           }
         ],
         "note": null,
+        "section": "For the Homemade Shrimp Stock (Optional)",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Parmesan Risotto with Shrimp:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoon olive oil",
@@ -92,11 +106,12 @@
           }
         ],
         "note": null,
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 teaspoon salt (divided)",
+      "raw": "2 teaspoon salt, divided",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -106,11 +121,12 @@
           }
         ],
         "note": "divided",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon black pepper",
+      "raw": "½ teaspoon black pepper",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,11 +151,12 @@
           }
         ],
         "note": null,
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 pounds shrimp (peeled and deveined)",
+      "raw": "2 pounds shrimp, peeled and deveined",
       "expected": {
         "item": "shrimp",
         "measurements": [
@@ -148,11 +166,12 @@
           }
         ],
         "note": "peeled and deveined",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "6 tablespoon salted butter (divided)",
+      "raw": "6 tablespoon salted butter, divided",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -162,11 +181,12 @@
           }
         ],
         "note": "divided",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 cups homemade shrimp stock ((or low-sodium chicken stock, vegetable broth, or water))",
+      "raw": "8 cups homemade shrimp stock, (or low-sodium chicken stock, vegetable broth, or water)",
       "expected": {
         "item": "homemade shrimp stock",
         "measurements": [
@@ -176,11 +196,12 @@
           }
         ],
         "note": "or low-sodium chicken stock, vegetable broth, or water",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Other"
       }
     },
     {
-      "raw": "4  shallots (minced)",
+      "raw": "4 shallots, minced",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -190,11 +211,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Produce"
       }
     },
     {
-      "raw": "6 cloves garlic (minced)",
+      "raw": "6 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -204,11 +226,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cups arborio rice (do not wash)",
+      "raw": "2 cups arborio rice, do not wash",
       "expected": {
         "item": "arborio rice",
         "measurements": [
@@ -218,11 +241,12 @@
           }
         ],
         "note": "do not wash",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "3/4 cup dry white wine",
+      "raw": "¾ cup dry white wine",
       "expected": {
         "item": "dry white wine",
         "measurements": [
@@ -232,11 +256,12 @@
           }
         ],
         "note": null,
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 cups grated parmesan cheese (divided)",
+      "raw": "2 cups grated parmesan cheese, divided",
       "expected": {
         "item": "grated parmesan cheese",
         "measurements": [
@@ -246,24 +271,27 @@
           }
         ],
         "note": "divided",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Cheese"
       }
     },
     {
-      "raw": "Fresh parsley (to garnish)",
+      "raw": "Fresh parsley, to garnish",
       "expected": {
-        "item": "Fresh parsley",
+        "item": "Fresh parsley, to garnish",
         "measurements": [],
-        "note": "to garnish",
+        "note": null,
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Produce"
       }
     },
     {
-      "raw": "lemon wedges (for serving (at least 3-4 lemons))",
+      "raw": "lemon wedges, for serving (at least 3-4 lemons)",
       "expected": {
         "item": "lemon wedges",
         "measurements": [],
-        "note": "for serving (at least 3-4 lemons)",
+        "note": "at least 3-4 lemons, for serving",
+        "section": "For the Parmesan Risotto with Shrimp",
         "category": "Produce"
       }
     }

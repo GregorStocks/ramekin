@@ -3,6 +3,10 @@
   "recipe_slug": "2025-10-opera-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 large egg whites (save the yolks)",
       "expected": {
         "item": "egg whites",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "save the yolks",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Buttercream:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) water",
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Buttercream",
         "category": "Beverages"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Buttercream",
         "category": "Baking"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": "I told you to save the yolks!",
+        "section": "Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": "cooled",
+        "section": "Buttercream",
         "category": "Beverages"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": "cut into cubes and softened",
+        "section": "Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,8 +222,13 @@
           }
         ],
         "note": null,
+        "section": "Buttercream",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Chocolate:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces (225 grams or 1 1/3 cups chocolate chips) semisweet or bittersweet chocolate, finely chopped",
@@ -221,6 +245,7 @@
           }
         ],
         "note": "225 grams or 1 1/3 cups chocolate chips, finely chopped",
+        "section": "Chocolate",
         "category": "Baking"
       }
     },
@@ -239,8 +264,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Syrup:",
+      "is_section_header": true
     },
     {
       "raw": "10 tablespoons (150 ml) hot espresso",
@@ -257,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Other"
       }
     },
@@ -275,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Baking"
       }
     },
@@ -293,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Beverages"
       }
     }

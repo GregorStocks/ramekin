@@ -3,6 +3,10 @@
   "recipe_slug": "2025-08-cacio-e-pepe-pizza",
   "ingredients": [
     {
+      "raw": "sourdough pizza:",
+      "is_section_header": true
+    },
+    {
       "raw": "325 grams water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Sourdough Pizza",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "caesar topping:",
+      "is_section_header": true
     },
     {
       "raw": "6 to 8 cups chopped romaine lettuce",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Caesar Topping",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Caesar Topping",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Caesar Topping",
         "category": "Cheese"
       }
     }

@@ -17,17 +17,17 @@
       }
     },
     {
-      "raw": "4  boneless (skinless chicken breasts, thawed)",
+      "raw": "4 boneless skinless chicken breasts, thawed",
       "expected": {
-        "item": "boneless",
+        "item": "boneless skinless chicken breasts",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "skinless chicken breasts, thawed",
-        "category": "Other"
+        "note": "thawed",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -45,6 +45,10 @@
       }
     },
     {
+      "raw": "Seasoning:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon garlic powder",
       "expected": {
         "item": "garlic powder",
@@ -55,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,8 +164,13 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Lemon slices",
@@ -162,6 +178,7 @@
         "item": "Lemon slices",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }

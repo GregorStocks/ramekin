@@ -3,6 +3,10 @@
   "recipe_slug": "2022-03-banana-cream-pie",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 11-ounce (311-gram) box Nilla Wafers, ground into crumbs",
       "expected": {
         "item": "Nilla Wafers",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "ground into crumbs",
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,8 +59,13 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Custard:",
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup (130 grams) granulated sugar",
@@ -71,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Baking"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Baking"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": "Diamond brand; use half of any other",
+        "section": "Custard",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,8 +222,13 @@
           }
         ],
         "note": "or 1 teaspoon extract and 1 teaspoon vanilla bean paste",
+        "section": "Custard",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 large bananas",
@@ -217,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -235,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +279,7 @@
           }
         ],
         "note": "optional",
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -271,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -289,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     }

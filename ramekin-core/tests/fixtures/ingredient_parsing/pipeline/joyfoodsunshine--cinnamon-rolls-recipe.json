@@ -3,7 +3,11 @@
   "recipe_slug": "cinnamon-rolls-recipe",
   "ingredients": [
     {
-      "raw": "1 cup whole milk ((warm, 105 degrees F))",
+      "raw": "Cinnamon Roll Dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup whole milk (warm, 105 degrees F)",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "warm, 105 degrees F",
+        "section": "Cinnamon Roll Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ cup + 1 Tablespoon  granulated sugar ((divided))",
+      "raw": "½ cup + 1 Tablespoon  granulated sugar (divided)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cinnamon Roll Dough",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  large eggs ((room temperature))",
+      "raw": "2 large eggs (room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "room temperature",
+        "section": "Cinnamon Roll Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 Tablespoons salted butter ((melted))",
+      "raw": "6 Tablespoons salted butter (melted)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -69,6 +77,7 @@
           }
         ],
         "note": "melted",
+        "section": "Cinnamon Roll Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,11 +137,16 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Roll Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup brown sugar ((packed))",
+      "raw": "Cinnamon Sugar Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup brown sugar (packed)",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cinnamon Sugar Filling",
         "category": "Baking"
       }
     },
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Sugar Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6 Tablespoons salted butter ((softened))",
+      "raw": "6 Tablespoons salted butter (softened)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -167,11 +186,16 @@
           }
         ],
         "note": "softened",
+        "section": "Cinnamon Sugar Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 ounces cream cheese ((softened))",
+      "raw": "Cream Cheese Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 ounces cream cheese (softened)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -181,11 +205,12 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
     {
-      "raw": "¼ cup salted butter ((softened))",
+      "raw": "¼ cup salted butter (softened)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -195,6 +220,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -237,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Spices & Seasonings"
       }
     }

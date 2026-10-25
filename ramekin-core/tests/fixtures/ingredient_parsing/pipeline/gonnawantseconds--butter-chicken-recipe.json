@@ -3,6 +3,10 @@
   "recipe_slug": "butter-chicken-recipe",
   "ingredients": [
     {
+      "raw": "SAUCE:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 Tablespoon Peanut Oil",
       "expected": {
         "item": "Peanut Oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  Shallot (Finely Chopped)",
+      "raw": "1 Shallot Finely Chopped",
       "expected": {
         "item": "Shallot",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "Finely Chopped",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 Cup White Onion (Finely Chopped)",
+      "raw": "1 Cup White Onion Finely Chopped",
       "expected": {
         "item": "White Onion",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "Finely Chopped",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,11 +152,12 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  Bay Leaf",
+      "raw": "1 Bay Leaf",
       "expected": {
         "item": "Bay Leaf",
         "measurements": [
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -223,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,20 +257,26 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 Pounds 2 Chicken Thighs (Boneless, Skinless, Cut Into Bite Size Pieces)",
+      "raw": "CHICKEN:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 Pounds 2 Chicken Thighs Boneless, Skinless, Cut Into Bite Size Pieces",
       "expected": {
-        "item": "2 Chicken Thighs",
+        "item": "2 Chicken Thighs Boneless, Skinless",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "Boneless, Skinless, Cut Into Bite Size Pieces",
+        "note": "Cut Into Bite Size Pieces",
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -265,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     }

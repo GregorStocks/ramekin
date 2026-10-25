@@ -180,6 +180,10 @@
       }
     },
     {
+      "raw": "Doughnut Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 ounces powdered sugar",
       "expected": {
         "item": "powdered sugar",
@@ -190,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Doughnut Glaze",
         "category": "Baking"
       }
     },
@@ -204,6 +209,7 @@
           }
         ],
         "note": "what I used, highly recommended",
+        "section": "Doughnut Glaze",
         "category": "Beverages"
       }
     },
@@ -218,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Doughnut Glaze",
         "category": "Baking"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "best-stuffed-french-toast-reci",
   "ingredients": [
     {
-      "raw": "3  eggs",
+      "raw": "Egg Mixture:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -13,21 +17,23 @@
           }
         ],
         "note": null,
+        "section": "Egg Mixture",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup half and half (you can also use whole milk)",
+      "raw": "1/2 cup half and half you can also use whole milk",
       "expected": {
-        "item": "half and half",
+        "item": "half and half you can also use whole milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "you can also use whole milk",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Egg Mixture",
+        "category": "Other"
       }
     },
     {
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Mixture",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,25 +92,31 @@
           }
         ],
         "note": null,
+        "section": "Egg Mixture",
         "category": "Baking"
       }
     },
     {
-      "raw": "10 slices Brioche or any thick cut artisan type bread (the thicker the better (about 8-10 slices))",
+      "raw": "10 slices Brioche or any thick cut artisan type bread the thicker the better (about 8-10 slices)",
       "expected": {
-        "item": "Brioche or any thick cut artisan type bread",
+        "item": "Brioche or any thick cut artisan type bread the thicker the better",
         "measurements": [
           {
             "amount": "10",
             "unit": "slice"
+          },
+          {
+            "amount": "8-10",
+            "unit": "slice"
           }
         ],
-        "note": "the thicker the better (about 8-10 slices)",
+        "note": "about 8-10 slices",
+        "section": "Egg Mixture",
         "category": "Other"
       }
     },
     {
-      "raw": "8 oz cream cheese (softened)",
+      "raw": "8 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -111,6 +126,7 @@
           }
         ],
         "note": "softened",
+        "section": "Egg Mixture",
         "category": "Cheese"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Egg Mixture",
         "category": "Baking"
       }
     },
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "Egg Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup fresh strawberries (sliced thin)",
+      "raw": "1 cup fresh strawberries sliced thin",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "Egg Mixture",
         "category": "Produce"
       }
     },
@@ -167,25 +186,27 @@
           }
         ],
         "note": null,
+        "section": "Egg Mixture",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tbsp fresh lemon juice  (about half of one lemon)",
+      "raw": "1 tbsp fresh lemon juice  about half of one lemon",
       "expected": {
-        "item": "fresh lemon juice",
+        "item": "fresh lemon juice about half of one lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "about half of one lemon",
-        "category": "Produce"
+        "note": null,
+        "section": "Egg Mixture",
+        "category": "Other"
       }
     },
     {
-      "raw": "8 tbsp butter (for frying (bacon fat is also good here))",
+      "raw": "8 tbsp butter for frying (bacon fat is also good here)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -194,7 +215,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "for frying (bacon fat is also good here)",
+        "note": "bacon fat is also good here, for frying",
+        "section": "Egg Mixture",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,12 +3,12 @@
   "recipe_slug": "italian-barley-cranberry-bean-",
   "ingredients": [
     {
-      "raw": "4 1/2 teaspoons Diamond Crystal kosher salt, divided, plus more to taste; for table salt, use half as much by volume",
+      "raw": "5 teaspoons Diamond Crystal kosher salt, divided, plus more to taste; for table salt, use half as much by volume",
       "expected": {
         "item": "Diamond Crystal kosher salt",
         "measurements": [
           {
-            "amount": "4.5",
+            "amount": "5",
             "unit": "tsp"
           }
         ],
@@ -139,13 +139,21 @@
       }
     },
     {
-      "raw": "1 cup pearl barley",
+      "raw": "1 cup pearl barley (7.5 ounces; 212 g)",
       "expected": {
         "item": "pearl barley",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "7.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "212",
+            "unit": "g"
           }
         ],
         "note": null,

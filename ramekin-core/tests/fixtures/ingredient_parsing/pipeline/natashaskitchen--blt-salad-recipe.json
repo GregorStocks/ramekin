@@ -3,6 +3,10 @@
   "recipe_slug": "blt-salad-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients for the BLT Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "12 oz sliced cooked bacon*",
       "expected": {
         "item": "sliced cooked bacon",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Blt Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for the Blt Salad",
         "category": "Bakery & Bread"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": "any kind, sliced",
+        "section": "Ingredients for the Blt Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  medium/large head of lettuce (** chopped, rinsed, dried)",
+      "raw": "1 medium/large head of lettuce, ** chopped, rinsed, dried",
       "expected": {
         "item": "lettuce",
         "measurements": [
@@ -55,8 +62,13 @@
           }
         ],
         "note": "** chopped, rinsed, dried",
+        "section": "Ingredients for the Blt Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Creamy BLT Salad Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3 Tbsp mayonnaise",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  large garlic clove (pressed)",
+      "raw": "1 large garlic clove, pressed",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -97,6 +111,7 @@
           }
         ],
         "note": "pressed",
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Produce"
       }
     },
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp sea salt (or to taste)",
+      "raw": "1/4 tsp sea salt, or to taste",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -139,20 +156,22 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 to 2 Tbsp milk (or add to desired consistency)",
+      "raw": "1 to 2 Tbsp milk, or add to desired consistency",
       "expected": {
-        "item": "milk",
+        "item": "milk, or add to desired consistency",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": "or add to desired consistency",
+        "note": null,
+        "section": "For the Creamy Blt Salad Dressing",
         "category": "Dairy & Eggs"
       }
     }

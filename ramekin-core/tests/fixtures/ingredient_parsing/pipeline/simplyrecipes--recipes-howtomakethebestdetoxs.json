@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-howtomakethebestdetoxs",
   "ingredients": [
     {
+      "raw": "Suggested smoothie ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup raw coconut water or filtered water, plus more as needed",
       "expected": {
         "item": "raw coconut water or filtered water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "Suggested Smoothie Ingredients",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "cored and diced",
+        "section": "Suggested Smoothie Ingredients",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "grated for conventional blenders, peeled and diced",
+        "section": "Suggested Smoothie Ingredients",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Suggested Smoothie Ingredients",
         "category": "Frozen"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Suggested Smoothie Ingredients",
         "category": "Frozen"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "pitted and peeled",
+        "section": "Suggested Smoothie Ingredients",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Suggested Smoothie Ingredients",
         "category": "Produce"
       }
     },
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "Suggested Smoothie Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "Pinch of cayenne pepper",
+      "raw": "Pinch cayenne pepper",
       "expected": {
         "item": "cayenne pepper",
         "measurements": [
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Suggested Smoothie Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Optional nutritional boosters:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup frozen raw broccoli",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Nutritional Boosters",
         "category": "Frozen"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Nutritional Boosters",
         "category": "Produce"
       }
     }

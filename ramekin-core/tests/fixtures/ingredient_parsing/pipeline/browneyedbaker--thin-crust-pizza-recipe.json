@@ -3,21 +3,30 @@
   "recipe_slug": "thin-crust-pizza-recipe",
   "ingredients": [
     {
-      "raw": "3 cups bread flour (plus more for work surface)",
+      "raw": "For the Dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cups  (375 g) bread flour, plus more for work surface",
       "expected": {
         "item": "bread flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
           }
         ],
         "note": "plus more for work surface",
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons granulated sugar",
+      "raw": "2 teaspoons   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,39 +36,50 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon instant (rapid-rise yeast)",
+      "raw": "½ teaspoon  (0.5 teaspoon) instant, rapid-rise yeast",
       "expected": {
-        "item": "instant",
+        "item": "instant, rapid-rise yeast",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "rapid-rise yeast",
+        "note": null,
+        "section": "For the Dough",
         "category": "Other"
       }
     },
     {
-      "raw": "1⅓ cups ice water",
+      "raw": "1⅓ cups  (333.33 ml) ice water",
       "expected": {
         "item": "ice water",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
+          },
+          {
+            "amount": "333.33",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 tablespoon vegetable oil (plus more for work surface)",
+      "raw": "1 tablespoon   vegetable oil, plus more for work surface",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -69,39 +89,54 @@
           }
         ],
         "note": "plus more for work surface",
+        "section": "For the Dough",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1½ teaspoons salt",
+      "raw": "1½ teaspoons  (1.5 teaspoons) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "28 ounce can whole peeled tomatoes, drained",
+      "raw": "For the Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "28 ounce  (793.79 g) can whole peeled tomatoes, drained",
       "expected": {
         "item": "can whole peeled tomatoes",
         "measurements": [
           {
             "amount": "28",
             "unit": "oz"
+          },
+          {
+            "amount": "793.79",
+            "unit": "g"
           }
         ],
         "note": "drained",
+        "section": "For the Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 tablespoon extra-virgin olive oil",
+      "raw": "1 tablespoon   extra-virgin olive oil",
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [
@@ -111,11 +146,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 teaspoon red wine vinegar",
+      "raw": "1 teaspoon   red wine vinegar",
       "expected": {
         "item": "red wine vinegar",
         "measurements": [
@@ -125,11 +161,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2   garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -139,11 +176,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon salt",
+      "raw": "1 teaspoon   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -153,11 +191,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon dried oregano",
+      "raw": "1 teaspoon   dried oregano",
       "expected": {
         "item": "dried oregano",
         "measurements": [
@@ -167,48 +206,72 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon ground black pepper",
+      "raw": "¼ teaspoon  (0.25 teaspoon) ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ cup grated Parmesan cheese",
+      "raw": "For the Toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup  (50 g) grated Parmesan cheese",
       "expected": {
         "item": "grated Parmesan cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Toppings",
         "category": "Cheese"
       }
     },
     {
-      "raw": "8 ounces mozzarella cheese (shredded (about 2 cups shredded))",
+      "raw": "8 ounces  (226.8 g) mozzarella cheese, shredded (about 2 cups shredded)",
       "expected": {
         "item": "mozzarella cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (about 2 cups shredded)",
+        "note": "about 2 cups shredded, shredded",
+        "section": "For the Toppings",
         "category": "Cheese"
       }
     },
@@ -218,6 +281,7 @@
         "item": "Pepperoni slices",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings",
         "category": "Meat & Seafood"
       }
     }

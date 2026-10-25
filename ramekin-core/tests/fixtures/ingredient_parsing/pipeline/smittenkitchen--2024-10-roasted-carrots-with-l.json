@@ -3,6 +3,10 @@
   "recipe_slug": "2024-10-roasted-carrots-with-l",
   "ingredients": [
     {
+      "raw": "Carrots and assembly:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds (905 grams) carrots, peeled and trimmed",
       "expected": {
         "item": "carrots",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "peeled and trimmed",
+        "section": "Carrots and Assembly",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Carrots and Assembly",
         "category": "Beverages"
       }
     },
@@ -44,6 +50,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Carrots and Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -53,6 +60,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Carrots and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -62,6 +70,7 @@
         "item": "1 1/2 cups cooked or 3/4 cup (135 grams) dried lentils de puy",
         "measurements": [],
         "note": null,
+        "section": "Carrots and Assembly",
         "category": "Other"
       }
     },
@@ -76,6 +85,7 @@
           }
         ],
         "note": "or a big handful",
+        "section": "Carrots and Assembly",
         "category": "Produce"
       }
     },
@@ -94,8 +104,13 @@
           }
         ],
         "note": null,
+        "section": "Carrots and Assembly",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons (90 ml) olive oil",
@@ -112,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -130,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -144,6 +161,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -158,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -172,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -186,6 +206,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "larb-mu-recipe",
   "ingredients": [
     {
-      "raw": "1/4 cup long-grain sticky rice ((sometimes called glutinous rice))",
+      "raw": "topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ cup  long-grain sticky rice (sometimes called glutinous rice)",
       "expected": {
         "item": "long-grain sticky rice",
         "measurements": [
@@ -13,11 +17,16 @@
           }
         ],
         "note": "sometimes called glutinous rice",
+        "section": "Topping",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons lime juice",
+      "raw": "dressing:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons  lime juice",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -27,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 1/2 tablespoons fish sauce",
+      "raw": "1 ½ tablespoons  fish sauce",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -41,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 teaspoons chili flakes ((to taste))",
+      "raw": "2 teaspoons  chili flakes (to taste)",
       "expected": {
         "item": "chili flakes",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": "to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon coconut sugar",
+      "raw": "1 teaspoon  coconut sugar",
       "expected": {
         "item": "coconut sugar",
         "measurements": [
@@ -69,11 +81,16 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 small head butter lettuce ((leaves separated))",
+      "raw": "salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 small head  butter lettuce (leaves separated)",
       "expected": {
         "item": "butter lettuce",
         "measurements": [
@@ -83,11 +100,12 @@
           }
         ],
         "note": "leaves separated",
+        "section": "Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "20 grams Thai shallots ((3-4 grape-sized , sliced))",
+      "raw": "20 grams  Thai shallots (3-4 grape-sized , sliced)",
       "expected": {
         "item": "Thai shallots",
         "measurements": [
@@ -97,11 +115,12 @@
           }
         ],
         "note": "3-4 grape-sized , sliced",
+        "section": "Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "20 grams scallions ((2 , thinly sliced))",
+      "raw": "20 grams  scallions (2 , thinly sliced)",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -111,11 +130,12 @@
           }
         ],
         "note": "2 , thinly sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "12 grams lemongrass ((1 stalk, white-part finely minced))",
+      "raw": "12 grams  lemongrass (1 stalk, white-part finely minced)",
       "expected": {
         "item": "lemongrass",
         "measurements": [
@@ -129,11 +149,12 @@
           }
         ],
         "note": "1 stalk, white-part finely minced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "10 grams culantro ((or cilantro, chopped))",
+      "raw": "10 grams  culantro (or cilantro, chopped)",
       "expected": {
         "item": "culantro",
         "measurements": [
@@ -143,11 +164,12 @@
           }
         ],
         "note": "or cilantro, chopped",
+        "section": "Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "10 grams mint ((leaves only))",
+      "raw": "10 grams  mint (leaves only)",
       "expected": {
         "item": "mint",
         "measurements": [
@@ -157,11 +179,16 @@
           }
         ],
         "note": "leaves only",
+        "section": "Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "10 grams galangal ((about 1/2-inch slice, smashed))",
+      "raw": "pork:",
+      "is_section_header": true
+    },
+    {
+      "raw": "10 grams  galangal (about ½-inch slice, smashed)",
       "expected": {
         "item": "galangal",
         "measurements": [
@@ -175,11 +202,12 @@
           }
         ],
         "note": "about 1/2-inch slice, smashed",
+        "section": "Pork",
         "category": "Produce"
       }
     },
     {
-      "raw": "300 grams ground pork",
+      "raw": "300 grams  ground pork",
       "expected": {
         "item": "ground pork",
         "measurements": [
@@ -189,7 +217,18 @@
           }
         ],
         "note": null,
+        "section": "Pork",
         "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Lime  (wedges for garnish)",
+      "expected": {
+        "item": "Lime",
+        "measurements": [],
+        "note": "wedges for garnish",
+        "section": "Pork",
+        "category": "Produce"
       }
     }
   ]

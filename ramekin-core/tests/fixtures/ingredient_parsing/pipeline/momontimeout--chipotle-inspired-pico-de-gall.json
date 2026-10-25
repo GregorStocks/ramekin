@@ -3,7 +3,16 @@
   "recipe_slug": "chipotle-inspired-pico-de-gall",
   "ingredients": [
     {
-      "raw": "1 1/2 cups Roma tomatoes (chopped (seeds removed))",
+      "raw": "Double (or triple) this recipe for a crowd.:",
+      "expected": {
+        "item": "Double this recipe for a crowd.:",
+        "measurements": [],
+        "note": "or triple",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 cups Roma tomatoes chopped (seeds removed)",
       "expected": {
         "item": "Roma tomatoes",
         "measurements": [
@@ -12,12 +21,12 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped (seeds removed)",
+        "note": "seeds removed, chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup cilantro (chopped)",
+      "raw": "1/2 cup cilantro chopped",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -31,7 +40,7 @@
       }
     },
     {
-      "raw": "2 1/2 tbsp jalapeno pepper (finely diced (leave seeds in if you want spicier salsa))",
+      "raw": "2 1/2 tbsp jalapeno pepper finely diced (leave seeds in if you want spicier salsa)",
       "expected": {
         "item": "jalapeno pepper",
         "measurements": [
@@ -40,12 +49,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely diced (leave seeds in if you want spicier salsa)",
+        "note": "leave seeds in if you want spicier salsa, finely diced",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  red onion (finely diced)",
+      "raw": "1/2 red onion finely diced",
       "expected": {
         "item": "red onion",
         "measurements": [

@@ -3,78 +3,8 @@
   "recipe_slug": "2014-12-gingerbread-biscotti",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Pasta and Fried Zucchini Salad",
-      "expected": {
-        "item": "Months Ago: Pasta and Fried Zucchini Salad",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Rhubarb Cream Cheese Hand Pies",
-      "expected": {
-        "item": "Years Ago: Rhubarb Cream Cheese Hand Pies",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Broccoli Parmesan Fritters",
-      "expected": {
-        "item": "Years Ago: Broccoli Parmesan Fritters",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Roasted Peppers with Capers and Mozzarella",
-      "expected": {
-        "item": "Years Ago: Roasted Peppers with Capers and Mozzarella",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Cookie",
-      "expected": {
-        "item": "Cookie",
-        "measurements": [],
-        "note": null,
-        "category": "Snacks"
-      }
+      "raw": "Cookie:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups plus 2 tablespoons (265 grams) all-purpose flour, plus extra for flouring hands",
@@ -91,6 +21,7 @@
           }
         ],
         "note": "plus extra for flouring hands",
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -109,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -127,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -159,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -168,6 +103,7 @@
         "item": "A few grinds of black pepper",
         "measurements": [],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -182,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -218,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -236,6 +175,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -250,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -268,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -282,6 +224,7 @@
           }
         ],
         "note": "optional, I kept mine plain",
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -296,17 +239,13 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Cinnamon-sugar (optional)",
-      "expected": {
-        "item": "Cinnamon-sugar",
-        "measurements": [],
-        "note": "optional",
-        "category": "Baking"
-      }
+      "raw": "Cinnamon-sugar:",
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup (65 grams) granulated sugar",
@@ -323,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon-Sugar",
         "category": "Baking"
       }
     },
@@ -341,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon-Sugar",
         "category": "Spices & Seasonings"
       }
     }

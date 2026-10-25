@@ -3,32 +3,36 @@
   "recipe_slug": "juicy-air-fryer-pork-tenderloi",
   "ingredients": [
     {
-      "raw": "1.75 lbs pork tenderloin (you can use two)",
+      "raw": "1.75 lbs pork tenderloin you can use two",
       "expected": {
-        "item": "pork tenderloin",
+        "item": "pork tenderloin you can use two",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "lb"
           }
         ],
-        "note": "you can use two",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon olive oil (more if using two pieces of tenderloin)",
+      "raw": "1 tablespoon olive oil more if using two pieces of tenderloin",
       "expected": {
-        "item": "olive oil",
+        "item": "olive oil more if using two pieces of tenderloin",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "more if using two pieces of tenderloin",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Dry Rub:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons brown sugar",
@@ -41,6 +45,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Baking"
       }
     },
@@ -55,6 +60,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +75,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +90,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,11 +184,12 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon cayenne powder (optional)",
+      "raw": "1/4 teaspoon cayenne powder optional",
       "expected": {
         "item": "cayenne powder",
         "measurements": [
@@ -185,6 +199,7 @@
           }
         ],
         "note": "optional",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     }

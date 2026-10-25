@@ -3,6 +3,10 @@
   "recipe_slug": "greek-salad-recipe",
   "ingredients": [
     {
+      "raw": "Greek Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "2.5 ounces spring mix",
       "expected": {
         "item": "spring mix",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 pint cherry tomatoes (halved)",
+      "raw": "1 pint cherry tomatoes halved",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -27,25 +32,31 @@
           }
         ],
         "note": "halved",
+        "section": "Greek Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  cucumber (peeled and diced (about 1 cup))",
+      "raw": "1 cucumber peeled and diced (about 1 cup)",
       "expected": {
         "item": "cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "peeled and diced (about 1 cup)",
+        "note": "about 1 cup, peeled and diced",
+        "section": "Greek Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ cup red onion (finely sliced or diced)",
+      "raw": "½ cup red onion finely sliced or diced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": "finely sliced or diced",
+        "section": "Greek Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ cup Kalamata olives (roughly chopped)",
+      "raw": "½ cup Kalamata olives roughly chopped",
       "expected": {
         "item": "Kalamata olives",
         "measurements": [
@@ -69,6 +81,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Greek Salad",
         "category": "Canned Goods"
       }
     },
@@ -83,11 +96,16 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2  pita rounds (sliced into 1” pieces (1 pita = 85 g))",
+      "raw": "Pita “croutons”:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 pita rounds sliced into 1” pieces (1 pita = 85 g)",
       "expected": {
         "item": "pita rounds",
         "measurements": [
@@ -96,7 +114,8 @@
             "unit": null
           }
         ],
-        "note": "sliced into 1” pieces (1 pita = 85 g)",
+        "note": "1 pita = 85 g, sliced into 1” pieces",
+        "section": "Pita “croutons”",
         "category": "Other"
       }
     },
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Pita “croutons”",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,8 +145,13 @@
           }
         ],
         "note": null,
+        "section": "Pita “croutons”",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Greek Salad Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tablespoons red wine vinegar",
@@ -139,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Produce"
       }
     },
@@ -167,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Produce"
       }
     },
@@ -195,11 +224,12 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 teaspoons granulated sugar ((or honey))",
+      "raw": "2 teaspoons granulated sugar (or honey)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -209,6 +239,7 @@
           }
         ],
         "note": "or honey",
+        "section": "Greek Salad Dressing",
         "category": "Baking"
       }
     },
@@ -223,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "Greek Salad Dressing",
         "category": "Spices & Seasonings"
       }
     }

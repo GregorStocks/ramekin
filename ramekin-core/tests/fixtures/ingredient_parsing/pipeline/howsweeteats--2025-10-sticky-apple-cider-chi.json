@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "¼  water",
+      "raw": "¼ water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -110,7 +110,11 @@
       }
     },
     {
-      "raw": "2  apples, (cut into matchsticks)",
+      "raw": "autumn apple slaw:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 apples, cut into matchsticks",
       "expected": {
         "item": "apples",
         "measurements": [
@@ -120,6 +124,7 @@
           }
         ],
         "note": "cut into matchsticks",
+        "section": "Autumn Apple Slaw",
         "category": "Produce"
       }
     },
@@ -134,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Autumn Apple Slaw",
         "category": "Produce"
       }
     },
@@ -148,11 +154,12 @@
           }
         ],
         "note": null,
+        "section": "Autumn Apple Slaw",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large carrot, (peeled and finely grated)",
+      "raw": "1 large carrot, peeled and finely grated",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -162,6 +169,7 @@
           }
         ],
         "note": "peeled and finely grated",
+        "section": "Autumn Apple Slaw",
         "category": "Produce"
       }
     },
@@ -176,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Autumn Apple Slaw",
         "category": "Condiments & Sauces"
       }
     },
@@ -190,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Autumn Apple Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -204,11 +214,12 @@
           }
         ],
         "note": null,
+        "section": "Autumn Apple Slaw",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  garlic cloves, (finely minced)",
+      "raw": "1 garlic cloves, finely minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -218,6 +229,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "Autumn Apple Slaw",
         "category": "Produce"
       }
     },
@@ -227,6 +239,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Autumn Apple Slaw",
         "category": "Spices & Seasonings"
       }
     }

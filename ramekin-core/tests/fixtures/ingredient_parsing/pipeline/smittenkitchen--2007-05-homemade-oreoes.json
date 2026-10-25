@@ -147,6 +147,10 @@
       }
     },
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup (4 tablespoons or 55 grams) unsalted butter at room temperature*",
       "expected": {
         "item": "unsalted butter at room temperature",
@@ -165,7 +169,7 @@
           }
         ],
         "note": null,
-        "section": "Chocolate Wafers",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -184,7 +188,7 @@
           }
         ],
         "note": "or you can swap with additional butter, see Note",
-        "section": "Chocolate Wafers",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -203,7 +207,7 @@
           }
         ],
         "note": null,
-        "section": "Chocolate Wafers",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -222,7 +226,7 @@
           }
         ],
         "note": null,
-        "section": "Chocolate Wafers",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -237,7 +241,7 @@
           }
         ],
         "note": null,
-        "section": "Chocolate Wafers",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

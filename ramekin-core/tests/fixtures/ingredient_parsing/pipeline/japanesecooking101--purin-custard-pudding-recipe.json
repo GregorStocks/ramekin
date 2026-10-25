@@ -3,6 +3,10 @@
   "recipe_slug": "purin-custard-pudding-recipe",
   "ingredients": [
     {
+      "raw": "Caramel:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup sugar",
       "expected": {
         "item": "sugar",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 Tbsp water",
+      "raw": "3 Tbsp water ( )",
       "expected": {
         "item": "water",
         "measurements": [
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Custard:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups plus 1 Tbsp milk",
@@ -41,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3  eggs",
+      "raw": "3 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup sugar",
+      "raw": "1/2 cup sugar ( )",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Custard",
         "category": "Baking"
       }
     }

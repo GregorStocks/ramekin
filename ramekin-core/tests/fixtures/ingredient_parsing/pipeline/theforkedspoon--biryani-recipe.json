@@ -3,7 +3,11 @@
   "recipe_slug": "biryani-recipe",
   "ingredients": [
     {
-      "raw": "3 medium  yellow onions (peeled and thinly sliced)",
+      "raw": "Fried Onions:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 medium  yellow onions, peeled and thinly sliced",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "peeled and thinly sliced",
+        "section": "Fried Onions",
         "category": "Produce"
       }
     },
     {
-      "raw": "1½ cups oil ((sunflower oil or peanut oil))",
+      "raw": "1½ cups oil, (sunflower oil or peanut oil)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -27,8 +32,13 @@
           }
         ],
         "note": "sunflower oil or peanut oil",
+        "section": "Fried Onions",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Biryani Spices (used in the marinade):",
+      "is_section_header": true
     },
     {
       "raw": "1 whole cinnamon stick",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Biryani Spices (Used in the Marinade)",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Biryani Spices (Used in the Marinade)",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "Biryani Spices (Used in the Marinade)",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  bay leaf",
+      "raw": "1 bay leaf",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "Biryani Spices (Used in the Marinade)",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon black cumin seeds ((shah jeera))",
+      "raw": "1 teaspoon black cumin seeds, (shah jeera)",
       "expected": {
         "item": "black cumin seeds",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": "shah jeera",
+        "section": "Biryani Spices (Used in the Marinade)",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 teaspoon ground black pepper",
+      "raw": "½ teaspoon ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -111,39 +126,46 @@
           }
         ],
         "note": null,
+        "section": "Biryani Spices (Used in the Marinade)",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5  chicken drumsticks (or chicken thighs)",
+      "raw": "Chicken and Lamb + Marinade:",
+      "is_section_header": true
+    },
+    {
+      "raw": "5 chicken drumsticks, or chicken thighs",
       "expected": {
-        "item": "chicken drumsticks",
+        "item": "chicken drumsticks, or chicken thighs",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "or chicken thighs",
+        "note": null,
+        "section": "Chicken and Lamb + Marinade",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2½ lbs lamb shoulder  (boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb))",
+      "raw": "2½ lbs lamb shoulder , boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb)",
       "expected": {
-        "item": "lamb shoulder",
+        "item": "lamb shoulder, boneless or bone-in",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb)",
-        "category": "Meat & Seafood"
+        "note": "you may also use lamb chops or leg of lamb, chopped into large chunks",
+        "section": "Chicken and Lamb + Marinade",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon fresh ginger (minced)",
+      "raw": "1 tablespoon fresh ginger, minced",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -153,11 +175,12 @@
           }
         ],
         "note": "minced",
+        "section": "Chicken and Lamb + Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "6 cloves garlic (minced)",
+      "raw": "6 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -167,6 +190,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chicken and Lamb + Marinade",
         "category": "Produce"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken and Lamb + Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken and Lamb + Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,11 +235,12 @@
           }
         ],
         "note": null,
+        "section": "Chicken and Lamb + Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  Serrano peppers (seeded and diced )",
+      "raw": "2 Serrano peppers, seeded and diced",
       "expected": {
         "item": "Serrano peppers",
         "measurements": [
@@ -223,6 +250,7 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "Chicken and Lamb + Marinade",
         "category": "Produce"
       }
     },
@@ -237,11 +265,16 @@
           }
         ],
         "note": null,
+        "section": "Chicken and Lamb + Marinade",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2½ cups long-grain white basmati rice (divided)",
+      "raw": "Par-Cooked Rice + Rice Preparation:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2½ cups long-grain white basmati rice, divided",
       "expected": {
         "item": "long-grain white basmati rice",
         "measurements": [
@@ -251,6 +284,7 @@
           }
         ],
         "note": "divided",
+        "section": "Par-Cooked Rice + Rice Preparation",
         "category": "Other"
       }
     },
@@ -265,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Par-Cooked Rice + Rice Preparation",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Par-Cooked Rice + Rice Preparation",
         "category": "Oils & Vinegars"
       }
     },
@@ -293,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "Par-Cooked Rice + Rice Preparation",
         "category": "Spices & Seasonings"
       }
     },
@@ -307,11 +344,12 @@
           }
         ],
         "note": null,
+        "section": "Par-Cooked Rice + Rice Preparation",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  bay leaves",
+      "raw": "2 bay leaves",
       "expected": {
         "item": "bay leaves",
         "measurements": [
@@ -321,11 +359,12 @@
           }
         ],
         "note": null,
+        "section": "Par-Cooked Rice + Rice Preparation",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2  cinnamon stick",
+      "raw": "½ cinnamon stick",
       "expected": {
         "item": "cinnamon stick",
         "measurements": [
@@ -335,11 +374,16 @@
           }
         ],
         "note": null,
+        "section": "Par-Cooked Rice + Rice Preparation",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup cilantro (chopped)",
+      "raw": "Biryani:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup cilantro, chopped",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -349,11 +393,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Biryani",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup fresh mint leaves (chopped )",
+      "raw": "¼ cup fresh mint leaves, chopped",
       "expected": {
         "item": "fresh mint leaves",
         "measurements": [
@@ -363,11 +408,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Biryani",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  lemon (juiced)",
+      "raw": "1 lemon, juiced",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -377,25 +423,27 @@
           }
         ],
         "note": null,
+        "section": "Biryani",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon good-quality saffron (soaked in 3 tbsp of hot water or warm milk)",
+      "raw": "1 teaspoon good-quality saffron, soaked in 3 tbsp of hot water or warm milk",
       "expected": {
-        "item": "saffron",
+        "item": "saffron, soaked in 3 tbsp of hot water or warm milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "soaked in 3 tbsp of hot water or warm milk, good-quality",
+        "note": "good-quality",
+        "section": "Biryani",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 tablespoon melted butter or ghee ((optional))",
+      "raw": "4 tablespoon melted butter or ghee, (optional)",
       "expected": {
         "item": "melted butter or ghee",
         "measurements": [
@@ -405,6 +453,7 @@
           }
         ],
         "note": "optional",
+        "section": "Biryani",
         "category": "Dairy & Eggs"
       }
     }

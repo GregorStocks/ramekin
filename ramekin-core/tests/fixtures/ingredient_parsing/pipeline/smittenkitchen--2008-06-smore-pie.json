@@ -3,6 +3,10 @@
   "recipe_slug": "2008-06-smore-pie",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "14 sheets (240 grams) graham crackers",
       "expected": {
         "item": "graham crackers",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -71,8 +78,13 @@
           }
         ],
         "note": "melted and cooled slightly",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -85,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,6 +112,7 @@
           }
         ],
         "note": "save the whites for the topping",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -131,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": "60 percent range is perfect here, chopped",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,8 +237,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "3 large egg whites (reserved from filling)",
@@ -231,6 +256,7 @@
           }
         ],
         "note": "reserved from filling",
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -263,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -277,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

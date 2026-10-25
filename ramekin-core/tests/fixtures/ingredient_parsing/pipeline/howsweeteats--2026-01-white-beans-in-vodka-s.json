@@ -3,6 +3,10 @@
   "recipe_slug": "2026-01-white-beans-in-vodka-s",
   "ingredients": [
     {
+      "raw": "starchy “pasta” water:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups water",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Starchy “pasta” Water",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Starchy “pasta” Water",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Starchy “pasta” Water",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "beans:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons unsalted butter",
@@ -55,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2  shallots, (diced)",
+      "raw": "2 shallots, diced",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -69,11 +81,12 @@
           }
         ],
         "note": "diced",
+        "section": "Beans",
         "category": "Produce"
       }
     },
     {
-      "raw": "6  garlic cloves, (minced)",
+      "raw": "6 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": "minced",
+        "section": "Beans",
         "category": "Produce"
       }
     },
@@ -97,20 +111,22 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "¼ cup vodka, (I like Tito’s)",
+      "raw": "¼ cup vodka, I like Tito’s",
       "expected": {
-        "item": "vodka",
+        "item": "vodka, I like Tito’s",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "I like Tito’s",
+        "note": null,
+        "section": "Beans",
         "category": "Beverages"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Other"
       }
     },
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "⅔ cup finely grated parmesan cheese, (plus more for topping)",
+      "raw": "⅔ cup finely grated parmesan cheese, plus more for topping",
       "expected": {
         "item": "finely grated parmesan cheese",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "plus more for topping",
+        "section": "Beans",
         "category": "Cheese"
       }
     },
     {
-      "raw": "4  cans cannellini beans, (drained and rinsed)",
+      "raw": "4 cans cannellini beans, drained and rinsed",
       "expected": {
         "item": "cannellini beans",
         "measurements": [
@@ -167,6 +186,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Beans",
         "category": "Canned Goods"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Beans",
         "category": "Cheese"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": "for topping",
+        "section": "Beans",
         "category": "Produce"
       }
     }

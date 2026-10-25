@@ -3,7 +3,11 @@
   "recipe_slug": "2026-01-sticky-honey-mustard-c",
   "ingredients": [
     {
-      "raw": "1  small green cabbage, (thinly sliced)",
+      "raw": "slaw:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 small green cabbage, thinly sliced",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -13,25 +17,27 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Slaw",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  carrots, (shaved with a vegetable peeler)",
+      "raw": "2 carrots, shaved with a vegetable peeler",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, shaved with a vegetable peeler",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "shaved with a vegetable peeler",
+        "note": null,
+        "section": "Slaw",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  red onion, (thinly sliced)",
+      "raw": "1 red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  garlic clove, (minced)",
+      "raw": "1 garlic clove, minced",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": "minced",
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "chicken:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound boneless, skinless chicken thighs",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -148,6 +166,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Condiments & Sauces"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Baking"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     }

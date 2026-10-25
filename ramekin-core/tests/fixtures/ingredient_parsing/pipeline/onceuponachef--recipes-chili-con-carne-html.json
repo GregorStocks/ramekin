@@ -277,11 +277,16 @@
       }
     },
     {
+      "raw": "Optional Garnishes:",
+      "is_section_header": true
+    },
+    {
       "raw": "Fresh chopped cilantro",
       "expected": {
         "item": "Fresh chopped cilantro",
         "measurements": [],
         "note": null,
+        "section": "Optional Garnishes",
         "category": "Produce"
       }
     },
@@ -291,6 +296,7 @@
         "item": "Shredded Cheddar or Monterey Jack cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Garnishes",
         "category": "Cheese"
       }
     },
@@ -300,6 +306,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "Optional Garnishes",
         "category": "Produce"
       }
     }

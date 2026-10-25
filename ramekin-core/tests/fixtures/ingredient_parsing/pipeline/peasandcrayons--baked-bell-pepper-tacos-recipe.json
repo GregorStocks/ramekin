@@ -3,7 +3,7 @@
   "recipe_slug": "baked-bell-pepper-tacos-recipe",
   "ingredients": [
     {
-      "raw": "4  large bell peppers",
+      "raw": "4 large bell peppers",
       "expected": {
         "item": "bell peppers",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "3-4 cups taco filling ((choose from below))",
+      "raw": "3-4 cups taco filling (choose from below)",
       "expected": {
         "item": "taco filling",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "3/4 cup shredded cheese (extra as desired)",
+      "raw": "¾ cup shredded cheese extra as desired",
       "expected": {
-        "item": "shredded cheese",
+        "item": "shredded cheese extra as desired",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "extra as desired",
-        "category": "Cheese"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3/4 cup chopped tomato",
+      "raw": "¾ cup chopped tomato",
       "expected": {
         "item": "chopped tomato",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "3/4 cup chopped lettuce",
+      "raw": "¾ cup chopped lettuce",
       "expected": {
         "item": "chopped lettuce",
         "measurements": [
@@ -73,20 +73,25 @@
       }
     },
     {
-      "raw": "cilantro and lime (as a tasty garnish)",
+      "raw": "cilantro and lime as a tasty garnish",
       "expected": {
-        "item": "cilantro and lime",
+        "item": "cilantro and lime as a tasty garnish",
         "measurements": [],
-        "note": "as a tasty garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "a. 1lb ground beef, chicken, or turkey",
+      "raw": "FEISTY FILLING OPTIONS:",
+      "is_section_header": true
+    },
+    {
+      "raw": "a. 1lb ground beef, chicken, or turkey seasoned your favorite way and browned on the stove-top! I use a combination of enchilada sauce (homemade or store bought) and homemade taco seasoning to flavor mine, plus a little mexican hot sacue for a kick! You can also make your protein option in advance and keep in the fridge for 2-3 days or freezer for emergency taco night filling. This also works with my lentil-veggie taco filling too!",
       "expected": {
-        "item": "a. 1lb ground beef, chicken, or turkey",
+        "item": "a. 1lb ground beef, chicken, or turkey seasoned your favorite way and browned on the stove-top! I use a combination of enchilada sauce and homemade taco seasoning to flavor mine",
         "measurements": [],
-        "note": null,
+        "note": "homemade or store bought, plus a little mexican hot sacue for a kick! You can also make your protein option in advance and keep in the fridge for 2-3 days or freezer for emergency taco night filling. This also works with my lentil-veggie taco filling too!",
+        "section": "Feisty Filling Options",
         "category": "Meat & Seafood"
       }
     },
@@ -96,20 +101,22 @@
         "item": "b. 3-4 cups Lentil Veggie Taco Filling",
         "measurements": [],
         "note": null,
+        "section": "Feisty Filling Options",
         "category": "Other"
       }
     },
     {
-      "raw": "c. 3-4 cups Seasoned tofu (like chipotle-style sofritos)",
+      "raw": "c. 3-4 cups Seasoned tofu like chipotle-style sofritos",
       "expected": {
-        "item": "3-4 cups Seasoned tofu",
+        "item": "3-4 cups Seasoned tofu like chipotle-style sofritos",
         "measurements": [
           {
             "amount": null,
             "unit": "cup"
           }
         ],
-        "note": "like chipotle-style sofritos",
+        "note": null,
+        "section": "Feisty Filling Options",
         "category": "Other"
       }
     },
@@ -119,8 +126,13 @@
         "item": "d. 2 cups Refried Beans",
         "measurements": [],
         "note": "or black beans + 1-2 cups sautéed veggies",
+        "section": "Feisty Filling Options",
         "category": "Other"
       }
+    },
+    {
+      "raw": "TASTY TOPPINGS (choose your favorites):",
+      "is_section_header": true
     },
     {
       "raw": "shredded cheddar or pepper jack cheese",
@@ -128,6 +140,7 @@
         "item": "shredded cheddar or pepper jack cheese",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Cheese"
       }
     },
@@ -137,6 +150,7 @@
         "item": "sour cream or plain Greek yogurt",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Dairy & Eggs"
       }
     },
@@ -146,6 +160,7 @@
         "item": "fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Produce"
       }
     },
@@ -155,6 +170,7 @@
         "item": "sliced jalapeños",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Produce"
       }
     },
@@ -164,6 +180,7 @@
         "item": "fresh or leftover grilled/roasted/sautéed veggies",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Other"
       }
     },
@@ -173,6 +190,7 @@
         "item": "fresh chopped avocado",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Produce"
       }
     },
@@ -182,6 +200,7 @@
         "item": "guacamole",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Condiments & Sauces"
       }
     },
@@ -191,6 +210,7 @@
         "item": "salsa verde",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Condiments & Sauces"
       }
     },
@@ -200,6 +220,7 @@
         "item": "pico de gallo",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,6 +230,7 @@
         "item": "salsa",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Condiments & Sauces"
       }
     },
@@ -218,6 +240,7 @@
         "item": "Looking for extra crunch? Try crumbling a few tortilla chips on top of your bell peppers or serve them with a side of chips and salsa!",
         "measurements": [],
         "note": null,
+        "section": "Tasty Toppings (Choose Your Favorites)",
         "category": "Other"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2022-06-strawberry-brita-cake",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 large eggs, separated",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "separated",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": "well-shaken",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -141,8 +153,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) fresh strawberries, halved or sliced",
@@ -159,6 +176,7 @@
           }
         ],
         "note": "halved or sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -173,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -191,6 +210,7 @@
           }
         ],
         "note": "divided",
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -209,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -250,6 +273,7 @@
         "item": "Confectioners’ sugar, for dusting, and mint leaves",
         "measurements": [],
         "note": "both optional, for garnish",
+        "section": "Assembly",
         "category": "Baking"
       }
     }

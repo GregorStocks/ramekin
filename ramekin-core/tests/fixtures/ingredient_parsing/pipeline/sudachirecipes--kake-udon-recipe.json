@@ -3,16 +3,21 @@
   "recipe_slug": "kake-udon-recipe",
   "ingredients": [
     {
-      "raw": "10 g dried sardines (niboshi) (substitute for dried shiitake mushrooms for plant-based diets)",
+      "raw": "Dashi Broth:",
+      "is_section_header": true
+    },
+    {
+      "raw": "10 g dried sardines (niboshi) substitute for dried shiitake mushrooms for plant-based diets",
       "expected": {
-        "item": "dried sardines",
+        "item": "dried sardines substitute for dried shiitake mushrooms for plant-based diets",
         "measurements": [
           {
             "amount": "10",
             "unit": "g"
           }
         ],
-        "note": "niboshi, substitute for dried shiitake mushrooms for plant-based diets",
+        "note": "niboshi",
+        "section": "Dashi Broth",
         "category": "Other"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": "kombu",
+        "section": "Dashi Broth",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "15 g bonito flakes (katsuobushi) ((katsuobushi) omit for plant-based diets)",
+      "raw": "15 g bonito flakes (katsuobushi) (katsuobushi) omit for plant-based diets",
       "expected": {
         "item": "bonito flakes omit for plant-based diets",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "katsuobushi, katsuobushi",
+        "section": "Dashi Broth",
         "category": "Other"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dashi Broth",
         "category": "Beverages"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Dashi Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Dashi Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Dashi Broth",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Contents:",
+      "is_section_header": true
     },
     {
       "raw": "5 portions udon noodles",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Contents",
         "category": "Pasta & Rice"
       }
     },
@@ -125,15 +141,17 @@
           }
         ],
         "note": null,
+        "section": "Contents",
         "category": "Produce"
       }
     },
     {
-      "raw": "toppings of your choice (see in post)",
+      "raw": "toppings of your choice see in post",
       "expected": {
-        "item": "toppings of your choice",
+        "item": "toppings of your choice see in post",
         "measurements": [],
-        "note": "see in post",
+        "note": null,
+        "section": "Contents",
         "category": "Other"
       }
     }

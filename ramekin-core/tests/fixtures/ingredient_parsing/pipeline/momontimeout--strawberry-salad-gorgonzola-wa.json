@@ -3,7 +3,7 @@
   "recipe_slug": "strawberry-salad-gorgonzola-wa",
   "ingredients": [
     {
-      "raw": "5 ounces spring mix ( (I like the 50/50 mix with half spring mix and half spinach)",
+      "raw": "5 ounces spring mix  (I like the 50/50 mix with half spring mix and half spinach",
       "expected": {
         "item": "spring mix",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "oz"
           }
         ],
-        "note": "(I like the 50/50 mix with half spring mix and half spinach",
+        "note": "I like the 50/50 mix with half spring mix and half spinach",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 pint strawberries (washed, hulled, sliced)",
+      "raw": "1 pint strawberries washed, hulled, sliced",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -45,32 +45,36 @@
       }
     },
     {
-      "raw": "3 ounces creamy Gorgonzola (look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind)",
+      "raw": "3 ounces creamy Gorgonzola look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind",
       "expected": {
-        "item": "creamy Gorgonzola",
+        "item": "creamy Gorgonzola look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": "look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind",
+        "note": null,
         "category": "Other"
       }
     },
     {
-      "raw": "½ cup mint  (chiffonade)",
+      "raw": "½ cup mint  chiffonade",
       "expected": {
-        "item": "mint",
+        "item": "mint chiffonade",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "chiffonade",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Balsamic Vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "¾ cup extra virgin olive oil",
@@ -83,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,11 +117,12 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon pepper (freshly ground)",
+      "raw": "½ teaspoon pepper freshly ground",
       "expected": {
         "item": "pepper",
         "measurements": [
@@ -125,6 +132,7 @@
           }
         ],
         "note": "freshly ground",
+        "section": "Balsamic Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,63 +3,87 @@
   "recipe_slug": "2022-05-chocolate-olive-oil-lo",
   "ingredients": [
     {
-      "raw": "1 1/4 cups all-purpose flour",
+      "raw": "For cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ¼ cups  / 156 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "156",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup Dutch-processed cocoa powder* (sifted)",
+      "raw": "¾ cup  / 68 g Dutch-processed cocoa powder*, sifted",
       "expected": {
         "item": "Dutch-processed cocoa powder",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  / 200 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup packed light brown sugar",
+      "raw": "½ cup  / 110 g packed light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
         "note": "packed",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 teaspoons baking powder",
+      "raw": "1 ½ teaspoons   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -69,11 +93,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoons baking soda",
+      "raw": "½ teaspoons   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -83,11 +108,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt",
+      "raw": "½ teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -97,11 +123,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon instant espresso powder (optional)",
+      "raw": "¼ teaspoon   instant espresso powder, optional",
       "expected": {
         "item": "instant espresso powder",
         "measurements": [
@@ -111,11 +138,12 @@
           }
         ],
         "note": "optional",
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2  large eggs (at room temperature)",
+      "raw": "2   large eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -125,25 +153,31 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup extra virgin olive oil",
+      "raw": "½ cup  / 112 g extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "112",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon vanilla extract",
+      "raw": "1 tablespoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -153,11 +187,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup boiling water",
+      "raw": "1 cup   boiling water",
       "expected": {
         "item": "boiling water",
         "measurements": [
@@ -167,39 +202,54 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 cup powdered sugar (sifted)",
+      "raw": "For Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  / 120 g powdered sugar, sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons milk or non-dairy milk",
+      "raw": "2 tablespoons  / 30 g milk or non-dairy milk",
       "expected": {
         "item": "milk or non-dairy milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "pinch fine sea salt",
+      "raw": "pinch   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -209,34 +259,45 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 cup dark or Dutch processed cocoa powder (sifted)",
+      "raw": "¼ cup  / 25 g dark or Dutch processed cocoa powder, sifted",
       "expected": {
         "item": "dark or Dutch processed cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon extra virgin olive oil",
+      "raw": "1 tablespoon  / 14 g extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Oils & Vinegars"
       }
     }

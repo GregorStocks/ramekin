@@ -3,6 +3,10 @@
   "recipe_slug": "pesto-pasta-recipe",
   "ingredients": [
     {
+      "raw": "Homemade Pesto Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups fresh basil",
       "expected": {
         "item": "fresh basil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pesto Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "6 Tablespoons pine nuts ((toasted))",
+      "raw": "6 Tablespoons pine nuts (toasted)",
       "expected": {
         "item": "pine nuts",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Homemade Pesto Sauce",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pesto Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pesto Sauce",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pesto Sauce",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pesto Sauce",
         "category": "Cheese"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pesto Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Homemade Pesto Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Pasta:",
+      "is_section_header": true
     },
     {
       "raw": "Salted Water",
@@ -120,11 +136,12 @@
         "item": "Salted Water",
         "measurements": [],
         "note": null,
+        "section": "Pasta",
         "category": "Beverages"
       }
     },
     {
-      "raw": "16 ounces bucatini spaghetti ((or your preferred pasta))",
+      "raw": "16 ounces bucatini spaghetti (or your preferred pasta)",
       "expected": {
         "item": "bucatini spaghetti",
         "measurements": [
@@ -134,6 +151,7 @@
           }
         ],
         "note": "or your preferred pasta",
+        "section": "Pasta",
         "category": "Other"
       }
     },
@@ -148,15 +166,17 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "Baby tomatoes, fresh basil, parmesan cheese, etc. ((optional garnishes))",
+      "raw": "Baby tomatoes, fresh basil, parmesan cheese, etc. (optional garnishes)",
       "expected": {
         "item": "Baby tomatoes, fresh basil, parmesan cheese, etc.",
         "measurements": [],
         "note": "optional garnishes",
+        "section": "Pasta",
         "category": "Other"
       }
     }

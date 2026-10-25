@@ -3,6 +3,10 @@
   "recipe_slug": "black-sesame-ice-cream-recipe",
   "ingredients": [
     {
+      "raw": "Black sesame paste:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ tbsp black sesame seeds",
       "expected": {
         "item": "black sesame seeds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Black Sesame Paste",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Black Sesame Paste",
         "category": "Other"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Black Sesame Paste",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Ice Cream:",
+      "is_section_header": true
     },
     {
       "raw": "200 ml whole milk",
@@ -55,21 +66,23 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "200 ml heavy cream (35% milk fat or higher)",
+      "raw": "200 ml heavy cream 35% milk fat or higher",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream 35% milk fat or higher",
         "measurements": [
           {
             "amount": "200",
             "unit": "ml"
           }
         ],
-        "note": "35% milk fat or higher",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Ice Cream",
+        "category": "Other"
       }
     },
     {
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  pasteurized egg yolk",
+      "raw": "2 pasteurized egg yolk",
       "expected": {
         "item": "pasteurized egg yolk",
         "measurements": [
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Baking"
       }
     },
@@ -125,16 +141,18 @@
           }
         ],
         "note": null,
+        "section": "Ice Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "ice cubes (to speed up cooling, optional)",
+      "raw": "ice cubes to speed up cooling, optional",
       "expected": {
-        "item": "ice cubes",
+        "item": "ice cubes to speed up cooling",
         "measurements": [],
-        "note": "to speed up cooling, optional",
-        "category": "Frozen"
+        "note": "optional",
+        "section": "Ice Cream",
+        "category": "Other"
       }
     }
   ]

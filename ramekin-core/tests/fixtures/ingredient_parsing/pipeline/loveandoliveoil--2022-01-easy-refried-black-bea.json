@@ -3,7 +3,7 @@
   "recipe_slug": "2022-01-easy-refried-black-bea",
   "ingredients": [
     {
-      "raw": "1 tablespoon olive oil",
+      "raw": "1 tablespoon   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon cumin",
+      "raw": "½ teaspoon   cumin",
       "expected": {
         "item": "cumin",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon dried oregano",
+      "raw": "½ teaspoon   dried oregano",
       "expected": {
         "item": "dried oregano",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon chipotle chili powder",
+      "raw": "½ teaspoon   chipotle chili powder",
       "expected": {
         "item": "chipotle chili powder",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 (14 oz) can black beans with liquid",
+      "raw": "1 (14 oz) can  / 396 g black beans with liquid",
       "expected": {
         "item": "black beans with liquid",
         "measurements": [
@@ -70,6 +70,10 @@
           {
             "amount": "14",
             "unit": "oz"
+          },
+          {
+            "amount": "396",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -77,7 +81,7 @@
       }
     },
     {
-      "raw": "1 tablespoon pickled jalapeños (finely chopped (plus more for topping as desired))",
+      "raw": "1 tablespoon   pickled jalapeños, finely chopped (plus more for topping as desired)",
       "expected": {
         "item": "pickled jalapeños",
         "measurements": [
@@ -86,12 +90,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely chopped (plus more for topping as desired)",
+        "note": "plus more for topping as desired, finely chopped",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 tablespoon pickled jalapeño juice",
+      "raw": "1 tablespoon   pickled jalapeño juice",
       "expected": {
         "item": "pickled jalapeño juice",
         "measurements": [
@@ -105,7 +109,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "½ teaspoon   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -119,7 +123,7 @@
       }
     },
     {
-      "raw": "small flour or corn tortillas (warmed)",
+      "raw": "small flour or corn tortillas, warmed",
       "expected": {
         "item": "flour or corn tortillas",
         "measurements": [
@@ -133,11 +137,16 @@
       }
     },
     {
+      "raw": "Optional toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Sour cream",
       "expected": {
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +156,7 @@
         "item": "Shredded cheese",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -156,15 +166,17 @@
         "item": "Fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "Romaine or iceberg lettuce (finely shredded)",
+      "raw": "Romaine or iceberg lettuce, finely shredded",
       "expected": {
         "item": "Romaine or iceberg lettuce",
         "measurements": [],
         "note": "finely shredded",
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -174,6 +186,7 @@
         "item": "Hot sauce or salsa",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -183,6 +196,7 @@
         "item": "Shaved red onion or thinly sliced radish",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

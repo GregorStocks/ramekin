@@ -3,30 +3,36 @@
   "recipe_slug": "strawberry-cheesecake-donut-ho",
   "ingredients": [
     {
-      "raw": "1 cup self raising flour (or plain, all-purpose flour)",
+      "raw": "Donut Holes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup self raising flour or plain, all-purpose flour",
       "expected": {
-        "item": "self raising flour",
+        "item": "self raising flour or plain, all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or plain, all-purpose flour",
+        "note": null,
+        "section": "Donut Holes",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons sugar (white, raw or coconut sugar)",
+      "raw": "2 tablespoons sugar white, raw or coconut sugar",
       "expected": {
-        "item": "sugar",
+        "item": "sugar white, raw or coconut sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "white, raw or coconut sugar",
+        "note": null,
+        "section": "Donut Holes",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Donut Holes",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,49 +62,53 @@
           }
         ],
         "note": null,
+        "section": "Donut Holes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon baking soda (only if using plain or all purpose flour/s)",
+      "raw": "1/2 teaspoon baking soda only if using plain or all purpose flour/s",
       "expected": {
-        "item": "baking soda",
+        "item": "baking soda only if using plain or all purpose flour/s",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "only if using plain or all purpose flour/s",
-        "category": "Baking"
+        "note": null,
+        "section": "Donut Holes",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons olive oil (or canola or melted coconut oil)",
+      "raw": "2 tablespoons olive oil or canola or melted coconut oil",
       "expected": {
-        "item": "olive oil",
+        "item": "olive oil or canola or melted coconut oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or canola or melted coconut oil",
+        "note": null,
+        "section": "Donut Holes",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  egg (large)",
+      "raw": "1 egg large",
       "expected": {
-        "item": "egg",
+        "item": "egg large",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "large",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Donut Holes",
+        "category": "Other"
       }
     },
     {
@@ -111,76 +122,86 @@
           }
         ],
         "note": null,
+        "section": "Donut Holes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup unsweetened almond milk (or low fat/skim milk)",
+      "raw": "1/2 cup unsweetened almond milk or low fat/skim milk",
       "expected": {
-        "item": "unsweetened almond milk",
+        "item": "unsweetened almond milk or low fat/skim milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or low fat/skim milk",
+        "note": null,
+        "section": "Donut Holes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup sugar (or mild tasting sweetener for coating)",
+      "raw": "1/4 cup sugar or mild tasting sweetener for coating",
       "expected": {
-        "item": "sugar",
+        "item": "sugar or mild tasting sweetener",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or mild tasting sweetener for coating",
+        "note": "for coating",
+        "section": "Donut Holes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup reduced fat cream cheese (block or spreadable)",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/3 cup reduced fat cream cheese block or spreadable",
       "expected": {
-        "item": "reduced fat cream cheese",
+        "item": "reduced fat cream cheese block or spreadable",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "block or spreadable",
-        "category": "Cheese"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons powdered sugar (icing sugar)",
+      "raw": "2 tablespoons powdered sugar icing sugar",
       "expected": {
-        "item": "powdered sugar",
+        "item": "powdered sugar icing sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "icing sugar",
-        "category": "Baking"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons strawberry jam (or jelly, or topping if you prefer)",
+      "raw": "2 tablespoons strawberry jam or jelly, or topping if you prefer",
       "expected": {
-        "item": "strawberry jam",
+        "item": "strawberry jam or jelly, or topping if you prefer",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or jelly, or topping if you prefer",
+        "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     }

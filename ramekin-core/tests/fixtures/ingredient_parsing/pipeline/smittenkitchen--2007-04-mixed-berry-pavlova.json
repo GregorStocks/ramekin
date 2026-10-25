@@ -3,13 +3,8 @@
   "recipe_slug": "2007-04-mixed-berry-pavlova",
   "ingredients": [
     {
-      "raw": "Meringue Cake",
-      "expected": {
-        "item": "Meringue Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Meringue Cake:",
+      "is_section_header": true
     },
     {
       "raw": "4 large (120 grams) egg whites",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue Cake",
         "category": "Baking"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": "castor, regular",
+        "section": "Meringue Cake",
         "category": "Baking"
       }
     },
@@ -86,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -100,17 +100,17 @@
           }
         ],
         "note": null,
+        "section": "Meringue Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "Whipped Cream",
-      "expected": {
-        "item": "Whipped Cream",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "raw": "Jaworski Notes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy whipping cream",
@@ -123,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -137,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Baking"
       }
     },
@@ -151,11 +153,12 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "Mixed Berry Topping",
+      "raw": "Mixed Berry Topping:",
       "is_section_header": true
     },
     {

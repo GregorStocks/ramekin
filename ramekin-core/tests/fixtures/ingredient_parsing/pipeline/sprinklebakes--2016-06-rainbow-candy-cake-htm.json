@@ -3,9 +3,13 @@
   "recipe_slug": "2016-06-rainbow-candy-cake-htm",
   "ingredients": [
     {
-      "raw": "6 1/2  cups/790 g cake flour (not self-rising, sifted)",
+      "raw": "Rainbow cake layers:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 1/2 cups/790 g cake flour not self-rising, sifted",
       "expected": {
-        "item": "cake flour",
+        "item": "cake flour not self-rising",
         "measurements": [
           {
             "amount": "6.5",
@@ -16,8 +20,9 @@
             "unit": "g"
           }
         ],
-        "note": "not self-rising, sifted",
-        "category": "Baking"
+        "note": "sifted",
+        "section": "Rainbow Cake Layers",
+        "category": "Other"
       }
     },
     {
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Baking"
       }
     },
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 1/4  cups/500 ml whole milk",
+      "raw": "2 1/4 cups/500 ml whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -77,13 +85,14 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 cups plus 4 tablespoons/395 g unsalted butter (room temperature)",
+      "raw": "1 1/2 cups plus 4 tablespoons/395 g unsalted butter room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter room temperature",
         "measurements": [
           {
             "amount": "1 1/2 cups plus 4 tablespoons",
@@ -94,12 +103,13 @@
             "unit": "g"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Rainbow Cake Layers",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 1/2  cups/490 g granulated sugar",
+      "raw": "2 1/2 cups/490 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -113,11 +123,12 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "10  large egg whites",
+      "raw": "10 large egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -127,20 +138,26 @@
           }
         ],
         "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Wilton or Americolor gel food colors: red (orange, yellow, green, blue, purple)",
+      "raw": "Wilton or Americolor gel food colors: red orange, yellow, green, blue, purple",
       "expected": {
-        "item": "Wilton or Americolor gel food colors: red",
+        "item": "Wilton or Americolor gel food colors: red orange, yellow, green, blue, purple",
         "measurements": [],
-        "note": "orange, yellow, green, blue, purple",
+        "note": null,
+        "section": "Rainbow Cake Layers",
         "category": "Other"
       }
     },
     {
-      "raw": "12  egg whites",
+      "raw": "Vanilla Swiss meringue buttercream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -150,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 1/2  cups/500g sugar",
+      "raw": "2 1/2 cups/500g sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -168,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Baking"
       }
     },
@@ -182,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 1/2 pounds unsalted butter (softened)",
+      "raw": "2 1/2 pounds unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -196,6 +216,7 @@
           }
         ],
         "note": "softened",
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -210,39 +231,46 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Swiss Meringue Buttercream",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  packages (12.4 ounces each Twizzler Rainbow Candy Twists)",
+      "raw": "Décor:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 packages 12.4 ounces each Twizzler Rainbow Candy Twists",
       "expected": {
-        "item": "Twizzler Rainbow Candy Twists",
+        "item": "12.4 ounces each Twizzler Rainbow Candy Twists",
         "measurements": [
           {
             "amount": "2",
             "unit": "package"
           }
         ],
-        "note": "12.4 ounces each Twizzler Rainbow Candy Twists",
+        "note": null,
+        "section": "Décor",
         "category": "Other"
       }
     },
     {
-      "raw": "3 tablespoons rainbow sprinkles (jimmies)",
+      "raw": "3 tablespoons rainbow sprinkles jimmies",
       "expected": {
-        "item": "rainbow sprinkles",
+        "item": "rainbow sprinkles jimmies",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "jimmies",
-        "category": "Baking"
+        "note": null,
+        "section": "Décor",
+        "category": "Other"
       }
     },
     {
-      "raw": "36  gummy bears",
+      "raw": "36 gummy bears",
       "expected": {
         "item": "gummy bears",
         "measurements": [
@@ -252,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Décor",
         "category": "Snacks"
       }
     }

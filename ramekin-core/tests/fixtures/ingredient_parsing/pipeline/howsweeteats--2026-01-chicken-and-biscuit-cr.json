@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  sweet onion, (diced)",
+      "raw": "1 sweet onion, diced",
       "expected": {
         "item": "sweet onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2  large carrots, (peeled and diced or cut into rounds)",
+      "raw": "2 large carrots, peeled and diced or cut into rounds",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2  celery stalks, (diced)",
+      "raw": "2 celery stalks, diced",
       "expected": {
         "item": "celery stalks",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "4  garlic cloves, (minced)",
+      "raw": "4 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -124,6 +124,10 @@
       }
     },
     {
+      "raw": "crumble topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ¾ cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -134,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Baking"
       }
     },
@@ -148,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Baking"
       }
     },
@@ -162,11 +168,12 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6 tablespoons cold butter, (cut into tiny pieces)",
+      "raw": "6 tablespoons cold butter, cut into tiny pieces",
       "expected": {
         "item": "cold butter",
         "measurements": [
@@ -176,6 +183,7 @@
           }
         ],
         "note": "cut into tiny pieces",
+        "section": "Crumble Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble Topping",
         "category": "Dairy & Eggs"
       }
     }

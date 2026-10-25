@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  avocados (mashed)",
+      "raw": "2 avocados, mashed",
       "expected": {
         "item": "avocados",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4  pepperjack cheese slices",
+      "raw": "4 pepperjack cheese slices",
       "expected": {
         "item": "pepperjack cheese slices",
         "measurements": [
@@ -59,16 +59,16 @@
       }
     },
     {
-      "raw": "½ cup light mayo  (or sour cream)",
+      "raw": "½ cup light mayo , or sour cream",
       "expected": {
-        "item": "light mayo",
+        "item": "light mayo, or sour cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or sour cream",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "4  hamburger buns",
+      "raw": "4 hamburger buns",
       "expected": {
         "item": "hamburger buns",
         "measurements": [
@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "Tex Mex Seasoning:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon garlic powder",
       "expected": {
         "item": "garlic powder",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Tex Mex Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Tex Mex Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Tex Mex Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Tex Mex Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Tex Mex Seasoning",
         "category": "Spices & Seasonings"
       }
     }

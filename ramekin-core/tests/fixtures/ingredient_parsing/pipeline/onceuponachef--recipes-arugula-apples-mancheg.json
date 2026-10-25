@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-arugula-apples-mancheg",
   "ingredients": [
     {
+      "raw": "For the Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 ounces arugula or baby arugula",
       "expected": {
         "item": "arugula or baby arugula",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  crisp apple, (such as Fuji or Honeycrisp)",
+      "raw": "1 crisp apple, such as Fuji or Honeycrisp",
       "expected": {
         "item": "crisp apple",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "such as Fuji or Honeycrisp",
+        "section": "For the Salad",
         "category": "Beverages"
       }
     },
     {
-      "raw": "3½ ounces Manchego, (thinly sliced)",
+      "raw": "3½ ounces Manchego, thinly sliced",
       "expected": {
         "item": "Manchego",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Cheese"
       }
     },
     {
-      "raw": "½ cup sliced almonds, (lightly toasted if desired)",
+      "raw": "½ cup sliced almonds, lightly toasted if desired",
       "expected": {
         "item": "sliced almonds",
         "measurements": [
@@ -55,8 +62,13 @@
           }
         ],
         "note": "lightly toasted if desired",
+        "section": "For the Salad",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the Vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons cider vinegar",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon finely chopped shallots, (from 1 shallot)",
+      "raw": "1 tablespoon finely chopped shallots, from 1 shallot",
       "expected": {
         "item": "finely chopped shallots",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": "from 1 shallot",
+        "section": "For the Vinaigrette",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

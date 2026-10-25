@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  mahi mahi fish filets",
+      "raw": "4 mahi mahi fish filets",
       "expected": {
         "item": "mahi mahi fish filets",
         "measurements": [
@@ -49,6 +49,10 @@
       }
     },
     {
+      "raw": "Brown Butter Lime Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -59,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Produce"
       }
     },
@@ -87,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Baking"
       }
     },
@@ -101,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Produce"
       }
     },
@@ -115,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,43 +138,42 @@
           }
         ],
         "note": null,
+        "section": "Brown Butter Lime Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 large diced avocado  (about 1 cup)",
+      "raw": "Avocado Salsa:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 large diced avocado  about 1 cup",
       "expected": {
-        "item": "diced avocado",
+        "item": "diced avocado about 1 cup",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
-        "note": "about 1 cup",
-        "category": "Produce"
+        "note": null,
+        "section": "Avocado Salsa",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  diced Roma tomato  (about ½ cup)",
+      "raw": "1 diced Roma tomato  about ½ cup",
       "expected": {
-        "item": "diced Roma tomato",
+        "item": "diced Roma tomato about 1/2 cup",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "0.5",
-            "unit": "cup"
           }
         ],
-        "note": "about 1/2 cup",
-        "category": "Produce"
+        "note": null,
+        "section": "Avocado Salsa",
+        "category": "Other"
       }
     },
     {
@@ -179,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Produce"
       }
     },
@@ -193,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Produce"
       }
     },
@@ -207,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Produce"
       }
     },
@@ -221,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Produce"
       }
     },
@@ -235,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Avocado Salsa",
         "category": "Spices & Seasonings"
       }
     }

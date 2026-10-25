@@ -3,13 +3,8 @@
   "recipe_slug": "2007-09-bronx-worthy-bagels",
   "ingredients": [
     {
-      "raw": "Sponge",
-      "expected": {
-        "item": "Sponge",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Sponge:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon instant yeast",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "see note below",
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -50,11 +47,12 @@
           }
         ],
         "note": "room temperature",
+        "section": "Sponge",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Dough",
+      "raw": "Dough:",
       "is_section_header": true
     },
     {

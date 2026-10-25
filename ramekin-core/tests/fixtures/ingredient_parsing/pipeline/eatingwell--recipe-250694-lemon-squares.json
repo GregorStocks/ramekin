@@ -17,9 +17,9 @@
       }
     },
     {
-      "raw": "0.33300000429153 cup confectioners&amp;amp;#8217; sugar",
+      "raw": "0.33300000429153 cup confectioners’ sugar",
       "expected": {
-        "item": "confectioners&#8217; sugar",
+        "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "0.33",
@@ -194,9 +194,9 @@
       }
     },
     {
-      "raw": "Confectioners&amp;amp;#8217; sugar for garnish",
+      "raw": "Confectioners’ sugar for garnish",
       "expected": {
-        "item": "Confectioners&#8217; sugar",
+        "item": "Confectioners’ sugar",
         "measurements": [],
         "note": "for garnish",
         "category": "Baking"

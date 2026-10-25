@@ -3,11 +3,16 @@
   "recipe_slug": "2018-03-15-favorite-kale-salad",
   "ingredients": [
     {
+      "raw": "for the toasted bread crumbs (totally optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs, see notes",
       "expected": {
         "item": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs",
         "measurements": [],
         "note": "see notes",
+        "section": "For the Toasted Bread Crumbs (Totally Optional)",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": null,
+        "section": "For the Toasted Bread Crumbs (Totally Optional)",
         "category": "Oils & Vinegars"
       }
     },
@@ -36,8 +42,13 @@
           }
         ],
         "note": null,
+        "section": "For the Toasted Bread Crumbs (Totally Optional)",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "for the large-batch shallot vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "3 to 4 shallots, peeled and coarsely chopped",
@@ -50,6 +61,7 @@
           }
         ],
         "note": "peeled and coarsely chopped",
+        "section": "For the Large-Batch Shallot Vinaigrette",
         "category": "Produce"
       }
     },
@@ -64,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "For the Large-Batch Shallot Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "For the Large-Batch Shallot Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,8 +106,13 @@
           }
         ],
         "note": null,
+        "section": "For the Large-Batch Shallot Vinaigrette",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "for assembly:",
+      "is_section_header": true
     },
     {
       "raw": "Tuscan kale, however many heads you need, stems removed, leaves finely chopped",
@@ -101,6 +120,7 @@
         "item": "Tuscan kale, however many heads you need",
         "measurements": [],
         "note": "stems removed, leaves finely chopped",
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
@@ -110,6 +130,7 @@
         "item": "grated Parmigiano Reggiano",
         "measurements": [],
         "note": null,
+        "section": "For Assembly",
         "category": "Cheese"
       }
     },
@@ -119,6 +140,7 @@
         "item": "toasted bread crumbs",
         "measurements": [],
         "note": "optional",
+        "section": "For Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -128,6 +150,7 @@
         "item": "shallot vinaigrette",
         "measurements": [],
         "note": "to taste",
+        "section": "For Assembly",
         "category": "Other"
       }
     },
@@ -137,6 +160,7 @@
         "item": "freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For Assembly",
         "category": "Spices & Seasonings"
       }
     }

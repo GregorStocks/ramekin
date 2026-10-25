@@ -73,9 +73,9 @@
       }
     },
     {
-      "raw": "2 cups red peppers, chopped",
+      "raw": "2 cups red pepper, chopped",
       "expected": {
-        "item": "red peppers",
+        "item": "red pepper",
         "measurements": [
           {
             "amount": "2",
@@ -83,7 +83,7 @@
           }
         ],
         "note": "chopped",
-        "category": "Produce"
+        "category": "Spices & Seasonings"
       }
     },
     {

@@ -3,7 +3,7 @@
   "recipe_slug": "naan-recipe",
   "ingredients": [
     {
-      "raw": "1 tsp instant / rapid rise yeast ((Note 1))",
+      "raw": "1 tsp instant / rapid rise yeast (Note 1)",
       "expected": {
         "item": "instant / rapid rise yeast",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1/2 cup warm tap water ((~40°C/105°F in temperature))",
+      "raw": "1/2 cup warm tap water (~40°C/105°F in temperature)",
       "expected": {
         "item": "warm tap water",
         "measurements": [
@@ -45,63 +45,63 @@
       }
     },
     {
-      "raw": "2 tbsp milk (, full fat (low fat ok too))",
+      "raw": "2 tbsp milk , full fat (low fat ok too)",
       "expected": {
-        "item": "milk",
+        "item": "milk, full fat",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "full fat (low fat ok too)",
+        "note": "low fat ok too",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 1/2 tbsp whisked egg (, at room temp (around 1/2 an egg, Note 2))",
+      "raw": "1 1/2 tbsp whisked egg , at room temp (around 1/2 an egg, Note 2)",
       "expected": {
-        "item": "whisked egg",
+        "item": "whisked egg, at room temp",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": "at room temp (around 1/2 an egg, Note 2)",
+        "note": "around 1/2 an egg, Note 2",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 tsp salt (, cooking / kosher)",
+      "raw": "1/2 tsp salt , cooking / kosher",
       "expected": {
-        "item": "salt",
+        "item": "salt, cooking / kosher",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "cooking / kosher",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 3/4 cups bread flour (, or all-purpose/plain (Note 3))",
+      "raw": "1 3/4 cups bread flour , or all-purpose/plain (Note 3)",
       "expected": {
-        "item": "bread flour",
+        "item": "bread flour, or all-purpose/plain",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": "or all-purpose/plain (Note 3)",
+        "note": "Note 3",
         "category": "Baking"
       }
     },
     {
-      "raw": "30g / 2 tbsp  ghee or unsalted butter (, melted (Note 4))",
+      "raw": "30g / 2 tbsp ghee or unsalted butter , melted (Note 4)",
       "expected": {
         "item": "ghee or unsalted butter",
         "measurements": [
@@ -114,12 +114,16 @@
             "unit": "tbsp"
           }
         ],
-        "note": "melted (Note 4)",
+        "note": "Note 4, melted",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "30g / 2 tbsp tbsp ghee or butter (, melted (Note 4))",
+      "raw": "Finishes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "30g / 2 tbsp tbsp ghee or butter , melted (Note 4)",
       "expected": {
         "item": "tbsp ghee or butter",
         "measurements": [
@@ -132,12 +136,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": "melted (Note 4)",
+        "note": "Note 4, melted",
+        "section": "Finishes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  small garlic clove (, for Garlic Butter option (Note 5))",
+      "raw": "1 small garlic clove , for Garlic Butter option (Note 5)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -146,7 +151,8 @@
             "unit": "small"
           }
         ],
-        "note": "for Garlic Butter option (Note 5)",
+        "note": "Note 5, for Garlic Butter option",
+        "section": "Finishes",
         "category": "Produce"
       }
     },
@@ -156,24 +162,31 @@
         "item": "Nigella seeds",
         "measurements": [],
         "note": null,
+        "section": "Finishes",
         "category": "Other"
       }
     },
     {
-      "raw": "Coriander/cilantro (, finely chopped)",
+      "raw": "Coriander/cilantro , finely chopped",
       "expected": {
         "item": "Coriander/cilantro",
         "measurements": [],
         "note": "finely chopped",
+        "section": "Finishes",
         "category": "Other"
       }
     },
     {
-      "raw": "Shredded cheese ((for cheese naan) – Monterey Jack, cheddar, tasty, colby, anything that melts (shred yourself) (Note 6))",
+      "raw": "Cheese Naan:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Shredded cheese (for cheese naan) – Monterey Jack, cheddar, tasty, colby, anything that melts (shred yourself) (Note 6)",
       "expected": {
         "item": "Shredded cheese - Monterey Jack, cheddar, tasty, colby, anything that melts",
         "measurements": [],
         "note": "for cheese naan, shred yourself, Note 6",
+        "section": "Cheese Naan",
         "category": "Other"
       }
     }

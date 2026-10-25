@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "Black Pepper Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 teaspoons Sichuan peppercorn powder",
       "expected": {
         "item": "Sichuan peppercorn powder",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Black Pepper Sauce",
         "category": "Other"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": "freshly ground",
+        "section": "Black Pepper Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Black Pepper Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": "low sodium",
+        "section": "Black Pepper Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Black Pepper Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Black Pepper Sauce",
         "category": "Beverages"
       }
     }

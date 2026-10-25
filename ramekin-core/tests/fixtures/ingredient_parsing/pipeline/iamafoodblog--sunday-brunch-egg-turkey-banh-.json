@@ -3,6 +3,10 @@
   "recipe_slug": "sunday-brunch-egg-turkey-banh-",
   "ingredients": [
     {
+      "raw": "Sandwich:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 vietnamese baguette",
       "expected": {
         "item": "vietnamese baguette",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sandwich",
         "category": "Other"
       }
     },
@@ -22,6 +27,7 @@
         "item": "kewpie mayo",
         "measurements": [],
         "note": "to taste",
+        "section": "Sandwich",
         "category": "Condiments & Sauces"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Sandwich",
         "category": "Other"
       }
     },
@@ -45,6 +52,7 @@
         "item": "quick-pickled daikon and carrots",
         "measurements": [],
         "note": null,
+        "section": "Sandwich",
         "category": "Other"
       }
     },
@@ -54,6 +62,7 @@
         "item": "cucumber spears",
         "measurements": [],
         "note": null,
+        "section": "Sandwich",
         "category": "Other"
       }
     },
@@ -63,6 +72,7 @@
         "item": "fresh cilantro sprigs",
         "measurements": [],
         "note": null,
+        "section": "Sandwich",
         "category": "Produce"
       }
     },
@@ -72,6 +82,7 @@
         "item": "sliced jalapeños",
         "measurements": [],
         "note": "if desired",
+        "section": "Sandwich",
         "category": "Produce"
       }
     },
@@ -86,8 +97,13 @@
           }
         ],
         "note": "or 1 regular fried egg",
+        "section": "Sandwich",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Pickles:",
+      "is_section_header": true
     },
     {
       "raw": "1 large carrot, julienned",
@@ -100,6 +116,7 @@
           }
         ],
         "note": "julienned",
+        "section": "Pickles",
         "category": "Produce"
       }
     },
@@ -114,6 +131,7 @@
           }
         ],
         "note": "julienned",
+        "section": "Pickles",
         "category": "Produce"
       }
     },
@@ -128,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Pickles",
         "category": "Spices & Seasonings"
       }
     },
@@ -142,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Pickles",
         "category": "Baking"
       }
     }

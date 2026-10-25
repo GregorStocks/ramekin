@@ -3,7 +3,11 @@
   "recipe_slug": "japanese-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "6  eggs (, whites and yolks separated)",
+      "raw": "Japanese Cheesecake Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6   eggs , whites and yolks separated",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "whites and yolks separated",
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 teaspoon kosher salt",
+      "raw": "1/4 teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3/4 cup (150g) sugar",
+      "raw": "3/4 cup   (150g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (120ml) milk",
+      "raw": "1/2 cup   (120ml) milk",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -63,11 +70,12 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 ounces (225g) cream cheese (, at room temperature)",
+      "raw": "8 ounces   (225g) cream cheese , at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -81,11 +89,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/4 cup (56g) unsalted butter (, at room temperature)",
+      "raw": "1/4 cup   (56g) unsalted butter , at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -99,6 +108,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -108,11 +118,12 @@
         "item": "finely grated zest from one medium lemon",
         "measurements": [],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon (15ml) fresh lemon juice",
+      "raw": "1 tablespoon   (15ml) fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -126,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon (5ml) vanilla extract",
+      "raw": "1 teaspoon   (5ml) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -144,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (60g) cake flour",
+      "raw": "1/2 cup   (60g) cake flour",
       "expected": {
         "item": "cake flour",
         "measurements": [
@@ -162,11 +175,12 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons (30ml) cornstarch",
+      "raw": "2 tablespoons   (30ml) cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -180,11 +194,16 @@
           }
         ],
         "note": null,
+        "section": "Japanese Cheesecake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (240ml or 150g) berries ( (blueberries, raspberries and/or strawberries cut into 1/2-inch pieces))",
+      "raw": "Berry Sauce Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup   (240ml or 150g) berries  (blueberries, raspberries and/or strawberries cut into 1/2-inch pieces)",
       "expected": {
         "item": "berries",
         "measurements": [
@@ -201,12 +220,13 @@
             "unit": "g"
           }
         ],
-        "note": "(blueberries, raspberries and/or strawberries cut into 1/2-inch pieces)",
+        "note": "blueberries, raspberries and/or strawberries cut into 1/2-inch pieces",
+        "section": "Berry Sauce Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup (50g) sugar",
+      "raw": "1/4 cup   (50g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -220,11 +240,12 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon (15ml) fresh lemon juice",
+      "raw": "1 tablespoon   (15ml) fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -238,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce Ingredients",
         "category": "Produce"
       }
     }

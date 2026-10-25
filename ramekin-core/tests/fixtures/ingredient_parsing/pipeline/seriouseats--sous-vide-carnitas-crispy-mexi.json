@@ -3,7 +3,7 @@
   "recipe_slug": "sous-vide-carnitas-crispy-mexi",
   "ingredients": [
     {
-      "raw": "4 pounds (1.8kg) boneless pork shoulder, cut into 2-inch-thick slabs",
+      "raw": "4 pounds (1.8 kg) boneless pork shoulder, cut into 2-inch-thick slabs",
       "expected": {
         "item": "boneless pork shoulder",
         "measurements": [
@@ -100,11 +100,16 @@
       }
     },
     {
+      "raw": "To Serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "Warm corn tortillas",
       "expected": {
         "item": "Warm corn tortillas",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -114,6 +119,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -123,15 +129,17 @@
         "item": "Chopped white onion and fresh cilantro leaves",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
     {
-      "raw": "Charred Salsa Verde or other salsa",
+      "raw": "Charred salsa verde or other salsa",
       "expected": {
-        "item": "Charred Salsa Verde or other salsa",
+        "item": "Charred salsa verde or other salsa",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Condiments & Sauces"
       }
     }

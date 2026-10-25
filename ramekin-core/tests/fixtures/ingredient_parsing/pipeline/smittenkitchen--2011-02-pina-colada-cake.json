@@ -3,13 +3,8 @@
   "recipe_slug": "2011-02-pina-colada-cake",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (250 grams or 8 3/4 ounces) all-purpose flour",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -134,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Beverages"
       }
     },
@@ -148,6 +150,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -166,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -188,17 +192,13 @@
           }
         ],
         "note": "or pineapple from a can, strained, juice reserved",
+        "section": "Cake",
         "category": "Produce"
       }
     },
     {
-      "raw": "To brush over the cake",
-      "expected": {
-        "item": "To brush over the cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "To brush over the cake:",
+      "is_section_header": true
     },
     {
       "raw": "1 to 2 tablespoons rum (optional)",
@@ -211,6 +211,7 @@
           }
         ],
         "note": "optional",
+        "section": "To Brush Over the Cake",
         "category": "Beverages"
       }
     },
@@ -225,11 +226,12 @@
           }
         ],
         "note": "optional",
+        "section": "To Brush Over the Cake",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Glaze",
+      "raw": "Glaze:",
       "is_section_header": true
     },
     {

@@ -3,30 +3,36 @@
   "recipe_slug": "ebi-mayo-recipe",
   "ingredients": [
     {
-      "raw": "70 g cake flour (lower protein content for lighter batter)",
+      "raw": "Batter:",
+      "is_section_header": true
+    },
+    {
+      "raw": "70 g cake flour lower protein content for lighter batter",
       "expected": {
-        "item": "cake flour",
+        "item": "cake flour lower protein content for lighter batter",
         "measurements": [
           {
             "amount": "70",
             "unit": "g"
           }
         ],
-        "note": "lower protein content for lighter batter",
-        "category": "Baking"
+        "note": null,
+        "section": "Batter",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tbsp rice flour (or corn starch)",
+      "raw": "1 tbsp rice flour or corn starch",
       "expected": {
-        "item": "rice flour",
+        "item": "rice flour or corn starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or corn starch",
+        "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Baking"
       }
     },
@@ -55,22 +62,28 @@
           }
         ],
         "note": null,
+        "section": "Batter",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "100 ml lager beer (or soda water, must be very cold)",
+      "raw": "100 ml lager beer or soda water, must be very cold",
       "expected": {
-        "item": "lager beer",
+        "item": "lager beer or soda water",
         "measurements": [
           {
             "amount": "100",
             "unit": "ml"
           }
         ],
-        "note": "or soda water, must be very cold",
+        "note": "must be very cold",
+        "section": "Batter",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Mayonnaise Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "4 tbsp Japanese mayonnaise",
@@ -83,21 +96,23 @@
           }
         ],
         "note": null,
+        "section": "Mayonnaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tbsp condensed milk (sweetened, not evaporated milk)",
+      "raw": "1 tbsp condensed milk sweetened, not evaporated milk",
       "expected": {
-        "item": "condensed milk",
+        "item": "condensed milk sweetened, not evaporated milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "sweetened, not evaporated milk",
-        "category": "Canned Goods"
+        "note": null,
+        "section": "Mayonnaise Sauce",
+        "category": "Other"
       }
     },
     {
@@ -111,21 +126,23 @@
           }
         ],
         "note": null,
+        "section": "Mayonnaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp rice vinegar (unseasoned)",
+      "raw": "1 tsp rice vinegar unseasoned",
       "expected": {
-        "item": "rice vinegar",
+        "item": "rice vinegar unseasoned",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "unseasoned",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "section": "Mayonnaise Sauce",
+        "category": "Other"
       }
     },
     {
@@ -139,95 +156,106 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Mayonnaise Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ tsp lemon juice (or lime juice, freshly squeezed best)",
+      "raw": "½ tsp lemon juice or lime juice, freshly squeezed best",
       "expected": {
-        "item": "lemon juice",
+        "item": "lemon juice or lime juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or lime juice, freshly squeezed best",
+        "note": "freshly squeezed best",
+        "section": "Mayonnaise Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ tsp paprika powder (regular or smoked)",
+      "raw": "½ tsp paprika powder regular or smoked",
       "expected": {
-        "item": "paprika powder",
+        "item": "paprika powder regular or smoked",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "regular or smoked",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "Mayonnaise Sauce",
+        "category": "Other"
       }
     },
     {
-      "raw": "250 g shrimp (medium to large size, deshelled and deveined, black tiger or white shrimp)",
+      "raw": "Ebi Mayo:",
+      "is_section_header": true
+    },
+    {
+      "raw": "250 g shrimp medium to large size, deshelled and deveined, black tiger or white shrimp",
       "expected": {
-        "item": "shrimp",
+        "item": "shrimp medium to large size, deshelled and deveined, black tiger or white shrimp",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": "medium to large size, deshelled and deveined, black tiger or white shrimp",
+        "note": null,
+        "section": "Ebi Mayo",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tsp cornstarch (for cleaning)",
+      "raw": "1 tsp cornstarch for cleaning",
       "expected": {
-        "item": "cornstarch",
+        "item": "cornstarch for cleaning",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "for cleaning",
-        "category": "Baking"
+        "note": null,
+        "section": "Ebi Mayo",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 pinches salt (for cleaning)",
+      "raw": "2 pinches salt for cleaning",
       "expected": {
-        "item": "salt",
+        "item": "salt for cleaning",
         "measurements": [
           {
             "amount": "2",
             "unit": "pinch"
           }
         ],
-        "note": "for cleaning",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "Ebi Mayo",
+        "category": "Other"
       }
     },
     {
-      "raw": "3 tbsp cornstarch (or potato starch)",
+      "raw": "3 tbsp cornstarch or potato starch",
       "expected": {
-        "item": "cornstarch",
+        "item": "cornstarch or potato starch",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "or potato starch",
+        "note": null,
+        "section": "Ebi Mayo",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 cloves garlic (peeled, whole)",
+      "raw": "2 cloves garlic peeled, whole",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -237,25 +265,28 @@
           }
         ],
         "note": "peeled, whole",
+        "section": "Ebi Mayo",
         "category": "Produce"
       }
     },
     {
-      "raw": "cooking oil (neutral with high smoke point)",
+      "raw": "cooking oil neutral with high smoke point",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil neutral with high smoke point",
         "measurements": [],
-        "note": "neutral with high smoke point",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "section": "Ebi Mayo",
+        "category": "Other"
       }
     },
     {
-      "raw": "dried parsley (to garnish)",
+      "raw": "dried parsley to garnish",
       "expected": {
-        "item": "dried parsley",
+        "item": "dried parsley to garnish",
         "measurements": [],
-        "note": "to garnish",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "Ebi Mayo",
+        "category": "Other"
       }
     }
   ]

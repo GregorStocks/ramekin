@@ -105,13 +105,13 @@
       }
     },
     {
-      "raw": "6 garlic cloves, smashed",
+      "raw": "6 cloves garlic, smashed",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "clove"
           }
         ],
         "note": "smashed",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "Handful of thyme sprigs",
+      "raw": "Handful thyme sprigs",
       "expected": {
         "item": "thyme sprigs",
         "measurements": [

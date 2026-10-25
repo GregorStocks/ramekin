@@ -3,7 +3,11 @@
   "recipe_slug": "cucumber-feta-salad-recipe",
   "ingredients": [
     {
-      "raw": "2  English Cucumber (sliced into rings)",
+      "raw": "Salad Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 English Cucumber, sliced into rings",
       "expected": {
         "item": "English Cucumber",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "sliced into rings",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  small/medium red onion (thinly sliced)",
+      "raw": "1 small/medium red onion, thinly sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  bell pepper (any color, sliced into strips)",
+      "raw": "1 bell pepper, any color, sliced into strips",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "any color, sliced into strips",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup Feta Cheese (or to taste)",
+      "raw": "1/2 cup Feta Cheese, or to taste",
       "expected": {
         "item": "Feta Cheese",
         "measurements": [
@@ -55,8 +62,13 @@
           }
         ],
         "note": "or to taste",
+        "section": "Salad Ingredients",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Balsamic Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tbsp Extra Virgin Olive Oil",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "Balsamic Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2- 1 tsp salt (or to taste)",
+      "raw": "1/2- 1 tsp salt, or to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": "or to taste",
+        "section": "Balsamic Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 tsp black pepper (or to taste)",
+      "raw": "1/8 tsp black pepper, or to taste",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Balsamic Dressing",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "For the crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups graham cracker crumbs",
       "expected": {
         "item": "graham cracker crumbs",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (melted)",
+      "raw": "½ cup unsalted butter melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon fine sea salt",
+      "raw": "½ teaspoon fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -55,29 +62,31 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "32 ounces cream cheese (4 packages, room temperature)",
+      "raw": "For the filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "32 ounces cream cheese 4 packages, room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese 4 packages",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
-          },
-          {
-            "amount": "4",
-            "unit": "package"
           }
         ],
-        "note": "4 packages, room temperature",
-        "category": "Cheese"
+        "note": "room temperature",
+        "section": "For the Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 1/4 cup granulated sugar",
+      "raw": "1 ¼ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -87,25 +96,27 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 large eggs (room temperature)",
+      "raw": "4 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "3/4 cup heavy cream",
+      "raw": "¾ cup heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
@@ -115,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     }

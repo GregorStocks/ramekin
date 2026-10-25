@@ -3,7 +3,7 @@
   "recipe_slug": "tropical-pineapple-chicken-rec",
   "ingredients": [
     {
-      "raw": "2 lbs chicken ((See Note 1))",
+      "raw": "2 lbs chicken (See Note 1)",
       "expected": {
         "item": "chicken",
         "measurements": [
@@ -59,7 +59,11 @@
       }
     },
     {
-      "raw": "3 cups pineapple ((See Note 2))",
+      "raw": "For Grilling Pineapple:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cups pineapple (See Note 2)",
       "expected": {
         "item": "pineapple",
         "measurements": [
@@ -69,6 +73,7 @@
           }
         ],
         "note": "See Note 2",
+        "section": "For Grilling Pineapple",
         "category": "Produce"
       }
     },
@@ -83,8 +88,13 @@
           }
         ],
         "note": null,
+        "section": "For Grilling Pineapple",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Marinade/Jerk Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup pineapple chunks",
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Produce"
       }
     },
@@ -111,21 +122,23 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  green onions (ends trimmed, cut half)",
+      "raw": "4 green onions ends trimmed, cut half",
       "expected": {
-        "item": "green onions",
+        "item": "green onions ends trimmed, cut half",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "ends trimmed, cut half",
-        "category": "Produce"
+        "note": null,
+        "section": "Marinade/jerk Sauce",
+        "category": "Other"
       }
     },
     {
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,11 +302,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade/jerk Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  Scotch Bonnet pepper ((See Note 3))",
+      "raw": "2 Scotch Bonnet pepper (See Note 3)",
       "expected": {
         "item": "Scotch Bonnet pepper",
         "measurements": [
@@ -293,21 +317,27 @@
           }
         ],
         "note": "See Note 3",
+        "section": "Marinade/jerk Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "2  green onions (tops only, chopped)",
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 green onions tops only, chopped",
       "expected": {
-        "item": "green onions",
+        "item": "green onions tops only",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "tops only, chopped",
-        "category": "Produce"
+        "note": "chopped",
+        "section": "Garnish",
+        "category": "Other"
       }
     }
   ]

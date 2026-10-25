@@ -3,35 +3,49 @@
   "recipe_slug": "lemon-pie-recipe",
   "ingredients": [
     {
-      "raw": "1 1/2 cups graham cracker crumbs",
+      "raw": "Graham crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 1/2 cups  (170 g) graham cracker crumbs",
       "expected": {
         "item": "graham cracker crumbs",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Graham Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "6 Tablespoons butter (, melted *see head note)",
+      "raw": "6 Tablespoons  (85 g) butter , melted *see head note",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
         "note": "melted *see head note",
+        "section": "Graham Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 teaspoon Optional - kosher salt (, if using unsalted butter or you like desserts with a sweet/salty contrast like salted caramel)",
+      "raw": "1/4 teaspoon   Optional - kosher salt , if using unsalted butter or you like desserts with a sweet/salty contrast like salted caramel",
       "expected": {
         "item": "Optional - kosher salt",
         "measurements": [
@@ -41,25 +55,35 @@
           }
         ],
         "note": "if using unsalted butter or you like desserts with a sweet/salty contrast like salted caramel",
+        "section": "Graham Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "28 ounces sweetened condensed milk ((two 14 oz. cans) (not evaporated milk))",
+      "raw": "Pie Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "28 ounces  (792 g) sweetened condensed milk (two 14 oz. cans) (not evaporated milk)",
       "expected": {
         "item": "sweetened condensed milk",
         "measurements": [
           {
             "amount": "28",
             "unit": "oz"
+          },
+          {
+            "amount": "792",
+            "unit": "g"
           }
         ],
         "note": "two 14 oz. cans, not evaporated milk",
+        "section": "Pie Filling",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "3  egg yolks",
+      "raw": "3   egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -69,48 +93,60 @@
           }
         ],
         "note": null,
+        "section": "Pie Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "finely grated zest from about 4 meyer lemons ((or 3 large lemons))",
+      "raw": "finely grated zest from about 4 meyer lemons (or 3 large lemons)",
       "expected": {
         "item": "finely grated zest from about 4 meyer lemons",
         "measurements": [],
         "note": "or 3 large lemons",
+        "section": "Pie Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup meyer lemon juice (* use 3/4 cup if using regular lemon juice)",
+      "raw": "1 cup  (240 ml) meyer lemon juice * use 3/4 cup if using regular lemon juice",
       "expected": {
-        "item": "meyer lemon juice",
+        "item": "meyer lemon juice * use 3/4 cup if using regular lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
           }
         ],
-        "note": "* use 3/4 cup if using regular lemon juice",
-        "category": "Produce"
+        "note": null,
+        "section": "Pie Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 teaspoon vanilla extract",
+      "raw": "1/2 teaspoon  (2.5 ml) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Pie Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "pinch salt",
+      "raw": "pinch   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -120,66 +156,88 @@
           }
         ],
         "note": null,
+        "section": "Pie Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup heavy whipping cream",
+      "raw": "Whipped Cream Topping & Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  (240 ml) heavy whipping cream",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 Tablespoon powdered sugar",
+      "raw": "1 Tablespoon  (15 ml) powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon vanilla extract",
+      "raw": "1/2 teaspoon  (2.5 ml) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Baking"
       }
     },
     {
-      "raw": "fresh mint (, optional for garnish)",
+      "raw": "fresh mint , optional for garnish",
       "expected": {
         "item": "fresh mint",
         "measurements": [],
         "note": "optional for garnish",
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Produce"
       }
     },
     {
-      "raw": "lemon slices (, optional for garnish)",
+      "raw": "lemon slices , optional for garnish",
       "expected": {
         "item": "lemon slices",
         "measurements": [],
         "note": "optional for garnish",
+        "section": "Whipped Cream Topping & Garnish",
         "category": "Produce"
       }
     }

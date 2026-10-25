@@ -3,7 +3,11 @@
   "recipe_slug": "oreo-mint-cheesecake-bars-reci",
   "ingredients": [
     {
-      "raw": "20  regular Oreo cookies",
+      "raw": "Oreo crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "20 regular Oreo cookies",
       "expected": {
         "item": "regular Oreo cookies",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Oreo Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (melted)",
+      "raw": "1/2 cup unsalted butter melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -27,11 +32,16 @@
           }
         ],
         "note": "melted",
+        "section": "Oreo Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "24 oz cream cheese (softened)",
+      "raw": "Mint filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "24 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -41,6 +51,7 @@
           }
         ],
         "note": "softened",
+        "section": "Mint Filling",
         "category": "Cheese"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Baking"
       }
     },
@@ -69,21 +81,23 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2  large eggs (room temperature)",
+      "raw": "2 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Mint Filling",
+        "category": "Other"
       }
     },
     {
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "3-4  drops of green gel food coloring",
+      "raw": "3-4 drops of green gel food coloring",
       "expected": {
         "item": "green gel food coloring",
         "measurements": [
@@ -111,21 +126,27 @@
           }
         ],
         "note": null,
+        "section": "Mint Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "2/3 cup heavy cream (cold)",
+      "raw": "Whipped cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2/3 cup heavy cream cold",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream cold",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "cold",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Whipped Cream",
+        "category": "Other"
       }
     },
     {
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Baking"
       }
     }

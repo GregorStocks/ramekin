@@ -3,7 +3,7 @@
   "recipe_slug": "garelu-medhu-vadai-recipe",
   "ingredients": [
     {
-      "raw": "1 cup urad dal ((or skinned black gram))",
+      "raw": "1 cup urad dal (or skinned black gram)",
       "expected": {
         "item": "urad dal",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "⅓ teaspoon salt ((adjust to taste))",
+      "raw": "⅓ teaspoon salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "Oil ( for deep frying)",
+      "raw": "Oil  for deep frying",
       "expected": {
         "item": "Oil",
         "measurements": [],
@@ -49,7 +49,11 @@
       }
     },
     {
-      "raw": "¼ to ½ teaspoon pepper corn  ((crushed coarsely))",
+      "raw": "Optional (skip if making for Naivedyam):",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ to ½ teaspoon pepper corn  (crushed coarsely)",
       "expected": {
         "item": "pepper corn",
         "measurements": [
@@ -59,11 +63,12 @@
           }
         ],
         "note": "crushed coarsely",
+        "section": "Optional (Skip If Making for Naivedyam)",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 to 3  green chilies ((chopped))",
+      "raw": "2 to 3 green chilies (chopped)",
       "expected": {
         "item": "green chilies",
         "measurements": [
@@ -73,11 +78,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Optional (Skip If Making for Naivedyam)",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 tablespoon onions ((chopped) (1 small))",
+      "raw": "4 tablespoon onions (chopped) (1 small)",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -91,11 +97,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Optional (Skip If Making for Naivedyam)",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 sprig curry leaves ((chopped))",
+      "raw": "1 sprig curry leaves (chopped)",
       "expected": {
         "item": "curry leaves",
         "measurements": [
@@ -105,11 +112,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Optional (Skip If Making for Naivedyam)",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ teaspoon cumin seeds ((jeera))",
+      "raw": "½ teaspoon cumin seeds (jeera)",
       "expected": {
         "item": "cumin seeds",
         "measurements": [
@@ -119,11 +127,12 @@
           }
         ],
         "note": "jeera",
+        "section": "Optional (Skip If Making for Naivedyam)",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon ginger (fine grated)",
+      "raw": "1 teaspoon ginger fine grated",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -133,6 +142,7 @@
           }
         ],
         "note": "fine grated",
+        "section": "Optional (Skip If Making for Naivedyam)",
         "category": "Produce"
       }
     }

@@ -3,21 +3,21 @@
   "recipe_slug": "cracker-barrel-meatloaf-recipe",
   "ingredients": [
     {
-      "raw": "2 lbs lean ground beef (85/15)",
+      "raw": "2 lbs lean ground beef 85/15",
       "expected": {
-        "item": "lean ground beef",
+        "item": "lean ground beef 85/15",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "85/15",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup white onion (finely diced or grated)",
+      "raw": "1/2 cup white onion finely diced or grated",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/2 cup bell pepper (finely diced or grated (optional, see Note 1))",
+      "raw": "1/2 cup bell pepper finely diced or grated (optional, see Note 1)",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -40,12 +40,12 @@
             "unit": "cup"
           }
         ],
-        "note": "finely diced or grated (optional, see Note 1)",
+        "note": "optional, see Note 1, finely diced or grated",
         "category": "Produce"
       }
     },
     {
-      "raw": "48  Ritz crackers (crushed (1 1/2 sleeves))",
+      "raw": "48 Ritz crackers crushed (1 1/2 sleeves)",
       "expected": {
         "item": "Ritz crackers",
         "measurements": [
@@ -54,12 +54,12 @@
             "unit": null
           }
         ],
-        "note": "crushed (1 1/2 sleeves)",
+        "note": "1 1/2 sleeves, crushed",
         "category": "Snacks"
       }
     },
     {
-      "raw": "4 oz sharp cheddar cheese (shredded)",
+      "raw": "4 oz sharp cheddar cheese shredded",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
@@ -73,21 +73,21 @@
       }
     },
     {
-      "raw": "1/2 cup milk (any variety)",
+      "raw": "1/2 cup milk any variety",
       "expected": {
-        "item": "milk",
+        "item": "milk any variety",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "any variety",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "3  large eggs",
+      "raw": "3 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -129,6 +129,10 @@
       }
     },
     {
+      "raw": "Meatloaf Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup ketchup",
       "expected": {
         "item": "ketchup",
@@ -139,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf Glaze",
         "category": "Baking"
       }
     },
@@ -167,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf Glaze",
         "category": "Other"
       }
     }

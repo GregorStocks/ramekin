@@ -3,7 +3,11 @@
   "recipe_slug": "healthy-pumpkin-pancakes-recip",
   "ingredients": [
     {
-      "raw": "3/4 cup nonfat Greek yogurt",
+      "raw": "FOR THE PUMPKIN PANCAKES:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup nonfat Greek yogurt",
       "expected": {
         "item": "nonfat Greek yogurt",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3/4 cup milk ((I used 1%))",
+      "raw": "¾ cup milk (I used 1%)",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "I used 1%",
+        "section": "For the Pumpkin Pancakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons butter (plus additional for cooking the pancakes)",
+      "raw": "2 tablespoons butter plus additional for cooking the pancakes",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "plus additional for cooking the pancakes",
+        "section": "For the Pumpkin Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Baking"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 teaspoon baking soda",
+      "raw": "¾ teaspoon baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon kosher salt",
+      "raw": "½ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3/4 teaspoons ground cinnamon*",
+      "raw": "¾ teaspoons ground cinnamon*",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon ground ginger*",
+      "raw": "½ teaspoon ground ginger*",
       "expected": {
         "item": "ground ginger",
         "measurements": [
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 teaspoon ground nutmeg*",
+      "raw": "⅛ teaspoon ground nutmeg*",
       "expected": {
         "item": "ground nutmeg",
         "measurements": [
@@ -139,25 +152,27 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3/4 cup pumpkin purée (pure pumpkin; NOT pumpkin pie filling)",
+      "raw": "¾ cup pumpkin purée pure pumpkin; NOT pumpkin pie filling",
       "expected": {
-        "item": "pumpkin purée",
+        "item": "pumpkin purée pure pumpkin; NOT pumpkin pie filling",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "pure pumpkin; NOT pumpkin pie filling",
+        "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Other"
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -167,20 +182,22 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons pure maple syrup (or granulated sugar or honey)",
+      "raw": "2 tablespoons pure maple syrup or granulated sugar or honey",
       "expected": {
-        "item": "pure maple syrup",
+        "item": "pure maple syrup or granulated sugar or honey",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or granulated sugar or honey",
+        "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,8 +212,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Pancakes",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "FOR SERVING (Optional):",
+      "is_section_header": true
     },
     {
       "raw": "Pure maple syrup",
@@ -204,6 +226,7 @@
         "item": "Pure maple syrup",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +236,7 @@
         "item": "Butter",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -222,6 +246,7 @@
         "item": "Chopped toasted pecans",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -231,6 +256,7 @@
         "item": "Vanilla greek yogurt",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Dairy & Eggs"
       }
     }

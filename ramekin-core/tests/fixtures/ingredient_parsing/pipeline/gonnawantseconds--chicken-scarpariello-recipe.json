@@ -3,7 +3,11 @@
   "recipe_slug": "chicken-scarpariello-recipe",
   "ingredients": [
     {
-      "raw": "1 1/2 pounds fingerling potatoes (halved lengthwise)",
+      "raw": "Potatoes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 1/2 pounds fingerling potatoes halved lengthwise",
       "expected": {
         "item": "fingerling potatoes",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "halved lengthwise",
+        "section": "Potatoes",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Potatoes",
         "category": "Oils & Vinegars"
       }
     },
@@ -36,6 +42,7 @@
         "item": "salt",
         "measurements": [],
         "note": null,
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,21 +52,27 @@
         "item": "black pepper",
         "measurements": [],
         "note": null,
+        "section": "Potatoes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 1/2 pounds chicken thighs (bone-in and skin on)",
+      "raw": "Chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 1/2 pounds chicken thighs bone-in and skin on",
       "expected": {
-        "item": "chicken thighs",
+        "item": "chicken thighs bone-in and skin on",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": "bone-in and skin on",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Chicken",
+        "category": "Other"
       }
     },
     {
@@ -68,6 +81,7 @@
         "item": "salt",
         "measurements": [],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +91,7 @@
         "item": "black pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,11 +106,12 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "8 ounces sweet Italian sausage (casing removed)",
+      "raw": "8 ounces sweet Italian sausage casing removed",
       "expected": {
         "item": "sweet Italian sausage",
         "measurements": [
@@ -105,11 +121,12 @@
           }
         ],
         "note": "casing removed",
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 large onion (chopped)",
+      "raw": "1 large onion chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -119,11 +136,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  red bell pepper",
+      "raw": "1 red bell pepper",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -133,11 +151,12 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "6 cloves garlic (minced)",
+      "raw": "6 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -147,6 +166,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chicken",
         "category": "Produce"
       }
     },
@@ -161,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Beverages"
       }
     },
@@ -175,11 +196,12 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/2 cup peppadew peppers in brine (drained and chopped)",
+      "raw": "1/2 cup peppadew peppers in brine drained and chopped",
       "expected": {
         "item": "peppadew peppers in brine",
         "measurements": [
@@ -189,6 +211,7 @@
           }
         ],
         "note": "drained and chopped",
+        "section": "Chicken",
         "category": "Other"
       }
     },
@@ -203,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -217,11 +241,12 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons fresh parsley (chopped)",
+      "raw": "2 tablespoons fresh parsley chopped",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -231,6 +256,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chicken",
         "category": "Produce"
       }
     }

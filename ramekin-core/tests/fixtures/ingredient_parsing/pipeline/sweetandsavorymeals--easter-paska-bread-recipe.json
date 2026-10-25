@@ -3,35 +3,37 @@
   "recipe_slug": "easter-paska-bread-recipe",
   "ingredients": [
     {
-      "raw": "1  envelope Instant Yeast (7 grams)",
+      "raw": "For the Starter:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 envelope Instant Yeast 7 grams",
       "expected": {
-        "item": "Instant Yeast",
+        "item": "Instant Yeast 7 grams",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
-          },
-          {
-            "amount": "7",
-            "unit": "g"
           }
         ],
         "note": null,
-        "category": "Baking"
+        "section": "For the Starter",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup whole milk (lukewarm)",
+      "raw": "1 cup whole milk lukewarm",
       "expected": {
-        "item": "whole milk",
+        "item": "whole milk lukewarm",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "lukewarm",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Starter",
+        "category": "Other"
       }
     },
     {
@@ -45,21 +47,23 @@
           }
         ],
         "note": null,
+        "section": "For the Starter",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon water (lukewarm)",
+      "raw": "1 teaspoon water lukewarm",
       "expected": {
-        "item": "water",
+        "item": "water lukewarm",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "lukewarm",
-        "category": "Beverages"
+        "note": null,
+        "section": "For the Starter",
+        "category": "Other"
       }
     },
     {
@@ -73,11 +77,16 @@
           }
         ],
         "note": null,
+        "section": "For the Starter",
         "category": "Baking"
       }
     },
     {
-      "raw": "6  egg yolks",
+      "raw": "For the Dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -87,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3  egg whites",
+      "raw": "3 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -115,21 +126,23 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup unsalted butter (room temperature)",
+      "raw": "1 cup unsalted butter room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Dough",
+        "category": "Other"
       }
     },
     {
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Produce"
       }
     },
@@ -171,11 +186,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2 cup almonds (ground)",
+      "raw": "1/2 cup almonds ground",
       "expected": {
         "item": "almonds",
         "measurements": [
@@ -185,6 +201,7 @@
           }
         ],
         "note": "ground",
+        "section": "For the Dough",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -199,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -213,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Baking"
       }
     },
@@ -227,11 +246,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  egg yolk (for brushing)",
+      "raw": "1 egg yolk for brushing",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -241,11 +261,16 @@
           }
         ],
         "note": "for brushing",
+        "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  egg white",
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 egg white",
       "expected": {
         "item": "egg white",
         "measurements": [
@@ -255,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -269,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -283,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Produce"
       }
     }

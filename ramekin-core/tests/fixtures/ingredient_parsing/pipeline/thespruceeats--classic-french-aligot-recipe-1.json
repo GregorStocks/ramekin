@@ -3,7 +3,7 @@
   "recipe_slug": "classic-french-aligot-recipe-1",
   "ingredients": [
     {
-      "raw": "2 pounds mashing potatoes (peeled and cut into quarters)",
+      "raw": "2 pounds mashing potatoes, peeled and cut into quarters",
       "expected": {
         "item": "mashing potatoes",
         "measurements": [
@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "1/8 teaspoon white pepper (ground)",
+      "raw": "1/8 teaspoon ground white pepper",
       "expected": {
-        "item": "white pepper",
+        "item": "ground white pepper",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": "ground",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/4 cup crème fraîche (or substitute equal parts sour cream and heavy cream)",
+      "raw": "1/4 cup crème fraîche, or substitute equal parts sour cream and heavy cream",
       "expected": {
         "item": "crème fraîche",
         "measurements": [
@@ -73,21 +73,21 @@
       }
     },
     {
-      "raw": "1 clove garlic (lightly crushed, but kept intact)",
+      "raw": "1 clove garlic, lightly crushed, but kept intact",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, lightly crushed, but kept intact",
         "measurements": [
           {
             "amount": "1",
             "unit": "clove"
           }
         ],
-        "note": "lightly crushed, but kept intact",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cups Cantal cheese (or substitute good-quality sharp cheddar, grated)",
+      "raw": "3 cups Cantal cheese, or substitute good-quality grated sharp cheddar",
       "expected": {
         "item": "Cantal cheese",
         "measurements": [
@@ -96,7 +96,7 @@
             "unit": "cup"
           }
         ],
-        "note": "or substitute good-quality sharp cheddar, grated",
+        "note": "or substitute good-quality grated sharp cheddar",
         "category": "Cheese"
       }
     }

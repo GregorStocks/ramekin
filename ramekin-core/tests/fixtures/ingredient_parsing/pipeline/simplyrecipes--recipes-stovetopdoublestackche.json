@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-stovetopdoublestackche",
   "ingredients": [
     {
+      "raw": "For the easy burger sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup mayonnaise",
       "expected": {
         "item": "mayonnaise",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Easy Burger Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Easy Burger Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "For the Easy Burger Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the burgers:",
+      "is_section_header": true
     },
     {
       "raw": "20 to 24 ounces ground beef (90/10)",
@@ -55,6 +66,7 @@
           }
         ],
         "note": "90/10",
+        "section": "For the Burgers",
         "category": "Meat & Seafood"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Cheese"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Bakery & Bread"
       }
     },
@@ -148,25 +166,33 @@
         "item": "Fresh lettuce",
         "measurements": [],
         "note": null,
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
     {
-      "raw": "Tomato slices",
+      "raw": "Slices tomato",
       "expected": {
-        "item": "Tomato slices",
-        "measurements": [],
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "slice"
+          }
+        ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
     {
-      "raw": "Red onion slices",
+      "raw": "Red onion",
       "expected": {
-        "item": "Red onion slices",
+        "item": "Red onion",
         "measurements": [],
         "note": null,
-        "category": "Other"
+        "section": "For the Burgers",
+        "category": "Produce"
       }
     }
   ]

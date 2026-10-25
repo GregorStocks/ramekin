@@ -3,7 +3,11 @@
   "recipe_slug": "mini-strawberry-cheesecakes-re",
   "ingredients": [
     {
-      "raw": "1 1/2 cups graham cracker crumbs (from 12 whole crackers)",
+      "raw": "Ingredients for Strawberry Cheesecakes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 1/2 cups graham cracker crumbs, from 12 whole crackers",
       "expected": {
         "item": "graham cracker crumbs",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "from 12 whole crackers",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Snacks"
       }
     },
     {
-      "raw": "6 Tbsp unsalted butter (melted)",
+      "raw": "6 Tbsp unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "melted",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "16 oz Cream Cheese (from two 8 oz packages, softened)",
+      "raw": "16 oz Cream Cheese, from two 8 oz packages, softened",
       "expected": {
         "item": "Cream Cheese",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "from two 8 oz packages, softened",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Cheese"
       }
     },
     {
-      "raw": "3  large eggs (room temperature)",
+      "raw": "3 large eggs, room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "room temperature",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "14 oz sweetened condensed milk (room temperature)",
+      "raw": "14 oz sweetened condensed milk, room temperature",
       "expected": {
         "item": "sweetened condensed milk",
         "measurements": [
@@ -69,11 +77,16 @@
           }
         ],
         "note": "room temperature",
+        "section": "Ingredients for Strawberry Cheesecakes",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 cup heavy whipping cream (chilled)",
+      "raw": "Ingredients for Toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup heavy whipping cream, chilled",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": "chilled",
+        "section": "Ingredients for Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Toppings",
         "category": "Baking"
       }
     },
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Toppings",
         "category": "Baking"
       }
     },
     {
-      "raw": "12  strawberries (halved)",
+      "raw": "12 strawberries, halved",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": "halved",
+        "section": "Ingredients for Toppings",
         "category": "Produce"
       }
     }

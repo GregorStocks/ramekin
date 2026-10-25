@@ -3,13 +3,8 @@
   "recipe_slug": "2014-01-chicken-pho",
   "ingredients": [
     {
-      "raw": "Broth",
-      "expected": {
-        "item": "Broth",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "raw": "Broth:",
+      "is_section_header": true
     },
     {
       "raw": "2 unpeeled yellow onions, quartered",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "quartered",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "smashed",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Beverages"
       }
     },
@@ -64,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Meat & Seafood"
       }
     },
@@ -78,6 +77,7 @@
           }
         ],
         "note": "quartered",
+        "section": "Broth",
         "category": "Meat & Seafood"
       }
     },
@@ -92,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Baking"
       }
     },
@@ -115,6 +117,7 @@
         "item": "Additional spices : Cinnamon, star anise, black cardamoms, coriander seeds, fennel seeds or cloves",
         "measurements": [],
         "note": "optional",
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -143,11 +147,12 @@
           }
         ],
         "note": "bánh phở",
+        "section": "Broth",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "Garnishes",
+      "raw": "Garnishes:",
       "is_section_header": true
     },
     {

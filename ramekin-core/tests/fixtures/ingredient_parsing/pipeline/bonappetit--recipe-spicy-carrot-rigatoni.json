@@ -3,6 +3,10 @@
   "recipe_slug": "recipe-spicy-carrot-rigatoni",
   "ingredients": [
     {
+      "raw": "Pasta:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb. (454 g) carrots (6–8 medium) with tops, peeled and cut into 1\" (2.5-cm) pieces, green tops reserved (see Topping)",
       "expected": {
         "item": "carrots with tops",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "2.5-cm, see Topping, peeled and cut into 1\" pieces, green tops reserved",
+        "section": "Pasta",
         "category": "Produce"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Produce"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": "plus more for serving",
+        "section": "Pasta",
         "category": "Cheese"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Oils & Vinegars"
       }
     },
@@ -89,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Beverages"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Condiments & Sauces"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": "toasted",
+        "section": "Pasta",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -126,8 +137,13 @@
         "item": "Kosher salt, freshly cracked black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Pasta",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup (20 g) finely chopped reserved carrot tops (see Pasta)",
@@ -144,6 +160,7 @@
           }
         ],
         "note": "see Pasta",
+        "section": "Topping",
         "category": "Other"
       }
     },
@@ -162,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -180,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Oils & Vinegars"
       }
     },
@@ -194,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -208,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -217,6 +238,7 @@
         "item": "Kosher salt, freshly cracked black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -235,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     },
@@ -244,6 +267,7 @@
         "item": "Ricotta cheese",
         "measurements": [],
         "note": "for topping, optional",
+        "section": "Topping",
         "category": "Cheese"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "snickerdoodle-cookie-recipe",
   "ingredients": [
     {
-      "raw": "1 cup unsalted butter (softened to room temperature)",
+      "raw": "SNICKERDOODLE COOKIES:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup unsalted butter softened to room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened to room temperature",
+        "section": "Snickerdoodle Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,21 +32,23 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodle Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons light brown sugar (packed)",
+      "raw": "2 tablespoons light brown sugar packed",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar packed",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "packed",
-        "category": "Baking"
+        "note": null,
+        "section": "Snickerdoodle Cookies",
+        "category": "Other"
       }
     },
     {
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodle Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,21 +77,23 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodle Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 3/4 cup flour (all purpose or plain)",
+      "raw": "2 3/4 cup flour all purpose or plain",
       "expected": {
-        "item": "flour",
+        "item": "flour all purpose or plain",
         "measurements": [
           {
             "amount": "2.75",
             "unit": "cup"
           }
         ],
-        "note": "all purpose or plain",
-        "category": "Baking"
+        "note": null,
+        "section": "Snickerdoodle Cookies",
+        "category": "Other"
       }
     },
     {
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodle Cookies",
         "category": "Baking"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodle Cookies",
         "category": "Baking"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Snickerdoodle Cookies",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "CINNAMON SUGAR:",
+      "is_section_header": true
     },
     {
       "raw": "5 tablespoons white granulated sugar",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Sugar",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Sugar",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,71 +3,6 @@
   "recipe_slug": "2015-06-oven-ribs-even-better",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Roasted Grape and Olive Crostini",
-      "expected": {
-        "item": "Months Ago: Roasted Grape and Olive Crostini",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Rum Campari Punch",
-      "expected": {
-        "item": "Years Ago: Rum Campari Punch",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Cinnamon Brown Butter Breakfast Puffs",
-      "expected": {
-        "item": "Years Ago: Cinnamon Brown Butter Breakfast Puffs",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Fromage Fort",
-      "expected": {
-        "item": "Years Ago: Fromage Fort",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "1/2 cup packed dark brown sugar",
       "expected": {
         "item": "dark brown sugar",
@@ -170,6 +105,10 @@
       }
     },
     {
+      "raw": "Let’s Talk About Timing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 to 3 hours at 300°F.",
       "expected": {
         "item": "hours at 300°F.",
@@ -180,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Let’s Talk About Timing",
         "category": "Other"
       }
     },
@@ -194,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Let’s Talk About Timing",
         "category": "Other"
       }
     },
@@ -208,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Let’s Talk About Timing",
         "category": "Other"
       }
     }

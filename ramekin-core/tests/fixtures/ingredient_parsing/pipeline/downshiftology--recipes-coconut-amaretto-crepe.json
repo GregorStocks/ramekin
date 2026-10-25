@@ -3,6 +3,15 @@
   "recipe_slug": "recipes-coconut-amaretto-crepe",
   "ingredients": [
     {
+      "raw": "Crepes (makes approx 25 crepes):",
+      "expected": {
+        "item": "Crepes :",
+        "measurements": [],
+        "note": "makes approx 25 crepes",
+        "category": "Other"
+      }
+    },
+    {
       "raw": "2 cups cassava flour",
       "expected": {
         "item": "cassava flour",
@@ -17,7 +26,7 @@
       }
     },
     {
-      "raw": "5  eggs",
+      "raw": "5 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -101,7 +110,11 @@
       }
     },
     {
-      "raw": "4  large egg whites, (room temperature)",
+      "raw": "Coconut Amaretto Buttercream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 large egg whites,, room temperature",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -111,6 +124,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Coconut Amaretto Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Amaretto Buttercream",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,11 +154,12 @@
           }
         ],
         "note": null,
+        "section": "Coconut Amaretto Buttercream",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 cups palm shortening or butter, (room temperature or slightly chilled)",
+      "raw": "1 1/2 cups palm shortening or butter,, room temperature or slightly chilled",
       "expected": {
         "item": "palm shortening or butter",
         "measurements": [
@@ -153,11 +169,12 @@
           }
         ],
         "note": "room temperature or slightly chilled",
+        "section": "Coconut Amaretto Buttercream",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup coconut cream ((from the top of a chilled can of full fat coconut milk))",
+      "raw": "1/4 cup coconut cream, (from the top of a chilled can of full fat coconut milk)",
       "expected": {
         "item": "coconut cream",
         "measurements": [
@@ -167,6 +184,7 @@
           }
         ],
         "note": "from the top of a chilled can of full fat coconut milk",
+        "section": "Coconut Amaretto Buttercream",
         "category": "Canned Goods"
       }
     },
@@ -181,25 +199,31 @@
           }
         ],
         "note": null,
+        "section": "Coconut Amaretto Buttercream",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup finely shredded coconut, (unsweetened)",
+      "raw": "1 cup finely shredded coconut,, unsweetened",
       "expected": {
-        "item": "finely shredded coconut",
+        "item": "finely shredded coconut,, unsweetened",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "unsweetened",
+        "note": null,
+        "section": "Coconut Amaretto Buttercream",
         "category": "Produce"
       }
     },
     {
-      "raw": "13.5 oz full fat coconut milk, (chilled overnight)",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "13.5 oz full fat coconut milk,, chilled overnight",
       "expected": {
         "item": "full fat coconut milk",
         "measurements": [
@@ -209,6 +233,7 @@
           }
         ],
         "note": "chilled overnight",
+        "section": "Topping",
         "category": "Canned Goods"
       }
     },
@@ -223,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -237,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -251,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

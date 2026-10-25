@@ -45,6 +45,10 @@
       }
     },
     {
+      "raw": "Slurry:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tsp Katakuriko (or cornstarch)",
       "expected": {
         "item": "Katakuriko",
@@ -55,6 +59,7 @@
           }
         ],
         "note": "or cornstarch",
+        "section": "Slurry",
         "category": "Baking"
       }
     },
@@ -69,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Slurry",
         "category": "Beverages"
       }
     }

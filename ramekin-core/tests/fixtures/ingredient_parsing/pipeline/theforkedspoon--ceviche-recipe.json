@@ -3,7 +3,11 @@
   "recipe_slug": "ceviche-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds white fish fillet ((cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
+      "raw": "For the Fish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 pounds white fish fillet, (cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces",
       "expected": {
         "item": "white fish fillet chopped into small, bite-size square pieces",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "cod, halibut, mahi mahi, tilapia, snapper, sea bass",
+        "section": "For the Fish",
         "category": "Other"
       }
     },
     {
-      "raw": "2  serrano peppers (sliced thin)",
+      "raw": "2 serrano peppers, sliced thin",
       "expected": {
         "item": "serrano peppers",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "sliced thin",
+        "section": "For the Fish",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 cloves  garlic (smashed)",
+      "raw": "4 cloves  garlic, smashed",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "smashed",
+        "section": "For the Fish",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoon fresh cilantro (chopped)",
+      "raw": "2 tablespoon fresh cilantro, chopped",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Fish",
         "category": "Produce"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "10  limes (juiced (enough to fully cover the fish in lime juice))",
+      "raw": "10 limes, juiced (enough to fully cover the fish in lime juice)",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": "enough to fully cover the fish in lime juice",
+        "section": "For the Fish",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 large grapefruit (juiced)",
+      "raw": "1 large grapefruit, juiced",
       "expected": {
         "item": "grapefruit juice",
         "measurements": [
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2  oranges (juiced)",
+      "raw": "2 oranges, juiced",
       "expected": {
         "item": "orange juice",
         "measurements": [
@@ -111,11 +122,16 @@
           }
         ],
         "note": null,
+        "section": "For the Fish",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2-3  shallots (thinly sliced)",
+      "raw": "For the Ceviche:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2-3 shallots, thinly sliced",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 teaspoon salt (divided)",
+      "raw": "3 teaspoon salt, divided",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Ceviche",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,11 +166,12 @@
         "item": "warm water",
         "measurements": [],
         "note": null,
+        "section": "For the Ceviche",
         "category": "Beverages"
       }
     },
     {
-      "raw": "5  Roma tomatoes (seeded and diced)",
+      "raw": "5 Roma tomatoes, seeded and diced",
       "expected": {
         "item": "Roma tomatoes",
         "measurements": [
@@ -162,11 +181,12 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 small bell peppers (seeded and diced)",
+      "raw": "2 small bell peppers, seeded and diced",
       "expected": {
         "item": "bell peppers",
         "measurements": [
@@ -176,11 +196,12 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
     {
-      "raw": "10  limes (juiced)",
+      "raw": "10 limes, juiced",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -190,11 +211,12 @@
           }
         ],
         "note": null,
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 small bunch fresh cilantro (chopped)",
+      "raw": "1 small bunch fresh cilantro, chopped",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -204,6 +226,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Ceviche",
         "category": "Produce"
       }
     },
@@ -218,15 +241,17 @@
           }
         ],
         "note": null,
+        "section": "For the Ceviche",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "hot sauce (to taste)",
+      "raw": "hot sauce, to taste",
       "expected": {
         "item": "hot sauce",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Ceviche",
         "category": "Condiments & Sauces"
       }
     }

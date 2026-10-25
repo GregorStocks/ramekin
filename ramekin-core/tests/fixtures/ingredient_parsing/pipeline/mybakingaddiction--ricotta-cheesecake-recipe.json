@@ -3,6 +3,10 @@
   "recipe_slug": "ricotta-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cups graham cracker crumbs",
       "expected": {
         "item": "graham cracker crumbs",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1/4 cup granulated sugar",
+      "raw": "¼ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup butter (melted)",
+      "raw": "¼ cup butter melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -41,8 +47,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup granulated sugar",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -69,21 +81,23 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "32 ounces ricotta cheese (room temperature)",
+      "raw": "32 ounces ricotta cheese room temperature",
       "expected": {
-        "item": "ricotta cheese",
+        "item": "ricotta cheese room temperature",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
           }
         ],
-        "note": "room temperature",
-        "category": "Cheese"
+        "note": null,
+        "section": "For the Filling",
+        "category": "Other"
       }
     },
     {
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "¼ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -111,22 +126,28 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  eggs (room temperature)",
+      "raw": "4 eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Filling",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "For the Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1-1/2 cups fresh strawberry slices and/or fresh whole raspberries",
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Produce"
       }
     },
@@ -153,20 +175,22 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup apricot jelly (heated slightly)",
+      "raw": "¼ cup apricot jelly heated slightly",
       "expected": {
-        "item": "apricot jelly",
+        "item": "apricot jelly heated slightly",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "heated slightly",
+        "note": null,
+        "section": "For the Topping",
         "category": "Other"
       }
     }

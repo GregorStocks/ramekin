@@ -3,7 +3,11 @@
   "recipe_slug": "momofuku-milk-bar-compost-cook",
   "ingredients": [
     {
-      "raw": "⅓ cup graham cracker crumbs",
+      "raw": "For the Graham Crumb Mixture:",
+      "is_section_header": true
+    },
+    {
+      "raw": "⅓ cup   graham cracker crumbs",
       "expected": {
         "item": "graham cracker crumbs",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1 tablespoon milk powder",
+      "raw": "1 tablespoon   milk powder",
       "expected": {
         "item": "milk powder",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Baking"
       }
     },
     {
-      "raw": "1½ teaspoons granulated sugar",
+      "raw": "1½ teaspoons   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Baking"
       }
     },
     {
-      "raw": "⅛ teaspoon kosher salt",
+      "raw": "⅛ teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tablespoon unsalted butter (melted)",
+      "raw": "1 tablespoon   unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "melted",
+        "section": "For the Graham Crumb Mixture",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon heavy cream",
+      "raw": "1 tablespoon   heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
@@ -83,11 +92,16 @@
           }
         ],
         "note": null,
+        "section": "For the Graham Crumb Mixture",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1⅓ cups bread flour",
+      "raw": "For the Cookies:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1⅓ cups   bread flour",
       "expected": {
         "item": "bread flour",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon baking powder",
+      "raw": "½ teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ teaspoon baking soda",
+      "raw": "¼ teaspoon   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon kosher salt",
+      "raw": "1 teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup unsalted butter, at room temperature",
+      "raw": "1 cup   unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "⅔ cup light brown sugar",
+      "raw": "⅔ cup   light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons &nbsp;glucose",
+      "raw": "2 tablespoons    glucose",
       "expected": {
         "item": "glucose",
         "measurements": [
@@ -195,11 +216,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1   egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -209,11 +231,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ teaspoon vanilla extract",
+      "raw": "½ teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -223,11 +246,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ cup mini chocolate chips",
+      "raw": "¾ cup   mini chocolate chips",
       "expected": {
         "item": "mini chocolate chips",
         "measurements": [
@@ -237,11 +261,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup mini butterscotch chips",
+      "raw": "½ cup   mini butterscotch chips",
       "expected": {
         "item": "mini butterscotch chips",
         "measurements": [
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Other"
       }
     },
@@ -260,11 +286,12 @@
         "item": "Prepared graham mixture",
         "measurements": [],
         "note": null,
+        "section": "For the Cookies",
         "category": "Other"
       }
     },
     {
-      "raw": "⅓ cup old-fashioned rolled oats",
+      "raw": "⅓ cup   old-fashioned rolled oats",
       "expected": {
         "item": "old-fashioned rolled oats",
         "measurements": [
@@ -274,11 +301,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Snacks"
       }
     },
     {
-      "raw": "2½ teaspoons ground coffee",
+      "raw": "2½ teaspoons   ground coffee",
       "expected": {
         "item": "ground coffee",
         "measurements": [
@@ -288,11 +316,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 cups potato chips",
+      "raw": "2 cups   potato chips",
       "expected": {
         "item": "potato chips",
         "measurements": [
@@ -302,11 +331,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1 cup mini pretzels",
+      "raw": "1 cup   mini pretzels",
       "expected": {
         "item": "mini pretzels",
         "measurements": [
@@ -316,6 +346,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cookies",
         "category": "Snacks"
       }
     }

@@ -3,20 +3,21 @@
   "recipe_slug": "chirashizushi-recipe",
   "ingredients": [
     {
-      "raw": "3  dried shiitake mushroom (or 2 medium/1 large)",
+      "raw": "Rice:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 dried shiitake mushroom or 2 medium/1 large",
       "expected": {
         "item": "dried shiitake mushroom",
         "measurements": [
           {
             "amount": "3",
             "unit": null
-          },
-          {
-            "amount": "1",
-            "unit": "large"
           }
         ],
         "note": "or 2 medium/1 large",
+        "section": "Rice",
         "category": "Produce"
       }
     },
@@ -31,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1  carrot ((medium size) julienned or decoratively cut)",
+      "raw": "1  carrot (medium size) julienned or decoratively cut",
       "expected": {
         "item": "carrot julienned or decoratively cut",
         "measurements": [
@@ -45,11 +47,12 @@
           }
         ],
         "note": "medium size",
+        "section": "Rice",
         "category": "Other"
       }
     },
     {
-      "raw": "30 g fried tofu pouch (aburaage) (thinly sliced)",
+      "raw": "30 g fried tofu pouch (aburaage) thinly sliced",
       "expected": {
         "item": "fried tofu pouch",
         "measurements": [
@@ -59,6 +62,7 @@
           }
         ],
         "note": "aburaage, thinly sliced",
+        "section": "Rice",
         "category": "Produce"
       }
     },
@@ -73,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Beverages"
       }
     },
@@ -87,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Condiments & Sauces"
       }
     },
@@ -101,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Baking"
       }
     },
@@ -115,6 +122,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Rice",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Oils & Vinegars"
       }
     },
@@ -143,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Baking"
       }
     },
@@ -157,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,8 +182,13 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Pasta & Rice"
       }
+    },
+    {
+      "raw": "Tuna and Marinade:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp sake",
@@ -185,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Tuna and Marinade",
         "category": "Beverages"
       }
     },
@@ -199,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Tuna and Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,11 +231,12 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Tuna and Marinade",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "75 g sashimi grade tuna (cubed)",
+      "raw": "75 g sashimi grade tuna cubed",
       "expected": {
         "item": "sashimi grade tuna",
         "measurements": [
@@ -227,11 +246,16 @@
           }
         ],
         "note": "cubed",
+        "section": "Tuna and Marinade",
         "category": "Other"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "Kinshi Tamago:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -241,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Kinshi Tamago",
         "category": "Dairy & Eggs"
       }
     },
@@ -255,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Kinshi Tamago",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,11 +295,16 @@
           }
         ],
         "note": null,
+        "section": "Kinshi Tamago",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "25 g lotus root (renkon) (sliced and boiled)",
+      "raw": "Other toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "25 g lotus root (renkon) sliced and boiled",
       "expected": {
         "item": "lotus root",
         "measurements": [
@@ -283,21 +314,23 @@
           }
         ],
         "note": "renkon, sliced and boiled",
+        "section": "Other Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "100 g shrimp (deshelled and boiled)",
+      "raw": "100 g shrimp deshelled and boiled",
       "expected": {
-        "item": "shrimp",
+        "item": "shrimp deshelled and boiled",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": "deshelled and boiled",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Other Toppings",
+        "category": "Other"
       }
     },
     {
@@ -311,11 +344,12 @@
           }
         ],
         "note": "ikura",
+        "section": "Other Toppings",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tbsp sweet pink fish powder (sakura denbu) (optional)",
+      "raw": "2 tbsp sweet pink fish powder (sakura denbu) optional",
       "expected": {
         "item": "sweet pink fish powder",
         "measurements": [
@@ -325,21 +359,23 @@
           }
         ],
         "note": "sakura denbu, optional",
+        "section": "Other Toppings",
         "category": "Other"
       }
     },
     {
-      "raw": "10  snow peas (blanched and cut in half diagonally)",
+      "raw": "10 snow peas blanched and cut in half diagonally",
       "expected": {
-        "item": "snow peas",
+        "item": "snow peas blanched and cut in half diagonally",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": "blanched and cut in half diagonally",
-        "category": "Produce"
+        "note": null,
+        "section": "Other Toppings",
+        "category": "Other"
       }
     },
     {
@@ -353,6 +389,7 @@
           }
         ],
         "note": "shredded nori",
+        "section": "Other Toppings",
         "category": "Spices & Seasonings"
       }
     }

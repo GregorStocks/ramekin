@@ -3,13 +3,8 @@
   "recipe_slug": "2013-06-pickled-vegetable-sand",
   "ingredients": [
     {
-      "raw": "Pickling mixture",
-      "expected": {
-        "item": "Pickling mixture",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Pickling mixture:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup distilled white vinegar",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pickling Mixture",
         "category": "Oils & Vinegars"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pickling Mixture",
         "category": "Baking"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Pickling Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Pickling Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Pickling Mixture",
         "category": "Beverages"
       }
     }

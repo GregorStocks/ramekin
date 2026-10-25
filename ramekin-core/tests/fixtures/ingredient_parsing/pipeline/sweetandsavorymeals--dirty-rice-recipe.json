@@ -3,6 +3,10 @@
   "recipe_slug": "dirty-rice-recipe",
   "ingredients": [
     {
+      "raw": "Rice:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups long-grain rice",
       "expected": {
         "item": "long-grain rice",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Pasta & Rice"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Canned Goods"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1  bay leaf",
+      "raw": "1 bay leaf",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Beef Mixture:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon vegetable oil",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Mixture",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Beef Mixture",
         "category": "Meat & Seafood"
       }
     },
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "Beef Mixture",
         "category": "Other"
       }
     },
     {
-      "raw": "1  medium onion (chopped)",
+      "raw": "1 medium onion chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  celery rib (finely chopped)",
+      "raw": "1 celery rib finely chopped",
       "expected": {
         "item": "celery rib",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  green bell pepper (seeded and chopped)",
+      "raw": "1/2 green bell pepper seeded and chopped",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": "seeded and chopped",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup green onion (chopped)",
+      "raw": "1/4 cup green onion chopped",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -167,6 +186,7 @@
           }
         ],
         "note": "minced",
+        "section": "Beef Mixture",
         "category": "Produce"
       }
     },
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "Beef Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon salt (to taste)",
+      "raw": "1/2 teaspoon salt to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Beef Mixture",
         "category": "Spices & Seasonings"
       }
     }

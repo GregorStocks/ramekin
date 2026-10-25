@@ -3,85 +3,6 @@
   "recipe_slug": "2016-04-potato-pizza-even-bett",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: S’More Cupcakes",
-      "expected": {
-        "item": "Months Ago: S’More Cupcakes",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: The Crispy Egg",
-      "expected": {
-        "item": "Years Ago: The Crispy Egg",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Frico Grilled Cheese Sandwiches",
-      "expected": {
-        "item": "Years Ago: Frico Grilled Cheese Sandwiches",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Spaghetti with Broccoli Cream Pesto",
-      "expected": {
-        "item": "Years Ago: Spaghetti with Broccoli Cream Pesto",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "4.5 Years Ago: Apple Pie Cookies",
-      "expected": {
-        "item": "Years Ago: Apple Pie Cookies",
-        "measurements": [
-          {
-            "amount": "4.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "4 teaspoons fine sea or table salt",
       "expected": {
         "item": "fine sea or table salt",
@@ -166,6 +87,10 @@
       }
     },
     {
+      "raw": "Jim Lahey’s Basic Pizza Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups minus 1 tablespoon (250 grams) all-purpose or bread flour",
       "expected": {
         "item": "minus 1 tablespoon all-purpose or bread flour",
@@ -180,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Baking"
       }
     },
@@ -198,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Baking"
       }
     },
@@ -207,6 +134,7 @@
         "item": "A heaped 1/4 teaspoon fine sea or table salt",
         "measurements": [],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -216,6 +144,7 @@
         "item": "A heaped 1/4 teaspoon granulated sugar",
         "measurements": [],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Other"
       }
     },
@@ -234,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Jim Lahey’s Basic Pizza Dough",
         "category": "Beverages"
       }
     }

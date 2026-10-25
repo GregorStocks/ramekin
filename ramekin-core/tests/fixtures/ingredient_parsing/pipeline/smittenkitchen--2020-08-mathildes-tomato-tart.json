@@ -3,6 +3,10 @@
   "recipe_slug": "2020-08-mathildes-tomato-tart",
   "ingredients": [
     {
+      "raw": "For the crust (pâte brisée):",
+      "is_section_header": true
+    },
+    {
       "raw": "1 3/4 cups (230 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust (Pâte Brisée)",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust (Pâte Brisée)",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust (Pâte Brisée)",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "cut into 1-inch pieces",
+        "section": "For the Crust (Pâte Brisée)",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust (Pâte Brisée)",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,8 +104,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crust (Pâte Brisée)",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 large very ripe tomatoes, heirloom or other, sliced crosswise 1/4-inch thick (about 1.5 pounds)",
@@ -113,6 +127,7 @@
           }
         ],
         "note": "about 1.5 pounds, sliced crosswise 1/4-inch thick",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -122,6 +137,7 @@
         "item": "Coarse or kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -136,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -154,6 +171,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -172,6 +190,7 @@
           }
         ],
         "note": "loosely packed",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -190,6 +209,7 @@
           }
         ],
         "note": "plus more for brushing",
+        "section": "For the Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -204,6 +224,7 @@
           }
         ],
         "note": "double if it you like mustard; skip if you don’t",
+        "section": "For the Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -222,6 +243,7 @@
           }
         ],
         "note": "see Note, thinly sliced or coarsely grated",
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
@@ -231,6 +253,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,32 +3,42 @@
   "recipe_slug": "turkey-gravy-recipe",
   "ingredients": [
     {
-      "raw": "4 cups turkey broth ( or stock mixed with drippings)",
+      "raw": "Gravy Base:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 cups turkey broth  or stock mixed with drippings",
       "expected": {
-        "item": "turkey broth",
+        "item": "turkey broth or stock",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "or stock mixed with drippings",
+        "note": "mixed with drippings",
+        "section": "Gravy Base",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2-3 tablespoons fresh herbs (parsley, thyme, sage)",
+      "raw": "2-3 tablespoons fresh herbs parsley, thyme, sage",
       "expected": {
-        "item": "fresh herbs",
+        "item": "fresh herbs parsley, thyme, sage",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": "parsley, thyme, sage",
-        "category": "Produce"
+        "note": null,
+        "section": "Gravy Base",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "For Thickening:",
+      "is_section_header": true
     },
     {
       "raw": "⅓ cup cornstarch",
@@ -41,22 +51,28 @@
           }
         ],
         "note": null,
+        "section": "For Thickening",
         "category": "Baking"
       }
     },
     {
-      "raw": "⅓ cup cold water (or cold broth)",
+      "raw": "⅓ cup cold water or cold broth",
       "expected": {
-        "item": "cold water",
+        "item": "cold water or cold broth",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "or cold broth",
+        "note": null,
+        "section": "For Thickening",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "OR:",
+      "is_section_header": true
     },
     {
       "raw": "⅔ cup  all-purpose flour",
@@ -69,20 +85,22 @@
           }
         ],
         "note": null,
+        "section": "Or",
         "category": "Baking"
       }
     },
     {
-      "raw": "⅔ cup cold water (or cold broth)",
+      "raw": "⅔ cup cold water or cold broth",
       "expected": {
-        "item": "cold water",
+        "item": "cold water or cold broth",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "or cold broth",
+        "note": null,
+        "section": "Or",
         "category": "Beverages"
       }
     }

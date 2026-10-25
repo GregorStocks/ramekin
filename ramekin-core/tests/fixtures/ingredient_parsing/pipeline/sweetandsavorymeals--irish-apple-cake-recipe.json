@@ -101,21 +101,21 @@
       }
     },
     {
-      "raw": "1 cup unsalted butter (cold and diced into small pieces)",
+      "raw": "1 cup unsalted butter cold and diced into small pieces",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter cold and diced into small pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "cold and diced into small pieces",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup granulated sugar (or use 1/2 cup white sugar and 1/3 cup brown sugar)",
+      "raw": "1 cup granulated sugar or use 1/2 cup white sugar and 1/3 cup brown sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "2 tablespoons granulated sugar (divided)",
+      "raw": "2 tablespoons granulated sugar divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 1/2 lbs granny smith apples (peeled, sliced in half, cored and stemed)",
+      "raw": "1 1/2 lbs granny smith apples peeled, sliced in half, cored and stemed",
       "expected": {
         "item": "granny smith apples",
         "measurements": [
@@ -171,17 +171,17 @@
       }
     },
     {
-      "raw": "2  large eggs (room temperature)",
+      "raw": "2 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -213,6 +213,10 @@
       }
     },
     {
+      "raw": "Custard Sauce – optional:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups whole milk",
       "expected": {
         "item": "whole milk",
@@ -223,11 +227,12 @@
           }
         ],
         "note": null,
+        "section": "Custard Sauce – Optional",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6  large egg yolks",
+      "raw": "6 large egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -237,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Sauce – Optional",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Sauce – Optional",
         "category": "Baking"
       }
     },
@@ -265,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Custard Sauce – Optional",
         "category": "Baking"
       }
     }

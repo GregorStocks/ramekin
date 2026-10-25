@@ -3,7 +3,11 @@
   "recipe_slug": "apple-cake-recipe",
   "ingredients": [
     {
-      "raw": "3 cups (375g) all-purpose flour",
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cups   (375g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tbsp baking powder",
+      "raw": "1 Tbsp   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp ground cinnamon",
+      "raw": "1 tsp   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 tsp salt",
+      "raw": "1/2 tsp   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -59,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup (200g) granulated sugar",
+      "raw": "1 cup   (200g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -77,11 +85,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (200g) lightly packed brown sugar",
+      "raw": "1 cup   (200g) lightly packed brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -95,11 +104,12 @@
           }
         ],
         "note": "lightly packed",
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (125ml) vegetable or canola oil",
+      "raw": "1/2 cup   (125ml) vegetable or canola oil",
       "expected": {
         "item": "vegetable or canola oil",
         "measurements": [
@@ -113,11 +123,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 cup sour cream or plain yogurt",
+      "raw": "1/2 cup   sour cream or plain yogurt",
       "expected": {
         "item": "sour cream or plain yogurt",
         "measurements": [
@@ -127,11 +138,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -141,11 +153,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup milk",
+      "raw": "1/4 cup   milk",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -155,11 +168,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tsp vanilla extract",
+      "raw": "2 tsp   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -169,11 +183,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 cups apples (peeled, cored, and diced)",
+      "raw": "3 cups   apples, peeled, cored, and diced",
       "expected": {
         "item": "apples",
         "measurements": [
@@ -183,11 +198,16 @@
           }
         ],
         "note": "peeled, cored, and diced",
+        "section": "Cake",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup (50g) granulated sugar",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/4 cup   (50g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -201,11 +221,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp ground cinnamon",
+      "raw": "1 tsp   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -215,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

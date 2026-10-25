@@ -3,13 +3,8 @@
   "recipe_slug": "2010-06-root-beer-float-cupcak",
   "ingredients": [
     {
-      "raw": "Cupcakes",
-      "expected": {
-        "item": "Cupcakes",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Cupcakes:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups root beer (I used Boylan because it was easy to find and made with cane sugar)",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "I used Boylan because it was easy to find and made with cane sugar",
+        "section": "Cupcakes",
         "category": "Beverages"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Other"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": "cut into 1-inch pieces",
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -86,6 +85,7 @@
           }
         ],
         "note": "firmly packed",
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -100,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -114,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -128,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -142,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Toppings",
+      "raw": "Toppings:",
       "is_section_header": true
     },
     {

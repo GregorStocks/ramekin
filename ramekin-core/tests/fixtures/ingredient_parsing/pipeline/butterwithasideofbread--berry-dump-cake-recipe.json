@@ -3,6 +3,10 @@
   "recipe_slug": "berry-dump-cake-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 20- oz can Berry pie filling",
       "expected": {
         "item": "Berry pie filling",
@@ -13,35 +17,42 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup butter (melted (1 stick))",
+      "raw": "1/2 cup butter melted (1 stick)",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
           }
         ],
-        "note": "melted (1 stick)",
+        "note": "melted",
+        "section": "Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 9- oz box Jiffy cake mix (you can also use 1/2 box of yellow or white cake mix)",
+      "raw": "1 9- oz box Jiffy cake mix you can also use 1/2 box of yellow or white cake mix",
       "expected": {
-        "item": "Jiffy cake mix",
+        "item": "Jiffy cake mix you can also use 1/2 box of yellow or white cake mix",
         "measurements": [
           {
             "amount": "1",
             "unit": "9-oz box"
           }
         ],
-        "note": "you can also use 1/2 box of yellow or white cake mix",
-        "category": "Other"
+        "note": null,
+        "section": "Ingredients",
+        "category": "Baking"
       }
     },
     {
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     }

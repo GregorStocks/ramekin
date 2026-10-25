@@ -3,35 +3,49 @@
   "recipe_slug": "smores-cupcakes-recipe",
   "ingredients": [
     {
-      "raw": "1½ cups all-purpose flour",
+      "raw": "For the Cupcakes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ cups  (187.5 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "187.5",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1-1/3 cups graham flour",
+      "raw": "1-1/3 cups  (40 g) graham flour",
       "expected": {
         "item": "graham flour",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Other"
       }
     },
     {
-      "raw": "2 teaspoons baking powder",
+      "raw": "2 teaspoons   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -41,39 +55,50 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1½ teaspoons salt",
+      "raw": "1½ teaspoons  (1.5 teaspoons) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1½ teaspoons ground cinnamon",
-      "expected": {
-        "item": "ground cinnamon",
-        "measurements": [
+          },
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "10 ounces  unsalted butter, room temperature ((1¼ cups))",
+      "raw": "1½ teaspoons  (1.5 teaspoons) ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For the Cupcakes",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "10 ounces  (283.5 g)  unsalted butter, room temperature, (1¼ cups)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -82,44 +107,59 @@
             "unit": "oz"
           },
           {
+            "amount": "283.5",
+            "unit": "g"
+          },
+          {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
         "note": "room temperature",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups light brown sugar",
+      "raw": "2 cups  (440 g) light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "440",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup honey",
+      "raw": "¼ cup  (84.75 ml) honey",
       "expected": {
         "item": "honey",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "84.75",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "6  eggs",
+      "raw": "6   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -129,11 +169,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 teaspoons vanilla extract",
+      "raw": "2 teaspoons   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -143,80 +184,106 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 ounces semisweet chocolate (finely chopped)",
+      "raw": "For the Chocolate Ganache Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 ounces  (113.4 g) semisweet chocolate, finely chopped",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
+          },
+          {
+            "amount": "113.4",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
+        "section": "For the Chocolate Ganache Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup heavy cream",
+      "raw": "½ cup  (119 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache Glaze",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  envelope unflavored gelatin (1 tablespoon)",
+      "raw": "For the Marshmallow Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1   envelope unflavored gelatin, 1 tablespoon",
       "expected": {
-        "item": "unflavored gelatin",
+        "item": "unflavored gelatin, 1 tablespoon",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
-          },
-          {
-            "amount": "1",
-            "unit": "tbsp"
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup plus ¼ cup cold water",
+      "raw": "⅓ cup  (83.33 ml) plus ¼ cup cold water",
       "expected": {
         "item": "cold water",
         "measurements": [
           {
             "amount": "1/3 cup plus 1/4 cup",
             "unit": null
+          },
+          {
+            "amount": "83.33",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Frosting",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  (200 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Marshmallow Frosting",
         "category": "Baking"
       }
     }

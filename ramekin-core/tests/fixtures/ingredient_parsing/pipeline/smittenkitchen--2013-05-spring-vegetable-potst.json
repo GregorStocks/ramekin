@@ -3,13 +3,8 @@
   "recipe_slug": "2013-05-spring-vegetable-potst",
   "ingredients": [
     {
-      "raw": "Potstickers",
-      "expected": {
-        "item": "Potstickers",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Potstickers:",
+      "is_section_header": true
     },
     {
       "raw": "3 to 3 1/4 cups chopped spring vegetables (such as asparagus, favas, peas, lima beans or more) (I used 2 1/4 cups chopped asparagus from 12 ounces stalks plus 1 cup cooked favas from about 1 pound fresh in their pods)",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "such as asparagus, favas, peas, lima beans or more, I used 2 1/4 cups chopped asparagus from 12 ounces stalks plus 1 cup cooked favas from about 1 pound fresh in their pods",
+        "section": "Potstickers",
         "category": "Other"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "such as safflower, canola or peanut",
+        "section": "Potstickers",
         "category": "Oils & Vinegars"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": "from about 3/4 of a bundle, about 3 ounces",
+        "section": "Potstickers",
         "category": "Produce"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Potstickers",
         "category": "Produce"
       }
     },
@@ -82,6 +81,7 @@
           }
         ],
         "note": "if using garlic chives, omit, peeled minced",
+        "section": "Potstickers",
         "category": "Produce"
       }
     },
@@ -100,6 +100,7 @@
           }
         ],
         "note": "about 6 ounces, see Note up top for alternative, chopped small",
+        "section": "Potstickers",
         "category": "Produce"
       }
     },
@@ -114,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Potstickers",
         "category": "Produce"
       }
     },
@@ -128,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Potstickers",
         "category": "Oils & Vinegars"
       }
     },
@@ -142,11 +145,12 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Potstickers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "To assemble",
+      "raw": "To assemble:",
       "is_section_header": true
     },
     {
@@ -195,14 +199,8 @@
       }
     },
     {
-      "raw": "Scallion dipping sauce",
-      "expected": {
-        "item": "Scallion dipping sauce",
-        "measurements": [],
-        "note": null,
-        "section": "To Assemble",
-        "category": "Other"
-      }
+      "raw": "Scallion dipping sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 scallions (or, remainder of bundle used for potstickers), thinly sliced (use some in sauce, some for garnish)",
@@ -215,7 +213,7 @@
           }
         ],
         "note": "or, remainder of bundle used for potstickers, use some in sauce, some for garnish, thinly sliced",
-        "section": "To Assemble",
+        "section": "Scallion Dipping Sauce",
         "category": "Produce"
       }
     },
@@ -230,7 +228,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Scallion Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -245,7 +243,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Scallion Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -260,12 +258,12 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Scallion Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "To cook",
+      "raw": "To cook:",
       "is_section_header": true
     },
     {

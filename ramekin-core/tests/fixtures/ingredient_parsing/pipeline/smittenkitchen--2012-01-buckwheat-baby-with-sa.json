@@ -3,13 +3,8 @@
   "recipe_slug": "2012-01-buckwheat-baby-with-sa",
   "ingredients": [
     {
-      "raw": "Caramel syrup",
-      "expected": {
-        "item": "Caramel syrup",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "raw": "Caramel syrup:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup granulated sugar",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Syrup",
         "category": "Baking"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "or, salted but ease up on the sea salt",
+        "section": "Caramel Syrup",
         "category": "Dairy & Eggs"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel Syrup",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,17 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Caramel Syrup",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Pancake",
-      "expected": {
-        "item": "Pancake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Pancake:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons buckwheat flour",
@@ -87,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Baking"
       }
     },
@@ -101,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Baking"
       }
     },
@@ -115,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Baking"
       }
     },
@@ -129,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Pancake",
         "category": "Dairy & Eggs"
       }
     },
@@ -180,6 +181,7 @@
         "item": "Confectioners’ sugar, to dust",
         "measurements": [],
         "note": "optional",
+        "section": "Pancake",
         "category": "Baking"
       }
     },
@@ -189,6 +191,7 @@
         "item": "Salted caramel syrup",
         "measurements": [],
         "note": null,
+        "section": "Pancake",
         "category": "Baking"
       }
     }

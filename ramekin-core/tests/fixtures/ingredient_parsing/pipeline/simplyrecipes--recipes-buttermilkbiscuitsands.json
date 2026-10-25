@@ -3,7 +3,11 @@
   "recipe_slug": "recipes-buttermilkbiscuitsands",
   "ingredients": [
     {
-      "raw": "2 1/2 cups self-rising flour (plus extra for flouring your surface)",
+      "raw": "For the buttermilk biscuits:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 1/2 cups self-rising flour, plus extra for flouring your surface",
       "expected": {
         "item": "self-rising flour",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "plus extra for flouring your surface",
+        "section": "For the Buttermilk Biscuits",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoon sugar (optional)",
+      "raw": "2 teaspoons sugar, optional",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Buttermilk Biscuits",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Buttermilk Biscuits",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 tablespoons vegetable shortening (see Baking Tips below)",
+      "raw": "4 tablespoons vegetable shortening (see Recipe Note)",
       "expected": {
         "item": "vegetable shortening",
         "measurements": [
@@ -54,7 +61,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "see Baking Tips below",
+        "note": "see Recipe Note",
+        "section": "For the Buttermilk Biscuits",
         "category": "Baking"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": "cut into cubes, chilled",
+        "section": "For the Buttermilk Biscuits",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup chilled buttermilk, plus 1-2 tablespoons more, if needed",
+      "raw": "1 cup chilled buttermilk, plus 1 to 2 tablespoons more, as needed",
       "expected": {
         "item": "chilled buttermilk",
         "measurements": [
@@ -82,23 +91,29 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 1-2 tablespoons more, if needed",
+        "note": "plus 1 to 2 tablespoons more, as needed",
+        "section": "For the Buttermilk Biscuits",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon melted butter (optional, to brush on top of biscuits after baking)",
+      "raw": "1 tablespoon melted butter, optional, to brush on top of biscuits after baking",
       "expected": {
-        "item": "melted butter",
+        "item": "melted butter, optional, to brush on top of biscuits after baking",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional, to brush on top of biscuits after baking",
+        "note": null,
+        "section": "For the Buttermilk Biscuits",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the sausage gravy:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound sage-flavored pork sausage",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Other"
       }
     },
@@ -125,13 +141,14 @@
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Produce"
       }
     },
     {
-      "raw": "6 tablespoons all purpose flour",
+      "raw": "6 tablespoons all-purpose flour",
       "expected": {
-        "item": "all purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "6",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,48 +216,52 @@
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1-2 dashes of Worcestershire sauce",
+      "raw": "1 to 2 dashes Worcestershire sauce",
       "expected": {
         "item": "Worcestershire sauce",
         "measurements": [
           {
-            "amount": "1-2",
+            "amount": "1 to 2",
             "unit": "dash"
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1-2 dashes of Tabasco sauce, cayenne pepper, or other hot sauce",
+      "raw": "1 to 2 dashes Tabasco sauce, cayenne pepper, or other hot sauce",
       "expected": {
         "item": "Tabasco sauce, cayenne pepper, or other hot sauce",
         "measurements": [
           {
-            "amount": "1-2",
+            "amount": "1 to 2",
             "unit": "dash"
           }
         ],
         "note": null,
+        "section": "For the Sausage Gravy",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1-2 tablespoons butter or bacon grease (if needed)",
+      "raw": "1 to 2 tablespoons butter or bacon grease (if needed)",
       "expected": {
         "item": "butter or bacon grease",
         "measurements": [
           {
-            "amount": "1-2",
+            "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
         "note": "if needed",
+        "section": "For the Sausage Gravy",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,49 +3,68 @@
   "recipe_slug": "2021-06-chocolate-covered-stra",
   "ingredients": [
     {
-      "raw": "3 tablespoons unsalted butter",
+      "raw": "For Brownie:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 tablespoons  / 42 g unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 oz 50-60% semisweet chocolate (chopped)",
+      "raw": "2 oz  / 57 g 50-60% semisweet chocolate, chopped",
       "expected": {
         "item": "50-60% semisweet chocolate",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
         "note": "chopped",
+        "section": "For Brownie",
         "category": "Other"
       }
     },
     {
-      "raw": "½ cup granulated sugar",
+      "raw": "½ cup  / 50 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  large egg",
+      "raw": "1   large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -55,11 +74,12 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ teaspoon vanilla extract",
+      "raw": "½ teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -69,39 +89,50 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup all-purpose flour",
+      "raw": "¼ cup  / 35 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons dark or Dutch process cocoa powder (sifted)",
+      "raw": "2 tablespoons  / 15 g dark or Dutch process cocoa powder, sifted",
       "expected": {
         "item": "dark or Dutch process cocoa powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ teaspoon baking powder",
+      "raw": "¼ teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -111,11 +142,12 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "⅛ teaspoon kosher salt",
+      "raw": "⅛ teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -125,11 +157,16 @@
           }
         ],
         "note": null,
+        "section": "For Brownie",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1¼ teaspoon unflavored powdered gelatin",
+      "raw": "For Strawberry Mousse:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1¼ teaspoon   unflavored powdered gelatin",
       "expected": {
         "item": "unflavored powdered gelatin",
         "measurements": [
@@ -139,11 +176,12 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons cold water",
+      "raw": "2 tablespoons   cold water",
       "expected": {
         "item": "cold water",
         "measurements": [
@@ -153,25 +191,31 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Beverages"
       }
     },
     {
-      "raw": "¼ cup whole milk",
+      "raw": "¼ cup  / 60 g whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  large egg yolk",
+      "raw": "1   large egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -181,39 +225,50 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "⅓ cup granulated sugar",
+      "raw": "⅓ cup  / 66 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "66",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup fresh strawberries (washed and hulled)",
+      "raw": "1 cup  / 130 g fresh strawberries, washed and hulled",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
           }
         ],
         "note": "washed and hulled",
+        "section": "For Strawberry Mousse",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon freshly squeezed lemon juice",
+      "raw": "1 tablespoon   freshly squeezed lemon juice",
       "expected": {
         "item": "freshly squeezed lemon juice",
         "measurements": [
@@ -223,62 +278,87 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Mousse",
         "category": "Produce"
       }
     },
     {
-      "raw": "⅔ cup heavy cream (cold)",
+      "raw": "⅔ cup  / 158 g heavy cream, cold",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "158",
+            "unit": "g"
           }
         ],
         "note": "cold",
+        "section": "For Strawberry Mousse",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup heavy cream",
+      "raw": "For Ganache Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  / 240 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Ganache Glaze",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon corn syrup",
+      "raw": "1 tablespoon  / 22 g corn syrup",
       "expected": {
         "item": "corn syrup",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Ganache Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "8 oz 50-70% dark chocolate (very finely chopped)",
+      "raw": "8 oz  / 226 g 50-70% dark chocolate, very finely chopped",
       "expected": {
         "item": "50-70% dark chocolate",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": "very finely chopped",
+        "section": "For Ganache Glaze",
         "category": "Other"
       }
     }

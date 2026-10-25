@@ -3,7 +3,7 @@
   "recipe_slug": "classic-italian-veggie-pasta-s",
   "ingredients": [
     {
-      "raw": "3 cups elbow macaroni ((one 12oz box))",
+      "raw": "3 cups elbow macaroni (one 12oz box)",
       "expected": {
         "item": "elbow macaroni",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2  a large seedless cucumber",
+      "raw": "½ a large seedless cucumber",
       "expected": {
         "item": "a large seedless cucumber",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "finely grated parmesan or feta cheese for topping ((choose your favorite))",
+      "raw": "finely grated parmesan or feta cheese for topping (choose your favorite)",
       "expected": {
         "item": "finely grated parmesan or feta cheese",
         "measurements": [],
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "salt and pepper (if desired)",
+      "raw": "salt and pepper if desired",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -91,7 +91,11 @@
       }
     },
     {
-      "raw": "1/2 cup extra virgin olive oil",
+      "raw": "Simple + Speedy Italian Dressing Recipe:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
@@ -101,11 +105,12 @@
           }
         ],
         "note": null,
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 cup white vinegar",
+      "raw": "½ cup white vinegar",
       "expected": {
         "item": "white vinegar",
         "measurements": [
@@ -115,11 +120,12 @@
           }
         ],
         "note": null,
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 TBSP Mrs Dash Italian Seasoning (plus extra to taste)",
+      "raw": "2 TBSP Mrs Dash Italian Seasoning plus extra to taste",
       "expected": {
         "item": "Mrs Dash Italian Seasoning",
         "measurements": [
@@ -129,6 +135,7 @@
           }
         ],
         "note": "plus extra to taste",
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Other"
       }
     },
@@ -143,11 +150,12 @@
           }
         ],
         "note": null,
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp salt (plus extra to taste)",
+      "raw": "¼ tsp salt plus extra to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -157,11 +165,12 @@
           }
         ],
         "note": "plus extra to taste",
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8-1/4 tsp freshly ground black pepper (if desired)",
+      "raw": "1/8-1/4 tsp freshly ground black pepper if desired",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [
@@ -171,6 +180,7 @@
           }
         ],
         "note": "if desired",
+        "section": "Simple + Speedy Italian Dressing Recipe",
         "category": "Spices & Seasonings"
       }
     }

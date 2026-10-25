@@ -3,7 +3,11 @@
   "recipe_slug": "lemon-cheesecake-bars-recipe",
   "ingredients": [
     {
-      "raw": "8 tbsp unsalted butter (softened)",
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 tbsp unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "softened",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -69,25 +77,31 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tbsp lemon juice (up to 2)",
+      "raw": "1 tbsp lemon juice up to 2",
       "expected": {
-        "item": "lemon juice",
+        "item": "lemon juice up to 2",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "up to 2",
-        "category": "Produce"
+        "note": null,
+        "section": "Crust",
+        "category": "Other"
       }
     },
     {
-      "raw": "16 oz cream cheese (softened)",
+      "raw": "Lemon Cheesecake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "16 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -97,6 +111,7 @@
           }
         ],
         "note": "softened",
+        "section": "Lemon Cheesecake",
         "category": "Cheese"
       }
     },
@@ -111,34 +126,37 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  eggs (room temperature)",
+      "raw": "2 eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Lemon Cheesecake",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tsp vanilla extract (or lemon extract)",
+      "raw": "1 tsp vanilla extract or lemon extract",
       "expected": {
-        "item": "vanilla extract",
+        "item": "vanilla extract or lemon extract",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or lemon extract",
+        "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Cheesecake",
         "category": "Baking"
       }
     }

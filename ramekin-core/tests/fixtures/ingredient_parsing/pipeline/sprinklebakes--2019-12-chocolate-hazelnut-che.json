@@ -3,16 +3,21 @@
   "recipe_slug": "2019-12-chocolate-hazelnut-che",
   "ingredients": [
     {
-      "raw": "1  package (9 oz. chocolate wafer cookies (such as Nabisco))",
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 package 9 oz. chocolate wafer cookies (such as Nabisco)",
       "expected": {
-        "item": "chocolate wafer cookies",
+        "item": "9 oz. chocolate wafer cookies",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": "9 oz. chocolate wafer cookies (such as Nabisco)",
+        "note": "such as Nabisco",
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (melted)",
+      "raw": "1/2 cup unsalted butter melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups 12 oz. package semisweet chocolate chips",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "softened",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon hazelnut liqueur (or 2 teaspoons vanilla extract)",
+      "raw": "1 tablespoon hazelnut liqueur or 2 teaspoons vanilla extract",
       "expected": {
         "item": "hazelnut liqueur",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": "or 2 teaspoons vanilla extract",
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -153,11 +171,16 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3/4 cup chocolate-hazelnut spread (such as Nutella)",
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3/4 cup chocolate-hazelnut spread such as Nutella",
       "expected": {
         "item": "chocolate-hazelnut spread",
         "measurements": [
@@ -167,21 +190,23 @@
           }
         ],
         "note": "such as Nutella",
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3/4 cup heavy cream (whipped to stiff peaks)",
+      "raw": "3/4 cup heavy cream whipped to stiff peaks",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream whipped to stiff peaks",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "whipped to stiff peaks",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Toppings",
+        "category": "Other"
       }
     },
     {
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     }

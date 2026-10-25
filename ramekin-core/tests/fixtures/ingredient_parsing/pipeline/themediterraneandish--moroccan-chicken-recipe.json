@@ -3,6 +3,10 @@
   "recipe_slug": "moroccan-chicken-recipe",
   "ingredients": [
     {
+      "raw": "For Spice Rub:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 tbsp all-natural Ras El Hanout",
       "expected": {
         "item": "all-natural Ras El Hanout",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,11 +77,16 @@
           }
         ],
         "note": null,
+        "section": "For Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 1/2 lb/1587.57 g whole chicken cut into bone-in pieces (or 7&nbsp; to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.)",
+      "raw": "For Chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 1/2 lb/1587.57 g whole chicken cut into bone-in pieces (or 7  to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.)",
       "expected": {
         "item": "whole chicken",
         "measurements": [
@@ -87,6 +100,7 @@
           }
         ],
         "note": "cut into bone-in pieces; or 7  to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -96,6 +110,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,11 +120,12 @@
         "item": "Private Reserve Greek extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 medium yellow on&nbsp;ion, chopped",
+      "raw": "1 medium yellow on ion, chopped",
       "expected": {
         "item": "yellow on ion",
         "measurements": [
@@ -119,6 +135,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Chicken",
         "category": "Other"
       }
     },
@@ -133,6 +150,7 @@
           }
         ],
         "note": "peeled and minced",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
@@ -151,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
@@ -165,6 +184,7 @@
           }
         ],
         "note": "thinly sliced; or 1 preserved lemon, cut up into small pieces",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
@@ -183,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Canned Goods"
       }
     },
@@ -201,6 +222,7 @@
           }
         ],
         "note": "any kind",
+        "section": "For Chicken",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -219,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Other"
       }
     },
@@ -237,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Canned Goods"
       }
     },
@@ -251,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Canned Goods"
       }
     },
@@ -260,6 +285,7 @@
         "item": "Toasted slivered almonds, to your liking",
         "measurements": [],
         "note": "optional",
+        "section": "For Chicken",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "1/2 cup Half &amp;amp; Half ( or whole milk)",
+      "raw": "1/2 cup Half & Half ( or whole milk)",
       "expected": {
         "item": "Half & Half",
         "measurements": [
@@ -37,6 +37,29 @@
         ],
         "note": "or whole milk",
         "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt (, or to tate)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to tate",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "fresh cracked black pepper",
+      "expected": {
+        "item": "fresh cracked black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -82,7 +105,7 @@
       }
     },
     {
-      "raw": "3 slices cooked bacon (, chopped&nbsp; or 1/2 cup diced ham)",
+      "raw": "3 slices cooked bacon (, chopped  or 1/2 cup diced ham)",
       "expected": {
         "item": "cooked bacon",
         "measurements": [
@@ -93,29 +116,6 @@
         ],
         "note": "chopped  or 1/2 cup diced ham",
         "category": "Meat & Seafood"
-      }
-    },
-    {
-      "raw": "1/4 teaspoon kosher salt (, or to tate)",
-      "expected": {
-        "item": "kosher salt",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": "or to tate",
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "fresh cracked black pepper",
-      "expected": {
-        "item": "fresh cracked black pepper",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
       }
     }
   ]

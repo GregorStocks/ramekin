@@ -3,13 +3,8 @@
   "recipe_slug": "2011-08-sugar-plum-crepes-with",
   "ingredients": [
     {
-      "raw": "Crepes",
-      "expected": {
-        "item": "Crepes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Crepes:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons butter, melted and cooled slightly (I browned this first, which probably won’t surprise you)",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "I browned this first, which probably won’t surprise you, melted and cooled slightly",
+        "section": "Crepes",
         "category": "Dairy & Eggs"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "fat level shouldn’t matter, but I use whole",
+        "section": "Crepes",
         "category": "Dairy & Eggs"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Crepes",
         "category": "Dairy & Eggs"
       }
     },
@@ -64,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Crepes",
         "category": "Baking"
       }
     },
@@ -78,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Crepes",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +87,7 @@
         "item": "Few gratings fresh nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Crepes",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,17 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Crepes",
         "category": "Baking"
       }
     },
     {
-      "raw": "Plums",
-      "expected": {
-        "item": "Plums",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "raw": "Plums:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound sugar or other plums, pitted and cut into quarters if tiny, eighths if larger",
@@ -124,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Baking"
       }
     },
@@ -138,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Baking"
       }
     },
@@ -166,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Spices & Seasonings"
       }
     },
@@ -180,11 +181,12 @@
           }
         ],
         "note": null,
+        "section": "Plums",
         "category": "Produce"
       }
     },
     {
-      "raw": "Assembly",
+      "raw": "Assembly:",
       "is_section_header": true
     },
     {

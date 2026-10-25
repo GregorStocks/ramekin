@@ -3,6 +3,10 @@
   "recipe_slug": "tonpeiyaki-recipe",
   "ingredients": [
     {
+      "raw": "Homemade Okonomiyaki Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ tbsp Worcestershire sauce",
       "expected": {
         "item": "Worcestershire sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Okonomiyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Okonomiyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Okonomiyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Okonomiyaki Sauce",
         "category": "Baking"
       }
     },
@@ -69,11 +77,16 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Homemade Okonomiyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "Tonpeiyaki:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Tonpeiyaki",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Tonpeiyaki",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "Tonpeiyaki",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "50 g green cabbage (shredded)",
+      "raw": "50 g green cabbage shredded",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Tonpeiyaki",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Tonpeiyaki",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,25 +171,23 @@
           }
         ],
         "note": null,
+        "section": "Tonpeiyaki",
         "category": "Produce"
       }
     },
     {
-      "raw": "100 g thinly sliced pork belly (approx 4 slices)",
+      "raw": "100 g thinly sliced pork belly approx 4 slices",
       "expected": {
-        "item": "thinly sliced pork belly",
+        "item": "thinly sliced pork belly approx 4 slices",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
-          },
-          {
-            "amount": "4",
-            "unit": "slice"
           }
         ],
-        "note": "approx 4 slices",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Tonpeiyaki",
+        "category": "Other"
       }
     },
     {
@@ -185,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Tonpeiyaki",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,6 +216,7 @@
           }
         ],
         "note": "dried green seaweed powder",
+        "section": "Tonpeiyaki",
         "category": "Spices & Seasonings"
       }
     }

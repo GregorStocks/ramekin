@@ -12,25 +12,21 @@
       }
     },
     {
-      "raw": "1  large green cabbage (about 2 lbs)",
+      "raw": "1 large green cabbage about 2 lbs",
       "expected": {
-        "item": "green cabbage",
+        "item": "green cabbage about 2 lbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "2",
-            "unit": "lb"
           }
         ],
-        "note": "about 2 lbs",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  lemon (quartered)",
+      "raw": "1 lemon quartered",
       "expected": {
         "item": "lemon",
         "measurements": [
@@ -44,6 +40,10 @@
       }
     },
     {
+      "raw": "Seasoning:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
@@ -54,6 +54,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -68,6 +69,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -82,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -110,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     }

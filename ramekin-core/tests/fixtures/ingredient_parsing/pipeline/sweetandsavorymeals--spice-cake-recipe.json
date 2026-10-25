@@ -3,6 +3,10 @@
   "recipe_slug": "spice-cake-recipe",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,21 +137,23 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/2 cups light brown sugar (packed)",
+      "raw": "1 1/2 cups light brown sugar packed",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar packed",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "packed",
-        "category": "Baking"
+        "note": null,
+        "section": "Cake",
+        "category": "Other"
       }
     },
     {
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,25 +182,27 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 cup applesauce (unsweetened)",
+      "raw": "1/2 cup applesauce unsweetened",
       "expected": {
-        "item": "applesauce",
+        "item": "applesauce unsweetened",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "unsweetened",
-        "category": "Canned Goods"
+        "note": null,
+        "section": "Cake",
+        "category": "Produce"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -195,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -223,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -251,34 +272,41 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "12 oz cream cheese (at room temperature)",
+      "raw": "Cream Cheese Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 oz cream cheese at room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese at room temperature",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (at room temperature)",
+      "raw": "1/2 cup unsalted butter at room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter at room temperature",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -307,6 +336,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     }

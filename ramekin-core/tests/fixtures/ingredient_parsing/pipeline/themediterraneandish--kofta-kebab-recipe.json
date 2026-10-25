@@ -3,7 +3,7 @@
   "recipe_slug": "kofta-kebab-recipe",
   "ingredients": [
     {
-      "raw": "1  medium yellow onion (quartered)",
+      "raw": "1 medium yellow onion quartered",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves",
+      "raw": "2 garlic cloves",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1  whole bunch parsley (stems removed (about 2 packed cups parsley leaves))",
+      "raw": "1 whole bunch parsley stems removed (about 2 packed cups parsley leaves)",
       "expected": {
         "item": "whole bunch parsley",
         "measurements": [
@@ -40,7 +40,7 @@
             "unit": null
           }
         ],
-        "note": "stems removed (about 2 packed cups parsley leaves)",
+        "note": "about 2 packed cups parsley leaves, stems removed",
         "category": "Other"
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 slice of bread (toasted until browned and soaked in water until fully tender)",
+      "raw": "1 slice of bread toasted until browned and soaked in water until fully tender",
       "expected": {
         "item": "bread",
         "measurements": [
@@ -189,11 +189,16 @@
       }
     },
     {
+      "raw": "For the Fixings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Tahini Sauce",
       "expected": {
         "item": "Tahini Sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Fixings",
         "category": "Other"
       }
     },
@@ -203,6 +208,7 @@
         "item": "Tomato wedges",
         "measurements": [],
         "note": null,
+        "section": "For the Fixings",
         "category": "Other"
       }
     },
@@ -212,6 +218,7 @@
         "item": "Onion wedges",
         "measurements": [],
         "note": null,
+        "section": "For the Fixings",
         "category": "Other"
       }
     },
@@ -221,6 +228,7 @@
         "item": "parsley",
         "measurements": [],
         "note": null,
+        "section": "For the Fixings",
         "category": "Produce"
       }
     }

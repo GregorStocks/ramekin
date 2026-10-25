@@ -3,6 +3,10 @@
   "recipe_slug": "2019-02-frosted-circus-animal-",
   "ingredients": [
     {
+      "raw": "Yellow cake layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 3/4 cups 347g granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Yellow Cake Layers",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Yellow Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Yellow Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Yellow Cake Layers",
         "category": "Oils & Vinegars"
       }
     },
@@ -81,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "Yellow Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Yellow Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Yellow Cake Layers",
         "category": "Baking"
       }
     },
@@ -131,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Yellow Cake Layers",
         "category": "Baking"
       }
     },
@@ -145,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Yellow Cake Layers",
         "category": "Baking"
       }
     },
@@ -163,11 +176,16 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Yellow Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6  egg whites",
+      "raw": "Swiss Meringue Buttercream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Swiss Meringue Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Swiss Meringue Buttercream",
         "category": "Baking"
       }
     },
@@ -209,11 +229,12 @@
           }
         ],
         "note": null,
+        "section": "Swiss Meringue Buttercream",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pound unsalted butter (cubed, at room temperature)",
+      "raw": "1 pound unsalted butter cubed, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -223,6 +244,7 @@
           }
         ],
         "note": "cubed, at room temperature",
+        "section": "Swiss Meringue Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Swiss Meringue Buttercream",
         "category": "Baking"
       }
     },
@@ -255,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "Swiss Meringue Buttercream",
         "category": "Other"
       }
     },
@@ -264,6 +288,7 @@
         "item": "Baker’s rose gel food color",
         "measurements": [],
         "note": null,
+        "section": "Swiss Meringue Buttercream",
         "category": "Other"
       }
     },
@@ -273,8 +298,13 @@
         "item": "Neon pink gel food color",
         "measurements": [],
         "note": null,
+        "section": "Swiss Meringue Buttercream",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "3 oz. ready-made hot pink fondant",
@@ -287,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -301,15 +332,17 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
     {
-      "raw": "Scalloped edging fondant cutter (see blog post for sources)",
+      "raw": "Scalloped edging fondant cutter see blog post for sources",
       "expected": {
-        "item": "Scalloped edging fondant cutter",
+        "item": "Scalloped edging fondant cutter see blog post for sources",
         "measurements": [],
-        "note": "see blog post for sources",
+        "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -324,20 +357,22 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2  batch American buttercream (recipe here)",
+      "raw": "1/2 batch American buttercream recipe here",
       "expected": {
-        "item": "American buttercream",
+        "item": "American buttercream recipe here",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "batch"
           }
         ],
-        "note": "recipe here",
+        "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -352,6 +387,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2016-11-salted-dark-chocolate-",
   "ingredients": [
     {
+      "raw": "For Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups vanilla wafer cookie crumbs (from about 7 ounces cookies)",
       "expected": {
         "item": "vanilla wafer cookie crumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "from about 7 ounces cookies",
+        "section": "For Crust",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Dulce de Leche:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces dulce de leche",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Dulce De Leche",
         "category": "Baking"
       }
     },
@@ -97,8 +111,13 @@
           }
         ],
         "note": "as needed",
+        "section": "For Dulce De Leche",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Ganache Mousse:",
+      "is_section_header": true
     },
     {
       "raw": "6 ounces good quality dark chocolate (70-75%), finely chopped",
@@ -111,6 +130,7 @@
           }
         ],
         "note": "70-75%, finely chopped, good quality",
+        "section": "For Ganache Mousse",
         "category": "Baking"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": "divided",
+        "section": "For Ganache Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "For Ganache Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For Ganache Mousse",
         "category": "Baking"
       }
     },
@@ -162,6 +185,7 @@
         "item": "flake sea salt",
         "measurements": [],
         "note": "such as Maldon, for topping",
+        "section": "For Ganache Mousse",
         "category": "Spices & Seasonings"
       }
     }

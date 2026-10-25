@@ -3,6 +3,10 @@
   "recipe_slug": "2017-08-corn-chowder-with-chil",
   "ingredients": [
     {
+      "raw": "Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "8 medium/large ears corn, husks and silks removed",
       "expected": {
         "item": "ears corn",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "husks and silks removed",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "preferably Spanish, chopped fine",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "minced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "or 1 teaspoon of a hotter one",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Baking"
       }
     },
@@ -133,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
     },
@@ -151,6 +164,7 @@
           }
         ],
         "note": "drained and rinsed; or one of each",
+        "section": "Soup",
         "category": "Canned Goods"
       }
     },
@@ -169,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -178,6 +193,7 @@
         "item": "Salt and freshly ground black pepper or cayenne",
         "measurements": [],
         "note": "to taste",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -196,8 +212,13 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Finish:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (50 grams) mayonnaise",
@@ -214,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Finish",
         "category": "Condiments & Sauces"
       }
     },
@@ -232,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -250,6 +273,7 @@
           }
         ],
         "note": "plus more for serving",
+        "section": "Finish",
         "category": "Cheese"
       }
     },
@@ -264,6 +288,7 @@
           }
         ],
         "note": "divided",
+        "section": "Finish",
         "category": "Produce"
       }
     },
@@ -278,6 +303,7 @@
           }
         ],
         "note": null,
+        "section": "Finish",
         "category": "Produce"
       }
     },
@@ -287,6 +313,7 @@
         "item": "Chili powder or a chili-lime seasoning",
         "measurements": [],
         "note": "such as Tajín",
+        "section": "Finish",
         "category": "Spices & Seasonings"
       }
     },
@@ -296,6 +323,7 @@
         "item": "Baked tortilla chips",
         "measurements": [],
         "note": "optional",
+        "section": "Finish",
         "category": "Other"
       }
     }

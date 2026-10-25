@@ -3,7 +3,11 @@
   "recipe_slug": "zucchini-noodle-pad-thai-recip",
   "ingredients": [
     {
-      "raw": "2 medium zucchini",
+      "raw": "for the zucchini noodle pad thai:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 medium   zucchini",
       "expected": {
         "item": "zucchini",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 Tablespoons olive oil ((30ml) , divided)",
+      "raw": "2 Tablespoons   olive oil (30ml) , divided",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": "divided",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 pound peeled and de-veined shrimp ((225g)  or what ever protein you prefer)",
+      "raw": "1/2 pound   peeled and de-veined shrimp (225g)  or what ever protein you prefer",
       "expected": {
         "item": "peeled and de-veined shrimp or what ever protein you prefer",
         "measurements": [
@@ -49,11 +55,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3 cloves garlic (, minced or crushed)",
+      "raw": "3 cloves   garlic , minced or crushed",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -63,11 +70,12 @@
           }
         ],
         "note": "minced or crushed",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  red bell pepper (, seeded and sliced thin)",
+      "raw": "1/2   red bell pepper , seeded and sliced thin",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -77,11 +85,12 @@
           }
         ],
         "note": "seeded and sliced thin",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  green onions (, sliced)",
+      "raw": "3   green onions , sliced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -91,11 +100,12 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 large egg",
+      "raw": "1 large   egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -105,11 +115,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups  bean sprouts ((480ml) , about)",
+      "raw": "2 cups    bean sprouts (480ml) , about",
       "expected": {
         "item": "bean sprouts, about",
         "measurements": [
@@ -123,11 +134,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/3 cup roasted peanuts ((80ml) )",
+      "raw": "1/3 cup   roasted peanuts (80ml)",
       "expected": {
         "item": "roasted peanuts",
         "measurements": [
@@ -141,11 +153,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4 cup chopped cilantro ((optional))",
+      "raw": "1/4 cup   chopped cilantro (optional)",
       "expected": {
         "item": "chopped cilantro",
         "measurements": [
@@ -155,34 +168,45 @@
           }
         ],
         "note": "optional",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Produce"
       }
     },
     {
-      "raw": "Few lime wedges for serving ((optional))",
+      "raw": "Few lime wedges for serving (optional)",
       "expected": {
         "item": "Few lime wedges",
         "measurements": [],
         "note": "optional, for serving",
+        "section": "For the Zucchini Noodle Pad Thai",
         "category": "Other"
       }
     },
     {
-      "raw": "2 Tablespoons rice vinegar ( or distilled white vinegar (30ml) )",
+      "raw": "for the sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 Tablespoons   rice vinegar  or distilled white vinegar (30ml)",
       "expected": {
-        "item": "rice vinegar",
+        "item": "rice vinegar or distilled white vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
-        "note": "or distilled white vinegar (30ml)",
+        "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 Tablespoons fish sauce ((30ml), or to taste)",
+      "raw": "2 Tablespoons   fish sauce (30ml), or to taste",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -196,11 +220,12 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3 Tablespoons ketchup ((45ml) )",
+      "raw": "3 Tablespoons   ketchup (45ml)",
       "expected": {
         "item": "ketchup",
         "measurements": [
@@ -214,11 +239,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon packed brown sugar ((5ml) )",
+      "raw": "1 teaspoon   packed brown sugar (5ml)",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -232,11 +258,12 @@
           }
         ],
         "note": "packed",
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon cayenne pepper or 1 small red chili (, sliced)",
+      "raw": "1/2 teaspoon   cayenne pepper or 1 small red chili , sliced",
       "expected": {
         "item": "cayenne pepper",
         "measurements": [
@@ -245,12 +272,13 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1 small red chili (sliced)",
+        "note": "or 1 small red chili; sliced",
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon chili garlic sauce (, or to taste)",
+      "raw": "1 teaspoon   chili garlic sauce , or to taste",
       "expected": {
         "item": "chili garlic sauce",
         "measurements": [
@@ -260,6 +288,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     }

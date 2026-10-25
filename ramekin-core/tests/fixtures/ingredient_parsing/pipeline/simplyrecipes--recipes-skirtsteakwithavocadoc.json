@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-skirtsteakwithavocadoc",
   "ingredients": [
     {
+      "raw": "For the avocado chimichurri sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup cilantro leaves, packed",
       "expected": {
         "item": "cilantro leaves",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,13 +107,14 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 cup extra-virgin olive oil",
+      "raw": "1/2 cup extra virgin olive oil",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 medium avocado, diced about 1 cup",
+      "raw": "1 medium avocado, diced, about 1 cup",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -124,9 +136,14 @@
             "unit": "medium"
           }
         ],
-        "note": "diced about 1 cup",
+        "note": "diced, about 1 cup",
+        "section": "For the Avocado Chimichurri Sauce",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the skirt steak:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound skirt steak",
@@ -139,13 +156,14 @@
           }
         ],
         "note": null,
+        "section": "For the Skirt Steak",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 teaspoon Kosher salt, as needed for seasoning",
+      "raw": "1 teaspoon kosher salt, as needed for seasoning",
       "expected": {
-        "item": "Kosher salt, as needed for seasoning",
+        "item": "kosher salt, as needed for seasoning",
         "measurements": [
           {
             "amount": "1",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skirt Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skirt Steak",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Skirt Steak",
         "category": "Oils & Vinegars"
       }
     }

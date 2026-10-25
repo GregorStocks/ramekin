@@ -3,6 +3,10 @@
   "recipe_slug": "chai-dairy-free-waffles-berry-",
   "ingredients": [
     {
+      "raw": "For the berry compote:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound frozen mixed berries",
       "expected": {
         "item": "frozen mixed berries",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Berry Compote",
         "category": "Frozen"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Berry Compote",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "For the Berry Compote",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the dairy free waffles:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup all-purpose flour",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Produce"
       },
       "expanded": true
@@ -126,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -141,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -156,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Spices & Seasonings"
       }
     },
@@ -170,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Oils & Vinegars"
       }
     },
@@ -184,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -198,6 +219,7 @@
           }
         ],
         "note": "we used Califia Farms",
+        "section": "For the Dairy Free Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -212,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Baking"
       }
     },
@@ -226,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dairy Free Waffles",
         "category": "Condiments & Sauces"
       }
     }

@@ -3,58 +3,86 @@
   "recipe_slug": "sopa-de-albondigas-de-pollo-ni",
   "ingredients": [
     {
-      "raw": "1 (4-pound) chicken, rinsed and cut into 8 pieces",
+      "raw": "For the Chicken Soup:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (4-pound; 1.8 kg) chicken, cut into 8 pieces (backbone reserved)",
       "expected": {
         "item": "chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "1.8",
+            "unit": "kg"
           }
         ],
-        "note": "4-pound, rinsed and cut into 8 pieces",
+        "note": "4-pound; 1.8 kg, backbone reserved, cut into 8 pieces",
+        "section": "For the Chicken Soup",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 medium yellow onion, peeled and quartered",
+      "raw": "1 medium yellow onion (8 ounces; 227 g), peeled and quartered",
       "expected": {
         "item": "yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": "peeled and quartered",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 medium green bell pepper, stemmed, seeded, and quartered",
+      "raw": "1 medium green bell pepper (7 ounces; 198 g), stemmed, seeded, and quartered",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
           }
         ],
         "note": "stemmed, seeded, and quartered",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
     {
-      "raw": "5 garlic cloves, peeled and smashed",
+      "raw": "5 medium garlic cloves, peeled and smashed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
           {
             "amount": "5",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": "peeled and smashed",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
@@ -69,27 +97,37 @@
           }
         ],
         "note": "see notes, split in half",
+        "section": "For the Chicken Soup",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup packed culantro (see notes)",
+      "raw": "1/2 cup packed culantro (3/4 ounce; 21 g; see notes)",
       "expected": {
         "item": "culantro",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": "see notes, packed",
+        "note": "3/4 ounce; 21 g; see notes, packed",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup packed mint leaves",
+      "raw": "1/4 cup packed fresh mint leaves",
       "expected": {
-        "item": "mint leaves",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "0.25",
@@ -97,34 +135,45 @@
           }
         ],
         "note": "packed",
+        "section": "For the Chicken Soup",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 quarts water",
+      "raw": "3 quarts (3 L) cold water",
       "expected": {
-        "item": "water",
+        "item": "cold water",
         "measurements": [
           {
             "amount": "3",
             "unit": "quart"
+          },
+          {
+            "amount": "3",
+            "unit": "l"
           }
         ],
         "note": null,
+        "section": "For the Chicken Soup",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 tablespoon salt",
+      "raw": "1 tablespoon (9 g) Diamond Crystal kosher salt; for table salt, use half as much by volume or same weight",
       "expected": {
-        "item": "salt",
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume or same weight",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Chicken Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,55 +188,79 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Soup",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 medium yellow onion, coarsely chopped",
+      "raw": "For the Chicken Meatballs:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 medium yellow onion (8 ounces; 227 g), coarsely chopped (about 1 3/4 cups)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          },
+          {
+            "amount": "1.75",
+            "unit": "cup"
           }
         ],
-        "note": "coarsely chopped",
+        "note": "about 1 3/4 cups, coarsely chopped",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 medium green bell pepper, stemmed, seeded, and coarsely chopped",
+      "raw": "1/2 stemmed and seeded medium green bell pepper, coarsely chopped (about 3/4 cup)",
       "expected": {
-        "item": "green bell pepper",
+        "item": "stemmed and seeded medium green bell pepper",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "medium"
+            "unit": null
+          },
+          {
+            "amount": "0.75",
+            "unit": "cup"
           }
         ],
-        "note": "stemmed, seeded, and coarsely chopped",
-        "category": "Produce"
+        "note": "about 3/4 cup, coarsely chopped",
+        "section": "For the Chicken Meatballs",
+        "category": "Other"
       }
     },
     {
-      "raw": "4 garlic cloves",
+      "raw": "4 medium garlic cloves, peeled",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons achiote paste or powdered annato",
+      "raw": "2 teaspoons achiote paste or powdered annatto",
       "expected": {
-        "item": "achiote paste or powdered annato",
+        "item": "achiote paste or powdered annatto",
         "measurements": [
           {
             "amount": "2",
@@ -195,41 +268,56 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Meatballs",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3 tablespoons unsalted butter",
+      "raw": "3 tablespoons (45 g) unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Chicken Meatballs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups corn masa mix, such as Maseca",
+      "raw": "2 cups corn masa mix (8 ounces; 227 g), such as Maseca",
       "expected": {
         "item": "corn masa mix",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": "such as Maseca",
+        "section": "For the Chicken Meatballs",
         "category": "Other"
       }
     },
     {
-      "raw": "1 teaspoon kosher salt",
+      "raw": "1 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by weight",
       "expected": {
-        "item": "kosher salt",
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by weight",
         "measurements": [
           {
             "amount": "1",
@@ -237,27 +325,37 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup culantro, finely chopped (see notes)",
+      "raw": "1/2 cup culantro (3/4 ounce; 21 g), finely chopped (see notes)",
       "expected": {
         "item": "culantro",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
         "note": "see notes, finely chopped",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup mint leaves, finely chopped",
+      "raw": "1/4 cup fresh mint leaves, finely chopped",
       "expected": {
-        "item": "mint leaves",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "0.25",
@@ -265,29 +363,36 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons sour orange juice (see notes)",
+      "raw": "2 tablespoons (30 ml) sour orange juice (see notes)",
       "expected": {
         "item": "sour orange juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": "see notes",
+        "section": "For the Chicken Meatballs",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Cilantro and mint leaves for garnish",
+      "raw": "Fresh herbs, such as torn culantro, cilantro, and/or mint, for ganish",
       "expected": {
-        "item": "Cilantro and mint leaves",
+        "item": "Fresh herbs",
         "measurements": [],
-        "note": "for garnish",
+        "note": "such as torn culantro, cilantro, and/or mint, for ganish",
+        "section": "For the Chicken Meatballs",
         "category": "Produce"
       }
     }

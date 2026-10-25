@@ -3,44 +3,59 @@
   "recipe_slug": "cream-puffs-recipe",
   "ingredients": [
     {
+      "raw": "Whipped Meyer Lemon Curd:",
+      "is_section_header": true
+    },
+    {
       "raw": "finely grated zest from 1-2 meyer lemons",
       "expected": {
         "item": "finely grated zest from 1-2 meyer lemons",
         "measurements": [],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Other"
       }
     },
     {
-      "raw": "3/4 cup sugar",
+      "raw": "3/4 cup  (150 g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup fresh meyer lemon juice",
+      "raw": "1/4 cup  (60 ml) fresh meyer lemon juice",
       "expected": {
         "item": "fresh meyer lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -50,25 +65,31 @@
           }
         ],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "5 Tablespoons butter (, cut into small pieces)",
+      "raw": "5 Tablespoons  (75 g) butter , cut into small pieces",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
           }
         ],
         "note": "cut into small pieces",
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 pinch kosher salt (, or to taste)",
+      "raw": "1 pinch   kosher salt , or to taste",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -78,109 +99,149 @@
           }
         ],
         "note": "or to taste",
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup heavy whipping cream",
+      "raw": "1/2 cup  (120 ml) heavy whipping cream",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 1/2 teaspoons corn starch",
+      "raw": "1 1/2 teaspoons  (7.5 ml) corn starch (to stabilize the whipped cream - you don't have to add this if piping and serving right away)",
       "expected": {
         "item": "corn starch",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "7.5",
+            "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "to stabilize the whipped cream - you don't have to add this if piping and serving right away",
+        "section": "Whipped Meyer Lemon Curd",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup water",
+      "raw": "Puffs:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  (240 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 cup butter ((one stick))",
+      "raw": "1/2 cup  (113 g) butter (one stick)",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "one stick",
+        "section": "Puffs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 teaspoons sugar",
+      "raw": "2 teaspoons  (10 ml) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon kosher salt",
+      "raw": "1/4 teaspoon  (1.25 ml) kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.25",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup flour",
+      "raw": "1 cup  (125 g) flour",
       "expected": {
         "item": "flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 large eggs",
+      "raw": "4 large   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -190,15 +251,17 @@
           }
         ],
         "note": null,
+        "section": "Puffs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "powdered sugar (, for dusting the cream puffs)",
+      "raw": "powdered sugar , for dusting the cream puffs",
       "expected": {
         "item": "powdered sugar",
         "measurements": [],
         "note": "for dusting the cream puffs",
+        "section": "Puffs",
         "category": "Baking"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "asian-shrimp-cocktail-recipe",
   "ingredients": [
     {
-      "raw": "450 grams large shrimp ((about 18 16/20 shrimp))",
+      "raw": "for shrimp:",
+      "is_section_header": true
+    },
+    {
+      "raw": "450 grams  large shrimp (about 18 16/20 shrimp)",
       "expected": {
         "item": "large shrimp",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "about 18 16/20 shrimp",
+        "section": "For Shrimp",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "4 cups water",
+      "raw": "4 cups  water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 tablespoon granulated sugar",
+      "raw": "1 tablespoon  granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons kosher salt",
+      "raw": "2 teaspoons  kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 whole plant cilantro ((leaves, stems and root))",
+      "raw": "1 whole plant  cilantro (leaves, stems and root)",
       "expected": {
         "item": "whole plant cilantro",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "leaves, stems and root",
+        "section": "For Shrimp",
         "category": "Other"
       }
     },
     {
-      "raw": "1 inch knob fresh ginger ((sliced thin))",
+      "raw": "1 inch knob  fresh ginger (sliced thin)",
       "expected": {
         "item": "inch knob fresh ginger",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "For Shrimp",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Produce"
       }
     },
@@ -106,11 +117,12 @@
         "item": "lime peel",
         "measurements": [],
         "note": null,
+        "section": "For Shrimp",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cups sake",
+      "raw": "½ cups  sake",
       "expected": {
         "item": "sake",
         "measurements": [
@@ -120,11 +132,16 @@
           }
         ],
         "note": null,
+        "section": "For Shrimp",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 small tomato ((cut into 1/4\" cubes))",
+      "raw": "for cocktail sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 small  tomato (cut into ¼\" cubes)",
       "expected": {
         "item": "tomato",
         "measurements": [
@@ -134,11 +151,12 @@
           }
         ],
         "note": "cut into 1/4\" cubes",
+        "section": "For Cocktail Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cups tomato sauce ((pureed stewed tomatoes))",
+      "raw": "½ cups  tomato sauce (pureed stewed tomatoes)",
       "expected": {
         "item": "tomato sauce",
         "measurements": [
@@ -148,11 +166,12 @@
           }
         ],
         "note": "pureed stewed tomatoes",
+        "section": "For Cocktail Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 tablespoons Thai sweet chili sauce",
+      "raw": "2 tablespoons  Thai sweet chili sauce",
       "expected": {
         "item": "Thai sweet chili sauce",
         "measurements": [
@@ -162,11 +181,12 @@
           }
         ],
         "note": null,
+        "section": "For Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon fish sauce",
+      "raw": "1 teaspoon  fish sauce",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -176,11 +196,12 @@
           }
         ],
         "note": null,
+        "section": "For Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon lime juice ((freshly squeezed))",
+      "raw": "1 tablespoon  lime juice (freshly squeezed)",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -190,11 +211,12 @@
           }
         ],
         "note": "freshly squeezed",
+        "section": "For Cocktail Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon wasabi",
+      "raw": "1 teaspoon  wasabi",
       "expected": {
         "item": "wasabi",
         "measurements": [
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For Cocktail Sauce",
         "category": "Condiments & Sauces"
       }
     }

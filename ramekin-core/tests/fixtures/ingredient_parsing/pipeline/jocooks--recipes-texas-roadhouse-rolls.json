@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-texas-roadhouse-rolls",
   "ingredients": [
     {
+      "raw": "Texas Roadhouse Rolls:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 teaspoon active dry yeast",
       "expected": {
         "item": "active dry yeast",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Texas Roadhouse Rolls",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Texas Roadhouse Rolls",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "to activate the yeast",
+        "section": "Texas Roadhouse Rolls",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "scalded and cooled to lukewarm",
+        "section": "Texas Roadhouse Rolls",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "unsalted, melted and slightly cooled",
+        "section": "Texas Roadhouse Rolls",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Texas Roadhouse Rolls",
         "category": "Baking"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": "up to 8 cups",
+        "section": "Texas Roadhouse Rolls",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Texas Roadhouse Rolls",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Texas Roadhouse Rolls",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": "unsalted, for brushing over the finished rolls",
+        "section": "Texas Roadhouse Rolls",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Cinnamon Honey Butter:",
+      "is_section_header": true
     },
     {
       "raw": "1 stick butter (unsalted, softened)",
@@ -153,6 +171,7 @@
           }
         ],
         "note": "unsalted, softened",
+        "section": "Cinnamon Honey Butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Honey Butter",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Honey Butter",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Honey Butter",
         "category": "Spices & Seasonings"
       }
     }

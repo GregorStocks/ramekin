@@ -3,6 +3,10 @@
   "recipe_slug": "old-fashioned-million-dollar-p",
   "ingredients": [
     {
+      "raw": "Pie:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (9-inch) prepared graham cracker crust",
       "expected": {
         "item": "prepared graham cracker crust",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "9-inch",
+        "section": "Pie",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "14-ounce",
+        "section": "Pie",
         "category": "Canned Goods"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Pie",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 (8-ounce) cans crushed pineapple (well drained)",
+      "raw": "2 (8-ounce) cans crushed pineapple well drained",
       "expected": {
         "item": "crushed pineapple",
         "measurements": [
@@ -55,25 +62,27 @@
           }
         ],
         "note": "8-ounce, well drained",
+        "section": "Pie",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 (20-ounce) can pineapple tidbits (well-drained)",
+      "raw": "1 (20-ounce) can pineapple tidbits well-drained",
       "expected": {
-        "item": "pineapple tidbits",
+        "item": "pineapple tidbits well-drained",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "20-ounce, well-drained",
-        "category": "Canned Goods"
+        "note": "20-ounce",
+        "section": "Pie",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 1/2 cups pecans, (divided, and chopped )",
+      "raw": "1 1/2 cups pecans, divided, and chopped",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": "divided, and chopped",
+        "section": "Pie",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "Pie",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  (8-ounce) container  frozen whipped topping (thawed )",
+      "raw": "1  (8-ounce) container  frozen whipped topping thawed",
       "expected": {
         "item": "frozen whipped topping",
         "measurements": [
@@ -111,11 +122,16 @@
           }
         ],
         "note": "8-ounce, thawed",
+        "section": "Pie",
         "category": "Frozen"
       }
     },
     {
-      "raw": "1 (8-ounce) container  frozen whipped topping (thawed )",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (8-ounce) container  frozen whipped topping thawed",
       "expected": {
         "item": "frozen whipped topping",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": "8-ounce, thawed",
+        "section": "Topping",
         "category": "Frozen"
       }
     },
     {
-      "raw": "2 tablespoons coconut (toasted )",
+      "raw": "2 tablespoons coconut toasted",
       "expected": {
         "item": "coconut",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": "toasted",
+        "section": "Topping",
         "category": "Produce"
       }
     },
     {
-      "raw": "6-8  maraschino cherries",
+      "raw": "6-8 maraschino cherries",
       "expected": {
         "item": "maraschino cherries",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Canned Goods"
       }
     }

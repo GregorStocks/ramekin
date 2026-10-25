@@ -3,6 +3,10 @@
   "recipe_slug": "best-chicken-marinade-recipe",
   "ingredients": [
     {
+      "raw": "For Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ½ cup Stonyfield Organic Whole Milk Yogurt",
       "expected": {
         "item": "Stonyfield Organic Whole Milk Yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Produce"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup Extra virgin olive oil&nbsp; (I used Private Reserve Greek olive oil)",
+      "raw": "¼ cup Extra virgin olive oil  (I used Private Reserve Greek olive oil)",
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "I used Private Reserve Greek olive oil",
+        "section": "For Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Marinade",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +177,7 @@
         "item": "Kosher salt and black pepper",
         "measurements": [],
         "note": null,
+        "section": "For Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,8 +192,13 @@
           }
         ],
         "note": "chopped",
+        "section": "For Marinade",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Chicken:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 lb boneless chicken breast cutlets (see notes)",
@@ -190,6 +211,7 @@
           }
         ],
         "note": "see notes",
+        "section": "For Chicken",
         "category": "Other"
       }
     }

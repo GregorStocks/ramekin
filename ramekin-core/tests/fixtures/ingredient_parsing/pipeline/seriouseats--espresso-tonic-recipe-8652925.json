@@ -3,9 +3,9 @@
   "recipe_slug": "espresso-tonic-recipe-8652925",
   "ingredients": [
     {
-      "raw": "4 fluid ounces tonic water (120ml)",
+      "raw": "4 fluid ounces chilled tonic water (120ml), plus more if desired",
       "expected": {
-        "item": "tonic water",
+        "item": "chilled tonic water",
         "measurements": [
           {
             "amount": "4",
@@ -16,14 +16,14 @@
             "unit": "ml"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "plus more if desired",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 freshly brewed shot espresso (about 1 fluid ounce; 30ml)",
+      "raw": "1 freshly brewed shot espresso (about 1 fluid ounce; 30ml) or other strongly brewed coffee",
       "expected": {
-        "item": "freshly brewed shot espresso",
+        "item": "freshly brewed shot espresso or other strongly brewed coffee",
         "measurements": [
           {
             "amount": "1",
@@ -39,13 +39,13 @@
           }
         ],
         "note": "about 1 fluid ounce; 30ml",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
-      "raw": "Simple syrup, oleo-saccharum, to taste (optional, see notes)",
+      "raw": "Simple syrup or oleo-saccharum, to taste (optional, see notes)",
       "expected": {
-        "item": "Simple syrup, oleo-saccharum",
+        "item": "Simple syrup or oleo-saccharum",
         "measurements": [],
         "note": "optional, see notes, to taste",
         "category": "Beverages"

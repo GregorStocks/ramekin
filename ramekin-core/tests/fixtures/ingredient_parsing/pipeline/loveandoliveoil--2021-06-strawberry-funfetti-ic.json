@@ -3,63 +3,87 @@
   "recipe_slug": "2021-06-strawberry-funfetti-ic",
   "ingredients": [
     {
-      "raw": "8 oz fresh or frozen strawberries (hulled)",
+      "raw": "For Strawberry Buttermilk Ice Cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 oz  / 227 g fresh or frozen strawberries, hulled",
       "expected": {
         "item": "fresh or frozen strawberries",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": "hulled",
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Produce"
       }
     },
     {
-      "raw": "1½ cups heavy cream",
+      "raw": "1½ cups  / 360 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "⅔ cup granulated sugar",
+      "raw": "⅔ cup  / 133 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup buttermilk",
+      "raw": "½ cup  / 120 g buttermilk",
       "expected": {
         "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon lemon juice",
+      "raw": "1 tablespoon   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -69,11 +93,12 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -83,11 +108,12 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "⅛ teaspoon kosher salt",
+      "raw": "⅛ teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -97,39 +123,54 @@
           }
         ],
         "note": null,
+        "section": "For Strawberry Buttermilk Ice Cream",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter (at room temperature)",
+      "raw": "For Funfetti Cake Layers:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup  / 113 g unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For Funfetti Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup granulated sugar",
+      "raw": "1 cup  / 200 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "3  large eggs (at room temperature)",
+      "raw": "3   large eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -139,39 +180,50 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Funfetti Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup buttermilk (at room temperature)",
+      "raw": "½ cup  / 120 g buttermilk, at room temperature",
       "expected": {
         "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For Funfetti Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup vegetable oil",
+      "raw": "¼ cup  / 54 g vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon vanilla extract",
+      "raw": "1 tablespoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -181,25 +233,31 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 cups cake flour (sifted)",
+      "raw": "1 ½ cups  / 185 g cake flour, sifted",
       "expected": {
         "item": "cake flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "185",
+            "unit": "g"
           }
         ],
         "note": "sifted",
+        "section": "For Funfetti Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon baking powder",
+      "raw": "1 teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -209,11 +267,12 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon kosher salt",
+      "raw": "1 teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -223,44 +282,52 @@
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup confetti quin sprinkles",
+      "raw": "½ cup  / 80 g confetti quin sprinkles",
       "expected": {
         "item": "confetti quin sprinkles",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Funfetti Cake Layers",
         "category": "Other"
       }
     },
     {
-      "raw": "whipped topping and fresh strawberries (optional, for decoration)",
+      "raw": "whipped topping and fresh strawberries, optional, for decoration",
       "expected": {
         "item": "whipped topping and fresh strawberries",
         "measurements": [],
         "note": "optional, for decoration",
+        "section": "For Funfetti Cake Layers",
         "category": "Frozen"
       }
     },
     {
-      "raw": "1/2 quart strawberry buttermilk ice cream (half a batch of the ice cream recipe as listed, or store-bought)",
+      "raw": "½ quart   strawberry buttermilk ice cream, half a batch of the ice cream recipe as listed, or store-bought",
       "expected": {
-        "item": "strawberry buttermilk ice cream",
+        "item": "strawberry buttermilk ice cream, half a batch of the ice cream recipe as listed, or store-bought",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "quart"
           }
         ],
-        "note": "half a batch of the ice cream recipe as listed, or store-bought",
-        "category": "Other"
+        "note": null,
+        "section": "For Funfetti Cake Layers",
+        "category": "Frozen"
       }
     }
   ]

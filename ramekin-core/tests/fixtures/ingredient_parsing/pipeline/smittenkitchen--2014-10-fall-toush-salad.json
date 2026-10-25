@@ -3,72 +3,7 @@
   "recipe_slug": "2014-10-fall-toush-salad",
   "ingredients": [
     {
-      "raw": "And for the other side of the world&#8230;(trying something new!)",
-      "expected": {
-        "item": "And for the other side of the world…",
-        "measurements": [],
-        "note": "trying something new!",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Asparagus-Stuffed Eggs",
-      "expected": {
-        "item": "Months Ago: Asparagus-Stuffed Eggs",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Bee Sting Cake",
-      "expected": {
-        "item": "Years Ago: Bee Sting Cake",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Pasta with Garlicky Broccoli Rabe",
-      "expected": {
-        "item": "Years Ago: Pasta with Garlicky Broccoli Rabe",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: French Onion Soup",
-      "expected": {
-        "item": "Years Ago: French Onion Soup",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Salad",
+      "raw": "Salad:",
       "is_section_header": true
     },
     {
@@ -207,7 +142,7 @@
       }
     },
     {
-      "raw": "Dressing",
+      "raw": "Dressing:",
       "is_section_header": true
     },
     {

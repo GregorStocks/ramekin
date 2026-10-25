@@ -115,6 +115,10 @@
       }
     },
     {
+      "raw": "Lime Crema:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup sour cream",
       "expected": {
         "item": "sour cream",
@@ -125,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Lime Crema",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": "from 1 lime",
+        "section": "Lime Crema",
         "category": "Produce"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Lime Crema",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Lime Crema",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Lime Crema",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Lime Crema",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +219,7 @@
           }
         ],
         "note": "plus more to taste, such as Tapatío",
+        "section": "Lime Crema",
         "category": "Condiments & Sauces"
       }
     },
@@ -223,6 +234,7 @@
           }
         ],
         "note": "optional",
+        "section": "Lime Crema",
         "category": "Dairy & Eggs"
       }
     }

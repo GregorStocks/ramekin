@@ -3,7 +3,7 @@
   "recipe_slug": "2025-06-sweet-potato-summer-sa",
   "ingredients": [
     {
-      "raw": "2 to 3  medium sweet potatoes, (peeled and chopped)",
+      "raw": "2 to 3 medium sweet potatoes, peeled and chopped",
       "expected": {
         "item": "sweet potatoes",
         "measurements": [
@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "1 tablespoon tajin seasoning, (or any chili lime seasoning)",
+      "raw": "1 tablespoon tajin seasoning, or any chili lime seasoning",
       "expected": {
-        "item": "tajin seasoning",
+        "item": "tajin seasoning, or any chili lime seasoning",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or any chili lime seasoning",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -87,9 +87,9 @@
       }
     },
     {
-      "raw": "¼ cup roasted, (salted pepitas)",
+      "raw": "¼ cup roasted, salted pepitas",
       "expected": {
-        "item": "roasted salted pepitas",
+        "item": "roasted, salted pepitas",
         "measurements": [
           {
             "amount": "0.25",
@@ -97,11 +97,15 @@
           }
         ],
         "note": null,
-        "category": "Nuts & Dried Fruit"
+        "category": "Snacks"
       }
     },
     {
-      "raw": "1  jalapeno pepper, (seeded and diced)",
+      "raw": "jalapeno ranch:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 jalapeno pepper, seeded and diced",
       "expected": {
         "item": "jalapeno pepper",
         "measurements": [
@@ -111,6 +115,7 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": "or 1 tablespoon dried chives",
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -181,6 +190,7 @@
           }
         ],
         "note": "or 2 teaspoons dried dill weed",
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -195,6 +205,7 @@
           }
         ],
         "note": "or 1 teaspoon dried parsley",
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -209,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Produce"
       }
     },
@@ -223,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -265,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeno Ranch",
         "category": "Spices & Seasonings"
       }
     }

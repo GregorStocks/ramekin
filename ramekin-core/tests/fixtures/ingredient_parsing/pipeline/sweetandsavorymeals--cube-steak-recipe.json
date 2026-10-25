@@ -115,7 +115,11 @@
       }
     },
     {
-      "raw": "1  large onion (sliced)",
+      "raw": "Gravy:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 large onion sliced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -125,6 +129,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -139,11 +144,12 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1  package ranch mix",
+      "raw": "1 package ranch mix",
       "expected": {
         "item": "ranch mix",
         "measurements": [
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Spices & Seasonings"
       }
     }

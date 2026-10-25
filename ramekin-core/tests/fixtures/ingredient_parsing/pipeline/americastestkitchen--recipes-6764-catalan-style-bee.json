@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-6764-catalan-style-bee",
   "ingredients": [
     {
+      "raw": "Stew:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "chopped fine",
+        "section": "Stew",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Baking"
       }
     },
@@ -50,6 +57,7 @@
         "item": "Kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Beverages"
       }
     },
@@ -120,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Beverages"
       }
     },
@@ -134,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Produce"
       }
     },
@@ -148,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,8 +177,13 @@
           }
         ],
         "note": "trimmed and cut into 2-inch cubes",
+        "section": "Stew",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Picada:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup whole blanched almonds",
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Picada",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Picada",
         "category": "Oils & Vinegars"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": "crust removed, torn into 1-inch pieces",
+        "section": "Picada",
         "category": "Bakery & Bread"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Picada",
         "category": "Produce"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Picada",
         "category": "Produce"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": "trimmed",
+        "section": "Picada",
         "category": "Produce"
       }
     },
@@ -260,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "Picada",
         "category": "Oils & Vinegars"
       }
     }

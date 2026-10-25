@@ -3,35 +3,49 @@
   "recipe_slug": "gingerbread-cupcake-recipe",
   "ingredients": [
     {
-      "raw": "3/4 cup Butter (, softened at room temp.)",
+      "raw": "Cupcakes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3/4 cup  (170 g) Butter , softened at room temp.",
       "expected": {
         "item": "Butter",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": "softened at room temp.",
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup Brown Sugar",
+      "raw": "1 cup  (220 g) Brown Sugar",
       "expected": {
         "item": "Brown Sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "3  Eggs",
+      "raw": "3   Eggs",
       "expected": {
         "item": "Eggs",
         "measurements": [
@@ -41,183 +55,253 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2/3 cup Half &amp;amp; Half",
+      "raw": "2/3 cup  (160 ml) Half & Half",
       "expected": {
         "item": "Half & Half",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 3/4 cup Flour",
+      "raw": "1 3/4 cup  (220 g) Flour",
       "expected": {
         "item": "Flour",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tablespoon Baking Powder",
+      "raw": "1 Tablespoon  (15 ml) Baking Powder",
       "expected": {
         "item": "Baking Powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon Baking Soda",
+      "raw": "1/2 teaspoon  (2.5 ml) Baking Soda",
       "expected": {
         "item": "Baking Soda",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tablespoon ground Cinnamon",
+      "raw": "1 Tablespoon  (15 ml) ground Cinnamon",
       "expected": {
         "item": "ground Cinnamon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon ground Clove",
+      "raw": "1/2 teaspoon  (2.5 ml) ground Clove",
       "expected": {
         "item": "ground Clove",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon Kosher Salt",
+      "raw": "1/2 teaspoon  (2.5 ml) Kosher Salt",
       "expected": {
         "item": "Kosher Salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 Tablespoon freshly grated Ginger (finely grated) ( or 1 teaspoon (5ml) ground Ginger Powder)",
+      "raw": "1 Tablespoon  (15 ml) freshly grated Ginger (finely grated)  or 1 teaspoon (5ml) ground Ginger Powder",
       "expected": {
         "item": "freshly grated Ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
-        "note": "finely grated, or 1 teaspoon (5ml) ground Ginger Powder",
+        "note": "finely grated; or 1 teaspoon ground Ginger Powder",
+        "section": "Cupcakes",
         "category": "Produce"
       }
     },
     {
-      "raw": "8 oz Cream Cheese (, room temp.)",
+      "raw": "Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 oz  (227 g) Cream Cheese , room temp.",
       "expected": {
-        "item": "Cream Cheese",
+        "item": "Cream Cheese, room temp.",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
-        "note": "room temp.",
+        "note": null,
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup Butter (, room temp.)",
+      "raw": "1/2 cup  (114 g) Butter , room temp.",
       "expected": {
-        "item": "Butter",
+        "item": "Butter, room temp.",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": "room temp.",
+        "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup pure Maple Syrup",
+      "raw": "1/4 cup  (60 ml) pure Maple Syrup",
       "expected": {
         "item": "pure Maple Syrup",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 cup Powdered Sugar ( or to personal taste)",
+      "raw": "1 cup  (120 g) Powdered Sugar  or to personal taste",
       "expected": {
-        "item": "Powdered Sugar",
+        "item": "Powdered Sugar or to personal taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
-        "note": "or to personal taste",
+        "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "sprinkle of ground cinnamon (, for topping cupcakes)",
+      "raw": "sprinkle of ground cinnamon , for topping cupcakes",
       "expected": {
         "item": "sprinkle of ground cinnamon",
         "measurements": [],
         "note": "for topping cupcakes",
+        "section": "Frosting",
         "category": "Other"
       }
     }

@@ -192,11 +192,16 @@
       }
     },
     {
+      "raw": "For serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Warm tortillas",
       "expected": {
         "item": "Warm tortillas",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     },
@@ -206,6 +211,7 @@
         "item": "Cilantro leaves",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -215,6 +221,7 @@
         "item": "Finely diced white onion",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -224,15 +231,17 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
     {
-      "raw": "Salsa verde , optional",
+      "raw": "Salsa verde, optional",
       "expected": {
         "item": "Salsa verde",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     }

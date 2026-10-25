@@ -49,6 +49,10 @@
       }
     },
     {
+      "raw": "For Meat Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tbsp Private Reserve Greek extra virgin olive oil",
       "expected": {
         "item": "Private Reserve Greek extra virgin olive oil",
@@ -59,11 +63,12 @@
           }
         ],
         "note": null,
+        "section": "For Meat Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  large yellow onion (chopped)",
+      "raw": "1 large yellow onion chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -73,6 +78,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For Meat Sauce",
         "category": "Produce"
       }
     },
@@ -87,11 +93,12 @@
           }
         ],
         "note": null,
+        "section": "For Meat Sauce",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3  garlic cloves (peeled and chopped)",
+      "raw": "3 garlic cloves peeled and chopped",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -101,6 +108,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "For Meat Sauce",
         "category": "Produce"
       }
     },
@@ -110,6 +118,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "For Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,6 +133,7 @@
           }
         ],
         "note": "such as merlot",
+        "section": "For Meat Sauce",
         "category": "Beverages"
       }
     },
@@ -138,11 +148,12 @@
           }
         ],
         "note": null,
+        "section": "For Meat Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2  dried bay leaves",
+      "raw": "2 dried bay leaves",
       "expected": {
         "item": "dried bay leaves",
         "measurements": [
@@ -152,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "For Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -166,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "For Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -180,76 +193,7 @@
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1/4  tsp ground nutmeg",
-      "expected": {
-        "item": "ground nutmeg",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "pinch sugar",
-      "expected": {
-        "item": "sugar",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "pinch"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "1/3 cup + 2 tbsp Private Reserve Greek extra virgin olive oil",
-      "expected": {
-        "item": "Private Reserve Greek extra virgin olive oil",
-        "measurements": [
-          {
-            "amount": "1/3 cup plus 2 tbsp",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Oils & Vinegars"
-      }
-    },
-    {
-      "raw": "2/3 cup all-purpose flour",
-      "expected": {
-        "item": "all-purpose flour",
-        "measurements": [
-          {
-            "amount": "0.67",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "1/2 tsp salt (more if you like)",
-      "expected": {
-        "item": "salt",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          }
-        ],
-        "note": "more if you like",
+        "section": "For Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -264,25 +208,106 @@
           }
         ],
         "note": null,
+        "section": "For Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 cups 2% milk (warmed)",
+      "raw": "pinch sugar",
       "expected": {
-        "item": "2% milk",
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "section": "For Meat Sauce",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "For Bechamel:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/3 cup + 2 tbsp Private Reserve Greek extra virgin olive oil",
+      "expected": {
+        "item": "Private Reserve Greek extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/3 cup plus 2 tbsp",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "section": "For Bechamel",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2/3 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "section": "For Bechamel",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 tsp salt more if you like",
+      "expected": {
+        "item": "salt more if you like",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For Bechamel",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 tsp ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For Bechamel",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 cups 2% milk warmed",
+      "expected": {
+        "item": "2% milk warmed",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "warmed",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For Bechamel",
+        "category": "Other"
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -292,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "For Bechamel",
         "category": "Dairy & Eggs"
       }
     }

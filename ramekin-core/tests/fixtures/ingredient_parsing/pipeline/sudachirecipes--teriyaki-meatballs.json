@@ -3,7 +3,11 @@
   "recipe_slug": "teriyaki-meatballs",
   "ingredients": [
     {
-      "raw": "▢ 3 tbsp panko breadcrumbs or regular breadcrumbs",
+      "raw": "Meatball Mixture:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 tbsp panko breadcrumbs or regular breadcrumbs",
       "expected": {
         "item": "panko breadcrumbs or regular breadcrumbs",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "▢ 2 tbsp whole milk cold",
+      "raw": "2 tbsp whole milk cold",
       "expected": {
         "item": "whole milk cold",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "▢ ⅛ onion",
+      "raw": "⅛ onion",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "▢ ½ tbsp grated ginger root or ginger paste",
+      "raw": "½ tbsp grated ginger root or ginger paste",
       "expected": {
         "item": "grated ginger root or ginger paste",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "▢ 300 g ground pork 20% fat content (increase lard if leaner), or ground chicken thigh",
+      "raw": "300 g ground pork 20% fat content (increase lard if leaner), or ground chicken thigh",
       "expected": {
         "item": "ground pork 20% fat content",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "increase lard if leaner; or ground chicken thigh",
+        "section": "Meatball Mixture",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "▢ ¼ tsp salt fine",
+      "raw": "¼ tsp salt fine",
       "expected": {
         "item": "salt fine",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "▢ 1 pinch ground black pepper or white pepper",
+      "raw": "1 pinch ground black pepper or white pepper",
       "expected": {
         "item": "ground black pepper or white pepper",
         "measurements": [
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "▢ 1 tsp lard omit if your pork mince is already fatty enough",
+      "raw": "1 tsp lard omit if your pork mince is already fatty enough",
       "expected": {
         "item": "lard omit if your pork mince is already fatty enough",
         "measurements": [
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Other"
       }
     },
     {
-      "raw": "▢ 2 tbsp potato starch (katakuriko) or cornstarch/tapioca starch",
+      "raw": "2 tbsp potato starch (katakuriko) or cornstarch/tapioca starch",
       "expected": {
         "item": "potato starch or cornstarch/tapioca starch",
         "measurements": [
@@ -125,11 +137,12 @@
           }
         ],
         "note": "katakuriko",
+        "section": "Meatball Mixture",
         "category": "Baking"
       }
     },
     {
-      "raw": "▢ 2 tbsp cooking oil neutral",
+      "raw": "2 tbsp cooking oil neutral",
       "expected": {
         "item": "cooking oil neutral",
         "measurements": [
@@ -139,11 +152,16 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "▢ 1½ tbsp Japanese soy sauce (koikuchi shoyu)",
+      "raw": "Teriyaki Glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
         "item": "Japanese soy sauce",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Teriyaki Glaze",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "▢ 1½ tbsp sake or dry sherry/wine",
+      "raw": "1½ tbsp sake or dry sherry/wine",
       "expected": {
         "item": "sake or dry sherry/wine",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Beverages"
       }
     },
     {
-      "raw": "▢ 1½ tbsp mirin or cola",
+      "raw": "1½ tbsp mirin or cola",
       "expected": {
         "item": "mirin or cola",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "▢ ½ tbsp sugar",
+      "raw": "½ tbsp sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -195,11 +216,12 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "▢ 1 tsp grated ginger root or ginger paste",
+      "raw": "1 tsp grated ginger root or ginger paste",
       "expected": {
         "item": "grated ginger root or ginger paste",
         "measurements": [
@@ -209,11 +231,12 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "▢ 1 tsp grated garlic or garlic paste",
+      "raw": "1 tsp grated garlic or garlic paste",
       "expected": {
         "item": "grated garlic or garlic paste",
         "measurements": [
@@ -223,33 +246,41 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "▢ toasted white sesame seeds to taste",
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "toasted white sesame seeds to taste",
       "expected": {
         "item": "toasted white sesame seeds",
         "measurements": [],
         "note": "to taste",
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "▢ finely chopped green onions to taste",
+      "raw": "finely chopped green onions to taste",
       "expected": {
         "item": "finely chopped green onions",
         "measurements": [],
         "note": "to taste",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "▢ grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
+      "raw": "grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
       "expected": {
         "item": "grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Cheese"
       }
     }

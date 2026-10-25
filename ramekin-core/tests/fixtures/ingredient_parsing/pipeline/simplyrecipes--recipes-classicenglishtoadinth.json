@@ -3,9 +3,9 @@
   "recipe_slug": "recipes-classicenglishtoadinth",
   "ingredients": [
     {
-      "raw": "1 1/2 cup (180 g) of all purpose flour",
+      "raw": "1 1/2 cup (180g) all-purpose flour",
       "expected": {
-        "item": "all purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
@@ -21,9 +21,9 @@
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "1/2 teaspoon kosher salt",
       "expected": {
-        "item": "salt",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "Pinch of freshly ground black pepper",
+      "raw": "Pinch freshly ground black pepper",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [
@@ -49,13 +49,13 @@
       }
     },
     {
-      "raw": "3 eggs, beaten",
+      "raw": "3 large eggs, beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "large"
           }
         ],
         "note": "beaten",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1 1/2 cup (350 ml) milk",
+      "raw": "1 1/2 cup (350ml) milk",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -81,21 +81,25 @@
       }
     },
     {
-      "raw": "2 tablespoons melted butter",
+      "raw": "2 tablespoons (28g) unsalted butter, melted",
       "expected": {
-        "item": "melted butter",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon vegetable oil",
+      "raw": "1 tablespoon vegetable oil, plus more for greasing the pan",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -104,12 +108,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "plus more for greasing the pan",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 pound (450 g) of bangers (an English sausage made with pork and breadcrumbs), or good quality pork or beef sausage links (in casings)",
+      "raw": "1 pound (454g) bangers (English sausage made with pork and breadcrumbs), or good quality pork or beef sausage links",
       "expected": {
         "item": "bangers, or good quality pork or beef sausage links",
         "measurements": [
@@ -118,11 +122,11 @@
             "unit": "lb"
           },
           {
-            "amount": "450",
+            "amount": "454",
             "unit": "g"
           }
         ],
-        "note": "an English sausage made with pork and breadcrumbs, in casings",
+        "note": "English sausage made with pork and breadcrumbs",
         "category": "Other"
       }
     }

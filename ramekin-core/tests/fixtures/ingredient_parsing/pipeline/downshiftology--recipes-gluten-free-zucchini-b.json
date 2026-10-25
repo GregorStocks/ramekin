@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-gluten-free-zucchini-b",
   "ingredients": [
     {
+      "raw": "Zucchini Bread:",
+      "is_section_header": true
+    },
+    {
       "raw": "1.5 cups shredded zucchini",
       "expected": {
         "item": "shredded zucchini",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3  eggs (beaten)",
+      "raw": "3 eggs, beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -111,6 +122,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Zucchini Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Canned Goods"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Bread",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Other Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1-2 cups grapes",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1-2  balls of burrata",
+      "raw": "1-2 balls of burrata",
       "expected": {
         "item": "burrata",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Other Ingredients",
         "category": "Cheese"
       }
     }

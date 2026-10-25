@@ -3,87 +3,22 @@
   "recipe_slug": "pork-katsu-recipe",
   "ingredients": [
     {
-      "raw": "2 tbsp Worcestershire sauce",
-      "expected": {
-        "item": "Worcestershire sauce",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "raw": "Tonkatsu:",
+      "is_section_header": true
     },
     {
-      "raw": "1 tbsp tomato ketchup",
+      "raw": "2 boneless pork chops rib-end/loin (2-2.5cm, 3/4-1 inch thick), fat-on",
       "expected": {
-        "item": "tomato ketchup",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
-      "expected": {
-        "item": "Japanese soy sauce",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tbsp"
-          }
-        ],
-        "note": "koikuchi shoyu",
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "1 pinch light brown sugar",
-      "expected": {
-        "item": "light brown sugar",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "pinch"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "1 tbsp toasted white sesame seeds",
-      "expected": {
-        "item": "toasted white sesame seeds",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "2  boneless pork chops (or loin/tenderloin - thick ones (2-2.5cm, 3/4-1 inch) work best)",
-      "expected": {
-        "item": "boneless pork chops",
+        "item": "boneless pork chops rib-end/loin, fat-on",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "or loin/tenderloin - thick ones (2-2.5cm, 3/4-1 inch) work best",
-        "category": "Meat & Seafood"
+        "note": "2-2.5cm, 3/4-1 inch thick",
+        "section": "Tonkatsu",
+        "category": "Other"
       }
     },
     {
@@ -97,29 +32,32 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "cooking oil (for deep frying, I used rice bran oil)",
+      "raw": "cooking oil neutral, high smoke point",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil neutral, high smoke point",
         "measurements": [],
-        "note": "for deep frying, I used rice bran oil",
+        "note": null,
+        "section": "Tonkatsu",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "all-purpose flour (for dusting)",
+      "raw": "all-purpose flour for dusting",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [],
         "note": "for dusting",
+        "section": "Tonkatsu",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -129,6 +67,7 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -143,13 +82,14 @@
           }
         ],
         "note": null,
+        "section": "Tonkatsu",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp cooking oil",
+      "raw": "1 tsp cooking oil for egg wash",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil for egg wash",
         "measurements": [
           {
             "amount": "1",
@@ -157,13 +97,14 @@
           }
         ],
         "note": null,
-        "category": "Oils & Vinegars"
+        "section": "Tonkatsu",
+        "category": "Other"
       }
     },
     {
-      "raw": "100 g panko breadcrumbs",
+      "raw": "100 g panko breadcrumbs coarse flakes or coarse homemade crumbs",
       "expected": {
-        "item": "panko breadcrumbs",
+        "item": "panko breadcrumbs coarse flakes or coarse homemade crumbs",
         "measurements": [
           {
             "amount": "100",
@@ -171,8 +112,92 @@
           }
         ],
         "note": null,
-        "category": "Bakery & Bread"
+        "section": "Tonkatsu",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Tonkatsu Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tbsp Worcestershire sauce Japanese or regular brands",
+      "expected": {
+        "item": "Worcestershire sauce Japanese or regular brands",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "Tonkatsu Sauce",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "½ tbsp tomato ketchup",
+      "expected": {
+        "item": "tomato ketchup",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "Tonkatsu Sauce",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "½ tbsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "koikuchi shoyu",
+        "section": "Tonkatsu Sauce",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 pinch light brown sugar or white sugar/honey",
+      "expected": {
+        "item": "light brown sugar or white sugar/honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "section": "Tonkatsu Sauce",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "½ tbsp toasted white sesame seeds",
+      "expected": {
+        "item": "toasted white sesame seeds",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "Tonkatsu Sauce",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Serving Suggestions:",
+      "is_section_header": true
     },
     {
       "raw": "2 portions cooked Japanese short-grain rice",
@@ -185,11 +210,12 @@
           }
         ],
         "note": null,
+        "section": "Serving Suggestions",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "200 g green cabbage (shredded)",
+      "raw": "200 g green cabbage shredded",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -199,21 +225,23 @@
           }
         ],
         "note": "shredded",
+        "section": "Serving Suggestions",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 slices lemon (to garnish)",
+      "raw": "2 slices lemon to garnish",
       "expected": {
-        "item": "lemon",
+        "item": "lemon to garnish",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": "to garnish",
-        "category": "Produce"
+        "note": null,
+        "section": "Serving Suggestions",
+        "category": "Other"
       }
     }
   ]

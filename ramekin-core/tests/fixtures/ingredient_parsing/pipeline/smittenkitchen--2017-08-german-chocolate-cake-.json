@@ -3,6 +3,10 @@
   "recipe_slug": "2017-08-german-chocolate-cake-",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 ounces (55 grams) bittersweet chocolate, chopped",
       "expected": {
         "item": "bittersweet chocolate",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Beverages"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "separated",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -163,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -177,6 +191,7 @@
           }
         ],
         "note": "any variety",
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -195,8 +210,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/3 cups (3 1/2 ounces, or half of a 7-ounce bag) sweetened flaked coconut",
@@ -213,6 +233,7 @@
           }
         ],
         "note": "3 1/2 ounces, or half of a 7-ounce bag",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -231,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -267,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -285,6 +309,7 @@
           }
         ],
         "note": "or a mixture of 1/2 cup milk and 1/4 cup heavy cream",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -303,6 +328,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -321,6 +347,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -335,6 +362,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -353,6 +381,7 @@
           }
         ],
         "note": "or 1/2 teaspoon vanilla and 1/2 teaspoon dark rum",
+        "section": "Filling",
         "category": "Baking"
       }
     }

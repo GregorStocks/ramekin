@@ -3,6 +3,10 @@
   "recipe_slug": "stuffed-bell-peppers-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients for Stuffed Bell Peppers:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 cups cooked white rice",
       "expected": {
         "item": "cooked white rice",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "8 to 10  medium bell peppers",
+      "raw": "8 to 10 medium bell peppers",
       "expected": {
         "item": "bell peppers",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Meat & Seafood"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4  medium carrots (grated)",
+      "raw": "4 medium carrots, grated",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": "grated",
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Other"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Other"
       }
     },
@@ -167,8 +182,13 @@
           }
         ],
         "note": null,
+        "section": "Ingredients for Stuffed Bell Peppers",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Podliva Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp Oil",
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "Podliva Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  Carrots (grated)",
+      "raw": "2 Carrots, grated",
       "expected": {
         "item": "Carrots",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": "grated",
+        "section": "Podliva Ingredients",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Podliva Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Podliva Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Podliva Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Podliva Ingredients",
         "category": "Other"
       }
     }

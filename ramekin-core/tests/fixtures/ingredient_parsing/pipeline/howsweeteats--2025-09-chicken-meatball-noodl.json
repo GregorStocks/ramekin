@@ -3,16 +3,21 @@
   "recipe_slug": "2025-09-chicken-meatball-noodl",
   "ingredients": [
     {
-      "raw": "1 pound lean ground chicken, (I like to use 94% lean)",
+      "raw": "chicken meatballs:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound lean ground chicken, I like to use 94% lean",
       "expected": {
-        "item": "lean ground chicken",
+        "item": "lean ground chicken, I like to use 94% lean",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "I like to use 94% lean",
+        "note": null,
+        "section": "Chicken Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -22,11 +27,12 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  garlic cloves, (minced)",
+      "raw": "2 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -36,6 +42,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Cheese"
       }
     },
@@ -64,20 +72,22 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "⅓ cup chopped fresh herbs, (like parsley, basil and chives)",
+      "raw": "⅓ cup chopped fresh herbs, like parsley, basil and chives",
       "expected": {
-        "item": "chopped fresh herbs",
+        "item": "chopped fresh herbs, like parsley, basil and chives",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "like parsley, basil and chives",
+        "note": null,
+        "section": "Chicken Meatballs",
         "category": "Produce"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "Chicken Meatballs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "soup:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons unsalted butter",
@@ -106,11 +121,12 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  sweet onion, (diced)",
+      "raw": "1 sweet onion, diced",
       "expected": {
         "item": "sweet onion",
         "measurements": [
@@ -120,11 +136,12 @@
           }
         ],
         "note": "diced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  carrots, (finely grated)",
+      "raw": "2 carrots, finely grated",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -134,11 +151,12 @@
           }
         ],
         "note": "finely grated",
+        "section": "Soup",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  celery sticks, (diced)",
+      "raw": "2 celery sticks, diced",
       "expected": {
         "item": "celery sticks",
         "measurements": [
@@ -148,11 +166,12 @@
           }
         ],
         "note": "diced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  garlic cloves, (minced)",
+      "raw": "3 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -162,6 +181,7 @@
           }
         ],
         "note": "minced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,11 +221,12 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1  parmesan cheese rind",
+      "raw": "1 parmesan cheese rind",
       "expected": {
         "item": "parmesan cheese rind",
         "measurements": [
@@ -213,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -227,24 +251,27 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "lemon wedges, (for spritzing)",
+      "raw": "lemon wedges, for spritzing",
       "expected": {
         "item": "lemon wedges",
         "measurements": [],
         "note": "for spritzing",
+        "section": "Soup",
         "category": "Produce"
       }
     },
     {
-      "raw": "fresh parsley, (for topping)",
+      "raw": "fresh parsley, for topping",
       "expected": {
         "item": "fresh parsley",
         "measurements": [],
         "note": "for topping",
+        "section": "Soup",
         "category": "Produce"
       }
     }

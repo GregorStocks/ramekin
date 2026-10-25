@@ -3,7 +3,11 @@
   "recipe_slug": "recipes-baileys-irish-cream-ch",
   "ingredients": [
     {
-      "raw": "8 ounces cream cheese, (preferably Philadelphia brand)",
+      "raw": "For the Cheesecake Batter:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 ounces cream cheese, preferably Philadelphia brand",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "preferably Philadelphia brand",
+        "section": "For the Cheesecake Batter",
         "category": "Cheese"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  large egg yolk",
+      "raw": "1 large egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Batter",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Batter",
         "category": "Beverages"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake Batter",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Brownie Batter:",
+      "is_section_header": true
     },
     {
       "raw": "5 tablespoons unsalted butter",
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For the Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4 ounces bittersweet or semisweet chocolate, (finely chopped)",
+      "raw": "4 ounces bittersweet or semisweet chocolate, finely chopped",
       "expected": {
         "item": "bittersweet or semisweet chocolate",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Brownie Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownie Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownie Batter",
         "category": "Baking"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Brownie Batter",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownie Batter",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownie Batter",
         "category": "Beverages"
       }
     },
@@ -195,20 +216,22 @@
           }
         ],
         "note": null,
+        "section": "For the Brownie Batter",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¾ cup all-purpose flour, (spooned into measuring cup and leveled-off with a knife)",
+      "raw": "¾ cup all-purpose flour, spooned into measuring cup and leveled-off with a knife",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour, spooned into measuring cup and leveled-off with a knife",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "spooned into measuring cup and leveled-off with a knife",
+        "note": null,
+        "section": "For the Brownie Batter",
         "category": "Baking"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "For the Brownie Batter",
         "category": "Baking"
       }
     }

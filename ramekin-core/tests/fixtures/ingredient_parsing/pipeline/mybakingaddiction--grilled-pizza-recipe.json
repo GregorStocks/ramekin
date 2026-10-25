@@ -3,6 +3,10 @@
   "recipe_slug": "grilled-pizza-recipe",
   "ingredients": [
     {
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "3-1/2 to 4 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "120° to 130°F",
+        "section": "For the Crust",
         "category": "Beverages"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,8 +102,13 @@
         "item": "Additional flour",
         "measurements": [],
         "note": "for rolling",
+        "section": "For the Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "pizza sauce",
@@ -101,6 +116,7 @@
         "item": "pizza sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": "crumbled and drained",
+        "section": "For the Toppings",
         "category": "Other"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Toppings",
         "category": "Cheese"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": "drained and sliced",
+        "section": "For the Toppings",
         "category": "Canned Goods"
       }
     },
@@ -152,6 +171,7 @@
         "item": "fresh basil",
         "measurements": [],
         "note": null,
+        "section": "For the Toppings",
         "category": "Produce"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "filthy-sopping-wet-martini",
   "ingredients": [
     {
-      "raw": "1 1/2 ounces (45ml) dry gin",
+      "raw": "1 1/2 ounces (45 ml) dry gin",
       "expected": {
         "item": "dry gin",
         "measurements": [
@@ -21,7 +21,7 @@
       }
     },
     {
-      "raw": "1 1/2 ounces (45ml) dry vermouth",
+      "raw": "1 1/2 ounces (45 ml) dry vermouth",
       "expected": {
         "item": "dry vermouth",
         "measurements": [
@@ -39,7 +39,7 @@
       }
     },
     {
-      "raw": "3/4 ounce (22ml) olive brine",
+      "raw": "3/4 ounce (22 ml) olive brine (see notes)",
       "expected": {
         "item": "olive brine",
         "measurements": [
@@ -52,7 +52,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Other"
       }
     },

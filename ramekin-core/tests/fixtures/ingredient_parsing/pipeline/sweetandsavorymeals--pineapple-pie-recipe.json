@@ -3,18 +3,22 @@
   "recipe_slug": "pineapple-pie-recipe",
   "ingredients": [
     {
-      "raw": "9 inch pie crust (homemade or store-bought)",
+      "raw": "9 inch pie crust homemade or store-bought",
       "expected": {
-        "item": "inch pie crust",
+        "item": "inch pie crust homemade or store-bought",
         "measurements": [
           {
             "amount": "9",
             "unit": null
           }
         ],
-        "note": "homemade or store-bought",
+        "note": null,
         "category": "Other"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "20 oz canned crushed pineapple",
@@ -27,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -97,21 +106,23 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "8 oz cream cheese (room temperature)",
+      "raw": "8 oz cream cheese room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese room temperature",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "room temperature",
-        "category": "Cheese"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
@@ -125,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -139,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -153,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

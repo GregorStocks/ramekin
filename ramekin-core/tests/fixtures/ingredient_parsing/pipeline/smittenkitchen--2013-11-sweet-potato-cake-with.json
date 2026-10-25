@@ -3,13 +3,8 @@
   "recipe_slug": "2013-11-sweet-potato-cake-with",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds sweet potatoes (about 2 to 3 medium or 2 large)",
@@ -30,6 +25,7 @@
           }
         ],
         "note": "about 2 to 3 medium or 2 large",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -104,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -118,6 +119,7 @@
           }
         ],
         "note": "more to taste",
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -132,6 +134,7 @@
           }
         ],
         "note": "more to taste",
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -154,6 +157,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -172,6 +176,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -186,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -200,11 +206,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Frosting",
+      "raw": "Frosting:",
       "is_section_header": true
     },
     {

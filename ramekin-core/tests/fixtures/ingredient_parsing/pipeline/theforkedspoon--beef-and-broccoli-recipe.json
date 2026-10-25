@@ -3,7 +3,11 @@
   "recipe_slug": "beef-and-broccoli-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds flank steak (sliced against the grain into thin ¼ inch thick slices)",
+      "raw": "For the Stir Fry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 pounds flank steak, sliced against the grain into thin ¼ inch thick slices",
       "expected": {
         "item": "flank steak",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sliced against the grain into thin 1/4 inch thick slices",
+        "section": "For the Stir Fry",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons vegetable oil (such as canola oil or peanut oil)",
+      "raw": "2 tablespoons vegetable oil, such as canola oil or peanut oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -69,8 +77,13 @@
           }
         ],
         "note": "such as canola oil or peanut oil",
+        "section": "For the Stir Fry",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup low-sodium soy sauce",
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "¼ cup brown sugar (packed)",
+      "raw": "¼ cup brown sugar, packed",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -97,6 +111,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 tablespoon Shaoxing wine (or dry sherry) ()",
+      "raw": "2 tablespoon Shaoxing wine (or dry sherry),",
       "expected": {
         "item": "Shaoxing wine",
         "measurements": [
@@ -139,15 +156,17 @@
           }
         ],
         "note": "or dry sherry",
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "hot water as needed to thin the sauce (see notes)",
+      "raw": "hot water as needed to thin the sauce, see notes",
       "expected": {
         "item": "hot water as needed to thin the sauce",
         "measurements": [],
         "note": "see notes",
+        "section": "For the Sauce",
         "category": "Other"
       }
     }

@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon &nbsp;dried mustard",
+      "raw": "1/2 teaspoon  dried mustard",
       "expected": {
         "item": "dried mustard",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1 cup extra sharp cheddar cheese (shredded)",
+      "raw": "1 cup extra sharp cheddar cheese shredded",
       "expected": {
         "item": "extra sharp cheddar cheese",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 cup Gruyère cheese, (shredded)",
+      "raw": "1 cup Gruyère cheese, shredded",
       "expected": {
         "item": "Gruyère cheese",
         "measurements": [
@@ -157,11 +157,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "shredded cheddar",
       "expected": {
         "item": "shredded cheddar",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
@@ -171,6 +176,7 @@
         "item": "chives",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -180,6 +186,7 @@
         "item": "crumbled bacon",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     }

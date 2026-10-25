@@ -3,7 +3,11 @@
   "recipe_slug": "kinpira-gobo-recipe",
   "ingredients": [
     {
-      "raw": "140 grams boneless skin-on chicken thighs",
+      "raw": "for the chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "140 grams  boneless skin-on chicken thighs",
       "expected": {
         "item": "boneless skin-on chicken thighs",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 teaspoon soy sauce",
+      "raw": "1 teaspoon  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon sake",
+      "raw": "1 teaspoon  sake",
       "expected": {
         "item": "sake",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 teaspoon evaporated cane sugar",
+      "raw": "½ teaspoon  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -55,11 +62,16 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Baking"
       }
     },
     {
-      "raw": "80 grams carrot ((1 small , peeled))",
+      "raw": "for the kinpira:",
+      "is_section_header": true
+    },
+    {
+      "raw": "80 grams  carrot (1 small , peeled)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -73,11 +85,12 @@
           }
         ],
         "note": "1 small , peeled",
+        "section": "For the Kinpira",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon vinegar ((anything acidic will work))",
+      "raw": "1 tablespoon  vinegar (anything acidic will work)",
       "expected": {
         "item": "vinegar",
         "measurements": [
@@ -87,11 +100,12 @@
           }
         ],
         "note": "anything acidic will work",
+        "section": "For the Kinpira",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "250 grams burdock root ((2 medium roots))",
+      "raw": "250 grams  burdock root (2 medium roots)",
       "expected": {
         "item": "burdock root",
         "measurements": [
@@ -101,11 +115,12 @@
           }
         ],
         "note": "2 medium roots",
+        "section": "For the Kinpira",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup sake",
+      "raw": "¼ cup  sake",
       "expected": {
         "item": "sake",
         "measurements": [
@@ -115,11 +130,12 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 teaspoon soy sauce",
+      "raw": "1 teaspoon  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -129,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/2 teaspoon evaporated cane sugar",
+      "raw": "½ teaspoon  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -143,11 +160,12 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "¼ teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -157,11 +175,12 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon vegetable oil",
+      "raw": "1 teaspoon  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -171,11 +190,12 @@
           }
         ],
         "note": null,
+        "section": "For the Kinpira",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 teaspoons toasted sesame seeds ((to garnish))",
+      "raw": "2 teaspoons  toasted sesame seeds (to garnish)",
       "expected": {
         "item": "toasted sesame seeds",
         "measurements": [
@@ -185,6 +205,7 @@
           }
         ],
         "note": "to garnish",
+        "section": "For the Kinpira",
         "category": "Spices & Seasonings"
       }
     }

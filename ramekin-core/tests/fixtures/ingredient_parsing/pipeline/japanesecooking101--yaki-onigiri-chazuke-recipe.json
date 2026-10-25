@@ -45,6 +45,10 @@
       }
     },
     {
+      "raw": "Dashi Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups dashi (fish broth)",
       "expected": {
         "item": "dashi",
@@ -55,6 +59,7 @@
           }
         ],
         "note": "fish broth",
+        "section": "Dashi Soup",
         "category": "Canned Goods"
       }
     },
@@ -69,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Dashi Soup",
         "category": "Beverages"
       }
     },
@@ -83,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Dashi Soup",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,8 +104,13 @@
           }
         ],
         "note": null,
+        "section": "Dashi Soup",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "1 Umeboshi pickled sour plum",
@@ -111,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -134,6 +148,7 @@
         "item": "Nori roasted seaweed",
         "measurements": [],
         "note": "shredded",
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +158,7 @@
         "item": "wasabi",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     }

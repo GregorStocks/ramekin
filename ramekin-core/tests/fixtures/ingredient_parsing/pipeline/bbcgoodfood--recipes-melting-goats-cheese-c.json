@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-melting-goats-cheese-c",
   "ingredients": [
     {
+      "raw": "For the chutney:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp olive oil plus extra for dressing",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "plus extra for dressing",
+        "section": "For the Chutney",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "halved and sliced",
+        "section": "For the Chutney",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "For the Chutney",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "plus extra for dressing",
+        "section": "For the Chutney",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chutney",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chutney",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the tarts:",
+      "is_section_header": true
     },
     {
       "raw": "375g pack all-butter ready-rolled puff pastry defrosted if frozen",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tarts",
         "category": "Other"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "we used Capricorn goat's brie, sliced",
+        "section": "For the Tarts",
         "category": "Other"
       }
     },
@@ -120,6 +136,7 @@
         "item": "sprinkling thyme leaves",
         "measurements": [],
         "note": null,
+        "section": "For the Tarts",
         "category": "Other"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "beaten",
+        "section": "For the Tarts",
         "category": "Dairy & Eggs"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tarts",
         "category": "Other"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tarts",
         "category": "Condiments & Sauces"
       }
     }

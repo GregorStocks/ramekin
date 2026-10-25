@@ -3,6 +3,10 @@
   "recipe_slug": "2009-01-warm-butternut-squash-",
   "ingredients": [
     {
+      "raw": "For salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 medium butternut squash (about 2 to 2 1/2 pounds), peeled, seeded, and cut into 1 1/2-inch pieces",
       "expected": {
         "item": "butternut squash, peeled, seeded, and cut into 1 1/2-inch pieces",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 2 to 2 1/2 pounds",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "minced or pressed",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "I skip this",
+        "section": "For Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -68,6 +76,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "For Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -86,6 +95,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "For Salad",
         "category": "Canned Goods"
       }
     },
@@ -100,6 +110,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Salad",
         "category": "Produce"
       }
     },
@@ -114,8 +125,13 @@
           }
         ],
         "note": null,
+        "section": "For Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For tahini dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1 medium garlic clove, finely minced with a pinch of salt",
@@ -128,6 +144,7 @@
           }
         ],
         "note": "finely minced with a pinch of salt",
+        "section": "For Tahini Dressing",
         "category": "Produce"
       }
     },
@@ -142,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "For Tahini Dressing",
         "category": "Produce"
       }
     },
@@ -156,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "For Tahini Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -170,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For Tahini Dressing",
         "category": "Beverages"
       }
     },
@@ -184,6 +204,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For Tahini Dressing",
         "category": "Oils & Vinegars"
       }
     }

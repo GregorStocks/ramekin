@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-sweet-potato-pie-with-",
   "ingredients": [
     {
+      "raw": "For the Pie:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 large sweet potatoes (about 2¼ pounds)",
       "expected": {
         "item": "sweet potatoes",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 2 1/4 pounds",
+        "section": "For the Pie",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Pie",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Pie",
         "category": "Baking"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Pie",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Pie",
         "category": "Dairy & Eggs"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie",
         "category": "Baking"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pie",
         "category": "Canned Goods"
       }
     },
@@ -185,8 +201,13 @@
           }
         ],
         "note": "no need to thaw",
+        "section": "For the Pie",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup  heavy whipping cream, cold",
@@ -199,6 +220,7 @@
           }
         ],
         "note": "cold",
+        "section": "For the Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Whipped Cream",
         "category": "Baking"
       }
     }

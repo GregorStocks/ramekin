@@ -3,7 +3,11 @@
   "recipe_slug": "turtle-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "24  Oreo cookies (finely crushed into crumbs)",
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "24   Oreo cookies, finely crushed into crumbs",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "finely crushed into crumbs",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "6 tablespoons unsalted butter (melted)",
+      "raw": "6 tablespoons   unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Pinch of salt",
+      "raw": "Pinch   of salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -41,67 +47,96 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1½ cups caramel sauce",
+      "raw": "For the Caramel-Pecan Layer:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ cups  (339 ml) caramel sauce, omit the salt for a sweeter version",
       "expected": {
-        "item": "caramel sauce",
+        "item": "caramel sauce, omit the salt for a sweeter version",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "339",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Caramel-Pecan Layer",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 cup chopped pecans",
+      "raw": "1 cup  (99 g) chopped pecans",
       "expected": {
         "item": "chopped pecans",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Caramel-Pecan Layer",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "32 ounces cream cheese (at room temperature)",
+      "raw": "For the Cheesecake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "32 ounces  (907.19 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
+          },
+          {
+            "amount": "907.19",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1¼ cups granulated sugar",
+      "raw": "1¼ cups  (250 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  eggs (at room temperature)",
+      "raw": "4   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -111,25 +146,31 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¾ cup heavy cream",
+      "raw": "¾ cup  (178.5 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "178.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon vanilla extract",
+      "raw": "1 tablespoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -139,62 +180,87 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ cup heavy cream",
+      "raw": "For the Chocolate Ganache:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup  (178.5 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "178.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¼ cup light corn syrup",
+      "raw": "¼ cup  (85.25 ml) light corn syrup",
       "expected": {
         "item": "light corn syrup",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "85.25",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache",
         "category": "Baking"
       }
     },
     {
-      "raw": "8 ounces semisweet chocolate (finely chopped)",
+      "raw": "8 ounces  (226.8 g) semisweet chocolate, finely chopped",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
+        "section": "For the Chocolate Ganache",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon vanilla extract",
+      "raw": "½ teaspoon  (0.5 teaspoon) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache",
         "category": "Baking"
       }
     }

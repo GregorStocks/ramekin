@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 to 3  tomatoes, (sliced)",
+      "raw": "2 to 3 tomatoes, sliced",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4  burrito-size tortillas",
+      "raw": "4 burrito-size tortillas",
       "expected": {
         "item": "burrito-size tortillas",
         "measurements": [
@@ -68,7 +68,11 @@
       }
     },
     {
-      "raw": "1  jalapeño pepper, (seeded and diced)",
+      "raw": "jalapeño ranch:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 jalapeño pepper, seeded and diced",
       "expected": {
         "item": "jalapeño pepper",
         "measurements": [
@@ -78,6 +82,7 @@
           }
         ],
         "note": "seeded and diced",
+        "section": "Jalapeño Ranch",
         "category": "Produce"
       }
     },
@@ -92,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Ranch",
         "category": "Dairy & Eggs"
       }
     },
@@ -106,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Ranch",
         "category": "Condiments & Sauces"
       }
     },
@@ -120,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Ranch",
         "category": "Dairy & Eggs"
       }
     },
@@ -134,6 +142,7 @@
           }
         ],
         "note": "or 1 tablespoon dried chives",
+        "section": "Jalapeño Ranch",
         "category": "Produce"
       }
     },
@@ -148,6 +157,7 @@
           }
         ],
         "note": "or 2 teaspoons dried dill weed",
+        "section": "Jalapeño Ranch",
         "category": "Produce"
       }
     },
@@ -162,6 +172,7 @@
           }
         ],
         "note": "or 1 teaspoon dried parsley",
+        "section": "Jalapeño Ranch",
         "category": "Produce"
       }
     },
@@ -176,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Ranch",
         "category": "Produce"
       }
     },
@@ -190,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -204,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Ranch",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Jalapeño Ranch",
         "category": "Spices & Seasonings"
       }
     }

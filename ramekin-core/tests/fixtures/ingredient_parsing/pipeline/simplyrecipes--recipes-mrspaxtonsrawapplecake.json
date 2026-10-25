@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-mrspaxtonsrawapplecake",
   "ingredients": [
     {
+      "raw": "For the cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups vegetable oil",
       "expected": {
         "item": "vegetable oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 cups of sugar",
+      "raw": "2 cups sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -27,27 +32,29 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 eggs, slightly beaten",
+      "raw": "3 large eggs, slightly beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "large"
           }
         ],
         "note": "slightly beaten",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 cups of white flour",
+      "raw": "3 cups all-purpose flour",
       "expected": {
-        "item": "white flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 teaspoon baking soda",
+      "raw": "1 1/2 teaspoons baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -69,13 +77,14 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon vanilla",
+      "raw": "1 teaspoon vanilla extract",
       "expected": {
-        "item": "vanilla",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1",
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,25 +122,27 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 cups chopped, peeled apples (varieties that are good for baking - i.e. Granny Smith, Gravenstein, Fuji)",
+      "raw": "3 cups peeled, cored, and chopped apples (varieties that are good for baking, such as Granny Smith, Gravenstein, Fuji)",
       "expected": {
-        "item": "chopped, peeled apples",
+        "item": "peeled, cored, and chopped apples",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "varieties that are good for baking - i.e. Granny Smith, Gravenstein, Fuji",
-        "category": "Produce"
+        "note": "varieties that are good for baking, such as Granny Smith, Gravenstein, Fuji",
+        "section": "For the Cake",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup of&nbsp;sweetened shredded coconut",
+      "raw": "1 cup sweetened shredded coconut",
       "expected": {
         "item": "sweetened shredded coconut",
         "measurements": [
@@ -139,13 +152,14 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup of chopped nuts - walnuts or pecans",
+      "raw": "1 cup chopped nuts, walnuts or pecans",
       "expected": {
-        "item": "chopped nuts - walnuts or pecans",
+        "item": "chopped nuts, walnuts or pecans",
         "measurements": [
           {
             "amount": "1",
@@ -153,21 +167,27 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2 stick sweet butter",
+      "raw": "For the glaze:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 tablespoons unsalted butter",
       "expected": {
-        "item": "sweet butter",
+        "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "stick"
+            "amount": "4",
+            "unit": "tbsp"
           }
         ],
         "note": null,
-        "category": "Produce"
+        "section": "For the Glaze",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Dairy & Eggs"
       }
     }

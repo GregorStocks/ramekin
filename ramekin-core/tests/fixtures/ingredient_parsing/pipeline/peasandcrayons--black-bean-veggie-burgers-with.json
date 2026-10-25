@@ -3,7 +3,7 @@
   "recipe_slug": "black-bean-veggie-burgers-with",
   "ingredients": [
     {
-      "raw": "1  flax egg (or one large egg)",
+      "raw": "1 flax egg or one large egg",
       "expected": {
         "item": "flax egg",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 1/4 cup black beans (divided)",
+      "raw": "1 ¼ cup black beans divided",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2 cup diced onion",
+      "raw": "½ cup diced onion",
       "expected": {
         "item": "diced onion",
         "measurements": [
@@ -59,21 +59,21 @@
       }
     },
     {
-      "raw": "1 cup coarsely grated zucchini (divided)",
+      "raw": "1 cup coarsely grated zucchini divided",
       "expected": {
-        "item": "coarsely grated zucchini",
+        "item": "coarsely grated zucchini divided",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "divided",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup chopped red bell pepper",
+      "raw": "½ cup chopped red bell pepper",
       "expected": {
         "item": "chopped red bell pepper",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic (smashed and minced)",
+      "raw": "2 cloves garlic smashed and minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1/2 tsp ground cumin",
+      "raw": "½ tsp ground cumin",
       "expected": {
         "item": "ground cumin",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1/2 tsp garlic powder",
+      "raw": "½ tsp garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "1/4 tsp salt",
+      "raw": "¼ tsp salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1/8 tsp cayenne pepper",
+      "raw": "⅛ tsp cayenne pepper",
       "expected": {
         "item": "cayenne pepper",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1  chipotle pepper in adobo sauce (minced)",
+      "raw": "1 chipotle pepper in adobo sauce minced",
       "expected": {
         "item": "chipotle pepper in adobo sauce",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "1 cup old-fashioned rolled oats ((not instant))",
+      "raw": "1 cup old-fashioned rolled oats (not instant)",
       "expected": {
         "item": "old-fashioned rolled oats",
         "measurements": [
@@ -213,6 +213,10 @@
       }
     },
     {
+      "raw": "CHIPOTLE HONEY MUSTARD:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 TBSP yellow mustard",
       "expected": {
         "item": "yellow mustard",
@@ -223,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Condiments & Sauces"
       }
     },
@@ -237,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,11 +272,12 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Baking"
       }
     },
     {
-      "raw": "1-2  chipotle peppers in adobo sauce",
+      "raw": "1-2 chipotle peppers in adobo sauce",
       "expected": {
         "item": "chipotle peppers in adobo sauce",
         "measurements": [
@@ -279,25 +287,27 @@
           }
         ],
         "note": null,
+        "section": "Chipotle Honey Mustard",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/2 tsp adobo sauce (extra to taste)",
+      "raw": "½ tsp adobo sauce extra to taste",
       "expected": {
-        "item": "adobo sauce",
+        "item": "adobo sauce extra",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "extra to taste",
-        "category": "Canned Goods"
+        "note": "to taste",
+        "section": "Chipotle Honey Mustard",
+        "category": "Other"
       }
     },
     {
-      "raw": "pinch of salt (to taste)",
+      "raw": "pinch of salt to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -307,8 +317,13 @@
           }
         ],
         "note": "to taste",
+        "section": "Chipotle Honey Mustard",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "EXTRAS:",
+      "is_section_header": true
     },
     {
       "raw": "Burger buns or lettuce wraps",
@@ -316,15 +331,17 @@
         "item": "Burger buns or lettuce wraps",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "Cheddar or Pepper Jack cheese (optional)",
+      "raw": "Cheddar or Pepper Jack cheese optional",
       "expected": {
         "item": "Cheddar or Pepper Jack cheese",
         "measurements": [],
         "note": "optional",
+        "section": "Extras",
         "category": "Cheese"
       }
     },
@@ -334,6 +351,7 @@
         "item": "arugula or lettuce",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
@@ -343,6 +361,7 @@
         "item": "sliced ripe tomato",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
@@ -352,15 +371,17 @@
         "item": "sliced or mashed avocado",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Produce"
       }
     },
     {
-      "raw": "PLUS&nbsp;all your favorite veggie burger add-ons!",
+      "raw": "PLUS all your favorite veggie burger add-ons!",
       "expected": {
         "item": "PLUS all your favorite veggie burger add-ons!",
         "measurements": [],
         "note": null,
+        "section": "Extras",
         "category": "Other"
       }
     }

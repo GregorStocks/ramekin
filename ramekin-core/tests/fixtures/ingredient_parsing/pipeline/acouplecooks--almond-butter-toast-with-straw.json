@@ -59,13 +59,8 @@
       }
     },
     {
-      "raw": "Other optional toppings:&nbsp;",
-      "expected": {
-        "item": "Other optional toppings:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Other optional toppings: ",
+      "is_section_header": true
     },
     {
       "raw": "Blueberries, blackberries",
@@ -73,6 +68,7 @@
         "item": "Blueberries, blackberries",
         "measurements": [],
         "note": null,
+        "section": "Other Optional Toppings",
         "category": "Produce"
       }
     },
@@ -82,6 +78,7 @@
         "item": "Sliced bananas or green apples",
         "measurements": [],
         "note": null,
+        "section": "Other Optional Toppings",
         "category": "Produce"
       }
     },
@@ -91,6 +88,7 @@
         "item": "Cacao nibs or chocolate chips",
         "measurements": [],
         "note": null,
+        "section": "Other Optional Toppings",
         "category": "Baking"
       }
     },
@@ -100,6 +98,7 @@
         "item": "Chia seeds",
         "measurements": [],
         "note": null,
+        "section": "Other Optional Toppings",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -109,6 +108,7 @@
         "item": "Shredded coconut",
         "measurements": [],
         "note": "consider toasting on low heat it in a dry skillet",
+        "section": "Other Optional Toppings",
         "category": "Produce"
       }
     },
@@ -118,6 +118,7 @@
         "item": "Bee pollen",
         "measurements": [],
         "note": "we love the confetti look",
+        "section": "Other Optional Toppings",
         "category": "Other"
       }
     },
@@ -127,6 +128,7 @@
         "item": "Chia jams: cherry chai, rhubarb or cranberry",
         "measurements": [],
         "note": null,
+        "section": "Other Optional Toppings",
         "category": "Produce"
       }
     }

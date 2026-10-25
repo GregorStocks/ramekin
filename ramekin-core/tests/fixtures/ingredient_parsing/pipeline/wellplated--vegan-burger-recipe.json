@@ -3,7 +3,11 @@
   "recipe_slug": "vegan-burger-recipe",
   "ingredients": [
     {
-      "raw": "1  large red pepper (cored and roughly chopped)",
+      "raw": "FOR THE BURGERS:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 large red pepper cored and roughly chopped",
       "expected": {
         "item": "red pepper",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "cored and roughly chopped",
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2  small red onion (roughly chopped)",
+      "raw": "½ small red onion roughly chopped",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup raw almonds",
+      "raw": "½ cup raw almonds",
       "expected": {
         "item": "raw almonds",
         "measurements": [
@@ -41,25 +47,27 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4 cup pepitas (pumpkin&nbsp;seeds)",
+      "raw": "¼ cup pepitas pumpkin seeds",
       "expected": {
-        "item": "pepitas",
+        "item": "pepitas pumpkin seeds",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "pumpkin seeds",
-        "category": "Nuts & Dried Fruit"
+        "note": null,
+        "section": "For the Burgers",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup hemp seed hearts",
+      "raw": "¼ cup hemp seed hearts",
       "expected": {
         "item": "hemp seed hearts",
         "measurements": [
@@ -69,20 +77,22 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
+      "raw": "2 tablespoons ground flaxseed meal chia seeds, or additional hemp seed hearts",
       "expected": {
-        "item": "ground flaxseed meal",
+        "item": "ground flaxseed meal chia seeds, or additional hemp seed hearts",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "chia seeds, or additional hemp seed hearts",
+        "note": null,
+        "section": "For the Burgers",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Produce"
       }
     },
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/4 teaspoons cumin",
+      "raw": "1 ¼ teaspoons cumin",
       "expected": {
         "item": "cumin",
         "measurements": [
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3/4 teaspoon chili powder",
+      "raw": "¾ teaspoon chili powder",
       "expected": {
         "item": "chili powder",
         "measurements": [
@@ -139,11 +152,12 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon smoked paprika",
+      "raw": "¼ teaspoon smoked paprika",
       "expected": {
         "item": "smoked paprika",
         "measurements": [
@@ -153,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 can black beans, ((15 ounces) rinsed and drained)",
+      "raw": "1 can black beans, (15 ounces) rinsed and drained",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -171,38 +186,46 @@
           }
         ],
         "note": "rinsed and drained",
+        "section": "For the Burgers",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/2 cup old fashioned rolled oats (gluten free if needed)",
+      "raw": "½ cup old fashioned rolled oats gluten free if needed",
       "expected": {
-        "item": "old fashioned rolled oats",
+        "item": "old fashioned rolled oats gluten free if needed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "gluten free if needed",
-        "category": "Snacks"
-      }
-    },
-    {
-      "raw": "Whole grain buns (for serving)",
-      "expected": {
-        "item": "Whole grain buns",
-        "measurements": [],
-        "note": "for serving",
+        "note": null,
+        "section": "For the Burgers",
         "category": "Other"
       }
     },
     {
-      "raw": "Sliced tomatoes, (avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard)",
+      "raw": "Whole grain buns for serving",
       "expected": {
-        "item": "Sliced tomatoes",
+        "item": "Whole grain buns",
         "measurements": [],
-        "note": "avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard",
+        "note": "for serving",
+        "section": "For the Burgers",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "TOPPING IDEAS:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Sliced tomatoes, avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard",
+      "expected": {
+        "item": "Sliced tomatoes, avocado, arugula, sliced red onions, avocado, plain yogurt, mustard",
+        "measurements": [],
+        "note": "dairy-free if needed",
+        "section": "Topping Ideas",
         "category": "Produce"
       }
     }

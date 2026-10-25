@@ -3,7 +3,11 @@
   "recipe_slug": "chocolate-zucchini-cake-recipe",
   "ingredients": [
     {
-      "raw": "1/2 cup unsalted butter (softened)",
+      "raw": "For the Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "softened",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup vegetable oil",
+      "raw": "½ cup vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 3/4 cups granulated sugar",
+      "raw": "1 ¾ cups granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon baking powder",
+      "raw": "½ teaspoon baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "½ teaspoon salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup sour cream",
+      "raw": "½ cup sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 1/2 cups all-purpose flour",
+      "raw": "2 ½ cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -139,11 +152,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup Dutch-process cocoa*",
+      "raw": "¾ cup Dutch-process cocoa*",
       "expected": {
         "item": "Dutch-process cocoa",
         "measurements": [
@@ -153,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 1/2 cups shredded zucchini",
+      "raw": "2 ½ cups shredded zucchini",
       "expected": {
         "item": "shredded zucchini",
         "measurements": [
@@ -167,11 +182,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
     {
-      "raw": "2/3 cup chocolate chips",
+      "raw": "⅔ cup chocolate chips",
       "expected": {
         "item": "chocolate chips",
         "measurements": [
@@ -181,11 +197,16 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup heavy cream",
+      "raw": "For the Chocolate Ganache:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Ganache",
         "category": "Baking"
       }
     }

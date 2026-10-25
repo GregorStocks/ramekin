@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "8 oz mejool dates (pitted)",
+      "raw": "8 oz mejool dates pitted",
       "expected": {
         "item": "mejool dates",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "1/2 cup dried cherries (or extra dates if desired)",
+      "raw": "½ cup dried cherries or extra dates if desired",
       "expected": {
-        "item": "dried cherries",
+        "item": "dried cherries or extra dates",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or extra dates if desired",
+        "note": "if desired",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4 cup unsweetened shredded coconut",
+      "raw": "¼ cup unsweetened shredded coconut",
       "expected": {
         "item": "unsweetened shredded coconut",
         "measurements": [
@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "1-3 TBSP pure maple syrup (adjust to taste)",
+      "raw": "1-3 TBSP pure maple syrup adjust to taste",
       "expected": {
-        "item": "pure maple syrup",
+        "item": "pure maple syrup adjust",
         "measurements": [
           {
             "amount": "1-3",
             "unit": "tbsp"
           }
         ],
-        "note": "adjust to taste",
-        "category": "Condiments & Sauces"
+        "note": "to taste",
+        "category": "Other"
       }
     },
     {
@@ -87,32 +87,31 @@
       }
     },
     {
-      "raw": "1-2 cups fresh fruit (see below)",
+      "raw": "1-2 cups fresh fruit see below",
       "expected": {
-        "item": "fresh fruit",
+        "item": "fresh fruit see below",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "cup"
           }
         ],
-        "note": "see below",
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "zest of 1 lime to taste",
+      "expected": {
+        "item": "zest of 1 lime",
+        "measurements": [],
+        "note": "to taste",
         "category": "Produce"
       }
     },
     {
-      "raw": "zest of 1 lime (to taste)",
-      "expected": {
-        "item": "lime zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lime"
-          }
-        ],
-        "note": "to taste",
-        "category": "Produce"
-      }
+      "raw": "FRUITY FAVORITES:",
+      "is_section_header": true
     },
     {
       "raw": "strawberries",
@@ -120,6 +119,7 @@
         "item": "strawberries",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -129,6 +129,7 @@
         "item": "blueberries",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -138,6 +139,7 @@
         "item": "raspberries",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -147,6 +149,7 @@
         "item": "mandarin oranges",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -156,6 +159,7 @@
         "item": "pineapple",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -165,6 +169,7 @@
         "item": "peaches",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -174,6 +179,7 @@
         "item": "banana",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     },
@@ -183,6 +189,7 @@
         "item": "kiwi",
         "measurements": [],
         "note": null,
+        "section": "Fruity Favorites",
         "category": "Produce"
       }
     }

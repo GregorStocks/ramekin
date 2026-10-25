@@ -3,6 +3,10 @@
   "recipe_slug": "meatloaf-recipe",
   "ingredients": [
     {
+      "raw": "Meatloaf:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds lean ground beef",
       "expected": {
         "item": "lean ground beef",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Bakery & Bread"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,8 +132,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup ketchup",
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Oils & Vinegars"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     }

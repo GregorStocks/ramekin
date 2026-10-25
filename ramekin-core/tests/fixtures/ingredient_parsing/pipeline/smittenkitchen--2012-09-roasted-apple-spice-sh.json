@@ -3,13 +3,8 @@
   "recipe_slug": "2012-09-roasted-apple-spice-sh",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "6 medium apples, any variety you like to bake with, peeled, halved and cored",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "any variety you like to bake with, peeled, halved and cored",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -180,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -194,6 +199,7 @@
           }
         ],
         "note": "585 grams updated: 1170 grams",
+        "section": "Cake",
         "category": "Canned Goods"
       }
     },
@@ -212,6 +218,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -230,6 +237,7 @@
           }
         ],
         "note": "packed",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -244,11 +252,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Frosting",
+      "raw": "Frosting:",
       "is_section_header": true
     },
     {

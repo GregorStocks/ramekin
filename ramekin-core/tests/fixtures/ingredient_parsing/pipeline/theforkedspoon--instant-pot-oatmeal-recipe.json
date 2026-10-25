@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4 cups water (see notes)",
+      "raw": "4 cups water, see notes",
       "expected": {
         "item": "water",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 tablespoon butter (optional)",
+      "raw": "2 tablespoon butter, optional",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -59,47 +59,56 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "Fresh fruit",
       "expected": {
         "item": "Fresh fruit",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "Sweetener (honey, maple syrup, brown sugar)",
+      "raw": "Sweetener, honey, maple syrup, brown sugar",
       "expected": {
-        "item": "Sweetener",
-        "measurements": [],
-        "note": "honey, maple syrup, brown sugar",
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "Nuts &amp;amp; Seeds",
-      "expected": {
-        "item": "Nuts & Seeds",
+        "item": "Sweetener, honey, maple syrup, brown sugar",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     },
     {
-      "raw": "Nut Butter (peanut butter, almond butter)",
+      "raw": "Nuts & Seeds",
       "expected": {
-        "item": "Nut Butter",
+        "item": "Nuts & Seeds",
         "measurements": [],
-        "note": "peanut butter, almond butter",
+        "note": null,
+        "section": "Optional Toppings",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Nut Butter, peanut butter, almond butter",
+      "expected": {
+        "item": "Nut Butter, peanut butter, almond butter",
+        "measurements": [],
+        "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
+      "raw": "Milk, almond milk, oat milk, soy milk, cow milk, etc.",
       "expected": {
-        "item": "Milk",
+        "item": "Milk, almond milk, oat milk, soy milk, cow milk, etc.",
         "measurements": [],
-        "note": "almond milk, oat milk, soy milk, cow milk, etc.",
+        "note": null,
+        "section": "Optional Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +118,7 @@
         "item": "Ground cinnamon or Nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     }

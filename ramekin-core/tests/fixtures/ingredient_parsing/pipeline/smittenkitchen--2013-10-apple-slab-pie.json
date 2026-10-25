@@ -3,7 +3,7 @@
   "recipe_slug": "2013-10-apple-slab-pie",
   "ingredients": [
     {
-      "raw": "Crust",
+      "raw": "Crust:",
       "is_section_header": true
     },
     {
@@ -90,7 +90,7 @@
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {
@@ -213,18 +213,8 @@
       }
     },
     {
-      "raw": "Glaze",
+      "raw": "Glaze (optional):",
       "is_section_header": true
-    },
-    {
-      "raw": "(optional) (only need half, barely, for what’s in photos)",
-      "expected": {
-        "item": "only need half",
-        "measurements": [],
-        "note": "optional, barely, for what’s in photos",
-        "section": "Glaze",
-        "category": "Other"
-      }
     },
     {
       "raw": "1/2 cup confectioners’ sugar",
@@ -237,7 +227,7 @@
           }
         ],
         "note": null,
-        "section": "Glaze",
+        "section": "Glaze (Optional)",
         "category": "Baking"
       }
     },
@@ -252,7 +242,7 @@
           }
         ],
         "note": "plus a drop or two more if needed",
-        "section": "Glaze",
+        "section": "Glaze (Optional)",
         "category": "Dairy & Eggs"
       }
     }

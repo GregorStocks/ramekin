@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic, peeled",
+      "raw": "3 cloves garlic",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -26,7 +26,7 @@
             "unit": "clove"
           }
         ],
-        "note": "peeled",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -101,11 +101,16 @@
       }
     },
     {
+      "raw": "To Serve:",
+      "is_section_header": true
+    },
+    {
       "raw": "Tortilla chips, store-bought or homemade",
       "expected": {
         "item": "Tortilla chips",
         "measurements": [],
         "note": "store-bought or homemade",
+        "section": "To Serve",
         "category": "Snacks"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "pomegranate-chicken-thigh-reci",
   "ingredients": [
     {
+      "raw": "Spice rub:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp seasoning salt with no msg",
       "expected": {
         "item": "seasoning salt with no msg",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "sweet or hot",
+        "section": "Spice Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Spice Rub",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "or organic blackstrap molasses",
+        "section": "Spice Rub",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Spice Rub",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Remaining Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "6 chicken thighs",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Remaining Ingredients",
         "category": "Meat & Seafood"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "sliced, divided",
+        "section": "Remaining Ingredients",
         "category": "Produce"
       }
     },
@@ -148,6 +166,7 @@
         "item": "Private Reserve extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "Remaining Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Remaining Ingredients",
         "category": "Beverages"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Remaining Ingredients",
         "category": "Canned Goods"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Remaining Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Remaining Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +236,7 @@
         "item": "seasoned salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Remaining Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +251,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Remaining Ingredients",
         "category": "Other"
       }
     },
@@ -241,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Remaining Ingredients",
         "category": "Produce"
       }
     }

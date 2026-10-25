@@ -3,7 +3,7 @@
   "recipe_slug": "bbq-pork-loin-stuffed-swiss-ch",
   "ingredients": [
     {
-      "raw": "4 pound Pork Loin",
+      "raw": "4 pound   Pork Loin",
       "expected": {
         "item": "Pork Loin",
         "measurements": [
@@ -17,7 +17,11 @@
       }
     },
     {
-      "raw": "4 cloves Garlic (, crushed or minced)",
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 cloves   Garlic , crushed or minced",
       "expected": {
         "item": "Garlic",
         "measurements": [
@@ -27,11 +31,12 @@
           }
         ],
         "note": "crushed or minced",
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 Tablespoon Sugar",
+      "raw": "1 Tablespoon   Sugar",
       "expected": {
         "item": "Sugar",
         "measurements": [
@@ -41,11 +46,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon Salt",
+      "raw": "1/2 teaspoon   Salt",
       "expected": {
         "item": "Salt",
         "measurements": [
@@ -55,11 +61,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon Ground Cumin",
+      "raw": "1 teaspoon   Ground Cumin",
       "expected": {
         "item": "Ground Cumin",
         "measurements": [
@@ -69,11 +76,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 Tablespoons Soy Sauce",
+      "raw": "2 Tablespoons   Soy Sauce",
       "expected": {
         "item": "Soy Sauce",
         "measurements": [
@@ -83,11 +91,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon Sesame Oil",
+      "raw": "1 teaspoon   Sesame Oil",
       "expected": {
         "item": "Sesame Oil",
         "measurements": [
@@ -97,39 +106,46 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3 Tablespoons Grapeseed Oil ( or olive oil )",
+      "raw": "3 Tablespoons   Grapeseed Oil  or olive oil",
       "expected": {
-        "item": "Grapeseed Oil",
+        "item": "Grapeseed Oil or olive oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil",
+        "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 Tablespoons Grapeseed Oil ( or olive oil )",
+      "raw": "Stuffing Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 Tablespoons   Grapeseed Oil  or olive oil",
       "expected": {
-        "item": "Grapeseed Oil",
+        "item": "Grapeseed Oil or olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil",
+        "note": null,
+        "section": "Stuffing Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "4-5 Large Swiss Chard Leaves (, stems removed and leaves chopped)",
+      "raw": "4-5 Large   Swiss Chard Leaves , stems removed and leaves chopped",
       "expected": {
         "item": "Swiss Chard Leaves",
         "measurements": [
@@ -139,11 +155,12 @@
           }
         ],
         "note": "stems removed and leaves chopped",
+        "section": "Stuffing Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "2-3 cloves Garlic (, crushed)",
+      "raw": "2-3 cloves   Garlic , crushed",
       "expected": {
         "item": "Garlic",
         "measurements": [
@@ -153,11 +170,12 @@
           }
         ],
         "note": "crushed",
+        "section": "Stuffing Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  Onion (, minced)",
+      "raw": "1/2   Onion , minced",
       "expected": {
         "item": "Onion",
         "measurements": [
@@ -167,11 +185,12 @@
           }
         ],
         "note": "minced",
+        "section": "Stuffing Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup Pineapple (, diced)",
+      "raw": "1/2 cup   Pineapple , diced",
       "expected": {
         "item": "Pineapple",
         "measurements": [
@@ -181,6 +200,7 @@
           }
         ],
         "note": "diced",
+        "section": "Stuffing Ingredients",
         "category": "Produce"
       }
     },
@@ -190,6 +210,7 @@
         "item": "Sea Salt",
         "measurements": [],
         "note": null,
+        "section": "Stuffing Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,6 +220,7 @@
         "item": "Fresh Cracked Black Pepper",
         "measurements": [],
         "note": null,
+        "section": "Stuffing Ingredients",
         "category": "Spices & Seasonings"
       }
     }

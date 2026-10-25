@@ -3,21 +3,26 @@
   "recipe_slug": "almond-chicken-recipe",
   "ingredients": [
     {
-      "raw": "3 tablespoons vegetable oil (divided use)",
+      "raw": "Stir Fry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 tablespoons vegetable oil divided use",
       "expected": {
-        "item": "vegetable oil",
+        "item": "vegetable oil divided use",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "divided use",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "section": "Stir Fry",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  small onion (diced)",
+      "raw": "1 small onion diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "diced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup zucchini (quartered lengthwise and sliced)",
+      "raw": "1 cup zucchini quartered lengthwise and sliced",
       "expected": {
         "item": "zucchini",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "quartered lengthwise and sliced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup mushrooms (sliced)",
+      "raw": "1 cup mushrooms sliced",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "sliced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  green bell pepper (diced)",
+      "raw": "1 green bell pepper diced",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "diced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 pounds boneless skinless chicken thighs (cut into 1 inch pieces)",
+      "raw": "2 pounds boneless skinless chicken thighs cut into 1 inch pieces",
       "expected": {
         "item": "boneless skinless chicken thighs",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": "cut into 1 inch pieces",
+        "section": "Stir Fry",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -97,11 +107,12 @@
           }
         ],
         "note": "minced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon ginger (minced)",
+      "raw": "1 teaspoon ginger minced",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -111,11 +122,12 @@
           }
         ],
         "note": "minced",
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup blanched almonds (sliced or slivered)",
+      "raw": "1/2 cup blanched almonds sliced or slivered",
       "expected": {
         "item": "blanched almonds",
         "measurements": [
@@ -125,6 +137,7 @@
           }
         ],
         "note": "sliced or slivered",
+        "section": "Stir Fry",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Stir Fry",
         "category": "Produce"
       }
     },
@@ -148,8 +162,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Stir Fry",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup chicken broth",
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -232,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -246,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -260,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     }

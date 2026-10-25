@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-semi-instant-pancake-m",
   "ingredients": [
     {
+      "raw": "SEMI-INSTANT PANCAKE MIX:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 cups all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Baking"
       }
     },
@@ -69,34 +77,41 @@
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancake Mix",
         "category": "Baking"
       }
     },
     {
-      "raw": "283 grams semi-instant pancake mix",
+      "raw": "SEMI-INSTANT PANCAKES:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups semi-instant pancake mix",
       "expected": {
         "item": "semi-instant pancake mix",
         "measurements": [
           {
-            "amount": "283",
-            "unit": "g"
+            "amount": "2",
+            "unit": "cup"
           }
         ],
         "note": null,
+        "section": "Semi-Instant Pancakes",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 large  eggs, separated, at room temperature",
+      "raw": "2 large  eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "separated, at room temperature",
+        "note": null,
+        "section": "Semi-Instant Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,21 +126,23 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Semi-Instant Pancakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4 tablespoons unsalted butter, melted and cooled",
+      "raw": "2  ounces vegetable oil",
       "expected": {
-        "item": "unsalted butter",
+        "item": "vegetable oil",
         "measurements": [
           {
-            "amount": "4",
-            "unit": "tbsp"
+            "amount": "2",
+            "unit": "oz"
           }
         ],
-        "note": "melted and cooled",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Semi-Instant Pancakes",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -139,6 +156,7 @@
           }
         ],
         "note": "such as blueberries, optional",
+        "section": "Semi-Instant Pancakes",
         "category": "Produce"
       }
     }

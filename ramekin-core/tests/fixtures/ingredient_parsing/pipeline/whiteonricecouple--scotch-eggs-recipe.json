@@ -3,13 +3,17 @@
   "recipe_slug": "scotch-eggs-recipe",
   "ingredients": [
     {
-      "raw": "1 pound uncooked bulk sausage",
+      "raw": "1 pound  (454 g) uncooked bulk sausage",
       "expected": {
         "item": "uncooked bulk sausage",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -17,7 +21,7 @@
       }
     },
     {
-      "raw": "5-6  hard boiled eggs (, peeled)",
+      "raw": "5-6   hard boiled eggs , peeled",
       "expected": {
         "item": "hard boiled eggs",
         "measurements": [
@@ -31,7 +35,7 @@
       }
     },
     {
-      "raw": "1-2  large raw eggs (, beaten)",
+      "raw": "1-2   large raw eggs , beaten",
       "expected": {
         "item": "raw eggs",
         "measurements": [
@@ -45,21 +49,25 @@
       }
     },
     {
-      "raw": "3/4 cup breading (, or more if needed (crushed pork rinds, almond flour or coconut flour for low carb))",
+      "raw": "3/4 cup  (180 ml) breading , or more if needed (crushed pork rinds, almond flour or coconut flour for low carb)",
       "expected": {
-        "item": "breading",
+        "item": "breading, or more if needed",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
           }
         ],
-        "note": "or more if needed (crushed pork rinds, almond flour or coconut flour for low carb)",
+        "note": "crushed pork rinds, almond flour or coconut flour for low carb",
         "category": "Other"
       }
     },
     {
-      "raw": "oil spray (, for coating)",
+      "raw": "oil spray , for coating",
       "expected": {
         "item": "oil spray",
         "measurements": [],
@@ -68,11 +76,16 @@
       }
     },
     {
+      "raw": "For serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Mustard and/or hot sauce",
       "expected": {
         "item": "Mustard and/or hot sauce",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     }

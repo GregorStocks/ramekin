@@ -3,7 +3,7 @@
   "recipe_slug": "2023-08-04-italian-chopped-sal",
   "ingredients": [
     {
-      "raw": "1 head romaine lettuce (roughly chopped)",
+      "raw": "1 head romaine lettuce, roughly chopped",
       "expected": {
         "item": "romaine lettuce",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "8 ounces fresh mozzarella (cut into 1/4-inch cubes)",
+      "raw": "8 ounces fresh mozzarella, cut into 1/4-inch cubes",
       "expected": {
         "item": "fresh mozzarella",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 ounces dry Italian salami (cut into matchsticks)",
+      "raw": "4 ounces dry Italian salami, cut into matchsticks",
       "expected": {
         "item": "dry Italian salami",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 (15-ounce) can chickpeas (rinsed and drained)",
+      "raw": "1 (15-ounce) can chickpeas, rinsed and drained",
       "expected": {
         "item": "chickpeas",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 (2.25 ounce) can sliced black olives (rinsed and drained)",
+      "raw": "1 (2.25 ounce) can sliced black olives, rinsed and drained",
       "expected": {
         "item": "sliced black olives",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "1  yellow bell pepper (diced)",
+      "raw": "1 yellow bell pepper, diced",
       "expected": {
         "item": "yellow bell pepper",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1/2  English cucumber (diced)",
+      "raw": "½ English cucumber, diced",
       "expected": {
         "item": "English cucumber",
         "measurements": [
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "6  pepperoncini (sliced)",
+      "raw": "6 pepperoncini, sliced",
       "expected": {
         "item": "pepperoncini",
         "measurements": [
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "1/3 cup chopped red onion",
+      "raw": "⅓ cup chopped red onion",
       "expected": {
         "item": "chopped red onion",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "1/2 cup shaved Parmesan",
+      "raw": "½ cup shaved Parmesan",
       "expected": {
         "item": "shaved Parmesan",
         "measurements": [
@@ -175,7 +175,11 @@
       }
     },
     {
-      "raw": "1/2 cup extra virgin olive oil",
+      "raw": "for the dressing:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup extra virgin olive oil",
       "expected": {
         "item": "extra virgin olive oil",
         "measurements": [
@@ -185,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -199,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -213,11 +219,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 clove garlic (grated)",
+      "raw": "1 clove garlic, grated",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -227,11 +234,12 @@
           }
         ],
         "note": "grated",
+        "section": "For the Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "3/4 teaspoon dried oregano",
+      "raw": "¾ teaspoon dried oregano",
       "expected": {
         "item": "dried oregano",
         "measurements": [
@@ -241,11 +249,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 teaspoon crushed red pepper flakes",
+      "raw": "⅛ teaspoon crushed red pepper flakes",
       "expected": {
         "item": "crushed red pepper flakes",
         "measurements": [
@@ -255,15 +264,17 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Kosher salt and freshly ground black pepper (to taste)",
+      "raw": "Kosher salt and freshly ground black pepper, to taste",
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     }

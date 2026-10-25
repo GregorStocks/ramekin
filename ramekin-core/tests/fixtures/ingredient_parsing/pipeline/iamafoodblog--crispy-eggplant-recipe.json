@@ -3,6 +3,10 @@
   "recipe_slug": "crispy-eggplant-recipe",
   "ingredients": [
     {
+      "raw": "Cherry Tomato Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon oil",
       "expected": {
         "item": "oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Tomato Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Cherry Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,8 +67,13 @@
         "item": "Tabasco",
         "measurements": [],
         "note": "to taste",
+        "section": "Cherry Tomato Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Eggplant:",
+      "is_section_header": true
     },
     {
       "raw": "2-3 slices of old brioche",
@@ -73,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "Eggplant",
         "category": "Other"
       }
     },
@@ -87,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Eggplant",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Eggplant",
         "category": "Other"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Eggplant",
         "category": "Produce"
       }
     },
@@ -124,6 +141,7 @@
         "item": "oil",
         "measurements": [],
         "note": "for frying",
+        "section": "Eggplant",
         "category": "Oils & Vinegars"
       }
     },
@@ -133,6 +151,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Eggplant",
         "category": "Spices & Seasonings"
       }
     }

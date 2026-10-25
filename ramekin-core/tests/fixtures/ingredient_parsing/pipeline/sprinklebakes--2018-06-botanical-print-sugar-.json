@@ -3,6 +3,10 @@
   "recipe_slug": "2018-06-botanical-print-sugar-",
   "ingredients": [
     {
+      "raw": "Sugar cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 lb. two US sticks unsalted butter",
       "expected": {
         "item": "unsalted butter",
@@ -17,25 +21,31 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup plus 2 tablespoons (225g granulated sugar)",
+      "raw": "1 cup plus 2 tablespoons 225g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 cup plus 2 tablespoons",
             "unit": null
+          },
+          {
+            "amount": "225",
+            "unit": "g"
           }
         ],
-        "note": "225g granulated sugar",
+        "note": null,
+        "section": "Sugar Cookies",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -45,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -59,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Baking"
       }
     },
@@ -77,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Baking"
       }
     },
@@ -91,67 +104,76 @@
           }
         ],
         "note": null,
+        "section": "Sugar Cookies",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3  bags (12 ounces each green candy melting wafers)",
+      "raw": "Botanical decors and supplies:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 bags 12 ounces each green candy melting wafers",
       "expected": {
-        "item": "green candy melting wafers",
+        "item": "12 ounces each green candy melting wafers",
         "measurements": [
           {
             "amount": "3",
             "unit": "bag"
           }
         ],
-        "note": "12 ounces each green candy melting wafers",
+        "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "1  bag (12 ounces bright white candy melting wafers)",
+      "raw": "1 bag 12 ounces bright white candy melting wafers",
       "expected": {
-        "item": "bright white candy melting wafers",
+        "item": "12 ounces bright white candy melting wafers",
         "measurements": [
           {
             "amount": "1",
             "unit": "bag"
           }
         ],
-        "note": "12 ounces bright white candy melting wafers",
+        "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup ready-made frosting (or homemade buttercream)",
+      "raw": "1/2 cup ready-made frosting or homemade buttercream",
       "expected": {
-        "item": "ready-made frosting",
+        "item": "ready-made frosting or homemade buttercream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or homemade buttercream",
+        "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "4  ornate frame candy molds (4×6-inches each)",
+      "raw": "4 ornate frame candy molds 4×6-inches each",
       "expected": {
-        "item": "ornate frame candy molds",
+        "item": "ornate frame candy molds 4×6-inches each",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "4×6-inches each",
+        "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "2  sheets edible rice paper",
+      "raw": "2 sheets edible rice paper",
       "expected": {
         "item": "edible rice paper",
         "measurements": [
@@ -161,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
@@ -170,15 +193,17 @@
         "item": "Food color pen",
         "measurements": [],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "Soft bristle art brushes (3-4)",
+      "raw": "Soft bristle art brushes 3-4",
       "expected": {
-        "item": "Soft bristle art brushes",
+        "item": "Soft bristle art brushes 3-4",
         "measurements": [],
-        "note": "3-4",
+        "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
@@ -188,15 +213,17 @@
         "item": "Brown gel food color",
         "measurements": [],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
     {
-      "raw": "Rubber stamp with script motif (new, unused)",
+      "raw": "Rubber stamp with script motif new, unused",
       "expected": {
-        "item": "Rubber stamp with script motif",
+        "item": "Rubber stamp with script motif new, unused",
         "measurements": [],
-        "note": "new, unused",
+        "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
@@ -206,6 +233,7 @@
         "item": "Piping gel or corn syrup",
         "measurements": [],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Baking"
       }
     },
@@ -215,6 +243,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Baking"
       }
     },
@@ -224,6 +253,7 @@
         "item": "Wilton fern mold",
         "measurements": [],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
@@ -238,6 +268,7 @@
           }
         ],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
@@ -252,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Other"
       }
     },
@@ -261,6 +293,7 @@
         "item": "Brown petal dust or cocoa powder",
         "measurements": [],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Baking"
       }
     },
@@ -270,6 +303,7 @@
         "item": "Gold luster dust",
         "measurements": [],
         "note": null,
+        "section": "Botanical Decors and Supplies",
         "category": "Baking"
       }
     }

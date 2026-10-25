@@ -3,7 +3,7 @@
   "recipe_slug": "perfect-snowball-cookies-recip",
   "ingredients": [
     {
-      "raw": "1 cup slivered almonds (4 1/2 ounces; 130g) (see note)",
+      "raw": "1 cup slivered almonds (4 1/2 ounces; 130 g) (see note)",
       "expected": {
         "item": "slivered almonds",
         "measurements": [
@@ -25,20 +25,20 @@
       }
     },
     {
-      "raw": "1 scant cup all-purpose flour (4 1/2 ounces; 130g)",
+      "raw": "1 cup all-purpose flour (4 1/2 ounces; 128 g)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
-            "unit": "scant cup"
+            "unit": "cup"
           },
           {
             "amount": "4.5",
             "unit": "oz"
           },
           {
-            "amount": "130",
+            "amount": "128",
             "unit": "g"
           }
         ],
@@ -47,17 +47,13 @@
       }
     },
     {
-      "raw": "1/2 teaspoon (3g) baking soda",
+      "raw": "1/2 teaspoon baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -65,17 +61,13 @@
       }
     },
     {
-      "raw": "1/4 teaspoon (1g) salt",
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
       "expected": {
-        "item": "salt",
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -83,7 +75,7 @@
       }
     },
     {
-      "raw": "4 ounces unsalted butter, softened (1 stick; 115g)",
+      "raw": "4 ounces unsalted butter, softened (113 g; 1 stick)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -92,12 +84,12 @@
             "unit": "oz"
           },
           {
-            "amount": "1",
-            "unit": "stick"
+            "amount": "113",
+            "unit": "g"
           },
           {
-            "amount": "115",
-            "unit": "g"
+            "amount": "1",
+            "unit": "stick"
           }
         ],
         "note": "softened",
@@ -105,17 +97,21 @@
       }
     },
     {
-      "raw": "3 tablespoons (35g) granulated sugar",
+      "raw": "45 g granulated sugar (1 1/2 ounces; 3 tablespoons)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
-            "amount": "3",
-            "unit": "tbsp"
+            "amount": "45",
+            "unit": "g"
           },
           {
-            "amount": "35",
-            "unit": "g"
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -123,17 +119,13 @@
       }
     },
     {
-      "raw": "1 teaspoon (5mL) pure vanilla extract",
+      "raw": "1 teaspoon vanilla extract",
       "expected": {
-        "item": "pure vanilla extract",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5",
-            "unit": "ml"
           }
         ],
         "note": null,
@@ -141,20 +133,24 @@
       }
     },
     {
-      "raw": "1 1/2 cups (about 200g) confectioner's sugar",
+      "raw": "200 g confectioners' sugar (7 ounces; 1 1/2 cups)",
       "expected": {
-        "item": "confectioner's sugar",
+        "item": "confectioners' sugar",
         "measurements": [
-          {
-            "amount": "1.5",
-            "unit": "cup"
-          },
           {
             "amount": "200",
             "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
           }
         ],
-        "note": "about 200g",
+        "note": null,
         "category": "Baking"
       }
     }

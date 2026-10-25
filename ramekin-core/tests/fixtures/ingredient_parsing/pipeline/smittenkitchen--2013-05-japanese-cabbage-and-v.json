@@ -3,13 +3,8 @@
   "recipe_slug": "2013-05-japanese-cabbage-and-v",
   "ingredients": [
     {
-      "raw": "Pancakes",
-      "expected": {
-        "item": "Pancakes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Pancakes:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 small head cabbage, very thinly sliced (1 pound or 5 to 6 cups shreds) which will be easiest on a mandoline if you have one",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "1 pound or 5 to 6 cups shreds, very thinly sliced which will be easiest on a mandoline if you have one",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": "peeled into ribbons with a vegetable peeler",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": "thinly sliced on an angle",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -82,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -110,6 +111,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -119,17 +121,13 @@
         "item": "Canola, safflower or peanut oil",
         "measurements": [],
         "note": "for frying",
+        "section": "Pancakes",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Tangy Sauce",
-      "expected": {
-        "item": "Tangy Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Tangy Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup ketchup",
@@ -142,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "Tangy Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -156,6 +155,7 @@
           }
         ],
         "note": "note: this is not vegetarian",
+        "section": "Tangy Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -170,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "Tangy Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -184,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "Tangy Sauce",
         "category": "Beverages"
       }
     },
@@ -198,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Tangy Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -212,6 +215,7 @@
           }
         ],
         "note": "use 2 if you like a sweeter sauce",
+        "section": "Tangy Sauce",
         "category": "Baking"
       }
     },
@@ -226,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Tangy Sauce",
         "category": "Spices & Seasonings"
       }
     }

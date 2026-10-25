@@ -59,62 +59,6 @@
       }
     },
     {
-      "raw": "1 (28 ounce can) crushed tomatoes",
-      "expected": {
-        "item": "crushed tomatoes",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": "28 ounce can",
-        "category": "Canned Goods"
-      }
-    },
-    {
-      "raw": "2 (6 ounce cans) tomato paste",
-      "expected": {
-        "item": "tomato paste",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": null
-          }
-        ],
-        "note": "6 ounce cans",
-        "category": "Canned Goods"
-      }
-    },
-    {
-      "raw": "1 (15 ounce can) tomato sauce (passata or tomato puree)",
-      "expected": {
-        "item": "tomato sauce",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": "15 ounce can, passata or tomato puree",
-        "category": "Canned Goods"
-      }
-    },
-    {
-      "raw": "1/2 cup white wine",
-      "expected": {
-        "item": "white wine",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Beverages"
-      }
-    },
-    {
       "raw": "2 tablespoons granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -213,6 +157,62 @@
       }
     },
     {
+      "raw": "1 (28 ounce can) crushed tomatoes",
+      "expected": {
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "28 ounce can",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 (6 ounce cans) tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "6 ounce cans",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 (15 ounce can) tomato sauce (passata or tomato puree)",
+      "expected": {
+        "item": "tomato sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "15 ounce can, passata or tomato puree",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup white wine",
+      "expected": {
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
       "raw": "1 pound lasagna pasta",
       "expected": {
         "item": "lasagna pasta",
@@ -241,20 +241,6 @@
       }
     },
     {
-      "raw": "2 tablespoons chopped fresh parsley",
-      "expected": {
-        "item": "chopped fresh parsley",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
       "raw": "1 large  egg",
       "expected": {
         "item": "egg",
@@ -266,6 +252,20 @@
         ],
         "note": null,
         "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh parsley",
+      "expected": {
+        "item": "chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
       }
     },
     {

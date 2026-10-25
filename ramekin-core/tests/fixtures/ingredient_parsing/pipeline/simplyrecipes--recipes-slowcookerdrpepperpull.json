@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "1 12-ounce can Dr Pepper (or any other cola-type soda you prefer)",
+      "raw": "1 (12-ounce) can Dr Pepper or any other cola-type soda you prefer",
       "expected": {
-        "item": "Dr Pepper",
+        "item": "Dr Pepper or any other cola-type soda you prefer",
         "measurements": [
           {
             "amount": "1",
-            "unit": "12-ounce can"
+            "unit": "can"
           }
         ],
-        "note": "or any other cola-type soda you prefer",
+        "note": "12-ounce",
         "category": "Beverages"
       }
     },
@@ -157,12 +157,12 @@
       }
     },
     {
-      "raw": "1/2 - 1 teaspoon chili flakes, depending on how spicy you like it",
+      "raw": "1/2 to 1 teaspoon chili flakes, depending on how spicy you like it",
       "expected": {
         "item": "chili flakes, depending on how spicy you like it",
         "measurements": [
           {
-            "amount": "0.5-1",
+            "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
@@ -171,9 +171,9 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons Worcester sauce",
+      "raw": "1 1/2 teaspoons Worcestershire sauce",
       "expected": {
-        "item": "Worcester sauce",
+        "item": "Worcestershire sauce",
         "measurements": [
           {
             "amount": "1.5",

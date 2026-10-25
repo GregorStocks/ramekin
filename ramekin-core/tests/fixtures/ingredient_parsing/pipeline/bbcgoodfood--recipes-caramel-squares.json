@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "For the caramel:",
+      "is_section_header": true
+    },
+    {
       "raw": "225g golden caster sugar",
       "expected": {
         "item": "golden caster sugar",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Baking"
       }
     },
@@ -106,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Caramel",
         "category": "Other"
       }
     },
@@ -120,8 +126,13 @@
           }
         ],
         "note": "cubed",
+        "section": "For the Caramel",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the top:",
+      "is_section_header": true
     },
     {
       "raw": "200g bar dark chocolate (70% cocoa solids)",
@@ -134,6 +145,7 @@
           }
         ],
         "note": "70% cocoa solids",
+        "section": "For the Top",
         "category": "Baking"
       }
     },
@@ -148,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Top",
         "category": "Dairy & Eggs"
       }
     }

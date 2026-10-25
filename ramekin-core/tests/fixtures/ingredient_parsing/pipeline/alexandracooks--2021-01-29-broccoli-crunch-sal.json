@@ -3,11 +3,16 @@
   "recipe_slug": "2021-01-29-broccoli-crunch-sal",
   "ingredients": [
     {
+      "raw": "For the broccoli salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Broccoli Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broccoli Salad",
         "category": "Produce"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broccoli Salad",
         "category": "Pasta & Rice"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broccoli Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broccoli Salad",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "For the Broccoli Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -92,8 +102,13 @@
           }
         ],
         "note": null,
+        "section": "For the Broccoli Salad",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup sour cream",
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Baking"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     }

@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "5  egg whites",
+      "raw": "5 egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 cup pecans (finely chopped)",
+      "raw": "1 cup pecans finely chopped",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅔ cup semi sweet or dark chocolate chips",
       "expected": {
         "item": "semi sweet or dark chocolate chips",
@@ -97,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -111,16 +116,18 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "caramel sauce (homemade or store-bought)",
+      "raw": "caramel sauce homemade or store-bought",
       "expected": {
-        "item": "caramel sauce",
+        "item": "caramel sauce homemade or store-bought",
         "measurements": [],
-        "note": "homemade or store-bought",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "section": "Topping",
+        "category": "Other"
       }
     },
     {
@@ -134,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

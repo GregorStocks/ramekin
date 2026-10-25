@@ -3,7 +3,7 @@
   "recipe_slug": "2025-09-zucchini-pasta-salad",
   "ingredients": [
     {
-      "raw": "4  zucchini squash, (thinly sliced)",
+      "raw": "4 zucchini squash, thinly sliced",
       "expected": {
         "item": "zucchini squash",
         "measurements": [
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "4  garlic cloves, (minced)",
+      "raw": "4 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -110,6 +110,10 @@
       }
     },
     {
+      "raw": "lemon vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons lemon juice",
       "expected": {
         "item": "lemon juice",
@@ -120,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Produce"
       }
     },
@@ -134,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -148,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Baking"
       }
     },
@@ -162,11 +169,12 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2  garlic cloves, (finely minced or pressed)",
+      "raw": "2 garlic cloves, finely minced or pressed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -176,6 +184,7 @@
           }
         ],
         "note": "finely minced or pressed",
+        "section": "Lemon Vinaigrette",
         "category": "Produce"
       }
     },
@@ -190,11 +199,12 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  shallot, (finely minced)",
+      "raw": "1 shallot, finely minced",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -204,6 +214,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "Lemon Vinaigrette",
         "category": "Produce"
       }
     },
@@ -213,6 +224,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Vinaigrette",
         "category": "Oils & Vinegars"
       }
     }

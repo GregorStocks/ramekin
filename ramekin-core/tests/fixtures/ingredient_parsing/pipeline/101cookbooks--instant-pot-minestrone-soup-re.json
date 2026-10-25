@@ -185,11 +185,16 @@
       }
     },
     {
+      "raw": "optional topping ideas:",
+      "is_section_header": true
+    },
+    {
       "raw": "chopped black olives, a dollop of pesto, a drizzle of lemon olive oil, or a big squeeze of lemon juice",
       "expected": {
         "item": "chopped black olives, a dollop of pesto, a drizzle of lemon olive oil, or a big squeeze of lemon juice",
         "measurements": [],
         "note": null,
+        "section": "Optional Topping Ideas",
         "category": "Canned Goods"
       }
     }

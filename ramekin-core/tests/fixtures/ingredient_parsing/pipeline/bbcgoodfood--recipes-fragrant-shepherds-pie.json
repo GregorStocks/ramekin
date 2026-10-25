@@ -194,6 +194,10 @@
       }
     },
     {
+      "raw": "For the mash:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 ¼kg sweet potatoes peeled and cut into chunks",
       "expected": {
         "item": "sweet potatoes peeled and cut into chunks",
@@ -204,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mash",
         "category": "Other"
       }
     },
@@ -218,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mash",
         "category": "Other"
       }
     },
@@ -232,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mash",
         "category": "Dairy & Eggs"
       }
     },
@@ -246,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mash",
         "category": "Dairy & Eggs"
       }
     },
@@ -255,6 +263,7 @@
         "item": "toasted cumin seeds to serve",
         "measurements": [],
         "note": null,
+        "section": "For the Mash",
         "category": "Other"
       }
     }

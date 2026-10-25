@@ -68,21 +68,21 @@
       }
     },
     {
-      "raw": "6 to 8 cups kale, (curly green or tuscan is fine, chopped)",
+      "raw": "6 to 8 cups kale, curly green or tuscan is fine, chopped",
       "expected": {
-        "item": "kale",
+        "item": "kale, curly green or tuscan is fine",
         "measurements": [
           {
             "amount": "6 to 8",
             "unit": "cup"
           }
         ],
-        "note": "curly green or tuscan is fine, chopped",
+        "note": "chopped",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  shallot or ¼ red onion, (diced)",
+      "raw": "1 shallot or ¼ red onion, diced",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -91,12 +91,12 @@
             "unit": null
           }
         ],
-        "note": "or 1/4 red onion (diced)",
+        "note": "or 1/4 red onion; diced",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 ounces goat cheese, (crumbled)",
+      "raw": "4 ounces goat cheese, crumbled",
       "expected": {
         "item": "goat cheese",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "½ cup dates, (chopped)",
+      "raw": "½ cup dates, chopped",
       "expected": {
         "item": "dates",
         "measurements": [
@@ -138,6 +138,10 @@
       }
     },
     {
+      "raw": "salted maple vinaigrette:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup apple cider vinegar",
       "expected": {
         "item": "apple cider vinegar",
@@ -148,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -162,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  garlic clove, (finely minced or pressed)",
+      "raw": "1 garlic clove, finely minced or pressed",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -176,6 +182,7 @@
           }
         ],
         "note": "finely minced or pressed",
+        "section": "Salted Maple Vinaigrette",
         "category": "Produce"
       }
     },
@@ -190,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -204,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Maple Vinaigrette",
         "category": "Oils & Vinegars"
       }
     }

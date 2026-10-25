@@ -3,7 +3,11 @@
   "recipe_slug": "zhaliang-recipe",
   "ingredients": [
     {
-      "raw": "1  scallion ((white part only))",
+      "raw": "For the sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 scallion (white part only)",
       "expected": {
         "item": "scallion",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "white part only",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -27,7 +32,8 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "section": "For the Sauce",
+        "category": "Produce"
       }
     },
     {
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,20 +122,26 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "salt ((to taste))",
+      "raw": "salt (to taste)",
       "expected": {
         "item": "salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  youtiao ((Chinese fried dough stick))",
+      "raw": "For the zhaliang:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 youtiao (Chinese fried dough stick)",
       "expected": {
         "item": "youtiao",
         "measurements": [
@@ -134,11 +151,12 @@
           }
         ],
         "note": "Chinese fried dough stick",
+        "section": "For the Zhaliang",
         "category": "Other"
       }
     },
     {
-      "raw": "5 tablespoons rice flour ((40g))",
+      "raw": "5 tablespoons rice flour (40g)",
       "expected": {
         "item": "rice flour",
         "measurements": [
@@ -152,11 +170,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zhaliang",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon mung bean starch ((9g))",
+      "raw": "1 tablespoon mung bean starch (9g)",
       "expected": {
         "item": "mung bean starch",
         "measurements": [
@@ -170,11 +189,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zhaliang",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons wheat starch ((18g))",
+      "raw": "2 tablespoons wheat starch (18g)",
       "expected": {
         "item": "wheat starch",
         "measurements": [
@@ -188,11 +208,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zhaliang",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons cornstarch ((18g))",
+      "raw": "2 tablespoons cornstarch (18g)",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -206,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "For the Zhaliang",
         "category": "Baking"
       }
     },
@@ -220,11 +242,12 @@
           }
         ],
         "note": null,
+        "section": "For the Zhaliang",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup water ((235ml))",
+      "raw": "1 cup water (235ml)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -238,15 +261,17 @@
           }
         ],
         "note": null,
+        "section": "For the Zhaliang",
         "category": "Beverages"
       }
     },
     {
-      "raw": "vegetable or canola oil ((for brushing))",
+      "raw": "vegetable or canola oil (for brushing)",
       "expected": {
         "item": "vegetable or canola oil",
         "measurements": [],
         "note": "for brushing",
+        "section": "For the Zhaliang",
         "category": "Oils & Vinegars"
       }
     }

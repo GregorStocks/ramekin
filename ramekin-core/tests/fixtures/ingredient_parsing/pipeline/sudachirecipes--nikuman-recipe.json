@@ -3,6 +3,10 @@
   "recipe_slug": "nikuman-recipe",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "100 g cake flour",
       "expected": {
         "item": "cake flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -83,36 +92,43 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "50 ml water (lukewarm)",
+      "raw": "50 ml water lukewarm",
       "expected": {
-        "item": "water",
+        "item": "water lukewarm",
         "measurements": [
           {
             "amount": "50",
             "unit": "ml"
           }
         ],
-        "note": "lukewarm",
-        "category": "Beverages"
+        "note": null,
+        "section": "Dough",
+        "category": "Other"
       }
     },
     {
-      "raw": "25 ml milk (whole milk)",
+      "raw": "25 ml milk whole milk",
       "expected": {
-        "item": "milk",
+        "item": "milk whole milk",
         "measurements": [
           {
             "amount": "25",
             "unit": "ml"
           }
         ],
-        "note": "whole milk",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Dough",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "100 g ground pork",
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "50 g onion (finely diced)",
+      "raw": "50 g onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "finely diced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "50 g canned bamboo shoots (finely diced)",
+      "raw": "50 g canned bamboo shoots finely diced",
       "expected": {
         "item": "canned bamboo shoots",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": "finely diced",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "30 g fresh shiitake mushroom (finely diced)",
+      "raw": "30 g fresh shiitake mushroom finely diced",
       "expected": {
         "item": "fresh shiitake mushroom",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": "finely diced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "15 g boiled wood ear mushroom (diced)",
+      "raw": "15 g boiled wood ear mushroom diced",
       "expected": {
         "item": "boiled wood ear mushroom",
         "measurements": [
@@ -195,34 +216,37 @@
           }
         ],
         "note": "diced",
+        "section": "Filling",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tsp grated ginger root (or ginger paste)",
+      "raw": "1 tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp grated garlic (or garlic paste)",
+      "raw": "1 tsp grated garlic or garlic paste",
       "expected": {
-        "item": "grated garlic",
+        "item": "grated garlic or garlic paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or garlic paste",
+        "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,21 +276,23 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp yellow miso paste (awase) (awase)",
+      "raw": "1 tsp yellow miso paste (awase) awase",
       "expected": {
-        "item": "yellow miso paste",
+        "item": "yellow miso paste awase",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "awase, awase",
-        "category": "Condiments & Sauces"
+        "note": "awase",
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
@@ -279,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -293,6 +321,7 @@
           }
         ],
         "note": "kurozu",
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -307,6 +336,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -321,6 +351,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -335,6 +366,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -349,6 +381,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -363,49 +396,53 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tsp Chinese-style chicken bouillon powder (based on 1 tsp = 200ml soup ratio, scale to your brand&amp;#39;s strength)",
+      "raw": "1 tsp Chinese-style chicken bouillon powder based on 1 tsp = 200ml soup ratio, scale to your brand's strength",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder",
+        "item": "Chinese-style chicken bouillon powder based on 1 tsp = 200ml soup ratio, scale to your brand's strength",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "based on 1 tsp = 200ml soup ratio, scale to your brand's strength",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tbsp cold water (for slurry)",
+      "raw": "1 tbsp cold water for slurry",
       "expected": {
-        "item": "cold water",
+        "item": "cold water for slurry",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "for slurry",
-        "category": "Beverages"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tsp potato starch (katakuriko) (for slurry)",
+      "raw": "1 tsp potato starch (katakuriko) for slurry",
       "expected": {
-        "item": "potato starch",
+        "item": "potato starch for slurry",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "katakuriko, for slurry",
-        "category": "Baking"
+        "note": "katakuriko",
+        "section": "Filling",
+        "category": "Other"
       }
     }
   ]

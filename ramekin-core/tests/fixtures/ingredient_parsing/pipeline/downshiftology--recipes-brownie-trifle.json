@@ -3,7 +3,11 @@
   "recipe_slug": "recipes-brownie-trifle",
   "ingredients": [
     {
-      "raw": "2  simple mills brownie mix",
+      "raw": "Brownies:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 simple mills brownie mix",
       "expected": {
         "item": "simple mills brownie mix",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup  coconut oil, butter or ghee (melted )",
+      "raw": "1 cup  coconut oil, butter or ghee, melted",
       "expected": {
         "item": "coconut oil, butter or ghee",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "melted",
+        "section": "Brownies",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Beverages"
       }
     },
     {
-      "raw": "4  eggs",
+      "raw": "4 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -55,20 +62,26 @@
           }
         ],
         "note": null,
+        "section": "Brownies",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 cup milk (any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work)",
+      "raw": "Chocolate Chia Pudding Mousse:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cup milk, any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
       "expected": {
-        "item": "milk",
+        "item": "milk, any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
+        "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,11 +141,16 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding Mousse",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 13.5 ounce cans full-fat coconut milk  (chilled 24-48 hours)",
+      "raw": "Coconut Whipped Cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 13.5 ounce cans full-fat coconut milk , chilled 24-48 hours",
       "expected": {
         "item": "full-fat coconut milk",
         "measurements": [
@@ -139,6 +160,7 @@
           }
         ],
         "note": "chilled 24-48 hours",
+        "section": "Coconut Whipped Cream",
         "category": "Canned Goods"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,8 +190,13 @@
           }
         ],
         "note": null,
+        "section": "Coconut Whipped Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "chocolate shavings",
@@ -176,6 +204,7 @@
         "item": "chocolate shavings",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     }

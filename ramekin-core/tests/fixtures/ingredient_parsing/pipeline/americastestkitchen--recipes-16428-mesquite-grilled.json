@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-16428-mesquite-grilled",
   "ingredients": [
     {
+      "raw": "Aguamole:",
+      "is_section_header": true
+    },
+    {
       "raw": "⅔ cup water , divided",
       "expected": {
         "item": "water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "divided",
+        "section": "Aguamole",
         "category": "Beverages"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Aguamole",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "plus extra as needed",
+        "section": "Aguamole",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "Aguamole",
         "category": "Produce"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Aguamole",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Salsa Tatemada and Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "12 spring onions",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Tatemada and Garnish",
         "category": "Produce"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Tatemada and Garnish",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Tatemada and Garnish",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "halved through root end into 2 wedges",
+        "section": "Salsa Tatemada and Garnish",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Tatemada and Garnish",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "plus extra for seasoning, plus lime wedges for serving",
+        "section": "Salsa Tatemada and Garnish",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Tatemada and Garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,8 +201,13 @@
           }
         ],
         "note": null,
+        "section": "Salsa Tatemada and Garnish",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Ribs:",
+      "is_section_header": true
     },
     {
       "raw": "1 (3½- to 4-pound) rack beef back ribs  (about 7 bones)",
@@ -195,6 +220,7 @@
           }
         ],
         "note": "3 1/2- to 4-pound, about 7 bones",
+        "section": "Ribs",
         "category": "Meat & Seafood"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": "divided",
+        "section": "Ribs",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": "6-inch, warmed",
+        "section": "Ribs",
         "category": "Bakery & Bread"
       }
     }

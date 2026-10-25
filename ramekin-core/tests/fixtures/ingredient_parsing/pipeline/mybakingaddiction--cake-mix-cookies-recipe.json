@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "For the Buttercream:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 sticks unsalted butter, softened",
       "expected": {
         "item": "unsalted butter",
@@ -97,6 +101,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Buttercream",
         "category": "Baking"
       }
     },
@@ -125,6 +131,7 @@
           }
         ],
         "note": "this helps maintain the bright white color",
+        "section": "For the Buttercream",
         "category": "Baking"
       }
     },
@@ -139,8 +146,13 @@
           }
         ],
         "note": null,
+        "section": "For the Buttercream",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Optional:",
+      "is_section_header": true
     },
     {
       "raw": "sprinkles or nonpareils for topping",
@@ -148,6 +160,7 @@
         "item": "sprinkles or nonpareils",
         "measurements": [],
         "note": "for topping",
+        "section": "Optional",
         "category": "Baking"
       }
     }

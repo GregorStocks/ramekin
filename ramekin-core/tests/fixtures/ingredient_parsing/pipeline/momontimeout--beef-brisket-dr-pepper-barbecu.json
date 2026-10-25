@@ -3,53 +3,45 @@
   "recipe_slug": "beef-brisket-dr-pepper-barbecu",
   "ingredients": [
     {
-      "raw": "1  beef brisket (7 to 9 lbs)",
+      "raw": "1 beef brisket 7 to 9 lbs",
       "expected": {
-        "item": "beef brisket",
+        "item": "beef brisket 7 to 9 lbs",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "7 to 9",
-            "unit": "lb"
           }
         ],
         "note": null,
-        "category": "Meat & Seafood"
+        "category": "Other"
       }
     },
     {
-      "raw": "16.9 oz Dr Pepper (1 bottle)",
+      "raw": "16.9 oz Dr Pepper 1 bottle",
       "expected": {
-        "item": "Dr Pepper",
+        "item": "Dr Pepper 1 bottle",
         "measurements": [
           {
             "amount": "16.9",
             "unit": "oz"
-          },
-          {
-            "amount": "1",
-            "unit": "bottle"
           }
         ],
         "note": null,
-        "category": "Beverages"
+        "category": "Other"
       }
     },
     {
-      "raw": "2 tsp salt (used smoked sea salt for a wonderful smoky flavor)",
+      "raw": "2 tsp salt used smoked sea salt for a wonderful smoky flavor",
       "expected": {
-        "item": "salt",
+        "item": "salt used smoked sea salt for a wonderful smoky flavor",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "used smoked sea salt for a wonderful smoky flavor",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -67,6 +59,10 @@
       }
     },
     {
+      "raw": "Dr Pepper Barbecue Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tbsp olive oil",
       "expected": {
         "item": "olive oil",
@@ -77,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -91,11 +88,12 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  medium onion (diced)",
+      "raw": "1 medium onion diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -105,11 +103,12 @@
           }
         ],
         "note": "diced",
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  garlic cloves (diced)",
+      "raw": "2 garlic cloves diced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -119,25 +118,23 @@
           }
         ],
         "note": "diced",
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "16.9 oz Dr Pepper (1 bottle)",
+      "raw": "16.9 oz Dr Pepper 1 bottle",
       "expected": {
-        "item": "Dr Pepper",
+        "item": "Dr Pepper 1 bottle",
         "measurements": [
           {
             "amount": "16.9",
             "unit": "oz"
-          },
-          {
-            "amount": "1",
-            "unit": "bottle"
           }
         ],
         "note": null,
-        "category": "Beverages"
+        "section": "Dr Pepper Barbecue Sauce",
+        "category": "Other"
       }
     },
     {
@@ -151,6 +148,7 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -165,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Canned Goods"
       }
     },
@@ -179,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -193,6 +193,7 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -207,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -221,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -235,21 +238,23 @@
           }
         ],
         "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tsp salt (smoked sea salt is great if you have it)",
+      "raw": "1 tsp salt smoked sea salt is great if you have it",
       "expected": {
-        "item": "salt",
+        "item": "salt smoked sea salt is great if you have it",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "smoked sea salt is great if you have it",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "Dr Pepper Barbecue Sauce",
+        "category": "Other"
       }
     }
   ]

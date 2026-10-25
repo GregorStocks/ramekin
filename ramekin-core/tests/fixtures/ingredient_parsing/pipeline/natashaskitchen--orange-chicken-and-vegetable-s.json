@@ -3,21 +3,26 @@
   "recipe_slug": "orange-chicken-and-vegetable-s",
   "ingredients": [
     {
-      "raw": "1 1/2 Tbsp cooking Oil (I used extra light olive oil)",
+      "raw": "Stir-Fry Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 1/2 Tbsp cooking Oil, I used extra light olive oil",
       "expected": {
-        "item": "cooking Oil",
+        "item": "cooking Oil, I used extra light olive oil",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": "I used extra light olive oil",
+        "note": null,
+        "section": "Stir-Fry Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  small onion (finely diced)",
+      "raw": "1 small onion, finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "finely diced",
+        "section": "Stir-Fry Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 lb to 1 1/4 lb chicken thighs (trimmed and cut into 1\" pieces)",
+      "raw": "1 lb to 1 1/4 lb chicken thighs, trimmed and cut into 1\" pieces",
       "expected": {
         "item": "chicken thighs",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "trimmed and cut into 1\" pieces",
+        "section": "Stir-Fry Ingredients",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "5-6 cups broccoli florets (from 1 large head of broccoli)",
+      "raw": "5-6 cups broccoli florets, from 1 large head of broccoli",
       "expected": {
         "item": "broccoli florets",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "from 1 large head of broccoli",
+        "section": "Stir-Fry Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  bunch asparagus spears (bases trimmed and cut into 1\" pieces)",
+      "raw": "1 bunch asparagus spears, bases trimmed and cut into 1\" pieces",
       "expected": {
         "item": "asparagus spears",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "bases trimmed and cut into 1\" pieces",
+        "section": "Stir-Fry Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large carrot (sliced into matchsticks)",
+      "raw": "1 large carrot, sliced into matchsticks",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -83,8 +92,13 @@
           }
         ],
         "note": "sliced into matchsticks",
+        "section": "Stir-Fry Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Marinade Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup cold water",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -111,25 +126,27 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 Tbsp grated orange zest (zest from 1/2 orange)",
+      "raw": "1/2 Tbsp grated orange zest, zest from 1/2 orange",
       "expected": {
-        "item": "grated orange zest",
+        "item": "grated orange zest, zest from 1/2 orange",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "zest from 1/2 orange",
+        "note": null,
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup freshly squeezed orange juice (from the same orange)",
+      "raw": "1/2 cup freshly squeezed orange juice, from the same orange",
       "expected": {
         "item": "freshly squeezed orange juice",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": "from the same orange",
+        "section": "Marinade Ingredients",
         "category": "Beverages"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,11 +186,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 Tbsp fresh ginger (grated)",
+      "raw": "1 Tbsp fresh ginger, grated",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": "grated",
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  garlic cloves (finely minced)",
+      "raw": "3 garlic cloves, finely minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "Marinade Ingredients",
         "category": "Produce"
       }
     },
@@ -209,29 +231,36 @@
           }
         ],
         "note": null,
+        "section": "Marinade Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "Toasted sesame seeds (medium heat 2 minutes, tossing frequently)",
+      "raw": "Serving/Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Toasted sesame seeds, medium heat 2 minutes, tossing frequently",
       "expected": {
-        "item": "Toasted sesame seeds",
+        "item": "Toasted sesame seeds, medium heat 2 minutes, tossing frequently",
         "measurements": [],
-        "note": "medium heat 2 minutes, tossing frequently",
+        "note": null,
+        "section": "Serving/garnish",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6 cups of hot cooked white rice (= 2 cups dry rice)",
+      "raw": "6 cups of hot cooked white rice, = 2 cups dry rice",
       "expected": {
-        "item": "hot cooked white rice",
+        "item": "hot cooked white rice, = 2 cups dry rice",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": "= 2 cups dry rice",
+        "note": null,
+        "section": "Serving/garnish",
         "category": "Other"
       }
     }

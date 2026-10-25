@@ -59,11 +59,16 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "cacao powder",
       "expected": {
         "item": "cacao powder",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Baking"
       }
     },
@@ -73,6 +78,7 @@
         "item": "Homemade Marshmallows",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Baking"
       }
     },
@@ -82,6 +88,7 @@
         "item": "Coconut Whipped Cream",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     }

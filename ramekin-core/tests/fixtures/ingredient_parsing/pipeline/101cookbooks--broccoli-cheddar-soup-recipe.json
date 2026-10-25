@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons unsalted butter or olive oil",
       "expected": {
         "item": "unsalted butter or olive oil",
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -115,6 +122,7 @@
           }
         ],
         "note": "peeled and cut into 1/4-inch cubes",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -129,6 +137,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -143,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -165,6 +175,7 @@
           }
         ],
         "note": "cut into small florets",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -179,6 +190,7 @@
           }
         ],
         "note": "plus more for topping",
+        "section": "Soup",
         "category": "Cheese"
       }
     },
@@ -193,6 +205,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Soup",
         "category": "Condiments & Sauces"
       }
     },
@@ -202,6 +215,7 @@
         "item": "smoked paprika, more olive oil, creme fraiche",
         "measurements": [],
         "note": "optional",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -216,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     }

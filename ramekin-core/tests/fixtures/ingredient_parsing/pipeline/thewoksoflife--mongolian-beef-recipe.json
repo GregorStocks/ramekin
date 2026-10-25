@@ -3,7 +3,11 @@
   "recipe_slug": "mongolian-beef-recipe",
   "ingredients": [
     {
-      "raw": "1 pound flank steak ((sliced against the grain into 1/4-inch/6mm thick slices))",
+      "raw": "For marinating the beef:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound flank steak (sliced against the grain into 1/4-inch/6mm thick slices)",
       "expected": {
         "item": "flank steak",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "sliced against the grain into 1/4-inch/6mm thick slices",
+        "section": "For Marinating the Beef",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2 teaspoons neutral oil ((such as vegetable, canola, or avocado oil))",
+      "raw": "2 teaspoons neutral oil (such as vegetable, canola, or avocado oil)",
       "expected": {
         "item": "neutral oil",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "such as vegetable, canola, or avocado oil",
+        "section": "For Marinating the Beef",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 teaspoons Shaoxing wine ((or dry cooking sherry, optional))",
+      "raw": "2 teaspoons Shaoxing wine (or dry cooking sherry, optional)",
       "expected": {
         "item": "Shaoxing wine",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "or dry cooking sherry, optional",
+        "section": "For Marinating the Beef",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinating the Beef",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinating the Beef",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For Marinating the Beef",
         "category": "Beverages"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "For Marinating the Beef",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup light brown sugar",
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup hot water ((or hot low sodium chicken or beef stock))",
+      "raw": "3/4 cup hot water (or hot low sodium chicken or beef stock)",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": "or hot low sodium chicken or beef stock",
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     },
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon dark soy sauce ((optional))",
+      "raw": "1 teaspoon dark soy sauce (optional)",
       "expected": {
         "item": "dark soy sauce",
         "measurements": [
@@ -153,8 +171,13 @@
           }
         ],
         "note": "optional",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "For coating and searing the beef:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup cornstarch",
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For Coating and Searing the Beef",
         "category": "Baking"
       }
     },
@@ -181,11 +205,16 @@
           }
         ],
         "note": null,
+        "section": "For Coating and Searing the Beef",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 teaspoon ginger ((minced))",
+      "raw": "For the rest of the dish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 teaspoon ginger (minced)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -195,11 +224,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
     {
-      "raw": "8  dried red chili peppers",
+      "raw": "8 dried red chili peppers (optional)",
       "expected": {
         "item": "dried red chili peppers",
         "measurements": [
@@ -208,12 +238,13 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "optional",
+        "section": "For the Rest of the Dish",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 cloves garlic",
+      "raw": "3 cloves garlic (finely chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -222,12 +253,13 @@
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "finely chopped",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
     {
-      "raw": "4  scallions",
+      "raw": "4 scallions (white and green parts separated, cut on the diagonal into 2-inch/5cm pieces)",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -236,12 +268,13 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "white and green parts separated, cut on the diagonal into 2-inch/5cm pieces",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 1/2 tablespoons cornstarch",
+      "raw": "1 1/2 tablespoons cornstarch (mixed with 2 tablespoons/30ml water to make a slurry)",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -250,7 +283,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "mixed with 2 tablespoons/30ml water to make a slurry",
+        "section": "For the Rest of the Dish",
         "category": "Baking"
       }
     }

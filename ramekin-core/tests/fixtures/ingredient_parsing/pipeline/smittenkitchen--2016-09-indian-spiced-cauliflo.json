@@ -3,6 +3,10 @@
   "recipe_slug": "2016-09-indian-spiced-cauliflo",
   "ingredients": [
     {
+      "raw": "Soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive or peanut oil",
       "expected": {
         "item": "olive or peanut oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -73,6 +81,7 @@
           }
         ],
         "note": "about 6 ounces, peeled and chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": "more or less to taste, chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +186,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +201,7 @@
           }
         ],
         "note": "about, from about 1/2 a large 2.75-pound head",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -199,6 +216,7 @@
           }
         ],
         "note": "peeled and chopped or 1 1/2 cups canned chopped tomatoes",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -213,8 +231,13 @@
           }
         ],
         "note": "we wanted more; or to taste",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To finish (all optional):",
+      "is_section_header": true
     },
     {
       "raw": "A couple spoonfuls heavy cream or dollops of yogurt",
@@ -222,6 +245,7 @@
         "item": "A couple spoonfuls heavy cream or dollops of yogurt",
         "measurements": [],
         "note": null,
+        "section": "To Finish (All Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -236,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish (All Optional)",
         "category": "Pasta & Rice"
       }
     },
@@ -250,6 +275,7 @@
           }
         ],
         "note": "chopped",
+        "section": "To Finish (All Optional)",
         "category": "Produce"
       }
     },
@@ -259,6 +285,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "To Finish (All Optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -268,6 +295,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "To Finish (All Optional)",
         "category": "Produce"
       }
     },
@@ -277,6 +305,7 @@
         "item": "Toasted pita or naan wedges",
         "measurements": [],
         "note": null,
+        "section": "To Finish (All Optional)",
         "category": "Bakery & Bread"
       }
     }

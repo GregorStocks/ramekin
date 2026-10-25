@@ -3,69 +3,8 @@
   "recipe_slug": "2015-03-black-bottom-oatmeal-p",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Herbed Tomato and Roasted Garlic Tart",
-      "expected": {
-        "item": "Months Ago: Herbed Tomato and Roasted Garlic Tart",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Baked Pasta with Broccoli Rabe and Sausage",
-      "expected": {
-        "item": "Years Ago: Baked Pasta with Broccoli Rabe and Sausage",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Roasted Apple Spice Sheet Cake",
-      "expected": {
-        "item": "Years Ago: Roasted Apple Spice Sheet Cake",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Red Wine Chocolate Cake",
-      "expected": {
-        "item": "Years Ago: Red Wine Chocolate Cake",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Crust:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 cups (155 grams) all-purpose flour",
@@ -82,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -100,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -118,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -140,6 +82,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -158,11 +101,12 @@
           }
         ],
         "note": "plus an additional tablespoon if needed",
+        "section": "Crust",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {

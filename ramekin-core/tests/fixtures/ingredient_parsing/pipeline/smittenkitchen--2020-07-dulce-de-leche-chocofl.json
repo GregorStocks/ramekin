@@ -3,6 +3,10 @@
   "recipe_slug": "2020-07-dulce-de-leche-chocofl",
   "ingredients": [
     {
+      "raw": "Flan:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 13.4-ounce (380-gram) can La Lechera dulce de leche or 1 1/2 cups (355 ml) prepared dulce de leche (see directions at end)",
       "expected": {
         "item": "La Lechera dulce de leche",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "or 1 1/2 cups prepared dulce de leche (see directions at end)",
+        "section": "Flan",
         "category": "Other"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Canned Goods"
       }
     },
@@ -57,6 +63,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Flan",
         "category": "Cheese"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,8 +108,13 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Chocolate Cake:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/3 cups (160 grams) all-purpose flour",
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Baking"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Baking"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Baking"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Baking"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": "Diamond is specified but you’ll be fine with any here",
+        "section": "Chocolate Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +248,7 @@
           }
         ],
         "note": "cubed, at room temperature",
+        "section": "Chocolate Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,6 +267,7 @@
           }
         ],
         "note": "cooled",
+        "section": "Chocolate Cake",
         "category": "Beverages"
       }
     },
@@ -263,6 +286,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -277,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -291,8 +316,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For serving (optional):",
+      "is_section_header": true
     },
     {
       "raw": "Dulce de leche, chopped nuts, whipped cream, and/or ground cinnamon",
@@ -300,6 +330,7 @@
         "item": "Dulce de leche, chopped nuts, whipped cream",
         "measurements": [],
         "note": "and/or ground cinnamon",
+        "section": "For Serving (Optional)",
         "category": "Baking"
       }
     }

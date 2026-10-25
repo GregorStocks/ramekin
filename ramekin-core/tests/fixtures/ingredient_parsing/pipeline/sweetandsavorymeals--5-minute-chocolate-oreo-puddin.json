@@ -3,7 +3,11 @@
   "recipe_slug": "5-minute-chocolate-oreo-puddin",
   "ingredients": [
     {
-      "raw": "14  Oreo cookies",
+      "raw": "Oreo layer:",
+      "is_section_header": true
+    },
+    {
+      "raw": "14 Oreo cookies",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Oreo Layer",
         "category": "Snacks"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "Oreo Layer",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Vanilla pudding layer:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups whole milk",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Pudding Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Pudding Layer",
         "category": "Baking"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Pudding Layer",
         "category": "Baking"
       }
     },
@@ -83,8 +96,13 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Pudding Layer",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Chocolate pudding layer:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups whole milk",
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding Layer",
         "category": "Baking"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding Layer",
         "category": "Baking"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding Layer",
         "category": "Baking"
       }
     },
@@ -153,8 +175,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Pudding Layer",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Whipped cream",
@@ -162,6 +189,7 @@
         "item": "Whipped cream",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +199,7 @@
         "item": "Oreo crumbs",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     },
@@ -180,6 +209,7 @@
         "item": "Oreo cookies",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Snacks"
       }
     }

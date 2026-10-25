@@ -3,13 +3,8 @@
   "recipe_slug": "2012-01-potato-chip-cookies",
   "ingredients": [
     {
-      "raw": "Cookie",
-      "expected": {
-        "item": "Cookie",
-        "measurements": [],
-        "note": null,
-        "category": "Snacks"
-      }
+      "raw": "Cookie:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (2 sticks or 225 grams) unsalted butter, at room temperature",
@@ -30,6 +25,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cookie",
         "category": "Dairy & Eggs"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": "divided",
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": "optional, see note above",
+        "section": "Cookie",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Other"
       }
     },
@@ -104,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Other"
       }
     },
@@ -122,17 +123,13 @@
           }
         ],
         "note": null,
+        "section": "Cookie",
         "category": "Baking"
       }
     },
     {
-      "raw": "Potato chip salt finish (optional)",
-      "expected": {
-        "item": "Potato chip salt finish",
-        "measurements": [],
-        "note": "optional",
-        "category": "Other"
-      }
+      "raw": "Potato chip salt finish:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon crushed potato chips",
@@ -145,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Potato Chip Salt Finish",
         "category": "Other"
       }
     },
@@ -159,17 +157,13 @@
           }
         ],
         "note": null,
+        "section": "Potato Chip Salt Finish",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Chocolate dip finish (optional)",
-      "expected": {
-        "item": "Chocolate dip finish",
-        "measurements": [],
-        "note": "optional",
-        "category": "Other"
-      }
+      "raw": "Chocolate dip finish:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces (115 grams) semi- or bittersweet chocolate, finely chopped",
@@ -186,6 +180,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Chocolate Dip Finish",
         "category": "Baking"
       }
     },
@@ -200,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Dip Finish",
         "category": "Dairy & Eggs"
       }
     }

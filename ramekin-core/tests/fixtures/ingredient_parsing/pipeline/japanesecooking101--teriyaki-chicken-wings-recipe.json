@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -97,8 +103,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Topping (optional):",
+      "is_section_header": true
     },
     {
       "raw": "toasted sesame seeds",
@@ -106,6 +117,7 @@
         "item": "toasted sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "Topping (Optional)",
         "category": "Spices & Seasonings"
       }
     }

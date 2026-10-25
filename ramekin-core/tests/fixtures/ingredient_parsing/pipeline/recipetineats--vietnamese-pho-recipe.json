@@ -3,7 +3,11 @@
   "recipe_slug": "vietnamese-pho-recipe",
   "ingredients": [
     {
-      "raw": "2  large onions (, halved)",
+      "raw": "Aromatics:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 large onions , halved",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "halved",
+        "section": "Aromatics",
         "category": "Produce"
       }
     },
     {
-      "raw": "150g / 5oz   ginger (, sliced down the centre)",
+      "raw": "150g / 5oz  ginger , sliced down the centre",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -31,11 +36,16 @@
           }
         ],
         "note": "sliced down the centre",
+        "section": "Aromatics",
         "category": "Produce"
       }
     },
     {
-      "raw": "10  star anise",
+      "raw": "Spices:",
+      "is_section_header": true
+    },
+    {
+      "raw": "10 star anise",
       "expected": {
         "item": "star anise",
         "measurements": [
@@ -45,11 +55,12 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  cinnamon quills",
+      "raw": "4 cinnamon quills",
       "expected": {
         "item": "cinnamon quills",
         "measurements": [
@@ -59,11 +70,12 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Other"
       }
     },
     {
-      "raw": "4  cardamon pods",
+      "raw": "4 cardamon pods",
       "expected": {
         "item": "cardamon pods",
         "measurements": [
@@ -73,11 +85,12 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Other"
       }
     },
     {
-      "raw": "3  cloves ((the spice cloves!))",
+      "raw": "3 cloves (the spice cloves!)",
       "expected": {
         "item": "the spice cloves!",
         "measurements": [
@@ -87,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Other"
       }
     },
@@ -101,11 +115,22 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1.5kg / 3lb   beef brisket",
+      "raw": "Beef bones (Note 1):",
+      "expected": {
+        "item": "Beef bones :",
+        "measurements": [],
+        "note": "Note 1",
+        "section": "Spices",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1.5kg / 3lb  beef brisket",
       "expected": {
         "item": "beef brisket",
         "measurements": [
@@ -119,11 +144,12 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1kg / 2lb   meaty beef bones",
+      "raw": "1kg / 2lb  meaty beef bones",
       "expected": {
         "item": "meaty beef bones",
         "measurements": [
@@ -137,11 +163,12 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Other"
       }
     },
     {
-      "raw": "1kg / 2lb   marrow bones ((leg, knuckle), cut to reveal marrow)",
+      "raw": "1kg / 2lb  marrow bones (leg, knuckle), cut to reveal marrow",
       "expected": {
         "item": "marrow bones",
         "measurements": [
@@ -155,11 +182,12 @@
           }
         ],
         "note": "leg, knuckle, cut to reveal marrow",
+        "section": "Spices",
         "category": "Other"
       }
     },
     {
-      "raw": "3.5 litres / 3.75 quarts   water ((15 cups))",
+      "raw": "3.5 litres / 3.75 quarts  water (15 cups)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -177,8 +205,13 @@
           }
         ],
         "note": null,
+        "section": "Spices",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Seasoning:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp white sugar",
@@ -191,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Baking"
       }
     },
@@ -205,11 +239,12 @@
           }
         ],
         "note": null,
+        "section": "Seasoning",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "40 ml / 3 tbsp   fish sauce ((Note 2))",
+      "raw": "40 ml / 3 tbsp  fish sauce (Note 2)",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -223,11 +258,16 @@
           }
         ],
         "note": "Note 2",
+        "section": "Seasoning",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "50g / 1.5 oz   dried rice sticks ((or 120g/4oz fresh) (Note 3))",
+      "raw": "Noodle Soup – PER BOWL:",
+      "is_section_header": true
+    },
+    {
+      "raw": "50g / 1.5 oz  dried rice sticks (or 120g/4oz fresh) (Note 3)",
       "expected": {
         "item": "dried rice sticks",
         "measurements": [
@@ -241,11 +281,12 @@
           }
         ],
         "note": "or 120g/4oz fresh, Note 3",
+        "section": "Noodle Soup – Per Bowl",
         "category": "Other"
       }
     },
     {
-      "raw": "30g / 1 oz   beef tenderloin, raw, very thinly sliced ((Note 4))",
+      "raw": "30g / 1 oz  beef tenderloin, raw, very thinly sliced (Note 4)",
       "expected": {
         "item": "beef tenderloin",
         "measurements": [
@@ -259,11 +300,12 @@
           }
         ],
         "note": "Note 4, raw, very thinly sliced",
+        "section": "Noodle Soup – Per Bowl",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3 - 5  brisket slices ((used for broth))",
+      "raw": "3 – 5 brisket slices (used for broth)",
       "expected": {
         "item": "brisket slices",
         "measurements": [
@@ -273,8 +315,13 @@
           }
         ],
         "note": "used for broth",
+        "section": "Noodle Soup – Per Bowl",
         "category": "Other"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "Beansprouts, handful",
@@ -282,24 +329,27 @@
         "item": "Beansprouts, handful",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "Thai basil, 3 - 5 sprigs",
+      "raw": "Thai basil, 3 – 5 sprigs",
       "expected": {
         "item": "Thai basil, 3 - 5 sprigs",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "Coriander/cilantro, 3 - 5 sprigs ((or more basil))",
+      "raw": "Coriander/cilantro, 3 – 5 sprigs (or more basil)",
       "expected": {
         "item": "Coriander/cilantro, 3 - 5 sprigs",
         "measurements": [],
         "note": "or more basil",
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -309,6 +359,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -318,6 +369,7 @@
         "item": "Finely sliced red chilli",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -327,15 +379,17 @@
         "item": "Hoisin sauce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "Sriracha* ((for spiciness))",
+      "raw": "Sriracha* (for spiciness)",
       "expected": {
         "item": "Sriracha",
         "measurements": [],
         "note": "for spiciness",
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     }

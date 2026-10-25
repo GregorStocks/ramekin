@@ -3,7 +3,11 @@
   "recipe_slug": "2025-09-chicken-with-frito-sla",
   "ingredients": [
     {
-      "raw": "1  small head green cabbage, (very thinly sliced)",
+      "raw": "frito slaw:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 small head green cabbage, very thinly sliced",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "very thinly sliced",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
     {
-      "raw": "4  green onions, (thinly sliced)",
+      "raw": "4 green onions, thinly sliced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  jalapeno peppers, (diced)",
+      "raw": "2 jalapeno peppers, diced",
       "expected": {
         "item": "jalapeno peppers",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "diced",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  bell pepper, (diced)",
+      "raw": "1 bell pepper, diced",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "diced",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  can black beans, (drained and rinsed)",
+      "raw": "1 can black beans, drained and rinsed",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Frito Slaw",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "10 ounces corn, (cooked if frozen (I use a steamfresh bag))",
+      "raw": "10 ounces corn, cooked if frozen (I use a steamfresh bag)",
       "expected": {
         "item": "corn",
         "measurements": [
@@ -82,7 +91,8 @@
             "unit": "oz"
           }
         ],
-        "note": "cooked if frozen (I use a steamfresh bag)",
+        "note": "I use a steamfresh bag, cooked if frozen",
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Frito Slaw",
         "category": "Produce"
       }
     },
@@ -115,8 +126,13 @@
           }
         ],
         "note": null,
+        "section": "Frito Slaw",
         "category": "Other"
       }
+    },
+    {
+      "raw": "creamy cilantro lime dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups fresh cilantro",
@@ -129,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  garlic clove",
+      "raw": "1 garlic clove",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -171,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Baking"
       }
     },
@@ -199,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -208,8 +230,13 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Creamy Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "chicken:",
+      "is_section_header": true
     },
     {
       "raw": "1 ½ pounds chicken thighs",
@@ -222,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -236,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -245,6 +274,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -259,6 +289,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,6 +304,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,6 +319,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     }

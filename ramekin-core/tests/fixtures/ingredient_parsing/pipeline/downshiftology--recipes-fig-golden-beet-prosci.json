@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "12  figs (halved)",
+      "raw": "12 figs, halved",
       "expected": {
         "item": "figs",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4  golden beets",
+      "raw": "4 golden beets",
       "expected": {
         "item": "golden beets",
         "measurements": [
@@ -59,7 +59,11 @@
       }
     },
     {
-      "raw": "3  figs",
+      "raw": "Fig Vinaigrette:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 figs",
       "expected": {
         "item": "figs",
         "measurements": [
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Produce"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,11 +103,12 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tsp shallot (finely diced )",
+      "raw": "1 tsp shallot, finely diced",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -111,6 +118,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Fig Vinaigrette",
         "category": "Produce"
       }
     },
@@ -125,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +148,7 @@
           }
         ],
         "note": null,
+        "section": "Fig Vinaigrette",
         "category": "Spices & Seasonings"
       }
     }

@@ -31,6 +31,10 @@
       }
     },
     {
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons crumbled feta cheese",
       "expected": {
         "item": "crumbled feta cheese",
@@ -41,11 +45,12 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2  Roma tomatoes (sliced)",
+      "raw": "2 Roma tomatoes sliced",
       "expected": {
         "item": "Roma tomatoes",
         "measurements": [
@@ -55,6 +60,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -69,11 +75,12 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼  red onion (sliced)",
+      "raw": "¼ red onion sliced",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -83,6 +90,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -92,8 +100,13 @@
         "item": "tzatziki sauce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Homemade Gyro Meat:",
+      "is_section_header": true
     },
     {
       "raw": "½ pound ground lamb",
@@ -106,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Gyro Meat",
         "category": "Meat & Seafood"
       }
     },
@@ -120,11 +134,12 @@
           }
         ],
         "note": null,
+        "section": "Homemade Gyro Meat",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼  onion (grated on small holes)",
+      "raw": "¼ onion grated on small holes",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -134,6 +149,7 @@
           }
         ],
         "note": "grated on small holes",
+        "section": "Homemade Gyro Meat",
         "category": "Produce"
       }
     },
@@ -148,11 +164,12 @@
           }
         ],
         "note": null,
+        "section": "Homemade Gyro Meat",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 clove garlic (minced)",
+      "raw": "1 clove garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -162,6 +179,7 @@
           }
         ],
         "note": "minced",
+        "section": "Homemade Gyro Meat",
         "category": "Produce"
       }
     },
@@ -176,21 +194,23 @@
           }
         ],
         "note": null,
+        "section": "Homemade Gyro Meat",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon olive oil (for cooking)",
+      "raw": "1 teaspoon olive oil for cooking",
       "expected": {
-        "item": "olive oil",
+        "item": "olive oil for cooking",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "for cooking",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "section": "Homemade Gyro Meat",
+        "category": "Other"
       }
     }
   ]

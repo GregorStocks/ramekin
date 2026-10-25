@@ -3,7 +3,11 @@
   "recipe_slug": "crepes-suzette-recipe-11876712",
   "ingredients": [
     {
-      "raw": "1/4 cup plus 1 tablespoon granulated sugar (about 2 1/4 ounces; 65g)",
+      "raw": "For the Orange Sugar:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/4 cup plus 1 tablespoon granulated sugar (about 2 1/4 ounces; 65 g)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -20,7 +24,8 @@
             "unit": "g"
           }
         ],
-        "note": "about 2 1/4 ounces; 65g",
+        "note": "about 2 1/4 ounces; 65 g",
+        "section": "For the Orange Sugar",
         "category": "Baking"
       }
     },
@@ -35,8 +40,13 @@
           }
         ],
         "note": null,
+        "section": "For the Orange Sugar",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Batter:",
+      "is_section_header": true
     },
     {
       "raw": "2 large eggs",
@@ -49,11 +59,12 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 1/4 cups (300ml) whole milk",
+      "raw": "1 1/4 cups (300 ml) whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -67,11 +78,12 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon unsalted butter (about 1/2 ounce; 14g), melted and cooled slightly",
+      "raw": "1 tablespoon unsalted butter (about 1/2 ounce; 14 g), melted and cooled slightly",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -88,7 +100,8 @@
             "unit": "g"
           }
         ],
-        "note": "about 1/2 ounce; 14g, melted and cooled slightly",
+        "note": "about 1/2 ounce; 14 g, melted and cooled slightly",
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Baking"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": "see above",
+        "section": "For the Batter",
         "category": "Other"
       }
     },
@@ -131,11 +146,12 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup all-purpose flour (4 1/2 ounces; 128g)",
+      "raw": "1 cup all-purpose flour (4 1/2 ounces; 128 g)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -153,11 +169,16 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "8 tablespoons unsalted butter (4 ounces; 113g)",
+      "raw": "For the Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 tablespoons unsalted butter (4 ounces; 113 g)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -175,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,11 +211,27 @@
           }
         ],
         "note": "see above",
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "2/3 cup (160ml) orange juice from 2 medium oranges",
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For the Sauce",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2/3 cup (160 ml) orange juice from 2 medium oranges",
       "expected": {
         "item": "orange juice from 2 medium oranges",
         "measurements": [
@@ -207,11 +245,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "3 tablespoons (45ml) orange liqueur, such as Cointreau or Grand Marnier",
+      "raw": "3 tablespoons (45 ml) orange liqueur, such as Cointreau or Grand Marnier",
       "expected": {
         "item": "orange liqueur",
         "measurements": [
@@ -225,6 +264,7 @@
           }
         ],
         "note": "such as Cointreau or Grand Marnier",
+        "section": "For the Sauce",
         "category": "Beverages"
       }
     }

@@ -3,17 +3,22 @@
   "recipe_slug": "ootoyas-sweet-and-sour-chicken",
   "ingredients": [
     {
-      "raw": "250 g boneless chicken thigh (boneless, skin-on)",
+      "raw": "For the chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "250 g boneless chicken thigh boneless, skin-on",
       "expected": {
-        "item": "boneless chicken thigh",
+        "item": "boneless chicken thigh boneless, skin-on",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": "boneless, skin-on",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "For the Chicken",
+        "category": "Other"
       }
     },
     {
@@ -27,48 +32,52 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "For the Chicken",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp sake (or white wine)",
+      "raw": "1 tsp sake or white wine",
       "expected": {
-        "item": "sake",
+        "item": "sake or white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or white wine",
+        "note": null,
+        "section": "For the Chicken",
         "category": "Beverages"
       }
     },
     {
-      "raw": "½ tsp grated ginger root (or ginger paste)",
+      "raw": "½ tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ tsp grated garlic (or garlic paste)",
+      "raw": "½ tsp grated garlic or garlic paste",
       "expected": {
-        "item": "grated garlic",
+        "item": "grated garlic or garlic paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or garlic paste",
+        "note": null,
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": "katakuriko",
+        "section": "For the Chicken",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 ½ tbsp light brown sugar",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -125,11 +141,12 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 tsp Japanese black vinegar (kurozu) ((kurozu))",
+      "raw": "2 tsp Japanese black vinegar (kurozu) (kurozu)",
       "expected": {
         "item": "Japanese black vinegar",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": "kurozu, kurozu",
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,20 +171,22 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tbsp sake (or white wine)",
+      "raw": "1 tbsp sake or white wine",
       "expected": {
-        "item": "sake",
+        "item": "sake or white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or white wine",
+        "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -195,15 +216,21 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "cooking oil (for shallow frying)",
+      "raw": "Vegetables:",
+      "is_section_header": true
+    },
+    {
+      "raw": "cooking oil for shallow frying",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
         "note": "for shallow frying",
+        "section": "Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -218,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -232,11 +260,12 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "50 g lotus root (renkon) ((renkon) optional)",
+      "raw": "50 g lotus root (renkon) (renkon) optional",
       "expected": {
         "item": "lotus root",
         "measurements": [
@@ -246,6 +275,7 @@
           }
         ],
         "note": "renkon, renkon, optional",
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -260,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -274,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     }

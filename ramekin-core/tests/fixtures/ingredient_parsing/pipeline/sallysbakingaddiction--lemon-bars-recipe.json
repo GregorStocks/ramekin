@@ -3,6 +3,10 @@
   "recipe_slug": "lemon-bars-recipe",
   "ingredients": [
     {
+      "raw": "Shortbread Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (16 Tbsp; 226g) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "melted",
+        "section": "Shortbread Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Shortbread Crust",
         "category": "Baking"
       }
     },
@@ -67,11 +74,12 @@
           }
         ],
         "note": null,
+        "section": "Shortbread Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 cups + 2 Tablespoons (265g) all-purpose flour (spooned &amp;amp; leveled)",
+      "raw": "2 cups + 2 Tablespoons (265g) all-purpose flour (spooned & leveled)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -85,8 +93,13 @@
           }
         ],
         "note": "spooned & leveled",
+        "section": "Shortbread Crust",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Lemon Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (400g) granulated sugar",
@@ -103,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Filling",
         "category": "Baking"
       }
     },
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Filling",
         "category": "Baking"
       }
     },
@@ -135,13 +150,14 @@
           }
         ],
         "note": null,
+        "section": "Lemon Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup (240ml) lemon juice (about 4 lemons)",
+      "raw": "1 cup (240ml) fresh lemon juice (about 4 lemons)",
       "expected": {
-        "item": "lemon juice",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
@@ -153,15 +169,32 @@
           }
         ],
         "note": "about 4 lemons",
+        "section": "Lemon Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "optional: confectioners&amp;#8217; sugar for dusting",
+      "raw": "2 teaspoons fresh lemon zest, optional",
+      "expected": {
+        "item": "fresh lemon zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "section": "Lemon Filling",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "optional: confectioners’ sugar for dusting",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [],
         "note": "optional, for dusting",
+        "section": "Lemon Filling",
         "category": "Baking"
       }
     }

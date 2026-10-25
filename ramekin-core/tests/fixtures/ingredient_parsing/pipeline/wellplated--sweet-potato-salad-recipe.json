@@ -3,6 +3,10 @@
   "recipe_slug": "sweet-potato-salad-recipe",
   "ingredients": [
     {
+      "raw": "For the Sweet Potato Salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 slices thick-cut bacon cooked*",
       "expected": {
         "item": "thick-cut bacon cooked",
@@ -13,25 +17,27 @@
           }
         ],
         "note": null,
+        "section": "For the Sweet Potato Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "3 large sweet potatoes (peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like))",
+      "raw": "3 large sweet potatoes peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like)",
       "expected": {
-        "item": "sweet potatoes",
+        "item": "sweet potatoes peeled and cut into chunks",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into chunks (I do a rough 3/4 inch, but you can do any size you like)",
-        "category": "Produce"
+        "note": "I do a rough 3/4 inch, but you can do any size you like",
+        "section": "For the Sweet Potato Salad",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup celery hearts (thinly sliced )",
+      "raw": "1 cup celery hearts thinly sliced",
       "expected": {
         "item": "celery hearts",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Sweet Potato Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup green onions (thinly sliced )",
+      "raw": "1 cup green onions thinly sliced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -55,11 +62,16 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Sweet Potato Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  jalapeño (seeded and minced)",
+      "raw": "For the Mustard Dressing:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 jalapeño seeded and minced",
       "expected": {
         "item": "jalapeño",
         "measurements": [
@@ -69,6 +81,7 @@
           }
         ],
         "note": "seeded and minced",
+        "section": "For the Mustard Dressing",
         "category": "Produce"
       }
     },
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2 garlic cloves minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Mustard Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 tablespoons&nbsp; rice vinegar",
+      "raw": "3 tablespoons  rice vinegar",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/4 teaspoon kosher salt",
+      "raw": "¼ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 teaspoon ground black pepper",
+      "raw": "⅛ teaspoon ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Dressing",
         "category": "Spices & Seasonings"
       }
     }

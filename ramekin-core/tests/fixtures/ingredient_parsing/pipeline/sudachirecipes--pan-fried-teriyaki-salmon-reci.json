@@ -3,7 +3,7 @@
   "recipe_slug": "pan-fried-teriyaki-salmon-reci",
   "ingredients": [
     {
-      "raw": "100 g Oriental spinach (or similar)",
+      "raw": "100 g Oriental spinach (or baby spinach)",
       "expected": {
         "item": "Oriental spinach",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "g"
           }
         ],
-        "note": "or similar",
+        "note": "or baby spinach",
         "category": "Produce"
       }
     },
     {
-      "raw": "100 g asparagus",
+      "raw": "100 g asparagus (pencil asparagus, or green beans)",
       "expected": {
         "item": "asparagus",
         "measurements": [
@@ -26,14 +26,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pencil asparagus, or green beans",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tbsp butter",
+      "raw": "1 tbsp unsalted butter",
       "expected": {
-        "item": "butter",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "2-4  salmon fillets (skin-on, boneless)",
+      "raw": "2-4  salmon fillets (skin-on, boneless, about 2 cm / ¾ in thick)",
       "expected": {
         "item": "salmon fillets",
         "measurements": [
@@ -119,12 +119,12 @@
             "unit": null
           }
         ],
-        "note": "skin-on, boneless",
+        "note": "skin-on, boneless, about 2 cm / 3/4 in thick",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tbsp potato starch (katakuriko) (or corn starch)",
+      "raw": "1 tbsp potato starch (katakuriko) (or cornstarch)",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -133,12 +133,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "katakuriko, or corn starch",
+        "note": "katakuriko, or cornstarch",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tbsp cooking oil (like vegetable oil or canola)",
+      "raw": "1 tbsp cooking oil (neutral)",
       "expected": {
         "item": "cooking oil",
         "measurements": [
@@ -147,12 +147,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "like vegetable oil or canola",
+        "note": "neutral",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 portions cooked Japanese short-grain rice",
+      "raw": "2 portions cooked Japanese short-grain rice (or Calrose)",
       "expected": {
         "item": "cooked Japanese short-grain rice",
         "measurements": [
@@ -161,7 +161,7 @@
             "unit": "portion"
           }
         ],
-        "note": null,
+        "note": "or Calrose",
         "category": "Pasta & Rice"
       }
     },

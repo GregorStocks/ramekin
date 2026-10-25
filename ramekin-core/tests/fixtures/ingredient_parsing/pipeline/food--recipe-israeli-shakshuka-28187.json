@@ -19,15 +19,15 @@
     {
       "raw": "4      extra large ripe tomatoes, chopped",
       "expected": {
-        "item": "extra large ripe tomatoes",
+        "item": "ripe tomatoes",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "extra-large"
           }
         ],
         "note": "chopped",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

@@ -3,7 +3,11 @@
   "recipe_slug": "ketchup-spaghetti-recipe",
   "ingredients": [
     {
-      "raw": "⅓ cup ketchup",
+      "raw": "For the Sauce Seasonings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "⅓ cup ketchup (for an authentic flavor, use Kagome Tomato Ketchup from the Japanese grocery store)",
       "expected": {
         "item": "ketchup",
         "measurements": [
@@ -12,12 +16,13 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for an authentic flavor, use Kagome Tomato Ketchup from the Japanese grocery store",
+        "section": "For the Sauce Seasonings",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ Tbsp milk ((optional; for a creamier taste))",
+      "raw": "½ Tbsp milk (optional; for a creamier taste)",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "optional; for a creamier taste",
+        "section": "For the Sauce Seasonings",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Seasonings",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp sugar ((optional; for an authentic Japanese taste))",
+      "raw": "1 tsp sugar (optional; for an authentic Japanese taste)",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -55,11 +62,16 @@
           }
         ],
         "note": "optional; for an authentic Japanese taste",
+        "section": "For the Sauce Seasonings",
         "category": "Baking"
       }
     },
     {
-      "raw": "½  onion ((3.5 oz, 100 g))",
+      "raw": "For the Sauce Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ onion (3.5 oz, 100 g)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -77,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼–½  green bell pepper ((2.5 oz, 70 g))",
+      "raw": "¼–½ green bell pepper (2.5 oz, 70 g)",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -99,11 +112,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "4  mushrooms ((2.5 oz, 70 g))",
+      "raw": "4 mushrooms (2.5 oz, 70 g)",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -121,11 +135,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "5 oz sausages",
+      "raw": "5 oz sausages (I use 4–6 kurobuta or arabiki sausages from the Japanese market; you can substitute another type of sausage, ham, bacon, etc.)",
       "expected": {
         "item": "sausages",
         "measurements": [
@@ -134,7 +149,8 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "I use 4-6 kurobuta or arabiki sausages from the Japanese market; you can substitute another type of sausage, ham, bacon, etc.",
+        "section": "For the Sauce Ingredients",
         "category": "Meat & Seafood"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Produce"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,8 +210,13 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce Ingredients",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Pasta:",
+      "is_section_header": true
     },
     {
       "raw": "7 oz spaghetti",
@@ -205,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Pasta & Rice"
       }
     },
@@ -219,11 +244,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ cup reserved pasta water ((you may not need it; check your sauce and add gradually))",
+      "raw": "¼ cup reserved pasta water (you may not need it; check your sauce and add gradually)",
       "expected": {
         "item": "reserved pasta water",
         "measurements": [
@@ -233,6 +259,7 @@
           }
         ],
         "note": "you may not need it; check your sauce and add gradually",
+        "section": "For the Pasta",
         "category": "Beverages"
       }
     },
@@ -247,8 +274,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pasta",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For Serving:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tbsp Parmigiano-Reggiano or Parmesan cheese",
@@ -261,6 +293,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Cheese"
       }
     }

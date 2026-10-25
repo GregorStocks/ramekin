@@ -3,92 +3,8 @@
   "recipe_slug": "2015-10-smore-cupcakes",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Carrot Graham Layer Cake",
-      "expected": {
-        "item": "Months Ago: Carrot Graham Layer Cake",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Three-Bean Chili",
-      "expected": {
-        "item": "Years Ago: Three-Bean Chili",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Lentil and Chickpea Salad with Feta and Tahini",
-      "expected": {
-        "item": "Years Ago: Lentil and Chickpea Salad with Feta and Tahini",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Over-the-Top Mushroom Quiche",
-      "expected": {
-        "item": "Years Ago: Over-the-Top Mushroom Quiche",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "4.5 Years Ago: Apple Tarte Tatin",
-      "expected": {
-        "item": "Years Ago: Apple Tarte Tatin",
-        "measurements": [
-          {
-            "amount": "4.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Cupcakes",
-      "expected": {
-        "item": "Cupcakes",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Cupcakes:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (125 grams) all-purpose flour",
@@ -105,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -123,6 +40,7 @@
           }
         ],
         "note": "from about 7 rectangular crackers",
+        "section": "Cupcakes",
         "category": "Snacks"
       }
     },
@@ -137,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Other"
       }
     },
@@ -151,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -165,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -179,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,6 +123,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -215,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -229,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Baking"
       }
     },
@@ -243,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -257,11 +183,12 @@
           }
         ],
         "note": null,
+        "section": "Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {
@@ -314,7 +241,7 @@
       }
     },
     {
-      "raw": "Frosting",
+      "raw": "Frosting:",
       "is_section_header": true
     },
     {

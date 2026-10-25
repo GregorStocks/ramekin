@@ -59,21 +59,25 @@
       }
     },
     {
-      "raw": "1/8 teaspoon mint green food coloring (or more)",
+      "raw": "1/8 teaspoon mint green food coloring or more",
       "expected": {
-        "item": "mint green food coloring",
+        "item": "mint green food coloring or more",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": "or more",
+        "note": null,
         "category": "Baking"
       }
     },
     {
-      "raw": "10  Oreos (crushed)",
+      "raw": "For Oreo Version:",
+      "is_section_header": true
+    },
+    {
+      "raw": "10 Oreos crushed",
       "expected": {
         "item": "Oreos",
         "measurements": [
@@ -83,8 +87,13 @@
           }
         ],
         "note": "crushed",
+        "section": "For Oreo Version",
         "category": "Snacks"
       }
+    },
+    {
+      "raw": "For Serving:",
+      "is_section_header": true
     },
     {
       "raw": "Whipped cream",
@@ -92,6 +101,7 @@
         "item": "Whipped cream",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,6 +111,7 @@
         "item": "Green sanding",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Other"
       }
     },
@@ -110,6 +121,7 @@
         "item": "Maraschino cherries",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Canned Goods"
       }
     }

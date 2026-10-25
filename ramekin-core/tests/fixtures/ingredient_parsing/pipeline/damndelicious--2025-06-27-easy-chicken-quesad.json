@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "Kosher salt and freshly ground black pepper (to taste)",
+      "raw": "Kosher salt and freshly ground black pepper, to taste",
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "1 1/2 tablespoons vegetable oil (divided)",
+      "raw": "1 ½ tablespoons vegetable oil, divided",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "6  (8-inch) flour tortillas (warmed)",
+      "raw": "6 (8-inch) flour tortillas, warmed",
       "expected": {
         "item": "flour tortillas",
         "measurements": [
@@ -82,6 +82,10 @@
       }
     },
     {
+      "raw": "for serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup guacamole",
       "expected": {
         "item": "guacamole",
@@ -92,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -106,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/4 cup sour cream",
+      "raw": "¼ cup sour cream",
       "expected": {
         "item": "sour cream",
         "measurements": [
@@ -120,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "pastilla-recipe",
   "ingredients": [
     {
-      "raw": "1/2 cup clarified butter",
+      "raw": "For almonds:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup  clarified butter",
       "expected": {
         "item": "clarified butter",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Almonds",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3/4 cup blanched slivered almonds",
+      "raw": "¾ cup  blanched slivered almonds",
       "expected": {
         "item": "blanched slivered almonds",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Almonds",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "2 tablespoons granulated sugar",
+      "raw": "2 tablespoons  granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Almonds",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons ground cinnamon",
+      "raw": "2 teaspoons  ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -55,11 +62,16 @@
           }
         ],
         "note": null,
+        "section": "For Almonds",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 large sweet onion ((chopped))",
+      "raw": "For chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 large  sweet onion (chopped)",
       "expected": {
         "item": "sweet onion",
         "measurements": [
@@ -69,11 +81,12 @@
           }
         ],
         "note": "chopped",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "6 pods green cardamom ((crushed))",
+      "raw": "6 pods  green cardamom (crushed)",
       "expected": {
         "item": "pods green cardamom",
         "measurements": [
@@ -83,11 +96,12 @@
           }
         ],
         "note": "crushed",
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 teaspoons ground turmeric",
+      "raw": "2 teaspoons  ground turmeric",
       "expected": {
         "item": "ground turmeric",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/2 teaspoons kosher salt",
+      "raw": "1 ½ teaspoons  kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon ground ginger",
+      "raw": "1 teaspoon  ground ginger",
       "expected": {
         "item": "ground ginger",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon ground coriander seed",
+      "raw": "1 teaspoon  ground coriander seed",
       "expected": {
         "item": "ground coriander seed",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon ground cinnamon",
+      "raw": "1 teaspoon  ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,11 +186,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon ground black pepper",
+      "raw": "½ teaspoon  ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1.5 pounds bone-in skin-on chicken thighs",
+      "raw": "1.5 pounds  bone-in skin-on chicken thighs",
       "expected": {
         "item": "bone-in skin-on chicken thighs",
         "measurements": [
@@ -195,11 +216,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3 large eggs (beaten)",
+      "raw": "3 large  eggs beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -209,11 +231,12 @@
           }
         ],
         "note": "beaten",
+        "section": "For Chicken",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cups parsley (minced)",
+      "raw": "¼ cups  parsley minced",
       "expected": {
         "item": "parsley",
         "measurements": [
@@ -223,11 +246,16 @@
           }
         ],
         "note": "minced",
+        "section": "For Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 package phyllo dough",
+      "raw": "For Pastilla:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 package  phyllo dough",
       "expected": {
         "item": "phyllo dough",
         "measurements": [
@@ -237,11 +265,12 @@
           }
         ],
         "note": null,
+        "section": "For Pastilla",
         "category": "Frozen"
       }
     },
     {
-      "raw": "6 tablespoons clarified butter",
+      "raw": "6 tablespoons  clarified butter",
       "expected": {
         "item": "clarified butter",
         "measurements": [
@@ -251,24 +280,27 @@
           }
         ],
         "note": null,
+        "section": "For Pastilla",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "powdered sugar (for dusting)",
+      "raw": "powdered sugar for dusting",
       "expected": {
         "item": "powdered sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "For Pastilla",
         "category": "Baking"
       }
     },
     {
-      "raw": "ground cinnamon (for dusting)",
+      "raw": "ground cinnamon for dusting",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [],
         "note": "for dusting",
+        "section": "For Pastilla",
         "category": "Spices & Seasonings"
       }
     }

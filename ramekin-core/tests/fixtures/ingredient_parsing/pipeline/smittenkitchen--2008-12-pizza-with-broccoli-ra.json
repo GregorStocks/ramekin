@@ -3,6 +3,10 @@
   "recipe_slug": "2008-12-pizza-with-broccoli-ra",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups (260 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "I use Diamond brand kosher salt; use half of other brands",
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "100° to 115°F",
+        "section": "Dough",
         "category": "Beverages"
       }
     },
@@ -77,8 +85,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 large yellow onion, diced",
@@ -91,6 +104,7 @@
           }
         ],
         "note": "diced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -100,6 +114,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -109,6 +124,7 @@
         "item": "Freshly ground black pepper or red pepper flakes",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +143,7 @@
           }
         ],
         "note": "about 1 pound, rapini, florets and heavy stems, cut into 1-inch segments",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -141,6 +158,7 @@
           }
         ],
         "note": "minced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -155,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -169,6 +188,7 @@
           }
         ],
         "note": "pitted, roughly torn",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -183,6 +203,7 @@
           }
         ],
         "note": "torn into bite-sized scraps",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -197,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     }

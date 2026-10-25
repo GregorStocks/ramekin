@@ -3,7 +3,11 @@
   "recipe_slug": "honey-lemon-chicken-recipe",
   "ingredients": [
     {
-      "raw": "1/4 cup white wine",
+      "raw": "For honey lemon sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ cup  white wine",
       "expected": {
         "item": "white wine",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Honey Lemon Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "3 tablespoons tomato paste",
+      "raw": "3 tablespoons  tomato paste",
       "expected": {
         "item": "tomato paste",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Honey Lemon Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "3 tablespoons honey",
+      "raw": "3 tablespoons  honey",
       "expected": {
         "item": "honey",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Honey Lemon Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons lemon juice ((save the rinds to zest))",
+      "raw": "2 tablespoons  lemon juice (save the rinds to zest)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "save the rinds to zest",
+        "section": "For Honey Lemon Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "½ teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -69,11 +77,16 @@
           }
         ],
         "note": null,
+        "section": "For Honey Lemon Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "700 grams boneless skin-on chicken thighs",
+      "raw": "For chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "700 grams  boneless skin-on chicken thighs",
       "expected": {
         "item": "boneless skin-on chicken thighs",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -92,6 +106,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,11 +116,12 @@
         "item": "Black pepper",
         "measurements": [],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons all-purpose flour",
+      "raw": "2 tablespoons  all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -115,11 +131,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon olive oil",
+      "raw": "1 tablespoon  olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -129,11 +146,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "5 grams garlic ((1 large clove, minced))",
+      "raw": "5 grams  garlic (1 large clove, minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -143,6 +161,7 @@
           }
         ],
         "note": "1 large clove, minced",
+        "section": "For Chicken",
         "category": "Produce"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "peach-mousse-recipe",
   "ingredients": [
     {
-      "raw": "1 lb ripe peaches (peeled, diced)",
+      "raw": "For the Peach Mousse:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 lb ripe peaches, peeled, diced",
       "expected": {
         "item": "ripe peaches",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "peeled, diced",
+        "section": "For the Peach Mousse",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Produce"
       }
     },
@@ -41,20 +47,22 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 Tbsp unflavored gelatin (I used Knox brand)",
+      "raw": "1 Tbsp unflavored gelatin, I used Knox brand",
       "expected": {
-        "item": "unflavored gelatin",
+        "item": "unflavored gelatin, I used Knox brand",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "I used Knox brand",
+        "note": null,
+        "section": "For the Peach Mousse",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Baking"
       }
     },
@@ -83,11 +92,16 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Mousse",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  ripe peach (peeled and thinly sliced)",
+      "raw": "Garnish/ Peach Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ripe peach, peeled and thinly sliced",
       "expected": {
         "item": "ripe peach",
         "measurements": [
@@ -97,6 +111,7 @@
           }
         ],
         "note": "peeled and thinly sliced",
+        "section": "Garnish/ Peach Topping",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish/ Peach Topping",
         "category": "Produce"
       }
     },
@@ -125,15 +141,17 @@
           }
         ],
         "note": null,
+        "section": "Garnish/ Peach Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "mint leaves (optional)",
+      "raw": "mint leaves, optional",
       "expected": {
         "item": "mint leaves",
         "measurements": [],
         "note": "optional",
+        "section": "Garnish/ Peach Topping",
         "category": "Produce"
       }
     }

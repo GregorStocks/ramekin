@@ -3,6 +3,10 @@
   "recipe_slug": "recipe-homemade-chicken-noodle",
   "ingredients": [
     {
+      "raw": "NOODLES:",
+      "is_section_header": true
+    },
+    {
       "raw": "3   cups    all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Noodles",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Noodles",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Noodles",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Noodles",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "Noodles",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "SOUP:",
+      "is_section_header": true
     },
     {
       "raw": "1      whole fresh chicken",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "diced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "diced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "minced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
     },
@@ -162,6 +181,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     }

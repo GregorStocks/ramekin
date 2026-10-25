@@ -127,11 +127,16 @@
       }
     },
     {
+      "raw": "Makeshift Apple Caramel Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "Apple juice wrung from shredded apple (above) (I had 1/2 cup)",
       "expected": {
         "item": "Apple juice wrung from shredded apple",
         "measurements": [],
         "note": "above, I had 1/2 cup",
+        "section": "Makeshift Apple Caramel Sauce",
         "category": "Other"
       }
     },
@@ -146,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Makeshift Apple Caramel Sauce",
         "category": "Baking"
       }
     },
@@ -160,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Makeshift Apple Caramel Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -174,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Makeshift Apple Caramel Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -188,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Makeshift Apple Caramel Sauce",
         "category": "Spices & Seasonings"
       }
     }

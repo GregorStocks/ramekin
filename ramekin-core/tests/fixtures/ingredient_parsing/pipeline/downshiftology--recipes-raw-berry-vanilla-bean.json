@@ -3,16 +3,21 @@
   "recipe_slug": "recipes-raw-berry-vanilla-bean",
   "ingredients": [
     {
-      "raw": "3 1/2 cups raw cashews (soaked overnight)",
+      "raw": "Cheesecake Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 1/2 cups raw cashews, soaked overnight",
       "expected": {
-        "item": "raw cashews",
+        "item": "raw cashews, soaked overnight",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": "soaked overnight",
+        "note": null,
+        "section": "Cheesecake Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  vanilla beans (scraped)",
+      "raw": "2 vanilla beans, scraped",
       "expected": {
         "item": "vanilla beans",
         "measurements": [
@@ -83,8 +92,13 @@
           }
         ],
         "note": "scraped",
+        "section": "Cheesecake Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Crust:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups raw macadamia nuts",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
     {
-      "raw": "10  Medjool dates (pitted)",
+      "raw": "10 Medjool dates, pitted",
       "expected": {
         "item": "Medjool dates",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": "pitted",
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -153,8 +171,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup raspberries",
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

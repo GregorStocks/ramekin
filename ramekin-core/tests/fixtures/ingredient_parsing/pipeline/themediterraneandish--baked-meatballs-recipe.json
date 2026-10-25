@@ -3,7 +3,11 @@
   "recipe_slug": "baked-meatballs-recipe",
   "ingredients": [
     {
-      "raw": "1  red onion ((large, halved and thinly sliced (1/4-inch) ))",
+      "raw": "For the Vegetables:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 red onion (large, halved and thinly sliced (1/4-inch) )",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "large, halved and thinly sliced (1/4-inch)",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 pound baby potatoes ((quartered or sliced small to cook quickly))",
+      "raw": "1/2 pound baby potatoes (quartered or sliced small to cook quickly)",
       "expected": {
         "item": "baby potatoes",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "quartered or sliced small to cook quickly",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "6  baby bell peppers ((any color, cut into 1/4 inch thick batons))",
+      "raw": "6 baby bell peppers (any color, cut into 1/4 inch thick batons)",
       "expected": {
         "item": "baby bell peppers",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "any color, cut into 1/4 inch thick batons",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves garlic ((minced))",
+      "raw": "3 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +87,7 @@
         "item": "Kosher salt and black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,11 +97,12 @@
         "item": "extra virgin olive oil",
         "measurements": [],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "28 ounces canned San Marzano tomatoes ((whole, peeled with their juices))",
+      "raw": "28 ounces canned San Marzano tomatoes (whole, peeled with their juices)",
       "expected": {
         "item": "canned San Marzano tomatoes",
         "measurements": [
@@ -101,6 +112,7 @@
           }
         ],
         "note": "whole, peeled with their juices",
+        "section": "For the Vegetables",
         "category": "Canned Goods"
       }
     },
@@ -110,8 +122,13 @@
         "item": "Kosher salt and black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Meatballs:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound lean ground beef",
@@ -124,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1  yellow onion ((small, very finely chopped))",
+      "raw": "1 yellow onion (small, very finely chopped)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -138,11 +156,12 @@
           }
         ],
         "note": "small, very finely chopped",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves garlic ((minced))",
+      "raw": "3 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -152,11 +171,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup fresh parsley ((chopped))",
+      "raw": "1 cup fresh parsley (chopped)",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -166,6 +186,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -180,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -194,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,6 +226,7 @@
         "item": "Kosher salt and black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Cheese"
       }
     },
@@ -231,11 +256,12 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -245,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Dairy & Eggs"
       }
     }

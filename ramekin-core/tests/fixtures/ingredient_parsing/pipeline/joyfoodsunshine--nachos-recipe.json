@@ -3,6 +3,10 @@
   "recipe_slug": "nachos-recipe",
   "ingredients": [
     {
+      "raw": "Ground Beef:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground beef",
       "expected": {
         "item": "ground beef",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "¾ cup red onion (diced &amp;amp; divided (about 1 small onion))",
+      "raw": "¾ cup red onion diced & divided (about 1 small onion)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -26,7 +31,8 @@
             "unit": "cup"
           }
         ],
-        "note": "diced & divided (about 1 small onion)",
+        "note": "about 1 small onion, diced & divided",
+        "section": "Ground Beef",
         "category": "Produce"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 Tablespoon olive oil (optional)",
+      "raw": "1 Tablespoon olive oil optional",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "optional",
+        "section": "Ground Beef",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,8 +167,13 @@
           }
         ],
         "note": null,
+        "section": "Ground Beef",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Nachos:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces tortilla chips",
@@ -167,11 +186,12 @@
           }
         ],
         "note": null,
+        "section": "Nachos",
         "category": "Snacks"
       }
     },
     {
-      "raw": "16 ounces cheddar cheese (shredded)",
+      "raw": "16 ounces cheddar cheese shredded",
       "expected": {
         "item": "cheddar cheese",
         "measurements": [
@@ -181,6 +201,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Nachos",
         "category": "Cheese"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Nachos",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Nachos",
         "category": "Canned Goods"
       }
     },
@@ -223,20 +246,26 @@
           }
         ],
         "note": "halved",
+        "section": "Nachos",
         "category": "Other"
       }
     },
     {
-      "raw": "2.25 ounces can sliced black olives (drained and rinsed (about ½ cup))",
+      "raw": "2.25 ounces can sliced black olives drained and rinsed (about ½ cup)",
       "expected": {
-        "item": "can sliced black olives",
+        "item": "can sliced black olives drained and rinsed",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": "drained and rinsed (about 1/2 cup)",
+        "note": "about 1/2 cup",
+        "section": "Nachos",
         "category": "Canned Goods"
       }
     },
@@ -246,6 +275,7 @@
         "item": "fresh cilantro",
         "measurements": [],
         "note": null,
+        "section": "Nachos",
         "category": "Produce"
       }
     },
@@ -255,16 +285,18 @@
         "item": "avocado slices",
         "measurements": [],
         "note": null,
+        "section": "Nachos",
         "category": "Other"
       }
     },
     {
-      "raw": "salsa (guacamole, sour cream, etc.)",
+      "raw": "salsa guacamole, sour cream, etc.",
       "expected": {
-        "item": "salsa",
+        "item": "salsa guacamole, sour cream, etc.",
         "measurements": [],
-        "note": "guacamole, sour cream, etc.",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "section": "Nachos",
+        "category": "Other"
       }
     }
   ]

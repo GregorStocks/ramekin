@@ -3,6 +3,10 @@
   "recipe_slug": "2007-12-pear-crisps-with-vanil",
   "ingredients": [
     {
+      "raw": "Vanilla Brown Butter:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 vanilla bean, split lengthwise or 1 teaspoon vanilla bean paste",
       "expected": {
         "item": "vanilla bean, split lengthwise",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "or 1 teaspoon vanilla bean paste",
+        "section": "Vanilla Brown Butter",
         "category": "Spices & Seasonings"
       }
     },
@@ -35,8 +40,13 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Brown Butter",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 pounds (1.4 kg) D’anjou or Bartlett pears (about 6 medium), peeled, cored, and diced",
@@ -57,6 +67,7 @@
           }
         ],
         "note": "about 6 medium, peeled, cored, and diced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -71,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -107,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -125,6 +139,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -143,8 +158,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (195 grams) all-purpose flour",
@@ -161,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -175,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     },
@@ -193,6 +215,7 @@
           }
         ],
         "note": "packed",
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -211,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -225,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

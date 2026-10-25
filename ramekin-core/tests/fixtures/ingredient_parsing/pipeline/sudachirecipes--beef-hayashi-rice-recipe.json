@@ -3,35 +3,41 @@
   "recipe_slug": "beef-hayashi-rice-recipe",
   "ingredients": [
     {
-      "raw": "1  bell pepper (red or green)",
+      "raw": "“Hayashi” Beef:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 bell pepper red or green",
       "expected": {
-        "item": "bell pepper",
+        "item": "bell pepper red or green",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "red or green",
-        "category": "Produce"
+        "note": null,
+        "section": "“hayashi” Beef",
+        "category": "Other"
       }
     },
     {
-      "raw": "4  button mushrooms (or mushroom of your choice)",
+      "raw": "4 button mushrooms or mushroom of your choice",
       "expected": {
-        "item": "button mushrooms",
+        "item": "button mushrooms or mushroom of your choice",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "or mushroom of your choice",
+        "note": null,
+        "section": "“hayashi” Beef",
         "category": "Produce"
       }
     },
     {
-      "raw": "½  yellow onions",
+      "raw": "½ yellow onions",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "“hayashi” Beef",
         "category": "Produce"
       }
     },
@@ -55,21 +62,23 @@
           }
         ],
         "note": null,
+        "section": "“hayashi” Beef",
         "category": "Produce"
       }
     },
     {
-      "raw": "200 g thinly sliced beef (beef round, boneless beef short-rib, or similar, avoid extremely lean cuts)",
+      "raw": "200 g thinly sliced beef beef round, boneless beef short-rib, or similar, avoid extremely lean cuts",
       "expected": {
-        "item": "thinly sliced beef",
+        "item": "thinly sliced beef beef round, boneless beef short-rib, or similar, avoid extremely lean cuts",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": "beef round, boneless beef short-rib, or similar, avoid extremely lean cuts",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "“hayashi” Beef",
+        "category": "Other"
       }
     },
     {
@@ -83,63 +92,72 @@
           }
         ],
         "note": null,
+        "section": "“hayashi” Beef",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ tbsp all-purpose flour (for light coating, or cake flour)",
+      "raw": "½ tbsp all-purpose flour for light coating, or cake flour",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour for light coating, or cake flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "for light coating, or cake flour",
+        "note": null,
+        "section": "“hayashi” Beef",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp cooking oil (neutral)",
+      "raw": "1 tsp cooking oil neutral",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil neutral",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "neutral",
+        "note": null,
+        "section": "“hayashi” Beef",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "4 tbsp red wine (dry type)",
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 tbsp red wine dry type",
       "expected": {
-        "item": "red wine",
+        "item": "red wine dry type",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "dry type",
-        "category": "Beverages"
+        "note": null,
+        "section": "Sauce",
+        "category": "Other"
       }
     },
     {
-      "raw": "½ tbsp all-purpose flour (to thicken hayashi sauce)",
+      "raw": "½ tbsp all-purpose flour to thicken hayashi sauce",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour to thicken hayashi sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "to thicken hayashi sauce",
-        "category": "Baking"
+        "note": null,
+        "section": "Sauce",
+        "category": "Other"
       }
     },
     {
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,25 +201,27 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "300 ml beef bouillon (or other bouillon)",
+      "raw": "300 ml beef bouillon or other bouillon",
       "expected": {
-        "item": "beef bouillon",
+        "item": "beef bouillon or other bouillon",
         "measurements": [
           {
             "amount": "300",
             "unit": "ml"
           }
         ],
-        "note": "or other bouillon",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "section": "Sauce",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  bay leaf",
+      "raw": "1 bay leaf",
       "expected": {
         "item": "bay leaf",
         "measurements": [
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -237,35 +261,42 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tbsp unsalted butter (cold)",
+      "raw": "1 tbsp unsalted butter cold",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter cold",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "cold",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Sauce",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 portions cooked Japanese short-grain rice (approx. 150 g per person)",
+      "raw": "Rice:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 portions cooked Japanese short-grain rice approx. 150 g per person",
       "expected": {
-        "item": "cooked Japanese short-grain rice",
+        "item": "cooked Japanese short-grain rice approx. 150 g per person",
         "measurements": [
           {
             "amount": "2",
             "unit": "portion"
           }
         ],
-        "note": "approx. 150 g per person",
-        "category": "Pasta & Rice"
+        "note": null,
+        "section": "Rice",
+        "category": "Other"
       }
     },
     {
@@ -279,11 +310,12 @@
           }
         ],
         "note": null,
+        "section": "Rice",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 clove garlic (minced)",
+      "raw": "1 clove garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -293,20 +325,22 @@
           }
         ],
         "note": "minced",
+        "section": "Rice",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp fresh parsley (or dry)",
+      "raw": "1 tsp fresh parsley or dry",
       "expected": {
-        "item": "fresh parsley",
+        "item": "fresh parsley or dry",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or dry",
+        "note": null,
+        "section": "Rice",
         "category": "Produce"
       }
     }

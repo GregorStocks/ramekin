@@ -3,7 +3,11 @@
   "recipe_slug": "snickers-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "24  Oreo cookies (whole)",
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "24   Oreo cookies, whole",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "whole",
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "4 tablespoons unsalted butter (melted)",
+      "raw": "4 tablespoons   unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -27,39 +32,54 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "32 ounces cream cheese (at room temperature)",
+      "raw": "For the Cheesecake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "32 ounces  (907.19 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
+          },
+          {
+            "amount": "907.19",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1¼ cups granulated sugar",
+      "raw": "1¼ cups  (250 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  eggs (at room temperature)",
+      "raw": "4   eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -69,25 +89,31 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¾ cup heavy cream",
+      "raw": "¾ cup  (178.5 ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "178.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon vanilla extract",
+      "raw": "1 tablespoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -97,11 +123,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "20  fun size Snickers bars (coarsely chopped)",
+      "raw": "20   fun size Snickers bars, coarsely chopped",
       "expected": {
         "item": "fun size Snickers bars",
         "measurements": [
@@ -111,8 +138,13 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For the Cheesecake",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "Whipped cream",
@@ -120,6 +152,7 @@
         "item": "Whipped cream",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +162,7 @@
         "item": "Chopped Snickers bars",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Other"
       }
     },
@@ -138,6 +172,7 @@
         "item": "Hot fudge sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Condiments & Sauces"
       }
     },
@@ -147,6 +182,7 @@
         "item": "Caramel sauce",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Condiments & Sauces"
       }
     }

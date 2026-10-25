@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-vietnamese-style-meatb",
   "ingredients": [
     {
+      "raw": "For the Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +96,7 @@
           }
         ],
         "note": "about 1/4 cup, finely chopped, plus a few more for serving",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": "from 2 limes",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -115,6 +126,7 @@
           }
         ],
         "note": "plus more for serving",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -129,6 +141,7 @@
           }
         ],
         "note": "plus more for serving",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -143,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -157,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -171,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -185,8 +201,13 @@
           }
         ],
         "note": "for serving",
+        "section": "For the Meatballs",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons Asian chili sauce, such as Sambal Oelek, or Asian chili garlic sauce (available in Asian aisle of most supermarkets)",
@@ -199,6 +220,7 @@
           }
         ],
         "note": "available in Asian aisle of most supermarkets, such as Sambal Oelek, or Asian chili garlic sauce",
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
@@ -213,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -227,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -241,6 +265,7 @@
           }
         ],
         "note": "from 2 to 3 limes",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -255,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     }

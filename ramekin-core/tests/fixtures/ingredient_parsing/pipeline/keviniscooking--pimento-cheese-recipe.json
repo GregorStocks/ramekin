@@ -3,7 +3,7 @@
   "recipe_slug": "pimento-cheese-recipe",
   "ingredients": [
     {
-      "raw": "4 oz pimento peppers (drained and rinsed (See Note 1))",
+      "raw": "4 oz pimento peppers drained and rinsed (See Note 1)",
       "expected": {
         "item": "pimento peppers",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "oz"
           }
         ],
-        "note": "drained and rinsed (See Note 1)",
+        "note": "See Note 1, drained and rinsed",
         "category": "Other"
       }
     },
     {
-      "raw": "2 cups sharp cheddar cheese (shredded)",
+      "raw": "2 cups sharp cheddar cheese shredded",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1/4 cup mayonaise ((See Note 2))",
+      "raw": "1/4 cup mayonaise (See Note 2)",
       "expected": {
         "item": "mayonaise",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 oz cream cheese (softened)",
+      "raw": "4 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "2 slices  cooked bacon (crumbled (optional))",
+      "raw": "2 slices  cooked bacon crumbled (optional)",
       "expected": {
         "item": "cooked bacon",
         "measurements": [
@@ -124,12 +124,16 @@
             "unit": "slice"
           }
         ],
-        "note": "crumbled (optional)",
+        "note": "optional, crumbled",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1  box of crackers of choice or toasted baguette slices",
+      "raw": "Serving:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 box of crackers of choice or toasted baguette slices",
       "expected": {
         "item": "crackers of choice or toasted baguette slices",
         "measurements": [
@@ -139,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Serving",
         "category": "Bakery & Bread"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2016-09-plum-squares-with-marz",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (130 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "toasted or equivalent weight almond flour",
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -103,8 +112,13 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Crumble:",
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup (85 grams) all purpose flour",
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Baking"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": "packed, about 3.5 ounces or half a 7-ounce tube",
+        "section": "Crumble",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -157,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Baking"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Spices & Seasonings"
       }
     },
@@ -193,6 +211,7 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "Crumble",
         "category": "Dairy & Eggs"
       }
     },
@@ -211,8 +230,13 @@
           }
         ],
         "note": null,
+        "section": "Crumble",
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 pounds plums (about 6 to 7), halved, pitted, thinly sliced",
@@ -225,6 +249,7 @@
           }
         ],
         "note": "about 6 to 7, halved, pitted, thinly sliced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -239,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -253,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "breadsticks-recipe",
   "ingredients": [
     {
+      "raw": "Breadstick dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup warm water",
       "expected": {
         "item": "warm water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Breadstick Dough",
         "category": "Beverages"
       }
     },
@@ -27,25 +32,27 @@
           }
         ],
         "note": null,
+        "section": "Breadstick Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon honey (or granulated sugar)",
+      "raw": "1 tablespoon honey or granulated sugar",
       "expected": {
-        "item": "honey",
+        "item": "honey or granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or granulated sugar",
+        "note": null,
+        "section": "Breadstick Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons salted butter (melted)",
+      "raw": "2 tablespoons salted butter melted",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "melted",
+        "section": "Breadstick Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Breadstick Dough",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Breadstick Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Breadstick Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons salted butter",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon Italian Seasoning ((Optional for extra flavor))",
+      "raw": "1 teaspoon Italian Seasoning (Optional for extra flavor)",
       "expected": {
         "item": "Italian Seasoning",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": "Optional for extra flavor",
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     }

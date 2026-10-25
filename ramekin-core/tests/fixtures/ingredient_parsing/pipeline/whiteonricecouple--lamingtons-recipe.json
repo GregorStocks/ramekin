@@ -3,7 +3,11 @@
   "recipe_slug": "lamingtons-recipe",
   "ingredients": [
     {
-      "raw": "3 cups (340g) cake flour ((not self-rising), plus additional for dusting pans)",
+      "raw": "cake ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cups   (340g) cake flour (not self-rising), plus additional for dusting pans",
       "expected": {
         "item": "cake flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": "not self-rising, plus additional for dusting pans",
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons baking powder",
+      "raw": "2 teaspoons   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "1/4 teaspoon   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup (2 sticks - 227g) unsalted butter (, room temperature, plus additional for greasing pans)",
+      "raw": "1 cup   (2 sticks - 227g) unsalted butter , room temperature, plus additional for greasing pans",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -59,11 +66,12 @@
           }
         ],
         "note": "2 sticks - 227g, room temperature, plus additional for greasing pans",
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 1/2 cups (300g) sugar",
+      "raw": "1 1/2 cups   (300g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -77,11 +85,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons pure vanilla extract",
+      "raw": "2 teaspoons   pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -91,11 +100,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -105,11 +115,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup (240ml) milk",
+      "raw": "1 cup   (240ml) milk",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -123,11 +134,16 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup (240ml) milk",
+      "raw": "chocolate icing ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup   (240ml) milk",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -141,11 +157,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4 tablespoons (1/2 stick) (60g) unsalted butter",
+      "raw": "4 tablespoons   (1/2 stick) (60g) unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -163,11 +180,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon pure vanilla extract",
+      "raw": "1 tablespoon   pure vanilla extract",
       "expected": {
         "item": "pure vanilla extract",
         "measurements": [
@@ -177,11 +195,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "8 cups (960g) confectioners&amp;#039; sugar (, sifted)",
+      "raw": "8 cups   (960g) confectioners' sugar , sifted",
       "expected": {
         "item": "confectioners' sugar",
         "measurements": [
@@ -195,11 +214,12 @@
           }
         ],
         "note": "sifted",
+        "section": "Chocolate Icing Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (90g) cocoa powder (, sifted)",
+      "raw": "1 cup   (90g) cocoa powder , sifted",
       "expected": {
         "item": "cocoa powder",
         "measurements": [
@@ -213,11 +233,16 @@
           }
         ],
         "note": "sifted",
+        "section": "Chocolate Icing Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (240ml) jam ( (we used our homemade strawberry peach jam, but use whichever flavor you&amp;#039;d like))",
+      "raw": "additional ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup   (240ml) jam  (we used our homemade strawberry peach jam, but use whichever flavor you'd like)",
       "expected": {
         "item": "jam",
         "measurements": [
@@ -230,12 +255,13 @@
             "unit": "ml"
           }
         ],
-        "note": "(we used our homemade strawberry peach jam, but use whichever flavor you'd like)",
+        "note": "we used our homemade strawberry peach jam, but use whichever flavor you'd like",
+        "section": "Additional Ingredients",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 pound (455g) desiccated coconut ( (or shredded sweetened coconut if you can&amp;#039;t get desiccated coconut))",
+      "raw": "1 pound   (455g) desiccated coconut  (or shredded sweetened coconut if you can't get desiccated coconut)",
       "expected": {
         "item": "desiccated coconut",
         "measurements": [
@@ -248,7 +274,8 @@
             "unit": "g"
           }
         ],
-        "note": "(or shredded sweetened coconut if you can't get desiccated coconut)",
+        "note": "or shredded sweetened coconut if you can't get desiccated coconut",
+        "section": "Additional Ingredients",
         "category": "Baking"
       }
     }

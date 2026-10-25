@@ -3,6 +3,10 @@
   "recipe_slug": "2017-09-homemade-oreo-sandwich",
   "ingredients": [
     {
+      "raw": "For Cookies:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 stick (1/2 cup) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Cookies",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Cookies",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For Cookies",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": "or 1/8 teaspoon fine table salt",
+        "section": "For Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Cookies",
         "category": "Baking"
       }
     },
@@ -113,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Cookies",
         "category": "Baking"
       }
     },
@@ -131,8 +142,13 @@
           }
         ],
         "note": null,
+        "section": "For Cookies",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 sticks (6 ounces) unsalted butter",
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": "or, for creme de menthe flavor, replace with 4-5 drops of flavoring oil and food coloring as desired",
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -177,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +214,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For Filling",
         "category": "Baking"
       }
     }

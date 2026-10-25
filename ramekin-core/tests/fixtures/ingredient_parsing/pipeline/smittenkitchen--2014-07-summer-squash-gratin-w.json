@@ -3,13 +3,8 @@
   "recipe_slug": "2014-07-summer-squash-gratin-w",
   "ingredients": [
     {
-      "raw": "Gratin",
-      "expected": {
-        "item": "Gratin",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Gratin:",
+      "is_section_header": true
     },
     {
       "raw": "2 pounds summer squash",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Gratin",
         "category": "Produce"
       }
     },
@@ -31,6 +27,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "Gratin",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Gratin",
         "category": "Bakery & Bread"
       }
     },
@@ -59,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Gratin",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,6 +72,7 @@
           }
         ],
         "note": "from 4 to 5 medium",
+        "section": "Gratin",
         "category": "Produce"
       }
     },
@@ -87,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Gratin",
         "category": "Cheese"
       }
     },
@@ -101,6 +102,7 @@
           }
         ],
         "note": "below",
+        "section": "Gratin",
         "category": "Condiments & Sauces"
       }
     },
@@ -110,17 +112,13 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Gratin",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Salsa verde",
-      "expected": {
-        "item": "Salsa verde",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "raw": "Salsa verde:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon thyme leaves",
@@ -133,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Verde",
         "category": "Produce"
       }
     },
@@ -147,6 +146,7 @@
           }
         ],
         "note": "or half, if dried",
+        "section": "Salsa Verde",
         "category": "Other"
       }
     },
@@ -161,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Verde",
         "category": "Produce"
       }
     },
@@ -175,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Verde",
         "category": "Produce"
       }
     },
@@ -189,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Verde",
         "category": "Produce"
       }
     },
@@ -203,6 +206,7 @@
           }
         ],
         "note": "rinsed and bones removed",
+        "section": "Salsa Verde",
         "category": "Other"
       }
     },
@@ -217,6 +221,7 @@
           }
         ],
         "note": "and rinsed, too, if salt-packed, drained",
+        "section": "Salsa Verde",
         "category": "Canned Goods"
       }
     },
@@ -231,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Salsa Verde",
         "category": "Oils & Vinegars"
       }
     },
@@ -245,6 +251,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Salsa Verde",
         "category": "Produce"
       }
     }

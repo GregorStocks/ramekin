@@ -3,7 +3,11 @@
   "recipe_slug": "dal-makhani-recipe",
   "ingredients": [
     {
-      "raw": "1 cup (200 grams)  urad dal  ((Indian black lentils/ whole black gram))",
+      "raw": "To cook dal:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup (200 grams) urad dal  (Indian black lentils/ whole black gram)",
       "expected": {
         "item": "urad dal",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": "Indian black lentils/ whole black gram",
+        "section": "To Cook Dal",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "¼ cup (55 grams)  rajma  ((red kidney beans, or sub with urad dal))",
+      "raw": "¼ cup (55 grams) rajma  (red kidney beans, or sub with urad dal)",
       "expected": {
         "item": "rajma",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": "red kidney beans, or sub with urad dal",
+        "section": "To Cook Dal",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "4 cups (960 ml)  water to pressure cook the dal ( (more to cook in pot))",
+      "raw": "4 cups (960 ml) water to pressure cook the dal  (more to cook in pot)",
       "expected": {
         "item": "water to pressure cook the dal",
         "measurements": [
@@ -52,12 +58,17 @@
             "unit": "ml"
           }
         ],
-        "note": "(more to cook in pot)",
+        "note": "more to cook in pot",
+        "section": "To Cook Dal",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons (30 ml)  ghee ((or use oil))",
+      "raw": "To Temper/ Masala:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons (30 ml) ghee (or use oil)",
       "expected": {
         "item": "ghee",
         "measurements": [
@@ -71,11 +82,12 @@
           }
         ],
         "note": "or use oil",
+        "section": "To Temper/ Masala",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 tablespoons (42 grams)  unsalted butter  ((cultured butter if you can))",
+      "raw": "3 tablespoons (42 grams) unsalted butter  (cultured butter if you can)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -89,11 +101,12 @@
           }
         ],
         "note": "cultured butter if you can",
+        "section": "To Temper/ Masala",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ cup (65 grams)  onions  ((fine chopped 1 small to medium))",
+      "raw": "½ cup (65 grams) onions  (fine chopped 1 small to medium)",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -107,11 +120,12 @@
           }
         ],
         "note": "fine chopped 1 small to medium",
+        "section": "To Temper/ Masala",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon (18 grams)  ginger garlic paste  ((or ¾ tbsp. (9 grams) each grated))",
+      "raw": "1 tablespoon (18 grams) ginger garlic paste  (or ¾ tbsp. (9 grams) each grated)",
       "expected": {
         "item": "ginger garlic paste",
         "measurements": [
@@ -125,11 +139,12 @@
           }
         ],
         "note": "or 3/4 tbsp. (9 grams) each grated",
+        "section": "To Temper/ Masala",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 cup (220 grams)  tomato puree  ((bottled or 2 to 3 medium tomatoes pureed in a blender))",
+      "raw": "1 cup (220 grams) tomato puree  (bottled or 2 to 3 medium tomatoes pureed in a blender)",
       "expected": {
         "item": "tomato puree",
         "measurements": [
@@ -143,11 +158,12 @@
           }
         ],
         "note": "bottled or 2 to 3 medium tomatoes pureed in a blender",
+        "section": "To Temper/ Masala",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "¾ to 1½ teaspoon Kashmiri red chili powder ((adjust to preference, I use 1 tsp))",
+      "raw": "¾ to 1½ teaspoon Kashmiri red chili powder (adjust to preference, I use 1 tsp)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -157,11 +173,12 @@
           }
         ],
         "note": "adjust to preference, I use 1 tsp",
+        "section": "To Temper/ Masala",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon garam masala  ((+ ½ tsp more if you want at the finishing stage))",
+      "raw": "1 teaspoon garam masala  (+ ½ tsp more if you want at the finishing stage)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -171,11 +188,12 @@
           }
         ],
         "note": "+ 1/2 tsp more if you want at the finishing stage",
+        "section": "To Temper/ Masala",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon sea salt ( (adjust as needed))",
+      "raw": "1 teaspoon sea salt  (adjust as needed)",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -184,12 +202,13 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust as needed)",
+        "note": "adjust as needed",
+        "section": "To Temper/ Masala",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 cups (480 ml)  hot water ( (to add later))",
+      "raw": "2 cups (480 ml) hot water  (to add later)",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -202,12 +221,13 @@
             "unit": "ml"
           }
         ],
-        "note": "(to add later)",
+        "note": "to add later",
+        "section": "To Temper/ Masala",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 tablespoon kasuri methi ((dried fenugreek leaves, optional))",
+      "raw": "1 tablespoon kasuri methi (dried fenugreek leaves, optional)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [
@@ -217,11 +237,12 @@
           }
         ],
         "note": "dried fenugreek leaves, optional",
+        "section": "To Temper/ Masala",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ to ⅓ cup (60 to 80 ml)  heavy cream  ((cooking cream or whipping cream, more to garnish if you want))",
+      "raw": "¼ to ⅓ cup (60 to 80 ml) heavy cream  (cooking cream or whipping cream, more to garnish if you want)",
       "expected": {
         "item": "heavy cream",
         "measurements": [
@@ -235,11 +256,16 @@
           }
         ],
         "note": "cooking cream or whipping cream, more to garnish if you want",
+        "section": "To Temper/ Masala",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  bay leaf, 2 green cardamoms, 1 black cardamom",
+      "raw": "Whole Spices (optional):",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 bay leaf, 2 green cardamoms, 1 black cardamom",
       "expected": {
         "item": "bay leaf, 2 green cardamoms, 1 black cardamom",
         "measurements": [
@@ -249,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Whole Spices (Optional)",
         "category": "Spices & Seasonings"
       }
     }

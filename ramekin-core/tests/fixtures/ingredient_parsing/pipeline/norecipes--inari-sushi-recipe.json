@@ -3,7 +3,11 @@
   "recipe_slug": "inari-sushi-recipe",
   "ingredients": [
     {
-      "raw": "6  aburaage ((thin fried tofu))",
+      "raw": "For Inari Wrappers:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6  aburaage (thin fried tofu)",
       "expected": {
         "item": "aburaage",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "thin fried tofu",
+        "section": "For Inari Wrappers",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup water",
+      "raw": "1 cup  water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Inari Wrappers",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/4 cup sake",
+      "raw": "¼ cup  sake",
       "expected": {
         "item": "sake",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Inari Wrappers",
         "category": "Beverages"
       }
     },
     {
-      "raw": "3 tablespoons sugar",
+      "raw": "3 tablespoons  sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For Inari Wrappers",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons soy sauce",
+      "raw": "2 tablespoons  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -69,11 +77,16 @@
           }
         ],
         "note": null,
+        "section": "For Inari Wrappers",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "300 grams Japanese short-grain rice",
+      "raw": "For Sushi Rice:",
+      "is_section_header": true
+    },
+    {
+      "raw": "300 grams  Japanese short-grain rice",
       "expected": {
         "item": "Japanese short-grain rice",
         "measurements": [
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For Sushi Rice",
         "category": "Other"
       }
     },
     {
-      "raw": "4 tablespoons rice vinegar",
+      "raw": "4 tablespoons  rice vinegar",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For Sushi Rice",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 tablespoons sugar",
+      "raw": "2 tablespoons  sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For Sushi Rice",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon salt",
+      "raw": "1 teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For Sushi Rice",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "40 grams gari ((finely chopped))",
+      "raw": "40 grams  gari (finely chopped)",
       "expected": {
         "item": "gari",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Sushi Rice",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon toasted sesame seeds",
+      "raw": "1 tablespoon  toasted sesame seeds",
       "expected": {
         "item": "toasted sesame seeds",
         "measurements": [
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For Sushi Rice",
         "category": "Spices & Seasonings"
       }
     }

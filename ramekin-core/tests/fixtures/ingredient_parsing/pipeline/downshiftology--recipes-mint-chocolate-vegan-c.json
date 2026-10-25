@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-mint-chocolate-vegan-c",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup raw almonds",
       "expected": {
         "item": "raw almonds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "10  Medjool Dates (pitted)",
+      "raw": "10 Medjool Dates, pitted",
       "expected": {
         "item": "Medjool Dates",
         "measurements": [
@@ -55,34 +62,41 @@
           }
         ],
         "note": "pitted",
+        "section": "Crust",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "2 tablespoon coconut oil (liquified)",
+      "raw": "2 tablespoon coconut oil, liquified",
       "expected": {
-        "item": "coconut oil",
+        "item": "coconut oil, liquified",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "liquified",
+        "note": null,
+        "section": "Crust",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3 1/2 cups raw cashews (soaked overnight, drained and rinsed)",
+      "raw": "Cheesecake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 1/2 cups raw cashews, soaked overnight, drained and rinsed",
       "expected": {
-        "item": "raw cashews",
+        "item": "raw cashews, soaked overnight",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": "soaked overnight, drained and rinsed",
+        "note": "drained and rinsed",
+        "section": "Cheesecake",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Beverages"
       }
     },
@@ -111,20 +126,22 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2/3 cup coconut oil (liquified )",
+      "raw": "2/3 cup coconut oil, liquified",
       "expected": {
-        "item": "coconut oil",
+        "item": "coconut oil, liquified",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "liquified",
+        "note": null,
+        "section": "Cheesecake",
         "category": "Oils & Vinegars"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Produce"
       }
     },
@@ -153,22 +171,28 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1-2 teaspoon peppermint extract (depending on how minty you&amp;#039;d like it)",
+      "raw": "1-2 teaspoon peppermint extract, depending on how minty you'd like it",
       "expected": {
-        "item": "peppermint extract",
+        "item": "peppermint extract, depending on how minty you'd like it",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": "depending on how minty you'd like it",
+        "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cheesecake Chocolate Swirl:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup chocolate chips",
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Chocolate Swirl",
         "category": "Baking"
       }
     },
@@ -195,8 +220,13 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Chocolate Swirl",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup chocolate chips",
@@ -209,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Baking"
       }
     },
@@ -223,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Oils & Vinegars"
       }
     },
@@ -232,6 +264,7 @@
         "item": "mint leaves",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     }

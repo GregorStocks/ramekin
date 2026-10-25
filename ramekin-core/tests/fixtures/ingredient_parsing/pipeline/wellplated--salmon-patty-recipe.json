@@ -3,7 +3,7 @@
   "recipe_slug": "salmon-patty-recipe",
   "ingredients": [
     {
-      "raw": "1  large egg",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  (15-ounce) can salmon (drained (wild-caught if possible))",
+      "raw": "1 (15-ounce) can salmon drained (wild-caught if possible)",
       "expected": {
         "item": "salmon",
         "measurements": [
@@ -26,12 +26,12 @@
             "unit": "can"
           }
         ],
-        "note": "15-ounce, drained (wild-caught if possible)",
+        "note": "15-ounce, wild-caught if possible, drained",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/2 cup Italian seasoned dry whole wheat bread crumbs",
+      "raw": "½ cup Italian seasoned dry whole wheat bread crumbs",
       "expected": {
         "item": "Italian seasoned dry whole wheat bread crumbs",
         "measurements": [
@@ -45,21 +45,21 @@
       }
     },
     {
-      "raw": "1/4 cup nonfat plain Greek yogurt (or sour cream)",
+      "raw": "¼ cup nonfat plain Greek yogurt or sour cream",
       "expected": {
-        "item": "nonfat plain Greek yogurt",
+        "item": "nonfat plain Greek yogurt or sour cream",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or sour cream",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 1/2 teaspoons Dijon mustard",
+      "raw": "1 ½ teaspoons Dijon mustard",
       "expected": {
         "item": "Dijon mustard",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon cayenne pepper",
+      "raw": "¼ teaspoon cayenne pepper",
       "expected": {
         "item": "cayenne pepper",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "2 tablespoons finely chopped fresh parsley (plus additional for serving)",
+      "raw": "2 tablespoons finely chopped fresh parsley plus additional for serving",
       "expected": {
         "item": "finely chopped fresh parsley",
         "measurements": [
@@ -143,18 +143,22 @@
       }
     },
     {
-      "raw": "1–2 tablespoons extra-virgin olive oil (for cooking the patties)",
+      "raw": "1–2 tablespoons extra-virgin olive oil for cooking the patties",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "extra-virgin olive oil for cooking the patties",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": "for cooking the patties",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Other"
       }
+    },
+    {
+      "raw": "For serving:",
+      "is_section_header": true
     },
     {
       "raw": "Greek yogurt",
@@ -162,6 +166,7 @@
         "item": "Greek yogurt",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +176,7 @@
         "item": "Lemon wedges",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

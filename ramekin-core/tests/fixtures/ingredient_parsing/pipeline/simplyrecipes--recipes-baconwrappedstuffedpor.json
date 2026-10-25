@@ -155,9 +155,9 @@
       }
     },
     {
-      "raw": "8 to 10 strips of bacon (about 12 ounces), cut in half",
+      "raw": "8 to 10 strips bacon (about 12 ounces), cut in half",
       "expected": {
-        "item": "strips of bacon",
+        "item": "strips bacon",
         "measurements": [
           {
             "amount": "8 to 10",
@@ -169,7 +169,7 @@
           }
         ],
         "note": "about 12 ounces, cut in half",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     }
   ]

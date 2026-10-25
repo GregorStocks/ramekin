@@ -3,6 +3,10 @@
   "recipe_slug": "2017-02-14-gourmets-double-cho",
   "ingredients": [
     {
+      "raw": "for the cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1½ ounces fine-quality semisweet chocolate (chips are fine, too)",
       "expected": {
         "item": "fine-quality semisweet chocolate",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "chips are fine, too",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -59,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ cups (72 g) unsweetened cocoa powder (use high&nbsp;quality if you can)",
+      "raw": "¾ cups (72 g) unsweetened cocoa powder (use high quality if you can)",
       "expected": {
         "item": "unsweetened cocoa powder",
         "measurements": [
@@ -77,6 +85,7 @@
           }
         ],
         "note": "use high quality if you can",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -133,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -161,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,8 +190,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "for the ganache:",
+      "is_section_header": true
     },
     {
       "raw": "8 ounces fine-quality semisweet chocolate (chips are fine, too)",
@@ -189,6 +209,7 @@
           }
         ],
         "note": "chips are fine, too",
+        "section": "For the Ganache",
         "category": "Baking"
       }
     },
@@ -203,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ganache",
         "category": "Baking"
       }
     },
@@ -231,6 +254,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Ganache",
         "category": "Baking"
       }
     },
@@ -245,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -254,8 +279,13 @@
         "item": "sea salt",
         "measurements": [],
         "note": "optional",
+        "section": "For the Ganache",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "to finish:",
+      "is_section_header": true
     },
     {
       "raw": "small square of semi-sweet (or other) chocolate",
@@ -268,6 +298,7 @@
           }
         ],
         "note": "or other",
+        "section": "To Finish",
         "category": "Other"
       }
     }

@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "3  large eggs",
+      "raw": "3 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "¼ cup sharp cheddar cheese (shredded)",
+      "raw": "¼ cup sharp cheddar cheese shredded",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [
@@ -59,6 +59,14 @@
       }
     },
     {
+      "raw": "Fillings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Vegetables:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 teaspoon olive oil",
       "expected": {
         "item": "olive oil",
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup vegetables (diced small (bell pepper, zucchini, onion, etc.))",
+      "raw": "1 cup vegetables diced small (bell pepper, zucchini, onion, etc.)",
       "expected": {
         "item": "vegetables",
         "measurements": [
@@ -96,7 +106,8 @@
             "unit": "cup"
           }
         ],
-        "note": "diced small (bell pepper, zucchini, onion, etc.)",
+        "note": "bell pepper, zucchini, onion, etc., diced small",
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -106,8 +117,13 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Vegetables",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Onion bacon, garlic:",
+      "is_section_header": true
     },
     {
       "raw": "1 teaspoon minced garlic",
@@ -120,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Onion Bacon, Garlic",
         "category": "Produce"
       }
     },
@@ -134,11 +151,12 @@
           }
         ],
         "note": null,
+        "section": "Onion Bacon, Garlic",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 slices bacon (diced)",
+      "raw": "2 slices bacon diced",
       "expected": {
         "item": "bacon",
         "measurements": [
@@ -148,6 +166,7 @@
           }
         ],
         "note": "diced",
+        "section": "Onion Bacon, Garlic",
         "category": "Meat & Seafood"
       }
     }

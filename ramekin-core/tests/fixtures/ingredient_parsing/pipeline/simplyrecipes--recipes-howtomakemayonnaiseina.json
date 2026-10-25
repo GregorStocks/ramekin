@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-howtomakemayonnaiseina",
   "ingredients": [
     {
-      "raw": "1 whole egg or 1 egg yolk",
+      "raw": "1 whole egg, or 1 egg yolk",
       "expected": {
         "item": "whole egg",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "A dew dashes of Tabasco, optional",
+      "raw": "A few dashes Tabasco, optional",
       "expected": {
-        "item": "A dew dashes of Tabasco",
+        "item": "A few dashes Tabasco",
         "measurements": [],
         "note": "optional",
         "category": "Other"
       }
     },
     {
-      "raw": "Salt to taste",
+      "raw": "Salt, to taste",
       "expected": {
         "item": "Salt",
         "measurements": [],
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "Freshly ground black pepper to taste (optional; I don’t bother)",
+      "raw": "Freshly ground black pepper, to taste (optional; I don’t bother)",
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],

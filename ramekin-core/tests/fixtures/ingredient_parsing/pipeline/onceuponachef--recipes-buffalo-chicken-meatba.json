@@ -3,7 +3,11 @@
   "recipe_slug": "recipes-buffalo-chicken-meatba",
   "ingredients": [
     {
-      "raw": "1  large egg",
+      "raw": "For the Meatballs:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon fresh chopped dill ((or 1 teaspoon dried))",
+      "raw": "1 tablespoon fresh chopped dill (or 1 teaspoon dried)",
       "expected": {
         "item": "fresh chopped dill",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "or 1 teaspoon dried",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon Frank&amp;#39;s Red Hot sauce ((or similar brand))",
+      "raw": "1 tablespoon Frank's Red Hot sauce (or similar brand)",
       "expected": {
         "item": "Frank's Red Hot sauce",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "or similar brand",
+        "section": "For the Meatballs",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 clove garlic, (minced)",
+      "raw": "1 clove garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Meatballs",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pound ground chicken, (preferably Purdue &amp;quot;Fresh &amp;amp; Lean&amp;quot; (avoid the one that is 98% lean))",
+      "raw": "1 pound ground chicken, preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean)",
       "expected": {
         "item": "ground chicken",
         "measurements": [
@@ -96,7 +106,8 @@
             "unit": "lb"
           }
         ],
-        "note": "preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean)",
+        "note": "avoid the one that is 98% lean, preferably Purdue \"Fresh & Lean\"",
+        "section": "For the Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Cheese"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "For the Meatballs",
         "category": "Bakery & Bread"
       }
+    },
+    {
+      "raw": "For the Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1⅓ cups heavy cream",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 to 4 tablespoons Frank&amp;#39;s Red Hot sauce ((see note))",
+      "raw": "3 to 4 tablespoons Frank's Red Hot sauce (see note)",
       "expected": {
         "item": "Frank's Red Hot sauce",
         "measurements": [
@@ -167,6 +186,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon fresh chopped dill ((or ¼ teaspoon dried))",
+      "raw": "1 teaspoon fresh chopped dill (or ¼ teaspoon dried)",
       "expected": {
         "item": "fresh chopped dill",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": "or 1/4 teaspoon dried",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Baking"
       }
     },
@@ -223,20 +246,26 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  scallions, (dark green parts only, thinly sliced)",
+      "raw": "For Serving (optional):",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 scallions, dark green parts only, thinly sliced",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, dark green parts only",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "dark green parts only, thinly sliced",
+        "note": "thinly sliced",
+        "section": "For Serving (Optional)",
         "category": "Produce"
       }
     }

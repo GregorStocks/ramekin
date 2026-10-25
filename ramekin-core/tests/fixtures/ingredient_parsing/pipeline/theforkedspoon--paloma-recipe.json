@@ -3,6 +3,10 @@
   "recipe_slug": "paloma-recipe",
   "ingredients": [
     {
+      "raw": "For the Chili Salt Rim:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoon kosher salt",
       "expected": {
         "item": "kosher salt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chili Salt Rim",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chili Salt Rim",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,15 +47,21 @@
           }
         ],
         "note": null,
+        "section": "For the Chili Salt Rim",
         "category": "Baking"
       }
     },
     {
-      "raw": "Chili Salt ((or just kosher salt))",
+      "raw": "For the Paloma:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Chili Salt, (or just kosher salt)",
       "expected": {
         "item": "Chili Salt",
         "measurements": [],
         "note": "or just kosher salt",
+        "section": "For the Paloma",
         "category": "Other"
       }
     },
@@ -59,6 +71,7 @@
         "item": "Ice",
         "measurements": [],
         "note": null,
+        "section": "For the Paloma",
         "category": "Frozen"
       }
     },
@@ -73,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "For the Paloma",
         "category": "Beverages"
       }
     },
@@ -87,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For the Paloma",
         "category": "Beverages"
       }
     },
@@ -101,11 +116,12 @@
           }
         ],
         "note": null,
+        "section": "For the Paloma",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon sugar ((optional))",
+      "raw": "1 teaspoon sugar, (optional)",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -115,29 +131,32 @@
           }
         ],
         "note": "optional",
+        "section": "For the Paloma",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 fluid ounces club soda (or grapefruit soda)",
+      "raw": "2 fluid ounces club soda, or grapefruit soda",
       "expected": {
-        "item": "club soda",
+        "item": "club soda, or grapefruit soda",
         "measurements": [
           {
             "amount": "2",
             "unit": "fl oz"
           }
         ],
-        "note": "or grapefruit soda",
+        "note": null,
+        "section": "For the Paloma",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Grapefruit and lime wedges (for serving)",
+      "raw": "Grapefruit and lime wedges, for serving",
       "expected": {
         "item": "Grapefruit and lime wedges",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Paloma",
         "category": "Produce"
       }
     }

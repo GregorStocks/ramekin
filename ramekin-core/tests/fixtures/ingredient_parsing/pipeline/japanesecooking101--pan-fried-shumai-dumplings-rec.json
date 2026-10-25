@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "Seasonings for Shumai:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 Tbsp  Katakuriko  (potato starch )",
       "expected": {
         "item": "Katakuriko",
@@ -111,6 +115,7 @@
           }
         ],
         "note": "potato starch",
+        "section": "Seasonings for Shumai",
         "category": "Baking"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings for Shumai",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings for Shumai",
         "category": "Beverages"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings for Shumai",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings for Shumai",
         "category": "Baking"
       }
     },
@@ -181,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Seasonings for Shumai",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,8 +205,13 @@
           }
         ],
         "note": null,
+        "section": "Seasonings for Shumai",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Dipping Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "soy sauce",
@@ -204,6 +219,7 @@
         "item": "soy sauce",
         "measurements": [],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +229,7 @@
         "item": "Japanese mustard",
         "measurements": [],
         "note": null,
+        "section": "Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     }

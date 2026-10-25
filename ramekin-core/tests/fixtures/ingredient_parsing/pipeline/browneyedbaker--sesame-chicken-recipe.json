@@ -3,77 +3,106 @@
   "recipe_slug": "sesame-chicken-recipe",
   "ingredients": [
     {
-      "raw": "1 cup chicken stock",
+      "raw": "For the Marinade:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  (240 ml) chicken stock",
       "expected": {
         "item": "chicken stock",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "½ cup water",
+      "raw": "½ cup  (125 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Beverages"
       }
     },
     {
-      "raw": "½ cup soy sauce",
+      "raw": "½ cup  (116 ml) soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "116",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "¼ cup honey",
+      "raw": "¼ cup  (84.75 ml) honey",
       "expected": {
         "item": "honey",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "84.75",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup rice wine vinegar",
+      "raw": "¼ cup  (63.75 ml) rice wine vinegar",
       "expected": {
         "item": "rice wine vinegar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "63.75",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3 tablespoons light brown sugar",
+      "raw": "3 tablespoons   light brown sugar",
       "expected": {
         "item": "light brown sugar",
         "measurements": [
@@ -83,11 +112,12 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons cornstarch",
+      "raw": "2 tablespoons   cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -97,11 +127,12 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon sesame oil",
+      "raw": "1 tablespoon   sesame oil",
       "expected": {
         "item": "sesame oil",
         "measurements": [
@@ -111,25 +142,35 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1½ pounds  boneless skinless chicken breast, cut into 1-inch chunks (skinless chicken breast, cut into 1-inch chunks)",
+      "raw": "1½ pounds  (680.39 g)  boneless skinless chicken breast, cut into 1-inch chunks, skinless chicken breast, cut into 1-inch chunks",
       "expected": {
-        "item": "boneless skinless chicken breast",
+        "item": "boneless skinless chicken breast, cut into 1-inch chunks, skinless chicken breast",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
+          },
+          {
+            "amount": "680.39",
+            "unit": "g"
           }
         ],
-        "note": "skinless chicken breast, cut into 1-inch chunks",
+        "note": "cut into 1-inch chunks",
+        "section": "For the Marinade",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tablespoon sesame oil",
+      "raw": "For the Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon   sesame oil",
       "expected": {
         "item": "sesame oil",
         "measurements": [
@@ -139,11 +180,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2   garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -153,11 +195,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon minced fresh ginger",
+      "raw": "1 tablespoon   minced fresh ginger",
       "expected": {
         "item": "minced fresh ginger",
         "measurements": [
@@ -167,25 +210,31 @@
           }
         ],
         "note": null,
+        "section": "For the Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon chili paste (can substitute a couple pinches of red pepper flakes)",
+      "raw": "1 teaspoon   chili paste, can substitute a couple pinches of red pepper flakes",
       "expected": {
-        "item": "chili paste",
+        "item": "chili paste, can substitute a couple pinches of red pepper flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "can substitute a couple pinches of red pepper flakes",
+        "note": null,
+        "section": "For the Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "3  egg whites",
+      "raw": "For Coating & Frying:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3   egg whites",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -195,80 +244,103 @@
           }
         ],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1½ cups cornstarch",
+      "raw": "1½ cups  (192 g) cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "192",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup all-purpose flour",
+      "raw": "½ cup  (62.5 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "62.5",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon baking soda",
+      "raw": "½ teaspoon  (0.5 teaspoon) baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For Coating & Frying",
         "category": "Baking"
       }
     },
     {
-      "raw": "6 cups vegetable oil (for frying)",
+      "raw": "6 cups  (1.31 l) vegetable oil, for frying",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
+          },
+          {
+            "amount": "1.31",
+            "unit": "l"
           }
         ],
         "note": "for frying",
+        "section": "For Coating & Frying",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Sesame seeds (to garnish)",
+      "raw": "Sesame seeds, to garnish",
       "expected": {
-        "item": "Sesame seeds",
+        "item": "Sesame seeds, to garnish",
         "measurements": [],
-        "note": "to garnish",
+        "note": null,
+        "section": "For Coating & Frying",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Scallions (sliced, to garnish)",
+      "raw": "Scallions, sliced, to garnish",
       "expected": {
-        "item": "Scallions",
+        "item": "Scallions, sliced, to garnish",
         "measurements": [],
-        "note": "sliced, to garnish",
+        "note": null,
+        "section": "For Coating & Frying",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "million-dollar-spaghetti-recip",
   "ingredients": [
     {
+      "raw": "For the Meat Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons (30 ml) olive oil",
       "expected": {
         "item": "olive oil",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -43,6 +48,7 @@
           }
         ],
         "note": "about 1 1/2 cups, finely chopped",
+        "section": "For the Meat Sauce",
         "category": "Produce"
       }
     },
@@ -61,11 +67,12 @@
           }
         ],
         "note": "85/15",
+        "section": "For the Meat Sauce",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "8 ounces (227 g) mild Italian sausage (bulk )",
+      "raw": "8 ounces (227 g) mild Italian sausage (bulk)",
       "expected": {
         "item": "mild Italian sausage",
         "measurements": [
@@ -79,6 +86,7 @@
           }
         ],
         "note": "bulk",
+        "section": "For the Meat Sauce",
         "category": "Meat & Seafood"
       }
     },
@@ -93,6 +101,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Meat Sauce",
         "category": "Produce"
       }
     },
@@ -111,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Canned Goods"
       }
     },
@@ -129,6 +139,7 @@
           }
         ],
         "note": "such as Red Boat",
+        "section": "For the Meat Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -143,11 +154,12 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 (3-inch) dried bay leaf",
+      "raw": "1 dried bay leaf",
       "expected": {
         "item": "dried bay leaf",
         "measurements": [
@@ -156,7 +168,8 @@
             "unit": null
           }
         ],
-        "note": "3-inch",
+        "note": null,
+        "section": "For the Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +184,7 @@
           }
         ],
         "note": "plus more to taste; for table salt, use half as much by volume",
+        "section": "For the Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +199,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,6 +233,7 @@
           }
         ],
         "note": "28-ounce; 794 g",
+        "section": "For the Meat Sauce",
         "category": "Canned Goods"
       }
     },
@@ -235,8 +252,13 @@
           }
         ],
         "note": null,
+        "section": "For the Meat Sauce",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "For the Béchamel:",
+      "is_section_header": true
     },
     {
       "raw": "5 tablespoons (76 g) unsalted butter",
@@ -253,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Béchamel",
         "category": "Dairy & Eggs"
       }
     },
@@ -275,11 +298,12 @@
           }
         ],
         "note": null,
+        "section": "For the Béchamel",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 1/2 cups (830 ml; 850g) whole milk",
+      "raw": "3 1/2 cups (830 ml; 850 g) whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
@@ -297,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "For the Béchamel",
         "category": "Dairy & Eggs"
       }
     },
@@ -319,6 +344,7 @@
           }
         ],
         "note": "about 1 cup, shredded",
+        "section": "For the Béchamel",
         "category": "Cheese"
       }
     },
@@ -337,6 +363,7 @@
           }
         ],
         "note": "about 1/4 cup packed, finely grated",
+        "section": "For the Béchamel",
         "category": "Cheese"
       }
     },
@@ -351,6 +378,7 @@
           }
         ],
         "note": null,
+        "section": "For the Béchamel",
         "category": "Spices & Seasonings"
       }
     },
@@ -365,6 +393,7 @@
           }
         ],
         "note": null,
+        "section": "For the Béchamel",
         "category": "Spices & Seasonings"
       }
     },
@@ -379,8 +408,13 @@
           }
         ],
         "note": null,
+        "section": "For the Béchamel",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the Spaghetti:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound (454 g) dried spaghetti",
@@ -397,6 +431,7 @@
           }
         ],
         "note": null,
+        "section": "For the Spaghetti",
         "category": "Pasta & Rice"
       }
     },
@@ -415,6 +450,7 @@
           }
         ],
         "note": null,
+        "section": "For the Spaghetti",
         "category": "Dairy & Eggs"
       }
     },
@@ -424,6 +460,7 @@
         "item": "Cooking spray",
         "measurements": [],
         "note": null,
+        "section": "For the Spaghetti",
         "category": "Oils & Vinegars"
       }
     },
@@ -442,6 +479,7 @@
           }
         ],
         "note": "about 3/4 cup packed, grated",
+        "section": "For the Spaghetti",
         "category": "Cheese"
       }
     }

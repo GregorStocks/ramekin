@@ -3,7 +3,11 @@
   "recipe_slug": "winter-salad-kale-pomegranate-",
   "ingredients": [
     {
-      "raw": "1/2 cup pecan&nbsp;halves",
+      "raw": "For the Winter Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup pecan halves",
       "expected": {
         "item": "pecan halves",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Winter Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/2  small&nbsp;red onion",
+      "raw": "½ small red onion",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -27,39 +32,42 @@
           }
         ],
         "note": null,
+        "section": "For the Winter Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "10 ounces kale (stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces))",
+      "raw": "10 ounces kale stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces)",
       "expected": {
-        "item": "kale",
+        "item": "kale stems removed and chopped into ribbons",
         "measurements": [
           {
             "amount": "10",
             "unit": "oz"
           }
         ],
-        "note": "stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces)",
-        "category": "Produce"
+        "note": "if using bagged, pre-cut kale, use 8 ounces",
+        "section": "For the Winter Salad",
+        "category": "Other"
       }
     },
     {
-      "raw": "1  small pomegranate (to yield 1/2 cup&nbsp;seeds)",
+      "raw": "1 small pomegranate to yield 1/2 cup seeds",
       "expected": {
-        "item": "pomegranate",
+        "item": "pomegranate to yield 1/2 cup seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "to yield 1/2 cup seeds",
-        "category": "Produce"
+        "note": null,
+        "section": "For the Winter Salad",
+        "category": "Other"
       }
     },
     {
-      "raw": "4&nbsp; ounces crumbled feta cheese",
+      "raw": "4  ounces crumbled feta cheese",
       "expected": {
         "item": "crumbled feta cheese",
         "measurements": [
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Winter Salad",
         "category": "Cheese"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Winter Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Dijon Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons extra virgin olive oil",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dijon Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dijon Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dijon Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dijon Dressing",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon kosher salt",
+      "raw": "¼ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dijon Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 teaspoon ground black pepper",
+      "raw": "⅛ teaspoon ground black pepper",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dijon Dressing",
         "category": "Spices & Seasonings"
       }
     }

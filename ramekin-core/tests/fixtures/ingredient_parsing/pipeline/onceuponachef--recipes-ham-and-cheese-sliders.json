@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-ham-and-cheese-sliders",
   "ingredients": [
     {
+      "raw": "For the Butter Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 tablespoons unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Butter Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Butter Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Butter Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Butter Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Butter Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,20 +92,26 @@
           }
         ],
         "note": null,
+        "section": "For the Butter Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "One 12-count pack square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
+      "raw": "For the Sandwiches:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 (12-count pack) square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
       "expected": {
-        "item": "12-count pack square soft white dinner rolls",
+        "item": "square soft white dinner rolls",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "such as Kings Hawaiian Sweet Rolls",
+        "note": "12-count pack, such as Kings Hawaiian Sweet Rolls",
+        "section": "For the Sandwiches",
         "category": "Other"
       }
     },
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "⅔ pound sliced Swiss cheese",
+      "raw": "⅔ lb sliced Swiss cheese",
       "expected": {
         "item": "sliced Swiss cheese",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Cheese"
       }
     },
     {
-      "raw": "½ pound sliced Black Forest ham",
+      "raw": "½ lb sliced Black Forest ham",
       "expected": {
         "item": "sliced Black Forest ham",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sandwiches",
         "category": "Meat & Seafood"
       }
     }

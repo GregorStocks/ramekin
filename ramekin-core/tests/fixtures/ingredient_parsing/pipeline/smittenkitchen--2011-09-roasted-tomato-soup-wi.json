@@ -3,13 +3,8 @@
   "recipe_slug": "2011-09-roasted-tomato-soup-wi",
   "ingredients": [
     {
-      "raw": "Soup",
-      "expected": {
-        "item": "Soup",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "raw": "Soup:",
+      "is_section_header": true
     },
     {
       "raw": "3 pounds plum tomatoes, halved lengthwise",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "halved lengthwise",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": "unpeeled",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": "or 1/4 teaspoon dried",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -82,6 +81,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "Lid",
+      "raw": "Lid:",
       "is_section_header": true
     },
     {

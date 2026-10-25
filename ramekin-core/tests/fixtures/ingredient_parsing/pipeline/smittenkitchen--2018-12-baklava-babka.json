@@ -3,6 +3,10 @@
   "recipe_slug": "2018-12-baklava-babka",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 tablespoons (85 grams) unsalted butter, melted and cooled",
       "expected": {
         "item": "unsalted butter",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -131,8 +142,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup (135 grams) granulated sugar",
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -163,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +203,7 @@
           }
         ],
         "note": "about 250 grams or 9 ounces, I use one cup each of pistachios and walnuts",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -199,6 +218,7 @@
           }
         ],
         "note": "finely grated, or orange",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -208,6 +228,7 @@
         "item": "A few pinches of sea salt",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -222,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -236,6 +258,7 @@
           }
         ],
         "note": "optional, to taste",
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -250,6 +273,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -268,8 +292,13 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Honey syrup:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (250 grams) honey, any kind you like",
@@ -286,6 +315,7 @@
           }
         ],
         "note": "any kind you like",
+        "section": "Honey Syrup",
         "category": "Baking"
       }
     },
@@ -304,6 +334,7 @@
           }
         ],
         "note": null,
+        "section": "Honey Syrup",
         "category": "Beverages"
       }
     },
@@ -318,6 +349,7 @@
           }
         ],
         "note": null,
+        "section": "Honey Syrup",
         "category": "Spices & Seasonings"
       }
     }

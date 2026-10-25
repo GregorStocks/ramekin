@@ -3,78 +3,8 @@
   "recipe_slug": "2015-05-pasta-salad-with-roast",
   "ingredients": [
     {
-      "raw": "And for the other side of the world:",
-      "expected": {
-        "item": "And for the other side of the world:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Six Months Ago: Cranberry Pie with Thick Pecan Crumble",
-      "expected": {
-        "item": "Months Ago: Cranberry Pie with Thick Pecan Crumble",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "1.5 Years Ago: Cauliflower with Brown Butter Crumbs",
-      "expected": {
-        "item": "Years Ago: Cauliflower with Brown Butter Crumbs",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2.5 Years Ago: Sweet Potato and Marshmallow Biscuits",
-      "expected": {
-        "item": "Years Ago: Sweet Potato and Marshmallow Biscuits",
-        "measurements": [
-          {
-            "amount": "2.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3.5 Years Ago: Spinach Salad with Warm Bacon Vinaigrette",
-      "expected": {
-        "item": "Years Ago: Spinach Salad with Warm Bacon Vinaigrette",
-        "measurements": [
-          {
-            "amount": "3.5",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "Oregano dressing",
-      "expected": {
-        "item": "Oregano dressing",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Oregano dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1 big clove or 2 small cloves garlic",
@@ -91,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Produce"
       }
     },
@@ -105,6 +36,7 @@
           }
         ],
         "note": "if you can find it, Sicilian is my favorite",
+        "section": "Oregano Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +51,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Oregano Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -128,6 +61,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -142,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Produce"
       }
     },
@@ -156,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -170,11 +106,12 @@
           }
         ],
         "note": null,
+        "section": "Oregano Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Assembly",
+      "raw": "Assembly:",
       "is_section_header": true
     },
     {

@@ -3,6 +3,10 @@
   "recipe_slug": "coconut-rice-with-brussels-spr",
   "ingredients": [
     {
+      "raw": "Coconut rice and Brussels sprouts:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup brown jasmine rice or regular jasmine rice*, rinsed",
       "expected": {
         "item": "brown jasmine rice or regular jasmine rice",
@@ -13,11 +17,12 @@
           }
         ],
         "note": "rinsed",
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "1 &amp;frac14; cups canned light coconut milk",
+      "raw": "1 ¼ cups canned light coconut milk",
       "expected": {
         "item": "canned light coconut milk",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Produce"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "&amp;frac14; cup chopped green onions",
+      "raw": "¼ cup chopped green onions",
       "expected": {
         "item": "chopped green onions",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Produce"
       }
     },
     {
-      "raw": "&amp;frac14; cup torn fresh basil",
+      "raw": "¼ cup torn fresh basil",
       "expected": {
         "item": "torn fresh basil",
         "measurements": [
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Produce"
       }
     },
     {
-      "raw": "&amp;frac14; cup torn fresh mint",
+      "raw": "¼ cup torn fresh mint",
       "expected": {
         "item": "torn fresh mint",
         "measurements": [
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Other"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": "pitted and diced",
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Produce"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,8 +162,13 @@
         "item": "Sriracha and lime wedges",
         "measurements": [],
         "note": "for serving",
+        "section": "Coconut Rice and Brussels Sprouts",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon tamari or soy sauce",
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,6 +196,7 @@
           }
         ],
         "note": "pressed or minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -204,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -218,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -232,11 +256,12 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 Thai chilies, diced, or &amp;frac12; teaspoon red pepper flakes",
+      "raw": "2 Thai chilies, diced, or ½ teaspoon red pepper flakes",
       "expected": {
         "item": "Thai chilies",
         "measurements": [
@@ -246,6 +271,7 @@
           }
         ],
         "note": "diced, or 1/2 teaspoon red pepper flakes",
+        "section": "Sauce",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipe-ditalini-and-peas-in-pa",
   "ingredients": [
     {
+      "raw": "Parmesan Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 oz. (113 g) bacon (about 3 thick slices), chopped",
       "expected": {
         "item": "bacon",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "about 3 thick slices, chopped",
+        "section": "Parmesan Broth",
         "category": "Meat & Seafood"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": "fronds and all, roughly chopped",
+        "section": "Parmesan Broth",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Parmesan Broth",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": "smashed",
+        "section": "Parmesan Broth",
         "category": "Produce"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "homemade or store-bought",
+        "section": "Parmesan Broth",
         "category": "Canned Goods"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "about 2 cups/340 g",
+        "section": "Parmesan Broth",
         "category": "Other"
       }
     },
@@ -121,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Parmesan Broth",
         "category": "Produce"
       }
     },
@@ -135,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Parmesan Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Parmesan Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Parmesan Broth",
         "category": "Produce"
       }
     },
@@ -181,8 +195,13 @@
           }
         ],
         "note": "plus more for serving",
+        "section": "Parmesan Broth",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "Ditalini and Peas:",
+      "is_section_header": true
     },
     {
       "raw": "Kosher salt",
@@ -190,6 +209,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Ditalini and Peas",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Ditalini and Peas",
         "category": "Other"
       }
     },
@@ -226,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Ditalini and Peas",
         "category": "Produce"
       }
     },
@@ -235,6 +257,7 @@
         "item": "Extra-virgin olive oil",
         "measurements": [],
         "note": "for coating the pasta and peas and to garnish",
+        "section": "Ditalini and Peas",
         "category": "Oils & Vinegars"
       }
     },
@@ -249,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Ditalini and Peas",
         "category": "Produce"
       }
     },
@@ -258,6 +282,7 @@
         "item": "Freshly cracked black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Ditalini and Peas",
         "category": "Spices & Seasonings"
       }
     }

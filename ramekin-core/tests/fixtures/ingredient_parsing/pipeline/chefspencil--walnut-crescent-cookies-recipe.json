@@ -3,6 +3,10 @@
   "recipe_slug": "walnut-crescent-cookies-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "100 g butter",
       "expected": {
         "item": "butter",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  vanilla paste",
+      "raw": "1 vanilla paste",
       "expected": {
         "item": "vanilla paste",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Other"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Baking"
       }
     },
@@ -106,6 +117,7 @@
         "item": "powdered sugar for decoration",
         "measurements": [],
         "note": null,
+        "section": "Ingredients",
         "category": "Other"
       }
     }

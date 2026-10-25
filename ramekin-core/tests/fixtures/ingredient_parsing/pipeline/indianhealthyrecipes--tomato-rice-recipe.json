@@ -3,7 +3,7 @@
   "recipe_slug": "tomato-rice-recipe",
   "ingredients": [
     {
-      "raw": "1½ cups aged basmati rice ((or any non-sticky rice, refer notes))",
+      "raw": "1½ cups aged basmati rice (or any non-sticky rice, refer notes)",
       "expected": {
         "item": "aged basmati rice",
         "measurements": [
@@ -17,21 +17,21 @@
       }
     },
     {
-      "raw": "2 tablespoons oil (or ghee)",
+      "raw": "2 tablespoons oil or ghee",
       "expected": {
-        "item": "oil",
+        "item": "oil or ghee",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or ghee",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 medium onion ((chopped or sliced))",
+      "raw": "1 medium onion (chopped or sliced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1  green chili  ((slit, optional))",
+      "raw": "1 green chili  (slit, optional)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 tablespoon ginger garlic paste (or ½ tablespoon each fine grated)",
+      "raw": "1 tablespoon ginger garlic paste or ½ tablespoon each fine grated",
       "expected": {
         "item": "ginger garlic paste",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 cup tomatoes ((2 to 3 medium sized) (chopped or pureed))",
+      "raw": "1 cup tomatoes (2 to 3 medium sized) (chopped or pureed)",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "¾ teaspoon salt ( (adjust to taste))",
+      "raw": "¾ teaspoon salt  (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -96,40 +96,40 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust to taste)",
+        "note": "adjust to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¾ to 1 teaspoon garam masala (powder or curry powder)",
+      "raw": "¾ to 1 teaspoon garam masala powder or curry powder",
       "expected": {
-        "item": "garam masala",
+        "item": "garam masala powder or curry powder",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "powder or curry powder",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ to 1 teaspoon red chili powder (or paprika (reduce for less spicy))",
+      "raw": "½ to 1 teaspoon red chili powder or paprika (reduce for less spicy)",
       "expected": {
-        "item": "red chili powder",
+        "item": "red chili powder or paprika",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "or paprika (reduce for less spicy)",
+        "note": "reduce for less spicy",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon Turmeric ((haldi))",
+      "raw": "¼ teaspoon Turmeric (haldi)",
       "expected": {
         "item": "Turmeric",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2½ cups water for cooker ((3 cups for pot &amp;amp; 1¾ cups + 2 tbsp for Instapot))",
+      "raw": "2½ cups water for cooker (3 cups for pot & 1¾ cups + 2 tbsp for Instapot)",
       "expected": {
         "item": "water for cooker",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "3 tablespoon coriander leaves ((cilantro) finely chopped)",
+      "raw": "3 tablespoon coriander leaves (cilantro) finely chopped",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 tablespoon lemon juice ((optional))",
+      "raw": "1 tablespoon lemon juice (optional)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "12  whole cashewnuts ((split &amp;amp; use) (optional))",
+      "raw": "12 whole cashewnuts (split & use) (optional)",
       "expected": {
         "item": "whole cashewnuts",
         "measurements": [
@@ -199,21 +199,30 @@
       }
     },
     {
-      "raw": "1 small bay leaf (or curry leaves)",
+      "raw": "Whole spices (Omit if you don't have):",
       "expected": {
-        "item": "bay leaf",
+        "item": "Whole spices :",
+        "measurements": [],
+        "note": "Omit if you don't have",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 small bay leaf or curry leaves",
+      "expected": {
+        "item": "bay leaf or curry leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "or curry leaves",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¾ teaspoon cumin seeds ((jeera))",
+      "raw": "¾ teaspoon cumin seeds (jeera)",
       "expected": {
         "item": "cumin seeds",
         "measurements": [
@@ -227,7 +236,7 @@
       }
     },
     {
-      "raw": "1 inch cinnamon piece ((dalchini))",
+      "raw": "1 inch cinnamon piece (dalchini)",
       "expected": {
         "item": "inch cinnamon piece",
         "measurements": [
@@ -241,7 +250,7 @@
       }
     },
     {
-      "raw": "3  green cardamoms  ((elaichi))",
+      "raw": "3 green cardamoms  (elaichi)",
       "expected": {
         "item": "green cardamoms",
         "measurements": [
@@ -255,7 +264,7 @@
       }
     },
     {
-      "raw": "3  cloves ((laung) )",
+      "raw": "3 cloves (laung)",
       "expected": {
         "item": "laung",
         "measurements": [

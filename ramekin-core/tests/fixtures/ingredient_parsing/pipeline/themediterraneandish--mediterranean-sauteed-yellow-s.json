@@ -3,11 +3,11 @@
   "recipe_slug": "mediterranean-sauteed-yellow-s",
   "ingredients": [
     {
-      "raw": "Extra virgin olive oil (I used our Greek Early Harvest olive oil)",
+      "raw": "Extra virgin olive oil, I used our Greek Early Harvest olive oil",
       "expected": {
-        "item": "Extra virgin olive oil",
+        "item": "Extra virgin olive oil, I used our Greek Early Harvest olive oil",
         "measurements": [],
-        "note": "I used our Greek Early Harvest olive oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "Crumbled feta cheese (optional)",
+      "raw": "Crumbled feta cheese, optional",
       "expected": {
         "item": "Crumbled feta cheese",
         "measurements": [],
@@ -104,7 +104,7 @@
       }
     },
     {
-      "raw": "Handful chopped fresh parsley (optional)",
+      "raw": "Handful chopped fresh parsley, optional",
       "expected": {
         "item": "chopped fresh parsley",
         "measurements": [
@@ -118,9 +118,13 @@
       }
     },
     {
-      "raw": "1 tsp za&amp;#8217;atar, more for later",
+      "raw": "Spice Mixture:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tsp za'atar, more for later",
       "expected": {
-        "item": "za’atar",
+        "item": "za'atar",
         "measurements": [
           {
             "amount": "1",
@@ -128,25 +132,27 @@
           }
         ],
         "note": "more for later",
+        "section": "Spice Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3/4 tsp to 1 tsp Aleppo pepper (start with less if you&amp;#8217;re not sure)",
+      "raw": "3/4 tsp to 1 tsp Aleppo pepper, start with less if you're not sure",
       "expected": {
-        "item": "Aleppo pepper",
+        "item": "Aleppo pepper, start with less if you're not sure",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "start with less if you’re not sure",
+        "note": null,
+        "section": "Spice Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3/4 tsp ground cumin",
+      "raw": "3/4 tsp ground cumin,",
       "expected": {
         "item": "ground cumin",
         "measurements": [
@@ -156,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Spice Mixture",
         "category": "Spices & Seasonings"
       }
     }

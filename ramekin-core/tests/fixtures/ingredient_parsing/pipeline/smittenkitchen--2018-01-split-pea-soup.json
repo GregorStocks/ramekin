@@ -3,6 +3,10 @@
   "recipe_slug": "2018-01-split-pea-soup",
   "ingredients": [
     {
+      "raw": "For the soup:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons olive oil or 1 tablespoon olive oil and 1 tablespoon butter",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "or 1 tablespoon olive oil and 1 tablespoon butter",
+        "section": "For the Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "halved and sliced into ribbons",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "chopped small",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
         "item": "Salt and freshly black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": "cloves peeled and sliced thin",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": "rinsed and picked over",
+        "section": "For the Soup",
         "category": "Canned Goods"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Canned Goods"
       }
     },
@@ -120,6 +132,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Soup",
         "category": "Produce"
       }
     },
@@ -134,8 +147,13 @@
           }
         ],
         "note": null,
+        "section": "For the Soup",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To finish:",
+      "is_section_header": true
     },
     {
       "raw": "Fresh herb sauce (instructions up top)",
@@ -143,6 +161,7 @@
         "item": "Fresh herb sauce",
         "measurements": [],
         "note": "instructions up top",
+        "section": "To Finish",
         "category": "Other"
       }
     },
@@ -152,6 +171,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -166,6 +186,7 @@
           }
         ],
         "note": "obviously would no longer be vegetarian",
+        "section": "To Finish",
         "category": "Meat & Seafood"
       }
     },
@@ -175,6 +196,7 @@
         "item": "Garlicky or gruyere croutons",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Bakery & Bread"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "p-a-question-about-the-clover-",
   "ingredients": [
     {
+      "raw": "Raspberry Syrup:",
+      "is_section_header": true
+    },
+    {
       "raw": "40 grams raspberries (about 10 raspberries)",
       "expected": {
         "item": "raspberries",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "about 10 raspberries",
+        "section": "Raspberry Syrup",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Syrup",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Syrup",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Clover Club (Raspberry Liqueur):",
+      "is_section_header": true
     },
     {
       "raw": "½ ounce egg white",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Clover Club (Raspberry Liqueur)",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "2:1",
+        "section": "Clover Club (Raspberry Liqueur)",
         "category": "Other"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": "preferably Giffard",
+        "section": "Clover Club (Raspberry Liqueur)",
         "category": "Other"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Clover Club (Raspberry Liqueur)",
         "category": "Produce"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "preferably Tanqueray",
+        "section": "Clover Club (Raspberry Liqueur)",
         "category": "Beverages"
       }
     }

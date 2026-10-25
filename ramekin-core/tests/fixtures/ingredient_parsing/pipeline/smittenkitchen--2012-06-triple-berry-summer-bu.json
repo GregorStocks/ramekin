@@ -3,13 +3,8 @@
   "recipe_slug": "2012-06-triple-berry-summer-bu",
   "ingredients": [
     {
-      "raw": "Cake",
-      "expected": {
-        "item": "Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "2 1/2 cups (355 grams) plus 2 tablespoons (20 grams) all-purpose flour",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -84,6 +82,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -102,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -130,6 +131,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -162,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -180,11 +184,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
     },
     {
-      "raw": "Glaze",
+      "raw": "Glaze:",
       "is_section_header": true
     },
     {

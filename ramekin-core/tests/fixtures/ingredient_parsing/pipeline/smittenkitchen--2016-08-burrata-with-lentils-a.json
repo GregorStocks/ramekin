@@ -3,6 +3,10 @@
   "recipe_slug": "2016-08-burrata-with-lentils-a",
   "ingredients": [
     {
+      "raw": "Lentils:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups dried lentils de puy or other small green lentils",
       "expected": {
         "item": "dried lentils de puy or other small green lentils",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Lentils",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Lentils",
         "category": "Oils & Vinegars"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "about 6 ounces each, diced",
+        "section": "Lentils",
         "category": "Produce"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": "diced",
+        "section": "Lentils",
         "category": "Produce"
       }
     },
@@ -72,6 +80,7 @@
         "item": "Leaves from 3 fresh sprigs thyme",
         "measurements": [],
         "note": null,
+        "section": "Lentils",
         "category": "Other"
       }
     },
@@ -90,6 +99,7 @@
           }
         ],
         "note": "minced",
+        "section": "Lentils",
         "category": "Produce"
       }
     },
@@ -99,8 +109,13 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Lentils",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Basil vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 cups fresh basil leaves",
@@ -113,6 +128,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Vinaigrette",
         "category": "Produce"
       }
     },
@@ -127,6 +143,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Basil Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -141,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -155,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Basil Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -164,8 +183,13 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Basil Vinaigrette",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 large balls of burrata (or 4 smaller ones), at room temperature (see Note up top)",
@@ -178,6 +202,7 @@
           }
         ],
         "note": "at room temperature; or 4 smaller ones, see Note up top",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -187,6 +212,7 @@
         "item": "Sea salt and more black pepper",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -196,6 +222,7 @@
         "item": "A few small basil leaves",
         "measurements": [],
         "note": "for garnish",
+        "section": "Assembly",
         "category": "Other"
       }
     }

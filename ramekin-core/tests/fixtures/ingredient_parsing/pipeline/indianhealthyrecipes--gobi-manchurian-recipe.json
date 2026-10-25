@@ -3,9 +3,9 @@
   "recipe_slug": "gobi-manchurian-recipe",
   "ingredients": [
     {
-      "raw": "1 small head (500 grams)  cauliflower (/gobi (250 grams cleaned florets))",
+      "raw": "1 small head (500 grams) cauliflower /gobi (250 grams cleaned florets)",
       "expected": {
-        "item": "cauliflower",
+        "item": "cauliflower /gobi",
         "measurements": [
           {
             "amount": "1",
@@ -16,12 +16,12 @@
             "unit": "g"
           }
         ],
-        "note": "/gobi (250 grams cleaned florets)",
-        "category": "Produce"
+        "note": "250 grams cleaned florets",
+        "category": "Other"
       }
     },
     {
-      "raw": "Oil (for deep frying as needed)",
+      "raw": "Oil for deep frying as needed",
       "expected": {
         "item": "Oil",
         "measurements": [],
@@ -30,7 +30,11 @@
       }
     },
     {
-      "raw": "½ cup (65 grams)  all-purpose flour (( prefer organic or at least unbleached))",
+      "raw": "To Make Batter:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup (65 grams) all-purpose flour ( prefer organic or at least unbleached)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -44,11 +48,12 @@
           }
         ],
         "note": "prefer organic or at least unbleached",
+        "section": "To Make Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup (32 grams)  cornstarch ((white corn flour or yellow corn flour))",
+      "raw": "¼ cup (32 grams) cornstarch (white corn flour or yellow corn flour)",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -62,25 +67,27 @@
           }
         ],
         "note": "white corn flour or yellow corn flour",
+        "section": "To Make Batter",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ to 1 teaspoon Kashmiri red chili powder (or paste (less spicy variety) (optional))",
+      "raw": "½ to 1 teaspoon Kashmiri red chili powder or paste (less spicy variety) (optional)",
       "expected": {
-        "item": "Kashmiri red chili powder",
+        "item": "Kashmiri red chili powder or paste",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "or paste (less spicy variety) (optional)",
+        "note": "less spicy variety, optional",
+        "section": "To Make Batter",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon black pepper (crushed or ground)",
+      "raw": "¼ teaspoon black pepper crushed or ground",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -90,11 +97,12 @@
           }
         ],
         "note": "crushed or ground",
+        "section": "To Make Batter",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon salt ((adjust to taste))",
+      "raw": "¼ teaspoon salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -104,11 +112,12 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make Batter",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ cup water ((more if needed))",
+      "raw": "½ cup water (more if needed)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -118,11 +127,16 @@
           }
         ],
         "note": "more if needed",
+        "section": "To Make Batter",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1½ tablespoons oil ((for sauce))",
+      "raw": "To Make Gobi Manchurian Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ tablespoons oil (for sauce)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -132,11 +146,12 @@
           }
         ],
         "note": "for sauce",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon garlic (fine chopped)",
+      "raw": "1 tablespoon garlic fine chopped",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -146,11 +161,12 @@
           }
         ],
         "note": "fine chopped",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ tablespoon ginger (fine chopped)",
+      "raw": "½ tablespoon ginger fine chopped",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -160,11 +176,12 @@
           }
         ],
         "note": "fine chopped",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  green chili (chopped (optional))",
+      "raw": "1 green chili chopped (optional)",
       "expected": {
         "item": "green chili",
         "measurements": [
@@ -173,26 +190,28 @@
             "unit": null
           }
         ],
-        "note": "chopped (optional)",
+        "note": "optional, chopped",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "⅓ cup onions (or spring onions/ scallions fine chopped - green &amp;amp; white separated )",
+      "raw": "⅓ cup onions or spring onions/ scallions fine chopped – green & white separated",
       "expected": {
-        "item": "onions",
+        "item": "onions or spring onions/ scallions",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "or spring onions/ scallions fine chopped - green & white separated",
+        "note": "fine chopped - green & white separated",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup bell pepper  ((capsicum chopped fine) (optional))",
+      "raw": "¼ cup bell pepper  (capsicum chopped fine) (optional)",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -202,11 +221,12 @@
           }
         ],
         "note": "capsicum chopped fine, optional",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon soya sauce ((organic or naturally brewed)(or tamari))",
+      "raw": "1 tablespoon soya sauce (organic or naturally brewed)(or tamari)",
       "expected": {
         "item": "soya sauce",
         "measurements": [
@@ -216,11 +236,12 @@
           }
         ],
         "note": "organic or naturally brewed, or tamari",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 to 3 tablespoon Red Chilli sauce ((or 2 tbsps hot &amp;amp; sweet sauce, adjust to taste, maggi/chings brand))",
+      "raw": "2 to 3 tablespoon Red Chilli sauce (or 2 tbsps hot & sweet sauce, adjust to taste, maggi/chings brand)",
       "expected": {
         "item": "Red Chilli sauce",
         "measurements": [
@@ -230,11 +251,12 @@
           }
         ],
         "note": "or 2 tbsps hot & sweet sauce, adjust to taste, maggi/chings brand",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "1 to 2 tablespoon tomato ketchup ((optional, use if using hot sauce))",
+      "raw": "1 to 2 tablespoon tomato ketchup (optional, use if using hot sauce)",
       "expected": {
         "item": "tomato ketchup",
         "measurements": [
@@ -244,11 +266,12 @@
           }
         ],
         "note": "optional, use if using hot sauce",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½  teaspoon Kashmiri red chili powder  ((or paprika optional) )",
+      "raw": "½  teaspoon Kashmiri red chili powder  (or paprika optional)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -258,11 +281,12 @@
           }
         ],
         "note": "or paprika optional",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ tablespoon rice vinegar ((I used apple cider vinegar))",
+      "raw": "½ tablespoon rice vinegar (I used apple cider vinegar)",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -272,11 +296,12 @@
           }
         ],
         "note": "I used apple cider vinegar",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 teaspoon sugar ((adjust to taste))",
+      "raw": "1 teaspoon sugar (adjust to taste)",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -286,15 +311,17 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "salt (as needed)",
+      "raw": "salt as needed",
       "expected": {
         "item": "salt",
         "measurements": [],
         "note": "as needed",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -309,11 +336,12 @@
           }
         ],
         "note": null,
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "½ to ¾ teaspoon black pepper (crushed or ground)",
+      "raw": "½ to ¾ teaspoon black pepper crushed or ground",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -323,11 +351,12 @@
           }
         ],
         "note": "crushed or ground",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "⅛ teaspoon salt ((adjust to taste))",
+      "raw": "⅛ teaspoon salt (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -337,11 +366,12 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons spring onion greens (chopped for garnish)",
+      "raw": "2 tablespoons spring onion greens chopped for garnish",
       "expected": {
         "item": "spring onion greens",
         "measurements": [
@@ -350,7 +380,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped for garnish",
+        "note": "chopped, for garnish",
+        "section": "To Make Gobi Manchurian Sauce",
         "category": "Other"
       }
     }

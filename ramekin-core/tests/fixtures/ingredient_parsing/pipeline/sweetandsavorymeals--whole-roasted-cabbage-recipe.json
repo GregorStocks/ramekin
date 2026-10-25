@@ -3,7 +3,7 @@
   "recipe_slug": "whole-roasted-cabbage-recipe",
   "ingredients": [
     {
-      "raw": "1  large head green cabbage",
+      "raw": "1 large head green cabbage",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 tablespoon Worcestershire sauce (optional)",
+      "raw": "1 tablespoon Worcestershire sauce optional",
       "expected": {
         "item": "Worcestershire sauce",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "2  stalks celery (chopped)",
+      "raw": "2 stalks celery chopped",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -124,21 +124,21 @@
       }
     },
     {
-      "raw": "2  medium carrots (peeled and cut into large chunks)",
+      "raw": "2 medium carrots peeled and cut into large chunks",
       "expected": {
-        "item": "carrots",
+        "item": "carrots peeled and cut into large chunks",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "peeled and cut into large chunks",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2  yellow onion (cut into quarters)",
+      "raw": "1/2 yellow onion cut into quarters",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -208,7 +208,7 @@
       }
     },
     {
-      "raw": "1/2 cup low-sodium vegetable broth (divided)",
+      "raw": "1/2 cup low-sodium vegetable broth divided",
       "expected": {
         "item": "low-sodium vegetable broth",
         "measurements": [
@@ -222,7 +222,7 @@
       }
     },
     {
-      "raw": "1 tablespoon freshly chopped parsley (for garnish)",
+      "raw": "1 tablespoon freshly chopped parsley for garnish",
       "expected": {
         "item": "freshly chopped parsley",
         "measurements": [
@@ -236,6 +236,10 @@
       }
     },
     {
+      "raw": "Gravy:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 tablespoons butter",
       "expected": {
         "item": "butter",
@@ -246,11 +250,12 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2  onion (finely chopped)",
+      "raw": "1/2 onion finely chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -260,11 +265,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Gravy",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 oz. mushrooms (finely chopped)",
+      "raw": "4 oz. mushrooms finely chopped",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -274,6 +280,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -288,6 +295,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -302,6 +310,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -316,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Produce"
       }
     },
@@ -330,6 +340,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Baking"
       }
     },
@@ -344,6 +355,7 @@
           }
         ],
         "note": null,
+        "section": "Gravy",
         "category": "Canned Goods"
       }
     }

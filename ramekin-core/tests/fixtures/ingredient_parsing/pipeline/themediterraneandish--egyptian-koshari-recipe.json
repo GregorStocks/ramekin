@@ -3,6 +3,10 @@
   "recipe_slug": "egyptian-koshari-recipe",
   "ingredients": [
     {
+      "raw": "For the Crispy Onion Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 large onion, sliced into thin rings",
       "expected": {
         "item": "onion",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "sliced into thin rings",
+        "section": "For the Crispy Onion Topping",
         "category": "Produce"
       }
     },
@@ -22,6 +27,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
+        "section": "For the Crispy Onion Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Onion Topping",
         "category": "Baking"
       }
     },
@@ -50,8 +57,13 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Onion Topping",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For Tomato Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "Cooking oil",
@@ -59,6 +71,7 @@
         "item": "Cooking oil",
         "measurements": [],
         "note": null,
+        "section": "For Tomato Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -73,6 +86,7 @@
           }
         ],
         "note": "grated",
+        "section": "For Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -87,6 +101,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Tomato Sauce",
         "category": "Produce"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": "optional",
+        "section": "For Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For Tomato Sauce",
         "category": "Canned Goods"
       }
     },
@@ -138,6 +156,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For Tomato Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -152,8 +171,13 @@
           }
         ],
         "note": null,
+        "section": "For Tomato Sauce",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For Koshari:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cup brown lentils, picked over and well-rinsed",
@@ -166,6 +190,7 @@
           }
         ],
         "note": "picked over and well-rinsed",
+        "section": "For Koshari",
         "category": "Canned Goods"
       }
     },
@@ -180,6 +205,7 @@
           }
         ],
         "note": "drained",
+        "section": "For Koshari",
         "category": "Other"
       }
     },
@@ -194,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "For Koshari",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "For Koshari",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -223,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "For Koshari",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "For Koshari",
         "category": "Pasta & Rice"
       }
     },
@@ -246,6 +276,7 @@
         "item": "Cooking oil",
         "measurements": [],
         "note": null,
+        "section": "For Koshari",
         "category": "Oils & Vinegars"
       }
     },
@@ -255,6 +286,7 @@
         "item": "Water",
         "measurements": [],
         "note": null,
+        "section": "For Koshari",
         "category": "Beverages"
       }
     },
@@ -269,6 +301,7 @@
           }
         ],
         "note": "rinsed, drained and warmed",
+        "section": "For Koshari",
         "category": "Canned Goods"
       }
     }

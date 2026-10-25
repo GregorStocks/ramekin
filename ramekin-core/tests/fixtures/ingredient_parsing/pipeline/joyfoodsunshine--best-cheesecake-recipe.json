@@ -3,7 +3,11 @@
   "recipe_slug": "best-cheesecake-recipe",
   "ingredients": [
     {
-      "raw": "1 ½ cups graham cracker crumbs ((12 full sheets of grahams processed in the food processor until fine))",
+      "raw": "Graham Cracker Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ½ cups graham cracker crumbs (12 full sheets of grahams processed in the food processor until fine)",
       "expected": {
         "item": "graham cracker crumbs",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "12 full sheets of grahams processed in the food processor until fine",
+        "section": "Graham Cracker Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker Crust",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6 Tablespoons salted butter (melted)",
+      "raw": "6 Tablespoons salted butter melted",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -55,21 +62,27 @@
           }
         ],
         "note": "melted",
+        "section": "Graham Cracker Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "24 ounces cream cheese (room temperature)",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "24 ounces cream cheese room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese room temperature",
         "measurements": [
           {
             "amount": "24",
             "unit": "oz"
           }
         ],
-        "note": "room temperature",
-        "category": "Cheese"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -111,35 +126,38 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ cup sour cream (room temperature)",
+      "raw": "½ cup sour cream room temperature",
       "expected": {
-        "item": "sour cream",
+        "item": "sour cream room temperature",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "3  large eggs (room temperature)",
+      "raw": "3 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Filling",
+        "category": "Other"
       }
     },
     {
@@ -153,8 +171,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "Homemade whipped cream",
@@ -162,6 +185,7 @@
         "item": "Homemade whipped cream",
         "measurements": [],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     }

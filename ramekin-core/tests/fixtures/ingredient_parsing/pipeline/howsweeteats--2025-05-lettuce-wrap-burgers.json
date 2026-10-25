@@ -3,7 +3,7 @@
   "recipe_slug": "2025-05-lettuce-wrap-burgers",
   "ingredients": [
     {
-      "raw": "4  large sweet onions, (thinly sliced)",
+      "raw": "4 large sweet onions, thinly sliced",
       "expected": {
         "item": "sweet onions",
         "measurements": [
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "crumbled blue cheese, (for topping)",
+      "raw": "crumbled blue cheese, for topping",
       "expected": {
         "item": "crumbled blue cheese",
         "measurements": [],
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1  head iceberg lettuce, (leaves pulled off and washed)",
+      "raw": "1 head iceberg lettuce, leaves pulled off and washed",
       "expected": {
         "item": "iceberg lettuce",
         "measurements": [
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "2 to 3 tablespoons chopped fresh chives, (for topping)",
+      "raw": "2 to 3 tablespoons chopped fresh chives, for topping",
       "expected": {
         "item": "chopped fresh chives",
         "measurements": [
@@ -91,6 +91,10 @@
       }
     },
     {
+      "raw": "creamy honey mustard:",
+      "is_section_header": true
+    },
+    {
       "raw": "¼ cup mayonnaise",
       "expected": {
         "item": "mayonnaise",
@@ -101,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Honey Mustard",
         "category": "Condiments & Sauces"
       }
     },
@@ -115,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Honey Mustard",
         "category": "Baking"
       }
     },
@@ -129,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Creamy Honey Mustard",
         "category": "Condiments & Sauces"
       }
     }

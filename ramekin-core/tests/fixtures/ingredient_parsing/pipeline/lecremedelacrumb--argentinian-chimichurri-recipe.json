@@ -3,6 +3,10 @@
   "recipe_slug": "argentinian-chimichurri-recipe",
   "ingredients": [
     {
+      "raw": "Chimichurri Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup  cilantro",
       "expected": {
         "item": "cilantro",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "½  onion (diced)",
+      "raw": "½ onion, diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "diced",
+        "section": "Chimichurri Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon  salt (or to taste)",
+      "raw": "1 teaspoon  salt, or to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "or to taste",
+        "section": "Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon pepper (or to taste)",
+      "raw": "¼ teaspoon pepper, or to taste",
       "expected": {
         "item": "pepper",
         "measurements": [
@@ -69,6 +77,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,20 +137,22 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 tablespoons red wine vinegar  (or apple cider vinegar)",
+      "raw": "2 tablespoons red wine vinegar , or apple cider vinegar",
       "expected": {
-        "item": "red wine vinegar",
+        "item": "red wine vinegar, or apple cider vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or apple cider vinegar",
+        "note": null,
+        "section": "Chimichurri Sauce",
         "category": "Oils & Vinegars"
       }
     }

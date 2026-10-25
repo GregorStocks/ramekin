@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  whole English cucumber (, peeled &amp;amp; sliced)",
+      "raw": "1  whole English cucumber (, peeled & sliced)",
       "expected": {
         "item": "whole English cucumber",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "salt &amp;amp; pepper to taste",
+      "raw": "salt & pepper to taste",
       "expected": {
         "item": "salt & pepper",
         "measurements": [],

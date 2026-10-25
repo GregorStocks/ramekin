@@ -3,6 +3,10 @@
   "recipe_slug": "2024-08-napa-cabbage-wedge-wit",
   "ingredients": [
     {
+      "raw": "Assembly:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 to 1 1/2 pounds napa cabbage (often half of a large one)",
       "expected": {
         "item": "napa cabbage",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "often half of a large one",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -36,6 +42,7 @@
         "item": "Neutral oil",
         "measurements": [],
         "note": "for frying",
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": "diced small",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -73,8 +82,13 @@
         "item": "Toasted sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons white miso",
@@ -87,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": "plus extra to drizzle",
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -194,6 +216,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

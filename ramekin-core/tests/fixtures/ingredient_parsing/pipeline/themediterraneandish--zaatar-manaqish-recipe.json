@@ -3,6 +3,10 @@
   "recipe_slug": "zaatar-manaqish-recipe",
   "ingredients": [
     {
+      "raw": "For Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup lukewarm water",
       "expected": {
         "item": "lukewarm water",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Beverages"
       }
     },
@@ -27,35 +32,38 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 1/4 tsp active dry yeast (one package active dry yeast)",
+      "raw": "2 1/4 tsp active dry yeast one package active dry yeast",
       "expected": {
-        "item": "active dry yeast",
+        "item": "active dry yeast one package active dry yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
           }
         ],
-        "note": "one package active dry yeast",
-        "category": "Baking"
+        "note": null,
+        "section": "For Dough",
+        "category": "Other"
       }
     },
     {
-      "raw": "3 cups unbleached all-purpose flour (more for dusting)",
+      "raw": "3 cups unbleached all-purpose flour more for dusting",
       "expected": {
-        "item": "unbleached all-purpose flour",
+        "item": "unbleached all-purpose flour more",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "more for dusting",
-        "category": "Baking"
+        "note": "for dusting",
+        "section": "For Dough",
+        "category": "Other"
       }
     },
     {
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For Dough",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For Za'atar Topping:",
+      "is_section_header": true
     },
     {
       "raw": "7 to 8 tbsp quality Za'atar spice",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For Za'atar Topping",
         "category": "Other"
       }
     },
@@ -111,15 +126,17 @@
           }
         ],
         "note": null,
+        "section": "For Za'atar Topping",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Fresh garden vegetables (tomato, cucumbers, radish)",
+      "raw": "Fresh garden vegetables tomato, cucumbers, radish",
       "expected": {
-        "item": "Fresh garden vegetables",
+        "item": "Fresh garden vegetables tomato, cucumbers, radish",
         "measurements": [],
-        "note": "tomato, cucumbers, radish",
+        "note": null,
+        "section": "For Za'atar Topping",
         "category": "Other"
       }
     },
@@ -129,16 +146,18 @@
         "item": "Olives",
         "measurements": [],
         "note": null,
+        "section": "For Za'atar Topping",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "Homemade labneh or feta cheese (omit if vegan)",
+      "raw": "Homemade labneh or feta cheese omit if vegan",
       "expected": {
-        "item": "Homemade labneh or feta cheese",
+        "item": "Homemade labneh or feta cheese omit if vegan",
         "measurements": [],
-        "note": "omit if vegan",
-        "category": "Cheese"
+        "note": null,
+        "section": "For Za'atar Topping",
+        "category": "Other"
       }
     }
   ]

@@ -3,7 +3,7 @@
   "recipe_slug": "turkey-burger-recipe",
   "ingredients": [
     {
-      "raw": "1 pound Ground turkey (preferably dark meat or between 80-90% lean)",
+      "raw": "1 pound Ground turkey, preferably dark meat or between 80-90% lean",
       "expected": {
         "item": "Ground turkey",
         "measurements": [
@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "1 teaspoon Worcestershire sauce (or soy sauce)",
+      "raw": "1 teaspoon Worcestershire sauce, or soy sauce",
       "expected": {
-        "item": "Worcestershire sauce",
+        "item": "Worcestershire sauce, or soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or soy sauce",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
@@ -129,6 +129,10 @@
       }
     },
     {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
+    },
+    {
       "raw": "4 slices white cheddar cheese",
       "expected": {
         "item": "white cheddar cheese",
@@ -139,11 +143,12 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Cheese"
       }
     },
     {
-      "raw": "4  hamburger buns",
+      "raw": "4 hamburger buns",
       "expected": {
         "item": "hamburger buns",
         "measurements": [
@@ -153,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Bakery & Bread"
       }
     },
@@ -167,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -181,11 +188,12 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "4  green leaf lettuce leaves",
+      "raw": "4 green leaf lettuce leaves",
       "expected": {
         "item": "green leaf lettuce leaves",
         "measurements": [
@@ -195,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     },
@@ -204,6 +213,7 @@
         "item": "Mayonnaise",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +223,7 @@
         "item": "Pickles",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     }

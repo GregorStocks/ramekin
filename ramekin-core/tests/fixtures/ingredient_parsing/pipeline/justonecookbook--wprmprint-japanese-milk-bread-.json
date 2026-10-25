@@ -127,6 +127,10 @@
       }
     },
     {
+      "raw": "For Greasing:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ tsp neutral oil (for the bowl)",
       "expected": {
         "item": "neutral oil",
@@ -137,7 +141,7 @@
           }
         ],
         "note": "for the bowl",
-        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
+        "section": "For Greasing",
         "category": "Oils & Vinegars"
       }
     },
@@ -152,7 +156,7 @@
           }
         ],
         "note": "at room temperature; for the shokupan mold; or use cooking oil spray",
-        "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
+        "section": "For Greasing",
         "category": "Dairy & Eggs"
       }
     },

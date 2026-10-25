@@ -3,7 +3,11 @@
   "recipe_slug": "general-tsos-chickpeas-recipe",
   "ingredients": [
     {
-      "raw": "1 can chickpeas ((15 ounces))",
+      "raw": "For the Chickpeas and Vegetables:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 can chickpeas (15 ounces)",
       "expected": {
         "item": "chickpeas",
         "measurements": [
@@ -17,25 +21,27 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas and Vegetables",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 tablespoon canola oil (or grapeseed oil, or other neutral cooking oil good for high heat)",
+      "raw": "1 tablespoon canola oil or grapeseed oil, or other neutral cooking oil good for high heat",
       "expected": {
-        "item": "canola oil",
+        "item": "canola oil or grapeseed oil, or other neutral cooking oil good for high heat",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or grapeseed oil, or other neutral cooking oil good for high heat",
+        "note": null,
+        "section": "For the Chickpeas and Vegetables",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 large crown broccoli (cut into florets)",
+      "raw": "1 large crown broccoli cut into florets",
       "expected": {
         "item": "crown broccoli",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": "cut into florets",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  small red bell peppers (cored and sliced)",
+      "raw": "2 small red bell peppers cored and sliced",
       "expected": {
         "item": "red bell peppers",
         "measurements": [
@@ -59,11 +66,12 @@
           }
         ],
         "note": "cored and sliced",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "2&nbsp; cloves minced garlic",
+      "raw": "2  cloves minced garlic",
       "expected": {
         "item": "minced garlic",
         "measurements": [
@@ -73,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas and Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  green onions (thinly sliced, white and green parts divided)",
+      "raw": "2 green onions thinly sliced, white and green parts divided",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -87,29 +96,36 @@
           }
         ],
         "note": "thinly sliced, white and green parts divided",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "Toasted sesame seeds (optional for serving)",
+      "raw": "Toasted sesame seeds optional for serving",
       "expected": {
-        "item": "Toasted sesame seeds",
+        "item": "Toasted sesame seeds optional",
         "measurements": [],
-        "note": "optional for serving",
+        "note": "for serving",
+        "section": "For the Chickpeas and Vegetables",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Prepared brown rice",
+      "raw": "Prepared brown rice quinoa, sorghum, or other whole grain, for serving",
       "expected": {
-        "item": "Prepared brown rice",
+        "item": "Prepared brown rice quinoa, sorghum, or other whole grain",
         "measurements": [],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "for serving",
+        "section": "For the Chickpeas and Vegetables",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 1/2 cups water",
+      "raw": "For the General Tso’s Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ½ cups water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -119,11 +135,12 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 cup low sodium soy sauce ((or tamari for gluten free))",
+      "raw": "½ cup low sodium soy sauce (or tamari for gluten free)",
       "expected": {
         "item": "low sodium soy sauce",
         "measurements": [
@@ -133,11 +150,12 @@
           }
         ],
         "note": "or tamari for gluten free",
+        "section": "For the General Tso’s Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/4&nbsp; cup&nbsp; hoisin sauce",
+      "raw": "1/4  cup  hoisin sauce",
       "expected": {
         "item": "hoisin sauce",
         "measurements": [
@@ -147,11 +165,12 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3 tablespoons&nbsp; apricot jam",
+      "raw": "3 tablespoons  apricot jam",
       "expected": {
         "item": "apricot jam",
         "measurements": [
@@ -161,11 +180,12 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2&nbsp; tablespoons rice vinegar",
+      "raw": "2  tablespoons rice vinegar",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -175,11 +195,12 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2&nbsp; tablespoons cornstarch",
+      "raw": "2  tablespoons cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -189,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Baking"
       }
     },
@@ -203,11 +225,12 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1-2 tablespoons&nbsp; chili garlic sauce",
+      "raw": "1-2 tablespoons  chili garlic sauce",
       "expected": {
         "item": "chili garlic sauce",
         "measurements": [
@@ -217,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "For the General Tso’s Sauce",
         "category": "Condiments & Sauces"
       }
     }

@@ -3,21 +3,26 @@
   "recipe_slug": "authentic-japanese-yakisoba-re",
   "ingredients": [
     {
-      "raw": "140 g thinly sliced pork belly (leaner option: pork loin)",
+      "raw": "Yakisoba:",
+      "is_section_header": true
+    },
+    {
+      "raw": "140 g thinly sliced pork belly leaner option: pork loin",
       "expected": {
-        "item": "thinly sliced pork belly",
+        "item": "thinly sliced pork belly leaner option: pork loin",
         "measurements": [
           {
             "amount": "140",
             "unit": "g"
           }
         ],
-        "note": "leaner option: pork loin",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Yakisoba",
+        "category": "Other"
       }
     },
     {
-      "raw": "¼  onion (thinly sliced)",
+      "raw": "¼ onion thinly sliced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Yakisoba",
         "category": "Produce"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "50 g green cabbage (roughly chopped)",
+      "raw": "50 g green cabbage roughly chopped",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Yakisoba",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba",
         "category": "Other"
       }
     },
@@ -83,35 +92,43 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "red pickled ginger (benishoga) (optional topping)",
+      "raw": "red pickled ginger (benishoga) optional topping",
       "expected": {
-        "item": "red pickled ginger",
+        "item": "red pickled ginger optional topping",
         "measurements": [],
-        "note": "benishoga, optional topping",
-        "category": "Condiments & Sauces"
+        "note": "benishoga",
+        "section": "Yakisoba",
+        "category": "Other"
       }
     },
     {
-      "raw": "bonito flakes (katsuobushi) (optional topping)",
+      "raw": "bonito flakes (katsuobushi) optional topping",
       "expected": {
-        "item": "bonito flakes",
+        "item": "bonito flakes optional topping",
         "measurements": [],
-        "note": "katsuobushi, optional topping",
-        "category": "Spices & Seasonings"
+        "note": "katsuobushi",
+        "section": "Yakisoba",
+        "category": "Other"
       }
     },
     {
-      "raw": "aonori (dried green seaweed powder) (optional topping)",
+      "raw": "aonori (dried green seaweed powder) optional topping",
       "expected": {
-        "item": "aonori",
+        "item": "aonori optional topping",
         "measurements": [],
-        "note": "dried green seaweed powder, optional topping",
-        "category": "Spices & Seasonings"
+        "note": "dried green seaweed powder",
+        "section": "Yakisoba",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Yakisoba Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
@@ -124,6 +141,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -152,20 +171,22 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ tbsp sake (or white wine)",
+      "raw": "½ tbsp sake or white wine",
       "expected": {
-        "item": "sake",
+        "item": "sake or white wine",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "or white wine",
+        "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Beverages"
       }
     },
@@ -180,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -194,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -208,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Baking"
       }
     },
@@ -222,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Yakisoba Sauce",
         "category": "Spices & Seasonings"
       }
     }

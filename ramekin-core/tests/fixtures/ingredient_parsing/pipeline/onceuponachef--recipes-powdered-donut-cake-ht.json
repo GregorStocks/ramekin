@@ -147,6 +147,10 @@
       }
     },
     {
+      "raw": "For Topping:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
@@ -157,6 +161,7 @@
           }
         ],
         "note": "melted",
+        "section": "For Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Baking"
       }
     }

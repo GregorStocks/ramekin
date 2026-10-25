@@ -31,13 +31,13 @@
       }
     },
     {
-      "raw": "1 stalk celery, finely chopped",
+      "raw": "1 rib celery, finely chopped",
       "expected": {
-        "item": "celery",
+        "item": "rib celery",
         "measurements": [
           {
             "amount": "1",
-            "unit": "stalk"
+            "unit": null
           }
         ],
         "note": "finely chopped",
@@ -73,23 +73,23 @@
       }
     },
     {
-      "raw": "1-2 teaspoons dried tarragon (or 1-2 tablespoons fresh chopped tarragon)",
+      "raw": "1 to 2 teaspoons dried tarragon or 1 to 2 tablespoons chopped fresh tarragon",
       "expected": {
         "item": "dried tarragon",
         "measurements": [
           {
-            "amount": "1-2",
+            "amount": "1 to 2",
             "unit": "tsp"
           }
         ],
-        "note": "or 1-2 tablespoons fresh chopped tarragon",
+        "note": "or 1 to 2 tablespoons chopped fresh tarragon",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Salt and pepper to taste",
+      "raw": "Kosher salt and freshly ground black pepper to taste",
       "expected": {
-        "item": "Salt and pepper",
+        "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"

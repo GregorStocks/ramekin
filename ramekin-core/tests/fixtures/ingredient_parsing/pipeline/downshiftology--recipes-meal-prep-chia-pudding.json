@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-meal-prep-chia-pudding",
   "ingredients": [
     {
+      "raw": "Basic Chia Pudding:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tbsp chia seeds",
       "expected": {
         "item": "chia seeds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Basic Chia Pudding",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Basic Chia Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "optional",
+        "section": "Basic Chia Pudding",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": "optional",
+        "section": "Basic Chia Pudding",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Chocolate Chia Pudding:",
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp chia seeds",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Chia Pudding",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Optional Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "Berries",
@@ -134,6 +155,7 @@
         "item": "Berries",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -143,6 +165,7 @@
         "item": "Mango",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -152,6 +175,7 @@
         "item": "Pineapple",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -161,6 +185,7 @@
         "item": "Peaches",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -170,6 +195,7 @@
         "item": "Nectarines",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -179,6 +205,7 @@
         "item": "Apricots",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -188,6 +215,7 @@
         "item": "Kiwi",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -197,6 +225,7 @@
         "item": "Cherries",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -206,6 +235,7 @@
         "item": "Oranges",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -215,6 +245,7 @@
         "item": "Fruit Purées",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     },
@@ -224,6 +255,7 @@
         "item": "Nut Butters",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -233,6 +265,7 @@
         "item": "Dried Fruit",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -242,6 +275,7 @@
         "item": "Cacao Nibs",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Baking"
       }
     },
@@ -251,6 +285,7 @@
         "item": "Spices",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,6 +295,7 @@
         "item": "Shredded Coconut",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -269,6 +305,7 @@
         "item": "Candied Ginger",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Snacks"
       }
     },
@@ -278,6 +315,7 @@
         "item": "Nuts and Seeds",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     }

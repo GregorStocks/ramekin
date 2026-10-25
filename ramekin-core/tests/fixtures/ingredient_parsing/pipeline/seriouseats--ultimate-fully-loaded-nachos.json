@@ -31,9 +31,9 @@
       }
     },
     {
-      "raw": "1 1/2 cups Nacho Cheese Sauce (1 full recipe), flavored with 2 minced pickled jalapeños as per the recipe note",
+      "raw": "1 1/2 cups nacho cheese sauce (1 full recipe), flavored with 2 minced pickled jalapeños as per the recipe note",
       "expected": {
-        "item": "Nacho Cheese Sauce",
+        "item": "nacho cheese sauce",
         "measurements": [
           {
             "amount": "1.5",
@@ -59,9 +59,9 @@
       }
     },
     {
-      "raw": "1/2 cup sliced pickled jalapeños",
+      "raw": "1/2 cup sliced pickled jalapenos",
       "expected": {
-        "item": "sliced pickled jalapeños",
+        "item": "sliced pickled jalapenos",
         "measurements": [
           {
             "amount": "0.5",
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/2 cup cooked black beans from one (15-ounce) can, drained and rinsed",
+      "raw": "1/2 cup cooked black beans from 1 (15-ounce) can, drained and rinsed",
       "expected": {
         "item": "cooked black beans",
         "measurements": [
@@ -82,7 +82,7 @@
             "unit": "cup"
           }
         ],
-        "note": "15-ounce, from one can, drained and rinsed",
+        "note": "15-ounce, from 1 can, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -185,9 +185,9 @@
       }
     },
     {
-      "raw": "1/2 recipe The Best Basic Guacamole",
+      "raw": "1/2 recipe the best basic guacamole",
       "expected": {
-        "item": "recipe The Best Basic Guacamole",
+        "item": "recipe the best basic guacamole",
         "measurements": [
           {
             "amount": "0.5",

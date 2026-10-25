@@ -3,7 +3,11 @@
   "recipe_slug": "lemon-bars-recipe",
   "ingredients": [
     {
-      "raw": "1 &amp;amp; 1/4  cups (155g) all-purpose flour",
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 & 1/4  cups   (155g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (60g) powdered sugar",
+      "raw": "1/2 cup   (60g) powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tbsp cornstarch",
+      "raw": "1 Tbsp   cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
@@ -49,11 +55,12 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (114g) unsalted butter (softened)",
+      "raw": "1/2 cup   (114g) unsalted butter, softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -67,11 +74,16 @@
           }
         ],
         "note": "softened",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3  large eggs",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -81,11 +93,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 &amp;amp; 1/2 cups (300g) granulated sugar",
+      "raw": "1 & 1/2 cups   (300g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -99,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -113,11 +127,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup (125ml) fresh lemon juice ((about 2 lemons))",
+      "raw": "1/2 cup   (125ml) fresh lemon juice, (about 2 lemons)",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -131,11 +146,12 @@
           }
         ],
         "note": "about 2 lemons",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup (62g) all-purpose flour",
+      "raw": "1/2 cup   (62g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -158,6 +175,7 @@
         "item": "powdered sugar",
         "measurements": [],
         "note": "for dusting",
+        "section": "Filling",
         "category": "Baking"
       }
     }

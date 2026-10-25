@@ -3,6 +3,10 @@
   "recipe_slug": "no-bake-smores-cheesecake-bars",
   "ingredients": [
     {
+      "raw": "Graham Cracker Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups graham cracker crumbs",
       "expected": {
         "item": "graham cracker crumbs",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker Crust",
         "category": "Snacks"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker Crust",
         "category": "Baking"
       }
     },
@@ -41,11 +47,16 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "24 oz cream cheese (softened)",
+      "raw": "Marshmallow Cheesecake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "24 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -55,6 +66,7 @@
           }
         ],
         "note": "softened",
+        "section": "Marshmallow Cheesecake",
         "category": "Cheese"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Marshmallow Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Marshmallow Cheesecake",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Marshmallow Cheesecake",
         "category": "Baking"
       }
     },
@@ -111,21 +126,27 @@
           }
         ],
         "note": null,
+        "section": "Marshmallow Cheesecake",
         "category": "Baking"
       }
     },
     {
-      "raw": "9.3 oz milk chocolate bars (6 - 1.55 oz bars)",
+      "raw": "Milk Chocolate Ganache:",
+      "is_section_header": true
+    },
+    {
+      "raw": "9.3 oz milk chocolate bars 6 - 1.55 oz bars",
       "expected": {
-        "item": "milk chocolate bars",
+        "item": "milk chocolate bars 6 - 1.55 oz bars",
         "measurements": [
           {
             "amount": "9.3",
             "unit": "oz"
           }
         ],
-        "note": "6 - 1.55 oz bars",
-        "category": "Snacks"
+        "note": null,
+        "section": "Milk Chocolate Ganache",
+        "category": "Other"
       }
     },
     {
@@ -139,8 +160,13 @@
           }
         ],
         "note": null,
+        "section": "Milk Chocolate Ganache",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups miniature marshmallows",
@@ -153,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

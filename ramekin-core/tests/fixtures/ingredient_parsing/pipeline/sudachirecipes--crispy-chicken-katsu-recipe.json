@@ -3,6 +3,10 @@
   "recipe_slug": "crispy-chicken-katsu-recipe",
   "ingredients": [
     {
+      "raw": "Katsu Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tbsp toasted white sesame seeds",
       "expected": {
         "item": "toasted white sesame seeds",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Katsu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Baking"
       }
     },
@@ -83,39 +92,41 @@
           }
         ],
         "note": null,
+        "section": "Katsu Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "600 g boneless chicken thigh (skin-on (or chicken breast))",
+      "raw": "Chicken Katsu:",
+      "is_section_header": true
+    },
+    {
+      "raw": "600 g boneless chicken thigh skin-on (or chicken breast)",
       "expected": {
-        "item": "boneless chicken thigh",
+        "item": "boneless chicken thigh skin-on",
         "measurements": [
           {
             "amount": "600",
             "unit": "g"
           }
         ],
-        "note": "skin-on (or chicken breast)",
+        "note": "or chicken breast",
+        "section": "Chicken Katsu",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 pinch salt and pepper",
+      "raw": "salt and pepper",
       "expected": {
         "item": "salt and pepper",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "pinch"
-          }
-        ],
+        "measurements": [],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "45 g all-purpose flour (for coating)",
+      "raw": "45 g all-purpose flour for coating",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -125,13 +136,14 @@
           }
         ],
         "note": "for coating",
+        "section": "Chicken Katsu",
         "category": "Baking"
       }
     },
     {
-      "raw": "100 g panko breadcrumbs",
+      "raw": "100 g panko breadcrumbs coarse flakes or coarse homemade crumbs",
       "expected": {
-        "item": "panko breadcrumbs",
+        "item": "panko breadcrumbs coarse flakes or coarse homemade crumbs",
         "measurements": [
           {
             "amount": "100",
@@ -139,7 +151,8 @@
           }
         ],
         "note": null,
-        "category": "Bakery & Bread"
+        "section": "Chicken Katsu",
+        "category": "Other"
       }
     },
     {
@@ -153,11 +166,12 @@
           }
         ],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2  egg",
+      "raw": "2 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -167,29 +181,32 @@
           }
         ],
         "note": null,
+        "section": "Chicken Katsu",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "100 g all-purpose flour (for the batter)",
+      "raw": "100 g all-purpose flour for the batter",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour for the batter",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": "for the batter",
-        "category": "Baking"
+        "note": null,
+        "section": "Chicken Katsu",
+        "category": "Other"
       }
     },
     {
-      "raw": "cooking oil (for deep frying)",
+      "raw": "cooking oil neutral, high smoke point",
       "expected": {
-        "item": "cooking oil",
+        "item": "cooking oil neutral, high smoke point",
         "measurements": [],
-        "note": "for deep frying",
+        "note": null,
+        "section": "Chicken Katsu",
         "category": "Oils & Vinegars"
       }
     }

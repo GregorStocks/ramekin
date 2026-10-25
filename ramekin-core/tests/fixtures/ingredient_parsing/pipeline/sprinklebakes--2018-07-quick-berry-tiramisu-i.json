@@ -3,16 +3,21 @@
   "recipe_slug": "2018-07-quick-berry-tiramisu-i",
   "ingredients": [
     {
-      "raw": "12 ounces fresh strawberries (or frozen, thawed)",
+      "raw": "Strawberry Puree:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 ounces fresh strawberries or frozen, thawed",
       "expected": {
-        "item": "fresh strawberries",
+        "item": "fresh strawberries or frozen",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "or frozen, thawed",
+        "note": "thawed",
+        "section": "Strawberry Puree",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Puree",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Strawberry Puree",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Whipped mascarpone cream:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy whipping cream",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Mascarpone Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "Whipped Mascarpone Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 ounces mascarpone cheese (softened)",
+      "raw": "3 ounces mascarpone cheese softened",
       "expected": {
         "item": "mascarpone cheese",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": "softened",
+        "section": "Whipped Mascarpone Cream",
         "category": "Cheese"
       }
     },
@@ -97,11 +111,16 @@
           }
         ],
         "note": null,
+        "section": "Whipped Mascarpone Cream",
         "category": "Beverages"
       }
     },
     {
-      "raw": "12  crisp lady fingers (chopped into 1-inch pieces)",
+      "raw": "Assembly:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 crisp lady fingers chopped into 1-inch pieces",
       "expected": {
         "item": "crisp lady fingers",
         "measurements": [
@@ -111,6 +130,7 @@
           }
         ],
         "note": "chopped into 1-inch pieces",
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -125,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
     {
-      "raw": "12  fresh mint leaves",
+      "raw": "12 fresh mint leaves",
       "expected": {
         "item": "fresh mint leaves",
         "measurements": [
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2025-08-sheet-pan-shrimp",
   "ingredients": [
     {
+      "raw": "cilantro lime dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons freshly squeezed lime juice",
       "expected": {
         "item": "freshly squeezed lime juice",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  garlic cloves (minced or pressed)",
+      "raw": "2 garlic cloves minced or pressed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced or pressed",
+        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -64,6 +72,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,20 +102,26 @@
           }
         ],
         "note": null,
+        "section": "Cilantro Lime Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 pound peeled and deveined raw jumbo shrimp (thawed if frozen)",
+      "raw": "shrimp and veg:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound peeled and deveined raw jumbo shrimp thawed if frozen",
       "expected": {
-        "item": "peeled and deveined raw jumbo shrimp",
+        "item": "peeled and deveined raw jumbo shrimp thawed if frozen",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "thawed if frozen",
+        "note": null,
+        "section": "Shrimp and Veg",
         "category": "Other"
       }
     },
@@ -120,21 +136,23 @@
           }
         ],
         "note": null,
+        "section": "Shrimp and Veg",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  ears of corn (kernels cut from the cob)",
+      "raw": "3 ears of corn kernels cut from the cob",
       "expected": {
-        "item": "corn",
+        "item": "corn kernels cut from the cob",
         "measurements": [
           {
             "amount": "3",
             "unit": "ear"
           }
         ],
-        "note": "kernels cut from the cob",
-        "category": "Produce"
+        "note": null,
+        "section": "Shrimp and Veg",
+        "category": "Other"
       }
     },
     {
@@ -148,15 +166,17 @@
           }
         ],
         "note": null,
+        "section": "Shrimp and Veg",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "jasmine rice (for serving)",
+      "raw": "jasmine rice for serving",
       "expected": {
         "item": "jasmine rice",
         "measurements": [],
         "note": "for serving",
+        "section": "Shrimp and Veg",
         "category": "Pasta & Rice"
       }
     }

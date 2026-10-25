@@ -107,7 +107,7 @@
       }
     },
     {
-      "raw": "1 large egg, lightly beaten",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -116,7 +116,7 @@
             "unit": "large"
           }
         ],
-        "note": "lightly beaten",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -157,11 +157,16 @@
       }
     },
     {
+      "raw": "For Serving (Optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "Sour cream",
       "expected": {
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +176,7 @@
         "item": "Shredded cheddar cheese",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Cheese"
       }
     },
@@ -180,6 +186,7 @@
         "item": "Cooked bacon",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Meat & Seafood"
       }
     },
@@ -189,6 +196,7 @@
         "item": "Fried eggs",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Dairy & Eggs"
       }
     }

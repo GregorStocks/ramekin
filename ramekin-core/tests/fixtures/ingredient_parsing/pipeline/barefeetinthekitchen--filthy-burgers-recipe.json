@@ -3,7 +3,7 @@
   "recipe_slug": "filthy-burgers-recipe",
   "ingredients": [
     {
-      "raw": "2 pound&nbsp; bacon (&nbsp;cooked until crisp, crumbled or chopped small)",
+      "raw": "2 pound  bacon ( cooked until crisp, crumbled or chopped small)",
       "expected": {
         "item": "bacon",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 cups cooked&nbsp;barbecue pulled pork (roughly chopped)",
+      "raw": "2 cups cooked barbecue pulled pork (roughly chopped)",
       "expected": {
         "item": "cooked barbecue pulled pork",
         "measurements": [
@@ -72,15 +72,6 @@
       }
     },
     {
-      "raw": "&nbsp;",
-      "expected": {
-        "item": "&nbsp;",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
       "raw": "For serving:",
       "is_section_header": true
     },
@@ -95,7 +86,7 @@
       }
     },
     {
-      "raw": "favorite&nbsp;barbecue sauce",
+      "raw": "favorite barbecue sauce",
       "expected": {
         "item": "favorite barbecue sauce",
         "measurements": [],

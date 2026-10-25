@@ -3,6 +3,10 @@
   "recipe_slug": "chicken-parmesan-recipe",
   "ingredients": [
     {
+      "raw": "For the Homemade Marinara Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoon olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Homemade Marinara Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 large yellow onion (minced)",
+      "raw": "1 large yellow onion, minced",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves garlic (minced)",
+      "raw": "3 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ teaspoon crushed red pepper flakes (plus more to taste)",
+      "raw": "½ teaspoon crushed red pepper flakes, plus more to taste",
       "expected": {
         "item": "crushed red pepper flakes",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Homemade Marinara Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 (28-ounce) can whole tomatoes (with juice)",
+      "raw": "1 (28-ounce) can whole tomatoes, with juice",
       "expected": {
         "item": "whole tomatoes",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": "28-ounce, with juice",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "6  fresh basil leaves (plus more to taste)",
+      "raw": "6 fresh basil leaves, plus more to taste",
       "expected": {
         "item": "fresh basil leaves",
         "measurements": [
@@ -97,11 +107,16 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Homemade Marinara Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1½ pounds chicken breasts (or 3 large chicken breasts)",
+      "raw": "For the Chicken Parmesan:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ pounds chicken breasts, or 3 large chicken breasts",
       "expected": {
         "item": "chicken breasts",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": "or 3 large chicken breasts",
+        "section": "For the Chicken Parmesan",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1½ teaspoon salt (divided 3 ways)",
+      "raw": "1½ teaspoon salt, divided 3 ways",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": "divided 3 ways",
+        "section": "For the Chicken Parmesan",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1½ teaspoon black pepper (divided 3 ways)",
+      "raw": "1½ teaspoon black pepper, divided 3 ways",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -139,15 +156,22 @@
           }
         ],
         "note": "divided 3 ways",
+        "section": "For the Chicken Parmesan",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "vegetable oil (like canola oil; for frying (approximately 1-2 cups))",
+      "raw": "vegetable oil, like canola oil; for frying (approximately 1-2 cups)",
       "expected": {
         "item": "vegetable oil",
-        "measurements": [],
-        "note": "like canola oil; for frying (approximately 1-2 cups)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "cup"
+          }
+        ],
+        "note": "approximately 1-2 cups, like canola oil; for frying",
+        "section": "For the Chicken Parmesan",
         "category": "Oils & Vinegars"
       }
     },
@@ -162,11 +186,12 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Parmesan",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 large eggs (plus ¼ cup water, whisked)",
+      "raw": "2 large eggs, plus ¼ cup water, whisked",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -176,6 +201,7 @@
           }
         ],
         "note": "plus 1/4 cup water, whisked",
+        "section": "For the Chicken Parmesan",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,11 +216,12 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken Parmesan",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup parmesan cheese (freshly grated, divided)",
+      "raw": "1 cup parmesan cheese, freshly grated, divided",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [
@@ -204,11 +231,12 @@
           }
         ],
         "note": "freshly grated, divided",
+        "section": "For the Chicken Parmesan",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 cup mozzarella cheese (freshly shredded, plus more if desired)",
+      "raw": "1 cup mozzarella cheese, freshly shredded, plus more if desired",
       "expected": {
         "item": "mozzarella cheese",
         "measurements": [
@@ -218,15 +246,17 @@
           }
         ],
         "note": "freshly shredded, plus more if desired",
+        "section": "For the Chicken Parmesan",
         "category": "Cheese"
       }
     },
     {
-      "raw": "fresh basil (for garnish)",
+      "raw": "fresh basil, for garnish",
       "expected": {
         "item": "fresh basil",
         "measurements": [],
         "note": "for garnish",
+        "section": "For the Chicken Parmesan",
         "category": "Produce"
       }
     }

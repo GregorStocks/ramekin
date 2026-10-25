@@ -3,7 +3,7 @@
   "recipe_slug": "magical-mystery-tour-pizza-rec",
   "ingredients": [
     {
-      "raw": "2  naan flatbreads",
+      "raw": "2 naan flatbreads",
       "expected": {
         "item": "naan flatbreads",
         "measurements": [
@@ -17,21 +17,21 @@
       }
     },
     {
-      "raw": "1/4 cup pesto (homemade or store bought)",
+      "raw": "¼ cup pesto homemade or store bought",
       "expected": {
-        "item": "pesto",
+        "item": "pesto homemade or store bought",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "homemade or store bought",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup grated mozzarella cheese",
+      "raw": "½ cup grated mozzarella cheese",
       "expected": {
         "item": "grated mozzarella cheese",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/4 cup crumbled feta",
+      "raw": "¼ cup crumbled feta",
       "expected": {
         "item": "crumbled feta",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/4 cup grated Parmesan",
+      "raw": "¼ cup grated Parmesan",
       "expected": {
         "item": "grated Parmesan",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/4 cup sliced pickled Jalapeño peppers",
+      "raw": "¼ cup sliced pickled Jalapeño peppers",
       "expected": {
         "item": "sliced pickled Jalapeño peppers",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1  large portobello cap (sliced)",
+      "raw": "1 large portobello cap sliced",
       "expected": {
         "item": "portobello cap",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "2  button mushrooms (sliced)",
+      "raw": "2 button mushrooms sliced",
       "expected": {
         "item": "button mushrooms",
         "measurements": [
@@ -115,11 +115,16 @@
       }
     },
     {
+      "raw": "OPTIONAL TOPPINGS:",
+      "is_section_header": true
+    },
+    {
       "raw": "crushed red pepper flakes",
       "expected": {
         "item": "crushed red pepper flakes",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +134,7 @@
         "item": "Sriracha chili sauce",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,6 +144,7 @@
         "item": "extra Pesto",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     },
@@ -147,6 +154,7 @@
         "item": "fresh parsley",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

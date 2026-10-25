@@ -3,7 +3,11 @@
   "recipe_slug": "pad-see-ew-recipe",
   "ingredients": [
     {
-      "raw": "150 grams dry wide rice noodles ((or 350 grams fresh, sen yai))",
+      "raw": "for stir-fry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "150 grams  dry wide rice noodles (or 350 grams fresh, sen yai)",
       "expected": {
         "item": "dry wide rice noodles",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "or 350 grams fresh, sen yai",
+        "section": "For Stir-Fry",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "2 tablespoons vegetable oil",
+      "raw": "2 tablespoons  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "12 grams garlic ((2 large cloves finely chopped))",
+      "raw": "12 grams  garlic (2 large cloves finely chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "2 large cloves finely chopped",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
@@ -55,25 +62,31 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "100 grams gailan (or other green vegetable, such as broccoli florets or Chinese broccoli)",
+      "raw": "100 grams  gailan or other green vegetable, such as broccoli florets or Chinese broccoli",
       "expected": {
-        "item": "gailan",
+        "item": "gailan or other green vegetable",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": "or other green vegetable, such as broccoli florets or Chinese broccoli",
+        "note": "such as broccoli florets or Chinese broccoli",
+        "section": "For Stir-Fry",
         "category": "Other"
       }
     },
     {
-      "raw": "200 grams chicken ((thinly sliced))",
+      "raw": "for chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "200 grams  chicken (thinly sliced)",
       "expected": {
         "item": "chicken",
         "measurements": [
@@ -83,11 +96,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 teaspoon soy sauce",
+      "raw": "1 teaspoon  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon potato starch",
+      "raw": "1 teaspoon  potato starch",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -111,11 +126,16 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon Thai dark soy sauce",
+      "raw": "pad see ew sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon  Thai dark soy sauce",
       "expected": {
         "item": "Thai dark soy sauce",
         "measurements": [
@@ -125,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "Pad See Ew Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon oyster sauce",
+      "raw": "1 tablespoon  oyster sauce",
       "expected": {
         "item": "oyster sauce",
         "measurements": [
@@ -139,11 +160,12 @@
           }
         ],
         "note": null,
+        "section": "Pad See Ew Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 teaspoons evaporated cane sugar",
+      "raw": "2 teaspoons  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -153,11 +175,12 @@
           }
         ],
         "note": null,
+        "section": "Pad See Ew Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/8 teaspoon ground white pepper",
+      "raw": "⅛ teaspoon  ground white pepper",
       "expected": {
         "item": "ground white pepper",
         "measurements": [
@@ -167,8 +190,13 @@
           }
         ],
         "note": null,
+        "section": "Pad See Ew Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "to serve:",
+      "is_section_header": true
     },
     {
       "raw": "pickled chili peppers",
@@ -176,6 +204,7 @@
         "item": "pickled chili peppers",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
     }

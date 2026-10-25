@@ -3,7 +3,11 @@
   "recipe_slug": "easy-garlic-flatbread-recipe",
   "ingredients": [
     {
-      "raw": "3 cups plain flour (plus extra for dusting)",
+      "raw": "FLATBREADS:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cups plain flour plus extra for dusting",
       "expected": {
         "item": "plain flour",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "plus extra for dusting",
+        "section": "Flatbreads",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Flatbreads",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Flatbreads",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon garlic powder (optional)",
+      "raw": "1 teaspoon garlic powder optional",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -55,39 +62,42 @@
           }
         ],
         "note": "optional",
+        "section": "Flatbreads",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3/4 cup plain Greek yogurt (or natural plain yogurt)",
+      "raw": "3/4 cup plain Greek yogurt or natural plain yogurt",
       "expected": {
-        "item": "plain Greek yogurt",
+        "item": "plain Greek yogurt or natural plain yogurt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "or natural plain yogurt",
+        "note": null,
+        "section": "Flatbreads",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup vegetable oil (or olive oil,  plus extra for cooking)",
+      "raw": "1/4 cup vegetable oil or olive oil,  plus extra for cooking",
       "expected": {
-        "item": "vegetable oil",
+        "item": "vegetable oil or olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or olive oil,  plus extra for cooking",
+        "note": "plus extra for cooking",
+        "section": "Flatbreads",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3/4 cup milk (divided)",
+      "raw": "3/4 cup milk divided",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": "divided",
+        "section": "Flatbreads",
         "category": "Dairy & Eggs"
       }
     }

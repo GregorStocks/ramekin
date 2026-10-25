@@ -3,13 +3,8 @@
   "recipe_slug": "2013-12-linzer-torte",
   "ingredients": [
     {
-      "raw": "Base and lattice",
-      "expected": {
-        "item": "Base and lattice",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Base and lattice:",
+      "is_section_header": true
     },
     {
       "raw": "4 1/2 cups (1 pound or 455 grams) shelled walnuts",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Base and Lattice",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Base and Lattice",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Base and Lattice",
         "category": "Spices & Seasonings"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": "I halved this, using only 1/4 teaspoon",
+        "section": "Base and Lattice",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": "Heatter says 1/4, I really prefer this with 1/2",
+        "section": "Base and Lattice",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": "cut into chunks",
+        "section": "Base and Lattice",
         "category": "Dairy & Eggs"
       }
     },
@@ -130,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Base and Lattice",
         "category": "Baking"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": "plus 1 egg yolk",
+        "section": "Base and Lattice",
         "category": "Dairy & Eggs"
       }
     },
@@ -158,11 +161,12 @@
           }
         ],
         "note": "finely grated",
+        "section": "Base and Lattice",
         "category": "Produce"
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {
@@ -204,7 +208,7 @@
       }
     },
     {
-      "raw": "To finish",
+      "raw": "To finish:",
       "is_section_header": true
     },
     {

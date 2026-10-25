@@ -3,7 +3,11 @@
   "recipe_slug": "thai-basil-chicken-pad-krapow-",
   "ingredients": [
     {
-      "raw": "20 grams holy basil",
+      "raw": "For Basil Chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "20 grams  holy basil",
       "expected": {
         "item": "holy basil",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Basil Chicken",
         "category": "Other"
       }
     },
     {
-      "raw": "250 grams boneless skin-on chicken thighs ((2-3 large thighs))",
+      "raw": "250 grams  boneless skin-on chicken thighs (2-3 large thighs)",
       "expected": {
         "item": "boneless skin-on chicken thighs",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "2-3 large thighs",
+        "section": "For Basil Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tablespoon oyster sauce",
+      "raw": "1 tablespoon  oyster sauce",
       "expected": {
         "item": "oyster sauce",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Basil Chicken",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon dark soy sauce",
+      "raw": "1 teaspoon  dark soy sauce",
       "expected": {
         "item": "dark soy sauce",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For Basil Chicken",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon evaporated cane sugar",
+      "raw": "1 teaspoon  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For Basil Chicken",
         "category": "Baking"
       }
     },
     {
-      "raw": "9 grams garlic ((2 medium cloves, roughly chopped))",
+      "raw": "9 grams  garlic (2 medium cloves, roughly chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": "2 medium cloves, roughly chopped",
+        "section": "For Basil Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "5 grams chili peppers ((to taste, roughly chopped))",
+      "raw": "5 grams  chili peppers (to taste, roughly chopped)",
       "expected": {
         "item": "chili peppers",
         "measurements": [
@@ -97,11 +107,16 @@
           }
         ],
         "note": "to taste, roughly chopped",
+        "section": "For Basil Chicken",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon vegetable oil",
+      "raw": "For Thai Fried Egg:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For Thai Fried Egg",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 large egg",
+      "raw": "1 large  egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For Thai Fried Egg",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-5863-spicy-mexican-shr",
   "ingredients": [
     {
+      "raw": "Tinga:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds boneless pork butt , trimmed of excess fat and cut into 1-inch pieces (see note)",
       "expected": {
         "item": "boneless pork butt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "see note, trimmed of excess fat and cut into 1-inch pieces",
+        "section": "Tinga",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "1 quartered and 1 chopped fine",
+        "section": "Tinga",
         "category": "Produce"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": "about 2 teaspoons, 3 peeled and smashed and 2 minced or pressed through garlic press",
+        "section": "Tinga",
         "category": "Produce"
       }
     },
@@ -59,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Tinga",
         "category": "Produce"
       }
     },
@@ -68,6 +76,7 @@
         "item": "table salt",
         "measurements": [],
         "note": null,
+        "section": "Tinga",
         "category": "Spices & Seasonings"
       }
     },
@@ -82,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Tinga",
         "category": "Oils & Vinegars"
       }
     },
@@ -96,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Tinga",
         "category": "Spices & Seasonings"
       }
     },
@@ -110,6 +121,7 @@
           }
         ],
         "note": "14.5-ounce",
+        "section": "Tinga",
         "category": "Canned Goods"
       }
     },
@@ -124,6 +136,7 @@
           }
         ],
         "note": "see note",
+        "section": "Tinga",
         "category": "Spices & Seasonings"
       }
     },
@@ -138,8 +151,13 @@
           }
         ],
         "note": null,
+        "section": "Tinga",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Tostadas:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup vegetable oil",
@@ -152,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "Tostadas",
         "category": "Oils & Vinegars"
       }
     },
@@ -166,6 +185,7 @@
           }
         ],
         "note": "6-inch, see note",
+        "section": "Tostadas",
         "category": "Bakery & Bread"
       }
     },
@@ -175,8 +195,13 @@
         "item": "table salt",
         "measurements": [],
         "note": null,
+        "section": "Tostadas",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Garnishes:",
+      "is_section_header": true
     },
     {
       "raw": "queso fresco  or feta cheese",
@@ -184,6 +209,7 @@
         "item": "queso fresco or feta cheese",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Cheese"
       }
     },
@@ -193,6 +219,7 @@
         "item": "fresh cilantro leaves",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -202,6 +229,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Dairy & Eggs"
       }
     },
@@ -211,6 +239,7 @@
         "item": "Diced avocado",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -220,6 +249,7 @@
         "item": "Lime wedge",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     }

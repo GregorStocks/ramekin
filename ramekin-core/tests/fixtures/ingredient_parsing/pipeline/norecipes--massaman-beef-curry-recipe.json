@@ -3,7 +3,11 @@
   "recipe_slug": "massaman-beef-curry-recipe",
   "ingredients": [
     {
-      "raw": "25 grams dried guajillo chiles ((4 chilies))",
+      "raw": "Massaman Curry Paste:",
+      "is_section_header": true
+    },
+    {
+      "raw": "25 grams  dried guajillo chiles (4 chilies)",
       "expected": {
         "item": "dried guajillo chiles",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "4 chilies",
+        "section": "Massaman Curry Paste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1.5 grams allspice ((1/2 teaspoon))",
+      "raw": "1.5 grams  allspice (½ teaspoon)",
       "expected": {
         "item": "allspice",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "Massaman Curry Paste",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "18 grams lemongrass ((1 stalk, finely chopped))",
+      "raw": "18 grams  lemongrass (1 stalk, finely chopped)",
       "expected": {
         "item": "lemongrass",
         "measurements": [
@@ -49,11 +55,12 @@
           }
         ],
         "note": "1 stalk, finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
     {
-      "raw": "18 grams galangal ((1-inch piece, finely chopped))",
+      "raw": "18 grams  galangal (1-inch piece, finely chopped)",
       "expected": {
         "item": "galangal",
         "measurements": [
@@ -67,11 +74,12 @@
           }
         ],
         "note": "1-inch piece, finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
     {
-      "raw": "1.3 grams kaffir lime leaves ((4 leaves, finely chopped))",
+      "raw": "1.3 grams  kaffir lime leaves (4 leaves, finely chopped)",
       "expected": {
         "item": "kaffir lime leaves",
         "measurements": [
@@ -85,11 +93,12 @@
           }
         ],
         "note": "4 leaves, finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
     {
-      "raw": "15 grams garlic ((2 very large cloves, finely chopped))",
+      "raw": "15 grams  garlic (2 very large cloves, finely chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -99,11 +108,12 @@
           }
         ],
         "note": "2 very large cloves, finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
     {
-      "raw": "50 grams shallot ((peeled and finely chopped))",
+      "raw": "50 grams  shallot (peeled and finely chopped)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -113,11 +123,12 @@
           }
         ],
         "note": "peeled and finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Produce"
       }
     },
     {
-      "raw": "5 grams coriander roots ((3 roots cleaned and finely chopped))",
+      "raw": "5 grams  coriander roots (3 roots cleaned and finely chopped)",
       "expected": {
         "item": "coriander roots",
         "measurements": [
@@ -127,11 +138,16 @@
           }
         ],
         "note": "3 roots cleaned and finely chopped",
+        "section": "Massaman Curry Paste",
         "category": "Other"
       }
     },
     {
-      "raw": "25 grams tamarind pulp ((about 1 tablespoon))",
+      "raw": "For curry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "25 grams  tamarind pulp (about 1 tablespoon)",
       "expected": {
         "item": "tamarind pulp",
         "measurements": [
@@ -145,11 +161,12 @@
           }
         ],
         "note": "about 1 tablespoon",
+        "section": "For Curry",
         "category": "Other"
       }
     },
     {
-      "raw": "1/3 cup boiling water",
+      "raw": "⅓ cup  boiling water",
       "expected": {
         "item": "boiling water",
         "measurements": [
@@ -159,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Beverages"
       }
     },
@@ -173,11 +191,12 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 pods star anise",
+      "raw": "2 pods  star anise",
       "expected": {
         "item": "pods star anise",
         "measurements": [
@@ -187,11 +206,12 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 pods green cardamom",
+      "raw": "4 pods  green cardamom",
       "expected": {
         "item": "pods green cardamom",
         "measurements": [
@@ -201,11 +221,12 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6 whole cloves",
+      "raw": "6 whole  cloves",
       "expected": {
         "item": "whole cloves",
         "measurements": [
@@ -215,11 +236,12 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tablespoon vegetable oil",
+      "raw": "1 tablespoon  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -229,11 +251,12 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "580 grams beef chuck ((cut into 1.5-inch cubes))",
+      "raw": "580 grams  beef chuck (cut into 1.5-inch cubes)",
       "expected": {
         "item": "beef chuck",
         "measurements": [
@@ -243,11 +266,12 @@
           }
         ],
         "note": "cut into 1.5-inch cubes",
+        "section": "For Curry",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 can coconut milk ((13.5 ounce can))",
+      "raw": "1 can  coconut milk (13.5 ounce can)",
       "expected": {
         "item": "coconut milk",
         "measurements": [
@@ -257,11 +281,12 @@
           }
         ],
         "note": "13.5 ounce can",
+        "section": "For Curry",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 cups vegetable stock",
+      "raw": "2 cups  vegetable stock",
       "expected": {
         "item": "vegetable stock",
         "measurements": [
@@ -271,11 +296,12 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 tablespoons fish sauce",
+      "raw": "2 tablespoons  fish sauce",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -285,11 +311,12 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "45 grams coconut sugar ((~2 tablespoons))",
+      "raw": "45 grams  coconut sugar (~2 tablespoons)",
       "expected": {
         "item": "coconut sugar",
         "measurements": [
@@ -303,11 +330,12 @@
           }
         ],
         "note": "~2 tablespoons",
+        "section": "For Curry",
         "category": "Baking"
       }
     },
     {
-      "raw": "70 grams roasted peanuts ((~1/2 cup))",
+      "raw": "70 grams  roasted peanuts (~½ cup)",
       "expected": {
         "item": "roasted peanuts",
         "measurements": [
@@ -321,11 +349,12 @@
           }
         ],
         "note": "~1/2 cup",
+        "section": "For Curry",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "90 grams shallots",
+      "raw": "90 grams  shallots",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -335,11 +364,12 @@
           }
         ],
         "note": null,
+        "section": "For Curry",
         "category": "Produce"
       }
     },
     {
-      "raw": "400 grams small potatoes ((scrubbed))",
+      "raw": "400 grams  small potatoes (scrubbed)",
       "expected": {
         "item": "small potatoes",
         "measurements": [
@@ -349,6 +379,7 @@
           }
         ],
         "note": "scrubbed",
+        "section": "For Curry",
         "category": "Produce"
       }
     }

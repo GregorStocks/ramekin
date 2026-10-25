@@ -3,6 +3,10 @@
   "recipe_slug": "chocolate-cheesecake-recipe",
   "ingredients": [
     {
+      "raw": "Oreo Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "10 ounces oreo cookies",
       "expected": {
         "item": "oreo cookies",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Oreo Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "6 tablespoons butter (melted)",
+      "raw": "6 tablespoons butter melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -27,11 +32,16 @@
           }
         ],
         "note": "melted",
+        "section": "Oreo Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "10 ounces bittersweet chocolate (melted)",
+      "raw": "Cheesecake Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "10 ounces bittersweet chocolate melted",
       "expected": {
         "item": "bittersweet chocolate",
         "measurements": [
@@ -41,6 +51,7 @@
           }
         ],
         "note": "melted",
+        "section": "Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": "8 ounce packages",
+        "section": "Cheesecake Filling",
         "category": "Cheese"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Baking"
       }
     },
@@ -97,11 +111,16 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 ounces semisweet chocolate (chopped)",
+      "raw": "Chocolate Ganache:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 ounces semisweet chocolate chopped",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
@@ -111,6 +130,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Ganache",
         "category": "Baking"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Ganache",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2016-03-greek-yogurt-meyer-lem",
   "ingredients": [
     {
+      "raw": "For Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/2 cups (6 1/4 ounces) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -133,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,6 +160,7 @@
           }
         ],
         "note": "from 2-3 lemons",
+        "section": "For Cake",
         "category": "Produce"
       }
     },
@@ -161,6 +175,7 @@
           }
         ],
         "note": "from 1 lemon",
+        "section": "For Cake",
         "category": "Produce"
       }
     },
@@ -175,8 +190,13 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups powdered sugar",
@@ -189,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -203,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Produce"
       }
     },
@@ -217,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Produce"
       }
     },
@@ -231,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,6 +269,7 @@
           }
         ],
         "note": "omit if using salted butter",
+        "section": "For Glaze",
         "category": "Spices & Seasonings"
       }
     }

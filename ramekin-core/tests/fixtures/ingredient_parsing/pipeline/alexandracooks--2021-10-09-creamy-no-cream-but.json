@@ -3,7 +3,11 @@
   "recipe_slug": "2021-10-09-creamy-no-cream-but",
   "ingredients": [
     {
-      "raw": "1 3/4 pounds Yukon Gold potatoes, peeled and cut into 2-inch chunks (you’ll have about 1 1/2 pounds of potatoes post peeling)&nbsp;",
+      "raw": "For the buttermilk mashed potatoes:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 3/4 pounds Yukon Gold potatoes, peeled and cut into 2-inch chunks (you’ll have about 1 1/2 pounds of potatoes post peeling)",
       "expected": {
         "item": "Yukon Gold potatoes",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "you’ll have about 1 1/2 pounds of potatoes post peeling, peeled and cut into 2-inch chunks",
+        "section": "For the Buttermilk Mashed Potatoes",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Buttermilk Mashed Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "room temperature, see notes above",
+        "section": "For the Buttermilk Mashed Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Buttermilk Mashed Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -64,6 +72,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Buttermilk Mashed Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,8 +82,13 @@
         "item": "Flaky sea salt",
         "measurements": [],
         "note": "if you have it",
+        "section": "For the Buttermilk Mashed Potatoes",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the herby garnish (see notes above before making):",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons olive oil",
@@ -87,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For the Herby Garnish (See Notes Above Before Making)",
         "category": "Oils & Vinegars"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Herby Garnish (See Notes Above Before Making)",
         "category": "Produce"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Herby Garnish (See Notes Above Before Making)",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Herby Garnish (See Notes Above Before Making)",
         "category": "Produce"
       }
     }

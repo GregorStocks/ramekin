@@ -97,6 +97,10 @@
       }
     },
     {
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup heavy or whipping cream",
       "expected": {
         "item": "heavy or whipping cream",
@@ -107,7 +111,7 @@
           }
         ],
         "note": null,
-        "section": "Cake Layer",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,7 +126,7 @@
           }
         ],
         "note": "use more if you prefer a sweeter filling",
-        "section": "Cake Layer",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -137,7 +141,7 @@
           }
         ],
         "note": "or 1 to 2 tablespoons liqueur of your choice; such as Grand Marnier",
-        "section": "Cake Layer",
+        "section": "Filling",
         "category": "Baking"
       }
     }

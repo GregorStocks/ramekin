@@ -3,7 +3,7 @@
   "recipe_slug": "pepper-steak-recipe",
   "ingredients": [
     {
-      "raw": "12 ounces flank steak ((or London boil or chuck roast))",
+      "raw": "12 ounces flank steak (or London boil or chuck roast)",
       "expected": {
         "item": "flank steak",
         "measurements": [
@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "For the rest of the dish:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup low-sodium chicken stock",
       "expected": {
         "item": "low-sodium chicken stock",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Canned Goods"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Baking"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Beverages"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Baking"
       }
     },
@@ -209,11 +220,12 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/8 teaspoon white pepper ((or to taste))",
+      "raw": "1/8 teaspoon white pepper (or to taste)",
       "expected": {
         "item": "white pepper",
         "measurements": [
@@ -223,6 +235,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "For the Rest of the Dish",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -251,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -265,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
@@ -279,11 +295,12 @@
           }
         ],
         "note": null,
+        "section": "For the Rest of the Dish",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/2 teaspoon ginger ((minced, optional))",
+      "raw": "1/2 teaspoon ginger (minced, optional)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -293,11 +310,12 @@
           }
         ],
         "note": "minced, optional",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cloves garlic ((chopped))",
+      "raw": "2 cloves garlic (chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -307,6 +325,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Rest of the Dish",
         "category": "Produce"
       }
     }

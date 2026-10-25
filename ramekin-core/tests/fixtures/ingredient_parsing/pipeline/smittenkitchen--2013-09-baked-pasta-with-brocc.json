@@ -3,7 +3,7 @@
   "recipe_slug": "2013-09-baked-pasta-with-brocc",
   "ingredients": [
     {
-      "raw": "Pasta and assembly",
+      "raw": "Pasta and assembly:",
       "is_section_header": true
     },
     {
@@ -82,14 +82,8 @@
       }
     },
     {
-      "raw": "Bechamel",
-      "expected": {
-        "item": "Bechamel",
-        "measurements": [],
-        "note": null,
-        "section": "Pasta and Assembly",
-        "category": "Other"
-      }
+      "raw": "Bechamel:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups milk, full fat is ideal",
@@ -102,7 +96,7 @@
           }
         ],
         "note": null,
-        "section": "Pasta and Assembly",
+        "section": "Bechamel",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,7 +111,7 @@
           }
         ],
         "note": null,
-        "section": "Pasta and Assembly",
+        "section": "Bechamel",
         "category": "Dairy & Eggs"
       }
     },
@@ -132,7 +126,7 @@
           }
         ],
         "note": null,
-        "section": "Pasta and Assembly",
+        "section": "Bechamel",
         "category": "Baking"
       }
     },
@@ -147,7 +141,7 @@
           }
         ],
         "note": null,
-        "section": "Pasta and Assembly",
+        "section": "Bechamel",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,7 +151,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Pasta and Assembly",
+        "section": "Bechamel",
         "category": "Spices & Seasonings"
       }
     },
@@ -172,7 +166,7 @@
           }
         ],
         "note": "minced",
-        "section": "Pasta and Assembly",
+        "section": "Bechamel",
         "category": "Produce"
       }
     },
@@ -182,7 +176,7 @@
         "item": "Few gratings fresh nutmeg",
         "measurements": [],
         "note": null,
-        "section": "Pasta and Assembly",
+        "section": "Bechamel",
         "category": "Spices & Seasonings"
       }
     }

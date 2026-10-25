@@ -3,81 +3,111 @@
   "recipe_slug": "asian-crispy-chicken-wings-rec",
   "ingredients": [
     {
-      "raw": "2 pounds chicken wings (, rinsed and patted dry)",
+      "raw": "Chicken Wings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 pounds  (907 g) chicken wings , rinsed and patted dry",
       "expected": {
         "item": "chicken wings",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
           }
         ],
         "note": "rinsed and patted dry",
+        "section": "Chicken Wings",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "salt (, to taste)",
+      "raw": "salt , to taste",
       "expected": {
         "item": "salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Chicken Wings",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "black pepper  (, to taste)",
+      "raw": "black pepper  , to taste",
       "expected": {
         "item": "black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Chicken Wings",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 Tablespoon cornstarch",
+      "raw": "Sweet-Spicy Chili Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 Tablespoon  (15 ml) cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tablespoon water",
+      "raw": "1 Tablespoon  (15 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 Tablespoon oil",
+      "raw": "1 Tablespoon  (15 ml) oil",
       "expected": {
         "item": "oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 cloves garlic (, finely minced)",
+      "raw": "2 cloves   garlic , finely minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,90 +117,121 @@
           }
         ],
         "note": "finely minced",
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup water",
+      "raw": "1 cup  (240 ml) water",
       "expected": {
         "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 Tablespoons sugar",
+      "raw": "2 Tablespoons  (30 ml) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon salt",
+      "raw": "1/2 teaspoon  (2.5 ml) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 Tablespoons fish sauce ( or soy sauce (We highly recommend fish sauce))",
+      "raw": "2 Tablespoons  (30 ml) fish sauce  or soy sauce (We highly recommend fish sauce)",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce or soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
-        "note": "or soy sauce (We highly recommend fish sauce)",
+        "note": "We highly recommend fish sauce",
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3 Tablespoons garlic chili sauce",
+      "raw": "3 Tablespoons  (45 ml) garlic chili sauce , tabasco sauce, or sriracha sauce. OR about 2 finely minced thai chilis. Use a little less of these if you want it more mild, or use more if you want it extra spicy!",
       "expected": {
-        "item": "garlic chili sauce",
+        "item": "garlic chili sauce, tabasco sauce, or sriracha sauce. OR about 2 finely minced thai chilis. Use a little less of these if you want it more mild, or use more if you want it extra spicy!",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
           }
         ],
         "note": null,
-        "category": "Other"
+        "section": "Sweet-Spicy Chili Sauce",
+        "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 Tablespoon vinegar",
+      "raw": "1 Tablespoon  (15 ml) vinegar",
       "expected": {
         "item": "vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -180,6 +241,7 @@
         "item": "lots of fresh ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Sweet-Spicy Chili Sauce",
         "category": "Other"
       }
     }

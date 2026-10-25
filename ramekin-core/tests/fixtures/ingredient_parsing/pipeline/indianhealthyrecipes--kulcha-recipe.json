@@ -3,7 +3,11 @@
   "recipe_slug": "kulcha-recipe",
   "ingredients": [
     {
-      "raw": "2¼ cups (280 grams)  organic all-purpose flour   ((or 1¼ cup whole wheat flour + 1 cup all-purpose flour))",
+      "raw": "To make the dough:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2¼ cups (280 grams) organic all-purpose flour   (or 1¼ cup whole wheat flour + 1 cup all-purpose flour)",
       "expected": {
         "item": "organic all-purpose flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": "or 1 1/4 cup whole wheat flour + 1 cup all-purpose flour",
+        "section": "To Make the Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup (120 ml)  plain yogurt  ((curd, at room temperature))",
+      "raw": "½ cup (120 ml) plain yogurt  (curd, at room temperature)",
       "expected": {
         "item": "plain yogurt",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": "curd, at room temperature",
+        "section": "To Make the Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¼ cup (60 ml)  warm milk  ((+ more as required))",
+      "raw": "¼ cup (60 ml) warm milk  (+ more as required)",
       "expected": {
         "item": "warm milk",
         "measurements": [
@@ -53,11 +59,12 @@
           }
         ],
         "note": "+ more as required",
+        "section": "To Make the Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons (30 ml)  oil or melted butter",
+      "raw": "2 tablespoons (30 ml) oil or melted butter",
       "expected": {
         "item": "oil or melted butter",
         "measurements": [
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Dough",
         "category": "Oils & Vinegars"
       }
     },
@@ -85,11 +93,12 @@
           }
         ],
         "note": null,
+        "section": "To Make the Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ to ¾ teaspoon sea salt  ((adjust to taste))",
+      "raw": "½ to ¾ teaspoon sea salt  (adjust to taste)",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -99,6 +108,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make the Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,11 +123,12 @@
           }
         ],
         "note": null,
+        "section": "To Make the Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon baking powder  ((or ½ tsp baking powder + ½ tsp instant yeast, read notes))",
+      "raw": "1 teaspoon baking powder  (or ½ tsp baking powder + ½ tsp instant yeast, read notes)",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -127,8 +138,13 @@
           }
         ],
         "note": "or 1/2 tsp baking powder + 1/2 tsp instant yeast, read notes",
+        "section": "To Make the Dough",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "To make the filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon ghee or oil",
@@ -141,11 +157,12 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "200 grams potato ((2 medium, boiled &amp;amp; grated))",
+      "raw": "200 grams potato (2 medium, boiled & grated)",
       "expected": {
         "item": "potato",
         "measurements": [
@@ -159,11 +176,12 @@
           }
         ],
         "note": "2 medium, boiled & grated",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "200 grams paneer ((grated or crumbled))",
+      "raw": "200 grams paneer (grated or crumbled)",
       "expected": {
         "item": "paneer",
         "measurements": [
@@ -173,11 +191,12 @@
           }
         ],
         "note": "grated or crumbled",
+        "section": "To Make the Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "¼ cup (1 small)  onion ( fine chopped)",
+      "raw": "¼ cup (1 small) onion  fine chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -191,11 +210,12 @@
           }
         ],
         "note": "fine chopped",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup (1 medium carrot)  carrot ( grated)",
+      "raw": "¼ cup (1 medium carrot) carrot  grated",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -205,11 +225,12 @@
           }
         ],
         "note": "1 medium carrot, grated",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  green chilies ( (fine chopped, omit for kids))",
+      "raw": "2 green chilies  (fine chopped, omit for kids)",
       "expected": {
         "item": "green chilies",
         "measurements": [
@@ -218,26 +239,28 @@
             "unit": null
           }
         ],
-        "note": "(fine chopped, omit for kids)",
+        "note": "fine chopped, omit for kids",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon ginger  (grated or ginger garlic paste)",
+      "raw": "1 teaspoon ginger  grated or ginger garlic paste",
       "expected": {
-        "item": "ginger",
+        "item": "ginger grated or ginger garlic paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "grated or ginger garlic paste",
+        "note": null,
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon white sesame seeds ((optional + 1 teaspoon kalonji/ onion seeds))",
+      "raw": "1 teaspoon white sesame seeds (optional + 1 teaspoon kalonji/ onion seeds)",
       "expected": {
         "item": "white sesame seeds",
         "measurements": [
@@ -247,6 +270,7 @@
           }
         ],
         "note": "optional + 1 teaspoon kalonji/ onion seeds",
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -261,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -275,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -289,11 +315,12 @@
           }
         ],
         "note": null,
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ to ½ teaspoon garam masala  ((omit if you don’t like))",
+      "raw": "¼ to ½ teaspoon garam masala  (omit if you don’t like)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -303,11 +330,12 @@
           }
         ],
         "note": "omit if you don’t like",
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "⅓ teaspoon sea salt  ((adjust to taste))",
+      "raw": "⅓ teaspoon sea salt  (adjust to taste)",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -317,25 +345,27 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Make the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon amchur (- dry mango powder or chaat masala (optional))",
+      "raw": "½ teaspoon amchur – dry mango powder or chaat masala (optional)",
       "expected": {
-        "item": "amchur",
+        "item": "amchur - dry mango powder or chaat masala",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "- dry mango powder or chaat masala (optional)",
-        "category": "Spices & Seasonings"
+        "note": "optional",
+        "section": "To Make the Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "4 tablespoons coriander leaves  (fine chopped (divided 2+ 2))",
+      "raw": "4 tablespoons coriander leaves  fine chopped (divided 2+ 2)",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -344,12 +374,17 @@
             "unit": "tbsp"
           }
         ],
-        "note": "fine chopped (divided 2+ 2)",
+        "note": "divided 2+ 2, fine chopped",
+        "section": "To Make the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 to 3 tablespoons butter  (softened or melted)",
+      "raw": "To toast:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 to 3 tablespoons butter  softened or melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -359,6 +394,7 @@
           }
         ],
         "note": "softened or melted",
+        "section": "To Toast",
         "category": "Dairy & Eggs"
       }
     }

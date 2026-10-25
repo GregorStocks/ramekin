@@ -3,6 +3,10 @@
   "recipe_slug": "meatloaf-recipe",
   "ingredients": [
     {
+      "raw": "Meatloaf:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds ground beef",
       "expected": {
         "item": "ground beef",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "¼ cup bread crumbs ((1 slice of bread made into bread crumbs))",
+      "raw": "¼ cup bread crumbs (1 slice of bread made into bread crumbs)",
       "expected": {
         "item": "bread crumbs",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "1 slice of bread made into bread crumbs",
+        "section": "Meatloaf",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "½ cup onion (finely diced)",
+      "raw": "½ cup onion finely diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "finely diced",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "½ cup ketchup",
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Condiments & Sauces"
       }
     }

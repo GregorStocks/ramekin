@@ -166,7 +166,11 @@
       }
     },
     {
-      "raw": "3/4 lb&nbsp; to 1 lb of cooked pasta of your choice",
+      "raw": "To Serve:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3/4 lb  to 1 lb of cooked pasta of your choice",
       "expected": {
         "item": "cooked pasta of your choice",
         "measurements": [
@@ -176,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
     }

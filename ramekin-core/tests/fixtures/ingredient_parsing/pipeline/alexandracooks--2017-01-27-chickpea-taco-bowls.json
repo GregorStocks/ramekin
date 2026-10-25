@@ -3,6 +3,10 @@
   "recipe_slug": "2017-01-27-chickpea-taco-bowls",
   "ingredients": [
     {
+      "raw": "For cooking the chickpeas:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound dried chickpeas, see notes above",
       "expected": {
         "item": "dried chickpeas",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For Cooking the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "For Cooking the Chickpeas",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the chickpea taco bowls:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons oil, grapeseed or olive",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpea Taco Bowls",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpea Taco Bowls",
         "category": "Produce"
       }
     },
@@ -64,6 +76,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Chickpea Taco Bowls",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +91,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Chickpea Taco Bowls",
         "category": "Produce"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Chickpea Taco Bowls",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpea Taco Bowls",
         "category": "Spices & Seasonings"
       }
     },
@@ -120,6 +136,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Chickpea Taco Bowls",
         "category": "Canned Goods"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": "or other",
+        "section": "For the Chickpea Taco Bowls",
         "category": "Oils & Vinegars"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": "from above, or two 15-oz cans, drained and rinsed",
+        "section": "For the Chickpea Taco Bowls",
         "category": "Canned Goods"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": "for juicing, plus more for serving",
+        "section": "For the Chickpea Taco Bowls",
         "category": "Produce"
       }
     },
@@ -171,6 +191,7 @@
         "item": "For serving: grated cheese, sour cream, finely shredded romaine lettuce, diced avocado, quick-pickled onions",
         "measurements": [],
         "note": "see notes above",
+        "section": "For the Chickpea Taco Bowls",
         "category": "Other"
       }
     }

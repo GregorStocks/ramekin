@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "½ cup Greek yogurt (plain)",
       "expected": {
         "item": "Greek yogurt",
@@ -27,6 +31,7 @@
           }
         ],
         "note": "plain",
+        "section": "Marinade",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -55,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +91,7 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -97,6 +106,7 @@
           }
         ],
         "note": "ground",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +121,7 @@
           }
         ],
         "note": "dried",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,6 +136,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +151,7 @@
           }
         ],
         "note": "ground",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +166,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,11 +181,16 @@
           }
         ],
         "note": "or to taste",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  pitas",
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 pitas",
       "expected": {
         "item": "pitas",
         "measurements": [
@@ -181,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Bakery & Bread"
       }
     },
@@ -195,11 +215,12 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½  red onion (thinly sliced)",
+      "raw": "½ red onion (thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -209,6 +230,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -223,6 +245,7 @@
           }
         ],
         "note": "halved",
+        "section": "Toppings",
         "category": "Produce"
       }
     }

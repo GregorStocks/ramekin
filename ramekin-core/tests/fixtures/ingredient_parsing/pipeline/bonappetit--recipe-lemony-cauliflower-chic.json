@@ -206,11 +206,16 @@
       "expanded": true
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Cooked jasmine rice, to taste (see Note)",
       "expected": {
         "item": "Cooked jasmine rice",
         "measurements": [],
         "note": "see Note, to taste",
+        "section": "For Serving",
         "category": "Pasta & Rice"
       }
     },
@@ -220,6 +225,7 @@
         "item": "Fresh dill fronds",
         "measurements": [],
         "note": "to taste",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -229,6 +235,7 @@
         "item": "Freshly grated Pecorino Romano",
         "measurements": [],
         "note": "to taste",
+        "section": "For Serving",
         "category": "Cheese"
       }
     }

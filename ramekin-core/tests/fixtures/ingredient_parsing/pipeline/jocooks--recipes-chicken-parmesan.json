@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-chicken-parmesan",
   "ingredients": [
     {
-      "raw": "4  chicken breasts (halves, boneless and skinless)",
+      "raw": "4 chicken breasts (halves, boneless and skinless)",
       "expected": {
         "item": "chicken breasts",
         "measurements": [
@@ -59,6 +59,10 @@
       }
     },
     {
+      "raw": "Breadcrumb mixture:",
+      "is_section_header": true
+    },
+    {
       "raw": "¾ cup panko breadcrumbs",
       "expected": {
         "item": "panko breadcrumbs",
@@ -69,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Breadcrumb Mixture",
         "category": "Bakery & Bread"
       }
     },
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Breadcrumb Mixture",
         "category": "Bakery & Bread"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": "grated",
+        "section": "Breadcrumb Mixture",
         "category": "Cheese"
       }
     },
@@ -111,6 +118,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Breadcrumb Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +133,13 @@
           }
         ],
         "note": "or to taste",
+        "section": "Breadcrumb Mixture",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Toppings:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup marinara sauce",
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Toppings",
         "category": "Cheese"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": "grated",
+        "section": "Toppings",
         "category": "Cheese"
       }
     },
@@ -181,6 +197,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Toppings",
         "category": "Produce"
       }
     }

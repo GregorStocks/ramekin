@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-green-smoothie-pancake",
   "ingredients": [
     {
-      "raw": "4  large eggs",
+      "raw": "4 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "1/4 cup almond milk (coconut milk or cashew milk)",
+      "raw": "1/4 cup almond milk, coconut milk or cashew milk",
       "expected": {
-        "item": "almond milk",
+        "item": "almond milk, coconut milk or cashew milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "coconut milk or cashew milk",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -87,16 +87,16 @@
       }
     },
     {
-      "raw": "1 tbsp honey (or maple syrup)",
+      "raw": "1 tbsp honey, or maple syrup",
       "expected": {
-        "item": "honey",
+        "item": "honey, or maple syrup",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or maple syrup",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -157,13 +157,17 @@
       }
     },
     {
-      "raw": "butter (ghee or coconut oil, to coat the skillet)",
+      "raw": "butter, ghee or coconut oil, to coat the skillet",
       "expected": {
-        "item": "butter",
+        "item": "butter, ghee or coconut oil, to coat the skillet",
         "measurements": [],
-        "note": "ghee or coconut oil, to coat the skillet",
+        "note": null,
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups blueberries",
@@ -176,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -190,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

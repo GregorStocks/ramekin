@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  large yellow onions ((about 1 1/2 cups) finely chopped)",
+      "raw": "1 large yellow onions, (about 1 1/2 cups) finely chopped",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "6  medium garlic cloves (pressed)",
+      "raw": "6 medium garlic cloves, pressed",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "6  medium tomatoes (diced)",
+      "raw": "6 medium tomatoes, diced",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "2  15 oz cans diced tomatoes (Italian style)",
+      "raw": "2 15 oz cans diced tomatoes (Italian style)",
       "expected": {
         "item": "diced tomatoes",
         "measurements": [
@@ -77,16 +77,16 @@
       }
     },
     {
-      "raw": "1 cup Red Wine (Soft Red, or Cabernet Sauvignon, most red wines will do)",
+      "raw": "1 cup Red Wine, Soft Red, or Cabernet Sauvignon, most red wines will do",
       "expected": {
-        "item": "Red Wine",
+        "item": "Red Wine, Soft Red, or Cabernet Sauvignon, most red wines will do",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "Soft Red, or Cabernet Sauvignon, most red wines will do",
+        "note": null,
         "category": "Beverages"
       }
     },
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1 Tbsp Kosher Salt (or 3/4 Tbsp Sea Salt (started with 1/2 Tbsp sea salt))",
+      "raw": "1 Tbsp Kosher Salt, or 3/4 Tbsp Sea Salt (started with 1/2 Tbsp sea salt)",
       "expected": {
         "item": "Kosher Salt",
         "measurements": [
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "1 lb fresh mushrooms (rinsed, dried, sliced)",
+      "raw": "1 lb fresh mushrooms, rinsed, dried, sliced",
       "expected": {
         "item": "fresh mushrooms",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "1 cup fresh basil (chopped)",
+      "raw": "1 cup fresh basil, chopped",
       "expected": {
         "item": "fresh basil",
         "measurements": [
@@ -173,6 +173,10 @@
         "note": "chopped",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Tools you will need:",
+      "is_section_header": true
     }
   ]
 }

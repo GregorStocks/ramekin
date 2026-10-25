@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-italian-meatloaf-html",
   "ingredients": [
     {
-      "raw": "1 small onion, cut into 1-inch pieces",
+      "raw": "1  small onion (cut into 1-in pieces)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "small"
           }
         ],
-        "note": "cut into 1-inch pieces",
+        "note": "cut into 1-in pieces",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  carrot, cut into 1-inch pieces",
+      "raw": "1  carrot (cut into 1-in pieces)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -26,12 +26,12 @@
             "unit": null
           }
         ],
-        "note": "cut into 1-inch pieces",
+        "note": "cut into 1-in pieces",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 stalk celery, cut into 1-inch pieces",
+      "raw": "1  stalk celery (cut into 1-in pieces)",
       "expected": {
         "item": "celery",
         "measurements": [
@@ -40,18 +40,18 @@
             "unit": "stalk"
           }
         ],
-        "note": "cut into 1-inch pieces",
+        "note": "cut into 1-in pieces",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  garlic cloves",
+      "raw": "3  cloves garlic",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "clove"
           }
         ],
         "note": null,
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2 large eggs",
+      "raw": "2  large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2 pounds meatloaf mix (or use 1½ pounds 85% lean ground beef plus ½ pound ground pork)",
+      "raw": "2 lbs meatloaf mix (or use 1½ lbs (680 g) 85% lean ground beef plus ½ lb (227 g) ground pork)",
       "expected": {
         "item": "meatloaf mix",
         "measurements": [
@@ -152,7 +152,7 @@
             "unit": "lb"
           }
         ],
-        "note": "or use 1 1/2 pounds 85% lean ground beef plus 1/2 pound ground pork",
+        "note": "or use 1 1/2 lbs (680 g) 85% lean ground beef plus 1/2 lb (227 g) ground pork",
         "category": "Other"
       }
     },
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "¾ cup marinara sauce, plus more for serving",
+      "raw": "¾ cup marinara sauce, (plus more for serving)",
       "expected": {
         "item": "marinara sauce",
         "measurements": [

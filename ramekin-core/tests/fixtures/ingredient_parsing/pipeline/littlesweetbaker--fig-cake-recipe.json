@@ -3,7 +3,11 @@
   "recipe_slug": "fig-cake-recipe",
   "ingredients": [
     {
-      "raw": "2 &amp;amp; 1/2 cups (315g) all-purpose flour",
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 & 1/2 cups   (315g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup (150g) granulated sugar",
+      "raw": "3/4 cup   (150g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tsp baking powder",
+      "raw": "2 tsp   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -49,11 +55,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 tsp baking soda",
+      "raw": "1/2 tsp   baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -63,11 +70,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 tsp salt",
+      "raw": "1/2 tsp   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -77,11 +85,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tsp ground cinnamon",
+      "raw": "1 tsp   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -91,11 +100,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp ground nutmeg",
+      "raw": "1/4 tsp   ground nutmeg",
       "expected": {
         "item": "ground nutmeg",
         "measurements": [
@@ -105,11 +115,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp ground cloves",
+      "raw": "1/4 tsp   ground cloves",
       "expected": {
         "item": "ground cloves",
         "measurements": [
@@ -119,11 +130,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 &amp;amp; 1/2 cups (360ml) buttermilk",
+      "raw": "1 & 1/2 cups   (360ml) buttermilk",
       "expected": {
         "item": "buttermilk",
         "measurements": [
@@ -137,11 +149,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup (60ml) melted unsalted butter",
+      "raw": "1/4 cup   (60ml) melted unsalted butter",
       "expected": {
         "item": "melted unsalted butter",
         "measurements": [
@@ -155,11 +168,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup (60ml) honey",
+      "raw": "1/4 cup   (60ml) honey",
       "expected": {
         "item": "honey",
         "measurements": [
@@ -173,11 +187,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  large eggs",
+      "raw": "2   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -187,11 +202,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 &amp;amp; 1/2 tsp vanilla extract",
+      "raw": "1 & 1/2 tsp   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -201,25 +217,31 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "8-10  fresh figs (depending on size cut in half)",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8-10   fresh figs, depending on size cut in half",
       "expected": {
-        "item": "fresh figs",
+        "item": "fresh figs, depending on size cut in half",
         "measurements": [
           {
             "amount": "8-10",
             "unit": null
           }
         ],
-        "note": "depending on size cut in half",
+        "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup chopped pistachios",
+      "raw": "1/4 cup   chopped pistachios",
       "expected": {
         "item": "chopped pistachios",
         "measurements": [
@@ -229,11 +251,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "3 Tbsp granulated sugar",
+      "raw": "3 Tbsp   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -243,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

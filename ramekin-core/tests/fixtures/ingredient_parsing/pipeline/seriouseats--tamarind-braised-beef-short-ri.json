@@ -3,6 +3,10 @@
   "recipe_slug": "tamarind-braised-beef-short-ri",
   "ingredients": [
     {
+      "raw": "For the Short Ribs:",
+      "is_section_header": true
+    },
+    {
       "raw": "5 pounds (2.3 kg) beef short ribs, English- or flanken-cut (see note)",
       "expected": {
         "item": "beef short ribs, English- or flanken-cut",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Short Ribs",
         "category": "Meat & Seafood"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "see notes",
+        "section": "For the Short Ribs",
         "category": "Condiments & Sauces"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Short Ribs",
         "category": "Baking"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": "stemmed and chopped",
+        "section": "For the Short Ribs",
         "category": "Produce"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": "see note",
+        "section": "For the Short Ribs",
         "category": "Baking"
       }
     },
@@ -99,6 +108,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Short Ribs",
         "category": "Other"
       }
     },
@@ -117,6 +127,7 @@
           }
         ],
         "note": "plus more for seasoning; for table salt, use half as much by volume",
+        "section": "For the Short Ribs",
         "category": "Spices & Seasonings"
       }
     },
@@ -126,6 +137,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Short Ribs",
         "category": "Spices & Seasonings"
       }
     },
@@ -144,8 +156,13 @@
           }
         ],
         "note": "such as vegetable oil",
+        "section": "For the Short Ribs",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Vegetables and Braise:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons (28 g) unsalted butter",
@@ -162,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables and Braise",
         "category": "Dairy & Eggs"
       }
     },
@@ -180,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables and Braise",
         "category": "Oils & Vinegars"
       }
     },
@@ -202,6 +221,7 @@
           }
         ],
         "note": "cut into 1/2-inch dice",
+        "section": "For the Vegetables and Braise",
         "category": "Produce"
       }
     },
@@ -224,6 +244,7 @@
           }
         ],
         "note": "about 12 ounces; 450 g total, cut into 1/2-inch dice",
+        "section": "For the Vegetables and Braise",
         "category": "Produce"
       }
     },
@@ -238,6 +259,7 @@
           }
         ],
         "note": "smashed",
+        "section": "For the Vegetables and Braise",
         "category": "Produce"
       }
     },
@@ -256,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables and Braise",
         "category": "Canned Goods"
       }
     },
@@ -270,6 +293,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables and Braise",
         "category": "Spices & Seasonings"
       }
     },
@@ -284,6 +308,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables and Braise",
         "category": "Produce"
       }
     },
@@ -302,8 +327,13 @@
           }
         ],
         "note": "if using store-bought broth, pour 1 packet unflavored gelatin (2 1/2 teaspoons; 10 g) over it and let set for 5 minutes; see notes",
+        "section": "For the Vegetables and Braise",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Finishing Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup minced flat-leaf parsley leaves (10 g)",
@@ -320,6 +350,7 @@
           }
         ],
         "note": null,
+        "section": "Finishing Garnish",
         "category": "Produce"
       }
     },
@@ -338,6 +369,7 @@
           }
         ],
         "note": null,
+        "section": "Finishing Garnish",
         "category": "Produce"
       }
     },
@@ -347,6 +379,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "Finishing Garnish",
         "category": "Produce"
       }
     }

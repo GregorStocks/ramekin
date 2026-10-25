@@ -3,13 +3,8 @@
   "recipe_slug": "2014-07-blue-and-red-berry-ric",
   "ingredients": [
     {
-      "raw": "Pastry",
-      "expected": {
-        "item": "Pastry",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "raw": "Pastry:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 cups (160 grams) all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Spices & Seasonings"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Produce"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -104,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Cheese"
       }
     },
@@ -118,11 +119,12 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {
@@ -201,7 +203,7 @@
       }
     },
     {
-      "raw": "Glaze",
+      "raw": "Glaze:",
       "is_section_header": true
     },
     {

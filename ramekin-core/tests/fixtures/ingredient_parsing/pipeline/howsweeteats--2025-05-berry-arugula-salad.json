@@ -124,13 +124,17 @@
       }
     },
     {
-      "raw": "crumbled goat cheese, (for topping)",
+      "raw": "crumbled goat cheese, for topping",
       "expected": {
         "item": "crumbled goat cheese",
         "measurements": [],
         "note": "for topping",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "goat cheese vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons red wine vinegar",
@@ -143,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,11 +162,12 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  garlic clove, (minced)",
+      "raw": "1 garlic clove, minced",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -171,6 +177,7 @@
           }
         ],
         "note": "minced",
+        "section": "Goat Cheese Vinaigrette",
         "category": "Produce"
       }
     },
@@ -185,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Produce"
       }
     },
@@ -199,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Baking"
       }
     },
@@ -213,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -222,6 +232,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Spices & Seasonings"
       }
     },
@@ -236,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -250,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Goat Cheese Vinaigrette",
         "category": "Cheese"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-14947-pepperoni-sheet-",
   "ingredients": [
     {
+      "raw": "Dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups (15 ounces/425 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Beverages"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,8 +100,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1¼ cups canned crushed tomatoes",
@@ -105,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -133,6 +149,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -147,6 +164,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Meat & Seafood"
       }
     },
@@ -161,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -189,6 +209,7 @@
           }
         ],
         "note": "plus extra for sprinkling",
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,8 +224,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Pizza:",
+      "is_section_header": true
     },
     {
       "raw": "1 ounce (28 grams) Parmesan cheese , grated (½ cup), plus extra for sprinkling",
@@ -225,6 +251,7 @@
           }
         ],
         "note": "grated, plus extra for sprinkling",
+        "section": "Pizza",
         "category": "Cheese"
       }
     },
@@ -247,6 +274,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Pizza",
         "category": "Cheese"
       }
     },
@@ -265,6 +293,7 @@
           }
         ],
         "note": null,
+        "section": "Pizza",
         "category": "Meat & Seafood"
       }
     }

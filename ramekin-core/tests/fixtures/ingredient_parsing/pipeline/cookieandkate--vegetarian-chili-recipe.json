@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "&amp;frac12; teaspoon salt, divided",
+      "raw": "½ teaspoon salt, divided",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1 &amp;frac12; teaspoons smoked paprika*",
+      "raw": "1 ½ teaspoons smoked paprika*",
       "expected": {
         "item": "smoked paprika",
         "measurements": [

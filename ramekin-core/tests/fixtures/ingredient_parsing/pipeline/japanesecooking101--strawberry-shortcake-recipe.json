@@ -3,6 +3,10 @@
   "recipe_slug": "strawberry-shortcake-recipe",
   "ingredients": [
     {
+      "raw": "Syrup:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup water",
       "expected": {
         "item": "water",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/4 cup sugar",
+      "raw": "1/4 cup sugar ( )",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Baking"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "Syrup",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 lb strawberries",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -69,8 +81,13 @@
           }
         ],
         "note": "drained",
+        "section": "Filling",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Whipped Cream:",
+      "is_section_header": true
     },
     {
       "raw": "2 cup heavy cream",
@@ -83,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Baking"
       }
     },
@@ -111,8 +130,13 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cream",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "7 inch Sponge Cake",
@@ -125,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     }

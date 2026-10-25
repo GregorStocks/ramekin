@@ -3,21 +3,30 @@
   "recipe_slug": "2022-10-sausage-corn-chowder-w",
   "ingredients": [
     {
-      "raw": "1 cup raw pepitas",
+      "raw": "For Toasted Pepitas:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  / 64 g raw pepitas",
       "expected": {
         "item": "raw pepitas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Toasted Pepitas",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "2 teaspoons olive oil",
+      "raw": "2 teaspoons   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -27,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "For Toasted Pepitas",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 teaspoon maple syrup",
+      "raw": "1 teaspoon   maple syrup",
       "expected": {
         "item": "maple syrup",
         "measurements": [
@@ -41,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "For Toasted Pepitas",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/4 teaspoon fine sea salt",
+      "raw": "¼ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -55,11 +66,16 @@
           }
         ],
         "note": null,
+        "section": "For Toasted Pepitas",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons olive oil",
+      "raw": "For Chowder:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -69,39 +85,50 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "8 oz raw Italian sausage (ideally bulk sausage, but if using links, remove casings first)",
+      "raw": "8 oz  / 226 g raw Italian sausage, ideally bulk sausage, but if using links, remove casings first",
       "expected": {
-        "item": "raw Italian sausage",
+        "item": "raw Italian sausage, ideally bulk sausage, but if using links, remove casings first",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
-        "note": "ideally bulk sausage, but if using links, remove casings first",
+        "note": null,
+        "section": "For Chowder",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1/4 cup white wine",
+      "raw": "¼ cup  / 60 ml white wine",
       "expected": {
         "item": "white wine",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1  medium onion (chopped)",
+      "raw": "1   medium onion, chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -111,11 +138,12 @@
           }
         ],
         "note": "chopped",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  medium carrot (coarsely chopped)",
+      "raw": "1   medium carrot, coarsely chopped",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -125,11 +153,12 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  red or green bell pepper or poblano pepper (diced)",
+      "raw": "1   red or green bell pepper or poblano pepper, diced",
       "expected": {
         "item": "red or green bell pepper or poblano pepper",
         "measurements": [
@@ -139,11 +168,12 @@
           }
         ],
         "note": "diced",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  garlic cloves (finely minced)",
+      "raw": "2   garlic cloves, finely minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -153,11 +183,12 @@
           }
         ],
         "note": "finely minced",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cups fresh or frozen corn kernels",
+      "raw": "2 cups   fresh or frozen corn kernels",
       "expected": {
         "item": "fresh or frozen corn kernels",
         "measurements": [
@@ -167,53 +198,69 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
     {
-      "raw": "12 oz yukon gold potatoes (peeled and cut into 1/2-inch pieces)",
+      "raw": "12 oz  / 340 g yukon gold potatoes, peeled and cut into 1/2-inch pieces",
       "expected": {
         "item": "yukon gold potatoes",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
         "note": "peeled and cut into 1/2-inch pieces",
+        "section": "For Chowder",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cups chicken stock",
+      "raw": "2 cups  / 480 ml chicken stock",
       "expected": {
         "item": "chicken stock",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 cups filtered water (plus more as needed)",
+      "raw": "2 cups  / 480 ml filtered water, plus more as needed",
       "expected": {
         "item": "filtered water",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "ml"
           }
         ],
         "note": "plus more as needed",
+        "section": "For Chowder",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1  dried bay leaf",
+      "raw": "1   dried bay leaf",
       "expected": {
         "item": "dried bay leaf",
         "measurements": [
@@ -223,20 +270,22 @@
           }
         ],
         "note": null,
+        "section": "For Chowder",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "salt and freshly ground black pepper (to taste)",
+      "raw": "salt and freshly ground black pepper, to taste",
       "expected": {
         "item": "salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For Chowder",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon sherry vinegar (more or less to taste)",
+      "raw": "½ teaspoon   sherry vinegar, more or less to taste",
       "expected": {
         "item": "sherry vinegar",
         "measurements": [
@@ -246,15 +295,17 @@
           }
         ],
         "note": "more or less to taste",
+        "section": "For Chowder",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "chopped fresh cilantro (for topping)",
+      "raw": "chopped fresh cilantro, for topping",
       "expected": {
         "item": "chopped fresh cilantro",
         "measurements": [],
         "note": "for topping",
+        "section": "For Chowder",
         "category": "Produce"
       }
     }

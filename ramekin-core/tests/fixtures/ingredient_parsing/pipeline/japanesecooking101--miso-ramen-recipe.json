@@ -3,6 +3,14 @@
   "recipe_slug": "miso-ramen-recipe",
   "ingredients": [
     {
+      "raw": "Soup:",
+      "is_section_header": true
+    },
+    {
+      "raw": "A:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 cups water",
       "expected": {
         "item": "water",
@@ -13,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "A",
         "category": "Beverages"
       }
     },
@@ -27,6 +36,7 @@
           }
         ],
         "note": "crushed",
+        "section": "A",
         "category": "Produce"
       }
     },
@@ -41,6 +51,7 @@
           }
         ],
         "note": "sliced",
+        "section": "A",
         "category": "Produce"
       }
     },
@@ -55,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "A",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3-4  green onions",
+      "raw": "3-4 green onions",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -69,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "A",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  8x3cm Dried Kombu",
+      "raw": "3 8x3cm Dried Kombu",
       "expected": {
         "item": "8x3cm Dried Kombu",
         "measurements": [
@@ -83,8 +96,13 @@
           }
         ],
         "note": null,
+        "section": "A",
         "category": "Other"
       }
+    },
+    {
+      "raw": "B:",
+      "is_section_header": true
     },
     {
       "raw": "5-6 Tbsp Miso Paste",
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "B",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "B",
         "category": "Beverages"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "B",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "B",
         "category": "Baking"
       }
     },
@@ -153,8 +175,13 @@
           }
         ],
         "note": "such as Tobanjan or any chili paste",
+        "section": "B",
         "category": "Other"
       }
+    },
+    {
+      "raw": "C:",
+      "is_section_header": true
     },
     {
       "raw": "2 Tbsp sesame oil",
@@ -167,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "C",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,8 +209,13 @@
           }
         ],
         "note": "grated",
+        "section": "C",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Noodles:",
+      "is_section_header": true
     },
     {
       "raw": "10 oz dried thin spaghetti",
@@ -195,11 +228,12 @@
           }
         ],
         "note": null,
+        "section": "Noodles",
         "category": "Other"
       }
     },
     {
-      "raw": "8 cups water",
+      "raw": "8 cups water ( )",
       "expected": {
         "item": "water",
         "measurements": [
@@ -209,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "Noodles",
         "category": "Beverages"
       }
     },
@@ -223,8 +258,13 @@
           }
         ],
         "note": null,
+        "section": "Noodles",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Topping:",
+      "is_section_header": true
     },
     {
       "raw": "Yakibuta (roast pork)",
@@ -232,6 +272,7 @@
         "item": "Yakibuta",
         "measurements": [],
         "note": "roast pork",
+        "section": "Topping",
         "category": "Other"
       }
     },
@@ -241,6 +282,7 @@
         "item": "soft boiled egg halves",
         "measurements": [],
         "note": null,
+        "section": "Topping",
         "category": "Other"
       }
     },
@@ -250,6 +292,7 @@
         "item": "green onions",
         "measurements": [],
         "note": "cut finely",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -259,6 +302,7 @@
         "item": "corn",
         "measurements": [],
         "note": "pan-fried with butter and salt",
+        "section": "Topping",
         "category": "Produce"
       }
     }

@@ -3,16 +3,21 @@
   "recipe_slug": "prune-honey-cake-recipe",
   "ingredients": [
     {
-      "raw": "6  large eggs (room temp)",
+      "raw": "For the Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 large eggs, room temp",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, room temp",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": "room temp",
+        "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -69,8 +77,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Frosting:",
+      "is_section_header": true
     },
     {
       "raw": "32 oz sour cream",
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -111,8 +126,13 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Fillings/Toppings/Decor:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups chopped prunes",
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Fillings/toppings/decor",
         "category": "Other"
       }
     },
@@ -134,6 +155,7 @@
         "item": "Melting Chocolate or Chocolate chips to melt for decor",
         "measurements": [],
         "note": null,
+        "section": "Fillings/toppings/decor",
         "category": "Other"
       }
     },
@@ -143,6 +165,7 @@
         "item": "Chocolate block for shavings",
         "measurements": [],
         "note": null,
+        "section": "Fillings/toppings/decor",
         "category": "Other"
       }
     }

@@ -3,21 +3,21 @@
   "recipe_slug": "recipes-marbled-chocolate-bana",
   "ingredients": [
     {
-      "raw": "1¾ cups all purpose flour, spooned into measuring cup and leveled-off",
+      "raw": "1¾ cups all purpose flour, (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "all purpose flour, spooned into measuring cup and leveled-off",
+        "item": "all purpose flour",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ teaspoon  baking soda",
+      "raw": "¾ teaspoon baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 cup  sugar",
+      "raw": "1 cup sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "1 stick (½ cup) unsalted butter, softened",
+      "raw": "1/2 cup (1 stick) unsalted butter, softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "stick"
-          },
-          {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
           }
         ],
         "note": "softened",
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "2 large eggs",
+      "raw": "2  large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "1 cup mashed very ripe bananas, from 2-3 bananas",
+      "raw": "1 cup mashed very ripe bananas, (from 2 to 3 bananas)",
       "expected": {
         "item": "mashed very ripe bananas",
         "measurements": [
@@ -100,7 +100,7 @@
             "unit": "cup"
           }
         ],
-        "note": "from 2-3 bananas",
+        "note": "from 2 to 3 bananas",
         "category": "Produce"
       }
     },
@@ -133,21 +133,21 @@
       }
     },
     {
-      "raw": "3 ounces  semisweet chocolate, chopped (a heaping ½ cup)",
+      "raw": "3 oz semi-sweet chocolate, (chopped (a heaping ½ cup))",
       "expected": {
-        "item": "semisweet chocolate",
+        "item": "semi-sweet chocolate",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": "a heaping 1/2 cup, chopped",
+        "note": "chopped (a heaping 1/2 cup)",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons natural unsweetened cocoa powder, such as Hershey's",
+      "raw": "2 teaspoons natural unsweetened cocoa powder, (such as Hershey's)",
       "expected": {
         "item": "natural unsweetened cocoa powder",
         "measurements": [

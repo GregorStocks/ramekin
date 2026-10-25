@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "Marinade:",
+      "is_section_header": true
+    },
+    {
       "raw": "Zest of 2 limes",
       "expected": {
         "item": "lime zest",
@@ -27,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -41,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -50,6 +56,7 @@
         "item": "Juice from one large orange",
         "measurements": [],
         "note": null,
+        "section": "Marinade",
         "category": "Other"
       }
     },
@@ -64,6 +71,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -78,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,11 +101,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "4 cloves garlic (minced)",
+      "raw": "4 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -106,6 +116,7 @@
           }
         ],
         "note": "minced",
+        "section": "Marinade",
         "category": "Produce"
       }
     },
@@ -120,21 +131,23 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  jalapeno (seeds and veins removed and finely minced)",
+      "raw": "1 jalapeno seeds and veins removed and finely minced",
       "expected": {
-        "item": "jalapeno",
+        "item": "jalapeno seeds and veins",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeds and veins removed and finely minced",
-        "category": "Produce"
+        "note": "removed and finely minced",
+        "section": "Marinade",
+        "category": "Other"
       }
     },
     {
@@ -148,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,15 +191,21 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Parsley (finely chopped)",
+      "raw": "Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Parsley finely chopped",
       "expected": {
         "item": "Parsley",
         "measurements": [],
         "note": "finely chopped",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -194,6 +215,7 @@
         "item": "Jalapeno slices",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -203,6 +225,7 @@
         "item": "Lemon wedges",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }

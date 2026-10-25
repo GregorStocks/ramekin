@@ -104,13 +104,8 @@
       }
     },
     {
-      "raw": "Steakhouse Mustard Vinaigrette",
-      "expected": {
-        "item": "Steakhouse Mustard Vinaigrette",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Steakhouse Mustard Vinaigrette:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon coarse Dijon mustard",
@@ -123,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Steakhouse Mustard Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -137,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Steakhouse Mustard Vinaigrette",
         "category": "Oils & Vinegars"
       }
     },
@@ -151,6 +148,7 @@
           }
         ],
         "note": null,
+        "section": "Steakhouse Mustard Vinaigrette",
         "category": "Condiments & Sauces"
       }
     },
@@ -165,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Steakhouse Mustard Vinaigrette",
         "category": "Baking"
       }
     },
@@ -179,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Steakhouse Mustard Vinaigrette",
         "category": "Oils & Vinegars"
       }
     }

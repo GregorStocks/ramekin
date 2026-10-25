@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-salted-smores-bites",
   "ingredients": [
     {
+      "raw": "Graham Cracker:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups almond flour",
       "expected": {
         "item": "almond flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup coconut oil (melted)",
+      "raw": "1/3 cup coconut oil, melted",
       "expected": {
         "item": "coconut oil",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": "melted",
+        "section": "Graham Cracker",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker",
         "category": "Baking"
       }
     },
@@ -125,11 +137,16 @@
           }
         ],
         "note": null,
+        "section": "Graham Cracker",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup water (divided)",
+      "raw": "Vanilla Bean Marshmallow:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup water, divided",
       "expected": {
         "item": "water",
         "measurements": [
@@ -139,35 +156,38 @@
           }
         ],
         "note": "divided",
+        "section": "Vanilla Bean Marshmallow",
         "category": "Beverages"
       }
     },
     {
-      "raw": "3 tbsp powdered gelatin (I use this brand)",
+      "raw": "3 tbsp powdered gelatin, I use this brand",
       "expected": {
-        "item": "powdered gelatin",
+        "item": "powdered gelatin, I use this brand",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "I use this brand",
+        "note": null,
+        "section": "Vanilla Bean Marshmallow",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup light colored honey (or maple syrup)",
+      "raw": "1 cup light colored honey, or maple syrup",
       "expected": {
-        "item": "light colored honey",
+        "item": "light colored honey, or maple syrup",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or maple syrup",
-        "category": "Other"
+        "note": null,
+        "section": "Vanilla Bean Marshmallow",
+        "category": "Baking"
       }
     },
     {
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Bean Marshmallow",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  vanilla bean (scraped (or 1 tsp vanilla extract))",
+      "raw": "1 vanilla bean, scraped (or 1 tsp vanilla extract)",
       "expected": {
         "item": "vanilla bean",
         "measurements": [
@@ -194,14 +215,15 @@
             "unit": null
           }
         ],
-        "note": "scraped (or 1 tsp vanilla extract)",
+        "note": "scraped; or 1 tsp vanilla extract",
+        "section": "Vanilla Bean Marshmallow",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Coating: 2 tbsp organic powdered sugar or arrowroot flour",
+      "raw": "Coating: 2 tbsp organic powdered sugar or arrowroot flour, or a mixture of both",
       "expected": {
-        "item": "organic powdered sugar or arrowroot flour",
+        "item": "organic powdered sugar or arrowroot flour, or a mixture of both",
         "measurements": [
           {
             "amount": "2",
@@ -209,8 +231,13 @@
           }
         ],
         "note": "Coating",
+        "section": "Vanilla Bean Marshmallow",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Chocolate:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup dark chocolate chips",
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate",
         "category": "Baking"
       }
     },
@@ -237,15 +265,17 @@
           }
         ],
         "note": null,
+        "section": "Chocolate",
         "category": "Baking"
       }
     },
     {
-      "raw": "Sea salt (for garnish)",
+      "raw": "Sea salt, for garnish",
       "expected": {
         "item": "Sea salt",
         "measurements": [],
         "note": "for garnish",
+        "section": "Chocolate",
         "category": "Spices & Seasonings"
       }
     }

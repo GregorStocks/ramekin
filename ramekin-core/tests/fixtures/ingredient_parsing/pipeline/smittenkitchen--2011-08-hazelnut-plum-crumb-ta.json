@@ -3,13 +3,8 @@
   "recipe_slug": "2011-08-hazelnut-plum-crumb-ta",
   "ingredients": [
     {
-      "raw": "Crust and crumbs",
-      "expected": {
-        "item": "Crust and crumbs",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Crust and crumbs:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup unsalted butter (6 ounces or 175 grams), chilled, cut into small pieces, plus more for pan",
@@ -30,6 +25,7 @@
           }
         ],
         "note": "chilled, cut into small pieces, plus more for pan",
+        "section": "Crust and Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -52,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "Crust and Crumbs",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -70,6 +67,7 @@
           }
         ],
         "note": null,
+        "section": "Crust and Crumbs",
         "category": "Baking"
       }
     },
@@ -88,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "Crust and Crumbs",
         "category": "Baking"
       }
     },
@@ -106,6 +105,7 @@
           }
         ],
         "note": "packed",
+        "section": "Crust and Crumbs",
         "category": "Baking"
       }
     },
@@ -120,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Crust and Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,11 +135,12 @@
           }
         ],
         "note": null,
+        "section": "Crust and Crumbs",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {

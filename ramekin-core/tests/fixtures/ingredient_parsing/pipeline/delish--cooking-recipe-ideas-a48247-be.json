@@ -3,17 +3,17 @@
   "recipe_slug": "cooking-recipe-ideas-a48247-be",
   "ingredients": [
     {
-      "raw": "4 tbsp. extra-virgin olive oil, divided",
+      "raw": "2 garlic cloves, finely chopped",
       "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "garlic cloves",
         "measurements": [
           {
-            "amount": "4",
-            "unit": "tbsp"
+            "amount": "2",
+            "unit": null
           }
         ],
-        "note": "divided",
-        "category": "Oils & Vinegars"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -31,9 +31,9 @@
       }
     },
     {
-      "raw": "1/4 c. freshly chopped cilantro",
+      "raw": "1/4 c. finely chopped fresh cilantro",
       "expected": {
-        "item": "freshly chopped cilantro",
+        "item": "finely chopped fresh cilantro",
         "measurements": [
           {
             "amount": "0.25",
@@ -41,20 +41,6 @@
           }
         ],
         "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "2 cloves garlic, minced",
-      "expected": {
-        "item": "garlic",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "clove"
-          }
-        ],
-        "note": "minced",
         "category": "Produce"
       }
     },
@@ -73,7 +59,7 @@
       }
     },
     {
-      "raw": "Pinch crushed red pepper flakes",
+      "raw": "Pinch of crushed red pepper flakes",
       "expected": {
         "item": "crushed red pepper flakes",
         "measurements": [
@@ -87,13 +73,27 @@
       }
     },
     {
-      "raw": "4 bone-in, skin-on chicken thighs",
+      "raw": "4 tbsp. extra-virgin olive oil, divided",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1½ to 2 lb. bone-in, skin-on chicken thighs",
       "expected": {
         "item": "bone-in, skin-on chicken thighs",
         "measurements": [
           {
-            "amount": "4",
-            "unit": null
+            "amount": "1.5 to 2",
+            "unit": "lb"
           }
         ],
         "note": null,

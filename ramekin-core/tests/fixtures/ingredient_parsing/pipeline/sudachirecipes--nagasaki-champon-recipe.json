@@ -3,16 +3,16 @@
   "recipe_slug": "nagasaki-champon-recipe",
   "ingredients": [
     {
-      "raw": "1 tsp lard (or cooking oil)",
+      "raw": "1 tsp lard or cooking oil",
       "expected": {
-        "item": "lard",
+        "item": "lard or cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or cooking oil",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "8  shrimp (deshelled, deveined with tails removed)",
+      "raw": "8 shrimp deshelled, deveined with tails removed",
       "expected": {
-        "item": "shrimp",
+        "item": "shrimp deshelled",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "deshelled, deveined with tails removed",
-        "category": "Meat & Seafood"
+        "note": "deveined with tails removed",
+        "category": "Other"
       }
     },
     {
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "50 g onion (thinly sliced)",
+      "raw": "50 g onion thinly sliced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "50 g green cabbage (roughly cut)",
+      "raw": "50 g green cabbage roughly cut",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -101,17 +101,17 @@
       }
     },
     {
-      "raw": "8 slices kamaboko fish cake (kamaboko)",
+      "raw": "8 slices kamaboko fish cake kamaboko",
       "expected": {
-        "item": "kamaboko fish cake",
+        "item": "kamaboko fish cake kamaboko",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": "kamaboko",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "20 g carrot (julienned)",
+      "raw": "20 g carrot julienned",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -143,6 +143,10 @@
       }
     },
     {
+      "raw": "Broth:",
+      "is_section_header": true
+    },
+    {
       "raw": "400 ml dashi stock",
       "expected": {
         "item": "dashi stock",
@@ -153,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -167,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,34 +202,37 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tsp grated garlic (or garlic paste)",
+      "raw": "1 tsp grated garlic or garlic paste",
       "expected": {
-        "item": "grated garlic",
+        "item": "grated garlic or garlic paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or garlic paste",
+        "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp grated ginger root (or ginger paste)",
+      "raw": "1 tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "grated ginger root",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or ginger paste",
+        "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -237,30 +247,33 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 portions ramen noodles (preferably thick type)",
+      "raw": "2 portions ramen noodles preferably thick type",
       "expected": {
-        "item": "ramen noodles",
+        "item": "ramen noodles preferably thick type",
         "measurements": [
           {
             "amount": "2",
             "unit": "portion"
           }
         ],
-        "note": "preferably thick type",
-        "category": "Pasta & Rice"
+        "note": null,
+        "section": "Broth",
+        "category": "Other"
       }
     },
     {
-      "raw": "ground white pepper (sprinkle at the end, optional)",
+      "raw": "ground white pepper sprinkle at the end, optional",
       "expected": {
-        "item": "ground white pepper",
+        "item": "ground white pepper sprinkle at the end",
         "measurements": [],
-        "note": "sprinkle at the end, optional",
-        "category": "Spices & Seasonings"
+        "note": "optional",
+        "section": "Broth",
+        "category": "Other"
       }
     }
   ]

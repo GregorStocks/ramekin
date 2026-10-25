@@ -3,6 +3,10 @@
   "recipe_slug": "storybook-cake-roll-recipe",
   "ingredients": [
     {
+      "raw": "For the Sponge Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup sifted cake flour",
       "expected": {
         "item": "sifted cake flour",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sponge Cake",
         "category": "Baking"
       }
     },
@@ -27,22 +32,28 @@
           }
         ],
         "note": null,
+        "section": "For the Sponge Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "5  large eggs (room temp)",
+      "raw": "5 large eggs, room temp",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, room temp",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": "room temp",
+        "note": null,
+        "section": "For the Sponge Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "For the Syrup:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup granulated sugar",
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Syrup",
         "category": "Baking"
       }
     },
@@ -69,25 +81,31 @@
           }
         ],
         "note": null,
+        "section": "For the Syrup",
         "category": "Beverages"
       }
     },
     {
-      "raw": "3 Tbsp rum - I used Bacardi golden rum (optional, but adds great flavor)",
+      "raw": "3 Tbsp rum - I used Bacardi golden rum, optional, but adds great flavor",
       "expected": {
-        "item": "rum - I used Bacardi golden rum",
+        "item": "rum - I used Bacardi golden rum, optional, but adds great flavor",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "optional, but adds great flavor",
+        "note": null,
+        "section": "For the Syrup",
         "category": "Other"
       }
     },
     {
-      "raw": "1  egg yolk",
+      "raw": "For the Custard Buttercream Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 egg yolk",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Custard Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Custard Buttercream Frosting",
         "category": "Baking"
       }
     },
@@ -125,20 +145,22 @@
           }
         ],
         "note": null,
+        "section": "For the Custard Buttercream Frosting",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 cup sweetened condensed milk (uncooked - straight from the can)",
+      "raw": "1/2 cup sweetened condensed milk, uncooked - straight from the can",
       "expected": {
-        "item": "sweetened condensed milk",
+        "item": "sweetened condensed milk, uncooked - straight from the can",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "uncooked - straight from the can",
+        "note": null,
+        "section": "For the Custard Buttercream Frosting",
         "category": "Canned Goods"
       }
     },
@@ -157,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "For the Custard Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "For the Custard Buttercream Frosting",
         "category": "Oils & Vinegars"
       }
     },
@@ -185,25 +209,35 @@
           }
         ],
         "note": null,
+        "section": "For the Custard Buttercream Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup golden brown cookie crumbs (I used crumbs from 4 graham crackers)",
+      "raw": "For the Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup golden brown cookie crumbs, I used crumbs from 4 graham crackers",
       "expected": {
-        "item": "golden brown cookie crumbs",
+        "item": "golden brown cookie crumbs, I used crumbs from 4 graham crackers",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "I used crumbs from 4 graham crackers",
+        "note": null,
+        "section": "For the Topping",
         "category": "Other"
       }
     },
     {
-      "raw": "11  ×17 rimmed baking sheet lined with parchment paper",
+      "raw": "What you'll need:",
+      "is_section_header": true
+    },
+    {
+      "raw": "11 ×17 rimmed baking sheet lined with parchment paper",
       "expected": {
         "item": "×17 rimmed baking sheet lined with parchment paper",
         "measurements": [
@@ -213,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "What You'll Need",
         "category": "Other"
       }
     }

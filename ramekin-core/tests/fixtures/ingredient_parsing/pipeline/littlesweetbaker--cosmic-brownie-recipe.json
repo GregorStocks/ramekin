@@ -3,7 +3,11 @@
   "recipe_slug": "cosmic-brownie-recipe",
   "ingredients": [
     {
-      "raw": "200 g dark chocolate (coarsely chopped)",
+      "raw": "Brownie:",
+      "is_section_header": true
+    },
+    {
+      "raw": "200 g   dark chocolate, coarsely chopped",
       "expected": {
         "item": "dark chocolate",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "180 g (3/4 cup plus 2 tsp) unsalted butter",
+      "raw": "180 g   (3/4 cup plus 2 tsp) unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "3/4 cup plus 2 tsp",
+        "section": "Brownie",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "15 g (3 tbsp) unsweetened cocoa powder",
+      "raw": "15 g   (3 tbsp) unsweetened cocoa powder",
       "expected": {
         "item": "unsweetened cocoa powder",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "3  large eggs (at room temperature)",
+      "raw": "3   large eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -59,11 +66,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Brownie",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "200 g (1 cup) granulated sugar",
+      "raw": "200 g   (1 cup) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -77,11 +85,12 @@
           }
         ],
         "note": null,
+        "section": "Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "100 g (1/2 cup) lightly packed light or dark brown sugar",
+      "raw": "100 g   (1/2 cup) lightly packed light or dark brown sugar",
       "expected": {
         "item": "light or dark brown sugar",
         "measurements": [
@@ -95,11 +104,12 @@
           }
         ],
         "note": "lightly packed",
+        "section": "Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 tsp salt",
+      "raw": "1/2 tsp   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -109,11 +119,12 @@
           }
         ],
         "note": null,
+        "section": "Brownie",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 tsp vanilla extract",
+      "raw": "1/2 tsp   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -123,11 +134,12 @@
           }
         ],
         "note": null,
+        "section": "Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "100 g (1 cup minus 2 tbsp) all-purpose flour",
+      "raw": "100 g   (1 cup minus 2 tbsp) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -137,11 +149,16 @@
           }
         ],
         "note": "1 cup minus 2 tbsp",
+        "section": "Brownie",
         "category": "Baking"
       }
     },
     {
-      "raw": "60 g (1/4 cup plus 1 tsp) unsalted butter",
+      "raw": "Chocolate Icing:",
+      "is_section_header": true
+    },
+    {
+      "raw": "60 g   (1/4 cup plus 1 tsp) unsalted butter",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -151,11 +168,12 @@
           }
         ],
         "note": "1/4 cup plus 1 tsp",
+        "section": "Chocolate Icing",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "25 g (5 tbsp) unsweetened cocoa powder",
+      "raw": "25 g   (5 tbsp) unsweetened cocoa powder",
       "expected": {
         "item": "unsweetened cocoa powder",
         "measurements": [
@@ -169,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing",
         "category": "Baking"
       }
     },
@@ -183,11 +202,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "250 g (2 cups) powdered sugar (sifted)",
+      "raw": "250 g   (2 cups) powdered sugar, sifted",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -201,11 +221,12 @@
           }
         ],
         "note": "sifted",
+        "section": "Chocolate Icing",
         "category": "Baking"
       }
     },
     {
-      "raw": "3-4 Tbsp hot water",
+      "raw": "3-4 Tbsp   hot water",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -215,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Icing",
         "category": "Beverages"
       }
     }

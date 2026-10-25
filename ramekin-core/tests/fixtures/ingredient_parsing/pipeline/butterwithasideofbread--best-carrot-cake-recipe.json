@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "4  eggs",
+      "raw": "4 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -115,21 +115,21 @@
       }
     },
     {
-      "raw": "8 oz can crushed pineapple (drained)",
+      "raw": "8 oz can crushed pineapple drained",
       "expected": {
-        "item": "can crushed pineapple",
+        "item": "can crushed pineapple drained",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "drained",
+        "note": null,
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 lb carrots (peeled and grated (I just buy them already shredded!))",
+      "raw": "1 lb carrots peeled and grated (I just buy them already shredded!)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -138,12 +138,16 @@
             "unit": "lb"
           }
         ],
-        "note": "peeled and grated (I just buy them already shredded!)",
+        "note": "I just buy them already shredded!, peeled and grated",
         "category": "Produce"
       }
     },
     {
-      "raw": "8 oz cream cheese (softened)",
+      "raw": "Cream Cheese Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 oz cream cheese softened",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -153,11 +157,12 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
     {
-      "raw": "½ cup butter (softened)",
+      "raw": "½ cup butter softened",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -167,6 +172,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -195,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting",
         "category": "Baking"
       }
     }

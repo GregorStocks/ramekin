@@ -3,7 +3,11 @@
   "recipe_slug": "zucchini-cake-recipe",
   "ingredients": [
     {
-      "raw": "1 pound (455g) zucchini (, grated)",
+      "raw": "Zucchini Cake Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound   (455g) zucchini , grated",
       "expected": {
         "item": "zucchini",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": "grated",
+        "section": "Zucchini Cake Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cups (375g) all-purpose flour",
+      "raw": "3 cups   (375g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 teaspoons (8ml) baking powder",
+      "raw": "1 1/2 teaspoons   (8ml) baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -53,11 +59,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon (3ml) baking soda",
+      "raw": "½ teaspoon   (3ml) baking soda",
       "expected": {
         "item": "baking soda",
         "measurements": [
@@ -71,11 +78,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 teaspoons (8ml) ground cinnamon",
+      "raw": "1 1/2 teaspoons   (8ml) ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -89,11 +97,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon (3ml) fresh grated nutmeg",
+      "raw": "1/2 teaspoon   (3ml) fresh grated nutmeg",
       "expected": {
         "item": "fresh grated nutmeg",
         "measurements": [
@@ -107,11 +116,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon (3ml) ground clove",
+      "raw": "1/2 teaspoon   (3ml) ground clove",
       "expected": {
         "item": "ground clove",
         "measurements": [
@@ -125,11 +135,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon (5ml) kosher salt",
+      "raw": "1 teaspoon   (5ml) kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -143,11 +154,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  large eggs",
+      "raw": "4   large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -157,11 +169,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup (220g) packed brown sugar",
+      "raw": "1 cup   (220g) packed brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -175,11 +188,12 @@
           }
         ],
         "note": "packed",
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (200g) sugar",
+      "raw": "1 cup   (200g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -193,11 +207,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (240ml) olive oil",
+      "raw": "1 cup   (240ml) olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -211,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Oils & Vinegars"
       }
     },
@@ -220,11 +236,12 @@
         "item": "finely grated zest from 2 medium lemons",
         "measurements": [],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "2 Tablespoons (30ml) fresh lemon juice",
+      "raw": "2 Tablespoons   (30ml) fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -238,11 +255,12 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons (10ml) vanilla extract",
+      "raw": "2 teaspoons   (10ml) vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -256,11 +274,16 @@
           }
         ],
         "note": null,
+        "section": "Zucchini Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "12 ounces (340g) cream cheese (, at room temperature)",
+      "raw": "Lemon Frosting Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "12 ounces   (340g) cream cheese , at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -274,11 +297,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Lemon Frosting Ingredients",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup (113g or 1 stick) unsalted butter (, at room temperature)",
+      "raw": "1/2 cup   (113g or 1 stick) unsalted butter , at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -296,11 +320,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Lemon Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 1/2 cups (275g) confectioners sugar",
+      "raw": "2 1/2 cups   (275g) confectioners sugar",
       "expected": {
         "item": "confectioners sugar",
         "measurements": [
@@ -314,6 +339,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Frosting Ingredients",
         "category": "Baking"
       }
     },
@@ -323,11 +349,12 @@
         "item": "finely grated zest from 1 medium lemon",
         "measurements": [],
         "note": null,
+        "section": "Lemon Frosting Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 Tablespoons fresh lemon juice",
+      "raw": "2 Tablespoons   fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -337,11 +364,12 @@
           }
         ],
         "note": null,
+        "section": "Lemon Frosting Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 teaspoon vanilla extract",
+      "raw": "1/2 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -351,6 +379,7 @@
           }
         ],
         "note": null,
+        "section": "Lemon Frosting Ingredients",
         "category": "Baking"
       }
     }

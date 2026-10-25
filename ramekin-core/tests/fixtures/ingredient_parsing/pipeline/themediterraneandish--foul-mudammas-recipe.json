@@ -3,16 +3,16 @@
   "recipe_slug": "foul-mudammas-recipe",
   "ingredients": [
     {
-      "raw": "2  cans plain fava beans,",
+      "raw": "2 cans plain fava beans, 13 to 15 ounces each can (see notes if using dry fava beans)",
       "expected": {
-        "item": "plain fava beans",
+        "item": "plain fava beans, 13 to 15 ounces each can",
         "measurements": [
           {
             "amount": "2",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "see notes if using dry fava beans",
         "category": "Other"
       }
     },
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "1 to 2  hot peppers, (chopped (jalapenos will work here))",
+      "raw": "1 to 2 hot peppers, chopped (jalapenos will work here)",
       "expected": {
         "item": "hot peppers",
         "measurements": [
@@ -63,12 +63,12 @@
             "unit": null
           }
         ],
-        "note": "chopped (jalapenos will work here)",
+        "note": "jalapenos will work here, chopped",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  garlic cloves, (chopped)",
+      "raw": "2 garlic cloves, chopped",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -82,23 +82,23 @@
       }
     },
     {
-      "raw": "1  large lemon, (juice of)",
+      "raw": "1 large lemon, juice of",
       "expected": {
-        "item": "lemon",
+        "item": "lemon, juice of",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "juice of",
+        "note": null,
         "category": "Produce"
       }
     },
     {
-      "raw": "Extra virgin olive oil,",
+      "raw": "Extra virgin olive oil, Early Harvest",
       "expected": {
-        "item": "Extra virgin olive oil",
+        "item": "Extra virgin olive oil, Early Harvest",
         "measurements": [],
         "note": null,
         "category": "Oils & Vinegars"
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "1  tomato, (diced)",
+      "raw": "1 tomato, diced",
       "expected": {
         "item": "tomato",
         "measurements": [
@@ -133,12 +133,17 @@
       }
     },
     {
-      "raw": "Warm (pita bread)",
+      "raw": "To Serve:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Warm pita bread",
       "expected": {
-        "item": "Warm",
+        "item": "Warm pita bread",
         "measurements": [],
-        "note": "pita bread",
-        "category": "Other"
+        "note": null,
+        "section": "To Serve",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -147,6 +152,7 @@
         "item": "Sliced tomatoes",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -156,6 +162,7 @@
         "item": "Sliced cucumbers",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -165,6 +172,7 @@
         "item": "Green onions",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -174,6 +182,7 @@
         "item": "Olives",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Canned Goods"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "strawberry-shortcake-recipe",
   "ingredients": [
     {
-      "raw": "2 cups (250g) all-purpose flour",
+      "raw": "For the biscuits:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups   (250g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 Tbsp (38g) granulated sugar",
+      "raw": "3 Tbsp   (38g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tbsp (15g) baking powder",
+      "raw": "1 Tbsp   (15g) baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -53,11 +59,12 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup (57g) cold salted butter (cubed)",
+      "raw": "1/4 cup   (57g) cold salted butter, cubed",
       "expected": {
         "item": "cold salted butter",
         "measurements": [
@@ -71,11 +78,12 @@
           }
         ],
         "note": "cubed",
+        "section": "For the Biscuits",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup (250ml) cold milk",
+      "raw": "1 cup   (250ml) cold milk",
       "expected": {
         "item": "cold milk",
         "measurements": [
@@ -89,11 +97,12 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp lemon zest",
+      "raw": "1 tsp   lemon zest",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -103,11 +112,16 @@
           }
         ],
         "note": null,
+        "section": "For the Biscuits",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 pint (454g) strawberries, sliced",
+      "raw": "For the macerated strawberries:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pint   (454g) strawberries, sliced",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -121,11 +135,12 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Macerated Strawberries",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 Tbsp (25g) granulated sugar",
+      "raw": "2 Tbsp   (25g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -139,11 +154,16 @@
           }
         ],
         "note": null,
+        "section": "For the Macerated Strawberries",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup (250ml) heavy cream",
+      "raw": "For the sweetened whipped cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup   (250ml) heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
@@ -157,11 +177,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sweetened Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup (50g) sugar",
+      "raw": "1/4 cup   (50g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -175,11 +196,12 @@
           }
         ],
         "note": null,
+        "section": "For the Sweetened Whipped Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 tsp vanilla extract",
+      "raw": "1/2 tsp   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -189,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For the Sweetened Whipped Cream",
         "category": "Baking"
       }
     }

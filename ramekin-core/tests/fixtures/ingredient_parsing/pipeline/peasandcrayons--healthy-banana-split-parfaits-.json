@@ -3,6 +3,10 @@
   "recipe_slug": "healthy-banana-split-parfaits-",
   "ingredients": [
     {
+      "raw": "FOR THE GRANOLA:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups old fashioned rolled oats",
       "expected": {
         "item": "old fashioned rolled oats",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1/2 cup roasted lightly salted almonds",
+      "raw": "½ cup roasted lightly salted almonds",
       "expected": {
         "item": "roasted lightly salted almonds",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Baking"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "For the Granola",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "FOR THE PARFAITS:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup nonfat or whole milk vanilla yogurt",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Other"
       }
     },
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup fresh chopped pineapple",
+      "raw": "½ cup fresh chopped pineapple",
       "expected": {
         "item": "fresh chopped pineapple",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large banana (peeled and sliced)",
+      "raw": "1 large banana peeled and sliced",
       "expected": {
         "item": "banana",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": "peeled and sliced",
+        "section": "For the Parfaits",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup granola ((see above for recipe))",
+      "raw": "1 cup granola (see above for recipe)",
       "expected": {
         "item": "granola",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "see above for recipe",
+        "section": "For the Parfaits",
         "category": "Snacks"
       }
     },
     {
-      "raw": "1/4 cup coconut whipped cream",
+      "raw": "¼ cup coconut whipped cream",
       "expected": {
         "item": "coconut whipped cream",
         "measurements": [
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Other"
       }
     },
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "For the Parfaits",
         "category": "Other"
       }
     },
     {
-      "raw": "2  cherries ((fresh or jarred))",
+      "raw": "2 cherries (fresh or jarred)",
       "expected": {
         "item": "cherries",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": "fresh or jarred",
+        "section": "For the Parfaits",
         "category": "Produce"
       }
     }

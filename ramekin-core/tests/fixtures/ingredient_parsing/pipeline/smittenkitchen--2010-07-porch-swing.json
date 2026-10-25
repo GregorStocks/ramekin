@@ -85,6 +85,10 @@
       }
     },
     {
+      "raw": "Lemonade:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 part freshly squeezed lemon juice",
       "expected": {
         "item": "part freshly squeezed lemon juice",
@@ -95,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Lemonade",
         "category": "Other"
       }
     },
@@ -109,6 +114,7 @@
           }
         ],
         "note": "I will use perhaps 1/2 or 3/4 of a part next time, see Note above; or to taste",
+        "section": "Lemonade",
         "category": "Other"
       }
     },
@@ -123,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Lemonade",
         "category": "Other"
       }
     }

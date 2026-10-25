@@ -3,7 +3,7 @@
   "recipe_slug": "dal-fry-recipe",
   "ingredients": [
     {
-      "raw": "1 cup toor dal ((split pigeon peas) (or ¾ cup toor dal + ¼ cup moong dal or masoor dal))",
+      "raw": "1 cup toor dal (split pigeon peas) (or ¾ cup toor dal + ¼ cup moong dal or masoor dal)",
       "expected": {
         "item": "toor dal",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2½ cups water  ((3 cups for Instant pot, more for regular pot))",
+      "raw": "2½ cups water  (3 cups for Instant pot, more for regular pot)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -31,7 +31,11 @@
       }
     },
     {
-      "raw": "2 tablespoons ghee  ((or oil or butter))",
+      "raw": "To Temper:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons ghee  (or oil or butter)",
       "expected": {
         "item": "ghee",
         "measurements": [
@@ -41,6 +45,7 @@
           }
         ],
         "note": "or oil or butter",
+        "section": "To Temper",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,11 +60,12 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon mustard seeds ((optional))",
+      "raw": "½ teaspoon mustard seeds (optional)",
       "expected": {
         "item": "mustard seeds",
         "measurements": [
@@ -69,11 +75,12 @@
           }
         ],
         "note": "optional",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "⅛ teaspoon hing ((asafoetida))",
+      "raw": "⅛ teaspoon hing (asafoetida)",
       "expected": {
         "item": "hing",
         "measurements": [
@@ -83,25 +90,27 @@
           }
         ],
         "note": "asafoetida",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  dried red chilli (broken (optional))",
+      "raw": "1 dried red chilli broken (optional)",
       "expected": {
-        "item": "dried red chilli",
+        "item": "dried red chilli broken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "broken (optional)",
-        "category": "Spices & Seasonings"
+        "note": "optional",
+        "section": "To Temper",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 to 2  green chilies ((slit or chopped) (optional))",
+      "raw": "1 to 2 green chilies (slit or chopped) (optional)",
       "expected": {
         "item": "green chilies",
         "measurements": [
@@ -111,11 +120,12 @@
           }
         ],
         "note": "slit or chopped, optional",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 medium onion ((¼ cup chopped finely))",
+      "raw": "1 medium onion (¼ cup chopped finely)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -125,11 +135,12 @@
           }
         ],
         "note": "1/4 cup chopped finely",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoon ginger garlic paste ((or ½ inch ginger &amp;amp; 2 garlic cloves fine chopped))",
+      "raw": "1 teaspoon ginger garlic paste (or ½ inch ginger & 2 garlic cloves fine chopped)",
       "expected": {
         "item": "ginger garlic paste",
         "measurements": [
@@ -139,11 +150,12 @@
           }
         ],
         "note": "or 1/2 inch ginger & 2 garlic cloves fine chopped",
+        "section": "To Temper",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 large tomato ((½ cup chopped or pureed))",
+      "raw": "1 large tomato (½ cup chopped or pureed)",
       "expected": {
         "item": "tomato",
         "measurements": [
@@ -153,6 +165,7 @@
           }
         ],
         "note": "1/2 cup chopped or pureed",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
@@ -167,39 +180,42 @@
           }
         ],
         "note": null,
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ to ½ teaspoon red chili powder ((adjust to taste))",
+      "raw": "½ teaspoon red chili powder (adjust to taste)",
       "expected": {
         "item": "red chili powder",
         "measurements": [
           {
-            "amount": "0.25 to 0.5",
+            "amount": "0.5",
             "unit": "tsp"
           }
         ],
         "note": "adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ to ½ teaspoon garam masala ((adjust to taste))",
+      "raw": "½ teaspoon garam masala (adjust to taste)",
       "expected": {
         "item": "garam masala",
         "measurements": [
           {
-            "amount": "0.25 to 0.5",
+            "amount": "0.5",
             "unit": "tsp"
           }
         ],
         "note": "adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¾ to 1 teaspoon salt  ((adjust to taste))",
+      "raw": "¾ to 1 teaspoon salt  (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -209,11 +225,12 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½  cup water ((to use for consistency))",
+      "raw": "½  cup water (to use for consistency)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -223,25 +240,27 @@
           }
         ],
         "note": "to use for consistency",
+        "section": "To Temper",
         "category": "Beverages"
       }
     },
     {
-      "raw": "½ teaspoon kasuri methi (crushed (dried fenugreek leaves))",
+      "raw": "1 teaspoon kasuri methi crushed (dried fenugreek leaves)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [
           {
-            "amount": "0.5",
+            "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "crushed (dried fenugreek leaves)",
+        "note": "dried fenugreek leaves, crushed",
+        "section": "To Temper",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves (finely chopped)",
+      "raw": "2 tablespoons coriander leaves finely chopped",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -251,11 +270,16 @@
           }
         ],
         "note": "finely chopped",
+        "section": "To Temper",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 to 2 tablespoons lemon juice  (or as needed (optional))",
+      "raw": "To Serve:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 to 2 tablespoons lemon juice  or as needed (optional)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -264,7 +288,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or as needed (optional)",
+        "note": "optional; or as needed",
+        "section": "To Serve",
         "category": "Produce"
       }
     }

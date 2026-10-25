@@ -3,21 +3,34 @@
   "recipe_slug": "taiwanese-pork-chop-recipe",
   "ingredients": [
     {
-      "raw": "4  bone-in pork chops",
+      "raw": "For the pork chops:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 bone-in pork chops (about 2.5 lbs/1kg; we used bone-in pork loin end chops because they're fattier than center cut pork chops)",
       "expected": {
         "item": "bone-in pork chops",
         "measurements": [
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "2.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "about 2.5 lbs/1kg; we used bone-in pork loin end chops because they're fattier than center cut pork chops",
+        "section": "For the Pork Chops",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "5 cloves garlic ((grated))",
+      "raw": "5 cloves garlic (grated)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -27,11 +40,12 @@
           }
         ],
         "note": "grated",
+        "section": "For the Pork Chops",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 tablespoons water ((plus 1/2 cup, divided))",
+      "raw": "3 tablespoons water (plus 1/2 cup, divided)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -41,6 +55,7 @@
           }
         ],
         "note": "plus 1/2 cup, divided",
+        "section": "For the Pork Chops",
         "category": "Beverages"
       }
     },
@@ -55,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Baking"
       }
     },
@@ -83,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 teaspoon potato starch ((Plus ½ cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch))",
+      "raw": "1 teaspoon potato starch (Plus ½ cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch)",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -139,17 +160,23 @@
           }
         ],
         "note": "Plus 1/2 cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch",
+        "section": "For the Pork Chops",
         "category": "Baking"
       }
     },
     {
-      "raw": "vegetable oil ((for frying))",
+      "raw": "vegetable oil (for frying)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Pork Chops",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the mustard greens:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon vegetable oil",
@@ -162,11 +189,12 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Greens",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  dried red chili",
+      "raw": "1 dried red chili",
       "expected": {
         "item": "dried red chili",
         "measurements": [
@@ -176,11 +204,12 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Greens",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 clove garlic ((chopped))",
+      "raw": "1 clove garlic (chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -190,6 +219,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Mustard Greens",
         "category": "Produce"
       }
     },
@@ -204,11 +234,12 @@
           }
         ],
         "note": null,
+        "section": "For the Mustard Greens",
         "category": "Baking"
       }
     },
     {
-      "raw": "2-2.5 cups pickled mustard greens ((chopped))",
+      "raw": "2-2.5 cups pickled mustard greens (chopped)",
       "expected": {
         "item": "pickled mustard greens",
         "measurements": [
@@ -218,11 +249,16 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Mustard Greens",
         "category": "Other"
       }
     },
     {
-      "raw": "1 small head napa cabbage ((washed and roughly chopped); can substitute any other leafy green))",
+      "raw": "For the cabbage:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 small head napa cabbage (washed and roughly chopped); can substitute any other leafy green)",
       "expected": {
         "item": "napa cabbage ; can substitute any other leafy green)",
         "measurements": [
@@ -232,6 +268,7 @@
           }
         ],
         "note": "washed and roughly chopped",
+        "section": "For the Cabbage",
         "category": "Produce"
       }
     },
@@ -246,11 +283,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cabbage",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 slice ginger ((optional))",
+      "raw": "1 slice ginger (optional)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -260,11 +298,12 @@
           }
         ],
         "note": "optional",
+        "section": "For the Cabbage",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves garlic ((sliced))",
+      "raw": "3 cloves garlic (sliced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -274,20 +313,26 @@
           }
         ],
         "note": "sliced",
+        "section": "For the Cabbage",
         "category": "Produce"
       }
     },
     {
-      "raw": "salt ((to taste))",
+      "raw": "salt (to taste)",
       "expected": {
         "item": "salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Cabbage",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4-6  tea eggs",
+      "raw": "To serve:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4-6 tea eggs (See our tea egg recipe. Note, they should be made the night before you plan to serve for optimal flavor. You can also substitute with plain hard-boiled eggs.)",
       "expected": {
         "item": "tea eggs",
         "measurements": [
@@ -296,12 +341,13 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "See our tea egg recipe. Note, they should be made the night before you plan to serve for optimal flavor. You can also substitute with plain hard-boiled eggs.",
+        "section": "To Serve",
         "category": "Other"
       }
     },
     {
-      "raw": "6 cups cooked white rice",
+      "raw": "6 cups cooked white rice (See our guide on perfect stovetop rice! Otherwise, be sure to time your rice cooker appropriately before you start frying the pork chops)",
       "expected": {
         "item": "cooked white rice",
         "measurements": [
@@ -310,7 +356,8 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "See our guide on perfect stovetop rice! Otherwise, be sure to time your rice cooker appropriately before you start frying the pork chops",
+        "section": "To Serve",
         "category": "Pasta & Rice"
       }
     }

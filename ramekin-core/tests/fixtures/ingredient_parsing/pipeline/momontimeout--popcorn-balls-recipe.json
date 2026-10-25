@@ -3,6 +3,10 @@
   "recipe_slug": "popcorn-balls-recipe",
   "ingredients": [
     {
+      "raw": "Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 lb marshmallows",
       "expected": {
         "item": "marshmallows",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredients",
         "category": "Baking"
       }
     },
@@ -50,6 +57,7 @@
         "item": "popcorn",
         "measurements": [],
         "note": null,
+        "section": "Ingredients",
         "category": "Snacks"
       }
     },
@@ -59,6 +67,7 @@
         "item": "food coloring",
         "measurements": [],
         "note": "optional",
+        "section": "Ingredients",
         "category": "Baking"
       }
     },
@@ -68,6 +77,7 @@
         "item": "non stick baking spray",
         "measurements": [],
         "note": null,
+        "section": "Ingredients",
         "category": "Oils & Vinegars"
       }
     }

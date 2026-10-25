@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  white nectarine (sliced)",
+      "raw": "1 white nectarine, sliced",
       "expected": {
         "item": "white nectarine",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "10  grapes (halved)",
+      "raw": "10 grapes, halved",
       "expected": {
         "item": "grapes",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2  radishes (sliced)",
+      "raw": "2 radishes, sliced",
       "expected": {
         "item": "radishes",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1/2  cucumber (peeled, sliced and halved)",
+      "raw": "1/2 cucumber, peeled, sliced and halved",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -101,6 +101,10 @@
       }
     },
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/3 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,15 +175,17 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "salt and pepper (to taste)",
+      "raw": "salt and pepper, to taste",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2020-06-whole-lemon-meringue-p",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "9 whole graham cracker sheets (1 sleeve), broken into pieces or 1 1/2 cups (150 grams) crumbs",
       "expected": {
         "item": "whole graham cracker sheets, broken into pieces",
@@ -17,6 +21,7 @@
           }
         ],
         "note": "1 sleeve; or 1 1/2 cups crumbs",
+        "section": "Crust",
         "category": "Other"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,8 +70,13 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 whole (preferably organic) lemon, any variety (see Note), scrubbed",
@@ -77,6 +89,7 @@
           }
         ],
         "note": "preferably organic, see Note, any variety, scrubbed",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -91,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -105,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +142,7 @@
           }
         ],
         "note": "cut into cubes",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -159,6 +176,7 @@
           }
         ],
         "note": "optional; I skip it",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -173,8 +191,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Meringue:",
+      "is_section_header": true
     },
     {
       "raw": "4 large egg whites",
@@ -187,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue",
         "category": "Dairy & Eggs"
       }
     },
@@ -205,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue",
         "category": "Baking"
       }
     },
@@ -219,6 +244,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue",
         "category": "Baking"
       }
     },
@@ -233,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Meringue",
         "category": "Spices & Seasonings"
       }
     }

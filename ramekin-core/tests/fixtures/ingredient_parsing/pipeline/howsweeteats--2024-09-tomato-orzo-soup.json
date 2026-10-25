@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves, (minced)",
+      "raw": "2 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -105,13 +105,17 @@
       }
     },
     {
-      "raw": "parmesan cheese, (for sprinkling)",
+      "raw": "parmesan cheese, for sprinkling",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [],
         "note": "for sprinkling",
         "category": "Cheese"
       }
+    },
+    {
+      "raw": "crunchy cheddar toasts:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons unsalted butter",
@@ -124,11 +128,12 @@
           }
         ],
         "note": null,
+        "section": "Crunchy Cheddar Toasts",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  small baguette, (sliced into rounds)",
+      "raw": "1 small baguette, sliced into rounds",
       "expected": {
         "item": "baguette",
         "measurements": [
@@ -138,6 +143,7 @@
           }
         ],
         "note": "sliced into rounds",
+        "section": "Crunchy Cheddar Toasts",
         "category": "Bakery & Bread"
       }
     },
@@ -152,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Crunchy Cheddar Toasts",
         "category": "Cheese"
       }
     }

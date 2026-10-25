@@ -3,49 +3,68 @@
   "recipe_slug": "2022-11-caramel-apple-entremet",
   "ingredients": [
     {
-      "raw": "1½ cups all-purpose flour",
+      "raw": "For Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1½ cups  / 190 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "190",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup almond meal or almond flour",
+      "raw": "½ cup  / 50 g almond meal or almond flour",
       "expected": {
         "item": "almond meal or almond flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons powdered sugar",
+      "raw": "2 tablespoons  / 12 g powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon fine sea salt",
+      "raw": "¼ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -55,11 +74,12 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ cup unsalted butter (1 stick) (cold and cut into cubes)",
+      "raw": "½ cup  / 113 g unsalted butter (1 stick), cold and cut into cubes",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -70,14 +90,19 @@
           {
             "amount": "1",
             "unit": "stick"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
         "note": "cold and cut into cubes",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 large egg (cold)",
+      "raw": "1 large   egg, cold",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -87,11 +112,12 @@
           }
         ],
         "note": "cold",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2-3 teaspoons water (as needed)",
+      "raw": "2-3 teaspoons   water, as needed",
       "expected": {
         "item": "water",
         "measurements": [
@@ -101,13 +127,18 @@
           }
         ],
         "note": "as needed",
+        "section": "For Crust",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 large apples (about 12oz or 340g)",
+      "raw": "For Caramel Apple layer:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 large   apples (about 12oz or 340g), peeled, cored, and cut into small 3/8-inch cubes (I recommend one granny smith and one softer, sweeter variety like Gala)",
       "expected": {
-        "item": "apples",
+        "item": "apples, peeled, cored, and cut into small 3/8-inch cubes",
         "measurements": [
           {
             "amount": "2",
@@ -122,12 +153,13 @@
             "unit": "g"
           }
         ],
-        "note": "about 12oz or 340g",
+        "note": "about 12oz or 340g, I recommend one granny smith and one softer, sweeter variety like Gala",
+        "section": "For Caramel Apple Layer",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 teaspoons lemon juice",
+      "raw": "2 teaspoons   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -137,11 +169,12 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 sheet leaf gelatin* (gold strength) (cut into strips and softened in cold water for at least 5 minutes)",
+      "raw": "1 sheet   leaf gelatin* (gold strength), cut into strips and softened in cold water for at least 5 minutes",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -151,39 +184,50 @@
           }
         ],
         "note": "gold strength, cut into strips and softened in cold water for at least 5 minutes",
+        "section": "For Caramel Apple Layer",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup granulated sugar",
+      "raw": "½ cup  / 100 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons corn syrup",
+      "raw": "2 tablespoons  / 42 g corn syrup",
       "expected": {
         "item": "corn syrup",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons water",
+      "raw": "2 tablespoons   water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -193,25 +237,31 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Beverages"
       }
     },
     {
-      "raw": "¼ cup heavy cream (at room temperature)",
+      "raw": "¼ cup  / 60 g heavy cream, at room temperature",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For Caramel Apple Layer",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons butter (at room temperature)",
+      "raw": "2 tablespoons   butter, at room temperature",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -221,11 +271,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Caramel Apple Layer",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¼ teaspoon fleur de sel",
+      "raw": "¼ teaspoon   fleur de sel",
       "expected": {
         "item": "fleur de sel",
         "measurements": [
@@ -235,11 +286,12 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon ground cinnamon",
+      "raw": "½ teaspoon   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -249,11 +301,12 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "⅛ teaspoon ground cardamom",
+      "raw": "⅛ teaspoon   ground cardamom",
       "expected": {
         "item": "ground cardamom",
         "measurements": [
@@ -263,11 +316,16 @@
           }
         ],
         "note": null,
+        "section": "For Caramel Apple Layer",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 sheets leaf gelatin* (gold strength) (cut into strips and softened in cold water for at least 5 minutes)",
+      "raw": "For Vanilla-Almond Crémeux:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 sheets   leaf gelatin* (gold strength), cut into strips and softened in cold water for at least 5 minutes",
       "expected": {
         "item": "leaf gelatin",
         "measurements": [
@@ -277,39 +335,50 @@
           }
         ],
         "note": "gold strength, cut into strips and softened in cold water for at least 5 minutes",
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ cup heavy cream",
+      "raw": "½ cup  / 120 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ cup whole milk",
+      "raw": "½ cup  / 120 g whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  vanilla bean (split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract—add at the end with the almond))",
+      "raw": "1   vanilla bean, split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract—add at the end with the almond)",
       "expected": {
         "item": "vanilla bean",
         "measurements": [
@@ -318,12 +387,13 @@
             "unit": null
           }
         ],
-        "note": "split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract-add at the end with the almond)",
+        "note": "split and seeds scraped out; or substitute 1 teaspoon vanilla bean paste or extract-add at the end with the almond",
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 large egg yolks (at room temperature)",
+      "raw": "3 large   egg yolks, at room temperature",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -333,25 +403,31 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3.5 oz good quality white chocolate (finely chopped)",
+      "raw": "3.5 oz  / 100 g good quality white chocolate, finely chopped",
       "expected": {
         "item": "white chocolate",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "oz"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": "finely chopped, good quality",
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon almond extract",
+      "raw": "½ teaspoon   almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -361,11 +437,16 @@
           }
         ],
         "note": null,
+        "section": "For Vanilla-Almond Crémeux",
         "category": "Baking"
       }
     },
     {
-      "raw": "¾ cup heavy whipping cream",
+      "raw": "For Mascarpone Whipped Cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup   heavy whipping cream",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
@@ -375,13 +456,33 @@
           }
         ],
         "note": null,
+        "section": "For Mascarpone Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons powdered sugar",
+      "raw": "2 tablespoons  / 12 g powdered sugar",
       "expected": {
         "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "section": "For Mascarpone Whipped Cream",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons   mascarpone, let sit at room temperature for no longer than 15 minutes",
+      "expected": {
+        "item": "mascarpone, let sit at room temperature for no longer than 15 minutes",
         "measurements": [
           {
             "amount": "2",
@@ -389,39 +490,31 @@
           }
         ],
         "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "2 tablespoons mascarpone (let sit at room temperature for no longer than 15 minutes)",
-      "expected": {
-        "item": "mascarpone",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": "let sit at room temperature for no longer than 15 minutes",
+        "section": "For Mascarpone Whipped Cream",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1  apple (I recommend a softer red variety like Gala, very thinly sliced)",
+      "raw": "For Apple Garnish:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1   apple, I recommend a softer red variety like Gala, very thinly sliced",
       "expected": {
-        "item": "apple",
+        "item": "apple, I recommend a softer red variety like Gala",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "I recommend a softer red variety like Gala, very thinly sliced",
+        "note": "very thinly sliced",
+        "section": "For Apple Garnish",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup water",
+      "raw": "1 cup   water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -431,11 +524,12 @@
           }
         ],
         "note": null,
+        "section": "For Apple Garnish",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 tablespoon sugar",
+      "raw": "1 tablespoon   sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -445,11 +539,12 @@
           }
         ],
         "note": null,
+        "section": "For Apple Garnish",
         "category": "Baking"
       }
     },
     {
-      "raw": "½ teaspoon salt",
+      "raw": "½ teaspoon   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -459,11 +554,12 @@
           }
         ],
         "note": null,
+        "section": "For Apple Garnish",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon citric acid (or use 2 teaspoons lemon juice)",
+      "raw": "¼ teaspoon   citric acid, or use 2 teaspoons lemon juice",
       "expected": {
         "item": "citric acid",
         "measurements": [
@@ -473,6 +569,7 @@
           }
         ],
         "note": "or use 2 teaspoons lemon juice",
+        "section": "For Apple Garnish",
         "category": "Baking"
       }
     }

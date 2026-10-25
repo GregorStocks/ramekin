@@ -3,6 +3,10 @@
   "recipe_slug": "2016-05-chicken-gyro-salad",
   "ingredients": [
     {
+      "raw": "Chicken:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Produce"
       },
       "expanded": true
@@ -56,6 +63,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chicken",
         "category": "Produce"
       }
     },
@@ -70,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -84,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -98,6 +108,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +123,7 @@
           }
         ],
         "note": "crumbled",
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,6 +133,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,8 +152,13 @@
           }
         ],
         "note": "about 3 pounds",
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Tzatziki dressing:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (554 grams) plain, unsweetened Greek yogurt",
@@ -157,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Tzatziki Dressing",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,6 +194,7 @@
           }
         ],
         "note": "about 1 pound, unpeeled",
+        "section": "Tzatziki Dressing",
         "category": "Produce"
       }
     },
@@ -189,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Tzatziki Dressing",
         "category": "Produce"
       }
     },
@@ -203,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Tzatziki Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -217,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Tzatziki Dressing",
         "category": "Produce"
       }
     },
@@ -231,6 +254,7 @@
           }
         ],
         "note": "minced",
+        "section": "Tzatziki Dressing",
         "category": "Produce"
       }
     },
@@ -245,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Tzatziki Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -259,8 +284,13 @@
           }
         ],
         "note": null,
+        "section": "Tzatziki Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "1 head romaine lettuce, chopped",
@@ -273,6 +303,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -287,6 +318,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -301,6 +333,7 @@
           }
         ],
         "note": "about, chopped",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -315,6 +348,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -329,6 +363,7 @@
           }
         ],
         "note": "intending 1/2 per person; or more as needed",
+        "section": "Assembly",
         "category": "Bakery & Bread"
       }
     }

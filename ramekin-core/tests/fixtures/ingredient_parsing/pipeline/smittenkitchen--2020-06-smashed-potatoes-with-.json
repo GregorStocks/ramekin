@@ -3,6 +3,10 @@
   "recipe_slug": "2020-06-smashed-potatoes-with-",
   "ingredients": [
     {
+      "raw": "Sweet corn relish:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 large ears sweet corn, shucked",
       "expected": {
         "item": "ears sweet corn",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "shucked",
+        "section": "Sweet Corn Relish",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "cut into 1/8-inch-thick slices",
+        "section": "Sweet Corn Relish",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "see Note",
+        "section": "Sweet Corn Relish",
         "category": "Baking"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,8 +197,13 @@
           }
         ],
         "note": null,
+        "section": "Sweet Corn Relish",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Spring green pea sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 1/4 teaspoons kosher salt, plus more as needed",
@@ -195,6 +216,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "Spring Green Pea Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": "or about 1 to 1 1/4 cup frozen",
+        "section": "Spring Green Pea Sauce",
         "category": "Other"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "minced jalapeño",
+        "section": "Spring Green Pea Sauce",
         "category": "Other"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "Spring Green Pea Sauce",
         "category": "Produce"
       }
     },
@@ -246,8 +271,13 @@
         "item": "Freshly ground white pepper",
         "measurements": [],
         "note": null,
+        "section": "Spring Green Pea Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Smashed potatoes, onions, and assembly:",
+      "is_section_header": true
     },
     {
       "raw": "16 small new potatoes (a little larger than a walnut is what Terry recommends)",
@@ -260,6 +290,7 @@
           }
         ],
         "note": "a little larger than a walnut is what Terry recommends",
+        "section": "Smashed Potatoes, Onions, and Assembly",
         "category": "Other"
       }
     },
@@ -274,6 +305,7 @@
           }
         ],
         "note": null,
+        "section": "Smashed Potatoes, Onions, and Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -288,6 +320,7 @@
           }
         ],
         "note": "cut into 1/2-inch-thick slices",
+        "section": "Smashed Potatoes, Onions, and Assembly",
         "category": "Produce"
       }
     },
@@ -297,6 +330,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Smashed Potatoes, Onions, and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -306,6 +340,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Smashed Potatoes, Onions, and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -315,6 +350,7 @@
         "item": "Sweet Corn Relish",
         "measurements": [],
         "note": "for serving",
+        "section": "Smashed Potatoes, Onions, and Assembly",
         "category": "Other"
       }
     },
@@ -324,6 +360,7 @@
         "item": "Spicy Spring Green Pea Sauce",
         "measurements": [],
         "note": "for serving",
+        "section": "Smashed Potatoes, Onions, and Assembly",
         "category": "Other"
       }
     }

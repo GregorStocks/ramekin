@@ -3,6 +3,10 @@
   "recipe_slug": "2020-08-08-peach-frangipane-ga",
   "ingredients": [
     {
+      "raw": "For the tart dough:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cups (160g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon (14 g)&nbsp;sugar",
+      "raw": "1 tablespoon (14 g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Baking"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Other"
       }
     },
@@ -85,11 +93,16 @@
           }
         ],
         "note": null,
+        "section": "For the Tart Dough",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 cup (54 g)&nbsp;almond flour",
+      "raw": "For the frangipane:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup (54 g) almond flour",
       "expected": {
         "item": "almond flour",
         "measurements": [
@@ -103,11 +116,12 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons (28 g)&nbsp;sugar",
+      "raw": "2 tablespoons (28 g) sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Baking"
       }
     },
@@ -135,11 +150,12 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons (30 g)&nbsp;butter at room temperature",
+      "raw": "2 tablespoons (30 g) butter at room temperature",
       "expected": {
         "item": "butter at room temperature",
         "measurements": [
@@ -153,11 +169,12 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1&nbsp;egg (small if possible)",
+      "raw": "1 egg (small if possible)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -167,11 +184,12 @@
           }
         ],
         "note": "small if possible",
+        "section": "For the Frangipane",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 teaspoons&nbsp;vanilla, rum, brandy or bourbon",
+      "raw": "2 teaspoons vanilla, rum, brandy or bourbon",
       "expected": {
         "item": "vanilla, rum, brandy or bourbon",
         "measurements": [
@@ -181,8 +199,13 @@
           }
         ],
         "note": null,
+        "section": "For the Frangipane",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For assembly:",
+      "is_section_header": true
     },
     {
       "raw": "2 peaches, sliced thinly (1/4-inch or smaller)",
@@ -195,11 +218,12 @@
           }
         ],
         "note": "1/4-inch or smaller, sliced thinly",
+        "section": "For Assembly",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons&nbsp;melted butter",
+      "raw": "2 tablespoons melted butter",
       "expected": {
         "item": "melted butter",
         "measurements": [
@@ -209,11 +233,12 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1&nbsp;to&nbsp;2&nbsp;tablespoons sugar, turbinado is nice",
+      "raw": "1 to 2 tablespoons sugar, turbinado is nice",
       "expected": {
         "item": "sugar, turbinado is nice",
         "measurements": [
@@ -223,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "For Assembly",
         "category": "Baking"
       }
     },
@@ -232,6 +258,7 @@
         "item": "vanilla ice cream",
         "measurements": [],
         "note": "for serving",
+        "section": "For Assembly",
         "category": "Frozen"
       }
     }

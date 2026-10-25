@@ -156,6 +156,10 @@
       }
     },
     {
+      "raw": "For the dumplings:",
+      "is_section_header": true
+    },
+    {
       "raw": "300g self-raising flour",
       "expected": {
         "item": "self-raising flour",
@@ -166,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Baking"
       }
     },
@@ -180,6 +185,7 @@
           }
         ],
         "note": "removed",
+        "section": "For the Dumplings",
         "category": "Produce"
       }
     },
@@ -194,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Dairy & Eggs"
       }
     },
@@ -208,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dumplings",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,6 +225,7 @@
         "item": "olive oil",
         "measurements": [],
         "note": "for drizzling",
+        "section": "For the Dumplings",
         "category": "Oils & Vinegars"
       }
     }

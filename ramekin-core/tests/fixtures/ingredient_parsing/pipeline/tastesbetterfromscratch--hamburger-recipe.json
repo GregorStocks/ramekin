@@ -3,7 +3,7 @@
   "recipe_slug": "hamburger-recipe",
   "ingredients": [
     {
-      "raw": "1 ½ pounds ground chuck* (, (80/20))",
+      "raw": "1 ½ pounds ground chuck*, , (80/20)",
       "expected": {
         "item": "ground chuck",
         "measurements": [
@@ -12,7 +12,7 @@
             "unit": "lb"
           }
         ],
-        "note": "(80/20)",
+        "note": "80/20",
         "category": "Meat & Seafood"
       }
     },
@@ -115,7 +115,11 @@
       }
     },
     {
-      "raw": "6  hamburger buns (, toasted, if desired)",
+      "raw": "Toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 hamburger buns, , toasted, if desired",
       "expected": {
         "item": "hamburger buns",
         "measurements": [
@@ -125,11 +129,12 @@
           }
         ],
         "note": "toasted, if desired",
+        "section": "Toppings",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "6 slices American cheese* (, or your favorite cheese)",
+      "raw": "6 slices American cheese*, , or your favorite cheese",
       "expected": {
         "item": "American cheese",
         "measurements": [
@@ -139,11 +144,12 @@
           }
         ],
         "note": "or your favorite cheese",
+        "section": "Toppings",
         "category": "Cheese"
       }
     },
     {
-      "raw": "6  lettuce leaves",
+      "raw": "6 lettuce leaves",
       "expected": {
         "item": "lettuce leaves",
         "measurements": [
@@ -153,11 +159,12 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  beefsteak tomato (, thinly sliced)",
+      "raw": "1 beefsteak tomato, , thinly sliced",
       "expected": {
         "item": "beefsteak tomato",
         "measurements": [
@@ -167,11 +174,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2  of a red or white onion (, thinly sliced)",
+      "raw": "½  of a red or white onion, , thinly sliced",
       "expected": {
         "item": "red or white onion",
         "measurements": [
@@ -181,11 +189,12 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
     {
-      "raw": "6  Pickle slices",
+      "raw": "6 Pickle slices",
       "expected": {
         "item": "Pickle slices",
         "measurements": [
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     },
@@ -204,6 +214,7 @@
         "item": "Other topping ideas: sautéed mushrooms, grilled onions, jalapeños, bacon, onion rings",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Other"
       }
     },
@@ -213,6 +224,7 @@
         "item": "Condiments: ketchup, mustard, BBQ sauce, Thousand island dressing, Ranch dressing, or homemade Chick-fil A Sauce.",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     }

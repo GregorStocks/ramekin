@@ -3,7 +3,11 @@
   "recipe_slug": "unaju-recipe",
   "ingredients": [
     {
-      "raw": "3 tbsp turbinado sugar ((zarame) light brown with coarse texture)",
+      "raw": "Unagi Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 tbsp turbinado sugar (zarame) light brown with coarse texture",
       "expected": {
         "item": "turbinado sugar light brown with coarse texture",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": "zarame",
+        "section": "Unagi Sauce",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Sauce",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Sauce",
         "category": "Beverages"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Unagi Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,20 +77,26 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Unagi Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "300 g filleted eels (1 fillet is approx 150g)",
+      "raw": "Unagi don:",
+      "is_section_header": true
+    },
+    {
+      "raw": "300 g filleted eels 1 fillet is approx 150g",
       "expected": {
-        "item": "filleted eels",
+        "item": "filleted eels 1 fillet is approx 150g",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": "1 fillet is approx 150g",
+        "note": null,
+        "section": "Unagi Don",
         "category": "Other"
       }
     },
@@ -97,13 +111,14 @@
           }
         ],
         "note": null,
+        "section": "Unagi Don",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 portions cooked Japanese short-grain rice",
+      "raw": "2 portions cooked Japanese short-grain rice see here for how to cook Japanese rice",
       "expected": {
-        "item": "cooked Japanese short-grain rice",
+        "item": "cooked Japanese short-grain rice see here for how to cook Japanese rice",
         "measurements": [
           {
             "amount": "2",
@@ -111,15 +126,17 @@
           }
         ],
         "note": null,
-        "category": "Pasta & Rice"
+        "section": "Unagi Don",
+        "category": "Other"
       }
     },
     {
-      "raw": "Japanese sansho pepper (optional)",
+      "raw": "Japanese sansho pepper optional",
       "expected": {
         "item": "Japanese sansho pepper",
         "measurements": [],
         "note": "optional",
+        "section": "Unagi Don",
         "category": "Other"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "recipes-beef-nachos-html",
   "ingredients": [
     {
-      "raw": "1 tablespoon minced jalapeño peppers, (from 1 pepper (seeded; see note))",
+      "raw": "Quick Salsa:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon minced jalapeño peppers, from 1 pepper (seeded; see note)",
       "expected": {
         "item": "minced jalapeño peppers",
         "measurements": [
@@ -12,26 +16,28 @@
             "unit": "tbsp"
           }
         ],
-        "note": "from 1 pepper (seeded; see note)",
+        "note": "seeded; see note, from 1 pepper",
+        "section": "Quick Salsa",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  scallions, (light and dark green parts, thinly sliced)",
+      "raw": "2 scallions, light and dark green parts, thinly sliced",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, light and dark green parts",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "light and dark green parts, thinly sliced",
+        "note": "thinly sliced",
+        "section": "Quick Salsa",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  small clove garlic, (minced)",
+      "raw": "1 small clove garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "Quick Salsa",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Salsa",
         "category": "Produce"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Quick Salsa",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tablespoon lime juice, (from 1 lime)",
+      "raw": "1 tablespoon lime juice, from 1 lime",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -83,22 +92,32 @@
           }
         ],
         "note": "from 1 lime",
+        "section": "Quick Salsa",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  small ripe tomatoes, (about ¾ pound (340 g), cored and diced)",
+      "raw": "2 small ripe tomatoes, about ¾ pound (340 g), cored and diced",
       "expected": {
         "item": "ripe tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
-        "note": "about 3/4 pound (340 g), cored and diced",
+        "note": "about 3/4 pound, cored and diced",
+        "section": "Quick Salsa",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Spicy Beef:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon vegetable oil",
@@ -111,11 +130,12 @@
           }
         ],
         "note": null,
+        "section": "Spicy Beef",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  small yellow onion, (finely chopped)",
+      "raw": "1 small yellow onion, finely chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -125,11 +145,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Spicy Beef",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large clove garlic, (minced)",
+      "raw": "1 large clove garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -139,6 +160,7 @@
           }
         ],
         "note": "minced",
+        "section": "Spicy Beef",
         "category": "Produce"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": "90 to 93%",
+        "section": "Spicy Beef",
         "category": "Meat & Seafood"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Beef",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,8 +265,13 @@
           }
         ],
         "note": null,
+        "section": "Spicy Beef",
         "category": "Canned Goods"
       }
+    },
+    {
+      "raw": "Nachos:",
+      "is_section_header": true
     },
     {
       "raw": "1 (10-oz) bag tortilla chips",
@@ -251,6 +284,7 @@
           }
         ],
         "note": "10-oz",
+        "section": "Nachos",
         "category": "Snacks"
       }
     },
@@ -273,11 +307,12 @@
           }
         ],
         "note": null,
+        "section": "Nachos",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2  jalapeño peppers, (thinly sliced into rounds (optional))",
+      "raw": "2 jalapeño peppers, thinly sliced into rounds (optional)",
       "expected": {
         "item": "jalapeño peppers",
         "measurements": [
@@ -286,9 +321,14 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced into rounds (optional)",
+        "note": "optional, thinly sliced into rounds",
+        "section": "Nachos",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For Serving (Optional):",
+      "is_section_header": true
     },
     {
       "raw": "Lime wedges",
@@ -296,6 +336,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Produce"
       }
     },
@@ -305,6 +346,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Dairy & Eggs"
       }
     },
@@ -314,6 +356,7 @@
         "item": "Homemade or store-bought guacamole",
         "measurements": [],
         "note": null,
+        "section": "For Serving (Optional)",
         "category": "Condiments & Sauces"
       }
     }

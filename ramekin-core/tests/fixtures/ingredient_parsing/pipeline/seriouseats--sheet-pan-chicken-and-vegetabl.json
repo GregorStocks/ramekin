@@ -3,6 +3,10 @@
   "recipe_slug": "sheet-pan-chicken-and-vegetabl",
   "ingredients": [
     {
+      "raw": "For the Chicken and Vegetables:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons (30 ml) Thai red curry paste",
       "expected": {
         "item": "Thai red curry paste",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken and Vegetables",
         "category": "Condiments & Sauces"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "such as canola oil",
+        "section": "For the Chicken and Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken and Vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -71,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken and Vegetables",
         "category": "Condiments & Sauces"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken and Vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,6 +116,7 @@
           }
         ],
         "note": "trimmed",
+        "section": "For the Chicken and Vegetables",
         "category": "Meat & Seafood"
       }
     },
@@ -125,6 +135,7 @@
           }
         ],
         "note": "halved lengthwise if larger than 1 inch in diameter, peeled and cut crosswise into 3-inch lengths",
+        "section": "For the Chicken and Vegetables",
         "category": "Produce"
       }
     },
@@ -147,8 +158,13 @@
           }
         ],
         "note": "about 4 cups, cut into 1 1/2- to 2-inch pieces",
+        "section": "For the Chicken and Vegetables",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the Cilantro-Peanut Relish:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (45 g) chopped fresh cilantro",
@@ -165,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cilantro-Peanut Relish",
         "category": "Produce"
       }
     },
@@ -183,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cilantro-Peanut Relish",
         "category": "Other"
       }
     },
@@ -201,6 +219,7 @@
           }
         ],
         "note": "about 1 teaspoon, finely chopped",
+        "section": "For the Cilantro-Peanut Relish",
         "category": "Other"
       }
     },
@@ -219,8 +238,32 @@
           }
         ],
         "note": null,
+        "section": "For the Cilantro-Peanut Relish",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) fish sauce",
+      "expected": {
+        "item": "fish sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "section": "For the Cilantro-Peanut Relish",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "For the Peanut-Lime Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) canned unsweetened coconut milk, well-shaken and stirred",
@@ -237,6 +280,7 @@
           }
         ],
         "note": "well-shaken and stirred",
+        "section": "For the Peanut-Lime Dressing",
         "category": "Other"
       }
     },
@@ -255,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut-Lime Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -273,6 +318,7 @@
           }
         ],
         "note": "from 1 lime",
+        "section": "For the Peanut-Lime Dressing",
         "category": "Produce"
       }
     },
@@ -291,6 +337,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut-Lime Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -309,6 +356,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut-Lime Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -327,6 +375,7 @@
           }
         ],
         "note": null,
+        "section": "For the Peanut-Lime Dressing",
         "category": "Baking"
       }
     }

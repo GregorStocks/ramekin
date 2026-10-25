@@ -3,7 +3,11 @@
   "recipe_slug": "pho-tai-nam-vietnamese-noodle-",
   "ingredients": [
     {
-      "raw": "560 grams oxtail",
+      "raw": "for stock:",
+      "is_section_header": true
+    },
+    {
+      "raw": "560 grams  oxtail",
       "expected": {
         "item": "oxtail",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Stock",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "275 grams brisket",
+      "raw": "275 grams  brisket",
       "expected": {
         "item": "brisket",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Stock",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "25 grams ginger",
+      "raw": "25 grams  ginger",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Stock",
         "category": "Produce"
       }
     },
     {
-      "raw": "175 grams onion ((1/2 large onion))",
+      "raw": "175 grams  onion (½ large onion)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": "1/2 large onion",
+        "section": "For Stock",
         "category": "Produce"
       }
     },
     {
-      "raw": "5 grams cinnamon",
+      "raw": "5 grams  cinnamon",
       "expected": {
         "item": "cinnamon",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For Stock",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 grams star anise",
+      "raw": "3 grams  star anise",
       "expected": {
         "item": "star anise",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "For Stock",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 teaspoon fennel seeds",
+      "raw": "½ teaspoon  fennel seeds",
       "expected": {
         "item": "fennel seeds",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For Stock",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For Stock",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,11 +137,16 @@
           }
         ],
         "note": null,
+        "section": "For Stock",
         "category": "Other"
       }
     },
     {
-      "raw": "400 grams Banh Pho Noodles ((dried flat rice noodles))",
+      "raw": "for pho:",
+      "is_section_header": true
+    },
+    {
+      "raw": "400 grams  Banh Pho Noodles (dried flat rice noodles)",
       "expected": {
         "item": "Banh Pho Noodles",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": "dried flat rice noodles",
+        "section": "For Pho",
         "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup fish sauce ((to taste))",
+      "raw": "¼ cup  fish sauce (to taste)",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "to taste",
+        "section": "For Pho",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon coconut sugar ((to taste))",
+      "raw": "1 teaspoon  coconut sugar (to taste)",
       "expected": {
         "item": "coconut sugar",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": "to taste",
+        "section": "For Pho",
         "category": "Baking"
       }
     },
     {
-      "raw": "50 grams onion ((about 1/4 onion))",
+      "raw": "50 grams  onion (about ¼ onion)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -181,6 +201,7 @@
           }
         ],
         "note": "about 1/4 onion",
+        "section": "For Pho",
         "category": "Produce"
       }
     },
@@ -190,17 +211,23 @@
         "item": "cilantro",
         "measurements": [],
         "note": null,
+        "section": "For Pho",
         "category": "Produce"
       }
     },
     {
-      "raw": "beef tenderloin ((sliced paper thin))",
+      "raw": "beef tenderloin (sliced paper thin)",
       "expected": {
         "item": "beef tenderloin",
         "measurements": [],
         "note": "sliced paper thin",
+        "section": "For Pho",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "to serve:",
+      "is_section_header": true
     },
     {
       "raw": "bean sprouts",
@@ -208,6 +235,7 @@
         "item": "bean sprouts",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -217,6 +245,7 @@
         "item": "lime",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -226,24 +255,27 @@
         "item": "Thai basil",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
     {
-      "raw": "hoisin sauce ((optional))",
+      "raw": "hoisin sauce (optional)",
       "expected": {
         "item": "hoisin sauce",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "sriracha ((optional))",
+      "raw": "sriracha (optional)",
       "expected": {
         "item": "sriracha",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Condiments & Sauces"
       }
     }

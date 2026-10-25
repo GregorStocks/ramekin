@@ -3,6 +3,10 @@
   "recipe_slug": "biskvit-russian-cake-recipe",
   "ingredients": [
     {
+      "raw": "Cake Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 1/4 cup flour",
       "expected": {
         "item": "flour",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "10  eggs",
+      "raw": "10 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
     },
@@ -55,8 +62,13 @@
           }
         ],
         "note": null,
+        "section": "Cake Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Syrup Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup water",
@@ -69,20 +81,22 @@
           }
         ],
         "note": null,
+        "section": "Syrup Ingredients",
         "category": "Beverages"
       }
     },
     {
-      "raw": "3/4 cup red wine (I used St. Chapelle Soft Red)",
+      "raw": "3/4 cup red wine, I used St. Chapelle Soft Red",
       "expected": {
-        "item": "red wine",
+        "item": "red wine, I used St. Chapelle Soft Red",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "I used St. Chapelle Soft Red",
+        "note": null,
+        "section": "Syrup Ingredients",
         "category": "Beverages"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup Ingredients",
         "category": "Baking"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup Ingredients",
         "category": "Produce"
       }
     }

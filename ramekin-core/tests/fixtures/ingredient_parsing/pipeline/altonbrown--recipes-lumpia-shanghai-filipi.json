@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-lumpia-shanghai-filipi",
   "ingredients": [
     {
+      "raw": "For the Lumpia:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 pound ground pork",
       "expected": {
         "item": "ground pork",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lumpia",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Lumpia",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Lumpia",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Lumpia",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "peeled and minced",
+        "section": "For the Lumpia",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "peeled and grated on large holes of box grater",
+        "section": "For the Lumpia",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Lumpia",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": "drained and minced",
+        "section": "For the Lumpia",
         "category": "Canned Goods"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lumpia",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lumpia",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lumpia",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,11 +182,12 @@
           }
         ],
         "note": null,
+        "section": "For the Lumpia",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -181,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lumpia",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lumpia",
         "category": "Other"
       }
     },
@@ -204,6 +222,7 @@
         "item": "a small bowl of water, to moisten fingers",
         "measurements": [],
         "note": null,
+        "section": "For the Lumpia",
         "category": "Other"
       }
     },
@@ -213,8 +232,13 @@
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Lumpia",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "For the Dipping Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup cane vinegar",
@@ -227,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Other"
       }
     },
@@ -241,6 +266,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Dipping Sauce",
         "category": "Produce"
       }
     },
@@ -255,6 +281,7 @@
           }
         ],
         "note": "finely minced",
+        "section": "For the Dipping Sauce",
         "category": "Other"
       }
     },
@@ -269,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dipping Sauce",
         "category": "Spices & Seasonings"
       }
     }

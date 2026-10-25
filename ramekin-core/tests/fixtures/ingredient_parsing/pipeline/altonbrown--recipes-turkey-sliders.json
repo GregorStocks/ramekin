@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-turkey-sliders",
   "ingredients": [
     {
+      "raw": "Savory Greek Yogurt Dip:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 quart plain Greek yogurt",
       "expected": {
         "item": "plain Greek yogurt",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Greek Yogurt Dip",
         "category": "Dairy & Eggs"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Greek Yogurt Dip",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Greek Yogurt Dip",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Greek Yogurt Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Greek Yogurt Dip",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Greek Yogurt Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Savory Greek Yogurt Dip",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Turkey Sliders:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon olive oil",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Sliders",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "stems and gills removed, finely chopped",
+        "section": "Turkey Sliders",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Sliders",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Sliders",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Turkey Sliders",
         "category": "Cheese"
       }
     },
@@ -181,11 +201,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Turkey Sliders",
         "category": "Other"
       }
     },
     {
-      "raw": "12  dinner rolls, sliced",
+      "raw": "12 dinner rolls, sliced",
       "expected": {
         "item": "dinner rolls",
         "measurements": [
@@ -195,6 +216,7 @@
           }
         ],
         "note": "sliced",
+        "section": "Turkey Sliders",
         "category": "Bakery & Bread"
       }
     },
@@ -204,6 +226,7 @@
         "item": "Savory Greek Yogurt Dip",
         "measurements": [],
         "note": null,
+        "section": "Turkey Sliders",
         "category": "Other"
       }
     },
@@ -213,6 +236,7 @@
         "item": "Lettuce",
         "measurements": [],
         "note": null,
+        "section": "Turkey Sliders",
         "category": "Produce"
       }
     },
@@ -222,6 +246,7 @@
         "item": "Tomato slices",
         "measurements": [],
         "note": null,
+        "section": "Turkey Sliders",
         "category": "Produce"
       }
     }

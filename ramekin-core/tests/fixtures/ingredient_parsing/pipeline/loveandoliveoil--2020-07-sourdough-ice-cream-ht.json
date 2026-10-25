@@ -3,49 +3,68 @@
   "recipe_slug": "2020-07-sourdough-ice-cream-ht",
   "ingredients": [
     {
-      "raw": "1 1/2 cups heavy cream",
+      "raw": "For Sourdough Ice Cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ½ cups  / 360 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Sourdough Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 1/2 cups whole milk",
+      "raw": "1 ½ cups  / 360 g whole milk",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Sourdough Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2/3 cup granulated sugar",
+      "raw": "⅔ cup  / 133 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Sourdough Ice Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon sea salt",
+      "raw": "¼ teaspoon   sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -55,11 +74,12 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Ice Cream",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 slices sourdough bread (lightly toasted)",
+      "raw": "2 slices   sourdough bread, lightly toasted",
       "expected": {
         "item": "sourdough bread",
         "measurements": [
@@ -69,11 +89,12 @@
           }
         ],
         "note": "lightly toasted",
+        "section": "For Sourdough Ice Cream",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "5  large egg yolks (at room temperature)",
+      "raw": "5   large egg yolks, at room temperature",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -83,11 +104,16 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Sourdough Ice Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 slices stale sourdough bread",
+      "raw": "For Sourdough Crumbs:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 slices   stale sourdough bread",
       "expected": {
         "item": "stale sourdough bread",
         "measurements": [
@@ -97,39 +123,50 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Crumbs",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons salted butter",
+      "raw": "2 tablespoons  / 28 g salted butter",
       "expected": {
         "item": "salted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Sourdough Crumbs",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons granulated sugar",
+      "raw": "2 tablespoons  / 24 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Sourdough Crumbs",
         "category": "Baking"
       }
     },
     {
-      "raw": "pinch sea salt",
+      "raw": "pinch   sea salt",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -139,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For Sourdough Crumbs",
         "category": "Spices & Seasonings"
       }
     }

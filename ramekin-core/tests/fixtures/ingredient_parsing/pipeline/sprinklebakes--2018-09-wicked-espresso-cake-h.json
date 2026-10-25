@@ -3,30 +3,36 @@
   "recipe_slug": "2018-09-wicked-espresso-cake-h",
   "ingredients": [
     {
-      "raw": "Flour based cooking spray (recommend Baker’s Joy)",
+      "raw": "Espresso cake layers:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Flour based cooking spray recommend Baker’s Joy",
       "expected": {
-        "item": "Flour based cooking spray",
+        "item": "Flour based cooking spray recommend Baker’s Joy",
         "measurements": [],
-        "note": "recommend Baker’s Joy",
+        "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Other"
       }
     },
     {
-      "raw": "4 tablespoons finely ground espresso (Wicked Joe’sWicked French Roast beans)",
+      "raw": "4 tablespoons finely ground espresso Wicked Joe’sWicked French Roast beans",
       "expected": {
-        "item": "finely ground espresso",
+        "item": "finely ground espresso Wicked Joe’sWicked French Roast beans",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": "Wicked Joe’sWicked French Roast beans",
-        "category": "Beverages"
+        "note": null,
+        "section": "Espresso Cake Layers",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2  cup/120ml hot water",
+      "raw": "1/2 cup/120ml hot water",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -40,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Beverages"
       }
     },
@@ -62,6 +69,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -76,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -90,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -134,6 +145,7 @@
           }
         ],
         "note": "packed",
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
@@ -156,6 +168,7 @@
           }
         ],
         "note": "softened",
+        "section": "Espresso Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -170,21 +183,23 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Baking"
       }
     },
     {
-      "raw": "6  large eggs (room temperature)",
+      "raw": "6 large eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Espresso Cake Layers",
+        "category": "Other"
       }
     },
     {
@@ -206,8 +221,13 @@
           }
         ],
         "note": null,
+        "section": "Espresso Cake Layers",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Coffee crème légère:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons instant espresso powder",
@@ -220,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Beverages"
       }
     },
@@ -234,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Beverages"
       }
     },
@@ -248,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Baking"
       }
     },
@@ -270,11 +293,12 @@
           }
         ],
         "note": "cold",
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -284,11 +308,12 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -298,6 +323,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
@@ -312,11 +338,12 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons butter (melted)",
+      "raw": "2 tablespoons butter melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -326,6 +353,7 @@
           }
         ],
         "note": "melted",
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
@@ -340,6 +368,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Baking"
       }
     },
@@ -362,6 +391,7 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Dairy & Eggs"
       }
     },
@@ -384,11 +414,16 @@
           }
         ],
         "note": null,
+        "section": "Coffee Crème Légère",
         "category": "Baking"
       }
     },
     {
-      "raw": "10  large egg yolks",
+      "raw": "Espresso French buttercream frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "10 large egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -398,6 +433,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -420,11 +456,12 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2  cups/400 g white granulated sugar",
+      "raw": "2 cups/400 g white granulated sugar",
       "expected": {
         "item": "white granulated sugar",
         "measurements": [
@@ -438,11 +475,12 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "4  cups/ 32oz. unsalted butter (softened)",
+      "raw": "4 cups/ 32oz. unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -456,6 +494,7 @@
           }
         ],
         "note": "softened",
+        "section": "Espresso French Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -470,6 +509,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -484,6 +524,7 @@
           }
         ],
         "note": "melted",
+        "section": "Espresso French Buttercream Frosting",
         "category": "Other"
       }
     },
@@ -498,6 +539,7 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Beverages"
       }
     },
@@ -512,8 +554,13 @@
           }
         ],
         "note": null,
+        "section": "Espresso French Buttercream Frosting",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "10 ounces semisweet chocolate chips",
@@ -526,6 +573,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     },
@@ -540,29 +588,32 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Baking"
       }
     },
     {
-      "raw": "3 tablespoons whole coffee beans (using Wicked Joe’s Wicked French Roast beans)",
+      "raw": "3 tablespoons whole coffee beans using Wicked Joe’s Wicked French Roast beans",
       "expected": {
-        "item": "whole coffee beans",
+        "item": "whole coffee beans using Wicked Joe’s Wicked French Roast beans",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "using Wicked Joe’s Wicked French Roast beans",
+        "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
     {
-      "raw": "Buttercream orbs (see blog post for details)",
+      "raw": "Buttercream orbs see blog post for details",
       "expected": {
-        "item": "Buttercream orbs",
+        "item": "Buttercream orbs see blog post for details",
         "measurements": [],
-        "note": "see blog post for details",
+        "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     }

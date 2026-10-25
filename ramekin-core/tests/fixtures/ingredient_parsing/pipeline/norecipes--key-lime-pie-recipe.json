@@ -3,7 +3,11 @@
   "recipe_slug": "key-lime-pie-recipe",
   "ingredients": [
     {
-      "raw": "130 grams graham crackers",
+      "raw": "For Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "130 grams  graham crackers",
       "expected": {
         "item": "graham crackers",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Snacks"
       }
     },
     {
-      "raw": "3 tablespoons evaporated cane sugar",
+      "raw": "3 tablespoons  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "70 grams cultured unsalted butter (melted)",
+      "raw": "70 grams  cultured unsalted butter melted",
       "expected": {
         "item": "cultured unsalted butter",
         "measurements": [
@@ -41,85 +47,95 @@
           }
         ],
         "note": "melted",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 cups heavy cream (45% butterfat)",
+      "raw": "For Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups  heavy cream 45% butterfat",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream 45% butterfat",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "45% butterfat",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "110 grams evaporated cane sugar (about 1/2 cup)",
+      "raw": "110 grams  evaporated cane sugar about ½ cup",
       "expected": {
-        "item": "evaporated cane sugar",
+        "item": "evaporated cane sugar about 1/2 cup",
         "measurements": [
           {
             "amount": "110",
             "unit": "g"
-          },
-          {
-            "amount": "0.5",
-            "unit": "cup"
           }
         ],
-        "note": "about 1/2 cup",
-        "category": "Baking"
+        "note": null,
+        "section": "For Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "4 grams lime zest (zest of 1 lime)",
+      "raw": "4 grams  lime zest zest of 1 lime",
       "expected": {
-        "item": "lime zest",
+        "item": "lime zest zest of 1 lime",
         "measurements": [
           {
             "amount": "4",
             "unit": "g"
           }
         ],
-        "note": "zest of 1 lime",
-        "category": "Produce"
+        "note": null,
+        "section": "For Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/3 cup lime juice (see note below)",
+      "raw": "⅓ cup  lime juice see note below",
       "expected": {
-        "item": "lime juice",
+        "item": "lime juice see note below",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "see note below",
-        "category": "Produce"
+        "note": null,
+        "section": "For Filling",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 cup whipping cream (35% butterfat)",
+      "raw": "For Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  whipping cream 35% butterfat",
       "expected": {
-        "item": "whipping cream",
+        "item": "whipping cream 35% butterfat",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "35% butterfat",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For Topping",
+        "category": "Other"
       }
     },
     {
-      "raw": "3 tablespoons powdered sugar",
+      "raw": "3 tablespoons  powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -129,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon vanilla",
+      "raw": "1 teaspoon  vanilla",
       "expected": {
         "item": "vanilla",
         "measurements": [
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Baking"
       }
     }

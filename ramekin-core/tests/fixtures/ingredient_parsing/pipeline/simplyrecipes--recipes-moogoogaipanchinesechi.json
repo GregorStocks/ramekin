@@ -3,9 +3,13 @@
   "recipe_slug": "recipes-moogoogaipanchinesechi",
   "ingredients": [
     {
-      "raw": "1 1/2 pounds boneless, skinless chicken breast",
+      "raw": "For the chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 1/2 pounds boneless, skinless chicken breasts",
       "expected": {
-        "item": "boneless, skinless chicken breast",
+        "item": "boneless, skinless chicken breasts",
         "measurements": [
           {
             "amount": "1.5",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,8 +47,13 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the stir fry sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups chicken stock",
@@ -55,13 +66,14 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2 tablespoons corn starch",
+      "raw": "2 tablespoons cornstarch",
       "expected": {
-        "item": "corn starch",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "2",
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,13 +126,14 @@
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1/2 teaspoon Chinese five spice powder",
+      "raw": "1/2 teaspoon Chinese 5 spice powder",
       "expected": {
-        "item": "Chinese five spice powder",
+        "item": "Chinese 5 spice powder",
         "measurements": [
           {
             "amount": "0.5",
@@ -125,22 +141,28 @@
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "section": "For the Stir Fry Sauce",
+        "category": "Other"
       }
     },
     {
-      "raw": "Pinch ground white pepper",
+      "raw": "1 pinch ground white pepper",
       "expected": {
         "item": "ground white pepper",
         "measurements": [
           {
-            "amount": null,
+            "amount": "1",
             "unit": "pinch"
           }
         ],
         "note": null,
+        "section": "For the Stir Fry Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the vegetables:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon vegetable oil",
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": "peeled and sliced thinly on a diagonal",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -185,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -199,11 +224,12 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 teaspoons grated fresh ginger",
+      "raw": "1 teaspoon grated fresh ginger",
       "expected": {
         "item": "grated fresh ginger",
         "measurements": [
@@ -213,13 +239,14 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cups (5 ounces) shiitake (or white button) mushrooms, sliced",
+      "raw": "2 cups (5 ounces) shiitake or white button mushrooms, sliced",
       "expected": {
-        "item": "shiitake mushrooms",
+        "item": "shiitake or white button mushrooms",
         "measurements": [
           {
             "amount": "2",
@@ -230,7 +257,8 @@
             "unit": "oz"
           }
         ],
-        "note": "sliced; or white button",
+        "note": "sliced",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -249,6 +277,7 @@
           }
         ],
         "note": "drained",
+        "section": "For the Vegetables",
         "category": "Canned Goods"
       }
     },
@@ -267,6 +296,7 @@
           }
         ],
         "note": "drained",
+        "section": "For the Vegetables",
         "category": "Canned Goods"
       }
     },
@@ -276,8 +306,13 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Vegetables",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "6 cups cooked jasmine rice",
@@ -290,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Pasta & Rice"
       }
     }

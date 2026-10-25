@@ -3,17 +3,26 @@
   "recipe_slug": "loubia-moroccan-white-bean-ste",
   "ingredients": [
     {
-      "raw": "1 pound dried Great Northern white beans or Cannellini white beans, picked off any debris and rinsed",
+      "raw": "For the Beans:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound (454 g) dried Great Northern or cannellini beans, picked over to remove debris and rinsed",
       "expected": {
-        "item": "dried Great Northern white beans or Cannellini white beans",
+        "item": "dried Great Northern or cannellini beans",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
-        "note": "picked off any debris and rinsed",
-        "category": "Canned Goods"
+        "note": "picked over to remove debris and rinsed",
+        "section": "For the Beans",
+        "category": "Other"
       }
     },
     {
@@ -31,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Beans",
         "category": "Spices & Seasonings"
       }
     },
@@ -49,8 +59,13 @@
           }
         ],
         "note": null,
+        "section": "For the Beans",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "For the Stew:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45 ml) olive oil, plus more for serving",
@@ -67,6 +82,7 @@
           }
         ],
         "note": "plus more for serving",
+        "section": "For the Stew",
         "category": "Oils & Vinegars"
       }
     },
@@ -89,6 +105,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -107,6 +124,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -121,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Canned Goods"
       }
     },
@@ -135,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -177,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -205,6 +229,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +248,7 @@
           }
         ],
         "note": "lamb neck, leg, or shoulder, or a combination, trimmed of excess fat and cut into 2- to 3-inch pieces",
+        "section": "For the Stew",
         "category": "Meat & Seafood"
       }
     },
@@ -232,6 +258,7 @@
         "item": "Drained brined white beans from above",
         "measurements": [],
         "note": null,
+        "section": "For the Stew",
         "category": "Other"
       }
     },
@@ -254,6 +281,7 @@
           }
         ],
         "note": "about 10 ounces; 285 g, alternatively use 7 ounces canned chopped tomatoes, halved and grated on the large holes of a box grater, with their juices",
+        "section": "For the Stew",
         "category": "Produce"
       }
     },
@@ -272,6 +300,7 @@
           }
         ],
         "note": null,
+        "section": "For the Stew",
         "category": "Canned Goods"
       }
     },
@@ -281,6 +310,7 @@
         "item": "Chopped cilantro",
         "measurements": [],
         "note": "for garnish, if desired",
+        "section": "For the Stew",
         "category": "Produce"
       }
     }

@@ -3,49 +3,68 @@
   "recipe_slug": "classic-lasagna-recipe",
   "ingredients": [
     {
-      "raw": "1¾ cups ricotta cheese",
+      "raw": "For the Ricotta Mixture:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1¾ cups  (430.5 g) ricotta cheese",
       "expected": {
         "item": "ricotta cheese",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "430.5",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 cup Parmesan cheese",
+      "raw": "1 cup  (100 g) Parmesan cheese",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Cheese"
       }
     },
     {
-      "raw": "¼ cup chopped fresh basil",
+      "raw": "¼ cup  (6 g) chopped fresh basil",
       "expected": {
         "item": "chopped fresh basil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2   eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -55,53 +74,73 @@
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¼ teaspoon salt",
+      "raw": "¼ teaspoon  (0.25 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "¼ teaspoon ground black pepper",
-      "expected": {
-        "item": "ground black pepper",
-        "measurements": [
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Ricotta Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "6 cups your favorite meat sauce",
+      "raw": "¼ teaspoon  (0.25 teaspoon) ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For the Ricotta Mixture",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "For the Lasagna:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 cups  (900 g) your favorite meat sauce",
       "expected": {
         "item": "your favorite meat sauce",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
+          },
+          {
+            "amount": "900",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Other"
       }
     },
     {
-      "raw": "12  no-boil lasagna noodles",
+      "raw": "12   no-boil lasagna noodles",
       "expected": {
         "item": "no-boil lasagna noodles",
         "measurements": [
@@ -111,34 +150,49 @@
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "20 ounces mozzarella cheese (shredded (5 cups))",
+      "raw": "20 ounces  (566.99 g) mozzarella cheese, shredded (5 cups)",
       "expected": {
         "item": "mozzarella cheese",
         "measurements": [
           {
             "amount": "20",
             "unit": "oz"
+          },
+          {
+            "amount": "566.99",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (5 cups)",
+        "note": "shredded",
+        "section": "For the Lasagna",
         "category": "Cheese"
       }
     },
     {
-      "raw": "¼ cup Parmesan cheese",
+      "raw": "¼ cup  (25 g) Parmesan cheese",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Cheese"
       }
     }

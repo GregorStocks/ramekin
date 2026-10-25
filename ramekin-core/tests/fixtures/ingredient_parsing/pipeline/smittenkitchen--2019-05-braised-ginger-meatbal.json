@@ -3,6 +3,10 @@
   "recipe_slug": "2019-05-braised-ginger-meatbal",
   "ingredients": [
     {
+      "raw": "Meatballs:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 pounds ground pork",
       "expected": {
         "item": "ground pork",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,8 +107,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Broth:",
+      "is_section_header": true
     },
     {
       "raw": "One 13 1/2-ounce can unsweetened coconut milk",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": "see Note, thinly sliced, plus extra for serving",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       },
       "expanded": true
@@ -210,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -224,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -238,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Baking"
       }
     },
@@ -247,6 +272,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -256,8 +282,13 @@
         "item": "A few handfuls of baby spinach",
         "measurements": [],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "To serve:",
+      "is_section_header": true
     },
     {
       "raw": "Roughly chopped fresh mint and cilantro leaves",
@@ -265,6 +296,7 @@
         "item": "Roughly chopped fresh mint and cilantro leaves",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -274,6 +306,7 @@
         "item": "Additional lime wedges",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -283,6 +316,7 @@
         "item": "Steamed jasmine rice",
         "measurements": [],
         "note": "I estimate about 1/4 cup cooked per serving",
+        "section": "To Serve",
         "category": "Pasta & Rice"
       }
     }

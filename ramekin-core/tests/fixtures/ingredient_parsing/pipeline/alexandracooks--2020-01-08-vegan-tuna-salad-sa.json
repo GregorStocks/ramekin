@@ -3,6 +3,10 @@
   "recipe_slug": "2020-01-08-vegan-tuna-salad-sa",
   "ingredients": [
     {
+      "raw": "For the salad:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 (15-ounce) can chickpeas, rinsed and drained",
       "expected": {
         "item": "chickpeas",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "15-ounce, rinsed and drained",
+        "section": "For the Salad",
         "category": "Canned Goods"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
@@ -125,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +152,7 @@
           }
         ],
         "note": "I like 2 tsp, drained and loosely chopped",
+        "section": "For the Salad",
         "category": "Canned Goods"
       }
     },
@@ -148,6 +162,7 @@
         "item": "Healthy pinch each sea salt and black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -162,6 +177,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Salad",
         "category": "Other"
       }
     },
@@ -171,8 +187,13 @@
         "item": "fresh lemon",
         "measurements": [],
         "note": "optional, to taste",
+        "section": "For the Salad",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For serving:",
+      "is_section_header": true
     },
     {
       "raw": "8 slices good bread",
@@ -185,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     },
@@ -194,6 +216,7 @@
         "item": "Boston lettuce",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Other"
       }
     }

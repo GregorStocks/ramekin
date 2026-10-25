@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "1/4 &amp;#8211; 1/2 cup finely chopped parsley",
+      "raw": "1/4 – 1/2 cup finely chopped parsley",
       "expected": {
         "item": "finely chopped parsley",
         "measurements": [
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "salt, I&amp;#8217;ve been using Maldon sea salt",
+      "raw": "salt, I’ve been using Maldon sea salt",
       "expected": {
         "item": "salt, I’ve been using Maldon sea salt",
         "measurements": [],

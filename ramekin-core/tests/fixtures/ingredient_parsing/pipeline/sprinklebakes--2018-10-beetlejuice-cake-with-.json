@@ -3,6 +3,10 @@
   "recipe_slug": "2018-10-beetlejuice-cake-with-",
   "ingredients": [
     {
+      "raw": "Vanilla sheet cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 cups 350g cake flour",
       "expected": {
         "item": "cake flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Baking"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Baking"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Baking"
       }
     },
@@ -59,20 +66,22 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  eggs (at room temperature)",
+      "raw": "4 eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "at room temperature",
+        "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Baking"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Baking"
       }
     },
@@ -123,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -141,8 +153,13 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Sheet Cake",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "White chocolate ganache:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup 6oz. white chocolate, chopped",
@@ -159,6 +176,7 @@
           }
         ],
         "note": "chopped",
+        "section": "White Chocolate Ganache",
         "category": "Baking"
       }
     },
@@ -177,8 +195,13 @@
           }
         ],
         "note": null,
+        "section": "White Chocolate Ganache",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Zagnut buttercream filling:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup 113g unsalted butter, at room temperature",
@@ -195,6 +218,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Zagnut Buttercream Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Zagnut Buttercream Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -231,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Zagnut Buttercream Filling",
         "category": "Baking"
       }
     },
@@ -249,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "Zagnut Buttercream Filling",
         "category": "Baking"
       }
     },
@@ -267,6 +294,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Zagnut Buttercream Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -281,6 +309,7 @@
           }
         ],
         "note": null,
+        "section": "Zagnut Buttercream Filling",
         "category": "Baking"
       }
     },
@@ -295,20 +324,30 @@
           }
         ],
         "note": null,
+        "section": "Zagnut Buttercream Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  sticks (226g unsalted butter, softened)",
+      "raw": "Vanilla buttercream frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 sticks 226g unsalted butter, softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
-        "note": "226g unsalted butter, softened",
+        "note": "softened",
+        "section": "Vanilla Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -327,6 +366,7 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Buttercream Frosting",
         "category": "Baking"
       }
     },
@@ -341,16 +381,18 @@
           }
         ],
         "note": null,
+        "section": "Vanilla Buttercream Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "Up to 1/4 cup (60ml milk or heavy cream, if needed)",
+      "raw": "Up to 1/4 cup 60ml milk or heavy cream, if needed",
       "expected": {
-        "item": "Up to 1/4 cup",
+        "item": "Up to 1/4 cup 60ml milk or heavy cream",
         "measurements": [],
-        "note": "60ml milk or heavy cream, if needed",
-        "category": "Other"
+        "note": "if needed",
+        "section": "Vanilla Buttercream Frosting",
+        "category": "Dairy & Eggs"
       }
     }
   ]

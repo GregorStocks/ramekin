@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "5  shallots (minced)",
+      "raw": "5 shallots, minced",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 cups carrots (shredded)",
+      "raw": "2 cups carrots, shredded",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2  Thai red chiles  (thinly sliced (optional))",
+      "raw": "2 Thai red chiles , thinly sliced (optional)",
       "expected": {
         "item": "Thai red chiles",
         "measurements": [
@@ -68,12 +68,12 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced (optional)",
+        "note": "optional, thinly sliced",
         "category": "Other"
       }
     },
     {
-      "raw": "5 cloves garlic (minced)",
+      "raw": "5 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "2 teaspoon fresh ginger (minced)",
+      "raw": "2 teaspoon fresh ginger, minced",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "1 lime (juiced)",
+      "raw": "1 lime, juiced",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 cup green onion (chopped)",
+      "raw": "1 cup green onion, chopped",
       "expected": {
         "item": "green onion",
         "measurements": [
@@ -157,18 +157,22 @@
       }
     },
     {
-      "raw": "4  eggs (cooked, sunny-side-up)",
+      "raw": "4 eggs, cooked, sunny-side-up",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, cooked, sunny-side-up",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "cooked, sunny-side-up",
+        "note": null,
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Optional toppings:",
+      "is_section_header": true
     },
     {
       "raw": "crushed peanuts",
@@ -176,6 +180,7 @@
         "item": "crushed peanuts",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Other"
       }
     },
@@ -185,6 +190,7 @@
         "item": "mung bean sprouts",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     },
@@ -194,6 +200,7 @@
         "item": "fresh chopped cilantro",
         "measurements": [],
         "note": null,
+        "section": "Optional Toppings",
         "category": "Produce"
       }
     }

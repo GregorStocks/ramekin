@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-ultimate-kedgeree",
   "ingredients": [
     {
+      "raw": "For the crisp onions:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tbsp vegetable or  sunflower oil",
       "expected": {
         "item": "vegetable or sunflower oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crisp Onions",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": "halved and very thinly sliced",
+        "section": "For the Crisp Onions",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "For the kedgeree:",
+      "is_section_header": true
     },
     {
       "raw": "350g undyed  smoked haddock",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Other"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Other"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": "Angela used Kashmiri",
+        "section": "For the Kedgeree",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Kedgeree",
         "category": "Produce"
       }
     },
@@ -125,6 +141,7 @@
           }
         ],
         "note": "about",
+        "section": "For the Kedgeree",
         "category": "Produce"
       }
     },
@@ -139,6 +156,7 @@
           }
         ],
         "note": "split",
+        "section": "For the Kedgeree",
         "category": "Spices & Seasonings"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Other"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Pasta & Rice"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Dairy & Eggs"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "For the Kedgeree",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": "to serve",
+        "section": "For the Kedgeree",
         "category": "Other"
       }
     }

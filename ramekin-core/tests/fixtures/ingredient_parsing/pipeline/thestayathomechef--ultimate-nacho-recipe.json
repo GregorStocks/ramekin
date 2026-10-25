@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "4 cups shredded cheddar cheese (divided)",
+      "raw": "4 cups shredded cheddar cheese divided",
       "expected": {
         "item": "shredded cheddar cheese",
         "measurements": [
@@ -87,6 +87,10 @@
       }
     },
     {
+      "raw": "Additional Topping Ideas:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup sour cream",
       "expected": {
         "item": "sour cream",
@@ -97,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Topping Ideas",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Topping Ideas",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Topping Ideas",
         "category": "Canned Goods"
       }
     },
@@ -139,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Topping Ideas",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,20 +161,22 @@
           }
         ],
         "note": null,
+        "section": "Additional Topping Ideas",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 medium jalapeno (sliced, or pickled jalapenos)",
+      "raw": "1 medium jalapeno sliced, or pickled jalapenos",
       "expected": {
-        "item": "jalapeno",
+        "item": "jalapeno sliced, or pickled jalapenos",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "sliced, or pickled jalapenos",
+        "note": null,
+        "section": "Additional Topping Ideas",
         "category": "Produce"
       }
     },
@@ -181,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Topping Ideas",
         "category": "Produce"
       }
     },
@@ -195,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "Additional Topping Ideas",
         "category": "Produce"
       }
     }

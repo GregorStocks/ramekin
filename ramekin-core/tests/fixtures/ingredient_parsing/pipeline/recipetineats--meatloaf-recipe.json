@@ -3,7 +3,7 @@
   "recipe_slug": "meatloaf-recipe",
   "ingredients": [
     {
-      "raw": "1 cup panko breadcrumbs ((Note 1))",
+      "raw": "1 cup panko breadcrumbs (Note 1)",
       "expected": {
         "item": "panko breadcrumbs",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1  large onion (, grated (brown, yellow))",
+      "raw": "1 large onion , grated (brown, yellow)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -26,12 +26,12 @@
             "unit": "large"
           }
         ],
-        "note": "grated (brown, yellow)",
+        "note": "brown, yellow, grated",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 kg / 2 lb   ground beef (mince) (, preferably not lean)",
+      "raw": "1 kg / 2 lb  ground beef (mince) , preferably not lean",
       "expected": {
         "item": "ground beef",
         "measurements": [
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "3  garlic cloves (, minced)",
+      "raw": "3 garlic cloves , minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1/4 cup chopped parsley ((optional), or 2 tsp dried parsley or basil)",
+      "raw": "1/4 cup chopped parsley (optional), or 2 tsp dried parsley or basil",
       "expected": {
         "item": "chopped parsley",
         "measurements": [
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "2  beef bouillon cubes (, crumbled or 2 tsp beef powder (Note 2))",
+      "raw": "2 beef bouillon cubes , crumbled or 2 tsp beef powder (Note 2)",
       "expected": {
         "item": "beef bouillon cubes",
         "measurements": [
@@ -142,7 +142,7 @@
             "unit": null
           }
         ],
-        "note": "crumbled or 2 tsp beef powder (Note 2)",
+        "note": "Note 2, crumbled or 2 tsp beef powder",
         "category": "Other"
       }
     },
@@ -161,6 +161,10 @@
       }
     },
     {
+      "raw": "Meatloaf Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup tomato ketchup",
       "expected": {
         "item": "tomato ketchup",
@@ -171,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -185,11 +190,12 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf Glaze",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tbsp brown sugar (, lightly packed)",
+      "raw": "1 tbsp brown sugar , lightly packed",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -199,6 +205,7 @@
           }
         ],
         "note": "lightly packed",
+        "section": "Meatloaf Glaze",
         "category": "Baking"
       }
     }

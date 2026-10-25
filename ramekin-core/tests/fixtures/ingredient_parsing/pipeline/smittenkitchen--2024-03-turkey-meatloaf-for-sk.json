@@ -3,6 +3,10 @@
   "recipe_slug": "2024-03-turkey-meatloaf-for-sk",
   "ingredients": [
     {
+      "raw": "Meatloaf:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 medium yellow onion, roughly chopped",
       "expected": {
         "item": "yellow onion",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "smashed",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Meatloaf",
         "category": "Oils & Vinegars"
       }
     },
@@ -59,6 +67,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -77,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Bakery & Bread"
       }
     },
@@ -95,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Canned Goods"
       }
     },
@@ -109,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Canned Goods"
       }
     },
@@ -123,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -141,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -155,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -169,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -187,8 +203,13 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 heaped (20 grams) tablespoon ketchup",
@@ -205,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -219,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -237,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Oils & Vinegars"
       }
     },
@@ -251,6 +275,7 @@
           }
         ],
         "note": "optional",
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -274,6 +300,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     }

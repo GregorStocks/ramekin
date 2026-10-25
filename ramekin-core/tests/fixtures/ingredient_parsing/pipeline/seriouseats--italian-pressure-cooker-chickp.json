@@ -30,16 +30,16 @@
       }
     },
     {
-      "raw": "3 teaspoons (15g) baking soda, divided",
+      "raw": "2 1/2 teaspoons (13g) baking soda, divided",
       "expected": {
         "item": "baking soda",
         "measurements": [
           {
-            "amount": "3",
+            "amount": "2.5",
             "unit": "tsp"
           },
           {
-            "amount": "15",
+            "amount": "13",
             "unit": "g"
           }
         ],
@@ -48,9 +48,9 @@
       }
     },
     {
-      "raw": "1 1/2 pounds (680g) baby back pork ribs, divided in half through the bones and separated into individual ribs (see notes)",
+      "raw": "1 1/2 pounds (680g) baby back pork ribs or spare ribs, divided in half through the bones and separated into individual ribs (see notes)",
       "expected": {
-        "item": "baby back pork ribs",
+        "item": "baby back pork ribs or spare ribs",
         "measurements": [
           {
             "amount": "1.5",
@@ -62,7 +62,7 @@
           }
         ],
         "note": "see notes, divided in half through the bones and separated into individual ribs",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -115,9 +115,9 @@
       }
     },
     {
-      "raw": "1 large celery rib (2 ounces; 57g); minced",
+      "raw": "1 large celery rib (2 ounces; 57g), minced",
       "expected": {
-        "item": "celery rib ; minced",
+        "item": "celery rib",
         "measurements": [
           {
             "amount": "1",
@@ -132,7 +132,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "minced",
         "category": "Produce"
       }
     },

@@ -3,6 +3,10 @@
   "recipe_slug": "mediterranean-chickpea-egg-sal",
   "ingredients": [
     {
+      "raw": "For dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 tsp Dijon mustard",
       "expected": {
         "item": "Dijon mustard",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  large lemon, (zested and juiced)",
+      "raw": "1 large lemon, zested and juiced",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large lemon, (zested and juiced)",
+      "raw": "1 large lemon, zested and juiced",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -41,14 +47,15 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Produce"
       },
       "expanded": true
     },
     {
-      "raw": "1/3 cup Private Reserve Greek extra virgin olive oil",
+      "raw": "1/3 cup Private Reserve Greek extra virgin olive oil or Early Harvest Greek extra virgin olive oil",
       "expected": {
-        "item": "Private Reserve Greek extra virgin olive oil",
+        "item": "Private Reserve Greek extra virgin olive oil or Early Harvest Greek extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.33",
@@ -56,11 +63,12 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  garlic clove, (minced)",
+      "raw": "1 garlic clove, minced",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -70,6 +78,7 @@
           }
         ],
         "note": "minced",
+        "section": "For Dressing",
         "category": "Produce"
       }
     },
@@ -84,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -98,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,11 +133,16 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "For Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  cans chickpeas, (rinsed and drained)",
+      "raw": "For Egg Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cans chickpeas, rinsed and drained",
       "expected": {
         "item": "chickpeas",
         "measurements": [
@@ -135,11 +152,12 @@
           }
         ],
         "note": "rinsed and drained",
+        "section": "For Egg Salad",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2  celery ribs, (chopped)",
+      "raw": "2 celery ribs, chopped",
       "expected": {
         "item": "celery ribs",
         "measurements": [
@@ -149,11 +167,12 @@
           }
         ],
         "note": "chopped",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  Persian cucumbers, (or 1/2 seedless English cucumber, diced)",
+      "raw": "2 Persian cucumbers, or 1/2 seedless English cucumber, diced",
       "expected": {
         "item": "Persian cucumbers",
         "measurements": [
@@ -163,11 +182,12 @@
           }
         ],
         "note": "or 1/2 seedless English cucumber, diced",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 to 3  green onions, (trimmed, and chopped (both white and green parts))",
+      "raw": "2 to 3 green onions, trimmed, and chopped (both white and green parts)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -176,7 +196,8 @@
             "unit": null
           }
         ],
-        "note": "trimmed, and chopped (both white and green parts)",
+        "note": "both white and green parts, trimmed, and chopped",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -191,11 +212,12 @@
           }
         ],
         "note": null,
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  jalapeno peppers, (chopped (optional))",
+      "raw": "2 jalapeno peppers, chopped (optional)",
       "expected": {
         "item": "jalapeno peppers",
         "measurements": [
@@ -204,7 +226,8 @@
             "unit": null
           }
         ],
-        "note": "chopped (optional)",
+        "note": "optional, chopped",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -219,6 +242,7 @@
           }
         ],
         "note": "packed",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
@@ -233,11 +257,12 @@
           }
         ],
         "note": "packed",
+        "section": "For Egg Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "5  large hard boiled eggs, (sliced)",
+      "raw": "5 large hard boiled eggs, sliced",
       "expected": {
         "item": "hard boiled eggs",
         "measurements": [
@@ -247,6 +272,7 @@
           }
         ],
         "note": "sliced",
+        "section": "For Egg Salad",
         "category": "Dairy & Eggs"
       }
     }

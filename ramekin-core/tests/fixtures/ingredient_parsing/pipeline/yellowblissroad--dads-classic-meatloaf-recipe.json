@@ -3,17 +3,22 @@
   "recipe_slug": "dads-classic-meatloaf-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds ground beef (85/15)",
+      "raw": "Meatloaf:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 pounds ground beef 85/15",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef 85/15",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "85/15",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "Meatloaf",
+        "category": "Other"
       }
     },
     {
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  eggs",
+      "raw": "2 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,21 +77,23 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 cup crushed crackers (quick cook oats or breadcrumbs)",
+      "raw": "1 cup crushed crackers quick cook oats or breadcrumbs",
       "expected": {
-        "item": "crushed crackers",
+        "item": "crushed crackers quick cook oats or breadcrumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "quick cook oats or breadcrumbs",
-        "category": "Other"
+        "note": null,
+        "section": "Meatloaf",
+        "category": "Snacks"
       }
     },
     {
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Other"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,8 +137,13 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup ketchup",
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
     }

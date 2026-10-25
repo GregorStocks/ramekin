@@ -21,16 +21,11 @@
       }
     },
     {
-      "raw": "1 teaspoon salt",
+      "raw": "Salt, for seasoning the water",
       "expected": {
-        "item": "salt",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
+        "item": "Salt",
+        "measurements": [],
+        "note": "for seasoning the water",
         "category": "Spices & Seasonings"
       }
     },

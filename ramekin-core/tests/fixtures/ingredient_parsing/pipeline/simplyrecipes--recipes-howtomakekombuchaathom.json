@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "8 bags caffeinated tea, or 4 tablespoons looseleaf tea (black, green, or white)",
+      "raw": "8 bags caffeinated tea, or 4 tablespoons loose-leaf tea (black, green, or white)",
       "expected": {
         "item": "caffeinated tea",
         "measurements": [
@@ -40,7 +40,7 @@
             "unit": "bag"
           }
         ],
-        "note": "or 4 tablespoons looseleaf tea (black, green, or white)",
+        "note": "or 4 tablespoons loose-leaf tea (black, green, or white)",
         "category": "Other"
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "To flavor:&nbsp;2 to 3 cups of juice, 1 to 2 cups chopped fruit, 2 to 4 tablespoons fresh herbs or spices",
+      "raw": "To flavor: 2 to 3 cups of juice, 1 to 2 cups chopped fruit, 2 to 4 tablespoons fresh herbs or spices",
       "expected": {
         "item": "To flavor: 2 to 3 cups of juice, 1 to 2 cups chopped fruit, 2 to 4 tablespoons fresh herbs or spices",
         "measurements": [],

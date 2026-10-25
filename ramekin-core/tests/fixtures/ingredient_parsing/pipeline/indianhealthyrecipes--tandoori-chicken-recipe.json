@@ -3,9 +3,9 @@
   "recipe_slug": "tandoori-chicken-recipe",
   "ingredients": [
     {
-      "raw": "¾ kg (1.5 lbs.)  chicken (skinless thighs or legs)",
+      "raw": "¾ kg (1.5 lbs.) chicken skinless thighs or legs",
       "expected": {
-        "item": "chicken",
+        "item": "chicken skinless thighs or legs",
         "measurements": [
           {
             "amount": "0.75",
@@ -16,12 +16,12 @@
             "unit": "lb"
           }
         ],
-        "note": "skinless thighs or legs",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "½ cup Greek yogurt ((hung curd))",
+      "raw": "½ cup Greek yogurt (hung curd)",
       "expected": {
         "item": "Greek yogurt",
         "measurements": [
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "1 tablespoon ginger garlic paste ((or ¾ tbsp each, grated))",
+      "raw": "1 tablespoon ginger garlic paste (or ¾ tbsp each, grated)",
       "expected": {
         "item": "ginger garlic paste",
         "measurements": [
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "1 teaspoon garam masala ((more if you prefer))",
+      "raw": "1 teaspoon garam masala (more if you prefer)",
       "expected": {
         "item": "garam masala",
         "measurements": [
@@ -63,7 +63,7 @@
       }
     },
     {
-      "raw": "1 to 2 teaspoon Kashmiri red chili powder ((or paprika, adjust to heat preference))",
+      "raw": "1 to 2 teaspoon Kashmiri red chili powder (or paprika, adjust to heat preference)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "¼  teaspoon black pepper crushed ((powder))",
+      "raw": "¼  teaspoon black pepper crushed (powder)",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "1½ teaspoon coriander powder ((daniya powder))",
+      "raw": "1½ teaspoon coriander powder (daniya powder)",
       "expected": {
         "item": "coriander powder",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "½ teaspoon cumin powder ((jeera powder))",
+      "raw": "½ teaspoon cumin powder (jeera powder)",
       "expected": {
         "item": "cumin powder",
         "measurements": [
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "½ teaspoon sea salt ((+ more to adjust or use ¼ tsp each sea salt &amp;amp; black salt / kala namak))",
+      "raw": "½ teaspoon sea salt (+ more to adjust or use ¼ tsp each sea salt & black salt / kala namak)",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "¼  teaspoon turmeric ((haldi, optional))",
+      "raw": "¼  teaspoon turmeric (haldi, optional)",
       "expected": {
         "item": "turmeric",
         "measurements": [
@@ -147,7 +147,7 @@
       }
     },
     {
-      "raw": "1 teaspoon kasuri methi ((dried fenugreek leaves))",
+      "raw": "1 teaspoon kasuri methi (dried fenugreek leaves)",
       "expected": {
         "item": "kasuri methi",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "1 tablespoon lemon juice ((or 1 teaspoon amchur/ dried mango powder or use ½ teaspoon chaat masala))",
+      "raw": "1 tablespoon lemon juice (or 1 teaspoon amchur/ dried mango powder or use ½ teaspoon chaat masala)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -175,7 +175,7 @@
       }
     },
     {
-      "raw": "1½ tablespoon oil ((any or neutral oils like avocado/grapeseed/ refined coconut or use mustard oil))",
+      "raw": "1½ tablespoon oil (any or neutral oils like avocado/grapeseed/ refined coconut or use mustard oil)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -189,17 +189,26 @@
       }
     },
     {
-      "raw": "1 tablespoon chopped coriander leaves (to garnish)",
+      "raw": "1 tablespoon chopped coriander leaves to garnish",
       "expected": {
-        "item": "chopped coriander leaves",
+        "item": "chopped coriander leaves to garnish",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "to garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Mix to make red chili oil (or use 1 tablespoon melted butter):",
+      "expected": {
+        "item": "Mix to make red chili oil :",
+        "measurements": [],
+        "note": "or use 1 tablespoon melted butter",
+        "category": "Other"
       }
     },
     {
@@ -217,7 +226,7 @@
       }
     },
     {
-      "raw": "1 to 2 tablespoon oil ((any or neutral oil or use mustard oil))",
+      "raw": "1 to 2 tablespoon oil (any or neutral oil or use mustard oil)",
       "expected": {
         "item": "oil",
         "measurements": [

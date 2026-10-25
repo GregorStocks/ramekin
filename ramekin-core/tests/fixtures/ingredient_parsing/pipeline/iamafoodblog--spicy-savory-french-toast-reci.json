@@ -3,6 +3,10 @@
   "recipe_slug": "spicy-savory-french-toast-reci",
   "ingredients": [
     {
+      "raw": "Pan Roasted Basil Cherry Tomatoes:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 tablespoon oil",
       "expected": {
         "item": "oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pan Roasted Basil Cherry Tomatoes",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Pan Roasted Basil Cherry Tomatoes",
         "category": "Produce"
       }
     },
@@ -36,6 +42,7 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Pan Roasted Basil Cherry Tomatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,8 +57,13 @@
           }
         ],
         "note": null,
+        "section": "Pan Roasted Basil Cherry Tomatoes",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Spicy Savory French Toast:",
+      "is_section_header": true
     },
     {
       "raw": "1 egg",
@@ -64,6 +76,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Savory French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -78,6 +91,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Savory French Toast",
         "category": "Condiments & Sauces"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Savory French Toast",
         "category": "Produce"
       }
     },
@@ -101,6 +116,7 @@
         "item": "sprinkle of salt",
         "measurements": [],
         "note": null,
+        "section": "Spicy Savory French Toast",
         "category": "Other"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Spicy Savory French Toast",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": "cut into slices",
+        "section": "Spicy Savory French Toast",
         "category": "Other"
       }
     }

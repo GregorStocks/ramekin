@@ -3,7 +3,11 @@
   "recipe_slug": "cabbage-and-bell-pepper-salad-",
   "ingredients": [
     {
-      "raw": "1/2  large or 1 small cabbage",
+      "raw": "Salad Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 large or 1 small cabbage",
       "expected": {
         "item": "cabbage",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  yellow or orange or red bell pepper (or 5-6 mini peppers)",
+      "raw": "1 yellow or orange or red bell pepper, or 5-6 mini peppers",
       "expected": {
         "item": "yellow or orange or red bell pepper",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": "or 5-6 mini peppers",
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  small head of brocolli",
+      "raw": "1 small head of brocolli",
       "expected": {
         "item": "brocolli",
         "measurements": [
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Other"
       }
     },
@@ -59,8 +66,13 @@
           }
         ],
         "note": null,
+        "section": "Salad Ingredients",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Dressing Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "Juice of 1 small lemon",
@@ -73,25 +85,27 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  Тbsp sunflower oil (olive oil works too but sunflower is better)",
+      "raw": "3 Тbsp sunflower oil, olive oil works too but sunflower is better",
       "expected": {
-        "item": "Тbsp sunflower oil",
+        "item": "Тbsp sunflower oil, olive oil works too but sunflower is better",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "olive oil works too but sunflower is better",
+        "note": null,
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "1  Тbsp mayo",
+      "raw": "1 Тbsp mayo",
       "expected": {
         "item": "Тbsp mayo",
         "measurements": [
@@ -101,11 +115,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "1  Тbsp sour cream",
+      "raw": "1 Тbsp sour cream",
       "expected": {
         "item": "Тbsp sour cream",
         "measurements": [
@@ -115,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     },
@@ -129,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 tsp garlic powder (or use 1 tsp of garlic salt instead of garlic powder and salt)",
+      "raw": "1/2 tsp garlic powder, or use 1 tsp of garlic salt instead of garlic powder and salt",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -143,6 +160,7 @@
           }
         ],
         "note": "or use 1 tsp of garlic salt instead of garlic powder and salt",
+        "section": "Dressing Ingredients",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,11 +175,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2  heaping Тbsp dill (fresh or frozen)",
+      "raw": "2 heaping Тbsp dill, fresh or frozen",
       "expected": {
         "item": "Тbsp dill",
         "measurements": [
@@ -171,11 +190,12 @@
           }
         ],
         "note": "fresh or frozen",
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "2  heaping Тbsp chopped fresh parsley (optional)",
+      "raw": "2 heaping Тbsp chopped fresh parsley, optional",
       "expected": {
         "item": "Тbsp chopped fresh parsley",
         "measurements": [
@@ -185,6 +205,7 @@
           }
         ],
         "note": "optional",
+        "section": "Dressing Ingredients",
         "category": "Other"
       }
     }

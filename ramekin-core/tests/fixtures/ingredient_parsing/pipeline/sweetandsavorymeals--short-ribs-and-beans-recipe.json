@@ -3,17 +3,17 @@
   "recipe_slug": "short-ribs-and-beans-recipe",
   "ingredients": [
     {
-      "raw": "6  short ribs (fat removed)",
+      "raw": "6 short ribs fat removed",
       "expected": {
-        "item": "short ribs",
+        "item": "short ribs fat",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "fat removed",
-        "category": "Meat & Seafood"
+        "note": "removed",
+        "category": "Other"
       }
     },
     {
@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "Salt and freshly ground pepper (to taste)",
+      "raw": "Salt and freshly ground pepper to taste",
       "expected": {
         "item": "Salt and freshly ground pepper",
         "measurements": [],
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "1  onion (diced)",
+      "raw": "1 onion diced",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "2 19 oz cans pinto beans (rinsed)",
+      "raw": "2 19 oz cans pinto beans rinsed",
       "expected": {
         "item": "pinto beans",
         "measurements": [
@@ -63,6 +63,10 @@
       }
     },
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "3/4 cup tomato sauce",
       "expected": {
         "item": "tomato sauce",
@@ -73,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
@@ -87,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -101,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -115,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "5 cloves garlic (minced)",
+      "raw": "5 cloves garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -129,6 +137,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -143,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoons salt (or to taste)",
+      "raw": "1 teaspoons salt or to taste",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -171,6 +182,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

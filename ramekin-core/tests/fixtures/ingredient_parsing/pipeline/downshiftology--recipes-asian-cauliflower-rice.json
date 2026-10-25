@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-asian-cauliflower-rice",
   "ingredients": [
     {
-      "raw": "1  cauliflower rice recipe",
+      "raw": "1 cauliflower rice recipe",
       "expected": {
         "item": "cauliflower rice recipe",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 1/2 pounds medium shrimp (peeled, deveined and rinsed)",
+      "raw": "1 1/2 pounds medium shrimp, peeled, deveined and rinsed",
       "expected": {
         "item": "medium shrimp",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "2  avocados",
+      "raw": "2 avocados",
       "expected": {
         "item": "avocados",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1  lemon (juiced)",
+      "raw": "1 lemon, juiced",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh parsley (chopped)",
+      "raw": "1/2 cup fresh parsley, chopped",
       "expected": {
         "item": "fresh parsley",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1/2 cup fresh cilantro (chopped)",
+      "raw": "1/2 cup fresh cilantro, chopped",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [
@@ -115,16 +115,21 @@
       }
     },
     {
-      "raw": "1/4 cup tamari (or coconut aminos)",
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/4 cup tamari, or coconut aminos",
       "expected": {
-        "item": "tamari",
+        "item": "tamari, or coconut aminos",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or coconut aminos",
+        "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -139,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -167,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -195,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

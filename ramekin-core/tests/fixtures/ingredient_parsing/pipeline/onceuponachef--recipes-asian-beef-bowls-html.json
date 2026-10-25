@@ -3,7 +3,7 @@
   "recipe_slug": "recipes-asian-beef-bowls-html",
   "ingredients": [
     {
-      "raw": "2 pounds 90% lean ground beef",
+      "raw": "2 lbs 90% lean ground beef",
       "expected": {
         "item": "90% lean ground beef",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "6 tablespoons hoisin sauce, best quality such as Lee Kum Kee or Kikkoman (use gluten-free if needed)",
+      "raw": "6 tablespoons hoisin sauce, best quality such as Lee Kum Kee or Kikkoman",
       "expected": {
         "item": "hoisin sauce, best quality",
         "measurements": [
@@ -40,12 +40,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "use gluten-free if needed, such as Lee Kum Kee or Kikkoman",
+        "note": "such as Lee Kum Kee or Kikkoman",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3 tablespoons soy sauce (use gluten-free if needed)",
+      "raw": "3 tablespoons soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -54,7 +54,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "use gluten-free if needed",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
@@ -101,9 +101,9 @@
       }
     },
     {
-      "raw": "½ teaspoon  red pepper flakes",
+      "raw": "½ teaspoon crushed red pepper flakes",
       "expected": {
-        "item": "red pepper flakes",
+        "item": "crushed red pepper flakes",
         "measurements": [
           {
             "amount": "0.5",
@@ -171,11 +171,16 @@
       }
     },
     {
+      "raw": "For Serving:",
+      "is_section_header": true
+    },
+    {
       "raw": "Rice",
       "expected": {
         "item": "Rice",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Pasta & Rice"
       }
     },
@@ -185,6 +190,7 @@
         "item": "Chopped cashews",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -194,6 +200,7 @@
         "item": "Sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,6 +210,7 @@
         "item": "Shredded veggies, such as carrots, lettuce or bell peppers",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     }

@@ -3,7 +3,7 @@
   "recipe_slug": "creamy-eggless-chocolate-frost",
   "ingredients": [
     {
-      "raw": "7 ounces plain or toasted sugar (1 cup; 195g)",
+      "raw": "7 ounces plain or toasted sugar (200g; 1 cup)",
       "expected": {
         "item": "plain or toasted sugar",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "oz"
           },
           {
-            "amount": "1",
-            "unit": "cup"
+            "amount": "200",
+            "unit": "g"
           },
           {
-            "amount": "195",
-            "unit": "g"
+            "amount": "1",
+            "unit": "cup"
           }
         ],
         "note": null,
@@ -25,7 +25,7 @@
       }
     },
     {
-      "raw": "2 ounces Dutch cocoa powder, such as Cacao Barry Extra Brute (about 2/3 cup, spooned; 55g); see note",
+      "raw": "2 ounces Dutch cocoa powder, such as Cacao Barry Extra Brute (about 2/3 cup, spooned; 55g; about 2/3 cup); see notes",
       "expected": {
         "item": "Dutch cocoa powder",
         "measurements": [
@@ -40,24 +40,24 @@
           {
             "amount": "55",
             "unit": "g"
+          },
+          {
+            "amount": "0.67",
+            "unit": "cup"
           }
         ],
-        "note": "about 2/3 cup, spooned; 55g, such as Cacao Barry Extra Brute ; see note",
+        "note": "about 2/3 cup, spooned; 55g; about 2/3 cup, such as Cacao Barry Extra Brute ; see notes",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 teaspoon (1g) Diamond Crystal kosher salt; for table salt, use about half as much by volume or the same weight",
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt, use about half as much by volume",
       "expected": {
-        "item": "Diamond Crystal kosher salt; for table salt, use about half as much by volume or the same weight",
+        "item": "Diamond Crystal kosher salt; for table salt, use about half as much by volume",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -65,21 +65,21 @@
       }
     },
     {
-      "raw": "32 ounces milk, any percentage will do (4 cups; 910g)",
+      "raw": "32 fluid ounces milk, any percentage will do (946ml; 4 cups)",
       "expected": {
         "item": "milk",
         "measurements": [
           {
             "amount": "32",
-            "unit": "oz"
+            "unit": "fl oz"
+          },
+          {
+            "amount": "946",
+            "unit": "ml"
           },
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "910",
-            "unit": "g"
           }
         ],
         "note": "any percentage will do",
@@ -87,21 +87,21 @@
       }
     },
     {
-      "raw": "6 ounces heavy cream (3/4 cup; 170g)",
+      "raw": "6 fluid ounces heavy cream (170g; 3/4 cup)",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "6",
-            "unit": "oz"
-          },
-          {
-            "amount": "0.75",
-            "unit": "cup"
+            "unit": "fl oz"
           },
           {
             "amount": "170",
             "unit": "g"
+          },
+          {
+            "amount": "0.75",
+            "unit": "cup"
           }
         ],
         "note": null,
@@ -109,7 +109,7 @@
       }
     },
     {
-      "raw": "12 ounces unsalted butter (about 3 sticks; 340g), softened to about 70°F (21°C)",
+      "raw": "12 ounces unsalted butter (340g; about 3 sticks), softened to about 70°F (21°C)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -118,15 +118,15 @@
             "unit": "oz"
           },
           {
-            "amount": "3",
-            "unit": "stick"
-          },
-          {
             "amount": "340",
             "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "stick"
           }
         ],
-        "note": "about 3 sticks; 340g, 21°C, softened to about 70°F",
+        "note": "21°C, softened to about 70°F",
         "category": "Dairy & Eggs"
       }
     }

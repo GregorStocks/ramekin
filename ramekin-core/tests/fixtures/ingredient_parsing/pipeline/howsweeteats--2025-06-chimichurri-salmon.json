@@ -3,6 +3,10 @@
   "recipe_slug": "2025-06-chimichurri-salmon",
   "ingredients": [
     {
+      "raw": "chimichurri:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup fresh cilantro",
       "expected": {
         "item": "fresh cilantro",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Produce"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Produce"
       }
     },
     {
-      "raw": "4  garlic cloves, (minced)",
+      "raw": "4 garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chimichurri",
         "category": "Produce"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Spices & Seasonings"
       }
     },
@@ -125,11 +137,16 @@
           }
         ],
         "note": null,
+        "section": "Chimichurri",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  salmon filets",
+      "raw": "salmon:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 salmon filets",
       "expected": {
         "item": "salmon filets",
         "measurements": [
@@ -139,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Meat & Seafood"
       }
     },
@@ -153,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +196,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Oils & Vinegars"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "maki-sushi-recipe",
   "ingredients": [
     {
+      "raw": "Roasted Shiitakes:",
+      "is_section_header": true
+    },
+    {
       "raw": "6 ounces shiitake mushrooms",
       "expected": {
         "item": "shiitake mushrooms",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Shiitakes",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Roasted Shiitakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,11 +47,16 @@
           }
         ],
         "note": null,
+        "section": "Roasted Shiitakes",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ cup chopped roasted carrots (about ¾ cup raw carrots)",
+      "raw": "Carrot ginger dipping sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup chopped roasted carrots, about ¾ cup raw carrots",
       "expected": {
         "item": "chopped roasted carrots",
         "measurements": [
@@ -55,6 +66,7 @@
           }
         ],
         "note": "about 3/4 cup raw carrots",
+        "section": "Carrot Ginger Dipping Sauce",
         "category": "Produce"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Ginger Dipping Sauce",
         "category": "Beverages"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Ginger Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Ginger Dipping Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Carrot Ginger Dipping Sauce",
         "category": "Produce"
       }
     },
@@ -125,11 +141,16 @@
           }
         ],
         "note": null,
+        "section": "Carrot Ginger Dipping Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup short grain brown rice (rinsed well)",
+      "raw": "Sushi rice:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup short grain brown rice, rinsed well",
       "expected": {
         "item": "short grain brown rice",
         "measurements": [
@@ -139,6 +160,7 @@
           }
         ],
         "note": "rinsed well",
+        "section": "Sushi Rice",
         "category": "Other"
       }
     },
@@ -153,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Sushi Rice",
         "category": "Beverages"
       }
     },
@@ -167,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Sushi Rice",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Sushi Rice",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Sushi Rice",
         "category": "Baking"
       }
     },
@@ -209,11 +235,16 @@
           }
         ],
         "note": null,
+        "section": "Sushi Rice",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3  nori sheets",
+      "raw": "For the rolls:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 nori sheets",
       "expected": {
         "item": "nori sheets",
         "measurements": [
@@ -223,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "For the Rolls",
         "category": "Other"
       }
     },
@@ -237,11 +269,12 @@
           }
         ],
         "note": null,
+        "section": "For the Rolls",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  long thin strips of cucumber",
+      "raw": "3 long thin strips of cucumber",
       "expected": {
         "item": "long thin strips of cucumber",
         "measurements": [
@@ -251,11 +284,12 @@
           }
         ],
         "note": null,
+        "section": "For the Rolls",
         "category": "Other"
       }
     },
     {
-      "raw": "½  avocado (sliced into strips)",
+      "raw": "½ avocado, sliced into strips",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -265,33 +299,37 @@
           }
         ],
         "note": "sliced into strips",
+        "section": "For the Rolls",
         "category": "Produce"
       }
     },
     {
-      "raw": "Sesame seeds (for sprinkling)",
+      "raw": "Sesame seeds, for sprinkling",
       "expected": {
         "item": "Sesame seeds",
         "measurements": [],
         "note": "for sprinkling",
+        "section": "For the Rolls",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Tamari (for serving)",
+      "raw": "Tamari, for serving",
       "expected": {
         "item": "Tamari",
         "measurements": [],
         "note": "for serving",
+        "section": "For the Rolls",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "Pickled ginger (optional, for serving)",
+      "raw": "Pickled ginger, optional, for serving",
       "expected": {
         "item": "Pickled ginger",
         "measurements": [],
         "note": "optional, for serving",
+        "section": "For the Rolls",
         "category": "Condiments & Sauces"
       }
     }

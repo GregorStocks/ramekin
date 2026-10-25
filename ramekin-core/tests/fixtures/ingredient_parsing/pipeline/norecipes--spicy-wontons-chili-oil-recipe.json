@@ -3,7 +3,11 @@
   "recipe_slug": "spicy-wontons-chili-oil-recipe",
   "ingredients": [
     {
-      "raw": "1/3 cup homemade chili oil",
+      "raw": "for sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "⅓ cup  homemade chili oil",
       "expected": {
         "item": "homemade chili oil",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon sweet soy sauce ((Kecap Manis will work))",
+      "raw": "1 tablespoon  sweet soy sauce (Kecap Manis will work)",
       "expected": {
         "item": "sweet soy sauce",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "Kecap Manis will work",
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon soy sauce",
+      "raw": "1 tablespoon  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoon Chinkiang black vinegar",
+      "raw": "1 tablespoon  Chinkiang black vinegar",
       "expected": {
         "item": "Chinkiang black vinegar",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Other"
       }
     },
     {
-      "raw": "4 grams garlic ((grated))",
+      "raw": "4 grams  garlic (grated)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -69,11 +77,16 @@
           }
         ],
         "note": "grated",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "250 grams ground pork",
+      "raw": "for wontons:",
+      "is_section_header": true
+    },
+    {
+      "raw": "250 grams  ground pork",
       "expected": {
         "item": "ground pork",
         "measurements": [
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Meat & Seafood"
       }
     },
@@ -97,11 +111,12 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 teaspoons Shaoxing wine",
+      "raw": "2 teaspoons  Shaoxing wine",
       "expected": {
         "item": "Shaoxing wine",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 teaspoons ginger juice",
+      "raw": "2 teaspoons  ginger juice",
       "expected": {
         "item": "ginger juice",
         "measurements": [
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 teaspoons potato starch",
+      "raw": "2 teaspoons  potato starch",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon toasted sesame oil",
+      "raw": "½ teaspoon  toasted sesame oil",
       "expected": {
         "item": "toasted sesame oil",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1/4 teaspoon salt",
+      "raw": "¼ teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon Chinese five spice powder",
+      "raw": "¼ teaspoon  Chinese five spice powder",
       "expected": {
         "item": "Chinese five spice powder",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 teaspoon white pepper",
+      "raw": "⅛ teaspoon  white pepper",
       "expected": {
         "item": "white pepper",
         "measurements": [
@@ -195,11 +216,12 @@
           }
         ],
         "note": null,
+        "section": "For Wontons",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "40  wonton wrappers ((depends on the size of the wrapper))",
+      "raw": "40  wonton wrappers (depends on the size of the wrapper)",
       "expected": {
         "item": "wonton wrappers",
         "measurements": [
@@ -209,24 +231,31 @@
           }
         ],
         "note": "depends on the size of the wrapper",
+        "section": "For Wontons",
         "category": "Frozen"
       }
     },
     {
-      "raw": "scallions ((chopped, for garnish))",
+      "raw": "to serve:",
+      "is_section_header": true
+    },
+    {
+      "raw": "scallions (chopped, for garnish)",
       "expected": {
         "item": "scallions",
         "measurements": [],
         "note": "chopped, for garnish",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
     {
-      "raw": "cilantro ((leaves, for garnish))",
+      "raw": "cilantro (leaves, for garnish)",
       "expected": {
         "item": "cilantro",
         "measurements": [],
         "note": "leaves, for garnish",
+        "section": "To Serve",
         "category": "Produce"
       }
     }

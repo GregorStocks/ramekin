@@ -3,35 +3,49 @@
   "recipe_slug": "2022-02-almond-bundt-cake-with",
   "ingredients": [
     {
-      "raw": "2 1/4 cups granulated sugar",
+      "raw": "For Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 ¼ cups  / 450 g granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "cup"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "8 oz almond paste",
+      "raw": "8 oz  / 226 g almond paste",
       "expected": {
         "item": "almond paste",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "2 teaspoons finely chopped Meyer lemon or orange zest",
+      "raw": "2 teaspoons   finely chopped Meyer lemon or orange zest",
       "expected": {
         "item": "finely chopped Meyer lemon or orange zest",
         "measurements": [
@@ -41,11 +55,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup (2 sticks) unsalted butter (at room temperature)",
+      "raw": "1 cup  / 226 g (2 sticks) unsalted butter, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -56,14 +71,19 @@
           {
             "amount": "2",
             "unit": "stick"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4  large eggs (at room temperature)",
+      "raw": "4   large eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -73,25 +93,31 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 tablespoons amaretto liqueur",
+      "raw": "3 tablespoons  / 45 g amaretto liqueur",
       "expected": {
         "item": "amaretto liqueur",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/4 teaspoon almond extract",
+      "raw": "¼ teaspoon   almond extract",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -101,25 +127,31 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 1/2 cups all-purpose flour",
+      "raw": "2 ½ cups  / 312 g all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "312",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 teaspoon baking powder",
+      "raw": "¾ teaspoon   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -129,11 +161,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon fine sea salt",
+      "raw": "½ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -143,76 +176,106 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2/3 cup whole milk (at room temperature)",
+      "raw": "⅔ cup  / 162 g whole milk, at room temperature",
       "expected": {
         "item": "whole milk",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "162",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup sour cream (at room temperature)",
+      "raw": "½ cup  / 120 g sour cream, at room temperature",
       "expected": {
         "item": "sour cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6 oz good quality dark chocolate (finely chopped)",
+      "raw": "For Amaretto Ganache:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 oz  / 170 g good quality dark chocolate, finely chopped",
       "expected": {
         "item": "dark chocolate",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": "finely chopped, good quality",
+        "section": "For Amaretto Ganache",
         "category": "Baking"
       }
     },
     {
-      "raw": "2/3 cup heavy cream",
+      "raw": "⅔ cup  / 160 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Amaretto Ganache",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon amaretto liqueur",
+      "raw": "1 tablespoon  / 15 g amaretto liqueur",
       "expected": {
         "item": "amaretto liqueur",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Amaretto Ganache",
         "category": "Beverages"
       }
     }

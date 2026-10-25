@@ -3,7 +3,11 @@
   "recipe_slug": "hiyashi-chuka-ramen-recipe",
   "ingredients": [
     {
-      "raw": "2 tablespoons water",
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons  water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 tablespoons soy sauce",
+      "raw": "2 tablespoons  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 tablespoons tahini",
+      "raw": "2 tablespoons  tahini",
       "expected": {
         "item": "tahini",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 tablespoons rice vinegar",
+      "raw": "2 tablespoons  rice vinegar",
       "expected": {
         "item": "rice vinegar",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 teaspoons toasted sesame oil",
+      "raw": "2 teaspoons  toasted sesame oil",
       "expected": {
         "item": "toasted sesame oil",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 teaspoons evaporated cane sugar",
+      "raw": "2 teaspoons  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon grated ginger",
+      "raw": "1 teaspoon  grated ginger",
       "expected": {
         "item": "grated ginger",
         "measurements": [
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/8 teaspoon salt",
+      "raw": "⅛ teaspoon  salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 teaspoon white pepper",
+      "raw": "⅛ teaspoon  white pepper",
       "expected": {
         "item": "white pepper",
         "measurements": [
@@ -125,11 +137,16 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "240 grams fresh ramen noodles",
+      "raw": "Ramen Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "240 grams  fresh ramen noodles",
       "expected": {
         "item": "fresh ramen noodles",
         "measurements": [
@@ -139,25 +156,27 @@
           }
         ],
         "note": null,
+        "section": "Ramen Salad",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "1 small cucumber (see note, julienned)",
+      "raw": "1 small  cucumber see note, julienned",
       "expected": {
-        "item": "cucumber",
+        "item": "cucumber see note",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "see note, julienned",
-        "category": "Produce"
+        "note": "julienned",
+        "section": "Ramen Salad",
+        "category": "Other"
       }
     },
     {
-      "raw": "2 small tomatoes (sliced into wedges)",
+      "raw": "2 small  tomatoes sliced into wedges",
       "expected": {
         "item": "tomatoes",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": "sliced into wedges",
+        "section": "Ramen Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 slices ham (sliced into thin strips)",
+      "raw": "4 slices  ham sliced into thin strips",
       "expected": {
         "item": "ham",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": "sliced into thin strips",
+        "section": "Ramen Salad",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "2 sheets usuyaki tamago (sliced into thin threads)",
+      "raw": "2 sheets  usuyaki tamago sliced into thin threads",
       "expected": {
         "item": "usuyaki tamago",
         "measurements": [
@@ -195,11 +216,12 @@
           }
         ],
         "note": "sliced into thin threads",
+        "section": "Ramen Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "1 tablespoon sesame seeds",
+      "raw": "1 tablespoon  sesame seeds",
       "expected": {
         "item": "sesame seeds",
         "measurements": [
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Ramen Salad",
         "category": "Spices & Seasonings"
       }
     }

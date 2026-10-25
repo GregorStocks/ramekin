@@ -3,16 +3,16 @@
   "recipe_slug": "skinny-red-velvet-shake-recipe",
   "ingredients": [
     {
-      "raw": "1 cup frozen yogurt (I used Greek)",
+      "raw": "1 cup frozen yogurt I used Greek",
       "expected": {
-        "item": "frozen yogurt",
+        "item": "frozen yogurt I used Greek",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "I used Greek",
+        "note": null,
         "category": "Frozen"
       }
     },
@@ -45,21 +45,25 @@
       }
     },
     {
-      "raw": "1  scoop of protein powder (optional, use chocolate or vanilla)",
+      "raw": "1 scoop of protein powder optional, use chocolate or vanilla",
       "expected": {
-        "item": "protein powder",
+        "item": "protein powder optional, use chocolate or vanilla",
         "measurements": [
           {
             "amount": "1",
             "unit": "scoop"
           }
         ],
-        "note": "optional, use chocolate or vanilla",
-        "category": "Other"
+        "note": null,
+        "category": "Baking"
       }
     },
     {
-      "raw": "2 oz light cream cheese (softened)",
+      "raw": "Cream Cheese Whipped Cream:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 oz light cream cheese softened",
       "expected": {
         "item": "light cream cheese",
         "measurements": [
@@ -69,11 +73,12 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Whipped Cream",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/2  heavy whipping cream",
+      "raw": "1/2 heavy whipping cream",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
@@ -83,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Whipped Cream",
         "category": "Baking"
       }
     },
@@ -111,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Whipped Cream",
         "category": "Baking"
       }
     }

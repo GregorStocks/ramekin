@@ -3,7 +3,7 @@
   "recipe_slug": "imo-mochi",
   "ingredients": [
     {
-      "raw": "▢ 230 g potatoes starchy varieties like russet or Yukon Gold",
+      "raw": "230 g potatoes starchy varieties like russet or Yukon Gold",
       "expected": {
         "item": "potatoes starchy varieties like russet or Yukon Gold",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "▢ salt",
+      "raw": "salt",
       "expected": {
         "item": "salt",
         "measurements": [],
@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "▢ 3 tbsp preferred shredded melting cheese Gouda or Cheddar",
+      "raw": "3 tbsp preferred shredded melting cheese Gouda or Cheddar",
       "expected": {
         "item": "preferred shredded melting cheese Gouda or Cheddar",
         "measurements": [
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "▢ 2 tbsp potato starch (katakuriko) or tapioca starch",
+      "raw": "2 tbsp potato starch (katakuriko) or tapioca starch",
       "expected": {
         "item": "potato starch or tapioca starch",
         "measurements": [
@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "▢ 1 tbsp grated parmesan cheese or powdered cheese",
+      "raw": "1 tbsp grated parmesan cheese or powdered cheese",
       "expected": {
         "item": "grated parmesan cheese or powdered cheese",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "▢ ½ tsp sugar",
+      "raw": "½ tsp sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "▢ ¼ tsp salt",
+      "raw": "¼ tsp salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "▢ ½ tbsp butter unsalted preferred",
+      "raw": "½ tbsp butter unsalted preferred",
       "expected": {
         "item": "butter unsalted preferred",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "▢ 1 tsp cooking oil neutral",
+      "raw": "1 tsp cooking oil neutral",
       "expected": {
         "item": "cooking oil neutral",
         "measurements": [
@@ -124,7 +124,11 @@
       }
     },
     {
-      "raw": "▢ 1 tbsp Japanese soy sauce (koikuchi shoyu)",
+      "raw": "Sweet-Savory Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
         "item": "Japanese soy sauce",
         "measurements": [
@@ -134,11 +138,12 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Sweet-Savory Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "▢ 1 tbsp mirin",
+      "raw": "1 tbsp mirin",
       "expected": {
         "item": "mirin",
         "measurements": [
@@ -148,11 +153,12 @@
           }
         ],
         "note": null,
+        "section": "Sweet-Savory Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "▢ 1 tbsp sugar",
+      "raw": "1 tbsp sugar",
       "expected": {
         "item": "sugar",
         "measurements": [
@@ -162,6 +168,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet-Savory Sauce",
         "category": "Baking"
       }
     }

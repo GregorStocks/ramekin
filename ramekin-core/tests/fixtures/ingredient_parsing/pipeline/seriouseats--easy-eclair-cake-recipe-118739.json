@@ -47,6 +47,28 @@
       }
     },
     {
+      "raw": "1/4 cup powdered sugar (1 ounce; 28g)",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
       "raw": "1 teaspoon (15ml) vanilla extract",
       "expected": {
         "item": "vanilla extract",

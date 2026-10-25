@@ -3,7 +3,7 @@
   "recipe_slug": "praline-blondies-recipe",
   "ingredients": [
     {
-      "raw": "6 tablespoons butter (melted)",
+      "raw": "6 tablespoons butter melted",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -87,18 +87,22 @@
       }
     },
     {
-      "raw": "1 cup all-purpose flour* (plus 1 tablespoon)",
+      "raw": "1 cup all-purpose flour* plus 1 tablespoon",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour* plus 1 tablespoon",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "plus 1 tablespoon",
-        "category": "Baking"
+        "note": null,
+        "category": "Other"
       }
+    },
+    {
+      "raw": "Praline Topping:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons butter",
@@ -111,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     },
@@ -139,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     },
@@ -153,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -167,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     },
@@ -181,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     },
@@ -195,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Praline Topping",
         "category": "Baking"
       }
     }

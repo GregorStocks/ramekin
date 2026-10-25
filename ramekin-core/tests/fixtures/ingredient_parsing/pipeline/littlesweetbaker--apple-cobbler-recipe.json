@@ -3,7 +3,11 @@
   "recipe_slug": "apple-cobbler-recipe",
   "ingredients": [
     {
-      "raw": "8 cups apples (peeled and sliced 1/4\" thick (about 6 large apples))",
+      "raw": "Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 cups   apples, peeled and sliced 1/4″ thick (about 6 large apples)",
       "expected": {
         "item": "apples",
         "measurements": [
@@ -12,12 +16,13 @@
             "unit": "cup"
           }
         ],
-        "note": "peeled and sliced 1/4\" thick (about 6 large apples)",
+        "note": "about 6 large apples, peeled and sliced 1/4″ thick",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup (50g) granulated sugar",
+      "raw": "1/4 cup   (50g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -31,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp apple pie spice or ground cinnamon",
+      "raw": "1 tsp   apple pie spice or ground cinnamon",
       "expected": {
         "item": "apple pie spice or ground cinnamon",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 tsp salt",
+      "raw": "1/4 tsp   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -59,11 +66,16 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 &amp;amp; 1/2 cups (188g) all-purpose flour",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 & 1/2 cups   (188g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -77,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (100g) granulated sugar",
+      "raw": "1/2 cup   (100g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -95,11 +108,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tbsp baking powder",
+      "raw": "1 Tbsp   baking powder",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -109,11 +123,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 tsp salt",
+      "raw": "1/4 tsp   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -123,11 +138,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 cup (125ml) milk",
+      "raw": "1/2 cup   (125ml) milk",
       "expected": {
         "item": "milk",
         "measurements": [
@@ -141,11 +157,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tsp vanilla extract",
+      "raw": "1 tsp   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -155,11 +172,12 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup (114g) unsalted butter (melted)",
+      "raw": "1/2 cup   (114g) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -173,6 +191,7 @@
           }
         ],
         "note": "melted",
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "2020-12-gingerbread-yule-log",
   "ingredients": [
     {
+      "raw": "Cranberries:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup (200 grams) plus 1/3 cup (65 grams) granulated sugar",
       "expected": {
         "item": "granulated sugar",
@@ -21,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberries",
         "category": "Baking"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Cranberries",
         "category": "Beverages"
       }
     },
@@ -57,8 +63,13 @@
           }
         ],
         "note": null,
+        "section": "Cranberries",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Cake:",
+      "is_section_header": true
     },
     {
       "raw": "3 large eggs",
@@ -71,6 +82,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -107,6 +120,7 @@
           }
         ],
         "note": "updated weight",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -125,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Cheese"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +209,7 @@
         "item": "Several gratings or two pinches nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Cake",
         "category": "Other"
       }
     },
@@ -204,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -222,6 +243,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -231,8 +253,13 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": "for rolling",
+        "section": "Cake",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Bark:",
+      "is_section_header": true
     },
     {
       "raw": "6 ounces (170 grams) white chocolate chips, or chopped white chocolate from a bar",
@@ -249,8 +276,13 @@
           }
         ],
         "note": "or chopped white chocolate from a bar",
+        "section": "Bark",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling and frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (355 ml) heavy cream",
@@ -267,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -281,6 +314,7 @@
           }
         ],
         "note": "or 1 1/2 teaspoons vanilla extract",
+        "section": "Filling and Frosting",
         "category": "Baking"
       }
     },
@@ -295,6 +329,7 @@
           }
         ],
         "note": "plus more to decorate",
+        "section": "Filling and Frosting",
         "category": "Baking"
       }
     },
@@ -313,6 +348,7 @@
           }
         ],
         "note": null,
+        "section": "Filling and Frosting",
         "category": "Cheese"
       }
     }

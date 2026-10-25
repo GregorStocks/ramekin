@@ -3,6 +3,10 @@
   "recipe_slug": "chocoflan-recipe",
   "ingredients": [
     {
+      "raw": "Cake:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 Cup Caramel Sauce or Topping",
       "expected": {
         "item": "Caramel Sauce or Topping",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4 Ounces Bittersweet Chocolate (Chopped)",
+      "raw": "4 Ounces Bittersweet Chocolate Chopped",
       "expected": {
         "item": "Bittersweet Chocolate",
         "measurements": [
@@ -83,6 +92,7 @@
           }
         ],
         "note": "Chopped",
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  Large Eggs",
+      "raw": "2 Large Eggs",
       "expected": {
         "item": "Eggs",
         "measurements": [
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,11 +167,16 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  14-Ounce Each Cans Sweetened Condensed Milk",
+      "raw": "Flan:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 14-Ounce Each Cans Sweetened Condensed Milk",
       "expected": {
         "item": "14-Ounce Each Cans Sweetened Condensed Milk",
         "measurements": [
@@ -167,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Canned Goods"
       }
     },
@@ -181,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,11 +216,12 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Cheese"
       }
     },
     {
-      "raw": "6  Large  Eggs",
+      "raw": "6 Large  Eggs",
       "expected": {
         "item": "Eggs",
         "measurements": [
@@ -209,11 +231,12 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "4  Large Egg Yolks",
+      "raw": "4 Large Egg Yolks",
       "expected": {
         "item": "Egg Yolks",
         "measurements": [
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Flan",
         "category": "Baking"
       }
     }

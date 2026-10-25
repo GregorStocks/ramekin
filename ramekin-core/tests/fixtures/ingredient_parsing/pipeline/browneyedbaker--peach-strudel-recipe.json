@@ -3,7 +3,11 @@
   "recipe_slug": "peach-strudel-recipe",
   "ingredients": [
     {
-      "raw": "20 ounces fresh peaches (peeled, pitted and cut into 1/8-inch slices)",
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "20 ounces   fresh peaches, peeled, pitted and cut into 1/8-inch slices",
       "expected": {
         "item": "fresh peaches",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "peeled, pitted and cut into 1/8-inch slices",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/3 cup brown sugar",
+      "raw": "⅓ cup   brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon all-purpose flour",
+      "raw": "1 tablespoon   all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup chopped pecans",
+      "raw": "⅓ cup   chopped pecans",
       "expected": {
         "item": "chopped pecans",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1 teaspoon vanilla extract",
+      "raw": "1 teaspoon   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ teaspoon ground cinnamon",
+      "raw": "¼ teaspoon   ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
@@ -83,11 +92,16 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "5  sheets phyllo dough (thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels))",
+      "raw": "For the Strudel Assembly:",
+      "is_section_header": true
+    },
+    {
+      "raw": "5   sheets phyllo dough, thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels)",
       "expected": {
         "item": "phyllo dough",
         "measurements": [
@@ -96,12 +110,13 @@
             "unit": "sheet"
           }
         ],
-        "note": "thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels)",
+        "note": "use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels, thawed",
+        "section": "For the Strudel Assembly",
         "category": "Frozen"
       }
     },
     {
-      "raw": "5 tablespoons unsalted butter (melted)",
+      "raw": "5 tablespoons   unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": "melted",
+        "section": "For the Strudel Assembly",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons granulated sugar",
+      "raw": "2 tablespoons   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Strudel Assembly",
         "category": "Baking"
       }
     }

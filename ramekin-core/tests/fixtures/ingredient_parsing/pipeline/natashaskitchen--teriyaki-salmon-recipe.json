@@ -3,18 +3,27 @@
   "recipe_slug": "teriyaki-salmon-recipe",
   "ingredients": [
     {
-      "raw": "2 1/2 lbs salmon filet sliced into 2\" wide slices (*)",
+      "raw": "For the Teriyaki Salmon:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 1/2 lbs salmon filet sliced into 2\" wide slices, *",
       "expected": {
-        "item": "salmon filet",
+        "item": "salmon filet sliced into 2\" wide slices,",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": "*, sliced into 2\" wide slices",
-        "category": "Meat & Seafood"
+        "note": null,
+        "section": "For the Teriyaki Salmon",
+        "category": "Other"
       }
+    },
+    {
+      "raw": "For the Teriyaki Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "3 Tbsp teriyaki sauce",
@@ -27,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "For the Teriyaki Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,11 +111,12 @@
           }
         ],
         "note": "packed",
+        "section": "For the Teriyaki Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  large or 3 medium garlic cloves (minced)",
+      "raw": "2 large or 3 medium garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -115,11 +130,12 @@
           }
         ],
         "note": "minced",
+        "section": "For the Teriyaki Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tsp freshly grated ginger (or 1/2 tsp ground ginger)",
+      "raw": "2 tsp freshly grated ginger, or 1/2 tsp ground ginger",
       "expected": {
         "item": "freshly grated ginger",
         "measurements": [
@@ -129,24 +145,31 @@
           }
         ],
         "note": "or 1/2 tsp ground ginger",
+        "section": "For the Teriyaki Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "Sesame seeds to garnish (optional)",
+      "raw": "To serve:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Sesame seeds to garnish, optional",
       "expected": {
         "item": "Sesame seeds to garnish",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Other"
       }
     },
     {
-      "raw": "Green onion (chopped, optional)",
+      "raw": "Green onion, chopped, optional",
       "expected": {
         "item": "Green onion",
         "measurements": [],
         "note": "chopped, optional",
+        "section": "To Serve",
         "category": "Produce"
       }
     }

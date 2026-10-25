@@ -3,11 +3,16 @@
   "recipe_slug": "lamb-and-peas-lasagna-recipe",
   "ingredients": [
     {
+      "raw": "Lamb Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "oil",
       "expected": {
         "item": "oil",
         "measurements": [],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -22,6 +27,7 @@
           }
         ],
         "note": "diced",
+        "section": "Lamb Filling",
         "category": "Produce"
       }
     },
@@ -36,6 +42,7 @@
           }
         ],
         "note": "diced",
+        "section": "Lamb Filling",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -64,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Produce"
       }
     },
@@ -78,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb Filling",
         "category": "Canned Goods"
       }
     },
@@ -101,8 +112,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Lamb Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Cheese Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons butter",
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Baking"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Cheese"
       }
     },
@@ -171,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Cheese Sauce",
         "category": "Cheese"
       }
     },
@@ -180,8 +201,13 @@
         "item": "salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Cheese Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Lasagna:",
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup roughly chopped flat leaf parsley",
@@ -194,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Lasagna",
         "category": "Produce"
       }
     },
@@ -208,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Lasagna",
         "category": "Produce"
       }
     },
@@ -222,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Lasagna",
         "category": "Produce"
       }
     },
@@ -236,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Lasagna",
         "category": "Other"
       }
     },
@@ -250,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Lasagna",
         "category": "Produce"
       }
     },
@@ -259,6 +290,7 @@
         "item": "parmesan",
         "measurements": [],
         "note": "to taste",
+        "section": "Lasagna",
         "category": "Cheese"
       }
     }

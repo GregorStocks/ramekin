@@ -3,49 +3,21 @@
   "recipe_slug": "tonjiru-recipe",
   "ingredients": [
     {
-      "raw": "200 g slab skinless pork belly (chilled)",
+      "raw": "200 g slab skinless pork belly or thinly sliced pork belly, or pork shoulder",
       "expected": {
-        "item": "slab skinless pork belly",
+        "item": "slab skinless pork belly or thinly sliced pork belly, or pork shoulder",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": "chilled",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "350 g daikon radish (peeled, thickly sliced and quartered)",
-      "expected": {
-        "item": "daikon radish",
-        "measurements": [
-          {
-            "amount": "350",
-            "unit": "g"
-          }
-        ],
-        "note": "peeled, thickly sliced and quartered",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "150 g carrot (roughly cut into bitesize pieces)",
-      "expected": {
-        "item": "carrot",
-        "measurements": [
-          {
-            "amount": "150",
-            "unit": "g"
-          }
-        ],
-        "note": "roughly cut into bitesize pieces",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "75 g burdock root (gobo) (peeled and thinly sliced diagonally)",
+      "raw": "75 g burdock root (gobo) scraped, sliced on the diagonal",
       "expected": {
         "item": "burdock root",
         "measurements": [
@@ -54,40 +26,54 @@
             "unit": "g"
           }
         ],
-        "note": "gobo, peeled and thinly sliced diagonally",
+        "note": "gobo, scraped, sliced on the diagonal",
         "category": "Produce"
       }
     },
     {
-      "raw": "20 g fresh shiitake mushroom (stems removed and thinly sliced)",
+      "raw": "300 g daikon radish peeled, cut into 1.5cm half-moons",
       "expected": {
-        "item": "fresh shiitake mushroom",
+        "item": "daikon radish",
         "measurements": [
           {
-            "amount": "20",
+            "amount": "300",
             "unit": "g"
           }
         ],
-        "note": "stems removed and thinly sliced",
+        "note": "peeled, cut into 1.5cm half-moons",
         "category": "Produce"
       }
     },
     {
-      "raw": "50 g Japanese leek (naganegi) (thinly sliced diagonally)",
+      "raw": "150 g carrot peeled, cut into 1.5cm half-moons",
       "expected": {
-        "item": "Japanese leek",
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled, cut into 1.5cm half-moons",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "50 g fresh shiitake mushrooms stems removed, sliced",
+      "expected": {
+        "item": "fresh shiitake mushrooms",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": "naganegi, thinly sliced diagonally",
+        "note": "stems removed, sliced",
         "category": "Produce"
       }
     },
     {
-      "raw": "400 g konjac (konnyaku) (cut into bitesize pieces)",
+      "raw": "400 g konjac (konnyaku) torn into bite-sized pieces with a spoon",
       "expected": {
         "item": "konjac",
         "measurements": [
@@ -96,12 +82,12 @@
             "unit": "g"
           }
         ],
-        "note": "konnyaku, cut into bitesize pieces",
+        "note": "konnyaku, torn into bite-sized pieces with a spoon",
         "category": "Other"
       }
     },
     {
-      "raw": "60 g fried tofu pouch (aburaage) (thinly sliced)",
+      "raw": "60 g fried tofu pouch (aburaage) sliced into strips",
       "expected": {
         "item": "fried tofu pouch",
         "measurements": [
@@ -110,28 +96,32 @@
             "unit": "g"
           }
         ],
-        "note": "aburaage, thinly sliced",
+        "note": "aburaage, sliced into strips",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ tbsp butter",
+      "raw": "50 g Japanese leek (naganegi) sliced on the diagonal",
       "expected": {
-        "item": "butter",
+        "item": "Japanese leek",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "tbsp"
+            "amount": "50",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "naganegi, sliced on the diagonal",
+        "category": "Produce"
       }
     },
     {
-      "raw": "1500 ml dashi stock ()",
+      "raw": "Seasonings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1500 ml dashi stock homemade, homemade dashi packets, or store-bought dashi packets recommended",
       "expected": {
-        "item": "dashi stock",
+        "item": "dashi stock homemade, homemade dashi packets, or store-bought dashi packets recommended",
         "measurements": [
           {
             "amount": "1500",
@@ -139,75 +129,106 @@
           }
         ],
         "note": null,
-        "category": "Canned Goods"
+        "section": "Seasonings",
+        "category": "Other"
       }
     },
     {
-      "raw": "6-7 tbsp yellow miso paste (awase) ()",
+      "raw": "½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "yellow miso paste",
+        "item": "Japanese soy sauce",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "koikuchi shoyu",
+        "section": "Seasonings",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "½ tbsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "Seasonings",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "6-7 tbsp yellow miso paste (awase) adjust to taste",
+      "expected": {
+        "item": "yellow miso paste adjust",
         "measurements": [
           {
             "amount": "6-7",
             "unit": "tbsp"
           }
         ],
-        "note": "awase",
-        "category": "Condiments & Sauces"
+        "note": "awase, to taste",
+        "section": "Seasonings",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 tsp Japanese soy sauce (koikuchi shoyu)",
+      "raw": "½ tbsp grated ginger root or ginger paste",
       "expected": {
-        "item": "Japanese soy sauce",
+        "item": "grated ginger root or ginger paste",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "tsp"
-          }
-        ],
-        "note": "koikuchi shoyu",
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "1 tsp mirin",
-      "expected": {
-        "item": "mirin",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
+            "amount": "0.5",
+            "unit": "tbsp"
           }
         ],
         "note": null,
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "toasted sesame oil (to garnish)",
-      "expected": {
-        "item": "toasted sesame oil",
-        "measurements": [],
-        "note": "to garnish",
-        "category": "Oils & Vinegars"
-      }
-    },
-    {
-      "raw": "finely chopped green onions (optional)",
-      "expected": {
-        "item": "finely chopped green onions",
-        "measurements": [],
-        "note": "optional",
+        "section": "Seasonings",
         "category": "Produce"
       }
     },
     {
-      "raw": "Japanese chili powder (shichimi togarashi) (optional)",
+      "raw": "½ tbsp unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "section": "Seasonings",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Toppings (optional):",
+      "is_section_header": true
+    },
+    {
+      "raw": "finely chopped green onions to taste",
+      "expected": {
+        "item": "finely chopped green onions",
+        "measurements": [],
+        "note": "to taste",
+        "section": "Toppings (Optional)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Japanese chili powder (shichimi togarashi) to taste",
       "expected": {
         "item": "Japanese chili powder",
         "measurements": [],
-        "note": "shichimi togarashi, optional",
+        "note": "shichimi togarashi, to taste",
+        "section": "Toppings (Optional)",
         "category": "Spices & Seasonings"
       }
     }

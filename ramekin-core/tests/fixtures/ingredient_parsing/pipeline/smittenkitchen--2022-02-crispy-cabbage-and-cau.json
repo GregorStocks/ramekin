@@ -3,6 +3,10 @@
   "recipe_slug": "2022-02-crispy-cabbage-and-cau",
   "ingredients": [
     {
+      "raw": "Vegetables:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 pound savoy cabbage (from half a small head)",
       "expected": {
         "item": "savoy cabbage",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "from half a small head",
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "from half a small head",
+        "section": "Vegetables",
         "category": "Produce"
       }
     },
@@ -36,6 +42,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -50,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,8 +67,13 @@
         "item": "Freshly ground black pepper and/or red pepper flakes",
         "measurements": [],
         "note": null,
+        "section": "Vegetables",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Dressing:",
+      "is_section_header": true
     },
     {
       "raw": "1 garlic clove, minced",
@@ -73,6 +86,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -87,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -101,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -115,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -124,6 +141,7 @@
         "item": "Water",
         "measurements": [],
         "note": "as needed",
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -133,6 +151,7 @@
         "item": "Harissa",
         "measurements": [],
         "note": "to taste",
+        "section": "Dressing",
         "category": "Other"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "cold-zaru-soba-recipe",
   "ingredients": [
     {
-      "raw": "1 cup dashi stock",
+      "raw": "For dipping sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  dashi stock",
       "expected": {
         "item": "dashi stock",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Dipping Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "3 tablespoons soy sauce",
+      "raw": "3 tablespoons  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Dipping Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 tablespoons sake",
+      "raw": "1 tablespoons  sake",
       "expected": {
         "item": "sake",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Dipping Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1 1/2 teaspoons evaporated cane sugar",
+      "raw": "1 ½ teaspoons  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -55,25 +62,31 @@
           }
         ],
         "note": null,
+        "section": "For Dipping Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 servings soba noodles",
+      "raw": "For serving:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 servings  soba noodles",
       "expected": {
-        "item": "servings soba noodles",
+        "item": "soba noodles",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "serving"
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Other"
       }
     },
     {
-      "raw": "1 teaspoon wasabi",
+      "raw": "1 teaspoon  wasabi",
       "expected": {
         "item": "wasabi",
         "measurements": [
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  scallion ((finely chopped))",
+      "raw": "1  scallion (finely chopped)",
       "expected": {
         "item": "scallion",
         "measurements": [
@@ -97,11 +111,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
     {
-      "raw": "50 grams daikon ((grated and drained))",
+      "raw": "50 grams  daikon (grated and drained)",
       "expected": {
         "item": "daikon",
         "measurements": [
@@ -111,11 +126,12 @@
           }
         ],
         "note": "grated and drained",
+        "section": "For Serving",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 sheet nori ((cut into thin strips with scissors))",
+      "raw": "½ sheet  nori (cut into thin strips with scissors)",
       "expected": {
         "item": "nori",
         "measurements": [
@@ -125,6 +141,7 @@
           }
         ],
         "note": "cut into thin strips with scissors",
+        "section": "For Serving",
         "category": "Spices & Seasonings"
       }
     }

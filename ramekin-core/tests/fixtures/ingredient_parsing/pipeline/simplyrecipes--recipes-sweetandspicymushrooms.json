@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-sweetandspicymushrooms",
   "ingredients": [
     {
+      "raw": "Glaze:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup chicken or vegetable stock (use vegetable stock for vegetarian option)",
       "expected": {
         "item": "chicken or vegetable stock",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "use vegetable stock for vegetarian option",
+        "section": "Glaze",
         "category": "Canned Goods"
       }
     },
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon soy sauce (use gluten-free soy sauce if cooking gluten-free)",
+      "raw": "1 teaspoon soy sauce (use gluten-free soy sauce if cooking gluten free)",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -40,9 +46,14 @@
             "unit": "tsp"
           }
         ],
-        "note": "use gluten-free soy sauce if cooking gluten-free",
+        "note": "use gluten-free soy sauce if cooking gluten free",
+        "section": "Glaze",
         "category": "Condiments & Sauces"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup chicken or vegetable stock (use vegetable stock for vegetarian option)",
@@ -55,11 +66,12 @@
           }
         ],
         "note": "use vegetable stock for vegetarian option",
+        "section": "Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "3 tablespoons soy sauce (use gluten-free soy sauce if cooking gluten-free)",
+      "raw": "3 tablespoons soy sauce (use gluten-free soy sauce if cooking gluten free)",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -68,7 +80,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "use gluten-free soy sauce if cooking gluten-free",
+        "note": "use gluten-free soy sauce if cooking gluten free",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -97,13 +111,14 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon shaoxing cooking wine or cooking sherry",
+      "raw": "1 tablespoon Shaoxing cooking wine or cooking sherry",
       "expected": {
-        "item": "shaoxing cooking wine or cooking sherry",
+        "item": "Shaoxing cooking wine or cooking sherry",
         "measurements": [
           {
             "amount": "1",
@@ -111,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -125,8 +141,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Stir-Fry:",
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons sesame, grapeseed, or other high smoke-point oil",
@@ -139,11 +160,12 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 lbs. of mixed mushrooms (oyster, crimini, button, shiitake, and/or enoki), roughly chopped or quartered (you want bite-sized pieces)",
+      "raw": "2 pounds mixed mushrooms (oyster, cremini, button, shiitake, and/or enoki), roughly chopped or quartered (you want bite-sized pieces)",
       "expected": {
         "item": "mixed mushrooms",
         "measurements": [
@@ -152,21 +174,23 @@
             "unit": "lb"
           }
         ],
-        "note": "oyster, crimini, button, shiitake, and/or enoki, you want bite-sized pieces, roughly chopped or quartered",
+        "note": "oyster, cremini, button, shiitake, and/or enoki, you want bite-sized pieces, roughly chopped or quartered",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 garlic cloves, sliced thinly",
+      "raw": "4 cloves garlic, thinly sliced",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "clove"
           }
         ],
-        "note": "sliced thinly",
+        "note": "thinly sliced",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -181,25 +205,27 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "2-5 dried red chilies, roughly chopped OR 1/4-1/2 teaspoon dried chili flakes",
+      "raw": "2 to 5 dried red chilies, roughly chopped, or 1/4 to 1/2 teaspoon dried chili flakes",
       "expected": {
         "item": "dried red chilies",
         "measurements": [
           {
-            "amount": "2-5",
+            "amount": "2 to 5",
             "unit": null
           }
         ],
-        "note": "roughly chopped OR 1/4-1/2 teaspoon dried chili flakes",
+        "note": "roughly chopped, or 1/4 to 1/2 teaspoon dried chili flakes",
+        "section": "Stir-Fry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/2 cups of snow peas or snap peas, de-stringed",
+      "raw": "1 1/2 cups snow peas or snap peas, de-stringed",
       "expected": {
         "item": "snow peas or snap peas, de-stringed",
         "measurements": [
@@ -209,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
@@ -223,24 +250,27 @@
           }
         ],
         "note": "chopped",
+        "section": "Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "Cooked rice, for serving",
+      "raw": "Cooked rice, for serving, optional",
       "expected": {
         "item": "Cooked rice",
         "measurements": [],
-        "note": "for serving",
+        "note": "for serving, optional",
+        "section": "Stir-Fry",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "Toasted sesame seeds (optional)",
+      "raw": "Toasted sesame seeds, for optional garnish",
       "expected": {
         "item": "Toasted sesame seeds",
         "measurements": [],
-        "note": "optional",
+        "note": "for optional garnish",
+        "section": "Stir-Fry",
         "category": "Spices & Seasonings"
       }
     }

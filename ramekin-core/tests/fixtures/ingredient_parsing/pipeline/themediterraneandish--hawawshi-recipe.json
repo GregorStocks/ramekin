@@ -3,7 +3,7 @@
   "recipe_slug": "hawawshi-recipe",
   "ingredients": [
     {
-      "raw": "1  large yellow onion (quartered)",
+      "raw": "1 large yellow onion quartered",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2  garlic cloves",
+      "raw": "2 garlic cloves",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "1  green bell pepper (cored and cut into large chunks)",
+      "raw": "1 green bell pepper cored and cut into large chunks",
       "expected": {
-        "item": "green bell pepper",
+        "item": "green bell pepper cored and cut into large chunks",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cored and cut into large chunks",
-        "category": "Produce"
+        "note": null,
+        "category": "Other"
       }
     },
     {
-      "raw": "1  jalapeno (halved and seeded (leave some of the seed if you like heat))",
+      "raw": "1 jalapeno halved and seeded (leave some of the seed if you like heat)",
       "expected": {
         "item": "jalapeno",
         "measurements": [
@@ -54,22 +54,22 @@
             "unit": null
           }
         ],
-        "note": "halved and seeded (leave some of the seed if you like heat)",
+        "note": "leave some of the seed if you like heat, halved and seeded",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ ounce fresh parsley (stems trimmed (cut most of the stem but leave some for extra flavor))",
+      "raw": "½ ounce fresh parsley stems trimmed (cut most of the stem but leave some for extra flavor)",
       "expected": {
-        "item": "fresh parsley",
+        "item": "fresh parsley stems",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "oz"
           }
         ],
-        "note": "stems trimmed (cut most of the stem but leave some for extra flavor)",
-        "category": "Produce"
+        "note": "cut most of the stem but leave some for extra flavor, trimmed",
+        "category": "Other"
       }
     },
     {
@@ -119,18 +119,22 @@
       }
     },
     {
-      "raw": "6  loaves of pita bread (you need the kind with pockets)",
+      "raw": "6 loaves of pita bread you need the kind with pockets",
       "expected": {
-        "item": "pita bread",
+        "item": "pita bread you need the kind with pockets",
         "measurements": [
           {
             "amount": "6",
             "unit": "loaf"
           }
         ],
-        "note": "you need the kind with pockets",
-        "category": "Bakery & Bread"
+        "note": null,
+        "category": "Other"
       }
+    },
+    {
+      "raw": "For the Hawawshi Seasoning (Spice Mixture):",
+      "is_section_header": true
     },
     {
       "raw": "1 tsp coriander",
@@ -143,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hawawshi Seasoning (Spice Mixture)",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hawawshi Seasoning (Spice Mixture)",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hawawshi Seasoning (Spice Mixture)",
         "category": "Spices & Seasonings"
       }
     },
@@ -185,6 +192,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hawawshi Seasoning (Spice Mixture)",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hawawshi Seasoning (Spice Mixture)",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hawawshi Seasoning (Spice Mixture)",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hawawshi Seasoning (Spice Mixture)",
         "category": "Spices & Seasonings"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "green-bean-stir-fry-recipe",
   "ingredients": [
     {
-      "raw": "200 grams ground pork",
+      "raw": "For Pork:",
+      "is_section_header": true
+    },
+    {
+      "raw": "200 grams  ground pork",
       "expected": {
         "item": "ground pork",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 tablespoon Shaoxing wine",
+      "raw": "1 tablespoon  Shaoxing wine",
       "expected": {
         "item": "Shaoxing wine",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2 teaspoons soy sauce",
+      "raw": "2 teaspoons  soy sauce",
       "expected": {
         "item": "soy sauce",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 teaspoon evaporated cane sugar",
+      "raw": "1 teaspoon  evaporated cane sugar",
       "expected": {
         "item": "evaporated cane sugar",
         "measurements": [
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon potato starch",
+      "raw": "½ teaspoon  potato starch",
       "expected": {
         "item": "potato starch",
         "measurements": [
@@ -69,20 +77,26 @@
           }
         ],
         "note": null,
+        "section": "For Pork",
         "category": "Baking"
       }
     },
     {
-      "raw": "vegetable oil ((for frying))",
+      "raw": "For green beans:",
+      "is_section_header": true
+    },
+    {
+      "raw": "vegetable oil (for frying)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For Green Beans",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "350 grams green beans ((trimmed and cut into 2-inch pieces))",
+      "raw": "350 grams  green beans (trimmed and cut into 2-inch pieces)",
       "expected": {
         "item": "green beans",
         "measurements": [
@@ -92,11 +106,16 @@
           }
         ],
         "note": "trimmed and cut into 2-inch pieces",
+        "section": "For Green Beans",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon vegetable oil",
+      "raw": "For Stir-fry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 tablespoon  vegetable oil",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -106,11 +125,12 @@
           }
         ],
         "note": null,
+        "section": "For Stir-Fry",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "14 grams garlic ((2 large cloves minced))",
+      "raw": "14 grams  garlic (2 large cloves minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -120,11 +140,12 @@
           }
         ],
         "note": "2 large cloves minced",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon douchi ((fermented black beans, finely minced))",
+      "raw": "1 tablespoon  douchi (fermented black beans, finely minced)",
       "expected": {
         "item": "douchi",
         "measurements": [
@@ -134,11 +155,12 @@
           }
         ],
         "note": "fermented black beans, finely minced",
+        "section": "For Stir-Fry",
         "category": "Other"
       }
     },
     {
-      "raw": "1 teaspoon doubanjiang ((chili bean paste))",
+      "raw": "1 teaspoon  doubanjiang (chili bean paste)",
       "expected": {
         "item": "doubanjiang",
         "measurements": [
@@ -148,11 +170,12 @@
           }
         ],
         "note": "chili bean paste",
+        "section": "For Stir-Fry",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1  scallion ((thinly sliced for garnish))",
+      "raw": "1  scallion (thinly sliced for garnish)",
       "expected": {
         "item": "scallion",
         "measurements": [
@@ -162,6 +185,7 @@
           }
         ],
         "note": "thinly sliced for garnish",
+        "section": "For Stir-Fry",
         "category": "Produce"
       }
     }

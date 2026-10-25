@@ -3,7 +3,11 @@
   "recipe_slug": "crab-dip-recipe",
   "ingredients": [
     {
-      "raw": "2 teaspoons olive oil",
+      "raw": "For the Dip:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 teaspoons   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dip",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  small red bell pepper (finely chopped)",
+      "raw": "1   small red bell pepper, finely chopped",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Dip",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  small yellow onion (finely chopped)",
+      "raw": "1   small yellow onion, finely chopped",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Dip",
         "category": "Produce"
       }
     },
     {
-      "raw": "2  garlic cloves (minced)",
+      "raw": "2   garlic cloves, minced",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -55,81 +62,111 @@
           }
         ],
         "note": "minced",
+        "section": "For the Dip",
         "category": "Produce"
       }
     },
     {
-      "raw": "16 ounces lump crab meat (drained, if canned)",
+      "raw": "16 ounces  (453.59 g) lump crab meat, drained, if canned",
       "expected": {
         "item": "lump crab meat",
         "measurements": [
           {
             "amount": "16",
             "unit": "oz"
+          },
+          {
+            "amount": "453.59",
+            "unit": "g"
           }
         ],
         "note": "drained, if canned",
+        "section": "For the Dip",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "8 ounces cream cheese (at room temperature)",
+      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "226.8",
+            "unit": "g"
           }
         ],
         "note": "at room temperature",
+        "section": "For the Dip",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 cup mayonnaise",
+      "raw": "1 cup  (224 g) mayonnaise",
       "expected": {
         "item": "mayonnaise",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "224",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Dip",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "4 ounces Monterey Jack cheese (shredded (1 cup shredded))",
+      "raw": "4 ounces  (113.4 g) Monterey Jack cheese, shredded (1 cup shredded)",
       "expected": {
         "item": "Monterey Jack cheese",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
+          },
+          {
+            "amount": "113.4",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "shredded (1 cup shredded)",
+        "note": "shredded",
+        "section": "For the Dip",
         "category": "Cheese"
       }
     },
     {
-      "raw": "¼ cup Parmesan cheese",
+      "raw": "¼ cup  (25 g) Parmesan cheese",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Dip",
         "category": "Cheese"
       }
     },
     {
-      "raw": "3 tablespoons Worcestershire sauce",
+      "raw": "3 tablespoons   Worcestershire sauce",
       "expected": {
         "item": "Worcestershire sauce",
         "measurements": [
@@ -139,11 +176,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dip",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "2 tablespoons lemon juice",
+      "raw": "2 tablespoons   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -153,11 +191,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dip",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons minced fresh parsley",
+      "raw": "2 tablespoons   minced fresh parsley",
       "expected": {
         "item": "minced fresh parsley",
         "measurements": [
@@ -167,25 +206,31 @@
           }
         ],
         "note": null,
+        "section": "For the Dip",
         "category": "Produce"
       }
     },
     {
-      "raw": "1½ teaspoons Old Bay seasoning",
+      "raw": "1½ teaspoons  (1.5 teaspoons) Old Bay seasoning",
       "expected": {
         "item": "Old Bay seasoning",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Dip",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon hot sauce",
+      "raw": "1 teaspoon   hot sauce",
       "expected": {
         "item": "hot sauce",
         "measurements": [
@@ -195,25 +240,35 @@
           }
         ],
         "note": null,
+        "section": "For the Dip",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "½ cup Panko bread crumbs",
+      "raw": "For the Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup  (30 g) Panko bread crumbs",
       "expected": {
         "item": "Panko bread crumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "1 tablespoon Parmesan cheese",
+      "raw": "1 tablespoon   Parmesan cheese",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
@@ -223,11 +278,12 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2 tablespoons unsalted butter (melted)",
+      "raw": "2 tablespoons   unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -237,6 +293,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     }

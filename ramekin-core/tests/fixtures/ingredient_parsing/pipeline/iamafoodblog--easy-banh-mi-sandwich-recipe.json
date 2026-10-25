@@ -3,11 +3,16 @@
   "recipe_slug": "easy-banh-mi-sandwich-recipe",
   "ingredients": [
     {
+      "raw": "Sandwich:",
+      "is_section_header": true
+    },
+    {
       "raw": "fresh baguette, cut into 4 equal pieces",
       "expected": {
         "item": "fresh baguette",
         "measurements": [],
         "note": "cut into 4 equal pieces",
+        "section": "Sandwich",
         "category": "Bakery & Bread"
       }
     },
@@ -17,6 +22,7 @@
         "item": "pork pâté",
         "measurements": [],
         "note": "to taste",
+        "section": "Sandwich",
         "category": "Meat & Seafood"
       }
     },
@@ -26,6 +32,7 @@
         "item": "Kewpie mayo",
         "measurements": [],
         "note": "to taste",
+        "section": "Sandwich",
         "category": "Condiments & Sauces"
       }
     },
@@ -40,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sandwich",
         "category": "Other"
       }
     },
@@ -54,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sandwich",
         "category": "Meat & Seafood"
       }
     },
@@ -63,6 +72,7 @@
         "item": "quick-pickled daikon and carrots",
         "measurements": [],
         "note": null,
+        "section": "Sandwich",
         "category": "Other"
       }
     },
@@ -72,6 +82,7 @@
         "item": "fresh cilantro sprigs",
         "measurements": [],
         "note": null,
+        "section": "Sandwich",
         "category": "Produce"
       }
     },
@@ -81,8 +92,13 @@
         "item": "sliced jalapeños",
         "measurements": [],
         "note": "if desired",
+        "section": "Sandwich",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Quick Pickled Carrots and Daikon:",
+      "is_section_header": true
     },
     {
       "raw": "1 large carrot, julienned",
@@ -95,6 +111,7 @@
           }
         ],
         "note": "julienned",
+        "section": "Quick Pickled Carrots and Daikon",
         "category": "Produce"
       }
     },
@@ -109,6 +126,7 @@
           }
         ],
         "note": "julienned",
+        "section": "Quick Pickled Carrots and Daikon",
         "category": "Produce"
       }
     },
@@ -123,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Pickled Carrots and Daikon",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Quick Pickled Carrots and Daikon",
         "category": "Baking"
       }
     }

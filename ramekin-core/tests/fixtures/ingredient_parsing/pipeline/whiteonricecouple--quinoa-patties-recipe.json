@@ -3,133 +3,182 @@
   "recipe_slug": "quinoa-patties-recipe",
   "ingredients": [
     {
-      "raw": "1 cup raw quinoa",
+      "raw": "Crispy Quinoa Fritters:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 cup  (170 g) raw quinoa",
       "expected": {
         "item": "raw quinoa",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "1/2 medium  onion (, finely minced (@ 1 cup) (the smaller the mince is, the easier it will be to mold the patties))",
+      "raw": "1/2 medium    onion , finely minced (@ 1 cup) (the smaller the mince is, the easier it will be to mold the patties)",
       "expected": {
         "item": "onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": "finely minced (@ 1 cup) (the smaller the mince is, the easier it will be to mold the patties)",
+        "note": "@ 1 cup, the smaller the mince is, the easier it will be to mold the patties, finely minced",
+        "section": "Crispy Quinoa Fritters",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup grated parmesan cheese",
+      "raw": "1/2 cup  (50 g) grated parmesan cheese",
       "expected": {
         "item": "grated parmesan cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Cheese"
       }
     },
     {
-      "raw": "3/4 cup all-purpose flour",
+      "raw": "3/4 cup  (94 g) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/4 cup minced parsley",
+      "raw": "1/4 cup  (60 ml) minced parsley",
       "expected": {
         "item": "minced parsley",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 teaspoon smoked paprika",
+      "raw": "1/2 teaspoon  (2.5 ml) smoked paprika",
       "expected": {
         "item": "smoked paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon garlic powder",
+      "raw": "1 teaspoon  (5 ml) garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon Kosher salt (, or to taste (I liberally seasoned the quinoa mix))",
+      "raw": "1 teaspoon  (5 ml) Kosher salt , or to taste (I liberally seasoned the quinoa mix)",
       "expected": {
         "item": "Kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
-        "note": "or to taste (I liberally seasoned the quinoa mix)",
+        "note": "I liberally seasoned the quinoa mix; or to taste",
+        "section": "Crispy Quinoa Fritters",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 teaspoon fresh cracked black pepper ( , or to taste)",
+      "raw": "1 teaspoon  (5 ml) fresh cracked black pepper  , or to taste",
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
         "note": "or to taste",
+        "section": "Crispy Quinoa Fritters",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 large eggs (, beaten)",
+      "raw": "3 large   eggs , beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -139,6 +188,7 @@
           }
         ],
         "note": "beaten",
+        "section": "Crispy Quinoa Fritters",
         "category": "Dairy & Eggs"
       }
     },
@@ -148,104 +198,150 @@
         "item": "vegetable oil",
         "measurements": [],
         "note": "for frying",
+        "section": "Crispy Quinoa Fritters",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 pound green tomatoes or red tomatoes (, roughly cut)",
+      "raw": "Sweet & Spicy Green Tomato Chutney:",
+      "expected": {
+        "item": "Sweet & Spicy Green Tomato Chutney:",
+        "measurements": [],
+        "note": null,
+        "section": "Crispy Quinoa Fritters",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 pound  (454 g) green tomatoes or red tomatoes , roughly cut",
       "expected": {
         "item": "green tomatoes or red tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": "roughly cut",
+        "section": "Crispy Quinoa Fritters",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup brown sugar",
+      "raw": "1/2 cup  (110 g) brown sugar",
       "expected": {
         "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon minced fresh chilies (or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.))",
+      "raw": "1 teaspoon  (5 ml) minced fresh chilies or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.)",
       "expected": {
-        "item": "minced fresh chilies",
+        "item": "minced fresh chilies or to personal taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
           }
         ],
-        "note": "or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.)",
-        "category": "Produce"
+        "note": "Serrano, Thai chilies, jalapeno, habanero, etc.",
+        "section": "Crispy Quinoa Fritters",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/4 teaspoon ground cinnamon",
+      "raw": "1/4 teaspoon  (1.25 ml) ground cinnamon",
       "expected": {
         "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.25",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon ground cloves",
+      "raw": "1/4 teaspoon  (1.25 ml) ground cloves",
       "expected": {
         "item": "ground cloves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.25",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 Tablespoon white vinegar (, or more depending on how tangy you want it)",
+      "raw": "1 Tablespoon  (15 ml) white vinegar , or more depending on how tangy you want it",
       "expected": {
-        "item": "white vinegar",
+        "item": "white vinegar, or more depending on how tangy you want it",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
-        "note": "or more depending on how tangy you want it",
+        "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 Tablespoon fresh lime juice",
+      "raw": "1 Tablespoon  (15 ml) fresh lime juice",
       "expected": {
         "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
         "note": null,
+        "section": "Crispy Quinoa Fritters",
         "category": "Produce"
       }
     }

@@ -3,7 +3,11 @@
   "recipe_slug": "japanese-katsudon-recipe",
   "ingredients": [
     {
-      "raw": "2  boneless pork chop",
+      "raw": "For the Katsu:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 boneless pork chop",
       "expected": {
         "item": "boneless pork chop",
         "measurements": [
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Meat & Seafood"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Spices & Seasonings"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Oils & Vinegars"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Dairy & Eggs"
       }
     },
@@ -97,17 +107,23 @@
           }
         ],
         "note": null,
+        "section": "For the Katsu",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "cooking oil (for frying)",
+      "raw": "cooking oil for frying",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
         "note": "for frying",
+        "section": "For the Katsu",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "Katsudon:",
+      "is_section_header": true
     },
     {
       "raw": "5 g dried kelp (kombu)",
@@ -120,6 +136,7 @@
           }
         ],
         "note": "kombu",
+        "section": "Katsudon",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +151,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Beverages"
       }
     },
@@ -148,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Produce"
       }
     },
@@ -162,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Condiments & Sauces"
       }
     },
@@ -176,13 +196,14 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp Chinese-style chicken bouillon powder",
+      "raw": "1 tsp Chinese-style chicken bouillon powder I use youki garasupu",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder",
+        "item": "Chinese-style chicken bouillon powder I use youki garasupu",
         "measurements": [
           {
             "amount": "1",
@@ -190,7 +211,8 @@
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "section": "Katsudon",
+        "category": "Other"
       }
     },
     {
@@ -204,21 +226,23 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Katsudon",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "3  eggs (room temperature)",
+      "raw": "3 eggs room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs room temperature",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "Katsudon",
+        "category": "Other"
       }
     },
     {
@@ -232,16 +256,18 @@
           }
         ],
         "note": null,
+        "section": "Katsudon",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "Japanese wild parsley (mitsuba) (optional to garnish)",
+      "raw": "Japanese wild parsley (mitsuba) optional to garnish",
       "expected": {
-        "item": "Japanese wild parsley",
+        "item": "Japanese wild parsley optional to garnish",
         "measurements": [],
-        "note": "mitsuba, optional to garnish",
-        "category": "Produce"
+        "note": "mitsuba",
+        "section": "Katsudon",
+        "category": "Other"
       }
     }
   ]

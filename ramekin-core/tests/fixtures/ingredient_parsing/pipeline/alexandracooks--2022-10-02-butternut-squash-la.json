@@ -3,7 +3,11 @@
   "recipe_slug": "2022-10-02-butternut-squash-la",
   "ingredients": [
     {
-      "raw": "¼ cup olive oil&nbsp;",
+      "raw": "For the butternut squash sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¼ cup olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Butternut Squash Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon&nbsp;finely chopped fresh sage&nbsp;",
+      "raw": "1 tablespoon finely chopped fresh sage",
       "expected": {
         "item": "finely chopped fresh sage",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Butternut Squash Sauce",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "diced",
+        "section": "For the Butternut Squash Sauce",
         "category": "Produce"
       }
     },
@@ -50,6 +57,7 @@
         "item": "kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Butternut Squash Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,8 +72,13 @@
           }
         ],
         "note": "about 4 cups",
+        "section": "For the Butternut Squash Sauce",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For the lasagna:",
+      "is_section_header": true
     },
     {
       "raw": "¼ cup olive oil, divided",
@@ -78,6 +91,7 @@
           }
         ],
         "note": "divided",
+        "section": "For the Lasagna",
         "category": "Oils & Vinegars"
       }
     },
@@ -92,6 +106,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Lasagna",
         "category": "Produce"
       }
     },
@@ -101,6 +116,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,11 +131,12 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "For the Lasagna",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 quart of the butternut squash sauce&nbsp;",
+      "raw": "1 quart of the butternut squash sauce",
       "expected": {
         "item": "the butternut squash sauce",
         "measurements": [
@@ -129,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Other"
       }
     },
@@ -143,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Pasta & Rice"
       }
     },
@@ -161,6 +180,7 @@
           }
         ],
         "note": "about 1 cup, grated",
+        "section": "For the Lasagna",
         "category": "Cheese"
       }
     },
@@ -175,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lasagna",
         "category": "Other"
       }
     }

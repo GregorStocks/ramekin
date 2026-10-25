@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "3 ounces orange liqueur (like Cointreau)",
+      "raw": "3 ounces orange liqueur like Cointreau",
       "expected": {
-        "item": "orange liqueur",
+        "item": "orange liqueur like Cointreau",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": "like Cointreau",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -73,6 +73,10 @@
       }
     },
     {
+      "raw": "Homemade Simple Syrup Recipe:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 cups cold water",
       "expected": {
         "item": "cold water",
@@ -83,6 +87,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Simple Syrup Recipe",
         "category": "Beverages"
       }
     },
@@ -97,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Simple Syrup Recipe",
         "category": "Baking"
       }
     },
@@ -111,6 +117,7 @@
           }
         ],
         "note": null,
+        "section": "Homemade Simple Syrup Recipe",
         "category": "Produce"
       }
     },
@@ -120,6 +127,7 @@
         "item": "Peel of 1 lemon",
         "measurements": [],
         "note": null,
+        "section": "Homemade Simple Syrup Recipe",
         "category": "Other"
       }
     },
@@ -134,8 +142,13 @@
           }
         ],
         "note": null,
+        "section": "Homemade Simple Syrup Recipe",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Garnish:",
+      "is_section_header": true
     },
     {
       "raw": "lime slices",
@@ -143,6 +156,7 @@
         "item": "lime slices",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -152,6 +166,7 @@
         "item": "sugar or salt for rim",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Baking"
       }
     },
@@ -161,6 +176,7 @@
         "item": "ice",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Frozen"
       }
     }

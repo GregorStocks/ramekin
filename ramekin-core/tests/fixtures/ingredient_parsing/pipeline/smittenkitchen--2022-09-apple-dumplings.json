@@ -3,6 +3,10 @@
   "recipe_slug": "2022-09-apple-dumplings",
   "ingredients": [
     {
+      "raw": "Crust:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 1/2 cups (325 grams) all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
@@ -17,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -75,6 +82,7 @@
           }
         ],
         "note": "very cold",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,8 +97,13 @@
           }
         ],
         "note": "about",
+        "section": "Crust",
         "category": "Beverages"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "3 large apples (about 3″ across), any kind you like to bake with",
@@ -103,6 +116,7 @@
           }
         ],
         "note": "about 3″ across, any kind you like to bake with",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -117,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -135,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -149,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -158,6 +175,7 @@
         "item": "A few gratings of fresh nutmeg",
         "measurements": [],
         "note": "or a couple pinches of ground",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -172,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +209,7 @@
           }
         ],
         "note": "cut into 6 pieces, kept cold",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -204,8 +224,13 @@
           }
         ],
         "note": "for glaze",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Sauce:",
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons (1 ounces or 30 grams) butter, at room temperature",
@@ -226,6 +251,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -240,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -254,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -263,6 +291,7 @@
         "item": "A dash of vanilla extract",
         "measurements": [],
         "note": "optional",
+        "section": "Sauce",
         "category": "Baking"
       }
     }

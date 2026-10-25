@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 tablespoon sesame seeds",
+      "raw": "4 tablespoons sesame seeds",
       "expected": {
         "item": "sesame seeds",
         "measurements": [
@@ -59,9 +59,9 @@
       }
     },
     {
-      "raw": "1 teaspoon whole aniseed",
+      "raw": "1 teaspoon aniseed",
       "expected": {
-        "item": "whole aniseed",
+        "item": "aniseed",
         "measurements": [
           {
             "amount": "1",
@@ -69,7 +69,7 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "1/2cup skin-on almonds",
+      "raw": "1/2 cup skin-on almonds",
       "expected": {
         "item": "skin-on almonds",
         "measurements": [

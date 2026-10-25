@@ -156,6 +156,10 @@
       }
     },
     {
+      "raw": "Savory Crêpes:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 large eggs",
       "expected": {
         "item": "eggs",
@@ -166,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Crêpes",
         "category": "Dairy & Eggs"
       }
     },
@@ -180,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Crêpes",
         "category": "Dairy & Eggs"
       }
     },
@@ -194,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Crêpes",
         "category": "Beverages"
       }
     },
@@ -208,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Crêpes",
         "category": "Baking"
       }
     },
@@ -222,6 +230,7 @@
           }
         ],
         "note": "melted",
+        "section": "Savory Crêpes",
         "category": "Dairy & Eggs"
       }
     },
@@ -236,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Savory Crêpes",
         "category": "Spices & Seasonings"
       }
     },
@@ -245,6 +255,7 @@
         "item": "Butter",
         "measurements": [],
         "note": "for coating the pan",
+        "section": "Savory Crêpes",
         "category": "Dairy & Eggs"
       }
     }

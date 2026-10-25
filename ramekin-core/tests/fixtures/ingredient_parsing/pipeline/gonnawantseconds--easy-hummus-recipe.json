@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 Cloves Galic (Peeled and Smashed)",
+      "raw": "4 Cloves Galic Peeled and Smashed",
       "expected": {
         "item": "Galic",
         "measurements": [
@@ -101,11 +101,16 @@
       }
     },
     {
+      "raw": "Topping-Garnish:",
+      "is_section_header": true
+    },
+    {
       "raw": "Olive Oil",
       "expected": {
         "item": "Olive Oil",
         "measurements": [],
         "note": null,
+        "section": "Topping-Garnish",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,11 +120,12 @@
         "item": "Sprinkle Sumac-Optional",
         "measurements": [],
         "note": null,
+        "section": "Topping-Garnish",
         "category": "Other"
       }
     },
     {
-      "raw": "1 Tablespoon Fresh Parsley (Chopped)",
+      "raw": "1 Tablespoon Fresh Parsley Chopped",
       "expected": {
         "item": "Fresh Parsley",
         "measurements": [
@@ -129,6 +135,7 @@
           }
         ],
         "note": "Chopped",
+        "section": "Topping-Garnish",
         "category": "Produce"
       }
     }

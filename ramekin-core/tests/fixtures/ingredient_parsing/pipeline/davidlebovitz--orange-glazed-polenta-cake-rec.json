@@ -3,7 +3,11 @@
   "recipe_slug": "orange-glazed-polenta-cake-rec",
   "ingredients": [
     {
-      "raw": "8 ounces (225g) unsalted butter (cubed, at room temperature)",
+      "raw": "For the cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 ounces (225g) unsalted butter, cubed, at room temperature",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -17,6 +21,7 @@
           }
         ],
         "note": "cubed, at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -49,11 +55,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  large eggs (at room temperature)",
+      "raw": "3 large eggs, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -63,11 +70,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons liqueur or eau-de-vie",
+      "raw": "2 tablespoons liqueur or eau-de-vie, such as orange liqueur (Grand Marnier or Cointreau), kirsch or grappa",
       "expected": {
         "item": "liqueur or eau-de-vie",
         "measurements": [
@@ -76,7 +84,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Grand Marnier or Cointreau, such as orange liqueur , kirsch or grappa",
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -91,11 +100,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup (125g) finely ground polenta (plus additional for preparing the pan)",
+      "raw": "3/4 cup (125g) finely ground polenta, plus additional for preparing the pan",
       "expected": {
         "item": "finely ground polenta",
         "measurements": [
@@ -109,6 +119,7 @@
           }
         ],
         "note": "plus additional for preparing the pan",
+        "section": "For the Cake",
         "category": "Other"
       }
     },
@@ -127,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -145,11 +157,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 teaspoons baking powder (preferably aluminium-free)",
+      "raw": "1 1/2 teaspoons baking powder, preferably aluminium-free",
       "expected": {
         "item": "baking powder",
         "measurements": [
@@ -159,6 +172,7 @@
           }
         ],
         "note": "preferably aluminium-free",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -173,8 +187,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "For the glaze:",
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 cups (170g) powdered sugar",
@@ -191,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Baking"
       }
     },
@@ -205,11 +225,12 @@
           }
         ],
         "note": null,
+        "section": "For the Glaze",
         "category": "Beverages"
       }
     },
     {
-      "raw": "4 teaspoons orange liqueur ((such as Grand Marnier or Cointreau))",
+      "raw": "4 teaspoons orange liqueur, (such as Grand Marnier or Cointreau)",
       "expected": {
         "item": "orange liqueur",
         "measurements": [
@@ -219,6 +240,7 @@
           }
         ],
         "note": "such as Grand Marnier or Cointreau",
+        "section": "For the Glaze",
         "category": "Beverages"
       }
     }

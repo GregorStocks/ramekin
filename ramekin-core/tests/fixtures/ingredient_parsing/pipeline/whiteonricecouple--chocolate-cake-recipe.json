@@ -3,7 +3,11 @@
   "recipe_slug": "chocolate-cake-recipe",
   "ingredients": [
     {
-      "raw": "1/4 cup unsalted Butter ((60 g) )",
+      "raw": "butterscotch ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/4 cup   unsalted Butter (60 g)",
       "expected": {
         "item": "unsalted Butter",
         "measurements": [
@@ -17,11 +21,12 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup Brown Sugar ((220 g) , tightly packed)",
+      "raw": "1 cup   Brown Sugar (220 g) , tightly packed",
       "expected": {
         "item": "Brown Sugar, tightly packed",
         "measurements": [
@@ -35,11 +40,12 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup Heavy Whipping Cream ((120 ml) )",
+      "raw": "1/2 cup   Heavy Whipping Cream (120 ml)",
       "expected": {
         "item": "Heavy Whipping Cream",
         "measurements": [
@@ -53,11 +59,12 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 teaspoon Vanilla Extract ((5 ml) )",
+      "raw": "1 teaspoon   Vanilla Extract (5 ml)",
       "expected": {
         "item": "Vanilla Extract",
         "measurements": [
@@ -71,11 +78,12 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 Tablespoons Bourbon ((22 ml) )",
+      "raw": "1 1/2 Tablespoons   Bourbon (22 ml)",
       "expected": {
         "item": "Bourbon",
         "measurements": [
@@ -89,20 +97,26 @@
           }
         ],
         "note": null,
+        "section": "Butterscotch Ingredients",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Sea Salt ( to taste (@ 1 teaspoon (5 g)))",
+      "raw": "Sea Salt  to taste (@ 1 teaspoon (5 g))",
       "expected": {
         "item": "Sea Salt",
         "measurements": [],
-        "note": "to taste (@ 1 teaspoon (5 g))",
+        "note": "@ 1 teaspoon (5 g), to taste",
+        "section": "Butterscotch Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 cups Sugar ((400g) )",
+      "raw": "chocolate cake ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups   Sugar (400g)",
       "expected": {
         "item": "Sugar",
         "measurements": [
@@ -116,11 +130,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1-3/4 cups Flour ((220g) )",
+      "raw": "1-3/4 cups   Flour (220g)",
       "expected": {
         "item": "Flour",
         "measurements": [
@@ -134,11 +149,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup  unsweetened cocoa powder ((65g))",
+      "raw": "3/4 cup    unsweetened cocoa powder (65g)",
       "expected": {
         "item": "unsweetened cocoa powder",
         "measurements": [
@@ -152,11 +168,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 teaspoons Baking Soda ((10g) )",
+      "raw": "2 teaspoons   Baking Soda (10g)",
       "expected": {
         "item": "Baking Soda",
         "measurements": [
@@ -170,11 +187,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon Baking Powder ((5g) )",
+      "raw": "1 teaspoon   Baking Powder (5g)",
       "expected": {
         "item": "Baking Powder",
         "measurements": [
@@ -188,25 +206,31 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon Kosher Salt ( or Sea Salt (5g) )",
+      "raw": "1 teaspoon   Kosher Salt  or Sea Salt (5g)",
       "expected": {
-        "item": "Kosher Salt",
+        "item": "Kosher Salt or Sea Salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
           }
         ],
-        "note": "or Sea Salt (5g)",
+        "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 large Eggs",
+      "raw": "2 large   Eggs",
       "expected": {
         "item": "Eggs",
         "measurements": [
@@ -216,11 +240,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup Buttermilk ((240ml) *see note 1 for alternate)",
+      "raw": "1 cup   Buttermilk (240ml) *see note 1 for alternate",
       "expected": {
         "item": "Buttermilk *see note 1 for alternate",
         "measurements": [
@@ -234,25 +259,31 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "1 cup Espresso ( or Strong Coffee (240ml) )",
+      "raw": "1 cup   Espresso  or Strong Coffee (240ml)",
       "expected": {
-        "item": "Espresso",
+        "item": "Espresso or Strong Coffee",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
           }
         ],
-        "note": "or Strong Coffee (240ml)",
+        "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 cup Vegetable Oil ((120ml) )",
+      "raw": "1/2 cup   Vegetable Oil (120ml)",
       "expected": {
         "item": "Vegetable Oil",
         "measurements": [
@@ -266,11 +297,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 teaspoons Vanilla Extract ((10ml) )",
+      "raw": "2 teaspoons   Vanilla Extract (10ml)",
       "expected": {
         "item": "Vanilla Extract",
         "measurements": [
@@ -284,11 +316,16 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup unsalted Butter ((115 g) , room temp.)",
+      "raw": "cream cheese frosting ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup   unsalted Butter (115 g) , room temp.",
       "expected": {
         "item": "unsalted Butter, room temp.",
         "measurements": [
@@ -302,11 +339,12 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "16 ounces Cream Cheese ((455g), room temp.)",
+      "raw": "16 ounces   Cream Cheese (455g), room temp.",
       "expected": {
         "item": "Cream Cheese, room temp.",
         "measurements": [
@@ -320,11 +358,12 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 teaspoon Vanilla Extract ((5 ml) )",
+      "raw": "1 teaspoon   Vanilla Extract (5 ml)",
       "expected": {
         "item": "Vanilla Extract",
         "measurements": [
@@ -338,11 +377,12 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 cups Confectioners Sugar ((455 g) )",
+      "raw": "4 cups   Confectioners Sugar (455 g)",
       "expected": {
         "item": "Confectioners Sugar",
         "measurements": [
@@ -356,20 +396,26 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "few dashes Orange Bitters ((optional))",
+      "raw": "few dashes Orange Bitters (optional)",
       "expected": {
         "item": "few dashes Orange Bitters",
         "measurements": [],
         "note": "optional",
+        "section": "Cream Cheese Frosting Ingredients",
         "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup Roasted Peanuts ((65g) , roughly chopped)",
+      "raw": "additional ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1/2 cup   Roasted Peanuts (65g) , roughly chopped",
       "expected": {
         "item": "Roasted Peanuts",
         "measurements": [
@@ -383,6 +429,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Additional Ingredients",
         "category": "Nuts & Dried Fruit"
       }
     }

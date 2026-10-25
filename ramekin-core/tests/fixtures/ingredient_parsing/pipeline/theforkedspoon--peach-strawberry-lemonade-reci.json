@@ -3,7 +3,11 @@
   "recipe_slug": "peach-strawberry-lemonade-reci",
   "ingredients": [
     {
-      "raw": "4  ripe peaches (chopped into large chunks)",
+      "raw": "For the Peach Strawberry Puree:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 ripe peaches, chopped into large chunks",
       "expected": {
         "item": "ripe peaches",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "chopped into large chunks",
+        "section": "For the Peach Strawberry Puree",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 cups fresh strawberries (stems removed and halved)",
+      "raw": "2 cups fresh strawberries, stems removed and halved",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "stems removed and halved",
+        "section": "For the Peach Strawberry Puree",
         "category": "Produce"
       }
     },
@@ -41,11 +47,16 @@
           }
         ],
         "note": null,
+        "section": "For the Peach Strawberry Puree",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/2 cup water",
+      "raw": "Homemade Simple Syrup:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ cup water",
       "expected": {
         "item": "water",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "Homemade Simple Syrup",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1/4 cup granulated sugar",
+      "raw": "¼ cup granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -69,8 +81,13 @@
           }
         ],
         "note": null,
+        "section": "Homemade Simple Syrup",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Peach Strawberry Lemonade:",
+      "is_section_header": true
     },
     {
       "raw": "Ice",
@@ -78,11 +95,12 @@
         "item": "Ice",
         "measurements": [],
         "note": null,
+        "section": "Peach Strawberry Lemonade",
         "category": "Frozen"
       }
     },
     {
-      "raw": "1 1/2 cups fresh lemon juice",
+      "raw": "1 ½ cups fresh lemon juice",
       "expected": {
         "item": "fresh lemon juice",
         "measurements": [
@@ -92,6 +110,7 @@
           }
         ],
         "note": null,
+        "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }
     },
@@ -106,42 +125,47 @@
           }
         ],
         "note": null,
+        "section": "Peach Strawberry Lemonade",
         "category": "Beverages"
       }
     },
     {
-      "raw": "Fresh chopped strawberries (to garnish)",
+      "raw": "Fresh chopped strawberries, to garnish",
       "expected": {
-        "item": "Fresh chopped strawberries",
+        "item": "Fresh chopped strawberries, to garnish",
         "measurements": [],
-        "note": "to garnish",
+        "note": null,
+        "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }
     },
     {
-      "raw": "Fresh sliced peaches (to garnish)",
+      "raw": "Fresh sliced peaches, to garnish",
       "expected": {
-        "item": "Fresh sliced peaches",
+        "item": "Fresh sliced peaches, to garnish",
         "measurements": [],
-        "note": "to garnish",
+        "note": null,
+        "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }
     },
     {
-      "raw": "Lemon wedges (to garnish)",
+      "raw": "Lemon wedges, to garnish",
       "expected": {
-        "item": "Lemon wedges",
+        "item": "Lemon wedges, to garnish",
         "measurements": [],
-        "note": "to garnish",
+        "note": null,
+        "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }
     },
     {
-      "raw": "Mint (to garnish)",
+      "raw": "Mint, to garnish",
       "expected": {
-        "item": "Mint",
+        "item": "Mint, to garnish",
         "measurements": [],
-        "note": "to garnish",
+        "note": null,
+        "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }
     }

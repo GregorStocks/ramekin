@@ -3,6 +3,10 @@
   "recipe_slug": "cannelloni-recipe",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/4 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1  large  onion (chopped)",
+      "raw": "1 large  onion chopped",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -27,11 +32,12 @@
           }
         ],
         "note": "chopped",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoon garlic (minced)",
+      "raw": "1 tablespoon garlic minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -41,11 +47,12 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/4 cup carrot (finely grated)",
+      "raw": "1/4 cup carrot finely grated",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -55,21 +62,23 @@
           }
         ],
         "note": "finely grated",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "2 (28-ounce) cans crushed tomatoes (including all the liquid)",
+      "raw": "2 (28-ounce) cans crushed tomatoes including all the liquid",
       "expected": {
-        "item": "crushed tomatoes",
+        "item": "crushed tomatoes including all the liquid",
         "measurements": [
           {
             "amount": "2",
             "unit": "can"
           }
         ],
-        "note": "28-ounce, including all the liquid",
-        "category": "Canned Goods"
+        "note": "28-ounce",
+        "section": "Sauce",
+        "category": "Other"
       }
     },
     {
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,8 +122,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "1 pound ricotta cheese",
@@ -125,11 +141,12 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 cup parmesan cheese (grated)",
+      "raw": "1 cup parmesan cheese grated",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [
@@ -139,11 +156,12 @@
           }
         ],
         "note": "grated",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2 cups Mozzarella (shredded)",
+      "raw": "2 cups Mozzarella shredded",
       "expected": {
         "item": "Mozzarella",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "shredded",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
     {
-      "raw": "2  large eggs (lightly beaten)",
+      "raw": "2 large eggs lightly beaten",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -167,20 +186,22 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 (10-ounce) package frozen chopped spinach (thawed and squeezed dry)",
+      "raw": "1 (10-ounce) package frozen chopped spinach thawed and squeezed dry",
       "expected": {
-        "item": "frozen chopped spinach",
+        "item": "frozen chopped spinach thawed and squeezed dry",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": "10-ounce, thawed and squeezed dry",
+        "note": "10-ounce",
+        "section": "Filling",
         "category": "Frozen"
       }
     },
@@ -195,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -223,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,8 +261,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Pasta:",
+      "is_section_header": true
     },
     {
       "raw": "16 ounces Barilla No Boil Lasagna Noodles",
@@ -251,11 +280,16 @@
           }
         ],
         "note": null,
+        "section": "Pasta",
         "category": "Other"
       }
     },
     {
-      "raw": "2 cups Mozzarella (shredded)",
+      "raw": "Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 cups Mozzarella shredded",
       "expected": {
         "item": "Mozzarella",
         "measurements": [
@@ -265,6 +299,7 @@
           }
         ],
         "note": "shredded",
+        "section": "Topping",
         "category": "Cheese"
       }
     }

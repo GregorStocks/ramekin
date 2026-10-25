@@ -3,7 +3,7 @@
   "recipe_slug": "daigaku-imo-recipe",
   "ingredients": [
     {
-      "raw": "350 g Japanese sweet potato (satsumaimo) ((satsumaimo))",
+      "raw": "350 g Japanese sweet potato (satsumaimo) (satsumaimo)",
       "expected": {
         "item": "Japanese sweet potato",
         "measurements": [
@@ -17,12 +17,12 @@
       }
     },
     {
-      "raw": "water (for soaking)",
+      "raw": "water for soaking",
       "expected": {
-        "item": "water",
+        "item": "water for soaking",
         "measurements": [],
-        "note": "for soaking",
-        "category": "Beverages"
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "cooking oil (for deep frying)",
+      "raw": "cooking oil for deep frying",
       "expected": {
         "item": "cooking oil",
         "measurements": [],
@@ -49,16 +49,21 @@
       }
     },
     {
-      "raw": "60 g white caster sugar (or granulated)",
+      "raw": "Caramel:",
+      "is_section_header": true
+    },
+    {
+      "raw": "60 g white caster sugar or granulated",
       "expected": {
-        "item": "white caster sugar",
+        "item": "white caster sugar or granulated",
         "measurements": [
           {
             "amount": "60",
             "unit": "g"
           }
         ],
-        "note": "or granulated",
+        "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -73,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Condiments & Sauces"
       }
     },
@@ -87,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Beverages"
       }
     },
@@ -101,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Oils & Vinegars"
       }
     },
@@ -115,6 +123,7 @@
           }
         ],
         "note": "koikuchi shoyu",
+        "section": "Caramel",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Spices & Seasonings"
       }
     }

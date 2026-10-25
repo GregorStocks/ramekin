@@ -3,6 +3,10 @@
   "recipe_slug": "2016-04-caramel-chocolate-moxi",
   "ingredients": [
     {
+      "raw": "Chocolate cake layers:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 ounces Guittard semisweet chocolate",
       "expected": {
         "item": "Guittard semisweet chocolate",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Other"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Beverages"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Baking"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Baking"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Other"
       }
     },
@@ -95,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Baking"
       }
     },
@@ -109,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Baking"
       }
     },
@@ -123,11 +134,12 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3  large eggs",
+      "raw": "3 large eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -137,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Oils & Vinegars"
       }
     },
@@ -169,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -183,8 +198,13 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Cake Layers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Salted caramel frosting:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup 100g granulated sugar",
@@ -201,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Frosting",
         "category": "Baking"
       }
     },
@@ -215,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Frosting",
         "category": "Beverages"
       }
     },
@@ -229,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Frosting",
         "category": "Baking"
       }
     },
@@ -257,6 +281,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -271,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -289,11 +315,16 @@
           }
         ],
         "note": null,
+        "section": "Salted Caramel Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "4 oz. semisweet chocolate (chopped)",
+      "raw": "Ganache drip:",
+      "is_section_header": true
+    },
+    {
+      "raw": "4 oz. semisweet chocolate chopped",
       "expected": {
         "item": "semisweet chocolate",
         "measurements": [
@@ -303,6 +334,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Ganache Drip",
         "category": "Baking"
       }
     },
@@ -321,11 +353,12 @@
           }
         ],
         "note": null,
+        "section": "Ganache Drip",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4  85g cup dark corn syrup",
+      "raw": "1/4 85g cup dark corn syrup",
       "expected": {
         "item": "cup dark corn syrup",
         "measurements": [
@@ -339,6 +372,7 @@
           }
         ],
         "note": null,
+        "section": "Ganache Drip",
         "category": "Baking"
       }
     },
@@ -353,70 +387,75 @@
           }
         ],
         "note": null,
+        "section": "Ganache Drip",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  TCHO chocolate bars (70 grams each)",
+      "raw": "Chocolate “moxie” toppings:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 TCHO chocolate bars 70 grams each",
       "expected": {
-        "item": "TCHO chocolate bars",
+        "item": "TCHO chocolate bars 70 grams each",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "70",
-            "unit": "g each"
           }
         ],
         "note": null,
+        "section": "Chocolate “moxie” Toppings",
         "category": "Other"
       }
     },
     {
-      "raw": "2  TCHO chocolate squares (.28 oz. each)",
+      "raw": "2 TCHO chocolate squares .28 oz. each",
       "expected": {
-        "item": "TCHO chocolate squares",
+        "item": "TCHO chocolate squares .28 oz. each",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": ".28",
-            "unit": "oz each"
           }
         ],
         "note": null,
+        "section": "Chocolate “moxie” Toppings",
         "category": "Other"
       }
     },
     {
-      "raw": "1  package (50g Marich milk chocolate salted caramel popcorn)",
+      "raw": "1 package 50g Marich milk chocolate salted caramel popcorn",
       "expected": {
         "item": "Marich milk chocolate salted caramel popcorn",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
-        "note": "50g Marich milk chocolate salted caramel popcorn",
+        "note": null,
+        "section": "Chocolate “moxie” Toppings",
         "category": "Other"
       }
     },
     {
-      "raw": "1  package (50 g Marich dark chocolate salted caramels)",
+      "raw": "1 package 50 g Marich dark chocolate salted caramels",
       "expected": {
-        "item": "Marich dark chocolate salted caramels",
+        "item": "50 g Marich dark chocolate salted caramels",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": "50 g Marich dark chocolate salted caramels",
+        "note": null,
+        "section": "Chocolate “moxie” Toppings",
         "category": "Other"
       }
     },
@@ -431,20 +470,22 @@
           }
         ],
         "note": null,
+        "section": "Chocolate “moxie” Toppings",
         "category": "Snacks"
       }
     },
     {
-      "raw": "2  Alter Eco Truffles (velvet and salted caramel)",
+      "raw": "2 Alter Eco Truffles velvet and salted caramel",
       "expected": {
-        "item": "Alter Eco Truffles",
+        "item": "Alter Eco Truffles velvet and salted caramel",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "velvet and salted caramel",
+        "note": null,
+        "section": "Chocolate “moxie” Toppings",
         "category": "Other"
       }
     }

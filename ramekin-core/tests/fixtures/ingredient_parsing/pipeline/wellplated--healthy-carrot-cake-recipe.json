@@ -3,7 +3,11 @@
   "recipe_slug": "healthy-carrot-cake-recipe",
   "ingredients": [
     {
-      "raw": "1 2/3 cups unbleached all-purpose flour",
+      "raw": "For the Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 ⅔ cups unbleached all-purpose flour",
       "expected": {
         "item": "unbleached all-purpose flour",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup whole wheat pastry flour&nbsp;",
+      "raw": "¾ cup whole wheat pastry flour",
       "expected": {
         "item": "whole wheat pastry flour",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -55,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon ground nutmeg",
+      "raw": "¼ teaspoon ground nutmeg",
       "expected": {
         "item": "ground nutmeg",
         "measurements": [
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/4 teaspoon kosher salt",
+      "raw": "¼ teaspoon kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -83,53 +92,57 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  large egg (at room temperature)",
+      "raw": "1 large egg at room temperature",
       "expected": {
-        "item": "egg",
+        "item": "egg at room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "at room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Cake",
+        "category": "Other"
       }
     },
     {
-      "raw": "2  large egg whites (at room temperature)",
+      "raw": "2 large egg whites at room temperature",
       "expected": {
-        "item": "egg whites",
+        "item": "egg whites at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "at room temperature",
+        "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 1/4 cups light brown sugar (lightly packed)",
+      "raw": "1 ¼ cups light brown sugar lightly packed",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar lightly packed",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": "lightly packed",
-        "category": "Baking"
+        "note": null,
+        "section": "For the Cake",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/4 cup canola oil",
+      "raw": "¼ cup canola oil",
       "expected": {
         "item": "canola oil",
         "measurements": [
@@ -139,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 1/2 cups grated carrots ((about 3 large or 4 small/medium))",
+      "raw": "2 ½ cups grated carrots (about 3 large or 4 small/medium)",
       "expected": {
         "item": "grated carrots",
         "measurements": [
@@ -175,11 +190,12 @@
           }
         ],
         "note": "about 3 large or 4 small/medium",
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 cup crushed pineapple (drained)",
+      "raw": "1 cup crushed pineapple drained",
       "expected": {
         "item": "crushed pineapple",
         "measurements": [
@@ -189,11 +205,12 @@
           }
         ],
         "note": "drained",
+        "section": "For the Cake",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1/2 cup shredded sweetened coconut",
+      "raw": "½ cup shredded sweetened coconut",
       "expected": {
         "item": "shredded sweetened coconut",
         "measurements": [
@@ -203,53 +220,61 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2/3 cup buttermilk (at room temperature)",
+      "raw": "⅔ cup buttermilk at room temperature",
       "expected": {
-        "item": "buttermilk",
+        "item": "buttermilk at room temperature",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "at room temperature",
-        "category": "Dairy & Eggs"
+        "note": null,
+        "section": "For the Cake",
+        "category": "Other"
       }
     },
     {
-      "raw": "1/2 cup walnuts (or pecans, toasted and roughly chopped )",
+      "raw": "½ cup walnuts or pecans, toasted and roughly chopped",
       "expected": {
-        "item": "walnuts",
+        "item": "walnuts or pecans",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or pecans, toasted and roughly chopped",
+        "note": "toasted and roughly chopped",
+        "section": "For the Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4 cup raisins, (golden raisins, or dried cranberries (optional))",
+      "raw": "¼ cup raisins, golden raisins, or dried cranberries (optional)",
       "expected": {
-        "item": "raisins",
+        "item": "raisins, golden raisins, or dried cranberries",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "golden raisins, or dried cranberries (optional)",
+        "note": "optional",
+        "section": "For the Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "3 ounces reduced-fat&nbsp;cream cheese",
+      "raw": "For the Greek Yogurt Cream Cheese Frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 ounces reduced-fat cream cheese",
       "expected": {
         "item": "reduced-fat cream cheese",
         "measurements": [
@@ -259,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
@@ -273,11 +299,12 @@
           }
         ],
         "note": null,
+        "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tablespoons unsalted butter (softened)",
+      "raw": "2 tablespoons unsalted butter softened",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -287,11 +314,12 @@
           }
         ],
         "note": "softened",
+        "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 teaspoon&nbsp; vanilla extract",
+      "raw": "½ teaspoon  vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -301,11 +329,12 @@
           }
         ],
         "note": null,
+        "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/8 teaspoon almond extract (optional)",
+      "raw": "⅛ teaspoon almond extract optional",
       "expected": {
         "item": "almond extract",
         "measurements": [
@@ -315,11 +344,12 @@
           }
         ],
         "note": "optional",
+        "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/8 teaspoon&nbsp; kosher salt",
+      "raw": "⅛ teaspoon  kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -329,11 +359,12 @@
           }
         ],
         "note": null,
+        "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/4 cups powdered sugar",
+      "raw": "1 ¼ cups powdered sugar",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -343,15 +374,17 @@
           }
         ],
         "note": null,
+        "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "toasted chopped pecans (or walnuts)",
+      "raw": "toasted chopped pecans or walnuts",
       "expected": {
-        "item": "toasted chopped pecans",
+        "item": "toasted chopped pecans or walnuts",
         "measurements": [],
-        "note": "or walnuts",
+        "note": null,
+        "section": "For the Greek Yogurt Cream Cheese Frosting",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-13887-pajeon-korean-sc",
   "ingredients": [
     {
+      "raw": "Sauce:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,8 +92,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Pancakes:",
+      "is_section_header": true
     },
     {
       "raw": "10 scallions",
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -119,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -141,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -155,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -169,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -183,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -197,6 +217,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -211,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -225,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Pancakes",
         "category": "Beverages"
       }
     },
@@ -239,6 +262,7 @@
           }
         ],
         "note": "minced",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -253,6 +277,7 @@
           }
         ],
         "note": "divided",
+        "section": "Pancakes",
         "category": "Oils & Vinegars"
       }
     }

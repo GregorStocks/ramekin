@@ -3,6 +3,10 @@
   "recipe_slug": "2016-05-18-dragons-love-tacos-",
   "ingredients": [
     {
+      "raw": "for the taco filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 teaspoons grapeseed or olive oil",
       "expected": {
         "item": "grapeseed or olive oil",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "finely chopped to yield a scant cup",
+        "section": "For the Taco Filling",
         "category": "Produce"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Taco Filling",
         "category": "Produce"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": "see notes above",
+        "section": "For the Taco Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +87,7 @@
         "item": "kosher salt and pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For the Taco Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,6 +102,7 @@
           }
         ],
         "note": "ground or finely chopped or 1 lb. ground beef",
+        "section": "For the Taco Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -106,6 +117,7 @@
           }
         ],
         "note": "pureed or slightly chunky",
+        "section": "For the Taco Filling",
         "category": "Canned Goods"
       }
     },
@@ -120,6 +132,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Filling",
         "category": "Beverages"
       }
     },
@@ -134,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "For the Taco Filling",
         "category": "Baking"
       }
     },
@@ -148,8 +162,13 @@
           }
         ],
         "note": "or other",
+        "section": "For the Taco Filling",
         "category": "Oils & Vinegars"
       }
+    },
+    {
+      "raw": "for serving:",
+      "is_section_header": true
     },
     {
       "raw": "tortillas, see notes above",
@@ -157,6 +176,7 @@
         "item": "tortillas",
         "measurements": [],
         "note": "see notes above",
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     },
@@ -166,6 +186,7 @@
         "item": "shredded cheddar cheese",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Cheese"
       }
     },
@@ -175,6 +196,7 @@
         "item": "shredded Romaine lettuce",
         "measurements": [],
         "note": null,
+        "section": "For Serving",
         "category": "Produce"
       }
     },
@@ -184,6 +206,7 @@
         "item": "salsa",
         "measurements": [],
         "note": "see notes above",
+        "section": "For Serving",
         "category": "Condiments & Sauces"
       }
     },
@@ -193,6 +216,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -202,6 +226,7 @@
         "item": "diced avocado",
         "measurements": [],
         "note": "optional",
+        "section": "For Serving",
         "category": "Produce"
       }
     }

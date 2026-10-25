@@ -3,13 +3,8 @@
   "recipe_slug": "2012-04-over-the-top-mushroom-",
   "ingredients": [
     {
-      "raw": "Buttery Pastry Shell",
-      "expected": {
-        "item": "Buttery Pastry Shell",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "raw": "Buttery Pastry Shell:",
+      "is_section_header": true
     },
     {
       "raw": "2 cups (250 grams) all-purpose flour, plus more for dusting",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "plus more for dusting",
+        "section": "Buttery Pastry Shell",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Buttery Pastry Shell",
         "category": "Spices & Seasonings"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": "2 sicks or 225 grams, cut into a small dice",
+        "section": "Buttery Pastry Shell",
         "category": "Dairy & Eggs"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": "ice cold",
+        "section": "Buttery Pastry Shell",
         "category": "Beverages"
       }
     },
@@ -85,11 +84,12 @@
         "item": "Neutral oil",
         "measurements": [],
         "note": "for brushing springform",
+        "section": "Buttery Pastry Shell",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Filling",
+      "raw": "Filling:",
       "is_section_header": true
     },
     {

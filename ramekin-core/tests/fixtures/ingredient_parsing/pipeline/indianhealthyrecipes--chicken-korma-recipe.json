@@ -3,7 +3,11 @@
   "recipe_slug": "chicken-korma-recipe",
   "ingredients": [
     {
-      "raw": "½ kg (1.2 lbs)  chicken  ((bone-in preferred but boneless is ok) )",
+      "raw": "Marinade:",
+      "is_section_header": true
+    },
+    {
+      "raw": "½ kg (1.2 lbs) chicken  (bone-in preferred but boneless is ok)",
       "expected": {
         "item": "chicken",
         "measurements": [
@@ -17,6 +21,7 @@
           }
         ],
         "note": "bone-in preferred but boneless is ok",
+        "section": "Marinade",
         "category": "Meat & Seafood"
       }
     },
@@ -31,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "3 tablespoons curd ((plain yogurt or coconut milk))",
+      "raw": "3 tablespoons curd (plain yogurt or coconut milk)",
       "expected": {
         "item": "curd",
         "measurements": [
@@ -45,11 +51,12 @@
           }
         ],
         "note": "plain yogurt or coconut milk",
+        "section": "Marinade",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon ginger garlic paste ((or ½ tbsps. each fine grated))",
+      "raw": "1 tablespoon ginger garlic paste (or ½ tbsps. each fine grated)",
       "expected": {
         "item": "ginger garlic paste",
         "measurements": [
@@ -59,25 +66,27 @@
           }
         ],
         "note": "or 1/2 tbsps. each fine grated",
+        "section": "Marinade",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "¾ to 1 teaspoon garam masala  (or korma masala)",
+      "raw": "¾ to 1 teaspoon garam masala  or korma masala",
       "expected": {
-        "item": "garam masala",
+        "item": "garam masala or korma masala",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "or korma masala",
+        "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 to 1¼ teaspoon Kashmiri red chili powder  ((less spicy variety, minimum ½ tsp))",
+      "raw": "1 to 1¼ teaspoon Kashmiri red chili powder  (less spicy variety, minimum ½ tsp)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -87,6 +96,7 @@
           }
         ],
         "note": "less spicy variety, minimum 1/2 tsp",
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,8 +111,13 @@
           }
         ],
         "note": null,
+        "section": "Marinade",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "To saute & blend:",
+      "is_section_header": true
     },
     {
       "raw": "1½ tablespoon oil or ghee",
@@ -115,11 +130,12 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Blend",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  green cardamoms",
+      "raw": "2 green cardamoms",
       "expected": {
         "item": "green cardamoms",
         "measurements": [
@@ -129,11 +145,12 @@
           }
         ],
         "note": null,
+        "section": "To Saute & Blend",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup onions (sliced (2 medium yellow onions))",
+      "raw": "1 cup onions sliced (2 medium yellow onions)",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -142,26 +159,28 @@
             "unit": "cup"
           }
         ],
-        "note": "sliced (2 medium yellow onions)",
+        "note": "2 medium yellow onions, sliced",
+        "section": "To Saute & Blend",
         "category": "Produce"
       }
     },
     {
-      "raw": "10  whole cashew nuts (or almonds (or use 5 each))",
+      "raw": "10 whole cashew nuts or almonds (or use 5 each)",
       "expected": {
-        "item": "whole cashew nuts",
+        "item": "whole cashew nuts or almonds",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": "or almonds (or use 5 each)",
-        "category": "Other"
+        "note": "or use 5 each",
+        "section": "To Saute & Blend",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "¼ cup curd ((plain yogurt or coconut milk))",
+      "raw": "¼ cup curd (plain yogurt or coconut milk)",
       "expected": {
         "item": "curd",
         "measurements": [
@@ -171,11 +190,16 @@
           }
         ],
         "note": "plain yogurt or coconut milk",
+        "section": "To Saute & Blend",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 to 2 tablespoon oil or ghee ((use as per your preference))",
+      "raw": "For korma curry:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 to 2 tablespoon oil or ghee (use as per your preference)",
       "expected": {
         "item": "oil or ghee",
         "measurements": [
@@ -185,11 +209,12 @@
           }
         ],
         "note": "use as per your preference",
+        "section": "For Korma Curry",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 small  Indian bay leaf ((optional))",
+      "raw": "1 small  Indian bay leaf (optional)",
       "expected": {
         "item": "Indian bay leaf",
         "measurements": [
@@ -199,13 +224,14 @@
           }
         ],
         "note": "optional",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "4  cloves ((optional))",
+      "raw": "4 cloves (optional)",
       "expected": {
-        "item": "4  cloves ((optional))",
+        "item": "4 cloves (optional)",
         "measurements": [
           {
             "amount": "4",
@@ -213,11 +239,12 @@
           }
         ],
         "note": "optional",
+        "section": "For Korma Curry",
         "category": "Other"
       }
     },
     {
-      "raw": "2 inch cinnamon ((optional))",
+      "raw": "2 inch cinnamon (optional)",
       "expected": {
         "item": "inch cinnamon",
         "measurements": [
@@ -227,11 +254,12 @@
           }
         ],
         "note": "optional",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1  cardamom ((optional))",
+      "raw": "1 cardamom (optional)",
       "expected": {
         "item": "cardamom",
         "measurements": [
@@ -241,25 +269,27 @@
           }
         ],
         "note": "optional",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 to 2   green chilies (slit or chopped (optional, Thai/Indian or serrano peppers))",
+      "raw": "1 to 2  green chilies slit or chopped (optional, Thai/Indian or serrano peppers)",
       "expected": {
-        "item": "green chilies",
+        "item": "green chilies slit or chopped",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "slit or chopped (optional, Thai/Indian or serrano peppers)",
-        "category": "Produce"
+        "note": "optional, Thai/Indian or serrano peppers",
+        "section": "For Korma Curry",
+        "category": "Other"
       }
     },
     {
-      "raw": "½ cup hot water ((more if needed))",
+      "raw": "½ cup hot water (more if needed)",
       "expected": {
         "item": "hot water",
         "measurements": [
@@ -269,11 +299,12 @@
           }
         ],
         "note": "more if needed",
+        "section": "For Korma Curry",
         "category": "Beverages"
       }
     },
     {
-      "raw": "¼ teaspoon salt  ((adjust to taste))",
+      "raw": "¼ teaspoon salt  (adjust to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -283,6 +314,7 @@
           }
         ],
         "note": "adjust to taste",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
@@ -297,11 +329,12 @@
           }
         ],
         "note": null,
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1½ teaspoon coriander powder ((ground coriander))",
+      "raw": "1½ teaspoon coriander powder (ground coriander)",
       "expected": {
         "item": "coriander powder",
         "measurements": [
@@ -311,11 +344,12 @@
           }
         ],
         "note": "ground coriander",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon Kashmiri red chili powder  ((optional, for color))",
+      "raw": "¼ teaspoon Kashmiri red chili powder  (optional, for color)",
       "expected": {
         "item": "Kashmiri red chili powder",
         "measurements": [
@@ -325,11 +359,12 @@
           }
         ],
         "note": "optional, for color",
+        "section": "For Korma Curry",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves ((cilantro) fine chopped to garnish)",
+      "raw": "2 tablespoons coriander leaves (cilantro) fine chopped to garnish",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -339,6 +374,7 @@
           }
         ],
         "note": "cilantro, fine chopped to garnish",
+        "section": "For Korma Curry",
         "category": "Produce"
       }
     }

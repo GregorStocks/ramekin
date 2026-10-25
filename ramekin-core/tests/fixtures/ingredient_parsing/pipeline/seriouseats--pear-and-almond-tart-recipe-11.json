@@ -17,6 +17,10 @@
       }
     },
     {
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
       "raw": "113g blanched or natural almond flour (4 ounces; 1 cup), see notes",
       "expected": {
         "item": "blanched or natural almond flour",
@@ -35,6 +39,7 @@
           }
         ],
         "note": "see notes",
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -57,6 +62,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -79,6 +85,7 @@
           }
         ],
         "note": "about 3 1/2 ounces; 1/2 cup",
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -101,11 +108,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 large egg, room temperature",
+      "raw": "1 large egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -114,14 +122,15 @@
             "unit": "large"
           }
         ],
-        "note": "room temperature",
+        "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon (15ml) brandy or dark rum, optional",
+      "raw": "1 tablespoon (15ml) brandy",
       "expected": {
-        "item": "brandy or dark rum",
+        "item": "brandy",
         "measurements": [
           {
             "amount": "1",
@@ -132,7 +141,8 @@
             "unit": "ml"
           }
         ],
-        "note": "optional",
+        "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
@@ -147,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -161,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -175,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -197,6 +210,7 @@
           }
         ],
         "note": "about 11 3/4 ounces; 330g, peeled, cored, and quartered",
+        "section": "For the Filling",
         "category": "Other"
       }
     },
@@ -206,6 +220,7 @@
         "item": "Honey",
         "measurements": [],
         "note": "optional, for brushing",
+        "section": "For the Filling",
         "category": "Baking"
       }
     }

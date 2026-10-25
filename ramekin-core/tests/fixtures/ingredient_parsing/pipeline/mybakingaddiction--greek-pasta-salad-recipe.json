@@ -3,6 +3,10 @@
   "recipe_slug": "greek-pasta-salad-recipe",
   "ingredients": [
     {
+      "raw": "For the Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup olive oil",
       "expected": {
         "item": "olive oil",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "3/4 cup red wine vinegar",
+      "raw": "¾ cup red wine vinegar",
       "expected": {
         "item": "red wine vinegar",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -83,11 +92,12 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1-1/2 teaspoons freshly ground black pepper",
+      "raw": "1 ½ teaspoons freshly ground black pepper",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [
@@ -97,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,25 +122,31 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 pound rotini pasta (cooked according to package directions)",
+      "raw": "For the Salad:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound rotini pasta cooked to al dente according to package directions and drained",
       "expected": {
-        "item": "rotini pasta",
+        "item": "rotini pasta cooked to al dente according to package directions and drained",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "cooked according to package directions",
-        "category": "Pasta & Rice"
+        "note": null,
+        "section": "For the Salad",
+        "category": "Other"
       }
     },
     {
-      "raw": "1 pint cherry tomatoes (cut in half (you can sub in grape tomatoes))",
+      "raw": "1 pint cherry tomatoes cut in half (you can sub in grape tomatoes)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -138,12 +155,13 @@
             "unit": "pint"
           }
         ],
-        "note": "cut in half (you can sub in grape tomatoes)",
+        "note": "you can sub in grape tomatoes, cut in half",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  large cucumber (seeded and chopped)",
+      "raw": "1 large cucumber seeded and chopped",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -153,11 +171,12 @@
           }
         ],
         "note": "seeded and chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  red bell pepper (chopped)",
+      "raw": "1 red bell pepper chopped",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -167,11 +186,12 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  green bell pepper (chopped)",
+      "raw": "1 green bell pepper chopped",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": "chopped",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "4  green onions (thinly sliced)",
+      "raw": "4 green onions thinly sliced",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -195,25 +216,27 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "3/4 cup Kalamata olives",
+      "raw": "¾ cup pitted Kalamata olives halved or quartered if desired",
       "expected": {
-        "item": "Kalamata olives",
+        "item": "pitted Kalamata olives",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "halved or quartered, if desired",
+        "section": "For the Salad",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1-1/2 cups crumbled feta cheese",
+      "raw": "1 ½ cups crumbled feta cheese",
       "expected": {
         "item": "crumbled feta cheese",
         "measurements": [
@@ -223,20 +246,22 @@
           }
         ],
         "note": null,
+        "section": "For the Salad",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1 7- ounce pepperoni stick (sliced)",
+      "raw": "1 (7-ounce) pepperoni stick sliced",
       "expected": {
-        "item": "7- ounce pepperoni stick",
+        "item": "pepperoni stick",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced",
+        "note": "7-ounce, sliced",
+        "section": "For the Salad",
         "category": "Other"
       }
     }

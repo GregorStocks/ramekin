@@ -61,16 +61,16 @@
       }
     },
     {
-      "raw": "1/4 cup (60ml) heavy whipping cream, plus for as needed",
+      "raw": "1/2 cup (120ml) heavy whipping cream, plus for as needed",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
           {
-            "amount": "0.25",
+            "amount": "0.5",
             "unit": "cup"
           },
           {
-            "amount": "60",
+            "amount": "120",
             "unit": "ml"
           }
         ],

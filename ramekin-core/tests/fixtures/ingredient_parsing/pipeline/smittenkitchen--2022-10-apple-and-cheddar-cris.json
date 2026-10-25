@@ -3,6 +3,10 @@
   "recipe_slug": "2022-10-apple-and-cheddar-cris",
   "ingredients": [
     {
+      "raw": "Dressing:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 small shallot, minced",
       "expected": {
         "item": "shallot",
@@ -13,6 +17,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -31,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -45,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -81,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -90,8 +99,13 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Crispy stuff:",
+      "is_section_header": true
     },
     {
       "raw": "1 cup (115 grams or 4 ounces) sharp cheddar, coarsely grated",
@@ -112,6 +126,7 @@
           }
         ],
         "note": "coarsely grated",
+        "section": "Crispy Stuff",
         "category": "Cheese"
       }
     },
@@ -130,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Stuff",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -148,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Stuff",
         "category": "Baking"
       }
     },
@@ -162,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Stuff",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,8 +194,13 @@
           }
         ],
         "note": null,
+        "section": "Crispy Stuff",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "Assembly:",
+      "is_section_header": true
     },
     {
       "raw": "5 ounces (140 grams) kale leaves, any variety, cut into thin ribbons [see Note]",
@@ -194,6 +217,7 @@
           }
         ],
         "note": "any variety, cut into thin ribbons [see Note]",
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -208,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     }

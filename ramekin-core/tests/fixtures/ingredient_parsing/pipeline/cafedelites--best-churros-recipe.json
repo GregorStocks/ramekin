@@ -3,6 +3,10 @@
   "recipe_slug": "best-churros-recipe",
   "ingredients": [
     {
+      "raw": "COATING:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup sugar",
       "expected": {
         "item": "sugar",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Baking"
       }
     },
@@ -27,8 +32,13 @@
           }
         ],
         "note": null,
+        "section": "Coating",
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "CHURROS:",
+      "is_section_header": true
     },
     {
       "raw": "4 ounces butter",
@@ -41,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Beverages"
       }
     },
@@ -69,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Baking"
       }
     },
@@ -83,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Baking"
       }
     },
@@ -97,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Spices & Seasonings"
       }
     },
@@ -111,34 +126,37 @@
           }
         ],
         "note": null,
+        "section": "Churros",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/4 cups all-purpose (or plain flour)",
+      "raw": "1 1/4 cups all-purpose or plain flour",
       "expected": {
-        "item": "all-purpose",
+        "item": "all-purpose or plain flour",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": "or plain flour",
+        "note": null,
+        "section": "Churros",
         "category": "Baking"
       }
     },
     {
-      "raw": "2  eggs (at room temperature)",
+      "raw": "2 eggs at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "at room temperature",
+        "note": null,
+        "section": "Churros",
         "category": "Dairy & Eggs"
       }
     }

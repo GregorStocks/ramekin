@@ -3,21 +3,30 @@
   "recipe_slug": "classic-apple-pie-recipe",
   "ingredients": [
     {
-      "raw": "2½ cups all-purpose flour, divided",
+      "raw": "For the Crust:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2½ cups  (312.5 g) all-purpose flour, divided",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "312.5",
+            "unit": "g"
           }
         ],
         "note": "divided",
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons granulated sugar",
+      "raw": "2 tablespoons   granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -27,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon salt",
+      "raw": "1 teaspoon   salt",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -41,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "12 tablespoons cold unsalted butter, cut into ¼-inch slices",
+      "raw": "12 tablespoons   cold unsalted butter, cut into ¼-inch slices",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
@@ -55,25 +66,31 @@
           }
         ],
         "note": "cut into 1/4-inch slices",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ cup chilled solid vegetable shortening, cut into 2 pieces",
+      "raw": "½ cup  (102.5 g) chilled solid vegetable shortening, cut into 2 pieces",
       "expected": {
         "item": "chilled solid vegetable shortening",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "102.5",
+            "unit": "g"
           }
         ],
         "note": "cut into 2 pieces",
+        "section": "For the Crust",
         "category": "Other"
       }
     },
     {
-      "raw": "4 tablespoons vodka (cold)",
+      "raw": "4 tablespoons   vodka, cold",
       "expected": {
         "item": "vodka",
         "measurements": [
@@ -83,11 +100,12 @@
           }
         ],
         "note": "cold",
+        "section": "For the Crust",
         "category": "Beverages"
       }
     },
     {
-      "raw": "4 tablespoons ice water",
+      "raw": "4 tablespoons   ice water",
       "expected": {
         "item": "ice water",
         "measurements": [
@@ -97,25 +115,35 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Beverages"
       }
     },
     {
-      "raw": "¾ cup granulated sugar",
+      "raw": "For the Filling:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup  (150 g) granulated sugar",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons instant tapioca",
+      "raw": "2 tablespoons   instant tapioca",
       "expected": {
         "item": "instant tapioca",
         "measurements": [
@@ -125,81 +153,107 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ teaspoon salt",
+      "raw": "¼ teaspoon  (0.25 teaspoon) salt",
       "expected": {
         "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "¼ teaspoon ground cinnamon",
-      "expected": {
-        "item": "ground cinnamon",
-        "measurements": [
+          },
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "⅛ teaspoon ground allspice",
+      "raw": "¼ teaspoon  (0.25 teaspoon) ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "section": "For the Filling",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "⅛ teaspoon  (0.13 teaspoon) ground allspice",
       "expected": {
         "item": "ground allspice",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.13",
+            "unit": "tsp"
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 pounds McIntosh apples (about 4 medium apples, peeled, cored and sliced&nbsp;¼-inch thick)",
+      "raw": "2 pounds  (907.18 g) McIntosh apples, about 4 medium apples, peeled, cored and sliced ¼-inch thick",
       "expected": {
         "item": "McIntosh apples",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
+          },
+          {
+            "amount": "907.18",
+            "unit": "g"
           }
         ],
         "note": "about 4 medium apples, peeled, cored and sliced 1/4-inch thick",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1½ pounds Granny Smith apples (about 3 medium apples, peeled, cored and sliced&nbsp;¼-inch thick)",
+      "raw": "1½ pounds  (680.39 g) Granny Smith apples, about 3 medium apples, peeled, cored and sliced ¼-inch thick",
       "expected": {
         "item": "Granny Smith apples",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
+          },
+          {
+            "amount": "680.39",
+            "unit": "g"
           }
         ],
         "note": "about 3 medium apples, peeled, cored and sliced 1/4-inch thick",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tablespoons lemon juice",
+      "raw": "1 tablespoons   lemon juice",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -209,11 +263,12 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
     {
-      "raw": "1  egg white (beaten lightly)",
+      "raw": "1   egg white, beaten lightly",
       "expected": {
         "item": "egg white",
         "measurements": [
@@ -223,11 +278,12 @@
           }
         ],
         "note": "beaten lightly",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon granulated sugar (for topping)",
+      "raw": "1 tablespoon   granulated sugar, for topping",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -237,6 +293,7 @@
           }
         ],
         "note": "for topping",
+        "section": "For the Filling",
         "category": "Baking"
       }
     }

@@ -3,6 +3,10 @@
   "recipe_slug": "kievsky-aka-kiev-cake-recipe",
   "ingredients": [
     {
+      "raw": "Biskvit Ingredients:",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup flour",
       "expected": {
         "item": "flour",
@@ -13,11 +17,12 @@
           }
         ],
         "note": null,
+        "section": "Biskvit Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "8  eggs",
+      "raw": "8 eggs",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Biskvit Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Biskvit Ingredients",
         "category": "Baking"
       }
     },
@@ -55,11 +62,16 @@
           }
         ],
         "note": null,
+        "section": "Biskvit Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "6  egg whites (at room temperature)",
+      "raw": "Beze/ Meringue Ingredients:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 egg whites, at room temperature",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -69,6 +81,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Beze/ Meringue Ingredients",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "Beze/ Meringue Ingredients",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 Tbsp unsalted butter (melted for wax paper)",
+      "raw": "1 Tbsp unsalted butter, melted for wax paper",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -97,8 +111,13 @@
           }
         ],
         "note": "melted for wax paper",
+        "section": "Beze/ Meringue Ingredients",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Syrup/ Puree Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "15 oz Can Apricot Halves in light syrup",
@@ -111,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup/ Puree Ingredients",
         "category": "Other"
       }
     },
@@ -125,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup/ Puree Ingredients",
         "category": "Beverages"
       }
     },
@@ -139,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Syrup/ Puree Ingredients",
         "category": "Produce"
       }
     },
@@ -153,8 +175,13 @@
           }
         ],
         "note": null,
+        "section": "Syrup/ Puree Ingredients",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Frosting Ingredients:",
+      "is_section_header": true
     },
     {
       "raw": "Follow the link in the post",
@@ -162,6 +189,7 @@
         "item": "Follow the link in the post",
         "measurements": [],
         "note": null,
+        "section": "Frosting Ingredients",
         "category": "Other"
       }
     }

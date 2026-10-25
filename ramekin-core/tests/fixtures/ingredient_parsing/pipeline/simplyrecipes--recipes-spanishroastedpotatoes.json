@@ -3,16 +3,16 @@
   "recipe_slug": "recipes-spanishroastedpotatoes",
   "ingredients": [
     {
-      "raw": "2 pounds Yukon gold potatoes, or other waxy potato (peeled or un-peeled, your choice), cut into 1 to 1 1/2-inch chunks",
+      "raw": "2 pounds Yukon Gold potatoes, or other waxy potato (peeled or unpeeled, your choice), cut into 1 to 1 1/2-inch chunks",
       "expected": {
-        "item": "Yukon gold potatoes, or other waxy potato",
+        "item": "Yukon Gold potatoes, or other waxy potato",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "peeled or un-peeled, your choice, cut into 1 to 1 1/2-inch chunks",
+        "note": "peeled or unpeeled, your choice, cut into 1 to 1 1/2-inch chunks",
         "category": "Produce"
       }
     },
@@ -49,13 +49,13 @@
       }
     },
     {
-      "raw": "3 garlic cloves, chopped",
+      "raw": "3 cloves garlic, chopped",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "clove"
           }
         ],
         "note": "chopped",
@@ -91,16 +91,16 @@
       }
     },
     {
-      "raw": "A 14-ounce can of crushed tomatoes",
+      "raw": "1 (14-ounce) can crushed tomatoes",
       "expected": {
         "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
-            "unit": "14-ounce can"
+            "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14-ounce",
         "category": "Canned Goods"
       }
     },

@@ -3,6 +3,10 @@
   "recipe_slug": "new-orleans-bbq-shrimp-recipe-",
   "ingredients": [
     {
+      "raw": "For the Shrimp:",
+      "is_section_header": true
+    },
+    {
       "raw": "24 tablespoons (3 sticks; 340 g) cold unsalted butter, cut into 1/2-inch cubes, divided",
       "expected": {
         "item": "cold unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "cut into 1/2-inch cubes, divided",
+        "section": "For the Shrimp",
         "category": "Dairy & Eggs"
       }
     },
@@ -35,6 +40,7 @@
           }
         ],
         "note": "16/20, preferably Gulf, see notes, head-on and unpeeled",
+        "section": "For the Shrimp",
         "category": "Meat & Seafood"
       }
     },
@@ -49,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Condiments & Sauces"
       }
     },
@@ -63,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Produce"
       }
     },
@@ -77,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Beverages"
       }
     },
@@ -91,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +130,7 @@
           }
         ],
         "note": "see notes, such as Tony Chachere's or Slap Ya Mama",
+        "section": "For the Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -133,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Spices & Seasonings"
       }
     },
@@ -147,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Shrimp",
         "category": "Produce"
       }
     },
@@ -161,6 +175,7 @@
           }
         ],
         "note": "plus 1 whole sprig",
+        "section": "For the Shrimp",
         "category": "Produce"
       }
     },
@@ -170,8 +185,13 @@
         "item": "A few dashes of Louisiana-style hot sauce",
         "measurements": [],
         "note": "such as Crystal or Louisiana Red Hot, to taste",
+        "section": "For the Shrimp",
         "category": "Other"
       }
+    },
+    {
+      "raw": "For Serving:",
+      "is_section_header": true
     },
     {
       "raw": "1 baguette",
@@ -184,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "For Serving",
         "category": "Bakery & Bread"
       }
     }

@@ -144,7 +144,7 @@
       }
     },
     {
-      "raw": "1/2 tsp sweet paprika&nbsp; (or try 1/2 tsp harissa spice blend!)",
+      "raw": "1/2 tsp sweet paprika  (or try 1/2 tsp harissa spice blend!)",
       "expected": {
         "item": "sweet paprika",
         "measurements": [
@@ -186,6 +186,10 @@
       }
     },
     {
+      "raw": "Ricotta Topping (optional):",
+      "is_section_header": true
+    },
+    {
       "raw": "1 cup reduced fat ricotta cheese",
       "expected": {
         "item": "reduced fat ricotta cheese",
@@ -196,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Ricotta Topping (Optional)",
         "category": "Other"
       }
     },
@@ -210,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Ricotta Topping (Optional)",
         "category": "Produce"
       }
     }

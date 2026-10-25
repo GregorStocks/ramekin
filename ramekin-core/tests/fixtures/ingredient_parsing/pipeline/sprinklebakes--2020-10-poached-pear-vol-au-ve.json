@@ -3,6 +3,10 @@
   "recipe_slug": "2020-10-poached-pear-vol-au-ve",
   "ingredients": [
     {
+      "raw": "White wine-caramel pastry cream:",
+      "is_section_header": true
+    },
+    {
       "raw": "2 tablespoons cornstarch",
       "expected": {
         "item": "cornstarch",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine-Caramel Pastry Cream",
         "category": "Baking"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": "divided",
+        "section": "White Wine-Caramel Pastry Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "recommend spumante",
+        "section": "White Wine-Caramel Pastry Cream",
         "category": "Beverages"
       }
     },
@@ -59,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "White Wine-Caramel Pastry Cream",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  whole egg",
+      "raw": "1 whole egg",
       "expected": {
         "item": "whole egg",
         "measurements": [
@@ -73,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "White Wine-Caramel Pastry Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2  egg yolks",
+      "raw": "2 egg yolks",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -87,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine-Caramel Pastry Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "White Wine-Caramel Pastry Cream",
         "category": "Baking"
       }
     },
@@ -115,11 +126,16 @@
           }
         ],
         "note": null,
+        "section": "White Wine-Caramel Pastry Cream",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "6  small firm but ripe pears",
+      "raw": "Poached Pears:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 small firm but ripe pears",
       "expected": {
         "item": "firm but ripe pears",
         "measurements": [
@@ -129,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Poached Pears",
         "category": "Other"
       }
     },
@@ -143,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Poached Pears",
         "category": "Produce"
       }
     },
@@ -161,20 +179,22 @@
           }
         ],
         "note": null,
+        "section": "Poached Pears",
         "category": "Baking"
       }
     },
     {
-      "raw": "1  bottle (750 ml white wine (or remaining spumante from pastry cream))",
+      "raw": "1 bottle 750 ml white wine (or remaining spumante from pastry cream)",
       "expected": {
-        "item": "white wine",
+        "item": "750 ml white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "bottle"
           }
         ],
-        "note": "750 ml white wine (or remaining spumante from pastry cream)",
+        "note": "or remaining spumante from pastry cream",
+        "section": "Poached Pears",
         "category": "Beverages"
       }
     },
@@ -189,11 +209,12 @@
           }
         ],
         "note": null,
+        "section": "Poached Pears",
         "category": "Beverages"
       }
     },
     {
-      "raw": "2  cinnamon sticks",
+      "raw": "2 cinnamon sticks",
       "expected": {
         "item": "cinnamon sticks",
         "measurements": [
@@ -203,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Poached Pears",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,25 +239,31 @@
           }
         ],
         "note": null,
+        "section": "Poached Pears",
         "category": "Produce"
       }
     },
     {
-      "raw": "3  sheets (1 1/2 boxes puff pastry, thawed)",
+      "raw": "Puff pastry cases:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 sheets 1 1/2 boxes puff pastry, thawed",
       "expected": {
-        "item": "puff pastry",
+        "item": "1 1/2 boxes puff pastry",
         "measurements": [
           {
             "amount": "3",
             "unit": "sheet"
           }
         ],
-        "note": "1 1/2 boxes puff pastry, thawed",
+        "note": "thawed",
+        "section": "Puff Pastry Cases",
         "category": "Frozen"
       }
     },
     {
-      "raw": "1  egg",
+      "raw": "1 egg",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -245,6 +273,7 @@
           }
         ],
         "note": null,
+        "section": "Puff Pastry Cases",
         "category": "Dairy & Eggs"
       }
     },
@@ -259,6 +288,7 @@
           }
         ],
         "note": null,
+        "section": "Puff Pastry Cases",
         "category": "Beverages"
       }
     }

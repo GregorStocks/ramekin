@@ -3,35 +3,49 @@
   "recipe_slug": "2025-02-flourless-hazelnut-cak",
   "ingredients": [
     {
-      "raw": "3 cups lightly packed hazelnut flour*",
+      "raw": "For Cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "3 cups  / 300 g lightly packed hazelnut flour*",
       "expected": {
         "item": "hazelnut flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
           }
         ],
         "note": "lightly packed",
+        "section": "For Cake",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons cornstarch",
+      "raw": "2 tablespoons  / 16 g cornstarch",
       "expected": {
         "item": "cornstarch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 teaspoon fine sea salt",
+      "raw": "½ teaspoon   fine sea salt",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -41,25 +55,31 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 1/3 cups granulated sugar (divided)",
+      "raw": "1 ⅓ cups  / 266 g granulated sugar, divided",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
+          },
+          {
+            "amount": "266",
+            "unit": "g"
           }
         ],
         "note": "divided",
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 teaspoon instant espresso powder",
+      "raw": "1 teaspoon   instant espresso powder",
       "expected": {
         "item": "instant espresso powder",
         "measurements": [
@@ -69,11 +89,12 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Beverages"
       }
     },
     {
-      "raw": "6 large eggs (separated, at room temperature)",
+      "raw": "6 large   eggs, separated, at room temperature",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -83,25 +104,31 @@
           }
         ],
         "note": "separated, at room temperature",
+        "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "10 tablespoons European-style salted butter (increase salt to 3/4 teaspoon if using unsalted butter)",
+      "raw": "10 tablespoons  / 141 g European-style salted butter, increase salt to 3/4 teaspoon if using unsalted butter",
       "expected": {
-        "item": "European-style salted butter",
+        "item": "European-style salted butter, increase salt to 3/4 teaspoon if using unsalted butter",
         "measurements": [
           {
             "amount": "10",
             "unit": "tbsp"
+          },
+          {
+            "amount": "141",
+            "unit": "g"
           }
         ],
-        "note": "increase salt to 3/4 teaspoon if using unsalted butter",
+        "note": null,
+        "section": "For Cake",
         "category": "Other"
       }
     },
     {
-      "raw": "2 teaspoons vanilla extract",
+      "raw": "2 teaspoons   vanilla extract",
       "expected": {
         "item": "vanilla extract",
         "measurements": [
@@ -111,85 +138,116 @@
           }
         ],
         "note": null,
+        "section": "For Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 oz 55-60% semisweet chocolate (finely chopped)",
+      "raw": "For Ganache Topping:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 oz  / 56 g 55-60% semisweet chocolate, finely chopped",
       "expected": {
         "item": "55-60% semisweet chocolate",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
+        "section": "For Ganache Topping",
         "category": "Other"
       }
     },
     {
-      "raw": "2 oz 30-35% milk chocolate (finely chopped)",
+      "raw": "2 oz  / 56 g 30-35% milk chocolate, finely chopped",
       "expected": {
         "item": "30-35% milk chocolate",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
           }
         ],
         "note": "finely chopped",
+        "section": "For Ganache Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/3 cup Nutella",
+      "raw": "⅓ cup  / 100 g Nutella",
       "expected": {
         "item": "Nutella",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Ganache Topping",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 cup heavy whipping cream",
+      "raw": "1 cup  / 240 g heavy whipping cream",
       "expected": {
         "item": "heavy whipping cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Ganache Topping",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon glucose or light corn syrup",
+      "raw": "1 tablespoon  / 22 g glucose or light corn syrup",
       "expected": {
         "item": "glucose or light corn syrup",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Ganache Topping",
         "category": "Baking"
       }
     },
     {
-      "raw": "candied hazelnuts (optional, for decoration)",
+      "raw": "candied hazelnuts, optional, for decoration",
       "expected": {
         "item": "candied hazelnuts",
         "measurements": [],
         "note": "optional, for decoration",
+        "section": "For Ganache Topping",
         "category": "Other"
       }
     }

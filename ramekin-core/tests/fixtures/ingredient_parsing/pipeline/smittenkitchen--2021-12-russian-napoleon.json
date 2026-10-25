@@ -3,6 +3,10 @@
   "recipe_slug": "2021-12-russian-napoleon",
   "ingredients": [
     {
+      "raw": "Wafers:",
+      "is_section_header": true
+    },
+    {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, melted",
       "expected": {
         "item": "unsalted butter",
@@ -21,6 +25,7 @@
           }
         ],
         "note": "melted",
+        "section": "Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -39,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -53,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -67,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Spices & Seasonings"
       }
     },
@@ -85,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
     },
@@ -103,8 +112,13 @@
           }
         ],
         "note": null,
+        "section": "Wafers",
         "category": "Baking"
       }
+    },
+    {
+      "raw": "Filling:",
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (150 grams) granulated sugar",
@@ -121,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -139,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,6 +188,7 @@
           }
         ],
         "note": "or 1 1/2 teaspoons vanilla bean paste plus 1/2 teaspoon vanilla extract",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -189,6 +207,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -203,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -221,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,8 +264,13 @@
           }
         ],
         "note": "diced",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "raw": "Finish:",
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon powdered sugar, plus more for dusting",
@@ -257,6 +283,7 @@
           }
         ],
         "note": "plus more for dusting",
+        "section": "Finish",
         "category": "Baking"
       }
     }

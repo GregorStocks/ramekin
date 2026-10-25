@@ -3,21 +3,30 @@
   "recipe_slug": "2023-01-creamy-garlic-chicken-",
   "ingredients": [
     {
-      "raw": "1 pound chicken tenders (or chicken breasts cut into 1-inch strips)",
+      "raw": "For Chicken:",
+      "is_section_header": true
+    },
+    {
+      "raw": "1 pound  / 453 g chicken tenders, or chicken breasts cut into 1-inch strips",
       "expected": {
         "item": "chicken tenders",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
+          },
+          {
+            "amount": "453",
+            "unit": "g"
           }
         ],
         "note": "or chicken breasts cut into 1-inch strips",
+        "section": "For Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 teaspoon garlic powder",
+      "raw": "1 teaspoon   garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -27,11 +36,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon smoked paprika",
+      "raw": "½ teaspoon   smoked paprika",
       "expected": {
         "item": "smoked paprika",
         "measurements": [
@@ -41,11 +51,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon kosher salt",
+      "raw": "½ teaspoon   kosher salt",
       "expected": {
         "item": "kosher salt",
         "measurements": [
@@ -55,11 +66,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon freshly ground black pepper",
+      "raw": "½ teaspoon   freshly ground black pepper",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [
@@ -69,11 +81,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons olive oil",
+      "raw": "2 tablespoons   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -83,11 +96,12 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tablespoon butter",
+      "raw": "1 tablespoon   butter",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -97,25 +111,35 @@
           }
         ],
         "note": null,
+        "section": "For Chicken",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "8 oz farfalle pasta",
+      "raw": "For Sauce:",
+      "is_section_header": true
+    },
+    {
+      "raw": "8 oz  /  227 g farfalle pasta",
       "expected": {
         "item": "farfalle pasta",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "2 tablespoons butter",
+      "raw": "2 tablespoons   butter",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -125,11 +149,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon olive oil",
+      "raw": "1 tablespoon   olive oil",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -139,25 +164,31 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "6 to 8  large garlic cloves (finely chopped (about 3 tablespoons))",
+      "raw": "6 to 8   large garlic cloves, finely chopped (about 3 tablespoons)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
           {
             "amount": "6 to 8",
             "unit": "large"
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
           }
         ],
-        "note": "finely chopped (about 3 tablespoons)",
+        "note": "about 3 tablespoons, finely chopped",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ teaspoon red pepper flakes (more or less to taste)",
+      "raw": "½ teaspoon   red pepper flakes, more or less to taste",
       "expected": {
         "item": "red pepper flakes",
         "measurements": [
@@ -167,11 +198,12 @@
           }
         ],
         "note": "more or less to taste",
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ teaspoon garlic powder",
+      "raw": "½ teaspoon   garlic powder",
       "expected": {
         "item": "garlic powder",
         "measurements": [
@@ -181,11 +213,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons all-purpose flour",
+      "raw": "2 tablespoons   all-purpose flour",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -195,11 +228,12 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Baking"
       }
     },
     {
-      "raw": "¼ cup white wine",
+      "raw": "¼ cup   white wine",
       "expected": {
         "item": "white wine",
         "measurements": [
@@ -209,39 +243,50 @@
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1¼ cups chicken broth",
+      "raw": "1¼ cups  / 300g g chicken broth",
       "expected": {
-        "item": "chicken broth",
+        "item": "g chicken broth",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "⅓ cup heavy cream",
+      "raw": "⅓ cup  / 75 g heavy cream",
       "expected": {
         "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
           }
         ],
         "note": null,
+        "section": "For Sauce",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 teaspoon lemon juice (more or less to taste)",
+      "raw": "1 teaspoon   lemon juice, more or less to taste",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -251,20 +296,22 @@
           }
         ],
         "note": "more or less to taste",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "salt and freshly ground black pepper (to taste)",
+      "raw": "salt and freshly ground black pepper, to taste",
       "expected": {
         "item": "salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "For Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tablespoons chopped fresh parsley (for topping)",
+      "raw": "2 tablespoons   chopped fresh parsley, for topping",
       "expected": {
         "item": "chopped fresh parsley",
         "measurements": [
@@ -274,15 +321,17 @@
           }
         ],
         "note": "for topping",
+        "section": "For Sauce",
         "category": "Produce"
       }
     },
     {
-      "raw": "parmesan cheese (for topping)",
+      "raw": "parmesan cheese, for topping",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [],
         "note": "for topping",
+        "section": "For Sauce",
         "category": "Cheese"
       }
     }

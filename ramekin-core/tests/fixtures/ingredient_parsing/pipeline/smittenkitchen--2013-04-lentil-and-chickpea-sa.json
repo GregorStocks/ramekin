@@ -3,13 +3,8 @@
   "recipe_slug": "2013-04-lentil-and-chickpea-sa",
   "ingredients": [
     {
-      "raw": "Lentils",
-      "expected": {
-        "item": "Lentils",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "raw": "Lentils:",
+      "is_section_header": true
     },
     {
       "raw": "Scant 1 cup dried green lentils (Puy or Casteluccio, if you can find them) lentils, picked and rinsed over",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "Puy or Casteluccio, if you can find them, picked and rinsed over",
+        "section": "Lentils",
         "category": "Other"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "halved lengthwise",
+        "section": "Lentils",
         "category": "Produce"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Lentils",
         "category": "Produce"
       }
     },
@@ -64,11 +62,12 @@
           }
         ],
         "note": null,
+        "section": "Lentils",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "For the dressing and salad",
+      "raw": "For the dressing and salad:",
       "is_section_header": true
     },
     {

@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "&amp;frac34; teaspoon fine sea salt, divided, to taste",
+      "raw": "¾ teaspoon fine sea salt, divided, to taste",
       "expected": {
         "item": "fine sea salt",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "&amp;frac12; teaspoon ground coriander",
+      "raw": "½ teaspoon ground coriander",
       "expected": {
         "item": "ground coriander",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "&amp;frac14; teaspoon ground cumin",
+      "raw": "¼ teaspoon ground cumin",
       "expected": {
         "item": "ground cumin",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 &amp;frac12; teaspoons lemon juice, to taste",
+      "raw": "1 ½ teaspoons lemon juice, to taste",
       "expected": {
         "item": "lemon juice",
         "measurements": [

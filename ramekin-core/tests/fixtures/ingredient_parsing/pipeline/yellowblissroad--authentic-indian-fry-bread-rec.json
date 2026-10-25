@@ -68,38 +68,46 @@
       }
     },
     {
-      "raw": "Honey &amp;amp; powdered sugar",
+      "raw": "Topping Ideas:",
+      "is_section_header": true
+    },
+    {
+      "raw": "Honey & powdered sugar",
       "expected": {
         "item": "Honey & powdered sugar",
         "measurements": [],
         "note": null,
+        "section": "Topping Ideas",
         "category": "Baking"
       }
     },
     {
-      "raw": "Cinnamon &amp;amp; sugar",
+      "raw": "Cinnamon & sugar",
       "expected": {
         "item": "Cinnamon & sugar",
         "measurements": [],
         "note": null,
+        "section": "Topping Ideas",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Bean &amp;amp; Cheese",
+      "raw": "Bean & Cheese",
       "expected": {
         "item": "Bean & Cheese",
         "measurements": [],
         "note": null,
+        "section": "Topping Ideas",
         "category": "Other"
       }
     },
     {
-      "raw": "Taco - beans (cheese, lettuce, tomato, olives &amp;amp; sour cream)",
+      "raw": "Taco – beans cheese, lettuce, tomato, olives & sour cream",
       "expected": {
-        "item": "Taco - beans",
+        "item": "Taco - beans cheese, lettuce, tomato, olives & sour cream",
         "measurements": [],
-        "note": "cheese, lettuce, tomato, olives & sour cream",
+        "note": null,
+        "section": "Topping Ideas",
         "category": "Other"
       }
     }

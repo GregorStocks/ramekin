@@ -3,6 +3,10 @@
   "recipe_slug": "recipes-korean-style-beef-bulg",
   "ingredients": [
     {
+      "raw": "For the Bulgogi Burgers:",
+      "is_section_header": true
+    },
+    {
       "raw": "3 tablespoons soy sauce",
       "expected": {
         "item": "soy sauce",
@@ -13,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bulgogi Burgers",
         "category": "Condiments & Sauces"
       }
     },
@@ -27,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bulgogi Burgers",
         "category": "Other"
       }
     },
@@ -41,6 +47,7 @@
           }
         ],
         "note": "packed",
+        "section": "For the Bulgogi Burgers",
         "category": "Baking"
       }
     },
@@ -55,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bulgogi Burgers",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,11 +77,12 @@
           }
         ],
         "note": null,
+        "section": "For the Bulgogi Burgers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 cloves garlic, (minced)",
+      "raw": "2 cloves garlic, minced",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -83,20 +92,22 @@
           }
         ],
         "note": "minced",
+        "section": "For the Bulgogi Burgers",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 slice white or whole wheat sandwich bread, (crusts removed and torn into ¼-inch (6-mm) pieces)",
+      "raw": "1 slice white or whole wheat sandwich bread, crusts removed and torn into ¼-inch (6-mm) pieces",
       "expected": {
-        "item": "white or whole wheat sandwich bread",
+        "item": "white or whole wheat sandwich bread, crusts removed and torn into 1/4-inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "slice"
           }
         ],
-        "note": "crusts removed and torn into 1/4-inch (6-mm) pieces",
+        "note": "6-mm",
+        "section": "For the Bulgogi Burgers",
         "category": "Bakery & Bread"
       }
     },
@@ -111,11 +122,12 @@
           }
         ],
         "note": null,
+        "section": "For the Bulgogi Burgers",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "½ cup chopped scallions, (from 4 to 5 scallions)",
+      "raw": "½ cup chopped scallions, from 4 to 5 scallions",
       "expected": {
         "item": "chopped scallions",
         "measurements": [
@@ -125,11 +137,12 @@
           }
         ],
         "note": "from 4 to 5 scallions",
+        "section": "For the Bulgogi Burgers",
         "category": "Produce"
       }
     },
     {
-      "raw": "5  hamburger buns",
+      "raw": "5 hamburger buns",
       "expected": {
         "item": "hamburger buns",
         "measurements": [
@@ -139,34 +152,41 @@
           }
         ],
         "note": null,
+        "section": "For the Bulgogi Burgers",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "Lettuce leaves, (for serving (optional))",
+      "raw": "Lettuce leaves, for serving (optional)",
       "expected": {
         "item": "Lettuce leaves",
         "measurements": [],
-        "note": "for serving (optional)",
+        "note": "optional, for serving",
+        "section": "For the Bulgogi Burgers",
         "category": "Produce"
       }
     },
     {
-      "raw": "¾ cup mayonnaise, (best quality such as Hellmann's or Duke's)",
+      "raw": "For the Chili Mayonnaise:",
+      "is_section_header": true
+    },
+    {
+      "raw": "¾ cup mayonnaise, best quality such as Hellmann's or Duke's",
       "expected": {
-        "item": "mayonnaise",
+        "item": "mayonnaise, best quality",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "best quality such as Hellmann's or Duke's",
+        "note": "such as Hellmann's or Duke's",
+        "section": "For the Chili Mayonnaise",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "¼ cup Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets))",
+      "raw": "¼ cup Asian chili sauce, such as Sambal Oelek (available in Asian aisle of most supermarkets)",
       "expected": {
         "item": "Asian chili sauce",
         "measurements": [
@@ -175,7 +195,8 @@
             "unit": "cup"
           }
         ],
-        "note": "such as Sambal Oelek (available in Asian aisle of most supermarkets)",
+        "note": "available in Asian aisle of most supermarkets, such as Sambal Oelek",
+        "section": "For the Chili Mayonnaise",
         "category": "Other"
       }
     },
@@ -190,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chili Mayonnaise",
         "category": "Baking"
       }
     }

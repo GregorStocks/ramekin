@@ -3,7 +3,7 @@
   "recipe_slug": "2014-08-raspberry-swirl-cheese",
   "ingredients": [
     {
-      "raw": "Crust",
+      "raw": "Crust:",
       "is_section_header": true
     },
     {
@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "Raspberry Swirl",
+      "raw": "Raspberry Swirl:",
       "is_section_header": true
     },
     {
@@ -121,7 +121,7 @@
       }
     },
     {
-      "raw": "Cheesecake",
+      "raw": "Cheesecake:",
       "is_section_header": true
     },
     {
@@ -208,14 +208,8 @@
       }
     },
     {
-      "raw": "Chocolate sauce for serving (optional)",
-      "expected": {
-        "item": "Chocolate sauce",
-        "measurements": [],
-        "note": "optional, for serving",
-        "section": "Cheesecake",
-        "category": "Condiments & Sauces"
-      }
+      "raw": "Chocolate sauce for serving:",
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) heavy or whipping cream",
@@ -232,7 +226,7 @@
           }
         ],
         "note": null,
-        "section": "Cheesecake",
+        "section": "Chocolate Sauce for Serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,7 +245,7 @@
           }
         ],
         "note": null,
-        "section": "Cheesecake",
+        "section": "Chocolate Sauce for Serving",
         "category": "Baking"
       }
     }
