@@ -2,16 +2,12 @@ pub mod create;
 pub mod delete;
 pub mod estimate_calories;
 pub mod export;
-pub mod generate_description;
 pub mod generate_photo;
 pub mod get;
 pub mod list;
 pub mod normalize;
-pub mod normalize_title;
 pub(crate) mod paprika;
 pub(crate) mod read;
-pub mod reparse_ingredients;
-pub mod rescrape;
 pub mod rescrape_photo;
 pub mod update;
 pub mod versions;
@@ -34,10 +30,6 @@ pub fn router() -> Router<AppState> {
         .route("/normalize-ops", get(normalize::list_normalize_ops))
         .route("/normalize", post(normalize::normalize_recipes))
         .route(
-            "/reparse-ingredients",
-            post(reparse_ingredients::reparse_all_ingredients),
-        )
-        .route(
             "/{id}",
             get(get::get_recipe)
                 .put(update::update_recipe)
@@ -45,17 +37,8 @@ pub fn router() -> Router<AppState> {
         )
         .route("/{id}/export", get(export::export_recipe))
         .route("/{id}/versions", get(versions::list_versions))
-        .route("/{id}/rescrape", post(rescrape::rescrape))
         .route("/{id}/rescrape-photo", post(rescrape_photo::rescrape_photo))
         .route("/{id}/generate-photo", post(generate_photo::generate_photo))
-        .route(
-            "/{id}/normalize-title",
-            post(normalize_title::normalize_title),
-        )
-        .route(
-            "/{id}/generate-description",
-            post(generate_description::generate_description),
-        )
         .route("/{id}/normalize", post(normalize::normalize_recipe))
         .route(
             "/{id}/normalize/{job_id}",
@@ -79,12 +62,8 @@ pub fn router() -> Router<AppState> {
         export::export_recipe,
         export::export_all_recipes,
         versions::list_versions,
-        reparse_ingredients::reparse_all_ingredients,
-        rescrape::rescrape,
         rescrape_photo::rescrape_photo,
         generate_photo::generate_photo,
-        normalize_title::normalize_title,
-        generate_description::generate_description,
         normalize::list_normalize_ops,
         normalize::normalize_recipe,
         normalize::normalize_recipes,
@@ -107,11 +86,8 @@ pub fn router() -> Router<AppState> {
         update::UpdateRecipeRequest,
         versions::VersionListResponse,
         versions::VersionSummary,
-        reparse_ingredients::ReparseIngredientsResponse,
-        rescrape::RescrapeResponse,
+        rescrape_photo::RescrapeResponse,
         generate_photo::GeneratePhotoResponse,
-        normalize_title::NormalizeTitleResponse,
-        generate_description::GenerateDescriptionResponse,
         normalize::NormalizeOpGroupResponse,
         normalize::NormalizeOpInfo,
         normalize::NormalizeOpsResponse,

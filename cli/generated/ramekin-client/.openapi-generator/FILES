@@ -27,11 +27,9 @@ docs/DerivedMeasurement.md
 docs/Direction.md
 docs/EditRecipeApi.md
 docs/EditRecipeRequest.md
-docs/EnrichApi.md
 docs/ErrorCode.md
 docs/ErrorResponse.md
 docs/EstimateCaloriesRequest.md
-docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
 docs/ImportApi.md
 docs/ImportExtractionMethod.md
@@ -66,7 +64,6 @@ docs/NormalizeOpInfo.md
 docs/NormalizeOpsResponse.md
 docs/NormalizeProposalResponse.md
 docs/NormalizeRequest.md
-docs/NormalizeTitleResponse.md
 docs/NormalizedRecipe.md
 docs/OpKind.md
 docs/OpResult.md
@@ -81,7 +78,6 @@ docs/RecipeSummary.md
 docs/RecipesApi.md
 docs/RenameTagRequest.md
 docs/RenameTagResponse.md
-docs/ReparseIngredientsResponse.md
 docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
@@ -121,7 +117,6 @@ src/apis/auth_api.rs
 src/apis/client_logs_api.rs
 src/apis/configuration.rs
 src/apis/edit_recipe_api.rs
-src/apis/enrich_api.rs
 src/apis/import_api.rs
 src/apis/ingredient_names_api.rs
 src/apis/meal_plans_api.rs
@@ -160,7 +155,6 @@ src/models/edit_recipe_request.rs
 src/models/error_code.rs
 src/models/error_response.rs
 src/models/estimate_calories_request.rs
-src/models/generate_description_response.rs
 src/models/generate_photo_response.rs
 src/models/import_extraction_method.rs
 src/models/import_from_photos_request.rs
@@ -192,7 +186,6 @@ src/models/normalize_op_info.rs
 src/models/normalize_ops_response.rs
 src/models/normalize_proposal_response.rs
 src/models/normalize_request.rs
-src/models/normalize_title_response.rs
 src/models/normalized_recipe.rs
 src/models/op_kind.rs
 src/models/op_result.rs
@@ -205,7 +198,6 @@ src/models/recipe_response.rs
 src/models/recipe_summary.rs
 src/models/rename_tag_request.rs
 src/models/rename_tag_response.rs
-src/models/reparse_ingredients_response.rs
 src/models/rescrape_response.rs
 src/models/retry_scrape_response.rs
 src/models/scrape_job_response.rs

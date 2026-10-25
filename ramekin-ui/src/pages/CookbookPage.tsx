@@ -5,6 +5,7 @@ import CookbookBulkToolbar from "../components/cookbook/CookbookBulkToolbar";
 import CookbookFilters from "../components/cookbook/CookbookFilters";
 import CookbookRecipeGrid from "../components/cookbook/CookbookRecipeGrid";
 import CookbookToolbar from "../components/cookbook/CookbookToolbar";
+import BulkReNormalizeModal from "../components/BulkReNormalizeModal";
 import PdfExportModal from "../components/PdfExportModal";
 import { useAuth } from "../context/AuthContext";
 import { useCookbookBulkSelection } from "../hooks/useCookbookBulkSelection";
@@ -26,7 +27,13 @@ import { usePageTitle } from "../utils/pageTitle";
 
 export default function CookbookPage() {
   usePageTitle(() => "Cookbook");
-  const { getRecipesApi, tags: availableTags, token, authedFetch } = useAuth();
+  const {
+    getRecipesApi,
+    getNormalizeApi,
+    tags: availableTags,
+    token,
+    authedFetch,
+  } = useAuth();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -187,6 +194,13 @@ export default function CookbookPage() {
         recipes={bulkSelection.selectedRecipes}
         token={token}
         authedFetch={authedFetch}
+      />
+      <BulkReNormalizeModal
+        isOpen={bulkSelection.showReNormalizeModal}
+        onClose={() => bulkSelection.setShowReNormalizeModal(false)}
+        recipes={bulkSelection.selectedRecipes}
+        getNormalizeApi={getNormalizeApi}
+        onAccepted={() => recipeList.loadRecipes()}
       />
     </div>
   );

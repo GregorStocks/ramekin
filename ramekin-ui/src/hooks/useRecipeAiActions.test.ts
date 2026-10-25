@@ -2,7 +2,6 @@ import { describe, expect, it, vi } from "vitest";
 import type {
   EditRecipeApi,
   EditRecipeWithAiRequest,
-  EnrichApi,
   RecipeContent,
   RecipeResponse,
   RecipesApi,
@@ -29,7 +28,7 @@ function recipe(versionId: string): RecipeResponse {
 }
 
 describe("recipe AI actions", () => {
-  it("applies an enrichment against the version that produced its preview", async () => {
+  it("applies an AI edit against the version that produced its preview", async () => {
     let currentRecipe = recipe("version-1");
     let submittedRequest: UpdateRecipeRequest | undefined;
     const enriched: RecipeContent = {
@@ -47,17 +46,16 @@ describe("recipe AI actions", () => {
             submittedRequest = updateRecipeRequest;
           }),
         }) as unknown as RecipesApi,
-      getEnrichApi: () =>
+      getEditRecipeApi: () =>
         ({
-          enrichRecipe: vi.fn(async () => enriched),
-        }) as unknown as EnrichApi,
-      getEditRecipeApi: () => ({}) as unknown as EditRecipeApi,
+          editRecipeWithAi: vi.fn(async () => enriched),
+        }) as unknown as EditRecipeApi,
       loadRecipe: vi.fn(async () => {}),
-      clearHistoricalVersion: vi.fn(),
       setError: vi.fn(),
     });
 
-    await actions.handleEnrich();
+    actions.setEditInstruction("make it better");
+    await actions.handleEditWithAi();
     currentRecipe = recipe("version-2");
     await actions.handleApplyEnrichment();
 
@@ -77,7 +75,6 @@ describe("recipe AI actions", () => {
       recipeId: () => current.id,
       recipe: () => current,
       getRecipesApi: () => ({}) as unknown as RecipesApi,
-      getEnrichApi: () => ({}) as unknown as EnrichApi,
       getEditRecipeApi: () =>
         ({
           editRecipeWithAi: vi.fn(async (request: EditRecipeWithAiRequest) => {
@@ -86,7 +83,6 @@ describe("recipe AI actions", () => {
           }),
         }) as unknown as EditRecipeApi,
       loadRecipe: vi.fn(async () => {}),
-      clearHistoricalVersion: vi.fn(),
       setError: vi.fn(),
     });
 
