@@ -7,13 +7,13 @@
       "is_section_header": true
     },
     {
-      "raw": "Green sprinkles or green sanding sugar",
+      "raw": "Green sprinkles (or green sanding sugar)",
       "expected": {
-        "item": "Green sprinkles or green sanding sugar",
+        "item": "Green sprinkles",
         "measurements": [],
-        "note": null,
+        "note": "or green sanding sugar",
         "section": "For the Rim",
-        "category": "Baking"
+        "category": "Other"
       }
     },
     {

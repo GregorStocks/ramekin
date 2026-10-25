@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "2 1/2 pounds peach slices from a can - divided",
+      "raw": "2 1/2 pounds peach slices (from a can - divided)",
       "expected": {
         "item": "peach slices",
         "measurements": [
@@ -54,12 +54,12 @@
             "unit": "lb"
           }
         ],
-        "note": "from a can, divided",
+        "note": "from a can - divided",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "8 tablespoons granulated sugar divided",
+      "raw": "8 tablespoons granulated sugar (divided)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [

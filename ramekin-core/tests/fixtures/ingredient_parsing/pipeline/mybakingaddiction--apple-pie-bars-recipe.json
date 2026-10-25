@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 ½  cups unsalted butter softened",
+      "raw": "1 ½ cups unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -101,18 +101,18 @@
       }
     },
     {
-      "raw": "6 pounds Granny Smith apples about 12 apples—peeled, cored and thinly sliced",
+      "raw": "6 pounds Granny Smith apples (about 12 apples—peeled, cored and thinly sliced)",
       "expected": {
-        "item": "Granny Smith apples about 12 apples-peeled",
+        "item": "Granny Smith apples",
         "measurements": [
           {
             "amount": "6",
             "unit": "lb"
           }
         ],
-        "note": "cored and thinly sliced",
+        "note": "about 12 apples-peeled, cored and thinly sliced",
         "section": "For the Filling",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -146,18 +146,18 @@
       }
     },
     {
-      "raw": "½ cup water if necessary",
+      "raw": "½ cup water (if necessary)",
       "expected": {
-        "item": "water if necessary",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "if necessary",
         "section": "For the Filling",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -255,7 +255,7 @@
       }
     },
     {
-      "raw": "1 ½ cups unsalted butter cut into 1/2-inch cubes and chilled",
+      "raw": "1 ½ cups unsalted butter (cut into 1/2-inch cubes and chilled)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

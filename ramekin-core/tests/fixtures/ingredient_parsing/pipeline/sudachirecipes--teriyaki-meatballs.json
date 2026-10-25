@@ -7,31 +7,31 @@
       "is_section_header": true
     },
     {
-      "raw": "3 tbsp panko breadcrumbs or regular breadcrumbs",
+      "raw": "3 tbsp panko breadcrumbs (or regular breadcrumbs)",
       "expected": {
-        "item": "panko breadcrumbs or regular breadcrumbs",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or regular breadcrumbs",
         "section": "Meatball Mixture",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "2 tbsp whole milk cold",
+      "raw": "2 tbsp whole milk (cold)",
       "expected": {
-        "item": "whole milk cold",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cold",
         "section": "Meatball Mixture",
         "category": "Dairy & Eggs"
       }
@@ -52,106 +52,106 @@
       }
     },
     {
-      "raw": "½ tbsp grated ginger root or ginger paste",
+      "raw": "½ tbsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root or ginger paste",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "section": "Meatball Mixture",
         "category": "Produce"
       }
     },
     {
-      "raw": "300 g ground pork 20% fat content (increase lard if leaner), or ground chicken thigh",
+      "raw": "300 g ground pork (20% fat content (increase lard if leaner), or ground chicken thigh)",
       "expected": {
-        "item": "ground pork 20% fat content",
+        "item": "ground pork",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": "increase lard if leaner; or ground chicken thigh",
+        "note": "20% fat content (increase lard if leaner), or ground chicken thigh",
         "section": "Meatball Mixture",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "¼ tsp salt fine",
+      "raw": "¼ tsp salt (fine)",
       "expected": {
-        "item": "salt fine",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "fine",
         "section": "Meatball Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch ground black pepper or white pepper",
+      "raw": "1 pinch ground black pepper (or white pepper)",
       "expected": {
-        "item": "ground black pepper or white pepper",
+        "item": "ground black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "or white pepper",
         "section": "Meatball Mixture",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 tsp lard omit if your pork mince is already fatty enough",
+      "raw": "1 tsp lard (omit if your pork mince is already fatty enough)",
       "expected": {
-        "item": "lard omit if your pork mince is already fatty enough",
+        "item": "lard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "section": "Meatball Mixture",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "2 tbsp potato starch (katakuriko) or cornstarch/tapioca starch",
-      "expected": {
-        "item": "potato starch or cornstarch/tapioca starch",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": "katakuriko",
+        "note": "omit if your pork mince is already fatty enough",
         "section": "Meatball Mixture",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tbsp cooking oil neutral",
+      "raw": "2 tbsp potato starch (katakuriko) (or cornstarch/tapioca starch)",
       "expected": {
-        "item": "cooking oil neutral",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "katakuriko, or cornstarch/tapioca starch",
+        "section": "Meatball Mixture",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tbsp cooking oil (neutral)",
+      "expected": {
+        "item": "cooking oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "neutral",
         "section": "Meatball Mixture",
         "category": "Oils & Vinegars"
       }
@@ -176,31 +176,31 @@
       }
     },
     {
-      "raw": "1½ tbsp sake or dry sherry/wine",
+      "raw": "1½ tbsp sake (or dry sherry/wine)",
       "expected": {
-        "item": "sake or dry sherry/wine",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or dry sherry/wine",
         "section": "Teriyaki Glaze",
         "category": "Beverages"
       }
     },
     {
-      "raw": "1½ tbsp mirin or cola",
+      "raw": "1½ tbsp mirin (or cola)",
       "expected": {
-        "item": "mirin or cola",
+        "item": "mirin",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or cola",
         "section": "Teriyaki Glaze",
         "category": "Condiments & Sauces"
       }
@@ -221,31 +221,31 @@
       }
     },
     {
-      "raw": "1 tsp grated ginger root or ginger paste",
+      "raw": "1 tsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root or ginger paste",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "section": "Teriyaki Glaze",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 tsp grated garlic or garlic paste",
+      "raw": "1 tsp grated garlic (or garlic paste)",
       "expected": {
-        "item": "grated garlic or garlic paste",
+        "item": "grated garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or garlic paste",
         "section": "Teriyaki Glaze",
         "category": "Produce"
       }
@@ -255,7 +255,7 @@
       "is_section_header": true
     },
     {
-      "raw": "toasted white sesame seeds to taste",
+      "raw": "toasted white sesame seeds (to taste)",
       "expected": {
         "item": "toasted white sesame seeds",
         "measurements": [],
@@ -265,7 +265,7 @@
       }
     },
     {
-      "raw": "finely chopped green onions to taste",
+      "raw": "finely chopped green onions (to taste)",
       "expected": {
         "item": "finely chopped green onions",
         "measurements": [],
@@ -275,13 +275,13 @@
       }
     },
     {
-      "raw": "grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
+      "raw": "grated hard cheese (to taste, Parmesan, Pecorino, Grana Padano)",
       "expected": {
-        "item": "grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
+        "item": "grated hard cheese",
         "measurements": [],
-        "note": null,
+        "note": "to taste, Parmesan, Pecorino, Grana Padano",
         "section": "Toppings",
-        "category": "Cheese"
+        "category": "Other"
       }
     }
   ]

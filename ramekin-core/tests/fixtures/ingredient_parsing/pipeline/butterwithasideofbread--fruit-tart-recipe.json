@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup butter one stick",
+      "raw": "1/2 cup butter (one stick)",
       "expected": {
-        "item": "butter one stick",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "one stick",
         "section": "For Crust",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

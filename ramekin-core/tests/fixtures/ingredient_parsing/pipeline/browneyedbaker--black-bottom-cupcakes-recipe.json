@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "16 ounces  (453.59 g) cream cheese, at room temperature",
+      "raw": "16 ounces (453.59 g) cream cheese, (at room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -64,7 +64,7 @@
       }
     },
     {
-      "raw": "2   egg whites, at room temperature",
+      "raw": "2 egg whites, (at room temperature)",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -250,7 +250,7 @@
       }
     },
     {
-      "raw": "8 tablespoons   unsalted butter, melted and slightly cooled",
+      "raw": "8 tablespoons unsalted butter, (melted and slightly cooled)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

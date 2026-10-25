@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "180 g dry spaghetti 1.7-1.8mm",
+      "raw": "180 g dry spaghetti (1.7-1.8mm)",
       "expected": {
-        "item": "dry spaghetti 1.7-1.8mm",
+        "item": "dry spaghetti",
         "measurements": [
           {
             "amount": "180",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1.7-1.8mm",
         "section": "Pasta",
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -37,18 +37,18 @@
       }
     },
     {
-      "raw": "1 tbsp salt approx. 1% of water weight",
+      "raw": "1 tbsp salt (approx. 1% of water weight)",
       "expected": {
-        "item": "salt approx. 1% of water weight",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "approx. 1% of water weight",
         "section": "Pasta",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -56,52 +56,56 @@
       "is_section_header": true
     },
     {
-      "raw": "100 g Oriental spinach cut into bitesize pieces, or whole leaves of baby spinach",
+      "raw": "100 g Oriental spinach (cut into bitesize pieces, or whole leaves of baby spinach)",
       "expected": {
-        "item": "Oriental spinach cut into bitesize pieces, or whole leaves of baby spinach",
+        "item": "Oriental spinach",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bitesize pieces, or whole leaves of baby spinach",
         "section": "Main Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "4 fresh shiitake mushrooms about 100 g, sliced ¼-inch thick",
+      "raw": "4 fresh shiitake mushrooms (about 100 g, sliced ¼-inch thick)",
       "expected": {
-        "item": "fresh shiitake mushrooms about 100 g",
+        "item": "fresh shiitake mushrooms",
         "measurements": [
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
-        "note": "sliced 1/4-inch thick",
+        "note": "about 100 g, sliced 1/4-inch thick",
         "section": "Main Ingredients",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "50 g bacon with visible fat, cut into short strips",
+      "raw": "50 g bacon (with visible fat, cut into short strips)",
       "expected": {
-        "item": "bacon with visible fat",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": "cut into short strips",
+        "note": "with visible fat, cut into short strips",
         "section": "Main Ingredients",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 garlic clove finely diced",
+      "raw": "1 garlic clove (finely diced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -120,26 +124,26 @@
       "is_section_header": true
     },
     {
-      "raw": "cooking oil only if bacon is lean",
+      "raw": "cooking oil (only if bacon is lean)",
       "expected": {
-        "item": "cooking oil only if bacon is lean",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "only if bacon is lean",
         "section": "Sauce and Seasoning",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 tbsp sake or dry sherry/wine",
+      "raw": "1 tbsp sake (or dry sherry/wine)",
       "expected": {
-        "item": "sake or dry sherry/wine",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or dry sherry/wine",
         "section": "Sauce and Seasoning",
         "category": "Beverages"
       }
@@ -160,7 +164,7 @@
       }
     },
     {
-      "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu) divided (2 tsp for the first stage, 1 tsp for the second stage)",
+      "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu) (divided (2 tsp for the first stage, 1 tsp for the second stage))",
       "expected": {
         "item": "Japanese soy sauce",
         "measurements": [
@@ -169,7 +173,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "koikuchi shoyu, 2 tsp for the first stage, 1 tsp for the second stage, divided",
+        "note": "koikuchi shoyu, divided (2 tsp for the first stage, 1 tsp for the second stage)",
         "section": "Sauce and Seasoning",
         "category": "Condiments & Sauces"
       }
@@ -190,31 +194,31 @@
       }
     },
     {
-      "raw": "4 tbsp pasta water reserved from cooking",
+      "raw": "4 tbsp pasta water (reserved from cooking)",
       "expected": {
-        "item": "pasta water reserved from cooking",
+        "item": "pasta water",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "reserved from cooking",
         "section": "Sauce and Seasoning",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
-      "raw": "1 tbsp unsalted butter at room temperature",
+      "raw": "1 tbsp unsalted butter (at room temperature)",
       "expected": {
-        "item": "unsalted butter at room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Sauce and Seasoning",
         "category": "Dairy & Eggs"
       }
@@ -224,17 +228,17 @@
       "is_section_header": true
     },
     {
-      "raw": "lemon juice a few drops",
+      "raw": "lemon juice (a few drops)",
       "expected": {
-        "item": "lemon juice a few drops",
+        "item": "lemon juice",
         "measurements": [],
-        "note": null,
+        "note": "a few drops",
         "section": "Garnish",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "kizami nori (shredded nori) optional",
+      "raw": "kizami nori (shredded nori) (optional)",
       "expected": {
         "item": "kizami nori",
         "measurements": [],
@@ -244,7 +248,7 @@
       }
     },
     {
-      "raw": "chopped green onions to taste",
+      "raw": "chopped green onions (to taste)",
       "expected": {
         "item": "chopped green onions",
         "measurements": [],
@@ -254,7 +258,7 @@
       }
     },
     {
-      "raw": "shiso leaves optional, sliced thin",
+      "raw": "shiso leaves (optional, sliced thin)",
       "expected": {
         "item": "shiso leaves",
         "measurements": [],
@@ -264,7 +268,7 @@
       }
     },
     {
-      "raw": "ground black pepper to taste",
+      "raw": "ground black pepper (to taste)",
       "expected": {
         "item": "ground black pepper",
         "measurements": [],

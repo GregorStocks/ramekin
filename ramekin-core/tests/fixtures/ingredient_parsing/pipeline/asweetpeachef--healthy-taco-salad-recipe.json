@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "½ yellow onion, diced",
+      "raw": "½ yellow onion, (diced)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic, minced",
+      "raw": "2 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -116,7 +116,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup grape tomatoes, whole",
+      "raw": "1 cup grape tomatoes, (whole)",
       "expected": {
         "item": "grape tomatoes",
         "measurements": [
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "1 cup taco meat, cooled (see recipe above)",
+      "raw": "1 cup taco meat, (cooled (see recipe above))",
       "expected": {
         "item": "taco meat",
         "measurements": [
@@ -140,13 +140,13 @@
             "unit": "cup"
           }
         ],
-        "note": "see recipe above, cooled",
+        "note": "cooled (see recipe above)",
         "section": "For the Taco Salad",
         "category": "Other"
       }
     },
     {
-      "raw": "¼ cup jack cheese, shredded",
+      "raw": "¼ cup jack cheese, (shredded)",
       "expected": {
         "item": "jack cheese",
         "measurements": [
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "½ avocado, diced (optional, when serving)",
+      "raw": "½ avocado, (diced (optional, when serving))",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -185,7 +185,7 @@
             "unit": null
           }
         ],
-        "note": "optional, when serving, diced",
+        "note": "diced (optional, when serving)",
         "section": "For the Taco Salad",
         "category": "Produce"
       }
@@ -240,7 +240,7 @@
       }
     },
     {
-      "raw": "1 tbsp. cilantro, minced",
+      "raw": "1 tbsp. cilantro, (minced)",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -255,7 +255,7 @@
       }
     },
     {
-      "raw": "1 clove garlic, minced",
+      "raw": "1 clove garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [

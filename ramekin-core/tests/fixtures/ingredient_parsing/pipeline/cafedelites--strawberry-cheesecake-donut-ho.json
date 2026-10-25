@@ -7,31 +7,31 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup self raising flour or plain, all-purpose flour",
+      "raw": "1 cup self raising flour (or plain, all-purpose flour)",
       "expected": {
-        "item": "self raising flour or plain, all-purpose flour",
+        "item": "self raising flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or plain, all-purpose flour",
         "section": "Donut Holes",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons sugar white, raw or coconut sugar",
+      "raw": "2 tablespoons sugar (white, raw or coconut sugar)",
       "expected": {
-        "item": "sugar white, raw or coconut sugar",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "white, raw or coconut sugar",
         "section": "Donut Holes",
         "category": "Baking"
       }
@@ -67,48 +67,48 @@
       }
     },
     {
-      "raw": "1/2 teaspoon baking soda only if using plain or all purpose flour/s",
+      "raw": "1/2 teaspoon baking soda (only if using plain or all purpose flour/s)",
       "expected": {
-        "item": "baking soda only if using plain or all purpose flour/s",
+        "item": "baking soda",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "only if using plain or all purpose flour/s",
         "section": "Donut Holes",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons olive oil or canola or melted coconut oil",
+      "raw": "2 tablespoons olive oil (or canola or melted coconut oil)",
       "expected": {
-        "item": "olive oil or canola or melted coconut oil",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or canola or melted coconut oil",
         "section": "Donut Holes",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 egg large",
+      "raw": "1 egg (large)",
       "expected": {
-        "item": "egg large",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large",
         "section": "Donut Holes",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -127,31 +127,31 @@
       }
     },
     {
-      "raw": "1/2 cup unsweetened almond milk or low fat/skim milk",
+      "raw": "1/2 cup unsweetened almond milk (or low fat/skim milk)",
       "expected": {
-        "item": "unsweetened almond milk or low fat/skim milk",
+        "item": "unsweetened almond milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or low fat/skim milk",
         "section": "Donut Holes",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup sugar or mild tasting sweetener for coating",
+      "raw": "1/4 cup sugar (or mild tasting sweetener for coating)",
       "expected": {
-        "item": "sugar or mild tasting sweetener",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "for coating",
+        "note": "or mild tasting sweetener for coating",
         "section": "Donut Holes",
         "category": "Baking"
       }
@@ -161,46 +161,46 @@
       "is_section_header": true
     },
     {
-      "raw": "1/3 cup reduced fat cream cheese block or spreadable",
+      "raw": "1/3 cup reduced fat cream cheese (block or spreadable)",
       "expected": {
-        "item": "reduced fat cream cheese block or spreadable",
+        "item": "reduced fat cream cheese",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "block or spreadable",
         "section": "Filling",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
-      "raw": "2 tablespoons powdered sugar icing sugar",
+      "raw": "2 tablespoons powdered sugar (icing sugar)",
       "expected": {
-        "item": "powdered sugar icing sugar",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "icing sugar",
         "section": "Filling",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons strawberry jam or jelly, or topping if you prefer",
+      "raw": "2 tablespoons strawberry jam (or jelly, or topping if you prefer)",
       "expected": {
-        "item": "strawberry jam or jelly, or topping if you prefer",
+        "item": "strawberry jam",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or jelly, or topping if you prefer",
         "section": "Filling",
         "category": "Condiments & Sauces"
       }

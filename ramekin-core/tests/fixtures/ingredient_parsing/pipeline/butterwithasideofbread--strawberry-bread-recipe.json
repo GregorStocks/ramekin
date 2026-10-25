@@ -129,17 +129,17 @@
       }
     },
     {
-      "raw": "1 1/2 cups fresh diced strawberries divided",
+      "raw": "1 1/2 cups fresh diced strawberries (divided)",
       "expected": {
-        "item": "fresh diced strawberries divided",
+        "item": "fresh diced strawberries",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "divided",
+        "category": "Produce"
       }
     },
     {

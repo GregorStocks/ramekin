@@ -63,16 +63,16 @@
       "is_section_header": true
     },
     {
-      "raw": "4 buns, Lettuce, tomatoes, sautéed onions & mushrooms, cheese, pickles, ketchup, mayo....whatever you like!",
+      "raw": "4 buns, (Lettuce, tomatoes, sautéed onions & mushrooms, cheese, pickles, ketchup, mayo....whatever you like!)",
       "expected": {
-        "item": "buns, Lettuce, tomatoes, sautéed onions & mushrooms, cheese, pickles, ketchup, mayo....whatever you like!",
+        "item": "buns",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Lettuce, tomatoes, sautéed onions & mushrooms, cheese, pickles, ketchup, mayo....whatever you like!",
         "section": "Other Stuff for the Burgers",
         "category": "Bakery & Bread"
       }

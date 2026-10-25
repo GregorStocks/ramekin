@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "2 tablespoons butter plus additional for cooking the pancakes",
+      "raw": "2 tablespoons butter (plus additional for cooking the pancakes)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -157,16 +157,16 @@
       }
     },
     {
-      "raw": "¾ cup pumpkin purée pure pumpkin; NOT pumpkin pie filling",
+      "raw": "¾ cup pumpkin purée (pure pumpkin; NOT pumpkin pie filling)",
       "expected": {
-        "item": "pumpkin purée pure pumpkin; NOT pumpkin pie filling",
+        "item": "pumpkin purée",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pure pumpkin; NOT pumpkin pie filling",
         "section": "For the Pumpkin Pancakes",
         "category": "Other"
       }
@@ -187,16 +187,16 @@
       }
     },
     {
-      "raw": "2 tablespoons pure maple syrup or granulated sugar or honey",
+      "raw": "2 tablespoons pure maple syrup (or granulated sugar or honey)",
       "expected": {
-        "item": "pure maple syrup or granulated sugar or honey",
+        "item": "pure maple syrup",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or granulated sugar or honey",
         "section": "For the Pumpkin Pancakes",
         "category": "Condiments & Sauces"
       }

@@ -59,30 +59,30 @@
       }
     },
     {
-      "raw": "½ cup salted butter frozen",
+      "raw": "½ cup salted butter (frozen)",
       "expected": {
-        "item": "salted butter frozen",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "frozen",
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "½ cup half and half or heavy cream",
+      "raw": "½ cup half and half (or heavy cream)",
       "expected": {
-        "item": "half and half or heavy cream",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or heavy cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -115,16 +115,16 @@
       }
     },
     {
-      "raw": "Optional: 1 cup add-ins chocolate chips, berries, nuts, dried fruit, etc.",
+      "raw": "Optional: 1 cup add-ins (chocolate chips, berries, nuts, dried fruit, etc.)",
       "expected": {
-        "item": "add-ins chocolate chips, berries, nuts, dried fruit, etc.",
+        "item": "add-ins",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, chocolate chips, berries, nuts, dried fruit, etc.",
         "category": "Other"
       }
     },

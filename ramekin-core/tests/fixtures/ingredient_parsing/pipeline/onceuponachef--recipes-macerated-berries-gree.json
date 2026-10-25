@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 lb strawberries, hulled and halved (or quartered if very large)",
+      "raw": "1 lb strawberries, (hulled and halved (or quartered if very large))",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -16,7 +16,7 @@
             "unit": "lb"
           }
         ],
-        "note": "hulled and halved; or quartered if very large",
+        "note": "hulled and halved (or quartered if very large)",
         "section": "For the Berries",
         "category": "Produce"
       }

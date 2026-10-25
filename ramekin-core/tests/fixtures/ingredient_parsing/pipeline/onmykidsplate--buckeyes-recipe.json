@@ -7,33 +7,33 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup butter  unsalted, softened",
+      "raw": "½ cup butter (unsalted, softened)",
       "expected": {
-        "item": "butter unsalted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "softened",
+        "note": "unsalted, softened",
         "section": "For the Peanut Butter Balls",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 cup peanut butter creamy no stir version",
+      "raw": "1 cup peanut butter (creamy no stir version)",
       "expected": {
-        "item": "peanut butter creamy no stir version",
+        "item": "peanut butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "creamy no stir version",
         "section": "For the Peanut Butter Balls",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -71,18 +71,22 @@
       "is_section_header": true
     },
     {
-      "raw": "3 cups chocolate chips about 20 ounces",
+      "raw": "3 cups chocolate chips (about 20 ounces)",
       "expected": {
-        "item": "chocolate chips about 20 ounces",
+        "item": "chocolate chips",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "20",
+            "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "about 20 ounces",
         "section": "For the Chocolate Dip",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {

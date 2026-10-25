@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2 pounds ground beef 85/15",
+      "raw": "2 pounds ground beef (85/15)",
       "expected": {
-        "item": "ground beef 85/15",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "85/15",
         "section": "Meatloaf",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -82,18 +82,18 @@
       }
     },
     {
-      "raw": "1 cup crushed crackers quick cook oats or breadcrumbs",
+      "raw": "1 cup crushed crackers (quick cook oats or breadcrumbs)",
       "expected": {
-        "item": "crushed crackers quick cook oats or breadcrumbs",
+        "item": "crushed crackers",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "quick cook oats or breadcrumbs",
         "section": "Meatloaf",
-        "category": "Snacks"
+        "category": "Other"
       }
     },
     {

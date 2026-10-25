@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "½ cup  / 113 g 1 stick cold unsalted butter, cut into cubes",
+      "raw": "½ cup / 113 g 1 stick cold unsalted butter, (cut into cubes)",
       "expected": {
         "item": "1 stick cold unsalted butter",
         "measurements": [
@@ -98,7 +98,7 @@
       }
     },
     {
-      "raw": "2 tablespoons  / 24 g unflavored vegetable shortening*, chilled and cut into cubes",
+      "raw": "2 tablespoons / 24 g unflavored vegetable shortening*, (chilled and cut into cubes)",
       "expected": {
         "item": "unflavored vegetable shortening",
         "measurements": [
@@ -276,7 +276,7 @@
       }
     },
     {
-      "raw": "¼ cup  / 45 g dark chocolate (50-70%), finely chopped",
+      "raw": "¼ cup / 45 g dark chocolate (50-70%), (finely chopped)",
       "expected": {
         "item": "dark chocolate",
         "measurements": [
@@ -295,7 +295,7 @@
       }
     },
     {
-      "raw": "2 large   bananas, sliced",
+      "raw": "2 large bananas, (sliced)",
       "expected": {
         "item": "bananas",
         "measurements": [
@@ -363,7 +363,7 @@
       }
     },
     {
-      "raw": "⅛ teaspoon   guar gum, optional*",
+      "raw": "⅛ teaspoon guar gum, (optional*)",
       "expected": {
         "item": "guar gum",
         "measurements": [
@@ -378,11 +378,11 @@
       }
     },
     {
-      "raw": "chocolate curls, for garnish (optional)",
+      "raw": "chocolate curls, (for garnish (optional))",
       "expected": {
         "item": "chocolate curls",
         "measurements": [],
-        "note": "optional, for garnish",
+        "note": "for garnish (optional)",
         "section": "For Filling",
         "category": "Other"
       }

@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 large egg yolks, reserve whites for frosting",
+      "raw": "2 large egg yolks, (reserve whites for frosting)",
       "expected": {
-        "item": "egg yolks, reserve whites for frosting",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "reserve whites for frosting",
         "section": "Praniki Ingredients",
         "category": "Dairy & Eggs"
       }
@@ -146,16 +146,16 @@
       }
     },
     {
-      "raw": "2 cups powdered sugar, confectioners sugar",
+      "raw": "2 cups powdered sugar, (confectioners sugar)",
       "expected": {
-        "item": "powdered sugar, confectioners sugar",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "confectioners sugar",
         "section": "Mint Glaze Ingredients",
         "category": "Baking"
       }

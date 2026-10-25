@@ -146,7 +146,7 @@
       "is_section_header": true
     },
     {
-      "raw": "¼ cup salted butter melted (for brushing)",
+      "raw": "¼ cup salted butter (melted (for brushing))",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -155,7 +155,7 @@
             "unit": "cup"
           }
         ],
-        "note": "for brushing, melted",
+        "note": "melted (for brushing)",
         "section": "Topping",
         "category": "Dairy & Eggs"
       }
@@ -171,11 +171,11 @@
       }
     },
     {
-      "raw": "Fresh cilantro chopped (Optional garnish)",
+      "raw": "Fresh cilantro (chopped (Optional garnish))",
       "expected": {
         "item": "Fresh cilantro",
         "measurements": [],
-        "note": "Optional garnish, chopped",
+        "note": "chopped (Optional garnish)",
         "section": "Topping",
         "category": "Produce"
       }

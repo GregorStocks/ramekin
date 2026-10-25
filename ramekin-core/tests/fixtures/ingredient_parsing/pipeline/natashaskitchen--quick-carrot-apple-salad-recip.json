@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 medium carrots, coarsely grated",
+      "raw": "4 medium carrots, (coarsely grated)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 apple, diced",
+      "raw": "1 apple, (diced)",
       "expected": {
         "item": "apple",
         "measurements": [
@@ -37,22 +37,22 @@
       }
     },
     {
-      "raw": "3/4 cup craisins, dried cranberries",
+      "raw": "3/4 cup craisins, (dried cranberries)",
       "expected": {
-        "item": "craisins, dried cranberries",
+        "item": "craisins",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "dried cranberries",
         "section": "For the Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4 cup purple or sweet onion, finely diced",
+      "raw": "1/4 cup purple or sweet onion, (finely diced)",
       "expected": {
         "item": "purple or sweet onion",
         "measurements": [
@@ -71,16 +71,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup mayonnaise, real mayo or vegenaise",
+      "raw": "1/2 cup mayonnaise, (real mayo or vegenaise)",
       "expected": {
-        "item": "mayonnaise, real mayo or vegenaise",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "real mayo or vegenaise",
         "section": "For the Dressing",
         "category": "Condiments & Sauces"
       }
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "1/8 tsp sea salt, or to taste",
+      "raw": "1/8 tsp sea salt, (or to taste)",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "pinch of black pepper, freshly ground",
+      "raw": "pinch of black pepper, (freshly ground)",
       "expected": {
         "item": "black pepper",
         "measurements": [

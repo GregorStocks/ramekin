@@ -147,33 +147,41 @@
       "is_section_header": true
     },
     {
-      "raw": "1 large diced avocado  about 1 cup",
+      "raw": "1 large diced avocado (about 1 cup)",
       "expected": {
-        "item": "diced avocado about 1 cup",
+        "item": "diced avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1 cup",
         "section": "Avocado Salsa",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 diced Roma tomato  about ½ cup",
+      "raw": "1 diced Roma tomato (about ½ cup)",
       "expected": {
-        "item": "diced Roma tomato about 1/2 cup",
+        "item": "diced Roma tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1/2 cup",
         "section": "Avocado Salsa",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

@@ -26,9 +26,9 @@
       }
     },
     {
-      "raw": "½ cup  (22.5 g) mint leaves, bruised",
+      "raw": "½ cup (22.5 g) mint leaves, (bruised)",
       "expected": {
-        "item": "mint leaves, bruised",
+        "item": "mint leaves",
         "measurements": [
           {
             "amount": "0.5",
@@ -39,7 +39,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bruised",
         "section": "For the Cupcakes",
         "category": "Produce"
       }
@@ -102,7 +102,7 @@
       }
     },
     {
-      "raw": "½ cup  (113.5 g) unsalted butter, at room temperature",
+      "raw": "½ cup (113.5 g) unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -140,7 +140,7 @@
       }
     },
     {
-      "raw": "2   eggs, at room temperature",
+      "raw": "2 eggs, (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -258,7 +258,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1½ cups  (340.5 g) unsalted butter, at room temperature",
+      "raw": "1½ cups (340.5 g) unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

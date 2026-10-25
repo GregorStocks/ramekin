@@ -81,7 +81,7 @@
       }
     },
     {
-      "raw": "1 tablespoon   pickled jalapeños, finely chopped (plus more for topping as desired)",
+      "raw": "1 tablespoon pickled jalapeños, (finely chopped (plus more for topping as desired))",
       "expected": {
         "item": "pickled jalapeños",
         "measurements": [
@@ -90,7 +90,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more for topping as desired, finely chopped",
+        "note": "finely chopped (plus more for topping as desired)",
         "category": "Canned Goods"
       }
     },
@@ -123,7 +123,7 @@
       }
     },
     {
-      "raw": "small flour or corn tortillas, warmed",
+      "raw": "small flour or corn tortillas, (warmed)",
       "expected": {
         "item": "flour or corn tortillas",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "Romaine or iceberg lettuce, finely shredded",
+      "raw": "Romaine or iceberg lettuce, (finely shredded)",
       "expected": {
         "item": "Romaine or iceberg lettuce",
         "measurements": [],

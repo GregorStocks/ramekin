@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "fresh cracked black pepper  to taste",
+      "raw": "fresh cracked black pepper (to taste)",
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [],
@@ -104,21 +104,21 @@
       }
     },
     {
-      "raw": "kosher salt  or sea salt, to taste",
+      "raw": "kosher salt (or sea salt, to taste)",
       "expected": {
-        "item": "kosher salt or sea salt",
+        "item": "kosher salt",
         "measurements": [],
-        "note": "to taste",
+        "note": "or sea salt, to taste",
         "section": "For the Burgers",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "lettuce, tomato, pickles  and other desired trimmings",
+      "raw": "lettuce, tomato, pickles (and other desired trimmings)",
       "expected": {
-        "item": "lettuce, tomato, pickles and other desired trimmings",
+        "item": "lettuce, tomato, pickles",
         "measurements": [],
-        "note": null,
+        "note": "and other desired trimmings",
         "section": "For the Burgers",
         "category": "Produce"
       }
@@ -147,9 +147,9 @@
       }
     },
     {
-      "raw": "1/4 cup  (60 ml) sake or water",
+      "raw": "1/4 cup (60 ml) sake (or water)",
       "expected": {
-        "item": "sake or water",
+        "item": "sake",
         "measurements": [
           {
             "amount": "0.25",
@@ -160,7 +160,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or water",
         "section": "For the Teriyaki Sauce",
         "category": "Beverages"
       }

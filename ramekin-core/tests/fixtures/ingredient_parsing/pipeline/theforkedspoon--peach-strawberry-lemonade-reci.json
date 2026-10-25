@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 ripe peaches, chopped into large chunks",
+      "raw": "4 ripe peaches, (chopped into large chunks)",
       "expected": {
         "item": "ripe peaches",
         "measurements": [
@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "2 cups fresh strawberries, stems removed and halved",
+      "raw": "2 cups fresh strawberries, (stems removed and halved)",
       "expected": {
         "item": "fresh strawberries",
         "measurements": [
@@ -130,41 +130,41 @@
       }
     },
     {
-      "raw": "Fresh chopped strawberries, to garnish",
+      "raw": "Fresh chopped strawberries, (to garnish)",
       "expected": {
-        "item": "Fresh chopped strawberries, to garnish",
+        "item": "Fresh chopped strawberries",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }
     },
     {
-      "raw": "Fresh sliced peaches, to garnish",
+      "raw": "Fresh sliced peaches, (to garnish)",
       "expected": {
-        "item": "Fresh sliced peaches, to garnish",
+        "item": "Fresh sliced peaches",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }
     },
     {
-      "raw": "Lemon wedges, to garnish",
+      "raw": "Lemon wedges, (to garnish)",
       "expected": {
-        "item": "Lemon wedges, to garnish",
+        "item": "Lemon wedges",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }
     },
     {
-      "raw": "Mint, to garnish",
+      "raw": "Mint, (to garnish)",
       "expected": {
-        "item": "Mint, to garnish",
+        "item": "Mint",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "Peach Strawberry Lemonade",
         "category": "Produce"
       }

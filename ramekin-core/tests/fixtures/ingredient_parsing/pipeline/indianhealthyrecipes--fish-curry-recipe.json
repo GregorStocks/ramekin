@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "¼ tsp salt  or as needed",
+      "raw": "¼ tsp salt (or as needed)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -120,48 +120,48 @@
       }
     },
     {
-      "raw": "2 medium  onions  sliced about 1 cup sliced",
+      "raw": "2 medium onions (sliced about 1 cup sliced)",
       "expected": {
-        "item": "onions sliced about 1 cup sliced",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "sliced about 1 cup sliced",
         "section": "To Saute & Puree",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "½ tbsp ginger garlic minced or paste",
+      "raw": "½ tbsp ginger garlic (minced or paste)",
       "expected": {
-        "item": "ginger garlic minced or paste",
+        "item": "ginger garlic",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "minced or paste",
         "section": "To Saute & Puree",
         "category": "Other"
       }
     },
     {
-      "raw": "2 medium tomatoes ripe (¾ to 1 cup chopped)",
+      "raw": "2 medium tomatoes (ripe (¾ to 1 cup chopped))",
       "expected": {
-        "item": "tomatoes ripe",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "3/4 to 1 cup chopped",
+        "note": "ripe (3/4 to 1 cup chopped)",
         "section": "To Saute & Puree",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -289,16 +289,16 @@
       }
     },
     {
-      "raw": "1 to 1 ½ tsp garam masala or curry powder as needed (refer notes)",
+      "raw": "1 to 1 ½ tsp garam masala (or curry powder as needed (refer notes))",
       "expected": {
-        "item": "garam masala or curry powder",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "1 to 1.5",
             "unit": "tsp"
           }
         ],
-        "note": "refer notes, as needed",
+        "note": "or curry powder as needed (refer notes)",
         "section": "For Curry",
         "category": "Spices & Seasonings"
       }

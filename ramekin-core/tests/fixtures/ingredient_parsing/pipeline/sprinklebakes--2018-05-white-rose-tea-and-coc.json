@@ -41,16 +41,16 @@
       }
     },
     {
-      "raw": "1 envelope .25 ounce unflavored powdered gelatin",
+      "raw": "1 envelope (.25 ounce unflavored powdered gelatin)",
       "expected": {
-        "item": ".25 ounce unflavored powdered gelatin",
+        "item": "unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
           }
         ],
-        "note": null,
+        "note": ".25 ounce unflavored powdered gelatin",
         "section": "Panna Cotta",
         "category": "Baking"
       }
@@ -143,16 +143,16 @@
       }
     },
     {
-      "raw": "1/2 envelope about 1 1/2 teaspoons unflavored powdered gelatin",
+      "raw": "1/2 envelope (about 1 1/2 teaspoons unflavored powdered gelatin)",
       "expected": {
-        "item": "about 1 1/2 teaspoons unflavored powdered gelatin",
+        "item": "unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "envelope"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 teaspoons unflavored powdered gelatin",
         "section": "Grenadine Layer",
         "category": "Baking"
       }
@@ -196,18 +196,18 @@
       "is_section_header": true
     },
     {
-      "raw": "15 ounce can full fat coconut milk unshaken and well chilled",
+      "raw": "15 ounce can full fat coconut milk (unshaken and well chilled)",
       "expected": {
-        "item": "can full fat coconut milk unshaken and well chilled",
+        "item": "can full fat coconut milk",
         "measurements": [
           {
             "amount": "15",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "unshaken and well chilled",
         "section": "Coconut Whipped Cream",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {

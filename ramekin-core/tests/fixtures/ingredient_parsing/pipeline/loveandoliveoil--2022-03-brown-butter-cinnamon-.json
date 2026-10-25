@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "1   large egg, at room temperature",
+      "raw": "1 large egg, (at room temperature)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -224,7 +224,7 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup  / 113 g brown butter, melted",
+      "raw": "½ cup / 113 g brown butter, (melted)",
       "expected": {
         "item": "brown butter",
         "measurements": [
@@ -319,7 +319,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3 tablespoons  / 42 g brown butter, softened",
+      "raw": "3 tablespoons / 42 g brown butter, (softened)",
       "expected": {
         "item": "brown butter",
         "measurements": [
@@ -338,7 +338,7 @@
       }
     },
     {
-      "raw": "2 oz  / 60 g cream cheese, softened",
+      "raw": "2 oz / 60 g cream cheese, (softened)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -357,7 +357,7 @@
       }
     },
     {
-      "raw": "1 cup  / 120 g powdered sugar, sifted",
+      "raw": "1 cup / 120 g powdered sugar, (sifted)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [

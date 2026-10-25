@@ -175,11 +175,11 @@
       "is_section_header": true
     },
     {
-      "raw": "Season the fries with chili powder, paprika, and garlic powder before baking",
+      "raw": "Season the fries with chili powder, paprika, and garlic powder (before baking)",
       "expected": {
-        "item": "Season the fries with chili powder, paprika, and garlic powder before baking",
+        "item": "Season the fries with chili powder, paprika, and garlic powder",
         "measurements": [],
-        "note": null,
+        "note": "before baking",
         "section": "Spice It Up",
         "category": "Other"
       }

@@ -22,37 +22,33 @@
       }
     },
     {
-      "raw": "1/2 cup butter melted (1 stick)",
+      "raw": "1/2 cup butter (melted (1 stick))",
       "expected": {
         "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "stick"
           }
         ],
-        "note": "melted",
+        "note": "melted (1 stick)",
         "section": "Ingredients",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 9- oz box Jiffy cake mix you can also use 1/2 box of yellow or white cake mix",
+      "raw": "1 9- oz box Jiffy cake mix (you can also use 1/2 box of yellow or white cake mix)",
       "expected": {
-        "item": "Jiffy cake mix you can also use 1/2 box of yellow or white cake mix",
+        "item": "Jiffy cake mix",
         "measurements": [
           {
             "amount": "1",
             "unit": "9-oz box"
           }
         ],
-        "note": null,
+        "note": "you can also use 1/2 box of yellow or white cake mix",
         "section": "Ingredients",
-        "category": "Baking"
+        "category": "Other"
       }
     },
     {

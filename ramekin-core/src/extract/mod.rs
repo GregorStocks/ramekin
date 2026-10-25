@@ -89,6 +89,7 @@ fn extract_recipe_untrimmed(html: &str, source_url: &str) -> Result<RawRecipe, E
 fn should_parse_html_for_supplements(html: &str, recipe: &RawRecipe) -> bool {
     needs_ingredient_header_recovery(&recipe.ingredients)
         || html.contains("wprm-recipe-group-name")
+        || html.contains("wprm-recipe-ingredient-notes")
         || html.contains("jetpack-recipe-ingredients")
         || html.contains("wprm-recipe-instruction")
         || html.contains("structured-ingredients__list-item")
@@ -97,6 +98,9 @@ fn should_parse_html_for_supplements(html: &str, recipe: &RawRecipe) -> bool {
 /// Try to replace flat ingredients or polluted instructions with cleaner HTML-derived content.
 fn supplement_recipe_from_html(recipe: &mut RawRecipe, document: &Html) {
     supplement_ingredient_groups(recipe, document);
+    if let Some(parenthesized) = parenthesize_wprm_notes(&recipe.ingredients, document) {
+        recipe.ingredients = parenthesized;
+    }
     supplement_dotdash_ingredients(recipe, document);
     supplement_instructions(recipe, document);
     if let Some(with_headers) = recover_ingredient_headers(&recipe.ingredients, document) {

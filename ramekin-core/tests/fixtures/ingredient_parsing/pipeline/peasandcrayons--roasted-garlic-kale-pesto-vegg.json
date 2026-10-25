@@ -131,17 +131,17 @@
       }
     },
     {
-      "raw": "salt to taste (don’t skip, but season to taste)",
+      "raw": "salt (to taste (don’t skip, but season to taste))",
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": "don’t skip, but season to taste",
+        "note": "to taste (don’t skip, but season to taste)",
         "section": "For the Pesto",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "pinch of black pepper if desired",
+      "raw": "pinch of black pepper (if desired)",
       "expected": {
         "item": "black pepper",
         "measurements": [
@@ -175,7 +175,7 @@
       }
     },
     {
-      "raw": "8 oz mushrooms sliced",
+      "raw": "8 oz mushrooms (sliced)",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -205,18 +205,18 @@
       }
     },
     {
-      "raw": "2-4 oz cheese I used mozzarella + parmesan",
+      "raw": "2-4 oz cheese (I used mozzarella + parmesan)",
       "expected": {
-        "item": "cheese I used mozzarella + parmesan",
+        "item": "cheese",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "I used mozzarella + parmesan",
         "section": "For the Pasta",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {

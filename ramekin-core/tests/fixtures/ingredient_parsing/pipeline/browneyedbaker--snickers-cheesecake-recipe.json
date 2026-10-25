@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "24   Oreo cookies, whole",
+      "raw": "24 Oreo cookies, (whole)",
       "expected": {
         "item": "Oreo cookies",
         "measurements": [
@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "4 tablespoons   unsalted butter, melted",
+      "raw": "4 tablespoons unsalted butter, (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -41,7 +41,7 @@
       "is_section_header": true
     },
     {
-      "raw": "32 ounces  (907.19 g) cream cheese, at room temperature",
+      "raw": "32 ounces (907.19 g) cream cheese, (at room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "4   eggs, at room temperature",
+      "raw": "4 eggs, (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -128,7 +128,7 @@
       }
     },
     {
-      "raw": "20   fun size Snickers bars, coarsely chopped",
+      "raw": "20 fun size Snickers bars, (coarsely chopped)",
       "expected": {
         "item": "fun size Snickers bars",
         "measurements": [

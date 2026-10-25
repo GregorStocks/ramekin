@@ -32,7 +32,7 @@
       }
     },
     {
-      "raw": "2 Tbsp olive oil, divided",
+      "raw": "2 Tbsp olive oil, (divided)",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -111,16 +111,16 @@
       }
     },
     {
-      "raw": "1 tsp lemon zest or orange zest (optional)",
+      "raw": "1 tsp lemon zest (or orange zest (optional))",
       "expected": {
-        "item": "lemon zest or orange zest",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "or orange zest (optional)",
         "section": "Roast",
         "category": "Produce"
       }
@@ -130,16 +130,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 Tbsp butter or olive oil",
+      "raw": "2 Tbsp butter (or olive oil)",
       "expected": {
-        "item": "butter or olive oil",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or olive oil",
         "section": "Gravy",
         "category": "Dairy & Eggs"
       }
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "2 Tbsp heavy cream, optional",
+      "raw": "2 Tbsp heavy cream, (optional)",
       "expected": {
         "item": "heavy cream",
         "measurements": [

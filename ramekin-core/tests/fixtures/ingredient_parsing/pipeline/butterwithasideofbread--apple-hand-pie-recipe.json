@@ -3,7 +3,7 @@
   "recipe_slug": "apple-hand-pie-recipe",
   "ingredients": [
     {
-      "raw": "21 oz apple pie filling  or 1 cup Fried Apples",
+      "raw": "21 oz apple pie filling (or 1 cup Fried Apples)",
       "expected": {
         "item": "apple pie filling",
         "measurements": [
@@ -17,31 +17,31 @@
       }
     },
     {
-      "raw": "1 pkg refrigerated pie crust double crust, thawed for 15 mins",
+      "raw": "1 pkg refrigerated pie crust (double crust, thawed for 15 mins)",
       "expected": {
-        "item": "refrigerated pie crust double crust",
+        "item": "refrigerated pie crust",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": "thawed for 15 mins",
-        "category": "Other"
+        "note": "double crust, thawed for 15 mins",
+        "category": "Frozen"
       }
     },
     {
-      "raw": "1 egg yolk slightly beaten",
+      "raw": "1 egg yolk (slightly beaten)",
       "expected": {
-        "item": "egg yolk slightly beaten",
+        "item": "egg yolk",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "slightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {

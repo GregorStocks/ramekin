@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "3 ounces box Jell-o pick your favorite flavor",
+      "raw": "3 ounces box Jell-o (pick your favorite flavor)",
       "expected": {
-        "item": "box Jell-o pick your favorite flavor",
+        "item": "box Jell-o",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "pick your favorite flavor",
         "section": "For One Flavor",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 cups water divided",
+      "raw": "1 1/2 cups water (divided)",
       "expected": {
         "item": "water",
         "measurements": [

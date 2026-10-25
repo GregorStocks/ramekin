@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "4 Tbsp unsalted butter, melted. Plus more to sauté.",
+      "raw": "4 Tbsp unsalted butter, (melted. Plus more to sauté.)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -61,7 +61,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "melted., Plus more to sauté.",
+        "note": "melted. Plus more to sauté.",
         "section": "Ingredients for the Crepes Batter",
         "category": "Dairy & Eggs"
       }
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "1 cup all-purpose flour, or use 1/2 cup whole wheat flour and 1/2 cup all-purpose",
+      "raw": "1 cup all-purpose flour, (or use 1/2 cup whole wheat flour and 1/2 cup all-purpose)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -111,16 +111,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 lb leftover turkey meat, dark and/or white meat",
+      "raw": "1/2 lb leftover turkey meat, (dark and/or white meat)",
       "expected": {
-        "item": "leftover turkey meat, dark and/or white meat",
+        "item": "leftover turkey meat",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "dark and/or white meat",
         "section": "Ingredients for the Filling",
         "category": "Meat & Seafood"
       }
@@ -141,7 +141,7 @@
       }
     },
     {
-      "raw": "1/2 lb mushrooms, sliced",
+      "raw": "1/2 lb mushrooms, (sliced)",
       "expected": {
         "item": "mushrooms",
         "measurements": [
@@ -156,7 +156,7 @@
       }
     },
     {
-      "raw": "1 medium onion, finely chopped",
+      "raw": "1 medium onion, (finely chopped)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 carrot, finely grated (or 4 tiny awkward ones from the garden)",
+      "raw": "1 carrot, (finely grated (or 4 tiny awkward ones from the garden))",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -180,7 +180,7 @@
             "unit": null
           }
         ],
-        "note": "finely grated; or 4 tiny awkward ones from the garden",
+        "note": "finely grated (or 4 tiny awkward ones from the garden)",
         "section": "Ingredients for the Filling",
         "category": "Produce"
       }

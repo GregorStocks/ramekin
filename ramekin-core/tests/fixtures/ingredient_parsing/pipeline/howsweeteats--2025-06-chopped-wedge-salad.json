@@ -3,7 +3,7 @@
   "recipe_slug": "2025-06-chopped-wedge-salad",
   "ingredients": [
     {
-      "raw": "8 slices bacon, chopped",
+      "raw": "8 slices bacon, (chopped)",
       "expected": {
         "item": "bacon",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 head iceberg lettuce, chopped",
+      "raw": "1 head iceberg lettuce, (chopped)",
       "expected": {
         "item": "iceberg lettuce",
         "measurements": [
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "2 cups cherry tomatoes, chopped",
+      "raw": "2 cups cherry tomatoes, (chopped)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 garlic clove, minced",
+      "raw": "1 garlic clove, (minced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [

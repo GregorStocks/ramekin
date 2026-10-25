@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "parmesan cheese, for sprinkling",
+      "raw": "parmesan cheese, (for sprinkling)",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [],
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "1 small baguette, sliced into rounds",
+      "raw": "1 small baguette, (sliced into rounds)",
       "expected": {
         "item": "baguette",
         "measurements": [

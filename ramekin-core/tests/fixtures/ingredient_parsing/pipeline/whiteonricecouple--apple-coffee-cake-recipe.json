@@ -64,16 +64,16 @@
       }
     },
     {
-      "raw": "Pinch  (Pinch) Kosher Salt  or sea Salt",
+      "raw": "Pinch (Pinch) Kosher Salt (or sea Salt)",
       "expected": {
-        "item": "Kosher Salt or sea Salt",
+        "item": "Kosher Salt",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": "Pinch",
+        "note": "Pinch, or sea Salt",
         "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
@@ -216,7 +216,7 @@
       }
     },
     {
-      "raw": "1 teaspoon  (5 ml) ground Ginger  or 2 teaspoons fresh grated ginger",
+      "raw": "1 teaspoon (5 ml) ground Ginger (or 2 teaspoons fresh grated ginger)",
       "expected": {
         "item": "ground Ginger",
         "measurements": [
@@ -235,9 +235,9 @@
       }
     },
     {
-      "raw": "1/2 teaspoon  (2.5 ml) Kosher salt  or Sea Salt",
+      "raw": "1/2 teaspoon (2.5 ml) Kosher salt (or Sea Salt)",
       "expected": {
-        "item": "Kosher salt or Sea Salt",
+        "item": "Kosher salt",
         "measurements": [
           {
             "amount": "0.5",
@@ -248,7 +248,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or Sea Salt",
         "section": "For the Batter",
         "category": "Spices & Seasonings"
       }

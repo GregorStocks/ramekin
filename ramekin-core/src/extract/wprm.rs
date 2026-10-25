@@ -66,6 +66,50 @@ pub(super) fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<St
     }
 }
 
+static INGREDIENT_NOTES_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(".wprm-recipe-ingredient-notes").expect("wprm ingredient notes selector")
+});
+
+/// WPRM sets an ingredient's notes apart in their own span ("3 large eggs" and
+/// "room temperature"), but its HTML text and its JSON-LD both run them into
+/// the name, "3 large eggs room temperature", which the parser then reads as
+/// part of the food. Puts the notes of each line that matches a card
+/// ingredient in parentheses; notes that already open with "(" or "," are
+/// left as they are. None when no line changes.
+pub(super) fn parenthesize_wprm_notes(ingredients: &str, document: &Html) -> Option<String> {
+    let mut notes_by_line = std::collections::HashMap::new();
+    for item in document.select(&WPRM_INGREDIENT_SELECTOR) {
+        let Some(notes) = item.select(&INGREDIENT_NOTES_SELECTOR).next() else {
+            continue;
+        };
+        let notes = normalize_wprm_text(&notes.text().collect::<String>());
+        if notes.is_empty() || notes.starts_with(['(', ',', ';']) {
+            continue;
+        }
+        if let Some(line) = sanitize_extracted_ingredient(&item.text().collect::<String>()) {
+            notes_by_line.insert(normalize_wprm_text(&line), notes);
+        }
+    }
+    let mut changed = false;
+    let lines: Vec<String> = ingredients
+        .lines()
+        .map(|line| {
+            let key = normalize_wprm_text(line);
+            let base = notes_by_line
+                .get(&key)
+                .and_then(|notes| Some((key.strip_suffix(notes.as_str())?.trim_end(), notes)));
+            match base {
+                Some((base, notes)) if !base.is_empty() => {
+                    changed = true;
+                    format!("{base} ({notes})")
+                }
+                _ => line.to_string(),
+            }
+        })
+        .collect();
+    changed.then(|| lines.join("\n"))
+}
+
 pub(super) static WPRM_STICKY_NOTE_TEXT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r#"(?is)<span[^>]*class="[^"]*\bsticky-note-text\b[^"]*"[^>]*>.*?</span>"#)
         .expect("Invalid WPRM sticky note text regex")

@@ -3,17 +3,17 @@
   "recipe_slug": "banana-bars-recipe",
   "ingredients": [
     {
-      "raw": "½ cup unsalted butter room temperature",
+      "raw": "½ cup unsalted butter (room temperature)",
       "expected": {
-        "item": "unsalted butter room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "2 large eggs room temperature",
+      "raw": "2 large eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -129,17 +129,17 @@
       }
     },
     {
-      "raw": "1 cup mashed bananas from about 2 medium bananas",
+      "raw": "1 cup mashed bananas (from about 2 medium bananas)",
       "expected": {
-        "item": "mashed bananas from about 2 medium bananas",
+        "item": "mashed bananas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "from about 2 medium bananas",
+        "category": "Produce"
       }
     },
     {
@@ -161,22 +161,22 @@
       "is_section_header": true
     },
     {
-      "raw": "8 ounces cream cheese room temperature",
+      "raw": "8 ounces cream cheese (room temperature)",
       "expected": {
-        "item": "cream cheese room temperature",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "For the Frosting",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
-      "raw": "¼ cup unsalted butter softened",
+      "raw": "¼ cup unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -206,7 +206,7 @@
       }
     },
     {
-      "raw": "3 ¾ cups confectioners’ sugar sifted",
+      "raw": "3 ¾ cups confectioners’ sugar (sifted)",
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [

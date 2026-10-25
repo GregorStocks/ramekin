@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup long-grain rice, rinsed well",
+      "raw": "1/2 cup long-grain rice, (rinsed well)",
       "expected": {
         "item": "long-grain rice",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1 small onion, shredded",
+      "raw": "1 small onion, (shredded)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -82,16 +82,16 @@
       }
     },
     {
-      "raw": "1 can 14.5 oz diced tomato with juice",
+      "raw": "1 can (14.5 oz diced tomato with juice)",
       "expected": {
-        "item": "14.5 oz diced tomato with juice",
+        "item": "diced tomato with juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14.5 oz diced tomato with juice",
         "section": "For Stuffing",
         "category": "Other"
       }
@@ -171,7 +171,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 large and very firm tomatoes, divided (3 to be cored and stuffed, and 1 to be sliced)",
+      "raw": "4 large and very firm tomatoes, (divided (3 to be cored and stuffed, and 1 to be sliced))",
       "expected": {
         "item": "and very firm tomatoes",
         "measurements": [
@@ -180,13 +180,13 @@
             "unit": "large"
           }
         ],
-        "note": "3 to be cored and stuffed, and 1 to be sliced, divided",
+        "note": "divided (3 to be cored and stuffed, and 1 to be sliced)",
         "section": "For Zucchini",
         "category": "Other"
       }
     },
     {
-      "raw": "1 small onion sliced into rounds",
+      "raw": "1 small onion (sliced into rounds)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -201,7 +201,7 @@
       }
     },
     {
-      "raw": "2 1/2 lb Medium-sized zucchini or Middle Eastern zucchini, about 8 or so zucchini, lightly peeled",
+      "raw": "2 1/2 lb Medium-sized zucchini or Middle Eastern zucchini, (about 8 or so zucchini, lightly peeled)",
       "expected": {
         "item": "Medium-sized zucchini or Middle Eastern zucchini",
         "measurements": [
@@ -216,16 +216,16 @@
       }
     },
     {
-      "raw": "1 can 14.5 oz tomato sauce",
+      "raw": "1 can (14.5 oz tomato sauce)",
       "expected": {
-        "item": "14.5 oz tomato sauce",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14.5 oz tomato sauce",
         "section": "For Zucchini",
         "category": "Canned Goods"
       }

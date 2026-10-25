@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "70 grams  cultured unsalted butter melted",
+      "raw": "70 grams cultured unsalted butter (melted)",
       "expected": {
         "item": "cultured unsalted butter",
         "measurements": [
@@ -56,63 +56,67 @@
       "is_section_header": true
     },
     {
-      "raw": "2 cups  heavy cream 45% butterfat",
+      "raw": "2 cups heavy cream (45% butterfat)",
       "expected": {
-        "item": "heavy cream 45% butterfat",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "45% butterfat",
         "section": "For Filling",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "110 grams  evaporated cane sugar about ½ cup",
+      "raw": "110 grams evaporated cane sugar (about ½ cup)",
       "expected": {
-        "item": "evaporated cane sugar about 1/2 cup",
+        "item": "evaporated cane sugar",
         "measurements": [
           {
             "amount": "110",
             "unit": "g"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1/2 cup",
         "section": "For Filling",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "4 grams  lime zest zest of 1 lime",
+      "raw": "4 grams lime zest (zest of 1 lime)",
       "expected": {
-        "item": "lime zest zest of 1 lime",
+        "item": "lime zest",
         "measurements": [
           {
             "amount": "4",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "zest of 1 lime",
         "section": "For Filling",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "⅓ cup  lime juice see note below",
+      "raw": "⅓ cup lime juice (see note below)",
       "expected": {
-        "item": "lime juice see note below",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note below",
         "section": "For Filling",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -120,18 +124,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup  whipping cream 35% butterfat",
+      "raw": "1 cup whipping cream (35% butterfat)",
       "expected": {
-        "item": "whipping cream 35% butterfat",
+        "item": "whipping cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "35% butterfat",
         "section": "For Topping",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

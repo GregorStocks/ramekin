@@ -56,7 +56,7 @@
       }
     },
     {
-      "raw": "1   egg, lightly beaten",
+      "raw": "1 egg, (lightly beaten)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "8 ounces  (226.8 g) conch, finely minced",
+      "raw": "8 ounces (226.8 g) conch, (finely minced)",
       "expected": {
         "item": "conch",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1   jalapeño, finely minced",
+      "raw": "1 jalapeño, (finely minced)",
       "expected": {
         "item": "jalapeño",
         "measurements": [
@@ -177,7 +177,7 @@
       }
     },
     {
-      "raw": "1 clove   garlic, minced",
+      "raw": "1 clove garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -211,7 +211,7 @@
       }
     },
     {
-      "raw": "Vegetable oil, for frying",
+      "raw": "Vegetable oil, (for frying)",
       "expected": {
         "item": "Vegetable oil",
         "measurements": [],

@@ -56,7 +56,7 @@
       }
     },
     {
-      "raw": "½ cup  / 113 g (1 stick) very cold unsalted butter, cut into cubes",
+      "raw": "½ cup / 113 g (1 stick) very cold unsalted butter, (cut into cubes)",
       "expected": {
         "item": "very cold unsalted butter",
         "measurements": [
@@ -94,7 +94,7 @@
       }
     },
     {
-      "raw": "3 to 5 tablespoons   ice water, as needed",
+      "raw": "3 to 5 tablespoons ice water, (as needed)",
       "expected": {
         "item": "ice water",
         "measurements": [
@@ -113,16 +113,16 @@
       "is_section_header": true
     },
     {
-      "raw": "8   large ripe Fuyu* persimmons, enough to make 2 cups of puree",
+      "raw": "8 large ripe Fuyu* persimmons, (enough to make 2 cups of puree)",
       "expected": {
-        "item": "ripe Fuyu* persimmons, enough to make 2 cups of puree",
+        "item": "ripe Fuyu* persimmons",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "enough to make 2 cups of puree",
         "section": "For Pie Filling",
         "category": "Other"
       }

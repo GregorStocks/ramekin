@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "6 oz  / 170 g full fat cream cheese, at room temperature",
+      "raw": "6 oz / 170 g full fat cream cheese, (at room temperature)",
       "expected": {
         "item": "full fat cream cheese",
         "measurements": [
@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "¼ cup  / 30 g powdered sugar, sifted",
+      "raw": "¼ cup / 30 g powdered sugar, (sifted)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -64,7 +64,7 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup  / 113 g (1 stick) unsalted butter, at room temperature",
+      "raw": "½ cup / 113 g (1 stick) unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 cup  / 200 g granulated sugar, plus more for topping",
+      "raw": "1 cup / 200 g granulated sugar, (plus more for topping)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -106,7 +106,7 @@
       }
     },
     {
-      "raw": "2   large eggs, at room temperature",
+      "raw": "2 large eggs, (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [

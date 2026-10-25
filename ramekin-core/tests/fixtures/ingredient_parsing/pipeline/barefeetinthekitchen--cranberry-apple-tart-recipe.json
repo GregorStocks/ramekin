@@ -7,13 +7,17 @@
       "is_section_header": true
     },
     {
-      "raw": "½ bag of Bob's Red Mill Pie Crust 12 ounces",
+      "raw": "½ bag of Bob's Red Mill Pie Crust (12 ounces)",
       "expected": {
-        "item": "Bob's Red Mill Pie Crust 12 ounces",
+        "item": "Bob's Red Mill Pie Crust",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "bag"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
           }
         ],
         "note": null,
@@ -22,7 +26,7 @@
       }
     },
     {
-      "raw": "10 tablespoons cold butter cut into 1/2″ pieces",
+      "raw": "10 tablespoons cold butter (cut into 1/2″ pieces)",
       "expected": {
         "item": "cold butter",
         "measurements": [
@@ -71,16 +75,20 @@
       }
     },
     {
-      "raw": "4 medium size Honey crisp apples peeled and sliced thin, about 3 1/2 cups worth",
+      "raw": "4 medium size Honey crisp apples (peeled and sliced thin, about 3 1/2 cups worth)",
       "expected": {
-        "item": "size Honey crisp apples peeled and sliced thin",
+        "item": "size Honey crisp apples",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
+          },
+          {
+            "amount": "3.5",
+            "unit": "cup"
           }
         ],
-        "note": "about 3 1/2 cups worth",
+        "note": "peeled and sliced thin, about 3 1/2 cups worth",
         "section": "Filling Ingredients",
         "category": "Other"
       }

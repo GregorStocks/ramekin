@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pound lean ground chicken, I like to use 94% lean",
+      "raw": "1 pound lean ground chicken, (I like to use 94% lean)",
       "expected": {
-        "item": "lean ground chicken, I like to use 94% lean",
+        "item": "lean ground chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "I like to use 94% lean",
         "section": "Chicken Meatballs",
         "category": "Meat & Seafood"
       }
@@ -32,7 +32,7 @@
       }
     },
     {
-      "raw": "2 garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -77,16 +77,16 @@
       }
     },
     {
-      "raw": "⅓ cup chopped fresh herbs, like parsley, basil and chives",
+      "raw": "⅓ cup chopped fresh herbs, (like parsley, basil and chives)",
       "expected": {
-        "item": "chopped fresh herbs, like parsley, basil and chives",
+        "item": "chopped fresh herbs",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "like parsley, basil and chives",
         "section": "Chicken Meatballs",
         "category": "Produce"
       }
@@ -126,7 +126,7 @@
       }
     },
     {
-      "raw": "1 sweet onion, diced",
+      "raw": "1 sweet onion, (diced)",
       "expected": {
         "item": "sweet onion",
         "measurements": [
@@ -141,7 +141,7 @@
       }
     },
     {
-      "raw": "2 carrots, finely grated",
+      "raw": "2 carrots, (finely grated)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -156,7 +156,7 @@
       }
     },
     {
-      "raw": "2 celery sticks, diced",
+      "raw": "2 celery sticks, (diced)",
       "expected": {
         "item": "celery sticks",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "3 garlic cloves, minced",
+      "raw": "3 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -256,7 +256,7 @@
       }
     },
     {
-      "raw": "lemon wedges, for spritzing",
+      "raw": "lemon wedges, (for spritzing)",
       "expected": {
         "item": "lemon wedges",
         "measurements": [],
@@ -266,7 +266,7 @@
       }
     },
     {
-      "raw": "fresh parsley, for topping",
+      "raw": "fresh parsley, (for topping)",
       "expected": {
         "item": "fresh parsley",
         "measurements": [],

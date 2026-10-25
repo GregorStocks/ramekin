@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "10 Medjool Dates, pitted",
+      "raw": "10 Medjool Dates, (pitted)",
       "expected": {
         "item": "Medjool Dates",
         "measurements": [
@@ -67,16 +67,16 @@
       }
     },
     {
-      "raw": "2 tablespoon coconut oil, liquified",
+      "raw": "2 tablespoon coconut oil, (liquified)",
       "expected": {
-        "item": "coconut oil, liquified",
+        "item": "coconut oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "liquified",
         "section": "Crust",
         "category": "Oils & Vinegars"
       }
@@ -86,16 +86,16 @@
       "is_section_header": true
     },
     {
-      "raw": "3 1/2 cups raw cashews, soaked overnight, drained and rinsed",
+      "raw": "3 1/2 cups raw cashews, (soaked overnight, drained and rinsed)",
       "expected": {
-        "item": "raw cashews, soaked overnight",
+        "item": "raw cashews",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "soaked overnight, drained and rinsed",
         "section": "Cheesecake",
         "category": "Nuts & Dried Fruit"
       }
@@ -131,16 +131,16 @@
       }
     },
     {
-      "raw": "2/3 cup coconut oil, liquified",
+      "raw": "2/3 cup coconut oil, (liquified)",
       "expected": {
-        "item": "coconut oil, liquified",
+        "item": "coconut oil",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "liquified",
         "section": "Cheesecake",
         "category": "Oils & Vinegars"
       }
@@ -176,16 +176,16 @@
       }
     },
     {
-      "raw": "1-2 teaspoon peppermint extract, depending on how minty you'd like it",
+      "raw": "1-2 teaspoon peppermint extract, (depending on how minty you'd like it)",
       "expected": {
-        "item": "peppermint extract, depending on how minty you'd like it",
+        "item": "peppermint extract",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "depending on how minty you'd like it",
         "section": "Cheesecake",
         "category": "Baking"
       }

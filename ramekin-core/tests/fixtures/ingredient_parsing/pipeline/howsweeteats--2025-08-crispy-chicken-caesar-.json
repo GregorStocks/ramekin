@@ -32,7 +32,7 @@
       }
     },
     {
-      "raw": "2 large eggs, lightly beaten",
+      "raw": "2 large eggs, (lightly beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -111,7 +111,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 garlic cloves, minced",
+      "raw": "4 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -201,7 +201,7 @@
       }
     },
     {
-      "raw": "½ lemon, juiced",
+      "raw": "½ lemon, (juiced)",
       "expected": {
         "item": "lemon juice",
         "measurements": [

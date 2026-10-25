@@ -21,37 +21,37 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup cooked rice you can use any rice that you like",
+      "raw": "1/2 cup cooked rice (you can use any rice that you like)",
       "expected": {
-        "item": "cooked rice you can use any rice that you like",
+        "item": "cooked rice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you can use any rice that you like",
         "section": "Meatballs",
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "1 lb ground beef any ground meat will work",
+      "raw": "1 lb ground beef (any ground meat will work)",
       "expected": {
-        "item": "ground beef any ground meat will work",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "any ground meat will work",
         "section": "Meatballs",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 small yellow onion diced",
+      "raw": "1 small yellow onion (diced)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -66,7 +66,7 @@
       }
     },
     {
-      "raw": "1/2 teaspoon sea salt or to taste",
+      "raw": "1/2 teaspoon sea salt (or to taste)",
       "expected": {
         "item": "sea salt",
         "measurements": [
@@ -81,7 +81,7 @@
       }
     },
     {
-      "raw": "1/4 teaspoon ground black pepper or to taste",
+      "raw": "1/4 teaspoon ground black pepper (or to taste)",
       "expected": {
         "item": "ground black pepper",
         "measurements": [
@@ -145,7 +145,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic minced",
+      "raw": "4 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -190,7 +190,7 @@
       }
     },
     {
-      "raw": "Salt and pepper to taste",
+      "raw": "Salt and pepper (to taste)",
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
@@ -200,16 +200,16 @@
       }
     },
     {
-      "raw": "2 cups water or chicken broth",
+      "raw": "2 cups water (or chicken broth)",
       "expected": {
-        "item": "water or chicken broth",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or chicken broth",
         "section": "Sauce",
         "category": "Beverages"
       }
@@ -219,22 +219,22 @@
       "is_section_header": true
     },
     {
-      "raw": "2-3 cups cabbage from inside the cabbage",
+      "raw": "2-3 cups cabbage (from inside the cabbage)",
       "expected": {
-        "item": "cabbage from inside the cabbage",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from inside the cabbage",
         "section": "Side Salad",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "4 Roma tomatoes chopped",
+      "raw": "4 Roma tomatoes (chopped)",
       "expected": {
         "item": "Roma tomatoes",
         "measurements": [
@@ -249,7 +249,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic minced",
+      "raw": "2 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -264,7 +264,7 @@
       }
     },
     {
-      "raw": "Fresh cilantro chopped",
+      "raw": "Fresh cilantro (chopped)",
       "expected": {
         "item": "Fresh cilantro",
         "measurements": [],
@@ -274,17 +274,17 @@
       }
     },
     {
-      "raw": "Vegetable oil or olive oil",
+      "raw": "Vegetable oil (or olive oil)",
       "expected": {
-        "item": "Vegetable oil or olive oil",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "or olive oil",
         "section": "Side Salad",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "Salt and pepper to taste",
+      "raw": "Salt and pepper (to taste)",
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],

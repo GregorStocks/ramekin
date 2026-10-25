@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 1/4 bars 164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
+      "raw": "2 1/4 bars (164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark)",
       "expected": {
-        "item": "164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
+        "item": "Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "bar"
           }
         ],
-        "note": null,
+        "note": "164 grams Taza Chocolate Wicked Dark with Toasted Coconut 95% dark",
         "section": "Brownies",
         "category": "Other"
       }

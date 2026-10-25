@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "6 cups cake flour sifted",
+      "raw": "6 cups cake flour (sifted)",
       "expected": {
         "item": "cake flour",
         "measurements": [
@@ -52,33 +52,33 @@
       }
     },
     {
-      "raw": "1 cup unsalted butter at room temperature",
+      "raw": "1 cup unsalted butter (at room temperature)",
       "expected": {
-        "item": "unsalted butter at room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/2 cup vegetable oil I like peanut oil",
+      "raw": "1/2 cup vegetable oil (I like peanut oil)",
       "expected": {
-        "item": "vegetable oil I like peanut oil",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like peanut oil",
         "section": "Cake Layers",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -97,16 +97,16 @@
       }
     },
     {
-      "raw": "8 egg whites at room temperature",
+      "raw": "8 egg whites (at room temperature)",
       "expected": {
-        "item": "egg whites at room temperature",
+        "item": "egg whites",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
@@ -240,7 +240,7 @@
       }
     },
     {
-      "raw": "2 cups/1 lb unsalted butter softened",
+      "raw": "2 cups/1 lb unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -293,7 +293,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pint strawberries sliced",
+      "raw": "1 pint strawberries (sliced)",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -323,11 +323,11 @@
       }
     },
     {
-      "raw": "Decors and powder coating see blog post for decor instructions",
+      "raw": "Decors and powder coating (see blog post for decor instructions)",
       "expected": {
-        "item": "Decors and powder coating see blog post for decor instructions",
+        "item": "Decors and powder coating",
         "measurements": [],
-        "note": null,
+        "note": "see blog post for decor instructions",
         "section": "Filling",
         "category": "Other"
       }

@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "140 g thinly sliced pork belly leaner option: pork loin",
+      "raw": "140 g thinly sliced pork belly (leaner option: pork loin)",
       "expected": {
-        "item": "thinly sliced pork belly leaner option: pork loin",
+        "item": "thinly sliced pork belly",
         "measurements": [
           {
             "amount": "140",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "leaner option: pork loin",
         "section": "Yakisoba",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "¼ onion thinly sliced",
+      "raw": "¼ onion (thinly sliced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "50 g green cabbage roughly chopped",
+      "raw": "50 g green cabbage (roughly chopped)",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -97,33 +97,33 @@
       }
     },
     {
-      "raw": "red pickled ginger (benishoga) optional topping",
+      "raw": "red pickled ginger (benishoga) (optional topping)",
       "expected": {
-        "item": "red pickled ginger optional topping",
+        "item": "red pickled ginger",
         "measurements": [],
-        "note": "benishoga",
+        "note": "benishoga, optional topping",
         "section": "Yakisoba",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "bonito flakes (katsuobushi) optional topping",
+      "raw": "bonito flakes (katsuobushi) (optional topping)",
       "expected": {
-        "item": "bonito flakes optional topping",
+        "item": "bonito flakes",
         "measurements": [],
-        "note": "katsuobushi",
+        "note": "katsuobushi, optional topping",
         "section": "Yakisoba",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "aonori (dried green seaweed powder) optional topping",
+      "raw": "aonori (dried green seaweed powder) (optional topping)",
       "expected": {
-        "item": "aonori optional topping",
+        "item": "aonori",
         "measurements": [],
-        "note": "dried green seaweed powder",
+        "note": "dried green seaweed powder, optional topping",
         "section": "Yakisoba",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -176,16 +176,16 @@
       }
     },
     {
-      "raw": "½ tbsp sake or white wine",
+      "raw": "½ tbsp sake (or white wine)",
       "expected": {
-        "item": "sake or white wine",
+        "item": "sake",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or white wine",
         "section": "Yakisoba Sauce",
         "category": "Beverages"
       }

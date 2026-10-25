@@ -265,22 +265,22 @@
       }
     },
     {
-      "raw": "2 tablespoon ghee or Oil",
+      "raw": "2 tablespoon ghee (or Oil)",
       "expected": {
-        "item": "ghee or Oil",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or Oil",
         "section": "Other Ingredients for Chicken Biryani",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 large onion  sliced thinly",
+      "raw": "1 large onion (sliced thinly)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -295,20 +295,16 @@
       }
     },
     {
-      "raw": "¼ to ½ cup mint leaves chopped fine (about 15 leaves)",
+      "raw": "¼ to ½ cup mint leaves (chopped fine (about 15 leaves))",
       "expected": {
         "item": "mint leaves",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "15",
-            "unit": "leaf"
           }
         ],
-        "note": "about 15 leaves, chopped fine",
+        "note": "chopped fine (about 15 leaves)",
         "section": "Other Ingredients for Chicken Biryani",
         "category": "Produce"
       }
@@ -453,7 +449,7 @@
       }
     },
     {
-      "raw": "2 cups (200 grams, 2 medium) yellow onions sliced (or use small red onions)",
+      "raw": "2 cups (200 grams, 2 medium) yellow onions (sliced (or use small red onions))",
       "expected": {
         "item": "yellow onions",
         "measurements": [
@@ -470,7 +466,7 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced; or use small red onions",
+        "note": "sliced (or use small red onions)",
         "section": "To Make Fried Onions",
         "category": "Produce"
       }
@@ -529,48 +525,48 @@
       }
     },
     {
-      "raw": "¾ tablespoon ginger  grated/ crushed or paste",
+      "raw": "¾ tablespoon ginger (grated/ crushed or paste)",
       "expected": {
-        "item": "ginger grated/ crushed or paste",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "grated/ crushed or paste",
         "section": "To Marinate",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "¾ tablespoon garlic pressed/grated or paste",
+      "raw": "¾ tablespoon garlic (pressed/grated or paste)",
       "expected": {
-        "item": "garlic pressed/grated or paste",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "pressed/grated or paste",
         "section": "To Marinate",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 green chili  deseeded and slit (optional, leave out for low heat)",
+      "raw": "1 green chili (deseeded and slit (optional, leave out for low heat))",
       "expected": {
-        "item": "green chili deseeded and slit",
+        "item": "green chili",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional, leave out for low heat",
+        "note": "deseeded and slit (optional, leave out for low heat)",
         "section": "To Marinate",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -679,7 +675,7 @@
       }
     },
     {
-      "raw": "2 tablespoons mint leaves  fine chopped",
+      "raw": "2 tablespoons mint leaves (fine chopped)",
       "expected": {
         "item": "mint leaves",
         "measurements": [
@@ -694,7 +690,7 @@
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves  fine chopped (optional)",
+      "raw": "2 tablespoons coriander leaves (fine chopped (optional))",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -703,7 +699,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional, fine chopped",
+        "note": "fine chopped (optional)",
         "section": "To Marinate",
         "category": "Produce"
       }
@@ -886,31 +882,31 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pinch (10 to 12)  saffron strands  or natural orange food color as needed",
+      "raw": "1 pinch (10 to 12) saffron strands (or natural orange food color as needed)",
       "expected": {
-        "item": "saffron strands or natural orange food color",
+        "item": "saffron strands",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "10 to 12, as needed",
+        "note": "10 to 12, or natural orange food color as needed",
         "section": "To Layer",
         "category": "Other"
       }
     },
     {
-      "raw": "2 tablespoons hot milk  + 2 tablespoons hot water",
+      "raw": "2 tablespoons hot milk (+ 2 tablespoons hot water)",
       "expected": {
-        "item": "hot milk + 2 tablespoons hot water",
+        "item": "hot milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "+ 2 tablespoons hot water",
         "section": "To Layer",
         "category": "Other"
       }

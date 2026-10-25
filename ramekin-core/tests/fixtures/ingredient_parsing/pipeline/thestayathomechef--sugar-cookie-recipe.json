@@ -3,7 +3,7 @@
   "recipe_slug": "sugar-cookie-recipe",
   "ingredients": [
     {
-      "raw": "1 cup salted butter softened",
+      "raw": "1 cup salted butter (softened)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -31,20 +31,16 @@
       }
     },
     {
-      "raw": "2 ounces cream cheese softened (1/4 cup)",
+      "raw": "2 ounces cream cheese (softened (1/4 cup))",
       "expected": {
         "item": "cream cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
-          },
-          {
-            "amount": "0.25",
-            "unit": "cup"
           }
         ],
-        "note": "softened",
+        "note": "softened (1/4 cup)",
         "category": "Cheese"
       }
     },
@@ -165,7 +161,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup salted butter softened",
+      "raw": "1 cup salted butter (softened)",
       "expected": {
         "item": "salted butter",
         "measurements": [

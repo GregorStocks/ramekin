@@ -7,33 +7,37 @@
       "is_section_header": true
     },
     {
-      "raw": "1 envelope Instant Yeast 7 grams",
+      "raw": "1 envelope Instant Yeast (7 grams)",
       "expected": {
-        "item": "Instant Yeast 7 grams",
+        "item": "Instant Yeast",
         "measurements": [
           {
             "amount": "1",
             "unit": "envelope"
+          },
+          {
+            "amount": "7",
+            "unit": "g"
           }
         ],
         "note": null,
         "section": "For the Starter",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "1 cup whole milk lukewarm",
+      "raw": "1 cup whole milk (lukewarm)",
       "expected": {
-        "item": "whole milk lukewarm",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "lukewarm",
         "section": "For the Starter",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -52,18 +56,18 @@
       }
     },
     {
-      "raw": "1 teaspoon water lukewarm",
+      "raw": "1 teaspoon water (lukewarm)",
       "expected": {
-        "item": "water lukewarm",
+        "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "lukewarm",
         "section": "For the Starter",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {
@@ -131,18 +135,18 @@
       }
     },
     {
-      "raw": "1 cup unsalted butter room temperature",
+      "raw": "1 cup unsalted butter (room temperature)",
       "expected": {
-        "item": "unsalted butter room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "For the Dough",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -191,7 +195,7 @@
       }
     },
     {
-      "raw": "1/2 cup almonds ground",
+      "raw": "1/2 cup almonds (ground)",
       "expected": {
         "item": "almonds",
         "measurements": [
@@ -251,7 +255,7 @@
       }
     },
     {
-      "raw": "1 egg yolk for brushing",
+      "raw": "1 egg yolk (for brushing)",
       "expected": {
         "item": "egg yolk",
         "measurements": [

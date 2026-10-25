@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1½ cups all-purpose flour, spooned into measuring cup and leveled-off",
+      "raw": "1½ cups all-purpose flour, (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "all-purpose flour, spooned into measuring cup and leveled-off",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "section": "For the Cupcakes",
         "category": "Baking"
       }
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "¾ cup natural unsweetened cocoa powder, such as Hershey’s",
+      "raw": "¾ cup natural unsweetened cocoa powder, (such as Hershey’s)",
       "expected": {
         "item": "natural unsweetened cocoa powder",
         "measurements": [
@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "2 large eggs, lightly beaten",
+      "raw": "2 large eggs, (lightly beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -176,16 +176,16 @@
       "is_section_header": true
     },
     {
-      "raw": "8 ounces milk or semi-sweet chocolate, broken into small pieces (see note)",
+      "raw": "8 ounces milk or semi-sweet chocolate, (broken into small pieces (see note))",
       "expected": {
-        "item": "milk or semi-sweet chocolate, broken into small pieces",
+        "item": "milk or semi-sweet chocolate",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "see note",
+        "note": "broken into small pieces (see note)",
         "section": "For the Frosting",
         "category": "Baking"
       }
@@ -225,7 +225,7 @@
       }
     },
     {
-      "raw": "½ cup natural unsweetened cocoa powder, such as Hershey's",
+      "raw": "½ cup natural unsweetened cocoa powder, (such as Hershey's)",
       "expected": {
         "item": "natural unsweetened cocoa powder",
         "measurements": [

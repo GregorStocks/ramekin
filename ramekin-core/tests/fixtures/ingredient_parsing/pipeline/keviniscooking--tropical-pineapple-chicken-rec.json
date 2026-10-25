@@ -127,18 +127,18 @@
       }
     },
     {
-      "raw": "4 green onions ends trimmed, cut half",
+      "raw": "4 green onions (ends trimmed, cut half)",
       "expected": {
-        "item": "green onions ends trimmed, cut half",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "ends trimmed, cut half",
         "section": "Marinade/jerk Sauce",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -326,18 +326,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2 green onions tops only, chopped",
+      "raw": "2 green onions (tops only, chopped)",
       "expected": {
-        "item": "green onions tops only",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "tops only, chopped",
         "section": "Garnish",
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

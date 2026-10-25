@@ -12,21 +12,21 @@
       }
     },
     {
-      "raw": "20 oz cheese tortellini fresh",
+      "raw": "20 oz cheese tortellini (fresh)",
       "expected": {
-        "item": "cheese tortellini fresh",
+        "item": "cheese tortellini",
         "measurements": [
           {
             "amount": "20",
             "unit": "oz"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "fresh",
+        "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "1 pint baby tomatoes optional",
+      "raw": "1 pint baby tomatoes (optional)",
       "expected": {
         "item": "baby tomatoes",
         "measurements": [
@@ -132,7 +132,7 @@
       }
     },
     {
-      "raw": "¾ cup parmesan cheese divided",
+      "raw": "¾ cup parmesan cheese (divided)",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [

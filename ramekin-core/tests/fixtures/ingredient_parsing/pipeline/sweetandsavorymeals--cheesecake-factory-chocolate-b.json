@@ -22,18 +22,18 @@
       }
     },
     {
-      "raw": "1/4 cup brown sugar packed",
+      "raw": "1/4 cup brown sugar (packed)",
       "expected": {
-        "item": "brown sugar packed",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Chocolate Pudding",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "6 ounces semisweet Belgian chocolate chopped",
+      "raw": "6 ounces semisweet Belgian chocolate (chopped)",
       "expected": {
         "item": "semisweet Belgian chocolate",
         "measurements": [
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter cubed",
+      "raw": "1/2 cup unsalted butter (cubed)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "6 ounces Belgian dark chocolate melted",
+      "raw": "6 ounces Belgian dark chocolate (melted)",
       "expected": {
         "item": "Belgian dark chocolate",
         "measurements": [
@@ -236,18 +236,18 @@
       }
     },
     {
-      "raw": "1 cup brown sugar packed",
+      "raw": "1 cup brown sugar (packed)",
       "expected": {
-        "item": "brown sugar packed",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Cake Layers",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -296,18 +296,18 @@
       }
     },
     {
-      "raw": "2 large eggs room temperature",
+      "raw": "2 large eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Cake Layers",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -315,7 +315,7 @@
       "is_section_header": true
     },
     {
-      "raw": "16 ounces Belgian semisweet chocolate chopped",
+      "raw": "16 ounces Belgian semisweet chocolate (chopped)",
       "expected": {
         "item": "Belgian semisweet chocolate",
         "measurements": [
@@ -330,7 +330,7 @@
       }
     },
     {
-      "raw": "1 cup unsalted butter cubed",
+      "raw": "1 cup unsalted butter (cubed)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -404,16 +404,16 @@
       }
     },
     {
-      "raw": "1/2 cup toasted peanuts or almonds",
+      "raw": "1/2 cup toasted peanuts (or almonds)",
       "expected": {
-        "item": "toasted peanuts or almonds",
+        "item": "toasted peanuts",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or almonds",
         "section": "Garnish",
         "category": "Nuts & Dried Fruit"
       }

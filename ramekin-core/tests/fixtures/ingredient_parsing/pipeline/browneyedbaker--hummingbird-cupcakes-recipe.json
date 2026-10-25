@@ -102,9 +102,9 @@
       }
     },
     {
-      "raw": "1 ⅓ cups  (200 g) mashed banana, 2 to 3 large bananas",
+      "raw": "1 ⅓ cups (200 g) mashed banana, (2 to 3 large bananas)",
       "expected": {
-        "item": "mashed banana, 2 to 3 large bananas",
+        "item": "mashed banana",
         "measurements": [
           {
             "amount": "1.33",
@@ -115,13 +115,13 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 to 3 large bananas",
         "section": "Cupcakes",
         "category": "Produce"
       }
     },
     {
-      "raw": "⅔ cup  (110 g) crushed pineapple, drained (about half of a 20-ounce can)",
+      "raw": "⅔ cup (110 g) crushed pineapple, (drained (about half of a 20-ounce can))",
       "expected": {
         "item": "crushed pineapple",
         "measurements": [
@@ -134,13 +134,13 @@
             "unit": "g"
           }
         ],
-        "note": "about half of a 20-ounce can, drained",
+        "note": "drained (about half of a 20-ounce can)",
         "section": "Cupcakes",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "⅔ cup  (78 g) walnuts or pecans, toasted and chopped",
+      "raw": "⅔ cup (78 g) walnuts or pecans, (toasted and chopped)",
       "expected": {
         "item": "walnuts or pecans",
         "measurements": [
@@ -159,9 +159,9 @@
       }
     },
     {
-      "raw": "⅔ cup  (53.33 g) shredded coconut, sweetened or unsweetened will work",
+      "raw": "⅔ cup (53.33 g) shredded coconut, (sweetened or unsweetened will work)",
       "expected": {
-        "item": "shredded coconut, sweetened or unsweetened will work",
+        "item": "shredded coconut",
         "measurements": [
           {
             "amount": "0.67",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sweetened or unsweetened will work",
         "section": "Cupcakes",
         "category": "Produce"
       }
@@ -197,7 +197,7 @@
       }
     },
     {
-      "raw": "11 tablespoons   unsalted butter, melted and cooled",
+      "raw": "11 tablespoons unsalted butter, (melted and cooled)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -269,7 +269,7 @@
       }
     },
     {
-      "raw": "½ cup  (113.5 g) unsalted butter, at room temperature",
+      "raw": "½ cup (113.5 g) unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 medium  onion, roughly chopped",
+      "raw": "1 medium onion, (roughly chopped)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -32,7 +32,7 @@
       }
     },
     {
-      "raw": "2 ribs celery, roughly chopped",
+      "raw": "2 ribs celery, (roughly chopped)",
       "expected": {
         "item": "ribs celery",
         "measurements": [
@@ -47,7 +47,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic, peeled and smashed",
+      "raw": "3 cloves garlic, (peeled and smashed)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -111,7 +111,7 @@
       }
     },
     {
-      "raw": "2 teaspoon salt, divided",
+      "raw": "2 teaspoon salt, (divided)",
       "expected": {
         "item": "salt",
         "measurements": [
@@ -156,7 +156,7 @@
       }
     },
     {
-      "raw": "2 pounds shrimp, peeled and deveined",
+      "raw": "2 pounds shrimp, (peeled and deveined)",
       "expected": {
         "item": "shrimp",
         "measurements": [
@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "6 tablespoon salted butter, divided",
+      "raw": "6 tablespoon salted butter, (divided)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -201,7 +201,7 @@
       }
     },
     {
-      "raw": "4 shallots, minced",
+      "raw": "4 shallots, (minced)",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -216,7 +216,7 @@
       }
     },
     {
-      "raw": "6 cloves garlic, minced",
+      "raw": "6 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -231,7 +231,7 @@
       }
     },
     {
-      "raw": "2 cups arborio rice, do not wash",
+      "raw": "2 cups arborio rice, (do not wash)",
       "expected": {
         "item": "arborio rice",
         "measurements": [
@@ -261,7 +261,7 @@
       }
     },
     {
-      "raw": "2 cups grated parmesan cheese, divided",
+      "raw": "2 cups grated parmesan cheese, (divided)",
       "expected": {
         "item": "grated parmesan cheese",
         "measurements": [
@@ -276,21 +276,21 @@
       }
     },
     {
-      "raw": "Fresh parsley, to garnish",
+      "raw": "Fresh parsley, (to garnish)",
       "expected": {
-        "item": "Fresh parsley, to garnish",
+        "item": "Fresh parsley",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "For the Parmesan Risotto with Shrimp",
         "category": "Produce"
       }
     },
     {
-      "raw": "lemon wedges, for serving (at least 3-4 lemons)",
+      "raw": "lemon wedges, (for serving (at least 3-4 lemons))",
       "expected": {
         "item": "lemon wedges",
         "measurements": [],
-        "note": "at least 3-4 lemons, for serving",
+        "note": "for serving (at least 3-4 lemons)",
         "section": "For the Parmesan Risotto with Shrimp",
         "category": "Produce"
       }

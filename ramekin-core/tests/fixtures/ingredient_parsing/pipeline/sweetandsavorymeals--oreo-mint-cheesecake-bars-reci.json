@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter melted",
+      "raw": "1/2 cup unsalted butter (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -41,7 +41,7 @@
       "is_section_header": true
     },
     {
-      "raw": "24 oz cream cheese softened",
+      "raw": "24 oz cream cheese (softened)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -86,18 +86,18 @@
       }
     },
     {
-      "raw": "2 large eggs room temperature",
+      "raw": "2 large eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Mint Filling",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -135,18 +135,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2/3 cup heavy cream cold",
+      "raw": "2/3 cup heavy cream (cold)",
       "expected": {
-        "item": "heavy cream cold",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cold",
         "section": "Whipped Cream",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

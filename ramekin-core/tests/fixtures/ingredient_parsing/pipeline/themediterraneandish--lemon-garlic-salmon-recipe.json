@@ -47,7 +47,7 @@
       }
     },
     {
-      "raw": "Chopped parsley, for garnish",
+      "raw": "Chopped parsley, (for garnish)",
       "expected": {
         "item": "Chopped parsley",
         "measurements": [],
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "5 garlic cloves, chopped",
+      "raw": "5 garlic cloves, (chopped)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

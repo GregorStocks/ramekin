@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 ounces cream cheese, preferably Philadelphia brand",
+      "raw": "8 ounces cream cheese, (preferably Philadelphia brand)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "4 ounces bittersweet or semisweet chocolate, finely chopped",
+      "raw": "4 ounces bittersweet or semisweet chocolate, (finely chopped)",
       "expected": {
         "item": "bittersweet or semisweet chocolate",
         "measurements": [
@@ -221,16 +221,16 @@
       }
     },
     {
-      "raw": "¾ cup all-purpose flour, spooned into measuring cup and leveled-off with a knife",
+      "raw": "¾ cup all-purpose flour, (spooned into measuring cup and leveled-off with a knife)",
       "expected": {
-        "item": "all-purpose flour, spooned into measuring cup and leveled-off with a knife",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off with a knife",
         "section": "For the Brownie Batter",
         "category": "Baking"
       }

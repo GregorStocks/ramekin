@@ -3,13 +3,21 @@
   "recipe_slug": "2022-09-curried-chicken-chickp",
   "ingredients": [
     {
-      "raw": "8 oz  / 226 g chicken breasts, 1 large or 2 small",
+      "raw": "8 oz / 226 g chicken breasts, (1 large or 2 small)",
       "expected": {
-        "item": "chicken breasts, 1 large or 2 small",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2",
+            "unit": "small"
           },
           {
             "amount": "226",
@@ -62,7 +70,7 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup   drained canned chickpeas, coarsely chopped",
+      "raw": "½ cup drained canned chickpeas, (coarsely chopped)",
       "expected": {
         "item": "drained canned chickpeas",
         "measurements": [
@@ -96,7 +104,7 @@
       }
     },
     {
-      "raw": "1 teaspoon   Vadouvan curry powder, or to taste",
+      "raw": "1 teaspoon Vadouvan curry powder, (or to taste)",
       "expected": {
         "item": "Vadouvan curry powder",
         "measurements": [
@@ -145,7 +153,7 @@
       }
     },
     {
-      "raw": "1   small cucumber, cut into 1/4-inch square strips",
+      "raw": "1 small cucumber, (cut into 1/4-inch square strips)",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -160,7 +168,7 @@
       }
     },
     {
-      "raw": "1   medium bell pepper or 3-4 small sweet peppers, cored, seeded and thinly sliced",
+      "raw": "1 medium bell pepper or 3-4 small sweet peppers, (cored, seeded and thinly sliced)",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -169,13 +177,13 @@
             "unit": "medium"
           }
         ],
-        "note": "or 3-4 small sweet peppers; cored, seeded and thinly sliced",
+        "note": "or 3-4 small sweet peppers (cored, seeded and thinly sliced)",
         "section": "To Assemble",
         "category": "Produce"
       }
     },
     {
-      "raw": "¼ cup  / 35 g toasted almonds, coarsely chopped",
+      "raw": "¼ cup / 35 g toasted almonds, (coarsely chopped)",
       "expected": {
         "item": "toasted almonds",
         "measurements": [

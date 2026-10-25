@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 (15-ounce) can salmon drained (wild-caught if possible)",
+      "raw": "1 (15-ounce) can salmon (drained (wild-caught if possible))",
       "expected": {
         "item": "salmon",
         "measurements": [
@@ -26,7 +26,7 @@
             "unit": "can"
           }
         ],
-        "note": "15-ounce, wild-caught if possible, drained",
+        "note": "15-ounce, drained (wild-caught if possible)",
         "category": "Meat & Seafood"
       }
     },
@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "¼ cup nonfat plain Greek yogurt or sour cream",
+      "raw": "¼ cup nonfat plain Greek yogurt (or sour cream)",
       "expected": {
-        "item": "nonfat plain Greek yogurt or sour cream",
+        "item": "nonfat plain Greek yogurt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or sour cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "2 tablespoons finely chopped fresh parsley plus additional for serving",
+      "raw": "2 tablespoons finely chopped fresh parsley (plus additional for serving)",
       "expected": {
         "item": "finely chopped fresh parsley",
         "measurements": [
@@ -143,17 +143,17 @@
       }
     },
     {
-      "raw": "1–2 tablespoons extra-virgin olive oil for cooking the patties",
+      "raw": "1–2 tablespoons extra-virgin olive oil (for cooking the patties)",
       "expected": {
-        "item": "extra-virgin olive oil for cooking the patties",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "for cooking the patties",
+        "category": "Oils & Vinegars"
       }
     },
     {

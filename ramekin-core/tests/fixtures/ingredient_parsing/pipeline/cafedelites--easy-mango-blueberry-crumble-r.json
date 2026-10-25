@@ -22,33 +22,33 @@
       }
     },
     {
-      "raw": "2 mangos large, sliced",
+      "raw": "2 mangos (large, sliced)",
       "expected": {
-        "item": "mangos large",
+        "item": "mangos",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced",
+        "note": "large, sliced",
         "section": "Fruit Mix",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1/2 tablespoon flour light spelt, all purpose or plain)",
+      "raw": "1/2 tablespoon flour (light spelt, all purpose or plain))",
       "expected": {
-        "item": "flour light spelt, all purpose or plain)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "light spelt, all purpose or plain",
         "section": "Fruit Mix",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -67,16 +67,16 @@
       }
     },
     {
-      "raw": "1 tablespoon light brown sugar or coconut sugar",
+      "raw": "1 tablespoon light brown sugar (or coconut sugar)",
       "expected": {
-        "item": "light brown sugar or coconut sugar",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or coconut sugar",
         "section": "Fruit Mix",
         "category": "Baking"
       }
@@ -101,33 +101,33 @@
       }
     },
     {
-      "raw": "1/3 cup plain flour or all purpose flour, light spelt to almond flour are fine to use",
+      "raw": "1/3 cup plain flour (or all purpose flour, light spelt to almond flour are fine to use)",
       "expected": {
-        "item": "plain flour or all purpose flour, light spelt to almond flour are fine to use",
+        "item": "plain flour",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or all purpose flour, light spelt to almond flour are fine to use",
         "section": "Crumble",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons shredded coconut finely, optional",
+      "raw": "2 tablespoons shredded coconut (finely, optional)",
       "expected": {
-        "item": "shredded coconut finely",
+        "item": "shredded coconut",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "finely, optional",
         "section": "Crumble",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -146,31 +146,31 @@
       }
     },
     {
-      "raw": "3 tablespoons reduced fat butter melted, or coconut oil",
+      "raw": "3 tablespoons reduced fat butter (melted, or coconut oil)",
       "expected": {
-        "item": "reduced fat butter melted, or coconut oil",
+        "item": "reduced fat butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "melted, or coconut oil",
         "section": "Crumble",
-        "category": "Oils & Vinegars"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 tablespoon light brown sugar or coconut sugar",
+      "raw": "1 tablespoon light brown sugar (or coconut sugar)",
       "expected": {
-        "item": "light brown sugar or coconut sugar",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or coconut sugar",
         "section": "Crumble",
         "category": "Baking"
       }

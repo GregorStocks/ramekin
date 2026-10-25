@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 teaspoon   Meyer lemon zest, from 1 lemon (save the rest of the zest for the mousse layer later)",
+      "raw": "1 teaspoon Meyer lemon zest, (from 1 lemon (save the rest of the zest for the mousse layer later))",
       "expected": {
         "item": "Meyer lemon zest",
         "measurements": [
@@ -16,13 +16,13 @@
             "unit": "tsp"
           }
         ],
-        "note": "save the rest of the zest for the mousse layer later, from 1 lemon",
+        "note": "from 1 lemon (save the rest of the zest for the mousse layer later)",
         "section": "For Lemon Curd",
         "category": "Produce"
       }
     },
     {
-      "raw": "⅓ cup  / 80 g Meyer lemon juice, from about 3 lemons",
+      "raw": "⅓ cup / 80 g Meyer lemon juice, (from about 3 lemons)",
       "expected": {
         "item": "Meyer lemon juice",
         "measurements": [
@@ -109,7 +109,7 @@
       }
     },
     {
-      "raw": "2 tablespoons  / 28 g salted butter, cut into small cubes",
+      "raw": "2 tablespoons / 28 g salted butter, (cut into small cubes)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -128,7 +128,7 @@
       }
     },
     {
-      "raw": "yellow food coloring, optional",
+      "raw": "yellow food coloring, (optional)",
       "expected": {
         "item": "yellow food coloring",
         "measurements": [],
@@ -180,7 +180,7 @@
       }
     },
     {
-      "raw": "½ cup  / 50 g powdered sugar, plus more for dusting",
+      "raw": "½ cup / 50 g powdered sugar, (plus more for dusting)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -252,7 +252,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon   pistachio extract, optional",
+      "raw": "¼ teaspoon pistachio extract, (optional)",
       "expected": {
         "item": "pistachio extract",
         "measurements": [
@@ -267,7 +267,7 @@
       }
     },
     {
-      "raw": "1 tablespoon   chopped pistachios, for sprinkling",
+      "raw": "1 tablespoon chopped pistachios, (for sprinkling)",
       "expected": {
         "item": "chopped pistachios",
         "measurements": [
@@ -301,7 +301,7 @@
       }
     },
     {
-      "raw": "4 large   egg yolks, at room temperature",
+      "raw": "4 large egg yolks, (at room temperature)",
       "expected": {
         "item": "egg yolks",
         "measurements": [
@@ -373,7 +373,7 @@
       }
     },
     {
-      "raw": "1 tablespoon   Meyer lemon zest, from 2 large lemons",
+      "raw": "1 tablespoon Meyer lemon zest, (from 2 large lemons)",
       "expected": {
         "item": "Meyer lemon zest",
         "measurements": [
@@ -517,7 +517,7 @@
       }
     },
     {
-      "raw": "7 ounces  / 200 g good quality white chocolate, finely chopped",
+      "raw": "7 ounces / 200 g good quality white chocolate, (finely chopped)",
       "expected": {
         "item": "white chocolate",
         "measurements": [
@@ -536,17 +536,17 @@
       }
     },
     {
-      "raw": "food coloring, as desired",
+      "raw": "food coloring, (as desired)",
       "expected": {
-        "item": "food coloring, as desired",
+        "item": "food coloring",
         "measurements": [],
-        "note": null,
+        "note": "as desired",
         "section": "For Mirror Glaze",
         "category": "Baking"
       }
     },
     {
-      "raw": "chopped pistachios, for garnish",
+      "raw": "chopped pistachios, (for garnish)",
       "expected": {
         "item": "chopped pistachios",
         "measurements": [],

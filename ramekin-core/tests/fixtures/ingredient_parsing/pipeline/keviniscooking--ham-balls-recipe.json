@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 white onion grated",
+      "raw": "1/2 white onion (grated)",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "2 large eggs beaten",
+      "raw": "2 large eggs (beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -137,18 +137,22 @@
       "is_section_header": true
     },
     {
-      "raw": "1 can condensed tomato soup 10.75 oz",
+      "raw": "1 can condensed tomato soup (10.75 oz)",
       "expected": {
-        "item": "condensed tomato soup 10.75 oz",
+        "item": "condensed tomato soup",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
+          },
+          {
+            "amount": "10.75",
+            "unit": "oz"
           }
         ],
         "note": null,
         "section": "Sauce",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {

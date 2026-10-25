@@ -3,17 +3,17 @@
   "recipe_slug": "grilled-asparagus-recipe",
   "ingredients": [
     {
-      "raw": "1 pound asparagus wood ends removed",
+      "raw": "1 pound asparagus (wood ends removed)",
       "expected": {
-        "item": "asparagus wood ends",
+        "item": "asparagus",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "removed",
-        "category": "Other"
+        "note": "wood ends removed",
+        "category": "Produce"
       }
     },
     {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tablespoon garlic minced",
+      "raw": "1 tablespoon garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -45,17 +45,17 @@
       }
     },
     {
-      "raw": "3/4 teaspoon salt to season",
+      "raw": "3/4 teaspoon salt (to season)",
       "expected": {
-        "item": "salt to season",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "to season",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -77,31 +77,31 @@
       "is_section_header": true
     },
     {
-      "raw": "2-4 tablespoons parmesan cheese fresh grated",
+      "raw": "2-4 tablespoons parmesan cheese (fresh grated)",
       "expected": {
-        "item": "parmesan cheese fresh",
+        "item": "parmesan cheese",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "tbsp"
           }
         ],
-        "note": "grated",
+        "note": "fresh grated",
         "section": "Optional Serving Suggestion",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
-      "raw": "1 squeeze lemon juice freshly squeezed, adjust to your tastes",
+      "raw": "1 squeeze lemon juice (freshly squeezed, adjust to your tastes)",
       "expected": {
-        "item": "squeeze lemon juice freshly squeezed, adjust to your tastes",
+        "item": "squeeze lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "freshly squeezed, adjust to your tastes",
         "section": "Optional Serving Suggestion",
         "category": "Other"
       }

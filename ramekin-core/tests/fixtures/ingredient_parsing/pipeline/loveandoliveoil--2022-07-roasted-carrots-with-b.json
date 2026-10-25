@@ -3,7 +3,7 @@
   "recipe_slug": "2022-07-roasted-carrots-with-b",
   "ingredients": [
     {
-      "raw": "16 oz  / 450 g carrots, with greens (from 1 large bunch, about 12-14 small-ish carrots)",
+      "raw": "16 oz / 450 g carrots, (with greens (from 1 large bunch, about 12-14 small-ish carrots))",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "from 1 large bunch, about 12-14 small-ish carrots, with greens",
+        "note": "with greens (from 1 large bunch, about 12-14 small-ish carrots)",
         "category": "Produce"
       }
     },
@@ -43,7 +43,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 ½ cups  / 50 g lightly packed carrot greens, large stems removed",
+      "raw": "1 ½ cups / 50 g lightly packed carrot greens, (large stems removed)",
       "expected": {
         "item": "carrot greens",
         "measurements": [
@@ -81,7 +81,7 @@
       }
     },
     {
-      "raw": "4   large garlic cloves, coarsely chopped",
+      "raw": "4 large garlic cloves, (coarsely chopped)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "2 tablespoons   pine nuts, lightly toasted (plus more for topping, if desired)",
+      "raw": "2 tablespoons pine nuts, (lightly toasted (plus more for topping, if desired))",
       "expected": {
         "item": "pine nuts",
         "measurements": [
@@ -105,7 +105,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more for topping, if desired, lightly toasted",
+        "note": "lightly toasted (plus more for topping, if desired)",
         "section": "For Pesto",
         "category": "Nuts & Dried Fruit"
       }

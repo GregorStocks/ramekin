@@ -131,31 +131,31 @@
       }
     },
     {
-      "raw": "1 1/4 cups all-purpose or plain flour",
+      "raw": "1 1/4 cups all-purpose (or plain flour)",
       "expected": {
-        "item": "all-purpose or plain flour",
+        "item": "all-purpose",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or plain flour",
         "section": "Churros",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 eggs at room temperature",
+      "raw": "2 eggs (at room temperature)",
       "expected": {
-        "item": "eggs at room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Churros",
         "category": "Dairy & Eggs"
       }

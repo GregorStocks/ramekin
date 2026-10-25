@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "1/4 cup unsalted butter melted",
+      "raw": "1/4 cup unsalted butter (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -101,18 +101,18 @@
       "is_section_header": true
     },
     {
-      "raw": "32 ounces full fat cream cheese 4 packages at room temperature",
+      "raw": "32 ounces full fat cream cheese (4 packages at room temperature)",
       "expected": {
-        "item": "full fat cream cheese 4 packages at room temperature",
+        "item": "full fat cream cheese",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "4 packages at room temperature",
         "section": "Filling",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
@@ -146,18 +146,18 @@
       }
     },
     {
-      "raw": "3 eggs room temperature",
+      "raw": "3 eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Filling",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

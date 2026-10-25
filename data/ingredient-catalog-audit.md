@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60115 | 88 | 53815/60027 (89.7%) | 51552/60027 (85.9%) | 1630/5408 (30.1%) | n/a (no servings) | 31816/37446 (85.0%) | 55160/60115 (91.8%) |
+| Pipeline fixtures | 5408 | 60116 | 92 | 54316/60024 (90.5%) | 52031/60024 (86.7%) | 1695/5408 (31.3%) | n/a (no servings) | 32037/37441 (85.6%) | 55697/60116 (92.6%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5178/5357 (96.7%) | 4850/5357 (90.5%) | 199/462 (43.1%) | n/a (no servings) | 2552/2893 (88.2%) | 5280/5379 (98.2%) |
-| Pipeline snapshots | 445 | 5177 | 17 | 5010/5160 (97.1%) | 4751/5160 (92.1%) | 204/445 (45.8%) | 100/445 (22.5%) | 2527/2853 (88.6%) | 5098/5177 (98.5%) |
+| Pipeline snapshots | 445 | 5177 | 17 | 5009/5160 (97.1%) | 4751/5160 (92.1%) | 204/445 (45.8%) | 100/445 (22.5%) | 2528/2853 (88.6%) | 5098/5177 (98.5%) |
 
 ## Pipeline fixtures
 
@@ -24,37 +24,37 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Reason | Lines | Share of lines |
 | --- | ---: | ---: |
-| Ambiguous ingredient | 483 | 0.8% |
+| Ambiguous ingredient | 514 | 0.9% |
 | Frying oil: only part of it is absorbed | 96 | 0.2% |
-| Missing density for this food | 27 | 0.0% |
-| Missing quantity | 1860 | 3.1% |
-| No supported nutrition match | 5729 | 9.5% |
-| Several ingredients share one amount | 55 | 0.1% |
-| Unsupported or missing quantity | 79 | 0.1% |
-| Unsupported quantity unit | 146 | 0.2% |
+| Missing density for this food | 26 | 0.0% |
+| Missing quantity | 1879 | 3.1% |
+| No supported nutrition match | 5194 | 8.6% |
+| Several ingredients share one amount | 56 | 0.1% |
+| Unsupported or missing quantity | 80 | 0.1% |
+| Unsupported quantity unit | 148 | 0.2% |
 
 ### Uncounted ingredients per recipe
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 2374 | 43.9% |
-| 1 | 1687 | 31.2% |
-| 2 | 783 | 14.5% |
-| 3 | 342 | 6.3% |
-| 4-5 | 179 | 3.3% |
-| 6+ | 43 | 0.8% |
+| 0 | 2458 | 45.5% |
+| 1 | 1723 | 31.9% |
+| 2 | 762 | 14.1% |
+| 3 | 312 | 5.8% |
+| 4-5 | 127 | 2.3% |
+| 6+ | 26 | 0.5% |
 
-Estimate status with at most 3 uncounted: Complete 43.7%, Insufficient 5.0%, Partial 51.3%
+Estimate status with at most 3 uncounted: Complete 45.2%, Insufficient 3.8%, Partial 51.0%
 
-Weights to estimate (distinct food and unit pairs the catalog can't weigh): 25
+Weights to estimate (distinct food and unit pairs the catalog can't weigh): 24
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 6703 | `99837fa5c957` |
-| Density | 2889 | `4631ab219e9e` |
-| Shopping category | 4753 | `a1586f94961f` |
+| Nutrition (all failures) | 6214 | `cef625203990` |
+| Density | 2642 | `6ad9a48d0a4f` |
+| Shopping category | 4278 | `0abbbb9d8e71` |
 
 ## Paprika fixtures
 
@@ -100,10 +100,10 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 1
 
 | Reason | Lines | Share of lines |
 | --- | ---: | ---: |
-| Ambiguous ingredient | 64 | 1.2% |
+| Ambiguous ingredient | 65 | 1.3% |
 | Frying oil: only part of it is absorbed | 16 | 0.3% |
 | Missing density for this food | 6 | 0.1% |
-| Missing quantity | 201 | 3.9% |
+| Missing quantity | 200 | 3.9% |
 | No supported nutrition match | 86 | 1.7% |
 | Several ingredients share one amount | 8 | 0.2% |
 | Unsupported or missing quantity | 9 | 0.2% |
@@ -128,9 +128,9 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 0
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 342 | `d37ede55d49e` |
-| Density | 182 | `019b033db1b4` |
-| Shopping category | 78 | `0185bd092549` |
+| Nutrition (all failures) | 341 | `c4abdf48ba46` |
+| Density | 181 | `0bbe5ebeb32c` |
+| Shopping category | 78 | `1448521c835c` |
 
 ## Shopping-list corpus
 

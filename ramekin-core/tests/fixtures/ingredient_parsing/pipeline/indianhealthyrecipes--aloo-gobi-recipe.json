@@ -75,7 +75,7 @@
       }
     },
     {
-      "raw": "½ tablespoon (½ inch) ginger peeled & minced or grated",
+      "raw": "½ tablespoon (½ inch) ginger (peeled & minced or grated)",
       "expected": {
         "item": "ginger",
         "measurements": [
@@ -89,35 +89,35 @@
       }
     },
     {
-      "raw": "½ tablespoon (3 to 4) garlic  cloves, peeled & minced or pressed",
+      "raw": "½ tablespoon (3 to 4) garlic (cloves, peeled & minced or pressed)",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": "3 to 4, peeled & minced or pressed",
+        "note": "3 to 4, cloves, peeled & minced or pressed",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 green chili slit or chopped (optional)",
+      "raw": "1 green chili (slit or chopped (optional))",
       "expected": {
-        "item": "green chili slit or chopped",
+        "item": "green chili",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
-        "category": "Other"
+        "note": "slit or chopped (optional)",
+        "category": "Produce"
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves  chopped finely",
+      "raw": "2 tablespoons coriander leaves (chopped finely)",
       "expected": {
         "item": "coriander leaves",
         "measurements": [

@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 small green cabbage, thinly sliced",
+      "raw": "1 small green cabbage, (thinly sliced)",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -22,22 +22,22 @@
       }
     },
     {
-      "raw": "2 carrots, shaved with a vegetable peeler",
+      "raw": "2 carrots, (shaved with a vegetable peeler)",
       "expected": {
-        "item": "carrots, shaved with a vegetable peeler",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shaved with a vegetable peeler",
         "section": "Slaw",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 red onion, thinly sliced",
+      "raw": "1 red onion, (thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "1 garlic clove, minced",
+      "raw": "1 garlic clove, (minced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [

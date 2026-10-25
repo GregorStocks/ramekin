@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1  1/2 cups onion, chopped",
+      "raw": "1 1/2 cups onion, (chopped)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic, minced",
+      "raw": "4 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "4 slices hearty white sandwich bread,  torn into small pieces",
+      "raw": "4 slices hearty white sandwich bread, (torn into small pieces)",
       "expected": {
         "item": "hearty white sandwich bread",
         "measurements": [
@@ -97,7 +97,7 @@
       }
     },
     {
-      "raw": "1 cup Parmesan cheese, grated",
+      "raw": "1 cup Parmesan cheese, (grated)",
       "expected": {
         "item": "Parmesan cheese",
         "measurements": [
@@ -157,22 +157,22 @@
       }
     },
     {
-      "raw": "2  1/2 pounds ground beef, 80/20",
+      "raw": "2 1/2 pounds ground beef, (80/20)",
       "expected": {
-        "item": "ground beef, 80/20",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "80/20",
         "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1 large  egg, beaten",
+      "raw": "1 large egg, (beaten)",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -206,7 +206,7 @@
       }
     },
     {
-      "raw": "1 cup onion, chopped",
+      "raw": "1 cup onion, (chopped)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -221,7 +221,7 @@
       }
     },
     {
-      "raw": "1 tablespoon garlic, minced",
+      "raw": "1 tablespoon garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "1/4 cup carrot,  finely grated",
+      "raw": "1/4 cup carrot, (finely grated)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -345,16 +345,16 @@
       "is_section_header": true
     },
     {
-      "raw": "16 ounces spaghetti, cooked per package instructions",
+      "raw": "16 ounces spaghetti, (cooked per package instructions)",
       "expected": {
-        "item": "spaghetti, cooked per package instructions",
+        "item": "spaghetti",
         "measurements": [
           {
             "amount": "16",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "cooked per package instructions",
         "section": "Pasta",
         "category": "Pasta & Rice"
       }

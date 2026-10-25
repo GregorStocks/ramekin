@@ -97,18 +97,18 @@
       }
     },
     {
-      "raw": "¼ cup butter melted and semi-cooled",
+      "raw": "¼ cup butter (melted and semi-cooled)",
       "expected": {
-        "item": "butter melted and semi-cooled",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "melted and semi-cooled",
         "section": "Cake Ingredients",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -161,7 +161,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1¼ cups butter melted",
+      "raw": "1¼ cups butter (melted)",
       "expected": {
         "item": "butter",
         "measurements": [

@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "25 g onion finely diced",
+      "raw": "25 g onion (finely diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -37,18 +37,18 @@
       }
     },
     {
-      "raw": "4 tbsp Japanese mayonnaise I use Kewpie Mayonnaise",
+      "raw": "4 tbsp Japanese mayonnaise (I use Kewpie Mayonnaise)",
       "expected": {
-        "item": "Japanese mayonnaise I use Kewpie Mayonnaise",
+        "item": "Japanese mayonnaise",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I use Kewpie Mayonnaise",
         "section": "Tartar Sauce",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -116,31 +116,31 @@
       "is_section_header": true
     },
     {
-      "raw": "6 black tiger shrimp or similar large prawn",
+      "raw": "6 black tiger shrimp (or similar large prawn)",
       "expected": {
-        "item": "black tiger shrimp or similar large prawn",
+        "item": "black tiger shrimp",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or similar large prawn",
         "section": "Ebi Fry",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "6 bamboo skewers longer than the prawns",
+      "raw": "6 bamboo skewers (longer than the prawns)",
       "expected": {
-        "item": "bamboo skewers longer than the prawns",
+        "item": "bamboo skewers",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "longer than the prawns",
         "section": "Ebi Fry",
         "category": "Other"
       }
@@ -221,7 +221,7 @@
       }
     },
     {
-      "raw": "cooking oil  for deep frying",
+      "raw": "cooking oil (for deep frying)",
       "expected": {
         "item": "cooking oil",
         "measurements": [],

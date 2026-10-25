@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 1/2 cups semi-sweet chocolate chips divided",
+      "raw": "1 1/2 cups semi-sweet chocolate chips (divided)",
       "expected": {
         "item": "semi-sweet chocolate chips",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/4 cup butter softened",
+      "raw": "1/4 cup butter (softened)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -73,17 +73,17 @@
       }
     },
     {
-      "raw": "2 eggs room temperature",
+      "raw": "2 eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -165,7 +165,7 @@
       }
     },
     {
-      "raw": "1 tbsp mini chocolate chips optional",
+      "raw": "1 tbsp mini chocolate chips (optional)",
       "expected": {
         "item": "mini chocolate chips",
         "measurements": [

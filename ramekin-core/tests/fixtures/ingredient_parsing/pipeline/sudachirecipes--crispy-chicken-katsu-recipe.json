@@ -101,16 +101,16 @@
       "is_section_header": true
     },
     {
-      "raw": "600 g boneless chicken thigh skin-on (or chicken breast)",
+      "raw": "600 g boneless chicken thigh (skin-on (or chicken breast))",
       "expected": {
-        "item": "boneless chicken thigh skin-on",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "600",
             "unit": "g"
           }
         ],
-        "note": "or chicken breast",
+        "note": "skin-on (or chicken breast)",
         "section": "Chicken Katsu",
         "category": "Meat & Seafood"
       }
@@ -126,7 +126,7 @@
       }
     },
     {
-      "raw": "45 g all-purpose flour for coating",
+      "raw": "45 g all-purpose flour (for coating)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -141,18 +141,18 @@
       }
     },
     {
-      "raw": "100 g panko breadcrumbs coarse flakes or coarse homemade crumbs",
+      "raw": "100 g panko breadcrumbs (coarse flakes or coarse homemade crumbs)",
       "expected": {
-        "item": "panko breadcrumbs coarse flakes or coarse homemade crumbs",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "coarse flakes or coarse homemade crumbs",
         "section": "Chicken Katsu",
-        "category": "Other"
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -186,26 +186,26 @@
       }
     },
     {
-      "raw": "100 g all-purpose flour for the batter",
+      "raw": "100 g all-purpose flour (for the batter)",
       "expected": {
-        "item": "all-purpose flour for the batter",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for the batter",
         "section": "Chicken Katsu",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "cooking oil neutral, high smoke point",
+      "raw": "cooking oil (neutral, high smoke point)",
       "expected": {
-        "item": "cooking oil neutral, high smoke point",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "neutral, high smoke point",
         "section": "Chicken Katsu",
         "category": "Oils & Vinegars"
       }

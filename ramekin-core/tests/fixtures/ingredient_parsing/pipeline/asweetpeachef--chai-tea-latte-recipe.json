@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 cinnamon sticks, broken into pieces",
+      "raw": "2 cinnamon sticks, (broken into pieces)",
       "expected": {
-        "item": "cinnamon sticks, broken into pieces",
+        "item": "cinnamon sticks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "broken into pieces",
         "section": "For the Chai Tea",
         "category": "Spices & Seasonings"
       }
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "1 2- inch piece fresh ginger thinly sliced",
+      "raw": "1 2- inch piece fresh ginger (thinly sliced)",
       "expected": {
         "item": "fresh ginger",
         "measurements": [
@@ -112,7 +112,7 @@
       }
     },
     {
-      "raw": "2 tablespoon loose-leaf black tea or 6 black tea bags",
+      "raw": "2 tablespoon loose-leaf black tea (or 6 black tea bags)",
       "expected": {
         "item": "loose-leaf black tea",
         "measurements": [
@@ -206,7 +206,7 @@
       }
     },
     {
-      "raw": "¾ cup full-fat coconut milk, at room temperature",
+      "raw": "¾ cup full-fat coconut milk, (at room temperature)",
       "expected": {
         "item": "full-fat coconut milk",
         "measurements": [

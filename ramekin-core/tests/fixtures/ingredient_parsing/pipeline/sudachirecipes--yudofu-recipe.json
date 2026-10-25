@@ -59,12 +59,12 @@
       }
     },
     {
-      "raw": "finely chopped green onions to garnish",
+      "raw": "finely chopped green onions (to garnish)",
       "expected": {
-        "item": "finely chopped green onions to garnish",
+        "item": "finely chopped green onions",
         "measurements": [],
-        "note": null,
-        "category": "Other"
+        "note": "to garnish",
+        "category": "Produce"
       }
     },
     {

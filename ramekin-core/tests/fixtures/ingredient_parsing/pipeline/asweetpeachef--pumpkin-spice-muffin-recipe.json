@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "⅓ cup vegetable oil plus more if greasing muffin tin",
+      "raw": "⅓ cup vegetable oil (plus more if greasing muffin tin)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -206,7 +206,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 tablespoon unsalted butter softened",
+      "raw": "4 tablespoon unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -221,18 +221,22 @@
       }
     },
     {
-      "raw": "4 oz cream cheese ½ package, softened",
+      "raw": "4 oz cream cheese (½ package, softened)",
       "expected": {
-        "item": "cream cheese 1/2 package",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "package"
           }
         ],
-        "note": "softened",
+        "note": "1/2 package, softened",
         "section": "For the Cream Cheese Frosting",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {

@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "4 chicken cutlets, or 2 large chicken breasts sliced horizontally into 4 cutlets",
+      "raw": "4 chicken cutlets, (or 2 large chicken breasts sliced horizontally into 4 cutlets)",
       "expected": {
         "item": "chicken cutlets",
         "measurements": [
@@ -116,7 +116,7 @@
       }
     },
     {
-      "raw": "1 small shallot, chopped",
+      "raw": "1 small shallot, (chopped)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic, minced",
+      "raw": "3 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -221,11 +221,11 @@
       }
     },
     {
-      "raw": "chopped parsley, to garnish, optional",
+      "raw": "chopped parsley, (to garnish, optional)",
       "expected": {
-        "item": "chopped parsley, to garnish",
+        "item": "chopped parsley",
         "measurements": [],
-        "note": "optional",
+        "note": "to garnish, optional",
         "section": "Florentine Sauce",
         "category": "Produce"
       }

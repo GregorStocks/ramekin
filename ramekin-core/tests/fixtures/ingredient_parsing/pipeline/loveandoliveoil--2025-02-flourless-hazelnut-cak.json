@@ -60,7 +60,7 @@
       }
     },
     {
-      "raw": "1 ⅓ cups  / 266 g granulated sugar, divided",
+      "raw": "1 ⅓ cups / 266 g granulated sugar, (divided)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -94,7 +94,7 @@
       }
     },
     {
-      "raw": "6 large   eggs, separated, at room temperature",
+      "raw": "6 large eggs, (separated, at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -109,9 +109,9 @@
       }
     },
     {
-      "raw": "10 tablespoons  / 141 g European-style salted butter, increase salt to 3/4 teaspoon if using unsalted butter",
+      "raw": "10 tablespoons / 141 g European-style salted butter, (increase salt to 3/4 teaspoon if using unsalted butter)",
       "expected": {
-        "item": "European-style salted butter, increase salt to 3/4 teaspoon if using unsalted butter",
+        "item": "European-style salted butter",
         "measurements": [
           {
             "amount": "10",
@@ -122,7 +122,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "increase salt to 3/4 teaspoon if using unsalted butter",
         "section": "For Cake",
         "category": "Other"
       }
@@ -147,7 +147,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 oz  / 56 g 55-60% semisweet chocolate, finely chopped",
+      "raw": "2 oz / 56 g 55-60% semisweet chocolate, (finely chopped)",
       "expected": {
         "item": "55-60% semisweet chocolate",
         "measurements": [
@@ -166,7 +166,7 @@
       }
     },
     {
-      "raw": "2 oz  / 56 g 30-35% milk chocolate, finely chopped",
+      "raw": "2 oz / 56 g 30-35% milk chocolate, (finely chopped)",
       "expected": {
         "item": "30-35% milk chocolate",
         "measurements": [
@@ -242,7 +242,7 @@
       }
     },
     {
-      "raw": "candied hazelnuts, optional, for decoration",
+      "raw": "candied hazelnuts, (optional, for decoration)",
       "expected": {
         "item": "candied hazelnuts",
         "measurements": [],

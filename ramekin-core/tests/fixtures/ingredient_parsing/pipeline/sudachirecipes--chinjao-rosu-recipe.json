@@ -7,37 +7,37 @@
       "is_section_header": true
     },
     {
-      "raw": "150 g bell pepper I used green piman and red bell pepper",
+      "raw": "150 g bell pepper (I used green piman and red bell pepper)",
       "expected": {
-        "item": "bell pepper I used green piman and red bell pepper",
+        "item": "bell pepper",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
-        "section": "Chinjao Rosu",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "150 g canned bamboo shoots water-packed, or king oyster mushrooms, celery, or broccoli stems.",
-      "expected": {
-        "item": "canned bamboo shoots water-packed, or king oyster mushrooms, celery, or broccoli stems.",
-        "measurements": [
-          {
-            "amount": "150",
-            "unit": "g"
-          }
-        ],
-        "note": null,
+        "note": "I used green piman and red bell pepper",
         "section": "Chinjao Rosu",
         "category": "Produce"
       }
     },
     {
-      "raw": "15 g ginger root peeled",
+      "raw": "150 g canned bamboo shoots (water-packed, or king oyster mushrooms, celery, or broccoli stems.)",
+      "expected": {
+        "item": "canned bamboo shoots",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": "water-packed, or king oyster mushrooms, celery, or broccoli stems.",
+        "section": "Chinjao Rosu",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "15 g ginger root (peeled)",
       "expected": {
         "item": "ginger root",
         "measurements": [
@@ -67,31 +67,31 @@
       }
     },
     {
-      "raw": "250 g boneless pork chop or beef/chicken",
+      "raw": "250 g boneless pork chop (or beef/chicken)",
       "expected": {
-        "item": "boneless pork chop or beef/chicken",
+        "item": "boneless pork chop",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or beef/chicken",
         "section": "Chinjao Rosu",
         "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "1½ tbsp cooking oil neutral, high-heat, e.g., canola or rice bran",
+      "raw": "1½ tbsp cooking oil (neutral, high-heat, e.g., canola or rice bran)",
       "expected": {
-        "item": "cooking oil neutral, high-heat, e.g., canola or rice bran",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "neutral, high-heat, e.g., canola or rice bran",
         "section": "Chinjao Rosu",
         "category": "Oils & Vinegars"
       }
@@ -112,13 +112,13 @@
       }
     },
     {
-      "raw": "toasted sesame oil a few drops to finish",
+      "raw": "toasted sesame oil (a few drops to finish)",
       "expected": {
-        "item": "toasted sesame oil a few drops to finish",
+        "item": "toasted sesame oil",
         "measurements": [],
-        "note": null,
+        "note": "a few drops to finish",
         "section": "Chinjao Rosu",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -126,46 +126,46 @@
       "is_section_header": true
     },
     {
-      "raw": "¼ tsp salt fine",
+      "raw": "¼ tsp salt (fine)",
       "expected": {
-        "item": "salt fine",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "fine",
         "section": "Marinade for Velveting",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 pinch ground white pepper or black pepper",
+      "raw": "1 pinch ground white pepper (or black pepper)",
       "expected": {
-        "item": "ground white pepper or black pepper",
+        "item": "ground white pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "or black pepper",
         "section": "Marinade for Velveting",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "2 tsp sake or dry sherry, white wine",
+      "raw": "2 tsp sake (or dry sherry, white wine)",
       "expected": {
-        "item": "sake or dry sherry, white wine",
+        "item": "sake",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or dry sherry, white wine",
         "section": "Marinade for Velveting",
         "category": "Beverages"
       }
@@ -186,48 +186,48 @@
       }
     },
     {
-      "raw": "1 egg white for velveting",
+      "raw": "1 egg white (for velveting)",
       "expected": {
-        "item": "egg white for velveting",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for velveting",
         "section": "Marinade for Velveting",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 tbsp potato starch (katakuriko) or cornstarch",
+      "raw": "2 tbsp potato starch (katakuriko) (or cornstarch)",
       "expected": {
-        "item": "potato starch or cornstarch",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "katakuriko",
+        "note": "katakuriko, or cornstarch",
         "section": "Marinade for Velveting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tsp cooking oil to seal marinade",
+      "raw": "1 tsp cooking oil (to seal marinade)",
       "expected": {
-        "item": "cooking oil to seal marinade",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to seal marinade",
         "section": "Marinade for Velveting",
-        "category": "Other"
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -310,16 +310,16 @@
       }
     },
     {
-      "raw": "¼ tsp potato starch (katakuriko) or cornstarch",
+      "raw": "¼ tsp potato starch (katakuriko) (or cornstarch)",
       "expected": {
-        "item": "potato starch or cornstarch",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "katakuriko",
+        "note": "katakuriko, or cornstarch",
         "section": "Chinjao Sauce",
         "category": "Baking"
       }

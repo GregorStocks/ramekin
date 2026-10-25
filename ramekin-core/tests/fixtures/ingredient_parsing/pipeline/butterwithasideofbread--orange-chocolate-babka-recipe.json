@@ -37,18 +37,18 @@
       }
     },
     {
-      "raw": "¾ cups sugar separated",
+      "raw": "¾ cups sugar (separated)",
       "expected": {
-        "item": "sugar separated",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "separated",
         "section": "Brioche Dough",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -82,18 +82,22 @@
       }
     },
     {
-      "raw": "1 cup butter 2 sticks, softened",
+      "raw": "1 cup butter (2 sticks, softened)",
       "expected": {
-        "item": "butter 2 sticks",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
           }
         ],
-        "note": "softened",
+        "note": "2 sticks, softened",
         "section": "Brioche Dough",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

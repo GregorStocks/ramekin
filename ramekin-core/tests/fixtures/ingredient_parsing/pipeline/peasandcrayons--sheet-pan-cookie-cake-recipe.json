@@ -182,18 +182,18 @@
       }
     },
     {
-      "raw": "2 cups confectioner’s sugar powdered sugar",
+      "raw": "2 cups confectioner’s sugar (powdered sugar)",
       "expected": {
-        "item": "confectioner’s sugar powdered sugar",
+        "item": "confectioner’s sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "powdered sugar",
         "section": "Chocolate Peanut Butter Frosting",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -242,7 +242,7 @@
       }
     },
     {
-      "raw": "½-¾ cup peanut butter to taste",
+      "raw": "½-¾ cup peanut butter (to taste)",
       "expected": {
         "item": "peanut butter",
         "measurements": [

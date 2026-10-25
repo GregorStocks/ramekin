@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic, minced",
+      "raw": "2 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -97,16 +97,16 @@
       }
     },
     {
-      "raw": "1 slice white or whole wheat sandwich bread, crusts removed and torn into ¼-inch (6-mm) pieces",
+      "raw": "1 slice white or whole wheat sandwich bread, (crusts removed and torn into ¼-inch (6-mm) pieces)",
       "expected": {
-        "item": "white or whole wheat sandwich bread, crusts removed and torn into 1/4-inch pieces",
+        "item": "white or whole wheat sandwich bread",
         "measurements": [
           {
             "amount": "1",
             "unit": "slice"
           }
         ],
-        "note": "6-mm",
+        "note": "crusts removed and torn into 1/4-inch (6-mm) pieces",
         "section": "For the Bulgogi Burgers",
         "category": "Bakery & Bread"
       }
@@ -127,7 +127,7 @@
       }
     },
     {
-      "raw": "½ cup chopped scallions, from 4 to 5 scallions",
+      "raw": "½ cup chopped scallions, (from 4 to 5 scallions)",
       "expected": {
         "item": "chopped scallions",
         "measurements": [
@@ -157,11 +157,11 @@
       }
     },
     {
-      "raw": "Lettuce leaves, for serving (optional)",
+      "raw": "Lettuce leaves, (for serving (optional))",
       "expected": {
         "item": "Lettuce leaves",
         "measurements": [],
-        "note": "optional, for serving",
+        "note": "for serving (optional)",
         "section": "For the Bulgogi Burgers",
         "category": "Produce"
       }
@@ -171,22 +171,22 @@
       "is_section_header": true
     },
     {
-      "raw": "¾ cup mayonnaise, best quality such as Hellmann's or Duke's",
+      "raw": "¾ cup mayonnaise, (best quality such as Hellmann's or Duke's)",
       "expected": {
-        "item": "mayonnaise, best quality",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "such as Hellmann's or Duke's",
+        "note": "best quality such as Hellmann's or Duke's",
         "section": "For the Chili Mayonnaise",
         "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "¼ cup Asian chili sauce, such as Sambal Oelek (available in Asian aisle of most supermarkets)",
+      "raw": "¼ cup Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets))",
       "expected": {
         "item": "Asian chili sauce",
         "measurements": [
@@ -195,7 +195,7 @@
             "unit": "cup"
           }
         ],
-        "note": "available in Asian aisle of most supermarkets, such as Sambal Oelek",
+        "note": "such as Sambal Oelek (available in Asian aisle of most supermarkets)",
         "section": "For the Chili Mayonnaise",
         "category": "Other"
       }

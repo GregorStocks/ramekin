@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 avocado, sliced",
+      "raw": "2 avocado, (sliced)",
       "expected": {
         "item": "avocado",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2 fennel bulb, thinly sliced",
+      "raw": "1/2 fennel bulb, (thinly sliced)",
       "expected": {
         "item": "fennel bulb",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1/2 red onion, thinly sliced",
+      "raw": "1/2 red onion, (thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -131,16 +131,16 @@
       }
     },
     {
-      "raw": "1 tsp honey, or maple",
+      "raw": "1 tsp honey, (or maple)",
       "expected": {
-        "item": "honey, or maple",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or maple",
         "section": "White Wine Vinaigrette",
         "category": "Baking"
       }
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste",
+      "raw": "salt and pepper, (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],

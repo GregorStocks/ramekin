@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "freshly ground black pepper, to taste",
+      "raw": "freshly ground black pepper, (to taste)",
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [],
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "2 pears, thinly sliced",
+      "raw": "2 pears, (thinly sliced)",
       "expected": {
         "item": "pears",
         "measurements": [
@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "1 medium shallot, finely sliced",
+      "raw": "1 medium shallot, (finely sliced)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -188,7 +188,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste",
+      "raw": "salt and pepper, (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],

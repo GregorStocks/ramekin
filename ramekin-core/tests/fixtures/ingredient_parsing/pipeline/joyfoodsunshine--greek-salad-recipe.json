@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 pint cherry tomatoes halved",
+      "raw": "1 pint cherry tomatoes (halved)",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -37,26 +37,22 @@
       }
     },
     {
-      "raw": "1 cucumber peeled and diced (about 1 cup)",
+      "raw": "1 cucumber (peeled and diced (about 1 cup))",
       "expected": {
         "item": "cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
-        "note": "about 1 cup, peeled and diced",
+        "note": "peeled and diced (about 1 cup)",
         "section": "Greek Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ cup red onion finely sliced or diced",
+      "raw": "½ cup red onion (finely sliced or diced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -71,7 +67,7 @@
       }
     },
     {
-      "raw": "½ cup Kalamata olives roughly chopped",
+      "raw": "½ cup Kalamata olives (roughly chopped)",
       "expected": {
         "item": "Kalamata olives",
         "measurements": [
@@ -105,7 +101,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 pita rounds sliced into 1” pieces (1 pita = 85 g)",
+      "raw": "2 pita rounds (sliced into 1” pieces (1 pita = 85 g))",
       "expected": {
         "item": "pita rounds",
         "measurements": [
@@ -114,7 +110,7 @@
             "unit": null
           }
         ],
-        "note": "1 pita = 85 g, sliced into 1” pieces",
+        "note": "sliced into 1” pieces (1 pita = 85 g)",
         "section": "Pita “croutons”",
         "category": "Other"
       }

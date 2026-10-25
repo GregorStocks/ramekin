@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste",
+      "raw": "salt and pepper, (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "1 tbsp fresh tarragon, chopped",
+      "raw": "1 tbsp fresh tarragon, (chopped)",
       "expected": {
         "item": "fresh tarragon",
         "measurements": [
@@ -138,7 +138,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic, finely chopped",
+      "raw": "3 cloves garlic, (finely chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -153,7 +153,7 @@
       }
     },
     {
-      "raw": "4 cups celery root, peeled and diced into 1/2 inch cubes",
+      "raw": "4 cups celery root, (peeled and diced into 1/2 inch cubes)",
       "expected": {
         "item": "celery root",
         "measurements": [
@@ -198,7 +198,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste",
+      "raw": "salt and pepper, (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],

@@ -184,16 +184,16 @@
       }
     },
     {
-      "raw": "1 bottle 750 ml white wine (or remaining spumante from pastry cream)",
+      "raw": "1 bottle (750 ml white wine (or remaining spumante from pastry cream))",
       "expected": {
-        "item": "750 ml white wine",
+        "item": "white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "bottle"
           }
         ],
-        "note": "or remaining spumante from pastry cream",
+        "note": "750 ml white wine (or remaining spumante from pastry cream)",
         "section": "Poached Pears",
         "category": "Beverages"
       }
@@ -248,16 +248,16 @@
       "is_section_header": true
     },
     {
-      "raw": "3 sheets 1 1/2 boxes puff pastry, thawed",
+      "raw": "3 sheets (1 1/2 boxes puff pastry, thawed)",
       "expected": {
-        "item": "1 1/2 boxes puff pastry",
+        "item": "puff pastry",
         "measurements": [
           {
             "amount": "3",
             "unit": "sheet"
           }
         ],
-        "note": "thawed",
+        "note": "1 1/2 boxes puff pastry, thawed",
         "section": "Puff Pastry Cases",
         "category": "Frozen"
       }

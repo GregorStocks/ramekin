@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "2 - 2 1/4 lb zucchini, 4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
+      "raw": "2 - 2 1/4 lb zucchini, (4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work))",
       "expected": {
-        "item": "zucchini, 4 medium",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2-2.25",
             "unit": "lb"
           }
         ],
-        "note": "green zucchini, yellow squash, or light green Mexican zucchini will work",
+        "note": "4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",
         "section": "Pickled Zucchini Ingredients",
         "category": "Produce"
       }
     },
     {
-      "raw": "3 cloves of garlic, halved",
+      "raw": "3 cloves of garlic, (halved)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -131,16 +131,16 @@
       }
     },
     {
-      "raw": "1/2 cup white vinegar, 5% acidity",
+      "raw": "1/2 cup white vinegar, (5% acidity)",
       "expected": {
-        "item": "white vinegar, 5% acidity",
+        "item": "white vinegar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "5% acidity",
         "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
@@ -161,16 +161,16 @@
       }
     },
     {
-      "raw": "1 Tbsp salt, we used sea salt, non-iodized",
+      "raw": "1 Tbsp salt, (we used sea salt, non-iodized)",
       "expected": {
-        "item": "salt, we used sea salt, non-iodized",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "we used sea salt, non-iodized",
         "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }

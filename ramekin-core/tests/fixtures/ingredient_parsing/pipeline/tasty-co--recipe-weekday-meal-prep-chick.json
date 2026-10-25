@@ -3,17 +3,73 @@
   "recipe_slug": "recipe-weekday-meal-prep-chick",
   "ingredients": [
     {
-      "raw": "3 chicken breasts, cubed",
+      "raw": "2 boneless, skinless chicken breasts",
       "expected": {
-        "item": "chicken breasts",
+        "item": "boneless, skinless chicken breasts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 bell peppers, any color, sliced",
+      "expected": {
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "cubed",
-        "category": "Meat & Seafood"
+        "note": "any color, sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large red onion, sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon taco seasoning",
+      "expected": {
+        "item": "taco seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -35,27 +91,13 @@
       }
     },
     {
-      "raw": "1 teaspoon garlic, crushed",
+      "raw": "1 jar salsa",
       "expected": {
-        "item": "garlic",
+        "item": "salsa",
         "measurements": [
           {
             "amount": "1",
-            "unit": "tsp"
-          }
-        ],
-        "note": "crushed",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "½ cup soy sauce",
-      "expected": {
-        "item": "soy sauce",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
+            "unit": "jar"
           }
         ],
         "note": null,
@@ -63,96 +105,87 @@
       }
     },
     {
-      "raw": "⅓ cup honey",
+      "raw": "3 cups brown rice, cooked",
       "expected": {
-        "item": "honey",
+        "item": "brown rice",
         "measurements": [
           {
-            "amount": "0.33",
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "cooked",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 can black beans, drained and rinsed",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 can corn",
+      "expected": {
+        "item": "corn",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup shredded cheddar cheese",
+      "expected": {
+        "item": "shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
             "unit": "cup"
           }
         ],
         "note": null,
-        "category": "Baking"
+        "category": "Cheese"
       }
     },
     {
-      "raw": "1 ½ tablespoons sesame seed, more to garnish",
+      "raw": "1 lime, sliced into wedges",
       "expected": {
-        "item": "sesame seed, more to garnish",
+        "item": "lime",
         "measurements": [
           {
-            "amount": "1.5",
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced into wedges",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh cilantro, to garnish",
+      "expected": {
+        "item": "fresh cilantro, to garnish",
+        "measurements": [
+          {
+            "amount": "2",
             "unit": "tbsp"
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1 onion, sliced",
-      "expected": {
-        "item": "onion",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": "sliced",
         "category": "Produce"
-      }
-    },
-    {
-      "raw": "2 small bell peppers, thinly sliced",
-      "expected": {
-        "item": "bell peppers",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "small"
-          }
-        ],
-        "note": "thinly sliced",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "2 cups broccoli",
-      "expected": {
-        "item": "broccoli",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1 green onion, thinly sliced",
-      "expected": {
-        "item": "green onion",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": "thinly sliced",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "white rice, cooked",
-      "expected": {
-        "item": "white rice",
-        "measurements": [],
-        "note": "cooked",
-        "category": "Pasta & Rice"
       }
     }
   ]

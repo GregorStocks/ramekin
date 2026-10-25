@@ -186,7 +186,7 @@
       }
     },
     {
-      "raw": "1 lime juiced",
+      "raw": "1 lime (juiced)",
       "expected": {
         "item": "lime juice",
         "measurements": [
@@ -220,7 +220,7 @@
       }
     },
     {
-      "raw": "2 roma tomatoes seeded and diced",
+      "raw": "2 roma tomatoes (seeded and diced)",
       "expected": {
         "item": "roma tomatoes",
         "measurements": [

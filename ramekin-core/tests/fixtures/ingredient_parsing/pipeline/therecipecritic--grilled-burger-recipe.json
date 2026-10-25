@@ -3,21 +3,21 @@
   "recipe_slug": "grilled-burger-recipe",
   "ingredients": [
     {
-      "raw": "2 pounds 80/20 ground beef cold",
+      "raw": "2 pounds 80/20 ground beef (cold)",
       "expected": {
-        "item": "80/20 ground beef cold",
+        "item": "80/20 ground beef",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "cold",
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "3 garlic cloves minced",
+      "raw": "3 garlic cloves (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

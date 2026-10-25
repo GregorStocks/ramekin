@@ -71,16 +71,16 @@
       }
     },
     {
-      "raw": "4 eggs at room temperature",
+      "raw": "4 eggs (at room temperature)",
       "expected": {
-        "item": "eggs at room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Vanilla Sheet Cake",
         "category": "Dairy & Eggs"
       }
@@ -333,20 +333,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 sticks 226g unsalted butter, softened",
+      "raw": "2 sticks (226g unsalted butter, softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
-          },
-          {
-            "amount": "226",
-            "unit": "g"
           }
         ],
-        "note": "softened",
+        "note": "226g unsalted butter, softened",
         "section": "Vanilla Buttercream Frosting",
         "category": "Dairy & Eggs"
       }
@@ -386,13 +382,13 @@
       }
     },
     {
-      "raw": "Up to 1/4 cup 60ml milk or heavy cream, if needed",
+      "raw": "Up to 1/4 cup (60ml milk or heavy cream, if needed)",
       "expected": {
-        "item": "Up to 1/4 cup 60ml milk or heavy cream",
+        "item": "Up to 1/4 cup",
         "measurements": [],
-        "note": "if needed",
+        "note": "60ml milk or heavy cream, if needed",
         "section": "Vanilla Buttercream Frosting",
-        "category": "Dairy & Eggs"
+        "category": "Other"
       }
     }
   ]

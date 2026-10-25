@@ -3,16 +3,16 @@
   "recipe_slug": "chaliapin-steak-don-recipe",
   "ingredients": [
     {
-      "raw": "2 beef steaks sirloin, fillet or similar. Thick cuts work best.",
+      "raw": "2 beef steaks (sirloin, fillet or similar. Thick cuts work best.)",
       "expected": {
-        "item": "beef steaks sirloin, fillet or similar. Thick cuts work best.",
+        "item": "beef steaks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sirloin, fillet or similar. Thick cuts work best.",
         "category": "Meat & Seafood"
       }
     },
@@ -59,16 +59,16 @@
       }
     },
     {
-      "raw": "1 tbsp beef suet (fat) or a neutral oil with a high smoke point like vegetable oil or canola",
+      "raw": "1 tbsp beef suet (fat) (or a neutral oil with a high smoke point like vegetable oil or canola)",
       "expected": {
-        "item": "beef suet or a neutral oil with a high smoke point like vegetable oil or canola",
+        "item": "beef suet",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "fat",
+        "note": "fat, or a neutral oil with a high smoke point like vegetable oil or canola",
         "category": "Meat & Seafood"
       }
     },
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "3 pickled plums (umeboshi) optional",
+      "raw": "3 pickled plums (umeboshi) (optional)",
       "expected": {
         "item": "pickled plums",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "4 perilla leaves (shiso) optional",
+      "raw": "4 perilla leaves (shiso) (optional)",
       "expected": {
         "item": "perilla leaves",
         "measurements": [
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "2 tbsp finely chopped green onions to garnish",
+      "raw": "2 tbsp finely chopped green onions (to garnish)",
       "expected": {
-        "item": "finely chopped green onions to garnish",
+        "item": "finely chopped green onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "to garnish",
+        "category": "Produce"
       }
     },
     {
@@ -193,16 +193,16 @@
       }
     },
     {
-      "raw": "1 tsp cornstarch or potato starch",
+      "raw": "1 tsp cornstarch (or potato starch)",
       "expected": {
-        "item": "cornstarch or potato starch",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or potato starch",
         "section": "Sauce",
         "category": "Baking"
       }

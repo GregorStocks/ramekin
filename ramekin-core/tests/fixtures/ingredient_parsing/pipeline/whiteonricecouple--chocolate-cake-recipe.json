@@ -102,11 +102,11 @@
       }
     },
     {
-      "raw": "Sea Salt  to taste (@ 1 teaspoon (5 g))",
+      "raw": "Sea Salt (to taste (@ 1 teaspoon (5 g)))",
       "expected": {
         "item": "Sea Salt",
         "measurements": [],
-        "note": "@ 1 teaspoon (5 g), to taste",
+        "note": "to taste (@ 1 teaspoon (5 g))",
         "section": "Butterscotch Ingredients",
         "category": "Spices & Seasonings"
       }
@@ -211,20 +211,16 @@
       }
     },
     {
-      "raw": "1 teaspoon   Kosher Salt  or Sea Salt (5g)",
+      "raw": "1 teaspoon Kosher Salt (or Sea Salt (5g))",
       "expected": {
-        "item": "Kosher Salt or Sea Salt",
+        "item": "Kosher Salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Sea Salt (5g)",
         "section": "Chocolate Cake Ingredients",
         "category": "Spices & Seasonings"
       }
@@ -264,20 +260,16 @@
       }
     },
     {
-      "raw": "1 cup   Espresso  or Strong Coffee (240ml)",
+      "raw": "1 cup Espresso (or Strong Coffee (240ml))",
       "expected": {
-        "item": "Espresso or Strong Coffee",
+        "item": "Espresso",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "240",
-            "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or Strong Coffee (240ml)",
         "section": "Chocolate Cake Ingredients",
         "category": "Beverages"
       }

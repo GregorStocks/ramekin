@@ -172,22 +172,22 @@
       }
     },
     {
-      "raw": "2 cups shredded carrots about 3 medium carrots",
+      "raw": "2 cups shredded carrots (about 3 medium carrots)",
       "expected": {
-        "item": "shredded carrots about 3 medium carrots",
+        "item": "shredded carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 3 medium carrots",
         "section": "Carrot Cake Roll",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1/3 cup very finely ground walnuts optional",
+      "raw": "1/3 cup very finely ground walnuts (optional)",
       "expected": {
         "item": "very finely ground walnuts",
         "measurements": [
@@ -202,7 +202,7 @@
       }
     },
     {
-      "raw": "1/4 cup powdered sugar for rolling",
+      "raw": "1/4 cup powdered sugar (for rolling)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -221,7 +221,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup powdered sugar sifted",
+      "raw": "1 cup powdered sugar (sifted)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -236,22 +236,22 @@
       }
     },
     {
-      "raw": "8 ounces cream cheese room temperature",
+      "raw": "8 ounces cream cheese (room temperature)",
       "expected": {
-        "item": "cream cheese room temperature",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Cream Cheese Filling",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
-      "raw": "6 tablespoons unsalted butter softened",
+      "raw": "6 tablespoons unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -281,7 +281,7 @@
       }
     },
     {
-      "raw": "1/2 cup raisins optional",
+      "raw": "1/2 cup raisins (optional)",
       "expected": {
         "item": "raisins",
         "measurements": [

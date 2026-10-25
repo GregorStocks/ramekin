@@ -98,37 +98,37 @@
       }
     },
     {
-      "raw": "1 teaspoon   orange zest, very finely garted",
+      "raw": "1 teaspoon orange zest, (very finely garted)",
       "expected": {
-        "item": "orange zest, very finely garted",
+        "item": "orange zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "very finely garted",
         "section": "For Cake",
         "category": "Produce"
       }
     },
     {
-      "raw": "6 large   eggs, at warm room temperature**",
+      "raw": "6 large eggs, (at warm room temperature**)",
       "expected": {
-        "item": "eggs, at warm room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "at warm room temperature",
         "section": "For Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "10 tablespoons  / 140 g unsalted butter, cut into cubes",
+      "raw": "10 tablespoons / 140 g unsalted butter, (cut into cubes)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -185,7 +185,7 @@
       "is_section_header": true
     },
     {
-      "raw": "5 oz  / 140 g 60-70% dark chocolate, finely chopped",
+      "raw": "5 oz / 140 g 60-70% dark chocolate, (finely chopped)",
       "expected": {
         "item": "60-70% dark chocolate",
         "measurements": [
@@ -204,7 +204,7 @@
       }
     },
     {
-      "raw": "1 oz  / 28 g 30-35% milk chocolate, finely chopped",
+      "raw": "1 oz / 28 g 30-35% milk chocolate, (finely chopped)",
       "expected": {
         "item": "30-35% milk chocolate",
         "measurements": [

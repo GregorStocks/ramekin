@@ -49,16 +49,16 @@
       }
     },
     {
-      "raw": "1 tablespoon oil  or ghee",
+      "raw": "1 tablespoon oil (or ghee)",
       "expected": {
-        "item": "oil or ghee",
+        "item": "oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or ghee",
         "category": "Oils & Vinegars"
       }
     },
@@ -207,22 +207,22 @@
       "is_section_header": true
     },
     {
-      "raw": "1 tablespoon ghee  or oil or butter",
+      "raw": "1 tablespoon ghee (or oil or butter)",
       "expected": {
-        "item": "ghee or oil or butter",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or oil or butter",
         "section": "To Temper",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 to 3 garlic cloves crushed",
+      "raw": "2 to 3 garlic cloves (crushed)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

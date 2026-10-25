@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup chickpea flour, also known as garbanzo bean flour or besan flour",
+      "raw": "1/2 cup chickpea flour, (also known as garbanzo bean flour or besan flour)",
       "expected": {
-        "item": "chickpea flour, also known as garbanzo bean flour or besan flour",
+        "item": "chickpea flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "also known as garbanzo bean flour or besan flour",
         "section": "Socca",
         "category": "Baking"
       }
     },
     {
-      "raw": "1/2 cup water, plus extra for thinning if needed",
+      "raw": "1/2 cup water, (plus extra for thinning if needed)",
       "expected": {
         "item": "water",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "pepper, to taste",
+      "raw": "pepper, (to taste)",
       "expected": {
         "item": "pepper",
         "measurements": [],
@@ -62,7 +62,7 @@
       }
     },
     {
-      "raw": "3 tbsp olive oil, divided",
+      "raw": "3 tbsp olive oil, (divided)",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -77,26 +77,22 @@
       }
     },
     {
-      "raw": "1 small shallot, thinly sliced (approx 1/4 cup)",
+      "raw": "1 small shallot, (thinly sliced (approx 1/4 cup))",
       "expected": {
         "item": "shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
-          },
-          {
-            "amount": "0.25",
-            "unit": "cup"
           }
         ],
-        "note": "approx 1/4 cup, thinly sliced",
+        "note": "thinly sliced (approx 1/4 cup)",
         "section": "Socca",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 clove garlic, minced",
+      "raw": "1 clove garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -115,7 +111,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pear, thinly sliced",
+      "raw": "1 pear, (thinly sliced)",
       "expected": {
         "item": "pear",
         "measurements": [
@@ -130,7 +126,7 @@
       }
     },
     {
-      "raw": "3/4 cup arugula, loosely packed",
+      "raw": "3/4 cup arugula, (loosely packed)",
       "expected": {
         "item": "arugula",
         "measurements": [

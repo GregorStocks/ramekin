@@ -3,7 +3,7 @@
   "recipe_slug": "2018-12-eggs-benedict-bake-htm",
   "ingredients": [
     {
-      "raw": "12 oz. package English Muffins lightly toasted (about 6 whole)",
+      "raw": "12 oz. package English Muffins (lightly toasted (about 6 whole))",
       "expected": {
         "item": "package English Muffins",
         "measurements": [
@@ -12,12 +12,12 @@
             "unit": "oz"
           }
         ],
-        "note": "about 6 whole, lightly toasted",
+        "note": "lightly toasted (about 6 whole)",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "8 ounces Canadian bacon diced",
+      "raw": "8 ounces Canadian bacon (diced)",
       "expected": {
         "item": "Canadian bacon",
         "measurements": [
@@ -190,18 +190,22 @@
       }
     },
     {
-      "raw": "Handful of chopped chives about 1/4 cup",
+      "raw": "Handful of chopped chives (about 1/4 cup)",
       "expected": {
-        "item": "chopped chives about 1/4 cup",
+        "item": "chopped chives",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1/4 cup",
         "section": "Hollandaise Sauce",
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

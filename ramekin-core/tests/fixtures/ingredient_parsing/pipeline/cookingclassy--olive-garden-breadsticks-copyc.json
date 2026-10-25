@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 Tbsp granulated sugar, divided",
+      "raw": "2 Tbsp granulated sugar, (divided)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -73,16 +73,16 @@
       }
     },
     {
-      "raw": "3 Tbsp vegetable oil or olive oil",
+      "raw": "3 Tbsp vegetable oil (or olive oil)",
       "expected": {
-        "item": "vegetable oil or olive oil",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or olive oil",
         "category": "Oils & Vinegars"
       }
     },

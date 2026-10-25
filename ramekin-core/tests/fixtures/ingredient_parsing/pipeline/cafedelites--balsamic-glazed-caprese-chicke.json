@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 pinch cracked black pepper to taste",
+      "raw": "1 pinch cracked black pepper (to taste)",
       "expected": {
         "item": "cracked black pepper",
         "measurements": [
@@ -73,21 +73,21 @@
       }
     },
     {
-      "raw": "1 tablespoon olive oil or a light spray of cooking oil spray",
+      "raw": "1 tablespoon olive oil (or a light spray of cooking oil spray)",
       "expected": {
-        "item": "olive oil or a light spray of cooking oil spray",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or a light spray of cooking oil spray",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 tablespoons garlic minced",
+      "raw": "2 tablespoons garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -115,59 +115,59 @@
       }
     },
     {
-      "raw": "2 1/2 tablespoons brown sugar packed",
+      "raw": "2 1/2 tablespoons brown sugar (packed)",
       "expected": {
-        "item": "brown sugar packed",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "packed",
+        "category": "Baking"
       }
     },
     {
-      "raw": "1 1/2 cups grape tomatoes or cherry tomatoes, divided",
+      "raw": "1 1/2 cups grape tomatoes (or cherry tomatoes, divided)",
       "expected": {
-        "item": "grape tomatoes or cherry tomatoes",
+        "item": "grape tomatoes",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "divided",
+        "note": "or cherry tomatoes, divided",
         "category": "Produce"
       }
     },
     {
-      "raw": "8 oz fresh mozzarella cheese or Bocconcini, cut into 6x 1/2-inch slices",
+      "raw": "8 oz fresh mozzarella cheese (or Bocconcini, cut into 6x 1/2-inch slices)",
       "expected": {
-        "item": "fresh mozzarella cheese or Bocconcini",
+        "item": "fresh mozzarella cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": "cut into 6x 1/2-inch slices",
+        "note": "or Bocconcini, cut into 6x 1/2-inch slices",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/4 cup fresh basil leaves chiffonade",
+      "raw": "1/4 cup fresh basil leaves (chiffonade)",
       "expected": {
-        "item": "fresh basil leaves chiffonade",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "chiffonade",
+        "category": "Produce"
       }
     },
     {
@@ -190,18 +190,18 @@
       }
     },
     {
-      "raw": "2 tablespoons brown sugar packed",
+      "raw": "2 tablespoons brown sugar (packed)",
       "expected": {
-        "item": "brown sugar packed",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Balsamic Glaze: (Optional to Serve)",
-        "category": "Other"
+        "category": "Baking"
       }
     }
   ]

@@ -37,22 +37,22 @@
       }
     },
     {
-      "raw": "1 tablespoon honey or granulated sugar",
+      "raw": "1 tablespoon honey (or granulated sugar)",
       "expected": {
-        "item": "honey or granulated sugar",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or granulated sugar",
         "section": "Breadstick Dough",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 tablespoons salted butter melted",
+      "raw": "2 tablespoons salted butter (melted)",
       "expected": {
         "item": "salted butter",
         "measurements": [

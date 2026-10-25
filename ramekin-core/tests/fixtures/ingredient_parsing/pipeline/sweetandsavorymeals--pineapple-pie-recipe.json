@@ -3,17 +3,17 @@
   "recipe_slug": "pineapple-pie-recipe",
   "ingredients": [
     {
-      "raw": "9 inch pie crust homemade or store-bought",
+      "raw": "9 inch pie crust (homemade or store-bought)",
       "expected": {
-        "item": "inch pie crust homemade or store-bought",
+        "item": "inch pie crust",
         "measurements": [
           {
             "amount": "9",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "homemade or store-bought",
+        "category": "Frozen"
       }
     },
     {
@@ -111,18 +111,18 @@
       }
     },
     {
-      "raw": "8 oz cream cheese room temperature",
+      "raw": "8 oz cream cheese (room temperature)",
       "expected": {
-        "item": "cream cheese room temperature",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Filling",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {

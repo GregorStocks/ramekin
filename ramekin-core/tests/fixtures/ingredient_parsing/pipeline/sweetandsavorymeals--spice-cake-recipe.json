@@ -142,18 +142,18 @@
       }
     },
     {
-      "raw": "1 1/2 cups light brown sugar packed",
+      "raw": "1 1/2 cups light brown sugar (packed)",
       "expected": {
-        "item": "light brown sugar packed",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Cake",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -187,18 +187,18 @@
       }
     },
     {
-      "raw": "1/2 cup applesauce unsweetened",
+      "raw": "1/2 cup applesauce (unsweetened)",
       "expected": {
-        "item": "applesauce unsweetened",
+        "item": "applesauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "unsweetened",
         "section": "Cake",
-        "category": "Produce"
+        "category": "Canned Goods"
       }
     },
     {
@@ -281,31 +281,31 @@
       "is_section_header": true
     },
     {
-      "raw": "12 oz cream cheese at room temperature",
+      "raw": "12 oz cream cheese (at room temperature)",
       "expected": {
-        "item": "cream cheese at room temperature",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup unsalted butter at room temperature",
+      "raw": "1/2 cup unsalted butter (at room temperature)",
       "expected": {
-        "item": "unsalted butter at room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "at room temperature",
         "section": "Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }

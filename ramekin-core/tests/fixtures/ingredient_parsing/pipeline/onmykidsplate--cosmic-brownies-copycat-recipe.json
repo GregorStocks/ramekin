@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup butter melted",
+      "raw": "1/2 cup butter (melted)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -22,18 +22,18 @@
       }
     },
     {
-      "raw": "1 cup white sugar granulated",
+      "raw": "1 cup white sugar (granulated)",
       "expected": {
-        "item": "white sugar granulated",
+        "item": "white sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "granulated",
         "section": "Brownie Batter",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "2 large eggs lightly beaten",
+      "raw": "2 large eggs (lightly beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -97,18 +97,18 @@
       }
     },
     {
-      "raw": "3/4 cup cocoa powder unsweetened",
+      "raw": "3/4 cup cocoa powder (unsweetened)",
       "expected": {
-        "item": "cocoa powder unsweetened",
+        "item": "cocoa powder",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "unsweetened",
         "section": "Brownie Batter",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -161,33 +161,41 @@
       }
     },
     {
-      "raw": "3 ounces milk chocolate chips about 1/2 cup",
+      "raw": "3 ounces milk chocolate chips (about 1/2 cup)",
       "expected": {
-        "item": "milk chocolate chips about 1/2 cup",
+        "item": "milk chocolate chips",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1/2 cup",
         "section": "Frosting",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "4 ounces semi-sweet chocolate about 3/4 cup",
+      "raw": "4 ounces semi-sweet chocolate (about 3/4 cup)",
       "expected": {
-        "item": "semi-sweet chocolate about 3/4 cup",
+        "item": "semi-sweet chocolate",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
+          },
+          {
+            "amount": "0.75",
+            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 3/4 cup",
         "section": "Frosting",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {

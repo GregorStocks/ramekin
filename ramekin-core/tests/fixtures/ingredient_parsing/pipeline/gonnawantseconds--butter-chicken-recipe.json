@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 Shallot Finely Chopped",
+      "raw": "1 Shallot (Finely Chopped)",
       "expected": {
         "item": "Shallot",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1 Cup White Onion Finely Chopped",
+      "raw": "1 Cup White Onion (Finely Chopped)",
       "expected": {
         "item": "White Onion",
         "measurements": [
@@ -266,16 +266,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 Pounds 2 Chicken Thighs Boneless, Skinless, Cut Into Bite Size Pieces",
+      "raw": "2 Pounds 2 Chicken Thighs (Boneless, Skinless, Cut Into Bite Size Pieces)",
       "expected": {
-        "item": "2 Chicken Thighs Boneless, Skinless",
+        "item": "2 Chicken Thighs",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "Cut Into Bite Size Pieces",
+        "note": "Boneless, Skinless, Cut Into Bite Size Pieces",
         "section": "Chicken",
         "category": "Meat & Seafood"
       }

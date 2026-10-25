@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "¾ cup  / 68 g Dutch-processed cocoa powder*, sifted",
+      "raw": "¾ cup / 68 g Dutch-processed cocoa powder*, (sifted)",
       "expected": {
         "item": "Dutch-processed cocoa powder",
         "measurements": [
@@ -128,7 +128,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon   instant espresso powder, optional",
+      "raw": "¼ teaspoon instant espresso powder, (optional)",
       "expected": {
         "item": "instant espresso powder",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "2   large eggs, at room temperature",
+      "raw": "2 large eggs, (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -211,7 +211,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup  / 120 g powdered sugar, sifted",
+      "raw": "1 cup / 120 g powdered sugar, (sifted)",
       "expected": {
         "item": "powdered sugar",
         "measurements": [
@@ -264,7 +264,7 @@
       }
     },
     {
-      "raw": "¼ cup  / 25 g dark or Dutch processed cocoa powder, sifted",
+      "raw": "¼ cup / 25 g dark or Dutch processed cocoa powder, (sifted)",
       "expected": {
         "item": "dark or Dutch processed cocoa powder",
         "measurements": [

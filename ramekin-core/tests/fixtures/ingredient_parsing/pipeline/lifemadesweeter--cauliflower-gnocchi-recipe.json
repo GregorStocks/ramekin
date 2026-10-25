@@ -21,16 +21,16 @@
       }
     },
     {
-      "raw": "2-3 tbsp extra-virgin olive oil OR avocado oil",
+      "raw": "2-3 tbsp extra-virgin olive oil (OR avocado oil)",
       "expected": {
-        "item": "extra-virgin olive oil OR avocado oil",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "OR avocado oil",
         "category": "Oils & Vinegars"
       }
     },

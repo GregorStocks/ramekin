@@ -184,18 +184,18 @@
       }
     },
     {
-      "raw": "¼ to ½ teaspoon mustard seeds",
+      "raw": "¼ to ½ teaspoon mustard (seeds)",
       "expected": {
-        "item": "mustard seeds",
+        "item": "mustard",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "seeds",
         "section": "For Potato Masala or Curry",
-        "category": "Spices & Seasonings"
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -274,7 +274,7 @@
       }
     },
     {
-      "raw": "¾ to 1 cup onions thinly sliced",
+      "raw": "¾ to 1 cup onions (thinly sliced)",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -304,7 +304,7 @@
       }
     },
     {
-      "raw": "2 green chilies chopped or sliced",
+      "raw": "2 green chilies (chopped or sliced)",
       "expected": {
         "item": "green chilies",
         "measurements": [
@@ -349,7 +349,7 @@
       }
     },
     {
-      "raw": "2 tablespoon coriander leaves finely chopped",
+      "raw": "2 tablespoon coriander leaves (finely chopped)",
       "expected": {
         "item": "coriander leaves",
         "measurements": [

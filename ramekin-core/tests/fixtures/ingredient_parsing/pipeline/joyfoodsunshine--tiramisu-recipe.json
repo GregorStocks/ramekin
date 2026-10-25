@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "6 eggs separated",
+      "raw": "6 eggs (separated)",
       "expected": {
-        "item": "eggs separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "separated",
         "section": "Ladyfinger Layers",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "¾ cup granulated sugar divided",
+      "raw": "¾ cup granulated sugar (divided)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -195,16 +195,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 ¾ cups coffee strong brewed, or espresso",
+      "raw": "1 ¾ cups coffee (strong brewed, or espresso)",
       "expected": {
-        "item": "coffee strong brewed, or espresso",
+        "item": "coffee",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "strong brewed, or espresso",
         "section": "Soaking Liquid",
         "category": "Beverages"
       }

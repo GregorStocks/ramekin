@@ -3,26 +3,26 @@
   "recipe_slug": "turmeric-roasted-carrots-recip",
   "ingredients": [
     {
-      "raw": "2 lb carrots pealed and cut on the diagonal",
+      "raw": "2 lb carrots (pealed and cut on the diagonal)",
       "expected": {
-        "item": "carrots pealed and cut on the diagonal",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "pealed and cut on the diagonal",
+        "category": "Produce"
       }
     },
     {
-      "raw": "Extra virgin olive oil I used Private Reserve Greek extra virgin olive oil",
+      "raw": "Extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil)",
       "expected": {
-        "item": "Extra virgin olive oil I used Private Reserve Greek extra virgin olive oil",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
-        "category": "Other"
+        "note": "I used Private Reserve Greek extra virgin olive oil",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +58,7 @@
       }
     },
     {
-      "raw": "1 garlic clove finely minced",
+      "raw": "1 garlic clove (finely minced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -73,18 +73,18 @@
       }
     },
     {
-      "raw": "1/2 lime juice of",
+      "raw": "1/2 lime (juice of)",
       "expected": {
-        "item": "lime juice of",
+        "item": "lime",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "juice of",
         "section": "To Flavor Roasted Carrots",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

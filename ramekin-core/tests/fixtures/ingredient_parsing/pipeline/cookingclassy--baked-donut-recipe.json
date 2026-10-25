@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "4 Tbsp (56g) unsalted butter, melted",
+      "raw": "4 Tbsp (56g) unsalted butter, (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -131,16 +131,16 @@
       }
     },
     {
-      "raw": "2 large eggs, brought to room temperature",
+      "raw": "2 large eggs, (brought to room temperature)",
       "expected": {
-        "item": "eggs, brought to room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "brought to room temperature",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,9 +159,9 @@
       }
     },
     {
-      "raw": "3/4 cup (175ml) buttermilk, brought to room temperature",
+      "raw": "3/4 cup (175ml) buttermilk, (brought to room temperature)",
       "expected": {
-        "item": "buttermilk, brought to room temperature",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.75",
@@ -172,7 +172,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "brought to room temperature",
         "category": "Dairy & Eggs"
       }
     },
@@ -200,7 +200,7 @@
       }
     },
     {
-      "raw": "2 Tbsp (28g) unsalted butter, melted",
+      "raw": "2 Tbsp (28g) unsalted butter, (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -219,9 +219,9 @@
       }
     },
     {
-      "raw": "1 1/2 Tbsp (20ml) milk, then more as needed",
+      "raw": "1 1/2 Tbsp (20ml) milk, (then more as needed)",
       "expected": {
-        "item": "milk, then more",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1.5",
@@ -232,7 +232,7 @@
             "unit": "ml"
           }
         ],
-        "note": "as needed",
+        "note": "then more as needed",
         "section": "Glaze",
         "category": "Dairy & Eggs"
       }

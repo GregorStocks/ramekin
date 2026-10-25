@@ -131,22 +131,22 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pound rotini pasta cooked to al dente according to package directions and drained",
+      "raw": "1 pound rotini pasta (cooked to al dente according to package directions and drained)",
       "expected": {
-        "item": "rotini pasta cooked to al dente according to package directions and drained",
+        "item": "rotini pasta",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "cooked to al dente according to package directions and drained",
         "section": "For the Salad",
-        "category": "Other"
+        "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "1 pint cherry tomatoes cut in half (you can sub in grape tomatoes)",
+      "raw": "1 pint cherry tomatoes (cut in half (you can sub in grape tomatoes))",
       "expected": {
         "item": "cherry tomatoes",
         "measurements": [
@@ -155,13 +155,13 @@
             "unit": "pint"
           }
         ],
-        "note": "you can sub in grape tomatoes, cut in half",
+        "note": "cut in half (you can sub in grape tomatoes)",
         "section": "For the Salad",
         "category": "Produce"
       }
     },
     {
-      "raw": "1 large cucumber seeded and chopped",
+      "raw": "1 large cucumber (seeded and chopped)",
       "expected": {
         "item": "cucumber",
         "measurements": [
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "1 red bell pepper chopped",
+      "raw": "1 red bell pepper (chopped)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "1 green bell pepper chopped",
+      "raw": "1 green bell pepper (chopped)",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -206,7 +206,7 @@
       }
     },
     {
-      "raw": "4 green onions thinly sliced",
+      "raw": "4 green onions (thinly sliced)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -221,7 +221,7 @@
       }
     },
     {
-      "raw": "¾ cup pitted Kalamata olives halved or quartered if desired",
+      "raw": "¾ cup pitted Kalamata olives (halved or quartered if desired)",
       "expected": {
         "item": "pitted Kalamata olives",
         "measurements": [
@@ -230,7 +230,7 @@
             "unit": "cup"
           }
         ],
-        "note": "halved or quartered, if desired",
+        "note": "halved or quartered if desired",
         "section": "For the Salad",
         "category": "Canned Goods"
       }
@@ -251,7 +251,7 @@
       }
     },
     {
-      "raw": "1 (7-ounce) pepperoni stick sliced",
+      "raw": "1 (7-ounce) pepperoni stick (sliced)",
       "expected": {
         "item": "pepperoni stick",
         "measurements": [

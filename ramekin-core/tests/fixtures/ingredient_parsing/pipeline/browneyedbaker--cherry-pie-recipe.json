@@ -56,7 +56,7 @@
       }
     },
     {
-      "raw": "10 tablespoons   cold unsalted butter, cut into ¼-inch pieces",
+      "raw": "10 tablespoons cold unsalted butter, (cut into ¼-inch pieces)",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
@@ -177,7 +177,7 @@
       }
     },
     {
-      "raw": "6 cups  (828 g) sour cherries, pitted (See note below.)",
+      "raw": "6 cups (828 g) sour cherries, (pitted (See note below.))",
       "expected": {
         "item": "sour cherries",
         "measurements": [
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": "See note below., pitted",
+        "note": "pitted (See note below.)",
         "section": "For the Pie Filling",
         "category": "Produce"
       }

@@ -7,22 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2 cups potatoes peel & cube to ¾ inch (2 large) (or sweet potatoes)",
+      "raw": "2 cups potatoes (peel & cube to ¾ inch (2 large) (or sweet potatoes))",
       "expected": {
-        "item": "potatoes peel & cube to 3/4 inch",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": "large"
           }
         ],
-        "note": "or sweet potatoes",
+        "note": "peel & cube to 3/4 inch (2 large) (or sweet potatoes)",
         "section": "Veggies for Cutlet",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -41,26 +37,22 @@
       }
     },
     {
-      "raw": "1 cup carrot diced (1 large)",
+      "raw": "1 cup carrot (diced (1 large))",
       "expected": {
         "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "large"
           }
         ],
-        "note": "diced",
+        "note": "diced (1 large)",
         "section": "Veggies for Cutlet",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ cup beans chopped (6 to 8)",
+      "raw": "½ cup beans (chopped (6 to 8))",
       "expected": {
         "item": "beans",
         "measurements": [
@@ -69,22 +61,22 @@
             "unit": "cup"
           }
         ],
-        "note": "6 to 8, chopped",
+        "note": "chopped (6 to 8)",
         "section": "Veggies for Cutlet",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "3 tablespoon coriander leaves or cilantro finely chopped",
+      "raw": "3 tablespoon coriander leaves (or cilantro finely chopped)",
       "expected": {
-        "item": "coriander leaves or cilantro",
+        "item": "coriander leaves",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "finely chopped",
+        "note": "or cilantro finely chopped",
         "section": "Veggies for Cutlet",
         "category": "Produce"
       }
@@ -109,22 +101,22 @@
       }
     },
     {
-      "raw": "¾ teaspoon ginger grated or paste",
+      "raw": "¾ teaspoon ginger grated (or paste)",
       "expected": {
-        "item": "ginger grated or paste",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "grated; or paste",
         "section": "Other Ingredients",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 to 2 green chilies finely chopped (skip for kids)",
+      "raw": "1 to 2 green chilies (finely chopped (skip for kids))",
       "expected": {
         "item": "green chilies",
         "measurements": [
@@ -133,7 +125,7 @@
             "unit": null
           }
         ],
-        "note": "skip for kids, finely chopped",
+        "note": "finely chopped (skip for kids)",
         "section": "Other Ingredients",
         "category": "Produce"
       }
@@ -154,7 +146,7 @@
       }
     },
     {
-      "raw": "6 tablespoon bread crumbs or ½ cup thick poha powdered or roasted besan (read notes)",
+      "raw": "6 tablespoon bread crumbs (or ½ cup thick poha powdered or roasted besan (read notes))",
       "expected": {
         "item": "bread crumbs",
         "measurements": [
@@ -163,13 +155,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": "read notes; or 1/2 cup thick poha powdered or roasted besan",
+        "note": "or 1/2 cup thick poha powdered or roasted besan (read notes)",
         "section": "Other Ingredients",
         "category": "Bakery & Bread"
       }
     },
     {
-      "raw": "4 tablespoons oil  or as needed",
+      "raw": "4 tablespoons oil (or as needed)",
       "expected": {
         "item": "oil",
         "measurements": [
@@ -188,31 +180,31 @@
       "is_section_header": true
     },
     {
-      "raw": "2 tablespoon besan or gram flour or rice flour or corn flour",
+      "raw": "2 tablespoon besan (or gram flour or rice flour or corn flour)",
       "expected": {
-        "item": "besan or gram flour or rice flour or corn flour",
+        "item": "besan",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or gram flour or rice flour or corn flour",
         "section": "For Crumb Coating",
-        "category": "Baking"
+        "category": "Other"
       }
     },
     {
-      "raw": "½ cup bread crumbs  or powdered poha for the crust",
+      "raw": "½ cup bread crumbs (or powdered poha for the crust)",
       "expected": {
-        "item": "bread crumbs or powdered poha for the crust",
+        "item": "bread crumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or powdered poha for the crust",
         "section": "For Crumb Coating",
         "category": "Bakery & Bread"
       }

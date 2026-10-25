@@ -56,16 +56,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 1/2 cups all-purpose flour, spoon into measuring cup and scrape off the top",
+      "raw": "1 1/2 cups all-purpose flour, (spoon into measuring cup and scrape off the top)",
       "expected": {
-        "item": "all-purpose flour, spoon into measuring cup and scrape off the top",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "spoon into measuring cup and scrape off the top",
         "section": "For the Cake",
         "category": "Baking"
       }
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "2 large eggs, separated",
+      "raw": "2 large eggs, (separated)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -161,16 +161,16 @@
       }
     },
     {
-      "raw": "1/2 cup whole milk, luke warm",
+      "raw": "1/2 cup whole milk, (luke warm)",
       "expected": {
-        "item": "whole milk, luke warm",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "luke warm",
         "section": "For the Cake",
         "category": "Dairy & Eggs"
       }

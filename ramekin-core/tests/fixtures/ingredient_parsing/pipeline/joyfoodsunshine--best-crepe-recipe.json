@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "2 Tablespoons salted butter melted and cooled slightly",
+      "raw": "2 Tablespoons salted butter (melted and cooled slightly)",
       "expected": {
-        "item": "salted butter melted and cooled slightly",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "melted and cooled slightly",
+        "category": "Dairy & Eggs"
       }
     },
     {

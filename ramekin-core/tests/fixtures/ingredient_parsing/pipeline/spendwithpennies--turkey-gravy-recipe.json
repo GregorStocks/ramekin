@@ -7,33 +7,33 @@
       "is_section_header": true
     },
     {
-      "raw": "4 cups turkey broth  or stock mixed with drippings",
+      "raw": "4 cups turkey broth (or stock mixed with drippings)",
       "expected": {
-        "item": "turkey broth or stock",
+        "item": "turkey broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "mixed with drippings",
+        "note": "or stock mixed with drippings",
         "section": "Gravy Base",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "2-3 tablespoons fresh herbs parsley, thyme, sage",
+      "raw": "2-3 tablespoons fresh herbs (parsley, thyme, sage)",
       "expected": {
-        "item": "fresh herbs parsley, thyme, sage",
+        "item": "fresh herbs",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "parsley, thyme, sage",
         "section": "Gravy Base",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -56,16 +56,16 @@
       }
     },
     {
-      "raw": "⅓ cup cold water or cold broth",
+      "raw": "⅓ cup cold water (or cold broth)",
       "expected": {
-        "item": "cold water or cold broth",
+        "item": "cold water",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or cold broth",
         "section": "For Thickening",
         "category": "Beverages"
       }
@@ -90,16 +90,16 @@
       }
     },
     {
-      "raw": "⅔ cup cold water or cold broth",
+      "raw": "⅔ cup cold water (or cold broth)",
       "expected": {
-        "item": "cold water or cold broth",
+        "item": "cold water",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or cold broth",
         "section": "Or",
         "category": "Beverages"
       }

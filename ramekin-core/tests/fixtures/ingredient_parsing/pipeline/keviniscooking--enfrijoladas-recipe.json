@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1/2 white onion quartered",
+      "raw": "1/2 white onion (quartered)",
       "expected": {
         "item": "white onion",
         "measurements": [
@@ -115,7 +115,7 @@
       }
     },
     {
-      "raw": "1/2 cup vegetable oil for frying",
+      "raw": "1/2 cup vegetable oil (for frying)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -129,16 +129,16 @@
       }
     },
     {
-      "raw": "10 ounces queso fresco Oaxaca cheese or Monterey Jack cheese (crumbled or shredded)",
+      "raw": "10 ounces queso fresco (Oaxaca cheese or Monterey Jack cheese (crumbled or shredded))",
       "expected": {
-        "item": "queso fresco Oaxaca cheese or Monterey Jack cheese",
+        "item": "queso fresco",
         "measurements": [
           {
             "amount": "10",
             "unit": "oz"
           }
         ],
-        "note": "crumbled or shredded",
+        "note": "Oaxaca cheese or Monterey Jack cheese (crumbled or shredded)",
         "category": "Cheese"
       }
     },

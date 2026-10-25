@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "500 g boneless chicken thigh preferably skin-on",
+      "raw": "500 g boneless chicken thigh (preferably skin-on)",
       "expected": {
-        "item": "boneless chicken thigh preferably skin-on",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "500",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably skin-on",
         "section": "Teriyaki Don",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -52,16 +52,16 @@
       }
     },
     {
-      "raw": "1 tbsp potato starch (katakuriko) or cornstarch/tapioca starch",
+      "raw": "1 tbsp potato starch (katakuriko) (or cornstarch/tapioca starch)",
       "expected": {
-        "item": "potato starch or cornstarch/tapioca starch",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "katakuriko",
+        "note": "katakuriko, or cornstarch/tapioca starch",
         "section": "Teriyaki Don",
         "category": "Baking"
       }
@@ -146,16 +146,16 @@
       }
     },
     {
-      "raw": "½ tbsp grated garlic or garlic paste",
+      "raw": "½ tbsp grated garlic (or garlic paste)",
       "expected": {
-        "item": "grated garlic or garlic paste",
+        "item": "grated garlic",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or garlic paste",
         "section": "Garlic Teriyaki Sauce",
         "category": "Produce"
       }
@@ -180,7 +180,7 @@
       "is_section_header": true
     },
     {
-      "raw": "100 g green cabbage shredded",
+      "raw": "100 g green cabbage (shredded)",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -235,7 +235,7 @@
       }
     },
     {
-      "raw": "2 soft-boiled egg boiled for 6 ½-8 minutes depending on preferred doneness.",
+      "raw": "2 soft-boiled egg (boiled for 6 ½-8 minutes depending on preferred doneness.)",
       "expected": {
         "item": "soft-boiled egg",
         "measurements": [

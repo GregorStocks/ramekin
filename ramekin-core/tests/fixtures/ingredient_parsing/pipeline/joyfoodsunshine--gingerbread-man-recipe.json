@@ -127,7 +127,7 @@
       }
     },
     {
-      "raw": "½ cup salted butter softened",
+      "raw": "½ cup salted butter (softened)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -142,18 +142,18 @@
       }
     },
     {
-      "raw": "½ cup light brown sugar packed",
+      "raw": "½ cup light brown sugar (packed)",
       "expected": {
-        "item": "light brown sugar packed",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Gingerbread Cookies",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -172,18 +172,18 @@
       }
     },
     {
-      "raw": "1 large egg room temperature",
+      "raw": "1 large egg (room temperature)",
       "expected": {
-        "item": "egg room temperature",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Gingerbread Cookies",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

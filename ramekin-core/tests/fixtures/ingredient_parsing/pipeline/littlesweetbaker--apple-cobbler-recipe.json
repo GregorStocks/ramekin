@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 cups   apples, peeled and sliced 1/4″ thick (about 6 large apples)",
+      "raw": "8 cups apples, (peeled and sliced 1/4″ thick (about 6 large apples))",
       "expected": {
         "item": "apples",
         "measurements": [
@@ -16,7 +16,7 @@
             "unit": "cup"
           }
         ],
-        "note": "about 6 large apples, peeled and sliced 1/4″ thick",
+        "note": "peeled and sliced 1/4″ thick (about 6 large apples)",
         "section": "Filling",
         "category": "Produce"
       }
@@ -177,7 +177,7 @@
       }
     },
     {
-      "raw": "1/2 cup   (114g) unsalted butter, melted",
+      "raw": "1/2 cup (114g) unsalted butter, (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 small head green cabbage, very thinly sliced",
+      "raw": "1 small head green cabbage, (very thinly sliced)",
       "expected": {
         "item": "green cabbage",
         "measurements": [
@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "4 green onions, thinly sliced",
+      "raw": "4 green onions, (thinly sliced)",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "2 jalapeno peppers, diced",
+      "raw": "2 jalapeno peppers, (diced)",
       "expected": {
         "item": "jalapeno peppers",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "1 bell pepper, diced",
+      "raw": "1 bell pepper, (diced)",
       "expected": {
         "item": "bell pepper",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "1 can black beans, drained and rinsed",
+      "raw": "1 can black beans, (drained and rinsed)",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "10 ounces corn, cooked if frozen (I use a steamfresh bag)",
+      "raw": "10 ounces corn, (cooked if frozen (I use a steamfresh bag))",
       "expected": {
         "item": "corn",
         "measurements": [
@@ -91,7 +91,7 @@
             "unit": "oz"
           }
         ],
-        "note": "I use a steamfresh bag, cooked if frozen",
+        "note": "cooked if frozen (I use a steamfresh bag)",
         "section": "Frito Slaw",
         "category": "Produce"
       }

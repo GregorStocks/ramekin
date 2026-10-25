@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "½ large sweet onion, diced",
+      "raw": "½ large sweet onion, (diced)",
       "expected": {
         "item": "sweet onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 red bell pepper, diced",
+      "raw": "1 red bell pepper, (diced)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "3 cloves garlic, minced",
+      "raw": "3 cloves garlic, (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -87,7 +87,7 @@
       }
     },
     {
-      "raw": "1 (15-ounce) can black beans, rinsed and drained",
+      "raw": "1 (15-ounce) can black beans, (rinsed and drained)",
       "expected": {
         "item": "black beans",
         "measurements": [
@@ -143,7 +143,7 @@
       }
     },
     {
-      "raw": "1 chipotle pepper in adobo sauce, minced",
+      "raw": "1 chipotle pepper in adobo sauce, (minced)",
       "expected": {
         "item": "chipotle pepper in adobo sauce",
         "measurements": [
@@ -199,7 +199,7 @@
       }
     },
     {
-      "raw": "Kosher salt and freshly ground black pepper, to taste",
+      "raw": "Kosher salt and freshly ground black pepper, (to taste)",
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],

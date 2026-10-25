@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "1   medium onion, finely chopped",
+      "raw": "1 medium onion, (finely chopped)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -94,7 +94,7 @@
       }
     },
     {
-      "raw": "2   celery ribs, chopped",
+      "raw": "2 celery ribs, (chopped)",
       "expected": {
         "item": "celery ribs",
         "measurements": [
@@ -109,7 +109,7 @@
       }
     },
     {
-      "raw": "1   green bell pepper, chopped",
+      "raw": "1 green bell pepper, (chopped)",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "2   garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

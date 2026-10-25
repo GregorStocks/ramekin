@@ -37,16 +37,16 @@
       }
     },
     {
-      "raw": "5 large eggs, room temp",
+      "raw": "5 large eggs, (room temp)",
       "expected": {
-        "item": "eggs, room temp",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temp",
         "section": "For the Sponge Cake",
         "category": "Dairy & Eggs"
       }
@@ -86,16 +86,16 @@
       }
     },
     {
-      "raw": "3 Tbsp rum - I used Bacardi golden rum, optional, but adds great flavor",
+      "raw": "3 Tbsp rum - I used Bacardi golden rum, (optional, but adds great flavor)",
       "expected": {
-        "item": "rum - I used Bacardi golden rum, optional, but adds great flavor",
+        "item": "rum - I used Bacardi golden rum",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "optional, but adds great flavor",
         "section": "For the Syrup",
         "category": "Other"
       }
@@ -150,16 +150,16 @@
       }
     },
     {
-      "raw": "1/2 cup sweetened condensed milk, uncooked - straight from the can",
+      "raw": "1/2 cup sweetened condensed milk, (uncooked - straight from the can)",
       "expected": {
-        "item": "sweetened condensed milk, uncooked - straight from the can",
+        "item": "sweetened condensed milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "uncooked - straight from the can",
         "section": "For the Custard Buttercream Frosting",
         "category": "Canned Goods"
       }
@@ -218,16 +218,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup golden brown cookie crumbs, I used crumbs from 4 graham crackers",
+      "raw": "1/2 cup golden brown cookie crumbs, (I used crumbs from 4 graham crackers)",
       "expected": {
-        "item": "golden brown cookie crumbs, I used crumbs from 4 graham crackers",
+        "item": "golden brown cookie crumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used crumbs from 4 graham crackers",
         "section": "For the Topping",
         "category": "Other"
       }

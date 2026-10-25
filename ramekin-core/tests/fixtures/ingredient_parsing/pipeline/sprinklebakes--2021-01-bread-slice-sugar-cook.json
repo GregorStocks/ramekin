@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup unsalted butter softened",
+      "raw": "1 cup unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -112,13 +112,13 @@
       }
     },
     {
-      "raw": "egg wash 1 egg beaten with 1 tablespoon water",
+      "raw": "egg wash (1 egg beaten with 1 tablespoon water)",
       "expected": {
-        "item": "egg wash 1 egg",
+        "item": "egg wash",
         "measurements": [],
-        "note": "beaten with 1 tablespoon water",
+        "note": "1 egg beaten with 1 tablespoon water",
         "section": "Sugar Cookies",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -126,7 +126,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2 cup unsalted butter softened",
+      "raw": "1/2 cup unsalted butter (softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -215,7 +215,7 @@
       }
     },
     {
-      "raw": "3 oz. white chocolate melted",
+      "raw": "3 oz. white chocolate (melted)",
       "expected": {
         "item": "white chocolate",
         "measurements": [

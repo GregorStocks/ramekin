@@ -67,22 +67,22 @@
       }
     },
     {
-      "raw": "1 teaspoon hot sauce tapatio or cholula",
+      "raw": "1 teaspoon hot sauce (tapatio or cholula)",
       "expected": {
-        "item": "hot sauce tapatio or cholula",
+        "item": "hot sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "tapatio or cholula",
         "section": "For the Buttermilk Marinade",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "1 whole chicken cut into pieces",
+      "raw": "1 whole chicken (cut into pieces)",
       "expected": {
         "item": "whole chicken",
         "measurements": [
@@ -210,16 +210,16 @@
       "is_section_header": true
     },
     {
-      "raw": "5-8 cups peanut oil or enough to fill a deep stock pot or deep fryer",
+      "raw": "5-8 cups peanut oil (or enough to fill a deep stock pot or deep fryer)",
       "expected": {
-        "item": "peanut oil or enough to fill a deep stock pot or deep fryer",
+        "item": "peanut oil",
         "measurements": [
           {
             "amount": "5-8",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or enough to fill a deep stock pot or deep fryer",
         "section": "For Frying",
         "category": "Oils & Vinegars"
       }

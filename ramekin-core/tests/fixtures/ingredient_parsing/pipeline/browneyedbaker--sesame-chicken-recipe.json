@@ -147,9 +147,9 @@
       }
     },
     {
-      "raw": "1½ pounds  (680.39 g)  boneless skinless chicken breast, cut into 1-inch chunks, skinless chicken breast, cut into 1-inch chunks",
+      "raw": "1½ pounds (680.39 g) boneless skinless chicken breast, cut into 1-inch chunks, (skinless chicken breast, cut into 1-inch chunks)",
       "expected": {
-        "item": "boneless skinless chicken breast, cut into 1-inch chunks, skinless chicken breast",
+        "item": "boneless skinless chicken breast",
         "measurements": [
           {
             "amount": "1.5",
@@ -160,7 +160,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 1-inch chunks",
+        "note": "skinless chicken breast, cut into 1-inch chunks",
         "section": "For the Marinade",
         "category": "Meat & Seafood"
       }
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "2   garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -215,16 +215,16 @@
       }
     },
     {
-      "raw": "1 teaspoon   chili paste, can substitute a couple pinches of red pepper flakes",
+      "raw": "1 teaspoon chili paste, (can substitute a couple pinches of red pepper flakes)",
       "expected": {
-        "item": "chili paste, can substitute a couple pinches of red pepper flakes",
+        "item": "chili paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "can substitute a couple pinches of red pepper flakes",
         "section": "For the Sauce",
         "category": "Other"
       }
@@ -306,7 +306,7 @@
       }
     },
     {
-      "raw": "6 cups  (1.31 l) vegetable oil, for frying",
+      "raw": "6 cups (1.31 l) vegetable oil, (for frying)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -325,21 +325,21 @@
       }
     },
     {
-      "raw": "Sesame seeds, to garnish",
+      "raw": "Sesame seeds, (to garnish)",
       "expected": {
-        "item": "Sesame seeds, to garnish",
+        "item": "Sesame seeds",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "For Coating & Frying",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Scallions, sliced, to garnish",
+      "raw": "Scallions, (sliced, to garnish)",
       "expected": {
-        "item": "Scallions, sliced, to garnish",
+        "item": "Scallions",
         "measurements": [],
-        "note": null,
+        "note": "sliced, to garnish",
         "section": "For Coating & Frying",
         "category": "Produce"
       }

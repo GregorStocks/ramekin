@@ -71,18 +71,18 @@
       }
     },
     {
-      "raw": "200 ml heavy cream 35% milk fat or higher",
+      "raw": "200 ml heavy cream (35% milk fat or higher)",
       "expected": {
-        "item": "heavy cream 35% milk fat or higher",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "200",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "35% milk fat or higher",
         "section": "Ice Cream",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -146,13 +146,13 @@
       }
     },
     {
-      "raw": "ice cubes to speed up cooling, optional",
+      "raw": "ice cubes (to speed up cooling, optional)",
       "expected": {
-        "item": "ice cubes to speed up cooling",
+        "item": "ice cubes",
         "measurements": [],
-        "note": "optional",
+        "note": "to speed up cooling, optional",
         "section": "Ice Cream",
-        "category": "Other"
+        "category": "Frozen"
       }
     }
   ]

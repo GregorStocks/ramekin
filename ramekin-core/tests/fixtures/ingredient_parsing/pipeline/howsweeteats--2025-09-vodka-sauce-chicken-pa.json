@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 pound lean ground chicken, I like to use 94% lean",
+      "raw": "1 pound lean ground chicken, (I like to use 94% lean)",
       "expected": {
-        "item": "lean ground chicken, I like to use 94% lean",
+        "item": "lean ground chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "I like to use 94% lean",
         "section": "Chicken Meatballs",
         "category": "Meat & Seafood"
       }
@@ -32,7 +32,7 @@
       }
     },
     {
-      "raw": "2 garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -77,16 +77,16 @@
       }
     },
     {
-      "raw": "⅓ cup chopped fresh herbs, like parsley, basil and chives",
+      "raw": "⅓ cup chopped fresh herbs, (like parsley, basil and chives)",
       "expected": {
-        "item": "chopped fresh herbs, like parsley, basil and chives",
+        "item": "chopped fresh herbs",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "like parsley, basil and chives",
         "section": "Chicken Meatballs",
         "category": "Produce"
       }
@@ -126,7 +126,7 @@
       }
     },
     {
-      "raw": "2 shallots, diced",
+      "raw": "2 shallots, (diced)",
       "expected": {
         "item": "shallots",
         "measurements": [
@@ -141,7 +141,7 @@
       }
     },
     {
-      "raw": "6 garlic cloves, minced",
+      "raw": "6 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -171,16 +171,16 @@
       }
     },
     {
-      "raw": "¼ cup vodka, I like Tito’s",
+      "raw": "¼ cup vodka, (I like Tito’s)",
       "expected": {
-        "item": "vodka, I like Tito’s",
+        "item": "vodka",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like Tito’s",
         "section": "Vodka Sauce",
         "category": "Beverages"
       }
@@ -216,7 +216,7 @@
       }
     },
     {
-      "raw": "⅔ cup finely grated parmesan cheese, plus more for topping",
+      "raw": "⅔ cup finely grated parmesan cheese, (plus more for topping)",
       "expected": {
         "item": "finely grated parmesan cheese",
         "measurements": [
@@ -231,7 +231,7 @@
       }
     },
     {
-      "raw": "8 ounces fresh mozzarella, torn or sliced",
+      "raw": "8 ounces fresh mozzarella, (torn or sliced)",
       "expected": {
         "item": "fresh mozzarella",
         "measurements": [
@@ -246,7 +246,7 @@
       }
     },
     {
-      "raw": "¼ cup shaved parmesan cheese, for topping",
+      "raw": "¼ cup shaved parmesan cheese, (for topping)",
       "expected": {
         "item": "shaved parmesan cheese",
         "measurements": [
@@ -261,7 +261,7 @@
       }
     },
     {
-      "raw": "crushed red pepper, for topping",
+      "raw": "crushed red pepper, (for topping)",
       "expected": {
         "item": "crushed red pepper",
         "measurements": [],
@@ -271,7 +271,7 @@
       }
     },
     {
-      "raw": "fresh basil, for topping",
+      "raw": "fresh basil, (for topping)",
       "expected": {
         "item": "fresh basil",
         "measurements": [],
@@ -285,7 +285,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 baguette, cut into rounds",
+      "raw": "1 baguette, (cut into rounds)",
       "expected": {
         "item": "baguette",
         "measurements": [
@@ -315,7 +315,7 @@
       }
     },
     {
-      "raw": "1 garlic clove, minced",
+      "raw": "1 garlic clove, (minced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [

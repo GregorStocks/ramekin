@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 pounds flank steak, sliced against the grain into thin ¼ inch thick slices",
+      "raw": "2 pounds flank steak, (sliced against the grain into thin ¼ inch thick slices)",
       "expected": {
         "item": "flank steak",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "2 tablespoons vegetable oil, such as canola oil or peanut oil",
+      "raw": "2 tablespoons vegetable oil, (such as canola oil or peanut oil)",
       "expected": {
         "item": "vegetable oil",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "¼ cup brown sugar, packed",
+      "raw": "¼ cup brown sugar, (packed)",
       "expected": {
         "item": "brown sugar",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "hot water as needed to thin the sauce, see notes",
+      "raw": "hot water as needed to thin the sauce, (see notes)",
       "expected": {
         "item": "hot water as needed to thin the sauce",
         "measurements": [],

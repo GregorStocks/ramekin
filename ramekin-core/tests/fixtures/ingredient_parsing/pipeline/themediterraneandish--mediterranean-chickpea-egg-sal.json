@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 large lemon, zested and juiced",
+      "raw": "1 large lemon, (zested and juiced)",
       "expected": {
         "item": "lemon zest",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1 large lemon, zested and juiced",
+      "raw": "1 large lemon, (zested and juiced)",
       "expected": {
         "item": "lemon juice",
         "measurements": [
@@ -53,22 +53,22 @@
       "expanded": true
     },
     {
-      "raw": "1/3 cup Private Reserve Greek extra virgin olive oil or Early Harvest Greek extra virgin olive oil",
+      "raw": "1/3 cup Private Reserve Greek extra virgin olive oil (or Early Harvest Greek extra virgin olive oil)",
       "expected": {
-        "item": "Private Reserve Greek extra virgin olive oil or Early Harvest Greek extra virgin olive oil",
+        "item": "Private Reserve Greek extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or Early Harvest Greek extra virgin olive oil",
         "section": "For Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 garlic clove, minced",
+      "raw": "1 garlic clove, (minced)",
       "expected": {
         "item": "garlic clove",
         "measurements": [
@@ -142,7 +142,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 cans chickpeas, rinsed and drained",
+      "raw": "2 cans chickpeas, (rinsed and drained)",
       "expected": {
         "item": "chickpeas",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "2 celery ribs, chopped",
+      "raw": "2 celery ribs, (chopped)",
       "expected": {
         "item": "celery ribs",
         "measurements": [
@@ -172,7 +172,7 @@
       }
     },
     {
-      "raw": "2 Persian cucumbers, or 1/2 seedless English cucumber, diced",
+      "raw": "2 Persian cucumbers, (or 1/2 seedless English cucumber, diced)",
       "expected": {
         "item": "Persian cucumbers",
         "measurements": [
@@ -187,7 +187,7 @@
       }
     },
     {
-      "raw": "2 to 3 green onions, trimmed, and chopped (both white and green parts)",
+      "raw": "2 to 3 green onions, (trimmed, and chopped (both white and green parts))",
       "expected": {
         "item": "green onions",
         "measurements": [
@@ -196,7 +196,7 @@
             "unit": null
           }
         ],
-        "note": "both white and green parts, trimmed, and chopped",
+        "note": "trimmed, and chopped (both white and green parts)",
         "section": "For Egg Salad",
         "category": "Produce"
       }
@@ -217,7 +217,7 @@
       }
     },
     {
-      "raw": "2 jalapeno peppers, chopped (optional)",
+      "raw": "2 jalapeno peppers, (chopped (optional))",
       "expected": {
         "item": "jalapeno peppers",
         "measurements": [
@@ -226,7 +226,7 @@
             "unit": null
           }
         ],
-        "note": "optional, chopped",
+        "note": "chopped (optional)",
         "section": "For Egg Salad",
         "category": "Produce"
       }
@@ -262,7 +262,7 @@
       }
     },
     {
-      "raw": "5 large hard boiled eggs, sliced",
+      "raw": "5 large hard boiled eggs, (sliced)",
       "expected": {
         "item": "hard boiled eggs",
         "measurements": [

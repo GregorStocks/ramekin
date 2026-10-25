@@ -3,7 +3,7 @@
   "recipe_slug": "roasted-vegetables-recipe",
   "ingredients": [
     {
-      "raw": "6 medium yellow potatoes, unpeeled and sliced into 3/4\" to 1\" thick pieces",
+      "raw": "6 medium yellow potatoes, (unpeeled and sliced into 3/4\" to 1\" thick pieces)",
       "expected": {
         "item": "yellow potatoes",
         "measurements": [
@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 medium butternut squash, peeled, seeded and sliced into 3/4\" - 1\" thick pieces",
+      "raw": "1 medium butternut squash, (peeled, seeded and sliced into 3/4\" - 1\" thick pieces)",
       "expected": {
         "item": "butternut squash",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "2 large carrots, peeled and sliced into 1/2\" thick rounds",
+      "raw": "2 large carrots, (peeled and sliced into 1/2\" thick rounds)",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "4 cloves of garlic, finely chopped",
+      "raw": "4 cloves of garlic, (finely chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 large or 2 medium zucchini, sliced into 3/4\" thick rounds",
+      "raw": "1 large or 2 medium zucchini, (sliced into 3/4\" thick rounds)",
       "expected": {
         "item": "zucchini",
         "measurements": [
@@ -77,9 +77,9 @@
       }
     },
     {
-      "raw": "2 red, yellow or orange bell peppers, cut into 1\" pieces",
+      "raw": "2 red, (yellow or orange bell peppers, cut into 1\" pieces)",
       "expected": {
-        "item": "red, yellow or orange bell peppers",
+        "item": "red yellow or orange bell peppers",
         "measurements": [
           {
             "amount": "2",
@@ -91,7 +91,7 @@
       }
     },
     {
-      "raw": "1.5 Tbsp garlic salt, or to taste",
+      "raw": "1.5 Tbsp garlic salt, (or to taste)",
       "expected": {
         "item": "garlic salt",
         "measurements": [
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "Freshly grated black pepper, to taste",
+      "raw": "Freshly grated black pepper, (to taste)",
       "expected": {
         "item": "Freshly grated black pepper",
         "measurements": [],
@@ -114,11 +114,11 @@
       }
     },
     {
-      "raw": "Extra light olive oil, or avocado oil, or vegetable oil",
+      "raw": "Extra light olive oil, (or avocado oil, or vegetable oil)",
       "expected": {
-        "item": "Extra light olive oil, or avocado oil, or vegetable oil",
+        "item": "Extra light olive oil",
         "measurements": [],
-        "note": null,
+        "note": "or avocado oil, or vegetable oil",
         "category": "Oils & Vinegars"
       }
     },

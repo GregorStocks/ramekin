@@ -31,16 +31,16 @@
       }
     },
     {
-      "raw": "6 tablespoons hoisin sauce, best quality such as Lee Kum Kee or Kikkoman",
+      "raw": "6 tablespoons hoisin sauce, (best quality such as Lee Kum Kee or Kikkoman)",
       "expected": {
-        "item": "hoisin sauce, best quality",
+        "item": "hoisin sauce",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": "such as Lee Kum Kee or Kikkoman",
+        "note": "best quality such as Lee Kum Kee or Kikkoman",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,7 +129,7 @@
       }
     },
     {
-      "raw": "4 cloves garlic, chopped",
+      "raw": "4 cloves garlic, (chopped)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -157,7 +157,7 @@
       }
     },
     {
-      "raw": "5 scallions, sliced, light and dark green parts separated",
+      "raw": "5 scallions, (sliced, light and dark green parts separated)",
       "expected": {
         "item": "scallions",
         "measurements": [
@@ -205,13 +205,13 @@
       }
     },
     {
-      "raw": "Shredded veggies, such as carrots, lettuce or bell peppers",
+      "raw": "Shredded veggies, (such as carrots, lettuce or bell peppers)",
       "expected": {
-        "item": "Shredded veggies, such as carrots, lettuce or bell peppers",
+        "item": "Shredded veggies",
         "measurements": [],
-        "note": null,
+        "note": "such as carrots, lettuce or bell peppers",
         "section": "For Serving",
-        "category": "Produce"
+        "category": "Other"
       }
     }
   ]

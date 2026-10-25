@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "2 tablespoons oil or ghee",
+      "raw": "2 tablespoons oil (or ghee)",
       "expected": {
-        "item": "oil or ghee",
+        "item": "oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or ghee",
         "category": "Oils & Vinegars"
       }
     },
@@ -59,7 +59,7 @@
       }
     },
     {
-      "raw": "1 tablespoon ginger garlic paste or ½ tablespoon each fine grated",
+      "raw": "1 tablespoon ginger garlic paste (or ½ tablespoon each fine grated)",
       "expected": {
         "item": "ginger garlic paste",
         "measurements": [
@@ -101,30 +101,30 @@
       }
     },
     {
-      "raw": "¾ to 1 teaspoon garam masala powder or curry powder",
+      "raw": "¾ to 1 teaspoon garam masala (powder or curry powder)",
       "expected": {
-        "item": "garam masala powder or curry powder",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "powder or curry powder",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "½ to 1 teaspoon red chili powder or paprika (reduce for less spicy)",
+      "raw": "½ to 1 teaspoon red chili powder (or paprika (reduce for less spicy))",
       "expected": {
-        "item": "red chili powder or paprika",
+        "item": "red chili powder",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "reduce for less spicy",
+        "note": "or paprika (reduce for less spicy)",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,16 +208,16 @@
       }
     },
     {
-      "raw": "1 small bay leaf or curry leaves",
+      "raw": "1 small bay leaf (or curry leaves)",
       "expected": {
-        "item": "bay leaf or curry leaves",
+        "item": "bay leaf",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "or curry leaves",
         "category": "Spices & Seasonings"
       }
     },

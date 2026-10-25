@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "1 teaspoon orange peel finely grated",
+      "raw": "1 teaspoon orange peel (finely grated)",
       "expected": {
         "item": "orange peel",
         "measurements": [
@@ -67,18 +67,18 @@
       }
     },
     {
-      "raw": "1/8 teaspoon salt fine grain",
+      "raw": "1/8 teaspoon salt (fine grain)",
       "expected": {
-        "item": "salt fine grain",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "fine grain",
         "section": "Cakes",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -97,18 +97,18 @@
       }
     },
     {
-      "raw": "10 tablespoons unsalted butter melted and cooled slightly",
+      "raw": "10 tablespoons unsalted butter (melted and cooled slightly)",
       "expected": {
-        "item": "unsalted butter melted and cooled slightly",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "10",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "melted and cooled slightly",
         "section": "Cakes",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -116,7 +116,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup semisweet chocolate chips chopped",
+      "raw": "1 cup semisweet chocolate chips (chopped)",
       "expected": {
         "item": "semisweet chocolate chips",
         "measurements": [
@@ -131,16 +131,16 @@
       }
     },
     {
-      "raw": "2 tablespoons olive oil or vegetable oil",
+      "raw": "2 tablespoons olive oil (or vegetable oil)",
       "expected": {
-        "item": "olive oil or vegetable oil",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or vegetable oil",
         "section": "Glaze",
         "category": "Oils & Vinegars"
       }

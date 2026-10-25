@@ -3,7 +3,7 @@
   "recipe_slug": "sweet-onion-crack-dip-recipe",
   "ingredients": [
     {
-      "raw": "8 ounces  (226.8 g) cream cheese, at room temperature",
+      "raw": "8 ounces (226.8 g) cream cheese, (at room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -93,11 +93,11 @@
       "is_section_header": true
     },
     {
-      "raw": "Baguette, crackers or chips, for serving",
+      "raw": "Baguette, (crackers or chips, for serving)",
       "expected": {
-        "item": "Baguette, crackers or chips",
+        "item": "Baguette",
         "measurements": [],
-        "note": "for serving",
+        "note": "crackers or chips, for serving",
         "section": "To Serve",
         "category": "Bakery & Bread"
       }

@@ -7,16 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "2 large egg whites, room temp (if you forgot, put them in warm water for 15 min)",
+      "raw": "2 large egg whites, (room temp (if you forgot, put them in warm water for 15 min))",
       "expected": {
-        "item": "egg whites, room temp",
+        "item": "egg whites",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "if you forgot, put them in warm water for 15 min",
+        "note": "room temp (if you forgot, put them in warm water for 15 min)",
         "section": "For the Meringue Mushrooms",
         "category": "Dairy & Eggs"
       }
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "1/4 cup semi-sweet chocolate chips, melted",
+      "raw": "1/4 cup semi-sweet chocolate chips, (melted)",
       "expected": {
         "item": "semi-sweet chocolate chips",
         "measurements": [

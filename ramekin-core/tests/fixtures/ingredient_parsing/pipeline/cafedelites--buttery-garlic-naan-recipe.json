@@ -37,67 +37,67 @@
       }
     },
     {
-      "raw": "1 1/2 teaspoons active dry yeast or instant, rapid rise",
+      "raw": "1 1/2 teaspoons active dry yeast (or instant, rapid rise)",
       "expected": {
-        "item": "active dry yeast or instant, rapid rise",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or instant, rapid rise",
         "section": "Naan Breads",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cup milk warm",
+      "raw": "3/4 cup milk (warm)",
       "expected": {
-        "item": "milk warm",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "section": "Naan Breads",
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "3/4 cup Greek yogurt or natural plain yogurt",
-      "expected": {
-        "item": "Greek yogurt or natural plain yogurt",
-        "measurements": [
-          {
-            "amount": "0.75",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
+        "note": "warm",
         "section": "Naan Breads",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1/4 cup vegetable oil plus 2 tablespoons extra for cooking",
+      "raw": "3/4 cup Greek yogurt (or natural plain yogurt)",
       "expected": {
-        "item": "vegetable oil plus 2 tablespoons extra for cooking",
+        "item": "Greek yogurt",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": "or natural plain yogurt",
+        "section": "Naan Breads",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup vegetable oil (plus 2 tablespoons extra for cooking)",
+      "expected": {
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus 2 tablespoons extra for cooking",
         "section": "Naan Breads",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2 cloves garlic minced",
+      "raw": "2 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -112,7 +112,7 @@
       }
     },
     {
-      "raw": "4 cups plain flour  plus extra for dusting",
+      "raw": "4 cups plain flour (plus extra for dusting)",
       "expected": {
         "item": "plain flour",
         "measurements": [
@@ -161,7 +161,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3 tablespoons butter melted",
+      "raw": "3 tablespoons butter (melted)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "2 cloves garlic minced",
+      "raw": "2 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -191,16 +191,16 @@
       }
     },
     {
-      "raw": "1 teaspoon fresh cilantro  or parsley, chopped",
+      "raw": "1 teaspoon fresh cilantro (or parsley, chopped)",
       "expected": {
-        "item": "fresh cilantro or parsley",
+        "item": "fresh cilantro",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "chopped",
+        "note": "or parsley, chopped",
         "section": "Garlic Butter Topping",
         "category": "Produce"
       }

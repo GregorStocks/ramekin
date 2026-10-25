@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "25 g white sugar caster or granulated",
+      "raw": "25 g white sugar (caster or granulated)",
       "expected": {
-        "item": "white sugar caster or granulated",
+        "item": "white sugar",
         "measurements": [
           {
             "amount": "25",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "caster or granulated",
         "section": "Caramel Sauce",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -71,18 +71,18 @@
       }
     },
     {
-      "raw": "100 g cream cheese I use Philadelphia or Yukijirushi",
+      "raw": "100 g cream cheese (I use Philadelphia or Yukijirushi)",
       "expected": {
-        "item": "cream cheese I use Philadelphia or Yukijirushi",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Philadelphia or Yukijirushi",
         "section": "Baschee",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
@@ -101,18 +101,18 @@
       }
     },
     {
-      "raw": "50 g white sugar caster or granulated",
+      "raw": "50 g white sugar (caster or granulated)",
       "expected": {
-        "item": "white sugar caster or granulated",
+        "item": "white sugar",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "caster or granulated",
         "section": "Baschee",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {

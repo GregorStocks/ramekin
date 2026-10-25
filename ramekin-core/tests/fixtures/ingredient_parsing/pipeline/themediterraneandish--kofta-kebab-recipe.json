@@ -3,7 +3,7 @@
   "recipe_slug": "kofta-kebab-recipe",
   "ingredients": [
     {
-      "raw": "1 medium yellow onion quartered",
+      "raw": "1 medium yellow onion (quartered)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 whole bunch parsley stems removed (about 2 packed cups parsley leaves)",
+      "raw": "1 whole bunch parsley (stems removed (about 2 packed cups parsley leaves))",
       "expected": {
         "item": "whole bunch parsley",
         "measurements": [
@@ -40,7 +40,7 @@
             "unit": null
           }
         ],
-        "note": "about 2 packed cups parsley leaves, stems removed",
+        "note": "stems removed (about 2 packed cups parsley leaves)",
         "category": "Other"
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 slice of bread toasted until browned and soaked in water until fully tender",
+      "raw": "1 slice of bread (toasted until browned and soaked in water until fully tender)",
       "expected": {
         "item": "bread",
         "measurements": [

@@ -133,7 +133,7 @@
       "expanded": true
     },
     {
-      "raw": "3 large eggs, at room temperature**",
+      "raw": "3 large eggs, (at room temperature**)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -201,7 +201,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 (8 oz) pkg. cream cheese, at room temperature",
+      "raw": "1 (8 oz) pkg. cream cheese, (at room temperature)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -239,7 +239,7 @@
       }
     },
     {
-      "raw": "6 Tbsp (85g) unsalted butter, at room temperature",
+      "raw": "6 Tbsp (85g) unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

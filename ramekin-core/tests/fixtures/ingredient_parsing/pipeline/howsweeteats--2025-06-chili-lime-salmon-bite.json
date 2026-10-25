@@ -3,7 +3,7 @@
   "recipe_slug": "2025-06-chili-lime-salmon-bite",
   "ingredients": [
     {
-      "raw": "2 pounds salmon, cut into chunks",
+      "raw": "2 pounds salmon, (cut into chunks)",
       "expected": {
         "item": "salmon",
         "measurements": [
@@ -17,16 +17,16 @@
       }
     },
     {
-      "raw": "1 ½ tablespoons tajin seasoning, or any chili lime seasoning",
+      "raw": "1 ½ tablespoons tajin seasoning, (or any chili lime seasoning)",
       "expected": {
-        "item": "tajin seasoning, or any chili lime seasoning",
+        "item": "tajin seasoning",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or any chili lime seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "herby summer sauce, optional",
+      "raw": "herby summer sauce, (optional)",
       "expected": {
         "item": "herby summer sauce",
         "measurements": [],
@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "jasmine rice, optional",
+      "raw": "jasmine rice, (optional)",
       "expected": {
         "item": "jasmine rice",
         "measurements": [],
@@ -95,7 +95,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 small cabbage, thinly sliced",
+      "raw": "1 small cabbage, (thinly sliced)",
       "expected": {
         "item": "cabbage",
         "measurements": [
@@ -110,7 +110,7 @@
       }
     },
     {
-      "raw": "1 mango, thinly sliced",
+      "raw": "1 mango, (thinly sliced)",
       "expected": {
         "item": "mango",
         "measurements": [
@@ -125,7 +125,7 @@
       }
     },
     {
-      "raw": "½ red onion, thinly sliced",
+      "raw": "½ red onion, (thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -140,7 +140,7 @@
       }
     },
     {
-      "raw": "½ cup fresh cilantro, plus more for sprinkling",
+      "raw": "½ cup fresh cilantro, (plus more for sprinkling)",
       "expected": {
         "item": "fresh cilantro",
         "measurements": [

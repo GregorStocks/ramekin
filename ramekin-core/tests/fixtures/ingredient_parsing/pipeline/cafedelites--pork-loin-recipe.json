@@ -7,22 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "4-5 pound pork loin roast trimmed of skin and fat",
+      "raw": "4-5 pound pork loin roast (trimmed of skin and fat)",
       "expected": {
-        "item": "pork loin roast trimmed of skin and fat",
+        "item": "pork loin roast",
         "measurements": [
           {
             "amount": "4-5",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "trimmed of skin and fat",
         "section": "Pork Loin",
         "category": "Other"
       }
     },
     {
-      "raw": "1 ½ tablespoons olive oil divided",
+      "raw": "1 ½ tablespoons olive oil (divided)",
       "expected": {
         "item": "olive oil",
         "measurements": [
@@ -41,18 +41,18 @@
       "is_section_header": true
     },
     {
-      "raw": "2 teaspoons paprika mild or smoked",
+      "raw": "2 teaspoons paprika (mild or smoked)",
       "expected": {
-        "item": "paprika mild or smoked",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "mild or smoked",
         "section": "Rub",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "½-1 teaspoon red chili powder optional",
+      "raw": "½-1 teaspoon red chili powder (optional)",
       "expected": {
         "item": "red chili powder",
         "measurements": [
@@ -180,18 +180,18 @@
       }
     },
     {
-      "raw": "6 cloves garlic finely chppped or minced",
+      "raw": "6 cloves garlic (finely chppped or minced)",
       "expected": {
-        "item": "garlic finely chppped or minced",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "6",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "finely chppped or minced",
         "section": "Honey Garlic Butter Sauce",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -210,33 +210,33 @@
       }
     },
     {
-      "raw": "2 tablespoons rice wine vinegar or cider vinegar",
+      "raw": "2 tablespoons rice wine vinegar (or cider vinegar)",
       "expected": {
-        "item": "rice wine vinegar or cider vinegar",
+        "item": "rice wine vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or cider vinegar",
         "section": "Honey Garlic Butter Sauce",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "1 pinch salt large",
+      "raw": "1 pinch salt (large)",
       "expected": {
-        "item": "salt large",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "large",
         "section": "Honey Garlic Butter Sauce",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -259,9 +259,24 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup low sodium beef stock or chicken stock/broth, FOR OVEN METHOD ONLY",
+      "raw": "½ cup low sodium beef stock (or chicken stock/broth, FOR OVEN METHOD ONLY)",
       "expected": {
-        "item": "low sodium beef stock or chicken stock/broth",
+        "item": "low sodium beef stock",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or chicken stock/broth, FOR OVEN METHOD ONLY",
+        "section": "Additional",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "½ cup water (FOR OVEN METHOD ONLY)",
+      "expected": {
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
@@ -270,22 +285,7 @@
         ],
         "note": "FOR OVEN METHOD ONLY",
         "section": "Additional",
-        "category": "Canned Goods"
-      }
-    },
-    {
-      "raw": "½ cup water FOR OVEN METHOD ONLY",
-      "expected": {
-        "item": "water FOR OVEN METHOD ONLY",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "section": "Additional",
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {

@@ -73,7 +73,7 @@
       }
     },
     {
-      "raw": "1 cup pecans finely chopped",
+      "raw": "1 cup pecans (finely chopped)",
       "expected": {
         "item": "pecans",
         "measurements": [
@@ -121,13 +121,13 @@
       }
     },
     {
-      "raw": "caramel sauce homemade or store-bought",
+      "raw": "caramel sauce (homemade or store-bought)",
       "expected": {
-        "item": "caramel sauce homemade or store-bought",
+        "item": "caramel sauce",
         "measurements": [],
-        "note": null,
+        "note": "homemade or store-bought",
         "section": "Topping",
-        "category": "Other"
+        "category": "Condiments & Sauces"
       }
     },
     {

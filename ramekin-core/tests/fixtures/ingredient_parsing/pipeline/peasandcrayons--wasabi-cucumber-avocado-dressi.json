@@ -82,16 +82,16 @@
       }
     },
     {
-      "raw": "2 TBSP  avocado oil or your favorite healthy oil",
+      "raw": "2 TBSP avocado oil (or your favorite healthy oil)",
       "expected": {
-        "item": "avocado oil or your favorite healthy oil",
+        "item": "avocado oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or your favorite healthy oil",
         "section": "For the Dressing",
         "category": "Oils & Vinegars"
       }

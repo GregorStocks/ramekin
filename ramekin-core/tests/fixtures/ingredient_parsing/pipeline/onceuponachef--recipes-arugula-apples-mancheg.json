@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 crisp apple, such as Fuji or Honeycrisp",
+      "raw": "1 crisp apple, (such as Fuji or Honeycrisp)",
       "expected": {
         "item": "crisp apple",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "3½ ounces Manchego, thinly sliced",
+      "raw": "3½ ounces Manchego, (thinly sliced)",
       "expected": {
         "item": "Manchego",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "½ cup sliced almonds, lightly toasted if desired",
+      "raw": "½ cup sliced almonds, (lightly toasted if desired)",
       "expected": {
         "item": "sliced almonds",
         "measurements": [
@@ -131,7 +131,7 @@
       }
     },
     {
-      "raw": "1 tablespoon finely chopped shallots, from 1 shallot",
+      "raw": "1 tablespoon finely chopped shallots, (from 1 shallot)",
       "expected": {
         "item": "finely chopped shallots",
         "measurements": [

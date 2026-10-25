@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "6 Tablespoons salted butter melted",
+      "raw": "6 Tablespoons salted butter (melted)",
       "expected": {
         "item": "salted butter",
         "measurements": [
@@ -71,18 +71,18 @@
       "is_section_header": true
     },
     {
-      "raw": "24 ounces cream cheese room temperature",
+      "raw": "24 ounces cream cheese (room temperature)",
       "expected": {
-        "item": "cream cheese room temperature",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "24",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Filling",
-        "category": "Other"
+        "category": "Cheese"
       }
     },
     {
@@ -131,33 +131,33 @@
       }
     },
     {
-      "raw": "½ cup sour cream room temperature",
+      "raw": "½ cup sour cream (room temperature)",
       "expected": {
-        "item": "sour cream room temperature",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Filling",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "3 large eggs room temperature",
+      "raw": "3 large eggs (room temperature)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temperature",
         "section": "Filling",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

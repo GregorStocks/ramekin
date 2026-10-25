@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 tablespoons  / 30 g unsalted butter, softened (softer than room temp, but not melted)",
+      "raw": "2 tablespoons / 30 g unsalted butter, (softened (softer than room temp, but not melted))",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "softer than room temp, but not melted, softened",
+        "note": "softened (softer than room temp, but not melted)",
         "section": "For Paste",
         "category": "Dairy & Eggs"
       }
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "⅓ cup  / 40 g cake flour, sifted",
+      "raw": "⅓ cup / 40 g cake flour, (sifted)",
       "expected": {
         "item": "cake flour",
         "measurements": [
@@ -97,7 +97,7 @@
       "is_section_header": true
     },
     {
-      "raw": "3   large eggs, separated",
+      "raw": "3 large eggs, (separated)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -112,7 +112,7 @@
       }
     },
     {
-      "raw": "6 tablespoons  / 75 g granulated sugar, divided",
+      "raw": "6 tablespoons / 75 g granulated sugar, (divided)",
       "expected": {
         "item": "granulated sugar",
         "measurements": [
@@ -195,7 +195,7 @@
       }
     },
     {
-      "raw": "⅔ cup  / 67 g cake flour*, sifted",
+      "raw": "⅔ cup / 67 g cake flour*, (sifted)",
       "expected": {
         "item": "cake flour",
         "measurements": [

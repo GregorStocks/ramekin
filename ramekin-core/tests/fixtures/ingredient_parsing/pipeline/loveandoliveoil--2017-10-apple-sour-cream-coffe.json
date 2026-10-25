@@ -41,9 +41,9 @@
       }
     },
     {
-      "raw": "½ cup  / 60 g finely chopped pecans, almonds, or walnuts",
+      "raw": "½ cup / 60 g finely chopped pecans, (almonds, or walnuts)",
       "expected": {
-        "item": "finely chopped pecans, almonds, or walnuts",
+        "item": "finely chopped pecans",
         "measurements": [
           {
             "amount": "0.5",
@@ -54,7 +54,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "almonds, or walnuts",
         "section": "For Topping",
         "category": "Nuts & Dried Fruit"
       }
@@ -64,7 +64,7 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup  / 113 g (1 stick) unsalted butter, at room temperature",
+      "raw": "½ cup / 113 g (1 stick) unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -106,7 +106,7 @@
       }
     },
     {
-      "raw": "2   large eggs, at room temperature",
+      "raw": "2 large eggs, (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -121,7 +121,7 @@
       }
     },
     {
-      "raw": "1 cup  / 240 g sour cream, at room temperature",
+      "raw": "1 cup / 240 g sour cream, (at room temperature)",
       "expected": {
         "item": "sour cream",
         "measurements": [
@@ -219,20 +219,16 @@
       }
     },
     {
-      "raw": "2   medium apples, peeled, cored, and finely diced (about 1 1/2 cups diced)",
+      "raw": "2 medium apples, (peeled, cored, and finely diced (about 1 1/2 cups diced))",
       "expected": {
         "item": "apples",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
-          },
-          {
-            "amount": "1.5",
-            "unit": "cup"
           }
         ],
-        "note": "about 1 1/2 cups diced, peeled, cored, and finely diced",
+        "note": "peeled, cored, and finely diced (about 1 1/2 cups diced)",
         "section": "For Cake",
         "category": "Produce"
       }

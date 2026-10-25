@@ -3,7 +3,7 @@
   "recipe_slug": "hawawshi-recipe",
   "ingredients": [
     {
-      "raw": "1 large yellow onion quartered",
+      "raw": "1 large yellow onion (quartered)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,21 +31,21 @@
       }
     },
     {
-      "raw": "1 green bell pepper cored and cut into large chunks",
+      "raw": "1 green bell pepper (cored and cut into large chunks)",
       "expected": {
-        "item": "green bell pepper cored and cut into large chunks",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "cored and cut into large chunks",
+        "category": "Produce"
       }
     },
     {
-      "raw": "1 jalapeno halved and seeded (leave some of the seed if you like heat)",
+      "raw": "1 jalapeno (halved and seeded (leave some of the seed if you like heat))",
       "expected": {
         "item": "jalapeno",
         "measurements": [
@@ -54,22 +54,22 @@
             "unit": null
           }
         ],
-        "note": "leave some of the seed if you like heat, halved and seeded",
+        "note": "halved and seeded (leave some of the seed if you like heat)",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ ounce fresh parsley stems trimmed (cut most of the stem but leave some for extra flavor)",
+      "raw": "½ ounce fresh parsley (stems trimmed (cut most of the stem but leave some for extra flavor))",
       "expected": {
-        "item": "fresh parsley stems",
+        "item": "fresh parsley",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "oz"
           }
         ],
-        "note": "cut most of the stem but leave some for extra flavor, trimmed",
-        "category": "Other"
+        "note": "stems trimmed (cut most of the stem but leave some for extra flavor)",
+        "category": "Produce"
       }
     },
     {
@@ -119,17 +119,17 @@
       }
     },
     {
-      "raw": "6 loaves of pita bread you need the kind with pockets",
+      "raw": "6 loaves of pita bread (you need the kind with pockets)",
       "expected": {
-        "item": "pita bread you need the kind with pockets",
+        "item": "pita bread",
         "measurements": [
           {
             "amount": "6",
             "unit": "loaf"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "you need the kind with pockets",
+        "category": "Bakery & Bread"
       }
     },
     {

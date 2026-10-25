@@ -3,142 +3,26 @@
   "recipe_slug": "cooking-recipe-ideas-recipes-a",
   "ingredients": [
     {
-      "raw": "1 box spice cake mix, plus ingredients called for on box",
+      "raw": "2 c. panko bread crumbs",
       "expected": {
-        "item": "spice cake mix",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "box"
-          }
-        ],
-        "note": "plus ingredients called for on box",
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "3 apples",
-      "expected": {
-        "item": "apples",
-        "measurements": [
-          {
-            "amount": "3",
-            "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1/3 c. chopped peanuts, preferably roasted",
-      "expected": {
-        "item": "chopped peanuts",
-        "measurements": [
-          {
-            "amount": "0.33",
-            "unit": "cup"
-          }
-        ],
-        "note": "preferably roasted",
-        "category": "Nuts & Dried Fruit"
-      }
-    },
-    {
-      "raw": "3 c. chocolate chips",
-      "expected": {
-        "item": "chocolate chips",
-        "measurements": [
-          {
-            "amount": "3",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "1 1/2 c. heavy cream",
-      "expected": {
-        "item": "heavy cream",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "1 c. (2 sticks) butter, softened",
-      "expected": {
-        "item": "butter",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": "stick"
-          }
-        ],
-        "note": "softened",
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "1 c. caramel, plus more for decoration",
-      "expected": {
-        "item": "caramel",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          }
-        ],
-        "note": "plus more for decoration",
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
-      "raw": "4 c. powdered sugar",
-      "expected": {
-        "item": "powdered sugar",
-        "measurements": [
-          {
-            "amount": "4",
-            "unit": "cup"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "1 tsp. pure vanilla extract",
-      "expected": {
-        "item": "pure vanilla extract",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
-      "raw": "2 tsp. cinnamon",
-      "expected": {
-        "item": "cinnamon",
+        "item": "panko bread crumbs",
         "measurements": [
           {
             "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1/2 tsp. garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "0.5",
             "unit": "tsp"
           }
         ],
@@ -147,9 +31,69 @@
       }
     },
     {
-      "raw": "3 tbsp. heavy cream",
+      "raw": "Kosher salt",
       "expected": {
-        "item": "heavy cream",
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 c. buttermilk",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 bone-in, skin-on chicken thighs",
+      "expected": {
+        "item": "bone-in, skin-on chicken thighs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 tbsp. Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
         "measurements": [
           {
             "amount": "3",
@@ -157,21 +101,49 @@
           }
         ],
         "note": null,
-        "category": "Dairy & Eggs"
+        "category": "Condiments & Sauces"
       }
     },
     {
-      "raw": "Pinch of kosher salt",
+      "raw": "2 tbsp. barbecue sauce",
       "expected": {
-        "item": "kosher salt",
+        "item": "barbecue sauce",
         "measurements": [
           {
-            "amount": null,
-            "unit": "pinch"
+            "amount": "2",
+            "unit": "tbsp"
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tbsp. mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tsp. honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

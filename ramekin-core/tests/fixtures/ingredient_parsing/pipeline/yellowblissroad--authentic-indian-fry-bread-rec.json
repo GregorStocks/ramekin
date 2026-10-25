@@ -102,11 +102,11 @@
       }
     },
     {
-      "raw": "Taco – beans cheese, lettuce, tomato, olives & sour cream",
+      "raw": "Taco – beans (cheese, lettuce, tomato, olives & sour cream)",
       "expected": {
-        "item": "Taco - beans cheese, lettuce, tomato, olives & sour cream",
+        "item": "Taco - beans",
         "measurements": [],
-        "note": null,
+        "note": "cheese, lettuce, tomato, olives & sour cream",
         "section": "Topping Ideas",
         "category": "Other"
       }

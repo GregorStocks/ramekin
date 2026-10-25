@@ -7,20 +7,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 heaped cup  paneer  crumbled (about 150 grams)",
+      "raw": "1 heaped cup paneer (crumbled (about 150 grams))",
       "expected": {
         "item": "paneer",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaped cup"
-          },
-          {
-            "amount": "150",
-            "unit": "g"
           }
         ],
-        "note": "about 150 grams, crumbled",
+        "note": "crumbled (about 150 grams)",
         "section": "For Malai Kofta",
         "category": "Cheese"
       }
@@ -75,7 +71,7 @@
       }
     },
     {
-      "raw": "2 tablespoons coriander leaves  chopped finely",
+      "raw": "2 tablespoons coriander leaves (chopped finely)",
       "expected": {
         "item": "coriander leaves",
         "measurements": [
@@ -174,7 +170,7 @@
       }
     },
     {
-      "raw": "1 cup onions cubed",
+      "raw": "1 cup onions (cubed)",
       "expected": {
         "item": "onions",
         "measurements": [
@@ -189,7 +185,7 @@
       }
     },
     {
-      "raw": "1½ cup tomatoes cubed",
+      "raw": "1½ cup tomatoes (cubed)",
       "expected": {
         "item": "tomatoes",
         "measurements": [

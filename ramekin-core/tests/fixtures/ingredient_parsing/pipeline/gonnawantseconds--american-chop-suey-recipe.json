@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 large yellow onion finely chopped",
+      "raw": "1 large yellow onion (finely chopped)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 green pepper seeded and finely chopped",
+      "raw": "1 green pepper (seeded and finely chopped)",
       "expected": {
         "item": "green pepper",
         "measurements": [
@@ -45,7 +45,7 @@
       }
     },
     {
-      "raw": "1 tablespoon fresh garlic minced",
+      "raw": "1 tablespoon fresh garlic (minced)",
       "expected": {
         "item": "fresh garlic",
         "measurements": [
@@ -59,17 +59,17 @@
       }
     },
     {
-      "raw": "2 pounds ground beef 80/20",
+      "raw": "2 pounds ground beef (80/20)",
       "expected": {
-        "item": "ground beef 80/20",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "80/20",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -119,7 +119,7 @@
       }
     },
     {
-      "raw": "1 (28-ounce) can crushed tomatoes, including all liquid",
+      "raw": "1 (28-ounce) can crushed tomatoes, (including all liquid)",
       "expected": {
         "item": "crushed tomatoes",
         "measurements": [
@@ -203,21 +203,21 @@
       }
     },
     {
-      "raw": "2 cups elbow macaroni uncooked",
+      "raw": "2 cups elbow macaroni (uncooked)",
       "expected": {
-        "item": "elbow macaroni uncooked",
+        "item": "elbow macaroni",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "uncooked",
+        "category": "Pasta & Rice"
       }
     },
     {
-      "raw": "16 ounces Mozzarella shredded",
+      "raw": "16 ounces Mozzarella (shredded)",
       "expected": {
         "item": "Mozzarella",
         "measurements": [
@@ -235,7 +235,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2-3 tablespoons Italian parsley roughly chopped, optional",
+      "raw": "2-3 tablespoons Italian parsley (roughly chopped, optional)",
       "expected": {
         "item": "Italian parsley",
         "measurements": [

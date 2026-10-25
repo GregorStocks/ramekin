@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 oz  / 227 g fresh or frozen strawberries, hulled",
+      "raw": "8 oz / 227 g fresh or frozen strawberries, (hulled)",
       "expected": {
         "item": "fresh or frozen strawberries",
         "measurements": [
@@ -132,7 +132,7 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup  / 113 g unsalted butter, at room temperature",
+      "raw": "½ cup / 113 g unsalted butter, (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -170,7 +170,7 @@
       }
     },
     {
-      "raw": "3   large eggs, at room temperature",
+      "raw": "3 large eggs, (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -185,7 +185,7 @@
       }
     },
     {
-      "raw": "½ cup  / 120 g buttermilk, at room temperature",
+      "raw": "½ cup / 120 g buttermilk, (at room temperature)",
       "expected": {
         "item": "buttermilk",
         "measurements": [
@@ -238,7 +238,7 @@
       }
     },
     {
-      "raw": "1 ½ cups  / 185 g cake flour, sifted",
+      "raw": "1 ½ cups / 185 g cake flour, (sifted)",
       "expected": {
         "item": "cake flour",
         "measurements": [
@@ -306,7 +306,7 @@
       }
     },
     {
-      "raw": "whipped topping and fresh strawberries, optional, for decoration",
+      "raw": "whipped topping and fresh strawberries, (optional, for decoration)",
       "expected": {
         "item": "whipped topping and fresh strawberries",
         "measurements": [],
@@ -316,18 +316,18 @@
       }
     },
     {
-      "raw": "½ quart   strawberry buttermilk ice cream, half a batch of the ice cream recipe as listed, or store-bought",
+      "raw": "½ quart strawberry buttermilk ice cream, (half a batch of the ice cream recipe as listed, or store-bought)",
       "expected": {
-        "item": "strawberry buttermilk ice cream, half a batch of the ice cream recipe as listed, or store-bought",
+        "item": "strawberry buttermilk ice cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "quart"
           }
         ],
-        "note": null,
+        "note": "half a batch of the ice cream recipe as listed, or store-bought",
         "section": "For Funfetti Cake Layers",
-        "category": "Frozen"
+        "category": "Other"
       }
     }
   ]

@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "1 pint strawberries washed, hulled, sliced",
+      "raw": "1 pint strawberries (washed, hulled, sliced)",
       "expected": {
         "item": "strawberries",
         "measurements": [
@@ -45,31 +45,31 @@
       }
     },
     {
-      "raw": "3 ounces creamy Gorgonzola look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind",
+      "raw": "3 ounces creamy Gorgonzola (look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind)",
       "expected": {
-        "item": "creamy Gorgonzola look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind",
+        "item": "creamy Gorgonzola",
         "measurements": [
           {
             "amount": "3",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind",
         "category": "Other"
       }
     },
     {
-      "raw": "½ cup mint  chiffonade",
+      "raw": "½ cup mint (chiffonade)",
       "expected": {
-        "item": "mint chiffonade",
+        "item": "mint",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "chiffonade",
+        "category": "Produce"
       }
     },
     {
@@ -122,7 +122,7 @@
       }
     },
     {
-      "raw": "½ teaspoon pepper freshly ground",
+      "raw": "½ teaspoon pepper (freshly ground)",
       "expected": {
         "item": "pepper",
         "measurements": [

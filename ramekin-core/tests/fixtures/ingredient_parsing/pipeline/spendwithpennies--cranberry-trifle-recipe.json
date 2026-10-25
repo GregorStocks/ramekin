@@ -7,18 +7,22 @@
       "is_section_header": true
     },
     {
-      "raw": "24 ounces fresh cranberries 2 packages",
+      "raw": "24 ounces fresh cranberries (2 packages)",
       "expected": {
-        "item": "fresh cranberries 2 packages",
+        "item": "fresh cranberries",
         "measurements": [
           {
             "amount": "24",
             "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "package"
           }
         ],
         "note": null,
         "section": "Cranberry Layer",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -180,22 +184,26 @@
       "is_section_header": true
     },
     {
-      "raw": "14.25 ounces white cake mix 1 box, baked, cooled and cubed",
+      "raw": "14.25 ounces white cake mix (1 box, baked, cooled and cubed)",
       "expected": {
-        "item": "white cake mix 1 box, baked",
+        "item": "white cake mix",
         "measurements": [
           {
             "amount": "14.25",
             "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "box"
           }
         ],
-        "note": "cooled and cubed",
+        "note": "1 box, baked, cooled and cubed",
         "section": "Cake",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
-      "raw": "whipped cream for decorating",
+      "raw": "whipped cream (for decorating)",
       "expected": {
         "item": "whipped cream",
         "measurements": [],
@@ -205,7 +213,7 @@
       }
     },
     {
-      "raw": "Sugared Cranberries  for decorating",
+      "raw": "Sugared Cranberries (for decorating)",
       "expected": {
         "item": "Sugared Cranberries",
         "measurements": [],

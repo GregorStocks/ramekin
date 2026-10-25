@@ -22,18 +22,18 @@
       }
     },
     {
-      "raw": "1 pound turkey sausage sweet or spicy with casings removed (I used spicy)",
+      "raw": "1 pound turkey sausage (sweet or spicy with casings removed (I used spicy))",
       "expected": {
-        "item": "turkey sausage sweet or spicy with casings removed",
+        "item": "turkey sausage",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "I used spicy",
+        "note": "sweet or spicy with casings removed (I used spicy)",
         "section": "For the Burgers",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -187,7 +187,7 @@
       }
     },
     {
-      "raw": "6 whole wheat hamburger buns for serving",
+      "raw": "6 whole wheat hamburger buns (for serving)",
       "expected": {
         "item": "whole wheat hamburger buns",
         "measurements": [
@@ -206,7 +206,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 large red onion halved and thinly sliced",
+      "raw": "1 large red onion (halved and thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -221,7 +221,7 @@
       }
     },
     {
-      "raw": "1 green bell pepper thinly sliced",
+      "raw": "1 green bell pepper (thinly sliced)",
       "expected": {
         "item": "green bell pepper",
         "measurements": [
@@ -236,7 +236,7 @@
       }
     },
     {
-      "raw": "1 red bell pepper thinly sliced",
+      "raw": "1 red bell pepper (thinly sliced)",
       "expected": {
         "item": "red bell pepper",
         "measurements": [

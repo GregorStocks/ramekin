@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "20 ounces   fresh peaches, peeled, pitted and cut into 1/8-inch slices",
+      "raw": "20 ounces fresh peaches, (peeled, pitted and cut into 1/8-inch slices)",
       "expected": {
         "item": "fresh peaches",
         "measurements": [
@@ -101,7 +101,7 @@
       "is_section_header": true
     },
     {
-      "raw": "5   sheets phyllo dough, thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels)",
+      "raw": "5 sheets phyllo dough, (thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels))",
       "expected": {
         "item": "phyllo dough",
         "measurements": [
@@ -110,13 +110,13 @@
             "unit": "sheet"
           }
         ],
-        "note": "use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels, thawed",
+        "note": "thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels)",
         "section": "For the Strudel Assembly",
         "category": "Frozen"
       }
     },
     {
-      "raw": "5 tablespoons   unsalted butter, melted",
+      "raw": "5 tablespoons unsalted butter, (melted)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

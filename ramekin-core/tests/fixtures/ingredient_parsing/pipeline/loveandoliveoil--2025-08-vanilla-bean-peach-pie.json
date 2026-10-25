@@ -60,7 +60,7 @@
       }
     },
     {
-      "raw": "½ cup  / 113 g 1 stick cold unsalted butter, cut into 1/4-inch pieces",
+      "raw": "½ cup / 113 g 1 stick cold unsalted butter, (cut into 1/4-inch pieces)",
       "expected": {
         "item": "1 stick cold unsalted butter",
         "measurements": [
@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "½ cup  / 110 g cold vegetable shortening*, cut into pieces",
+      "raw": "½ cup / 110 g cold vegetable shortening*, (cut into pieces)",
       "expected": {
         "item": "cold vegetable shortening",
         "measurements": [
@@ -174,7 +174,7 @@
       }
     },
     {
-      "raw": "1 ¾ lbs  / 800 g ripe peaches, about 5-6 medium peaches or 5 cups sliced",
+      "raw": "1 ¾ lbs / 800 g ripe peaches, (about 5-6 medium peaches or 5 cups sliced)",
       "expected": {
         "item": "ripe peaches",
         "measurements": [
@@ -208,7 +208,7 @@
       }
     },
     {
-      "raw": "2 tablespoons  / 28 g cold unsalted butter, cut into small pieces",
+      "raw": "2 tablespoons / 28 g cold unsalted butter, (cut into small pieces)",
       "expected": {
         "item": "cold unsalted butter",
         "measurements": [
@@ -227,7 +227,7 @@
       }
     },
     {
-      "raw": "1   egg, lightly beaten (for egg wash)",
+      "raw": "1 egg, (lightly beaten (for egg wash))",
       "expected": {
         "item": "egg",
         "measurements": [
@@ -236,7 +236,7 @@
             "unit": null
           }
         ],
-        "note": "for egg wash, lightly beaten",
+        "note": "lightly beaten (for egg wash)",
         "section": "For Filling",
         "category": "Dairy & Eggs"
       }
@@ -265,18 +265,18 @@
       }
     },
     {
-      "raw": "⅛ teaspoon   guar gum*, optional, to stabilize the cream",
+      "raw": "⅛ teaspoon guar gum*, (optional, to stabilize the cream)",
       "expected": {
-        "item": "guar gum*, optional, to stabilize the cream",
+        "item": "guar gum",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "optional, to stabilize the cream",
         "section": "For Topping",
-        "category": "Other"
+        "category": "Baking"
       }
     }
   ]

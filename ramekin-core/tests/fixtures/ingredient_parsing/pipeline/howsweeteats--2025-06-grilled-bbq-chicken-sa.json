@@ -96,7 +96,7 @@
       }
     },
     {
-      "raw": "pickled onions, for topping",
+      "raw": "pickled onions, (for topping)",
       "expected": {
         "item": "pickled onions",
         "measurements": [],
@@ -105,7 +105,7 @@
       }
     },
     {
-      "raw": "romaine lettuce, for topping",
+      "raw": "romaine lettuce, (for topping)",
       "expected": {
         "item": "romaine lettuce",
         "measurements": [],
@@ -133,7 +133,7 @@
       }
     },
     {
-      "raw": "1 to 2 limes, juiced",
+      "raw": "1 to 2 limes, (juiced)",
       "expected": {
         "item": "lime juice",
         "measurements": [

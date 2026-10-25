@@ -41,16 +41,16 @@
       }
     },
     {
-      "raw": "20 g maple syrup, honey or cane sugar",
+      "raw": "20 g maple syrup, (honey or cane sugar)",
       "expected": {
-        "item": "maple syrup, honey or cane sugar",
+        "item": "maple syrup",
         "measurements": [
           {
             "amount": "20",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "honey or cane sugar",
         "section": "To Activate the Yeast",
         "category": "Condiments & Sauces"
       }
@@ -75,7 +75,7 @@
       }
     },
     {
-      "raw": "275 g filtered water, room temperature",
+      "raw": "275 g filtered water, (room temperature)",
       "expected": {
         "item": "filtered water",
         "measurements": [
@@ -90,33 +90,33 @@
       }
     },
     {
-      "raw": "80 g Bob’s Red Mill Potato Starch, or another starch like tapioca starch or arrowroot starch, or a combination",
+      "raw": "80 g Bob’s Red Mill Potato Starch, (or another starch like tapioca starch or arrowroot starch, or a combination)",
       "expected": {
-        "item": "Bob’s Red Mill Potato Starch, or another starch like tapioca starch or arrowroot starch, or a combination",
+        "item": "Bob’s Red Mill Potato Starch",
         "measurements": [
           {
             "amount": "80",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or another starch like tapioca starch or arrowroot starch, or a combination",
         "section": "For the Loaf",
-        "category": "Baking"
+        "category": "Other"
       }
     },
     {
-      "raw": "220 g Bob’s Red Mill gluten-free whole grain flours, I did a 50/50 blend of Bob’s Red Mill millet flour and brown rice flour for the pizzas in the photos; you can also use any combination of sorghum flour, white rice flour, quinoa flour, buckwheat flour, or millet flour.",
+      "raw": "220 g Bob’s Red Mill gluten-free whole grain flours, (I did a 50/50 blend of Bob’s Red Mill millet flour and brown rice flour for the pizzas in the photos; you can also use any combination of sorghum flour, white rice flour, quinoa flour, buckwheat flour, or millet flour.)",
       "expected": {
-        "item": "Bob’s Red Mill gluten-free whole grain flours, I did a 50/50 blend of Bob’s Red Mill millet flour and brown rice flour for the pizzas in the photos; you can also use any combination of sorghum flour, white rice flour, quinoa flour, buckwheat flour, or millet flour.",
+        "item": "Bob’s Red Mill gluten-free whole grain flours",
         "measurements": [
           {
             "amount": "220",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I did a 50/50 blend of Bob’s Red Mill millet flour and brown rice flour for the pizzas in the photos; you can also use any combination of sorghum flour, white rice flour, quinoa flour, buckwheat flour, or millet flour.",
         "section": "For the Loaf",
-        "category": "Baking"
+        "category": "Other"
       }
     },
     {

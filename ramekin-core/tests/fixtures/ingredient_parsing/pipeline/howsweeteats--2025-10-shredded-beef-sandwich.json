@@ -54,7 +54,7 @@
       }
     },
     {
-      "raw": "6 ounces pumpkin beer, for nonalcoholic you can use root beer",
+      "raw": "6 ounces pumpkin beer, (for nonalcoholic you can use root beer)",
       "expected": {
         "item": "pumpkin beer",
         "measurements": [
@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "kaiser rolls, for serving",
+      "raw": "kaiser rolls, (for serving)",
       "expected": {
         "item": "kaiser rolls",
         "measurements": [],
@@ -77,7 +77,7 @@
       }
     },
     {
-      "raw": "sharp cheddar cheese, for serving",
+      "raw": "sharp cheddar cheese, (for serving)",
       "expected": {
         "item": "sharp cheddar cheese",
         "measurements": [],

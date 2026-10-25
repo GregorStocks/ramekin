@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "3 bananas mashed",
+      "raw": "3 bananas (mashed)",
       "expected": {
         "item": "bananas",
         "measurements": [
@@ -221,18 +221,18 @@
       }
     },
     {
-      "raw": "1 tablespoon butter cold",
+      "raw": "1 tablespoon butter (cold)",
       "expected": {
-        "item": "butter cold",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cold",
         "section": "For the Crumb Topping",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -129,11 +129,11 @@
       }
     },
     {
-      "raw": "Instant peanut butter cup hot cocoa mix from recipe above",
+      "raw": "Instant peanut butter cup hot cocoa mix (from recipe above)",
       "expected": {
-        "item": "Instant peanut butter cup hot cocoa mix from recipe above",
+        "item": "Instant peanut butter cup hot cocoa mix",
         "measurements": [],
-        "note": null,
+        "note": "from recipe above",
         "section": "Chocolate Shell and Bomb Ingredients",
         "category": "Other"
       }
@@ -154,7 +154,7 @@
       }
     },
     {
-      "raw": "6 mini Reese's peanut butter cups unwrapped",
+      "raw": "6 mini Reese's peanut butter cups (unwrapped)",
       "expected": {
         "item": "mini Reese's peanut butter cups",
         "measurements": [

@@ -31,17 +31,17 @@
       }
     },
     {
-      "raw": "4 eggs large",
+      "raw": "4 eggs (large)",
       "expected": {
-        "item": "eggs large",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "large",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -133,18 +133,18 @@
       "is_section_header": true
     },
     {
-      "raw": "1/4 cup brown sugar  packed",
+      "raw": "1/4 cup brown sugar (packed)",
       "expected": {
-        "item": "brown sugar packed",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Filling",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -178,18 +178,18 @@
       }
     },
     {
-      "raw": "2 cups blueberries fresh",
+      "raw": "2 cups blueberries (fresh)",
       "expected": {
-        "item": "blueberries fresh",
+        "item": "blueberries",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "fresh",
         "section": "Filling",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
@@ -231,7 +231,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1/2  cup  blueberries optional",
+      "raw": "1/2 cup blueberries (optional)",
       "expected": {
         "item": "blueberries",
         "measurements": [

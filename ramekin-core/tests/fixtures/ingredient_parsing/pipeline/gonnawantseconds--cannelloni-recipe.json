@@ -22,7 +22,7 @@
       }
     },
     {
-      "raw": "1 large  onion chopped",
+      "raw": "1 large onion (chopped)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "1 tablespoon garlic minced",
+      "raw": "1 tablespoon garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -52,7 +52,7 @@
       }
     },
     {
-      "raw": "1/4 cup carrot finely grated",
+      "raw": "1/4 cup carrot (finely grated)",
       "expected": {
         "item": "carrot",
         "measurements": [
@@ -67,18 +67,18 @@
       }
     },
     {
-      "raw": "2 (28-ounce) cans crushed tomatoes including all the liquid",
+      "raw": "2 (28-ounce) cans crushed tomatoes (including all the liquid)",
       "expected": {
-        "item": "crushed tomatoes including all the liquid",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "can"
           }
         ],
-        "note": "28-ounce",
+        "note": "28-ounce, including all the liquid",
         "section": "Sauce",
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {
@@ -146,7 +146,7 @@
       }
     },
     {
-      "raw": "1 cup parmesan cheese grated",
+      "raw": "1 cup parmesan cheese (grated)",
       "expected": {
         "item": "parmesan cheese",
         "measurements": [
@@ -161,7 +161,7 @@
       }
     },
     {
-      "raw": "2 cups Mozzarella shredded",
+      "raw": "2 cups Mozzarella (shredded)",
       "expected": {
         "item": "Mozzarella",
         "measurements": [
@@ -176,7 +176,7 @@
       }
     },
     {
-      "raw": "2 large eggs lightly beaten",
+      "raw": "2 large eggs (lightly beaten)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -191,16 +191,16 @@
       }
     },
     {
-      "raw": "1 (10-ounce) package frozen chopped spinach thawed and squeezed dry",
+      "raw": "1 (10-ounce) package frozen chopped spinach (thawed and squeezed dry)",
       "expected": {
-        "item": "frozen chopped spinach thawed and squeezed dry",
+        "item": "frozen chopped spinach",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": "10-ounce",
+        "note": "10-ounce, thawed and squeezed dry",
         "section": "Filling",
         "category": "Frozen"
       }
@@ -289,7 +289,7 @@
       "is_section_header": true
     },
     {
-      "raw": "2 cups Mozzarella shredded",
+      "raw": "2 cups Mozzarella (shredded)",
       "expected": {
         "item": "Mozzarella",
         "measurements": [

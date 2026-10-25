@@ -68,7 +68,7 @@
       }
     },
     {
-      "raw": "1 large yellow onion chopped",
+      "raw": "1 large yellow onion (chopped)",
       "expected": {
         "item": "yellow onion",
         "measurements": [
@@ -98,7 +98,7 @@
       }
     },
     {
-      "raw": "3 garlic cloves peeled and chopped",
+      "raw": "3 garlic cloves (peeled and chopped)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [
@@ -262,18 +262,18 @@
       }
     },
     {
-      "raw": "1/2 tsp salt more if you like",
+      "raw": "1/2 tsp salt (more if you like)",
       "expected": {
-        "item": "salt more if you like",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "more if you like",
         "section": "For Bechamel",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -292,18 +292,18 @@
       }
     },
     {
-      "raw": "4 cups 2% milk warmed",
+      "raw": "4 cups 2% milk (warmed)",
       "expected": {
-        "item": "2% milk warmed",
+        "item": "2% milk",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "section": "For Bechamel",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

@@ -7,18 +7,18 @@
       "is_section_header": true
     },
     {
-      "raw": "150 g thinly sliced beef or thinly sliced pork",
+      "raw": "150 g thinly sliced beef (or thinly sliced pork)",
       "expected": {
-        "item": "thinly sliced beef or thinly sliced pork",
+        "item": "thinly sliced beef",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or thinly sliced pork",
         "section": "Marinating the Beef and Onions",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -82,16 +82,16 @@
       }
     },
     {
-      "raw": "½ tsp grated ginger root or ginger paste",
+      "raw": "½ tsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root or ginger paste",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "section": "Marinating the Beef and Onions",
         "category": "Produce"
       }
@@ -210,16 +210,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 tsp beef suet (fat) or beef tallow, lard, cooking oil",
+      "raw": "1 tsp beef suet (fat) (or beef tallow, lard, cooking oil)",
       "expected": {
-        "item": "beef suet or beef tallow, lard, cooking oil",
+        "item": "beef suet",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "fat",
+        "note": "fat, or beef tallow, lard, cooking oil",
         "section": "Cooking / Serving",
         "category": "Meat & Seafood"
       }
@@ -240,17 +240,17 @@
       }
     },
     {
-      "raw": "finely chopped green onions to garnish",
+      "raw": "finely chopped green onions (to garnish)",
       "expected": {
-        "item": "finely chopped green onions to garnish",
+        "item": "finely chopped green onions",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "section": "Cooking / Serving",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "Japanese chili powder (shichimi togarashi) optional",
+      "raw": "Japanese chili powder (shichimi togarashi) (optional)",
       "expected": {
         "item": "Japanese chili powder",
         "measurements": [],

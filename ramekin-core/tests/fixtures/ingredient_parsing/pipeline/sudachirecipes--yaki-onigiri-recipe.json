@@ -3,16 +3,16 @@
   "recipe_slug": "yaki-onigiri-recipe",
   "ingredients": [
     {
-      "raw": "700 g cooked Japanese short-grain rice or Calrose",
+      "raw": "700 g cooked Japanese short-grain rice (or Calrose)",
       "expected": {
-        "item": "cooked Japanese short-grain rice or Calrose",
+        "item": "cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "700",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Calrose",
         "category": "Pasta & Rice"
       }
     },
@@ -31,7 +31,7 @@
       }
     },
     {
-      "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu) toasted",
+      "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu) (toasted)",
       "expected": {
         "item": "Japanese soy sauce",
         "measurements": [
@@ -45,16 +45,16 @@
       }
     },
     {
-      "raw": "1 tbsp butter or neutral oil",
+      "raw": "1 tbsp butter (or neutral oil)",
       "expected": {
-        "item": "butter or neutral oil",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or neutral oil",
         "category": "Dairy & Eggs"
       }
     },
@@ -78,16 +78,16 @@
       }
     },
     {
-      "raw": "1 tbsp mirin or cola",
+      "raw": "1 tbsp mirin (or cola)",
       "expected": {
-        "item": "mirin or cola",
+        "item": "mirin",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or cola",
         "section": "Sauce",
         "category": "Condiments & Sauces"
       }
@@ -123,16 +123,16 @@
       }
     },
     {
-      "raw": "1 tsp garlic paste or grated garlic",
+      "raw": "1 tsp garlic paste (or grated garlic)",
       "expected": {
-        "item": "garlic paste or grated garlic",
+        "item": "garlic paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or grated garlic",
         "section": "Sauce",
         "category": "Produce"
       }

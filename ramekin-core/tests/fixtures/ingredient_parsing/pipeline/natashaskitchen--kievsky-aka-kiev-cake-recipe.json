@@ -71,7 +71,7 @@
       "is_section_header": true
     },
     {
-      "raw": "6 egg whites, at room temperature",
+      "raw": "6 egg whites, (at room temperature)",
       "expected": {
         "item": "egg whites",
         "measurements": [
@@ -101,7 +101,7 @@
       }
     },
     {
-      "raw": "1 Tbsp unsalted butter, melted for wax paper",
+      "raw": "1 Tbsp unsalted butter, (melted for wax paper)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [

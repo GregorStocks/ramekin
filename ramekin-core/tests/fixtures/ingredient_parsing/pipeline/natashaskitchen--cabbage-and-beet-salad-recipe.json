@@ -7,13 +7,17 @@
       "is_section_header": true
     },
     {
-      "raw": "2 medium heads of cabbage, 5-6 lb total",
+      "raw": "2 medium heads of cabbage, (5-6 lb total)",
       "expected": {
-        "item": "cabbage, 5-6 lb total",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium head"
+          },
+          {
+            "amount": "5-6",
+            "unit": "lb"
           }
         ],
         "note": null,
@@ -22,13 +26,17 @@
       }
     },
     {
-      "raw": "3 medium beets, 1 lb",
+      "raw": "3 medium beets, (1 lb)",
       "expected": {
-        "item": "beets, 1 lb",
+        "item": "beets",
         "measurements": [
           {
             "amount": "3",
             "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
           }
         ],
         "note": null,
@@ -71,16 +79,16 @@
       }
     },
     {
-      "raw": "1 1/4 cup oil, I used light olive oil",
+      "raw": "1 1/4 cup oil, (I used light olive oil)",
       "expected": {
-        "item": "oil, I used light olive oil",
+        "item": "oil",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used light olive oil",
         "section": "Marinade Ingredients",
         "category": "Oils & Vinegars"
       }
@@ -116,16 +124,16 @@
       }
     },
     {
-      "raw": "2 Tbsp sea salt, best if it's not iodized",
+      "raw": "2 Tbsp sea salt, (best if it's not iodized)",
       "expected": {
-        "item": "sea salt, best if it's not iodized",
+        "item": "sea salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "best if it's not iodized",
         "section": "Marinade Ingredients",
         "category": "Spices & Seasonings"
       }

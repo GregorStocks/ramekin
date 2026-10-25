@@ -82,7 +82,7 @@
       }
     },
     {
-      "raw": "4 radishes, thinly sliced",
+      "raw": "4 radishes, (thinly sliced)",
       "expected": {
         "item": "radishes",
         "measurements": [
@@ -96,21 +96,21 @@
       }
     },
     {
-      "raw": "2 blood oranges, segmented",
+      "raw": "2 blood oranges, (segmented)",
       "expected": {
-        "item": "blood oranges, segmented",
+        "item": "blood oranges",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "segmented",
         "category": "Produce"
       }
     },
     {
-      "raw": "½ red onion, thinly sliced",
+      "raw": "½ red onion, (thinly sliced)",
       "expected": {
         "item": "red onion",
         "measurements": [
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "¼ cup pistachios, chopped",
+      "raw": "¼ cup pistachios, (chopped)",
       "expected": {
         "item": "pistachios",
         "measurements": [
@@ -172,7 +172,7 @@
       }
     },
     {
-      "raw": "2 garlic cloves, minced",
+      "raw": "2 garlic cloves, (minced)",
       "expected": {
         "item": "garlic cloves",
         "measurements": [

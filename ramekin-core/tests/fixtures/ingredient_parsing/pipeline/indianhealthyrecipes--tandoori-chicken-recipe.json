@@ -3,9 +3,9 @@
   "recipe_slug": "tandoori-chicken-recipe",
   "ingredients": [
     {
-      "raw": "¾ kg (1.5 lbs.) chicken skinless thighs or legs",
+      "raw": "¾ kg (1.5 lbs.) chicken (skinless thighs or legs)",
       "expected": {
-        "item": "chicken skinless thighs or legs",
+        "item": "chicken",
         "measurements": [
           {
             "amount": "0.75",
@@ -16,8 +16,8 @@
             "unit": "lb"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "skinless thighs or legs",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -189,17 +189,17 @@
       }
     },
     {
-      "raw": "1 tablespoon chopped coriander leaves to garnish",
+      "raw": "1 tablespoon chopped coriander leaves (to garnish)",
       "expected": {
-        "item": "chopped coriander leaves to garnish",
+        "item": "chopped coriander leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "to garnish",
+        "category": "Produce"
       }
     },
     {

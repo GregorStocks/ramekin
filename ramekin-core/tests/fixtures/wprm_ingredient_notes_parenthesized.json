@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/wprm/ingredient_notes_parenthesized.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Cheesecake",
+    "ingredients_raw": "6 Tablespoons salted butter (melted)\n3 large eggs (room temperature)\n1 ½ cups graham cracker crumbs (12 full sheets)\n2 cups flour, divided\n1 teaspoon vanilla",
+    "instructions_raw": "Bake."
+  }
+}

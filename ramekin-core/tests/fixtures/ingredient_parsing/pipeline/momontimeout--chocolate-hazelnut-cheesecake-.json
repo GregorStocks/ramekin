@@ -17,7 +17,7 @@
       }
     },
     {
-      "raw": "2 Tbsp. butter melted",
+      "raw": "2 Tbsp. butter (melted)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -31,31 +31,31 @@
       }
     },
     {
-      "raw": "12 oz light cream cheese Neufchâtel cheese, softened",
+      "raw": "12 oz light cream cheese (Neufchâtel cheese, softened)",
       "expected": {
-        "item": "light cream cheese Neufchâtel cheese",
+        "item": "light cream cheese",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "softened",
-        "category": "Other"
+        "note": "Neufchâtel cheese, softened",
+        "category": "Cheese"
       }
     },
     {
-      "raw": "1/2 cup Greek yogurt plain or vanilla",
+      "raw": "1/2 cup Greek yogurt (plain or vanilla)",
       "expected": {
-        "item": "Greek yogurt plain or vanilla",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "plain or vanilla",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -73,17 +73,17 @@
       }
     },
     {
-      "raw": "4 oz bittersweet chocolate melted and cooled slightly",
+      "raw": "4 oz bittersweet chocolate (melted and cooled slightly)",
       "expected": {
-        "item": "bittersweet chocolate melted and cooled slightly",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "melted and cooled slightly",
+        "category": "Baking"
       }
     },
     {
@@ -115,17 +115,17 @@
       }
     },
     {
-      "raw": "3 eggs room temperature, lightly beaten",
+      "raw": "3 eggs (room temperature, lightly beaten)",
       "expected": {
-        "item": "eggs room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "lightly beaten",
-        "category": "Other"
+        "note": "room temperature, lightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -163,7 +163,7 @@
       }
     },
     {
-      "raw": "1/2 cup toasted hazelnuts chopped optional",
+      "raw": "1/2 cup toasted hazelnuts (chopped optional)",
       "expected": {
         "item": "toasted hazelnuts",
         "measurements": [
@@ -172,13 +172,13 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped, optional",
+        "note": "chopped optional",
         "section": "Ganache",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "1/4 cup chocolate jimmies optional",
+      "raw": "1/4 cup chocolate jimmies (optional)",
       "expected": {
         "item": "chocolate jimmies",
         "measurements": [

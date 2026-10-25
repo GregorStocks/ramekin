@@ -22,22 +22,22 @@
       }
     },
     {
-      "raw": "50 g Japanese leek (naganegi) green part",
+      "raw": "50 g Japanese leek (naganegi) (green part)",
       "expected": {
-        "item": "Japanese leek green part",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": "naganegi",
+        "note": "naganegi, green part",
         "section": "Chashu",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "50 g ginger root thickly sliced",
+      "raw": "50 g ginger root (thickly sliced)",
       "expected": {
         "item": "ginger root",
         "measurements": [
@@ -67,7 +67,7 @@
       }
     },
     {
-      "raw": "100 g onion roughly cut",
+      "raw": "100 g onion (roughly cut)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -131,16 +131,16 @@
       }
     },
     {
-      "raw": "250 ml pork stock from part 1",
+      "raw": "250 ml pork stock (from part 1)",
       "expected": {
-        "item": "pork stock from part 1",
+        "item": "pork stock",
         "measurements": [
           {
             "amount": "250",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "from part 1",
         "section": "Chashu Marinade",
         "category": "Other"
       }
@@ -220,17 +220,17 @@
       }
     },
     {
-      "raw": "Japanese leek (naganegi) white part, to make \"shiraganegi\"",
+      "raw": "Japanese leek (naganegi) (white part, to make \"shiraganegi\")",
       "expected": {
-        "item": "Japanese leek white part, to make \"shiraganegi\"",
+        "item": "Japanese leek",
         "measurements": [],
-        "note": "naganegi",
+        "note": "naganegi, white part, to make \"shiraganegi\"",
         "section": "Chashu Donburi",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
-      "raw": "chili threads optional",
+      "raw": "chili threads (optional)",
       "expected": {
         "item": "chili threads",
         "measurements": [],

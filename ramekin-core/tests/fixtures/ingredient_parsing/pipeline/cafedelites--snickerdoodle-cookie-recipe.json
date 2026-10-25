@@ -7,7 +7,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1 cup unsalted butter softened to room temperature",
+      "raw": "1 cup unsalted butter (softened to room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -37,18 +37,18 @@
       }
     },
     {
-      "raw": "2 tablespoons light brown sugar packed",
+      "raw": "2 tablespoons light brown sugar (packed)",
       "expected": {
-        "item": "light brown sugar packed",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Snickerdoodle Cookies",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -82,18 +82,18 @@
       }
     },
     {
-      "raw": "2 3/4 cup flour all purpose or plain",
+      "raw": "2 3/4 cup flour (all purpose or plain)",
       "expected": {
-        "item": "flour all purpose or plain",
+        "item": "flour",
         "measurements": [
           {
             "amount": "2.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "all purpose or plain",
         "section": "Snickerdoodle Cookies",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {

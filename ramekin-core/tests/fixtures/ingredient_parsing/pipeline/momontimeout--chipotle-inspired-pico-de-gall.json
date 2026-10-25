@@ -12,7 +12,7 @@
       }
     },
     {
-      "raw": "1 1/2 cups Roma tomatoes chopped (seeds removed)",
+      "raw": "1 1/2 cups Roma tomatoes (chopped (seeds removed))",
       "expected": {
         "item": "Roma tomatoes",
         "measurements": [
@@ -21,12 +21,12 @@
             "unit": "cup"
           }
         ],
-        "note": "seeds removed, chopped",
+        "note": "chopped (seeds removed)",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 cup cilantro chopped",
+      "raw": "1/2 cup cilantro (chopped)",
       "expected": {
         "item": "cilantro",
         "measurements": [
@@ -40,7 +40,7 @@
       }
     },
     {
-      "raw": "2 1/2 tbsp jalapeno pepper finely diced (leave seeds in if you want spicier salsa)",
+      "raw": "2 1/2 tbsp jalapeno pepper (finely diced (leave seeds in if you want spicier salsa))",
       "expected": {
         "item": "jalapeno pepper",
         "measurements": [
@@ -49,12 +49,12 @@
             "unit": "tbsp"
           }
         ],
-        "note": "leave seeds in if you want spicier salsa, finely diced",
+        "note": "finely diced (leave seeds in if you want spicier salsa)",
         "category": "Produce"
       }
     },
     {
-      "raw": "1/2 red onion finely diced",
+      "raw": "1/2 red onion (finely diced)",
       "expected": {
         "item": "red onion",
         "measurements": [

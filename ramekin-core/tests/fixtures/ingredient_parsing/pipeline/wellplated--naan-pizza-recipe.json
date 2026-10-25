@@ -3,17 +3,21 @@
   "recipe_slug": "naan-pizza-recipe",
   "ingredients": [
     {
-      "raw": "2 naan breads about 8-inches each, or 4 mini naan breads (purchased or Homemade Naan)",
+      "raw": "2 naan breads (about 8-inches each, or 4 mini naan breads (purchased or Homemade Naan))",
       "expected": {
-        "item": "naan breads about 8-inches each",
+        "item": "naan breads",
         "measurements": [
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "inches each"
           }
         ],
-        "note": "purchased or Homemade Naan; or 4 mini naan breads",
-        "category": "Other"
+        "note": "about 8-inches each, or 4 mini naan breads (purchased or Homemade Naan)",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -31,7 +35,7 @@
       }
     },
     {
-      "raw": "¼ teaspoon Italian seasoning optional",
+      "raw": "¼ teaspoon Italian seasoning (optional)",
       "expected": {
         "item": "Italian seasoning",
         "measurements": [
@@ -209,13 +213,13 @@
       }
     },
     {
-      "raw": "Arugula and prosciutto add after the pizza comes out of the oven",
+      "raw": "Arugula and prosciutto (add after the pizza comes out of the oven)",
       "expected": {
-        "item": "Arugula and prosciutto add after the pizza comes out of the oven",
+        "item": "Arugula and prosciutto",
         "measurements": [],
-        "note": null,
+        "note": "add after the pizza comes out of the oven",
         "section": "Other Topping Ideas",
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

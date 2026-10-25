@@ -86,7 +86,7 @@
       }
     },
     {
-      "raw": "4 tsp butter melted",
+      "raw": "4 tsp butter (melted)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -135,13 +135,13 @@
       "is_section_header": true
     },
     {
-      "raw": "Cooking spray butter or lard for making pancakes (Gramma’s favorite was Crisco)",
+      "raw": "Cooking spray (butter or lard for making pancakes (Gramma’s favorite was Crisco))",
       "expected": {
-        "item": "Cooking spray butter or lard for making pancakes",
+        "item": "Cooking spray",
         "measurements": [],
-        "note": "Gramma’s favorite was Crisco",
+        "note": "butter or lard for making pancakes (Gramma’s favorite was Crisco)",
         "section": "Cooking",
-        "category": "Dairy & Eggs"
+        "category": "Oils & Vinegars"
       }
     }
   ]

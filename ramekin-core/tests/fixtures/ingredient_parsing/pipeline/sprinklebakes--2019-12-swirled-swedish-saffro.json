@@ -37,18 +37,18 @@
       }
     },
     {
-      "raw": "1/2 cup warm milk 110° to 115°F",
+      "raw": "1/2 cup warm milk (110° to 115°F)",
       "expected": {
-        "item": "warm milk 110° to 115°F",
+        "item": "warm milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "110° to 115°F",
         "section": "Bread",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -71,7 +71,7 @@
       }
     },
     {
-      "raw": "1/4 cup butter softened",
+      "raw": "1/4 cup butter (softened)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -101,16 +101,16 @@
       }
     },
     {
-      "raw": "4 capsules .100 gram each powdered saffron",
+      "raw": "4 capsules (.100 gram each powdered saffron)",
       "expected": {
-        "item": "capsules .100 gram each powdered saffron",
+        "item": "capsules",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": ".100 gram each powdered saffron",
         "section": "Bread",
         "category": "Other"
       }
@@ -150,7 +150,7 @@
       "is_section_header": true
     },
     {
-      "raw": "6 tablespoons butter melted",
+      "raw": "6 tablespoons butter (melted)",
       "expected": {
         "item": "butter",
         "measurements": [
@@ -210,13 +210,13 @@
       }
     },
     {
-      "raw": "Egg wash 1 egg plus 1 tablespoon water beaten together",
+      "raw": "Egg wash (1 egg plus 1 tablespoon water beaten together)",
       "expected": {
-        "item": "Egg wash 1 egg plus 1 tablespoon water beaten together",
+        "item": "Egg wash",
         "measurements": [],
-        "note": null,
+        "note": "1 egg plus 1 tablespoon water beaten together",
         "section": "Filling",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     }
   ]

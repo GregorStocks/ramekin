@@ -37,7 +37,7 @@
       }
     },
     {
-      "raw": "salt and pepper, to taste",
+      "raw": "salt and pepper, (to taste)",
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
@@ -126,7 +126,7 @@
       }
     },
     {
-      "raw": "1/2 cup unsalted butter or ghee, melted and hot",
+      "raw": "1/2 cup unsalted butter or ghee, (melted and hot)",
       "expected": {
         "item": "unsalted butter or ghee",
         "measurements": [

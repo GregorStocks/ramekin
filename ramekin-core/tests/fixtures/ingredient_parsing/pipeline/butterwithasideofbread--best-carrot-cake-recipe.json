@@ -115,21 +115,21 @@
       }
     },
     {
-      "raw": "8 oz can crushed pineapple drained",
+      "raw": "8 oz can crushed pineapple (drained)",
       "expected": {
-        "item": "can crushed pineapple drained",
+        "item": "can crushed pineapple",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "drained",
         "category": "Canned Goods"
       }
     },
     {
-      "raw": "1 lb carrots peeled and grated (I just buy them already shredded!)",
+      "raw": "1 lb carrots (peeled and grated (I just buy them already shredded!))",
       "expected": {
         "item": "carrots",
         "measurements": [
@@ -138,7 +138,7 @@
             "unit": "lb"
           }
         ],
-        "note": "I just buy them already shredded!, peeled and grated",
+        "note": "peeled and grated (I just buy them already shredded!)",
         "category": "Produce"
       }
     },
@@ -147,7 +147,7 @@
       "is_section_header": true
     },
     {
-      "raw": "8 oz cream cheese softened",
+      "raw": "8 oz cream cheese (softened)",
       "expected": {
         "item": "cream cheese",
         "measurements": [
@@ -162,7 +162,7 @@
       }
     },
     {
-      "raw": "½ cup butter softened",
+      "raw": "½ cup butter (softened)",
       "expected": {
         "item": "butter",
         "measurements": [

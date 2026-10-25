@@ -12,35 +12,35 @@
       }
     },
     {
-      "raw": "700 g slab skinless pork belly with a good balance of fat and lean meat",
+      "raw": "700 g slab skinless pork belly (with a good balance of fat and lean meat)",
       "expected": {
-        "item": "slab skinless pork belly with a good balance of fat and lean meat",
+        "item": "slab skinless pork belly",
         "measurements": [
           {
             "amount": "700",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "with a good balance of fat and lean meat",
+        "category": "Meat & Seafood"
       }
     },
     {
-      "raw": "50 g Japanese leek (naganegi) green part",
+      "raw": "50 g Japanese leek (naganegi) (green part)",
       "expected": {
-        "item": "Japanese leek green part",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": "naganegi",
-        "category": "Other"
+        "note": "naganegi, green part",
+        "category": "Produce"
       }
     },
     {
-      "raw": "50 g ginger root thickly sliced",
+      "raw": "50 g ginger root (thickly sliced)",
       "expected": {
         "item": "ginger root",
         "measurements": [
@@ -54,21 +54,21 @@
       }
     },
     {
-      "raw": "3 cloves garlic whole and peeled",
+      "raw": "3 cloves garlic (whole and peeled)",
       "expected": {
-        "item": "garlic whole and peeled",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "whole and peeled",
+        "category": "Produce"
       }
     },
     {
-      "raw": "100 g onion roughly cut",
+      "raw": "100 g onion (roughly cut)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -133,16 +133,16 @@
       }
     },
     {
-      "raw": "250 ml pork stock from part 1",
+      "raw": "250 ml pork stock (from part 1)",
       "expected": {
-        "item": "pork stock from part 1",
+        "item": "pork stock",
         "measurements": [
           {
             "amount": "250",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "from part 1",
         "category": "Other"
       }
     },

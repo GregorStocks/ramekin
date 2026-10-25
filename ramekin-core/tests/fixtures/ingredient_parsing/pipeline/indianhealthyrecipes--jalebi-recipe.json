@@ -41,16 +41,16 @@
       }
     },
     {
-      "raw": "1/8 teaspoon turmeric or use natural food color",
+      "raw": "1/8 teaspoon turmeric (or use natural food color)",
       "expected": {
-        "item": "turmeric or use natural food color",
+        "item": "turmeric",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or use natural food color",
         "section": "For Jalebi",
         "category": "Spices & Seasonings"
       }
@@ -124,7 +124,7 @@
       }
     },
     {
-      "raw": "oil or ghee as needed",
+      "raw": "oil or ghee (as needed)",
       "expected": {
         "item": "oil or ghee",
         "measurements": [],
@@ -172,33 +172,33 @@
       }
     },
     {
-      "raw": "1 pinch saffron or kesar optional",
+      "raw": "1 pinch saffron (or kesar optional)",
       "expected": {
-        "item": "saffron or kesar",
+        "item": "saffron",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "optional",
+        "note": "or kesar optional",
         "section": "For Sugar Syrup",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "¼ teaspoon cardamom powder or elaichi powder",
+      "raw": "¼ teaspoon cardamom powder (or elaichi powder)",
       "expected": {
-        "item": "cardamom powder or elaichi powder",
+        "item": "cardamom powder",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or elaichi powder",
         "section": "For Sugar Syrup",
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -221,16 +221,16 @@
       "is_section_header": true
     },
     {
-      "raw": "1 sauce bottle or Zip lock bag or cloth bag",
+      "raw": "1 sauce bottle (or Zip lock bag or cloth bag)",
       "expected": {
-        "item": "sauce bottle or Zip lock bag or cloth bag",
+        "item": "sauce bottle",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or Zip lock bag or cloth bag",
         "section": "Equipment Needed",
         "category": "Other"
       }

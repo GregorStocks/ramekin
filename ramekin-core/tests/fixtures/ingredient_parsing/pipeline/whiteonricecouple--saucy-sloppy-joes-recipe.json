@@ -225,11 +225,11 @@
       }
     },
     {
-      "raw": "shredded cheese optional, (if you didn’t add to sloppy Joe mixture already)",
+      "raw": "shredded cheese (optional, (if you didn’t add to sloppy Joe mixture already))",
       "expected": {
         "item": "shredded cheese",
         "measurements": [],
-        "note": "if you didn’t add to sloppy Joe mixture already, optional",
+        "note": "optional, (if you didn’t add to sloppy Joe mixture already)",
         "section": "For the Sandwich",
         "category": "Cheese"
       }

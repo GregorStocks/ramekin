@@ -79,7 +79,7 @@
       }
     },
     {
-      "raw": "2 tablespoons   unsalted butter, melted and cooled",
+      "raw": "2 tablespoons unsalted butter, (melted and cooled)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -113,9 +113,9 @@
       "is_section_header": true
     },
     {
-      "raw": "½ cup  (122 ml) whole milk, heated to 110 degrees F",
+      "raw": "½ cup (122 ml) whole milk, (heated to 110 degrees F)",
       "expected": {
-        "item": "whole milk, heated to 110 degrees F",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -126,7 +126,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "heated to 110 degrees F",
         "section": "For the Dough",
         "category": "Dairy & Eggs"
       }
@@ -238,7 +238,7 @@
       }
     },
     {
-      "raw": "8 tablespoons   unsalted butter, cut into 8 pieces and softened",
+      "raw": "8 tablespoons unsalted butter, (cut into 8 pieces and softened)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -257,7 +257,7 @@
       "is_section_header": true
     },
     {
-      "raw": "1   egg, lightly beaten",
+      "raw": "1 egg, (lightly beaten)",
       "expected": {
         "item": "egg",
         "measurements": [

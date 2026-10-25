@@ -3,17 +3,17 @@
   "recipe_slug": "short-ribs-and-beans-recipe",
   "ingredients": [
     {
-      "raw": "6 short ribs fat removed",
+      "raw": "6 short ribs (fat removed)",
       "expected": {
-        "item": "short ribs fat",
+        "item": "short ribs",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "removed",
-        "category": "Other"
+        "note": "fat removed",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -26,7 +26,7 @@
       }
     },
     {
-      "raw": "Salt and freshly ground pepper to taste",
+      "raw": "Salt and freshly ground pepper (to taste)",
       "expected": {
         "item": "Salt and freshly ground pepper",
         "measurements": [],
@@ -35,7 +35,7 @@
       }
     },
     {
-      "raw": "1 onion diced",
+      "raw": "1 onion (diced)",
       "expected": {
         "item": "onion",
         "measurements": [
@@ -49,7 +49,7 @@
       }
     },
     {
-      "raw": "2 19 oz cans pinto beans rinsed",
+      "raw": "2 19 oz cans pinto beans (rinsed)",
       "expected": {
         "item": "pinto beans",
         "measurements": [
@@ -127,7 +127,7 @@
       }
     },
     {
-      "raw": "5 cloves garlic minced",
+      "raw": "5 cloves garlic (minced)",
       "expected": {
         "item": "garlic",
         "measurements": [
@@ -172,7 +172,7 @@
       }
     },
     {
-      "raw": "1 teaspoons salt or to taste",
+      "raw": "1 teaspoons salt (or to taste)",
       "expected": {
         "item": "salt",
         "measurements": [
