@@ -131,11 +131,11 @@
     {
       "raw": "2  extra large eggs ((at room temperature))",
       "expected": {
-        "item": "extra large eggs",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "extra-large"
           }
         ],
         "note": "at room temperature",
@@ -201,15 +201,15 @@
     {
       "raw": "1  extra large egg yolk ((at room temperature))",
       "expected": {
-        "item": "extra large egg yolk",
+        "item": "egg yolk",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "extra-large"
           }
         ],
         "note": "at room temperature",
-        "category": "Other"
+        "category": "Dairy & Eggs"
       }
     },
     {

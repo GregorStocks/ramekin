@@ -403,6 +403,7 @@ fn counted_ingredients_use_usda_piece_weights() {
         (count("eggs", "3"), "eggs", 150.0),
         (ingredient("eggs", "2", "large"), "eggs", 100.0),
         (ingredient("eggs", "1", "extra-large"), "eggs", 56.0),
+        (parse_ingredient("3 extra large eggs"), "eggs", 168.0),
         (ingredient("egg yolks", "2", "large"), "egg yolks", 34.0),
         (ingredient("garlic", "2", "cloves"), "garlic", 6.0),
         (ingredient("onion", "1", "medium"), "onion", 110.0),

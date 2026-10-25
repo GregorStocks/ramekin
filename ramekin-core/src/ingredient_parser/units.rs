@@ -172,6 +172,7 @@ pub(super) const UNITS_RAW: &[&str] = &[
     "glug",
     // Size descriptors that act like units
     "extra-large",
+    "extra large",
     "medium",
     "small",
     "large",
@@ -353,6 +354,7 @@ pub(super) static UNIT_CANONICAL_MAP: LazyLock<HashMap<&'static str, &'static st
 
         // Size - normalize xl, and "big" is "large"
         map.insert("xl", "extra-large");
+        map.insert("extra large", "extra-large");
         map.insert("big", "large");
 
         map
