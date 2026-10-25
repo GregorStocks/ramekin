@@ -66,7 +66,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *ClientLogsApi* | [**create_client_log**](ramekin_client/docs/ClientLogsApi.md#create_client_log) | **POST** /api/client-logs | 
-*EditRecipeApi* | [**edit_recipe_with_ai**](ramekin_client/docs/EditRecipeApi.md#edit_recipe_with_ai) | **POST** /api/edit-recipe | Edit a recipe with AI
+*EditRecipeApi* | [**edit_recipe_with_ai**](ramekin_client/docs/EditRecipeApi.md#edit_recipe_with_ai) | **POST** /api/recipes/{id}/edit-with-ai | Edit a recipe with AI
 *ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *ImportApi* | [**lookup_import_jobs**](ramekin_client/docs/ImportApi.md#lookup_import_jobs) | **POST** /api/import/recipe/lookup | 

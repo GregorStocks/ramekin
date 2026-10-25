@@ -40,6 +40,7 @@ mod cache;
 mod client;
 mod config;
 mod edit_recipe;
+mod edit_recipe_tools;
 mod estimate_ingredient_weights;
 mod generate_description;
 mod generate_recipe_photo;
@@ -54,7 +55,8 @@ pub use auto_tag::{suggest_tags, AutoTagResult};
 pub use cache::{AiCache, CacheKey, CacheStats, CachedAiResponse};
 pub use client::{complete_json, AiClient, AiError, CachingAiClient, UnconfiguredAiClient};
 pub use config::{AiConfig, ConfigError};
-pub use edit_recipe::{edit_recipe, EditRecipeResult};
+pub use edit_recipe::{edit_recipe, EditRecipeResult, MAX_EDIT_TOOL_CALLS, MAX_EDIT_TURNS};
+pub use edit_recipe_tools::{render_recipe, NoUserData, RecipeEditContext};
 pub use estimate_ingredient_weights::{
     estimate_ingredient_weights, EstimateIngredientWeightsResult,
 };
@@ -72,5 +74,6 @@ pub use resolve_ingredient_names::{
     resolve_ingredient_names, NameResolution, ResolveIngredientNamesResult,
 };
 pub use types::{
-    ChatMessage, ChatRequest, ChatResponse, ImageData, Role, Usage, SHORT_JSON_ANSWER_MAX_TOKENS,
+    ChatMessage, ChatRequest, ChatResponse, ImageData, Role, ToolCall, ToolSpec, Usage,
+    SHORT_JSON_ANSWER_MAX_TOKENS,
 };

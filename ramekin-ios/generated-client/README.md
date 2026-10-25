@@ -29,7 +29,7 @@ Class | Method | HTTP request | Description
 *AuthAPI* | [**login**](docs/AuthAPI.md#login) | **POST** /api/auth/login | 
 *AuthAPI* | [**signup**](docs/AuthAPI.md#signup) | **POST** /api/auth/signup | 
 *ClientLogsAPI* | [**createClientLog**](docs/ClientLogsAPI.md#createclientlog) | **POST** /api/client-logs | 
-*EditRecipeAPI* | [**editRecipeWithAi**](docs/EditRecipeAPI.md#editrecipewithai) | **POST** /api/edit-recipe | Edit a recipe with AI
+*EditRecipeAPI* | [**editRecipeWithAi**](docs/EditRecipeAPI.md#editrecipewithai) | **POST** /api/recipes/{id}/edit-with-ai | Edit a recipe with AI
 *ImportAPI* | [**importFromPhotos**](docs/ImportAPI.md#importfromphotos) | **POST** /api/import/photos | 
 *ImportAPI* | [**importRecipe**](docs/ImportAPI.md#importrecipe) | **POST** /api/import/recipe | 
 *ImportAPI* | [**lookupImportJobs**](docs/ImportAPI.md#lookupimportjobs) | **POST** /api/import/recipe/lookup | 

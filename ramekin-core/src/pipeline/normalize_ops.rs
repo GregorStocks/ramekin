@@ -29,6 +29,10 @@ pub const APPLY_NORMALIZE_STEP: &str = "apply_normalize";
 /// Builds the content a manual normalize run proposes, without saving it.
 pub const PROPOSE_NORMALIZE_STEP: &str = "propose_normalize";
 
+/// Edits the loaded recipe the way an Edit with AI job's request says, for
+/// `propose_normalize` to propose.
+pub const EDIT_WITH_AI_STEP: &str = "edit_with_ai";
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum NormalizeOp {

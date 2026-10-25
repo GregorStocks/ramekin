@@ -99,6 +99,7 @@
     { "step": "normalize_title", "expected": "Normalize title" },
     { "step": "fetch_html", "expected": "Fetching the page" },
     { "step": "propose_normalize", "expected": "Preparing the preview" },
+    { "step": "edit_with_ai", "expected": "Editing with AI" },
     { "step": "some_new_step", "expected": "some new step" }
   ],
   "proposal_changes": [

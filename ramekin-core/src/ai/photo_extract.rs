@@ -45,6 +45,7 @@ pub async fn extract_recipe_from_photos(
         // think first.
         max_tokens: Some(8192),
         temperature: Some(0.1),
+        ..Default::default()
     };
 
     let (extracted, response): (PhotoExtractResponse, _) =

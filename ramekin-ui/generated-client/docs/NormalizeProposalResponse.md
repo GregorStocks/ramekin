@@ -11,6 +11,7 @@ Name | Type
 `ops` | Array&lt;string&gt;
 `proposed` | [NormalizedRecipe](NormalizedRecipe.md)
 `status` | string
+`summary` | string
 
 ## Example
 
@@ -24,6 +25,7 @@ const example = {
   "ops": null,
   "proposed": null,
   "status": null,
+  "summary": null,
 } satisfies NormalizeProposalResponse
 
 console.log(example)

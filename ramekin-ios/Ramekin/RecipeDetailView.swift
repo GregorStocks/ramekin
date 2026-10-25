@@ -139,13 +139,17 @@ struct RecipeDetailView: View {
         }
         .sheet(isPresented: $viewModel.showingEditWithAI) {
             if let recipe = viewModel.recipe {
-                EditWithAISheet(recipe: recipe, isPresented: $viewModel.showingEditWithAI) { result in
-                    viewModel.enrichResult = result
+                ProposalJobSheet(
+                    recipeId: recipeId,
+                    mode: .edit(photoIds: recipe.photoIds),
+                    isPresented: $viewModel.showingEditWithAI
+                ) {
+                    await viewModel.loadRecipe()
                 }
             }
         }
         .sheet(isPresented: $viewModel.showingReNormalize) {
-            ReNormalizeSheet(recipeId: recipeId, isPresented: $viewModel.showingReNormalize) {
+            ProposalJobSheet(recipeId: recipeId, mode: .normalize, isPresented: $viewModel.showingReNormalize) {
                 await viewModel.loadRecipe()
             }
         }
@@ -154,19 +158,6 @@ struct RecipeDetailView: View {
                 RecipeFormView(mode: .edit(recipeId: recipeId), resuming: resumingEdit) {
                     Task { await viewModel.loadRecipe() }
                 }
-            }
-        }
-        .sheet(isPresented: Binding(
-            get: { viewModel.enrichResult != nil },
-            set: { if !$0 { viewModel.enrichResult = nil } }
-        )) {
-            if let recipe = viewModel.recipe, let modified = viewModel.enrichResult {
-                EnrichPreviewSheet(
-                    original: recipe,
-                    modified: modified,
-                    onApply: { await viewModel.applyEnrichment(modified) },
-                    onCancel: { viewModel.enrichResult = nil }
-                )
             }
         }
         .sheet(isPresented: $viewModel.showingCompareSheet) {

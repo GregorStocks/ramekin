@@ -47,6 +47,7 @@ enum NormalizeSelection {
         "fetch_images": "Fetching photos",
         "load_recipe": "Loading the recipe",
         "resolve_ingredient_names": "Matching ingredients",
+        "edit_with_ai": "Editing with AI",
         "propose_normalize": "Preparing the preview"
     ]
 
