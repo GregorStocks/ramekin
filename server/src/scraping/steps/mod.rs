@@ -5,6 +5,7 @@
 
 mod apply_normalize;
 mod edit_with_ai;
+mod extract_text;
 mod fetch_html;
 mod fetch_images;
 mod helpers;
@@ -15,6 +16,7 @@ mod save_recipe;
 
 pub use apply_normalize::ApplyNormalizeStep;
 pub use edit_with_ai::{EditRequest, EditWithAiStep};
+pub use extract_text::ExtractTextStep;
 pub use fetch_html::FetchHtmlStep;
 pub use fetch_images::FetchImagesStep;
 pub use load_recipe::LoadRecipeStep;

@@ -176,6 +176,7 @@ async fn create_user_and_recipes(
             tags: Some(template.tags.iter().map(|s| s.to_string()).collect()),
             photo_ids: None,
             raw_ingredients: None,
+            source_text: None,
             source_name: None,
             source_url: None,
             servings: None,

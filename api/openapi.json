@@ -3174,6 +3174,13 @@
                   "null"
                 ],
                 "description": "Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save."
+              },
+              "source_text": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The pasted text a text draft was read from. Stored as the recipe's\nsource, so Re-extract can read the recipe from it again."
               }
             }
           }

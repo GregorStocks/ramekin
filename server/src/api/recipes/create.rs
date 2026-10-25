@@ -4,6 +4,7 @@ use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
+use crate::scraping;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use serde::{Deserialize, Serialize};
@@ -17,6 +18,9 @@ pub struct CreateRecipeRequest {
     pub photo_ids: Option<Vec<Uuid>>,
     /// Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save.
     pub raw_ingredients: Option<String>,
+    /// The pasted text a text draft was read from. Stored as the recipe's
+    /// source, so Re-extract can read the recipe from it again.
+    pub source_text: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -71,6 +75,19 @@ pub async fn create_recipe(
         }
         request.content.ingredients = ingredients;
     }
+
+    let source_text = match request.source_text.as_deref() {
+        Some(text) if text.trim().is_empty() || text.len() > 50_000 => {
+            return Err(ApiError::invalid_request(
+                "Send source text between 1 and 50,000 bytes.",
+            ));
+        }
+        Some(text) => Some(scraping::prepare_text_source(text).await.map_err(|e| {
+            tracing::error!("Failed to prepare a recipe's source text: {e}");
+            ApiError::internal("Failed to create recipe")
+        })?),
+        None => None,
+    };
 
     let ingredients_json = match serde_json::to_value(&request.content.ingredients) {
         Ok(v) => v,
@@ -141,6 +158,9 @@ pub async fn create_recipe(
                 conn,
                 request.content.ingredients.iter().map(|i| i.item.as_str()),
             )?;
+            if let Some(text) = source_text {
+                scraping::record_text_source(conn, user_id, recipe_id, text)?;
+            }
 
             Ok(recipe_id)
         });

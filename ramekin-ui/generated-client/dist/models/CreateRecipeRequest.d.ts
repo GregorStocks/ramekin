@@ -118,6 +118,13 @@ export interface CreateRecipeRequest {
      * @memberof CreateRecipeRequest
      */
     rawIngredients?: string | null;
+    /**
+     * The pasted text a text draft was read from. Stored as the recipe's
+     * source, so Re-extract can read the recipe from it again.
+     * @type {string}
+     * @memberof CreateRecipeRequest
+     */
+    sourceText?: string | null;
 }
 /**
  * Check if a given object implements the CreateRecipeRequest interface.

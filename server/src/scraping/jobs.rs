@@ -75,14 +75,53 @@ pub struct StoredSource {
     step_name: &'static str,
 }
 
-/// Find `recipe_id`'s latest stored source, if it has one. Text-created
-/// recipes never ran a job, so they have none.
+/// The step a text-created recipe's pasted text is stored under, so
+/// Re-extract can read the recipe from it again.
+pub const SOURCE_TEXT_STEP: &str = "source_text";
+
+/// The pasted text a recipe was created from, ready to store with
+/// `record_text_source`.
+pub async fn prepare_text_source(text: &str) -> Result<PreparedOutput, ScrapeError> {
+    prepare_output(SOURCE_TEXT_STEP, serde_json::json!({ "text": text })).await
+}
+
+/// Store `text` as the source of the new recipe `recipe_id`: a completed job
+/// holding it as its `source_text` output, where `stored_source` finds it.
+/// Call inside the transaction that creates the recipe.
+pub fn record_text_source(
+    conn: &mut diesel::SqliteConnection,
+    user_id: Uuid,
+    recipe_id: Uuid,
+    text: PreparedOutput,
+) -> Result<(), diesel::result::Error> {
+    let job_id = Uuid::now_v7();
+    diesel::insert_into(scrape_jobs::table)
+        .values((
+            scrape_jobs::id.eq(job_id),
+            scrape_jobs::user_id.eq(user_id),
+            scrape_jobs::recipe_id.eq(Some(recipe_id)),
+            scrape_jobs::status.eq(STATUS_COMPLETED),
+        ))
+        .execute(conn)?;
+    diesel::insert_into(step_outputs::table)
+        .values(text.into_row(job_id, SOURCE_TEXT_STEP, None, true, None))
+        .execute(conn)?;
+    Ok(())
+}
+
+/// Find `recipe_id`'s latest stored source, if it has one: the page it was
+/// fetched from, the text it was pasted as, or the recipe an import
+/// extracted. Recipes typed into the form have none.
 pub async fn stored_source(
     pool: &DbPool,
     recipe_id: Uuid,
 ) -> Result<Option<StoredSource>, ScrapeError> {
     run_scrape_db(pool, move |conn| {
-        for step_name in [FetchHtmlStep::NAME, ExtractRecipeStep::NAME] {
+        for step_name in [
+            FetchHtmlStep::NAME,
+            SOURCE_TEXT_STEP,
+            ExtractRecipeStep::NAME,
+        ] {
             let job: Option<(Uuid, Option<String>)> = step_outputs::table
                 .inner_join(scrape_jobs::table)
                 .filter(scrape_jobs::recipe_id.eq(recipe_id))
@@ -131,6 +170,10 @@ pub async fn create_normalize_job(
             NormalizeStart::Refetch { url } => (Some(url.as_str()), FetchHtmlStep::NAME),
             NormalizeStart::Reextract(source) if source.step_name == FetchHtmlStep::NAME => {
                 (source.url.as_deref(), ExtractRecipeStep::NAME)
+            }
+            // Text extraction stands in for extract_recipe (see the runner).
+            NormalizeStart::Reextract(source) if source.step_name == SOURCE_TEXT_STEP => {
+                (None, ExtractRecipeStep::NAME)
             }
             NormalizeStart::Reextract(source) => {
                 (source.url.as_deref(), ParseIngredientsStep::NAME)

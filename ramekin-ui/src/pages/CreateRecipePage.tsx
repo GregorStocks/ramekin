@@ -148,6 +148,10 @@ export default function CreateRecipePage() {
         createRecipeRequest: {
           ...form.toCreateRecipeRequest(),
           rawIngredients: rawIngredients(),
+          // Stored as the recipe's source, so Re-extract can read it again.
+          // The text box is locked once a draft exists, so this is the text
+          // the draft came from.
+          sourceText: recipeText(),
         },
       });
 
