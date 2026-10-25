@@ -87,6 +87,20 @@ final class SceneRestorationTests: XCTestCase {
         )
     }
 
+    func testTopVisibleItemFollowsListOrder() {
+        let (milk, eggs, bread) = (UUID(), UUID(), UUID())
+        XCTAssertNil(SceneRestoration.topVisibleItem(in: [milk, eggs], visible: []))
+        XCTAssertEqual(
+            SceneRestoration.topVisibleItem(in: [milk, eggs, bread], visible: [bread, eggs]),
+            eggs,
+            "The first visible row in list order, not set order"
+        )
+        XCTAssertNil(
+            SceneRestoration.topVisibleItem(in: [milk], visible: [eggs]),
+            "A row no longer listed isn't restored"
+        )
+    }
+
     func testDraftsRoundTrip() throws {
         let prepared = PrepareTextRecipeResponse(
             content: RecipeContent(ingredients: [], instructions: "Mix.", title: "Pancakes"),

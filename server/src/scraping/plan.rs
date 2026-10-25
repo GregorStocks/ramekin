@@ -10,8 +10,8 @@ use ramekin_core::pipeline::steps::{
     ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
 use ramekin_core::pipeline::{
-    default_import_ops, normalize_phase_steps, NormalizeOp, APPLY_NORMALIZE_STEP, LOAD_RECIPE_STEP,
-    PROPOSE_NORMALIZE_STEP, RESOLVE_INGREDIENT_NAMES_STEP,
+    default_import_ops, normalize_phase_steps, NormalizeOp, APPLY_NORMALIZE_STEP,
+    EDIT_WITH_AI_STEP, LOAD_RECIPE_STEP, PROPOSE_NORMALIZE_STEP, RESOLVE_INGREDIENT_NAMES_STEP,
 };
 
 use crate::models::ScrapeJob;
@@ -49,6 +49,9 @@ fn scrape_steps() -> Vec<&'static str> {
 
 impl JobPlan {
     pub fn for_job(job: &ScrapeJob) -> Result<Self, String> {
+        if job.edit_request.is_some() {
+            return Ok(Self::edit());
+        }
         let rescrape = job.expected_version_id.is_some();
         match &job.normalize_ops {
             Some(ops) => Ok(Self::normalize(&ops_from_json(ops)?)),
@@ -96,6 +99,19 @@ impl JobPlan {
             concurrent: normalize_phase_steps(ops, PROPOSE_NORMALIZE_STEP),
             ops: ops.to_vec(),
             refetch: true,
+        }
+    }
+
+    /// An Edit with AI run on the base version, proposing a version.
+    pub fn edit() -> Self {
+        Self {
+            sequential: vec![LOAD_RECIPE_STEP],
+            concurrent: vec![
+                (EDIT_WITH_AI_STEP, Vec::new()),
+                (PROPOSE_NORMALIZE_STEP, vec![EDIT_WITH_AI_STEP]),
+            ],
+            ops: Vec::new(),
+            refetch: false,
         }
     }
 
@@ -178,5 +194,15 @@ mod tests {
         assert_eq!(title.next_after("load_recipe"), Some("normalize_title"));
         assert!(title.is_concurrent("normalize_title"));
         assert!(!title.is_concurrent("load_recipe"));
+    }
+
+    #[test]
+    fn edit_plans_load_edit_then_propose() {
+        let edit = JobPlan::edit();
+        assert_eq!(
+            edit.step_names(),
+            vec!["load_recipe", "edit_with_ai", "propose_normalize"]
+        );
+        assert!(edit.ops.is_empty());
     }
 }

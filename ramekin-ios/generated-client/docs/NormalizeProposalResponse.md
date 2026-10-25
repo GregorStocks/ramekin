@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ops** | **[String]** | The ops the job runs, in run order. | 
 **proposed** | [**NormalizedRecipe**](NormalizedRecipe.md) | What accepting saves; absent until the job completes. | [optional] 
 **status** | **String** | The job&#39;s status, as &#x60;GET /api/scrape/{id}&#x60; reports it. | 
+**summary** | **String** | What an Edit with AI run says it changed, once it completes. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

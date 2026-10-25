@@ -4,7 +4,6 @@ ramekin_client/api/__init__.py
 ramekin_client/api/auth_api.py
 ramekin_client/api/client_logs_api.py
 ramekin_client/api/edit_recipe_api.py
-ramekin_client/api/enrich_api.py
 ramekin_client/api/import_api.py
 ramekin_client/api/ingredient_names_api.py
 ramekin_client/api/meal_plans_api.py
@@ -44,11 +43,9 @@ ramekin_client/docs/DerivedMeasurement.md
 ramekin_client/docs/Direction.md
 ramekin_client/docs/EditRecipeApi.md
 ramekin_client/docs/EditRecipeRequest.md
-ramekin_client/docs/EnrichApi.md
 ramekin_client/docs/ErrorCode.md
 ramekin_client/docs/ErrorResponse.md
 ramekin_client/docs/EstimateCaloriesRequest.md
-ramekin_client/docs/GenerateDescriptionResponse.md
 ramekin_client/docs/GeneratePhotoResponse.md
 ramekin_client/docs/ImportApi.md
 ramekin_client/docs/ImportExtractionMethod.md
@@ -83,7 +80,6 @@ ramekin_client/docs/NormalizeOpInfo.md
 ramekin_client/docs/NormalizeOpsResponse.md
 ramekin_client/docs/NormalizeProposalResponse.md
 ramekin_client/docs/NormalizeRequest.md
-ramekin_client/docs/NormalizeTitleResponse.md
 ramekin_client/docs/NormalizedRecipe.md
 ramekin_client/docs/OpKind.md
 ramekin_client/docs/OpResult.md
@@ -98,7 +94,6 @@ ramekin_client/docs/RecipeSummary.md
 ramekin_client/docs/RecipesApi.md
 ramekin_client/docs/RenameTagRequest.md
 ramekin_client/docs/RenameTagResponse.md
-ramekin_client/docs/ReparseIngredientsResponse.md
 ramekin_client/docs/RescrapeResponse.md
 ramekin_client/docs/RetryScrapeResponse.md
 ramekin_client/docs/ScrapeApi.md
@@ -159,7 +154,6 @@ ramekin_client/models/edit_recipe_request.py
 ramekin_client/models/error_code.py
 ramekin_client/models/error_response.py
 ramekin_client/models/estimate_calories_request.py
-ramekin_client/models/generate_description_response.py
 ramekin_client/models/generate_photo_response.py
 ramekin_client/models/import_extraction_method.py
 ramekin_client/models/import_from_photos_request.py
@@ -190,7 +184,6 @@ ramekin_client/models/normalize_op_info.py
 ramekin_client/models/normalize_ops_response.py
 ramekin_client/models/normalize_proposal_response.py
 ramekin_client/models/normalize_request.py
-ramekin_client/models/normalize_title_response.py
 ramekin_client/models/normalized_recipe.py
 ramekin_client/models/op_kind.py
 ramekin_client/models/op_result.py
@@ -203,7 +196,6 @@ ramekin_client/models/recipe_response.py
 ramekin_client/models/recipe_summary.py
 ramekin_client/models/rename_tag_request.py
 ramekin_client/models/rename_tag_response.py
-ramekin_client/models/reparse_ingredients_response.py
 ramekin_client/models/rescrape_response.py
 ramekin_client/models/retry_scrape_response.py
 ramekin_client/models/scrape_job_response.py
@@ -258,11 +250,9 @@ ramekin_client/test/test_derived_measurement.py
 ramekin_client/test/test_direction.py
 ramekin_client/test/test_edit_recipe_api.py
 ramekin_client/test/test_edit_recipe_request.py
-ramekin_client/test/test_enrich_api.py
 ramekin_client/test/test_error_code.py
 ramekin_client/test/test_error_response.py
 ramekin_client/test/test_estimate_calories_request.py
-ramekin_client/test/test_generate_description_response.py
 ramekin_client/test/test_generate_photo_response.py
 ramekin_client/test/test_import_api.py
 ramekin_client/test/test_import_extraction_method.py
@@ -297,7 +287,6 @@ ramekin_client/test/test_normalize_op_info.py
 ramekin_client/test/test_normalize_ops_response.py
 ramekin_client/test/test_normalize_proposal_response.py
 ramekin_client/test/test_normalize_request.py
-ramekin_client/test/test_normalize_title_response.py
 ramekin_client/test/test_normalized_recipe.py
 ramekin_client/test/test_op_kind.py
 ramekin_client/test/test_op_result.py
@@ -312,7 +301,6 @@ ramekin_client/test/test_recipe_summary.py
 ramekin_client/test/test_recipes_api.py
 ramekin_client/test/test_rename_tag_request.py
 ramekin_client/test/test_rename_tag_response.py
-ramekin_client/test/test_reparse_ingredients_response.py
 ramekin_client/test/test_rescrape_response.py
 ramekin_client/test/test_retry_scrape_response.py
 ramekin_client/test/test_scrape_api.py

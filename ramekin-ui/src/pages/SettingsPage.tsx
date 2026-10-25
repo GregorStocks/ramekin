@@ -20,13 +20,8 @@ type UploadState = "idle" | "uploading" | "done";
 
 export default function SettingsPage() {
   usePageTitle(() => "Settings");
-  const {
-    getUsersApi,
-    getClientLogsApi,
-    getIngredientNamesApi,
-    getRecipesApi,
-    setToken,
-  } = useAuth();
+  const { getUsersApi, getClientLogsApi, getIngredientNamesApi, setToken } =
+    useAuth();
 
   const [username, setUsername] = createSignal<string | null>(null);
   const [status, setStatus] = createSignal<ConnectionStatus>("checking");
@@ -117,30 +112,6 @@ export default function SettingsPage() {
       setNameError(await extractApiError(err, "Failed to queue names"));
     } finally {
       setRetrying(false);
-    }
-  };
-
-  // Rebuild stored recipes' ingredients from the scrapes that saved them,
-  // after parser changes.
-  const [reparsing, setReparsing] = createSignal(false);
-  const [reparseMessage, setReparseMessage] = createSignal<string | null>(null);
-  const [reparseError, setReparseError] = createSignal<string | null>(null);
-  const handleReparse = async () => {
-    setReparsing(true);
-    setReparseMessage(null);
-    setReparseError(null);
-    try {
-      const result = await getRecipesApi().reparseAllIngredients();
-      setReparseMessage(
-        `Updated ${result.recipesUpdated} of ${result.recipesChecked} recipes. ` +
-          `Skipped ${result.skippedEdited} edited by hand and ` +
-          `${result.skippedNoSource} with no saved scrape.`,
-      );
-      refetchNameStatus();
-    } catch (err) {
-      setReparseError(await extractApiError(err, "Failed to re-parse recipes"));
-    } finally {
-      setReparsing(false);
     }
   };
 
@@ -257,26 +228,10 @@ export default function SettingsPage() {
       <section class="settings-section" aria-label="Re-parse recipes">
         <h3>Re-parse recipes</h3>
         <p>
-          Read each scraped or imported recipe's ingredients again from the page
-          or file it came from, with the current parser. Recipes edited by hand
-          since then are left alone; changed ones get a new version.
+          To read recipes again from the page or file they came from with the
+          current parser, select them in the cookbook and choose Re-normalize…,
+          then Re-extract from saved source.
         </p>
-        <button
-          type="button"
-          class="btn btn-small"
-          disabled={reparsing()}
-          onClick={handleReparse}
-        >
-          {reparsing() ? "Re-parsing…" : "Re-parse recipes"}
-        </button>
-        <Show when={reparseMessage()}>
-          <p class="success" role="status">
-            {reparseMessage()}
-          </p>
-        </Show>
-        <Show when={reparseError()}>
-          <p class="error">{reparseError()}</p>
-        </Show>
       </section>
 
       <section class="settings-section">

@@ -71,9 +71,9 @@ struct RecipeDetailView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Button {
-                            Task { await viewModel.enrichWithAI() }
+                            viewModel.showingReNormalize = true
                         } label: {
-                            Label("Enrich with AI", systemImage: "wand.and.stars")
+                            Label("Re-normalize…", systemImage: "arrow.triangle.2.circlepath")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
@@ -81,20 +81,6 @@ struct RecipeDetailView: View {
                             viewModel.showingEditWithAI = true
                         } label: {
                             Label("Edit with AI…", systemImage: "wand.and.stars.inverse")
-                        }
-                        .disabled(actionsDisabledForHistoricalVersion)
-
-                        Button {
-                            Task { await viewModel.normalizeTitle() }
-                        } label: {
-                            Label("Auto-Rename", systemImage: "textformat")
-                        }
-                        .disabled(actionsDisabledForHistoricalVersion)
-
-                        Button {
-                            Task { await viewModel.generateDescription() }
-                        } label: {
-                            Label("Generate Description", systemImage: "text.bubble")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
@@ -119,19 +105,6 @@ struct RecipeDetailView: View {
                                 Label("Add to Shopping List", systemImage: "cart.badge.plus")
                             }
                             .disabled(actionsDisabledForHistoricalVersion)
-                        }
-
-                        if let sourceUrl = recipe.sourceUrl, !sourceUrl.isEmpty {
-                            Button {
-                                viewModel.showingRescrapeConfirmation = true
-                            } label: {
-                                Label("Rescrape from Source", systemImage: "arrow.triangle.2.circlepath")
-                            }
-                            .disabled(
-                                actionsDisabledForHistoricalVersion
-                                    || viewModel.isRescraping
-                                    || viewModel.isFinishingRescrapeNormalize
-                            )
                         }
 
                         exportMenu(for: recipe)
@@ -166,9 +139,18 @@ struct RecipeDetailView: View {
         }
         .sheet(isPresented: $viewModel.showingEditWithAI) {
             if let recipe = viewModel.recipe {
-                EditWithAISheet(recipe: recipe, isPresented: $viewModel.showingEditWithAI) { result in
-                    viewModel.enrichResult = result
+                ProposalJobSheet(
+                    recipeId: recipeId,
+                    mode: .edit(photoIds: recipe.photoIds),
+                    isPresented: $viewModel.showingEditWithAI
+                ) {
+                    await viewModel.loadRecipe()
                 }
+            }
+        }
+        .sheet(isPresented: $viewModel.showingReNormalize) {
+            ProposalJobSheet(recipeId: recipeId, mode: .normalize, isPresented: $viewModel.showingReNormalize) {
+                await viewModel.loadRecipe()
             }
         }
         .sheet(isPresented: $viewModel.showingEdit) {
@@ -176,19 +158,6 @@ struct RecipeDetailView: View {
                 RecipeFormView(mode: .edit(recipeId: recipeId), resuming: resumingEdit) {
                     Task { await viewModel.loadRecipe() }
                 }
-            }
-        }
-        .sheet(isPresented: Binding(
-            get: { viewModel.enrichResult != nil },
-            set: { if !$0 { viewModel.enrichResult = nil } }
-        )) {
-            if let recipe = viewModel.recipe, let modified = viewModel.enrichResult {
-                EnrichPreviewSheet(
-                    original: recipe,
-                    modified: modified,
-                    onApply: { await viewModel.applyEnrichment(modified) },
-                    onCancel: { viewModel.enrichResult = nil }
-                )
             }
         }
         .sheet(isPresented: $viewModel.showingCompareSheet) {
@@ -218,24 +187,6 @@ struct RecipeDetailView: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(viewModel.deleteError ?? "")
-        }
-        .confirmationDialog("Rescrape from Source", isPresented: $viewModel.showingRescrapeConfirmation) {
-            Button("Rescrape") {
-                viewModel.startRescrapeFromSource()
-            }
-        } message: {
-            Text(
-                "This will re-import the recipe from its original URL. "
-                    + "Your current version will be preserved in history."
-            )
-        }
-        .alert("Rescrape Failed", isPresented: Binding(
-            get: { viewModel.rescrapeError != nil },
-            set: { if !$0 { viewModel.rescrapeError = nil } }
-        )) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text(viewModel.rescrapeError ?? "")
         }
         .alert("AI Action Failed", isPresented: Binding(
             get: { viewModel.aiActionError != nil },
@@ -278,9 +229,6 @@ struct RecipeDetailView: View {
             if isExpanded && viewModel.versionHistory.isEmpty {
                 Task { await viewModel.loadVersionHistory(force: true) }
             }
-        }
-        .onDisappear {
-            viewModel.cancelRescrape()
         }
         .modifier(RecipeScaleRestorationModifier(recipeId: recipeId, viewModel: viewModel))
     }

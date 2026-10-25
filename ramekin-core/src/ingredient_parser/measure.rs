@@ -848,6 +848,11 @@ pub(super) fn is_package_word(word: &str) -> bool {
     is_one_of(word, PACKAGE_WORDS)
 }
 
+/// A piece cut to a size in inches ("piece", "knobs", "chunk").
+pub(super) fn is_inch_piece_noun(word: &str) -> bool {
+    is_one_of(word, INCH_PIECE_NOUNS)
+}
+
 /// A word in `words`, or its plural ("cans", "bunches").
 fn is_one_of(word: &str, words: &[&str]) -> bool {
     let word = word.to_lowercase();
