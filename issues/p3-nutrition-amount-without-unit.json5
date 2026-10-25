@@ -1,0 +1,18 @@
+{
+  "title": "Calorie estimates: bare amounts of foods that are never counted (a unit lost upstream)",
+  "description": "12 pipeline-fixture lines have a bare amount for a food that is measured, not counted: \"0.5 sugar\", \"0.5 flour\", \"226 cornstarch\" (the line has 226 g / 8 oz / 2 cup alternatives elsewhere), \"0.25 brown sugar\", \"0.33 brown sugar\", \"0.5 full-fat milk\", \"0.5 heavy whipping cream\", \"2 unsweetened cocoa powder\" (noted \"for a mild chocolate cake OR 1 tablespoon\"), \"0.5/1 orange zest\", \"1 sugar pumpkin\". \
+The fractions suggest the recipe's unit (cup) was dropped by extraction or parsing, not that the author wrote a bare number. \
+Find the raw lines in the pipeline fixtures, see whether the unit is in the source HTML (a separate unit span the extractor skipped, or a scaled amount), and fix extraction/parsing rather than guessing a unit in the nutrition layer. make pipeline diffs are expected if extraction changes. \
+Measure with make ingredient-catalog-audit (Unsupported quantity unit, all three corpora) and, once blocked-ingredient-burndown-from-prod lands, the prod report; make pipeline should produce only data/ingredient-catalog-audit.md and fixture-category diffs. \
+Server-side only (ramekin-core nutrition), so no web or iOS change. \
+Split out of the retired p3-nutrition-remaining-count-units (owner, 2026-10-24: whole groups per PR, never one ingredient).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "catalog",
+  ],
+  "created_at": "2026-10-24T19:00:00-07:00",
+  "updated_at": "2026-10-24T19:00:00-07:00",
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Calorie estimates: lines that reference another recipe or a serving",
+  "description": "36 lines (24 pipeline fixtures, 6 Paprika, 6 snapshots) name another recipe or a portion instead of an amount: \"2 portion cooked Japanese short-grain rice\" (11 lines, some noted \"approx. 150 g per person\"), \"2 servings cooked Japanese short-grain rice\", \"1 recipe guacamole\", \"1 recipe pico de gallo\", \"1/2 recipe the best basic guacamole\", \"1 recipe pizza dough or …\", \"1 batch buttermilk biscuits\", \"1 batch roasted tomato salsa\", \"1 batch corn tortillas\", \"1 portion no-knead pizza dough\". \
+Decide per kind: a portion/serving of a plain food can use a cited serving (USDA cooked rice: 1 cup; or the noted grams per person, which the note reader could pick up), while a recipe or batch of a sub-recipe can't be weighed and should probably be reported as not counted with a clearer reason than Unsupported quantity unit (or, longer term, link to the sub-recipe's own estimate). \
+Owner decision needed on the recipe/batch half. \
+Measure with make ingredient-catalog-audit (Unsupported quantity unit, all three corpora) and, once blocked-ingredient-burndown-from-prod lands, the prod report; make pipeline should produce only data/ingredient-catalog-audit.md and fixture-category diffs. \
+Server-side only (ramekin-core nutrition), so no web or iOS change. \
+Split out of the retired p3-nutrition-remaining-count-units (owner, 2026-10-24: whole groups per PR, never one ingredient).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "catalog",
+  ],
+  "created_at": "2026-10-24T19:00:00-07:00",
+  "updated_at": "2026-10-24T19:00:00-07:00",
+}
