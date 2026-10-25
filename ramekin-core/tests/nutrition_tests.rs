@@ -1210,6 +1210,26 @@ fn a_bare_count_weighs_the_piece_the_food_is_named_for() {
 }
 
 #[test]
+fn a_counted_chipotle_in_adobo_weighs_the_labeled_chile() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    // Branded labels give 2 chiles (with their sauce) as 30 g.
+    assert!(calories("chipotle peppers in adobo sauce", "2", "").is_some());
+    assert_eq!(
+        calories("chipotle peppers in adobo sauce", "2", ""),
+        calories("chipotle peppers in adobo sauce", "30", "g")
+    );
+    assert_eq!(
+        calories("chipotle chiles en adobo", "1", ""),
+        calories("chipotle chile in adobo sauce", "15", "g")
+    );
+}
+
+#[test]
 fn a_weight_in_the_note_weighs_a_counted_line() {
     let noted = |raw: &str, item: &str, amount: &str, note: &str| ParsedIngredient {
         measurements: vec![Measurement {
