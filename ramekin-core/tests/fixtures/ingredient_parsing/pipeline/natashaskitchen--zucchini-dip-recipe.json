@@ -5,11 +5,11 @@
     {
       "raw": "4  or 5 small/medium zucchini/squash (about 2 1/2 lbs)",
       "expected": {
-        "item": "small/medium zucchini/squash",
+        "item": "zucchini/squash",
         "measurements": [
           {
             "amount": "4 or 5",
-            "unit": null
+            "unit": "small"
           },
           {
             "amount": "2.5",
@@ -23,11 +23,11 @@
     {
       "raw": "2  med/large tomatoes (1 lb)",
       "expected": {
-        "item": "med/large tomatoes",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "medium"
           },
           {
             "amount": "1",
@@ -35,7 +35,7 @@
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

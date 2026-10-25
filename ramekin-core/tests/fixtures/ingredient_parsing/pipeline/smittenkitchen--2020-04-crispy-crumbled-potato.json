@@ -5,15 +5,15 @@
     {
       "raw": "4 medium/large Russet potatoes",
       "expected": {
-        "item": "medium/large Russet potatoes",
+        "item": "Russet potatoes",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

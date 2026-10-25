@@ -5,11 +5,11 @@
     {
       "raw": "6  small-medium russet potatoes ((roughly 110-215 grams each))",
       "expected": {
-        "item": "small-medium russet potatoes",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "small"
           },
           {
             "amount": "110-215",
@@ -17,7 +17,7 @@
           }
         ],
         "note": "roughly 110-215 grams each",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

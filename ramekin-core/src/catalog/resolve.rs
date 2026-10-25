@@ -118,6 +118,9 @@ const LEADING_MODIFIERS: &[&str] = &[
     "raw",
     // "regular cloves garlic", from "3 large or 4 regular cloves garlic".
     "regular",
+    // "roasted broccoli florets"; an exact name ("roasted peanuts", "roasted
+    // red peppers") matches first.
+    "roasted",
     "roughly",
     "shredded",
     "skinless",
@@ -135,6 +138,7 @@ const LEADING_MODIFIERS: &[&str] = &[
     "thin",
     "thinly",
     "toasted",
+    "uncooked",
     // "unsalted pecan halves"; an exact name ("unsalted butter") matches first.
     "unsalted",
 ];
@@ -174,7 +178,23 @@ fn without_measures(name: &str) -> Vec<String> {
         }
     }
     names.extend(base);
+    names.extend(without_piece_word(name));
     names
+}
+
+/// The name with a piece word the food's own name doesn't need: a crown or
+/// floret written first ("crown of broccoli", "crowns broccoli") follows the
+/// food, as its pieces' entries name it ("broccoli crowns"), and a bulb that
+/// is the whole food ("kohlrabi bulbs") goes; "fennel bulb" matches before.
+fn without_piece_word(name: &str) -> Option<String> {
+    static LEADING_PIECE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(?P<piece>crown|floret)s?\s+(?:of\s+)?(?P<food>\p{L}.*)$").unwrap()
+    });
+    static BULB: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"^(.+?)\s+bulbs?$").unwrap());
+    if let Some(caps) = LEADING_PIECE.captures(name) {
+        return Some(format!("{} {}s", &caps["food"], &caps["piece"]));
+    }
+    BULB.captures(name).map(|caps| caps[1].to_string())
 }
 
 /// The name with leading size/preparation words dropped one at a time,
@@ -579,7 +599,8 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
 }
 
 /// One alternative without what keeps it from naming its food: an example
-/// marker ("like cream cheese", "such as ..."), a footnote marker ("***"),
+/// marker ("like cream cheese", "such as ..."), what it's for ("zucchini per
+/// person for zoodles"), a footnote marker ("***"),
 /// and a prep word joined by "and"
 /// ("cooked and cooled white rice" is cooked white rice). A citrus part
 /// counted by the fruit ("juice of half a lemon") is that part ("lemon juice").
@@ -587,8 +608,13 @@ fn clean_alternative(piece: &str) -> String {
     static EXAMPLE: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(r"^(?:[^:]+:\s*)?(?:(?:like|such as|e\.g\.|eg|for example),? )?").unwrap()
     });
+    // What it's for or how much each eater gets ("zucchini per person for
+    // zoodles*").
+    static PURPOSE: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"\s+(?:per\s+(?:person|serving)|for)\b.*$").unwrap());
     // A leading label ("berries: sliced strawberries") and an example marker.
     let piece = EXAMPLE.replace(piece, "");
+    let piece = PURPOSE.replace(&piece, "");
     // A footnote marker ("dried bread crumbs*** or panko").
     let piece = piece.trim_end_matches(['*', '†', '‡']).trim_end();
     if let Some(part) = citrus_part_name(piece) {

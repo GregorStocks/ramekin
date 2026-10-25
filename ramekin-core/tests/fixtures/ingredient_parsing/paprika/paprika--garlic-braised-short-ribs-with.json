@@ -74,14 +74,18 @@
     {
       "raw": "4 ribs celery (about 8 ounces, chopped",
       "expected": {
-        "item": "ribs celery (about 8 ounces",
+        "item": "ribs celery",
         "measurements": [
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
           }
         ],
-        "note": "chopped",
+        "note": "about 8 ounces, chopped",
         "category": "Produce"
       }
     },

@@ -5,15 +5,15 @@
     {
       "raw": "1 small/medium acorn squash",
       "expected": {
-        "item": "small/medium acorn squash",
+        "item": "acorn squash",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "small"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

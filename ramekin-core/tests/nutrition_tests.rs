@@ -1380,6 +1380,80 @@ fn whole_produce_and_seafood_weigh_by_size() {
 }
 
 #[test]
+fn size_piece_and_prep_words_left_in_the_item_still_weigh() {
+    let calories = |parsed: ParsedIngredient| {
+        estimate(&[parsed], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    let weighed = |item: &str, amount: &str, unit: &str| calories(ingredient(item, amount, unit));
+    for (raw, item, amount, unit) in [
+        // A size behind a word the parser doesn't read as a unit sizes the
+        // count.
+        (
+            "16 uncooked medium shrimp, peeled and deveined",
+            "shrimp",
+            "176",
+            "g",
+        ),
+        ("16 uncooked large shrimp", "shrimp", "256", "g"),
+        (
+            "6 black tiger shrimp (or similar large prawn)",
+            "shrimp",
+            "66",
+            "g",
+        ),
+        // A size pair is its first size.
+        (
+            "1 medium/small butternut squash",
+            "butternut squash",
+            "1361",
+            "g",
+        ),
+        // An unclosed "(" still splits the note off.
+        (
+            "1 medium butternut squash (peeled, seeded and sliced into 3/4\"",
+            "butternut squash",
+            "1361",
+            "g",
+        ),
+        // A crown or floret written first is the food's piece.
+        ("1 crown of broccoli", "broccoli", "272", "g"),
+        ("1 large crown broccoli", "broccoli", "272", "g"),
+        ("3 crowns broccoli", "broccoli", "816", "g"),
+        (
+            "5 roasted broccoli florets (chopped small)",
+            "broccoli",
+            "50",
+            "g",
+        ),
+        // A bulb that is the whole food.
+        (
+            "2 small kohlrabi bulbs, peeled and sliced paper thin",
+            "kohlrabi",
+            "2",
+            "small",
+        ),
+        // What an alternative is for doesn't pass it over.
+        (
+            "1 small zucchini per person for zoodles* or pho noodles",
+            "zucchini",
+            "1",
+            "small",
+        ),
+    ] {
+        let expected = weighed(item, amount, unit);
+        assert!(expected.is_some(), "{item}");
+        assert_eq!(calories(parse_ingredient(raw)), expected, "{raw}");
+    }
+    assert_eq!(
+        parse_ingredient("1 medium butternut squash (peeled, seeded and sliced into 3/4\"").item,
+        "butternut squash"
+    );
+}
+
+#[test]
 fn shrimp_and_marshmallows_weigh_by_their_size() {
     let calories = |item: &str, amount: &str, unit: &str| {
         estimate(&[ingredient(item, amount, unit)], None, 1.0)

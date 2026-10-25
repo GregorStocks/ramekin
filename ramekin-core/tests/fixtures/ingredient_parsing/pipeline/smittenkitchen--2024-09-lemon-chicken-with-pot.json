@@ -42,11 +42,11 @@
     {
       "raw": "4 medium-large bone-in chicken thighs (about 2.25 pounds total)",
       "expected": {
-        "item": "medium-large bone-in chicken thighs",
+        "item": "bone-in chicken thighs",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "medium"
           },
           {
             "amount": "2.25",
@@ -54,7 +54,7 @@
           }
         ],
         "note": "about 2.25 pounds total",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {

@@ -45,15 +45,19 @@
     {
       "raw": "3 small/medium or 2 large lemons",
       "expected": {
-        "item": "small/medium or 2 large lemons",
+        "item": "lemons",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "small"
+          },
+          {
+            "amount": "2",
+            "unit": "large"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

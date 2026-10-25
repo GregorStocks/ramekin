@@ -98,11 +98,11 @@
     {
       "raw": "6 medium-large leeks or 3 leeks and 2 small yellow onions, diced (just white and pale green parts from leeks; leeks washed well)",
       "expected": {
-        "item": "medium-large leeks",
+        "item": "leeks",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": "or 3 leeks and 2 small yellow onions (just white and pale green parts from leeks; leeks washed well); diced",

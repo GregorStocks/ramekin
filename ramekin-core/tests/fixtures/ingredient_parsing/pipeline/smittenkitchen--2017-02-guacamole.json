@@ -75,15 +75,15 @@
     {
       "raw": "2 medium-large ripe avocados",
       "expected": {
-        "item": "medium-large ripe avocados",
+        "item": "ripe avocados",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Produce"
       }
     }
   ]

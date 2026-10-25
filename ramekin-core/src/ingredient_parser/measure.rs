@@ -547,6 +547,31 @@ fn sized_unit(c: &mut Cursor, size: &str) -> Option<String> {
     Some(format!("{} {measure}", normalize_unit(size)))
 }
 
+/// A pair of sizes written as one ("medium/small", "small-medium", "med/large",
+/// "small- medium"), read as its first size: the recipe's own first guess.
+fn size_pair(c: &mut Cursor) -> Option<String> {
+    let size = |t: &Token| {
+        let word = t.lower();
+        (t.kind == Kind::Word && (word == "med" || is_size_unit(&word))).then(|| {
+            match word.as_str() {
+                "med" => "medium".to_string(),
+                _ => word,
+            }
+        })
+    };
+    let mut probe = c.clone();
+    let first = probe.peek(0).and_then(size)?;
+    probe.pos += 1;
+    probe.take_if(|t| matches!(t.kind, Kind::Slash | Kind::Dash) && !t.space_before)?;
+    probe.peek(0).and_then(size)?;
+    probe.pos += 1;
+    if probe.peek(0).is_some_and(|t| !t.space_before) {
+        return None;
+    }
+    *c = probe;
+    Some(first)
+}
+
 /// Read the unit phrase after an amount.
 fn unit_phrase(c: &mut Cursor, amount_start: usize) -> Option<(Option<String>, String)> {
     // "2 x 400g cans": a multiplier before the unit.
@@ -588,7 +613,7 @@ fn unit_phrase(c: &mut Cursor, amount_start: usize) -> Option<(Option<String>, S
         c.skip_of(false);
         return Some((None, unit));
     }
-    let base = unit(c)?;
+    let base = size_pair(c).or_else(|| unit(c))?;
     if let Some(sized) = sized_unit(c, &base) {
         return Some((None, sized));
     }
@@ -763,7 +788,8 @@ pub(super) fn read_measurement(s: &str) -> Read {
 /// A size word read as the unit, sizing a measure after it when one follows.
 fn unit_phrase_size(c: &mut Cursor) -> Option<String> {
     let mut probe = c.clone();
-    let size = unit(&mut probe).filter(|size| is_size_unit(size))?;
+    let size =
+        size_pair(&mut probe).or_else(|| unit(&mut probe).filter(|size| is_size_unit(size)))?;
     let unit = sized_unit(&mut probe, &size).unwrap_or(size);
     *c = probe;
     Some(unit)

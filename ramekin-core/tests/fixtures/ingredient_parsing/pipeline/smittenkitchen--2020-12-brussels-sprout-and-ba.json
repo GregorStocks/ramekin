@@ -19,15 +19,15 @@
     {
       "raw": "2 small- medium shallots, halved and thinly sliced",
       "expected": {
-        "item": "small- medium shallots",
+        "item": "shallots",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "small"
           }
         ],
         "note": "halved and thinly sliced",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

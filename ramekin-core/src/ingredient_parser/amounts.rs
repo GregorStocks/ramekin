@@ -294,10 +294,11 @@ mod tests {
     #[test]
     fn test_slash_inside_descriptor_is_not_treated_as_measurement_boundary() {
         let result = parse_ingredient("4 or 5 small/medium zucchini/squash (about 2 1/2 lbs)");
-        assert_eq!(result.item, "small/medium zucchini/squash");
+        // The size pair reads as its first size.
+        assert_eq!(result.item, "zucchini/squash");
         assert_eq!(result.measurements.len(), 2);
         assert_eq!(result.measurements[0].amount, Some("4 or 5".to_string()));
-        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.measurements[0].unit, Some("small".to_string()));
         assert_eq!(result.measurements[1].amount, Some("2 1/2".to_string()));
         assert_eq!(result.measurements[1].unit, Some("lb".to_string()));
     }

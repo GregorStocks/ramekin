@@ -91,7 +91,9 @@ Names are lowercased and whitespace is collapsed. Then:
 6. The name without a leading measure the parser left in it ("8 tbsp unsalted
    butter", "240 ml heavy cream", "cloves garlic", "can of tomato paste", "bag
    broccoli florets" after "16 oz.", "big handfuls of kale"), then steps 3 and 5
-   on that. A count, container or unit never names the food.
+   on that. A count, container or unit never names the food. A crown or floret
+   written first follows the food ("crown of broccoli" is "broccoli crowns"),
+   and a bulb that is the whole food goes ("kohlrabi bulbs").
 7. A name offering alternatives ("x or y", "x and/or y") that steps 1–3 don't
    match directly (exactly, as a plural, or without modifiers) resolves to the
    first-listed alternative that names a food (`Via::Alternative`; owner

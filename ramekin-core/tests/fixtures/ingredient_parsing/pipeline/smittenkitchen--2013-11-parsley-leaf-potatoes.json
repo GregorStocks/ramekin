@@ -23,11 +23,11 @@
     {
       "raw": "8 small-medium baking potatoes (about 4 pounds), scrubbed",
       "expected": {
-        "item": "small-medium baking potatoes",
+        "item": "baking potatoes",
         "measurements": [
           {
             "amount": "8",
-            "unit": null
+            "unit": "small"
           },
           {
             "amount": "4",

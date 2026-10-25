@@ -19,15 +19,15 @@
     {
       "raw": "4  medium-large boneless skinless chicken breasts (cut into 1 1/2 inch pieces)",
       "expected": {
-        "item": "medium-large boneless skinless chicken breasts",
+        "item": "boneless skinless chicken breasts",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": "cut into 1 1/2 inch pieces",
-        "category": "Other"
+        "category": "Meat & Seafood"
       }
     },
     {

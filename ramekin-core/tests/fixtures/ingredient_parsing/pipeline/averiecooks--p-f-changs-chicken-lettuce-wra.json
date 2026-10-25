@@ -47,11 +47,11 @@
     {
       "raw": "1  medium/large sweet Vidalia or yellow onion (diced small)",
       "expected": {
-        "item": "medium/large sweet Vidalia or yellow onion",
+        "item": "sweet Vidalia or yellow onion",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": "diced small",
