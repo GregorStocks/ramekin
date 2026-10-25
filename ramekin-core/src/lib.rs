@@ -24,7 +24,7 @@ pub mod volume_to_weight;
 
 pub use error::{ExtractError, FetchError};
 pub use extract::{extract_recipe, extract_recipe_with_stats};
-pub use fetch::{fetch_bytes, fetch_html};
+pub use fetch::{fetch_bytes, fetch_html, refetch_html};
 pub use http::{
     CacheStats, CachingClient, CachingClientBuilder, DiskCache, HttpClient, MockClient,
     MockResponse,

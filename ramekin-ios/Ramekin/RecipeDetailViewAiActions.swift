@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension RecipeDetailView {
-    func autoEnrichmentProgressBanner(_ label: String) -> some View {
+    func aiActionProgressBanner(_ label: String) -> some View {
         HStack(spacing: 10) {
             ProgressView()
             Text(label)

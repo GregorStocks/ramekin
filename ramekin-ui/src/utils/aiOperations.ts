@@ -1,6 +1,6 @@
 import { extractApiError } from "./recipeFormHelpers";
 
-export const AI_ENRICHMENTS = {
+export const AI_OPERATIONS = {
   normalizeTitle: {
     bulkLabel: "Auto-rename",
     individualLabel: "Auto-rename",

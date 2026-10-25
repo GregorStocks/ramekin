@@ -63,7 +63,7 @@ extension RecipeDetailView {
             progressBanner("Rescraping from source…")
         }
 
-        if viewModel.isFinishingRescrapeEnrichment {
+        if viewModel.isFinishingRescrapeNormalize {
             progressBanner("Adding an AI title, description, and tags…")
         }
 
@@ -77,8 +77,8 @@ extension RecipeDetailView {
             progressBanner("Deleting recipe…")
         }
 
-        if let banner = viewModel.autoEnrichmentProgressLabel {
-            autoEnrichmentProgressBanner(banner)
+        if let banner = viewModel.aiActionProgressLabel {
+            aiActionProgressBanner(banner)
         }
 
         if let error = viewModel.error {

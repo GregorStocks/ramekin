@@ -132,7 +132,7 @@ pub async fn prepare_text_recipe(
         })?;
     let raw = extracted.raw_recipe;
     // The model's warnings are for the user to read. Whether the draft is
-    // complete enough to enrich is decided here, the same way for every model
+    // complete enough to normalize is decided here, the same way for every model
     // (non-recipe text comes back with these fields empty).
     let mut warnings = extracted.warnings;
     let mut incomplete = Vec::new();

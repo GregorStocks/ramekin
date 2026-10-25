@@ -1,8 +1,9 @@
-"""End-to-end tests for the post-save ("enriching") phase of scrape jobs.
+"""End-to-end tests for the post-save ("normalizing") phase of scrape jobs.
 
-Once save_recipe runs, the job reports status "enriching" with the recipe id
-so clients can show the recipe while the AI steps finish, and those steps run
-concurrently instead of one at a time.
+Once save_recipe runs, the job reports status "normalizing" with the recipe id
+so clients can show the recipe while the normalize ops finish. The ops run
+concurrently instead of one at a time, then apply_normalize saves their
+results as one "normalize" version.
 """
 
 import json
@@ -86,7 +87,7 @@ def give_user_auto_tag(recipes_api: RecipesApi) -> None:
     )
 
 
-def test_recipe_is_viewable_while_enrichment_runs_concurrently(
+def test_recipe_is_viewable_while_normalize_ops_run_concurrently(
     authed_api_client, server_url
 ):
     client, _ = authed_api_client
@@ -110,17 +111,16 @@ def test_recipe_is_viewable_while_enrichment_runs_concurrently(
                     step_status(j, s) == "completed"
                     for s in (
                         "resolve_ingredient_names",
-                        "enrich_normalize_title",
-                        "apply_normalized_title",
-                        "enrich_auto_tag",
+                        "normalize_title",
+                        "auto_tag",
                     )
                 )
                 and j
             )
         )
-        assert job.status == "enriching"
-        assert step_status(job, "enrich_generate_description") == "running"
-        assert step_status(job, "apply_auto_tags") == "pending"
+        assert job.status == "normalizing"
+        assert step_status(job, "generate_description") == "running"
+        assert step_status(job, "apply_normalize") == "pending"
         assert job.recipe_id is not None
         recipe = recipes_api.get_recipe(id=str(job.recipe_id))
         assert recipe.title == f"Viewable {marker}"
@@ -132,9 +132,18 @@ def test_recipe_is_viewable_while_enrichment_runs_concurrently(
     recipe = recipes_api.get_recipe(id=str(job.recipe_id))
     assert recipe.description == "A delicious test recipe."
     assert "test-auto-tag" in recipe.tags
+    # One version for the scrape, one for every normalize op together.
+    assert recipe.version_source == "normalize"
+    assert recipe.normalize_ops == [
+        "normalize_title",
+        "generate_description",
+        "auto_tag",
+    ]
+    versions = recipes_api.list_versions(id=str(job.recipe_id)).versions
+    assert [v.version_source for v in versions] == ["normalize", "scrape"]
 
 
-def test_edit_during_enrichment_wins_over_ai(authed_api_client, server_url):
+def test_edit_during_normalizing_wins_over_ai(authed_api_client, server_url):
     client, _ = authed_api_client
     scrape_api = ScrapeApi(client)
     recipes_api = RecipesApi(client)
@@ -149,9 +158,9 @@ def test_edit_during_enrichment_wins_over_ai(authed_api_client, server_url):
         job = wait_for(
             lambda: (
                 (j := scrape_api.get_scrape(job_id))
-                and j.status == "enriching"
-                and step_status(j, "apply_normalized_title") == "completed"
-                and step_status(j, "enrich_auto_tag") == "completed"
+                and j.status == "normalizing"
+                and step_status(j, "normalize_title") == "completed"
+                and step_status(j, "auto_tag") == "completed"
                 and j
             )
         )
@@ -168,12 +177,11 @@ def test_edit_during_enrichment_wins_over_ai(authed_api_client, server_url):
         hold_description(marker, False)
 
     job = wait_for_job_completion(scrape_api, job_id)
-    # The edit made the AI writes stale; they are skipped, not failures.
+    # The edit made the AI write stale; it is skipped, not a failure.
     assert job.status == "completed", job.error
-    for name in ("apply_generated_description", "apply_auto_tags"):
-        step = next(s for s in job.steps if s.name == name)
-        assert step.status == "completed"
-        assert step.summary.startswith("skipped:"), step.summary
+    step = next(s for s in job.steps if s.name == "apply_normalize")
+    assert step.status == "completed"
+    assert step.summary.startswith("skipped:"), step.summary
     recipe = recipes_api.get_recipe(id=recipe_id)
     assert recipe.title == "My own title"
     assert recipe.description != "A delicious test recipe."
@@ -190,7 +198,7 @@ def test_failure_lets_earlier_steps_finish_so_retry_resumes_correctly(
 
     # Auto-tag (later in canonical order) fails while the description
     # (earlier) is still held. The description branch must still run: a retry
-    # resumes at enrich_auto_tag and treats everything before it as done.
+    # resumes at auto_tag and treats everything before it as done.
     hold_description(marker, True)
     try:
         job_id = capture(
@@ -201,7 +209,7 @@ def test_failure_lets_earlier_steps_finish_so_retry_resumes_correctly(
         )
         wait_for(
             lambda: (
-                step_status(scrape_api.get_scrape(job_id), "enrich_auto_tag")
+                step_status(scrape_api.get_scrape(job_id), "auto_tag")
                 == "failed"
                 or None
             )
@@ -211,13 +219,9 @@ def test_failure_lets_earlier_steps_finish_so_retry_resumes_correctly(
 
     job = wait_for_job_completion(scrape_api, job_id)
     assert job.status == "failed"
-    assert job.failed_at_step == "enrich_auto_tag"
-    # The recipe was saved before enrichment failed; clients can still open it.
+    assert job.failed_at_step == "auto_tag"
+    # The recipe was saved before normalizing failed; clients can still open it.
     assert job.recipe_id is not None
-    for name in (
-        "apply_normalized_title",
-        "enrich_generate_description",
-        "apply_generated_description",
-    ):
+    for name in ("normalize_title", "generate_description"):
         assert step_status(job, name) == "completed", name
-    assert step_status(job, "apply_auto_tags") == "pending"
+    assert step_status(job, "apply_normalize") == "pending"

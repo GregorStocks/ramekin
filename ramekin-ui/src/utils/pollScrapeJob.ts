@@ -11,12 +11,12 @@ export function isTerminalScrapeJobStatus(status: string): boolean {
 }
 
 /**
- * The job has saved its recipe. While it is "enriching", AI steps are still
+ * The job has saved its recipe. While it is "normalizing", normalize ops are still
  * running and may update the recipe before the job completes.
  */
 export function isScrapeRecipeReady(job: ScrapeJobResponse): boolean {
   return (
-    (job.status === "enriching" || job.status === "completed") && !!job.recipeId
+    (job.status === "normalizing" || job.status === "completed") && !!job.recipeId
   );
 }
 
@@ -40,7 +40,7 @@ interface PollScrapeJobOptions {
   onUpdate?: (job: ScrapeJobResponse) => void;
   onPollError?: (err: unknown) => void | Promise<void>;
   beforePoll?: () => Promise<void>;
-  /** Stop as soon as the recipe is saved instead of waiting for enrichment. */
+  /** Stop as soon as the recipe is saved instead of waiting for normalize ops. */
   untilRecipeReady?: boolean;
   sleep?: (ms: number) => Promise<void>;
 }

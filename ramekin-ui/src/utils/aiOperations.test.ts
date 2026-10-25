@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   runRecipeAiBatchOperation,
   runSingleRecipeAiOperation,
-} from "./aiEnrichments";
+} from "./aiOperations";
 
 describe("recipe AI operations", () => {
   it("tracks progress and changed results for batch operations", async () => {

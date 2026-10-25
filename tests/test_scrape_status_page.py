@@ -16,12 +16,10 @@ CANONICAL_STEP_NAMES = [
     "parse_ingredients",
     "save_recipe",
     "resolve_ingredient_names",
-    "enrich_normalize_title",
-    "apply_normalized_title",
-    "enrich_generate_description",
-    "apply_generated_description",
-    "enrich_auto_tag",
-    "apply_auto_tags",
+    "normalize_title",
+    "generate_description",
+    "auto_tag",
+    "apply_normalize",
 ]
 
 

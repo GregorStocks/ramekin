@@ -9,8 +9,12 @@ use super::super::is_host_allowed;
 
 /// Server implementation of FetchHtml step.
 ///
-/// Uses ramekin_core::fetch_html directly (no caching).
-pub struct FetchHtmlStep;
+/// Serves a page from the HTTP disk cache when it has one, unless `refetch`:
+/// a job re-reading an existing recipe's source must see the page as it is
+/// now.
+pub struct FetchHtmlStep {
+    pub refetch: bool,
+}
 
 impl FetchHtmlStep {
     pub const NAME: &'static str = "fetch_html";
@@ -41,7 +45,12 @@ impl PipelineStep for FetchHtmlStep {
             };
         }
 
-        match ramekin_core::fetch_html(ctx.url).await {
+        let fetched = if self.refetch {
+            ramekin_core::refetch_html(ctx.url).await
+        } else {
+            ramekin_core::fetch_html(ctx.url).await
+        };
+        match fetched {
             Ok(html) => StepResult {
                 step_name: Self::NAME.to_string(),
                 success: true,

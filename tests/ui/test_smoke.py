@@ -32,8 +32,9 @@ def wait_for_job_completion(scrape_api: ScrapeApi, job_id: str, timeout: float =
     raise TimeoutError(f"Job {job_id} did not complete within {timeout}s")
 
 
-def create_scraped_recipe_with_enrichment(api_url: str) -> tuple[str, str, str]:
-    """Create a user and scrape a recipe so version history includes enrichment."""
+def create_scraped_recipe_with_normalize(api_url: str) -> tuple[str, str, str]:
+    """Create a user and scrape a recipe so version history includes a
+    normalize version."""
     username = f"ui_smoke_{uuid.uuid4().hex[:8]}"
     password = "testpass123"
     fixture_base_url = os.environ["FIXTURE_BASE_URL"]
@@ -68,7 +69,7 @@ def create_scraped_recipe_with_enrichment(api_url: str) -> tuple[str, str, str]:
         job = wait_for_job_completion(scrape_api, response.id)
         assert job.status == "completed"
         recipe = recipes_api.get_recipe(job.recipe_id)
-        assert recipe.version_source == "enrichment"
+        assert recipe.version_source == "normalize"
         return username, password, recipe.id
 
 
@@ -380,11 +381,11 @@ def test_cookbook_filters_adapt_between_desktop_and_mobile(logged_in_page: Page)
     expect(logged_in_page.locator("body")).not_to_have_css("overflow", "hidden")
 
 
-def test_version_history_labels_enrichment_badges(
+def test_version_history_labels_normalize_badges(
     page: Page, ui_url: str, api_url: str
 ):
-    """Verify AI-enriched versions show the user-facing badge label."""
-    username, password, recipe_id = create_scraped_recipe_with_enrichment(api_url)
+    """Verify normalize versions show the user-facing badge label."""
+    username, password, recipe_id = create_scraped_recipe_with_normalize(api_url)
 
     page.goto(ui_url)
     page.fill("input[type='text']", username)
@@ -395,9 +396,9 @@ def test_version_history_labels_enrichment_badges(
     page.goto(f"{ui_url}/recipes/{recipe_id}")
     page.get_by_text("Version History").click()
 
-    expect(page.locator(".version-source-badge").first).to_have_text("AI Enriched")
+    expect(page.locator(".version-source-badge").first).to_have_text("Normalized")
     expect(
-        page.locator(".version-source-badge").filter(has_text="enrichment")
+        page.locator(".version-source-badge").filter(has_text=re.compile("^normalize$"))
     ).to_have_count(0)
 
 

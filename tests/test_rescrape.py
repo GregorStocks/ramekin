@@ -80,12 +80,7 @@ class TestRescrapeSuccess:
         # Verify a new version was created
         assert tagged_version_id != original_version_id
         assert updated_recipe.version_id != tagged_version_id
-        assert updated_recipe.version_source in (
-            "rescrape",
-            "normalize_title",
-            "generate_description",
-            "enrichment",
-        )
+        assert updated_recipe.version_source in ("rescrape", "normalize")
         assert sorted(updated_recipe.tags) == ["rescrape-tag", "weeknight"]
         versions = recipes_api.list_versions(recipe_id)
         assert any(v.version_source == "rescrape" for v in versions.versions)
@@ -242,9 +237,9 @@ class TestRescrapePhoto:
             fixture_path.unlink(missing_ok=True)
 
     def test_rescrape_photo_creates_exactly_one_new_version(self, authed_api_client):
-        """Photo rescrape must not trigger the enrichment chain afterwards —
-        otherwise auto-tagging would create a second 'enrichment' version and
-        the endpoint would silently mutate metadata beyond photo_ids."""
+        """Photo rescrape must not run normalize ops afterwards — otherwise
+        they would create a second 'normalize' version and the endpoint would
+        silently mutate metadata beyond photo_ids."""
         client, _ = authed_api_client
         scrape_api = ScrapeApi(client)
         recipes_api = RecipesApi(client)
@@ -269,9 +264,9 @@ class TestRescrapePhoto:
 
             after = recipes_api.list_versions(recipe_id)
             # Exactly one new version — the photo_rescrape one — with no
-            # follow-up enrichment version from apply_auto_tags.
+            # follow-up version from apply_normalize.
             assert len(after.versions) == before_count + 1
-            # The newest version is photo_rescrape, not enrichment.
+            # The newest version is photo_rescrape, not normalize.
             newest = after.versions[0]
             assert newest.version_source == "photo_rescrape"
         finally:

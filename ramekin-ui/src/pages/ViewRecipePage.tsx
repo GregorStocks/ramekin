@@ -33,7 +33,7 @@ import {
   derivedMeasurementAt,
   formatIngredientParts,
 } from "../utils/ingredientFormatting";
-import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
+import { AI_OPERATIONS } from "../utils/aiOperations";
 import {
   PollScrapeJobAbortedError,
   pollScrapeJob,
@@ -161,13 +161,13 @@ export default function ViewRecipePage() {
   // Rescrape state
   const [rescraping, setRescraping] = createSignal(false);
 
-  // A scrape job whose recipe is saved but whose AI enrichment (title,
-  // description, tags) is still running. The scrape status page links here
+  // A scrape job whose recipe is saved but whose normalize ops (title,
+  // description, tags) are still running. The scrape status page links here
   // with ?scrapeJob= so the recipe shows right away; reload when it lands.
-  const [enrichingJobId, setEnrichingJobId] = createSignal<string | null>(
+  const [normalizingJobId, setNormalizingJobId] = createSignal<string | null>(
     typeof searchParams.scrapeJob === "string" ? searchParams.scrapeJob : null,
   );
-  const [enrichmentFailedJobId, setEnrichmentFailedJobId] = createSignal<
+  const [normalizeFailedJobId, setNormalizeFailedJobId] = createSignal<
     string | null
   >(null);
 
@@ -364,18 +364,18 @@ export default function ViewRecipePage() {
   });
 
   createEffect(() => {
-    const jobId = enrichingJobId();
+    const jobId = normalizingJobId();
     if (!jobId) return;
     const controller = new AbortController();
     onCleanup(() => controller.abort());
-    setEnrichmentFailedJobId(null);
+    setNormalizeFailedJobId(null);
     void pollScrapeJob(getScrapeApi(), jobId, {
       signal: controller.signal,
       // Track the job until it ends; leaving the page aborts the poll.
       timeoutMs: null,
     })
       .then(async (result) => {
-        if (result.status === "failed") setEnrichmentFailedJobId(jobId);
+        if (result.status === "failed") setNormalizeFailedJobId(jobId);
         await loadRecipe();
       })
       .catch((err: unknown) => {
@@ -385,7 +385,7 @@ export default function ViewRecipePage() {
       })
       .finally(() => {
         if (controller.signal.aborted) return;
-        setEnrichingJobId(null);
+        setNormalizingJobId(null);
         if (searchParams.scrapeJob) {
           setSearchParams({ scrapeJob: undefined }, { replace: true });
         }
@@ -411,7 +411,7 @@ export default function ViewRecipePage() {
         await loadRecipe();
       } else if (result.status === "recipe_ready") {
         await loadRecipe();
-        setEnrichingJobId(jobId);
+        setNormalizingJobId(jobId);
       } else if (result.status === "failed") {
         setError(`Rescrape failed: ${result.error}`);
       } else {
@@ -554,7 +554,7 @@ export default function ViewRecipePage() {
                           onClick={handleRescrape}
                           disabled={
                             rescraping() ||
-                            !!enrichingJobId() ||
+                            !!normalizingJobId() ||
                             isViewingHistoricalVersion()
                           }
                         >
@@ -573,7 +573,7 @@ export default function ViewRecipePage() {
                       >
                         {recipeAiActions.normalizingTitle()
                           ? "Renaming..."
-                          : AI_ENRICHMENTS.normalizeTitle.individualLabel}
+                          : AI_OPERATIONS.normalizeTitle.individualLabel}
                       </button>
                       <button
                         type="button"
@@ -587,7 +587,7 @@ export default function ViewRecipePage() {
                       >
                         {recipeAiActions.generatingDescription()
                           ? "Generating..."
-                          : AI_ENRICHMENTS.generateDescription.individualLabel}
+                          : AI_OPERATIONS.generateDescription.individualLabel}
                       </button>
                       <button
                         type="button"
@@ -600,7 +600,7 @@ export default function ViewRecipePage() {
                       >
                         {recipeAiActions.enriching()
                           ? "Enriching..."
-                          : AI_ENRICHMENTS.enrichRecipe.individualLabel}
+                          : AI_OPERATIONS.enrichRecipe.individualLabel}
                       </button>
                       <button
                         type="button"
@@ -616,7 +616,7 @@ export default function ViewRecipePage() {
                           isViewingHistoricalVersion()
                         }
                       >
-                        {AI_ENRICHMENTS.customEnrich.individualLabel}
+                        {AI_OPERATIONS.customEnrich.individualLabel}
                       </button>
                       <button
                         type="button"
@@ -629,7 +629,7 @@ export default function ViewRecipePage() {
                       >
                         {recipeAiActions.generatingPhoto()
                           ? "Generating Photo..."
-                          : AI_ENRICHMENTS.generatePhoto.individualLabel}
+                          : AI_OPERATIONS.generatePhoto.individualLabel}
                       </button>
                     </div>
                     <div class="recipe-action-group">
@@ -678,15 +678,15 @@ export default function ViewRecipePage() {
               </Show>
             </div>
 
-            <Show when={enrichingJobId()}>
-              <div class="enrichment-notice" role="status">
+            <Show when={normalizingJobId()}>
+              <div class="normalize-notice" role="status">
                 Adding an AI title, description, and tags…
               </div>
             </Show>
-            <Show when={enrichmentFailedJobId()}>
+            <Show when={normalizeFailedJobId()}>
               {(jobId) => (
-                <div class="enrichment-notice enrichment-notice-failed">
-                  AI enrichment didn't finish.{" "}
+                <div class="normalize-notice normalize-notice-failed">
+                  Normalizing didn't finish.{" "}
                   <A href={`/scrape/${jobId()}`}>See what happened</A>
                 </div>
               )}

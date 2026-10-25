@@ -66,7 +66,10 @@ pub async fn build_registry(
 ) -> Result<StepRegistry, ScrapeError> {
     let user_id = job.user_id;
     let mut registry = StepRegistry::new();
-    registry.register(Box::new(FetchHtmlStep));
+    // Rescrapes and refetches re-read an existing recipe's source.
+    registry.register(Box::new(FetchHtmlStep {
+        refetch: job.expected_version_id.is_some(),
+    }));
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
     registry.register(Box::new(ParseIngredientsStep));
@@ -117,14 +120,19 @@ pub async fn build_registry(
                 }
             };
             registry.register(Box::new(save_step));
-            registry.register(Box::new(ResolveIngredientNamesStep::new(pool.clone())));
-            let ops = default_import_ops();
-            registry.register(Box::new(ApplyNormalizeStep::new(
-                pool.clone(),
-                user_id,
-                ops.clone(),
-            )));
-            ops
+            if job.photo_only {
+                // See JobPlan::for_job: nothing runs after a photo-only save.
+                Vec::new()
+            } else {
+                registry.register(Box::new(ResolveIngredientNamesStep::new(pool.clone())));
+                let ops = default_import_ops();
+                registry.register(Box::new(ApplyNormalizeStep::new(
+                    pool.clone(),
+                    user_id,
+                    ops.clone(),
+                )));
+                ops
+            }
         }
     };
 

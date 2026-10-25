@@ -5,7 +5,7 @@ final class RecipeVersionSupportTests: XCTestCase {
     func testSourceLabelMapsKnownValues() {
         XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "user"), "User Edit")
         XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "scrape"), "Imported")
-        XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "enrichment"), "AI Enriched")
+        XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "normalize"), "Normalized")
         XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "reparse"), "Re-parsed")
         XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "custom"), "custom")
     }
@@ -112,6 +112,7 @@ final class RecipeVersionSupportTests: XCTestCase {
             id: recipe.id,
             ingredients: recipe.ingredients,
             instructions: recipe.instructions,
+            normalizeOps: [],
             notes: nil,
             nutritionalInfo: nil,
             photoIds: recipe.photoIds,
@@ -186,6 +187,7 @@ final class RecipeVersionSupportTests: XCTestCase {
             id: recipe.id,
             ingredients: recipe.ingredients,
             instructions: recipe.instructions,
+            normalizeOps: [],
             notes: recipe.notes,
             nutritionalInfo: "  200 calories\n",
             photoIds: recipe.photoIds,
@@ -212,6 +214,7 @@ final class RecipeVersionSupportTests: XCTestCase {
             id: recipe.id,
             ingredients: recipe.ingredients,
             instructions: recipe.instructions,
+            normalizeOps: [],
             notes: recipe.notes,
             nutritionalInfo: " \n ",
             photoIds: recipe.photoIds,
@@ -250,6 +253,7 @@ final class RecipeVersionSupportTests: XCTestCase {
                 )
             ],
             instructions: "Mix everything.",
+            normalizeOps: [],
             notes: "Test notes",
             nutritionalInfo: "200 calories",
             photoIds: photoIds,

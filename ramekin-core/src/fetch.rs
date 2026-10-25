@@ -15,6 +15,13 @@ pub async fn fetch_html(url: &str) -> Result<String, FetchError> {
     client.fetch_html(url).await
 }
 
+/// Fetch HTML content from a URL over the network, bypassing any cached
+/// response, and cache what comes back.
+pub async fn refetch_html(url: &str) -> Result<String, FetchError> {
+    let client = CachingClient::new()?;
+    client.refetch_html(url).await
+}
+
 /// Fetch binary content from a URL (for images, etc.).
 ///
 /// Uses the default CachingClient configuration (disk caching, rate limiting).

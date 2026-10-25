@@ -2,7 +2,7 @@ import { Show } from "solid-js";
 import type { Accessor } from "solid-js";
 
 import type { CookbookBulkSelectionState } from "../../hooks/useCookbookBulkSelection";
-import { AI_ENRICHMENTS } from "../../utils/aiEnrichments";
+import { AI_OPERATIONS } from "../../utils/aiOperations";
 
 interface CookbookBulkToolbarProps {
   state: CookbookBulkSelectionState;
@@ -70,8 +70,8 @@ export default function CookbookBulkToolbar(props: CookbookBulkToolbarProps) {
         >
           {state.bulkButtonLabel(
             "normalizeTitle",
-            AI_ENRICHMENTS.normalizeTitle.bulkLabel,
-            AI_ENRICHMENTS.normalizeTitle.progressVerb,
+            AI_OPERATIONS.normalizeTitle.bulkLabel,
+            AI_OPERATIONS.normalizeTitle.progressVerb,
           )}
         </button>
         <button
@@ -84,8 +84,8 @@ export default function CookbookBulkToolbar(props: CookbookBulkToolbarProps) {
         >
           {state.bulkButtonLabel(
             "description",
-            AI_ENRICHMENTS.generateDescription.bulkLabel,
-            AI_ENRICHMENTS.generateDescription.progressVerb,
+            AI_OPERATIONS.generateDescription.bulkLabel,
+            AI_OPERATIONS.generateDescription.progressVerb,
           )}
         </button>
         <button
@@ -98,8 +98,8 @@ export default function CookbookBulkToolbar(props: CookbookBulkToolbarProps) {
         >
           {state.bulkButtonLabel(
             "photo",
-            AI_ENRICHMENTS.generatePhoto.bulkLabel,
-            AI_ENRICHMENTS.generatePhoto.progressVerb,
+            AI_OPERATIONS.generatePhoto.bulkLabel,
+            AI_OPERATIONS.generatePhoto.progressVerb,
           )}
         </button>
       </div>

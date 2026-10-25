@@ -54,9 +54,9 @@ describe("pollScrapeJob", () => {
     expect(updates).toEqual(["pending", "scraping", "completed"]);
   });
 
-  it("keeps polling through enriching by default", async () => {
+  it("keeps polling through normalizing by default", async () => {
     const api = scrapeApi([
-      scrapeJob("enriching", { recipeId: "recipe-id" }),
+      scrapeJob("normalizing", { recipeId: "recipe-id" }),
       scrapeJob("completed", { recipeId: "recipe-id" }),
     ]);
 
@@ -67,10 +67,10 @@ describe("pollScrapeJob", () => {
     expect(result.status).toBe("completed");
   });
 
-  it("returns recipe_ready once enriching when asked", async () => {
+  it("returns recipe_ready once normalizing when asked", async () => {
     const api = scrapeApi([
       scrapeJob("parsing"),
-      scrapeJob("enriching", { recipeId: "recipe-id" }),
+      scrapeJob("normalizing", { recipeId: "recipe-id" }),
     ]);
 
     const result = await pollScrapeJob(api, "job-id", {
