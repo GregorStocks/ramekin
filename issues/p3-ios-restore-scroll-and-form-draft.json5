@@ -1,0 +1,18 @@
+{
+  "title": "iOS: restore recipe scroll position and in-progress recipe form drafts after termination",
+  "description": "Follow-up to restoring place after background termination (ContentView's @SceneStorage keys in ramekin-ios/Ramekin/RamekinApp.swift now restore the tab, both navigation stacks, the meal plan week, and each open recipe's scale). \
+Still lost when iOS kills the app: (1) the scroll position in RecipeDetailView (which ingredient or step was in view). \
+The iOS 16 deployment target has no scrollPosition(id:), so this needs a preference-key tracker of the topmost visible ingredient/step plus ScrollViewReader.scrollTo on restore, stored per recipe next to RecipeScaleState in SceneRestorationSupport.swift. (2) a half-typed RecipeFormView edit or new recipe. \
+Store the draft (RecipeFormViewModel.formData / recipeText), not the sheet: EditableIngredient, EditableMeasurement, and IngredientEditorRow aren't Codable and mint fresh UUIDs, so they need a Codable snapshot type. \
+On relaunch, offer to resume the draft (for edit mode, only if the recipe's version hasn't changed since; otherwise warn). (3) shopping list scroll position, if cheap. \
+Scene storage keys must be unique per scene, so add them in ContentView and pass them down like the existing recipeScaleMemory environment value. \
+Extend RecipeFlowTests.testRelaunchAfterTerminationRestoresPlace for whatever lands.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-10-24T18:30:00-07:00",
+  "updated_at": "2026-10-24T18:30:00-07:00",
+}

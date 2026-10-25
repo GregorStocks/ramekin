@@ -265,6 +265,7 @@ struct RecipeDetailView: View {
         .onDisappear {
             viewModel.cancelRescrape()
         }
+        .modifier(RecipeScaleRestorationModifier(recipeId: recipeId, viewModel: viewModel))
     }
 
     func setRecipeScale(_ value: Double) {
@@ -274,6 +275,33 @@ struct RecipeDetailView: View {
     func applyCustomScale() {
         customScaleFocused = false
         viewModel.applyCustomScale()
+    }
+}
+
+/// Seeds the recipe's scale from the scene's restoration state and records
+/// changes back. Kept as a ViewModifier so the detail view's body stays small
+/// enough to type-check.
+private struct RecipeScaleRestorationModifier: ViewModifier {
+    let recipeId: UUID
+    @ObservedObject var viewModel: RecipeDetailViewModel
+    @Environment(\.recipeScaleMemory) private var scaleMemory
+
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                guard let stored = scaleMemory.stored(recipeId) else { return }
+                viewModel.customScaleInput = stored.customInput
+                viewModel.setRecipeScale(stored.scale)
+            }
+            .onChange(of: viewModel.recipeScale) { _ in rememberScale() }
+            .onChange(of: viewModel.customScaleInput) { _ in rememberScale() }
+    }
+
+    private func rememberScale() {
+        scaleMemory.remember(
+            recipeId,
+            RecipeScaleState(scale: viewModel.recipeScale, customInput: viewModel.customScaleInput)
+        )
     }
 }
 

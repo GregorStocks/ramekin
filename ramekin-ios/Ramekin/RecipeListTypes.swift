@@ -122,7 +122,7 @@ struct RecipeRowView: View {
 
 // MARK: - Navigation Destinations
 
-enum NavigationDestination: Hashable {
+enum NavigationDestination: Hashable, Codable {
     case recipe(UUID)
     case settings
 }

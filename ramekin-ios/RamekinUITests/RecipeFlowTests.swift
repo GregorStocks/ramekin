@@ -195,6 +195,74 @@ final class RecipeFlowTests: XCTestCase {
         XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
         XCTAssertTrue(moreActions.isHittable)
     }
+
+    /// iOS terminating the app in the background must not lose the user's
+    /// place: relaunching restores the tab, the open recipe, and its scale.
+    func testRelaunchAfterTerminationRestoresPlace() throws {
+        try launchSignedIn()
+        let recipeCell = app.cells.firstMatch
+        XCTAssertTrue(recipeCell.waitForExistence(timeout: 60), "Seed data from make seed is required")
+        recipeCell.tap()
+        XCTAssertTrue(app.navigationBars.buttons["Edit Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
+        let recipeTitle = app.navigationBars.firstMatch.identifier
+
+        let doubleScale = app.buttons["2x"]
+        scrollUntilHittable(doubleScale)
+        doubleScale.tap()
+        XCTAssertTrue(waitUntilSelected(doubleScale), "Tapping 2x should select it")
+
+        app.tabBars.buttons["Meal Plan"].tap()
+        XCTAssertTrue(app.navigationBars["Meal Plan"].waitForExistence(timeout: slowSimulatorTimeout))
+
+        // Background first so iOS saves scene state, then kill the process
+        // the way the OS does; swiping the app away would discard the state.
+        // Background work (sync) can keep the app from suspending, and scene
+        // state is saved on entering the background, so wait only for that.
+        XCUIDevice.shared.press(.home)
+        let backgrounded = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "state != %d", XCUIApplication.State.runningForeground.rawValue),
+            object: app
+        )
+        XCTAssertEqual(XCTWaiter.wait(for: [backgrounded], timeout: slowSimulatorTimeout), .completed)
+        // Give the system a moment to write the scene's state.
+        _ = XCTWaiter.wait(for: [XCTestExpectation(description: "Scene state saved")], timeout: 2)
+        app.terminate()
+        // Keep the stored session: resetting auth would sign out.
+        app.launchArguments = []
+        app.launch()
+
+        XCTAssertTrue(
+            app.navigationBars["Meal Plan"].waitForExistence(timeout: slowSimulatorTimeout),
+            "Relaunch should restore the selected tab"
+        )
+        attachScreenshot(named: "08-RestoredTab")
+        app.tabBars.buttons["Recipes"].tap()
+        XCTAssertTrue(
+            app.navigationBars[recipeTitle].waitForExistence(timeout: slowSimulatorTimeout),
+            "Relaunch should restore the open recipe"
+        )
+        XCTAssertTrue(app.navigationBars.buttons["Edit Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
+        scrollUntilHittable(doubleScale)
+        XCTAssertTrue(waitUntilSelected(doubleScale), "Relaunch should restore the recipe's scale")
+        attachScreenshot(named: "09-RestoredRecipe")
+    }
+
+    private func scrollUntilHittable(_ element: XCUIElement) {
+        XCTAssertTrue(element.waitForExistence(timeout: slowSimulatorTimeout))
+        for _ in 0..<8 where !element.isHittable {
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.75))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            start.press(forDuration: 0.01, thenDragTo: end)
+        }
+    }
+
+    private func waitUntilSelected(_ element: XCUIElement) -> Bool {
+        let selected = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "isSelected == true"),
+            object: element
+        )
+        return XCTWaiter.wait(for: [selected], timeout: slowSimulatorTimeout) == .completed
+    }
 }
 
 /// Carries a URLSession response out of its completion handler.

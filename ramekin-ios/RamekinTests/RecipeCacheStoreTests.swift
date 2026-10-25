@@ -395,6 +395,27 @@ extension RecipeCacheStoreTests {
         XCTAssertEqual(Set(cached.map(\.summary.id)), [ids[0], ids[2]])
     }
 
+    func testExistingRecipeIdsReportsOnlyThisAccountsCachedRecipes() async throws {
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let mine = makeRecipe()
+        let theirs = makeRecipe()
+        let missing = UUID()
+        let ids = [mine.id, theirs.id, missing]
+
+        try await store.apply(syncResponse: page([mine]), afterId: nil, accountKey: accountKey)
+        try await store.apply(syncResponse: page([theirs]), afterId: nil, accountKey: "https://example.test|other")
+
+        // Until a sweep completes, a missing recipe may just be unsynced.
+        let midSweep = try await store.existingRecipeIds(ids, accountKey: accountKey)
+        XCTAssertNil(midSweep)
+
+        store.setSyncCursor(300, accountKey: accountKey)
+
+        let existing = try await store.existingRecipeIds(ids, accountKey: accountKey)
+        XCTAssertEqual(existing, [mine.id])
+    }
+
     func testFullResyncPageWithMoreButNoRecipesSettlesNothing() {
         let response = page([], fullResync: true, hasMore: true)
 
