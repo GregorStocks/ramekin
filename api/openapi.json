@@ -2125,6 +2125,123 @@
         ]
       }
     },
+    "/api/shopping-list/history": {
+      "get": {
+        "tags": [
+          "shopping_list"
+        ],
+        "operationId": "list_shopping_list_history",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Most entries to return, between 1 and 200. Defaults to 50.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The latest history entries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingListHistoryResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/shopping-list/history/{id}/undo": {
+      "post": {
+        "tags": [
+          "shopping_list"
+        ],
+        "operationId": "undo_shopping_list_change",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "History entry ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Undone; the entry recording the undo. Sync to see it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingListHistoryEntry"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No such entry",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Already undone, or later changes replaced all of it",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/sync/meal-plans": {
       "post": {
         "tags": [
@@ -3780,7 +3897,8 @@
         "enum": [
           "create",
           "update",
-          "delete"
+          "delete",
+          "restore"
         ]
       },
       "OpResult": {
@@ -4381,6 +4499,59 @@
               "string",
               "null"
             ]
+          }
+        }
+      },
+      "ShoppingListHistoryEntry": {
+        "type": "object",
+        "required": [
+          "id",
+          "created_at",
+          "summary"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "summary": {
+            "type": "string",
+            "description": "What the entry changed, e.g. \"Checked milk; deleted eggs and bread\"."
+          },
+          "undoes_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "The entry this one undid, when it's an undo."
+          },
+          "undone_by_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "The entry that undid this one. Only an entry without one can be undone."
+          }
+        }
+      },
+      "ShoppingListHistoryResponse": {
+        "type": "object",
+        "required": [
+          "entries"
+        ],
+        "properties": {
+          "entries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShoppingListHistoryEntry"
+            },
+            "description": "Newest first."
           }
         }
       },

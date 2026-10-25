@@ -8,6 +8,7 @@ apis/MealPlansApi.ts
 apis/PhotosApi.ts
 apis/RecipesApi.ts
 apis/ScrapeApi.ts
+apis/ShoppingListApi.ts
 apis/SyncApi.ts
 apis/TagsApi.ts
 apis/TestingApi.ts
@@ -83,7 +84,10 @@ docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
 docs/ScrapeJobResponse.md
+docs/ShoppingListApi.md
 docs/ShoppingListFields.md
+docs/ShoppingListHistoryEntry.md
+docs/ShoppingListHistoryResponse.md
 docs/ShoppingListOp.md
 docs/SignupRequest.md
 docs/SignupResponse.md
@@ -173,6 +177,8 @@ models/RescrapeResponse.ts
 models/RetryScrapeResponse.ts
 models/ScrapeJobResponse.ts
 models/ShoppingListFields.ts
+models/ShoppingListHistoryEntry.ts
+models/ShoppingListHistoryResponse.ts
 models/ShoppingListOp.ts
 models/SignupRequest.ts
 models/SignupResponse.ts

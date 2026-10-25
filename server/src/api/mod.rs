@@ -9,6 +9,7 @@ pub mod photos;
 pub mod public;
 pub mod recipes;
 pub mod scrape;
+pub mod shopping_list;
 pub mod sync;
 pub mod tags;
 pub mod testing;
@@ -104,6 +105,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         import::ApiDoc::openapi(),
         ingredient_names::ApiDoc::openapi(),
         meal_plans::ApiDoc::openapi(),
+        shopping_list::ApiDoc::openapi(),
         sync::ApiDoc::openapi(),
         users::ApiDoc::openapi(),
     ];

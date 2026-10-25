@@ -17,6 +17,7 @@ export declare const OpKind: {
     readonly Create: 'create';
     readonly Update: 'update';
     readonly Delete: 'delete';
+    readonly Restore: 'restore';
 };
 export type OpKind = typeof OpKind[keyof typeof OpKind];
 export declare function instanceOfOpKind(value: any): boolean;

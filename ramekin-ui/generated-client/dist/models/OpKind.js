@@ -18,7 +18,8 @@
 export const OpKind = {
     Create: 'create',
     Update: 'update',
-    Delete: 'delete'
+    Delete: 'delete',
+    Restore: 'restore'
 };
 export function instanceOfOpKind(value) {
     for (const key in OpKind) {

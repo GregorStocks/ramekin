@@ -7,6 +7,10 @@ enum OutboxStatus: String {
     case pendingCreate = "pending_create"
     case pendingUpdate = "pending_update"
     case pendingDelete = "pending_delete"
+    /// Undeleting a row (shopping list only): a restore op carrying every
+    /// field, which also recreates a row whose create never reached the
+    /// server.
+    case pendingRestore = "pending_restore"
 }
 
 /// A cached row whose local writes wait in an outbox until a sync sends them
@@ -48,17 +52,18 @@ extension OutboxRow {
         switch syncStatusEnum {
         case .synced: return nil
         case .pendingCreate: return .create
-        case .pendingUpdate: return .update
+        // A full resync keeps it, as it does an update, until its op settles.
+        case .pendingUpdate, .pendingRestore: return .update
         case .pendingDelete: return .delete
         }
     }
 
-    /// The fields with unsent local edits: every field of a pending create,
-    /// none of a synced row or pending delete.
+    /// The fields with unsent local edits: every field of a pending create
+    /// or restore, none of a synced row or pending delete.
     var dirtyFieldSet: Set<String> {
         get {
             switch syncStatusEnum {
-            case .pendingCreate:
+            case .pendingCreate, .pendingRestore:
                 return Set(Self.syncedFields)
             case .pendingUpdate:
                 return DirtyFields.decode(dirtyFields, allFields: Self.syncedFields)
@@ -77,7 +82,7 @@ extension OutboxRow {
             syncStatusEnum = .pendingUpdate
         case .pendingUpdate:
             dirtyFieldSet = dirtyFieldSet.union(fields)
-        case .pendingCreate, .pendingDelete:
+        case .pendingCreate, .pendingRestore, .pendingDelete:
             break
         }
     }
@@ -88,6 +93,13 @@ extension OutboxRow {
     func markDeleted() {
         dirtyFields = nil
         syncStatusEnum = .pendingDelete
+    }
+
+    /// Marks a deleted row (or one whose delete is still pending) to be
+    /// undeleted on the next sync.
+    func markRestored() {
+        dirtyFields = nil
+        syncStatusEnum = .pendingRestore
     }
 
     /// Marks the row as matching the server.
@@ -111,6 +123,12 @@ extension OutboxRow {
     /// server's copy (or tombstone) in the feed replaces them, and fields
     /// edited since stay dirty.
     func settle(result: OpResult, sent: OutboxSent) -> OutboxSettled {
+        if syncStatusEnum == .pendingRestore, sent.kind != .restore {
+            // Restored while an earlier op was in flight: the restore goes
+            // next, whatever that op got back. Even a gone row comes back,
+            // since the restore carries every field.
+            return .kept
+        }
         if result == .gone || sent.kind == .delete {
             return .removed
         }
@@ -125,7 +143,7 @@ extension OutboxRow {
         switch syncStatusEnum {
         case .pendingDelete, .synced:
             return .kept
-        case .pendingCreate, .pendingUpdate:
+        case .pendingCreate, .pendingUpdate, .pendingRestore:
             let stillDirty = dirtyFieldSet.filter { field in
                 guard let value = sent.values[field] else { return true }
                 return syncedValue(of: field) != value
@@ -177,10 +195,13 @@ enum OutboxSupport {
             if let rowId = row.rowId { byId[rowId] = row }
         }
         let changesById = Dictionary(response.changes.map { ($0.id, $0) }, uniquingKeysWith: { _, last in last })
+        // A pending restore outranks a tombstone (its own delete's, say):
+        // the restore op settles the row.
+        let restoring = Set(byId.filter { $0.value.syncStatusEnum == .pendingRestore }.keys)
         let actions = SyncApplySupport.plan(
             cached: byId.mapValues { SyncApplySupport.CachedState(changeSeq: $0.changeSeq, pending: $0.pendingWrite) },
             changes: response.changes.map { (id: $0.id, changeSeq: $0.changeSeq) },
-            deleted: response.deleted,
+            deleted: response.deleted.filter { !restoring.contains($0) },
             fullResync: response.fullResync
         )
         for (rowId, action) in actions {

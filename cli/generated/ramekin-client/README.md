@@ -61,6 +61,8 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**get_scrape**](docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**get_step_output**](docs/ScrapeApi.md#get_step_output) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeApi* | [**retry_scrape**](docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
+*ShoppingListApi* | [**list_shopping_list_history**](docs/ShoppingListApi.md#list_shopping_list_history) | **GET** /api/shopping-list/history | 
+*ShoppingListApi* | [**undo_shopping_list_change**](docs/ShoppingListApi.md#undo_shopping_list_change) | **POST** /api/shopping-list/history/{id}/undo | 
 *SyncApi* | [**sync_meal_plans**](docs/SyncApi.md#sync_meal_plans) | **POST** /api/sync/meal-plans | 
 *SyncApi* | [**sync_recipes**](docs/SyncApi.md#sync_recipes) | **GET** /api/sync/recipes | 
 *SyncApi* | [**sync_shopping_list**](docs/SyncApi.md#sync_shopping_list) | **POST** /api/sync/shopping-list | 
@@ -139,6 +141,8 @@ Class | Method | HTTP request | Description
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)
  - [ShoppingListFields](docs/ShoppingListFields.md)
+ - [ShoppingListHistoryEntry](docs/ShoppingListHistoryEntry.md)
+ - [ShoppingListHistoryResponse](docs/ShoppingListHistoryResponse.md)
  - [ShoppingListOp](docs/ShoppingListOp.md)
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)

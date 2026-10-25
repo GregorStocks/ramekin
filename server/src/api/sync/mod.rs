@@ -49,6 +49,11 @@ pub enum OpKind {
     Update,
     /// Soft-delete the row.
     Delete,
+    /// Undelete the row, then set the fields the op names, as an update
+    /// does. A live row just takes the fields, and a missing one is created
+    /// from them if they name an item (its create may never have been
+    /// sent). Shopping list only.
+    Restore,
 }
 
 /// The outcome of one write op, reported in request order.

@@ -29,6 +29,12 @@ def delete(item_id):
     return ShoppingListOp(op=OpKind.DELETE, id=item_id)
 
 
+def restore(item_id, **fields):
+    return ShoppingListOp(
+        op=OpKind.RESTORE, id=item_id, fields=ShoppingListFields(**fields)
+    )
+
+
 def sync(api, *ops, cursor=None):
     return api.sync_shopping_list(SyncShoppingListRequest(cursor=cursor, ops=list(ops)))
 

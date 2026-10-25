@@ -13,6 +13,7 @@ import {
   EnrichApi,
   TagsApi,
   MealPlansApi,
+  ShoppingListApi,
   SyncApi,
   ImportApi,
   UsersApi,
@@ -30,6 +31,7 @@ interface AuthContextValue {
   getEnrichApi: () => EnrichApi;
   getTagsApi: () => TagsApi;
   getMealPlansApi: () => MealPlansApi;
+  getShoppingListApi: () => ShoppingListApi;
   getSyncApi: () => SyncApi;
   getImportApi: () => ImportApi;
   getUsersApi: () => UsersApi;
@@ -102,6 +104,7 @@ export const AuthProvider: ParentComponent = (props) => {
   const getEnrichApi = () => new EnrichApi(getAuthedConfig());
   const getTagsApi = () => new TagsApi(getAuthedConfig());
   const getMealPlansApi = () => new MealPlansApi(getAuthedConfig());
+  const getShoppingListApi = () => new ShoppingListApi(getAuthedConfig());
   const getSyncApi = () => new SyncApi(getAuthedConfig());
   const getImportApi = () => new ImportApi(getAuthedConfig());
   const getUsersApi = () => new UsersApi(getAuthedConfig());
@@ -143,6 +146,7 @@ export const AuthProvider: ParentComponent = (props) => {
     getEnrichApi,
     getTagsApi,
     getMealPlansApi,
+    getShoppingListApi,
     getSyncApi,
     getImportApi,
     getUsersApi,

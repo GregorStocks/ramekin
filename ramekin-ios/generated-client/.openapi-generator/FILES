@@ -16,6 +16,7 @@ RamekinClient/Classes/OpenAPIs/APIs/MealPlansAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/PhotosAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/RecipesAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/ScrapeAPI.swift
+RamekinClient/Classes/OpenAPIs/APIs/ShoppingListAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/SyncAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/TagsAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/TestingAPI.swift
@@ -88,6 +89,8 @@ RamekinClient/Classes/OpenAPIs/Models/RescrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RetryScrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ScrapeJobResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ShoppingListFields.swift
+RamekinClient/Classes/OpenAPIs/Models/ShoppingListHistoryEntry.swift
+RamekinClient/Classes/OpenAPIs/Models/ShoppingListHistoryResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ShoppingListOp.swift
 RamekinClient/Classes/OpenAPIs/Models/SignupRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/SignupResponse.swift
@@ -184,7 +187,10 @@ docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeAPI.md
 docs/ScrapeJobResponse.md
+docs/ShoppingListAPI.md
 docs/ShoppingListFields.md
+docs/ShoppingListHistoryEntry.md
+docs/ShoppingListHistoryResponse.md
 docs/ShoppingListOp.md
 docs/SignupRequest.md
 docs/SignupResponse.md

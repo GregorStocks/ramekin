@@ -73,7 +73,10 @@ docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
 docs/ScrapeJobResponse.md
+docs/ShoppingListApi.md
 docs/ShoppingListFields.md
+docs/ShoppingListHistoryEntry.md
+docs/ShoppingListHistoryResponse.md
 docs/ShoppingListOp.md
 docs/SignupRequest.md
 docs/SignupResponse.md
@@ -112,6 +115,7 @@ src/apis/mod.rs
 src/apis/photos_api.rs
 src/apis/recipes_api.rs
 src/apis/scrape_api.rs
+src/apis/shopping_list_api.rs
 src/apis/sync_api.rs
 src/apis/tags_api.rs
 src/apis/testing_api.rs
@@ -180,6 +184,8 @@ src/models/rescrape_response.rs
 src/models/retry_scrape_response.rs
 src/models/scrape_job_response.rs
 src/models/shopping_list_fields.rs
+src/models/shopping_list_history_entry.rs
+src/models/shopping_list_history_response.rs
 src/models/shopping_list_op.rs
 src/models/signup_request.rs
 src/models/signup_response.rs
