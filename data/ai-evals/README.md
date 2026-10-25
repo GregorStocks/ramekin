@@ -65,9 +65,9 @@ model, and the page holds only what's still unjudged. Your clicks survive a
 reload of the page. Beside it, `results.html` shows every model's answers
 named and with their judgments, one model at a time or side by side.
 
-Who judged: titles, descriptions, recipe photos and 13 of the 49
+Who judged: titles, descriptions, recipe photos and 13 of the 59
 edit-recipe answers were judged by the maintainer; the tag sets and the
-other 36 edit-recipe answers by Claude, at the maintainer's request.
+other 46 edit-recipe answers by Claude, at the maintainer's request.
 
 Pick image candidates from the public blind-vote leaderboards (the LMArena
 and Artificial Analysis text-to-image arenas), not from OpenRouter's catalog

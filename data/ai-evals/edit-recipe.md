@@ -11,7 +11,7 @@ Golden set: `data/ai-evals/golden/edit-recipe.json` (10 cases), one call per cas
 | google/gemini-3.5-flash-lite | 90% | 10% | 0 | 0% | 0 | 0 | $0.0458 |
 | anthropic/claude-haiku-4.5 | 78% | 11% | 0 | 10% | 1 | 0 | $0.0920 |
 | anthropic/claude-sonnet-5.5 | 90% | 60% | 0 | 0% | 0 | 0 | $0.2797 |
-| anthropic/claude-opus-5.5 | – | – | 10 | 0% | 0 | 0 | $0.6594 |
+| anthropic/claude-opus-5.5 | 100% | 90% | 0 | 0% | 0 | 0 | $0.6594 |
 
 ## Rejected answers
 
