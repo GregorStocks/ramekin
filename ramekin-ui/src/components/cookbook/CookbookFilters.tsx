@@ -75,45 +75,89 @@ export default function CookbookFilters(props: CookbookFiltersProps) {
             when={state.sortedTags().length > 0}
             fallback={<span class="cookbook-filter-empty">No tags yet</span>}
           >
-            <div class="cookbook-filter-tag-groups">
+            {/* One button per namespace; its values live in a popover so
+                long tag lists don't stretch the sidebar. */}
+            <div class="cookbook-filter-chips">
               <For each={state.groupedTags()}>
-                {(group) => (
-                  <details class="cookbook-filter-tag-group" open>
-                    <summary>
-                      {group.namespace ?? "Uncategorized"}
-                      <span class="cookbook-filter-tag-group-count">
-                        {` (${group.tags.length})`}
-                      </span>
-                    </summary>
-                    <div class="cookbook-filter-chips">
-                      <For each={group.tags}>
-                        {(tag) => {
-                          const parsed = parseTag(tag);
-                          const selected = () =>
-                            state.currentFilters().tags.includes(tag);
-                          return (
-                            <button
-                              type="button"
-                              class="filter-chip"
-                              classList={{ "filter-chip-active": selected() }}
-                              aria-pressed={selected()}
-                              onClick={() => state.toggleTag(tag)}
-                            >
-                              <Show when={parsed.namespace}>
-                                <span class="tag-chip-ns">
-                                  {parsed.namespace}:
-                                </span>
-                              </Show>
-                              {parsed.value}
-                            </button>
-                          );
+                {(group, index) => {
+                  const label = group.namespace ?? "Uncategorized";
+                  const popoverId = `cookbook-tag-popover-${index()}`;
+                  const anchorName = `--cookbook-tag-group-${index()}`;
+                  const hasSelection = () =>
+                    group.tags.some((tag) =>
+                      state.currentFilters().tags.includes(tag),
+                    );
+                  return (
+                    <>
+                      <button
+                        type="button"
+                        class="filter-chip cookbook-tag-group-button"
+                        classList={{
+                          "filter-chip-active": hasSelection(),
                         }}
-                      </For>
-                    </div>
-                  </details>
-                )}
+                        style={{ "anchor-name": anchorName }}
+                        popovertarget={popoverId}
+                      >
+                        {label}
+                        <span class="cookbook-tag-group-count">
+                          {group.tags.length}
+                        </span>
+                      </button>
+                      <div
+                        id={popoverId}
+                        class="cookbook-tag-popover"
+                        style={{ "position-anchor": anchorName }}
+                        popover="auto"
+                        aria-label={`${label} tags`}
+                      >
+                        <div class="cookbook-tag-popover-title">{label}</div>
+                        <div class="cookbook-filter-chips">
+                          <For each={group.tags}>
+                            {(tag) => {
+                              const selected = () =>
+                                state.currentFilters().tags.includes(tag);
+                              return (
+                                <button
+                                  type="button"
+                                  class="filter-chip"
+                                  classList={{
+                                    "filter-chip-active": selected(),
+                                  }}
+                                  aria-pressed={selected()}
+                                  onClick={() => state.toggleTag(tag)}
+                                >
+                                  {parseTag(tag).value}
+                                </button>
+                              );
+                            }}
+                          </For>
+                        </div>
+                      </div>
+                    </>
+                  );
+                }}
               </For>
             </div>
+            <Show when={state.currentFilters().tags.length > 0}>
+              <div class="cookbook-filter-chips cookbook-selected-tags">
+                <For each={state.currentFilters().tags}>
+                  {(tag) => (
+                    <button
+                      type="button"
+                      class="filter-chip filter-chip-active"
+                      title={tag}
+                      aria-label={`Remove tag filter ${tag}`}
+                      onClick={() => state.toggleTag(tag)}
+                    >
+                      <span class="filter-chip-text">
+                        {parseTag(tag).value}
+                      </span>
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  )}
+                </For>
+              </div>
+            </Show>
           </Show>
         </div>
 

@@ -55,7 +55,10 @@ export function useCookbookFilters(options: UseCookbookFiltersOptions) {
   createEffect(() => {
     if (!mobileFiltersOpen()) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMobileFiltersOpen(false);
+      if (event.key !== "Escape") return;
+      // Let an open tag popover consume Escape before the drawer does.
+      if (document.querySelector(".cookbook-tag-popover:popover-open")) return;
+      setMobileFiltersOpen(false);
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";

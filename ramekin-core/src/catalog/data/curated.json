@@ -4301,6 +4301,7 @@
       "trace_ok": true
     },
     "chipotle chile in adobo sauce": {
+      "default_portion": "chile",
       "grams_per_cup": {
         "source": "USDA FoodData Central Branded food 370559: serving 34 g = 2 Tbsp",
         "value": 272.0
@@ -4309,6 +4310,13 @@
         "source": "USDA FoodData Central Branded food 370559 (CHIPOTLE PEPPERS IN ADOBO SAUCE, PRODUCTOS CAREY, S.A. DE C.V.): 74 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/370559/nutrients",
         "value": 74.0
+      },
+      "portions": {
+        "chile": {
+          "source": "USDA FoodData Central Branded food 2676978 (CHIPOTLES PEPPERS IN ADOBO SAUCE, Conservas La Costena S.A.): 2 pieces = 30 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2676978/nutrients",
+          "value": 15.0
+        }
       }
     },
     "chocolate sprinkles": {

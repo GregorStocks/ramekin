@@ -20,6 +20,7 @@ import {
   saveDensity,
   type Density,
 } from "./cookbook/presentation";
+import { restoreCookbookView, saveCookbookView } from "./cookbook/savedView";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 
@@ -28,6 +29,15 @@ export default function CookbookPage() {
   const { getRecipesApi, tags: availableTags, token, authedFetch } = useAuth();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const restoredView = restoreCookbookView(localStorage, {
+    q: searchParams.q === undefined ? undefined : getQueryParam(searchParams.q),
+    sort:
+      searchParams.sort === undefined
+        ? undefined
+        : getQueryParam(searchParams.sort),
+  });
+  if (restoredView) setSearchParams(restoredView, { replace: true });
 
   const searchQuery = () => getQueryParam(searchParams.q);
   const sortOption = () => parseSortOption(getQueryParam(searchParams.sort));
@@ -38,6 +48,9 @@ export default function CookbookPage() {
   const [notice, setNotice] = createSignal<string | null>(null);
 
   createEffect(() => saveDensity(density()));
+  createEffect(() =>
+    saveCookbookView(localStorage, sortOption(), searchQuery()),
+  );
 
   const setQuery = (query: string) => {
     setSearchInput(query);
