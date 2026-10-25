@@ -587,11 +587,20 @@ fn informal_measures_weigh_by_convention() {
         kcal("2 scoops vanilla ice cream").min,
         kcal("1 cup vanilla ice cream").min
     ));
-    // A scoop of powder depends on the brand's scoop.
+    // An ice-cream scoop is never a question for the model.
+    let ice_cream = estimate(&[parse_ingredient("2 scoops vanilla ice cream")], None, 1.0).unwrap();
+    assert!(ice_cream.weight_gaps.is_empty());
+    // A scoop of powder depends on the brand's scoop, so it's estimated per
+    // food (a whey scoop is ~30 g by label convention).
     let powder = estimate(&[parse_ingredient("1 scoop protein powder")], None, 1.0).unwrap();
-    assert_eq!(
-        powder.unknown_ingredients[0].reason,
-        "Unsupported quantity unit"
+    assert!(close(
+        powder.known_calories.unwrap().min,
+        kcal("30 g protein powder").min
+    ));
+    assert!(
+        powder.lines[0].text.ends_with("(estimated weight)"),
+        "{}",
+        powder.lines[0].text
     );
 }
 
