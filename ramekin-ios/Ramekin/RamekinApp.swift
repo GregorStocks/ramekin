@@ -197,6 +197,11 @@ struct ContentView: View {
                         .tag(Tab.shopping)
                 }
                 .environment(\.recipeScaleMemory, recipeScaleMemory)
+                // A link opened before the tabs exist (cold launch, or while
+                // signed out) must still win over the restored tab.
+                .onAppear {
+                    if appState.pendingRecipeId != nil { selectedTab = .recipes }
+                }
                 .onChange(of: appState.pendingRecipeId) { id in
                     if id != nil { selectedTab = .recipes }
                 }
