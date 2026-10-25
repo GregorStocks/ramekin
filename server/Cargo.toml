@@ -18,9 +18,9 @@ listenfd = "1.0.2"
 socket2 = "0.6"
 tower = "0.5"
 tower-http = { version = "0.7", features = ["cors", "trace"] }
-utoipa = { version = "5.5", features = ["axum_extras", "uuid", "chrono"] }
-utoipa-axum = "0.2"
-utoipa-swagger-ui = { version = "9.0", features = ["axum"] }
+utoipa = { version = "6.0", features = ["axum_extras", "uuid", "chrono"] }
+utoipa-axum = "0.3"
+utoipa-swagger-ui = { version = "10.0", features = ["axum"] }
 
 # Database
 diesel = { version = "2.3", features = ["sqlite", "returning_clauses_for_sqlite_3_35", "r2d2", "chrono", "serde_json"] }
@@ -67,8 +67,8 @@ base64 = "0.23"
 
 # Compression (Paprika export; step outputs in the file store)
 flate2 = "1.1"
-zip = "8.6"
-zstd = "0.13"
+zip = "9.0"
+zstd = "0.14"
 
 # Web scraping
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
