@@ -8,9 +8,8 @@ import type {
 } from "ramekin-client";
 import Modal from "./Modal";
 import NormalizeOpPicker from "./NormalizeOpPicker";
-import RecipeContentDiff, {
-  normalizedRecipeChanged,
-} from "./RecipeContentDiff";
+import RecipeContentDiff from "./RecipeContentDiff";
+import { normalizedRecipeChanged } from "../utils/recipeContentChanges";
 import {
   defaultNormalizeSelection,
   effectiveNormalizeOps,

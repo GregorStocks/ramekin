@@ -2,8 +2,8 @@ import Foundation
 
 /// Which normalize ops the Re-normalize sheet has checked.
 ///
-/// Mirrors ramekin-ui/src/utils/normalizeSelection.ts; keep the tests in step
-/// (doc/client-logic-sharing.md).
+/// Mirrors ramekin-ui/src/utils/normalizeSelection.ts; pinned by
+/// shared-test-vectors/normalize-selection.json.
 enum NormalizeSelection {
     /// The ops imports run, where the recipe can run them.
     static func defaultSelection(_ ops: [NormalizeOpInfo]) -> Set<String> {

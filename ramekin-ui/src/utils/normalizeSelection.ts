@@ -4,8 +4,8 @@ import type { NormalizeOpInfo, StepState } from "ramekin-client";
  * Which ops the Re-normalize sheet starts with checked: the ones imports run,
  * where the recipe can run them.
  *
- * Mirrored in ramekin-ios/Ramekin/NormalizeSelection.swift; keep the tests in
- * step (doc/client-logic-sharing.md).
+ * Mirrored in ramekin-ios/Ramekin/NormalizeSelection.swift and pinned by
+ * shared-test-vectors/normalize-selection.json.
  */
 export function defaultNormalizeSelection(ops: NormalizeOpInfo[]): Set<string> {
   return new Set(

@@ -73,7 +73,8 @@ final class ReNormalizeViewModel: ObservableObject {
 
     /// Whether accepting would save anything different.
     var hasChanges: Bool {
-        !diffs.isEmpty || photosChange
+        guard let proposal, let proposed = proposal.proposed else { return false }
+        return RecipeContentFieldDiff.changed(base: proposal.base, proposed: proposed)
     }
 
     func load() async {

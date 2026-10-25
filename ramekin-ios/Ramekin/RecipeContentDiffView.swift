@@ -8,12 +8,33 @@ struct RecipeContentFieldDiff: Identifiable, Equatable {
 
     var id: String { label }
 
+    /// Ingredients as their parsed parts, one per line, so a re-parse that
+    /// reads the same ("1 cup water" as the item vs. amount 1, unit cup, item
+    /// water) still shows as a change.
+    static func formatIngredientStructure(_ ingredients: [Ingredient]) -> String {
+        ingredients.map { ingredient in
+            let section = ingredient.section.map { $0.isEmpty ? "" : "[\($0)] " } ?? ""
+            let measurements = ingredient.measurements
+                .map { "\($0.amount ?? "") \($0.unit ?? "")".trimmingCharacters(in: .whitespaces) }
+                .joined(separator: " / ")
+            let note = ingredient.note.map { $0.isEmpty ? "" : " | \($0)" } ?? ""
+            return "\(section)\(ingredient.item) | \(measurements)\(note)"
+        }
+        .joined(separator: "\n")
+    }
+
     /// The fields that differ between `old` and `new`, in reading order.
+    /// "Ingredients (parsed)" appears only when the ingredients read the same
+    /// but were parsed differently.
+    ///
+    /// Mirrors ramekin-ui/src/utils/recipeContentChanges.ts; pinned by
+    /// shared-test-vectors/normalize-selection.json (proposal_changes).
     static func diffs(old: RecipeContent, new: RecipeContent) -> [RecipeContentFieldDiff] {
         let fields: [(String, (RecipeContent) -> String)] = [
             ("Title", { $0.title }),
             ("Description", { $0.description ?? "" }),
             ("Ingredients", { RecipeVersionSupport.formatIngredients($0.ingredients) }),
+            ("Ingredients (parsed)", { formatIngredientStructure($0.ingredients) }),
             ("Instructions", { $0.instructions }),
             ("Tags", { RecipeVersionSupport.formatTags($0.tags ?? []) }),
             ("Notes", { $0.notes ?? "" }),
@@ -26,11 +47,18 @@ struct RecipeContentFieldDiff: Identifiable, Equatable {
             ("Source", { $0.sourceName ?? "" }),
             ("Source URL", { $0.sourceUrl ?? "" })
         ]
-        return fields.compactMap { label, text in
+        let changes: [RecipeContentFieldDiff] = fields.compactMap { label, text in
             let before = text(old)
             let after = text(new)
             return before == after ? nil : RecipeContentFieldDiff(label: label, before: before, after: after)
         }
+        guard changes.contains(where: { $0.label == "Ingredients" }) else { return changes }
+        return changes.filter { $0.label != "Ingredients (parsed)" }
+    }
+
+    /// Whether accepting `proposed` over `base` would change anything.
+    static func changed(base: NormalizedRecipe, proposed: NormalizedRecipe) -> Bool {
+        !diffs(old: base.content, new: proposed.content).isEmpty || base.photoIds != proposed.photoIds
     }
 }
 
