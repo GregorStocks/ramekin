@@ -1598,6 +1598,33 @@ fn a_weight_in_the_note_weighs_a_counted_line() {
 }
 
 #[test]
+fn a_weight_per_person_weighs_each_portion() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    assert_eq!(
+        calories("2 portions cooked Japanese short-grain rice (approx. 150 g per person)"),
+        calories("300 g cooked Japanese short-grain rice")
+    );
+    assert_eq!(
+        calories("3 servings cooked white rice (100 g per serving)"),
+        calories("300 g cooked white rice")
+    );
+    // A portion or serving with no weight can't be weighed.
+    assert_eq!(
+        calories("2 portions cooked Japanese short-grain rice"),
+        None
+    );
+    assert_eq!(
+        calories("2 servings cooked Japanese short-grain rice"),
+        None
+    );
+}
+
+#[test]
 fn alternatives_count_the_first_and_say_so() {
     let line = |item: &str| {
         let result = estimate(&[ingredient(item, "100", "g")], None, 1.0).unwrap();
