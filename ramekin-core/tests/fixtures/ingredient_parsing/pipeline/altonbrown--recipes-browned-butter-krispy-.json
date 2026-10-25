@@ -47,15 +47,15 @@
     {
       "raw": "2 big pinches kosher salt",
       "expected": {
-        "item": "big pinches kosher salt",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "large pinch"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     }
   ]

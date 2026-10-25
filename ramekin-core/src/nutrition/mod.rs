@@ -356,26 +356,51 @@ fn grams_per_unit(unit: &Unit, food: &Food) -> Result<CalorieRange, &'static str
         Unit::Piece(unit) if unit.is_empty() => catalog::grams_per_piece(food.entry, None)
             .map(Range::exact)
             .ok_or("Unsupported quantity unit"),
-        Unit::Piece(unit) => catalog::grams_per_piece(food.entry, Some(unit))
-            .or_else(|| food.estimated(&catalog::piece_unit(unit)))
-            .or_else(|| Some(trace_measure_cups(unit)? * food.entry.grams_per_cup?))
-            .map(Range::exact)
-            .ok_or("Unsupported quantity unit"),
+        // A sized measure ("large handful") weighs as the plain one when
+        // only that has a weight.
+        Unit::Piece(unit) => {
+            let unsized_unit = catalog::unsized_unit(unit);
+            let plain = unsized_unit.as_deref().unwrap_or(unit);
+            catalog::grams_per_piece(food.entry, Some(unit))
+                .or_else(|| food.estimated(&catalog::piece_unit(unit)))
+                .or_else(|| food.estimated(unsized_unit.as_deref()?))
+                .map(Range::exact)
+                .or_else(|| {
+                    let cups = informal_measure_cups(plain, food.entry)?;
+                    let grams_per_cup =
+                        food.entry.grams_per_cup.or_else(|| food.estimated("cup"))?;
+                    Some(cups.times(Range::exact(grams_per_cup)))
+                })
+                .ok_or("Unsupported quantity unit")
+        }
     }
 }
 
-/// Cups in one of a tiny measure, as measuring-spoon sets size them (a dash is
-/// 1/8 tsp, a pinch 1/16) and a drop as 0.05 ml (1/96 tsp).
-/// Trace spices are negligible before this; it weighs a dash of hot sauce or a
-/// pinch of sugar with the food's density.
-fn trace_measure_cups(unit: &str) -> Option<f64> {
-    let tsp = match unit {
-        "dash" => 1.0 / 8.0,
-        "pinch" => 1.0 / 16.0,
-        "drop" => 1.0 / 96.0,
-        _ => return None,
+/// Cups in one of a measure that isn't a volume unit, for a food with a
+/// density. Trace spices are negligible before this; it weighs a dash of hot
+/// sauce or a glug of oil.
+/// - Tiny measures as measuring-spoon sets size them (a dash is 1/8 tsp, a
+///   pinch 1/16) and a drop as 0.05 ml (1/96 tsp).
+/// - A glug or a knob has no fixed size: cooks put either at 1 to 2 tbsp (a
+///   knob of butter at 12-25 g).
+/// - A shot is a single espresso shot, 1 fl oz.
+/// - A scoop of ice cream is 1/2 cup; scoops of powders and drink mixes are
+///   whatever the tub's scoop holds, so they stay unknown.
+fn informal_measure_cups(unit: &str, entry: &Entry) -> Option<Range> {
+    let tsp = |tsp: f64| Range::exact(tsp * catalog::CUPS_PER_TSP);
+    let tbsp = |min: f64, max: f64| Range {
+        min: min * catalog::CUPS_PER_TBSP,
+        max: max * catalog::CUPS_PER_TBSP,
     };
-    Some(tsp * catalog::CUPS_PER_TSP)
+    Some(match unit {
+        "dash" => tsp(1.0 / 8.0),
+        "pinch" => tsp(1.0 / 16.0),
+        "drop" => tsp(1.0 / 96.0),
+        "glug" | "knob" => tbsp(1.0, 2.0),
+        "shot" => Range::exact(catalog::CUPS_PER_FL_OZ),
+        "scoop" if entry.id.starts_with("ice cream") => Range::exact(0.5),
+        _ => return None,
+    })
 }
 
 /// A measure's total in whatever `per_unit` converts one unit to.

@@ -192,8 +192,13 @@
     {
       "raw": "Glug of white wine",
       "expected": {
-        "item": "Glug of white wine",
-        "measurements": [],
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "glug"
+          }
+        ],
         "note": null,
         "section": "Artichoke Prep",
         "category": "Beverages"

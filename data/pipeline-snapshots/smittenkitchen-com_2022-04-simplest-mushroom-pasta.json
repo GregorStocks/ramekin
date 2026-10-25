@@ -83,8 +83,13 @@
       "section": null
     },
     {
-      "item": "Glug of dry marsala or white wine",
-      "measurements": [],
+      "item": "dry marsala or white wine",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "glug"
+        }
+      ],
       "note": "optional",
       "raw": "Glug of dry marsala or white wine (optional)",
       "section": null

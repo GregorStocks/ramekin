@@ -180,11 +180,11 @@
     {
       "raw": "Two glugs of olive oil",
       "expected": {
-        "item": "glugs of olive oil",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "glug"
           }
         ],
         "note": null,

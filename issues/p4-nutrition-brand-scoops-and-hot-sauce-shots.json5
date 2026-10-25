@@ -1,0 +1,17 @@
+{
+  "title": "Calorie estimates: powder scoops and shots of hot sauce",
+  "description": "Left unknown on purpose when glugs, knobs, shots and ice-cream scoops got weights (nutrition/mod.rs informal_measure_cups). \
+Scoops of powders and mixes (\"1 scoop protein powder\", \"1/2 scoop vanilla protein-powder\", \"1 scoop collagen powder\", \"4 scoops Country Time pink lemonade mix\") hold whatever the tub's scoop holds, so a 1/2-cup ice-cream scoop would be wrong; one option is adding \"scoop\" to ESTIMABLE_UNITS so make catalog-fill-weights asks the model per food (a whey scoop is ~30 g by label convention). \"2 to 3 really good shots hot sauce\" (x3: pipeline, Paprika, snapshot) doesn't parse \"really good shots\" as a unit, and a shot of hot sauce is a shake, not the 1 fl oz espresso shot, so parsing it as \"shot\" would charge 3 fl oz; it needs its own reading (maybe a dash) or stays unknown. \
+Calories are tiny either way. \
+Measure with make ingredient-catalog-audit (Unsupported quantity unit). \
+Server-side only (ramekin-core), so no web or iOS change.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "catalog",
+  ],
+  "created_at": "2026-10-24T20:45:00-07:00",
+  "updated_at": "2026-10-24T20:45:00-07:00",
+}

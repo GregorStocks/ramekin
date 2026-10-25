@@ -971,6 +971,13 @@ fn test_count_words_read_as_units() {
             "vanilla protein powder",
         ),
         ("splash of milk", "splash", "milk"),
+        ("2 glugs of olive oil", "glug", "olive oil"),
+        ("Glug of white wine", "glug", "white wine"),
+        (
+            "2 big handfuls of chopped kale",
+            "large handful",
+            "chopped kale",
+        ),
         ("1 leaf basil", "leaf", "basil"),
     ];
     for (raw, unit, item) in cases {
@@ -1062,10 +1069,17 @@ fn test_sized_cloves_sprigs_and_stalks_are_units() {
             ]
         )
     );
-    // A sized measure before "or" isn't the food.
+    // "Big" is "large", and a sized measure before "or" isn't the food.
     assert_eq!(
-        item_note_units("1 big clove or 2 small cloves garlic").0,
-        "big clove or 2 small cloves garlic"
+        item_note_units("1 big clove or 2 small cloves garlic"),
+        (
+            "garlic".to_string(),
+            None,
+            vec![
+                Some("large clove".to_string()),
+                Some("small clove".to_string())
+            ]
+        )
     );
 }
 
