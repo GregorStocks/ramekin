@@ -3,7 +3,11 @@
   "recipe_slug": "chocolate-cake-recipe",
   "ingredients": [
     {
-      "raw": "2 tablespoons unsalted butter ((for greasing the pans))",
+      "raw": "For the cake:",
+      "is_section_header": true
+    },
+    {
+      "raw": "2 tablespoons unsalted butter (for greasing the pans)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -13,11 +17,12 @@
           }
         ],
         "note": "for greasing the pans",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1 3/4 cups all-purpose flour ((plus more for pans))",
+      "raw": "1 3/4 cups all-purpose flour (plus more for pans)",
       "expected": {
         "item": "all-purpose flour",
         "measurements": [
@@ -27,6 +32,7 @@
           }
         ],
         "note": "plus more for pans",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -41,11 +47,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "3/4 cups cocoa powder ((Hershey&amp;#x27;s Special Dark is especially good for this recipe!))",
+      "raw": "3/4 cups cocoa powder (Hershey's Special Dark is especially good for this recipe!)",
       "expected": {
         "item": "cocoa powder",
         "measurements": [
@@ -55,6 +62,7 @@
           }
         ],
         "note": "Hershey's Special Dark is especially good for this recipe!",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -69,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -83,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -97,11 +107,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1 cup buttermilk",
+      "raw": "1 cup buttermilk (shaken; If you don't have buttermilk, feel free to substitute 1 cup milk plus 1 tablespoon distilled white vinegar or lemon juice. I've gotten great results creating this substitution with skim milk, 2%, whole, or even half and half!)",
       "expected": {
         "item": "buttermilk",
         "measurements": [
@@ -110,7 +121,8 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "shaken; If you don't have buttermilk, feel free to substitute 1 cup milk plus 1 tablespoon distilled white vinegar or lemon juice. I've gotten great results creating this substitution with skim milk, 2%, whole, or even half and half!",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,11 +137,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
     {
-      "raw": "2  extra large eggs ((at room temperature))",
+      "raw": "2 extra large eggs (at room temperature)",
       "expected": {
         "item": "eggs",
         "measurements": [
@@ -139,6 +152,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,11 +167,12 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 cup freshly brewed hot coffee ((the stronger the better))",
+      "raw": "1 cup freshly brewed hot coffee (the stronger the better)",
       "expected": {
         "item": "freshly brewed hot coffee",
         "measurements": [
@@ -167,11 +182,16 @@
           }
         ],
         "note": "the stronger the better",
+        "section": "For the Cake",
         "category": "Beverages"
       }
     },
     {
-      "raw": "6 ounces semisweet or bittersweet chocolate ((baking chocolate or chocolate chips are both fine))",
+      "raw": "For the chocolate frosting:",
+      "is_section_header": true
+    },
+    {
+      "raw": "6 ounces semisweet or bittersweet chocolate (baking chocolate or chocolate chips are both fine)",
       "expected": {
         "item": "semisweet or bittersweet chocolate",
         "measurements": [
@@ -181,11 +201,12 @@
           }
         ],
         "note": "baking chocolate or chocolate chips are both fine",
+        "section": "For the Chocolate Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "2 sticks unsalted butter ((at room temperature))",
+      "raw": "2 sticks unsalted butter (at room temperature)",
       "expected": {
         "item": "unsalted butter",
         "measurements": [
@@ -195,11 +216,12 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Chocolate Frosting",
         "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "1  extra large egg yolk ((at room temperature))",
+      "raw": "1 extra large egg yolk (at room temperature)",
       "expected": {
         "item": "egg yolk",
         "measurements": [
@@ -209,6 +231,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Chocolate Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,13 +246,14 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 1/4 cups confectioners' sugar",
+      "raw": "1 1/4 cups confectioners’ sugar",
       "expected": {
-        "item": "confectioners' sugar",
+        "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "1.25",
@@ -237,11 +261,12 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Frosting",
         "category": "Baking"
       }
     },
     {
-      "raw": "1 tablespoon instant coffee powder ((optional))",
+      "raw": "1 tablespoon instant coffee powder (optional)",
       "expected": {
         "item": "instant coffee powder",
         "measurements": [
@@ -251,6 +276,7 @@
           }
         ],
         "note": "optional",
+        "section": "For the Chocolate Frosting",
         "category": "Beverages"
       }
     }

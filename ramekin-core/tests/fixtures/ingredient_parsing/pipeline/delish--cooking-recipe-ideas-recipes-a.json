@@ -3,55 +3,55 @@
   "recipe_slug": "cooking-recipe-ideas-recipes-a",
   "ingredients": [
     {
-      "raw": "1/4 c. mayonnaise",
+      "raw": "1 box spice cake mix, plus ingredients called for on box",
       "expected": {
-        "item": "mayonnaise",
+        "item": "spice cake mix",
         "measurements": [
           {
-            "amount": "0.25",
+            "amount": "1",
+            "unit": "box"
+          }
+        ],
+        "note": "plus ingredients called for on box",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 apples",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/3 c. chopped peanuts, preferably roasted",
+      "expected": {
+        "item": "chopped peanuts",
+        "measurements": [
+          {
+            "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "preferably roasted",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
-      "raw": "Juice of 1 lime",
+      "raw": "3 c. chocolate chips",
       "expected": {
-        "item": "lime juice",
+        "item": "chocolate chips",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "lime"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "2 tbsp. finely chopped fresh cilantro",
-      "expected": {
-        "item": "finely chopped fresh cilantro",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1 tbsp. honey",
-      "expected": {
-        "item": "honey",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tbsp"
+            "amount": "3",
+            "unit": "cup"
           }
         ],
         "note": null,
@@ -59,69 +59,97 @@
       }
     },
     {
-      "raw": "1 jalapeño, seeds removed if desired, finely chopped",
+      "raw": "1 1/2 c. heavy cream",
       "expected": {
-        "item": "jalapeño, seeds removed",
+        "item": "heavy cream",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1.5",
+            "unit": "cup"
           }
         ],
-        "note": "if desired, finely chopped",
-        "category": "Produce"
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
-      "raw": "2 c. shredded purple cabbage",
+      "raw": "1 c. (2 sticks) butter, softened",
       "expected": {
-        "item": "shredded purple cabbage",
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 c. caramel, plus more for decoration",
+      "expected": {
+        "item": "caramel",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for decoration",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "4 c. powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tsp. pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tsp. cinnamon",
+      "expected": {
+        "item": "cinnamon",
         "measurements": [
           {
             "amount": "2",
-            "unit": "cup"
+            "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "1 c. fresh or frozen corn kernels, thawed",
-      "expected": {
-        "item": "fresh or frozen corn kernels",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          }
-        ],
-        "note": "thawed",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "Kosher salt",
-      "expected": {
-        "item": "Kosher salt",
-        "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "Freshly ground black pepper",
+      "raw": "3 tbsp. heavy cream",
       "expected": {
-        "item": "Freshly ground black pepper",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "3 tbsp. extra-virgin olive oil",
-      "expected": {
-        "item": "extra-virgin olive oil",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "3",
@@ -129,128 +157,21 @@
           }
         ],
         "note": null,
-        "category": "Oils & Vinegars"
-      }
-    },
-    {
-      "raw": "2 tsp. chili powder",
-      "expected": {
-        "item": "chili powder",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1 tsp. paprika",
-      "expected": {
-        "item": "paprika",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1/2 tsp. cayenne pepper",
-      "expected": {
-        "item": "cayenne pepper",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1/2 tsp. ground cumin",
-      "expected": {
-        "item": "ground cumin",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
-      "raw": "1 1/2 lb. cod or other flaky white fish",
-      "expected": {
-        "item": "cod or other flaky white fish",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": "lb"
-          }
-        ],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
-    },
-    {
-      "raw": "1 tbsp. vegetable oil",
-      "expected": {
-        "item": "vegetable oil",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
-        "category": "Oils & Vinegars"
-      }
-    },
-    {
-      "raw": "8 corn tortillas, toasted",
-      "expected": {
-        "item": "corn tortillas",
-        "measurements": [
-          {
-            "amount": "8",
-            "unit": null
-          }
-        ],
-        "note": "toasted",
-        "category": "Bakery & Bread"
-      }
-    },
-    {
-      "raw": "1 avocado, finely chopped",
-      "expected": {
-        "item": "avocado",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": "finely chopped",
-        "category": "Produce"
-      }
-    },
-    {
-      "raw": "Sour cream and lime wedges, for serving",
-      "expected": {
-        "item": "Sour cream and lime wedges",
-        "measurements": [],
-        "note": "for serving",
         "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pinch of kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]
