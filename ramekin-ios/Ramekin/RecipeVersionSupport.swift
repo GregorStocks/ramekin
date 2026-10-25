@@ -9,6 +9,8 @@ enum RecipeVersionSupport {
             return "Imported"
         case "normalize":
             return "Normalized"
+        case "ai_edit":
+            return "AI Edit"
         case "ai_photo":
             return "AI Photo"
         case "reparse":

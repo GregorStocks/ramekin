@@ -57,6 +57,12 @@ export interface NormalizeProposalResponse {
      * @memberof NormalizeProposalResponse
      */
     status: string;
+    /**
+     * What an Edit with AI run says it changed, once it completes.
+     * @type {string}
+     * @memberof NormalizeProposalResponse
+     */
+    summary?: string | null;
 }
 
 /**
@@ -85,6 +91,7 @@ export function NormalizeProposalResponseFromJSONTyped(json: any, ignoreDiscrimi
         'ops': json['ops'],
         'proposed': json['proposed'] == null ? undefined : NormalizedRecipeFromJSON(json['proposed']),
         'status': json['status'],
+        'summary': json['summary'] == null ? undefined : json['summary'],
     };
 }
 
@@ -104,6 +111,7 @@ export function NormalizeProposalResponseToJSONTyped(value?: NormalizeProposalRe
         'ops': value['ops'],
         'proposed': NormalizedRecipeToJSON(value['proposed']),
         'status': value['status'],
+        'summary': value['summary'],
     };
 }
 

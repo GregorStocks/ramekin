@@ -4,22 +4,15 @@ import UIKit
 
 struct RecipeDetailViewAPIClient {
     var deleteRecipe: (UUID) async throws -> Void
-    var enrichRecipe: (RecipeContent) async throws -> RecipeContent
     var exportRecipe: (UUID) async throws -> RamekinAPI.ExportDownload
     var fetchCoverPhoto: (RecipeResponse) async -> UIImage?
-    var generateDescription: (UUID) async throws -> GenerateDescriptionResponse
     var generatePhoto: (UUID) async throws -> GeneratePhotoResponse
     var getRecipe: (UUID, UUID?) async throws -> RecipeResponse
-    var getScrape: (UUID) async throws -> ScrapeJobResponse
     var listVersions: (UUID) async throws -> VersionListResponse
-    var normalizeTitle: (UUID) async throws -> NormalizeTitleResponse
-    var rescrape: (UUID) async throws -> RescrapeResponse
     var revertRecipe: (UUID, RecipeResponse, UUID) async throws -> Void
-    var updateRecipe: (UUID, UpdateRecipeRequest) async throws -> Void
 
     static let live = RecipeDetailViewAPIClient(
         deleteRecipe: { try await RecipesAPI.deleteRecipe(id: $0) },
-        enrichRecipe: { try await EnrichAPI.enrichRecipe(recipeContent: $0) },
         exportRecipe: { try await RamekinAPI.shared.exportRecipe(id: $0) },
         fetchCoverPhoto: { recipe in
             guard let photoId = recipe.photoIds.first,
@@ -43,15 +36,10 @@ struct RecipeDetailViewAPIClient {
                 return nil
             }
         },
-        generateDescription: { try await RecipesAPI.generateDescription(id: $0) },
         generatePhoto: { try await RecipesAPI.generatePhoto(id: $0) },
         getRecipe: { try await RecipesAPI.getRecipe(id: $0, versionId: $1) },
-        getScrape: { try await ScrapeAPI.getScrape(id: $0) },
         listVersions: { try await RecipesAPI.listVersions(id: $0) },
-        normalizeTitle: { try await RecipesAPI.normalizeTitle(id: $0) },
-        rescrape: { try await RecipesAPI.rescrape(id: $0) },
-        revertRecipe: { try await RecipeVersionSupport.revertRecipe(id: $0, from: $1, expectedVersionId: $2) },
-        updateRecipe: { try await RecipesAPI.updateRecipe(id: $0, updateRecipeRequest: $1) }
+        revertRecipe: { try await RecipeVersionSupport.revertRecipe(id: $0, from: $1, expectedVersionId: $2) }
     )
 }
 
@@ -75,24 +63,15 @@ final class RecipeDetailViewModel: ObservableObject {
     @Published var showingAddToShoppingList = false
     @Published var showingAddToMealPlan = false
     @Published var showingEditWithAI = false
+    @Published var showingReNormalize = false
     @Published var showingEdit = false
     @Published var showingCompareSheet = false
-    @Published var enrichResult: RecipeContent?
     @Published var comparedOlderVersion: RecipeResponse?
     @Published var comparedNewerVersion: RecipeResponse?
     @Published var showingDeleteConfirmation = false
     @Published var isDeleting = false
     @Published var deleteError: String?
-    @Published var isRescraping = false
-    /// The rescraped recipe is saved and shown; its normalize ops (title,
-    /// description, tags) are still running and will reload it when done.
-    @Published var isFinishingRescrapeNormalize = false
-    @Published var rescrapeError: String?
-    @Published var showingRescrapeConfirmation = false
-    @Published var isEnriching = false
     @Published var isGeneratingPhoto = false
-    @Published var isGeneratingDescription = false
-    @Published var isNormalizingTitle = false
     @Published var aiActionError: String?
     @Published var recipeScale: Double = 1
     @Published var customScaleInput = ""
@@ -101,24 +80,14 @@ final class RecipeDetailViewModel: ObservableObject {
     @Published var exportError: String?
 
     private let api: RecipeDetailViewAPIClient
-    private var rescrapeTask: Task<Void, Never>?
-    var rescrapePollIntervalNanoseconds: UInt64 = 500_000_000
 
     init(recipeId: UUID, api: RecipeDetailViewAPIClient = .live) {
         self.recipeId = recipeId
         self.api = api
     }
-
-    deinit {
-        rescrapeTask?.cancel()
-    }
 }
 
 extension RecipeDetailViewModel {
-    func submitUpdate(_ request: UpdateRecipeRequest) async throws {
-        try await api.updateRecipe(recipeId, request)
-    }
-
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
             displayedVersionId: recipe?.versionId,
@@ -127,11 +96,11 @@ extension RecipeDetailViewModel {
     }
 
     var actionsDisabledForHistoricalVersion: Bool {
-        isViewingHistoricalVersion || isReverting || isRescraping || isAiActionRunning || isDeleting
+        isViewingHistoricalVersion || isReverting || isAiActionRunning || isDeleting
     }
 
     var isAiActionRunning: Bool {
-        isEnriching || isGeneratingPhoto || isGeneratingDescription || isNormalizingTitle
+        isGeneratingPhoto
     }
 
     var canCompareSelectedVersions: Bool {
@@ -139,11 +108,7 @@ extension RecipeDetailViewModel {
     }
 
     var aiActionProgressLabel: String? {
-        if isEnriching { return "Enriching recipe…" }
-        if isGeneratingPhoto { return "Generating AI photo…" }
-        if isGeneratingDescription { return "Generating description…" }
-        if isNormalizingTitle { return "Renaming recipe…" }
-        return nil
+        isGeneratingPhoto ? "Generating AI photo…" : nil
     }
 
     func toggleCompareSelection(versionId: UUID) {
@@ -311,111 +276,9 @@ extension RecipeDetailViewModel {
 
         isReverting = false
     }
-
 }
 
 extension RecipeDetailViewModel {
-    func startRescrapeFromSource() {
-        rescrapeTask?.cancel()
-        rescrapeTask = Task { await rescrapeFromSource() }
-    }
-
-    func cancelRescrape() {
-        rescrapeTask?.cancel()
-        rescrapeTask = nil
-    }
-
-    func rescrapeFromSource() async {
-        isRescraping = true
-        isFinishingRescrapeNormalize = false
-        rescrapeError = nil
-        error = nil
-        defer {
-            isRescraping = false
-            isFinishingRescrapeNormalize = false
-        }
-
-        do {
-            let response = try await api.rescrape(recipeId)
-            let jobId = response.jobId
-
-            let pollStartTime = Date()
-            let timeoutInterval: TimeInterval = 120
-
-            while true {
-                try Task.checkCancellation()
-
-                let job = try await api.getScrape(jobId)
-
-                if job.status == "completed" {
-                    await loadRecipe()
-                    return
-                } else if job.status == "failed" {
-                    if isFinishingRescrapeNormalize {
-                        // The rescraped recipe was saved before normalizing
-                        // failed; show the latest version.
-                        await loadRecipe()
-                    }
-                    rescrapeError = job.error ?? "Unknown error"
-                    return
-                } else if job.status == "normalizing" && !isFinishingRescrapeNormalize {
-                    // The rescraped recipe is saved: show it now and reload
-                    // again once its normalize ops finish.
-                    await loadRecipe()
-                    isRescraping = false
-                    isFinishingRescrapeNormalize = true
-                }
-
-                // Normalizing has no deadline here: AI calls can take longer
-                // than this window, and leaving the view cancels the task.
-                if !isFinishingRescrapeNormalize
-                    && Date().timeIntervalSince(pollStartTime) > timeoutInterval {
-                    rescrapeError = "Rescrape timed out"
-                    return
-                }
-
-                try await Task.sleep(nanoseconds: rescrapePollIntervalNanoseconds)
-            }
-        } catch is CancellationError {
-            return
-        } catch {
-            rescrapeError = "Failed to rescrape recipe"
-        }
-    }
-
-    func enrichWithAI() async {
-        guard let recipe else { return }
-        isEnriching = true
-        aiActionError = nil
-
-        let content = RecipeContent(
-            cookTime: recipe.cookTime,
-            description: recipe.description,
-            difficulty: recipe.difficulty,
-            ingredients: recipe.ingredients,
-            instructions: recipe.instructions,
-            notes: recipe.notes,
-            nutritionalInfo: recipe.nutritionalInfo,
-            prepTime: recipe.prepTime,
-            rating: recipe.rating,
-            servings: recipe.servings,
-            sourceName: recipe.sourceName,
-            sourceUrl: recipe.sourceUrl,
-            tags: recipe.tags,
-            title: recipe.title,
-            totalTime: recipe.totalTime
-        )
-
-        do {
-            let enriched = try await api.enrichRecipe(content)
-            enrichResult = enriched
-        } catch is CancellationError {
-        } catch {
-            aiActionError = "Failed to enrich recipe"
-        }
-        isEnriching = false
-    }
-
     func generatePhoto() async {
         guard recipe != nil else { return }
         isGeneratingPhoto = true
@@ -429,40 +292,6 @@ extension RecipeDetailViewModel {
             aiActionError = "Failed to generate AI photo"
         }
         isGeneratingPhoto = false
-    }
-
-    func generateDescription() async {
-        guard recipe != nil else { return }
-        isGeneratingDescription = true
-        aiActionError = nil
-
-        do {
-            let result = try await api.generateDescription(recipeId)
-            if result.changed {
-                await loadRecipe()
-            }
-        } catch is CancellationError {
-        } catch {
-            aiActionError = "Failed to generate description"
-        }
-        isGeneratingDescription = false
-    }
-
-    func normalizeTitle() async {
-        guard recipe != nil else { return }
-        isNormalizingTitle = true
-        aiActionError = nil
-
-        do {
-            let result = try await api.normalizeTitle(recipeId)
-            if result.changed {
-                await loadRecipe()
-            }
-        } catch is CancellationError {
-        } catch {
-            aiActionError = "Failed to normalize title"
-        }
-        isNormalizingTitle = false
     }
 }
 

@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { RecipeContent } from './RecipeContent';
 /**
  * Request body for Edit with AI.
  * @export
@@ -17,23 +16,17 @@ import type { RecipeContent } from './RecipeContent';
  */
 export interface EditRecipeRequest {
     /**
-     *
+     * The change the user wants, in their words.
      * @type {string}
      * @memberof EditRecipeRequest
      */
     instruction: string;
     /**
-     *
+     * Photos of the dish to give the model as context.
      * @type {Array<string>}
      * @memberof EditRecipeRequest
      */
     photoIds?: Array<string>;
-    /**
-     *
-     * @type {RecipeContent}
-     * @memberof EditRecipeRequest
-     */
-    recipe: RecipeContent;
 }
 /**
  * Check if a given object implements the EditRecipeRequest interface.

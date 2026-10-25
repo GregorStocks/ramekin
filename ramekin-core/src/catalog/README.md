@@ -483,10 +483,11 @@ under the Open Database License (https://opendatacommons.org/licenses/odbl/1.0/)
   starting with "a pinch of", "a few sprigs" and the like stay: the parser
   keeps those words in `item` today, so the keys still match real lines.
   Recipes already stored keep the items an older parser gave them until
-  **Re-parse recipes** in web Settings rebuilds them from the scrape that
-  saved them (its page, or its Paprika or text import). It saves a new
-  version (source "reparse") for each recipe that changed, and leaves
-  recipes edited by hand since that scrape alone.
+  they're re-extracted: select them in the web cookbook and run
+  **Re-normalize…** with **Re-extract from saved source**, which rebuilds
+  each from the scrape that saved it (its page, or its Paprika or text
+  import) and proposes a new version to review. Re-extracting replaces hand
+  edits made since that scrape.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `food_overrides` correct SR Legacy foods by their unique description:

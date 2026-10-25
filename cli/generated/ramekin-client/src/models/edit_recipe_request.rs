@@ -14,21 +14,20 @@ use serde::{Deserialize, Serialize};
 /// EditRecipeRequest : Request body for Edit with AI.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct EditRecipeRequest {
+    /// The change the user wants, in their words.
     #[serde(rename = "instruction")]
     pub instruction: String,
+    /// Photos of the dish to give the model as context.
     #[serde(rename = "photo_ids", skip_serializing_if = "Option::is_none")]
     pub photo_ids: Option<Vec<uuid::Uuid>>,
-    #[serde(rename = "recipe")]
-    pub recipe: Box<models::RecipeContent>,
 }
 
 impl EditRecipeRequest {
     /// Request body for Edit with AI.
-    pub fn new(instruction: String, recipe: models::RecipeContent) -> EditRecipeRequest {
+    pub fn new(instruction: String) -> EditRecipeRequest {
         EditRecipeRequest {
             instruction,
             photo_ids: None,
-            recipe: Box::new(recipe),
         }
     }
 }

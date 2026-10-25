@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60554 | 306 | 54230/60248 (90.0%) | 51909/60248 (86.2%) | 1638/5408 (30.3%) | n/a (no servings) | 31958/37338 (85.6%) | 55640/60554 (91.9%) |
-| Paprika fixtures | 462 | 5379 | 22 | 5178/5357 (96.7%) | 4849/5357 (90.5%) | 199/462 (43.1%) | n/a (no servings) | 2552/2893 (88.2%) | 5280/5379 (98.2%) |
-| Pipeline snapshots | 445 | 5177 | 17 | 5010/5160 (97.1%) | 4749/5160 (92.0%) | 203/445 (45.6%) | 99/445 (22.2%) | 2527/2853 (88.6%) | 5098/5177 (98.5%) |
+| Pipeline fixtures | 5408 | 60554 | 306 | 54230/60248 (90.0%) | 51917/60248 (86.2%) | 1639/5408 (30.3%) | n/a (no servings) | 31958/37338 (85.6%) | 55640/60554 (91.9%) |
+| Paprika fixtures | 462 | 5379 | 22 | 5178/5357 (96.7%) | 4850/5357 (90.5%) | 199/462 (43.1%) | n/a (no servings) | 2552/2893 (88.2%) | 5280/5379 (98.2%) |
+| Pipeline snapshots | 445 | 5177 | 17 | 5010/5160 (97.1%) | 4750/5160 (92.1%) | 203/445 (45.6%) | 99/445 (22.2%) | 2527/2853 (88.6%) | 5098/5177 (98.5%) |
 
 ## Pipeline fixtures
 
@@ -31,28 +31,28 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | No supported nutrition match | 5490 | 9.1% |
 | Several ingredients share one amount | 55 | 0.1% |
 | Unsupported or missing quantity | 79 | 0.1% |
-| Unsupported quantity unit | 177 | 0.3% |
+| Unsupported quantity unit | 169 | 0.3% |
 
 ### Uncounted ingredients per recipe
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 2413 | 44.6% |
-| 1 | 1698 | 31.4% |
-| 2 | 781 | 14.4% |
-| 3 | 340 | 6.3% |
-| 4-5 | 140 | 2.6% |
-| 6+ | 36 | 0.7% |
+| 0 | 2415 | 44.7% |
+| 1 | 1700 | 31.4% |
+| 2 | 778 | 14.4% |
+| 3 | 339 | 6.3% |
+| 4-5 | 141 | 2.6% |
+| 6+ | 35 | 0.6% |
 
-Estimate status with at most 3 uncounted: Complete 44.4%, Insufficient 4.2%, Partial 51.4%
+Estimate status with at most 3 uncounted: Complete 44.5%, Insufficient 4.2%, Partial 51.3%
 
-Weights to estimate (distinct food and unit pairs the catalog can't weigh): 28
+Weights to estimate (distinct food and unit pairs the catalog can't weigh): 24
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 6541 | `8a4246bfd1e5` |
+| Nutrition (all failures) | 6533 | `7572490a4d35` |
 | Density | 2631 | `4603e05b6443` |
 | Shopping category | 4612 | `d835d72af1c7` |
 
@@ -69,20 +69,20 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 28
 | No supported nutrition match | 97 | 1.8% |
 | Several ingredients share one amount | 6 | 0.1% |
 | Unsupported or missing quantity | 11 | 0.2% |
-| Unsupported quantity unit | 21 | 0.4% |
+| Unsupported quantity unit | 20 | 0.4% |
 
 ### Uncounted ingredients per recipe
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 351 | 76.0% |
-| 1 | 89 | 19.3% |
+| 0 | 352 | 76.2% |
+| 1 | 88 | 19.0% |
 | 2 | 21 | 4.5% |
 | 3 | 1 | 0.2% |
 | 4-5 | 0 | 0.0% |
 | 6+ | 0 | 0.0% |
 
-Estimate status with at most 3 uncounted: Complete 75.8%, Insufficient 0.2%, Partial 24.0%
+Estimate status with at most 3 uncounted: Complete 76.0%, Insufficient 0.2%, Partial 23.8%
 
 Weights to estimate (distinct food and unit pairs the catalog can't weigh): 1
 
@@ -90,7 +90,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 1
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 415 | `8d7585f8e2c6` |
+| Nutrition (all failures) | 414 | `9c7dc7f587fd` |
 | Density | 187 | `a8bf0b9db99c` |
 | Shopping category | 97 | `9ac28a2cbba3` |
 
@@ -107,20 +107,20 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 1
 | No supported nutrition match | 86 | 1.7% |
 | Several ingredients share one amount | 8 | 0.2% |
 | Unsupported or missing quantity | 9 | 0.2% |
-| Unsupported quantity unit | 21 | 0.4% |
+| Unsupported quantity unit | 20 | 0.4% |
 
 ### Uncounted ingredients per recipe
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 330 | 74.2% |
-| 1 | 90 | 20.2% |
+| 0 | 331 | 74.4% |
+| 1 | 89 | 20.0% |
 | 2 | 23 | 5.2% |
 | 3 | 2 | 0.4% |
 | 4-5 | 0 | 0.0% |
 | 6+ | 0 | 0.0% |
 
-Estimate status with at most 3 uncounted: Complete 73.9%, Insufficient 0.4%, Partial 25.6%
+Estimate status with at most 3 uncounted: Complete 74.2%, Insufficient 0.4%, Partial 25.4%
 
 Weights to estimate (distinct food and unit pairs the catalog can't weigh): 0
 
@@ -128,7 +128,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 0
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 344 | `3adcd1004b83` |
+| Nutrition (all failures) | 343 | `60d415915d83` |
 | Density | 182 | `019b033db1b4` |
 | Shopping category | 78 | `0185bd092549` |
 
