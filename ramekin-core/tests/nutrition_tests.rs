@@ -1917,3 +1917,32 @@ fn ginger_pieces_sized_in_the_note_or_item_weigh_by_the_inch() {
         calories("5 grams ginger")
     );
 }
+
+#[test]
+fn counted_olives_pickles_and_artichoke_hearts_weigh_by_their_piece() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        ("16 kalamata olives", "80 g kalamata olives"),
+        ("6 pepperoncini", "90 g pepperoncini"),
+        (
+            "3 marinated artichoke hearts",
+            "90 g marinated artichoke hearts",
+        ),
+        // Small pickles, not the default large one.
+        ("6 baby dill pickles", "180 g baby dill pickles"),
+        ("12 hamburger pickle chips", "84 g hamburger pickle chips"),
+        ("10 pickled jalapeño slices", "20 g pickled jalapeño slices"),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}"
+        );
+    }
+}

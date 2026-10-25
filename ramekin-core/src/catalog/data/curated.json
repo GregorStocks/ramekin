@@ -149,7 +149,6 @@
     "baby bell peppers": "peppers, sweet, red, raw",
     "baby bella mushrooms": "mushrooms, brown, italian, or crimini, raw",
     "baby carrots": "carrots, baby, raw",
-    "baby dill pickles": "pickles, cucumber, dill or kosher dill",
     "baby kale": "kale, raw",
     "baby portabella mushrooms": "mushrooms, brown, italian, or crimini, raw",
     "baby potatoes": "potatoes, flesh and skin",
@@ -1269,7 +1268,6 @@
     "ham": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
     "ham ends or trimmings": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
     "ham steak": "pork, cured, ham, steak, boneless, extra lean, unheated",
-    "hamburger pickle chips": "pickles, cucumber, dill or kosher dill",
     "hard boiled eggs": "egg, whole, cooked, hard-boiled",
     "hard shell tacos": "taco shells, baked",
     "hard-boiled eggs": "egg, whole, cooked, hard-boiled",
@@ -1848,10 +1846,9 @@
     "pickled gherkin": "pickles, cucumber, sour",
     "pickled ginger": "red pickled ginger",
     "pickled jalalpenos": "peppers, jalapeno, canned, solids and liquids",
-    "pickled jalapeno slices": "peppers, jalapeno, canned, solids and liquids",
+    "pickled jalapeno slices": "pickled jalapeño slices",
     "pickled jalapenos": "peppers, jalapeno, canned, solids and liquids",
     "pickled jalapeño peppers": "peppers, jalapeno, canned, solids and liquids",
-    "pickled jalapeño slices": "peppers, jalapeno, canned, solids and liquids",
     "pickled jalapeños": "peppers, jalapeno, canned, solids and liquids",
     "pickled pepperoncini": "peppers, hot pickled, canned",
     "pickled plums": "umeboshi pickled sour plum",
@@ -2884,6 +2881,7 @@
     "baby back pork ribs or spare ribs": "Meat & Seafood",
     "baby bok choy": "Produce",
     "baby corn": "Canned Goods",
+    "baby dill pickles": "Condiments & Sauces",
     "bacon bits": "Meat & Seafood",
     "bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame)": "Bakery & Bread",
     "baguette": "Bakery & Bread",
@@ -3331,6 +3329,7 @@
     "halloumi cheese": "Cheese",
     "ham, sliced, regular (approximately 11% fat)": "Meat & Seafood",
     "hamburger buns": "Bakery & Bread",
+    "hamburger pickle chips": "Condiments & Sauces",
     "harissa paste or another hot sauce": "Condiments & Sauces",
     "harissa spice blend": "Spices & Seasonings",
     "hearts of palm, raw": "Canned Goods",
@@ -3575,6 +3574,7 @@
     "phyllo dough": "Frozen",
     "pickle juice": "Condiments & Sauces",
     "pickle relish, sweet": "Condiments & Sauces",
+    "pickled jalapeño slices": "Canned Goods",
     "pickled onions": "Condiments & Sauces",
     "pickles, cucumber, dill or kosher dill": "Condiments & Sauces",
     "pickles, cucumber, sour": "Condiments & Sauces",
@@ -4114,6 +4114,17 @@
         "source": "USDA FoodData Central Branded food 2588804 (SWEET & WHOLE IN BRINE BABY CORN, Lieber Chocolate & Food Products Co.): 32 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/2588804/nutrients",
         "value": 32.0
+      }
+    },
+    "baby dill pickles": {
+      "default_portion": "pickle",
+      "fdc_id": 168558,
+      "portions": {
+        "pickle": {
+          "source": "USDA FNDDS 2710078 (Pickles, dill): 1 miniature = 30 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2710078/nutrients",
+          "value": 30.0
+        }
       }
     },
     "bacon bits": {
@@ -4986,6 +4997,17 @@
         }
       }
     },
+    "hamburger pickle chips": {
+      "default_portion": "chip",
+      "fdc_id": 168558,
+      "portions": {
+        "chip": {
+          "source": "USDA SR Legacy 168558 (Pickles, cucumber, dill or kosher dill): 1 slice = 7 g; a pickle chip is a slice",
+          "url": "https://fdc.nal.usda.gov/food-details/168558/nutrients",
+          "value": 7.0
+        }
+      }
+    },
     "harissa spice blend": {
       "trace_ok": true
     },
@@ -5425,6 +5447,17 @@
         "source": "USDA FoodData Central Branded food 369360 (PICKLE JUICE, FARMSTEAD FERMENTS): 17 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/369360/nutrients",
         "value": 17.0
+      }
+    },
+    "pickled jalapeño slices": {
+      "default_portion": "slice",
+      "fdc_id": 170080,
+      "portions": {
+        "slice": {
+          "source": "USDA FNDDS 2710095 (Peppers, hot, pickled): 1 slice = 2 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2710095/nutrients",
+          "value": 2.0
+        }
       }
     },
     "pickled onions": {
