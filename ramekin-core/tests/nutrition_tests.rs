@@ -1725,3 +1725,42 @@ fn every_estimated_weight_is_used() {
     }
     assert!(unused.is_empty(), "unused estimated weights: {unused:#?}");
 }
+
+#[test]
+fn ginger_pieces_sized_in_the_note_or_item_weigh_by_the_inch() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    let inches = |size: &str| calories(&format!("1 {size}-inch piece fresh ginger"));
+    for (raw, size) in [
+        // The size in the note of a counted piece.
+        ("1 (2-inch-long) piece fresh ginger", "2"),
+        (
+            "1 piece (1 1/2 inches) fresh ginger, peeled and chopped",
+            "1 1/2",
+        ),
+        (
+            "1 piece fresh ginger ((approx 1/2 inch) peeled and chopped)",
+            "1/2",
+        ),
+        ("1 piece peeled ginger (2\")", "2"),
+        // The unit left in the item.
+        ("1 inch knob fresh ginger ((sliced thin))", "1"),
+        ("1 inch piece ginger", "1"),
+        ("1/2 inch ginger (juliennes)", "1/2"),
+        ("1.5 inches fresh ginger ((sliced into 8 coins))", "1.5"),
+    ] {
+        assert!(calories(raw).is_some(), "{raw}");
+        assert_eq!(calories(raw), inches(size), "{raw}");
+    }
+    // A leading inch size behind a piece unit sizes each piece.
+    assert_eq!(
+        calories("2 piece 1-inch fresh ginger root"),
+        calories("2 1-inch pieces fresh ginger root")
+    );
+    // A note that sizes nothing leaves a bare piece unknown, as before.
+    assert_eq!(calories("1 piece fresh ginger, peeled"), None);
+}
