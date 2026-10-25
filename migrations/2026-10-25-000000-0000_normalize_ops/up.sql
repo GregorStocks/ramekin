@@ -27,12 +27,16 @@ WHERE step_name IN ('apply_normalized_title', 'apply_generated_description', 'ap
 UPDATE scrape_jobs SET current_step = 'normalize_title' WHERE current_step = 'enrich_normalize_title';
 UPDATE scrape_jobs SET current_step = 'generate_description' WHERE current_step = 'enrich_generate_description';
 UPDATE scrape_jobs SET current_step = 'auto_tag' WHERE current_step = 'enrich_auto_tag';
-UPDATE scrape_jobs SET current_step = 'apply_normalize'
+-- A job stopped at an old apply step may still have had AI steps running, and
+-- the concurrent phase treats every step before its resume point as done.
+-- Resume at the first normalize step instead: steps that already succeeded
+-- keep their outputs, and the rest run again.
+UPDATE scrape_jobs SET current_step = 'normalize_title'
 WHERE current_step IN ('apply_normalized_title', 'apply_generated_description', 'apply_auto_tags');
 UPDATE scrape_jobs SET failed_at_step = 'normalize_title' WHERE failed_at_step = 'enrich_normalize_title';
 UPDATE scrape_jobs SET failed_at_step = 'generate_description' WHERE failed_at_step = 'enrich_generate_description';
 UPDATE scrape_jobs SET failed_at_step = 'auto_tag' WHERE failed_at_step = 'enrich_auto_tag';
-UPDATE scrape_jobs SET failed_at_step = 'apply_normalize'
+UPDATE scrape_jobs SET failed_at_step = 'normalize_title'
 WHERE failed_at_step IN ('apply_normalized_title', 'apply_generated_description', 'apply_auto_tags');
 
 -- Re-extract finds a recipe's stored source through the jobs that worked on it.
