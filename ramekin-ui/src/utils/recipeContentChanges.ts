@@ -73,6 +73,14 @@ export function recipeContentChanges(
     : changes;
 }
 
+/** Whether accepting `proposed` would replace the recipe's photos. */
+export function photosChanged(
+  base: NormalizedRecipe,
+  proposed: NormalizedRecipe,
+): boolean {
+  return base.photoIds.join(",") !== proposed.photoIds.join(",");
+}
+
 /** Whether accepting `proposed` over `base` would change anything. */
 export function normalizedRecipeChanged(
   base: NormalizedRecipe,
@@ -80,6 +88,6 @@ export function normalizedRecipeChanged(
 ): boolean {
   return (
     recipeContentChanges(base.content, proposed.content).length > 0 ||
-    base.photoIds.join(",") !== proposed.photoIds.join(",")
+    photosChanged(base, proposed)
   );
 }

@@ -19,7 +19,10 @@ import type {
 import Modal from "./Modal";
 import NormalizeOpPicker from "./NormalizeOpPicker";
 import RecipeContentDiff from "./RecipeContentDiff";
-import { normalizedRecipeChanged } from "../utils/recipeContentChanges";
+import {
+  normalizedRecipeChanged,
+  photosChanged,
+} from "../utils/recipeContentChanges";
 import {
   defaultNormalizeSelection,
   effectiveNormalizeOps,
@@ -165,9 +168,8 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
     !!proposal.proposed &&
     normalizedRecipeChanged(proposal.base, proposal.proposed);
 
-  const photosChanged = (proposal: NormalizeProposalResponse) =>
-    !!proposal.proposed &&
-    proposal.proposed.photoIds.join(",") !== proposal.base.photoIds.join(",");
+  const proposalPhotosChanged = (proposal: NormalizeProposalResponse) =>
+    !!proposal.proposed && photosChanged(proposal.base, proposal.proposed);
 
   const actions = () => {
     const current = phase();
@@ -283,10 +285,8 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
           >
             {(review) => (
               <div class="enrich-preview">
-                <Show when={photosChanged(review().proposal)}>
-                  <p class="renormalize-hint">
-                    The recipe's photos change too.
-                  </p>
+                <Show when={proposalPhotosChanged(review().proposal)}>
+                  <p class="renormalize-hint">The recipe's photos change.</p>
                 </Show>
                 <Show
                   when={review().proposal.proposed}
@@ -296,7 +296,11 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
                     <RecipeContentDiff
                       oldContent={review().proposal.base.content}
                       newContent={proposed().content}
-                      emptyMessage="Nothing changes, so there is nothing to save."
+                      emptyMessage={
+                        proposalPhotosChanged(review().proposal)
+                          ? "No other fields change."
+                          : "Nothing changes, so there is nothing to save."
+                      }
                     />
                   )}
                 </Show>

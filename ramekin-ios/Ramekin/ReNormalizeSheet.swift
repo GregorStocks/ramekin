@@ -224,14 +224,16 @@ struct ReNormalizeSheet: View {
         case .review:
             if viewModel.photosChange {
                 Section {
-                    Text("The recipe's photos change too.")
+                    Text("The recipe's photos change.")
                         .foregroundColor(.secondary)
                 }
             }
             Section("Changes") {
                 RecipeContentDiffView(
                     diffs: viewModel.diffs,
-                    emptyMessage: "Nothing changes, so there is nothing to save."
+                    emptyMessage: viewModel.photosChange
+                        ? "No other fields change."
+                        : "Nothing changes, so there is nothing to save."
                 )
             }
         case .failed(let message):

@@ -9,7 +9,10 @@ import type {
 import Modal from "./Modal";
 import NormalizeOpPicker from "./NormalizeOpPicker";
 import RecipeContentDiff from "./RecipeContentDiff";
-import { normalizedRecipeChanged } from "../utils/recipeContentChanges";
+import {
+  normalizedRecipeChanged,
+  photosChanged,
+} from "../utils/recipeContentChanges";
 import {
   defaultNormalizeSelection,
   effectiveNormalizeOps,
@@ -206,6 +209,8 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
   };
 
   const close = async () => {
+    // A save in flight would finish after the cookbook refreshes; wait for it.
+    if (counts().saving > 0) return;
     stopPolling();
     props.onClose();
     if (accepted) await props.onAccepted();
@@ -220,6 +225,7 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
       ready: count("ready"),
       unchanged: count("unchanged"),
       accepted: count("accepted"),
+      saving: count("saving"),
       failed: count("failed"),
     };
   };
@@ -252,7 +258,12 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
             </>
           }
         >
-          <button type="button" class="btn" onClick={close}>
+          <button
+            type="button"
+            class="btn"
+            onClick={close}
+            disabled={counts().saving > 0}
+          >
             Close
           </button>
           <button
@@ -355,10 +366,15 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
                           row.proposed
                         }
                       >
+                        <Show when={photosChanged(row.base!, row.proposed!)}>
+                          <p class="renormalize-hint">
+                            The recipe's photos change.
+                          </p>
+                        </Show>
                         <RecipeContentDiff
                           oldContent={row.base!.content}
                           newContent={row.proposed!.content}
-                          emptyMessage="Nothing changes."
+                          emptyMessage="No other fields change."
                         />
                       </Show>
                     </li>
