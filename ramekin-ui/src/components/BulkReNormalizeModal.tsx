@@ -177,8 +177,12 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
     void pollRows(controller.signal);
   };
 
-  const accept = async (row: Row) => {
-    if (!row.jobId) return;
+  /** Save a recipe's proposal, if it is still waiting for a decision. */
+  const accept = async (recipeId: string) => {
+    // Rows are replaced on every update, so read the current one: the row may
+    // have been discarded or saved since this was queued.
+    const row = rows()?.find((candidate) => candidate.recipeId === recipeId);
+    if (!row || row.status !== "ready" || !row.jobId) return;
     updateRow(row.recipeId, { status: "saving", error: null });
     try {
       await props.getNormalizeApi().acceptNormalizeProposal({
@@ -197,9 +201,8 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
   };
 
   const acceptAllReady = async () => {
-    for (const row of rows() ?? []) {
-      if (row.status === "ready") await accept(row);
-    }
+    const ready = (rows() ?? []).filter((row) => row.status === "ready");
+    for (const row of ready) await accept(row.recipeId);
   };
 
   const close = async () => {
@@ -332,7 +335,7 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
                             <button
                               type="button"
                               class="btn btn-small btn-primary"
-                              onClick={() => accept(row)}
+                              onClick={() => accept(row.recipeId)}
                             >
                               Accept
                             </button>

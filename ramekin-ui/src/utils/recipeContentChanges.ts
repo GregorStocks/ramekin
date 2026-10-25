@@ -48,6 +48,7 @@ const FIELDS: { label: string; text: (content: RecipeContent) => string }[] = [
   { label: "Total Time", text: (c) => c.totalTime ?? "" },
   { label: "Servings", text: (c) => c.servings ?? "" },
   { label: "Difficulty", text: (c) => c.difficulty ?? "" },
+  { label: "Rating", text: (c) => (c.rating == null ? "" : String(c.rating)) },
   { label: "Nutritional Info", text: (c) => c.nutritionalInfo ?? "" },
   { label: "Source", text: (c) => c.sourceName ?? "" },
   { label: "Source URL", text: (c) => c.sourceUrl ?? "" },

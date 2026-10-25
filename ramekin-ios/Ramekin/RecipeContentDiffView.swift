@@ -43,6 +43,7 @@ struct RecipeContentFieldDiff: Identifiable, Equatable {
             ("Total Time", { $0.totalTime ?? "" }),
             ("Servings", { $0.servings ?? "" }),
             ("Difficulty", { $0.difficulty ?? "" }),
+            ("Rating", { $0.rating.map(String.init) ?? "" }),
             ("Nutritional Info", { $0.nutritionalInfo ?? "" }),
             ("Source", { $0.sourceName ?? "" }),
             ("Source URL", { $0.sourceUrl ?? "" })

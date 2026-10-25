@@ -176,6 +176,24 @@
       "expected_labels": ["Ingredients (parsed)"]
     },
     {
+      "name": "a rating alone changes the recipe",
+      "base": {
+        "content": { "title": "Soup", "instructions": "Simmer.", "ingredients": [] },
+        "photo_ids": []
+      },
+      "proposed": {
+        "content": {
+          "title": "Soup",
+          "instructions": "Simmer.",
+          "ingredients": [],
+          "rating": 4
+        },
+        "photo_ids": []
+      },
+      "expected_changed": true,
+      "expected_labels": ["Rating"]
+    },
+    {
       "name": "new photos alone change the recipe",
       "base": {
         "content": { "title": "Soup", "instructions": "Simmer.", "ingredients": [] },
