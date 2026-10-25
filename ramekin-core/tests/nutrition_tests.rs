@@ -1378,6 +1378,95 @@ fn leaves_and_sized_heads_weigh_their_pieces() {
 }
 
 #[test]
+fn whole_produce_and_seafood_weigh_by_size() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    // A size or a bare count weighs the whole food: its sized piece, else
+    // its typical one.
+    for (item, amount, unit, grams) in [
+        ("savoy cabbage", "1", "small", 567.0),
+        ("savoy cabbage", "1", "large", 680.0),
+        ("kohlrabi", "4", "medium", 680.0),
+        ("butternut squash", "1", "", 1361.0),
+        ("sugar pumpkin", "1", "small", 1474.0),
+        ("pumpkins", "2", "", 2948.0),
+        ("fresh papaya", "1", "", 330.0),
+        ("papaya", "1", "large", 781.0),
+        ("blackberries", "3", "large", 15.0),
+        ("ahi tuna steak", "1", "small", 227.0),
+        ("baby bok choy", "3", "", 339.0),
+        ("broccoli", "1", "", 255.0),
+        ("broccoli crowns", "2", "", 544.0),
+    ] {
+        assert!(calories(item, amount, unit).is_some(), "{item}");
+        assert_eq!(
+            calories(item, amount, unit),
+            calories(item, &grams.to_string(), "g"),
+            "{amount} {unit} {item}"
+        );
+    }
+    // A crown is no whole head, and a floret no crown.
+    assert_eq!(
+        calories("broccoli crown", "1", "large"),
+        calories("broccoli", "272", "g")
+    );
+    assert_eq!(
+        calories("broccoli florets", "5", ""),
+        calories("broccoli", "50", "g")
+    );
+    assert_eq!(
+        calories("broccoli", "1", "bunch"),
+        calories("broccoli", "608", "g")
+    );
+}
+
+#[test]
+fn shrimp_and_marshmallows_weigh_by_their_size() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    // ATK's count per pound; a bare count is medium.
+    for (unit, grams) in [
+        ("small", 8.0),
+        ("medium", 11.0),
+        ("", 11.0),
+        ("large", 16.0),
+        ("extra-large", 20.0),
+        ("jumbo", 25.0),
+    ] {
+        assert!(calories("shrimp", "10", unit).is_some(), "{unit}");
+        assert_eq!(
+            calories("shrimp", "10", unit),
+            calories("shrimp", &(10.0 * grams).to_string(), "g"),
+            "{unit}"
+        );
+    }
+    // A large marshmallow is USDA's regular one; jumbo ones are the giant
+    // roasters, named or as a size. A bare count could be minis, so it stays
+    // unknown.
+    assert_eq!(
+        calories("marshmallows", "10", "large"),
+        calories("marshmallows", "72", "g")
+    );
+    assert_eq!(
+        calories("marshmallows", "8", "jumbo"),
+        calories("marshmallows", "224", "g")
+    );
+    assert_eq!(
+        calories("jumbo or s’mores marshmallows", "8", ""),
+        calories("marshmallows", "224", "g")
+    );
+    assert_eq!(calories("mini marshmallows", "20", ""), None);
+}
+
+#[test]
 fn a_weight_in_the_note_weighs_a_counted_line() {
     let noted = |raw: &str, item: &str, amount: &str, note: &str| ParsedIngredient {
         measurements: vec![Measurement {

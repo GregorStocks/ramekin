@@ -19,6 +19,16 @@
         }
       }
     },
+    "ahi tuna steaks": {
+      "default": "steak",
+      "pieces": {
+        "steak": {
+          "basis": "'4 tuna steaks, 8 ounces each and about 1 inch thick' (America's Test Kitchen, Pan-Seared Pepper-Crusted Tuna Steaks)",
+          "grams": 227,
+          "url": "https://www.americastestkitchen.com/recipes/8-pan-seared-pepper-crusted-tuna-steaks"
+        }
+      }
+    },
     "asparagus": {
       "pieces": {
         "bunch": {
@@ -64,6 +74,7 @@
       }
     },
     "broccoli": {
+      "default": "head medium",
       "pieces": {
         "head large": {
           "basis": "'1 large head broccoli (about 1 3/4 pounds)' (America's Test Kitchen, Roasted Broccoli)",
@@ -74,6 +85,16 @@
           "basis": "A typical medium head of broccoli is about 9 ounces (howmuchisin.com)",
           "grams": 255,
           "url": "https://www.howmuchisin.com/produce_converters/broccoli"
+        }
+      }
+    },
+    "butternut squash": {
+      "default": "medium",
+      "pieces": {
+        "medium": {
+          "basis": "'1 medium butternut squash (about 3 pounds)' (America's Test Kitchen, Roasted Butternut Squash Soup)",
+          "grams": 1361,
+          "url": "https://www.americastestkitchen.com/recipes/4497-roasted-butternut-squash-soup"
         }
       }
     },
@@ -224,6 +245,16 @@
         }
       }
     },
+    "kohlrabi": {
+      "default": "medium",
+      "pieces": {
+        "medium": {
+          "basis": "'4 medium kohlrabi globes (about 1 1/2 pounds without leaves...)', so 170 g each (Purdue Extension, Kohlrabi)",
+          "grams": 170,
+          "url": "https://extension.purdue.edu/foodlink/includes/pubs/Print4perpaper/4VegetablesPrint/4KOHLRABIprint.pdf"
+        }
+      }
+    },
     "lemon juice": {
       "pieces": {
         "lemon": {
@@ -314,12 +345,37 @@
         }
       }
     },
+    "pumpkin": {
+      "default": "pumpkin",
+      "pieces": {
+        "pumpkin": {
+          "basis": "'1 (3- to 3½-pound) sugar pumpkin', 3 1/4 lb at the midpoint (America's Test Kitchen, Cheesy Stuffed Pumpkin); a pumpkin a recipe counts is one to cook, a sugar or pie pumpkin",
+          "grams": 1474,
+          "url": "https://www.americastestkitchen.com/recipes/17208-cheesy-stuffed-pumpkin"
+        }
+      }
+    },
     "pumpkin puree": {
       "pieces": {
         "can": {
           "basis": "Standard US can of pumpkin: 15 oz (425 g) (Libby's 100% Pure Pumpkin)",
           "grams": 425,
           "url": "https://www.kroger.com/p/libby-s-100-pure-canned-pumpkin/0003900004504"
+        }
+      }
+    },
+    "savoy cabbage": {
+      "default": "head",
+      "pieces": {
+        "head": {
+          "basis": "'1 head savoy cabbage (1½ pounds)' (America's Test Kitchen, Braised Savoy Cabbage with Pancetta)",
+          "grams": 680,
+          "url": "https://www.americastestkitchen.com/recipes/12627-braised-savoy-cabbage-with-pancetta"
+        },
+        "head small": {
+          "basis": "'1 small head savoy cabbage (1 ¼ pounds)' (America's Test Kitchen, Sautéed Cabbage with Fennel and Garlic)",
+          "grams": 567,
+          "url": "https://www.americastestkitchen.com/recipes/8273-sauteed-cabbage-with-fennel-and-garlic"
         }
       }
     },
@@ -349,6 +405,36 @@
           "basis": "Small shallot: 1/2 ounce (14 g) (America's Test Kitchen, Sizing Up Shallots)",
           "grams": 14,
           "url": "https://www.americastestkitchen.com/how_tos/9885-sizing-up-shallots"
+        }
+      }
+    },
+    "shrimp": {
+      "default": "medium",
+      "pieces": {
+        "extra large": {
+          "basis": "Extra-large shrimp: 21/25 per pound, so 20 g at the midpoint (America's Test Kitchen, Shrimp Size Chart)",
+          "grams": 20,
+          "url": "https://www.americastestkitchen.com/lessons/articles/2280-shrimp-size-chart"
+        },
+        "jumbo": {
+          "basis": "Jumbo shrimp: 16/20 per pound, so 25 g at the midpoint (America's Test Kitchen, Shrimp Size Chart)",
+          "grams": 25,
+          "url": "https://www.americastestkitchen.com/lessons/articles/2280-shrimp-size-chart"
+        },
+        "large": {
+          "basis": "Large shrimp: 26/30 per pound, so 16 g at the midpoint (America's Test Kitchen, Shrimp Size Chart)",
+          "grams": 16,
+          "url": "https://www.americastestkitchen.com/lessons/articles/2280-shrimp-size-chart"
+        },
+        "medium": {
+          "basis": "Medium shrimp: 41/45 per pound, so 11 g at the midpoint (America's Test Kitchen, Shrimp Size Chart)",
+          "grams": 11,
+          "url": "https://www.americastestkitchen.com/lessons/articles/2280-shrimp-size-chart"
+        },
+        "small": {
+          "basis": "Small shrimp: 51/60 per pound, so 8 g at the midpoint (America's Test Kitchen, Shrimp Size Chart)",
+          "grams": 8,
+          "url": "https://www.americastestkitchen.com/lessons/articles/2280-shrimp-size-chart"
         }
       }
     },
