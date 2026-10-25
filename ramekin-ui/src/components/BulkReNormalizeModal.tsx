@@ -73,6 +73,9 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
   const [starting, setStarting] = createSignal(false);
   let accepted = false;
   let polling: AbortController | null = null;
+  // Bumped whenever the modal opens or closes, so a Run that answers after
+  // its session ended is ignored.
+  let session = 0;
 
   const stopPolling = () => {
     polling?.abort();
@@ -82,6 +85,7 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
 
   createEffect(
     on(props.isOpen, (open) => {
+      session += 1;
       stopPolling();
       if (!open) return;
       setRows(null);
@@ -148,6 +152,7 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
   const start = async () => {
     const recipes = props.recipes();
     const titles = new Map(recipes.map((recipe) => [recipe.id, recipe.title]));
+    const runSession = session;
     setStarting(true);
     setError(null);
     try {
@@ -157,6 +162,7 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
           ops: effectiveNormalizeOps(ops(), selected()),
         },
       });
+      if (runSession !== session) return;
       setRows(
         response.results.map((result) => ({
           recipeId: result.recipeId,
@@ -169,11 +175,13 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
         })),
       );
     } catch (err) {
-      setError(await extractApiError(err, "Failed to start normalizing"));
+      const message = await extractApiError(err, "Failed to start normalizing");
+      if (runSession === session) setError(message);
       return;
     } finally {
       setStarting(false);
     }
+    if (runSession !== session) return;
     stopPolling();
     const controller = new AbortController();
     polling = controller;

@@ -114,11 +114,14 @@ export default function ReNormalizeModal(props: ReNormalizeModalProps) {
       });
       jobId = job.jobId;
     } catch (err) {
-      setError(await extractApiError(err, "Failed to start normalizing"));
+      const message = await extractApiError(err, "Failed to start normalizing");
       setBusy(false);
+      // Closing the modal aborts the run; its answer belongs to no one.
+      if (!run.signal.aborted) setError(message);
       return;
     }
     setBusy(false);
+    if (run.signal.aborted) return;
     setPhase({ kind: "running", jobId, steps: [] });
     try {
       const result = await pollScrapeJob(props.getScrapeApi(), jobId, {
