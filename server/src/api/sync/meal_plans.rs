@@ -104,6 +104,9 @@ pub async fn sync_meal_plans(
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<SyncMealPlansRequest>,
 ) -> Result<impl IntoResponse, ApiError> {
+    if request.ops.iter().any(|op| op.op == OpKind::Restore) {
+        return Err(ApiError::invalid_request("Meal plans can't be restored"));
+    }
     let user_id = user.id;
 
     let response = run_db_write(&pool, move |conn| {
@@ -172,6 +175,7 @@ pub async fn sync_meal_plans(
                         }
                     }
                 }
+                OpKind::Restore => unreachable!("refused before the transaction"),
                 OpKind::Delete => {
                     if target == (Target::Mine { live: true }) {
                         diesel::update(meal_plans::table.find(op.id))

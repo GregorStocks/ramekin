@@ -75,6 +75,11 @@ Class | Method | HTTP request | Description
 *IngredientNamesApi* | [**get_ingredient_names_status**](ramekin_client/docs/IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
 *IngredientNamesApi* | [**retry_ingredient_names**](ramekin_client/docs/IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
 *MealPlansApi* | [**list_meal_plans**](ramekin_client/docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
+*NormalizeApi* | [**accept_normalize_proposal**](ramekin_client/docs/NormalizeApi.md#accept_normalize_proposal) | **POST** /api/recipes/{id}/normalize/{job_id}/accept | 
+*NormalizeApi* | [**get_normalize_proposal**](ramekin_client/docs/NormalizeApi.md#get_normalize_proposal) | **GET** /api/recipes/{id}/normalize/{job_id} | 
+*NormalizeApi* | [**list_normalize_ops**](ramekin_client/docs/NormalizeApi.md#list_normalize_ops) | **GET** /api/recipes/normalize-ops | 
+*NormalizeApi* | [**normalize_recipe**](ramekin_client/docs/NormalizeApi.md#normalize_recipe) | **POST** /api/recipes/{id}/normalize | 
+*NormalizeApi* | [**normalize_recipes**](ramekin_client/docs/NormalizeApi.md#normalize_recipes) | **POST** /api/recipes/normalize | 
 *PhotosApi* | [**get_photo**](ramekin_client/docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](ramekin_client/docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -98,6 +103,8 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**get_scrape**](ramekin_client/docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**get_step_output**](ramekin_client/docs/ScrapeApi.md#get_step_output) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeApi* | [**retry_scrape**](ramekin_client/docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
+*ShoppingListApi* | [**list_shopping_list_history**](ramekin_client/docs/ShoppingListApi.md#list_shopping_list_history) | **GET** /api/shopping-list/history | 
+*ShoppingListApi* | [**undo_shopping_list_change**](ramekin_client/docs/ShoppingListApi.md#undo_shopping_list_change) | **POST** /api/shopping-list/history/{id}/undo | 
 *SyncApi* | [**sync_meal_plans**](ramekin_client/docs/SyncApi.md#sync_meal_plans) | **POST** /api/sync/meal-plans | 
 *SyncApi* | [**sync_recipes**](ramekin_client/docs/SyncApi.md#sync_recipes) | **GET** /api/sync/recipes | 
 *SyncApi* | [**sync_shopping_list**](ramekin_client/docs/SyncApi.md#sync_shopping_list) | **POST** /api/sync/shopping-list | 
@@ -114,7 +121,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AcceptNormalizeResponse](ramekin_client/docs/AcceptNormalizeResponse.md)
  - [BookmarkletTokenResponse](ramekin_client/docs/BookmarkletTokenResponse.md)
+ - [BulkNormalizeRequest](ramekin_client/docs/BulkNormalizeRequest.md)
+ - [BulkNormalizeResponse](ramekin_client/docs/BulkNormalizeResponse.md)
+ - [BulkNormalizeResult](ramekin_client/docs/BulkNormalizeResult.md)
  - [CalorieEstimateResponse](ramekin_client/docs/CalorieEstimateResponse.md)
  - [CalorieLine](ramekin_client/docs/CalorieLine.md)
  - [CalorieRange](ramekin_client/docs/CalorieRange.md)
@@ -159,7 +170,14 @@ Class | Method | HTTP request | Description
  - [MealPlanOp](ramekin_client/docs/MealPlanOp.md)
  - [MealType](ramekin_client/docs/MealType.md)
  - [Measurement](ramekin_client/docs/Measurement.md)
+ - [NormalizeJobResponse](ramekin_client/docs/NormalizeJobResponse.md)
+ - [NormalizeOpGroupResponse](ramekin_client/docs/NormalizeOpGroupResponse.md)
+ - [NormalizeOpInfo](ramekin_client/docs/NormalizeOpInfo.md)
+ - [NormalizeOpsResponse](ramekin_client/docs/NormalizeOpsResponse.md)
+ - [NormalizeProposalResponse](ramekin_client/docs/NormalizeProposalResponse.md)
+ - [NormalizeRequest](ramekin_client/docs/NormalizeRequest.md)
  - [NormalizeTitleResponse](ramekin_client/docs/NormalizeTitleResponse.md)
+ - [NormalizedRecipe](ramekin_client/docs/NormalizedRecipe.md)
  - [OpKind](ramekin_client/docs/OpKind.md)
  - [OpResult](ramekin_client/docs/OpResult.md)
  - [PaginationMetadata](ramekin_client/docs/PaginationMetadata.md)
@@ -176,6 +194,8 @@ Class | Method | HTTP request | Description
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)
  - [ShoppingListFields](ramekin_client/docs/ShoppingListFields.md)
+ - [ShoppingListHistoryEntry](ramekin_client/docs/ShoppingListHistoryEntry.md)
+ - [ShoppingListHistoryResponse](ramekin_client/docs/ShoppingListHistoryResponse.md)
  - [ShoppingListOp](ramekin_client/docs/ShoppingListOp.md)
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)
  - [SignupResponse](ramekin_client/docs/SignupResponse.md)

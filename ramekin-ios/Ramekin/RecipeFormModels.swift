@@ -2,11 +2,17 @@ import Foundation
 
 // MARK: - Editable Models
 
-struct EditableIngredient: Equatable, Identifiable {
+/// Codable so an unsaved form can be kept across app termination; a decoded
+/// row gets a fresh id.
+struct EditableIngredient: Equatable, Identifiable, Codable {
     let id = UUID()
     var item: String
     var measurements: [EditableMeasurement]
     var note: String
+
+    private enum CodingKeys: String, CodingKey {
+        case item, measurements, note
+    }
 
     static func empty() -> EditableIngredient {
         EditableIngredient(
@@ -34,10 +40,14 @@ struct EditableIngredient: Equatable, Identifiable {
     }
 }
 
-struct EditableMeasurement: Equatable, Identifiable {
+struct EditableMeasurement: Equatable, Identifiable, Codable {
     let id = UUID()
     var amount: String
     var unit: String
+
+    private enum CodingKeys: String, CodingKey {
+        case amount, unit
+    }
 
     init(amount: String = "", unit: String = "") {
         self.amount = amount
@@ -61,7 +71,7 @@ struct EditableMeasurement: Equatable, Identifiable {
 
 // MARK: - Form Mode
 
-enum RecipeFormMode: Equatable {
+enum RecipeFormMode: Equatable, Codable {
     case create
     case edit(recipeId: UUID)
 }
@@ -75,7 +85,7 @@ enum RecipeFormMode: Equatable {
 ///
 /// Mirrors ramekin-ui/src/utils/ingredientEditorRows.ts; both are pinned by
 /// shared-test-vectors/ingredient-editor-rows.json.
-enum IngredientEditorRow: Identifiable, Equatable {
+enum IngredientEditorRow: Identifiable, Equatable, Codable {
     case section(id: UUID, name: String)
     case ingredient(EditableIngredient)
 

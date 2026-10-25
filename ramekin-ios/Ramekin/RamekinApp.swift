@@ -156,27 +156,36 @@ class AppState: ObservableObject {
     }
 }
 
-enum Tab: Hashable {
+enum Tab: String, Hashable {
     case recipes
     case mealPlan
     case shopping
 }
 
+/// Where the user is lives in scene storage, so relaunching after iOS
+/// terminates the app in the background comes back to the same tab, stack,
+/// recipe scale and scroll position, and unsaved recipe form. Scene storage keys must be unique within a scene and a
+/// recipe can be open on both stacks, so this view owns every key and hands
+/// the tabs bindings.
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
-    @State private var selectedTab: Tab = .recipes
+    @SceneStorage("selectedTab") private var selectedTab: Tab = .recipes
+    @SceneStorage("recipesPath") private var recipesPathData = Data()
+    @SceneStorage("mealPlanPath") private var mealPlanPathData = Data()
+    @SceneStorage("recipePlaces") private var recipePlacesData = Data()
+    @SceneStorage("recipeFormDrafts") private var recipeFormDraftsData = Data()
 
     var body: some View {
         Group {
             if appState.isLoggedIn {
                 TabView(selection: $selectedTab) {
-                    RecipesTab()
+                    RecipesTab(path: pathBinding(.recipes))
                         .tabItem {
                             Label("Recipes", systemImage: "book")
                         }
                         .tag(Tab.recipes)
 
-                    MealPlanView()
+                    MealPlanView(path: pathBinding(.mealPlan))
                         .tabItem {
                             Label("Meal Plan", systemImage: "calendar")
                         }
@@ -188,8 +197,18 @@ struct ContentView: View {
                         }
                         .tag(Tab.shopping)
                 }
+                .environment(\.recipePlaceMemory, recipePlaceMemory)
+                .environment(\.recipeFormDraftMemory, recipeFormDraftMemory)
+                // A link opened before the tabs exist (cold launch, or while
+                // signed out) must still win over the restored tab.
+                .onAppear {
+                    if appState.pendingRecipeId != nil { selectedTab = .recipes }
+                }
                 .onChange(of: appState.pendingRecipeId) { id in
                     if id != nil { selectedTab = .recipes }
+                }
+                .task(id: appState.username) {
+                    await pruneMissingRecipes()
                 }
             } else {
                 LoginView()
@@ -200,11 +219,105 @@ struct ContentView: View {
             appState.handleUniversalLink(url)
         }
     }
+
+    private enum Stack: CaseIterable {
+        case recipes
+        case mealPlan
+    }
+
+    private func path(_ stack: Stack) -> [NavigationDestination] {
+        switch stack {
+        case .recipes: return SceneRestoration.decodePath(recipesPathData)
+        case .mealPlan: return SceneRestoration.decodePath(mealPlanPathData)
+        }
+    }
+
+    private func setPath(_ path: [NavigationDestination], for stack: Stack) {
+        let data = SceneRestoration.encodePath(path)
+        switch stack {
+        case .recipes: recipesPathData = data
+        case .mealPlan: mealPlanPathData = data
+        }
+        pruneToOpenRecipes()
+    }
+
+    private func pathBinding(_ stack: Stack) -> Binding<[NavigationDestination]> {
+        Binding(get: { path(stack) }, set: { setPath($0, for: stack) })
+    }
+
+    private var openRecipeIds: Set<UUID> {
+        Set(Stack.allCases.flatMap { SceneRestoration.recipeIds(in: path($0)) })
+    }
+
+    private var recipePlaceMemory: RecipePlaceMemory {
+        RecipePlaceMemory(
+            stored: { SceneRestoration.decodePlaces(recipePlacesData)[$0] },
+            remember: { id, place in
+                var places = SceneRestoration.decodePlaces(recipePlacesData)
+                places[id] = place
+                recipePlacesData = SceneRestoration.encodePlaces(places)
+            }
+        )
+    }
+
+    private var recipeFormDraftMemory: RecipeFormDraftMemory {
+        RecipeFormDraftMemory(
+            stored: { mode in
+                SceneRestoration.decodeDrafts(recipeFormDraftsData).first { $0.mode == mode }
+            },
+            remember: { mode, draft in
+                let drafts = SceneRestoration.decodeDrafts(recipeFormDraftsData)
+                let updated = SceneRestoration.replacingDraft(in: drafts, for: mode, with: draft)
+                if updated != drafts {
+                    recipeFormDraftsData = SceneRestoration.encodeDrafts(updated)
+                }
+            }
+        )
+    }
+
+    private func pruneToOpenRecipes() {
+        let open = openRecipeIds
+        let places = SceneRestoration.decodePlaces(recipePlacesData)
+        let prunedPlaces = SceneRestoration.prunedPlaces(places, keeping: open)
+        if prunedPlaces != places {
+            recipePlacesData = SceneRestoration.encodePlaces(prunedPlaces)
+        }
+        let drafts = SceneRestoration.decodeDrafts(recipeFormDraftsData)
+        let prunedDrafts = SceneRestoration.prunedDrafts(drafts, keeping: open)
+        if prunedDrafts != drafts {
+            recipeFormDraftsData = SceneRestoration.encodeDrafts(prunedDrafts)
+        }
+    }
+
+    /// A restored stack can name a recipe deleted by sync since, or one from
+    /// another account after signing in as someone else; drop it so the user
+    /// lands where they opened it from. Checks the local cache only, so it
+    /// never waits on the network.
+    @MainActor
+    private func pruneMissingRecipes() async {
+        let checked = openRecipeIds
+        guard !checked.isEmpty, let accountKey = AccountScope.currentAccountKey() else { return }
+        guard let existing = try? await RecipeCacheStore.shared.existingRecipeIds(
+            Array(checked),
+            accountKey: accountKey
+        ) else {
+            return
+        }
+        for stack in Stack.allCases {
+            let current = path(stack)
+            // A recipe opened while the cache was being checked wasn't asked
+            // about; keep it.
+            let pruned = SceneRestoration.prunedPath(current) { !checked.contains($0) || existing.contains($0) }
+            if pruned != current {
+                setPath(pruned, for: stack)
+            }
+        }
+    }
 }
 
 struct RecipesTab: View {
     @EnvironmentObject var appState: AppState
-    @State private var path = NavigationPath()
+    @Binding var path: [NavigationDestination]
 
     var body: some View {
         NavigationStack(path: $path) {

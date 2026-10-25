@@ -5,13 +5,18 @@ struct RecipeFormView: View {
     var onSaved: (() -> Void)?
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.recipeFormDraftMemory) private var draftMemory
     @StateObject private var viewModel: RecipeFormViewModel
     @FocusState private var focusedSectionId: UUID?
     @State private var showingDiscardConfirmation = false
+    /// Saved or discarded: a pending draft write must not bring it back.
+    @State private var isClosing = false
 
-    init(mode: RecipeFormMode, onSaved: (() -> Void)? = nil) {
+    /// `resuming` reopens a form the app was terminated on.
+    init(mode: RecipeFormMode, resuming draft: RecipeFormDraft? = nil, onSaved: (() -> Void)? = nil) {
         self.onSaved = onSaved
-        _viewModel = StateObject(wrappedValue: RecipeFormViewModel(mode: mode))
+        _viewModel = StateObject(wrappedValue: RecipeFormViewModel(mode: mode, resuming: draft))
     }
 
     private static let errorSectionId = "recipe-form-error"
@@ -37,7 +42,7 @@ struct RecipeFormView: View {
                     if viewModel.hasUnsavedChanges {
                         showingDiscardConfirmation = true
                     } else {
-                        dismiss()
+                        close()
                     }
                 }
             }
@@ -49,7 +54,7 @@ struct RecipeFormView: View {
                         Task {
                             if await viewModel.save() {
                                 onSaved?()
-                                dismiss()
+                                close()
                             }
                         }
                     }
@@ -65,19 +70,42 @@ struct RecipeFormView: View {
             isPresented: $showingDiscardConfirmation,
             titleVisibility: .visible
         ) {
-            Button("Discard Changes", role: .destructive) { dismiss() }
+            Button("Discard Changes", role: .destructive) { close() }
             Button("Keep Editing", role: .cancel) {}
         }
         .disabled(viewModel.isSaving)
         .overlay { if viewModel.isLoading { ProgressView("Loading recipe…") } }
         .task {
             await viewModel.start()
+            // Opening the form afresh replaces any draft it wasn't resumed from.
+            rememberDraft()
         }
         .onChange(of: viewModel.selectedPhotoItems) { items in
             if !items.isEmpty {
                 Task { await viewModel.uploadSelectedPhotos() }
             }
         }
+        // Writing scene storage re-renders every tab, so wait for a pause in
+        // typing; leaving the foreground writes at once.
+        .task(id: viewModel.resumableDraft) {
+            try? await Task.sleep(nanoseconds: 500_000_000)
+            guard !Task.isCancelled else { return }
+            rememberDraft()
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase != .active { rememberDraft() }
+        }
+    }
+
+    private func rememberDraft() {
+        guard !isClosing else { return }
+        draftMemory.remember(viewModel.mode, viewModel.resumableDraft)
+    }
+
+    private func close() {
+        isClosing = true
+        draftMemory.remember(viewModel.mode, nil)
+        dismiss()
     }
     private var form: some View {
         Form {
@@ -300,6 +328,14 @@ extension RecipeFormView {
 
     @ViewBuilder
     private var errorSection: some View {
+        if viewModel.resumedOverNewerVersion {
+            Section {
+                HStack {
+                    Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.orange)
+                    Text("This recipe changed since you started these edits. Saving will replace those changes.")
+                }
+            }
+        }
         if let error = viewModel.error {
             Section {
                 HStack {

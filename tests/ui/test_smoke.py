@@ -32,8 +32,9 @@ def wait_for_job_completion(scrape_api: ScrapeApi, job_id: str, timeout: float =
     raise TimeoutError(f"Job {job_id} did not complete within {timeout}s")
 
 
-def create_scraped_recipe_with_enrichment(api_url: str) -> tuple[str, str, str]:
-    """Create a user and scrape a recipe so version history includes enrichment."""
+def create_scraped_recipe_with_normalize(api_url: str) -> tuple[str, str, str]:
+    """Create a user and scrape a recipe so version history includes a
+    normalize version."""
     username = f"ui_smoke_{uuid.uuid4().hex[:8]}"
     password = "testpass123"
     fixture_base_url = os.environ["FIXTURE_BASE_URL"]
@@ -68,7 +69,7 @@ def create_scraped_recipe_with_enrichment(api_url: str) -> tuple[str, str, str]:
         job = wait_for_job_completion(scrape_api, response.id)
         assert job.status == "completed"
         recipe = recipes_api.get_recipe(job.recipe_id)
-        assert recipe.version_source == "enrichment"
+        assert recipe.version_source == "normalize"
         return username, password, recipe.id
 
 
@@ -338,6 +339,25 @@ def test_cookbook_density_toggle_persists(logged_in_page: Page):
     )
 
 
+def test_cookbook_sort_and_filters_persist(logged_in_page: Page, ui_url: str):
+    """A fresh visit restores the last sort and filters, but not search text."""
+    logged_in_page.goto(f"{ui_url}?q=has:photos")
+    logged_in_page.get_by_label("Sort recipes").select_option("rating")
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]sort=rating"))
+
+    logged_in_page.goto(f"{ui_url}?q=wonton+has:photos")
+    expect(logged_in_page.get_by_label("Sort recipes")).to_be_disabled()
+
+    logged_in_page.goto(ui_url)
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]sort=rating"))
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]q=has%3Aphotos(&|$)"))
+    expect(logged_in_page.get_by_label("Sort recipes")).to_have_value("rating")
+
+    logged_in_page.goto(f"{ui_url}?q=tag:dinner")
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]q=tag%3Adinner(&|$)"))
+    expect(logged_in_page.get_by_label("Sort recipes")).to_have_value("rating")
+
+
 def test_cookbook_filters_adapt_between_desktop_and_mobile(logged_in_page: Page):
     """The desktop sidebar becomes an accessible mobile filter sheet."""
     sidebar = logged_in_page.get_by_role("complementary", name="Filters")
@@ -361,11 +381,9 @@ def test_cookbook_filters_adapt_between_desktop_and_mobile(logged_in_page: Page)
     expect(logged_in_page.locator("body")).not_to_have_css("overflow", "hidden")
 
 
-def test_version_history_labels_enrichment_badges(
-    page: Page, ui_url: str, api_url: str
-):
-    """Verify AI-enriched versions show the user-facing badge label."""
-    username, password, recipe_id = create_scraped_recipe_with_enrichment(api_url)
+def test_version_history_labels_normalize_badges(page: Page, ui_url: str, api_url: str):
+    """Verify normalize versions show the user-facing badge label."""
+    username, password, recipe_id = create_scraped_recipe_with_normalize(api_url)
 
     page.goto(ui_url)
     page.fill("input[type='text']", username)
@@ -376,9 +394,9 @@ def test_version_history_labels_enrichment_badges(
     page.goto(f"{ui_url}/recipes/{recipe_id}")
     page.get_by_text("Version History").click()
 
-    expect(page.locator(".version-source-badge").first).to_have_text("AI Enriched")
+    expect(page.locator(".version-source-badge").first).to_have_text("Normalized")
     expect(
-        page.locator(".version-source-badge").filter(has_text="enrichment")
+        page.locator(".version-source-badge").filter(has_text=re.compile("^normalize$"))
     ).to_have_count(0)
 
 
@@ -449,20 +467,17 @@ def test_cookbook_grouped_tag_filter(page: Page, ui_url: str, api_url: str):
     page.click("button[type='submit']")
     page.wait_for_selector(".recipe-card")
 
-    # Grouped sections visible.
-    expect(
-        page.locator(".cookbook-filter-tag-group summary", has_text="course")
-    ).to_be_visible()
-    expect(
-        page.locator(".cookbook-filter-tag-group summary", has_text="ingredient")
-    ).to_be_visible()
-    expect(
-        page.locator(".cookbook-filter-tag-group summary", has_text="Uncategorized")
-    ).to_be_visible()
+    # One button per namespace.
+    for label in ("course", "ingredient", "Uncategorized"):
+        expect(
+            page.locator(".cookbook-tag-group-button", has_text=label)
+        ).to_be_visible()
 
-    # Clicking the "chicken" chip (under the ingredient namespace) filters
-    # the recipes. The chip label renders as "<span>ingredient:</span>chicken"
-    # so the accessible name includes the full text "ingredient:chicken".
-    page.locator(".filter-chip", has_text="chicken").click()
+    # The namespace button opens a popover listing its values; clicking the
+    # "chicken" value filters the recipes.
+    page.locator(".cookbook-tag-group-button", has_text="ingredient").click()
+    popover = page.get_by_label("ingredient tags")
+    expect(popover).to_be_visible()
+    popover.locator(".filter-chip", has_text="chicken").click()
     expect(page.get_by_text("Chicken dish")).to_be_visible()
     expect(page.locator(".recipe-card h3", has_text="Morning oats")).to_have_count(0)

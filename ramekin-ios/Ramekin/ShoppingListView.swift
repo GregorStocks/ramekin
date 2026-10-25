@@ -8,7 +8,8 @@ struct ShoppingListView: View {
     @State private var amount = ""
     @State private var addedCount = 0
     @State private var addTapTime: CFAbsoluteTime?
-    @State private var showingClearCheckedConfirmation = false
+    /// The last delete, which the toast offers to undo.
+    @State private var pendingUndo: ShoppingListUndo?
     @FocusState private var addFieldFocused: Bool
 
     var body: some View {
@@ -22,10 +23,18 @@ struct ShoppingListView: View {
             }
             .navigationTitle("Shopping List")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink {
+                        ShoppingListHistoryView(store: store)
+                    } label: {
+                        Image(systemName: "clock.arrow.circlepath")
+                    }
+                    .accessibilityLabel("History")
+                }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     if store.items.contains(where: \.isChecked) {
-                        Button("Clear Checked", role: .destructive) {
-                            showingClearCheckedConfirmation = true
+                        Button("Clear Checked") {
+                            offerUndo(store.clearChecked())
                         }
                     }
                     Button {
@@ -40,15 +49,6 @@ struct ShoppingListView: View {
                         Image(systemName: "plus")
                     }
                     .accessibilityLabel("Add Item")
-                }
-            }
-            .confirmationDialog(
-                "Remove all checked items?",
-                isPresented: $showingClearCheckedConfirmation,
-                titleVisibility: .visible
-            ) {
-                Button("Clear Checked", role: .destructive) {
-                    store.clearChecked()
                 }
             }
             .onChange(of: isAddingItem) { adding in
@@ -89,7 +89,9 @@ struct ShoppingListView: View {
                 }
             }
             .overlay(alignment: .bottom) {
-                if addedCount > 0 {
+                if let pendingUndo {
+                    undoToast(pendingUndo)
+                } else if addedCount > 0 {
                     HStack {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.green)
@@ -104,7 +106,50 @@ struct ShoppingListView: View {
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
+            .task(id: pendingUndo?.id) {
+                guard pendingUndo != nil else { return }
+                try? await Task.sleep(nanoseconds: Self.undoToastNanoseconds)
+                guard !Task.isCancelled else { return }
+                withAnimation { pendingUndo = nil }
+            }
         }
+    }
+
+    /// How long the toast offers to undo a delete.
+    private static let undoToastNanoseconds: UInt64 = 8_000_000_000
+
+    private func offerUndo(_ undo: ShoppingListUndo?) {
+        guard let undo else { return }
+        withAnimation { pendingUndo = undo }
+        UIAccessibility.post(notification: .announcement, argument: undo.message)
+    }
+
+    private func deleteItems(_ deleted: [ShoppingItem]) {
+        let undos = deleted.compactMap { store.deleteItem($0) }
+        guard let first = undos.first else { return }
+        offerUndo(undos.count == 1 ? first : ShoppingListUndo(
+            message: "Deleted \(undos.count) items",
+            items: undos.flatMap(\.items)
+        ))
+    }
+
+    private func undoToast(_ undo: ShoppingListUndo) -> some View {
+        HStack(spacing: 12) {
+            Text(undo.message)
+                .lineLimit(1)
+            Button("Undo") {
+                store.restore(undo)
+                withAnimation { pendingUndo = nil }
+            }
+            .fontWeight(.semibold)
+        }
+        .font(.subheadline.weight(.medium))
+        .padding(.horizontal, 16)
+        .padding(.vertical, 10)
+        .background(.regularMaterial)
+        .clipShape(Capsule())
+        .padding(.bottom, 8)
+        .transition(.move(edge: .bottom).combined(with: .opacity))
     }
 
     private var emptyState: some View {
@@ -183,9 +228,7 @@ struct ShoppingListView: View {
                         ShoppingItemRow(item: item, store: store)
                     }
                     .onDelete { offsets in
-                        for offset in offsets {
-                            store.deleteItem(group.items[offset])
-                        }
+                        deleteItems(offsets.map { group.items[$0] })
                     }
                 }
             }
@@ -197,9 +240,7 @@ struct ShoppingListView: View {
                         ShoppingItemRow(item: item, store: store)
                     }
                     .onDelete { offsets in
-                        for offset in offsets {
-                            store.deleteItem(checked[offset])
-                        }
+                        deleteItems(offsets.map { checked[$0] })
                     }
                 }
             }

@@ -1,4 +1,5 @@
 use super::{patch_text, refused, text_or_none, with_refused, OpKind, OpResult, Target, Window};
+use crate::api::shopping_list::history::{self, ItemFields};
 use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
@@ -7,7 +8,7 @@ use crate::models::NewShoppingListItem;
 use crate::schema::shopping_list_items;
 use crate::shopping_list::{category_order, is_valid_category, item_category, store_categories};
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
-use chrono::Utc;
+use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -125,108 +126,8 @@ pub async fn sync_shopping_list(
     let user_id = user.id;
 
     let response = run_db_write(&pool, move |conn| {
-        let now = Utc::now();
-        let mut next_sort_order = shopping_list_items::table
-            .filter(shopping_list_items::user_id.eq(user_id))
-            .filter(shopping_list_items::deleted_at.is_null())
-            .select(diesel::dsl::max(shopping_list_items::sort_order))
-            .first::<Option<i32>>(conn)?
-            .unwrap_or(0)
-            + 1;
-        let mut results = Vec::with_capacity(request.ops.len());
-        // Names this sync wrote, queued for resolution below.
-        let mut renamed: Vec<String> = Vec::new();
-        // Items this sync wrote, whose categories are stored below.
-        let mut written: Vec<(Uuid, String)> = Vec::new();
-
         let ids: Vec<Uuid> = request.ops.iter().map(|op| op.id).collect();
-        for op in request.ops {
-            let owner: Option<(Uuid, bool)> = shopping_list_items::table
-                .find(op.id)
-                .select((
-                    shopping_list_items::user_id,
-                    shopping_list_items::deleted_at.is_null(),
-                ))
-                .first(conn)
-                .optional()?;
-            let target = Target::of(owner, user_id);
-            let live = target == (Target::Mine { live: true });
-
-            let result = match op.op {
-                OpKind::Create => match target.existing_create() {
-                    Some(result) => result,
-                    None => {
-                        let item = create(conn, user_id, op.id, op.fields, &mut next_sort_order)?;
-                        renamed.push(item.clone());
-                        written.push((op.id, item));
-                        OpResult::Applied
-                    }
-                },
-                OpKind::Update if !live => OpResult::Gone,
-                OpKind::Update => {
-                    let fields = op.fields;
-                    let (item, amount, note, is_checked, sort_order, category_override): (
-                        String,
-                        Option<String>,
-                        Option<String>,
-                        bool,
-                        i32,
-                        Option<String>,
-                    ) = shopping_list_items::table
-                        .find(op.id)
-                        .select((
-                            shopping_list_items::item,
-                            shopping_list_items::amount,
-                            shopping_list_items::note,
-                            shopping_list_items::is_checked,
-                            shopping_list_items::sort_order,
-                            shopping_list_items::category_override,
-                        ))
-                        .first(conn)?;
-                    if let Some(item) = &fields.item {
-                        renamed.push(item.clone());
-                    }
-                    let item = fields.item.unwrap_or(item);
-                    diesel::update(shopping_list_items::table.find(op.id))
-                        .set((
-                            shopping_list_items::item.eq(&item),
-                            shopping_list_items::amount.eq(patch_text(fields.amount, amount)),
-                            shopping_list_items::note.eq(patch_text(fields.note, note)),
-                            shopping_list_items::is_checked
-                                .eq(fields.is_checked.unwrap_or(is_checked)),
-                            shopping_list_items::sort_order
-                                .eq(fields.sort_order.unwrap_or(sort_order)),
-                            shopping_list_items::category_override
-                                .eq(patch_text(fields.category_override, category_override)),
-                            shopping_list_items::updated_at.eq(now),
-                        ))
-                        .execute(conn)?;
-                    written.push((op.id, item));
-                    OpResult::Applied
-                }
-                OpKind::Delete => {
-                    if live {
-                        diesel::update(shopping_list_items::table.find(op.id))
-                            .set((
-                                shopping_list_items::deleted_at.eq(now),
-                                shopping_list_items::updated_at.eq(now),
-                            ))
-                            .execute(conn)?;
-                    }
-                    target.delete()
-                }
-            };
-            results.push(result);
-        }
-
-        // Queue the names this sync wrote, then store its items' categories
-        // (in that order; see `store_categories`), before reading changes.
-        crate::ingredient_names::enqueue_items(conn, renamed.iter().map(String::as_str))?;
-        let written: Vec<(Uuid, &str)> = written
-            .iter()
-            .map(|(id, item)| (*id, item.as_str()))
-            .collect();
-        store_categories(conn, &written)?;
+        let results = apply_ops(conn, user_id, request.ops, None)?.results;
 
         // After the writes, so they come back as changes now rather than on
         // the next sync. The write lock keeps anything else from committing
@@ -294,6 +195,160 @@ pub async fn sync_shopping_list(
     crate::ingredient_names::wake();
 
     Ok((StatusCode::OK, Json(response)))
+}
+
+/// What [`apply_ops`] did.
+pub(crate) struct Applied {
+    /// One per op, in order.
+    pub results: Vec<OpResult>,
+    /// The history entry recording the ops' changes, if any changed anything.
+    pub history_id: Option<Uuid>,
+}
+
+/// Apply `ops` in order and record what they changed as one history entry,
+/// marked as undoing `undoes` when it's an undo. Call inside `db::write`.
+pub(crate) fn apply_ops(
+    conn: &mut SqliteConnection,
+    user_id: Uuid,
+    ops: Vec<ShoppingListOp>,
+    undoes: Option<Uuid>,
+) -> QueryResult<Applied> {
+    let now = Utc::now();
+    let mut next_sort_order = shopping_list_items::table
+        .filter(shopping_list_items::user_id.eq(user_id))
+        .filter(shopping_list_items::deleted_at.is_null())
+        .select(diesel::dsl::max(shopping_list_items::sort_order))
+        .first::<Option<i32>>(conn)?
+        .unwrap_or(0)
+        + 1;
+    let mut results = Vec::with_capacity(ops.len());
+    // Names this sync wrote, queued for resolution below.
+    let mut renamed: Vec<String> = Vec::new();
+    // Items this sync wrote, whose categories are stored below.
+    let mut written: Vec<(Uuid, String)> = Vec::new();
+    let mut events: Vec<history::Event> = Vec::new();
+
+    for op in ops {
+        let row = history::load_item(conn, op.id)?;
+        let target = Target::of(row.as_ref().map(|row| (row.user_id, row.live)), user_id);
+        // The client's own row, and its fields if it's live.
+        let mine = row.filter(|_| matches!(target, Target::Mine { .. }));
+        let before = mine
+            .as_ref()
+            .filter(|row| row.live)
+            .map(|row| row.fields.clone());
+
+        let result = match (op.op, &before) {
+            (OpKind::Create, _) => match target.existing_create() {
+                Some(result) => result,
+                None => {
+                    let item = create(conn, user_id, op.id, op.fields, &mut next_sort_order)?;
+                    renamed.push(item.clone());
+                    written.push((op.id, item));
+                    OpResult::Applied
+                }
+            },
+            (OpKind::Update, None) => OpResult::Gone,
+            (OpKind::Update, Some(current)) => {
+                let item = update(conn, op.id, current, op.fields, now, &mut renamed)?;
+                written.push((op.id, item));
+                OpResult::Applied
+            }
+            (OpKind::Restore, _) => match &mine {
+                Some(row) => {
+                    if !row.live {
+                        diesel::update(shopping_list_items::table.find(op.id))
+                            .set(shopping_list_items::deleted_at.eq(None::<DateTime<Utc>>))
+                            .execute(conn)?;
+                    }
+                    let item = update(conn, op.id, &row.fields, op.fields, now, &mut renamed)?;
+                    written.push((op.id, item));
+                    OpResult::Applied
+                }
+                // Its create never arrived: the restore makes it, given a name.
+                None if target == Target::Missing && op.fields.item.is_some() => {
+                    let item = create(conn, user_id, op.id, op.fields, &mut next_sort_order)?;
+                    renamed.push(item.clone());
+                    written.push((op.id, item));
+                    OpResult::Applied
+                }
+                None => OpResult::Gone,
+            },
+            (OpKind::Delete, _) => {
+                if before.is_some() {
+                    diesel::update(shopping_list_items::table.find(op.id))
+                        .set((
+                            shopping_list_items::deleted_at.eq(now),
+                            shopping_list_items::updated_at.eq(now),
+                        ))
+                        .execute(conn)?;
+                }
+                target.delete()
+            }
+        };
+
+        if result == OpResult::Applied {
+            let after = history::load_item(conn, op.id)?
+                .filter(|row| row.live)
+                .map(|row| row.fields);
+            if after != before {
+                events.push(history::Event {
+                    item_id: op.id,
+                    op: op.op,
+                    before,
+                    after,
+                });
+            }
+        }
+        results.push(result);
+    }
+
+    // Queue the names this sync wrote, then store its items' categories
+    // (in that order; see `store_categories`), before reading changes.
+    crate::ingredient_names::enqueue_items(conn, renamed.iter().map(String::as_str))?;
+    let written: Vec<(Uuid, &str)> = written
+        .iter()
+        .map(|(id, item)| (*id, item.as_str()))
+        .collect();
+    store_categories(conn, &written)?;
+
+    let history_id = history::record(conn, user_id, now, &events, undoes)?;
+    Ok(Applied {
+        results,
+        history_id,
+    })
+}
+
+/// Set the fields `fields` names on a live item whose fields are `current`,
+/// and return its name. A new name is queued in `renamed`.
+fn update(
+    conn: &mut SqliteConnection,
+    id: Uuid,
+    current: &ItemFields,
+    fields: ShoppingListFields,
+    now: DateTime<Utc>,
+    renamed: &mut Vec<String>,
+) -> QueryResult<String> {
+    let current = current.clone();
+    if let Some(item) = &fields.item {
+        renamed.push(item.clone());
+    }
+    let item = fields.item.unwrap_or(current.item);
+    diesel::update(shopping_list_items::table.find(id))
+        .set((
+            shopping_list_items::item.eq(&item),
+            shopping_list_items::amount.eq(patch_text(fields.amount, current.amount)),
+            shopping_list_items::note.eq(patch_text(fields.note, current.note)),
+            shopping_list_items::is_checked.eq(fields.is_checked.unwrap_or(current.is_checked)),
+            shopping_list_items::sort_order.eq(fields.sort_order.unwrap_or(current.sort_order)),
+            shopping_list_items::category_override.eq(patch_text(
+                fields.category_override,
+                current.category_override,
+            )),
+            shopping_list_items::updated_at.eq(now),
+        ))
+        .execute(conn)?;
+    Ok(item)
 }
 
 /// Insert a new item, sorted last unless the op says where, and return its

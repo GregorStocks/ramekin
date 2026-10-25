@@ -21,9 +21,19 @@ pub struct VersionSummary {
     pub id: Uuid,
     pub title: String,
     pub version_source: String,
+    /// For a `normalize` version, the op ids it applied, in run order.
+    pub normalize_ops: Vec<String>,
     pub created_at: DateTime<Utc>,
     pub is_current: bool,
 }
+
+type VersionRow = (
+    Uuid,
+    String,
+    String,
+    Option<serde_json::Value>,
+    DateTime<Utc>,
+);
 
 /// Response for version list endpoint
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -70,13 +80,14 @@ pub async fn list_versions(
         };
 
         // Fetch all versions for this recipe, ordered by created_at descending (newest first)
-        let versions: Vec<(Uuid, String, String, DateTime<Utc>)> = recipe_versions::table
+        let versions: Vec<VersionRow> = recipe_versions::table
             .filter(recipe_versions::recipe_id.eq(id))
             .order(recipe_versions::created_at.desc())
             .select((
                 recipe_versions::id,
                 recipe_versions::title,
                 recipe_versions::version_source,
+                recipe_versions::normalize_ops,
                 recipe_versions::created_at,
             ))
             .load(conn)
@@ -88,13 +99,16 @@ pub async fn list_versions(
 
     let summaries: Vec<VersionSummary> = versions
         .into_iter()
-        .map(|(vid, title, version_source, created_at)| VersionSummary {
-            id: vid,
-            title,
-            version_source,
-            created_at,
-            is_current: current_version_id == Some(vid),
-        })
+        .map(
+            |(vid, title, version_source, normalize_ops, created_at)| VersionSummary {
+                id: vid,
+                title,
+                version_source,
+                normalize_ops: crate::normalize::version_op_ids(normalize_ops.as_ref()),
+                created_at,
+                is_current: current_version_id == Some(vid),
+            },
+        )
         .collect();
 
     Ok((

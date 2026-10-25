@@ -132,6 +132,24 @@ final class RecipeCacheStore {
         }
     }
 
+    /// Which of `ids` the cache holds for the account, or nil until a full
+    /// sync has completed (first launch, or after a schema bump), when a
+    /// missing recipe may just not be synced yet.
+    func existingRecipeIds(_ ids: [UUID], accountKey: String) async throws -> Set<UUID>? {
+        guard syncCursor(accountKey: accountKey) != nil else {
+            return nil
+        }
+        return try await backgroundContext.perform { [self] in
+            let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
+            request.predicate = NSPredicate(
+                format: "accountKey == %@ AND id IN %@",
+                accountKey,
+                ids as [NSUUID]
+            )
+            return Set(try backgroundContext.fetch(request).compactMap(\.id))
+        }
+    }
+
     /// Rows written under an older cache schema must never be served: Core
     /// Data's lightweight migration backfills columns the old schema lacked
     /// with defaults (e.g. an empty ingredient match text), so searching them

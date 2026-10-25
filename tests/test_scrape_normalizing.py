@@ -1,0 +1,226 @@
+"""End-to-end tests for the post-save ("normalizing") phase of scrape jobs.
+
+Once save_recipe runs, the job reports status "normalizing" with the recipe id
+so clients can show the recipe while the normalize ops finish. The ops run
+concurrently instead of one at a time, then apply_normalize saves their
+results as one "normalize" version.
+"""
+
+import json
+import os
+import time
+import uuid
+
+import requests
+
+from conftest import make_ingredient, wait_for_job_completion
+from ramekin_client.api import RecipesApi, ScrapeApi
+from ramekin_client.models import CreateRecipeRequest, UpdateRecipeRequest
+
+
+def unique(label: str) -> str:
+    # Letters only, so the token survives title normalization intact.
+    token = uuid.uuid4().hex[:8].translate(str.maketrans("0123456789", "ghijklmnop"))
+    return f"zq{token} {label}"
+
+
+def mock_get(path: str, **params) -> None:
+    port = os.environ["MOCK_OPENROUTER_PORT"]
+    requests.get(
+        f"http://localhost:{port}{path}", params=params, timeout=10
+    ).raise_for_status()
+
+
+def hold_description(marker: str, hold: bool) -> None:
+    mock_get("/test/description-hold", marker=marker, hold=str(hold).lower())
+
+
+def capture(server_url: str, token: str, title: str, ingredient: str) -> str:
+    recipe = {
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        "name": title,
+        "recipeIngredient": [f"1 cup {ingredient}", "2 cups water"],
+        "recipeInstructions": [{"@type": "HowToStep", "text": "Stir and serve."}],
+    }
+    html = (
+        "<html><head><script type='application/ld+json'>"
+        f"{json.dumps(recipe)}</script></head><body></body></html>"
+    )
+    response = requests.post(
+        f"{server_url}/api/scrape/capture",
+        json={
+            "html": html,
+            "source_url": f"https://www.seriouseats.com/{uuid.uuid4().hex}",
+        },
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=10,
+    )
+    response.raise_for_status()
+    return response.json()["id"]
+
+
+def wait_for(predicate, timeout: float = 15.0):
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        result = predicate()
+        if result:
+            return result
+        time.sleep(0.1)
+    raise TimeoutError("condition not met")
+
+
+def step_status(job, name: str) -> str:
+    return next(s.status for s in job.steps if s.name == name)
+
+
+def give_user_auto_tag(recipes_api: RecipesApi) -> None:
+    """Auto-tagging only applies tags the user already has; the mock suggests
+    'test-auto-tag'."""
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Setup Recipe for Tags",
+            ingredients=[make_ingredient(item="water")],
+            instructions="test instructions",
+            tags=["test-auto-tag"],
+        )
+    )
+
+
+def test_recipe_is_viewable_while_normalize_ops_run_concurrently(
+    authed_api_client, server_url
+):
+    client, _ = authed_api_client
+    scrape_api = ScrapeApi(client)
+    recipes_api = RecipesApi(client)
+    give_user_auto_tag(recipes_api)
+    marker = unique("soup")
+
+    # Hold the description call, the slowest AI step in production.
+    hold_description(marker, True)
+    try:
+        job_id = capture(
+            server_url, client.configuration.access_token, f"Viewable {marker}", "salt"
+        )
+        # Steps that don't depend on the description finish while it is
+        # still held: they no longer run one after another.
+        job = wait_for(
+            lambda: (
+                (j := scrape_api.get_scrape(job_id))
+                and all(
+                    step_status(j, s) == "completed"
+                    for s in (
+                        "resolve_ingredient_names",
+                        "normalize_title",
+                        "auto_tag",
+                    )
+                )
+                and j
+            )
+        )
+        assert job.status == "normalizing"
+        assert step_status(job, "generate_description") == "running"
+        assert step_status(job, "apply_normalize") == "pending"
+        assert job.recipe_id is not None
+        recipe = recipes_api.get_recipe(id=str(job.recipe_id))
+        assert recipe.title == f"Viewable {marker}"
+    finally:
+        hold_description(marker, False)
+
+    job = wait_for_job_completion(scrape_api, job_id)
+    assert job.status == "completed", job.error
+    recipe = recipes_api.get_recipe(id=str(job.recipe_id))
+    assert recipe.description == "A delicious test recipe."
+    assert "test-auto-tag" in recipe.tags
+    # One version for the scrape, one for every normalize op together.
+    assert recipe.version_source == "normalize"
+    assert recipe.normalize_ops == [
+        "normalize_title",
+        "generate_description",
+        "auto_tag",
+    ]
+    versions = recipes_api.list_versions(id=str(job.recipe_id)).versions
+    assert [v.version_source for v in versions] == ["normalize", "scrape"]
+
+
+def test_edit_during_normalizing_wins_over_ai(authed_api_client, server_url):
+    client, _ = authed_api_client
+    scrape_api = ScrapeApi(client)
+    recipes_api = RecipesApi(client)
+    give_user_auto_tag(recipes_api)
+    marker = unique("stew")
+
+    hold_description(marker, True)
+    try:
+        job_id = capture(
+            server_url, client.configuration.access_token, f"Edited {marker}", "salt"
+        )
+        job = wait_for(
+            lambda: (
+                (j := scrape_api.get_scrape(job_id))
+                and j.status == "normalizing"
+                and step_status(j, "normalize_title") == "completed"
+                and step_status(j, "auto_tag") == "completed"
+                and j
+            )
+        )
+        recipe_id = str(job.recipe_id)
+        current = recipes_api.get_recipe(id=recipe_id)
+        recipes_api.update_recipe(
+            id=recipe_id,
+            update_recipe_request=UpdateRecipeRequest(
+                expected_version_id=current.version_id,
+                title="My own title",
+            ),
+        )
+    finally:
+        hold_description(marker, False)
+
+    job = wait_for_job_completion(scrape_api, job_id)
+    # The edit made the AI write stale; it is skipped, not a failure.
+    assert job.status == "completed", job.error
+    step = next(s for s in job.steps if s.name == "apply_normalize")
+    assert step.status == "completed"
+    assert step.summary.startswith("skipped:"), step.summary
+    recipe = recipes_api.get_recipe(id=recipe_id)
+    assert recipe.title == "My own title"
+    assert recipe.description != "A delicious test recipe."
+    assert "test-auto-tag" not in recipe.tags
+
+
+def test_failure_lets_earlier_steps_finish_so_retry_resumes_correctly(
+    authed_api_client, server_url
+):
+    client, _ = authed_api_client
+    scrape_api = ScrapeApi(client)
+    give_user_auto_tag(RecipesApi(client))
+    marker = unique("chili")
+
+    # Auto-tag (later in canonical order) fails while the description
+    # (earlier) is still held. The description branch must still run: a retry
+    # resumes at auto_tag and treats everything before it as done.
+    hold_description(marker, True)
+    try:
+        job_id = capture(
+            server_url,
+            client.configuration.access_token,
+            f"Force Auto Tag Failure {marker}",
+            "salt",
+        )
+        wait_for(
+            lambda: (
+                step_status(scrape_api.get_scrape(job_id), "auto_tag") == "failed"
+                or None
+            )
+        )
+    finally:
+        hold_description(marker, False)
+
+    job = wait_for_job_completion(scrape_api, job_id)
+    assert job.status == "failed"
+    assert job.failed_at_step == "auto_tag"
+    # The recipe was saved before normalizing failed; clients can still open it.
+    assert job.recipe_id is not None
+    for name in ("normalize_title", "generate_description"):
+        assert step_status(job, name) == "completed", name
+    assert step_status(job, "apply_normalize") == "pending"

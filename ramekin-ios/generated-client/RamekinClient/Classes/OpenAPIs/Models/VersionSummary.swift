@@ -16,13 +16,16 @@ public struct VersionSummary: Codable, JSONEncodable, Hashable {
     public var createdAt: Date
     public var id: UUID
     public var isCurrent: Bool
+    /** For a `normalize` version, the op ids it applied, in run order. */
+    public var normalizeOps: [String]
     public var title: String
     public var versionSource: String
 
-    public init(createdAt: Date, id: UUID, isCurrent: Bool, title: String, versionSource: String) {
+    public init(createdAt: Date, id: UUID, isCurrent: Bool, normalizeOps: [String], title: String, versionSource: String) {
         self.createdAt = createdAt
         self.id = id
         self.isCurrent = isCurrent
+        self.normalizeOps = normalizeOps
         self.title = title
         self.versionSource = versionSource
     }
@@ -31,6 +34,7 @@ public struct VersionSummary: Codable, JSONEncodable, Hashable {
         case createdAt = "created_at"
         case id
         case isCurrent = "is_current"
+        case normalizeOps = "normalize_ops"
         case title
         case versionSource = "version_source"
     }
@@ -42,6 +46,7 @@ public struct VersionSummary: Codable, JSONEncodable, Hashable {
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(id, forKey: .id)
         try container.encode(isCurrent, forKey: .isCurrent)
+        try container.encode(normalizeOps, forKey: .normalizeOps)
         try container.encode(title, forKey: .title)
         try container.encode(versionSource, forKey: .versionSource)
     }

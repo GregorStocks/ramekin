@@ -60,7 +60,7 @@ require() {
     command -v "$1" >/dev/null 2>&1 || MISSING+=("$1 ($2)")
 }
 
-SWIFTLINT_LINUX="curl -fsSL https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip -o /tmp/swiftlint.zip && unzip -o /tmp/swiftlint.zip -d /tmp/swiftlint && install -D -m 0755 /tmp/swiftlint/swiftlint ~/.local/bin/swiftlint"
+SWIFTLINT_LINUX="curl -fsSL https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip -o /tmp/swiftlint.zip && unzip -o /tmp/swiftlint.zip -d /tmp/swiftlint && install -D -m 0755 /tmp/swiftlint/swiftlint-static ~/.local/bin/swiftlint"
 
 # uv is checked in every mode that needs it: `make venv` runs --venv before
 # building the virtualenv, since the venv recipe itself needs uv.

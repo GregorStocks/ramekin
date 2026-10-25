@@ -9,6 +9,7 @@ mod files;
 mod ids;
 mod ingredient_names;
 mod models;
+mod normalize;
 mod photos;
 mod raw_sql;
 mod recipes;
@@ -300,6 +301,7 @@ async fn main() {
         .nest("/api/scrape", api::scrape::router())
         .nest("/api/tags", api::tags::router())
         .nest("/api/meal-plans", api::meal_plans::router())
+        .nest("/api/shopping-list", api::shopping_list::router())
         .nest("/api/sync", api::sync::router())
         .nest("/api/users", api::users::router())
         .route("/api/enrich", post(api::enrich::enrich_recipe))

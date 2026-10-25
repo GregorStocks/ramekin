@@ -275,19 +275,19 @@ final class RecipeDetailViewModelTests: XCTestCase {
         XCTAssertEqual(loadCount, 1)
         XCTAssertEqual(viewModel.recipe?.title, "Reloaded")
         XCTAssertFalse(viewModel.isGeneratingDescription)
-        XCTAssertNil(viewModel.autoEnrichError)
+        XCTAssertNil(viewModel.aiActionError)
     }
 }
 
 final class RecipeDetailViewModelRescrapeTests: XCTestCase {
     @MainActor
-    func testRescrapeShowsRecipeWhileEnrichingAndReloadsWhenDone() async {
+    func testRescrapeShowsRecipeWhileNormalizingAndReloadsWhenDone() async {
         let recipeId = UUID()
         let jobId = UUID()
-        var statuses = ["parsing", "enriching", "enriching", "completed"]
+        var statuses = ["parsing", "normalizing", "normalizing", "completed"]
         var loadCount = 0
         var viewModel: RecipeDetailViewModel!
-        var stateWhileEnriching: (rescraping: Bool, finishing: Bool)?
+        var stateWhileNormalizing: (rescraping: Bool, finishing: Bool)?
 
         viewModel = RecipeDetailViewModel(
             recipeId: recipeId,
@@ -300,8 +300,8 @@ final class RecipeDetailViewModelRescrapeTests: XCTestCase {
                     XCTAssertEqual(id, jobId)
                     let status = statuses.removeFirst()
                     if statuses.count == 1 {
-                        // Second "enriching" poll: the first one showed the recipe.
-                        stateWhileEnriching = (viewModel.isRescraping, viewModel.isFinishingRescrapeEnrichment)
+                        // Second "normalizing" poll: the first one showed the recipe.
+                        stateWhileNormalizing = (viewModel.isRescraping, viewModel.isFinishingRescrapeNormalize)
                     }
                     return makeScrapeJob(id: jobId, status: status, recipeId: recipeId)
                 },
@@ -312,20 +312,20 @@ final class RecipeDetailViewModelRescrapeTests: XCTestCase {
 
         await viewModel.rescrapeFromSource()
 
-        XCTAssertEqual(stateWhileEnriching?.rescraping, false)
-        XCTAssertEqual(stateWhileEnriching?.finishing, true)
+        XCTAssertEqual(stateWhileNormalizing?.rescraping, false)
+        XCTAssertEqual(stateWhileNormalizing?.finishing, true)
         XCTAssertEqual(loadCount, 2)
         XCTAssertEqual(viewModel.recipe?.title, "Load 2")
         XCTAssertFalse(viewModel.isRescraping)
-        XCTAssertFalse(viewModel.isFinishingRescrapeEnrichment)
+        XCTAssertFalse(viewModel.isFinishingRescrapeNormalize)
         XCTAssertNil(viewModel.rescrapeError)
     }
 
     @MainActor
-    func testRescrapeFailureDuringEnrichmentKeepsSavedRecipe() async {
+    func testRescrapeFailureWhileNormalizingKeepsSavedRecipe() async {
         let recipeId = UUID()
         let jobId = UUID()
-        var statuses = ["enriching", "failed"]
+        var statuses = ["normalizing", "failed"]
         var loadCount = 0
 
         let viewModel = RecipeDetailViewModel(
@@ -356,7 +356,7 @@ final class RecipeDetailViewModelRescrapeTests: XCTestCase {
         XCTAssertEqual(viewModel.recipe?.title, "Rescraped")
         XCTAssertEqual(viewModel.rescrapeError, "AI call failed")
         XCTAssertFalse(viewModel.isRescraping)
-        XCTAssertFalse(viewModel.isFinishingRescrapeEnrichment)
+        XCTAssertFalse(viewModel.isFinishingRescrapeNormalize)
     }
 }
 
@@ -429,6 +429,7 @@ private func makeRecipe(
         id: id,
         ingredients: [],
         instructions: "Mix.",
+        normalizeOps: [],
         notes: nil,
         nutritionalInfo: nil,
         photoIds: [],
@@ -451,6 +452,7 @@ private func makeVersion(isCurrent: Bool) -> VersionSummary {
         createdAt: Date(),
         id: UUID(),
         isCurrent: isCurrent,
+        normalizeOps: [],
         title: isCurrent ? "Current" : "Older",
         versionSource: "user"
     )

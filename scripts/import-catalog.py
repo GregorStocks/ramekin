@@ -307,7 +307,7 @@ def piece_portions(portions: list[dict]) -> dict[str, float]:
     return pieces
 
 
-def default_portion(pieces: dict[str, float]) -> str | None:
+def default_portion(pieces: dict[str, float], description: str) -> str | None:
     """The piece a bare count ("3 carrots") most likely means. Parts of a
     piece (a slice, a wedge) never are."""
     whole = [key for key in pieces if key.split(" ")[0] not in PARTIAL_PIECES]
@@ -319,6 +319,10 @@ def default_portion(pieces: dict[str, float]) -> str | None:
         return sized[0]
     if len(whole) == 1:
         return whole[0]
+    # The piece the food is named for: "12 dinner rolls" are "roll", not "each".
+    named = singular(normalize(description).split(",")[0].split(" ")[-1])
+    if named in whole:
+        return named
     return None
 
 
@@ -388,7 +392,7 @@ def build_data(foods: list[dict], nutrients: list[dict], portions: list[dict]) -
             "kcal_per_100g": energy.get(food_id),
             "grams_per_cup": densities.get(food_id),
             "portions": dict(sorted(pieces[food_id].items())),
-            "default_portion": default_portion(pieces[food_id]),
+            "default_portion": default_portion(pieces[food_id], description),
         }
         for food_id, description in descriptions.items()
     ]

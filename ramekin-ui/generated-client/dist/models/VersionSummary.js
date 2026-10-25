@@ -21,6 +21,8 @@ export function instanceOfVersionSummary(value) {
         return false;
     if (!('isCurrent' in value) || value['isCurrent'] === undefined)
         return false;
+    if (!('normalizeOps' in value) || value['normalizeOps'] === undefined)
+        return false;
     if (!('title' in value) || value['title'] === undefined)
         return false;
     if (!('versionSource' in value) || value['versionSource'] === undefined)
@@ -38,6 +40,7 @@ export function VersionSummaryFromJSONTyped(json, ignoreDiscriminator) {
         'createdAt': (new Date(json['created_at'])),
         'id': json['id'],
         'isCurrent': json['is_current'],
+        'normalizeOps': json['normalize_ops'],
         'title': json['title'],
         'versionSource': json['version_source'],
     };
@@ -53,6 +56,7 @@ export function VersionSummaryToJSONTyped(value, ignoreDiscriminator = false) {
         'created_at': value['createdAt'].toISOString(),
         'id': value['id'],
         'is_current': value['isCurrent'],
+        'normalize_ops': value['normalizeOps'],
         'title': value['title'],
         'version_source': value['versionSource'],
     };

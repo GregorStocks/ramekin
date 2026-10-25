@@ -1,0 +1,20 @@
+{
+  "title": "Ingredient parsing: drive the burndown from the production DB, listing specific misses and proposals before changing anything",
+  "description": "The parsing/catalog burndown so far has been measured mostly against the committed corpora (pipeline fixtures, Paprika fixtures, snapshots) via `make ingredient-catalog-audit`, with prod as an optional PROD_RECIPES= input (see the history of the retired p3-nutrition-remaining-count-units). \
+The owner still regularly sees unmatched ingredients in real use, so fixture counts aren't a trustworthy measure of what matters. \
+Change the process: (1) Start from the current production recipes (current versions, not deleted) and learned names: a repeatable, documented way to get them locally (a server export endpoint or a script the owner runs), feeding the existing --prod-recipes / --learned inputs. (2) Produce a report of every prod ingredient line that fails, by failure: does not parse, parses but the name doesn't resolve to a catalog food, resolves but can't be weighed, no shopping category. \
+List the actual lines and the recipes they come from, grouped by cause, with counts. (3) For each group, propose a specific fix (parser rule, curated alias, cited weight, or leave alone) and stop: the owner reviews the list and approves which to do before any code or catalog change. (4) Check past work against it: for the fixes already landed, which prod lines did they actually fix, and which prod failures look like they should have been fixed but weren't. (5) Once approved fixes land, prod failure counts by group are the headline metric in PRs and issues, with fixture counts secondary; update doc/finding-ingredient-issues.md and the audit output (data/ingredient-catalog-audit.md) to lead with prod. \
+Re-rank the p3-nutrition-* weight issues split out of it (ginger pieces, size words, informal measures, containers, sub-recipe references, amounts without a unit, bare counts of small foods) against the prod report rather than the fixture dump. \
+Prod recipe text is the owner's data: keep the raw export out of git (logs/ or tmp/), and commit only aggregate counts or lines the owner OKs.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "catalog",
+    "nutrition",
+  ],
+  "blocked": "Needs the owner to provide or approve a way to export current production recipes and learned names, and to review the per-ingredient report and proposed fixes before any parser or catalog changes are made.",
+  "created_at": "2026-10-24T15:46:03-07:00",
+  "updated_at": "2026-10-24T15:46:03-07:00",
+}

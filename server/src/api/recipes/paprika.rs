@@ -61,7 +61,7 @@ struct PaprikaPhoto {
 ///
 /// Read-time derived grams are left out: they're approximate, and Paprika
 /// would store them as source text.
-fn format_ingredients_text(ingredients: &[Ingredient]) -> String {
+pub(crate) fn format_ingredients_text(ingredients: &[Ingredient]) -> String {
     let mut lines = Vec::new();
     let mut current_section: Option<&str> = None;
     for ingredient in ingredients {

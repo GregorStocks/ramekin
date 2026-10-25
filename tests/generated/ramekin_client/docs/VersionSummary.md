@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | 
 **id** | **UUID** |  | 
 **is_current** | **bool** |  | 
+**normalize_ops** | **List[str]** | For a &#x60;normalize&#x60; version, the op ids it applied, in run order. | 
 **title** | **str** |  | 
 **version_source** | **str** |  | 
 

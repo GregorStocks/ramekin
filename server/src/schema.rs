@@ -131,6 +131,7 @@ diesel::table! {
         version_source -> Text,
         created_at -> TimestamptzSqlite,
         change_seq -> BigInt,
+        normalize_ops -> Nullable<Json>,
     }
 }
 
@@ -169,6 +170,7 @@ diesel::table! {
         current_step_started_at -> Nullable<TimestamptzSqlite>,
         expected_version_id -> Nullable<UuidText>,
         idempotency_key -> Nullable<Text>,
+        normalize_ops -> Nullable<Json>,
     }
 }
 
@@ -183,6 +185,33 @@ diesel::table! {
         expires_at -> TimestamptzSqlite,
         created_at -> TimestamptzSqlite,
         token_type -> Text,
+    }
+}
+
+diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
+    shopping_list_history (id) {
+        id -> UuidText,
+        user_id -> UuidText,
+        created_at -> TimestamptzSqlite,
+        undoes_id -> Nullable<UuidText>,
+        undone_by_id -> Nullable<UuidText>,
+    }
+}
+
+diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
+    shopping_list_history_events (history_id, position) {
+        history_id -> UuidText,
+        position -> Integer,
+        item_id -> UuidText,
+        op -> Text,
+        before -> Nullable<Json>,
+        after -> Nullable<Json>,
     }
 }
 
@@ -282,6 +311,9 @@ diesel::joinable!(recipes -> users (user_id));
 diesel::joinable!(scrape_jobs -> recipe_versions (expected_version_id));
 diesel::joinable!(scrape_jobs -> users (user_id));
 diesel::joinable!(sessions -> users (user_id));
+diesel::joinable!(shopping_list_history -> users (user_id));
+diesel::joinable!(shopping_list_history_events -> shopping_list_history (history_id));
+diesel::joinable!(shopping_list_history_events -> shopping_list_items (item_id));
 diesel::joinable!(shopping_list_items -> recipes (source_recipe_id));
 diesel::joinable!(shopping_list_items -> users (user_id));
 diesel::joinable!(step_outputs -> scrape_jobs (scrape_job_id));
@@ -299,6 +331,8 @@ diesel::allow_tables_to_appear_in_same_query!(
     recipes,
     scrape_jobs,
     sessions,
+    shopping_list_history,
+    shopping_list_history_events,
     shopping_list_items,
     step_outputs,
     sync_clock,

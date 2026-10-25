@@ -34,7 +34,7 @@ pub const DEFAULT_REQUEST_TIMEOUT_SECS: u64 = 30;
 pub const INGREDIENT_TIMEOUT_SECS: u64 = 120;
 /// The least request timeout for extraction calls, which write out a whole
 /// recipe: 10-20 s for a long one. Text import waits on it and then on the
-/// enrichments in the request, so iOS gives that request 180 s and the web
+/// normalize ops in the request, so iOS gives that request 180 s and the web
 /// client sets no timeout.
 pub const EXTRACTION_TIMEOUT_SECS: u64 = 60;
 /// The least request timeout for custom enrich, which also writes out a whole

@@ -1010,11 +1010,21 @@ pub fn grams_per_piece(entry: &Entry, unit: Option<&str>) -> Option<f64> {
     {
         return Some(grams);
     }
+    // A thick or thin slice of a food with only plain slices is a slice.
+    if let Some(base) = ["thick", "thin"]
+        .iter()
+        .find_map(|thickness| key.strip_suffix(thickness)?.strip_suffix(' '))
+    {
+        return portions.get(base).copied();
+    }
     if SIZES.contains(&key.as_str()) {
         let suffix = format!(" {key}");
+        // A leaf is part of a head too: "1 medium cabbage" is the head, not
+        // "leaf medium". (A bare count of a leafy herb can still mean leaves,
+        // so the importer's default pieces don't treat it as a part.)
         let mut sized = portions.iter().filter(|(piece, _)| {
-            piece.ends_with(&suffix)
-                && !PARTIAL_PIECES.contains(&piece.split(' ').next().unwrap_or_default())
+            let first = piece.split(' ').next().unwrap_or_default();
+            piece.ends_with(&suffix) && !PARTIAL_PIECES.contains(&first) && first != "leaf"
         });
         return match (sized.next(), sized.next()) {
             (Some((_, &grams)), None) => Some(grams),

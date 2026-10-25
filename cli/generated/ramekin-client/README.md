@@ -38,6 +38,11 @@ Class | Method | HTTP request | Description
 *IngredientNamesApi* | [**get_ingredient_names_status**](docs/IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
 *IngredientNamesApi* | [**retry_ingredient_names**](docs/IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
 *MealPlansApi* | [**list_meal_plans**](docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
+*NormalizeApi* | [**accept_normalize_proposal**](docs/NormalizeApi.md#accept_normalize_proposal) | **POST** /api/recipes/{id}/normalize/{job_id}/accept | 
+*NormalizeApi* | [**get_normalize_proposal**](docs/NormalizeApi.md#get_normalize_proposal) | **GET** /api/recipes/{id}/normalize/{job_id} | 
+*NormalizeApi* | [**list_normalize_ops**](docs/NormalizeApi.md#list_normalize_ops) | **GET** /api/recipes/normalize-ops | 
+*NormalizeApi* | [**normalize_recipe**](docs/NormalizeApi.md#normalize_recipe) | **POST** /api/recipes/{id}/normalize | 
+*NormalizeApi* | [**normalize_recipes**](docs/NormalizeApi.md#normalize_recipes) | **POST** /api/recipes/normalize | 
 *PhotosApi* | [**get_photo**](docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -61,6 +66,8 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**get_scrape**](docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**get_step_output**](docs/ScrapeApi.md#get_step_output) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeApi* | [**retry_scrape**](docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
+*ShoppingListApi* | [**list_shopping_list_history**](docs/ShoppingListApi.md#list_shopping_list_history) | **GET** /api/shopping-list/history | 
+*ShoppingListApi* | [**undo_shopping_list_change**](docs/ShoppingListApi.md#undo_shopping_list_change) | **POST** /api/shopping-list/history/{id}/undo | 
 *SyncApi* | [**sync_meal_plans**](docs/SyncApi.md#sync_meal_plans) | **POST** /api/sync/meal-plans | 
 *SyncApi* | [**sync_recipes**](docs/SyncApi.md#sync_recipes) | **GET** /api/sync/recipes | 
 *SyncApi* | [**sync_shopping_list**](docs/SyncApi.md#sync_shopping_list) | **POST** /api/sync/shopping-list | 
@@ -77,7 +84,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AcceptNormalizeResponse](docs/AcceptNormalizeResponse.md)
  - [BookmarkletTokenResponse](docs/BookmarkletTokenResponse.md)
+ - [BulkNormalizeRequest](docs/BulkNormalizeRequest.md)
+ - [BulkNormalizeResponse](docs/BulkNormalizeResponse.md)
+ - [BulkNormalizeResult](docs/BulkNormalizeResult.md)
  - [CalorieEstimateResponse](docs/CalorieEstimateResponse.md)
  - [CalorieLine](docs/CalorieLine.md)
  - [CalorieRange](docs/CalorieRange.md)
@@ -122,7 +133,14 @@ Class | Method | HTTP request | Description
  - [MealPlanOp](docs/MealPlanOp.md)
  - [MealType](docs/MealType.md)
  - [Measurement](docs/Measurement.md)
+ - [NormalizeJobResponse](docs/NormalizeJobResponse.md)
+ - [NormalizeOpGroupResponse](docs/NormalizeOpGroupResponse.md)
+ - [NormalizeOpInfo](docs/NormalizeOpInfo.md)
+ - [NormalizeOpsResponse](docs/NormalizeOpsResponse.md)
+ - [NormalizeProposalResponse](docs/NormalizeProposalResponse.md)
+ - [NormalizeRequest](docs/NormalizeRequest.md)
  - [NormalizeTitleResponse](docs/NormalizeTitleResponse.md)
+ - [NormalizedRecipe](docs/NormalizedRecipe.md)
  - [OpKind](docs/OpKind.md)
  - [OpResult](docs/OpResult.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
@@ -139,6 +157,8 @@ Class | Method | HTTP request | Description
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)
  - [ShoppingListFields](docs/ShoppingListFields.md)
+ - [ShoppingListHistoryEntry](docs/ShoppingListHistoryEntry.md)
+ - [ShoppingListHistoryResponse](docs/ShoppingListHistoryResponse.md)
  - [ShoppingListOp](docs/ShoppingListOp.md)
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)

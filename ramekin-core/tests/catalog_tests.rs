@@ -1137,8 +1137,9 @@ fn name_specific_pieces_replace_the_foods() {
         Resolution::Entry { entry, .. } => grams_per_piece(entry, unit),
         other => panic!("{item:?} did not resolve: {other:?}"),
     };
-    // Generic French bread has a 139 g slice; a baguette's isn't known.
-    assert_eq!(piece("crusty bread", Some("slice")), Some(139.0));
+    // Generic French bread has FNDDS's 64 g slice (not SR's 139 g one); a
+    // baguette's isn't known.
+    assert_eq!(piece("crusty bread", Some("slice")), Some(64.0));
     assert_eq!(piece("baguette", Some("slices")), None);
     // A can of corn is canned corn's, not raw corn's.
     assert_eq!(piece("canned corn", Some("can")), Some(432.0));

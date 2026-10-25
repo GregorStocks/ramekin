@@ -13,7 +13,11 @@
 """  # noqa: E501
 
 # import models into model package
+from ramekin_client.models.accept_normalize_response import AcceptNormalizeResponse
 from ramekin_client.models.bookmarklet_token_response import BookmarkletTokenResponse
+from ramekin_client.models.bulk_normalize_request import BulkNormalizeRequest
+from ramekin_client.models.bulk_normalize_response import BulkNormalizeResponse
+from ramekin_client.models.bulk_normalize_result import BulkNormalizeResult
 from ramekin_client.models.calorie_estimate_response import CalorieEstimateResponse
 from ramekin_client.models.calorie_line import CalorieLine
 from ramekin_client.models.calorie_range import CalorieRange
@@ -58,7 +62,14 @@ from ramekin_client.models.meal_plan_list_response import MealPlanListResponse
 from ramekin_client.models.meal_plan_op import MealPlanOp
 from ramekin_client.models.meal_type import MealType
 from ramekin_client.models.measurement import Measurement
+from ramekin_client.models.normalize_job_response import NormalizeJobResponse
+from ramekin_client.models.normalize_op_group_response import NormalizeOpGroupResponse
+from ramekin_client.models.normalize_op_info import NormalizeOpInfo
+from ramekin_client.models.normalize_ops_response import NormalizeOpsResponse
+from ramekin_client.models.normalize_proposal_response import NormalizeProposalResponse
+from ramekin_client.models.normalize_request import NormalizeRequest
 from ramekin_client.models.normalize_title_response import NormalizeTitleResponse
+from ramekin_client.models.normalized_recipe import NormalizedRecipe
 from ramekin_client.models.op_kind import OpKind
 from ramekin_client.models.op_result import OpResult
 from ramekin_client.models.pagination_metadata import PaginationMetadata
@@ -75,6 +86,8 @@ from ramekin_client.models.rescrape_response import RescrapeResponse
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse
 from ramekin_client.models.shopping_list_fields import ShoppingListFields
+from ramekin_client.models.shopping_list_history_entry import ShoppingListHistoryEntry
+from ramekin_client.models.shopping_list_history_response import ShoppingListHistoryResponse
 from ramekin_client.models.shopping_list_op import ShoppingListOp
 from ramekin_client.models.signup_request import SignupRequest
 from ramekin_client.models.signup_response import SignupResponse

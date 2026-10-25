@@ -101,7 +101,8 @@ enum MealPlanSyncSupport {
                 }
             case .pendingDelete:
                 kind = .delete
-            case .synced:
+            case .synced, .pendingRestore:
+                // Meal plans are never restored.
                 continue
             }
             var operation: [String: Any] = ["op": kind.rawValue, "id": id.uuidString]

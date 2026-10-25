@@ -125,6 +125,7 @@ pub async fn create_recipe(
                 nutritional_info: request.content.nutritional_info.as_deref(),
                 notes: request.content.notes.as_deref(),
                 version_source: "user",
+                normalize_ops: None,
             };
 
             create_new_version_cas(

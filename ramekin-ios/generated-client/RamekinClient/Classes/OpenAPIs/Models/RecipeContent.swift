@@ -10,7 +10,7 @@ import Foundation
 import AnyCodable
 #endif
 
-/** Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest. */
+/** Core recipe content - all fields AI ops can change. Used for: Enrich API request/response, base for CreateRecipeRequest. */
 public struct RecipeContent: Codable, JSONEncodable, Hashable {
 
     public var cookTime: String?

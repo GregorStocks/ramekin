@@ -1,0 +1,25 @@
+{
+  "title": "Normalize: one 'Re-normalize…' sheet on web and iOS that asks which operations to run",
+  "description": "Normalize-1 landed the op registry and its endpoints, with end-to-end tests: GET /api/recipes/normalize-ops (optionally ?recipe_id= for per-recipe availability and reasons), POST /api/recipes/{id}/normalize {ops} and the bulk POST /api/recipes/normalize {recipe_ids, ops}, which start jobs that propose a version without saving it; GET /api/recipes/{id}/normalize/{job_id} returns the base and proposed recipe; POST /api/recipes/{id}/normalize/{job_id}/accept saves the proposal as one 'normalize' version (409 if the recipe changed since). \
+Progress is the job's steps via GET /api/scrape/{id}. \
+Neither client uses them yet (they are 'neither' exceptions in api/client-parity-exceptions.json5; drop those). \
+Replace the per-operation menu items (iOS RecipeDetailView: Enrich with AI, Auto-Rename, Generate Description, Rescrape from Source; web ViewRecipePage and the CookbookBulkToolbar bulk actions; web Settings 'Re-parse recipes') with one 'Re-normalize…' action that opens a sheet listing the ops from GET normalize-ops, grouped as Source (Re-fetch from source, Re-extract from saved source) and Normalize (title, description, tags, house style when it lands). \
+Behavior: defaults to the ops with default_on_import; checking Re-fetch checks and locks Re-extract (refetch implies reextract); ops unavailable for the recipe are disabled with unavailable_reason. \
+The owner decided source ops simply replace hand edits: there is no hand-edit warning, the before/after preview is the warning. \
+Progress shows per op from the job's steps; when the job completes the client shows the base vs proposed diff (reuse the version compare views) with Accept and Discard; Accept calls the accept endpoint and reloads. \
+The same sheet works on a multi-selection in the web cookbook (and iOS if it gets bulk selection) via the bulk endpoint; decide how bulk previews are reviewed (e.g. accept all, or step through). \
+Once both clients use the new endpoints, delete the old ones and their tests: POST /api/recipes/{id}/normalize-title, /generate-description, /rescrape, /rescrape-photo (unless photo ops join the registry), POST /api/enrich (tag suggestions; auto_tag replaces it) and POST /api/recipes/reparse-ingredients, plus EnrichPreviewModal/EnrichPreviewSheet if nothing else uses them. \
+'Customize with AI' (customize-1) stays a separate action since it takes free text. \
+'Generate AI photo' stays its own menu item unless photo ops join the registry. \
+Both clients; no data/ diffs expected.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "web",
+    "ios",
+    "ai",
+  ],
+  "created_at": "2026-10-24T15:46:03-07:00",
+  "updated_at": "2026-10-24T19:20:00-07:00",
+}

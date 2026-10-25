@@ -775,7 +775,19 @@ fn unit_phrase_size(c: &mut Cursor) -> Option<String> {
 
 /// Mass units a package or noted weight may use.
 const PACKAGE_MASSES: &[&str] = &[
-    "ounce", "ounces", "oz", "pound", "pounds", "lb", "lbs", "gram", "grams", "g",
+    "ounce",
+    "ounces",
+    "oz",
+    "pound",
+    "pounds",
+    "lb",
+    "lbs",
+    "gram",
+    "grams",
+    "g",
+    "kilogram",
+    "kilograms",
+    "kg",
 ];
 
 /// Containers whose weight a recipe may state ("15-ounce can").
@@ -792,6 +804,8 @@ pub(super) const PACKAGE_WORDS: &[&str] = &[
     "bottle",
     "packet",
     "tub",
+    "envelope",
+    "pkg",
 ];
 
 /// Pieces a recipe may size by weight or length ("2-pound head", "4-ounce
@@ -805,11 +819,17 @@ pub(super) const SIZED_PIECES: &[&str] = &[
 const HEDGES: &[&str] = &["about", "approximately", "approx", "roughly", "around"];
 
 pub(super) fn is_package_word(word: &str) -> bool {
+    is_one_of(word, PACKAGE_WORDS)
+}
+
+/// A word in `words`, or its plural ("cans", "bunches").
+fn is_one_of(word: &str, words: &[&str]) -> bool {
     let word = word.to_lowercase();
-    PACKAGE_WORDS.contains(&word.as_str())
-        || word
-            .strip_suffix('s')
-            .is_some_and(|singular| PACKAGE_WORDS.contains(&singular))
+    words.contains(&word.as_str())
+        || [word.strip_suffix('s'), word.strip_suffix("es")]
+            .into_iter()
+            .flatten()
+            .any(|singular| words.contains(&singular))
 }
 
 /// Unicode fractions and dashes in ASCII, and decimal commas ("1,5",
@@ -904,18 +924,33 @@ fn weight(c: &mut Cursor, masses: &[&str]) -> Option<(Range, String, bool)> {
     Some((amount, mass.lower(), dash))
 }
 
-/// Read a container that states its weight: "15-ounce can", "(28-oz.)
-/// can", "14 1/2-ounce can", "12- to 18-ounce package", "400g cans".
-/// Returns the weight of one and its mass unit.
+/// Read a container or piece that states its weight: "15-ounce can",
+/// "(28-oz.) can", "14 1/2-ounce can", "12- to 18-ounce package", "400g
+/// cans", "8-ounce wheel", "14-ounce each cans". Returns the weight of one
+/// and its mass unit.
 pub(super) fn read_package(s: &str) -> Option<(Range, String)> {
+    read_weighed_piece(s, true)
+}
+
+/// Read a weight left at the front of an item, sizing one of a line's count:
+/// a weighed container or piece ("4-ounce balls"), or the weight alone
+/// ("15-ounce", "3.4 oz").
+pub(super) fn read_leading_weight(s: &str) -> Option<(Range, String)> {
+    read_weighed_piece(s, false)
+}
+
+fn read_weighed_piece(s: &str, noun_required: bool) -> Option<(Range, String)> {
     let s = ascii_amounts(s);
     let mut c = Cursor::size(&s);
     c.take_if(|t| t.kind == Kind::Open);
     let (amount, mass, _) = weight(&mut c, PACKAGE_MASSES)?;
     c.take_if(|t| t.kind == Kind::Close);
     c.take_if(|t| t.kind == Kind::Dash);
-    c.take_if(|t| t.kind == Kind::Word && is_package_word(t.text))?;
-    c.at_end().then_some((amount, mass))
+    c.take_word(&["each"]);
+    let noun = c.take_if(|t| {
+        t.kind == Kind::Word && (is_package_word(t.text) || is_one_of(t.text, SIZED_PIECES))
+    });
+    (c.at_end() && (noun.is_some() || !noun_required)).then_some((amount, mass))
 }
 
 /// Read the size of a piece cut to a size in inches: "3-inch piece", "3-4
@@ -993,8 +1028,7 @@ pub(super) fn read_noted_weight(part: &str) -> Option<NotedWeight> {
     if !hedged {
         c.pos = 0;
     }
-    let masses = [PACKAGE_MASSES, &["kilogram", "kilograms", "kg"]].concat();
-    let (amount, mass, dash) = weight(&mut c, &masses)?;
+    let (amount, mass, dash) = weight(&mut c, PACKAGE_MASSES)?;
     // "(1.1 k)": a conversion in parentheses.
     if c.peek(0).is_some_and(|t| t.kind == Kind::Open) {
         let mut probe = c.clone();
@@ -1222,6 +1256,32 @@ mod tests {
             ))
         );
         assert_eq!(read_package("15-ounce cans of beans"), None);
+        assert_eq!(
+            read_package("8-ounce wheel"),
+            Some((Range::exact(8.0), "ounce".to_string()))
+        );
+        assert_eq!(
+            read_package("1-ounce envelope"),
+            Some((Range::exact(1.0), "ounce".to_string()))
+        );
+        assert_eq!(
+            read_package("14-ounce each cans"),
+            Some((Range::exact(14.0), "ounce".to_string()))
+        );
+        assert_eq!(read_package("15-ounce"), None);
+        assert_eq!(
+            read_leading_weight("15-ounce"),
+            Some((Range::exact(15.0), "ounce".to_string()))
+        );
+        assert_eq!(
+            read_leading_weight("5- to 5 1/2-ounce log"),
+            Some((Range { min: 5.0, max: 5.5 }, "ounce".to_string()))
+        );
+        assert_eq!(
+            read_leading_weight("1-kg bags"),
+            Some((Range::exact(1.0), "kg".to_string()))
+        );
+        assert_eq!(read_leading_weight("2-inch piece"), None);
         assert_eq!(
             read_inch_piece("3-4 inch chunks"),
             Some(Range { min: 3.0, max: 4.0 })

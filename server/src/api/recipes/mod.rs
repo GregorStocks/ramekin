@@ -6,6 +6,7 @@ pub mod generate_description;
 pub mod generate_photo;
 pub mod get;
 pub mod list;
+pub mod normalize;
 pub mod normalize_title;
 pub(crate) mod paprika;
 pub(crate) mod read;
@@ -30,6 +31,8 @@ pub fn router() -> Router<AppState> {
             "/estimate-calories",
             post(estimate_calories::estimate_calories),
         )
+        .route("/normalize-ops", get(normalize::list_normalize_ops))
+        .route("/normalize", post(normalize::normalize_recipes))
         .route(
             "/reparse-ingredients",
             post(reparse_ingredients::reparse_all_ingredients),
@@ -53,6 +56,15 @@ pub fn router() -> Router<AppState> {
             "/{id}/generate-description",
             post(generate_description::generate_description),
         )
+        .route("/{id}/normalize", post(normalize::normalize_recipe))
+        .route(
+            "/{id}/normalize/{job_id}",
+            get(normalize::get_normalize_proposal),
+        )
+        .route(
+            "/{id}/normalize/{job_id}/accept",
+            post(normalize::accept_normalize_proposal),
+        )
 }
 
 #[derive(OpenApi)]
@@ -73,6 +85,11 @@ pub fn router() -> Router<AppState> {
         generate_photo::generate_photo,
         normalize_title::normalize_title,
         generate_description::generate_description,
+        normalize::list_normalize_ops,
+        normalize::normalize_recipe,
+        normalize::normalize_recipes,
+        normalize::get_normalize_proposal,
+        normalize::accept_normalize_proposal,
     ),
     components(schemas(
         create::CreateRecipeRequest,
@@ -95,6 +112,17 @@ pub fn router() -> Router<AppState> {
         generate_photo::GeneratePhotoResponse,
         normalize_title::NormalizeTitleResponse,
         generate_description::GenerateDescriptionResponse,
+        normalize::NormalizeOpGroupResponse,
+        normalize::NormalizeOpInfo,
+        normalize::NormalizeOpsResponse,
+        normalize::NormalizeRequest,
+        normalize::BulkNormalizeRequest,
+        normalize::NormalizeJobResponse,
+        normalize::BulkNormalizeResult,
+        normalize::BulkNormalizeResponse,
+        normalize::NormalizeProposalResponse,
+        normalize::AcceptNormalizeResponse,
+        crate::normalize::NormalizedRecipe,
     ))
 )]
 pub struct ApiDoc;

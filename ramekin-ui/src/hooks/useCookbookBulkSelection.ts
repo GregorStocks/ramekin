@@ -4,7 +4,7 @@ import type { RecipeSummary, RecipesApi } from "ramekin-client";
 import {
   runRecipeAiBatchOperation,
   type RecipeAiOperationSummary,
-} from "../utils/aiEnrichments";
+} from "../utils/aiOperations";
 import { createRequestTracker } from "../utils/requestTracker";
 
 export type BulkOperation =

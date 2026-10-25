@@ -20,6 +20,9 @@ pub struct VersionSummary {
     pub id: uuid::Uuid,
     #[serde(rename = "is_current")]
     pub is_current: bool,
+    /// For a `normalize` version, the op ids it applied, in run order.
+    #[serde(rename = "normalize_ops")]
+    pub normalize_ops: Vec<String>,
     #[serde(rename = "title")]
     pub title: String,
     #[serde(rename = "version_source")]
@@ -32,6 +35,7 @@ impl VersionSummary {
         created_at: String,
         id: uuid::Uuid,
         is_current: bool,
+        normalize_ops: Vec<String>,
         title: String,
         version_source: String,
     ) -> VersionSummary {
@@ -39,6 +43,7 @@ impl VersionSummary {
             created_at,
             id,
             is_current,
+            normalize_ops,
             title,
             version_source,
         }

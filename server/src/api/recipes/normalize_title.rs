@@ -14,6 +14,7 @@ use axum::{
 };
 use diesel::prelude::*;
 use ramekin_core::ai::normalize_title as ai_normalize_title;
+use ramekin_core::pipeline::NormalizeOp;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -144,7 +145,8 @@ pub async fn normalize_title(
         let write_result: Result<(), VersionWriteError> = crate::db::write(conn, |conn| {
             let new_version = NewRecipeVersion {
                 title: &title_for_write,
-                ..NewRecipeVersion::copy_of(&current_version, "normalize_title")
+                normalize_ops: Some(crate::normalize::ops_json(&[NormalizeOp::NormalizeTitle])),
+                ..NewRecipeVersion::copy_of(&current_version, crate::normalize::VERSION_SOURCE)
             };
 
             create_new_version_cas(

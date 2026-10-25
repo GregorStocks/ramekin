@@ -21,6 +21,8 @@ pub enum OpKind {
     Update,
     #[serde(rename = "delete")]
     Delete,
+    #[serde(rename = "restore")]
+    Restore,
 }
 
 impl std::fmt::Display for OpKind {
@@ -29,6 +31,7 @@ impl std::fmt::Display for OpKind {
             Self::Create => write!(f, "create"),
             Self::Update => write!(f, "update"),
             Self::Delete => write!(f, "delete"),
+            Self::Restore => write!(f, "restore"),
         }
     }
 }

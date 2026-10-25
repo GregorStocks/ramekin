@@ -110,7 +110,7 @@ fn canonical_unit(normalized: &str) -> String {
     });
     let unit = FILL.replace(normalized, "");
     match unit.as_ref() {
-        "cups" => "cup",
+        "c" | "cups" => "cup",
         "pints" => "pint",
         "quarts" => "quart",
         "gallons" => "gallon",
@@ -249,12 +249,79 @@ fn noted_weight(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
     }
 }
 
+/// A size left at the front of a counted item, sizing each of the count: "2
+/// 4-ounce balls burrata", "1 14-oz block tofu", "1 2\" piece ginger".
+fn leading_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
+    let count = match read(ingredient.measurements.first()?)?.as_slice() {
+        [Term {
+            amount,
+            unit: Unit::Piece(unit),
+        }] if unit.is_empty() => *amount,
+        _ => return None,
+    };
+    let (size, _) = super::split_leading_size(&ingredient.item)?;
+    let size = normalize(size);
+    let unit = match measure::read_leading_weight(&size) {
+        Some((weight, mass)) => Unit::Grams(weight.times(Range::exact(grams_per(&mass)))),
+        None => Unit::Inches(measure::read_inch_piece(
+            &size.replace(['"', '”'], " inch"),
+        )?),
+    };
+    Some(vec![Term {
+        amount: count,
+        unit,
+    }])
+}
+
+/// The piece a counted item names, which the parser leaves in the item: a
+/// slice at its front ("2 thick slices country bread", "1 1/2-inch slice
+/// sandwich bread", "3 large slices sandwich bread", where the size is the
+/// unit) or leaves ("6 large leaves lettuce", "4 kale leaves"). A slice's
+/// stated thickness is no weight, so "1-inch slices" are plain slices.
+fn named_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
+    static SLICE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(
+            r#"^(?:(?P<thickness>thick|thin)(?:ly)?(?:[- ]cut)?\s+|[\d/ .]+-?\s*(?:inch(?:es)?|in\.|["”])(?:[- ]thick)?\s+)?(?:slices?|(?P<leaf>leaves))\s+(?:of\s+)?\p{L}"#,
+        )
+        .unwrap()
+    });
+    static LEAVES: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"^[\p{L}' -]+\sleaves(?:,|$)").unwrap());
+    let (count, size) = match read(ingredient.measurements.first()?)?.as_slice() {
+        [Term {
+            amount,
+            unit: Unit::Piece(unit),
+        }] if unit.is_empty() || crate::catalog::is_size(unit) => (*amount, unit.clone()),
+        _ => return None,
+    };
+    let item = normalize(&ingredient.item);
+    let piece = match SLICE.captures(&item) {
+        Some(caps) if caps.name("leaf").is_some() => "leaf".to_string(),
+        Some(caps) => match caps.name("thickness") {
+            Some(thickness) if size.is_empty() => format!("slice {}", thickness.as_str()),
+            _ => "slice".to_string(),
+        },
+        None if LEAVES.is_match(&item) => "leaf".to_string(),
+        None => return None,
+    };
+    let unit = match size.as_str() {
+        "" => piece,
+        size => format!("{size} {piece}"),
+    };
+    Some(vec![Term {
+        amount: count,
+        unit: Unit::Piece(unit),
+    }])
+}
+
 /// The ways to measure a line, best first: per-item weights ("2 cans, 10 oz
-/// each"), then its measurements in order (the primary leads, so rounded gram
-/// enrichments don't replace precise amounts), then a weight stated only in
-/// the note. Measurements are alternatives, not additive.
+/// each") and sizes leading the item ("2 4-ounce balls burrata"), then its
+/// measurements in order (the primary leads, so rounded gram enrichments
+/// don't replace precise amounts), then a weight stated only in the note,
+/// then a piece the item names ("2 thick slices bread"). Measurements are
+/// alternatives, not additive.
 pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
-    let mut measures = Vec::new();
+    let mut measures: Vec<Measure> = leading_size(ingredient).into_iter().map(Some).collect();
     let mut weighed_package = false;
     if let Some((primary, alternatives)) = ingredient.measurements.split_first() {
         // A stated weight per item beats a package's standard size, as a
@@ -305,6 +372,9 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
             measures.push(Some(weight));
         }
     }
+    // Last, so a weight the recipe states ("2 slices bread (50 g each)")
+    // beats the catalog's slice.
+    measures.extend(named_piece(ingredient).map(Some));
     measures
 }
 
@@ -406,6 +476,11 @@ mod tests {
         };
         assert_eq!(cups(terms("1 plus 2", &unit("cup")).unwrap()), 3.0);
         assert_eq!(cups(terms("1 cup plus 2 tbsp", &unit("")).unwrap()), 1.125);
+        // The parser leaves an abbreviated unit inside a compound amount.
+        assert_eq!(
+            cups(terms("1/2 c plus 2 tablespoons", &unit("")).unwrap()),
+            0.625
+        );
         assert_eq!(terms("1 cup plus 2 tbsp", &unit("cup")), None);
     }
 
@@ -455,6 +530,124 @@ mod tests {
                 unit: Unit::Piece("steaks".to_string())
             }])
         );
+    }
+
+    #[test]
+    fn sizes_leading_the_item_lead() {
+        let sized = |amount: &str, item: &str| {
+            let mut line = line(amount, None, None);
+            line.item = item.to_string();
+            measures(&line)
+        };
+        let burrata = sized("2", "4-ounce balls burrata cheese");
+        assert_eq!(burrata.len(), 2);
+        close(grams(burrata[0].as_ref().unwrap()), 226.80, 226.80);
+        let tofu = sized("1", "14-oz block extra-firm tofu");
+        close(grams(tofu[0].as_ref().unwrap()), 396.89, 396.89);
+        let goat_cheese = sized("1", "5- to 5 1/2-ounce log soft fresh goat cheese");
+        close(grams(goat_cheese[0].as_ref().unwrap()), 141.75, 155.92);
+        let milk = sized("2", "14-Ounce Each Cans Sweetened Condensed Milk");
+        close(grams(milk[0].as_ref().unwrap()), 793.79, 793.79);
+        let pudding = sized("2", "3.4 oz instant pistachio pudding mix");
+        close(grams(pudding[0].as_ref().unwrap()), 192.78, 192.78);
+        let rice = sized("2", "1-kilogram bags rice");
+        close(grams(rice[0].as_ref().unwrap()), 2000.0, 2000.0);
+        let sauce = sized("1", "15-ounce tomato sauce");
+        close(grams(sauce[0].as_ref().unwrap()), 425.24, 425.24);
+        assert_eq!(
+            sized("1", "1 1/2\" piece ginger")[0],
+            Some(vec![Term {
+                amount: Range::exact(1.0),
+                unit: Unit::Inches(Range::exact(1.5))
+            }])
+        );
+        // Thick slices are no length of the food, and a size that leads no
+        // food ("1-inch slices from a loaf") isn't split off: both are
+        // counted slices.
+        let slices = Some(vec![Term {
+            amount: Range::exact(3.0),
+            unit: Unit::Piece("slice".to_string()),
+        }]);
+        assert_eq!(
+            sized("3", "1/2-inch-thick slices of ginger"),
+            vec![
+                Some(vec![Term {
+                    amount: Range::exact(3.0),
+                    unit: Unit::Piece(String::new()),
+                }]),
+                slices.clone(),
+            ]
+        );
+        assert_eq!(
+            sized("3", "1-inch slices from a large loaf").pop().unwrap(),
+            slices
+        );
+        // Only a bare count is a count of the sized items.
+        let mut cups = line("2", Some("cups"), None);
+        cups.item = "15-ounce tomato sauce".to_string();
+        assert_eq!(measures(&cups).len(), 1);
+    }
+
+    #[test]
+    fn pieces_the_item_names_come_last() {
+        let named = |amount: &str, unit: Option<&str>, item: &str| {
+            let mut line = line(amount, unit, None);
+            line.item = item.to_string();
+            measures(&line).pop().unwrap()
+        };
+        let piece = |amount: f64, unit: &str| {
+            Some(vec![Term {
+                amount: Range::exact(amount),
+                unit: Unit::Piece(unit.to_string()),
+            }])
+        };
+        assert_eq!(
+            named("2", None, "thick slices country or sourdough bread"),
+            piece(2.0, "slice thick")
+        );
+        assert_eq!(
+            named("2", None, "Thin Slices white bread"),
+            piece(2.0, "slice thin")
+        );
+        assert_eq!(
+            named("1", None, "1/2-inch slice seven-grain sandwich bread"),
+            piece(1.0, "slice")
+        );
+        assert_eq!(
+            named("4", None, "1-inch thick slices good bread"),
+            piece(4.0, "slice")
+        );
+        assert_eq!(
+            named("3", Some("large"), "slices good-quality sandwich bread"),
+            piece(3.0, "large slice")
+        );
+        assert_eq!(
+            named("6", Some("large"), "leaves lettuce"),
+            piece(6.0, "large leaf")
+        );
+        assert_eq!(named("4", None, "kale leaves"), piece(4.0, "leaf"));
+        assert_eq!(
+            named("5", None, "lacinato kale leaves, ribs removed"),
+            piece(5.0, "leaf")
+        );
+        // A slice in the middle of the item names no piece of the count, and
+        // a measured unit is already the piece.
+        assert_eq!(named("2", None, "sliced bread"), piece(2.0, ""));
+        assert_eq!(
+            named("2", Some("cups"), "slices bread").map(|terms| terms[0].unit.clone()),
+            Some(Unit::Cups(1.0))
+        );
+        assert_eq!(named("1", None, "basil leaves torn"), piece(1.0, ""));
+        // A weight the recipe states per item comes first.
+        let mut each = line("2", None, None);
+        each.item = "thick slices sourdough bread".to_string();
+        each.measurements.push(Measurement {
+            amount: Some("50".to_string()),
+            unit: Some("g each".to_string()),
+        });
+        let each = measures(&each);
+        close(grams(each[0].as_ref().unwrap()), 100.0, 100.0);
+        assert_eq!(each.last().unwrap(), &piece(2.0, "slice thick"));
     }
 
     #[test]
