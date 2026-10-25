@@ -4,6 +4,7 @@ struct RecipeDetailView: View {
     let recipeId: UUID
 
     @Environment(\.dismiss) var dismiss
+    @Environment(\.recipeScaleMemory) private var scaleMemory
     @StateObject var viewModel: RecipeDetailViewModel
     @FocusState var customScaleFocused: Bool
 
@@ -265,6 +266,20 @@ struct RecipeDetailView: View {
         .onDisappear {
             viewModel.cancelRescrape()
         }
+        .onAppear {
+            guard let stored = scaleMemory.stored(recipeId) else { return }
+            viewModel.customScaleInput = stored.customInput
+            viewModel.setRecipeScale(stored.scale)
+        }
+        .onChange(of: viewModel.recipeScale) { _ in rememberScale() }
+        .onChange(of: viewModel.customScaleInput) { _ in rememberScale() }
+    }
+
+    private func rememberScale() {
+        scaleMemory.remember(
+            recipeId,
+            RecipeScaleState(scale: viewModel.recipeScale, customInput: viewModel.customScaleInput)
+        )
     }
 
     func setRecipeScale(_ value: Double) {

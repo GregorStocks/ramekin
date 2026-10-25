@@ -156,27 +156,35 @@ class AppState: ObservableObject {
     }
 }
 
-enum Tab: Hashable {
+enum Tab: String, Hashable {
     case recipes
     case mealPlan
     case shopping
 }
 
+/// Where the user is lives in scene storage, so relaunching after iOS
+/// terminates the app in the background comes back to the same tab, stack,
+/// and recipe scale. Scene storage keys must be unique within a scene and a
+/// recipe can be open on both stacks, so this view owns every key and hands
+/// the tabs bindings.
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
-    @State private var selectedTab: Tab = .recipes
+    @SceneStorage("selectedTab") private var selectedTab: Tab = .recipes
+    @SceneStorage("recipesPath") private var recipesPathData = Data()
+    @SceneStorage("mealPlanPath") private var mealPlanPathData = Data()
+    @SceneStorage("recipeScales") private var recipeScalesData = Data()
 
     var body: some View {
         Group {
             if appState.isLoggedIn {
                 TabView(selection: $selectedTab) {
-                    RecipesTab()
+                    RecipesTab(path: pathBinding(.recipes))
                         .tabItem {
                             Label("Recipes", systemImage: "book")
                         }
                         .tag(Tab.recipes)
 
-                    MealPlanView()
+                    MealPlanView(path: pathBinding(.mealPlan))
                         .tabItem {
                             Label("Meal Plan", systemImage: "calendar")
                         }
@@ -188,8 +196,12 @@ struct ContentView: View {
                         }
                         .tag(Tab.shopping)
                 }
+                .environment(\.recipeScaleMemory, recipeScaleMemory)
                 .onChange(of: appState.pendingRecipeId) { id in
                     if id != nil { selectedTab = .recipes }
+                }
+                .task(id: appState.username) {
+                    await pruneMissingRecipes()
                 }
             } else {
                 LoginView()
@@ -200,11 +212,84 @@ struct ContentView: View {
             appState.handleUniversalLink(url)
         }
     }
+
+    private enum Stack: CaseIterable {
+        case recipes
+        case mealPlan
+    }
+
+    private func path(_ stack: Stack) -> [NavigationDestination] {
+        switch stack {
+        case .recipes: return SceneRestoration.decodePath(recipesPathData)
+        case .mealPlan: return SceneRestoration.decodePath(mealPlanPathData)
+        }
+    }
+
+    private func setPath(_ path: [NavigationDestination], for stack: Stack) {
+        let data = SceneRestoration.encodePath(path)
+        switch stack {
+        case .recipes: recipesPathData = data
+        case .mealPlan: mealPlanPathData = data
+        }
+        pruneScalesToOpenRecipes()
+    }
+
+    private func pathBinding(_ stack: Stack) -> Binding<[NavigationDestination]> {
+        Binding(get: { path(stack) }, set: { setPath($0, for: stack) })
+    }
+
+    private var openRecipeIds: Set<UUID> {
+        Set(Stack.allCases.flatMap { SceneRestoration.recipeIds(in: path($0)) })
+    }
+
+    private var recipeScaleMemory: RecipeScaleMemory {
+        RecipeScaleMemory(
+            stored: { SceneRestoration.decodeScales(recipeScalesData)[$0] },
+            remember: { id, state in
+                var scales = SceneRestoration.decodeScales(recipeScalesData)
+                scales[id] = state
+                recipeScalesData = SceneRestoration.encodeScales(scales)
+            }
+        )
+    }
+
+    private func pruneScalesToOpenRecipes() {
+        let scales = SceneRestoration.decodeScales(recipeScalesData)
+        let pruned = SceneRestoration.prunedScales(scales, keeping: openRecipeIds)
+        if pruned != scales {
+            recipeScalesData = SceneRestoration.encodeScales(pruned)
+        }
+    }
+
+    /// A restored stack can name a recipe deleted by sync since, or one from
+    /// another account after signing in as someone else; drop it so the user
+    /// lands where they opened it from. Checks the local cache only, so it
+    /// never waits on the network.
+    @MainActor
+    private func pruneMissingRecipes() async {
+        let checked = openRecipeIds
+        guard !checked.isEmpty, let accountKey = AccountScope.currentAccountKey() else { return }
+        guard let existing = try? await RecipeCacheStore.shared.existingRecipeIds(
+            Array(checked),
+            accountKey: accountKey
+        ) else {
+            return
+        }
+        for stack in Stack.allCases {
+            let current = path(stack)
+            // A recipe opened while the cache was being checked wasn't asked
+            // about; keep it.
+            let pruned = SceneRestoration.prunedPath(current) { !checked.contains($0) || existing.contains($0) }
+            if pruned != current {
+                setPath(pruned, for: stack)
+            }
+        }
+    }
 }
 
 struct RecipesTab: View {
     @EnvironmentObject var appState: AppState
-    @State private var path = NavigationPath()
+    @Binding var path: [NavigationDestination]
 
     var body: some View {
         NavigationStack(path: $path) {

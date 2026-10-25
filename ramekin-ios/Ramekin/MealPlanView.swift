@@ -23,7 +23,12 @@ struct MealPlanView: View {
     /// Plans live in the offline cache, so any week shows at once; syncing
     /// only refreshes it.
     @ObservedObject private var store = MealPlanStore.shared
-    @State private var weekStart: Date = MealPlanDateSupport.mondayStart(from: Date())
+    @Binding var path: [NavigationDestination]
+    /// The week shown, kept in scene storage so relaunching after the app
+    /// is terminated in the background comes back to it.
+    @SceneStorage("mealPlanWeekStart") private var storedWeekStart = MealPlanDateSupport
+        .mondayStart(from: Date())
+        .timeIntervalSinceReferenceDate
     /// Failures of add/edit, shown as an alert.
     @State private var actionError: String?
 
@@ -40,8 +45,13 @@ struct MealPlanView: View {
 
     private let logger = DebugLogger.shared
 
+    private var weekStart: Date {
+        get { Date(timeIntervalSinceReferenceDate: storedWeekStart) }
+        nonmutating set { storedWeekStart = newValue.timeIntervalSinceReferenceDate }
+    }
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             weekCalendar
             .navigationTitle("Meal Plan")
             .toolbar {
@@ -324,5 +334,5 @@ extension MealPlanView {
 }
 
 #Preview {
-    MealPlanView()
+    MealPlanView(path: .constant([]))
 }
