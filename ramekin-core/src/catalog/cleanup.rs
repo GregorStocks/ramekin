@@ -14,6 +14,9 @@
 //! hidden from the catalog, the key and every corpus name that could reach it
 //! still resolve the same way, through modifier stripping, plurals or a
 //! shorter key ("chopped fresh basil").
+//!
+//! Prod lines are never re-parsed, so keys prod's stored items still hit
+//! (`PROD_NAMES`) are left alone.
 
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
 use std::path::Path;
@@ -141,13 +144,15 @@ fn line_outcome(line: &(String, Option<String>), hidden: &HashSet<String>) -> St
 /// Plan and apply the cleanup to curated.json's text. Returns the new text
 /// (formatted like the file: 2-space indent, sorted keys) and the changes.
 ///
-/// A key among `known.typed` stays even when the parser would never produce
-/// it: the shopping list matches those names without parsing. A redundant key
-/// goes only if no name in `known.corpus` resolves differently without it.
+/// A key among `known.verbatim` stays even when the parser would never
+/// produce it: those names are matched without parsing. A key among
+/// `known.prod` is never touched. No key goes or moves while a line in
+/// `known.corpus` estimates differently without it.
 pub fn clean_curated(json: &str, known: &CleanupNames) -> (String, Vec<CuratedChange>) {
     let mut curated: Map<String, Value> =
         serde_json::from_str(json).expect("curated.json is an object");
     let mut changes = Vec::new();
+    let mut reach = Reach::new(&known.corpus);
     for section in ["aliases", "not_food"] {
         let names: Map<String, Value> = curated[section]
             .as_object()
@@ -160,7 +165,10 @@ pub fn clean_curated(json: &str, known: &CleanupNames) -> (String, Vec<CuratedCh
             // The tail of a hyphenated amount the parser once split ("-ounce
             // block feta" from "8-ounce block feta"); it now reads the whole
             // amount, so no line produces the key.
-            if name.starts_with('-') && !known.typed.contains(name) {
+            if known.prod.contains(name) {
+                continue;
+            }
+            if name.starts_with('-') && !known.verbatim.contains(name) {
                 changes.push(CuratedChange::Remove {
                     section,
                     name: name.clone(),
@@ -168,11 +176,25 @@ pub fn clean_curated(json: &str, known: &CleanupNames) -> (String, Vec<CuratedCh
                 continue;
             }
             let parsed = parsed_name(name);
-            if parsed.is_empty() || parsed == *name || known.typed.contains(name) {
+            if parsed.is_empty() || parsed == *name || known.verbatim.contains(name) {
                 continue;
             }
             let current = outcome(name);
             let cleaned = outcome(&parsed);
+            // A stored line that reaches the key another way ("fresh
+            // katakuriko (potato starch" through modifier stripping) still
+            // needs it; lines that are the key itself were judged above.
+            let indirect = reach
+                .reaching(name)
+                .into_iter()
+                .filter(|(item, _)| normalize(item) != *name)
+                .cloned()
+                .collect();
+            if (cleaned == current || cleaned == "unresolved")
+                && !reach.unchanged(indirect, &HashSet::from([name.clone()]))
+            {
+                continue;
+            }
             if cleaned == current {
                 changes.push(CuratedChange::Remove {
                     section,
@@ -245,7 +267,7 @@ pub fn clean_curated(json: &str, known: &CleanupNames) -> (String, Vec<CuratedCh
             }
         }
     }
-    changes.extend(redundant_keys(&curated, &changes, &known.corpus));
+    changes.extend(redundant_keys(&curated, &changes, known));
     for change in &changes {
         if let CuratedChange::Redundant { section, name } = change {
             curated[*section]
@@ -275,21 +297,57 @@ pub fn clean_curated(json: &str, known: &CleanupNames) -> (String, Vec<CuratedCh
 }
 
 /// The names a cleanup must leave resolving as they do: hand-typed
-/// shopping-list items, which are matched as typed, and every item name the
-/// parser produces for the repo's recipe corpora.
+/// shopping-list items, which are matched as typed, every item name the
+/// parser produces for the repo's recipe corpora, and the keys prod's stored
+/// lines need.
 pub struct CleanupNames {
-    /// Normalized hand-typed shopping-list items; their keys are never
-    /// re-keyed, even when the parser would split them.
-    pub typed: BTreeSet<String>,
-    /// Item lines (item and note; typed items included) whose estimate
+    /// Normalized names matched as written, never re-parsed: hand-typed
+    /// shopping-list items and, with `with_prod`, the items prod lines kept
+    /// from when they were saved. Their keys are never re-keyed, even when
+    /// the parser would split them.
+    pub verbatim: BTreeSet<String>,
+    /// Item lines (item and note; verbatim items included) whose estimate
     /// removing a redundant key must not change.
     pub corpus: BTreeSet<(String, Option<String>)>,
+    /// Keys prod's stored lines need (`PROD_NAMES`), left alone even without
+    /// prod's lines at hand.
+    pub prod: BTreeSet<String>,
 }
 
+/// The curated keys only prod's stored lines need, as last found by
+/// `make catalog-clean-aliases PROD_RECIPES=`. Prod lines keep the item parsed
+/// at save, so a key the parser no longer produces can still be live there.
+pub const PROD_NAMES: &str = "ramekin-core/src/catalog/data/prod_names.json";
+
 impl CleanupNames {
+    /// Read the repo's names (`load_repo`) and the committed `PROD_NAMES`.
+    pub fn load(root: &Path) -> Self {
+        let path = root.join(PROD_NAMES);
+        let text = std::fs::read_to_string(&path)
+            .unwrap_or_else(|e| panic!("reading {}: {e}", path.display()));
+        CleanupNames {
+            prod: serde_json::from_str(&text)
+                .unwrap_or_else(|e| panic!("parsing {}: {e}", path.display())),
+            ..Self::load_repo(root)
+        }
+    }
+
+    /// Add prod's stored lines: their items are matched as stored, and their
+    /// estimates must not change.
+    pub fn with_prod(mut self, lines: impl IntoIterator<Item = (String, Option<String>)>) -> Self {
+        for (item, note) in lines {
+            if item.trim().is_empty() {
+                continue;
+            }
+            self.verbatim.insert(normalize(&item));
+            self.corpus.insert((item, note));
+        }
+        self
+    }
+
     /// Read the corpora under the repo root: the pipeline and Paprika parser
     /// fixtures, the pipeline snapshots and the shopping-list corpus.
-    pub fn load(root: &Path) -> Self {
+    pub fn load_repo(root: &Path) -> Self {
         let read = |path: &Path| -> Value {
             let text = std::fs::read_to_string(path)
                 .unwrap_or_else(|e| panic!("reading {}: {e}", path.display()));
@@ -311,7 +369,7 @@ impl CleanupNames {
                 .collect()
         };
         let shopping = lines(&read(&root.join(SHOPPING_CORPUS)), "");
-        let typed = shopping.iter().map(|(item, _)| normalize(item)).collect();
+        let verbatim = shopping.iter().map(|(item, _)| normalize(item)).collect();
         let mut corpus: BTreeSet<_> = shopping.into_iter().map(|(item, _)| (item, None)).collect();
         for (dir, prefix) in [
             (
@@ -334,7 +392,11 @@ impl CleanupNames {
                 }
             }
         }
-        CleanupNames { typed, corpus }
+        CleanupNames {
+            verbatim,
+            corpus,
+            prod: BTreeSet::new(),
+        }
     }
 }
 
@@ -359,31 +421,89 @@ fn stems(name: &str) -> BTreeSet<String> {
         .collect()
 }
 
+/// The corpus lines that could reach a key, and whether hiding keys changes
+/// their estimates. A name reaches a key only through spellings built from
+/// its own words, so only lines whose item has all of the key's words count.
+struct Reach<'a> {
+    corpus: Vec<&'a (String, Option<String>)>,
+    by_stem: HashMap<String, Vec<usize>>,
+    /// Each checked line's estimate with nothing hidden.
+    now: HashMap<(String, Option<String>), String>,
+}
+
+impl<'a> Reach<'a> {
+    fn new(corpus: &'a BTreeSet<(String, Option<String>)>) -> Self {
+        let corpus: Vec<_> = corpus.iter().collect();
+        let mut by_stem: HashMap<String, Vec<usize>> = HashMap::new();
+        for (index, (item, _)) in corpus.iter().enumerate() {
+            for word in stems(&item.to_lowercase()) {
+                by_stem.entry(word).or_default().push(index);
+            }
+        }
+        Reach {
+            corpus,
+            by_stem,
+            now: HashMap::new(),
+        }
+    }
+
+    fn reaching(&self, key: &str) -> Vec<&'a (String, Option<String>)> {
+        let mut reaching: Option<BTreeSet<usize>> = None;
+        for word in stems(key) {
+            let names: BTreeSet<usize> = self
+                .by_stem
+                .get(&word)
+                .into_iter()
+                .flatten()
+                .copied()
+                .collect();
+            reaching = Some(match reaching {
+                Some(found) => found.intersection(&names).copied().collect(),
+                None => names,
+            });
+        }
+        reaching
+            .into_iter()
+            .flatten()
+            .map(|index| self.corpus[index])
+            .collect()
+    }
+
+    /// Whether every line estimates as it does now with `hidden` hidden.
+    fn unchanged(
+        &mut self,
+        lines: Vec<(String, Option<String>)>,
+        hidden: &HashSet<String>,
+    ) -> bool {
+        lines.into_iter().all(|line| {
+            let after = line_outcome(&line, hidden);
+            let before = self
+                .now
+                .entry(line)
+                .or_insert_with_key(|line| line_outcome(line, &HashSet::new()));
+            after == *before
+        })
+    }
+}
+
 /// The keys left in `curated` that nothing needs: hidden from the catalog
 /// (with the keys `changes` already removed), the key itself and every corpus
-/// line that could reach it still estimate as they do now (`line_outcome`). A
-/// name reaches a key only through spellings built from its own words, so only
-/// lines whose item has all of the key's words are checked. Longer keys go first, so of two keys that
-/// only need each other ("tomato", "tomatoes") the shorter stays.
+/// line that could reach it (`Reach`) still estimate as they do now
+/// (`line_outcome`). Longer keys go first, so of two keys that only need each
+/// other ("tomato", "tomatoes") the shorter stays.
 ///
 /// Ambiguous (null) aliases are deliberate overrides and always stay, as do
-/// names bespoke.json gives pieces (it needs the exact name); keys the
+/// names bespoke.json gives pieces (it needs the exact name) and keys prod
+/// needs (`known.prod`); keys the
 /// compiled catalog doesn't have yet are left for the next run.
 fn redundant_keys(
     curated: &Map<String, Value>,
     changes: &[CuratedChange],
-    corpus: &BTreeSet<(String, Option<String>)>,
+    known: &CleanupNames,
 ) -> Vec<CuratedChange> {
     let bespoke: Value = serde_json::from_str(BESPOKE_JSON).expect("bespoke.json is JSON");
     let bespoke = bespoke["pieces"].as_object().expect("bespoke pieces");
-    let corpus: Vec<&(String, Option<String>)> = corpus.iter().collect();
-    let mut by_stem: HashMap<String, Vec<usize>> = HashMap::new();
-    for (index, (item, _)) in corpus.iter().enumerate() {
-        for word in stems(&item.to_lowercase()) {
-            by_stem.entry(word).or_default().push(index);
-        }
-    }
-    let mut now: HashMap<(String, Option<String>), String> = HashMap::new();
+    let mut reach = Reach::new(&known.corpus);
     let mut hidden: HashSet<String> = changes
         .iter()
         .filter_map(|change| match change {
@@ -402,6 +522,7 @@ fn redundant_keys(
                 .filter(|(name, target)| {
                     !target.is_null()
                         && !bespoke.contains_key(*name)
+                        && !known.prod.contains(*name)
                         && CATALOG.index.contains_key(*name)
                 })
                 .map(move |(name, _)| (section, name))
@@ -410,30 +531,11 @@ fn redundant_keys(
     keys.sort_by_key(|(_, name)| std::cmp::Reverse(name.len()));
     let mut redundant = Vec::new();
     for (section, key) in keys {
-        let mut reaching: Option<BTreeSet<usize>> = None;
-        for word in stems(key) {
-            let names: BTreeSet<usize> =
-                by_stem.get(&word).into_iter().flatten().copied().collect();
-            reaching = Some(match reaching {
-                Some(found) => found.intersection(&names).copied().collect(),
-                None => names,
-            });
-        }
-        let lines = std::iter::once((key.clone(), None)).chain(
-            reaching
-                .into_iter()
-                .flatten()
-                .map(|index| corpus[index].clone()),
-        );
         hidden.insert(key.clone());
-        let unchanged = lines.into_iter().all(|line| {
-            let after = line_outcome(&line, &hidden);
-            let before = now
-                .entry(line)
-                .or_insert_with_key(|line| line_outcome(line, &HashSet::new()));
-            after == *before
-        });
-        if unchanged {
+        let lines = std::iter::once((key.clone(), None))
+            .chain(reach.reaching(key).into_iter().cloned())
+            .collect();
+        if reach.unchanged(lines, &hidden) {
             redundant.push(CuratedChange::Redundant {
                 section,
                 name: key.clone(),

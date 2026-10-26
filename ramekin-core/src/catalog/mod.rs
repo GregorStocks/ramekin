@@ -23,7 +23,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::ingredient_categorizer::CATEGORIES;
 
-pub use cleanup::{clean_curated, parsed_name, CleanupNames, CuratedChange};
+pub use cleanup::{clean_curated, parsed_name, CleanupNames, CuratedChange, PROD_NAMES};
 pub use learned::{
     candidates, is_ambiguous, learned_estimate, learned_key_resolves, resolve_line_with,
     resolve_with, unlearned_name, EstimatedFood, Learned, LearnedTarget,

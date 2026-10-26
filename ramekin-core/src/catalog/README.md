@@ -451,8 +451,14 @@ under the Open Database License (https://opendatacommons.org/licenses/odbl/1.0/)
   already parsed, even if the bare key would lose a leading size or count. A
   key that a hand-typed shopping-list item in
   `data/shopping-list-categories.json` uses verbatim stays too, because the
-  shopping list matches typed text without parsing it. A removed or re-keyed
-  name takes its `categories` entry with it.
+  shopping list matches typed text without parsing it. Prod lines keep the
+  item parsed at save and are never re-parsed, so a key the parser no longer
+  produces can still be live there: `make catalog-clean-aliases
+  PROD_RECIPES=logs/prod/recipes.json` (after `make prod-export`) treats prod's
+  stored items like typed ones, checks prod's lines for redundant keys too, and
+  records the keys only prod needs in `data/prod_names.json`. Runs without
+  `PROD_RECIPES=`, and the test below, leave those keys alone. A removed or
+  re-keyed name takes its `categories` entry with it.
 
   The `curated_names_are_what_the_parser_produces` test fails until it has
   been run. The first run (2026-09-29, alongside the parser fix) removed 571
