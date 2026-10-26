@@ -6,9 +6,9 @@ Golden set: `data/ai-evals/golden/house-style.json` (10 cases), one call per cas
 
 | Model | Good | Best | Unjudged | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| anthropic/claude-opus-5.5 | 100% | 80% | 0 | 0% | 0 | 0 | $1.5461 |
-| anthropic/claude-sonnet-5.5 | 100% | 20% | 0 | 0% | 0 | 0 | $0.7559 |
-| google/gemini-3.8-flash | 86% | 0% | 0 | 30% | 3 | 0 | $0.4315 |
+| anthropic/claude-opus-5.5 | 100% | 80% | 0 | 0% | 0 | 0 | $1.6922 |
+| anthropic/claude-sonnet-5.5 | 100% | 10% | 0 | 0% | 0 | 0 | $0.8216 |
+| google/gemini-3.8-flash | 86% | 14% | 0 | 30% | 3 | 0 | $0.4433 |
 
 ## Rejected answers
 
