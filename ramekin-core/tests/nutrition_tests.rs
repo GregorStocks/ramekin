@@ -794,6 +794,8 @@ fn an_amount_of_another_recipe_says_so() {
         "1/2 batch Rice Krispies Treats",
         // Pizza dough is weighed by the ball, but a recipe of it isn't one.
         "1 recipe pizza dough",
+        // With no amount left, the batter isn't negligible either.
+        "1 recipe Yorkshire pudding batter, see above",
     ] {
         let result = estimate(&[parse_ingredient(raw)], None, 1.0).unwrap();
         assert_eq!(
@@ -814,6 +816,15 @@ fn an_amount_of_another_recipe_says_so() {
     });
     assert_eq!(
         estimate(&[batch], None, 1.0).unwrap().known_calories,
+        estimate(&[parse_ingredient("200 g guacamole")], None, 1.0)
+            .unwrap()
+            .known_calories
+    );
+    // So does a weight in the note.
+    let mut noted = parse_ingredient("1 batch guacamole");
+    noted.note = Some("about 200 g".into());
+    assert_eq!(
+        estimate(&[noted], None, 1.0).unwrap().known_calories,
         estimate(&[parse_ingredient("200 g guacamole")], None, 1.0)
             .unwrap()
             .known_calories

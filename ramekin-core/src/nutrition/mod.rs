@@ -467,8 +467,10 @@ fn refers_to_another_recipe(ingredient: &ParsedIngredient) -> bool {
 }
 
 /// What a line adds, or why it can't be counted. An amount of another
-/// recipe counts only by its other measurements: "1 recipe pizza dough" is a
-/// batch, not one of the food's pieces.
+/// recipe counts only by its other measurements or a weight in its note
+/// ("1 batch guacamole, about 200 g"): "1 recipe pizza dough" is a batch,
+/// not one of the food's pieces. With nothing else to weigh, the line has
+/// no amount at all, which would otherwise read as negligible.
 fn contribution(
     ingredient: &ParsedIngredient,
     scale: f64,
@@ -482,10 +484,10 @@ fn contribution(
         measurements: ingredient.measurements[1..].to_vec(),
         ..ingredient.clone()
     };
-    if others.measurements.is_empty() {
-        return Err("Another recipe");
+    match weigh_line(&others, scale, learned, estimated) {
+        Ok(line @ Line::Calories(..)) => Ok(line),
+        _ => Err("Another recipe"),
     }
-    weigh_line(&others, scale, learned, estimated).map_err(|_| "Another recipe")
 }
 
 fn weigh_line(
