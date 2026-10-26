@@ -141,6 +141,11 @@ pub struct ChatRequest {
     /// Tools the model may call instead of answering.
     #[serde(skip_serializing_if = "Vec::is_empty")]
     pub tools: Vec<ToolSpec>,
+    /// If true, ask the provider to cache the prompt prefix (the system
+    /// message and the latest message), for multi-turn loops that resend a
+    /// growing conversation. Providers that cache on their own ignore it.
+    #[serde(skip)]
+    pub cache_prompt: bool,
 }
 
 /// Token usage information.
@@ -149,6 +154,11 @@ pub struct Usage {
     pub prompt_tokens: u32,
     pub completion_tokens: u32,
     pub total_tokens: u32,
+    /// What the provider says the call cost in dollars (OpenRouter's
+    /// `usage.cost`), which counts prompt-cache discounts that token counts
+    /// don't show.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub cost: Option<f64>,
 }
 
 /// Response from a chat completion.
