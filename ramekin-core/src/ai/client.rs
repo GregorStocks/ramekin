@@ -1,14 +1,16 @@
 //! AI client implementation using OpenRouter (OpenAI-compatible API).
 
 use async_trait::async_trait;
-use openai_api_rs::v1::api::OpenAIClient;
-use openai_api_rs::v1::chat_completion::chat_completion::ChatCompletionRequest;
+use openai_api_rs::v1::chat_completion::chat_completion::{
+    ChatCompletionRequest, ChatCompletionResponse,
+};
 use openai_api_rs::v1::chat_completion::{
     ChatCompletionMessage, Content, ContentType, FinishReason, ImageUrl, ImageUrlType, MessageRole,
     Tool, ToolCall as OpenAiToolCall, ToolCallFunction, ToolType,
 };
 use openai_api_rs::v1::error::APIError;
 use openai_api_rs::v1::types::{Function, FunctionParameters};
+use serde::Deserialize;
 use serde_json::json;
 use std::sync::Arc;
 use std::time::Duration;
@@ -132,7 +134,7 @@ fn parse_error(prompt_name: &str, content: &str, err: &serde_json::Error) -> AiE
 
 /// AI client with caching and rate limiting, using OpenRouter.
 pub struct CachingAiClient {
-    client: OpenAIClient,
+    http: reqwest::Client,
     cache: AiCache,
     config: AiConfig,
     last_request: Arc<Mutex<Option<Instant>>>,
@@ -147,18 +149,10 @@ impl CachingAiClient {
 
     /// Create a new client with the given configuration.
     pub fn new(config: AiConfig) -> Self {
-        // OpenAIClient::builder().build() is fallible in signature only — given
-        // a valid api_key and endpoint, the underlying impl never errors.
-        let client = OpenAIClient::builder()
-            .with_api_key(&config.api_key)
-            .with_endpoint(&config.base_url)
-            .build()
-            .expect("OpenAIClient::build cannot fail with provided api_key and endpoint");
-
         let cache = AiCache::new(config.namespaced_cache_dir());
 
         Self {
-            client,
+            http: reqwest::Client::new(),
             cache,
             config,
             last_request: Arc::new(Mutex::new(None)),
@@ -235,6 +229,41 @@ impl CachingAiClient {
             tool_calls,
             tool_call_id: msg.tool_call_id.clone(),
         }
+    }
+
+    /// Post a chat completion request body and parse the answer, with the
+    /// provider's reported cost. openai-api-rs's request types have no room
+    /// for OpenRouter's `cache_control`, so we send the (edited) JSON
+    /// ourselves; failures read as openai-api-rs's would, for
+    /// `chat_completion_error`.
+    async fn post_chat_completion(
+        &self,
+        body: &serde_json::Value,
+    ) -> Result<(ChatCompletionResponse, Option<f64>), APIError> {
+        let custom = |message: String| APIError::CustomError { message };
+        let url = format!(
+            "{}/chat/completions",
+            self.config.base_url.trim_end_matches('/')
+        );
+        let response = self
+            .http
+            .post(url)
+            .bearer_auth(&self.config.api_key)
+            .json(body)
+            .send()
+            .await
+            .map_err(|e| custom(e.to_string()))?;
+        let status = response.status();
+        let text = response.text().await.unwrap_or_default();
+        if !status.is_success() {
+            return Err(custom(format!("{status}: {text}")));
+        }
+        let parse = |text: &str| -> Result<_, serde_json::Error> {
+            let value: serde_json::Value = serde_json::from_str(text)?;
+            let cost = value["usage"]["cost"].as_f64();
+            Ok((ChatCompletionResponse::deserialize(value)?, cost))
+        };
+        parse(&text).map_err(|e| custom(format!("Failed to parse JSON: {e} / response {text}")))
     }
 
     /// Convert our tool spec to openai-api-rs's format.
@@ -374,6 +403,31 @@ fn chat_completion_error(e: APIError) -> AiError {
     }
 }
 
+/// Mark the system message and the latest message of a chat completion
+/// request body as prompt-cache breakpoints (OpenRouter's `cache_control`,
+/// which Anthropic models need to cache at all): the next turn of a tool loop
+/// then reads everything up to its new message from the cache. The mark goes
+/// on a message's last content part, so a plain-text message becomes a
+/// one-part array.
+fn mark_cache_breakpoints(body: &mut serde_json::Value) {
+    let Some(messages) = body["messages"].as_array_mut() else {
+        return;
+    };
+    let last = messages.len().saturating_sub(1);
+    for (i, message) in messages.iter_mut().enumerate() {
+        if i != last && message["role"] != "system" {
+            continue;
+        }
+        let content = &mut message["content"];
+        if let Some(text) = content.as_str() {
+            *content = json!([{"type": "text", "text": text}]);
+        }
+        if let Some(part) = content.as_array_mut().and_then(|parts| parts.last_mut()) {
+            part["cache_control"] = json!({"type": "ephemeral"});
+        }
+    }
+}
+
 /// First ~200 chars of a response, for inclusion in error messages.
 fn content_snippet(content: &str) -> String {
     content.chars().take(200).collect()
@@ -448,10 +502,16 @@ impl AiClient for CachingAiClient {
             "Calling AI API"
         );
 
+        let mut body = serde_json::to_value(&openai_request)
+            .map_err(|e| AiError::Api(format!("Request doesn't serialize: {e}")))?;
+        if request.cache_prompt {
+            mark_cache_breakpoints(&mut body);
+        }
+
         // Make the API call with a hard timeout to avoid hanging the pipeline.
-        let response = tokio::time::timeout(
+        let (response, cost) = tokio::time::timeout(
             Duration::from_secs(self.config.request_timeout_secs),
-            self.client.chat_completion(openai_request),
+            self.post_chat_completion(&body),
         )
         .await
         .map_err(|_| {
@@ -460,8 +520,7 @@ impl AiClient for CachingAiClient {
                 self.config.request_timeout_secs
             ))
         })?
-        .map_err(chat_completion_error)?
-        .inner;
+        .map_err(chat_completion_error)?;
 
         // Extract the response content
         let choice = response.choices.first();
@@ -502,6 +561,7 @@ impl AiClient for CachingAiClient {
             prompt_tokens: response.usage.prompt_tokens.max(0) as u32,
             completion_tokens: response.usage.completion_tokens.max(0) as u32,
             total_tokens: response.usage.total_tokens.max(0) as u32,
+            cost,
         };
 
         let chat_response = ChatResponse {
@@ -712,6 +772,34 @@ mod tests {
     #[derive(Debug, PartialEq, serde::Deserialize)]
     struct Answer {
         answer: u32,
+    }
+
+    #[test]
+    fn cache_breakpoints_mark_the_system_and_latest_messages() {
+        let mut body = json!({"messages": [
+            {"role": "system", "content": "Rules."},
+            {"role": "user", "content": [
+                {"type": "text", "text": "Recipe."},
+                {"type": "image_url", "image_url": {"url": "data:image/png;base64,AA"}}
+            ]},
+            {"role": "assistant", "content": null, "tool_calls": []},
+            {"role": "tool", "content": "Done.", "tool_call_id": "call-0"}
+        ]});
+
+        mark_cache_breakpoints(&mut body);
+
+        let ephemeral = json!({"type": "ephemeral"});
+        let messages = &body["messages"];
+        assert_eq!(
+            messages[0]["content"],
+            json!([{"type": "text", "text": "Rules.", "cache_control": ephemeral}])
+        );
+        assert!(messages[1]["content"][1].get("cache_control").is_none());
+        assert!(messages[2]["content"].is_null());
+        assert_eq!(
+            messages[3]["content"],
+            json!([{"type": "text", "text": "Done.", "cache_control": ephemeral}])
+        );
     }
 
     #[test]

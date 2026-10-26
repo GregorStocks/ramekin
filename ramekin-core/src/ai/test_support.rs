@@ -9,7 +9,8 @@ use serde_json::Value;
 use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, ChatResponse, ToolCall, Usage};
 
 /// Answers each turn with the next scripted tool calls (none once the script
-/// runs out), and records the requests it saw. Every turn reports 15 tokens.
+/// runs out), and records the requests it saw. Every turn reports 15 tokens
+/// costing $0.25.
 pub struct ScriptedClient {
     turns: Mutex<VecDeque<Vec<ToolCall>>>,
     pub requests: Mutex<Vec<ChatRequest>>,
@@ -54,6 +55,7 @@ impl AiClient for ScriptedClient {
                 prompt_tokens: 10,
                 completion_tokens: 5,
                 total_tokens: 15,
+                cost: Some(0.25),
             },
             cached: false,
             tool_calls,

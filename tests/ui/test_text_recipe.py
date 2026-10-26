@@ -20,7 +20,7 @@ def test_text_review_correct_and_save(logged_in_page, ui_url):
         timeout=30000
     )
     expect(
-        page.get_by_text("1 cup (~125 g) all-purpose flour", exact=True)
+        page.get_by_text("~125 g (1 cup) all-purpose flour", exact=True)
     ).to_be_visible()
     page.get_by_label("Title", exact=False).fill("Reviewed text pancakes")
     page.get_by_label("Ingredients", exact=True).fill("2 cups all-purpose flour")
@@ -36,7 +36,9 @@ def test_text_review_correct_and_save(logged_in_page, ui_url):
         page.get_by_role("heading", name="Reviewed text pancakes", exact=True)
     ).to_be_visible(timeout=30000)
     # The saved recipe shows the grams computed when it is read.
-    expect(page.locator(".ingredients-list .alt-measurement")).to_have_text("(~250 g)")
+    ingredient = page.locator(".ingredients-list li")
+    expect(ingredient.locator(".amount")).to_have_text("~250")
+    expect(ingredient.locator(".alt-measurement")).to_contain_text("(2 cup")
 
 
 def test_failed_processing_preserves_text(logged_in_page, ui_url):

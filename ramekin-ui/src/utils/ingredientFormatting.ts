@@ -13,8 +13,9 @@ export interface FormatIngredientOptions {
   includeAlternatives?: boolean;
   includeNote?: boolean;
   /**
-   * Approximate grams the server computed for this line, shown after the
-   * stored alternatives as "~120 g" when alternatives are included.
+   * Approximate grams the server computed for this line. When alternatives
+   * are included they lead the line as "~120 g", and the stored measurements
+   * all move into the parens.
    */
   derived?: Measurement | null;
 }
@@ -22,15 +23,14 @@ export interface FormatIngredientOptions {
 /**
  * The pieces of a formatted ingredient line, kept separate so the recipe view
  * can style each one. `formatIngredient` joins them in display order:
- * "<amount> <unit> (<alternatives>) <item> (<note>)".
+ * "<amount> <unit> (<alternatives>) <item> (<note>)". With derived grams the
+ * amount and unit are the grams ("~120" "g") and the alternatives start with
+ * the stored primary measurement.
  */
 export interface IngredientParts {
   amount: string | null;
   unit: string | null;
-  /**
-   * Alternative measurements, then the derived grams prefixed "~", joined
-   * with ", " — no surrounding parens.
-   */
+  /** Alternative measurements joined with ", " — no surrounding parens. */
   alternatives: string | null;
   item: string;
   /** Trimmed note — no surrounding parens. */
@@ -65,25 +65,32 @@ export function formatIngredientParts(
   options: FormatIngredientOptions = {},
 ): IngredientParts {
   const scale = options.scale ?? 1;
-  const primary = ingredient.measurements[0];
+  const [primary, ...rest] = ingredient.measurements;
+  // Derived grams lead the line, marked approximate, and push the stored
+  // primary into the alternatives. Grams without an amount say nothing.
+  const derived = options.includeAlternatives ? options.derived : null;
+  const derivedAmount = derived
+    ? trimmedValue(scaleAmount(derived.amount, scale))
+    : null;
+  const lead = derivedAmount ? derived : primary;
+  const amount = derivedAmount
+    ? `~${derivedAmount}`
+    : primary
+      ? trimmedValue(scaleAmount(primary.amount, scale))
+      : null;
 
   let alternatives: string | null = null;
   if (options.includeAlternatives) {
-    const derived = options.derived
-      ? formatMeasurement(options.derived, scale)
-      : null;
     const formatted = [
-      ...ingredient.measurements
-        .slice(1)
-        .map((m) => formatMeasurement(m, isPerItem(m) ? 1 : scale)),
-      derived && `~${derived}`,
+      derivedAmount && primary ? formatMeasurement(primary, scale) : null,
+      ...rest.map((m) => formatMeasurement(m, isPerItem(m) ? 1 : scale)),
     ].filter((v): v is string => !!v);
     alternatives = formatted.length > 0 ? formatted.join(", ") : null;
   }
 
   return {
-    amount: primary ? trimmedValue(scaleAmount(primary.amount, scale)) : null,
-    unit: primary ? trimmedValue(primary.unit) : null,
+    amount,
+    unit: lead ? trimmedValue(lead.unit) : null,
     alternatives,
     item: ingredient.item,
     note: options.includeNote ? trimmedValue(ingredient.note) : null,
