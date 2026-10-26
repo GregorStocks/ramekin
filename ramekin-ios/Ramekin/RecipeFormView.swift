@@ -148,20 +148,24 @@ extension RecipeFormView {
         } footer: {
             Text("Type or paste a whole recipe: title, ingredients, instructions, and any details, then tap Import.")
         }
-        .disabled(viewModel.isImporting)
+        .disabled(viewModel.isImporting || viewModel.importedRecipeId != nil)
     }
 
     /// The step's primary action lives in the navigation bar so it stays
-    /// reachable above the keyboard however long the pasted text is.
+    /// reachable above the keyboard however long the pasted text is. Once
+    /// the recipe is saved the form stays open on the job's steps, so the
+    /// extraction's warnings can be read, until Done.
     @ViewBuilder private var importButton: some View {
         if viewModel.isImporting {
             ProgressView().accessibilityLabel("Importing recipe")
+        } else if viewModel.importedRecipeId != nil {
+            Button("Done") { close() }
+                .fontWeight(.semibold)
         } else {
             Button("Import") {
                 importTask = Task {
                     if await viewModel.importRecipe() {
                         onSaved?()
-                        close()
                     }
                 }
             }
@@ -171,8 +175,8 @@ extension RecipeFormView {
     }
 
     @ViewBuilder private var importProgressSection: some View {
-        if viewModel.isImporting {
-            Section("Progress") {
+        if viewModel.isImporting || viewModel.importedRecipeId != nil {
+            Section(viewModel.importedRecipeId == nil ? "Progress" : "Recipe saved") {
                 if viewModel.importSteps.isEmpty {
                     Text("Starting…")
                 }
@@ -188,7 +192,15 @@ extension RecipeFormView {
                         default:
                             Image(systemName: "circle").foregroundColor(.secondary)
                         }
-                        Text(NormalizeSelection.stepLabel(step.name, ops: []))
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(NormalizeSelection.stepLabel(step.name, ops: []))
+                            // Extraction's summary carries the model's warnings.
+                            if let summary = step.summary {
+                                Text(summary)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
                     }
                 }
             }

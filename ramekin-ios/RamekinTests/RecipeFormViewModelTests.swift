@@ -5,18 +5,22 @@ import XCTest
 final class RecipeFormViewModelTests: XCTestCase {
     func testTextImportFollowsTheJobUntilTheRecipeIsSaved() async {
         let jobId = UUID()
+        let recipeId = UUID()
         var polls = 0
-        let model = RecipeFormViewModel(mode: .create, api: createClient(
+        var model: RecipeFormViewModel!
+        model = RecipeFormViewModel(mode: .create, api: createClient(
             importFromText: { text in
                 XCTAssertEqual(text, "Pasted recipe")
+                XCTAssertTrue(model.hasUnsavedChanges, "The text isn't safe until the server accepts it")
                 return jobId
             },
             getScrape: { id in
                 XCTAssertEqual(id, jobId)
+                XCTAssertFalse(model.hasUnsavedChanges, "The job has the text")
                 polls += 1
                 return polls == 1
                     ? makeJob(id: jobId, recipeId: nil, status: "parsing")
-                    : makeJob(id: jobId, recipeId: UUID(), status: "normalizing")
+                    : makeJob(id: jobId, recipeId: recipeId, status: "normalizing")
             }
         ))
         model.pollIntervalNanoseconds = 0
@@ -31,6 +35,27 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertEqual(polls, 2)
         XCTAssertFalse(model.isImporting)
         XCTAssertNil(model.error)
+        XCTAssertEqual(model.importedRecipeId, recipeId)
+        XCTAssertFalse(model.canImport)
+        XCTAssertFalse(model.hasUnsavedChanges)
+    }
+
+    func testLostPollDoesNotOfferToImportAgain() async {
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in UUID() },
+            getScrape: { _ in throw TestError.unexpectedCall }
+        ))
+        model.recipeText = "Pasted recipe"
+
+        let saved = await model.importRecipe()
+
+        XCTAssertFalse(saved)
+        XCTAssertEqual(
+            model.error,
+            "Lost track of the import. It's still running; the recipe will appear in your list."
+        )
+        XCTAssertFalse(model.canImport, "Importing again would make a second recipe")
+        XCTAssertFalse(model.hasUnsavedChanges)
     }
 
     func testFailedTextImportKeepsTheText() async {
@@ -50,6 +75,7 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertEqual(model.recipeText, "My original recipe")
         XCTAssertFalse(model.isImporting)
         XCTAssertTrue(model.canImport)
+        XCTAssertTrue(model.hasUnsavedChanges)
     }
 
     func testTextImportThatCannotStartKeepsTheText() async {
@@ -64,6 +90,8 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertFalse(saved)
         XCTAssertNotNil(model.error)
         XCTAssertEqual(model.recipeText, "My original recipe")
+        XCTAssertTrue(model.canImport)
+        XCTAssertTrue(model.hasUnsavedChanges)
     }
 
     func testNormalizeFailureAfterSavingStillSaves() async {

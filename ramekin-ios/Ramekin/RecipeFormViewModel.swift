@@ -48,7 +48,11 @@ final class RecipeFormViewModel: ObservableObject {
     @Published var isUploadingPhoto = false
     @Published var recipeText = ""
     @Published var isImporting = false
-    /// The text import job's steps, while it runs.
+    /// The text import job, once the server has accepted the text.
+    @Published private(set) var importJobId: UUID?
+    /// The imported recipe, once the job has saved it.
+    @Published private(set) var importedRecipeId: UUID?
+    /// The text import job's steps, as last polled.
     @Published var importSteps: [StepState] = []
     var pollIntervalNanoseconds: UInt64 = 1_000_000_000
     /// A resumed edit started from an older version than the one now saved,
@@ -83,14 +87,14 @@ final class RecipeFormViewModel: ObservableObject {
 
 extension RecipeFormViewModel {
     /// Whether closing the form would throw away the user's work. In create
-    /// mode that's any typed text not yet imported (a running import saves
-    /// the recipe without the form); a photo still uploading counts in
-    /// either mode.
+    /// mode that's any typed text the server hasn't yet accepted as a job (a
+    /// running job saves the recipe without the form); a photo still
+    /// uploading counts in either mode.
     var hasUnsavedChanges: Bool {
         if isUploadingPhoto { return true }
         return switch mode {
         case .create:
-            !isImporting && !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            importJobId == nil && !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         case .edit:
             formData != savedFormData
         }
@@ -119,7 +123,8 @@ extension RecipeFormViewModel {
     }
 
     var canImport: Bool {
-        !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !isImporting
+        !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            && !isImporting && importJobId == nil
     }
 
     /// Imports the recipe text as a job and follows it until the recipe is
@@ -133,16 +138,19 @@ extension RecipeFormViewModel {
         defer { isImporting = false }
         do {
             let jobId = try await api.importFromText(recipeText)
+            importJobId = jobId
             // AI can be slow, so there's no deadline; closing the form
             // cancels the task, and the job carries on.
             while true {
                 try Task.checkCancellation()
                 let job = try await api.getScrape(jobId)
                 importSteps = job.steps
-                if job.recipeId != nil {
+                if let recipeId = job.recipeId {
+                    importedRecipeId = recipeId
                     return true
                 }
                 if job.status == "failed" {
+                    importJobId = nil
                     error = job.error ?? "The import failed. Your text is unchanged; try again."
                     return false
                 }
@@ -151,6 +159,12 @@ extension RecipeFormViewModel {
         } catch is CancellationError {
             return false
         } catch {
+            // A failed poll leaves the job running with the text, so trying
+            // again would import the recipe twice.
+            guard importJobId == nil else {
+                self.error = "Lost track of the import. It's still running; the recipe will appear in your list."
+                return false
+            }
             self.error = APIErrorFormatter.userMessage(
                 from: error, fallback: "Could not import the recipe. Your text is unchanged; try again."
             )
