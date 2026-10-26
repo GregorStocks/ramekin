@@ -8,27 +8,30 @@ extension Ingredient {
         derived: Measurement? = nil
     ) -> String {
         var parts: [String] = []
+        let primary = measurements.first.flatMap { Self.formattedMeasurement($0, scale: scale) }
 
-        if let measurement = measurements.first {
-            let amount = RecipeScaleSupport.scaleAmount(measurement.amount, by: scale)
-            let primary = [amount, measurement.unit]
-                .compactMap(Self.trimmedValue)
+        // Derived grams the server computed lead the line, marked approximate
+        // ("~120 g"), and push the stored primary into the alternatives.
+        // Grams without an amount say nothing.
+        var derivedLead: String?
+        if includeAlternatives, let derived,
+           Self.trimmedValue(RecipeScaleSupport.scaleAmount(derived.amount, by: scale)) != nil,
+           let formatted = Self.formattedMeasurement(derived, scale: scale) {
+            derivedLead = "~\(formatted)"
+        }
 
-            if !primary.isEmpty {
-                parts.append(primary.joined(separator: " "))
-            }
+        if let lead = derivedLead ?? primary {
+            parts.append(lead)
         }
 
         if includeAlternatives {
-            // Derived grams the server computed come after the stored
-            // alternatives, marked approximate ("~120 g").
             // A per-item size ("10 oz each") stays the same however many
             // items the recipe calls for.
             var alternatives = measurements.dropFirst().compactMap { measurement in
                 Self.formattedMeasurement(measurement, scale: Self.isPerItem(measurement) ? 1 : scale)
             }
-            if let derived, let formatted = Self.formattedMeasurement(derived, scale: scale) {
-                alternatives.append("~\(formatted)")
+            if derivedLead != nil, let primary {
+                alternatives.insert(primary, at: 0)
             }
 
             if !alternatives.isEmpty {

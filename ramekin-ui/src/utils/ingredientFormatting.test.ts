@@ -60,6 +60,27 @@ describe("formatIngredientParts", () => {
     });
   });
 
+  it("leads with derived grams and moves the primary into alternatives", () => {
+    const ing = ingredient({
+      item: "flour",
+      measurements: [{ amount: "1", unit: "cup" }],
+    });
+
+    expect(
+      formatIngredientParts(ing, {
+        scale: 2,
+        includeAlternatives: true,
+        derived: { amount: "120", unit: "g" },
+      }),
+    ).toEqual({
+      amount: "~240",
+      unit: "g",
+      alternatives: "2 cup",
+      item: "flour",
+      note: null,
+    });
+  });
+
   it("omits alternatives and note unless requested", () => {
     const ing = ingredient({
       item: "flour",
