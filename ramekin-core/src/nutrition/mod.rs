@@ -466,20 +466,26 @@ fn refers_to_another_recipe(ingredient: &ParsedIngredient) -> bool {
     }
 }
 
-/// What a line adds, or why it can't be counted.
+/// What a line adds, or why it can't be counted. An amount of another
+/// recipe counts only by its other measurements: "1 recipe pizza dough" is a
+/// batch, not one of the food's pieces.
 fn contribution(
     ingredient: &ParsedIngredient,
     scale: f64,
     learned: &catalog::Learned,
     estimated: &Gaps,
 ) -> Result<Line, &'static str> {
-    weigh_line(ingredient, scale, learned, estimated).map_err(|reason| {
-        if refers_to_another_recipe(ingredient) {
-            "Another recipe"
-        } else {
-            reason
-        }
-    })
+    if !refers_to_another_recipe(ingredient) {
+        return weigh_line(ingredient, scale, learned, estimated);
+    }
+    let others = ParsedIngredient {
+        measurements: ingredient.measurements[1..].to_vec(),
+        ..ingredient.clone()
+    };
+    if others.measurements.is_empty() {
+        return Err("Another recipe");
+    }
+    weigh_line(&others, scale, learned, estimated).map_err(|_| "Another recipe")
 }
 
 fn weigh_line(

@@ -4346,10 +4346,18 @@
       }
     },
     "burrata": {
+      "default_portion": "ball",
       "kcal_per_100g": {
         "source": "USDA FoodData Central Branded food 2070553 (BURRATA, Belgioioso Cheese, Inc.): 250 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/2070553/nutrients",
         "value": 250.0
+      },
+      "portions": {
+        "ball": {
+          "source": "USDA FoodData Central Branded food 2755791 (Cheese Burrata Ball, 8 ounce, BelGioioso): 227 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2755791/nutrients",
+          "value": 227.0
+        }
       }
     },
     "butter": {
@@ -4581,7 +4589,19 @@
       "fdc_id": 169698
     },
     "cream cheese": {
-      "fdc_id": 173418
+      "fdc_id": 173418,
+      "portions": {
+        "block": {
+          "source": "USDA FoodData Central Branded food 2756799 (Philadelphia Original Cream Cheese, 8 oz Brick): 227 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2756799/nutrients",
+          "value": 227.0
+        },
+        "brick": {
+          "source": "USDA FoodData Central Branded food 2756799 (Philadelphia Original Cream Cheese, 8 oz Brick): 227 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2756799/nutrients",
+          "value": 227.0
+        }
+      }
     },
     "creole seasoning": {
       "kcal_per_100g": {
@@ -5507,10 +5527,18 @@
       }
     },
     "pizza dough": {
+      "default_portion": "ball",
       "kcal_per_100g": {
         "source": "USDA FoodData Central Branded food 2696525 (Gold Medal All Trumps High Gluten Pizza Dough Balls, GENERAL MILLS SALES INC.): 241 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/2696525/nutrients",
         "value": 241.0
+      },
+      "portions": {
+        "ball": {
+          "source": "USDA FoodData Central Branded food 2737131 (BONICI Frozen Pizza Dough Ball 30/16 OZ, General Mills): one ball = 16 oz = 454 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2737131/nutrients",
+          "value": 454.0
+        }
       }
     },
     "plastic wrap": {
@@ -5948,6 +5976,15 @@
           "source": "USDA SR Legacy 167995 (Candies, marshmallows): 1 regular = 7.2 g; the regular marshmallow is the one sold as large",
           "url": "https://fdc.nal.usda.gov/food-details/167995/nutrients",
           "value": 7.2
+        }
+      }
+    },
+    "cheese, mozzarella, whole milk": {
+      "portions": {
+        "ball": {
+          "source": "USDA FoodData Central Branded food 2442048 (ORGANIC FRESH MOZZARELLA CHEESE BALL, O Organics): package 8 oz/226 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2442048/nutrients",
+          "value": 226.0
         }
       }
     },

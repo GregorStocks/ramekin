@@ -792,6 +792,8 @@ fn an_amount_of_another_recipe_says_so() {
         "1/2 recipe the best basic guacamole",
         "1 batch roasted tomato salsa or your favorite salsa, for serving",
         "1/2 batch Rice Krispies Treats",
+        // Pizza dough is weighed by the ball, but a recipe of it isn't one.
+        "1 recipe pizza dough",
     ] {
         let result = estimate(&[parse_ingredient(raw)], None, 1.0).unwrap();
         assert_eq!(
@@ -2055,6 +2057,32 @@ fn seasoning_mix_packets_and_bouillon_cubes_weigh_by_the_package() {
             "1 chicken bouillon (cube or powder)",
             "4 g chicken bouillon",
         ),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
+
+#[test]
+fn balls_of_dough_and_cheese_and_blocks_of_cream_cheese_weigh_by_the_piece() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        ("1 ball no-knead pizza dough", "454 g pizza dough"),
+        // A bare count of pizza dough is a ball.
+        ("1 fresh pizza dough", "454 g pizza dough"),
+        ("1 ball burrata, torn", "227 g burrata"),
+        ("2 large balls of burrata", "454 g burrata"),
+        ("1 ball fresh mozzarella", "226 g fresh mozzarella"),
+        ("1/2 block cream cheese", "113.5 g cream cheese"),
     ] {
         let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
         assert!(counted_kcal.is_some(), "{counted}");
