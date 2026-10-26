@@ -176,11 +176,12 @@ impl Line {
     }
 
     /// Whether `rewritten` still names this line's food: the same catalog
-    /// entries, or a line that only drops words from this one and names the
+    /// entries, or a line that only drops prep from this one and names the
     /// same family of food or one the catalog doesn't know ("6 hardboiled
     /// eggs" to "6 eggs", "frisée, torn into bite-size pieces" to "frisée").
-    /// The family check keeps a dropped word from changing the food ("garlic
-    /// powder" to "garlic").
+    /// Only prep and restated amounts may go (`is_droppable_word`), so a
+    /// dropped word can't change the food ("garlic powder" to "garlic" or
+    /// "powder", "sweetened condensed milk" to "milk").
     fn kept_by(&self, rewritten: &Line) -> bool {
         let ids = |line: &Line| {
             line.foods
@@ -196,8 +197,32 @@ impl Line {
         ids(self) == ids(rewritten)
             || (!rewritten.words.is_empty()
                 && rewritten.words.is_subset(&self.words)
+                && self
+                    .words
+                    .difference(&rewritten.words)
+                    .all(|word| is_droppable_word(word))
                 && (rewritten.foods.is_empty() || families(self) == families(rewritten)))
     }
+}
+
+/// Words a rewrite may drop from a line: prep that moves into the steps (the
+/// style guide's cutting, chopping, peeling, boiling and so on) with the
+/// words that say how, and an amount restated in the note ("about 2
+/// ounces"), since the amounts are checked on their own. Purchased forms
+/// ("ground", "dried", "frozen", "shredded", "crumbled") and states that
+/// change the measure ("cooked") aren't here: they stay in the line.
+fn is_droppable_word(word: &str) -> bool {
+    const WORDS: &[&str] = &[
+        "about", "approximately", "g", "grams", "lb", "lbs", "ounce", "ounces", "oz", "pound",
+        "pounds",
+        "and", "beaten", "bite", "boiled", "chopped", "chunks", "coarsely", "cored", "crosswise",
+        "cubed", "cubes", "cut", "diced", "finely", "grated", "halved", "hard", "hardboiled",
+        "inch", "into", "julienned", "lengthwise", "lightly", "melted", "minced", "peeled",
+        "piece", "pieces", "quartered", "roughly", "rounds", "seeded", "size", "sized",
+        "sliced", "slices", "softened", "strips", "thick", "thin", "thinly", "toasted", "torn",
+        "trimmed", "wedges", "whisked",
+    ];
+    WORDS.contains(&word) || word.chars().all(|c| c.is_ascii_digit())
 }
 
 /// The kind of food a catalog entry is: a USDA description's first part
@@ -232,21 +257,32 @@ fn check_unchanged(before: &Before, ingredients: &[Value]) -> Result<(), String>
     // keeps its food and its amounts, so amounts can't trade places between
     // ingredients.
     let after: Vec<Line> = ingredients.iter().map(Line::of).collect();
-    let mut unused: Vec<&Line> = after.iter().collect();
+    let named: Vec<&Line> = before
+        .lines
+        .iter()
+        .filter(|line| !line.foods.is_empty())
+        .collect();
+    let candidates: Vec<Vec<usize>> = named
+        .iter()
+        .map(|line| {
+            (0..after.len())
+                .filter(|&at| after[at].amounts == line.amounts && line.kept_by(&after[at]))
+                .collect()
+        })
+        .collect();
+    let matched = match_lines(&candidates, after.len());
     let (mut lost, mut moved) = (Vec::new(), Vec::new());
-    for line in before.lines.iter().filter(|line| !line.foods.is_empty()) {
-        match unused
-            .iter()
-            .position(|other| other.amounts == line.amounts && line.kept_by(other))
-        {
-            Some(at) => {
-                unused.remove(at);
-            }
-            None if after.iter().any(|other| line.kept_by(other)) => moved.push(format!(
+    for (line, matched) in named.iter().zip(matched) {
+        if matched.is_some() {
+            continue;
+        }
+        if after.iter().any(|other| line.kept_by(other)) {
+            moved.push(format!(
                 "\"{}\"",
                 format!("{}: {}", line.food_names(), line.amounts).trim()
-            )),
-            None => lost.push(line.food_names()),
+            ));
+        } else {
+            lost.push(line.food_names());
         }
     }
     if !lost.is_empty() {
@@ -264,6 +300,42 @@ fn check_unchanged(before: &Before, ingredients: &[Value]) -> Result<(), String>
         ));
     }
     Ok(())
+}
+
+/// A largest one-to-one matching of original lines to the rewritten lines
+/// each could be (`candidates[i]` lists line i's), as each original line's
+/// match. Matched by augmenting paths, so one line taking an ambiguous match
+/// can't leave another without its only one.
+fn match_lines(candidates: &[Vec<usize>], rewritten: usize) -> Vec<Option<usize>> {
+    fn augment(
+        line: usize,
+        candidates: &[Vec<usize>],
+        seen: &mut [bool],
+        owner: &mut [Option<usize>],
+    ) -> bool {
+        for &at in &candidates[line] {
+            if seen[at] {
+                continue;
+            }
+            seen[at] = true;
+            if owner[at].is_none_or(|other| augment(other, candidates, seen, owner)) {
+                owner[at] = Some(line);
+                return true;
+            }
+        }
+        false
+    }
+    let mut owner = vec![None; rewritten];
+    for line in 0..candidates.len() {
+        augment(line, candidates, &mut vec![false; rewritten], &mut owner);
+    }
+    let mut matched = vec![None; candidates.len()];
+    for (at, line) in owner.into_iter().enumerate() {
+        if let Some(line) = line {
+            matched[line] = Some(at);
+        }
+    }
+    matched
 }
 
 /// The amounts in `a` that `b` lacks, counting repeats, as quoted text.
@@ -498,10 +570,10 @@ mod tests {
         assert_eq!(reply, "Done.");
 
         // fried egg sandwich: the catalog reads the original line as endive
-        // and doesn't know frisée alone.
+        // and doesn't know frisée without the item's "endive".
         let reply = finish_after(
             vec![json!({"item": "frisée, torn into-bite size pieces", "measurements": [{"amount": "1.5", "unit": "cup"}, {"amount": "2", "unit": "oz"}], "note": "French curly endive, about 2 ounces", "section": null})],
-            &[(1, "1 1/2 cups (2 oz) frisée")],
+            &[(1, "1 1/2 cups (2 oz) frisée, French curly endive")],
         )
         .await;
         assert_eq!(reply, "Done.");
@@ -512,6 +584,19 @@ mod tests {
         let reply = finish_after(
             vec![json!({"item": "garlic powder", "measurements": [{"amount": "1", "unit": "tsp"}], "note": null, "section": null})],
             &[(1, "1 tsp garlic")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+
+        let reply = finish_after(
+            vec![json!({"item": "garlic powder", "measurements": [{"amount": "1", "unit": "tsp"}], "note": null, "section": null})],
+            &[(1, "1 tsp powder")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+        let reply = finish_after(
+            vec![json!({"item": "sweetened condensed milk", "measurements": [{"amount": "1", "unit": "cup"}], "note": null, "section": null})],
+            &[(1, "1 cup milk")],
         )
         .await;
         assert!(reply.contains("These ingredients are gone"), "{reply}");
@@ -531,6 +616,21 @@ mod tests {
         )
         .await;
         assert!(reply.contains("These ingredients are gone"), "{reply}");
+    }
+
+    #[tokio::test]
+    async fn lines_that_could_match_either_way_still_reorder() {
+        // "eggs" could keep either line's food; the hardboiled eggs still
+        // find their own line.
+        let reply = finish_after(
+            vec![
+                json!({"item": "hardboiled eggs", "measurements": [{"amount": "6", "unit": null}], "note": null, "section": null}),
+                json!({"item": "eggs", "measurements": [{"amount": "6", "unit": null}], "note": null, "section": null}),
+            ],
+            &[(1, "6 eggs"), (2, "6 hardboiled eggs")],
+        )
+        .await;
+        assert_eq!(reply, "Done.");
     }
 
     #[test]
