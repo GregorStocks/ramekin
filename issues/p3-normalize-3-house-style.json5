@@ -8,7 +8,7 @@ Recommendation: our own spec, NYT-style voice and ingredient ordering plus weigh
 Also decide: sentence case vs title case for ingredient names, unit abbreviations (g, tbsp), temperature format (°F with °C?), and whether steps are split one action each. \
 The op should keep ingredient structure valid for the parser and calorie estimates (the rewritten lines must still parse; the PR should show before/after on pipeline fixtures). \
 Build an ai-eval suite (data/ai-evals/) with a handful of golden before/after recipes and a judge prompt keyed to the spec. \
-Whether the op runs by default on import is an owner decision once results are good. `make pipeline` should not change unless the op is added to the default import set.",
+Owner decisions (2026-10-25): our own spec (NYT-style voice and ingredient ordering, weights first, prep moved into steps); grams first with the original volume or count in parentheses when useful ('120 g (1 cup) flour'), short unit abbreviations (g, tbsp, tsp); when the catalog can't weigh a line, leave it as-is and never use the model's guessed weights; lowercase ingredient names except proper nouns ('Dijon mustard'); temperatures in °F only ('425°F'); steps as short related groups, one coherent stage each, not strictly one action per step; brief whys for non-obvious steps (Serious Eats style), with no added doneness cues or timing rewrites; the op runs by default on import like the other AI normalize ops (`make pipeline` runs no AI, so pipeline data won't change).",
   "status": "open",
   "priority": 3,
   "type": "task",
@@ -17,7 +17,6 @@ Whether the op runs by default on import is an owner decision once results are g
     "pipeline",
     "api",
   ],
-  "blocked": "Needs the owner to choose the style guide basis and settle the open style questions (unit display, title vs sentence case, one action per step, whether it runs on import) before the spec and prompt are written.",
   "created_at": "2026-10-24T15:46:03-07:00",
-  "updated_at": "2026-10-24T17:13:29-07:00",
+  "updated_at": "2026-10-25T00:00:00-07:00",
 }
