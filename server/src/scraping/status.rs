@@ -157,6 +157,18 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
                 .map(|a| a.len())?;
             Some(format!("{} tags suggested", count))
         }
+        // HouseStyleStep stores `{ changed, ingredients, instructions, summary, ... }`.
+        "house_style" => {
+            let changed = output
+                .get("changed")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false);
+            Some(if changed {
+                "rewritten in house style".to_string()
+            } else {
+                "already in house style".to_string()
+            })
+        }
         // ApplyNormalizeStep stores `{ changed, new_version_id? }`.
         "apply_normalize" => {
             let changed = output

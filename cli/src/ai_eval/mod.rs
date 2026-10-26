@@ -35,7 +35,7 @@ pub const BATCH: usize = 40;
 /// Candidate keys offered per name, as the server does.
 const CANDIDATES: usize = 12;
 
-pub const SUITES: [&str; 10] = [
+pub const SUITES: [&str; 11] = [
     "ingredient-weights",
     "food-estimates",
     "ingredient-names",
@@ -45,16 +45,18 @@ pub const SUITES: [&str; 10] = [
     "titles",
     "descriptions",
     "edit-recipe",
+    "house-style",
     "recipe-photos",
 ];
 
 /// The suites a person judges (`judged`): their reports need judgments, and
 /// their models are general (or, for photos, image) models.
-const JUDGED: [&str; 5] = [
+const JUDGED: [&str; 6] = [
     "tags",
     "titles",
     "descriptions",
     "edit-recipe",
+    "house-style",
     "recipe-photos",
 ];
 
@@ -950,6 +952,17 @@ fn spec(suite: &str) -> SuiteSpec {
             title: "Edit with AI",
             about: concat!(
                 "A recipe changed by a user's instruction (`edit_recipe`), for 13 pipeline snapshots each paired with an instruction that suits it (`EDIT_CASES`: make it vegetarian, halve it, convert to metric…; three need its tools: catalog weights, calories, scaling). The model edits with tools in a bounded loop (`MAX_EDIT_TURNS`), seeing no user tags or other recipes; answers end with its summary. An answer that doesn't parse as the server's recipe shape is invalid, as in production. ",
+                judging!(),
+                " ",
+                verdicts!()
+            ),
+            columns: judged::VERDICT_COLUMNS,
+            batched: false,
+        },
+        "house-style" => SuiteSpec {
+            title: "House style",
+            about: concat!(
+                "A recipe rewritten into the house style (`house_style`, `doc/house-style.md`), for 10 pipeline snapshots: 4 with prep in their ingredient lines and sections, 4 with prep and no sections, and 2 with neither, which should change little. The model rewrites with the edit tools in a bounded loop (`MAX_EDIT_TURNS`), limited to ingredient and step edits; `finish` is refused until every original amount and catalog food is back, so an answer that never gets there (or doesn't parse as the server's recipe shape) is invalid, as in production. ",
                 judging!(),
                 " ",
                 verdicts!()

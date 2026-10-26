@@ -261,7 +261,8 @@ pub async fn list_normalize_ops(
                 NormalizeOp::Reextract => reextract.clone(),
                 NormalizeOp::NormalizeTitle
                 | NormalizeOp::GenerateDescription
-                | NormalizeOp::AutoTag => None,
+                | NormalizeOp::AutoTag
+                | NormalizeOp::HouseStyle => None,
             };
             NormalizeOpInfo {
                 id: op.id().to_string(),

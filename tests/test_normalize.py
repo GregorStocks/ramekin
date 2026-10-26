@@ -104,6 +104,7 @@ def test_list_ops_describes_the_registry(authed_api_client):
         "normalize_title",
         "generate_description",
         "auto_tag",
+        "house_style",
     ]
     ops = ops_by_id(response)
     assert all(op.available for op in response.ops)
@@ -111,11 +112,37 @@ def test_list_ops_describes_the_registry(authed_api_client):
     assert ops["refetch"].group == "source"
     assert ops["generate_description"].runs_after == ["normalize_title"]
     assert ops["auto_tag"].writes == ["tags"]
+    assert ops["house_style"].writes == ["ingredients", "instructions"]
     assert [op.id for op in response.ops if op.default_on_import] == [
         "normalize_title",
         "generate_description",
         "auto_tag",
+        "house_style",
     ]
+
+
+def test_house_style_proposes_rewritten_steps(authed_api_client):
+    client, _ = authed_api_client
+    # The mock rewrites only recipes titled for this test: it adds a prep step.
+    recipe_id = create_typed_recipe(client, "House Style Test Soup")
+
+    _, proposal = run(client, recipe_id, ["house_style"])
+
+    assert proposal.ops == ["house_style"]
+    proposed = proposal.proposed.content
+    assert proposed.instructions == "Chop the onion.\nCook it."
+    assert [i.item for i in proposed.ingredients] == ["shrimp"]
+    assert proposed.ingredients[0].measurements[0].amount == "1"
+    assert proposed.title == "House Style Test Soup"
+
+
+def test_house_style_leaves_a_styled_recipe_alone(authed_api_client):
+    client, _ = authed_api_client
+    recipe_id = create_typed_recipe(client, "Plain Shrimp")
+
+    _, proposal = run(client, recipe_id, ["house_style"])
+
+    assert proposal.proposed.content.instructions == "Cook it."
 
 
 def test_typed_recipe_has_no_source_ops(authed_api_client):

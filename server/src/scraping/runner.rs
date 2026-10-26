@@ -7,7 +7,7 @@ use futures::stream::{FuturesUnordered, StreamExt};
 use tokio::sync::{Semaphore, SemaphorePermit};
 use tracing::Instrument;
 
-use ramekin_core::ai::{AiClient, AiConfig, CachingAiClient, UnconfiguredAiClient};
+use ramekin_core::ai::AiConfig;
 use ramekin_core::pipeline::steps::{
     ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
@@ -161,22 +161,19 @@ pub async fn build_registry(
 
     if !normalize_ops.is_empty() {
         // A missing OPENROUTER_API_KEY must not fail the job before
-        // save_recipe runs: hand the normalize steps a client that errors on
-        // every call, so a missing key behaves exactly like an invalid one.
-        let ai_client: Arc<dyn AiClient> = match AiConfig::from_env() {
-            Ok(config) => Arc::new(CachingAiClient::new(config)),
-            Err(e) => {
-                tracing::warn!("AI client unavailable, normalize steps will fail: {e}");
-                Arc::new(UnconfiguredAiClient::new(e))
-            }
-        };
+        // save_recipe runs: the normalize steps then fail on their first
+        // call, so a missing key behaves exactly like an invalid one.
+        let ai_config = AiConfig::from_env();
+        if let Err(e) = &ai_config {
+            tracing::warn!("AI client unavailable, normalize steps will fail: {e}");
+        }
         let user_tags = if normalize_ops.contains(&NormalizeOp::AutoTag) {
             fetch_user_tags(&pool, user_id).await?
         } else {
             Vec::new()
         };
         for op in normalize_ops {
-            if let Some(step) = op.step(ai_client.clone(), &user_tags) {
+            if let Some(step) = op.step(&ai_config, &user_tags) {
                 registry.register(step);
             }
         }

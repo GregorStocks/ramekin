@@ -7,12 +7,11 @@ use std::{
 use async_trait::async_trait;
 use axum::{extract::State, Json};
 use diesel::prelude::*;
-use ramekin_core::ai::{
-    text_extract::extract_recipe_from_text, AiClient, AiConfig, CachingAiClient,
-};
+use ramekin_core::ai::{text_extract::extract_recipe_from_text, AiConfig, CachingAiClient};
 use ramekin_core::metric_weights::is_metric_weight_unit;
 use ramekin_core::pipeline::{
-    default_import_ops, steps::ParseIngredientsStep, PipelineStep, StepContext, StepOutputStore,
+    default_import_ops, steps::ParseIngredientsStep, NormalizeOp, PipelineStep, StepContext,
+    StepOutputStore,
 };
 use ramekin_core::RawRecipe;
 use serde::{Deserialize, Serialize};
@@ -121,7 +120,6 @@ pub async fn prepare_text_recipe(
         ApiError::service_unavailable("Recipe text processing is unavailable. Ask your server administrator to configure AI access, then retry.")
     })?;
     let extractor = CachingAiClient::new(config.for_extraction());
-    let client: Arc<dyn AiClient> = Arc::new(CachingAiClient::new(config));
     let extracted = extract_recipe_from_text(&extractor, &request.text)
         .await
         .map_err(|e| {
@@ -173,9 +171,16 @@ pub async fn prepare_text_recipe(
         outputs
             .0
             .insert("extract_recipe".into(), json!({"raw_recipe": raw}));
-        let ops = default_import_ops();
+        // Long tool loops are too slow for this request; they come back once
+        // text import is a background job
+        // (issues/p2-text-import-background-job.json5).
+        let ops: Vec<NormalizeOp> = default_import_ops()
+            .into_iter()
+            .filter(|op| !op.long_running())
+            .collect();
+        let ai_config = Ok(config);
         for op in &ops {
-            if let Some(step) = op.step(client.clone(), &tags) {
+            if let Some(step) = op.step(&ai_config, &tags) {
                 outputs.execute(step.as_ref()).await?;
             }
         }

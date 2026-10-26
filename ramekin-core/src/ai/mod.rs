@@ -44,10 +44,13 @@ mod edit_recipe_tools;
 mod estimate_ingredient_weights;
 mod generate_description;
 mod generate_recipe_photo;
+mod house_style;
 mod normalize_title;
 pub mod photo_extract;
 pub mod prompts;
 mod resolve_ingredient_names;
+#[cfg(test)]
+pub(crate) mod test_support;
 pub mod text_extract;
 mod types;
 
@@ -62,6 +65,7 @@ pub use estimate_ingredient_weights::{
 };
 pub use generate_description::{generate_description, GenerateDescriptionResult};
 pub use generate_recipe_photo::{generate_recipe_photo, GenerateRecipePhotoResult};
+pub use house_style::house_style;
 pub use normalize_title::{normalize_title, NormalizeTitleResult};
 pub use photo_extract::{extract_recipe_from_photos, PhotoExtractResult};
 pub use prompts::resolve_ingredient_names::NameQuery;

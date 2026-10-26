@@ -19,6 +19,7 @@ CANONICAL_STEP_NAMES = [
     "normalize_title",
     "generate_description",
     "auto_tag",
+    "house_style",
     "apply_normalize",
 ]
 

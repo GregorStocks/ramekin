@@ -113,6 +113,7 @@ def test_recipe_is_viewable_while_normalize_ops_run_concurrently(
                         "resolve_ingredient_names",
                         "normalize_title",
                         "auto_tag",
+                        "house_style",
                     )
                 )
                 and j
@@ -138,6 +139,7 @@ def test_recipe_is_viewable_while_normalize_ops_run_concurrently(
         "normalize_title",
         "generate_description",
         "auto_tag",
+        "house_style",
     ]
     versions = recipes_api.list_versions(id=str(job.recipe_id)).versions
     assert [v.version_source for v in versions] == ["normalize", "scrape"]

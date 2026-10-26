@@ -1,0 +1,22 @@
+{
+  "title": "Pasted-text import: run as a background job like every other import",
+  "description": "Pasted-text import (POST /api/import/text, server/src/api/import/text.rs) extracts the recipe and runs the default import normalize ops inside the HTTP request, then returns a draft for the user to review and save. \
+Every other import (URL, capture, photos) is a background scrape job. \
+The owner wants text import to work the same way: the request starts a job (extract from the text, parse ingredients, save, then the normalize phase with apply_normalize), and the clients follow it like a URL import, with no synchronous draft. \
+This matters now because the house_style normalize op (a multi-turn tool loop on the edit model) is too slow to run inside a request, so the synchronous draft skips it (see the filter in text.rs); once text import is a job, drop that filter so it gets house style like every other import. \
+Both clients change: web ramekin-ui/src/pages/CreateRecipePage.tsx and iOS RecipeFormViewModel.prepareTextRecipe currently show the returned draft in the recipe form. \
+Decide with the owner whether the review step survives (e.g. warnings like 'Missing ingredients' surfaced on the job status page) or goes away. \
+Breaking the API is fine (single user). \
+Add e2e tests for the new endpoint shape before switching the clients.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "api",
+    "web",
+    "ios",
+    "pipeline",
+  ],
+  "created_at": "2026-10-25T12:00:00-07:00",
+  "updated_at": "2026-10-25T12:00:00-07:00",
+}

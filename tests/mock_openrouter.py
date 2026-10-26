@@ -425,7 +425,15 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         )
         prompt = json.dumps(messages)
         tool_results = [m for m in messages if m.get("role") == "tool"]
-        if "like my other" in prompt and not tool_results:
+        if "into the house style" in prompt:
+            # House style leaves recipes alone, so imports in other tests
+            # keep their steps, except one titled for the house style test,
+            # which gets a prep step.
+            if "House Style Test" in prompt and not tool_results:
+                calls = [("add_step", {"after": 0, "text": "Chop the onion."})]
+            else:
+                calls = [("finish", {"summary": "Rewrote it in house style."})]
+        elif "like my other" in prompt and not tool_results:
             # Search the user's recipes by an ingredient, and report what
             # came back so tests can see the search.
             calls = [("search_recipes", {"query": "tahini"})]

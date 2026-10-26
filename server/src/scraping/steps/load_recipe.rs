@@ -4,6 +4,7 @@ use std::time::Instant;
 use async_trait::async_trait;
 use serde_json::json;
 
+use ramekin_core::ingredient_parser::ParsedIngredient;
 use ramekin_core::pipeline::{
     PipelineStep, StepContext, StepMetadata, StepResult, LOAD_RECIPE_STEP,
 };
@@ -14,7 +15,8 @@ use crate::normalize::load_version_blocking;
 
 use super::helpers::step_failure;
 
-/// Writes the version a normalize job started from as its `raw_recipe`, so
+/// Writes the version a normalize job started from as its `raw_recipe`, and
+/// its structured `ingredients` (as `parse_ingredients` writes them), so
 /// normalize ops can run on it without re-reading the source.
 pub struct LoadRecipeStep {
     pool: Arc<DbPool>,
@@ -46,7 +48,15 @@ impl PipelineStep for LoadRecipeStep {
         StepResult {
             step_name: LOAD_RECIPE_STEP.to_string(),
             success: true,
-            output: json!({ "raw_recipe": recipe.to_raw_recipe() }),
+            output: json!({
+                "raw_recipe": recipe.to_raw_recipe(),
+                "ingredients": recipe
+                    .content
+                    .ingredients
+                    .into_iter()
+                    .map(ParsedIngredient::from)
+                    .collect::<Vec<_>>(),
+            }),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: None,

@@ -113,6 +113,25 @@ pub fn edit_recipe_tools() -> Vec<ToolSpec> {
             &["index"],
         ),
         tool(
+            "move_ingredient",
+            "Move ingredient N to after ingredient M (0 moves it first). Numbers are as they are before the move; it keeps its section.",
+            json!({
+                "index": {"type": "number", "description": "The ingredient's number, from 1"},
+                "after": {"type": "number", "description": "The ingredient number to move it after, or 0"}
+            }),
+            &["index", "after"],
+        ),
+        tool(
+            "set_section",
+            "Put ingredients FROM through TO in a section (a heading like \"For the sauce\"), or \"\" to take them out of any section.",
+            json!({
+                "from": {"type": "number", "description": "The first ingredient's number, from 1"},
+                "to": {"type": "number", "description": "The last ingredient's number"},
+                "section": {"type": "string", "description": "The section's heading, or \"\""}
+            }),
+            &["from", "to", "section"],
+        ),
+        tool(
             "set_step",
             "Replace step N of the instructions with new text.",
             json!({
@@ -184,7 +203,7 @@ impl RecipeDraft {
         self.recipe.get(field).and_then(Value::as_str).unwrap_or("")
     }
 
-    fn ingredients(&self) -> &[Value] {
+    pub(crate) fn ingredients(&self) -> &[Value] {
         self.recipe
             .get("ingredients")
             .and_then(Value::as_array)
@@ -359,6 +378,42 @@ impl RecipeDraft {
                     "Removed ingredient {}: {}. Later ingredients moved up one number.",
                     index + 1,
                     ingredient_line(&removed)
+                ))
+            }
+            "move_ingredient" => {
+                let count = self.ingredients().len();
+                let index = index_arg(args, "index", count)?;
+                let after = position_arg(args, "after", count)?;
+                let ingredients = self.ingredients_mut();
+                let moved = ingredients.remove(index);
+                // `after` counts the moved ingredient when it came before.
+                let at = if after > index { after - 1 } else { after };
+                ingredients.insert(at, moved);
+                Ok(format!(
+                    "Moved it to number {}. The ingredients now:\n{}",
+                    at + 1,
+                    self.render_ingredients()
+                ))
+            }
+            "set_section" => {
+                let count = self.ingredients().len();
+                let from = index_arg(args, "from", count)?;
+                let to = index_arg(args, "to", count)?;
+                if to < from {
+                    return Err("to must not be before from".to_string());
+                }
+                let section = string_arg(args, "section")?;
+                let section = match section.trim() {
+                    "" => Value::Null,
+                    name => Value::String(one_line(name)?),
+                };
+                for ingredient in &mut self.ingredients_mut()[from..=to] {
+                    ingredient["section"] = section.clone();
+                }
+                Ok(format!(
+                    "Set the section of ingredients {} to {}.",
+                    from + 1,
+                    to + 1
                 ))
             }
             "set_step" => {
@@ -613,7 +668,7 @@ fn is_per_item(measurement: &Value) -> bool {
 }
 
 /// An amount as recipes store them: up to 3 decimals, no trailing zeros.
-fn format_amount(amount: f64) -> String {
+pub(crate) fn format_amount(amount: f64) -> String {
     let text = format!("{amount:.3}");
     let text = text.trim_end_matches('0').trim_end_matches('.');
     text.to_string()
@@ -744,6 +799,82 @@ mod tests {
         assert_eq!(parsley["raw"], "2 tbsp chopped parsley");
         // The others are untouched.
         assert_eq!(recipe["ingredients"][0]["raw"], "2 cups water");
+    }
+
+    fn items(draft: RecipeDraft) -> Vec<(String, Value)> {
+        draft.into_value()["ingredients"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .map(|i| {
+                (
+                    i["item"].as_str().unwrap().to_string(),
+                    i["section"].clone(),
+                )
+            })
+            .collect()
+    }
+
+    #[tokio::test]
+    async fn move_ingredient_counts_positions_before_the_move() {
+        let mut draft = draft();
+        call(
+            &mut draft,
+            "move_ingredient",
+            json!({"index": 1, "after": 3}),
+        )
+        .await;
+        assert_eq!(
+            items(draft),
+            [
+                ("salt".to_string(), Value::Null),
+                ("parsley".to_string(), json!("To serve")),
+                ("water".to_string(), Value::Null),
+            ]
+        );
+
+        let mut draft = super::tests::draft();
+        call(
+            &mut draft,
+            "move_ingredient",
+            json!({"index": 3, "after": 0}),
+        )
+        .await;
+        assert_eq!(items(draft)[0].0, "parsley");
+    }
+
+    #[tokio::test]
+    async fn set_section_names_or_clears_a_range() {
+        let mut draft = draft();
+        call(
+            &mut draft,
+            "set_section",
+            json!({"from": 1, "to": 2, "section": "For the soup"}),
+        )
+        .await;
+        call(
+            &mut draft,
+            "set_section",
+            json!({"from": 3, "to": 3, "section": ""}),
+        )
+        .await;
+        assert_eq!(
+            items(draft),
+            [
+                ("water".to_string(), json!("For the soup")),
+                ("salt".to_string(), json!("For the soup")),
+                ("parsley".to_string(), Value::Null),
+            ]
+        );
+
+        let mut draft = super::tests::draft();
+        let reply = call(
+            &mut draft,
+            "set_section",
+            json!({"from": 2, "to": 1, "section": "x"}),
+        )
+        .await;
+        assert_eq!(reply, "Error: to must not be before from");
     }
 
     #[tokio::test]
