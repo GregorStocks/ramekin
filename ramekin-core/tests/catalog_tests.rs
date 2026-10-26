@@ -945,7 +945,8 @@ fn curated_names_are_what_the_parser_produces() {
     // Aliases keyed on text the parser splits off ("about 7 cloves garlic",
     // "chickpeas, rinsed", "-ounce block feta") never match a newly parsed
     // line, and ones the resolver reaches anyway ("chopped fresh basil") are
-    // dead weight. `make catalog-clean-aliases` removes or re-keys them; only
+    // dead weight. `make catalog-clean-aliases` removes or re-keys them, except
+    // keys prod's stored lines still hit (prod_names.json); only
     // conflicts, which need a person to decide, may remain.
     let (_, changes) =
         ramekin_core::catalog::clean_curated(ramekin_core::catalog::CURATED_JSON, &known_names());
@@ -1186,10 +1187,33 @@ fn clean_curated_keeps_names_people_type() {
     // A hand-typed shopping-list item is matched as typed, never parsed.
     let json = r#"{"aliases": {"zzfood, chopped": "zzfood"}, "not_food": {}, "categories": {}}"#;
     let known = ramekin_core::catalog::CleanupNames {
-        typed: std::collections::BTreeSet::from(["zzfood, chopped".to_string()]),
+        verbatim: std::collections::BTreeSet::from(["zzfood, chopped".to_string()]),
         ..no_names()
     };
     let (_, changes) = ramekin_core::catalog::clean_curated(json, &known);
+    assert!(changes.is_empty(), "{changes:?}");
+}
+
+#[test]
+fn clean_curated_keeps_names_prod_stores() {
+    // Prod lines keep the item parsed at save, so a key the parser no longer
+    // produces ("zzfood (about 8 ounces") can still be one a stored line hits.
+    let json =
+        r#"{"aliases": {"zzfood (about 8 ounces": "zzfood"}, "not_food": {}, "categories": {}}"#;
+    let (_, changes) = ramekin_core::catalog::clean_curated(json, &no_names());
+    assert_eq!(changes.len(), 1, "{changes:?}");
+    let stored = no_names().with_prod([(
+        "Zzfood (about 8 ounces".to_string(),
+        Some("chopped".to_string()),
+    )]);
+    let (_, changes) = ramekin_core::catalog::clean_curated(json, &stored);
+    assert!(changes.is_empty(), "{changes:?}");
+    // Runs without prod's lines keep the keys it last needed.
+    let recorded = ramekin_core::catalog::CleanupNames {
+        prod: std::collections::BTreeSet::from(["zzfood (about 8 ounces".to_string()]),
+        ..no_names()
+    };
+    let (_, changes) = ramekin_core::catalog::clean_curated(json, &recorded);
     assert!(changes.is_empty(), "{changes:?}");
 }
 
@@ -1202,7 +1226,8 @@ fn known_names() -> ramekin_core::catalog::CleanupNames {
 
 fn no_names() -> ramekin_core::catalog::CleanupNames {
     ramekin_core::catalog::CleanupNames {
-        typed: std::collections::BTreeSet::new(),
+        verbatim: std::collections::BTreeSet::new(),
         corpus: std::collections::BTreeSet::new(),
+        prod: std::collections::BTreeSet::new(),
     }
 }

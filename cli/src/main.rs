@@ -256,7 +256,11 @@ enum Commands {
         fixtures_dir: Option<PathBuf>,
     },
     /// Re-key or remove curated aliases and not-food names that the ingredient parser no longer produces
-    CatalogCleanAliases,
+    CatalogCleanAliases {
+        /// Also keep every key a JSON array of {servings, ingredients} prod recipes still needs, recording them in the catalog's prod_names.json
+        #[arg(long)]
+        prod_recipes: Option<PathBuf>,
+    },
     /// Write the names the ingredient catalog does not resolve, most frequent first (classification work queue)
     IngredientCatalogUnresolved {
         /// Also include a JSON array of {servings, ingredients} prod recipes
@@ -494,8 +498,8 @@ async fn main() -> Result<()> {
         Commands::IngredientTestsMigrateCurated { fixtures_dir } => {
             ingredient_tests::migrate_curated(fixtures_dir.as_deref())?;
         }
-        Commands::CatalogCleanAliases => {
-            ingredient_catalog_audit::clean_aliases(Path::new("."))?;
+        Commands::CatalogCleanAliases { prod_recipes } => {
+            ingredient_catalog_audit::clean_aliases(Path::new("."), prod_recipes.as_deref())?;
         }
         Commands::IngredientCatalogUnresolved { prod_recipes } => {
             ingredient_catalog_audit::export_unresolved(Path::new("."), prod_recipes.as_deref())?;
@@ -645,7 +649,7 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::IngredientTestsGeneratePaprika { .. } => "ingredient-tests-generate-paprika",
         Commands::IngredientTestsMigrateCurated { .. } => "ingredient-tests-migrate-curated",
         Commands::IngredientCatalogAudit { .. } => "ingredient-catalog-audit",
-        Commands::CatalogCleanAliases => "catalog-clean-aliases",
+        Commands::CatalogCleanAliases { .. } => "catalog-clean-aliases",
         Commands::IngredientProdReport { .. } => "ingredient-prod-report",
         Commands::CatalogFillWeights { .. } => "catalog-fill-weights",
         Commands::IngredientCatalogUnresolved { .. } => "ingredient-catalog-unresolved",

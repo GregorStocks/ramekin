@@ -363,8 +363,9 @@ catalog-fill-weights: ## Ask the model (cli.env) for the weights the catalog can
 		$(if $(PROD_RECIPES),--prod-recipes $(PROD_RECIPES),) \
 		$(if $(LEARNED),--learned $(LEARNED),)
 
-catalog-clean-aliases: ## Re-key or remove curated aliases the parser no longer produces or the resolver no longer needs (report in logs/catalog-alias-cleanup.md)
-	@cargo run -q --release --manifest-path cli/Cargo.toml -- catalog-clean-aliases
+catalog-clean-aliases: ## Re-key or remove curated aliases the parser no longer produces or the resolver no longer needs (report in logs/catalog-alias-cleanup.md; optional PROD_RECIPES= re-finds the keys prod's stored lines need)
+	@cargo run -q --release --manifest-path cli/Cargo.toml -- catalog-clean-aliases \
+		$(if $(PROD_RECIPES),--prod-recipes $(PROD_RECIPES),)
 
 ingredient-catalog-unresolved: ## Write names the ingredient catalog does not resolve to logs/catalog-unresolved.json (optional PROD_RECIPES=)
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- ingredient-catalog-unresolved \
