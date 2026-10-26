@@ -167,6 +167,17 @@ impl Line {
         }
     }
 
+    /// Whether `word` is a number in one of this line's amounts, so dropping
+    /// it from the note ("about 2 ounces") loses nothing. Other numbers stay:
+    /// "85/15" picks a blend of ground beef.
+    fn restates_amount(&self, word: &str) -> bool {
+        word.chars().all(|c| c.is_ascii_digit())
+            && self
+                .amounts
+                .split(|c: char| !c.is_ascii_digit())
+                .any(|number| number == word)
+    }
+
     fn food_names(&self) -> String {
         self.foods
             .iter()
@@ -179,9 +190,10 @@ impl Line {
     /// entries, or a line that only drops prep from this one and names the
     /// same family of food or one the catalog doesn't know ("6 hardboiled
     /// eggs" to "6 eggs", "frisée, torn into bite-size pieces" to "frisée").
-    /// Only prep and restated amounts may go (`is_droppable_word`), so a
-    /// dropped word can't change the food ("garlic powder" to "garlic" or
-    /// "powder", "sweetened condensed milk" to "milk").
+    /// Only prep and restated amounts may go (`is_droppable_word`,
+    /// `restates_amount`), so a dropped word can't change the food ("garlic
+    /// powder" to "garlic" or "powder", "sweetened condensed milk" to
+    /// "milk").
     fn kept_by(&self, rewritten: &Line) -> bool {
         let ids = |line: &Line| {
             line.foods
@@ -200,7 +212,7 @@ impl Line {
                 && self
                     .words
                     .difference(&rewritten.words)
-                    .all(|word| is_droppable_word(word))
+                    .all(|word| is_droppable_word(word) || self.restates_amount(word))
                 && (rewritten.foods.is_empty() || families(self) == families(rewritten)))
     }
 }
@@ -271,7 +283,7 @@ fn is_droppable_word(word: &str) -> bool {
         "wedges",
         "whisked",
     ];
-    WORDS.contains(&word) || word.chars().all(|c| c.is_ascii_digit())
+    WORDS.contains(&word)
 }
 
 /// The kind of food a catalog entry is: a USDA description's first part
@@ -646,6 +658,14 @@ mod tests {
         let reply = finish_after(
             vec![json!({"item": "sweetened condensed milk", "measurements": [{"amount": "1", "unit": "cup"}], "note": null, "section": null})],
             &[(1, "1 cup milk")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+
+        // Nor can a number that names the food.
+        let reply = finish_after(
+            vec![json!({"item": "ground beef", "measurements": [{"amount": "2", "unit": "lb"}], "note": "85/15", "section": null})],
+            &[(1, "2 lb ground beef")],
         )
         .await;
         assert!(reply.contains("These ingredients are gone"), "{reply}");
