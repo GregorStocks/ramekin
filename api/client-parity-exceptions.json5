@@ -18,6 +18,7 @@
 // or removal, run `./scripts/check_client_parity.py --update`
 // and commit the diff with a note explaining the change.
 {
+  create_recipe: { platforms: "neither", reason: "New recipes come from imports (URL, capture, text, photos); API tests and the CLI load test still create recipes directly." },
   create_scrape: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },
   create_tag: { platforms: "neither", reason: "Tags are created implicitly via update_recipe; no client surfaces a standalone create-tag flow." },
   export_recipe: { platforms: "ios-only", reason: "iOS uses the generated client for single-recipe export; web still triggers downloads via a plain <a> / fetch." },

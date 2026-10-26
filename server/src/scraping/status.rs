@@ -71,13 +71,25 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
                 .map(|s| s.len())?;
             Some(format!("{} bytes fetched", bytes))
         }
-        // ExtractRecipeStep stores `ExtractRecipeOutput` with `raw_recipe.title`.
+        // ExtractRecipeStep stores `ExtractRecipeOutput` with `raw_recipe.title`;
+        // ExtractTextStep adds the text model's `warnings` for the user to read.
         "extract_recipe" => {
             let title = output
                 .get("raw_recipe")
                 .and_then(|r| r.get("title"))
                 .and_then(|t| t.as_str())?;
-            Some(format!("extracted \"{}\"", title))
+            let mut summary = format!("extracted \"{}\"", title);
+            for warning in output
+                .get("warnings")
+                .and_then(|v| v.as_array())
+                .into_iter()
+                .flatten()
+                .filter_map(|v| v.as_str())
+            {
+                summary.push_str(" · ");
+                summary.push_str(warning);
+            }
+            Some(summary)
         }
         // FetchImagesStep stores `FetchImagesOutput { photo_ids, failed_urls }`.
         // "Requested" = photo_ids + failed_urls; "succeeded" = photo_ids.
@@ -474,6 +486,18 @@ mod tests {
         assert_eq!(
             step_summary("extract_recipe", &output).as_deref(),
             Some("extracted \"Chocolate Cake\"")
+        );
+    }
+
+    #[test]
+    fn step_summary_extract_recipe_shows_text_warnings() {
+        let output = json!({
+            "raw_recipe": { "title": "Cake" },
+            "warnings": ["Two recipes found.", "Unreadable quantity."],
+        });
+        assert_eq!(
+            step_summary("extract_recipe", &output).as_deref(),
+            Some("extracted \"Cake\" · Two recipes found. · Unreadable quantity.")
         );
     }
 

@@ -1,28 +1,24 @@
 
-# PrepareTextRecipeResponse
+# ImportFromTextResponse
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`content` | [RecipeContent](RecipeContent.md)
-`derivedMeasurements` | [Array&lt;DerivedMeasurement&gt;](DerivedMeasurement.md)
-`rawIngredients` | string
-`warnings` | Array&lt;string&gt;
+`jobId` | string
+`status` | string
 
 ## Example
 
 ```typescript
-import type { PrepareTextRecipeResponse } from ''
+import type { ImportFromTextResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "content": null,
-  "derivedMeasurements": null,
-  "rawIngredients": null,
-  "warnings": null,
-} satisfies PrepareTextRecipeResponse
+  "jobId": null,
+  "status": null,
+} satisfies ImportFromTextResponse
 
 console.log(example)
 
@@ -31,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as PrepareTextRecipeResponse
+const exampleParsed = JSON.parse(exampleJSON) as ImportFromTextResponse
 console.log(exampleParsed)
 ```
 

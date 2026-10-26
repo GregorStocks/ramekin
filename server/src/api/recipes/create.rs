@@ -4,7 +4,6 @@ use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
-use crate::scraping;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use serde::{Deserialize, Serialize};
@@ -16,11 +15,6 @@ pub struct CreateRecipeRequest {
     #[serde(flatten)]
     pub content: RecipeContent,
     pub photo_ids: Option<Vec<Uuid>>,
-    /// Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save.
-    pub raw_ingredients: Option<String>,
-    /// The pasted text a text draft was read from. Stored as the recipe's
-    /// source, so Re-extract can read the recipe from it again.
-    pub source_text: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -45,7 +39,7 @@ pub struct CreateRecipeResponse {
 pub async fn create_recipe(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
-    Json(mut request): Json<CreateRecipeRequest>,
+    Json(request): Json<CreateRecipeRequest>,
 ) -> Result<impl IntoResponse, ApiError> {
     if request.content.title.trim().is_empty() {
         return Err(ApiError::invalid_request("Title cannot be empty"));
@@ -54,40 +48,6 @@ pub async fn create_recipe(
     if request.content.instructions.trim().is_empty() {
         return Err(ApiError::invalid_request("Instructions cannot be empty"));
     }
-
-    if let Some(lines) = &request.raw_ingredients {
-        if lines.trim().is_empty() || lines.len() > 50_000 {
-            return Err(ApiError::invalid_request(
-                "Enter ingredient lines between 1 and 50,000 bytes.",
-            ));
-        }
-        let mut value = serde_json::to_value(&request.content)
-            .map_err(|_| ApiError::internal("Invalid recipe content"))?;
-        value["ingredients"] = serde_json::json!(lines);
-        value["image_urls"] = serde_json::json!([]);
-        let raw = serde_json::from_value(value)
-            .map_err(|_| ApiError::internal("Invalid recipe content"))?;
-        let ingredients = crate::api::import::text::parse_draft_ingredients(&raw).await?;
-        if ingredients.is_empty() {
-            return Err(ApiError::invalid_request(
-                "Add ingredient lines before saving.",
-            ));
-        }
-        request.content.ingredients = ingredients;
-    }
-
-    let source_text = match request.source_text.as_deref() {
-        Some(text) if text.trim().is_empty() || text.len() > 50_000 => {
-            return Err(ApiError::invalid_request(
-                "Send source text between 1 and 50,000 bytes.",
-            ));
-        }
-        Some(text) => Some(scraping::prepare_text_source(text).await.map_err(|e| {
-            tracing::error!("Failed to prepare a recipe's source text: {e}");
-            ApiError::internal("Failed to create recipe")
-        })?),
-        None => None,
-    };
 
     let ingredients_json = match serde_json::to_value(&request.content.ingredients) {
         Ok(v) => v,
@@ -158,9 +118,6 @@ pub async fn create_recipe(
                 conn,
                 request.content.ingredients.iter().map(|i| i.item.as_str()),
             )?;
-            if let Some(text) = source_text {
-                scraping::record_text_source(conn, user_id, recipe_id, text)?;
-            }
 
             Ok(recipe_id)
         });

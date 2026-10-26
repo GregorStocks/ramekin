@@ -105,7 +105,7 @@ final class RecipeFormSupportTests: XCTestCase {
         XCTAssertEqual(ingredient.measurements[0].unit, "")
     }
 
-    func testCreateRequestFiltersBlankIngredientAndOmitsEmptyOptionalFields() {
+    func testUpdateRequestFiltersBlankIngredientAndOmitsEmptyOptionalFields() throws {
         let photoId = UUID()
         let formData = RecipeFormData(
             title: "Cake",
@@ -131,10 +131,11 @@ final class RecipeFormSupportTests: XCTestCase {
                 )),
                 .ingredient(.empty())
             ],
-            photoIds: [photoId]
+            photoIds: [photoId],
+            expectedVersionId: UUID()
         )
 
-        let request = formData.makeCreateRequest()
+        let request = try formData.makeUpdateRequest()
 
         XCTAssertEqual(request.title, "Cake")
         XCTAssertEqual(request.instructions, "Mix and bake")
@@ -147,10 +148,9 @@ final class RecipeFormSupportTests: XCTestCase {
         XCTAssertNil(request.servings)
         XCTAssertNil(request.cookTime)
         XCTAssertNil(request.sourceUrl)
-        XCTAssertNil(request.tags)
-        XCTAssertEqual(request.ingredients.count, 1)
-        XCTAssertEqual(request.ingredients[0].item, "Flour")
-        XCTAssertEqual(request.ingredients[0].section, "Cake")
+        XCTAssertEqual(request.ingredients?.count, 1)
+        XCTAssertEqual(request.ingredients?.first?.item, "Flour")
+        XCTAssertEqual(request.ingredients?.first?.section, "Cake")
     }
 
     func testUpdateRequestPreservesExplicitEmptyTagsAndPhotoIds() throws {

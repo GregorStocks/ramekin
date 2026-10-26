@@ -68,9 +68,9 @@ Class | Method | HTTP request | Description
 *ClientLogsApi* | [**create_client_log**](ramekin_client/docs/ClientLogsApi.md#create_client_log) | **POST** /api/client-logs | 
 *EditRecipeApi* | [**edit_recipe_with_ai**](ramekin_client/docs/EditRecipeApi.md#edit_recipe_with_ai) | **POST** /api/recipes/{id}/edit-with-ai | Edit a recipe with AI
 *ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
+*ImportApi* | [**import_from_text**](ramekin_client/docs/ImportApi.md#import_from_text) | **POST** /api/import/text | 
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *ImportApi* | [**lookup_import_jobs**](ramekin_client/docs/ImportApi.md#lookup_import_jobs) | **POST** /api/import/recipe/lookup | 
-*ImportApi* | [**prepare_text_recipe**](ramekin_client/docs/ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
 *IngredientNamesApi* | [**get_ingredient_names_status**](ramekin_client/docs/IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
 *IngredientNamesApi* | [**retry_ingredient_names**](ramekin_client/docs/IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
 *MealPlansApi* | [**list_meal_plans**](ramekin_client/docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
@@ -144,6 +144,8 @@ Class | Method | HTTP request | Description
  - [ImportExtractionMethod](ramekin_client/docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](ramekin_client/docs/ImportFromPhotosRequest.md)
  - [ImportFromPhotosResponse](ramekin_client/docs/ImportFromPhotosResponse.md)
+ - [ImportFromTextRequest](ramekin_client/docs/ImportFromTextRequest.md)
+ - [ImportFromTextResponse](ramekin_client/docs/ImportFromTextResponse.md)
  - [ImportJobKey](ramekin_client/docs/ImportJobKey.md)
  - [ImportRawRecipe](ramekin_client/docs/ImportRawRecipe.md)
  - [ImportRecipeRequest](ramekin_client/docs/ImportRecipeRequest.md)
@@ -175,8 +177,6 @@ Class | Method | HTTP request | Description
  - [OpResult](ramekin_client/docs/OpResult.md)
  - [PaginationMetadata](ramekin_client/docs/PaginationMetadata.md)
  - [PingResponse](ramekin_client/docs/PingResponse.md)
- - [PrepareTextRecipeRequest](ramekin_client/docs/PrepareTextRecipeRequest.md)
- - [PrepareTextRecipeResponse](ramekin_client/docs/PrepareTextRecipeResponse.md)
  - [RecipeContent](ramekin_client/docs/RecipeContent.md)
  - [RecipeResponse](ramekin_client/docs/RecipeResponse.md)
  - [RecipeSummary](ramekin_client/docs/RecipeSummary.md)

@@ -31,9 +31,9 @@ Class | Method | HTTP request | Description
 *ClientLogsAPI* | [**createClientLog**](docs/ClientLogsAPI.md#createclientlog) | **POST** /api/client-logs | 
 *EditRecipeAPI* | [**editRecipeWithAi**](docs/EditRecipeAPI.md#editrecipewithai) | **POST** /api/recipes/{id}/edit-with-ai | Edit a recipe with AI
 *ImportAPI* | [**importFromPhotos**](docs/ImportAPI.md#importfromphotos) | **POST** /api/import/photos | 
+*ImportAPI* | [**importFromText**](docs/ImportAPI.md#importfromtext) | **POST** /api/import/text | 
 *ImportAPI* | [**importRecipe**](docs/ImportAPI.md#importrecipe) | **POST** /api/import/recipe | 
 *ImportAPI* | [**lookupImportJobs**](docs/ImportAPI.md#lookupimportjobs) | **POST** /api/import/recipe/lookup | 
-*ImportAPI* | [**prepareTextRecipe**](docs/ImportAPI.md#preparetextrecipe) | **POST** /api/import/text | 
 *IngredientNamesAPI* | [**getIngredientNamesStatus**](docs/IngredientNamesAPI.md#getingredientnamesstatus) | **GET** /api/ingredient-names/status | 
 *IngredientNamesAPI* | [**retryIngredientNames**](docs/IngredientNamesAPI.md#retryingredientnames) | **POST** /api/ingredient-names/retry | 
 *MealPlansAPI* | [**listMealPlans**](docs/MealPlansAPI.md#listmealplans) | **GET** /api/meal-plans | 
@@ -106,6 +106,8 @@ Class | Method | HTTP request | Description
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](docs/ImportFromPhotosRequest.md)
  - [ImportFromPhotosResponse](docs/ImportFromPhotosResponse.md)
+ - [ImportFromTextRequest](docs/ImportFromTextRequest.md)
+ - [ImportFromTextResponse](docs/ImportFromTextResponse.md)
  - [ImportJobKey](docs/ImportJobKey.md)
  - [ImportRawRecipe](docs/ImportRawRecipe.md)
  - [ImportRecipeRequest](docs/ImportRecipeRequest.md)
@@ -138,8 +140,6 @@ Class | Method | HTTP request | Description
  - [OpResult](docs/OpResult.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
  - [PingResponse](docs/PingResponse.md)
- - [PrepareTextRecipeRequest](docs/PrepareTextRecipeRequest.md)
- - [PrepareTextRecipeResponse](docs/PrepareTextRecipeResponse.md)
  - [RecipeContent](docs/RecipeContent.md)
  - [RecipeResponse](docs/RecipeResponse.md)
  - [RecipeSummary](docs/RecipeSummary.md)

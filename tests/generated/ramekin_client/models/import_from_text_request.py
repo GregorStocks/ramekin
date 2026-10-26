@@ -19,20 +19,15 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
-from ramekin_client.models.derived_measurement import DerivedMeasurement
-from ramekin_client.models.recipe_content import RecipeContent
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PrepareTextRecipeResponse(BaseModel):
+class ImportFromTextRequest(BaseModel):
     """
-    PrepareTextRecipeResponse
+    ImportFromTextRequest
     """ # noqa: E501
-    content: RecipeContent
-    derived_measurements: List[DerivedMeasurement] = Field(description="Approximate grams for `content.ingredients` that have them, for previewing the draft. Never saved.")
-    raw_ingredients: StrictStr = Field(description="Editable ingredient lines. Send these as raw_ingredients when saving.")
-    warnings: List[StrictStr]
-    __properties: ClassVar[List[str]] = ["content", "derived_measurements", "raw_ingredients", "warnings"]
+    text: StrictStr = Field(description="A whole recipe, typed or pasted as unstructured text.")
+    __properties: ClassVar[List[str]] = ["text"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +47,7 @@ class PrepareTextRecipeResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PrepareTextRecipeResponse from a JSON string"""
+        """Create an instance of ImportFromTextRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,21 +68,11 @@ class PrepareTextRecipeResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of content
-        if self.content:
-            _dict['content'] = self.content.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in derived_measurements (list)
-        _items = []
-        if self.derived_measurements:
-            for _item_derived_measurements in self.derived_measurements:
-                if _item_derived_measurements:
-                    _items.append(_item_derived_measurements.to_dict())
-            _dict['derived_measurements'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PrepareTextRecipeResponse from a dict"""
+        """Create an instance of ImportFromTextRequest from a dict"""
         if obj is None:
             return None
 
@@ -95,10 +80,7 @@ class PrepareTextRecipeResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "content": RecipeContent.from_dict(obj["content"]) if obj.get("content") is not None else None,
-            "derived_measurements": [DerivedMeasurement.from_dict(_item) for _item in obj["derived_measurements"]] if obj.get("derived_measurements") is not None else None,
-            "raw_ingredients": obj.get("raw_ingredients"),
-            "warnings": obj.get("warnings")
+            "text": obj.get("text")
         })
         return _obj
 

@@ -51,6 +51,8 @@ ramekin_client/docs/ImportApi.md
 ramekin_client/docs/ImportExtractionMethod.md
 ramekin_client/docs/ImportFromPhotosRequest.md
 ramekin_client/docs/ImportFromPhotosResponse.md
+ramekin_client/docs/ImportFromTextRequest.md
+ramekin_client/docs/ImportFromTextResponse.md
 ramekin_client/docs/ImportJobKey.md
 ramekin_client/docs/ImportRawRecipe.md
 ramekin_client/docs/ImportRecipeRequest.md
@@ -86,8 +88,6 @@ ramekin_client/docs/OpResult.md
 ramekin_client/docs/PaginationMetadata.md
 ramekin_client/docs/PhotosApi.md
 ramekin_client/docs/PingResponse.md
-ramekin_client/docs/PrepareTextRecipeRequest.md
-ramekin_client/docs/PrepareTextRecipeResponse.md
 ramekin_client/docs/RecipeContent.md
 ramekin_client/docs/RecipeResponse.md
 ramekin_client/docs/RecipeSummary.md
@@ -158,6 +158,8 @@ ramekin_client/models/generate_photo_response.py
 ramekin_client/models/import_extraction_method.py
 ramekin_client/models/import_from_photos_request.py
 ramekin_client/models/import_from_photos_response.py
+ramekin_client/models/import_from_text_request.py
+ramekin_client/models/import_from_text_response.py
 ramekin_client/models/import_job_key.py
 ramekin_client/models/import_raw_recipe.py
 ramekin_client/models/import_recipe_request.py
@@ -189,8 +191,6 @@ ramekin_client/models/op_kind.py
 ramekin_client/models/op_result.py
 ramekin_client/models/pagination_metadata.py
 ramekin_client/models/ping_response.py
-ramekin_client/models/prepare_text_recipe_request.py
-ramekin_client/models/prepare_text_recipe_response.py
 ramekin_client/models/recipe_content.py
 ramekin_client/models/recipe_response.py
 ramekin_client/models/recipe_summary.py
@@ -258,6 +258,8 @@ ramekin_client/test/test_import_api.py
 ramekin_client/test/test_import_extraction_method.py
 ramekin_client/test/test_import_from_photos_request.py
 ramekin_client/test/test_import_from_photos_response.py
+ramekin_client/test/test_import_from_text_request.py
+ramekin_client/test/test_import_from_text_response.py
 ramekin_client/test/test_import_job_key.py
 ramekin_client/test/test_import_raw_recipe.py
 ramekin_client/test/test_import_recipe_request.py
@@ -293,8 +295,6 @@ ramekin_client/test/test_op_result.py
 ramekin_client/test/test_pagination_metadata.py
 ramekin_client/test/test_photos_api.py
 ramekin_client/test/test_ping_response.py
-ramekin_client/test/test_prepare_text_recipe_request.py
-ramekin_client/test/test_prepare_text_recipe_response.py
 ramekin_client/test/test_recipe_content.py
 ramekin_client/test/test_recipe_response.py
 ramekin_client/test/test_recipe_summary.py

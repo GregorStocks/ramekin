@@ -1,35 +1,14 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { createRoot } from "solid-js";
-import type { PhotosApi, RecipeContent, RecipeResponse } from "ramekin-client";
+import type { PhotosApi, RecipeResponse } from "ramekin-client";
 import { createRecipeFormState } from "./recipeFormState";
 import {
-  buildCreateRecipeRequest,
   buildUpdateRecipeRequest,
   defaultRecipeFormValues,
   recipeFormValuesFromRecipe,
 } from "./recipeFormSerialization";
 
 describe("recipe form request serialization", () => {
-  it("builds create requests with empty optional fields omitted", () => {
-    const values = defaultRecipeFormValues();
-    values.title = "Pancakes";
-    values.instructions = "Mix and cook.";
-    values.rating = 0;
-    values.ingredients = [
-      { item: "Flour", measurements: [{ amount: "1", unit: "cup" }] },
-      { item: "   ", measurements: [{}] },
-    ];
-
-    expect(buildCreateRecipeRequest(values)).toEqual({
-      title: "Pancakes",
-      instructions: "Mix and cook.",
-      ingredients: [
-        { item: "Flour", measurements: [{ amount: "1", unit: "cup" }] },
-      ],
-      rating: 0,
-    });
-  });
-
   it("builds update requests with nullable cleared fields and photo ids", () => {
     const values = defaultRecipeFormValues();
     values.title = "Soup";
@@ -132,12 +111,20 @@ describe("createRecipeFormState unsaved changes", () => {
 
   it("treats loaded and saved values as the new baseline", () => {
     withForm((form) => {
-      const content: RecipeContent = {
+      form.loadRecipe({
+        id: "recipe-1",
         title: "Pancakes",
         instructions: "Mix.",
         ingredients: [{ item: "flour", measurements: [{ amount: "1" }] }],
-      };
-      form.loadDraft(content);
+        derivedMeasurements: [],
+        photoIds: [],
+        tags: [],
+        createdAt: new Date("2026-01-01T00:00:00Z"),
+        updatedAt: new Date("2026-01-02T00:00:00Z"),
+        versionId: "version-1",
+        versionSource: "manual",
+        normalizeOps: [],
+      });
       expect(form.hasUnsavedChanges()).toBe(false);
       form.setNotes("Extra fluffy");
       expect(form.hasUnsavedChanges()).toBe(true);

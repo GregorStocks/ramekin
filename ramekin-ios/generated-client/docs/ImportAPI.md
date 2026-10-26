@@ -5,9 +5,9 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**importFromPhotos**](ImportAPI.md#importfromphotos) | **POST** /api/import/photos | 
+[**importFromText**](ImportAPI.md#importfromtext) | **POST** /api/import/text | 
 [**importRecipe**](ImportAPI.md#importrecipe) | **POST** /api/import/recipe | 
 [**lookupImportJobs**](ImportAPI.md#lookupimportjobs) | **POST** /api/import/recipe/lookup | 
-[**prepareTextRecipe**](ImportAPI.md#preparetextrecipe) | **POST** /api/import/text | 
 
 
 # **importFromPhotos**
@@ -45,6 +45,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ImportFromPhotosResponse**](ImportFromPhotosResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **importFromText**
+```swift
+    open class func importFromText(importFromTextRequest: ImportFromTextRequest, completion: @escaping (_ data: ImportFromTextResponse?, _ error: Error?) -> Void)
+```
+
+
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import RamekinClient
+
+let importFromTextRequest = ImportFromTextRequest(text: "text_example") // ImportFromTextRequest | 
+
+ImportAPI.importFromText(importFromTextRequest: importFromTextRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importFromTextRequest** | [**ImportFromTextRequest**](ImportFromTextRequest.md) |  | 
+
+### Return type
+
+[**ImportFromTextResponse**](ImportFromTextResponse.md)
 
 ### Authorization
 
@@ -139,53 +186,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LookupImportJobsResponse**](LookupImportJobsResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **prepareTextRecipe**
-```swift
-    open class func prepareTextRecipe(prepareTextRecipeRequest: PrepareTextRecipeRequest, completion: @escaping (_ data: PrepareTextRecipeResponse?, _ error: Error?) -> Void)
-```
-
-
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import RamekinClient
-
-let prepareTextRecipeRequest = PrepareTextRecipeRequest(text: "text_example") // PrepareTextRecipeRequest | 
-
-ImportAPI.prepareTextRecipe(prepareTextRecipeRequest: prepareTextRecipeRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **prepareTextRecipeRequest** | [**PrepareTextRecipeRequest**](PrepareTextRecipeRequest.md) |  | 
-
-### Return type
-
-[**PrepareTextRecipeResponse**](PrepareTextRecipeResponse.md)
 
 ### Authorization
 

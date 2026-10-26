@@ -356,24 +356,24 @@
         "tags": [
           "import"
         ],
-        "operationId": "prepare_text_recipe",
+        "operationId": "import_from_text",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PrepareTextRecipeRequest"
+                "$ref": "#/components/schemas/ImportFromTextRequest"
               }
             }
           },
           "required": true
         },
         "responses": {
-          "200": {
-            "description": "Recipe draft ready for review; nothing saved",
+          "201": {
+            "description": "Text import job created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrepareTextRecipeResponse"
+                  "$ref": "#/components/schemas/ImportFromTextResponse"
                 }
               }
             }
@@ -390,16 +390,6 @@
           },
           "401": {
             "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Recipe processing failed",
             "content": {
               "application/json": {
                 "schema": {
@@ -3167,20 +3157,6 @@
                   "type": "string",
                   "format": "uuid"
                 }
-              },
-              "raw_ingredients": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "description": "Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save."
-              },
-              "source_text": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "description": "The pasted text a text draft was read from. Stored as the recipe's\nsource, so Re-extract can read the recipe from it again."
               }
             }
           }
@@ -3410,6 +3386,36 @@
         }
       },
       "ImportFromPhotosResponse": {
+        "type": "object",
+        "required": [
+          "job_id",
+          "status"
+        ],
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The created job ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current job status"
+          }
+        }
+      },
+      "ImportFromTextRequest": {
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "A whole recipe, typed or pasted as unstructured text."
+          }
+        }
+      },
+      "ImportFromTextResponse": {
         "type": "object",
         "required": [
           "job_id",
@@ -4187,49 +4193,6 @@
         "properties": {
           "message": {
             "type": "string"
-          }
-        }
-      },
-      "PrepareTextRecipeRequest": {
-        "type": "object",
-        "required": [
-          "text"
-        ],
-        "properties": {
-          "text": {
-            "type": "string",
-            "description": "A whole recipe, typed or pasted as unstructured text."
-          }
-        }
-      },
-      "PrepareTextRecipeResponse": {
-        "type": "object",
-        "required": [
-          "content",
-          "raw_ingredients",
-          "derived_measurements",
-          "warnings"
-        ],
-        "properties": {
-          "content": {
-            "$ref": "#/components/schemas/RecipeContent"
-          },
-          "derived_measurements": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DerivedMeasurement"
-            },
-            "description": "Approximate grams for `content.ingredients` that have them, for\npreviewing the draft. Never saved."
-          },
-          "raw_ingredients": {
-            "type": "string",
-            "description": "Editable ingredient lines. Send these as raw_ingredients when saving."
-          },
-          "warnings": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },

@@ -12,6 +12,7 @@ struct RecipeFormView: View {
     @State private var showingDiscardConfirmation = false
     /// Saved or discarded: a pending draft write must not bring it back.
     @State private var isClosing = false
+    @State private var importTask: Task<Void, Never>?
 
     /// `resuming` reopens a form the app was terminated on.
     init(mode: RecipeFormMode, resuming draft: RecipeFormDraft? = nil, onSaved: (() -> Void)? = nil) {
@@ -22,7 +23,7 @@ struct RecipeFormView: View {
     private static let errorSectionId = "recipe-form-error"
 
     var body: some View {
-        // Save and Review live in the navigation bar, so a failure must be
+        // Save and Import live in the navigation bar, so a failure must be
         // brought into view rather than left at the bottom of a long form.
         ScrollViewReader { proxy in
             form
@@ -47,8 +48,8 @@ struct RecipeFormView: View {
                 }
             }
             ToolbarItem(placement: .confirmationAction) {
-                if viewModel.mode == .create && viewModel.draft == nil {
-                    reviewButton
+                if viewModel.mode == .create {
+                    importButton
                 } else {
                     Button(viewModel.isSaving ? "Saving…" : "Save") {
                         Task {
@@ -85,6 +86,9 @@ struct RecipeFormView: View {
                 Task { await viewModel.uploadSelectedPhotos() }
             }
         }
+        // The import job carries on without the form; the recipe appears
+        // once it's saved.
+        .onDisappear { importTask?.cancel() }
         // Writing scene storage re-renders every tab, so wait for a pause in
         // typing; leaving the foreground writes at once.
         .task(id: viewModel.resumableDraft) {
@@ -111,19 +115,15 @@ struct RecipeFormView: View {
         Form {
             errorSection
                 .id(Self.errorSectionId)
-            if viewModel.mode == .create && viewModel.draft == nil {
+            if viewModel.mode == .create {
                 recipeTextSection
+                importProgressSection
             } else {
-                draftReviewSection
                 titleSection
                 descriptionSection
                 metadataSection
                 ratingSection
-                if viewModel.draft != nil {
-                    draftIngredientsSection
-                } else {
-                    ingredientsFormSection
-                }
+                ingredientsFormSection
                 instructionsSection
                 sourceSection
                 tagsSection
@@ -146,52 +146,62 @@ extension RecipeFormView {
         } header: {
             Text("Recipe text")
         } footer: {
-            Text("Type or paste a whole recipe: title, ingredients, instructions, and any details, then tap Review.")
+            Text("Type or paste a whole recipe: title, ingredients, instructions, and any details, then tap Import.")
         }
-        .disabled(viewModel.isPreparing)
+        .disabled(viewModel.isImporting || viewModel.importedRecipeId != nil)
     }
 
     /// The step's primary action lives in the navigation bar so it stays
-    /// reachable above the keyboard however long the pasted text is.
-    @ViewBuilder private var reviewButton: some View {
-        if viewModel.isPreparing {
-            ProgressView().accessibilityLabel("Reading recipe")
+    /// reachable above the keyboard however long the pasted text is. Once
+    /// the recipe is saved the form stays open on the job's steps, so the
+    /// extraction's warnings can be read, until Done.
+    @ViewBuilder private var importButton: some View {
+        if viewModel.isImporting {
+            ProgressView().accessibilityLabel("Importing recipe")
+        } else if viewModel.importedRecipeId != nil {
+            Button("Done") { close() }
+                .fontWeight(.semibold)
         } else {
-            Button("Review") {
-                Task { await viewModel.prepareRecipe() }
-            }
-            .disabled(viewModel.recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-        }
-    }
-
-    @ViewBuilder private var draftReviewSection: some View {
-        if let draft = viewModel.draft {
-            Section("Review recipe") {
-                Text("Check the details, then save. Weight estimates are available only for supported ingredients and quantities.")
-                ForEach(Array(draft.warnings.enumerated()), id: \.offset) { _, warning in
-                    Text(warning).foregroundStyle(.orange)
-                }
-                DisclosureGroup("Original recipe text") { Text(viewModel.recipeText) }
-            }
-        }
-    }
-
-    @ViewBuilder private var draftIngredientsSection: some View {
-        if let draft = viewModel.draft {
-            Section("Ingredients") {
-                TextEditor(text: $viewModel.rawIngredients)
-                    .frame(minHeight: 150).accessibilityLabel("Ingredients")
-                if viewModel.rawIngredients == draft.rawIngredients {
-                    ForEach(Array(draft.content.ingredients.enumerated()), id: \.offset) { index, ingredient in
-                        Text(ingredient.formatted(
-                            includeAlternatives: true,
-                            includeNote: true,
-                            derived: draft.derivedMeasurements.measurement(forIngredientAt: index)
-                        ))
-                        .font(.caption)
+            Button("Import") {
+                importTask = Task {
+                    if await viewModel.importRecipe() {
+                        onSaved?()
                     }
-                } else {
-                    Text("Weight estimates will be recalculated when you save.").font(.caption)
+                }
+            }
+            .disabled(!viewModel.canImport)
+            .fontWeight(.semibold)
+        }
+    }
+
+    @ViewBuilder private var importProgressSection: some View {
+        if viewModel.isImporting || viewModel.importedRecipeId != nil {
+            Section(viewModel.importedRecipeId == nil ? "Progress" : "Recipe saved") {
+                if viewModel.importSteps.isEmpty {
+                    Text("Starting…")
+                }
+                ForEach(viewModel.importSteps, id: \.name) { step in
+                    HStack {
+                        switch step.status {
+                        case "completed":
+                            Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
+                        case "running":
+                            ProgressView()
+                        case "failed":
+                            Image(systemName: "xmark.circle.fill").foregroundColor(.red)
+                        default:
+                            Image(systemName: "circle").foregroundColor(.secondary)
+                        }
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(NormalizeSelection.stepLabel(step.name, ops: []))
+                            // Extraction's summary carries the model's warnings.
+                            if let summary = step.summary {
+                                Text(summary)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
                 }
             }
         }

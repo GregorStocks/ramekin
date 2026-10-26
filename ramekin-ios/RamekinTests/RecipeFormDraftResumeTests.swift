@@ -4,29 +4,12 @@ import XCTest
 /// Resuming a recipe form the app was terminated on.
 @MainActor
 final class RecipeFormDraftResumeTests: XCTestCase {
-    func testResumingNewRecipeRestoresTextAndReview() {
-        let prepared = PrepareTextRecipeResponse(
-            content: RecipeContent(ingredients: [], instructions: "Mix.", title: "Pancakes"),
-            derivedMeasurements: [],
-            rawIngredients: "1 cup flour",
-            warnings: []
-        )
-        var form = RecipeFormData(content: prepared.content)
-        form.title = "Better pancakes"
-        let resumed = RecipeFormDraft(
-            mode: .create,
-            form: form,
-            recipeText: "Pancakes",
-            rawIngredients: "2 cups flour",
-            prepared: prepared
-        )
+    func testResumingNewRecipeRestoresText() {
+        let resumed = RecipeFormDraft(mode: .create, form: RecipeFormData(), recipeText: "Pancakes")
 
         let model = RecipeFormViewModel(mode: .create, resuming: resumed, api: unexpectedCallsClient())
 
-        XCTAssertEqual(model.formData.title, "Better pancakes")
         XCTAssertEqual(model.recipeText, "Pancakes")
-        XCTAssertEqual(model.rawIngredients, "2 cups flour")
-        XCTAssertEqual(model.draft, prepared)
         XCTAssertTrue(model.hasUnsavedChanges)
         XCTAssertEqual(model.resumableDraft, resumed)
     }
@@ -79,12 +62,12 @@ final class RecipeFormDraftResumeTests: XCTestCase {
         getRecipe: @escaping (UUID) async throws -> RecipeResponse = { _ in throw TestError.unexpectedCall }
     ) -> RecipeFormViewAPIClient {
         RecipeFormViewAPIClient(
-            createRecipe: { _ in throw TestError.unexpectedCall },
             updateRecipe: { _, _ in throw TestError.unexpectedCall },
             getRecipe: getRecipe,
             syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
             uploadPhoto: { _ in throw TestError.unexpectedCall },
-            prepareTextRecipe: { _ in throw TestError.unexpectedCall }
+            importFromText: { _ in throw TestError.unexpectedCall },
+            getScrape: { _ in throw TestError.unexpectedCall }
         )
     }
 

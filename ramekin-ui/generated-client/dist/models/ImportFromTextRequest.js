@@ -12,17 +12,17 @@
  * Do not edit the class manually.
  */
 /**
- * Check if a given object implements the PrepareTextRecipeRequest interface.
+ * Check if a given object implements the ImportFromTextRequest interface.
  */
-export function instanceOfPrepareTextRecipeRequest(value) {
+export function instanceOfImportFromTextRequest(value) {
     if (!('text' in value) || value['text'] === undefined)
         return false;
     return true;
 }
-export function PrepareTextRecipeRequestFromJSON(json) {
-    return PrepareTextRecipeRequestFromJSONTyped(json, false);
+export function ImportFromTextRequestFromJSON(json) {
+    return ImportFromTextRequestFromJSONTyped(json, false);
 }
-export function PrepareTextRecipeRequestFromJSONTyped(json, ignoreDiscriminator) {
+export function ImportFromTextRequestFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -30,10 +30,10 @@ export function PrepareTextRecipeRequestFromJSONTyped(json, ignoreDiscriminator)
         'text': json['text'],
     };
 }
-export function PrepareTextRecipeRequestToJSON(json) {
-    return PrepareTextRecipeRequestToJSONTyped(json, false);
+export function ImportFromTextRequestToJSON(json) {
+    return ImportFromTextRequestToJSONTyped(json, false);
 }
-export function PrepareTextRecipeRequestToJSONTyped(value, ignoreDiscriminator = false) {
+export function ImportFromTextRequestToJSONTyped(value, ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

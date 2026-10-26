@@ -55,6 +55,8 @@ RamekinClient/Classes/OpenAPIs/Models/GeneratePhotoResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportExtractionMethod.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/ImportFromTextRequest.swift
+RamekinClient/Classes/OpenAPIs/Models/ImportFromTextResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportJobKey.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRawRecipe.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRecipeRequest.swift
@@ -87,8 +89,6 @@ RamekinClient/Classes/OpenAPIs/Models/OpKind.swift
 RamekinClient/Classes/OpenAPIs/Models/OpResult.swift
 RamekinClient/Classes/OpenAPIs/Models/PaginationMetadata.swift
 RamekinClient/Classes/OpenAPIs/Models/PingResponse.swift
-RamekinClient/Classes/OpenAPIs/Models/PrepareTextRecipeRequest.swift
-RamekinClient/Classes/OpenAPIs/Models/PrepareTextRecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeContent.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeSummary.swift
@@ -157,6 +157,8 @@ docs/ImportAPI.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
 docs/ImportFromPhotosResponse.md
+docs/ImportFromTextRequest.md
+docs/ImportFromTextResponse.md
 docs/ImportJobKey.md
 docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
@@ -193,8 +195,6 @@ docs/OpResult.md
 docs/PaginationMetadata.md
 docs/PhotosAPI.md
 docs/PingResponse.md
-docs/PrepareTextRecipeRequest.md
-docs/PrepareTextRecipeResponse.md
 docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md

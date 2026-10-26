@@ -1,4 +1,4 @@
-# PrepareTextRecipeRequest
+# ImportFromTextRequest
 
 ## Properties
 Name | Type | Description | Notes

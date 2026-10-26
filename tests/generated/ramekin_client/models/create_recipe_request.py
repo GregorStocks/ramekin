@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.ingredient import Ingredient
@@ -44,9 +44,7 @@ class CreateRecipeRequest(BaseModel):
     title: StrictStr
     total_time: Optional[StrictStr] = None
     photo_ids: Optional[List[UUID]] = None
-    raw_ingredients: Optional[StrictStr] = Field(default=None, description="Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save.")
-    source_text: Optional[StrictStr] = Field(default=None, description="The pasted text a text draft was read from. Stored as the recipe's source, so Re-extract can read the recipe from it again.")
-    __properties: ClassVar[List[str]] = ["cook_time", "description", "difficulty", "ingredients", "instructions", "notes", "nutritional_info", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "photo_ids", "raw_ingredients", "source_text"]
+    __properties: ClassVar[List[str]] = ["cook_time", "description", "difficulty", "ingredients", "instructions", "notes", "nutritional_info", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "photo_ids"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,16 +97,6 @@ class CreateRecipeRequest(BaseModel):
         if self.photo_ids is None and "photo_ids" in self.model_fields_set:
             _dict['photo_ids'] = None
 
-        # set to None if raw_ingredients (nullable) is None
-        # and model_fields_set contains the field
-        if self.raw_ingredients is None and "raw_ingredients" in self.model_fields_set:
-            _dict['raw_ingredients'] = None
-
-        # set to None if source_text (nullable) is None
-        # and model_fields_set contains the field
-        if self.source_text is None and "source_text" in self.model_fields_set:
-            _dict['source_text'] = None
-
         return _dict
 
     @classmethod
@@ -136,9 +124,7 @@ class CreateRecipeRequest(BaseModel):
             "tags": obj.get("tags"),
             "title": obj.get("title"),
             "total_time": obj.get("total_time"),
-            "photo_ids": obj.get("photo_ids"),
-            "raw_ingredients": obj.get("raw_ingredients"),
-            "source_text": obj.get("source_text")
+            "photo_ids": obj.get("photo_ids")
         })
         return _obj
 

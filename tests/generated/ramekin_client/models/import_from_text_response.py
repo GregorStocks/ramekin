@@ -19,15 +19,17 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PrepareTextRecipeRequest(BaseModel):
+class ImportFromTextResponse(BaseModel):
     """
-    PrepareTextRecipeRequest
+    ImportFromTextResponse
     """ # noqa: E501
-    text: StrictStr = Field(description="A whole recipe, typed or pasted as unstructured text.")
-    __properties: ClassVar[List[str]] = ["text"]
+    job_id: UUID = Field(description="The created job ID")
+    status: StrictStr = Field(description="Current job status")
+    __properties: ClassVar[List[str]] = ["job_id", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -47,7 +49,7 @@ class PrepareTextRecipeRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PrepareTextRecipeRequest from a JSON string"""
+        """Create an instance of ImportFromTextResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,7 +74,7 @@ class PrepareTextRecipeRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PrepareTextRecipeRequest from a dict"""
+        """Create an instance of ImportFromTextResponse from a dict"""
         if obj is None:
             return None
 
@@ -80,7 +82,8 @@ class PrepareTextRecipeRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "text": obj.get("text")
+            "job_id": obj.get("job_id"),
+            "status": obj.get("status")
         })
         return _obj
 

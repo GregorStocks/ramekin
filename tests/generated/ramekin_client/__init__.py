@@ -70,6 +70,8 @@ __all__ = [
     "ImportExtractionMethod",
     "ImportFromPhotosRequest",
     "ImportFromPhotosResponse",
+    "ImportFromTextRequest",
+    "ImportFromTextResponse",
     "ImportJobKey",
     "ImportRawRecipe",
     "ImportRecipeRequest",
@@ -101,8 +103,6 @@ __all__ = [
     "OpResult",
     "PaginationMetadata",
     "PingResponse",
-    "PrepareTextRecipeRequest",
-    "PrepareTextRecipeResponse",
     "RecipeContent",
     "RecipeResponse",
     "RecipeSummary",
@@ -195,6 +195,8 @@ from ramekin_client.models.generate_photo_response import GeneratePhotoResponse 
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod as ImportExtractionMethod
 from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest as ImportFromPhotosRequest
 from ramekin_client.models.import_from_photos_response import ImportFromPhotosResponse as ImportFromPhotosResponse
+from ramekin_client.models.import_from_text_request import ImportFromTextRequest as ImportFromTextRequest
+from ramekin_client.models.import_from_text_response import ImportFromTextResponse as ImportFromTextResponse
 from ramekin_client.models.import_job_key import ImportJobKey as ImportJobKey
 from ramekin_client.models.import_raw_recipe import ImportRawRecipe as ImportRawRecipe
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest as ImportRecipeRequest
@@ -226,8 +228,6 @@ from ramekin_client.models.op_kind import OpKind as OpKind
 from ramekin_client.models.op_result import OpResult as OpResult
 from ramekin_client.models.pagination_metadata import PaginationMetadata as PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse as PingResponse
-from ramekin_client.models.prepare_text_recipe_request import PrepareTextRecipeRequest as PrepareTextRecipeRequest
-from ramekin_client.models.prepare_text_recipe_response import PrepareTextRecipeResponse as PrepareTextRecipeResponse
 from ramekin_client.models.recipe_content import RecipeContent as RecipeContent
 from ramekin_client.models.recipe_response import RecipeResponse as RecipeResponse
 from ramekin_client.models.recipe_summary import RecipeSummary as RecipeSummary

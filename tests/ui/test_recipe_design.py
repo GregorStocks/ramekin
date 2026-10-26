@@ -165,18 +165,15 @@ def test_create_and_edit_recipe_with_responsive_form(
     page.get_by_label("Recipe text", exact=True).fill(
         "Design test soup\n2 cups carrots\nSimmer until tender."
     )
-    page.get_by_role("button", name="Review recipe", exact=True).click()
-    expect(page.get_by_label("Title *", exact=True)).to_be_visible(timeout=30000)
-    page.get_by_label("Title *", exact=True).fill("Design test soup")
-    page.get_by_label("Instructions *", exact=True).fill("Simmer until tender.")
-    page.get_by_label("Ingredients", exact=True).fill("2 cups carrots")
     assert_no_horizontal_overflow(page)
-    page.get_by_role("button", name="Save recipe", exact=True).click()
-    expect(page.locator(".recipe-header-compact h2")).to_have_text("Design test soup")
-    expect(page.locator(".ingredients-list")).to_contain_text("carrots")
+    page.get_by_role("button", name="Import recipe", exact=True).click()
+    page.get_by_role("button", name="View Recipe →").click(timeout=30000)
+    # The mock text extractor reads every text as "Text Pancakes".
+    expect(page.locator(".recipe-header-compact h2")).to_have_text("Text Pancakes")
+    expect(page.locator(".ingredients-list")).to_contain_text("all-purpose flour")
 
     page.get_by_role("link", name="Edit", exact=True).click()
     page.get_by_label("Title *", exact=True).fill("Carrot soup")
     page.get_by_role("button", name="Save Changes", exact=True).click()
     expect(page.locator(".recipe-header-compact h2")).to_have_text("Carrot soup")
-    expect(page.locator(".instructions")).to_have_text("Simmer until tender.")
+    expect(page.locator(".instructions")).to_contain_text("Cook in a pan.")

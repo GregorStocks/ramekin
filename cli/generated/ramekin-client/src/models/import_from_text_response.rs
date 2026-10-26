@@ -12,14 +12,17 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PrepareTextRecipeRequest {
-    /// A whole recipe, typed or pasted as unstructured text.
-    #[serde(rename = "text")]
-    pub text: String,
+pub struct ImportFromTextResponse {
+    /// The created job ID
+    #[serde(rename = "job_id")]
+    pub job_id: uuid::Uuid,
+    /// Current job status
+    #[serde(rename = "status")]
+    pub status: String,
 }
 
-impl PrepareTextRecipeRequest {
-    pub fn new(text: String) -> PrepareTextRecipeRequest {
-        PrepareTextRecipeRequest { text }
+impl ImportFromTextResponse {
+    pub fn new(job_id: uuid::Uuid, status: String) -> ImportFromTextResponse {
+        ImportFromTextResponse { job_id, status }
     }
 }

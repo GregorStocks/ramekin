@@ -1,7 +1,5 @@
 import type {
-  CreateRecipeRequest,
   Ingredient,
-  RecipeContent,
   RecipeResponse,
   UpdateRecipeRequest,
 } from "ramekin-client";
@@ -58,7 +56,7 @@ export function emptyEditRecipeFormValues(): RecipeFormValues {
 }
 
 export function recipeFormValuesFromRecipe(
-  recipe: RecipeResponse | (RecipeContent & { photoIds?: string[] }),
+  recipe: RecipeResponse,
 ): RecipeFormValues {
   return {
     title: recipe.title,
@@ -84,29 +82,6 @@ export function recipeFormValuesFromRecipe(
 
 function validIngredients(ingredients: Ingredient[]): Ingredient[] {
   return ingredients.filter((ing) => ing.item.trim() !== "");
-}
-
-export function buildCreateRecipeRequest(
-  values: RecipeFormValues,
-): CreateRecipeRequest {
-  return {
-    title: values.title,
-    description: values.description || undefined,
-    instructions: values.instructions,
-    ingredients: validIngredients(values.ingredients),
-    sourceUrl: values.sourceUrl || undefined,
-    sourceName: values.sourceName || undefined,
-    tags: values.tags.length > 0 ? values.tags : undefined,
-    photoIds: values.photoIds.length > 0 ? values.photoIds : undefined,
-    servings: values.servings || undefined,
-    prepTime: values.prepTime || undefined,
-    cookTime: values.cookTime || undefined,
-    totalTime: values.totalTime || undefined,
-    rating: values.rating ?? undefined,
-    difficulty: values.difficulty || undefined,
-    nutritionalInfo: values.nutritionalInfo || undefined,
-    notes: values.notes || undefined,
-  };
 }
 
 export function buildUpdateRecipeRequest(

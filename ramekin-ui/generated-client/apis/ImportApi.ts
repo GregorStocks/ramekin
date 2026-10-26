@@ -18,12 +18,12 @@ import type {
   ErrorResponse,
   ImportFromPhotosRequest,
   ImportFromPhotosResponse,
+  ImportFromTextRequest,
+  ImportFromTextResponse,
   ImportRecipeRequest,
   ImportRecipeResponse,
   LookupImportJobsRequest,
   LookupImportJobsResponse,
-  PrepareTextRecipeRequest,
-  PrepareTextRecipeResponse,
 } from '../models/index';
 import {
     ErrorResponseFromJSON,
@@ -32,6 +32,10 @@ import {
     ImportFromPhotosRequestToJSON,
     ImportFromPhotosResponseFromJSON,
     ImportFromPhotosResponseToJSON,
+    ImportFromTextRequestFromJSON,
+    ImportFromTextRequestToJSON,
+    ImportFromTextResponseFromJSON,
+    ImportFromTextResponseToJSON,
     ImportRecipeRequestFromJSON,
     ImportRecipeRequestToJSON,
     ImportRecipeResponseFromJSON,
@@ -40,14 +44,14 @@ import {
     LookupImportJobsRequestToJSON,
     LookupImportJobsResponseFromJSON,
     LookupImportJobsResponseToJSON,
-    PrepareTextRecipeRequestFromJSON,
-    PrepareTextRecipeRequestToJSON,
-    PrepareTextRecipeResponseFromJSON,
-    PrepareTextRecipeResponseToJSON,
 } from '../models/index';
 
 export interface ImportFromPhotosOperationRequest {
     importFromPhotosRequest: ImportFromPhotosRequest;
+}
+
+export interface ImportFromTextOperationRequest {
+    importFromTextRequest: ImportFromTextRequest;
 }
 
 export interface ImportRecipeOperationRequest {
@@ -56,10 +60,6 @@ export interface ImportRecipeOperationRequest {
 
 export interface LookupImportJobsOperationRequest {
     lookupImportJobsRequest: LookupImportJobsRequest;
-}
-
-export interface PrepareTextRecipeOperationRequest {
-    prepareTextRecipeRequest: PrepareTextRecipeRequest;
 }
 
 /**
@@ -109,6 +109,51 @@ export class ImportApi extends runtime.BaseAPI {
      */
     async importFromPhotos(requestParameters: ImportFromPhotosOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImportFromPhotosResponse> {
         const response = await this.importFromPhotosRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async importFromTextRaw(requestParameters: ImportFromTextOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImportFromTextResponse>> {
+        if (requestParameters['importFromTextRequest'] == null) {
+            throw new runtime.RequiredError(
+                'importFromTextRequest',
+                'Required parameter "importFromTextRequest" was null or undefined when calling importFromText().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/import/text`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ImportFromTextRequestToJSON(requestParameters['importFromTextRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ImportFromTextResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async importFromText(requestParameters: ImportFromTextOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImportFromTextResponse> {
+        const response = await this.importFromTextRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -199,51 +244,6 @@ export class ImportApi extends runtime.BaseAPI {
      */
     async lookupImportJobs(requestParameters: LookupImportJobsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupImportJobsResponse> {
         const response = await this.lookupImportJobsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async prepareTextRecipeRaw(requestParameters: PrepareTextRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PrepareTextRecipeResponse>> {
-        if (requestParameters['prepareTextRecipeRequest'] == null) {
-            throw new runtime.RequiredError(
-                'prepareTextRecipeRequest',
-                'Required parameter "prepareTextRecipeRequest" was null or undefined when calling prepareTextRecipe().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/api/import/text`;
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: PrepareTextRecipeRequestToJSON(requestParameters['prepareTextRecipeRequest']),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PrepareTextRecipeResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async prepareTextRecipe(requestParameters: PrepareTextRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PrepareTextRecipeResponse> {
-        const response = await this.prepareTextRecipeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
