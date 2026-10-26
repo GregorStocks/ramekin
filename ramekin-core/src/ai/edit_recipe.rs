@@ -104,6 +104,8 @@ pub(crate) async fn run_edit_loop<T: Serialize + DeserializeOwned>(
         max_tokens: Some(8192),
         temperature: Some(0.7),
         tools: prompt.tools,
+        // Each turn resends the whole conversation so far.
+        cache_prompt: true,
         ..Default::default()
     };
 
@@ -115,6 +117,12 @@ pub(crate) async fn run_edit_loop<T: Serialize + DeserializeOwned>(
         usage.prompt_tokens += response.usage.prompt_tokens;
         usage.completion_tokens += response.usage.completion_tokens;
         usage.total_tokens += response.usage.total_tokens;
+        // A cost only when every turn reports one.
+        usage.cost = match (turn, usage.cost, response.usage.cost) {
+            (1, _, cost) => cost,
+            (_, Some(total), Some(cost)) => Some(total + cost),
+            _ => None,
+        };
         cached &= response.cached;
 
         if response.tool_calls.is_empty() {
@@ -235,6 +243,7 @@ mod tests {
         assert_eq!(result.summary, "Doubled it.");
         assert_eq!(result.turns, 3);
         assert_eq!(result.usage.total_tokens, 45);
+        assert_eq!(result.usage.cost, Some(0.75));
         assert_eq!(result.recipe.servings.as_deref(), Some("4"));
         assert_eq!(
             result.recipe.ingredients[0]["measurements"][0]["amount"],
@@ -250,6 +259,7 @@ mod tests {
         assert_eq!(tool_results[0].tool_call_id.as_deref(), Some("call-0-0"));
         assert!(tool_results[1].content.starts_with("Scaled 1 amounts by 2"));
         assert!(!requests[0].tools.is_empty());
+        assert!(requests.iter().all(|request| request.cache_prompt));
     }
 
     #[tokio::test]
