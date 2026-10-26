@@ -903,6 +903,15 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
         return Err(ScrapeError::MaxRetriesExceeded);
     }
 
+    // A job without a page can only start again from pasted text; photo and
+    // Paprika imports keep nothing to retry from.
+    let text_source = job.url.is_none() && has_output(pool, job_id, SOURCE_TEXT_STEP).await?;
+    if job.url.is_none() && !text_source {
+        return Err(ScrapeError::InvalidState(
+            "Cannot retry import jobs".to_string(),
+        ));
+    }
+
     // Resume at the step that failed. `failed_at_step` holds the real pipeline
     // step name (see `mark_failed`); if it's missing or not one of the job's
     // steps, fall back to running the whole pipeline from the top.
@@ -913,6 +922,9 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
         .filter(|name| plan.contains(name))
         .unwrap_or(plan.sequential[0])
         .to_string();
+    if text_source && resume_step == FetchHtmlStep::NAME {
+        resume_step = ExtractRecipeStep::NAME.to_string();
+    }
 
     // Photo-only jobs: if the failed step is save_recipe or later but
     // fetch_images produced an empty photo_ids set, resuming at the failed

@@ -107,6 +107,21 @@ def test_extraction_failure_fails_without_saving(authed_api_client):
     assert RecipesApi(client).list_recipes().recipes == []
 
 
+def test_failed_text_import_retries_from_its_text(authed_api_client):
+    client, _ = authed_api_client
+    scrape_api = ScrapeApi(client)
+    job = import_text(client, "TEXT_EXTRACTION_FAILURE\n" + RECIPE_TEXT)
+    assert job.can_retry
+
+    retry = scrape_api.retry_scrape(job.id)
+    assert retry.status == "parsing"
+    # The fixture fails this text every time; the retry reran extraction.
+    job = wait_for_job_completion(scrape_api, str(job.id))
+    assert job.status == "failed"
+    assert job.failed_at_step == "extract_recipe"
+    assert job.retry_count == 1
+
+
 def test_normalize_failure_keeps_the_saved_recipe(authed_api_client):
     client, _ = authed_api_client
     job = import_text(client, "TEXT_NORMALIZE_FAILURE\n" + RECIPE_TEXT)
