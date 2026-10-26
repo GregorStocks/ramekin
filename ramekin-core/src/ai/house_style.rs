@@ -194,7 +194,8 @@ impl Line {
             families
         };
         ids(self) == ids(rewritten)
-            || (rewritten.words.is_subset(&self.words)
+            || (!rewritten.words.is_empty()
+                && rewritten.words.is_subset(&self.words)
                 && (rewritten.foods.is_empty() || families(self) == families(rewritten)))
     }
 }
@@ -511,6 +512,14 @@ mod tests {
         let reply = finish_after(
             vec![json!({"item": "garlic powder", "measurements": [{"amount": "1", "unit": "tsp"}], "note": null, "section": null})],
             &[(1, "1 tsp garlic")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+
+        // Nor can the food go altogether.
+        let reply = finish_after(
+            vec![json!({"item": "hardboiled eggs", "measurements": [{"amount": "6", "unit": null}], "note": null, "section": null})],
+            &[(1, "6")],
         )
         .await;
         assert!(reply.contains("These ingredients are gone"), "{reply}");
