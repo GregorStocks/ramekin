@@ -1,6 +1,8 @@
 {
   "title": "Calorie estimates: sized containers, packages, balls and blocks",
-  "description": "About 35 lines (pipeline fixtures mostly) count a container or piece the catalog can't weigh. \
+  "description": "Prod (make ingredient-prod-report, 2026-10-25): 36 unweighable prod lines name a container or package, the biggest weight group in prod; 11 are fixed just by re-parsing the stored line and many others lost the package size's unit at import (see blocked-apply-prod-burndown-fixes, D2). \
+Real ones left: an envelope of ranch mix (a regression), a jar of furikake, a bag of marshmallows, a cube of curry roux. \
+About 35 lines (pipeline fixtures mostly) count a container or piece the catalog can't weigh. \
 Done: a bundle is a bunch (\"1 bundle scallions\" x5), a USDA portion named by alternatives (\"wedge or slice\") answers to either (\"2 wedge lemon\"), and cited pieces for \"2 stick rhubarb\" (a stalk), \"1 fillet anchovy\" and \"1 package instant ramen noodles\". \
 Parser/reader cases done: metric volumes on containers (\"1 750-ml bottle red wine\"), \"1 12- ounce beer\", \"10-to-12-ounce bag\", a weight leading the item after a package (\"1 package, 9 oz. chocolate wafer cookies\"), a noted weight that runs on into the item (\"1 package (.25 ounce powdered gelatin)\"), and \"roughly 2.5 - 3 pounds\" after a comma. \
 Left: \"1 five-pound leg of lamb\" x3 (spelled-out leading weight; bone-in cuts are null aliases anyway, so it stays unknown) and \"10-inch flour tortillas\" with no count (the inch size reads as the unit; there's no count to weigh). \
@@ -17,5 +19,5 @@ Split out of the retired p3-nutrition-remaining-count-units (owner, 2026-10-24: 
     "catalog",
   ],
   "created_at": "2026-10-24T19:00:00-07:00",
-  "updated_at": "2026-10-25T12:00:00-07:00",
+  "updated_at": "2026-10-25T18:00:00-07:00",
 }

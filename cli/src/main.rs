@@ -6,6 +6,7 @@ mod export;
 mod generate_test_urls;
 mod import;
 mod ingredient_catalog_audit;
+mod ingredient_prod_report;
 mod ingredient_tests;
 mod load_test;
 mod parse_html;
@@ -281,6 +282,16 @@ enum Commands {
         #[arg(long)]
         learned: Option<PathBuf>,
     },
+    /// List every failing ingredient line of the prod recipes, grouped by why, in logs/prod/burndown.md
+    IngredientProdReport {
+        /// A JSON array of {id, title, servings, ingredients} prod recipes (`make prod-export`)
+        #[arg(long)]
+        prod_recipes: PathBuf,
+        /// Apply the server's learned names (a JSON array of ingredient_name_resolutions
+        /// rows), as the server does
+        #[arg(long)]
+        learned: Option<PathBuf>,
+    },
     /// Ask the model for the weights the catalog can't give across the ingredient corpora, writing them to the catalog's estimated_weights.json
     CatalogFillWeights {
         /// Also fill the weights a JSON array of {servings, ingredients} prod recipes needs
@@ -507,6 +518,12 @@ async fn main() -> Result<()> {
                 learned.as_deref(),
             )?;
         }
+        Commands::IngredientProdReport {
+            prod_recipes,
+            learned,
+        } => {
+            ingredient_prod_report::run(Path::new("."), &prod_recipes, learned.as_deref())?;
+        }
         Commands::CatalogFillWeights {
             prod_recipes,
             learned,
@@ -629,6 +646,7 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::IngredientTestsMigrateCurated { .. } => "ingredient-tests-migrate-curated",
         Commands::IngredientCatalogAudit { .. } => "ingredient-catalog-audit",
         Commands::CatalogCleanAliases => "catalog-clean-aliases",
+        Commands::IngredientProdReport { .. } => "ingredient-prod-report",
         Commands::CatalogFillWeights { .. } => "catalog-fill-weights",
         Commands::IngredientCatalogUnresolved { .. } => "ingredient-catalog-unresolved",
         Commands::IngredientCatalogUncategorized { .. } => "ingredient-catalog-uncategorized",

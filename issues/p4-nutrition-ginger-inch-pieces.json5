@@ -1,18 +1,19 @@
 {
   "title": "Calorie estimates: ginger and turmeric pieces, knobs and chunks",
-  "description": "Leftover ginger/turmeric piece lines the weigher still can't size. ginger root, raw has inch-piece weights (\"1 inch piece\" 7.4 g, …); sizes in the note (\"1 piece fresh ginger\" noted \"2-inch-long\"), an inch unit in the item (\"1 inch knob fresh ginger\", \"1/2 inch ginger\") and \"2 piece 1-inch fresh ginger root\" already weigh. \
+  "description": "Prod (make ingredient-prod-report, 2026-10-25): 13 lines, 5 of them fixed just by re-parsing the stored line and most of the rest stored without the inch unit by early imports (see blocked-apply-prod-burndown-fixes, D2); about 3 real prod lines left, so p4. \
+Leftover ginger/turmeric piece lines the weigher still can't size. ginger root, raw has inch-piece weights (\"1 inch piece\" 7.4 g, …); sizes in the note (\"1 piece fresh ginger\" noted \"2-inch-long\"), an inch unit in the item (\"1 inch knob fresh ginger\", \"1/2 inch ginger\") and \"2 piece 1-inch fresh ginger root\" already weigh. \
 Still failing: a spelled-out size (\"one-and-a-half inch chunk ginger\"); a size word with no inches (\"1 small piece fresh ginger\", \"1 small knob ginger\"; treat as a cited 1-inch piece or leave unknown); and \"1 2-inch piece turmeric\" (turmeric root has no piece weights; needs a cited one). \
 Also: an inch length of a food with no 1-inch weight (\"2 inches Daikon\", \"1 (2-inch) piece daikon\") falls back to the food's whole default piece, overcounting; a cited per-inch weight for daikon would fix those. \
 Measure with make ingredient-catalog-audit (Unsupported quantity unit, all three corpora); make pipeline should produce only data/ingredient-catalog-audit.md and fixture-category diffs. \
 Server-side only (ramekin-core nutrition), so no web or iOS change. \
 Split out of the retired p3-nutrition-remaining-count-units (owner, 2026-10-24: whole groups per PR, never one ingredient).",
   "status": "open",
-  "priority": 3,
+  "priority": 4,
   "type": "task",
   "labels": [
     "nutrition",
     "catalog",
   ],
   "created_at": "2026-10-24T19:00:00-07:00",
-  "updated_at": "2026-10-25T04:45:00-07:00",
+  "updated_at": "2026-10-25T18:00:00-07:00",
 }
