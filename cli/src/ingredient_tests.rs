@@ -529,7 +529,7 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
 
     for i in 0..archive.len() {
         let mut entry = archive.by_index(i)?;
-        let entry_name = entry.name().to_string();
+        let entry_name = entry.name()?.to_string();
 
         if !entry_name.ends_with(".paprikarecipe") {
             continue;
