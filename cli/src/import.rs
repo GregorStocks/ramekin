@@ -296,11 +296,14 @@ pub fn recipe_entry_names(file_path: &Path) -> Result<Vec<String>> {
         .with_context(|| format!("Failed to open file: {}", file_path.display()))?;
     let archive = ZipArchive::new(file)
         .with_context(|| format!("Failed to read zip archive: {}", file_path.display()))?;
-    Ok(archive
-        .file_names()
-        .filter(|name| name.ends_with(".paprikarecipe"))
-        .map(String::from)
-        .collect())
+    let mut names = Vec::new();
+    for name in archive.file_names() {
+        let name = name.context("Failed to read zip entry name")?;
+        if name.ends_with(".paprikarecipe") {
+            names.push(name.into_owned());
+        }
+    }
+    Ok(names)
 }
 
 /// The caller's import jobs for these idempotency keys, keyed by idempotency key.
@@ -354,7 +357,7 @@ pub async fn import_archive(
     let submitted: Result<()> = async {
         for i in 0..archive.len() {
             let mut entry = archive.by_index(i)?;
-            let entry_name = entry.name().to_string();
+            let entry_name = entry.name()?.to_string();
 
             if !entry_name.ends_with(".paprikarecipe") {
                 tracing::debug!(file = %entry_name, "Skipping non-recipe file");
