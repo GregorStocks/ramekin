@@ -316,6 +316,14 @@ pub async fn apply_op_outputs(
                     deserialize_required_output_field(&output, step_name, "suggested_tags")?;
                 merge_tags(&mut content.tags, suggested);
             }
+            NormalizeOp::HouseStyle => {
+                if changed(&output) {
+                    content.ingredients =
+                        deserialize_required_output_field(&output, step_name, "ingredients")?;
+                    content.instructions =
+                        deserialize_required_output_field(&output, step_name, "instructions")?;
+                }
+            }
         }
     }
     Ok(())
@@ -400,6 +408,43 @@ mod tests {
         assert_eq!(recipe.title, "Soup");
         assert_eq!(recipe.description.as_deref(), Some("Old"));
         assert_eq!(recipe.tags, vec!["Dinner", "Quick"]);
+    }
+
+    #[tokio::test]
+    async fn house_style_replaces_ingredients_and_steps_only_when_changed() {
+        let styled = json!({
+            "changed": true,
+            "ingredients": [{
+                "item": "onion",
+                "measurements": [{"amount": "1", "unit": null}],
+                "note": null,
+                "raw": "1 onion",
+                "section": "For the soup",
+            }],
+            "instructions": "Slice the onion.\nBoil.",
+        });
+        let outputs = Outputs(HashMap::from([("house_style".to_string(), styled.clone())]));
+        let mut recipe = content();
+        apply_op_outputs(&mut recipe, &[NormalizeOp::HouseStyle], &outputs)
+            .await
+            .unwrap();
+        assert_eq!(recipe.instructions, "Slice the onion.\nBoil.");
+        assert_eq!(recipe.ingredients.len(), 1);
+        assert_eq!(
+            recipe.ingredients[0].section.as_deref(),
+            Some("For the soup")
+        );
+        assert_eq!(recipe.title, "soup");
+
+        let mut unchanged = styled;
+        unchanged["changed"] = json!(false);
+        let outputs = Outputs(HashMap::from([("house_style".to_string(), unchanged)]));
+        let mut recipe = content();
+        apply_op_outputs(&mut recipe, &[NormalizeOp::HouseStyle], &outputs)
+            .await
+            .unwrap();
+        assert_eq!(recipe.instructions, "Boil.");
+        assert!(recipe.ingredients.is_empty());
     }
 
     #[tokio::test]

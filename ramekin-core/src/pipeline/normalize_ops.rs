@@ -11,7 +11,9 @@ use std::sync::Arc;
 use serde::{Deserialize, Serialize};
 
 use crate::ai::AiClient;
-use crate::pipeline::steps::{AutoTagStep, GenerateDescriptionStep, NormalizeTitleStep};
+use crate::pipeline::steps::{
+    AutoTagStep, GenerateDescriptionStep, HouseStyleStep, NormalizeTitleStep,
+};
 use crate::pipeline::PipelineStep;
 
 /// Step that writes the recipe's current version as a `raw_recipe` output,
@@ -44,6 +46,8 @@ pub enum NormalizeOp {
     NormalizeTitle,
     GenerateDescription,
     AutoTag,
+    /// Rewrite ingredients and steps to `doc/house-style.md`.
+    HouseStyle,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
@@ -95,6 +99,7 @@ impl NormalizeOp {
         NormalizeOp::NormalizeTitle,
         NormalizeOp::GenerateDescription,
         NormalizeOp::AutoTag,
+        NormalizeOp::HouseStyle,
     ];
 
     pub fn id(self) -> &'static str {
@@ -104,6 +109,7 @@ impl NormalizeOp {
             NormalizeOp::NormalizeTitle => "normalize_title",
             NormalizeOp::GenerateDescription => "generate_description",
             NormalizeOp::AutoTag => "auto_tag",
+            NormalizeOp::HouseStyle => "house_style",
         }
     }
 
@@ -118,6 +124,7 @@ impl NormalizeOp {
             NormalizeOp::NormalizeTitle => "Normalize title",
             NormalizeOp::GenerateDescription => "Generate description",
             NormalizeOp::AutoTag => "Auto-tag",
+            NormalizeOp::HouseStyle => "Apply house style",
         }
     }
 
@@ -126,7 +133,8 @@ impl NormalizeOp {
             NormalizeOp::Refetch | NormalizeOp::Reextract => NormalizeOpGroup::Source,
             NormalizeOp::NormalizeTitle
             | NormalizeOp::GenerateDescription
-            | NormalizeOp::AutoTag => NormalizeOpGroup::Normalize,
+            | NormalizeOp::AutoTag
+            | NormalizeOp::HouseStyle => NormalizeOpGroup::Normalize,
         }
     }
 
@@ -142,6 +150,7 @@ impl NormalizeOp {
             NormalizeOp::NormalizeTitle => &["title"],
             NormalizeOp::GenerateDescription => &["description"],
             NormalizeOp::AutoTag => &["tags"],
+            NormalizeOp::HouseStyle => &["ingredients", "instructions"],
         }
     }
 
@@ -154,7 +163,8 @@ impl NormalizeOp {
             NormalizeOp::Refetch
             | NormalizeOp::Reextract
             | NormalizeOp::NormalizeTitle
-            | NormalizeOp::AutoTag => &[],
+            | NormalizeOp::AutoTag
+            | NormalizeOp::HouseStyle => &[],
         }
     }
 
@@ -165,7 +175,8 @@ impl NormalizeOp {
             NormalizeOp::Reextract
             | NormalizeOp::NormalizeTitle
             | NormalizeOp::GenerateDescription
-            | NormalizeOp::AutoTag => &[],
+            | NormalizeOp::AutoTag
+            | NormalizeOp::HouseStyle => &[],
         }
     }
 
@@ -182,13 +193,16 @@ impl NormalizeOp {
             NormalizeOp::NormalizeTitle => Some(NormalizeTitleStep::NAME),
             NormalizeOp::GenerateDescription => Some(GenerateDescriptionStep::NAME),
             NormalizeOp::AutoTag => Some(AutoTagStep::NAME),
+            NormalizeOp::HouseStyle => Some(HouseStyleStep::NAME),
         }
     }
 
-    /// The step implementation for a normalize op.
+    /// The step implementation for a normalize op. `edit_ai_client` is
+    /// configured for recipe edits, for the ops that run the edit tool loop.
     pub fn step(
         self,
         ai_client: Arc<dyn AiClient>,
+        edit_ai_client: Arc<dyn AiClient>,
         user_tags: &[String],
     ) -> Option<Box<dyn PipelineStep>> {
         match self {
@@ -198,6 +212,7 @@ impl NormalizeOp {
                 Some(Box::new(GenerateDescriptionStep::new(ai_client)))
             }
             NormalizeOp::AutoTag => Some(Box::new(AutoTagStep::new(ai_client, user_tags.to_vec()))),
+            NormalizeOp::HouseStyle => Some(Box::new(HouseStyleStep::new(edit_ai_client))),
         }
     }
 
@@ -332,9 +347,15 @@ mod tests {
                 ("normalize_title", vec![]),
                 ("generate_description", vec!["normalize_title"]),
                 ("auto_tag", vec![]),
+                ("house_style", vec![]),
                 (
                     "apply_normalize",
-                    vec!["normalize_title", "generate_description", "auto_tag"]
+                    vec![
+                        "normalize_title",
+                        "generate_description",
+                        "auto_tag",
+                        "house_style"
+                    ]
                 ),
             ]
         );

@@ -12,7 +12,8 @@ use ramekin_core::ai::{
 };
 use ramekin_core::metric_weights::is_metric_weight_unit;
 use ramekin_core::pipeline::{
-    default_import_ops, steps::ParseIngredientsStep, PipelineStep, StepContext, StepOutputStore,
+    default_import_ops, steps::ParseIngredientsStep, NormalizeOp, PipelineStep, StepContext,
+    StepOutputStore,
 };
 use ramekin_core::RawRecipe;
 use serde::{Deserialize, Serialize};
@@ -173,9 +174,15 @@ pub async fn prepare_text_recipe(
         outputs
             .0
             .insert("extract_recipe".into(), json!({"raw_recipe": raw}));
-        let ops = default_import_ops();
+        // House style is a long tool loop, too slow for this request; it
+        // comes back once text import is a background job
+        // (issues/p2-text-import-background-job.json5).
+        let ops: Vec<NormalizeOp> = default_import_ops()
+            .into_iter()
+            .filter(|op| *op != NormalizeOp::HouseStyle)
+            .collect();
         for op in &ops {
-            if let Some(step) = op.step(client.clone(), &tags) {
+            if let Some(step) = op.step(client.clone(), client.clone(), &tags) {
                 outputs.execute(step.as_ref()).await?;
             }
         }

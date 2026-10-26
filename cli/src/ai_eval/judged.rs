@@ -1,6 +1,6 @@
 //! The human-judged suites: auto-tag, title normalization, description
-//! generation, recipe edits and recipe photos, whose answers no rule can
-//! score.
+//! generation, recipe edits, house style and recipe photos, whose answers no
+//! rule can score.
 //!
 //! A run writes a blind judging page per suite
 //! (`logs/ai-evals/<suite>/judge.html`): each case's source and the distinct
@@ -16,8 +16,8 @@ use anyhow::{anyhow, bail, Context, Result};
 use base64::Engine as _;
 use ramekin_core::ai::prompts::render_generate_recipe_photo_prompt;
 use ramekin_core::ai::{
-    edit_recipe, generate_description, generate_recipe_photo, normalize_title, suggest_tags,
-    AiConfig, AiError, NoUserData, Usage,
+    edit_recipe, generate_description, generate_recipe_photo, house_style, normalize_title,
+    suggest_tags, AiConfig, AiError, NoUserData, Usage,
 };
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
@@ -124,6 +124,15 @@ const EDIT_CASES: [(&str, &str); 13] = [
         "smittenkitchen-com_2008-11-cottage-cheese-pancakes",
         "Make enough for 3 people; it makes about 15 pancakes, which feeds 5.",
     ),
+];
+
+/// What a house-style case asks, shown on the judging page.
+const HOUSE_STYLE_INSTRUCTION: &str = "Rewrite it in house style (doc/house-style.md).";
+
+/// Prep in an ingredient's note, which house style moves into the steps.
+const PREP_WORDS: [&str; 14] = [
+    "chopped", "minced", "diced", "sliced", "grated", "peeled", "melted", "softened", "toasted",
+    "beaten", "zested", "juiced", "crushed", "cut",
 ];
 
 /// Recipe photo cases: dishes whose real look is crisp, structured or
@@ -375,6 +384,42 @@ pub fn write_golden(root: &Path) -> Result<Vec<(&'static str, String)>> {
         })
         .collect::<Result<Vec<_>>>()?;
 
+    // Mostly recipes with prep in their ingredient lines, half of those with
+    // sections, and two with neither, which should change little.
+    let has_prep = |s: &Snapshot| {
+        s.ingredients.iter().any(|i| {
+            i.note.as_deref().is_some_and(|note| {
+                let note = note.to_lowercase();
+                PREP_WORDS.iter().any(|word| note.contains(word))
+            })
+        })
+    };
+    let has_sections = |s: &Snapshot| s.ingredients.iter().any(|i| i.section.is_some());
+    let styleable: Vec<&String> = recipes
+        .iter()
+        .map(|c| &c.id)
+        .filter(|id| !EDIT_CASES.iter().any(|(edit, _)| edit == id))
+        .collect();
+    let pick_ids = |kind: &str, keep: &dyn Fn(&Snapshot) -> bool, n: usize| {
+        let ids: Vec<String> = styleable
+            .iter()
+            .filter(|id| keep(&snapshots[id.as_str()]))
+            .map(|id| id.to_string())
+            .collect();
+        sample(ids, |id| format!("house-style {kind} {id}"), n)
+    };
+    let mut style_ids = pick_ids("sections", &|s| has_prep(s) && has_sections(s), 4);
+    style_ids.extend(pick_ids("prep", &|s| has_prep(s) && !has_sections(s), 4));
+    style_ids.extend(pick_ids("plain", &|s| !has_prep(s) && !has_sections(s), 2));
+    let styles: Vec<EditCase> = style_ids
+        .into_iter()
+        .map(|id| EditCase {
+            recipe: edit_case_recipe(snapshots.remove(&id).expect("sampled from the snapshots")),
+            id,
+            instruction: HOUSE_STYLE_INSTRUCTION.to_string(),
+        })
+        .collect();
+
     let mut edits = Vec::new();
     for (id, instruction) in EDIT_CASES {
         let snapshot = snapshots
@@ -392,6 +437,7 @@ pub fn write_golden(root: &Path) -> Result<Vec<(&'static str, String)>> {
         ("titles", serde_json::to_string_pretty(&titles)?),
         ("descriptions", serde_json::to_string_pretty(&descriptions)?),
         ("edit-recipe", serde_json::to_string_pretty(&edits)?),
+        ("house-style", serde_json::to_string_pretty(&styles)?),
         ("recipe-photos", serde_json::to_string_pretty(&photos)?),
     ])
 }
@@ -934,7 +980,7 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                 &verdicts,
             )?;
         }
-        "edit-recipe" => {
+        "edit-recipe" | "house-style" => {
             let golden: Vec<EditCase> = read_json(&golden)?;
             cases = golden.len();
             let verdicts: Verdicts = read_judgments(root, suite)?;
@@ -945,17 +991,21 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                 let mut spend = Spend::default();
                 let (answers, invalid) = ask_all(suite, model, &golden, &mut spend, async |i| {
                     let case = &golden[i];
-                    // Evals edit each recipe on its own, so the tools see no
-                    // user tags or other recipes.
-                    edit_recipe(
-                        &client,
-                        &case.recipe,
-                        &case.instruction,
-                        vec![],
-                        &NoUserData,
-                    )
-                    .await
-                    .map(|r| ((r.recipe, r.summary), r.usage))
+                    let result = if suite == "house-style" {
+                        house_style(&client, &case.recipe).await
+                    } else {
+                        // Evals edit each recipe on its own, so the tools see
+                        // no user tags or other recipes.
+                        edit_recipe(
+                            &client,
+                            &case.recipe,
+                            &case.instruction,
+                            vec![],
+                            &NoUserData,
+                        )
+                        .await
+                    };
+                    result.map(|r| ((r.recipe, r.summary), r.usage))
                 })
                 .await?;
                 let shown: Vec<Option<Shown>> = answers

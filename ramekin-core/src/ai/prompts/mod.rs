@@ -5,6 +5,7 @@ pub mod edit_recipe;
 pub mod estimate_ingredient_weights;
 pub mod generate_description;
 pub mod generate_recipe_photo;
+pub mod house_style;
 pub mod normalize_title;
 pub mod photo_extract;
 pub mod resolve_ingredient_names;

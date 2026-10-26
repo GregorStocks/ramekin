@@ -15,7 +15,7 @@ use crate::ai::edit_recipe_tools::{
 use crate::ai::prompts::edit_recipe::{
     render_edit_recipe_system_prompt, render_edit_recipe_user_prompt, EDIT_RECIPE_PROMPT_NAME,
 };
-use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, ImageData, Usage};
+use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, ImageData, ToolSpec, Usage};
 
 /// The most model calls one edit makes before giving up.
 pub const MAX_EDIT_TURNS: usize = 20;
@@ -47,25 +47,63 @@ pub async fn edit_recipe<T: Serialize + DeserializeOwned>(
     images: Vec<ImageData>,
     context: &dyn RecipeEditContext,
 ) -> Result<EditRecipeResult<T>, AiError> {
+    run_edit_loop(
+        ai_client,
+        recipe,
+        EditPrompt {
+            name: EDIT_RECIPE_PROMPT_NAME,
+            system: render_edit_recipe_system_prompt(),
+            tools: edit_recipe_tools(),
+            check: None,
+        },
+        |rendered| render_edit_recipe_user_prompt(rendered, instruction),
+        images,
+        context,
+    )
+    .await
+}
+
+/// What a tool-loop run asks of the model.
+pub(crate) struct EditPrompt {
+    /// Prompt name for cache keys.
+    pub name: &'static str,
+    pub system: String,
+    /// The tools the model may call; any other is refused.
+    pub tools: Vec<ToolSpec>,
+    /// What must hold of the edited recipe before `finish` is accepted; its
+    /// error goes back to the model to fix.
+    pub check: Option<DraftCheck>,
+}
+
+/// A check of the edited recipe, returning what's wrong.
+pub(crate) type DraftCheck = Box<dyn Fn(&RecipeDraft) -> Result<(), String> + Send + Sync>;
+
+/// Run the edit tool loop on `recipe`: `user_prompt` turns the rendered
+/// recipe into the first user message.
+pub(crate) async fn run_edit_loop<T: Serialize + DeserializeOwned>(
+    ai_client: &dyn AiClient,
+    recipe: &T,
+    prompt: EditPrompt,
+    user_prompt: impl FnOnce(&str) -> String,
+    images: Vec<ImageData>,
+    context: &dyn RecipeEditContext,
+) -> Result<EditRecipeResult<T>, AiError> {
     let value = serde_json::to_value(recipe)
         .map_err(|e| AiError::ParseError(format!("Recipe doesn't serialize: {e}")))?;
     let mut draft = RecipeDraft::new(value).map_err(AiError::ParseError)?;
 
-    let user_prompt = render_edit_recipe_user_prompt(&draft.render(), instruction);
+    let user_prompt = user_prompt(&draft.render());
     let user_message = if images.is_empty() {
         ChatMessage::user(user_prompt)
     } else {
         ChatMessage::user_with_images(user_prompt, images)
     };
     let mut request = ChatRequest {
-        messages: vec![
-            ChatMessage::system(render_edit_recipe_system_prompt()),
-            user_message,
-        ],
+        messages: vec![ChatMessage::system(prompt.system), user_message],
         // A turn is a few tool calls, after the model's hidden reasoning.
         max_tokens: Some(8192),
         temperature: Some(0.7),
-        tools: edit_recipe_tools(),
+        tools: prompt.tools,
         ..Default::default()
     };
 
@@ -73,9 +111,7 @@ pub async fn edit_recipe<T: Serialize + DeserializeOwned>(
     let mut cached = true;
     let mut tool_calls = 0;
     for turn in 1..=MAX_EDIT_TURNS {
-        let response = ai_client
-            .complete(EDIT_RECIPE_PROMPT_NAME, &request)
-            .await?;
+        let response = ai_client.complete(prompt.name, &request).await?;
         usage.prompt_tokens += response.usage.prompt_tokens;
         usage.completion_tokens += response.usage.completion_tokens;
         usage.total_tokens += response.usage.total_tokens;
@@ -105,12 +141,21 @@ pub async fn edit_recipe<T: Serialize + DeserializeOwned>(
                 )));
             }
             let reply = if call.name == FINISH_TOOL {
-                let text = serde_json::from_str::<serde_json::Value>(&call.arguments)
-                    .ok()
-                    .and_then(|args| args["summary"].as_str().map(str::to_string))
-                    .unwrap_or_default();
-                summary = Some(text);
-                "Done.".to_string()
+                match prompt.check.as_ref().map_or(Ok(()), |check| check(&draft)) {
+                    Ok(()) => {
+                        let text = serde_json::from_str::<serde_json::Value>(&call.arguments)
+                            .ok()
+                            .and_then(|args| args["summary"].as_str().map(str::to_string))
+                            .unwrap_or_default();
+                        summary = Some(text);
+                        "Done.".to_string()
+                    }
+                    Err(problem) => {
+                        format!("Error: {problem} Fix that, then call finish again.")
+                    }
+                }
+            } else if !request.tools.iter().any(|tool| tool.name == call.name) {
+                format!("Error: there is no tool called {}", call.name)
             } else {
                 run_tool(&mut draft, context, &call.name, &call.arguments).await
             };

@@ -163,20 +163,27 @@ pub async fn build_registry(
         // A missing OPENROUTER_API_KEY must not fail the job before
         // save_recipe runs: hand the normalize steps a client that errors on
         // every call, so a missing key behaves exactly like an invalid one.
-        let ai_client: Arc<dyn AiClient> = match AiConfig::from_env() {
-            Ok(config) => Arc::new(CachingAiClient::new(config)),
-            Err(e) => {
-                tracing::warn!("AI client unavailable, normalize steps will fail: {e}");
-                Arc::new(UnconfiguredAiClient::new(e))
-            }
-        };
+        let (ai_client, edit_ai_client): (Arc<dyn AiClient>, Arc<dyn AiClient>) =
+            match AiConfig::from_env() {
+                Ok(config) => (
+                    Arc::new(CachingAiClient::new(config.clone())),
+                    Arc::new(CachingAiClient::new(config.for_recipe_edit())),
+                ),
+                Err(e) => {
+                    tracing::warn!("AI client unavailable, normalize steps will fail: {e}");
+                    (
+                        Arc::new(UnconfiguredAiClient::new(e.clone())),
+                        Arc::new(UnconfiguredAiClient::new(e)),
+                    )
+                }
+            };
         let user_tags = if normalize_ops.contains(&NormalizeOp::AutoTag) {
             fetch_user_tags(&pool, user_id).await?
         } else {
             Vec::new()
         };
         for op in normalize_ops {
-            if let Some(step) = op.step(ai_client.clone(), &user_tags) {
+            if let Some(step) = op.step(ai_client.clone(), edit_ai_client.clone(), &user_tags) {
                 registry.register(step);
             }
         }
