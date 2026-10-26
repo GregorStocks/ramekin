@@ -1,5 +1,5 @@
 import { Show, For } from "solid-js";
-import type { Accessor, JSX } from "solid-js";
+import type { Accessor } from "solid-js";
 import { A } from "@solidjs/router";
 import TagInput from "./TagInput";
 import StarRating from "./StarRating";
@@ -14,7 +14,6 @@ export interface RecipeFormProps {
   submitLabelSaving: string;
   cancelHref: string;
   token: Accessor<string | null | undefined>;
-  ingredientEditor?: JSX.Element;
 }
 
 export default function RecipeForm(props: RecipeFormProps) {
@@ -116,17 +115,10 @@ export default function RecipeForm(props: RecipeFormProps) {
         </div>
       </div>
 
-      <Show
-        when={props.ingredientEditor}
-        fallback={
-          <IngredientEditor
-            rows={props.form.ingredientRows}
-            setRows={props.form.setIngredientRows}
-          />
-        }
-      >
-        {props.ingredientEditor}
-      </Show>
+      <IngredientEditor
+        rows={props.form.ingredientRows}
+        setRows={props.form.setIngredientRows}
+      />
 
       <div class="form-group">
         <label for="instructions">Instructions *</label>

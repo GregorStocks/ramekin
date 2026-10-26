@@ -102,12 +102,6 @@ final class SceneRestorationTests: XCTestCase {
     }
 
     func testDraftsRoundTrip() throws {
-        let prepared = PrepareTextRecipeResponse(
-            content: RecipeContent(ingredients: [], instructions: "Mix.", title: "Pancakes"),
-            derivedMeasurements: [],
-            rawIngredients: "1 cup flour",
-            warnings: ["Check the oven temperature"]
-        )
         var createForm = RecipeFormData()
         createForm.title = "Pancakes"
         var editForm = RecipeFormData()
@@ -126,9 +120,7 @@ final class SceneRestorationTests: XCTestCase {
             RecipeFormDraft(
                 mode: .create,
                 form: createForm,
-                recipeText: "Pancakes\n1 cup flour",
-                rawIngredients: "1 cup flour",
-                prepared: prepared
+                recipeText: "Pancakes\n1 cup flour"
             ),
             RecipeFormDraft(mode: .edit(recipeId: first), form: editForm)
         ]
@@ -139,8 +131,6 @@ final class SceneRestorationTests: XCTestCase {
         XCTAssertEqual(decoded[0].mode, .create)
         XCTAssertEqual(decoded[0].form.title, "Pancakes")
         XCTAssertEqual(decoded[0].recipeText, "Pancakes\n1 cup flour")
-        XCTAssertEqual(decoded[0].rawIngredients, "1 cup flour")
-        XCTAssertEqual(decoded[0].prepared, prepared)
         XCTAssertEqual(decoded[1].mode, .edit(recipeId: first))
         XCTAssertEqual(decoded[1].form.expectedVersionId, second)
         XCTAssertEqual(

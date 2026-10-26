@@ -47,6 +47,8 @@ docs/ImportApi.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
 docs/ImportFromPhotosResponse.md
+docs/ImportFromTextRequest.md
+docs/ImportFromTextResponse.md
 docs/ImportJobKey.md
 docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
@@ -82,8 +84,6 @@ docs/OpResult.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
 docs/PingResponse.md
-docs/PrepareTextRecipeRequest.md
-docs/PrepareTextRecipeResponse.md
 docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md
@@ -153,6 +153,8 @@ models/GeneratePhotoResponse.ts
 models/ImportExtractionMethod.ts
 models/ImportFromPhotosRequest.ts
 models/ImportFromPhotosResponse.ts
+models/ImportFromTextRequest.ts
+models/ImportFromTextResponse.ts
 models/ImportJobKey.ts
 models/ImportRawRecipe.ts
 models/ImportRecipeRequest.ts
@@ -184,8 +186,6 @@ models/OpKind.ts
 models/OpResult.ts
 models/PaginationMetadata.ts
 models/PingResponse.ts
-models/PrepareTextRecipeRequest.ts
-models/PrepareTextRecipeResponse.ts
 models/RecipeContent.ts
 models/RecipeResponse.ts
 models/RecipeSummary.ts

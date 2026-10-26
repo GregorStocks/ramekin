@@ -22,6 +22,15 @@ pub enum ImportFromPhotosError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`import_from_text`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ImportFromTextError {
+    Status400(models::ErrorResponse),
+    Status401(models::ErrorResponse),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`import_recipe`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -37,16 +46,6 @@ pub enum ImportRecipeError {
 pub enum LookupImportJobsError {
     Status400(models::ErrorResponse),
     Status401(models::ErrorResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`prepare_text_recipe`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PrepareTextRecipeError {
-    Status400(models::ErrorResponse),
-    Status401(models::ErrorResponse),
-    Status503(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -91,6 +90,55 @@ pub async fn import_from_photos(
     } else {
         let content = resp.text().await?;
         let entity: Option<ImportFromPhotosError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+pub async fn import_from_text(
+    configuration: &configuration::Configuration,
+    import_from_text_request: models::ImportFromTextRequest,
+) -> Result<models::ImportFromTextResponse, Error<ImportFromTextError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_import_from_text_request = import_from_text_request;
+
+    let uri_str = format!("{}/api/import/text", configuration.base_path);
+    let mut req_builder = configuration
+        .client
+        .request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_import_from_text_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ImportFromTextResponse`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ImportFromTextResponse`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<ImportFromTextError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,
@@ -189,55 +237,6 @@ pub async fn lookup_import_jobs(
     } else {
         let content = resp.text().await?;
         let entity: Option<LookupImportJobsError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent {
-            status,
-            content,
-            entity,
-        }))
-    }
-}
-
-pub async fn prepare_text_recipe(
-    configuration: &configuration::Configuration,
-    prepare_text_recipe_request: models::PrepareTextRecipeRequest,
-) -> Result<models::PrepareTextRecipeResponse, Error<PrepareTextRecipeError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_prepare_text_recipe_request = prepare_text_recipe_request;
-
-    let uri_str = format!("{}/api/import/text", configuration.base_path);
-    let mut req_builder = configuration
-        .client
-        .request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.bearer_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-    req_builder = req_builder.json(&p_body_prepare_text_recipe_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::PrepareTextRecipeResponse`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::PrepareTextRecipeResponse`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<PrepareTextRecipeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,

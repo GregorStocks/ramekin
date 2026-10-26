@@ -5,9 +5,9 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**importFromPhotos**](ImportApi.md#importfromphotosoperation) | **POST** /api/import/photos |  |
+| [**importFromText**](ImportApi.md#importfromtextoperation) | **POST** /api/import/text |  |
 | [**importRecipe**](ImportApi.md#importrecipeoperation) | **POST** /api/import/recipe |  |
 | [**lookupImportJobs**](ImportApi.md#lookupimportjobsoperation) | **POST** /api/import/recipe/lookup |  |
-| [**prepareTextRecipe**](ImportApi.md#preparetextrecipeoperation) | **POST** /api/import/text |  |
 
 
 
@@ -77,6 +77,77 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **201** | Photo import job created |  -  |
 | **400** | Invalid request |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## importFromText
+
+> ImportFromTextResponse importFromText(importFromTextRequest)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  ImportApi,
+} from '';
+import type { ImportFromTextOperationRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearer_auth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new ImportApi(config);
+
+  const body = {
+    // ImportFromTextRequest
+    importFromTextRequest: ...,
+  } satisfies ImportFromTextOperationRequest;
+
+  try {
+    const data = await api.importFromText(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **importFromTextRequest** | [ImportFromTextRequest](ImportFromTextRequest.md) |  | |
+
+### Return type
+
+[**ImportFromTextResponse**](ImportFromTextResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Text import job created |  -  |
+| **400** | Invalid recipe text |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
@@ -221,78 +292,6 @@ example().catch(console.error);
 | **200** | Jobs for the keys this user has used |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## prepareTextRecipe
-
-> PrepareTextRecipeResponse prepareTextRecipe(prepareTextRecipeRequest)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  ImportApi,
-} from '';
-import type { PrepareTextRecipeOperationRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: bearer_auth
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new ImportApi(config);
-
-  const body = {
-    // PrepareTextRecipeRequest
-    prepareTextRecipeRequest: ...,
-  } satisfies PrepareTextRecipeOperationRequest;
-
-  try {
-    const data = await api.prepareTextRecipe(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **prepareTextRecipeRequest** | [PrepareTextRecipeRequest](PrepareTextRecipeRequest.md) |  | |
-
-### Return type
-
-[**PrepareTextRecipeResponse**](PrepareTextRecipeResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Recipe draft ready for review; nothing saved |  -  |
-| **400** | Invalid recipe text |  -  |
-| **401** | Unauthorized |  -  |
-| **503** | Recipe processing failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

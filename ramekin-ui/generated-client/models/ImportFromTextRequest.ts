@@ -16,30 +16,30 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface PrepareTextRecipeRequest
+ * @interface ImportFromTextRequest
  */
-export interface PrepareTextRecipeRequest {
+export interface ImportFromTextRequest {
     /**
      * A whole recipe, typed or pasted as unstructured text.
      * @type {string}
-     * @memberof PrepareTextRecipeRequest
+     * @memberof ImportFromTextRequest
      */
     text: string;
 }
 
 /**
- * Check if a given object implements the PrepareTextRecipeRequest interface.
+ * Check if a given object implements the ImportFromTextRequest interface.
  */
-export function instanceOfPrepareTextRecipeRequest(value: object): value is PrepareTextRecipeRequest {
+export function instanceOfImportFromTextRequest(value: object): value is ImportFromTextRequest {
     if (!('text' in value) || value['text'] === undefined) return false;
     return true;
 }
 
-export function PrepareTextRecipeRequestFromJSON(json: any): PrepareTextRecipeRequest {
-    return PrepareTextRecipeRequestFromJSONTyped(json, false);
+export function ImportFromTextRequestFromJSON(json: any): ImportFromTextRequest {
+    return ImportFromTextRequestFromJSONTyped(json, false);
 }
 
-export function PrepareTextRecipeRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): PrepareTextRecipeRequest {
+export function ImportFromTextRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImportFromTextRequest {
     if (json == null) {
         return json;
     }
@@ -49,11 +49,11 @@ export function PrepareTextRecipeRequestFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
-export function PrepareTextRecipeRequestToJSON(json: any): PrepareTextRecipeRequest {
-    return PrepareTextRecipeRequestToJSONTyped(json, false);
+export function ImportFromTextRequestToJSON(json: any): ImportFromTextRequest {
+    return ImportFromTextRequestToJSONTyped(json, false);
 }
 
-export function PrepareTextRecipeRequestToJSONTyped(value?: PrepareTextRecipeRequest | null, ignoreDiscriminator: boolean = false): any {
+export function ImportFromTextRequestToJSONTyped(value?: ImportFromTextRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -122,34 +122,31 @@ fn source_photos_live(
     Ok(!ids.is_empty() && live == ids.len() as i64)
 }
 
-/// The pasted text a recipe was created from, ready to store with
-/// `record_text_source`.
-pub async fn prepare_text_source(text: &str) -> Result<PreparedOutput, ScrapeError> {
-    prepare_output(SOURCE_TEXT_STEP, serde_json::json!({ "text": text })).await
-}
-
-/// Store `text` as the source of the new recipe `recipe_id`: a completed job
-/// holding it as its `source_text` output, where `stored_source` finds it.
-/// Call inside the transaction that creates the recipe.
-pub fn record_text_source(
-    conn: &mut diesel::SqliteConnection,
+/// Create an import job for a recipe pasted as `text`. The text is stored as
+/// the job's `source_text` output, which `extract_recipe` reads it from (see
+/// the runner) and Re-extract later reads again; the job starts there.
+pub async fn create_text_import_job(
+    pool: &DbPool,
     user_id: Uuid,
-    recipe_id: Uuid,
-    text: PreparedOutput,
-) -> Result<(), diesel::result::Error> {
-    let job_id = Uuid::now_v7();
-    diesel::insert_into(scrape_jobs::table)
-        .values((
-            scrape_jobs::id.eq(job_id),
-            scrape_jobs::user_id.eq(user_id),
-            scrape_jobs::recipe_id.eq(Some(recipe_id)),
-            scrape_jobs::status.eq(STATUS_COMPLETED),
-        ))
-        .execute(conn)?;
-    diesel::insert_into(step_outputs::table)
-        .values(text.into_row(job_id, SOURCE_TEXT_STEP, None, true, None))
-        .execute(conn)?;
-    Ok(())
+    text: &str,
+) -> Result<ScrapeJob, ScrapeError> {
+    let source = prepare_output(SOURCE_TEXT_STEP, serde_json::json!({ "text": text })).await?;
+    run_scrape_db_write(pool, move |conn| {
+        let now = Utc::now();
+        // Starting at a named step lets a restart resume a job without a URL.
+        let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
+            .values((
+                scrape_jobs::id.eq(Uuid::now_v7()),
+                scrape_jobs::user_id.eq(user_id),
+                scrape_jobs::status.eq(STATUS_PARSING),
+                scrape_jobs::current_step.eq(Some(ExtractRecipeStep::NAME)),
+                scrape_jobs::current_step_started_at.eq(Some(now)),
+            ))
+            .get_result(conn)?;
+        save_step_output(conn, job.id, SOURCE_TEXT_STEP, source)?;
+        Ok(job)
+    })
+    .await
 }
 
 /// Find `recipe_id`'s latest stored source, if it has one: the page it was

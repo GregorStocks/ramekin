@@ -32,6 +32,12 @@ class TestImportApi(unittest.TestCase):
         """
         pass
 
+    def test_import_from_text(self) -> None:
+        """Test case for import_from_text
+
+        """
+        pass
+
     def test_import_recipe(self) -> None:
         """Test case for import_recipe
 
@@ -40,12 +46,6 @@ class TestImportApi(unittest.TestCase):
 
     def test_lookup_import_jobs(self) -> None:
         """Test case for lookup_import_jobs
-
-        """
-        pass
-
-    def test_prepare_text_recipe(self) -> None:
-        """Test case for prepare_text_recipe
 
         """
         pass

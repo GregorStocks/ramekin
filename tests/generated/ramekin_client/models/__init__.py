@@ -41,6 +41,8 @@ from ramekin_client.models.generate_photo_response import GeneratePhotoResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod
 from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest
 from ramekin_client.models.import_from_photos_response import ImportFromPhotosResponse
+from ramekin_client.models.import_from_text_request import ImportFromTextRequest
+from ramekin_client.models.import_from_text_response import ImportFromTextResponse
 from ramekin_client.models.import_job_key import ImportJobKey
 from ramekin_client.models.import_raw_recipe import ImportRawRecipe
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest
@@ -72,8 +74,6 @@ from ramekin_client.models.op_kind import OpKind
 from ramekin_client.models.op_result import OpResult
 from ramekin_client.models.pagination_metadata import PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse
-from ramekin_client.models.prepare_text_recipe_request import PrepareTextRecipeRequest
-from ramekin_client.models.prepare_text_recipe_response import PrepareTextRecipeResponse
 from ramekin_client.models.recipe_content import RecipeContent
 from ramekin_client.models.recipe_response import RecipeResponse
 from ramekin_client.models.recipe_summary import RecipeSummary

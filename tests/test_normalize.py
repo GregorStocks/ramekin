@@ -331,17 +331,13 @@ def test_reextract_of_an_import_reparses_its_extracted_recipe(authed_api_client)
 def test_reextract_of_a_text_import_reads_its_pasted_text_again(authed_api_client):
     client, _ = authed_api_client
     recipes_api = RecipesApi(client)
-    recipe_id = str(
-        recipes_api.create_recipe(
-            CreateRecipeRequest(
-                title="My Pancakes",
-                instructions="Mix and cook.",
-                ingredients=[],
-                raw_ingredients="1 cup flour",
-                source_text="Pancakes\n1 cup flour\nMix and cook.",
-            )
-        ).id
+    job = ImportApi(client).import_from_text(
+        {"text": "Pancakes\n1 cup flour\nMix and cook."}
     )
+    finished = wait_for_job_completion(ScrapeApi(client), str(job.job_id))
+    assert finished.status == "completed", finished.error
+    recipe_id = str(finished.recipe_id)
+    rename(client, recipe_id, "My Pancakes")
 
     ops = ops_by_id(NormalizeApi(client).list_normalize_ops(recipe_id=recipe_id))
     assert ops["reextract"].available
@@ -431,20 +427,6 @@ def test_reextract_of_a_photo_import_reparses_once_its_photos_are_gone(
     job_id, proposal = run(client, recipe_id, ["reextract"])
     assert proposal.proposed.content.title == "Photo Imported Recipe"
     assert not extract_ran(client, job_id)
-
-
-def test_blank_source_text_is_rejected(authed_api_client):
-    client, _ = authed_api_client
-    with pytest.raises(ApiException) as error:
-        RecipesApi(client).create_recipe(
-            CreateRecipeRequest(
-                title="Blank",
-                instructions="Cook.",
-                ingredients=[],
-                source_text="   ",
-            )
-        )
-    assert error.value.status == 400
 
 
 def test_bulk_starts_one_job_per_recipe(authed_api_client):

@@ -1,5 +1,5 @@
 
-# PrepareTextRecipeRequest
+# ImportFromTextRequest
 
 
 ## Properties
@@ -11,12 +11,12 @@ Name | Type
 ## Example
 
 ```typescript
-import type { PrepareTextRecipeRequest } from ''
+import type { ImportFromTextRequest } from ''
 
 // TODO: Update the object below with actual values
 const example = {
   "text": null,
-} satisfies PrepareTextRecipeRequest
+} satisfies ImportFromTextRequest
 
 console.log(example)
 
@@ -25,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as PrepareTextRecipeRequest
+const exampleParsed = JSON.parse(exampleJSON) as ImportFromTextRequest
 console.log(exampleParsed)
 ```
 

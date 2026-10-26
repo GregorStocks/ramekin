@@ -15,8 +15,6 @@ struct RecipeFormDraft: Codable, Equatable {
     var mode: RecipeFormMode
     var form: RecipeFormData
     var recipeText: String = ""
-    var rawIngredients: String = ""
-    var prepared: PrepareTextRecipeResponse?
 }
 
 /// Encodes where the user was — navigation stacks, per-recipe place, and

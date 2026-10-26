@@ -3,15 +3,12 @@ import type { Accessor, Setter } from "solid-js";
 import { createStore, reconcile } from "solid-js/store";
 import type { SetStoreFunction } from "solid-js/store";
 import type {
-  CreateRecipeRequest,
   PhotosApi,
   RecipeResponse,
-  RecipeContent,
   UpdateRecipeRequest,
 } from "ramekin-client";
 import { extractApiError, extractImageFile } from "./recipeFormHelpers";
 import {
-  buildCreateRecipeRequest,
   buildUpdateRecipeRequest,
   defaultRecipeFormValues,
   recipeFormValuesFromRecipe,
@@ -64,8 +61,6 @@ export interface RecipeFormState {
   onPhotoUpload: (e: Event) => Promise<void>;
   removePhoto: (photoId: string) => void;
   loadRecipe: (recipe: RecipeResponse) => void;
-  loadDraft: (content: RecipeContent) => void;
-  toCreateRecipeRequest: () => CreateRecipeRequest;
   toUpdateRecipeRequest: () => UpdateRecipeRequest;
   /**
    * Whether leaving would lose work: the fields differ from what was last
@@ -250,9 +245,6 @@ export function createRecipeFormState(
       loadValues(recipeFormValuesFromRecipe(recipe));
       setExpectedVersionId(recipe.versionId);
     },
-    loadDraft: (content: RecipeContent) =>
-      loadValues(recipeFormValuesFromRecipe(content)),
-    toCreateRecipeRequest: () => buildCreateRecipeRequest(values()),
     toUpdateRecipeRequest: () => {
       const versionId = expectedVersionId();
       if (versionId === null) {

@@ -10,18 +10,18 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { ImportFromPhotosRequest, ImportFromPhotosResponse, ImportRecipeRequest, ImportRecipeResponse, LookupImportJobsRequest, LookupImportJobsResponse, PrepareTextRecipeRequest, PrepareTextRecipeResponse } from '../models/index';
+import type { ImportFromPhotosRequest, ImportFromPhotosResponse, ImportFromTextRequest, ImportFromTextResponse, ImportRecipeRequest, ImportRecipeResponse, LookupImportJobsRequest, LookupImportJobsResponse } from '../models/index';
 export interface ImportFromPhotosOperationRequest {
     importFromPhotosRequest: ImportFromPhotosRequest;
+}
+export interface ImportFromTextOperationRequest {
+    importFromTextRequest: ImportFromTextRequest;
 }
 export interface ImportRecipeOperationRequest {
     importRecipeRequest: ImportRecipeRequest;
 }
 export interface LookupImportJobsOperationRequest {
     lookupImportJobsRequest: LookupImportJobsRequest;
-}
-export interface PrepareTextRecipeOperationRequest {
-    prepareTextRecipeRequest: PrepareTextRecipeRequest;
 }
 /**
  *
@@ -35,6 +35,12 @@ export declare class ImportApi extends runtime.BaseAPI {
     importFromPhotos(requestParameters: ImportFromPhotosOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImportFromPhotosResponse>;
     /**
      */
+    importFromTextRaw(requestParameters: ImportFromTextOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImportFromTextResponse>>;
+    /**
+     */
+    importFromText(requestParameters: ImportFromTextOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImportFromTextResponse>;
+    /**
+     */
     importRecipeRaw(requestParameters: ImportRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImportRecipeResponse>>;
     /**
      */
@@ -45,10 +51,4 @@ export declare class ImportApi extends runtime.BaseAPI {
     /**
      */
     lookupImportJobs(requestParameters: LookupImportJobsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupImportJobsResponse>;
-    /**
-     */
-    prepareTextRecipeRaw(requestParameters: PrepareTextRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PrepareTextRecipeResponse>>;
-    /**
-     */
-    prepareTextRecipe(requestParameters: PrepareTextRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PrepareTextRecipeResponse>;
 }

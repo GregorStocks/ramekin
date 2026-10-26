@@ -4,19 +4,19 @@ import PhotosUI
 import SwiftUI
 
 struct RecipeFormViewAPIClient {
-    var createRecipe: (_ request: CreateRecipeRequest) async throws -> Void
     var updateRecipe: (_ id: UUID, _ request: UpdateRecipeRequest) async throws -> Void
     var getRecipe: (_ id: UUID) async throws -> RecipeResponse
     var syncTags: (_ cursor: Int64?) async throws -> SyncTagsResponse
     var uploadPhoto: (_ fileURL: URL) async throws -> UploadPhotoResponse
-    var prepareTextRecipe: (_ text: String) async throws -> PrepareTextRecipeResponse = {
-        try await ImportAPI.prepareTextRecipe(prepareTextRecipeRequest: PrepareTextRecipeRequest(text: $0))
+    /// Starts a text import job; returns its id.
+    var importFromText: (_ text: String) async throws -> UUID = {
+        try await ImportAPI.importFromText(importFromTextRequest: ImportFromTextRequest(text: $0)).jobId
+    }
+    var getScrape: (_ id: UUID) async throws -> ScrapeJobResponse = {
+        try await ScrapeAPI.getScrape(id: $0)
     }
 
     static let live = RecipeFormViewAPIClient(
-        createRecipe: {
-            _ = try await RecipesAPI.createRecipe(createRecipeRequest: $0)
-        },
         updateRecipe: {
             try await RecipesAPI.updateRecipe(id: $0, updateRecipeRequest: $1)
         },
@@ -47,14 +47,15 @@ final class RecipeFormViewModel: ObservableObject {
     @Published var selectedPhotoItems: [PhotosPickerItem] = []
     @Published var isUploadingPhoto = false
     @Published var recipeText = ""
-    @Published var rawIngredients = ""
-    @Published var draft: PrepareTextRecipeResponse?
-    @Published var isPreparing = false
+    @Published var isImporting = false
+    /// The text import job's steps, while it runs.
+    @Published var importSteps: [StepState] = []
+    var pollIntervalNanoseconds: UInt64 = 1_000_000_000
     /// A resumed edit started from an older version than the one now saved,
     /// so saving will replace someone else's changes.
     @Published var resumedOverNewerVersion = false
 
-    /// The form as last loaded or prepared, to tell whether the user has
+    /// The form as last loaded, to tell whether the user has
     /// edited anything since.
     private var savedFormData: RecipeFormData
     private let api: RecipeFormViewAPIClient
@@ -72,8 +73,6 @@ final class RecipeFormViewModel: ObservableObject {
         savedFormData = initialFormData
         if let resumed {
             recipeText = resumed.recipeText
-            rawIngredients = resumed.rawIngredients
-            draft = resumed.prepared
             if case .edit = mode {
                 isResumingEdit = true
                 resumedEditVersionId = resumed.form.expectedVersionId
@@ -84,13 +83,14 @@ final class RecipeFormViewModel: ObservableObject {
 
 extension RecipeFormViewModel {
     /// Whether closing the form would throw away the user's work. In create
-    /// mode that's any typed text or a prepared draft; a photo still
-    /// uploading counts in either mode.
+    /// mode that's any typed text not yet imported (a running import saves
+    /// the recipe without the form); a photo still uploading counts in
+    /// either mode.
     var hasUnsavedChanges: Bool {
         if isUploadingPhoto { return true }
         return switch mode {
         case .create:
-            draft != nil || !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            !isImporting && !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         case .edit:
             formData != savedFormData
         }
@@ -103,42 +103,58 @@ extension RecipeFormViewModel {
         return RecipeFormDraft(
             mode: mode,
             form: formData,
-            recipeText: recipeText,
-            rawIngredients: rawIngredients,
-            prepared: draft
+            recipeText: recipeText
         )
     }
 
+    /// Only edits save from the form; a new recipe is imported from its text.
     var canSave: Bool {
-        let hasRequiredVersion = switch mode {
-        case .create:
-            draft != nil && !rawIngredients.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        case .edit:
-            formData.expectedVersionId != nil
-        }
+        guard case .edit = mode else { return false }
         return !formData.title.trimmingCharacters(in: .whitespaces).isEmpty
             && !formData.instructions.trimmingCharacters(in: .whitespaces).isEmpty
-            && hasRequiredVersion
+            && formData.expectedVersionId != nil
             && !isSaving
-            && !isPreparing
             // Saving mid-upload would drop the photo being uploaded.
             && !isUploadingPhoto
     }
 
-    func prepareRecipe() async {
+    var canImport: Bool {
+        !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !isImporting
+    }
+
+    /// Imports the recipe text as a job and follows it until the recipe is
+    /// saved; returns whether it was. Normalize ops may still update the
+    /// recipe afterwards, and one failing leaves it saved. The text is kept
+    /// when the import fails.
+    func importRecipe() async -> Bool {
         error = nil
-        isPreparing = true
-        defer { isPreparing = false }
+        importSteps = []
+        isImporting = true
+        defer { isImporting = false }
         do {
-            let result = try await api.prepareTextRecipe(recipeText)
-            formData = RecipeFormData(content: result.content)
-            savedFormData = formData
-            rawIngredients = result.rawIngredients
-            draft = result
+            let jobId = try await api.importFromText(recipeText)
+            // AI can be slow, so there's no deadline; closing the form
+            // cancels the task, and the job carries on.
+            while true {
+                try Task.checkCancellation()
+                let job = try await api.getScrape(jobId)
+                importSteps = job.steps
+                if job.recipeId != nil {
+                    return true
+                }
+                if job.status == "failed" {
+                    error = job.error ?? "The import failed. Your text is unchanged; try again."
+                    return false
+                }
+                try await Task.sleep(nanoseconds: pollIntervalNanoseconds)
+            }
+        } catch is CancellationError {
+            return false
         } catch {
             self.error = APIErrorFormatter.userMessage(
-                from: error, fallback: "Could not read the recipe. Your text is unchanged; try again."
+                from: error, fallback: "Could not import the recipe. Your text is unchanged; try again."
             )
+            return false
         }
     }
 
@@ -276,21 +292,11 @@ extension RecipeFormViewModel {
     }
 
     func save() async -> Bool {
+        guard case .edit(let recipeId) = mode else { return false }
         error = nil
         isSaving = true
         do {
-            switch mode {
-            case .create:
-                var request = formData.makeCreateRequest()
-                request.rawIngredients = rawIngredients
-                // Stored as the recipe's source, so Re-extract can read it
-                // again. The text is hidden once a draft exists, so it's the
-                // text the draft came from.
-                request.sourceText = recipeText
-                try await api.createRecipe(request)
-            case .edit(let recipeId):
-                try await api.updateRecipe(recipeId, try formData.makeUpdateRequest())
-            }
+            try await api.updateRecipe(recipeId, try formData.makeUpdateRequest())
             isSaving = false
             return true
         } catch is CancellationError {

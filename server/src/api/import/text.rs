@@ -1,227 +1,61 @@
-use std::{
-    collections::{HashMap, HashSet},
-    error::Error,
-    sync::Arc,
-};
+use std::sync::Arc;
 
-use async_trait::async_trait;
-use axum::{extract::State, Json};
-use diesel::prelude::*;
-use ramekin_core::ai::{text_extract::extract_recipe_from_text, AiConfig, CachingAiClient};
-use ramekin_core::metric_weights::is_metric_weight_unit;
-use ramekin_core::pipeline::{
-    default_import_ops, steps::ParseIngredientsStep, NormalizeOp, PipelineStep, StepContext,
-    StepOutputStore,
-};
-use ramekin_core::RawRecipe;
+use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use serde::{Deserialize, Serialize};
-use serde_json::{json, Value};
 use utoipa::ToSchema;
 
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::models::{derived_measurements, DerivedMeasurement, Ingredient};
-use crate::schema::user_tags;
-use crate::types::RecipeContent;
+use crate::ids::Uuid;
+use crate::scraping;
 
 #[derive(Deserialize, ToSchema)]
-pub struct PrepareTextRecipeRequest {
+pub struct ImportFromTextRequest {
     /// A whole recipe, typed or pasted as unstructured text.
     pub text: String,
 }
 
 #[derive(Serialize, ToSchema)]
-pub struct PrepareTextRecipeResponse {
-    pub content: RecipeContent,
-    /// Editable ingredient lines. Send these as raw_ingredients when saving.
-    pub raw_ingredients: String,
-    /// Approximate grams for `content.ingredients` that have them, for
-    /// previewing the draft. Never saved.
-    pub derived_measurements: Vec<DerivedMeasurement>,
-    pub warnings: Vec<String>,
-}
-
-/// Draft execution uses the same pipeline steps without persisting a recipe.
-#[derive(Default)]
-struct DraftOutputs(HashMap<String, Value>);
-
-#[async_trait]
-impl StepOutputStore for DraftOutputs {
-    async fn get_output(&self, name: &str) -> Option<Value> {
-        self.0.get(name).cloned()
-    }
-
-    async fn save_output(
-        &mut self,
-        name: &str,
-        output: &Value,
-        _duration_ms: i64,
-        _success: bool,
-        _error: Option<&str>,
-    ) -> Result<(), Box<dyn Error + Send + Sync>> {
-        self.0.insert(name.to_string(), output.clone());
-        Ok(())
-    }
-}
-
-impl DraftOutputs {
-    async fn execute(&mut self, step: &dyn PipelineStep) -> Result<Value, ApiError> {
-        let result = step
-            .execute(&StepContext {
-                url: "",
-                outputs: self,
-            })
-            .await;
-        if !result.success {
-            tracing::warn!(step = result.step_name, error = ?result.error, "Recipe draft failed");
-            return Err(ApiError::service_unavailable(
-                "Recipe processing failed. Your text is unchanged; try reviewing it again.",
-            ));
-        }
-        self.0.insert(result.step_name, result.output.clone());
-        Ok(result.output)
-    }
-}
-
-pub(crate) async fn parse_draft_ingredients(raw: &RawRecipe) -> Result<Vec<Ingredient>, ApiError> {
-    let mut outputs = DraftOutputs::default();
-    outputs
-        .0
-        .insert("extract_recipe".into(), json!({"raw_recipe": raw}));
-    let parsed = outputs.execute(&ParseIngredientsStep).await?;
-    serde_json::from_value(parsed["ingredients"].clone())
-        .map_err(|_| ApiError::internal("Invalid ingredient pipeline output"))
+pub struct ImportFromTextResponse {
+    /// The created job ID
+    pub job_id: Uuid,
+    /// Current job status
+    pub status: String,
 }
 
 #[utoipa::path(
     post, path = "/api/import/text", tag = "import",
-    request_body = PrepareTextRecipeRequest,
+    request_body = ImportFromTextRequest,
     responses(
-        (status = 200, description = "Recipe draft ready for review; nothing saved", body = PrepareTextRecipeResponse),
+        (status = 201, description = "Text import job created", body = ImportFromTextResponse),
         (status = 400, description = "Invalid recipe text", body = ErrorResponse),
-        (status = 401, description = "Unauthorized", body = ErrorResponse),
-        (status = 503, description = "Recipe processing failed", body = ErrorResponse)
+        (status = 401, description = "Unauthorized", body = ErrorResponse)
     ),
     security(("bearer_auth" = []))
 )]
-pub async fn prepare_text_recipe(
+pub async fn import_from_text(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
-    Json(request): Json<PrepareTextRecipeRequest>,
-) -> Result<Json<PrepareTextRecipeResponse>, ApiError> {
+    Json(request): Json<ImportFromTextRequest>,
+) -> Result<impl IntoResponse, ApiError> {
     if request.text.trim().is_empty() || request.text.len() > 50_000 {
         return Err(ApiError::invalid_request(
             "Enter recipe text between 1 and 50,000 bytes.",
         ));
     }
-    let config = AiConfig::from_env().map_err(|e| {
-        tracing::warn!(error = %e, "Text extraction unavailable");
-        ApiError::service_unavailable("Recipe text processing is unavailable. Ask your server administrator to configure AI access, then retry.")
-    })?;
-    let extractor = CachingAiClient::new(config.for_extraction());
-    let extracted = extract_recipe_from_text(&extractor, &request.text)
+    let job = scraping::create_text_import_job(&pool, user.id, &request.text)
         .await
         .map_err(|e| {
-            tracing::warn!(error = %e, "Text extraction failed");
-            ApiError::service_unavailable(
-                "Could not read the recipe. Your text is unchanged; try again.",
-            )
+            tracing::error!("Failed to create text import job: {}", e);
+            ApiError::internal("Failed to create import job")
         })?;
-    let raw = extracted.raw_recipe;
-    // The model's warnings are for the user to read. Whether the draft is
-    // complete enough to normalize is decided here, the same way for every model
-    // (non-recipe text comes back with these fields empty).
-    let mut warnings = extracted.warnings;
-    let mut incomplete = Vec::new();
-    for (name, value) in [
-        ("title", &raw.title),
-        ("ingredients", &raw.ingredients),
-        ("instructions", &raw.instructions),
-    ] {
-        if value.trim().is_empty() {
-            incomplete.push(format!("Missing {name}. Add it before saving."));
-        }
-    }
-    let ingredients = parse_draft_ingredients(&raw).await?;
-    if ingredients.is_empty() && !raw.ingredients.trim().is_empty() {
-        incomplete.push("No ingredients found. Add ingredient lines before saving.".to_string());
-    }
-    let mut value =
-        serde_json::to_value(&raw).map_err(|_| ApiError::internal("Invalid extracted recipe"))?;
-    value["ingredients"] = json!(ingredients);
-    value["tags"] = json!(raw.categories.clone().unwrap_or_default());
-    let mut content: RecipeContent = serde_json::from_value(value)
-        .map_err(|_| ApiError::internal("Invalid extracted recipe"))?;
-    // An incomplete recipe needs correction before normalize ops can be grounded.
-    let normalize = incomplete.is_empty();
-    warnings.extend(incomplete);
-    if normalize {
-        let tags = run_db(&pool, move |conn| {
-            user_tags::table
-                .filter(user_tags::user_id.eq(user.id))
-                .filter(user_tags::deleted_at.is_null())
-                .select(user_tags::name)
-                .order(user_tags::name.asc())
-                .load::<String>(conn)
-                .map_err(|_| ApiError::internal("Could not load recipe tags"))
-        })
-        .await?;
-        let mut outputs = DraftOutputs::default();
-        outputs
-            .0
-            .insert("extract_recipe".into(), json!({"raw_recipe": raw}));
-        // Long tool loops are too slow for this request; they come back once
-        // text import is a background job
-        // (issues/p2-text-import-background-job.json5).
-        let ops: Vec<NormalizeOp> = default_import_ops()
-            .into_iter()
-            .filter(|op| !op.long_running())
-            .collect();
-        let ai_config = Ok(config);
-        for op in &ops {
-            if let Some(step) = op.step(&ai_config, &tags) {
-                outputs.execute(step.as_ref()).await?;
-            }
-        }
-        crate::normalize::apply_op_outputs(&mut content, &ops, &outputs)
-            .await
-            .map_err(|e| {
-                tracing::warn!(error = %e, "Recipe draft failed");
-                ApiError::internal("Invalid recipe pipeline output")
-            })?;
-    }
-    let items: Vec<String> = content
-        .ingredients
-        .iter()
-        .map(|ingredient| ingredient.item.clone())
-        .collect();
-    let learned = run_db(&pool, move |conn| {
-        crate::ingredient_names::load_learned(conn, items.iter().map(String::as_str))
-            .map_err(|_| ApiError::internal("Failed to load ingredient names"))
-    })
-    .await?;
-    let derived_measurements = derived_measurements(&content.ingredients, &learned);
-    let derived_indices: HashSet<usize> = derived_measurements
-        .iter()
-        .map(|derived| derived.ingredient_index)
-        .collect();
-    for (index, ingredient) in content.ingredients.iter().enumerate() {
-        let has_weight = derived_indices.contains(&index)
-            || ingredient.measurements.iter().any(|measurement| {
-                measurement.amount.is_some() && is_metric_weight_unit(measurement.unit.as_deref())
-            });
-        if !has_weight {
-            warnings.push(format!(
-                "Weight estimate unavailable for {}.",
-                ingredient.item
-            ));
-        }
-    }
-    Ok(Json(PrepareTextRecipeResponse {
-        content,
-        raw_ingredients: raw.ingredients,
-        derived_measurements,
-        warnings,
-    }))
+    scraping::spawn_import_job(pool.clone(), job.id, "text_import");
+    Ok((
+        StatusCode::CREATED,
+        Json(ImportFromTextResponse {
+            job_id: job.id,
+            status: job.status,
+        }),
+    ))
 }

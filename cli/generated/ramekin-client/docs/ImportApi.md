@@ -5,9 +5,9 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**import_from_photos**](ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
+[**import_from_text**](ImportApi.md#import_from_text) | **POST** /api/import/text | 
 [**import_recipe**](ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 [**lookup_import_jobs**](ImportApi.md#lookup_import_jobs) | **POST** /api/import/recipe/lookup | 
-[**prepare_text_recipe**](ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
 
 
 
@@ -26,6 +26,34 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::ImportFromPhotosResponse**](ImportFromPhotosResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## import_from_text
+
+> models::ImportFromTextResponse import_from_text(import_from_text_request)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**import_from_text_request** | [**ImportFromTextRequest**](ImportFromTextRequest.md) |  | [required] |
+
+### Return type
+
+[**models::ImportFromTextResponse**](ImportFromTextResponse.md)
 
 ### Authorization
 
@@ -82,34 +110,6 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::LookupImportJobsResponse**](LookupImportJobsResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## prepare_text_recipe
-
-> models::PrepareTextRecipeResponse prepare_text_recipe(prepare_text_recipe_request)
-
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**prepare_text_recipe_request** | [**PrepareTextRecipeRequest**](PrepareTextRecipeRequest.md) |  | [required] |
-
-### Return type
-
-[**models::PrepareTextRecipeResponse**](PrepareTextRecipeResponse.md)
 
 ### Authorization
 

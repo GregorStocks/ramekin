@@ -35,6 +35,8 @@ docs/ImportApi.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
 docs/ImportFromPhotosResponse.md
+docs/ImportFromTextRequest.md
+docs/ImportFromTextResponse.md
 docs/ImportJobKey.md
 docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
@@ -70,8 +72,6 @@ docs/OpResult.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
 docs/PingResponse.md
-docs/PrepareTextRecipeRequest.md
-docs/PrepareTextRecipeResponse.md
 docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md
@@ -159,6 +159,8 @@ src/models/generate_photo_response.rs
 src/models/import_extraction_method.rs
 src/models/import_from_photos_request.rs
 src/models/import_from_photos_response.rs
+src/models/import_from_text_request.rs
+src/models/import_from_text_response.rs
 src/models/import_job_key.rs
 src/models/import_raw_recipe.rs
 src/models/import_recipe_request.rs
@@ -191,8 +193,6 @@ src/models/op_kind.rs
 src/models/op_result.rs
 src/models/pagination_metadata.rs
 src/models/ping_response.rs
-src/models/prepare_text_recipe_request.rs
-src/models/prepare_text_recipe_response.rs
 src/models/recipe_content.rs
 src/models/recipe_response.rs
 src/models/recipe_summary.rs

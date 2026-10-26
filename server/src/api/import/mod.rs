@@ -1,10 +1,10 @@
 mod photos;
 mod recipe;
-pub(crate) mod text;
+mod text;
 
 pub use photos::import_from_photos;
 pub use recipe::{import_recipe, lookup_import_jobs};
-pub use text::prepare_text_recipe;
+pub use text::import_from_text;
 
 use utoipa::OpenApi;
 
@@ -14,7 +14,7 @@ use utoipa::OpenApi;
         recipe::import_recipe,
         recipe::lookup_import_jobs,
         photos::import_from_photos,
-        text::prepare_text_recipe
+        text::import_from_text
     ),
     components(schemas(
         recipe::ImportRecipeRequest,
@@ -24,8 +24,8 @@ use utoipa::OpenApi;
         recipe::LookupImportJobsResponse,
         photos::ImportFromPhotosRequest,
         photos::ImportFromPhotosResponse,
-        text::PrepareTextRecipeRequest,
-        text::PrepareTextRecipeResponse,
+        text::ImportFromTextRequest,
+        text::ImportFromTextResponse,
     ))
 )]
 pub struct ApiDoc;

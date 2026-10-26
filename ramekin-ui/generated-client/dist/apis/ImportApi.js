@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ImportFromPhotosRequestToJSON, ImportFromPhotosResponseFromJSON, ImportRecipeRequestToJSON, ImportRecipeResponseFromJSON, LookupImportJobsRequestToJSON, LookupImportJobsResponseFromJSON, PrepareTextRecipeRequestToJSON, PrepareTextRecipeResponseFromJSON, } from '../models/index';
+import { ImportFromPhotosRequestToJSON, ImportFromPhotosResponseFromJSON, ImportFromTextRequestToJSON, ImportFromTextResponseFromJSON, ImportRecipeRequestToJSON, ImportRecipeResponseFromJSON, LookupImportJobsRequestToJSON, LookupImportJobsResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -47,6 +47,38 @@ export class ImportApi extends runtime.BaseAPI {
      */
     async importFromPhotos(requestParameters, initOverrides) {
         const response = await this.importFromPhotosRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+    /**
+     */
+    async importFromTextRaw(requestParameters, initOverrides) {
+        if (requestParameters['importFromTextRequest'] == null) {
+            throw new runtime.RequiredError('importFromTextRequest', 'Required parameter "importFromTextRequest" was null or undefined when calling importFromText().');
+        }
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+        let urlPath = `/api/import/text`;
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ImportFromTextRequestToJSON(requestParameters['importFromTextRequest']),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ImportFromTextResponseFromJSON(jsonValue));
+    }
+    /**
+     */
+    async importFromText(requestParameters, initOverrides) {
+        const response = await this.importFromTextRaw(requestParameters, initOverrides);
         return await response.value();
     }
     /**
@@ -111,38 +143,6 @@ export class ImportApi extends runtime.BaseAPI {
      */
     async lookupImportJobs(requestParameters, initOverrides) {
         const response = await this.lookupImportJobsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-    /**
-     */
-    async prepareTextRecipeRaw(requestParameters, initOverrides) {
-        if (requestParameters['prepareTextRecipeRequest'] == null) {
-            throw new runtime.RequiredError('prepareTextRecipeRequest', 'Required parameter "prepareTextRecipeRequest" was null or undefined when calling prepareTextRecipe().');
-        }
-        const queryParameters = {};
-        const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/import/text`;
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: PrepareTextRecipeRequestToJSON(requestParameters['prepareTextRecipeRequest']),
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => PrepareTextRecipeResponseFromJSON(jsonValue));
-    }
-    /**
-     */
-    async prepareTextRecipe(requestParameters, initOverrides) {
-        const response = await this.prepareTextRecipeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 }

@@ -3,66 +3,87 @@ import XCTest
 
 @MainActor
 final class RecipeFormViewModelTests: XCTestCase {
-    func testTextReviewCorrectAndSave() async {
-        var saved: CreateRecipeRequest?
-        let content = RecipeContent(
-            ingredients: [Ingredient(item: "flour", measurements: [Measurement(amount: "125", unit: "g")])],
-            instructions: "Mix.", title: "Pancakes"
-        )
-        let model = RecipeFormViewModel(mode: .create, api: RecipeFormViewAPIClient(
-            createRecipe: { saved = $0 },
-            updateRecipe: { _, _ in throw TestError.unexpectedCall },
-            getRecipe: { _ in throw TestError.unexpectedCall },
-            syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-            uploadPhoto: { _ in throw TestError.unexpectedCall },
-            prepareTextRecipe: { text in
+    func testTextImportFollowsTheJobUntilTheRecipeIsSaved() async {
+        let jobId = UUID()
+        var polls = 0
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { text in
                 XCTAssertEqual(text, "Pasted recipe")
-                return PrepareTextRecipeResponse(content: content, derivedMeasurements: [], rawIngredients: "1 cup flour", warnings: [])
+                return jobId
+            },
+            getScrape: { id in
+                XCTAssertEqual(id, jobId)
+                polls += 1
+                return polls == 1
+                    ? makeJob(id: jobId, recipeId: nil, status: "parsing")
+                    : makeJob(id: jobId, recipeId: UUID(), status: "normalizing")
             }
         ))
+        model.pollIntervalNanoseconds = 0
+        XCTAssertFalse(model.canImport)
         model.recipeText = "Pasted recipe"
-        XCTAssertFalse(model.canSave)
-        await model.prepareRecipe()
-        XCTAssertTrue(model.canSave)
-        XCTAssertNil(saved)
-        model.formData.title = "Corrected pancakes"
-        model.rawIngredients = "2 cups flour"
-        let didSave = await model.save()
-        XCTAssertTrue(didSave)
-        XCTAssertEqual(saved?.title, "Corrected pancakes")
-        XCTAssertEqual(saved?.rawIngredients, "2 cups flour")
-        XCTAssertEqual(saved?.sourceText, "Pasted recipe")
-        XCTAssertEqual(model.recipeText, "Pasted recipe")
+        XCTAssertTrue(model.canImport)
+        XCTAssertFalse(model.canSave, "A new recipe is imported, not saved from the form")
+
+        let saved = await model.importRecipe()
+
+        XCTAssertTrue(saved)
+        XCTAssertEqual(polls, 2)
+        XCTAssertFalse(model.isImporting)
+        XCTAssertNil(model.error)
     }
 
-    func testTextAndReviewEditsSurviveFailures() async {
-        let model = RecipeFormViewModel(mode: .create, api: RecipeFormViewAPIClient(
-            createRecipe: { _ in throw TestError.unexpectedCall },
-            updateRecipe: { _, _ in throw TestError.unexpectedCall },
-            getRecipe: { _ in throw TestError.unexpectedCall },
-            syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-            uploadPhoto: { _ in throw TestError.unexpectedCall },
-            prepareTextRecipe: { _ in throw TestError.unexpectedCall }
+    func testFailedTextImportKeepsTheText() async {
+        let jobId = UUID()
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in jobId },
+            getScrape: { _ in
+                makeJob(id: jobId, recipeId: nil, status: "failed", error: "No recipe found in the text (missing title).")
+            }
         ))
         model.recipeText = "My original recipe"
-        await model.prepareRecipe()
+
+        let saved = await model.importRecipe()
+
+        XCTAssertFalse(saved)
+        XCTAssertEqual(model.error, "No recipe found in the text (missing title).")
         XCTAssertEqual(model.recipeText, "My original recipe")
+        XCTAssertFalse(model.isImporting)
+        XCTAssertTrue(model.canImport)
+    }
+
+    func testTextImportThatCannotStartKeepsTheText() async {
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in throw TestError.unexpectedCall },
+            getScrape: { _ in throw TestError.unexpectedCall }
+        ))
+        model.recipeText = "My original recipe"
+
+        let saved = await model.importRecipe()
+
+        XCTAssertFalse(saved)
         XCTAssertNotNil(model.error)
-        XCTAssertFalse(model.isPreparing)
-        model.formData.title = "My corrected recipe"
-        model.rawIngredients = "3 cups flour"
-        let didSave = await model.save()
-        XCTAssertFalse(didSave)
-        XCTAssertEqual(model.formData.title, "My corrected recipe")
-        XCTAssertEqual(model.rawIngredients, "3 cups flour")
         XCTAssertEqual(model.recipeText, "My original recipe")
+    }
+
+    func testNormalizeFailureAfterSavingStillSaves() async {
+        let jobId = UUID()
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in jobId },
+            getScrape: { _ in makeJob(id: jobId, recipeId: UUID(), status: "failed", error: "auto_tag failed") }
+        ))
+        model.recipeText = "Pasted recipe"
+
+        let saved = await model.importRecipe()
+
+        XCTAssertTrue(saved)
+        XCTAssertNil(model.error)
     }
 
     func testEditSaveRequiresLoadedRecipeVersion() {
         let viewModel = RecipeFormViewModel(
             mode: .edit(recipeId: UUID()),
             api: RecipeFormViewAPIClient(
-                createRecipe: { _ in throw TestError.unexpectedCall },
                 updateRecipe: { _, _ in throw TestError.unexpectedCall },
                 getRecipe: { _ in throw TestError.unexpectedCall },
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
@@ -79,49 +100,12 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.canSave)
     }
 
-    func testCreateSaveBuildsRequestAndClearsSavingState() async {
-        var capturedRequest: CreateRecipeRequest?
-        let viewModel = RecipeFormViewModel(
-            mode: .create,
-            api: RecipeFormViewAPIClient(
-                createRecipe: {
-                    capturedRequest = $0
-                },
-                updateRecipe: { _, _ in XCTFail("Expected create, not update") },
-                getRecipe: { _ in throw TestError.unexpectedCall },
-                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                uploadPhoto: { _ in UploadPhotoResponse(id: UUID()) }
-            )
-        )
-        viewModel.formData.title = "Cake"
-        viewModel.formData.instructions = "Mix and bake"
-        viewModel.formData.ingredientRows = [
-            .newSection("Batter"),
-            .ingredient(EditableIngredient(
-                item: "Flour",
-                measurements: [EditableMeasurement(amount: "2", unit: "cups")],
-                note: ""
-            ))
-        ]
-
-        let didSave = await viewModel.save()
-
-        XCTAssertTrue(didSave)
-        XCTAssertFalse(viewModel.isSaving)
-        XCTAssertNil(viewModel.error)
-        XCTAssertEqual(capturedRequest?.title, "Cake")
-        XCTAssertEqual(capturedRequest?.instructions, "Mix and bake")
-        XCTAssertEqual(capturedRequest?.ingredients.count, 1)
-        XCTAssertEqual(capturedRequest?.ingredients.first?.section, "Batter")
-    }
-
     func testUpdateSaveUsesExistingRecipeId() async {
         let recipeId = UUID()
         var capturedUpdate: (id: UUID, request: UpdateRecipeRequest)?
         let viewModel = RecipeFormViewModel(
             mode: .edit(recipeId: recipeId),
             api: RecipeFormViewAPIClient(
-                createRecipe: { _ in XCTFail("Expected update, not create") },
                 updateRecipe: {
                     capturedUpdate = ($0, $1)
                 },
@@ -148,7 +132,6 @@ final class RecipeFormViewModelTests: XCTestCase {
         let viewModel = RecipeFormViewModel(
             mode: .edit(recipeId: UUID()),
             api: RecipeFormViewAPIClient(
-                createRecipe: { _ in XCTFail("Expected update, not create") },
                 updateRecipe: { _, _ in
                     throw ErrorResponse.error(
                         409,
@@ -180,7 +163,6 @@ final class RecipeFormViewModelTests: XCTestCase {
         let viewModel = RecipeFormViewModel(
             mode: .create,
             api: RecipeFormViewAPIClient(
-                createRecipe: { _ in },
                 updateRecipe: { _, _ in },
                 getRecipe: { _ in throw TestError.unexpectedCall },
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
@@ -204,26 +186,16 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.newTagValue, "")
     }
 
-    func testCreateHasUnsavedChangesOnceTextIsTyped() async {
-        let content = RecipeContent(ingredients: [], instructions: "Mix.", title: "Pancakes")
-        let model = RecipeFormViewModel(mode: .create, api: RecipeFormViewAPIClient(
-            createRecipe: { _ in throw TestError.unexpectedCall },
-            updateRecipe: { _, _ in throw TestError.unexpectedCall },
-            getRecipe: { _ in throw TestError.unexpectedCall },
-            syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-            uploadPhoto: { _ in throw TestError.unexpectedCall },
-            prepareTextRecipe: { _ in
-                PrepareTextRecipeResponse(content: content, derivedMeasurements: [], rawIngredients: "", warnings: [])
-            }
+    func testCreateHasUnsavedChangesOnceTextIsTyped() {
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in throw TestError.unexpectedCall },
+            getScrape: { _ in throw TestError.unexpectedCall }
         ))
         XCTAssertFalse(model.hasUnsavedChanges)
         model.recipeText = "  \n"
         XCTAssertFalse(model.hasUnsavedChanges)
         model.recipeText = "Pancakes"
         XCTAssertTrue(model.hasUnsavedChanges)
-        await model.prepareRecipe()
-        model.recipeText = ""
-        XCTAssertTrue(model.hasUnsavedChanges, "A prepared draft is unsaved work")
     }
 
     func testEditHasUnsavedChangesOnlyAfterAnEdit() async {
@@ -253,7 +225,6 @@ final class RecipeFormViewModelTests: XCTestCase {
             versionSource: "user"
         )
         let model = RecipeFormViewModel(mode: .edit(recipeId: recipe.id), api: RecipeFormViewAPIClient(
-            createRecipe: { _ in throw TestError.unexpectedCall },
             updateRecipe: { _, _ in throw TestError.unexpectedCall },
             getRecipe: { _ in recipe },
             syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
@@ -273,4 +244,31 @@ final class RecipeFormViewModelTests: XCTestCase {
     private enum TestError: Error {
         case unexpectedCall
     }
+}
+
+private func createClient(
+    importFromText: @escaping (String) async throws -> UUID,
+    getScrape: @escaping (UUID) async throws -> ScrapeJobResponse
+) -> RecipeFormViewAPIClient {
+    RecipeFormViewAPIClient(
+        updateRecipe: { _, _ in throw TestError.unexpectedCall },
+        getRecipe: { _ in throw TestError.unexpectedCall },
+        syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
+        uploadPhoto: { _ in throw TestError.unexpectedCall },
+        importFromText: importFromText,
+        getScrape: getScrape
+    )
+}
+
+private func makeJob(id: UUID, recipeId: UUID?, status: String, error: String? = nil) -> ScrapeJobResponse {
+    ScrapeJobResponse(
+        canRetry: status == "failed",
+        createdAt: Date(timeIntervalSince1970: 1),
+        error: error,
+        id: id,
+        recipeId: recipeId,
+        retryCount: 0,
+        status: status,
+        steps: []
+    )
 }

@@ -33,24 +33,6 @@ struct RecipeFormData: Equatable, Codable {
 
     init() {}
 
-    init(content: RecipeContent) {
-        title = content.title
-        recipeDescription = content.description ?? ""
-        instructions = content.instructions
-        servings = content.servings ?? ""
-        prepTime = content.prepTime ?? ""
-        cookTime = content.cookTime ?? ""
-        totalTime = content.totalTime ?? ""
-        difficulty = content.difficulty ?? ""
-        rating = content.rating
-        sourceUrl = content.sourceUrl ?? ""
-        sourceName = content.sourceName ?? ""
-        tags = content.tags ?? []
-        notes = content.notes ?? ""
-        nutritionalInfo = content.nutritionalInfo ?? ""
-        ingredientRows = ingredientEditorRows(from: content.ingredients)
-    }
-
     init(
         title: String,
         recipeDescription: String,
@@ -114,27 +96,6 @@ struct RecipeFormData: Equatable, Codable {
     private var validIngredients: [Ingredient] {
         ingredients(from: ingredientRows)
             .filter { !$0.item.trimmingCharacters(in: .whitespaces).isEmpty }
-    }
-
-    func makeCreateRequest() -> CreateRecipeRequest {
-        CreateRecipeRequest(
-            cookTime: cookTime.isEmpty ? nil : cookTime,
-            description: recipeDescription.isEmpty ? nil : recipeDescription,
-            difficulty: difficulty.isEmpty ? nil : difficulty,
-            ingredients: validIngredients,
-            instructions: instructions,
-            notes: notes.isEmpty ? nil : notes,
-            nutritionalInfo: nutritionalInfo.isEmpty ? nil : nutritionalInfo,
-            prepTime: prepTime.isEmpty ? nil : prepTime,
-            rating: rating,
-            servings: servings.isEmpty ? nil : servings,
-            sourceName: sourceName.isEmpty ? nil : sourceName,
-            sourceUrl: sourceUrl.isEmpty ? nil : sourceUrl,
-            tags: tags.isEmpty ? nil : tags,
-            title: title,
-            totalTime: totalTime.isEmpty ? nil : totalTime,
-            photoIds: photoIds.isEmpty ? nil : photoIds
-        )
     }
 
     func makeUpdateRequest() throws -> UpdateRecipeRequest {

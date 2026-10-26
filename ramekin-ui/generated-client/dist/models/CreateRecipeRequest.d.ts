@@ -112,19 +112,6 @@ export interface CreateRecipeRequest {
      * @memberof CreateRecipeRequest
      */
     photoIds?: Array<string> | null;
-    /**
-     * Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save.
-     * @type {string}
-     * @memberof CreateRecipeRequest
-     */
-    rawIngredients?: string | null;
-    /**
-     * The pasted text a text draft was read from. Stored as the recipe's
-     * source, so Re-extract can read the recipe from it again.
-     * @type {string}
-     * @memberof CreateRecipeRequest
-     */
-    sourceText?: string | null;
 }
 /**
  * Check if a given object implements the CreateRecipeRequest interface.

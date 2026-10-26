@@ -309,7 +309,7 @@ async fn main() {
             "/api/import/recipe/lookup",
             post(api::import::lookup_import_jobs),
         )
-        .route("/api/import/text", post(api::import::prepare_text_recipe))
+        .route("/api/import/text", post(api::import::import_from_text))
         .route("/api/import/photos", post(api::import::import_from_photos))
         .layer(middleware::from_fn_with_state(
             pool.clone(),

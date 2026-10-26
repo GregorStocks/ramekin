@@ -1,9 +1,9 @@
-"""Text creation must use import processing, without saving before review."""
+"""Text import runs as a background job, like every other import."""
 
 import pytest
 
 from conftest import wait_for_job_completion
-from ramekin_client.api import ImportApi, RecipesApi, ScrapeApi
+from ramekin_client.api import ImportApi, NormalizeApi, RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
 
 
@@ -19,71 +19,115 @@ Family notebook. Serve warm.
 """
 
 
-def prepare(client, text=RECIPE_TEXT):
-    return ImportApi(client).prepare_text_recipe({"text": text})
+def start(client, text=RECIPE_TEXT):
+    return ImportApi(client).import_from_text({"text": text})
 
 
-def test_text_draft_review_save_and_import_parity(authed_api_client):
+def import_text(client, text=RECIPE_TEXT):
+    response = start(client, text)
+    return wait_for_job_completion(ScrapeApi(client), str(response.job_id))
+
+
+def step(job, name):
+    return next(s for s in job.steps if s.name == name)
+
+
+def test_text_import_saves_and_normalizes(authed_api_client):
     client, _ = authed_api_client
-    recipes = RecipesApi(client)
-    draft = prepare(client)
-    assert draft.content.title == "Text Pancakes"
-    assert draft.content.servings == "4"
-    assert draft.content.prep_time == "10 minutes"
-    assert draft.content.source_name == "Family notebook"
-    assert draft.content.notes == "Serve warm."
-    # The mock answers "unknowable" names unknown, so once saved and learned
-    # this line still gets no grams.
-    assert draft.warnings == ["Weight estimate unavailable for unknowable powder."]
-    assert draft.content.description == "A delicious test recipe."
-    ingredients = draft.content.ingredients
-    assert [len(i.measurements) for i in ingredients] == [1, 1, 1]
-    assert [d.to_dict() for d in draft.derived_measurements] == [
+    response = start(client)
+    assert response.status == "parsing"
+    job = wait_for_job_completion(ScrapeApi(client), str(response.job_id))
+    assert job.status == "completed", job.error
+    assert job.url is None
+    assert step(job, "extract_recipe").summary == 'extracted "Text Pancakes"'
+    # Every default import op runs, house style included.
+    for name in ("normalize_title", "generate_description", "house_style"):
+        assert step(job, name).status == "completed", name
+    assert step(job, "apply_normalize").status == "completed"
+
+    recipe = RecipesApi(client).get_recipe(str(job.recipe_id))
+    assert recipe.title == "Text Pancakes"
+    assert recipe.servings == "4"
+    assert recipe.prep_time == "10 minutes"
+    assert recipe.source_name == "Family notebook"
+    assert recipe.notes == "Serve warm."
+    assert recipe.description == "A delicious test recipe."
+    assert [i.item for i in recipe.ingredients] == [
+        "all-purpose flour",
+        "butter",
+        "unknowable powder",
+    ]
+    assert [d.to_dict() for d in recipe.derived_measurements] == [
         {"ingredient_index": 0, "amount": "125", "unit": "g"},
         {"ingredient_index": 1, "amount": "227", "unit": "g"},
     ]
-    assert recipes.list_recipes().recipes == []
-
-    saved = recipes.create_recipe(
-        {
-            **draft.content.to_dict(),
-            "raw_ingredients": draft.raw_ingredients,
-        }
-    )
-    recipe = recipes.get_recipe(saved.id)
-    assert recipe.ingredients == ingredients
-    assert recipe.derived_measurements == draft.derived_measurements
-
-    imported = ImportApi(client).import_recipe(
-        {
-            "raw_recipe": {
-                "title": "Text Pancakes",
-                "ingredients": draft.raw_ingredients,
-                "instructions": draft.content.instructions,
-            },
-            "photo_ids": [],
-            "extraction_method": "paprika",
-        }
-    )
-    job = wait_for_job_completion(ScrapeApi(client), imported.job_id)
-    assert job.status == "completed"
-    assert recipes.get_recipe(job.recipe_id).ingredients == ingredients
 
 
-def test_reviewed_ingredient_changes_recompute_weights(authed_api_client):
+def test_text_import_is_its_recipes_source_for_reextract(authed_api_client):
     client, _ = authed_api_client
-    draft = prepare(client)
-    saved = RecipesApi(client).create_recipe(
-        {
-            **draft.content.to_dict(),
-            "title": "Corrected Pancakes",
-            "raw_ingredients": "2 cups all-purpose flour\n1 cup unknowable powder",
-        }
+    job = import_text(client)
+    assert job.status == "completed", job.error
+    recipe_id = str(job.recipe_id)
+    ops = {
+        op.id: op
+        for op in NormalizeApi(client).list_normalize_ops(recipe_id=recipe_id).ops
+    }
+    assert ops["reextract"].available
+    assert not ops["refetch"].available
+
+
+def test_model_warnings_show_on_the_job(authed_api_client):
+    client, _ = authed_api_client
+    job = import_text(client, "TEXT_MODEL_WARNING\n" + RECIPE_TEXT)
+    assert job.status == "completed", job.error
+    assert step(job, "extract_recipe").summary == (
+        'extracted "Text Pancakes" · The source mentions a note that was not supplied.'
     )
-    recipe = RecipesApi(client).get_recipe(saved.id)
-    assert recipe.title == "Corrected Pancakes"
-    assert recipe.derived_measurements[0].amount == "250"
-    assert len(recipe.ingredients[1].measurements) == 1
+
+
+def test_text_without_a_recipe_fails_without_saving(authed_api_client):
+    client, _ = authed_api_client
+    job = import_text(client, "TEXT_INCOMPLETE\n1 cup all-purpose flour")
+    assert job.status == "failed"
+    assert job.failed_at_step == "extract_recipe"
+    assert job.error == (
+        "No recipe found in the text (missing title, instructions). "
+        "Check the missing fields."
+    )
+    assert job.recipe_id is None
+    assert RecipesApi(client).list_recipes().recipes == []
+
+
+def test_extraction_failure_fails_without_saving(authed_api_client):
+    client, _ = authed_api_client
+    job = import_text(client, "TEXT_EXTRACTION_FAILURE\n" + RECIPE_TEXT)
+    assert job.status == "failed"
+    assert job.failed_at_step == "extract_recipe"
+    assert job.recipe_id is None
+    assert RecipesApi(client).list_recipes().recipes == []
+
+
+def test_normalize_failure_keeps_the_saved_recipe(authed_api_client):
+    client, _ = authed_api_client
+    job = import_text(client, "TEXT_NORMALIZE_FAILURE\n" + RECIPE_TEXT)
+    assert job.status == "failed"
+    assert job.failed_at_step == "normalize_title"
+    recipe = RecipesApi(client).get_recipe(str(job.recipe_id))
+    assert recipe.title == "Force Text Normalize Failure"
+
+
+@pytest.mark.parametrize("text", ["", "   ", "x" * 50_001])
+def test_invalid_text_rejected(authed_api_client, text):
+    client, _ = authed_api_client
+    with pytest.raises(ApiException) as error:
+        start(client, text)
+    assert error.value.status == 400
+
+
+def test_text_requires_authentication(unauthed_api_client):
+    with pytest.raises(ApiException) as error:
+        start(unauthed_api_client)
+    assert error.value.status == 401
 
 
 def test_structured_creation_gets_weight_estimates(authed_api_client):
@@ -105,66 +149,3 @@ def test_structured_creation_gets_weight_estimates(authed_api_client):
     recipe = RecipesApi(client).get_recipe(saved.id)
     assert len(recipe.ingredients[0].measurements) == 1
     assert recipe.derived_measurements[0].amount == "125"
-
-
-def test_model_warnings_are_shown_without_blocking_normalize_ops(authed_api_client):
-    client, _ = authed_api_client
-    draft = prepare(client, "TEXT_MODEL_WARNING\n" + RECIPE_TEXT)
-    assert draft.warnings[0] == "The source mentions a note that was not supplied."
-    assert draft.content.description == "A delicious test recipe."
-
-
-def test_incomplete_text_exposes_missing_fields(authed_api_client):
-    client, _ = authed_api_client
-    draft = prepare(client, "TEXT_INCOMPLETE\n1 cup all-purpose flour")
-    assert draft.content.title == ""
-    assert draft.content.instructions == ""
-    assert "Missing title. Add it before saving." in draft.warnings
-    assert "Missing instructions. Add it before saving." in draft.warnings
-    # Missing fields block normalize ops, which would have nothing to ground them.
-    assert draft.content.description is None
-    with pytest.raises(ApiException) as error:
-        RecipesApi(client).create_recipe(
-            {**draft.content.to_dict(), "raw_ingredients": draft.raw_ingredients}
-        )
-    assert error.value.status == 400
-
-
-@pytest.mark.parametrize("text", ["", "   ", "x" * 50_001])
-def test_invalid_text_rejected(authed_api_client, text):
-    client, _ = authed_api_client
-    with pytest.raises(ApiException) as error:
-        prepare(client, text)
-    assert error.value.status == 400
-
-
-@pytest.mark.parametrize(
-    "marker", ["TEXT_EXTRACTION_FAILURE", "TEXT_NORMALIZE_FAILURE"]
-)
-def test_pipeline_failure_does_not_save(authed_api_client, marker):
-    client, _ = authed_api_client
-    with pytest.raises(ApiException) as error:
-        prepare(client, marker + "\nFailure regression\n" + RECIPE_TEXT)
-    assert error.value.status == 503
-    assert RecipesApi(client).list_recipes().recipes == []
-
-
-def test_text_requires_authentication(unauthed_api_client):
-    with pytest.raises(ApiException) as error:
-        prepare(unauthed_api_client)
-    assert error.value.status == 401
-
-
-@pytest.mark.parametrize("lines", ["   ", "Ingredients:"])
-def test_raw_ingredients_must_contain_ingredients(authed_api_client, lines):
-    client, _ = authed_api_client
-    with pytest.raises(ApiException) as error:
-        RecipesApi(client).create_recipe(
-            {
-                "title": "Incomplete recipe",
-                "instructions": "Mix.",
-                "ingredients": [],
-                "raw_ingredients": lines,
-            }
-        )
-    assert error.value.status == 400

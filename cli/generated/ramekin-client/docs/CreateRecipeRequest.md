@@ -20,8 +20,6 @@ Name | Type | Description | Notes
 **title** | **String** |  | 
 **total_time** | Option<**String**> |  | [optional]
 **photo_ids** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
-**raw_ingredients** | Option<**String**> | Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save. | [optional]
-**source_text** | Option<**String**> | The pasted text a text draft was read from. Stored as the recipe's source, so Re-extract can read the recipe from it again. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
