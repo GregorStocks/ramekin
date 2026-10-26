@@ -60,14 +60,6 @@ pub async fn retry_scrape(
         return ApiError::not_found("Scrape job not found").into_response();
     }
 
-    // Retry only makes sense for jobs with a URL (scrape jobs, not imports)
-    let url = match &job.url {
-        Some(u) => u,
-        None => {
-            return ApiError::invalid_request("Cannot retry import jobs").into_response();
-        }
-    };
-
     // Retry job
     let new_status = match scraping::retry_job(&pool, job_id).await {
         Ok(s) => s,
@@ -81,7 +73,11 @@ pub async fn retry_scrape(
     };
 
     // Spawn background task with instrumentation
-    scraping::spawn_scrape_job(pool.clone(), job_id, url, "retry");
+    match &job.url {
+        Some(url) => scraping::spawn_scrape_job(pool.clone(), job_id, url, "retry"),
+        // retry_job only accepts a job without a URL when it has pasted text.
+        None => scraping::spawn_import_job(pool.clone(), job_id, "retry"),
+    }
 
     (
         StatusCode::OK,
