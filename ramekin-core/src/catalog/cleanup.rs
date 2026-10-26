@@ -146,12 +146,13 @@ fn line_outcome(line: &(String, Option<String>), hidden: &HashSet<String>) -> St
 ///
 /// A key among `known.verbatim` stays even when the parser would never
 /// produce it: those names are matched without parsing. A key among
-/// `known.prod` is never touched. A redundant key goes only if no name in
-/// `known.corpus` resolves differently without it.
+/// `known.prod` is never touched. No key goes or moves while a line in
+/// `known.corpus` estimates differently without it.
 pub fn clean_curated(json: &str, known: &CleanupNames) -> (String, Vec<CuratedChange>) {
     let mut curated: Map<String, Value> =
         serde_json::from_str(json).expect("curated.json is an object");
     let mut changes = Vec::new();
+    let mut reach = Reach::new(&known.corpus);
     for section in ["aliases", "not_food"] {
         let names: Map<String, Value> = curated[section]
             .as_object()
@@ -180,6 +181,20 @@ pub fn clean_curated(json: &str, known: &CleanupNames) -> (String, Vec<CuratedCh
             }
             let current = outcome(name);
             let cleaned = outcome(&parsed);
+            // A stored line that reaches the key another way ("fresh
+            // katakuriko (potato starch" through modifier stripping) still
+            // needs it; lines that are the key itself were judged above.
+            let indirect = reach
+                .reaching(name)
+                .into_iter()
+                .filter(|(item, _)| normalize(item) != *name)
+                .cloned()
+                .collect();
+            if (cleaned == current || cleaned == "unresolved")
+                && !reach.unchanged(indirect, &HashSet::from([name.clone()]))
+            {
+                continue;
+            }
             if cleaned == current {
                 changes.push(CuratedChange::Remove {
                     section,
@@ -406,12 +421,76 @@ fn stems(name: &str) -> BTreeSet<String> {
         .collect()
 }
 
+/// The corpus lines that could reach a key, and whether hiding keys changes
+/// their estimates. A name reaches a key only through spellings built from
+/// its own words, so only lines whose item has all of the key's words count.
+struct Reach<'a> {
+    corpus: Vec<&'a (String, Option<String>)>,
+    by_stem: HashMap<String, Vec<usize>>,
+    /// Each checked line's estimate with nothing hidden.
+    now: HashMap<(String, Option<String>), String>,
+}
+
+impl<'a> Reach<'a> {
+    fn new(corpus: &'a BTreeSet<(String, Option<String>)>) -> Self {
+        let corpus: Vec<_> = corpus.iter().collect();
+        let mut by_stem: HashMap<String, Vec<usize>> = HashMap::new();
+        for (index, (item, _)) in corpus.iter().enumerate() {
+            for word in stems(&item.to_lowercase()) {
+                by_stem.entry(word).or_default().push(index);
+            }
+        }
+        Reach {
+            corpus,
+            by_stem,
+            now: HashMap::new(),
+        }
+    }
+
+    fn reaching(&self, key: &str) -> Vec<&'a (String, Option<String>)> {
+        let mut reaching: Option<BTreeSet<usize>> = None;
+        for word in stems(key) {
+            let names: BTreeSet<usize> = self
+                .by_stem
+                .get(&word)
+                .into_iter()
+                .flatten()
+                .copied()
+                .collect();
+            reaching = Some(match reaching {
+                Some(found) => found.intersection(&names).copied().collect(),
+                None => names,
+            });
+        }
+        reaching
+            .into_iter()
+            .flatten()
+            .map(|index| self.corpus[index])
+            .collect()
+    }
+
+    /// Whether every line estimates as it does now with `hidden` hidden.
+    fn unchanged(
+        &mut self,
+        lines: Vec<(String, Option<String>)>,
+        hidden: &HashSet<String>,
+    ) -> bool {
+        lines.into_iter().all(|line| {
+            let after = line_outcome(&line, hidden);
+            let before = self
+                .now
+                .entry(line)
+                .or_insert_with_key(|line| line_outcome(line, &HashSet::new()));
+            after == *before
+        })
+    }
+}
+
 /// The keys left in `curated` that nothing needs: hidden from the catalog
 /// (with the keys `changes` already removed), the key itself and every corpus
-/// line that could reach it still estimate as they do now (`line_outcome`). A
-/// name reaches a key only through spellings built from its own words, so only
-/// lines whose item has all of the key's words are checked. Longer keys go first, so of two keys that
-/// only need each other ("tomato", "tomatoes") the shorter stays.
+/// line that could reach it (`Reach`) still estimate as they do now
+/// (`line_outcome`). Longer keys go first, so of two keys that only need each
+/// other ("tomato", "tomatoes") the shorter stays.
 ///
 /// Ambiguous (null) aliases are deliberate overrides and always stay, as do
 /// names bespoke.json gives pieces (it needs the exact name) and keys prod
@@ -424,14 +503,7 @@ fn redundant_keys(
 ) -> Vec<CuratedChange> {
     let bespoke: Value = serde_json::from_str(BESPOKE_JSON).expect("bespoke.json is JSON");
     let bespoke = bespoke["pieces"].as_object().expect("bespoke pieces");
-    let corpus: Vec<&(String, Option<String>)> = known.corpus.iter().collect();
-    let mut by_stem: HashMap<String, Vec<usize>> = HashMap::new();
-    for (index, (item, _)) in corpus.iter().enumerate() {
-        for word in stems(&item.to_lowercase()) {
-            by_stem.entry(word).or_default().push(index);
-        }
-    }
-    let mut now: HashMap<(String, Option<String>), String> = HashMap::new();
+    let mut reach = Reach::new(&known.corpus);
     let mut hidden: HashSet<String> = changes
         .iter()
         .filter_map(|change| match change {
@@ -459,30 +531,11 @@ fn redundant_keys(
     keys.sort_by_key(|(_, name)| std::cmp::Reverse(name.len()));
     let mut redundant = Vec::new();
     for (section, key) in keys {
-        let mut reaching: Option<BTreeSet<usize>> = None;
-        for word in stems(key) {
-            let names: BTreeSet<usize> =
-                by_stem.get(&word).into_iter().flatten().copied().collect();
-            reaching = Some(match reaching {
-                Some(found) => found.intersection(&names).copied().collect(),
-                None => names,
-            });
-        }
-        let lines = std::iter::once((key.clone(), None)).chain(
-            reaching
-                .into_iter()
-                .flatten()
-                .map(|index| corpus[index].clone()),
-        );
         hidden.insert(key.clone());
-        let unchanged = lines.into_iter().all(|line| {
-            let after = line_outcome(&line, &hidden);
-            let before = now
-                .entry(line)
-                .or_insert_with_key(|line| line_outcome(line, &HashSet::new()));
-            after == *before
-        });
-        if unchanged {
+        let lines = std::iter::once((key.clone(), None))
+            .chain(reach.reaching(key).into_iter().cloned())
+            .collect();
+        if reach.unchanged(lines, &hidden) {
             redundant.push(CuratedChange::Redundant {
                 section,
                 name: key.clone(),

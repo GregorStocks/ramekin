@@ -1208,6 +1208,14 @@ fn clean_curated_keeps_names_prod_stores() {
     )]);
     let (_, changes) = ramekin_core::catalog::clean_curated(json, &stored);
     assert!(changes.is_empty(), "{changes:?}");
+    // A stored line that reaches the key through modifier stripping needs it
+    // too.
+    let katakuriko = r#"{"aliases": {"katakuriko (potato starch": "cornstarch"}, "not_food": {}, "categories": {}}"#;
+    let (_, changes) = ramekin_core::catalog::clean_curated(katakuriko, &no_names());
+    assert_eq!(changes.len(), 1, "{changes:?}");
+    let stored = no_names().with_prod([("fresh katakuriko (potato starch".to_string(), None)]);
+    let (_, changes) = ramekin_core::catalog::clean_curated(katakuriko, &stored);
+    assert!(changes.is_empty(), "{changes:?}");
     // Runs without prod's lines keep the keys it last needed.
     let recorded = ramekin_core::catalog::CleanupNames {
         prod: std::collections::BTreeSet::from(["zzfood (about 8 ounces".to_string()]),
