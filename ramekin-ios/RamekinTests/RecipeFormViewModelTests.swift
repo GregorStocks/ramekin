@@ -246,6 +246,7 @@ private enum TestError: Error {
     case unexpectedCall
 }
 
+@MainActor
 private func createClient(
     importFromText: @escaping (String) async throws -> UUID,
     getScrape: @escaping (UUID) async throws -> ScrapeJobResponse
