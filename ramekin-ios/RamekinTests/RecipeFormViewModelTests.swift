@@ -240,10 +240,10 @@ final class RecipeFormViewModelTests: XCTestCase {
         model.isUploadingPhoto = true
         XCTAssertTrue(model.hasUnsavedChanges, "A pending photo upload would be lost")
     }
+}
 
-    private enum TestError: Error {
-        case unexpectedCall
-    }
+private enum TestError: Error {
+    case unexpectedCall
 }
 
 private func createClient(

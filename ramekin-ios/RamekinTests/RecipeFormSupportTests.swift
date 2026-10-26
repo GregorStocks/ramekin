@@ -148,9 +148,9 @@ final class RecipeFormSupportTests: XCTestCase {
         XCTAssertNil(request.servings)
         XCTAssertNil(request.cookTime)
         XCTAssertNil(request.sourceUrl)
-        XCTAssertEqual(request.ingredients.count, 1)
-        XCTAssertEqual(request.ingredients[0].item, "Flour")
-        XCTAssertEqual(request.ingredients[0].section, "Cake")
+        XCTAssertEqual(request.ingredients?.count, 1)
+        XCTAssertEqual(request.ingredients?.first?.item, "Flour")
+        XCTAssertEqual(request.ingredients?.first?.section, "Cake")
     }
 
     func testUpdateRequestPreservesExplicitEmptyTagsAndPhotoIds() throws {
