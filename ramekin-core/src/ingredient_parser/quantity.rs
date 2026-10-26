@@ -103,6 +103,20 @@ fn sized(amount: Range, unit: &str) -> Option<Unit> {
     }
 }
 
+/// A unit naming a container of a stated size ("14.5-ounce cans", "(28-oz.)
+/// can", "750-ml bottle"), as the parser writes "2 (14.5 oz) cans": the
+/// container ("can"), and one's size (14.5) and its unit ("oz").
+pub fn split_package(unit: &str) -> Option<(String, Range, String)> {
+    let unit = normalize(unit);
+    let (size, mass) = measure::read_package(&unit)?;
+    let container = unit.rsplit([' ', '-']).next()?;
+    Some((
+        super::units::normalize_unit_base(container),
+        size,
+        super::units::normalize_unit_base(&mass),
+    ))
+}
+
 /// Grams in one of a mass unit.
 fn grams_per(mass: &str) -> f64 {
     match mass.trim_end_matches('s') {
@@ -553,6 +567,23 @@ mod tests {
         assert_eq!(range("1,5–2,5"), Some(Range { min: 1.5, max: 2.5 }));
         assert_eq!(range("1-1/2-2"), Some(Range { min: 1.5, max: 2.0 }));
         assert_eq!(range("80/20 or 85/15").map(|r| r.min), Some(4.0));
+    }
+
+    #[test]
+    fn split_packages() {
+        let split = |unit: &str| {
+            split_package(unit).map(|(container, size, unit)| (container, size.min, unit))
+        };
+        assert_eq!(
+            split("14.5-ounce cans"),
+            Some(("can".to_string(), 14.5, "oz".to_string()))
+        );
+        assert_eq!(
+            split("(28-oz.) can"),
+            Some(("can".to_string(), 28.0, "oz".to_string()))
+        );
+        assert_eq!(split("can"), None);
+        assert_eq!(split("cup"), None);
     }
 
     #[test]
