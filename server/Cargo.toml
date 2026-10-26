@@ -20,7 +20,7 @@ tower = "0.5"
 tower-http = { version = "0.7", features = ["cors", "trace"] }
 utoipa = { version = "6.0", features = ["axum_extras", "uuid", "chrono"] }
 utoipa-axum = "0.3"
-utoipa-swagger-ui = { version = "10.0", features = ["axum"] }
+utoipa-swagger-ui = { version = "10.0.2", features = ["axum"] }
 
 # Database
 diesel = { version = "2.3", features = ["sqlite", "returning_clauses_for_sqlite_3_35", "r2d2", "chrono", "serde_json"] }
