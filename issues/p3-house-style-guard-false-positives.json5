@@ -1,0 +1,16 @@
+{
+  "title": "House style: finish check refuses some legitimate prep and unit cleanups",
+  "description": "The house_style op (ramekin-core/src/ai/house_style.rs) refuses `finish` unless the sorted (amount, unit) pairs and the set of resolved catalog foods match the original. \
+In the first eval run (data/ai-evals/house-style.md) that blocked edits the style guide asks for, so models left prep or long units in place: '2 14.5-ounce cans diced tomatoes' could not become '2 (14.5 oz) cans …' because the parsed measurements change shape (firehouse chili gumbo); dropping 'hard-boiled' from '6 hardboiled eggs' changed the catalog food (sparerib oden); taking 'torn into bite-size pieces' out of the frisée line changed what it resolved to (fried egg sandwich). \
+Loosen the check without letting real changes through: e.g. compare measurements after the parser's per-item normalization (a '14.5-ounce can' and '(14.5 oz) can' are the same), and match foods by catalog family or by 'some line resolves to the same entry or a parent/child' rather than exact entry ids. \
+Add cases from those three recipes to the house_style.rs unit tests, rerun `make ai-eval SUITE=house-style` and judge the new answers.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ai",
+    "pipeline",
+  ],
+  "created_at": "2026-10-25T12:00:00-07:00",
+  "updated_at": "2026-10-25T12:00:00-07:00",
+}

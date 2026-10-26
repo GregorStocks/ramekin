@@ -69,7 +69,8 @@ named and with their judgments, one model at a time or side by side.
 
 Who judged: titles, descriptions, recipe photos and 13 of the 96
 edit-recipe answers were judged by the maintainer; the tag sets and the
-other 83 edit-recipe answers by Claude, at the maintainer's request.
+other 83 edit-recipe answers and the house-style answers by Claude, at the
+maintainer's request.
 
 Pick image candidates from the public blind-vote leaderboards (the LMArena
 and Artificial Analysis text-to-image arenas), not from OpenRouter's catalog
