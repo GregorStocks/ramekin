@@ -829,6 +829,15 @@ fn an_amount_of_another_recipe_says_so() {
             .unwrap()
             .known_calories
     );
+    // A weight per batch counts each batch.
+    let mut each = parse_ingredient("2 batches guacamole");
+    each.note = Some("200 g each".into());
+    assert_eq!(
+        estimate(&[each], None, 1.0).unwrap().known_calories,
+        estimate(&[parse_ingredient("400 g guacamole")], None, 1.0)
+            .unwrap()
+            .known_calories
+    );
     // "recipe" deeper in the name is just a word.
     let result = estimate(&[parse_ingredient("1 cup recipe-ready broth")], None, 1.0).unwrap();
     assert!(result
