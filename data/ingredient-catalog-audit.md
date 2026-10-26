@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60115 | 92 | 54399/60023 (90.6%) | 52103/60023 (86.8%) | 1711/5408 (31.6%) | n/a (no servings) | 32070/37466 (85.6%) | 55730/60115 (92.7%) |
+| Pipeline fixtures | 5408 | 60115 | 92 | 54399/60023 (90.6%) | 52104/60023 (86.8%) | 1711/5408 (31.6%) | n/a (no servings) | 32071/37466 (85.6%) | 55730/60115 (92.7%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5178/5357 (96.7%) | 4854/5357 (90.6%) | 200/462 (43.3%) | n/a (no servings) | 2552/2893 (88.2%) | 5280/5379 (98.2%) |
 | Pipeline snapshots | 445 | 5177 | 17 | 5010/5160 (97.1%) | 4755/5160 (92.2%) | 205/445 (46.1%) | 101/445 (22.7%) | 2528/2853 (88.6%) | 5098/5177 (98.5%) |
 
@@ -27,7 +27,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Ambiguous ingredient | 511 | 0.9% |
 | Another recipe | 53 | 0.1% |
 | Frying oil: only part of it is absorbed | 96 | 0.2% |
-| Missing density for this food | 26 | 0.0% |
+| Missing density for this food | 25 | 0.0% |
 | Missing quantity | 1884 | 3.1% |
 | No supported nutrition match | 5113 | 8.5% |
 | Several ingredients share one amount | 56 | 0.1% |
@@ -41,20 +41,20 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | 0 | 2487 | 46.0% |
 | 1 | 1718 | 31.8% |
 | 2 | 750 | 13.9% |
-| 3 | 305 | 5.6% |
-| 4-5 | 122 | 2.3% |
+| 3 | 306 | 5.7% |
+| 4-5 | 121 | 2.2% |
 | 6+ | 26 | 0.5% |
 
 Estimate status with at most 3 uncounted: Complete 45.8%, Insufficient 3.6%, Partial 50.6%
 
-Weights to estimate (distinct food and unit pairs the catalog can't weigh): 14
+Weights to estimate (distinct food and unit pairs the catalog can't weigh): 13
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 6153 | `6121c55254db` |
-| Density | 2634 | `a80773c1fa0a` |
+| Nutrition (all failures) | 6152 | `54592f784fca` |
+| Density | 2633 | `281aeda42f97` |
 | Shopping category | 4243 | `a04e477f83ac` |
 
 ## Paprika fixtures
