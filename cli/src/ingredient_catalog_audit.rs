@@ -150,7 +150,7 @@ struct ProdRecipe {
     ingredients: Vec<ParsedIngredient>,
 }
 
-fn normalize_name(item: &str) -> String {
+pub(crate) fn normalize_name(item: &str) -> String {
     item.split_whitespace()
         .collect::<Vec<_>>()
         .join(" ")
@@ -323,7 +323,7 @@ impl LearnedRow {
 }
 
 /// The resolved rows of a learned-names export, as the server reads them.
-fn load_learned(path: &Path) -> Result<Learned> {
+pub(crate) fn load_learned(path: &Path) -> Result<Learned> {
     let rows: Vec<LearnedRow> = read_json(path)?;
     rows.into_iter()
         .filter(|row| row.status == "resolved")

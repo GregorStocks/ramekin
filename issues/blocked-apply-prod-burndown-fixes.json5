@@ -1,0 +1,23 @@
+{
+  "title": "Ingredient parsing: apply the approved fixes from the prod burndown report",
+  "description": "make prod-export && make ingredient-prod-report (doc/finding-ingredient-issues.md, Start from prod) list every failing prod ingredient line by cause. \
+On 2026-10-25: 1,000 recipes, 11,873 lines; 201 lines in 175 recipes keep a calorie estimate from being complete (does not parse 2, name doesn't resolve 50, can't be weighed 129, other recipe or frying oil 20); 828 lines have no amount; 39 have no shopping category. 825 recipes are fully estimated. \
+Proposals (detail in the owner's logs/prod/proposals.md; regenerate the numbers with the make targets): D1. 435 source URLs have 2+ live copies, covering 913 of the 983 recipes with a source, and the older copies (imported 2026-02 to 04) carry the worst parses: list duplicate pairs for the owner to approve, then soft-delete the older copy. \
+D2. \
+Prod stores lines as parsed at save, with no raw text, so parser fixes never reach older recipes: 40 calorie-failing and 38 no-amount lines are fixed just by re-parsing the written-out line (a data migration saving a new version where the re-parse is strictly better), and 426 lines in 215 early-import recipes lost a secondary measurement's unit (\"1 piece (2) ginger\"), recoverable only by re-import or by D1. \
+Then: 1 cite kcal for mirin (13 lines); 2 learned names that resolve to catalog keys with no nutrition (garlic salt, celery salt, fresh sage leaves, minced fresh tarragon leaves; 8 lines); 3 leading prep words on herb names (9 lines); 4 whole chicken and chicken parts (9 lines, ambiguous); 6 cite a density for ground black pepper (12 lines); 7/8/9 the p3/p4-nutrition-* weight issues, re-ranked by prod counts; 10 glug/shot measures left in the item (8 lines); 12-14 regressions since #825 (filed separately, plus an envelope weight for ranch mix); 15 combined zest-and-juice of a counted fruit (12 no-amount lines); 16 shopping categories for about 10 real-food lines. \
+Leave alone: frying oil, other-recipe references, serving-note lines, sub-recipe headers. \
+Past work: the weigh-* series since #825 fixed 92 prod lines (283 to 201 failing, 763 to 825 fully estimated recipes) and broke 7. \
+Once approved fixes land, PRs and issues lead with prod group counts from make ingredient-prod-report and give fixture counts second; also make data/ingredient-catalog-audit.md point at the prod report (counts only: prod text stays out of git).",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "catalog",
+    "nutrition",
+  ],
+  "blocked": "Owner to review the proposals (logs/prod/proposals.md, or rerun make prod-export && make ingredient-prod-report) and approve which to do; D1 (duplicates) is the owner's call on their data.",
+  "created_at": "2026-10-25T18:00:00-07:00",
+  "updated_at": "2026-10-25T18:00:00-07:00",
+}
