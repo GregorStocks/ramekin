@@ -22,9 +22,9 @@ def test_text_import_follows_the_job_to_the_recipe(logged_in_page, ui_url):
         timeout=30000
     )
     # The saved recipe shows the grams computed when it is read.
-    expect(page.locator(".ingredients-list .alt-measurement").first).to_have_text(
-        "(~125 g)"
-    )
+    flour = page.locator(".ingredients-list li").first
+    expect(flour.locator(".amount")).to_have_text("~125")
+    expect(flour.locator(".alt-measurement")).to_contain_text("(1 cup")
 
 
 def test_failed_start_preserves_text(logged_in_page, ui_url):

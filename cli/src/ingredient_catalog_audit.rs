@@ -856,12 +856,54 @@ const CLEANUP_REPORT: &str = "logs/catalog-alias-cleanup.md";
 
 /// Re-key or remove curated names the parser no longer produces, writing
 /// curated.json and a report of every change and conflict.
-pub fn clean_aliases(root: &Path) -> Result<()> {
-    use ramekin_core::catalog::{clean_curated, CleanupNames, CuratedChange};
+///
+/// With prod recipes, also keep every key their stored lines need, and record
+/// the keys only they need in `PROD_NAMES` for runs without them. Without,
+/// keep the keys `PROD_NAMES` lists.
+pub fn clean_aliases(root: &Path, prod_recipes: Option<&Path>) -> Result<()> {
+    use ramekin_core::catalog::{clean_curated, CleanupNames, CuratedChange, PROD_NAMES};
     let path = root.join(CURATED_PATH);
     let json =
         fs::read_to_string(&path).with_context(|| format!("Failed to read {CURATED_PATH}"))?;
-    let (cleaned, changes) = clean_curated(&json, &CleanupNames::load(root));
+    let (cleaned, changes) = match prod_recipes {
+        Some(prod_recipes) => {
+            let prod = load_prod_corpus(prod_recipes, None)?;
+            let lines = prod
+                .recipes
+                .into_iter()
+                .flat_map(|recipe| recipe.ingredients)
+                .map(|ingredient| (ingredient.item, ingredient.note));
+            let (cleaned, changes) =
+                clean_curated(&json, &CleanupNames::load_repo(root).with_prod(lines));
+            let (_, repo_changes) = clean_curated(&json, &CleanupNames::load_repo(root));
+            let changed = |changes: &[CuratedChange]| -> BTreeSet<String> {
+                changes
+                    .iter()
+                    .filter_map(|change| match change {
+                        CuratedChange::Remove { name, .. }
+                        | CuratedChange::Redundant { name, .. } => Some(name.clone()),
+                        CuratedChange::Rename { from, .. } => Some(from.clone()),
+                        CuratedChange::Conflict { .. } => None,
+                    })
+                    .collect()
+            };
+            let prod_names: BTreeSet<String> = changed(&repo_changes)
+                .difference(&changed(&changes))
+                .cloned()
+                .collect();
+            fs::write(
+                root.join(PROD_NAMES),
+                serde_json::to_string_pretty(&prod_names)? + "\n",
+            )
+            .with_context(|| format!("Failed to write {PROD_NAMES}"))?;
+            tracing::info!(
+                "{} keys only prod needs saved to: {PROD_NAMES}",
+                prod_names.len()
+            );
+            (cleaned, changes)
+        }
+        None => clean_curated(&json, &CleanupNames::load(root)),
+    };
     fs::write(&path, cleaned).with_context(|| format!("Failed to write {CURATED_PATH}"))?;
     let (mut removed, mut redundant, mut renamed, mut conflicts) =
         (Vec::new(), Vec::new(), Vec::new(), Vec::new());

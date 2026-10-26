@@ -4,7 +4,10 @@
 //!
 //! `finish` is accepted only once every amount and every catalog food the
 //! recipe started with is still there, so a rewrite can reword, reorder and
-//! move prep into steps but can't change what the recipe makes.
+//! move prep into steps but can't change what the recipe makes. Amounts
+//! compare as the parser reads them, and a line keeps its food when it only
+//! drops words from it without changing the kind of food (see
+//! `Line::kept_by`).
 
 use std::collections::BTreeSet;
 
@@ -17,7 +20,7 @@ use crate::ai::prompts::house_style::{
     render_house_style_system_prompt, render_house_style_user_prompt, HOUSE_STYLE_PROMPT_NAME,
 };
 use crate::ai::{AiClient, AiError, EditRecipeResult, NoUserData};
-use crate::catalog::{self, Resolution};
+use crate::catalog::{self, Entry, Resolution};
 use crate::ingredient_parser::quantity;
 
 /// The tools a house-style rewrite may call.
@@ -47,8 +50,7 @@ pub async fn house_style<T: Serialize + DeserializeOwned>(
         .map_or(&[][..], Vec::as_slice);
     let before = Before {
         measures: measures(original),
-        foods: foods(original),
-        food_amounts: food_amounts(original),
+        lines: original.iter().map(Line::of).collect(),
     };
 
     let tools = edit_recipe_tools()
@@ -80,16 +82,17 @@ fn measures(ingredients: &[Value]) -> Vec<(String, String)> {
     measures
 }
 
-/// One ingredient's amounts as (amount, unit) pairs. An amount the parser
-/// reads compares as a number or range ("1/2" and "0.5", "2-3" and "2 to 3"
-/// are the same).
+/// One ingredient's amounts as (amount, unit) pairs, sorted. An amount the
+/// parser reads compares as a number or range ("1/2" and "0.5", "2-3" and "2
+/// to 3" are the same), and a container of a stated size as its count and
+/// one's size ("2 14.5-ounce cans" and "2 (14.5 oz) cans" are the same).
 fn line_measures(ingredient: &Value) -> Vec<(String, String)> {
-    ingredient
+    let mut measures: Vec<(String, String)> = ingredient
         .get("measurements")
         .and_then(Value::as_array)
         .into_iter()
         .flatten()
-        .filter_map(|m| {
+        .flat_map(|m| {
             let text = |key: &str| {
                 m.get(key)
                     .and_then(Value::as_str)
@@ -99,72 +102,208 @@ fn line_measures(ingredient: &Value) -> Vec<(String, String)> {
             };
             let (amount, unit) = (text("amount"), text("unit"));
             if amount.is_empty() && unit.is_empty() {
-                return None;
+                return Vec::new();
             }
-            let amount = match quantity::range(&amount) {
-                Some(r) if r.min == r.max => format_amount(r.min),
-                Some(r) => format!("{}-{}", format_amount(r.min), format_amount(r.max)),
-                None => amount,
-            };
-            Some((amount, unit))
+            match quantity::split_package(&unit) {
+                Some((container, size, size_unit)) => vec![
+                    (number(&amount), container),
+                    (number(&format_range(size)), size_unit),
+                ],
+                None => vec![(number(&amount), unit)],
+            }
         })
-        .collect()
+        .collect();
+    measures.sort();
+    measures
 }
 
-/// The catalog foods one ingredient line names, or none when the catalog
-/// can't tell.
-fn line_foods(ingredient: &Value) -> Vec<String> {
-    let item = ingredient.get("item").and_then(Value::as_str).unwrap_or("");
-    let note = ingredient.get("note").and_then(Value::as_str);
-    match catalog::resolve_line(item, note) {
-        Resolution::Entry { entry, .. } => vec![entry.id.clone()],
-        Resolution::Compound(entries) => {
-            entries.into_iter().map(|entry| entry.id.clone()).collect()
-        }
-        _ => Vec::new(),
+/// An amount as a number or range, when the parser reads it.
+fn number(amount: &str) -> String {
+    quantity::range(amount).map_or_else(|| amount.to_string(), format_range)
+}
+
+fn format_range(range: quantity::Range) -> String {
+    if range.min == range.max {
+        format_amount(range.min)
+    } else {
+        format!("{}-{}", format_amount(range.min), format_amount(range.max))
     }
 }
 
-/// The catalog foods the ingredient lines name.
-fn foods(ingredients: &[Value]) -> BTreeSet<String> {
-    ingredients.iter().flat_map(line_foods).collect()
+/// An ingredient line, as what it must keep through a rewrite.
+struct Line {
+    /// The catalog foods it names, or none when the catalog can't tell.
+    foods: Vec<&'static Entry>,
+    /// Its item's and note's words.
+    words: BTreeSet<String>,
+    /// Its amounts, as text.
+    amounts: String,
 }
 
-/// Each line the catalog can name, as its foods and its amounts, sorted: so
-/// amounts can't trade places between ingredients.
-fn food_amounts(ingredients: &[Value]) -> Vec<(String, String)> {
-    let mut lines: Vec<(String, String)> = ingredients
-        .iter()
-        .filter_map(|ingredient| {
-            let foods = line_foods(ingredient);
-            if foods.is_empty() {
-                return None;
-            }
-            let amounts = line_measures(ingredient)
-                .into_iter()
-                .map(|(amount, unit)| format!("{amount} {unit}").trim().to_string())
+impl Line {
+    fn of(ingredient: &Value) -> Line {
+        let item = ingredient.get("item").and_then(Value::as_str).unwrap_or("");
+        let note = ingredient.get("note").and_then(Value::as_str);
+        let foods = match catalog::resolve_line(item, note) {
+            Resolution::Entry { entry, .. } => vec![entry],
+            Resolution::Compound(entries) => entries,
+            _ => Vec::new(),
+        };
+        let words = [item, note.unwrap_or("")]
+            .iter()
+            .flat_map(|text| text.split(|c: char| !c.is_alphanumeric()))
+            .filter(|word| !word.is_empty())
+            .map(str::to_lowercase)
+            .collect();
+        let amounts = line_measures(ingredient)
+            .into_iter()
+            .map(|(amount, unit)| format!("{amount} {unit}").trim().to_string())
+            .collect::<Vec<_>>()
+            .join(", ");
+        Line {
+            foods,
+            words,
+            amounts,
+        }
+    }
+
+    /// Whether `word` is a number in one of this line's amounts, so dropping
+    /// it from the note ("about 2 ounces") loses nothing. Other numbers stay:
+    /// "85/15" picks a blend of ground beef.
+    fn restates_amount(&self, word: &str) -> bool {
+        word.chars().all(|c| c.is_ascii_digit())
+            && self
+                .amounts
+                .split(|c: char| !c.is_ascii_digit())
+                .any(|number| number == word)
+    }
+
+    fn food_names(&self) -> String {
+        self.foods
+            .iter()
+            .map(|entry| entry.id.as_str())
+            .collect::<Vec<_>>()
+            .join(" + ")
+    }
+
+    /// Whether `rewritten` still names this line's food: the same catalog
+    /// entries, or a line that only drops prep from this one and names the
+    /// same family of food or one the catalog doesn't know ("6 hardboiled
+    /// eggs" to "6 eggs", "frisée, torn into bite-size pieces" to "frisée").
+    /// Only prep and restated amounts may go (`is_droppable_word`,
+    /// `restates_amount`), so a dropped word can't change the food ("garlic
+    /// powder" to "garlic" or "powder", "sweetened condensed milk" to
+    /// "milk").
+    fn kept_by(&self, rewritten: &Line) -> bool {
+        let ids = |line: &Line| {
+            line.foods
+                .iter()
+                .map(|entry| entry.id.as_str())
                 .collect::<Vec<_>>()
-                .join(", ");
-            Some((foods.join(" + "), amounts))
-        })
-        .collect();
-    lines.sort();
-    lines
+        };
+        let families = |line: &Line| {
+            let mut families: Vec<&str> = line.foods.iter().map(|entry| family(entry)).collect();
+            families.sort();
+            families
+        };
+        ids(self) == ids(rewritten)
+            || (!rewritten.words.is_empty()
+                && rewritten.words.is_subset(&self.words)
+                && self
+                    .words
+                    .difference(&rewritten.words)
+                    .all(|word| is_droppable_word(word) || self.restates_amount(word))
+                && (rewritten.foods.is_empty() || families(self) == families(rewritten)))
+    }
+}
+
+/// Words a rewrite may drop from a line: prep that moves into the steps (the
+/// style guide's cutting, chopping, peeling, boiling and so on) with the
+/// words that say how, and an amount restated in the note ("about 2
+/// ounces"), since the amounts are checked on their own. Purchased forms
+/// ("ground", "dried", "frozen", "shredded", "crumbled") and states that
+/// change the measure ("cooked") aren't here: they stay in the line.
+fn is_droppable_word(word: &str) -> bool {
+    const WORDS: &[&str] = &[
+        "about",
+        "approximately",
+        "g",
+        "grams",
+        "lb",
+        "lbs",
+        "ounce",
+        "ounces",
+        "oz",
+        "pound",
+        "pounds",
+        "and",
+        "beaten",
+        "bite",
+        "boiled",
+        "chopped",
+        "chunks",
+        "coarsely",
+        "cored",
+        "crosswise",
+        "cubed",
+        "cubes",
+        "cut",
+        "diced",
+        "finely",
+        "grated",
+        "halved",
+        "hard",
+        "hardboiled",
+        "inch",
+        "into",
+        "julienned",
+        "lengthwise",
+        "lightly",
+        "melted",
+        "minced",
+        "peeled",
+        "piece",
+        "pieces",
+        "quartered",
+        "roughly",
+        "rounds",
+        "seeded",
+        "size",
+        "sized",
+        "sliced",
+        "slices",
+        "softened",
+        "strips",
+        "thick",
+        "thin",
+        "thinly",
+        "toasted",
+        "torn",
+        "trimmed",
+        "wedges",
+        "whisked",
+    ];
+    WORDS.contains(&word)
+}
+
+/// The kind of food a catalog entry is: a USDA description's first part
+/// ("egg" for "egg, whole, cooked, hard-boiled"), or a curated entry's name.
+fn family(entry: &Entry) -> &str {
+    entry.id.split(',').next().unwrap_or(&entry.id).trim()
 }
 
 /// What a rewrite must keep, from the original ingredients.
 struct Before {
     measures: Vec<(String, String)>,
-    foods: BTreeSet<String>,
-    food_amounts: Vec<(String, String)>,
+    lines: Vec<Line>,
 }
 
 /// Whether the rewritten `ingredients` keep the original amounts and foods;
 /// the error says what's missing, for the model to fix.
 fn check_unchanged(before: &Before, ingredients: &[Value]) -> Result<(), String> {
     let measures_after = measures(ingredients);
-    let missing = difference(&before.measures, &measures_after, " ");
-    let added = difference(&measures_after, &before.measures, " ");
+    let missing = difference(&before.measures, &measures_after);
+    let added = difference(&measures_after, &before.measures);
     if !missing.is_empty() || !added.is_empty() {
         let mut problem = "The amounts changed.".to_string();
         if !missing.is_empty() {
@@ -175,19 +314,46 @@ fn check_unchanged(before: &Before, ingredients: &[Value]) -> Result<(), String>
         }
         return Err(problem);
     }
-    let foods_after = foods(ingredients);
-    let lost: Vec<&str> = before
-        .foods
-        .difference(&foods_after)
-        .map(String::as_str)
+    // Each line the catalog can name needs a rewritten line of its own that
+    // keeps its food and its amounts, so amounts can't trade places between
+    // ingredients.
+    let after: Vec<Line> = ingredients.iter().map(Line::of).collect();
+    let named: Vec<&Line> = before
+        .lines
+        .iter()
+        .filter(|line| !line.foods.is_empty())
         .collect();
+    let candidates: Vec<Vec<usize>> = named
+        .iter()
+        .map(|line| {
+            (0..after.len())
+                .filter(|&at| after[at].amounts == line.amounts && line.kept_by(&after[at]))
+                .collect()
+        })
+        .collect();
+    let matched = match_lines(&candidates, after.len());
+    let (mut lost, mut moved) = (Vec::new(), Vec::new());
+    for (line, matched) in named.iter().zip(matched) {
+        if matched.is_some() {
+            continue;
+        }
+        if after.iter().any(|other| line.kept_by(other)) {
+            moved.push(format!(
+                "\"{}\"",
+                format!("{}: {}", line.food_names(), line.amounts).trim()
+            ));
+        } else {
+            lost.push(line.food_names());
+        }
+    }
     if !lost.is_empty() {
+        lost.sort();
+        lost.dedup();
         return Err(format!(
             "These ingredients are gone: {}. Keep every ingredient the recipe started with.",
             lost.join(", ")
         ));
     }
-    let moved = difference(&before.food_amounts, &food_amounts(ingredients), ": ");
     if !moved.is_empty() {
         return Err(format!(
             "Amounts moved between ingredients; give each of these foods its own amount back: {}.",
@@ -197,9 +363,44 @@ fn check_unchanged(before: &Before, ingredients: &[Value]) -> Result<(), String>
     Ok(())
 }
 
-/// The pairs in `a` that `b` lacks, counting repeats, as quoted text with
-/// `separator` between each pair's halves.
-fn difference(a: &[(String, String)], b: &[(String, String)], separator: &str) -> Vec<String> {
+/// A largest one-to-one matching of original lines to the rewritten lines
+/// each could be (`candidates[i]` lists line i's), as each original line's
+/// match. Matched by augmenting paths, so one line taking an ambiguous match
+/// can't leave another without its only one.
+fn match_lines(candidates: &[Vec<usize>], rewritten: usize) -> Vec<Option<usize>> {
+    fn augment(
+        line: usize,
+        candidates: &[Vec<usize>],
+        seen: &mut [bool],
+        owner: &mut [Option<usize>],
+    ) -> bool {
+        for &at in &candidates[line] {
+            if seen[at] {
+                continue;
+            }
+            seen[at] = true;
+            if owner[at].is_none_or(|other| augment(other, candidates, seen, owner)) {
+                owner[at] = Some(line);
+                return true;
+            }
+        }
+        false
+    }
+    let mut owner = vec![None; rewritten];
+    for line in 0..candidates.len() {
+        augment(line, candidates, &mut vec![false; rewritten], &mut owner);
+    }
+    let mut matched = vec![None; candidates.len()];
+    for (at, line) in owner.into_iter().enumerate() {
+        if let Some(line) = line {
+            matched[line] = Some(at);
+        }
+    }
+    matched
+}
+
+/// The amounts in `a` that `b` lacks, counting repeats, as quoted text.
+fn difference(a: &[(String, String)], b: &[(String, String)]) -> Vec<String> {
     let mut rest = b.to_vec();
     a.iter()
         .filter(
@@ -211,7 +412,7 @@ fn difference(a: &[(String, String)], b: &[(String, String)], separator: &str) -
                 None => true,
             },
         )
-        .map(|(first, second)| format!("\"{}\"", format!("{first}{separator}{second}").trim()))
+        .map(|(amount, unit)| format!("\"{}\"", format!("{amount} {unit}").trim()))
         .collect()
 }
 
@@ -370,6 +571,135 @@ mod tests {
             "{refusal}"
         );
         assert!(refusal.contains(": 1 cup\""), "{refusal}");
+    }
+
+    /// Run a house-style rewrite of `ingredients` that sets each line in
+    /// `lines` (by 1-based index) and finishes, returning the reply to that
+    /// `finish`: "Done." when it was accepted.
+    async fn finish_after(ingredients: Vec<Value>, lines: &[(usize, &str)]) -> String {
+        let recipe = Recipe {
+            title: "Recipe".to_string(),
+            ingredients,
+            instructions: "Cook.".to_string(),
+        };
+        let edits = lines
+            .iter()
+            .map(|(index, line)| ("set_ingredient", json!({"index": index, "line": line})))
+            .collect();
+        let client =
+            ScriptedClient::new(vec![edits, vec![("finish", json!({"summary": "Done."}))]]);
+        match house_style(&client, &recipe).await {
+            Ok(result) => result.summary,
+            Err(_) => reply_to_finish(&client, 2),
+        }
+    }
+
+    #[tokio::test]
+    async fn a_weighed_can_can_move_its_size_into_parentheses() {
+        // firehouse chili gumbo
+        let reply = finish_after(
+            vec![
+                json!({"item": "diced tomatoes", "measurements": [{"amount": "2", "unit": "14.5-ounce cans"}], "note": null, "section": null}),
+                json!({"item": "tomato paste", "measurements": [{"amount": "2", "unit": "6-ounce cans"}], "note": null, "section": null}),
+            ],
+            &[
+                (1, "2 (14.5 oz) cans diced tomatoes"),
+                (2, "2 (6 oz) cans tomato paste"),
+            ],
+        )
+        .await;
+        assert_eq!(reply, "Done.");
+
+        // The size still has to be the same.
+        let reply = finish_after(
+            vec![json!({"item": "diced tomatoes", "measurements": [{"amount": "2", "unit": "14.5-ounce cans"}], "note": null, "section": null})],
+            &[(1, "2 (15 oz) cans diced tomatoes")],
+        )
+        .await;
+        assert!(reply.contains("Missing now: \"14.5 oz\""), "{reply}");
+    }
+
+    #[tokio::test]
+    async fn dropping_prep_words_keeps_the_food() {
+        // sparerib oden: "hardboiled eggs" is a different catalog entry than
+        // "eggs", but the same family of food.
+        let reply = finish_after(
+            vec![json!({"item": "hardboiled eggs", "measurements": [{"amount": "6", "unit": null}], "note": null, "section": null})],
+            &[(1, "6 eggs")],
+        )
+        .await;
+        assert_eq!(reply, "Done.");
+
+        // fried egg sandwich: the catalog reads the original line as endive
+        // and doesn't know frisée without the item's "endive".
+        let reply = finish_after(
+            vec![json!({"item": "frisée, torn into-bite size pieces", "measurements": [{"amount": "1.5", "unit": "cup"}, {"amount": "2", "unit": "oz"}], "note": "French curly endive, about 2 ounces", "section": null})],
+            &[(1, "1 1/2 cups (2 oz) frisée, French curly endive")],
+        )
+        .await;
+        assert_eq!(reply, "Done.");
+    }
+
+    #[tokio::test]
+    async fn dropping_a_word_that_names_the_food_is_refused() {
+        let reply = finish_after(
+            vec![json!({"item": "garlic powder", "measurements": [{"amount": "1", "unit": "tsp"}], "note": null, "section": null})],
+            &[(1, "1 tsp garlic")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+
+        let reply = finish_after(
+            vec![json!({"item": "garlic powder", "measurements": [{"amount": "1", "unit": "tsp"}], "note": null, "section": null})],
+            &[(1, "1 tsp powder")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+        let reply = finish_after(
+            vec![json!({"item": "sweetened condensed milk", "measurements": [{"amount": "1", "unit": "cup"}], "note": null, "section": null})],
+            &[(1, "1 cup milk")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+
+        // Nor can a number that names the food.
+        let reply = finish_after(
+            vec![json!({"item": "ground beef", "measurements": [{"amount": "2", "unit": "lb"}], "note": "85/15", "section": null})],
+            &[(1, "2 lb ground beef")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+
+        // Nor can the food go altogether.
+        let reply = finish_after(
+            vec![json!({"item": "hardboiled eggs", "measurements": [{"amount": "6", "unit": null}], "note": null, "section": null})],
+            &[(1, "6")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+
+        // Nor can a new word turn a food into another of its family.
+        let reply = finish_after(
+            vec![json!({"item": "eggs", "measurements": [{"amount": "6", "unit": null}], "note": null, "section": null})],
+            &[(1, "6 hardboiled eggs")],
+        )
+        .await;
+        assert!(reply.contains("These ingredients are gone"), "{reply}");
+    }
+
+    #[tokio::test]
+    async fn lines_that_could_match_either_way_still_reorder() {
+        // "eggs" could keep either line's food; the hardboiled eggs still
+        // find their own line.
+        let reply = finish_after(
+            vec![
+                json!({"item": "hardboiled eggs", "measurements": [{"amount": "6", "unit": null}], "note": null, "section": null}),
+                json!({"item": "eggs", "measurements": [{"amount": "6", "unit": null}], "note": null, "section": null}),
+            ],
+            &[(1, "6 eggs"), (2, "6 hardboiled eggs")],
+        )
+        .await;
+        assert_eq!(reply, "Done.");
     }
 
     #[test]
