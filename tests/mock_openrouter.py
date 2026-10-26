@@ -438,7 +438,11 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             # came back so tests can see the search.
             calls = [("search_recipes", {"query": "tahini"})]
         elif "like my other" in prompt:
-            found = tool_results[-1].get("content", "")
+            # Cache breakpoints turn the latest message's text into parts.
+            content = tool_results[-1].get("content", "")
+            if isinstance(content, list):
+                content = "".join(part.get("text", "") for part in content)
+            found = content
             calls = [("finish", {"summary": "Found: " + found.split("\n")[0]})]
         elif tool_results:
             calls = [("finish", {"summary": "Marked the title as modified."})]

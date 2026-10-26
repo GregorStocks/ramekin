@@ -112,6 +112,16 @@ def _amount_texts(page: Page) -> List[str]:
     return page.locator(".ingredients-list li .amount").all_text_contents()
 
 
+def _alternative_texts(page: Page) -> List[str]:
+    """Return the parenthesized alternatives for each ingredient row that has them."""
+    return [
+        text.strip()
+        for text in page.locator(
+            ".ingredients-list li .alt-measurement"
+        ).all_text_contents()
+    ]
+
+
 def test_calorie_estimates_follow_recipe_and_scale(
     scale_recipe, page: Page, api_url: str
 ):
@@ -299,7 +309,9 @@ def test_recipe_loads_with_original_amounts(scale_recipe, page: Page):
     _recipe_id, _token = scale_recipe
     amounts = _amount_texts(page)
     assert "2" in amounts
-    assert "1/2" in amounts
+    # Sugar leads with its derived grams; the stored 1/2 cup follows.
+    assert "~100" in amounts
+    assert "(1/2 cup)" in _alternative_texts(page)
     assert "1 1/2" in amounts
     assert "2.5" in amounts
     assert "3" in amounts
@@ -358,9 +370,10 @@ def test_scale_2x_doubles_amounts(scale_recipe, page: Page):
     page.wait_for_url(lambda url: "scale=2" in url)
 
     amounts = _amount_texts(page)
-    # 2 → 4, 1/2 → 1, 1 1/2 → 3, 2.5 → 5, 3 → 6
+    # 2 → 4, 1/2 → 1 (~100 g → ~200 g), 1 1/2 → 3, 2.5 → 5, 3 → 6
     assert "4" in amounts
-    assert "1" in amounts
+    assert "~200" in amounts
+    assert "(1 cup)" in _alternative_texts(page)
     assert "3" in amounts
     assert "5" in amounts
     assert "6" in amounts
@@ -381,9 +394,10 @@ def test_scale_half_halves_amounts(scale_recipe, page: Page):
     page.wait_for_url(lambda url: "scale=0.5" in url)
 
     amounts = _amount_texts(page)
-    # 2 → 1, 1/2 → 1/4, 1 1/2 → 0.75, 2.5 → 1.25, 3 → 1.5
+    # 2 → 1, 1/2 → 1/4 (~100 g → ~50 g), 1 1/2 → 0.75, 2.5 → 1.25, 3 → 1.5
     assert "1" in amounts
-    assert "1/4" in amounts
+    assert "~50" in amounts
+    assert "(1/4 cup)" in _alternative_texts(page)
     assert "0.75" in amounts
     assert "1.25" in amounts
     assert "1.5" in amounts

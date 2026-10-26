@@ -360,14 +360,21 @@ struct Spend {
     rejected_calls: usize,
     prompt_tokens: u64,
     completion_tokens: u64,
-    /// Dollars the provider reported for calls that carry no token usage
-    /// (image generation, whose image tokens are priced apart from text).
+    /// Dollars the provider reported: for calls whose usage carries a cost,
+    /// and for those that carry no token usage (image generation, whose
+    /// image tokens are priced apart from text).
     reported_dollars: f64,
 }
 
 impl Spend {
+    /// Count a call: its reported cost when it has one (which counts
+    /// prompt-cache discounts), else its tokens at list price.
     fn add(&mut self, usage: &Usage) {
         self.calls += 1;
+        if let Some(cost) = usage.cost {
+            self.reported_dollars += cost;
+            return;
+        }
         self.prompt_tokens += u64::from(usage.prompt_tokens);
         self.completion_tokens += u64::from(usage.completion_tokens);
     }
@@ -988,7 +995,7 @@ fn spec(suite: &str) -> SuiteSpec {
 fn render(suite: &str, cases: usize, batch_size: usize, rows: &[Row]) -> String {
     let spec = spec(suite);
     let mut out = format!(
-        "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), {}. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.\n\n",
+        "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), {}. Cost is what the accepted calls cost: what OpenRouter reported (prompt-cache discounts included) or, for answers cached before it reported costs, their tokens at its current prices; rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.\n\n",
         spec.title,
         spec.about,
         if spec.batched {

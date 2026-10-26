@@ -97,7 +97,7 @@
     "expected": "2 (pinch) eggs"
   },
   {
-    "name": "derived grams follow the primary, scaled and marked approximate",
+    "name": "derived grams lead, scaled and marked approximate",
     "ingredient": {
       "item": "flour",
       "measurements": [{"amount": "1/2", "unit": "cup"}],
@@ -108,10 +108,10 @@
       "includeAlternatives": true,
       "derived": {"amount": "63", "unit": "g"}
     },
-    "expected": "1 cup (~126 g) flour"
+    "expected": "~126 g (1 cup) flour"
   },
   {
-    "name": "derived grams come after stored alternatives",
+    "name": "the primary and stored alternatives follow derived grams",
     "ingredient": {
       "item": "milk",
       "measurements": [
@@ -124,7 +124,7 @@
       "includeAlternatives": true,
       "derived": {"amount": "240", "unit": "g"}
     },
-    "expected": "1 cup (8 fl oz, ~240 g) milk"
+    "expected": "~240 g (1 cup, 8 fl oz) milk"
   },
   {
     "name": "derived grams are hidden without alternatives",
@@ -144,6 +144,33 @@
       "note": null
     },
     "options": {"includeAlternatives": true, "derived": null},
+    "expected": "1 cup flour"
+  },
+  {
+    "name": "derived grams lead a line with a note",
+    "ingredient": {
+      "item": "flour",
+      "measurements": [{"amount": "1", "unit": "cup"}],
+      "note": "sifted"
+    },
+    "options": {
+      "includeAlternatives": true,
+      "includeNote": true,
+      "derived": {"amount": "120", "unit": "g"}
+    },
+    "expected": "~120 g (1 cup) flour (sifted)"
+  },
+  {
+    "name": "derived grams without an amount are omitted",
+    "ingredient": {
+      "item": "flour",
+      "measurements": [{"amount": "1", "unit": "cup"}],
+      "note": null
+    },
+    "options": {
+      "includeAlternatives": true,
+      "derived": {"amount": " ", "unit": "g"}
+    },
     "expected": "1 cup flour"
   }
 ]
