@@ -2986,11 +2986,11 @@
           "known_calories": {
             "oneOf": [
               {
-                "type": "null"
-              },
-              {
                 "$ref": "#/components/schemas/CalorieRange",
                 "description": "Null when nothing was counted. A lower bound when status is partial."
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -3011,10 +3011,10 @@
           "per_serving_calories": {
             "oneOf": [
               {
-                "type": "null"
+                "$ref": "#/components/schemas/CalorieRange"
               },
               {
-                "$ref": "#/components/schemas/CalorieRange"
+                "type": "null"
               }
             ]
           },
@@ -3046,11 +3046,11 @@
           "calories": {
             "oneOf": [
               {
-                "type": "null"
-              },
-              {
                 "$ref": "#/components/schemas/CalorieRange",
                 "description": "Scaled calories when counted (zero when negligible)."
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -3822,10 +3822,10 @@
           "meal_type": {
             "oneOf": [
               {
-                "type": "null"
+                "$ref": "#/components/schemas/MealType"
               },
               {
-                "$ref": "#/components/schemas/MealType"
+                "type": "null"
               }
             ]
           },
@@ -4078,11 +4078,11 @@
           "proposed": {
             "oneOf": [
               {
-                "type": "null"
-              },
-              {
                 "$ref": "#/components/schemas/NormalizedRecipe",
                 "description": "What accepting saves; absent until the job completes."
+              },
+              {
+                "type": "null"
               }
             ]
           },

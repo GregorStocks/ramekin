@@ -1,0 +1,18 @@
+{
+  "title": "A curated kcal-only entry hides the density a learned estimate had",
+  "description": "\"tonkatsu sauce\" was learned on prod as an estimate with grams_per_cup, so \"1 tbsp tonkatsu sauce\" counted at #825. \
+A later commit added a curated entry with only a cited kcal_per_100g (USDA Branded 2455990); the curated entry now wins and the line is \"Missing density for this food\". \
+Any curated entry added without a density can regress a learned name the same way. \
+Fix: when the matched entry has no grams_per_cup, fall back to the learned estimate's grams_per_cup (and grams_per_piece) for the same name before the committed estimated weights, or require a density when a curated entry replaces a learned estimate (and cite one for tonkatsu sauce). \
+Measure with make ingredient-prod-report. \
+Server-side only (ramekin-core catalog/nutrition): no web or iOS change.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "catalog",
+    "nutrition",
+  ],
+  "created_at": "2026-10-25T18:00:00-07:00",
+  "updated_at": "2026-10-25T18:00:00-07:00",
+}
