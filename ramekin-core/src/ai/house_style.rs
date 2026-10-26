@@ -45,14 +45,17 @@ pub async fn house_style<T: Serialize + DeserializeOwned>(
     let original = value["ingredients"]
         .as_array()
         .map_or(&[][..], Vec::as_slice);
-    let measures = measures(original);
-    let foods = foods(original);
+    let before = Before {
+        measures: measures(original),
+        foods: foods(original),
+        food_amounts: food_amounts(original),
+    };
 
     let tools = edit_recipe_tools()
         .into_iter()
         .filter(|tool| HOUSE_STYLE_TOOLS.contains(&tool.name.as_str()))
         .collect();
-    let check = move |draft: &RecipeDraft| check_unchanged(&measures, &foods, draft.ingredients());
+    let check = move |draft: &RecipeDraft| check_unchanged(&before, draft.ingredients());
     run_edit_loop(
         ai_client,
         recipe,
@@ -70,12 +73,21 @@ pub async fn house_style<T: Serialize + DeserializeOwned>(
 }
 
 /// Every ingredient's amounts, as sorted (amount, unit) pairs, so reordering
-/// doesn't count as a change. An amount the parser reads compares as a
-/// number or range ("1/2" and "0.5", "2-3" and "2 to 3" are the same).
+/// doesn't count as a change.
 fn measures(ingredients: &[Value]) -> Vec<(String, String)> {
-    let mut measures: Vec<(String, String)> = ingredients
-        .iter()
-        .filter_map(|ingredient| ingredient.get("measurements")?.as_array())
+    let mut measures: Vec<(String, String)> = ingredients.iter().flat_map(line_measures).collect();
+    measures.sort();
+    measures
+}
+
+/// One ingredient's amounts as (amount, unit) pairs. An amount the parser
+/// reads compares as a number or range ("1/2" and "0.5", "2-3" and "2 to 3"
+/// are the same).
+fn line_measures(ingredient: &Value) -> Vec<(String, String)> {
+    ingredient
+        .get("measurements")
+        .and_then(Value::as_array)
+        .into_iter()
         .flatten()
         .filter_map(|m| {
             let text = |key: &str| {
@@ -96,39 +108,63 @@ fn measures(ingredients: &[Value]) -> Vec<(String, String)> {
             };
             Some((amount, unit))
         })
-        .collect();
-    measures.sort();
-    measures
+        .collect()
+}
+
+/// The catalog foods one ingredient line names, or none when the catalog
+/// can't tell.
+fn line_foods(ingredient: &Value) -> Vec<String> {
+    let item = ingredient.get("item").and_then(Value::as_str).unwrap_or("");
+    let note = ingredient.get("note").and_then(Value::as_str);
+    match catalog::resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => vec![entry.id.clone()],
+        Resolution::Compound(entries) => {
+            entries.into_iter().map(|entry| entry.id.clone()).collect()
+        }
+        _ => Vec::new(),
+    }
 }
 
 /// The catalog foods the ingredient lines name.
 fn foods(ingredients: &[Value]) -> BTreeSet<String> {
-    ingredients
+    ingredients.iter().flat_map(line_foods).collect()
+}
+
+/// Each line the catalog can name, as its foods and its amounts, sorted: so
+/// amounts can't trade places between ingredients.
+fn food_amounts(ingredients: &[Value]) -> Vec<(String, String)> {
+    let mut lines: Vec<(String, String)> = ingredients
         .iter()
-        .flat_map(|ingredient| {
-            let item = ingredient.get("item").and_then(Value::as_str).unwrap_or("");
-            let note = ingredient.get("note").and_then(Value::as_str);
-            match catalog::resolve_line(item, note) {
-                Resolution::Entry { entry, .. } => vec![entry.id.clone()],
-                Resolution::Compound(entries) => {
-                    entries.into_iter().map(|entry| entry.id.clone()).collect()
-                }
-                _ => Vec::new(),
+        .filter_map(|ingredient| {
+            let foods = line_foods(ingredient);
+            if foods.is_empty() {
+                return None;
             }
+            let amounts = line_measures(ingredient)
+                .into_iter()
+                .map(|(amount, unit)| format!("{amount} {unit}").trim().to_string())
+                .collect::<Vec<_>>()
+                .join(", ");
+            Some((foods.join(" + "), amounts))
         })
-        .collect()
+        .collect();
+    lines.sort();
+    lines
+}
+
+/// What a rewrite must keep, from the original ingredients.
+struct Before {
+    measures: Vec<(String, String)>,
+    foods: BTreeSet<String>,
+    food_amounts: Vec<(String, String)>,
 }
 
 /// Whether the rewritten `ingredients` keep the original amounts and foods;
 /// the error says what's missing, for the model to fix.
-fn check_unchanged(
-    measures_before: &[(String, String)],
-    foods_before: &BTreeSet<String>,
-    ingredients: &[Value],
-) -> Result<(), String> {
+fn check_unchanged(before: &Before, ingredients: &[Value]) -> Result<(), String> {
     let measures_after = measures(ingredients);
-    let missing = difference(measures_before, &measures_after);
-    let added = difference(&measures_after, measures_before);
+    let missing = difference(&before.measures, &measures_after, " ");
+    let added = difference(&measures_after, &before.measures, " ");
     if !missing.is_empty() || !added.is_empty() {
         let mut problem = "The amounts changed.".to_string();
         if !missing.is_empty() {
@@ -140,7 +176,8 @@ fn check_unchanged(
         return Err(problem);
     }
     let foods_after = foods(ingredients);
-    let lost: Vec<&str> = foods_before
+    let lost: Vec<&str> = before
+        .foods
         .difference(&foods_after)
         .map(String::as_str)
         .collect();
@@ -150,11 +187,19 @@ fn check_unchanged(
             lost.join(", ")
         ));
     }
+    let moved = difference(&before.food_amounts, &food_amounts(ingredients), ": ");
+    if !moved.is_empty() {
+        return Err(format!(
+            "Amounts moved between ingredients; give each of these foods its own amount back: {}.",
+            moved.join(", ")
+        ));
+    }
     Ok(())
 }
 
-/// The measures in `a` that `b` lacks, counting repeats, as text.
-fn difference(a: &[(String, String)], b: &[(String, String)]) -> Vec<String> {
+/// The pairs in `a` that `b` lacks, counting repeats, as quoted text with
+/// `separator` between each pair's halves.
+fn difference(a: &[(String, String)], b: &[(String, String)], separator: &str) -> Vec<String> {
     let mut rest = b.to_vec();
     a.iter()
         .filter(
@@ -166,7 +211,7 @@ fn difference(a: &[(String, String)], b: &[(String, String)]) -> Vec<String> {
                 None => true,
             },
         )
-        .map(|(amount, unit)| format!("\"{}\"", format!("{amount} {unit}").trim()))
+        .map(|(first, second)| format!("\"{}\"", format!("{first}{separator}{second}").trim()))
         .collect()
 }
 
@@ -290,6 +335,41 @@ mod tests {
         );
         let reply = reply_to_finish(&client, 1);
         assert_eq!(reply, "Error: there is no tool called scale_recipe");
+    }
+
+    #[tokio::test]
+    async fn finish_is_refused_when_amounts_swap_between_ingredients() {
+        let recipe = Recipe {
+            title: "Cake".to_string(),
+            ingredients: vec![
+                json!({"item": "all-purpose flour", "measurements": [{"amount": "1", "unit": "cup"}], "note": null, "raw": "1 cup all-purpose flour", "section": null}),
+                json!({"item": "granulated sugar", "measurements": [{"amount": "2", "unit": "cup"}], "note": null, "raw": "2 cups granulated sugar", "section": null}),
+            ],
+            instructions: "Mix.".to_string(),
+        };
+        let client = ScriptedClient::new(vec![
+            vec![
+                (
+                    "set_ingredient",
+                    json!({"index": 1, "line": "2 cups all-purpose flour"}),
+                ),
+                (
+                    "set_ingredient",
+                    json!({"index": 2, "line": "1 cup granulated sugar"}),
+                ),
+            ],
+            vec![("finish", json!({"summary": "Done."}))],
+        ]);
+
+        let result = house_style(&client, &recipe).await;
+
+        assert!(result.is_err());
+        let refusal = reply_to_finish(&client, 2);
+        assert!(
+            refusal.contains("Amounts moved between ingredients"),
+            "{refusal}"
+        );
+        assert!(refusal.contains(": 1 cup\""), "{refusal}");
     }
 
     #[test]

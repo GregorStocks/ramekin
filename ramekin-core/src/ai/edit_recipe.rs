@@ -134,6 +134,11 @@ pub(crate) async fn run_edit_loop<T: Serialize + DeserializeOwned>(
         ));
         let mut summary = None;
         for call in &response.tool_calls {
+            // Nothing after an accepted finish applies: the recipe it checked
+            // is the one returned.
+            if summary.is_some() {
+                break;
+            }
             tool_calls += 1;
             if tool_calls > MAX_EDIT_TOOL_CALLS {
                 return Err(AiError::Api(format!(
@@ -245,6 +250,20 @@ mod tests {
         assert_eq!(tool_results[0].tool_call_id.as_deref(), Some("call-0-0"));
         assert!(tool_results[1].content.starts_with("Scaled 1 amounts by 2"));
         assert!(!requests[0].tools.is_empty());
+    }
+
+    #[tokio::test]
+    async fn calls_after_an_accepted_finish_are_ignored() {
+        let client = ScriptedClient::new(vec![vec![
+            ("finish", serde_json::json!({"summary": "Done."})),
+            ("remove_ingredient", serde_json::json!({"index": 1})),
+        ]]);
+
+        let result = edit_recipe(&client, &recipe(), "nothing", vec![], &NoUserData)
+            .await
+            .unwrap();
+
+        assert_eq!(result.recipe.ingredients.len(), 1);
     }
 
     #[tokio::test]
