@@ -9,11 +9,10 @@ use serde::{Deserialize, Serialize};
 
 use crate::ai::{house_style, AiClient, Usage};
 use crate::ingredient_parser::ParsedIngredient;
-use crate::pipeline::steps::{base_raw_recipe, step_failure, ParseIngredientsStep};
-use crate::pipeline::{
-    deserialize_required_output_field, PipelineStep, StepContext, StepMetadata, StepResult,
-    LOAD_RECIPE_STEP,
+use crate::pipeline::steps::{
+    base_output_field, base_raw_recipe, step_failure, ParseIngredientsStep,
 };
+use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 
 /// Step that rewrites a recipe's ingredients and steps into the house style.
 pub struct HouseStyleStep {
@@ -48,20 +47,6 @@ struct HouseStyleOutput {
     usage: Usage,
 }
 
-/// The structured ingredients the job's recipe has: freshly parsed when it
-/// read the source, or the loaded version's.
-async fn base_ingredients(ctx: &StepContext<'_>) -> Result<Vec<ParsedIngredient>, String> {
-    for step_name in [ParseIngredientsStep::NAME, LOAD_RECIPE_STEP] {
-        if let Some(output) = ctx.outputs.get_output(step_name).await {
-            return deserialize_required_output_field(&output, step_name, "ingredients");
-        }
-    }
-    Err(format!(
-        "No {LOAD_RECIPE_STEP} or {} output found",
-        ParseIngredientsStep::NAME
-    ))
-}
-
 #[async_trait]
 impl PipelineStep for HouseStyleStep {
     fn metadata(&self) -> StepMetadata {
@@ -78,10 +63,12 @@ impl PipelineStep for HouseStyleStep {
             Ok(r) => r,
             Err(e) => return step_failure(Self::NAME, start, e),
         };
-        let ingredients = match base_ingredients(ctx).await {
-            Ok(ingredients) => ingredients,
-            Err(e) => return step_failure(Self::NAME, start, e),
-        };
+        // Structured, with sections: the raw recipe's ingredients are text.
+        let ingredients =
+            match base_output_field(ctx, ParseIngredientsStep::NAME, "ingredients").await {
+                Ok(ingredients) => ingredients,
+                Err(e) => return step_failure(Self::NAME, start, e),
+            };
         let recipe = StyledRecipe {
             title: raw_recipe.title,
             ingredients,
@@ -117,72 +104,15 @@ impl PipelineStep for HouseStyleStep {
 
 #[cfg(test)]
 mod tests {
-    use std::collections::{HashMap, VecDeque};
-    use std::error::Error;
-    use std::sync::{Arc, Mutex};
+    use std::sync::Arc;
 
-    use async_trait::async_trait;
     use serde_json::{json, Value as JsonValue};
 
     use super::HouseStyleStep;
-    use crate::ai::{
-        AiClient, AiError, ChatMessage, ChatRequest, ChatResponse, ConfigError, ToolCall,
-        UnconfiguredAiClient, Usage,
-    };
-    use crate::pipeline::{PipelineStep, StepContext, StepOutputStore};
-
-    #[derive(Default)]
-    struct TestOutputStore {
-        outputs: HashMap<String, JsonValue>,
-    }
-
-    #[async_trait]
-    impl StepOutputStore for TestOutputStore {
-        async fn get_output(&self, step_name: &str) -> Option<JsonValue> {
-            self.outputs.get(step_name).cloned()
-        }
-
-        async fn save_output(
-            &mut self,
-            _step_name: &str,
-            _output: &JsonValue,
-            _duration_ms: i64,
-            _success: bool,
-            _error: Option<&str>,
-        ) -> Result<(), Box<dyn Error + Send + Sync>> {
-            Ok(())
-        }
-    }
-
-    /// Answers each turn with the next scripted tool calls.
-    struct ScriptedClient(Mutex<VecDeque<Vec<(&'static str, JsonValue)>>>);
-
-    #[async_trait]
-    impl AiClient for ScriptedClient {
-        async fn complete(
-            &self,
-            _prompt_name: &str,
-            _request: &ChatRequest,
-        ) -> Result<ChatResponse, AiError> {
-            let calls = self.0.lock().unwrap().pop_front().unwrap_or_default();
-            Ok(ChatResponse {
-                content: String::new(),
-                usage: Usage::default(),
-                cached: false,
-                tool_calls: calls
-                    .into_iter()
-                    .enumerate()
-                    .map(|(i, (name, args))| ToolCall {
-                        id: format!("call-{i}"),
-                        name: name.to_string(),
-                        arguments: args.to_string(),
-                    })
-                    .collect(),
-            })
-        }
-
-        fn forget(&self, _prompt_name: &str, _messages: &[ChatMessage]) {}
-    }
+    use crate::ai::test_support::ScriptedClient;
+    use crate::ai::{ConfigError, UnconfiguredAiClient};
+    use crate::pipeline::steps::TestOutputStore;
+    use crate::pipeline::{PipelineStep, StepContext};
 
     /// A manual run: the loaded version, with its structured ingredients.
     fn loaded() -> TestOutputStore {
@@ -215,13 +145,13 @@ mod tests {
             url: "https://example.test/soup",
             outputs: &outputs,
         };
-        let client = ScriptedClient(Mutex::new(VecDeque::from([
+        let client = ScriptedClient::new(vec![
             vec![
                 ("set_ingredient", json!({"index": 1, "line": "2 onions"})),
                 ("add_step", json!({"after": 0, "text": "Slice the onions."})),
             ],
             vec![("finish", json!({"summary": "Moved the slicing."}))],
-        ])));
+        ]);
 
         let result = HouseStyleStep::new(Arc::new(client)).execute(&ctx).await;
 
@@ -244,10 +174,10 @@ mod tests {
             url: "https://example.test/soup",
             outputs: &outputs,
         };
-        let client = ScriptedClient(Mutex::new(VecDeque::from([vec![(
+        let client = ScriptedClient::new(vec![vec![(
             "finish",
             json!({"summary": "Already in house style."}),
-        )]])));
+        )]]);
 
         let result = HouseStyleStep::new(Arc::new(client)).execute(&ctx).await;
 

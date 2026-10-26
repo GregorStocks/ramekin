@@ -84,39 +84,14 @@ impl PipelineStep for NormalizeTitleStep {
 
 #[cfg(test)]
 mod tests {
-    use std::collections::HashMap;
-    use std::error::Error;
     use std::sync::Arc;
 
-    use async_trait::async_trait;
-    use serde_json::{json, Value as JsonValue};
+    use serde_json::json;
 
     use super::NormalizeTitleStep;
     use crate::ai::{ConfigError, UnconfiguredAiClient};
-    use crate::pipeline::{PipelineStep, StepContext, StepOutputStore};
-
-    #[derive(Default)]
-    struct TestOutputStore {
-        outputs: HashMap<String, JsonValue>,
-    }
-
-    #[async_trait]
-    impl StepOutputStore for TestOutputStore {
-        async fn get_output(&self, step_name: &str) -> Option<JsonValue> {
-            self.outputs.get(step_name).cloned()
-        }
-
-        async fn save_output(
-            &mut self,
-            _step_name: &str,
-            _output: &JsonValue,
-            _duration_ms: i64,
-            _success: bool,
-            _error: Option<&str>,
-        ) -> Result<(), Box<dyn Error + Send + Sync>> {
-            Ok(())
-        }
-    }
+    use crate::pipeline::steps::TestOutputStore;
+    use crate::pipeline::{PipelineStep, StepContext};
 
     /// A missing OPENROUTER_API_KEY reaches the step as an UnconfiguredAiClient
     /// (see server build_registry): the step must fail with the config error,

@@ -185,66 +185,9 @@ pub(crate) async fn run_edit_loop<T: Serialize + DeserializeOwned>(
 mod tests {
     use super::*;
     use crate::ai::edit_recipe_tools::NoUserData;
-    use crate::ai::{ChatResponse, Role, ToolCall};
-    use async_trait::async_trait;
+    use crate::ai::test_support::ScriptedClient;
+    use crate::ai::Role;
     use serde::Deserialize;
-    use std::collections::VecDeque;
-    use std::sync::Mutex;
-
-    /// Answers each turn with the next scripted tool calls, and records the
-    /// requests it saw.
-    struct ScriptedClient {
-        turns: Mutex<VecDeque<Vec<ToolCall>>>,
-        requests: Mutex<Vec<ChatRequest>>,
-    }
-
-    impl ScriptedClient {
-        fn new(turns: Vec<Vec<(&str, serde_json::Value)>>) -> Self {
-            let turns = turns
-                .into_iter()
-                .enumerate()
-                .map(|(turn, calls)| {
-                    calls
-                        .into_iter()
-                        .enumerate()
-                        .map(|(i, (name, args))| ToolCall {
-                            id: format!("call-{turn}-{i}"),
-                            name: name.to_string(),
-                            arguments: args.to_string(),
-                        })
-                        .collect()
-                })
-                .collect();
-            Self {
-                turns: Mutex::new(turns),
-                requests: Mutex::new(Vec::new()),
-            }
-        }
-    }
-
-    #[async_trait]
-    impl AiClient for ScriptedClient {
-        async fn complete(
-            &self,
-            _prompt_name: &str,
-            request: &ChatRequest,
-        ) -> Result<ChatResponse, AiError> {
-            self.requests.lock().unwrap().push(request.clone());
-            let tool_calls = self.turns.lock().unwrap().pop_front().unwrap_or_default();
-            Ok(ChatResponse {
-                content: String::new(),
-                usage: Usage {
-                    prompt_tokens: 10,
-                    completion_tokens: 5,
-                    total_tokens: 15,
-                },
-                cached: false,
-                tool_calls,
-            })
-        }
-
-        fn forget(&self, _prompt_name: &str, _messages: &[ChatMessage]) {}
-    }
 
     #[derive(Serialize, Deserialize, Debug)]
     struct Recipe {

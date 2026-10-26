@@ -49,6 +49,8 @@ mod normalize_title;
 pub mod photo_extract;
 pub mod prompts;
 mod resolve_ingredient_names;
+#[cfg(test)]
+pub(crate) mod test_support;
 pub mod text_extract;
 mod types;
 

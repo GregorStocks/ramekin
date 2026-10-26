@@ -18,7 +18,7 @@ use crate::ai::prompts::house_style::{
 };
 use crate::ai::{AiClient, AiError, EditRecipeResult, NoUserData};
 use crate::catalog::{self, Resolution};
-use crate::metric_weights::parse_amount;
+use crate::ingredient_parser::quantity;
 
 /// The tools a house-style rewrite may call.
 const HOUSE_STYLE_TOOLS: &[&str] = &[
@@ -42,9 +42,11 @@ pub async fn house_style<T: Serialize + DeserializeOwned>(
 ) -> Result<EditRecipeResult<T>, AiError> {
     let value = serde_json::to_value(recipe)
         .map_err(|e| AiError::ParseError(format!("Recipe doesn't serialize: {e}")))?;
-    let original = RecipeDraft::new(value).map_err(AiError::ParseError)?;
-    let measures = measures(original.ingredients());
-    let foods = foods(original.ingredients());
+    let original = value["ingredients"]
+        .as_array()
+        .map_or(&[][..], Vec::as_slice);
+    let measures = measures(original);
+    let foods = foods(original);
 
     let tools = edit_recipe_tools()
         .into_iter()
@@ -68,18 +70,13 @@ pub async fn house_style<T: Serialize + DeserializeOwned>(
 }
 
 /// Every ingredient's amounts, as sorted (amount, unit) pairs, so reordering
-/// doesn't count as a change. An amount that parses compares as a number
-/// ("1/2" and "0.5" are the same).
+/// doesn't count as a change. An amount the parser reads compares as a
+/// number or range ("1/2" and "0.5", "2-3" and "2 to 3" are the same).
 fn measures(ingredients: &[Value]) -> Vec<(String, String)> {
     let mut measures: Vec<(String, String)> = ingredients
         .iter()
-        .flat_map(|ingredient| {
-            ingredient
-                .get("measurements")
-                .and_then(Value::as_array)
-                .cloned()
-                .unwrap_or_default()
-        })
+        .filter_map(|ingredient| ingredient.get("measurements")?.as_array())
+        .flatten()
         .filter_map(|m| {
             let text = |key: &str| {
                 m.get(key)
@@ -92,7 +89,11 @@ fn measures(ingredients: &[Value]) -> Vec<(String, String)> {
             if amount.is_empty() && unit.is_empty() {
                 return None;
             }
-            let amount = parse_amount(&amount).map_or(amount, format_amount);
+            let amount = match quantity::range(&amount) {
+                Some(r) if r.min == r.max => format_amount(r.min),
+                Some(r) => format!("{}-{}", format_amount(r.min), format_amount(r.max)),
+                None => amount,
+            };
             Some((amount, unit))
         })
         .collect();
@@ -126,9 +127,9 @@ fn check_unchanged(
     ingredients: &[Value],
 ) -> Result<(), String> {
     let measures_after = measures(ingredients);
-    if measures_after != measures_before {
-        let missing: Vec<String> = difference(measures_before, &measures_after);
-        let added: Vec<String> = difference(&measures_after, measures_before);
+    let missing = difference(measures_before, &measures_after);
+    let added = difference(&measures_after, measures_before);
+    if !missing.is_empty() || !added.is_empty() {
         let mut problem = "The amounts changed.".to_string();
         if !missing.is_empty() {
             problem.push_str(&format!(" Missing now: {}.", missing.join(", ")));
@@ -172,56 +173,9 @@ fn difference(a: &[(String, String)], b: &[(String, String)]) -> Vec<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::ai::{ChatMessage, ChatRequest, ChatResponse, ToolCall, Usage};
-    use async_trait::async_trait;
+    use crate::ai::test_support::ScriptedClient;
     use serde::Deserialize;
     use serde_json::json;
-    use std::collections::VecDeque;
-    use std::sync::Mutex;
-
-    /// Answers each turn with the next scripted tool calls, and records the
-    /// requests it saw.
-    struct ScriptedClient {
-        turns: Mutex<VecDeque<Vec<(&'static str, Value)>>>,
-        requests: Mutex<Vec<ChatRequest>>,
-    }
-
-    impl ScriptedClient {
-        fn new(turns: Vec<Vec<(&'static str, Value)>>) -> Self {
-            Self {
-                turns: Mutex::new(turns.into()),
-                requests: Mutex::new(Vec::new()),
-            }
-        }
-    }
-
-    #[async_trait]
-    impl AiClient for ScriptedClient {
-        async fn complete(
-            &self,
-            _prompt_name: &str,
-            request: &ChatRequest,
-        ) -> Result<ChatResponse, AiError> {
-            self.requests.lock().unwrap().push(request.clone());
-            let calls = self.turns.lock().unwrap().pop_front().unwrap_or_default();
-            Ok(ChatResponse {
-                content: String::new(),
-                usage: Usage::default(),
-                cached: false,
-                tool_calls: calls
-                    .into_iter()
-                    .enumerate()
-                    .map(|(i, (name, args))| ToolCall {
-                        id: format!("call-{i}"),
-                        name: name.to_string(),
-                        arguments: args.to_string(),
-                    })
-                    .collect(),
-            })
-        }
-
-        fn forget(&self, _prompt_name: &str, _messages: &[ChatMessage]) {}
-    }
 
     #[derive(Serialize, Deserialize, Debug)]
     struct Recipe {
@@ -349,5 +303,11 @@ mod tests {
             json!({"measurements": [{"amount": "0.5", "unit": "cup"}]}),
         ]);
         assert_eq!(a, b);
+
+        let range = |amount: &str| {
+            measures(&[json!({"measurements": [{"amount": amount, "unit": "cup"}]})])
+        };
+        assert_eq!(range("4 to 6"), range("4-6"));
+        assert_ne!(range("4 to 6"), range("4"));
     }
 }

@@ -238,37 +238,11 @@ mod tests {
         assert_eq!(super::extract_trailing_marker("salt* (to taste)"), "*");
     }
 
-    use std::collections::HashMap;
-    use std::error::Error;
-
-    use async_trait::async_trait;
     use serde_json::{json, Value as JsonValue};
 
     use super::ParseIngredientsStep;
-    use crate::pipeline::{PipelineStep, StepContext, StepOutputStore};
-
-    #[derive(Default)]
-    struct TestOutputStore {
-        outputs: HashMap<String, JsonValue>,
-    }
-
-    #[async_trait]
-    impl StepOutputStore for TestOutputStore {
-        async fn get_output(&self, step_name: &str) -> Option<JsonValue> {
-            self.outputs.get(step_name).cloned()
-        }
-
-        async fn save_output(
-            &mut self,
-            _step_name: &str,
-            _output: &JsonValue,
-            _duration_ms: i64,
-            _success: bool,
-            _error: Option<&str>,
-        ) -> Result<(), Box<dyn Error + Send + Sync>> {
-            Ok(())
-        }
-    }
+    use crate::pipeline::steps::TestOutputStore;
+    use crate::pipeline::{PipelineStep, StepContext};
 
     #[tokio::test]
     async fn malformed_raw_recipe_reports_deserialization_error() {

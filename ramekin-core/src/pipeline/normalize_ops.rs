@@ -10,7 +10,7 @@ use std::sync::Arc;
 
 use serde::{Deserialize, Serialize};
 
-use crate::ai::AiClient;
+use crate::ai::{AiClient, AiConfig, CachingAiClient, ConfigError, UnconfiguredAiClient};
 use crate::pipeline::steps::{
     AutoTagStep, GenerateDescriptionStep, HouseStyleStep, NormalizeTitleStep,
 };
@@ -197,22 +197,42 @@ impl NormalizeOp {
         }
     }
 
-    /// The step implementation for a normalize op. `edit_ai_client` is
-    /// configured for recipe edits, for the ops that run the edit tool loop.
+    /// Whether the op is a long tool loop rather than one model call: too
+    /// slow to run inside a request.
+    pub fn long_running(self) -> bool {
+        matches!(self, NormalizeOp::HouseStyle)
+    }
+
+    /// The step implementation for a normalize op, calling the model the op
+    /// uses. A missing AI configuration still gives a step, which fails on
+    /// its first call, so it fails like any other AI error.
     pub fn step(
         self,
-        ai_client: Arc<dyn AiClient>,
-        edit_ai_client: Arc<dyn AiClient>,
+        ai_config: &Result<AiConfig, ConfigError>,
         user_tags: &[String],
     ) -> Option<Box<dyn PipelineStep>> {
+        let client = |configure: fn(&AiConfig) -> AiConfig| -> Arc<dyn AiClient> {
+            match ai_config {
+                Ok(config) => Arc::new(CachingAiClient::new(configure(config))),
+                Err(e) => Arc::new(UnconfiguredAiClient::new(e.clone())),
+            }
+        };
         match self {
             NormalizeOp::Refetch | NormalizeOp::Reextract => None,
-            NormalizeOp::NormalizeTitle => Some(Box::new(NormalizeTitleStep::new(ai_client))),
-            NormalizeOp::GenerateDescription => {
-                Some(Box::new(GenerateDescriptionStep::new(ai_client)))
+            NormalizeOp::NormalizeTitle => {
+                Some(Box::new(NormalizeTitleStep::new(client(AiConfig::clone))))
             }
-            NormalizeOp::AutoTag => Some(Box::new(AutoTagStep::new(ai_client, user_tags.to_vec()))),
-            NormalizeOp::HouseStyle => Some(Box::new(HouseStyleStep::new(edit_ai_client))),
+            NormalizeOp::GenerateDescription => Some(Box::new(GenerateDescriptionStep::new(
+                client(AiConfig::clone),
+            ))),
+            NormalizeOp::AutoTag => Some(Box::new(AutoTagStep::new(
+                client(AiConfig::clone),
+                user_tags.to_vec(),
+            ))),
+            // A tool loop, on the Edit with AI model.
+            NormalizeOp::HouseStyle => Some(Box::new(HouseStyleStep::new(client(
+                AiConfig::for_recipe_edit,
+            )))),
         }
     }
 
