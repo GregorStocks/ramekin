@@ -7,7 +7,7 @@
 
 use crate::ingredient_catalog_audit::{load_learned, normalize_name, read_json};
 use anyhow::{Context, Result};
-use ramekin_core::catalog::{is_non_food_with, Learned};
+use ramekin_core::catalog::{is_non_food_with, learned_estimate, Learned};
 use ramekin_core::ingredient_categorizer::categorize_with;
 use ramekin_core::ingredient_parser::{parse_ingredient, ParsedIngredient};
 use ramekin_core::nutrition;
@@ -21,6 +21,11 @@ const REPORT: &str = "logs/prod/burndown.md";
 const DUMP: &str = "logs/prod/burndown.json";
 /// Lines quoted per name in the Markdown report; the JSON dump has them all.
 const MAX_LINES: usize = 5;
+
+const MISSING_DENSITY: &str = "Missing density for this food";
+/// A curated entry without a density replaced a learned estimate that had
+/// one, so the line stopped counting: the entry needs a cited density.
+const DENSITY_DROPPED: &str = "Missing density for this food (its learned estimate had one)";
 
 #[derive(Clone, Deserialize)]
 struct ProdRecipe {
@@ -64,7 +69,7 @@ impl Group {
             | "Unsupported or missing quantity"
             | "Several ingredients share one amount" => Group::DoesNotParse,
             "No supported nutrition match" | "Ambiguous ingredient" => Group::NameUnresolved,
-            "Unsupported quantity unit" | "Missing density for this food" => Group::CannotWeigh,
+            "Unsupported quantity unit" | MISSING_DENSITY | DENSITY_DROPPED => Group::CannotWeigh,
             _ => Group::LeftUnknown,
         }
     }
@@ -179,11 +184,15 @@ fn classify(recipes: &[ProdRecipe], learned: &Learned) -> Result<(Totals, Vec<Fa
             });
         };
         for unknown in &estimate.unknown_ingredients {
-            failure(
-                Group::of_reason(&unknown.reason),
-                &unknown.reason,
-                unknown.index,
-            );
+            let item = &recipe.ingredients[unknown.index].item;
+            let reason = if unknown.reason == MISSING_DENSITY
+                && learned_estimate(item, learned).is_some_and(|e| e.grams_per_cup.is_some())
+            {
+                DENSITY_DROPPED
+            } else {
+                &unknown.reason
+            };
+            failure(Group::of_reason(reason), reason, unknown.index);
         }
         for no_amount in &estimate.no_amount {
             failure(Group::NoAmount, &no_amount.reason, no_amount.index);
@@ -365,6 +374,7 @@ pub fn run(root: &Path, prod_recipes: &Path, learned: Option<&Path>) -> Result<(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use ramekin_core::catalog::{EstimatedFood, LearnedTarget};
 
     fn recipe(ingredients: serde_json::Value) -> ProdRecipe {
         ProdRecipe {
@@ -414,6 +424,38 @@ mod tests {
         );
         assert_eq!(failures[1].line, "1 cup Zzqq Moon Dust");
         assert_eq!(failures[1].title, "Test recipe");
+    }
+
+    #[test]
+    fn a_density_a_learned_estimate_had_is_called_out() {
+        let recipes = [recipe(serde_json::json!([
+            {"item": "chestnut spread", "measurements": [{"amount": "3", "unit": "cups"}]},
+            {"item": "pickled onions", "measurements": [{"amount": "2", "unit": "cups"}]},
+        ]))];
+        let estimate = |grams_per_cup| {
+            LearnedTarget::Estimate(EstimatedFood {
+                kcal_per_100g: 100.0,
+                grams_per_cup,
+                grams_per_piece: None,
+                category: None,
+            })
+        };
+        let learned = Learned::from([
+            ("chestnut spread".to_string(), estimate(Some(240.0))),
+            ("pickled onions".to_string(), estimate(None)),
+        ]);
+        let (_, failures) = classify(&recipes, &learned).unwrap();
+        let reasons: Vec<_> = failures
+            .iter()
+            .map(|f| (f.name.as_str(), f.group, f.reason.as_str()))
+            .collect();
+        assert_eq!(
+            reasons,
+            [
+                ("chestnut spread", Group::CannotWeigh, DENSITY_DROPPED),
+                ("pickled onions", Group::CannotWeigh, MISSING_DENSITY),
+            ]
+        );
     }
 
     #[test]
