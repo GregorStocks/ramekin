@@ -272,7 +272,6 @@
     "boneless pork butt roast": "pork, fresh, shoulder, (boston butt), blade (steaks), separable lean and fat, raw",
     "boneless pork chops": "pork, fresh, loin, center loin (chops), boneless, separable lean and fat",
     "boneless pork loin chops": "pork, fresh, loin, top loin (chops), boneless, separable lean and fat, raw",
-    "boneless rib eye steak": "beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "boneless short ribs, 1 1/2 to 2 inches thick and 4 to 5 inches long": "beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0\" fat, all grades",
     "boneless skin-on chicken thighs": "chicken, broilers or fryers, thigh, meat and skin, raw",
     "boneless skinless chicken breast cutlets": "chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
@@ -404,7 +403,7 @@
     "celery seed": "spices, celery seed",
     "celery stalk": "celery",
     "celery sticks": "celery, raw",
-    "center-cut salmon fillet": "fish, salmon, atlantic, farmed, raw",
+    "center-cut salmon fillet": "salmon fillets",
     "center-cut slices ripe plum tomatoes": "tomatoes, red, ripe, raw, year round average",
     "challah bread": "bread, egg",
     "challenge butter": "butter",
@@ -2097,6 +2096,8 @@
     "reserved pasta water": "water, bottled, generic",
     "rhubarb stalks": "rhubarb",
     "rib celery": "celery",
+    "rib eye steak": "beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
+    "ribeye steak": "beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "ribs": null,
     "ribs celery": "celery, raw",
     "ribs celery (about 8 ounces": "celery, raw",
@@ -2170,8 +2171,7 @@
     "sake or dry sherry/white wine": null,
     "salami": "salami, dry or hard, pork",
     "salmon": "fish, salmon, atlantic, farmed",
-    "salmon filets": "fish, salmon, atlantic, farmed, raw",
-    "salmon fillet": "fish, salmon, atlantic, farmed, raw",
+    "salmon filets": "salmon fillets",
     "salmon or white fish filets": null,
     "salsa": "sauce, salsa, ready-to-serve",
     "salsa verde": null,
@@ -2279,7 +2279,7 @@
     "sirloin steak tips": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "skim milk": "milk, nonfat, fluid, with added vitamin a and vitamin d (fat free or skim)",
     "skin-on chicken drumsticks": null,
-    "skin-on salmon fillet": "fish, salmon, atlantic, farmed, raw",
+    "skin-on salmon fillet": "salmon fillets",
     "skin-on, bone-in chicken thighs": null,
     "skinless, boneless chicken breast halves": "chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
     "skirt steak": "beef, plate steak, boneless, inside skirt, separable lean and fat, trimmed to 0\" fat, all grades, raw",
@@ -3694,6 +3694,7 @@
     "salad dressing, mayonnaise, light": "Condiments & Sauces",
     "salad dressing, ranch dressing, regular": "Condiments & Sauces",
     "salami, dry or hard, pork": "Meat & Seafood",
+    "salmon fillets": "Meat & Seafood",
     "salsa verde": "Condiments & Sauces",
     "salt, table": "Spices & Seasonings",
     "sardines": "Meat & Seafood",
@@ -5454,10 +5455,18 @@
       "kind": "product"
     },
     "pancetta": {
+      "default_portion": "slice",
       "kcal_per_100g": {
         "source": "USDA FoodData Central Branded food 522789 (PANCETTA, Euro Foods Inc.): 357 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/522789/nutrients",
         "value": 357.0
+      },
+      "portions": {
+        "slice": {
+          "source": "USDA FoodData Central Branded food 2096795 (PANCETTA THINLY SLICED, Carando Inc.): 1 slice = 21 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2096795/nutrients",
+          "value": 21.0
+        }
       }
     },
     "paneer": {
@@ -5697,6 +5706,22 @@
       "grams_per_cup": {
         "source": "Not in USDA; rice wine with ~15% alcohol and residual sugars, comparable to mirin/water densities",
         "value": 240.0
+      }
+    },
+    "salmon fillets": {
+      "default_portion": "fillet",
+      "fdc_id": 175167,
+      "portions": {
+        "fillet": {
+          "source": "USDA FNDDS 2706285 (Fish, salmon, NFS): 1 small/regular fillet = 140 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2706285/nutrients",
+          "value": 140.0
+        },
+        "piece": {
+          "source": "A piece of salmon fillet is one fillet. USDA FNDDS 2706285 (Fish, salmon, NFS): 1 small/regular fillet = 140 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2706285/nutrients",
+          "value": 140.0
+        }
       }
     },
     "sardines": {
@@ -5955,6 +5980,9 @@
     "basil, fresh": {
       "trace_ok": true
     },
+    "beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8\" fat, all grades, raw": {
+      "default_portion": "steak"
+    },
     "blackberries, raw": {
       "default_portion": "blackberry",
       "portions": {
@@ -6185,7 +6213,14 @@
       }
     },
     "pork, cured, bacon, unprepared": {
-      "default_portion": "slice"
+      "default_portion": "slice",
+      "portions": {
+        "piece": {
+          "source": "A piece of bacon is a slice. USDA SR Legacy 168277 (Pork, cured, bacon, unprepared): 1 slice raw = 28 g",
+          "url": "https://fdc.nal.usda.gov/food-details/168277/nutrients",
+          "value": 28.0
+        }
+      }
     },
     "pork, cured, ham, boneless, regular (approximately 11% fat), roasted": {
       "portions": {

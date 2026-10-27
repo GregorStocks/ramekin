@@ -2174,3 +2174,33 @@ fn pantry_containers_weigh_by_their_label() {
         );
     }
 }
+
+#[test]
+fn counted_cuts_of_meat_and_seafood_weigh_by_the_piece() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // A piece of bacon is a slice.
+        ("1 piece thick-cut bacon", "28 g thick-cut bacon"),
+        // A piece of shrimp is one shrimp, medium unless sized.
+        ("6-7 piece shrimp", "66 g shrimp"),
+        // A salmon fillet is a portion, not SR Legacy's whole side of fish.
+        ("4 piece salmon fillets", "560 g salmon fillets"),
+        ("1 salmon fillet", "140 g salmon fillet"),
+        ("1 boneless rib eye steak", "361 g boneless rib eye steak"),
+        ("2 ribeye steaks", "722 g ribeye steak"),
+        ("12-15 thin slices pancetta", "252 g pancetta"),
+        ("4 slices pancetta", "84 g pancetta"),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
