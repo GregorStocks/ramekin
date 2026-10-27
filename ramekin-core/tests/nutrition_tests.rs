@@ -2112,3 +2112,30 @@ fn balls_of_dough_and_cheese_and_blocks_of_cream_cheese_weigh_by_the_piece() {
         );
     }
 }
+
+#[test]
+fn pantry_containers_weigh_by_their_label() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        ("1 cube Japanese curry roux", "20 g Japanese curry roux"),
+        ("1 jar nori komi furikake", "48 g furikake"),
+        // A small jar or can is the plain one.
+        (
+            "1 small jar roasted red peppers, or about 1 cup, drained",
+            "340 g roasted red peppers",
+        ),
+        ("1 small can baby corn, drained", "226 g baby corn"),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
