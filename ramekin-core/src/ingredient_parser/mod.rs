@@ -355,9 +355,12 @@ fn split_leading_item_qualifier(item: &str) -> Option<(&str, &str)> {
     })
 }
 
+/// Whole numbers a recipe spells out in an inch size ("two-inch piece").
+const SPELLED_INCHES: [&str; 6] = ["one", "two", "three", "four", "five", "six"];
+
 /// A size left at the front of the item, with the piece or container it sizes:
 /// "8-ounce block", "2\" piece", "1-inch thick", "5-pound", "14-ounce each
-/// cans", "5- to 5 1/2-ounce log", "3.4 oz".
+/// cans", "5- to 5 1/2-ounce log", "3.4 oz", "one-and-a-half inch chunk".
 static LEADING_SIZE_REGEX: LazyLock<regex::Regex> = LazyLock::new(|| {
     let nouns = [measure::PACKAGE_WORDS, measure::SIZED_PIECES]
         .concat()
@@ -365,8 +368,9 @@ static LEADING_SIZE_REGEX: LazyLock<regex::Regex> = LazyLock::new(|| {
         .map(|noun| format!("{noun}(?:e?s)?"))
         .collect::<Vec<_>>()
         .join("|");
+    let spelled = SPELLED_INCHES.join("|");
     regex::Regex::new(&format!(
-        r#"(?i)^(?P<size>\d+(?:\s+\d+/\d+|/\d+|\.\d+)?(?:\s*(?:-\s*to|-|to)\s*\d+(?:\s+\d+/\d+|/\d+|\.\d+)?)?(?:[-\s](?:inch(?:es)?\b|in\.)|["”]|(?:-\s*|\s+)(?:ounces?|oz|pounds?|lbs?|grams?|g|kilograms?|kg|cm)\b\.?)(?:[-\s](?:thick|long|wide)\b)?(?:\s+each\b)?(?:\s+(?:{nouns})\b,?)?)\s+(?:of\s+)?(?P<rest>\p{{L}}.*)$"#
+        r#"(?i)^(?P<size>(?:\d+(?:\s+\d+/\d+|/\d+|\.\d+)?(?:\s*(?:-\s*to|-|to)\s*\d+(?:\s+\d+/\d+|/\d+|\.\d+)?)?(?:[-\s](?:inch(?:es)?\b|in\.)|["”]|(?:-\s*|\s+)(?:ounces?|oz|pounds?|lbs?|grams?|g|kilograms?|kg|cm)\b\.?)|(?:{spelled})(?:[-\s]and[-\s]a[-\s]half)?[-\s]inch(?:es)?\b)(?:[-\s](?:thick|long|wide)\b)?(?:\s+each\b)?(?:\s+(?:{nouns})\b,?)?)\s+(?:of\s+)?(?P<rest>\p{{L}}.*)$"#
     ))
     .expect("Invalid leading size regex")
 });

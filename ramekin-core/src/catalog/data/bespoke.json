@@ -160,6 +160,15 @@
         }
       }
     },
+    "daikon": {
+      "pieces": {
+        "1 inch piece": {
+          "basis": "A seventh of USDA's 7-inch-long daikon: USDA SR Legacy 168451 (Radishes, oriental, raw): 1 radish (7\" long) = 338 g, about 48 g an inch",
+          "grams": 48.3,
+          "url": "https://fdc.nal.usda.gov/food-details/168451/nutrients"
+        }
+      }
+    },
     "diced green chiles": {
       "pieces": {
         "can": {
@@ -208,6 +217,21 @@
           "basis": "Three times a 1-inch piece: A 1-inch piece of ginger about 1 inch across weighs about 0.26 oz (7.4 g) (howmuchisin.com produce converter)",
           "grams": 22.2,
           "url": "https://www.howmuchisin.com/produce_converters/ginger"
+        },
+        "chunk small": {
+          "basis": "A small chunk of ginger is a 1-inch piece: '1 small knob ginger, about an inch long' (Alexandra's Kitchen, Vegan One-Pot Ginger-Scallion Ramen Noodles), and a 1-inch piece about 1 inch across weighs about 0.26 oz (7.4 g) (howmuchisin.com produce converter)",
+          "grams": 7.4,
+          "url": "https://alexandracooks.com/2019/10/25/vegan-one-pot-ginger-scallion-ramen-noodles/"
+        },
+        "knob small": {
+          "basis": "A small knob of ginger is a 1-inch piece: '1 small knob ginger, about an inch long' (Alexandra's Kitchen, Vegan One-Pot Ginger-Scallion Ramen Noodles), and a 1-inch piece about 1 inch across weighs about 0.26 oz (7.4 g) (howmuchisin.com produce converter)",
+          "grams": 7.4,
+          "url": "https://alexandracooks.com/2019/10/25/vegan-one-pot-ginger-scallion-ramen-noodles/"
+        },
+        "piece small": {
+          "basis": "A small piece of ginger is a 1-inch piece: '1 small knob ginger, about an inch long' (Alexandra's Kitchen, Vegan One-Pot Ginger-Scallion Ramen Noodles), and a 1-inch piece about 1 inch across weighs about 0.26 oz (7.4 g) (howmuchisin.com produce converter)",
+          "grams": 7.4,
+          "url": "https://alexandracooks.com/2019/10/25/vegan-one-pot-ginger-scallion-ramen-noodles/"
         }
       }
     },

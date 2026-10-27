@@ -1938,6 +1938,41 @@ fn ginger_pieces_sized_in_the_note_or_item_weigh_by_the_inch() {
         calories("1/2 inch (5 grams) ginger"),
         calories("5 grams ginger")
     );
+    // A spelled-out size, and a small piece, knob or chunk as a 1-inch piece.
+    for (raw, size) in [
+        (
+            "1 one-and-a-half inch chunk ginger, peeled and sliced",
+            "1 1/2",
+        ),
+        ("1 two-inch piece fresh ginger", "2"),
+        ("1 small knob ginger, about an inch long, peeled", "1"),
+        ("1 small piece of fresh ginger root finely shredded", "1"),
+        ("1 small chunk ginger", "1"),
+    ] {
+        assert!(calories(raw).is_some(), "{raw}");
+        assert_eq!(calories(raw), inches(size), "{raw}");
+    }
+}
+
+#[test]
+fn daikon_and_turmeric_inch_pieces() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    // Daikon weighs by the inch, not as a whole radish.
+    let two_inches = calories("2 inches Daikon").unwrap();
+    for raw in [
+        "1 (2-inch) piece daikon",
+        "2\u{201d} piece of daikon, julienned",
+    ] {
+        assert_eq!(calories(raw), Some(two_inches), "{raw}");
+    }
+    assert!(two_inches * 3.0 < calories("1 daikon").unwrap());
+    // The catalog has only ground turmeric, with no piece to weigh.
+    assert_eq!(calories("1 2-inch piece turmeric"), None);
 }
 
 #[test]

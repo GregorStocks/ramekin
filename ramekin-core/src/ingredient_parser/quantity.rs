@@ -299,7 +299,8 @@ fn leading_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
         _ => return None,
     };
     let (size, _) = super::split_leading_size(&ingredient.item)?;
-    let size = normalize(size).replace(['"', '”'], " inch");
+    let size = normalize(&spelled_inch_size(size).unwrap_or_else(|| size.to_string()))
+        .replace(['"', '”'], " inch");
     let unit = match measure::read_leading_weight(&size) {
         Some((size, unit)) => sized(size, &unit)?,
         // A bare size behind a counted piece ("2 piece 1-inch ...") sizes
@@ -314,6 +315,28 @@ fn leading_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
         amount: count,
         unit,
     }])
+}
+
+/// A spelled-out inch size in numerals: "one-and-a-half inch chunk" -> "1 1/2
+/// inch chunk", "two-inch piece" -> "2 inch piece". None when it isn't one.
+fn spelled_inch_size(size: &str) -> Option<String> {
+    static SPELLED: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(&format!(
+            r"(?i)^(?P<whole>{})(?P<half>[-\s]and[-\s]a[-\s]half)?[-\s](?P<rest>inch(?:es)?\b.*)$",
+            super::SPELLED_INCHES.join("|")
+        ))
+        .unwrap()
+    });
+    let caps = SPELLED.captures(size.trim_start())?;
+    let whole = 1 + super::SPELLED_INCHES
+        .iter()
+        .position(|word| caps["whole"].eq_ignore_ascii_case(word))?;
+    let half = if caps.name("half").is_some() {
+        " 1/2"
+    } else {
+        ""
+    };
+    Some(format!("{whole}{half} {}", &caps["rest"]))
 }
 
 /// An inch size stated only in the note of a counted piece, knob or chunk,
@@ -344,12 +367,14 @@ fn noted_inch_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 }
 
 /// An inch size whose unit the parser left in the item: "1 inch knob fresh
-/// ginger", "1/2 inch ginger", "1.5 inches fresh ginger". The amount is the
-/// piece's length, and there is one piece.
+/// ginger", "1/2 inch ginger", "1.5 inches fresh ginger", "2” piece of
+/// daikon". The amount is the piece's length, and there is one piece.
 fn item_inches(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
     static INCH: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(r"^(?:inch(?:es)?|in\.)\s+(?:(?:piece|chunk|knob|hunk)s?\s+)?(?:of\s+)?\p{L}")
-            .unwrap()
+        Regex::new(
+            r#"^(?:(?:inch(?:es)?|in\.)\s+|["”]\s*)(?:(?:piece|chunk|knob|hunk)s?\s+)?(?:of\s+)?\p{L}"#,
+        )
+        .unwrap()
     });
     let inches = match read(ingredient.measurements.first()?)?.as_slice() {
         [Term {
@@ -399,8 +424,9 @@ fn item_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 /// The piece a counted item names, which the parser leaves in the item: a
 /// slice at its front ("2 thick slices country bread", "1 1/2-inch slice
 /// sandwich bread", "3 large slices sandwich bread", where the size is the
-/// unit) or leaves ("6 large leaves lettuce", "4 kale leaves"). A slice's
-/// stated thickness is no weight, so "1-inch slices" are plain slices.
+/// unit), leaves ("6 large leaves lettuce", "4 kale leaves") or a sized
+/// piece, knob or chunk ("1 small knob ginger"). A slice's stated thickness
+/// is no weight, so "1-inch slices" are plain slices.
 fn named_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
     static SLICE: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(
@@ -410,6 +436,9 @@ fn named_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
     });
     static LEAVES: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(r"^[\p{L}' -]+\sleaves(?:,|$)").unwrap());
+    static PIECE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(?P<piece>piece|chunk|knob|hunk)s?\s+(?:of\s+)?\p{L}").unwrap()
+    });
     let (count, size) = match read(ingredient.measurements.first()?)?.as_slice() {
         [Term {
             amount,
@@ -425,6 +454,8 @@ fn named_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
             _ => "slice".to_string(),
         },
         None if LEAVES.is_match(&item) => "leaf".to_string(),
+        // Only a sized one: a bare count's piece is already its unit.
+        None if !size.is_empty() => PIECE.captures(&item)?["piece"].to_string(),
         None => return None,
     };
     let unit = match size.as_str() {
@@ -551,6 +582,24 @@ mod tests {
             (actual.min - min).abs() < 0.01 && (actual.max - max).abs() < 0.01,
             "{actual:?} != {min}-{max}"
         );
+    }
+
+    #[test]
+    fn spelled_inch_sizes() {
+        assert_eq!(
+            spelled_inch_size("one-and-a-half inch chunk").as_deref(),
+            Some("1 1/2 inch chunk")
+        );
+        assert_eq!(
+            spelled_inch_size("Two-inch piece").as_deref(),
+            Some("2 inch piece")
+        );
+        assert_eq!(
+            spelled_inch_size("three and a half inches").as_deref(),
+            Some("3 1/2 inches")
+        );
+        assert_eq!(spelled_inch_size("2-inch piece"), None);
+        assert_eq!(spelled_inch_size("oneinch"), None);
     }
 
     #[test]
