@@ -4115,6 +4115,13 @@
         "source": "USDA FoodData Central Branded food 2588804 (SWEET & WHOLE IN BRINE BABY CORN, Lieber Chocolate & Food Products Co.): 32 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/2588804/nutrients",
         "value": 32.0
+      },
+      "portions": {
+        "can": {
+          "source": "USDA FoodData Central Branded food 2404439 (CUT BABY CORN, American Roland Food LLC): 1 can drained = 226 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2404439/nutrients",
+          "value": 226.0
+        }
       }
     },
     "baby dill pickles": {
@@ -4859,6 +4866,13 @@
         "url": "https://fdc.nal.usda.gov/food-details/2195707/nutrients",
         "value": 400.0
       },
+      "portions": {
+        "jar": {
+          "source": "USDA FoodData Central Branded food 2027413 (TERIYAKI BONITO WITH TOASTY SESAME & NORI FURIKAKE, Urashima Nori Co Ltd): package 1.7 oz/48 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2027413/nutrients",
+          "value": 48.0
+        }
+      },
       "trace_ok": true
     },
     "garam masala": {
@@ -5101,6 +5115,13 @@
         "source": "USDA FoodData Central Branded food 593137 (GOLDEN CURRY SAUCE MIX, S & B Shokuhin Company Ltd): 500 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/593137/nutrients",
         "value": 500.0
+      },
+      "portions": {
+        "cube": {
+          "source": "USDA FoodData Central Branded food 2031609 (S&B, GOLDEN CURRY, SAUCE MIX, S & B Shokuhin Company Ltd): serving 20 g = 1/12 package, one cube",
+          "url": "https://fdc.nal.usda.gov/food-details/2031609/nutrients",
+          "value": 20.0
+        }
       }
     },
     "japanese roasted green pea snack": {
@@ -6142,6 +6163,15 @@
           "source": "USDA FNDDS 2710095 (Peppers, hot, pickled): 1 whole = 15 g",
           "url": "https://fdc.nal.usda.gov/food-details/2710095/nutrients",
           "value": 15.0
+        }
+      }
+    },
+    "peppers, sweet, red, canned, solids and liquids": {
+      "portions": {
+        "jar": {
+          "source": "USDA FoodData Central Branded food 2091712 (ROASTED RED PEPPERS, Tree of Life, Inc.): package 12 oz/340 g, the smallest common jar",
+          "url": "https://fdc.nal.usda.gov/food-details/2091712/nutrients",
+          "value": 340.0
         }
       }
     },
