@@ -39,6 +39,10 @@ def test_text_import_saves_and_normalizes(authed_api_client):
     job = wait_for_job_completion(ScrapeApi(client), str(response.job_id))
     assert job.status == "completed", job.error
     assert job.url is None
+    # There's no page to fetch, so the job starts at extract_recipe and no
+    # step is left pending.
+    assert job.steps[0].name == "extract_recipe"
+    assert all(s.status != "pending" for s in job.steps), job.steps
     assert step(job, "extract_recipe").summary == 'extracted "Text Pancakes"'
     # Every default import op runs, house style included.
     for name in ("normalize_title", "generate_description", "house_style"):

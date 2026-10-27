@@ -63,6 +63,7 @@ impl JobPlan {
                 ops: Vec::new(),
                 refetch: true,
             }),
+            None if job.url.is_none() => Ok(Self::import_without_page()),
             None => Ok(Self {
                 refetch: rescrape,
                 ..Self::import()
@@ -81,6 +82,14 @@ impl JobPlan {
             ops,
             refetch: false,
         }
+    }
+
+    /// A new recipe from pasted text, photos or a Paprika import: there's no
+    /// page to fetch, so the job starts past `fetch_html`.
+    pub fn import_without_page() -> Self {
+        let mut plan = Self::import();
+        plan.sequential.retain(|name| *name != FetchHtmlStep::NAME);
+        plan
     }
 
     /// A manual normalize run of `ops`, proposing a version.
@@ -162,6 +171,14 @@ mod tests {
                 "apply_normalize",
             ]
         );
+    }
+
+    #[test]
+    fn import_without_page_skips_fetch_html() {
+        let plan = JobPlan::import_without_page();
+        assert_eq!(plan.sequential[0], "extract_recipe");
+        assert!(!plan.contains("fetch_html"));
+        assert_eq!(plan.step_names()[1..], JobPlan::import().step_names()[2..]);
     }
 
     #[test]
