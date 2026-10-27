@@ -1,0 +1,17 @@
+{
+  "title": "Calorie estimates: pieces of fresh turmeric root",
+  "description": "\"1 2-inch piece turmeric\" and \"1 (2-inch) piece of turmeric, chopped\" (pipeline fixtures; about one prod line) stay unknown: every turmeric name resolves to USDA's ground spice (312 kcal/100 g), which has no piece weights, and an inch of fresh root weighed at the ground spice's calories would overcount about 4x. \
+Needs a curated fresh-turmeric entry with cited calories (none found 2026-10-27: SR Legacy and FNDDS have only the ground spice; web figures run 40-89 kcal/100 g without sources; a USDA Branded label for fresh turmeric root would do) plus a cited 1-inch piece weight in bespoke.json, and aliases routing a counted inch piece of turmeric (\"piece turmeric\", \"fresh turmeric\", \"turmeric root\") to it rather than the spice. \
+Measure with make ingredient-catalog-audit (Unsupported quantity unit / No supported nutrition match); make pipeline should produce only data/ingredient-catalog-audit.md and fixture-category diffs. \
+Server-side only (ramekin-core nutrition), so no web or iOS change. \
+Split out of p4-nutrition-ginger-inch-pieces.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "catalog",
+  ],
+  "created_at": "2026-10-27T08:30:00-07:00",
+  "updated_at": "2026-10-27T08:30:00-07:00",
+}
