@@ -21,6 +21,7 @@ export const SortBy = {
     Rating: 'rating',
     Title: 'title',
     CreatedAt: 'created_at',
+    Calories: 'calories',
     Random: 'random'
 };
 export function instanceOfSortBy(value) {

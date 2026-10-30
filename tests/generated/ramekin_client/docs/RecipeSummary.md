@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**calories_per_serving** | **str** | Estimated calories per serving, for display: \&quot;~520 kcal\&quot;, \&quot;~380–560 kcal\&quot;, or \&quot;~520+ kcal\&quot; when some ingredients couldn&#39;t be counted. Null when there&#39;s no per-serving estimate. | [optional] 
 **created_at** | **datetime** |  | 
 **description** | **str** |  | [optional] 
 **id** | **UUID** |  | 

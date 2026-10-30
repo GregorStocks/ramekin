@@ -31,6 +31,7 @@ macro_rules! recipe_summary_select {
             $crate::schema::recipe_versions::photo_ids,
             $crate::schema::recipe_versions::rating,
             $crate::schema::recipe_versions::created_at,
+            $crate::schema::recipe_versions::kcal_per_serving_label,
             $crate::raw_sql::tags_subquery(),
         )
     };
@@ -48,6 +49,7 @@ macro_rules! counted_recipe_summary_select {
             $crate::schema::recipe_versions::photo_ids,
             $crate::schema::recipe_versions::rating,
             $crate::schema::recipe_versions::created_at,
+            $crate::schema::recipe_versions::kcal_per_serving_label,
             diesel::dsl::count_star().over(),
             $crate::raw_sql::tags_subquery(),
         )
@@ -66,6 +68,7 @@ macro_rules! recipe_relevance_select {
             $crate::schema::recipe_versions::photo_ids,
             $crate::schema::recipe_versions::rating,
             $crate::schema::recipe_versions::created_at,
+            $crate::schema::recipe_versions::kcal_per_serving_label,
             $crate::schema::recipe_versions::ingredients,
             $crate::schema::recipe_versions::instructions,
             $crate::schema::recipe_versions::notes,
@@ -113,6 +116,7 @@ pub struct RecipeSummaryRow {
     pub photo_ids: crate::ids::PhotoIds,
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
+    pub calories_per_serving: Option<String>,
     pub tags: Vec<String>,
 }
 
@@ -125,6 +129,7 @@ pub struct CountedRecipeSummaryRow {
     pub photo_ids: crate::ids::PhotoIds,
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
+    pub calories_per_serving: Option<String>,
     pub total: i64,
     pub tags: Vec<String>,
 }
@@ -139,6 +144,7 @@ impl CountedRecipeSummaryRow {
             photo_ids: self.photo_ids,
             rating: self.rating,
             updated_at: self.updated_at,
+            calories_per_serving: self.calories_per_serving,
             tags: self.tags,
         }
     }
@@ -153,6 +159,7 @@ pub struct RecipeRelevanceRow {
     pub photo_ids: crate::ids::PhotoIds,
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
+    pub calories_per_serving: Option<String>,
     pub ingredients: JsonValue,
     pub instructions: String,
     pub notes: Option<String>,
@@ -188,6 +195,7 @@ impl RecipeRelevanceRow {
             photo_ids: self.photo_ids,
             rating: self.rating,
             updated_at: self.updated_at,
+            calories_per_serving: self.calories_per_serving,
             tags: self.tags,
         }
     }

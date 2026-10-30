@@ -130,12 +130,13 @@ fluid-ounce portions (zero-amount rows excluded). An entry without a density pro
   above 10^15 kcal. A real known zero (e.g. table salt) is distinct from no known
   ingredients, which returns null rather than zero.
 
-Estimates are computed on every request and never stored, so there is no
-version to bump: identical inputs and catalog give identical results, except
-that a name the catalog doesn't know can change from unknown to counted once
-its learned answer arrives (see "Names the catalog doesn't know"). Numeric
-fields retain calculation precision; display strings round as described under
-Presentation.
+The endpoint computes its estimate on every request, so there is no version
+to bump: identical inputs and catalog give identical results, except that a
+name the catalog doesn't know can change from unknown to counted once its
+learned answer arrives (see "Names the catalog doesn't know"). Numeric fields
+retain calculation precision; display strings round as described under
+Presentation. The one stored copy is the recipe list's per-serving figure (see
+"Recipe list").
 
 ## Names the catalog doesn't know
 
@@ -285,3 +286,30 @@ Both clients reject custom scales above the endpoint's 1,000,000 limit before
 changing the displayed scale. Invalid web URL scales use the original 1× recipe.
 `shared-test-vectors/recipe-scale-validation.json` pins accepted bounds across
 the Rust estimator and both clients.
+
+## Recipe list
+
+The recipe list shows, sorts by, and filters on each recipe's per-serving
+figure (`nutrition::Estimate::serving_figure`), so it is stored on the
+version (`recipe_versions.kcal_per_serving` and `kcal_per_serving_label`)
+rather than computed per request (`server/src/recipe_calories.rs`):
+
+- **Which estimates:** complete and partial ones with a serving count. A
+  complete estimate's value is its per-serving figure, or a serving range's
+  midpoint ("4 to 6 servings" of 2,400 kcal is 500). A partial one's is its
+  lower bound, labeled "~380+ kcal". Insufficient and empty estimates, and
+  recipes with no serving count, have none.
+- **Keeping it current:** it's stored when a version is written, recomputed
+  for current versions using a name when the name's answer arrives (in the
+  same write), and reconciled for every current version at startup, after
+  learned names are synced with the catalog, which also picks up a catalog
+  deploy's changes. Historical versions keep the figure they were saved with.
+- **Sorting:** `sort_by=calories`, either direction, with recipes that have
+  no figure last.
+- **Filtering:** `calories:300..600`, `calories:300..` or `calories:..600`,
+  inclusive (`calories:>300` and `calories:<600` mean the open ranges).
+  Recipes with no figure never match.
+
+The web cookbook shows the label on each card and offers the filter and both
+sorts. iOS offers the filter and sorts but doesn't show the label; the synced
+recipes don't carry calories, so those queries go to the server.

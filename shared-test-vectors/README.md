@@ -31,3 +31,7 @@ client match it in the same PR.
   table (doc/sync-design.md): tombstones, full-resync pruning, skipping older
   server rows, and keeping fields with unsent local edits. Web runs the cases
   with no pending local writes, since its cache never holds any.
+- `calorie-filter.json`: Rust server, web, and iOS parsing of the recipe
+  list's `calories:` filter into inclusive per-serving bounds (`min`/`max`,
+  null when unset), and the web's canonical spelling of them. A bound is
+  plain digits with an optional decimal part; anything else is ignored.

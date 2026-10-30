@@ -8,6 +8,17 @@ import {
   parseQueryToFilters,
   parseSortOption,
 } from "./query";
+import calorieVectorsJson from "../../../../shared-test-vectors/calorie-filter.json?raw";
+
+interface CalorieFilterVector {
+  name: string;
+  query: string;
+  min: number | null;
+  max: number | null;
+  canonical: string;
+}
+
+const calorieVectors = JSON.parse(calorieVectorsJson) as CalorieFilterVector[];
 
 describe("cookbook query filters", () => {
   it("parses text, quoted facets, aliases, thresholds, and dates", () => {
@@ -25,9 +36,27 @@ describe("cookbook query filters", () => {
         createdBefore: "2026-02-01",
         photoSize: { op: "<", value: 1000 },
         photoDim: { op: ">", value: 600 },
+        caloriesMin: "",
+        caloriesMax: "",
       },
     });
   });
+
+  it.each(calorieVectors)(
+    "parses calorie filters like the server: $name",
+    ({ query, min, max, canonical }) => {
+      const parsed = parseQueryToFilters(query);
+      const bound = (text: string) => (text === "" ? null : Number(text));
+      expect(parsed.textTerms).toEqual([]);
+      expect([
+        bound(parsed.filters.caloriesMin),
+        bound(parsed.filters.caloriesMax),
+      ]).toEqual([min, max]);
+      expect(buildQueryFromFilters(parsed.textTerms, parsed.filters)).toBe(
+        canonical,
+      );
+    },
+  );
 
   it("serializes parsed filters using the canonical query spelling", () => {
     const parsed = parseQueryToFilters(
@@ -41,10 +70,10 @@ describe("cookbook query filters", () => {
 
   it("counts each active facet and each selected tag", () => {
     const { filters } = parseQueryToFilters(
-      "tag:a tag:b source:test has:photos photo_size:<10 photo_dim:>20 created:<2026-01-01",
+      "tag:a tag:b source:test has:photos photo_size:<10 photo_dim:>20 created:<2026-01-01 calories:..500",
     );
 
-    expect(countActiveFilters(filters)).toBe(7);
+    expect(countActiveFilters(filters)).toBe(8);
   });
 
   it("builds numeric thresholds only from populated numeric input", () => {
@@ -70,5 +99,14 @@ describe("cookbook sorting", () => {
       sortDir: "desc",
     });
     expect(getSortParams("random")).toEqual({ sortBy: "random" });
+    expect(getSortParams("calories_low")).toEqual({
+      sortBy: "calories",
+      sortDir: "asc",
+    });
+    expect(getSortParams("calories_high")).toEqual({
+      sortBy: "calories",
+      sortDir: "desc",
+    });
+    expect(parseSortOption("calories_low")).toBe("calories_low");
   });
 });

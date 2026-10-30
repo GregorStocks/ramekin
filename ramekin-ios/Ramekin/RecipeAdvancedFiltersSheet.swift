@@ -8,6 +8,8 @@ struct RecipeAdvancedFiltersSheet: View {
     @Binding var createdBefore: String
     @Binding var photoSizeFilter: String
     @Binding var photoDimensionFilter: String
+    @Binding var caloriesMin: String
+    @Binding var caloriesMax: String
 
     let onApply: () -> Void
 
@@ -22,6 +24,8 @@ struct RecipeAdvancedFiltersSheet: View {
     @State private var hasPhotoDimensionFilter: Bool
     @State private var draftPhotoDimensionOperator: NumericThresholdOperator
     @State private var draftPhotoDimensionValue: String
+    @State private var draftCaloriesMin: String
+    @State private var draftCaloriesMax: String
 
     init(
         source: Binding<String>,
@@ -29,6 +33,8 @@ struct RecipeAdvancedFiltersSheet: View {
         createdBefore: Binding<String>,
         photoSizeFilter: Binding<String>,
         photoDimensionFilter: Binding<String>,
+        caloriesMin: Binding<String>,
+        caloriesMax: Binding<String>,
         onApply: @escaping () -> Void
     ) {
         _source = source
@@ -36,6 +42,8 @@ struct RecipeAdvancedFiltersSheet: View {
         _createdBefore = createdBefore
         _photoSizeFilter = photoSizeFilter
         _photoDimensionFilter = photoDimensionFilter
+        _caloriesMin = caloriesMin
+        _caloriesMax = caloriesMax
         self.onApply = onApply
 
         let normalizedSource = RecipeListFilterSupport.normalizedSource(source.wrappedValue)
@@ -59,6 +67,12 @@ struct RecipeAdvancedFiltersSheet: View {
         _hasPhotoDimensionFilter = State(initialValue: initialPhotoDimension != nil)
         _draftPhotoDimensionOperator = State(initialValue: initialPhotoDimension?.comparison ?? .lessThan)
         _draftPhotoDimensionValue = State(initialValue: initialPhotoDimension.map { String($0.value) } ?? "")
+        _draftCaloriesMin = State(
+            initialValue: RecipeListFilterSupport.normalizedCalorieBound(caloriesMin.wrappedValue)
+        )
+        _draftCaloriesMax = State(
+            initialValue: RecipeListFilterSupport.normalizedCalorieBound(caloriesMax.wrappedValue)
+        )
     }
 
     private var hasInvalidDateRange: Bool {
@@ -100,6 +114,15 @@ struct RecipeAdvancedFiltersSheet: View {
                             .font(.caption)
                             .foregroundColor(.red)
                     }
+                }
+
+                Section("Calories per serving") {
+                    TextField("Minimum", text: $draftCaloriesMin)
+                        .keyboardType(.numberPad)
+                        .accessibilityLabel("Minimum calories per serving")
+                    TextField("Maximum", text: $draftCaloriesMax)
+                        .keyboardType(.numberPad)
+                        .accessibilityLabel("Maximum calories per serving")
                 }
 
                 thresholdSection(
@@ -182,6 +205,8 @@ struct RecipeAdvancedFiltersSheet: View {
         hasPhotoDimensionFilter = false
         draftPhotoDimensionOperator = .lessThan
         draftPhotoDimensionValue = ""
+        draftCaloriesMin = ""
+        draftCaloriesMax = ""
     }
 
     private func applyFilters() {
@@ -206,6 +231,8 @@ struct RecipeAdvancedFiltersSheet: View {
             comparison: draftPhotoDimensionOperator,
             value: draftPhotoDimensionValue
         )
+        caloriesMin = RecipeListFilterSupport.normalizedCalorieBound(draftCaloriesMin)
+        caloriesMax = RecipeListFilterSupport.normalizedCalorieBound(draftCaloriesMax)
         onApply()
         dismiss()
     }

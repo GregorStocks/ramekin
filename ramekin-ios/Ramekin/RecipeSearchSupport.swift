@@ -14,11 +14,16 @@ struct ParsedSearchQuery: Equatable {
     var createdBefore: String?
     var photoSize: NumericThreshold?
     var photoDim: NumericThreshold?
+    /// Inclusive per-serving calorie bounds.
+    var caloriesMin: Double?
+    var caloriesMax: Double?
 
-    /// `SyncRecipe` carries neither the source name nor detailed photo
-    /// metadata, so queries using them can only run on the server.
+    /// `SyncRecipe` carries neither the source name, detailed photo
+    /// metadata, nor calorie estimates, so queries using them can only run
+    /// on the server.
     var requiresServer: Bool {
         source != nil || photoSize != nil || photoDim != nil
+            || caloriesMin != nil || caloriesMax != nil
     }
 }
 
@@ -99,6 +104,10 @@ enum RecipeSearchSupport {
         }
         if let dimExpression = value(of: "photo_dim:", in: token) {
             result.photoDim = parseNumericThreshold(dimExpression)
+            return true
+        }
+        if let calorieExpression = value(of: "calories:", in: token) {
+            parseCalorieFilter(calorieExpression, into: &result)
             return true
         }
         return false
@@ -254,7 +263,7 @@ enum RecipeSearchSupport {
         sortBy: SortBy?,
         sortDir: Direction?
     ) -> [RecipeSummary] {
-        precondition(!parsed.requiresServer, "source/photo_size/photo_dim queries are server-only")
+        precondition(!parsed.requiresServer, "source/photo_size/photo_dim/calories queries are server-only")
 
         let membershipTokens = parsed.textTokens.map(normalizedScalars)
         let matched = documents.filter {
@@ -290,6 +299,12 @@ enum RecipeSearchSupport {
             }
         case .random:
             fatalError("random ordering is server-only; routing must not send it here")
+        case .calories:
+            // Server-only too (the cache has no calories), but routing a
+            // calorie sort here shouldn't crash: keep the browse default.
+            return matched.map(\.summary).sorted { lhs, rhs in
+                compareDates(lhs.updatedAt, rhs.updatedAt, lhs.id, rhs.id, descending: true)
+            }
         }
     }
 
@@ -361,4 +376,31 @@ enum RecipeSearchSupport {
         formatter.timeZone = TimeZone(secondsFromGMT: 0)!
         return formatter
     }()
+}
+
+// Kept outside the enum body to stay within its length limit.
+extension RecipeSearchSupport {
+    /// Mirror of the server's `parse_calorie_filter`: `300..600`, `300..`,
+    /// `..600`, `>300` or `<600`, all inclusive. A bound is plain digits with
+    /// an optional decimal part. Pinned by shared-test-vectors/calorie-filter.json.
+    private static func parseCalorieFilter(_ expression: String, into result: inout ParsedSearchQuery) {
+        func digits(_ part: Substring) -> Bool {
+            !part.isEmpty && part.allSatisfy { $0.isASCII && $0.isNumber }
+        }
+        func bound(_ text: Substring) -> Double? {
+            let parts = text.split(separator: ".", maxSplits: 1, omittingEmptySubsequences: false)
+            guard parts.allSatisfy(digits) else {
+                return nil
+            }
+            return Double(text)
+        }
+        if let dotsRange = expression.range(of: "..") {
+            result.caloriesMin = bound(expression[..<dotsRange.lowerBound])
+            result.caloriesMax = bound(expression[dotsRange.upperBound...])
+        } else if expression.hasPrefix(">") {
+            result.caloriesMin = bound(expression.dropFirst())
+        } else if expression.hasPrefix("<") {
+            result.caloriesMax = bound(expression.dropFirst())
+        }
+    }
 }

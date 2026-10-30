@@ -50,6 +50,12 @@ final class RecipeListViewModel: ObservableObject {
     @Published var photoDimensionFilter: String {
         didSet { userDefaults.set(photoDimensionFilter, forKey: Self.photoDimensionFilterKey) }
     }
+    @Published var caloriesMinFilter: String {
+        didSet { userDefaults.set(caloriesMinFilter, forKey: Self.caloriesMinFilterKey) }
+    }
+    @Published var caloriesMaxFilter: String {
+        didSet { userDefaults.set(caloriesMaxFilter, forKey: Self.caloriesMaxFilterKey) }
+    }
 
     let api: RecipeListViewAPIClient
     let cache: RecipeListCacheClient
@@ -89,6 +95,8 @@ final class RecipeListViewModel: ObservableObject {
         createdBeforeFilter = userDefaults.string(forKey: Self.createdBeforeFilterKey) ?? ""
         photoSizeFilter = userDefaults.string(forKey: Self.photoSizeFilterKey) ?? ""
         photoDimensionFilter = userDefaults.string(forKey: Self.photoDimensionFilterKey) ?? ""
+        caloriesMinFilter = userDefaults.string(forKey: Self.caloriesMinFilterKey) ?? ""
+        caloriesMaxFilter = userDefaults.string(forKey: Self.caloriesMaxFilterKey) ?? ""
     }
 
     deinit {
@@ -110,7 +118,9 @@ extension RecipeListViewModel {
             createdAfter: createdAfterFilter,
             createdBefore: createdBeforeFilter,
             photoSizeThreshold: RecipeListFilterSupport.numericThreshold(from: photoSizeFilter),
-            photoDimensionThreshold: RecipeListFilterSupport.numericThreshold(from: photoDimensionFilter)
+            photoDimensionThreshold: RecipeListFilterSupport.numericThreshold(from: photoDimensionFilter),
+            caloriesMin: caloriesMinFilter,
+            caloriesMax: caloriesMaxFilter
         )
     }
 
@@ -176,6 +186,8 @@ extension RecipeListViewModel {
         createdBeforeFilter = ""
         photoSizeFilter = ""
         photoDimensionFilter = ""
+        caloriesMinFilter = ""
+        caloriesMaxFilter = ""
         persistSelectedTags()
         reloadRecipes()
     }
@@ -478,4 +490,6 @@ private extension RecipeListViewModel {
     static let createdBeforeFilterKey = "recipeCreatedBeforeFilter"
     static let photoSizeFilterKey = "recipePhotoSizeFilter"
     static let photoDimensionFilterKey = "recipePhotoDimensionFilter"
+    static let caloriesMinFilterKey = "recipeCaloriesMinFilter"
+    static let caloriesMaxFilterKey = "recipeCaloriesMaxFilter"
 }

@@ -99,7 +99,9 @@ struct RecipeListView: View {
                 createdAfter: $viewModel.createdAfterFilter,
                 createdBefore: $viewModel.createdBeforeFilter,
                 photoSizeFilter: $viewModel.photoSizeFilter,
-                photoDimensionFilter: $viewModel.photoDimensionFilter
+                photoDimensionFilter: $viewModel.photoDimensionFilter,
+                caloriesMin: $viewModel.caloriesMinFilter,
+                caloriesMax: $viewModel.caloriesMaxFilter
             ) {
                 viewModel.reloadRecipes()
             }

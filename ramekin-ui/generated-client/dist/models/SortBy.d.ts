@@ -19,6 +19,7 @@ export declare const SortBy: {
     readonly Rating: 'rating';
     readonly Title: 'title';
     readonly CreatedAt: 'created_at';
+    readonly Calories: 'calories';
     readonly Random: 'random';
 };
 export type SortBy = typeof SortBy[keyof typeof SortBy];

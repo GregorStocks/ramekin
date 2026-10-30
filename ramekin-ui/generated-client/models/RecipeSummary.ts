@@ -20,6 +20,14 @@ import { mapValues } from '../runtime';
  */
 export interface RecipeSummary {
     /**
+     * Estimated calories per serving, for display: "~520 kcal",
+     * "~380–560 kcal", or "~520+ kcal" when some ingredients couldn't be
+     * counted. Null when there's no per-serving estimate.
+     * @type {string}
+     * @memberof RecipeSummary
+     */
+    caloriesPerServing?: string | null;
+    /**
      * 
      * @type {Date}
      * @memberof RecipeSummary
@@ -91,6 +99,7 @@ export function RecipeSummaryFromJSONTyped(json: any, ignoreDiscriminator: boole
     }
     return {
         
+        'caloriesPerServing': json['calories_per_serving'] == null ? undefined : json['calories_per_serving'],
         'createdAt': (new Date(json['created_at'])),
         'description': json['description'] == null ? undefined : json['description'],
         'id': json['id'],
@@ -113,6 +122,7 @@ export function RecipeSummaryToJSONTyped(value?: RecipeSummary | null, ignoreDis
 
     return {
         
+        'calories_per_serving': value['caloriesPerServing'],
         'created_at': value['createdAt'].toISOString(),
         'description': value['description'],
         'id': value['id'],

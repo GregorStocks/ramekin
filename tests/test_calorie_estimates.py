@@ -3,7 +3,12 @@ import requests
 
 from conftest import make_ingredient
 from ramekin_client.api import RecipesApi
-from ramekin_client.models import CreateRecipeRequest, UpdateRecipeRequest
+from ramekin_client.models import (
+    CreateRecipeRequest,
+    Direction,
+    SortBy,
+    UpdateRecipeRequest,
+)
 
 
 def estimate(server_url, client, ingredients, scale=1, servings=None):
@@ -221,3 +226,75 @@ def test_estimate_leaves_out_lines_with_no_amount(server_url, authed_api_client)
     partial = estimate(server_url, client, [sugar, oil, *unknown]).json()
     assert partial["status"] == "partial"
     assert partial["not_counted"] == ["olive oil", *(u.item for u in unknown)]
+
+
+def create_for_calories(api, title, ingredients, servings):
+    return api.create_recipe(
+        CreateRecipeRequest(
+            title=title,
+            instructions="Mix",
+            ingredients=ingredients,
+            servings=servings,
+        )
+    ).id
+
+
+def listed(api, **kwargs):
+    return [
+        (recipe.title, recipe.calories_per_serving)
+        for recipe in api.list_recipes(**kwargs).recipes
+    ]
+
+
+def test_recipe_list_shows_sorts_and_filters_calories(authed_api_client):
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    sugar = lambda grams: make_ingredient("granulated sugar", grams, "g")  # noqa: E731
+    # Answered "unknown" by the (mock) model, so it stays uncounted.
+    yogurt = make_ingredient("unknowable yogurt", "1", "cup")
+    create_for_calories(api, "Light", [sugar("100")], "4")
+    heavy = create_for_calories(api, "Heavy", [sugar("400")], "2")
+    create_for_calories(api, "Partial", [sugar("200"), yogurt], "Serves 2")
+    create_for_calories(api, "Whole recipe only", [sugar("100")], None)
+    create_for_calories(api, "Cookies", [sugar("100")], "Makes 12 cookies")
+
+    light = ("Light", "~97 kcal")
+    heavy_row = ("Heavy", "~770 kcal")
+    # A partial estimate counts by its lower bound.
+    partial = ("Partial", "~380+ kcal")
+    asc = listed(api, sort_by=SortBy.CALORIES, sort_dir=Direction.ASC)
+    # No per-serving figure: last, in id (creation) order, either way.
+    no_figure = [("Whole recipe only", None), ("Cookies", None)]
+    assert asc == [light, partial, heavy_row, *no_figure]
+    desc = listed(api, sort_by=SortBy.CALORIES, sort_dir=Direction.DESC)
+    assert desc == [heavy_row, partial, light, *no_figure]
+
+    by_calories = dict(sort_by=SortBy.CALORIES, sort_dir=Direction.ASC)
+    assert listed(api, q="calories:100..500", **by_calories) == [partial]
+    assert listed(api, q="calories:..500", **by_calories) == [light, partial]
+    assert listed(api, q="calories:<500", **by_calories) == [light, partial]
+    assert listed(api, q="calories:387..", **by_calories) == [partial, heavy_row]
+    assert listed(api, q="calories:>500", **by_calories) == [heavy_row]
+    assert listed(api, q="calories:96.75..96.75") == [light]
+    assert api.list_recipes(q="calories:>500").pagination.total == 1
+
+    # Saving a new version recomputes it: 1,548 kcal over 20 servings.
+    current = api.get_recipe(heavy)
+    api.update_recipe(
+        heavy,
+        UpdateRecipeRequest(expected_version_id=current.version_id, servings="20"),
+    )
+    assert listed(api, q="calories:<100", **by_calories) == [
+        ("Heavy", "~77 kcal"),
+        light,
+    ]
+
+
+def test_recipe_list_calorie_ranges_rank_by_midpoint(authed_api_client):
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    sugar = make_ingredient("granulated sugar", "240", "g")
+    # 928.8 kcal over 4 to 6 servings: 154.8 to 232.2, midpoint 193.5.
+    create_for_calories(api, "Range", [sugar], "4 to 6")
+    assert listed(api, q="calories:193..194") == [("Range", "~150–240 kcal")]
+    assert listed(api, q="calories:..193") == []

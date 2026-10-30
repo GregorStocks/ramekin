@@ -110,6 +110,9 @@ targets:
       - path: ../shared-test-vectors/calorie-poll-delays.json
         buildPhase: resources
         type: file
+      - path: ../shared-test-vectors/calorie-filter.json
+        buildPhase: resources
+        type: file
       - path: ../shared-test-vectors/normalize-selection.json
         buildPhase: resources
         type: file

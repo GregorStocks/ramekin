@@ -39,6 +39,9 @@ pub enum SortBy {
     Title,
     /// Sort by creation time (recipe created_at)
     CreatedAt,
+    /// Sort by estimated calories per serving (a partial estimate's lower
+    /// bound). Recipes without a per-serving estimate come last either way.
+    Calories,
     /// Random order (useful for "pick a random recipe")
     Random,
 }
@@ -68,6 +71,10 @@ pub struct ListRecipesParams {
     /// - created:>2024-01-01: created on or after date
     /// - created:<2024-12-31: created on or before date
     /// - created:2024-01-01..2024-12-31: created in date range
+    /// - calories:300..600, calories:300.., calories:..600: estimated
+    ///   calories per serving, inclusive (calories:>300 and calories:<600 are
+    ///   the same as the open ranges). A partial estimate counts by its lower
+    ///   bound; recipes without a per-serving estimate never match.
     ///
     /// Date filters name inclusive UTC calendar days.
     ///
@@ -104,6 +111,8 @@ struct ParsedQuery {
     created_before: Option<NaiveDate>,
     photo_size: Option<NumericThreshold>,
     photo_dim: Option<NumericThreshold>,
+    calories_min: Option<f64>,
+    calories_max: Option<f64>,
 }
 
 fn parse_query(q: &str) -> ParsedQuery {
@@ -131,6 +140,8 @@ fn parse_query(q: &str) -> ParsedQuery {
             result.photo_size = parse_numeric_threshold(expr);
         } else if let Some(expr) = token.strip_prefix("photo_dim:") {
             result.photo_dim = parse_numeric_threshold(expr);
+        } else if let Some(expr) = token.strip_prefix("calories:") {
+            parse_calorie_filter(expr, &mut result);
         } else if !token.is_empty() {
             // Plain text search term
             result.text.push(token.to_string());
@@ -180,6 +191,27 @@ fn parse_numeric_threshold(expr: &str) -> Option<NumericThreshold> {
             .map(|value| NumericThreshold { op: ">", value })
     } else {
         None
+    }
+}
+
+/// `300..600`, `300..`, `..600`, `>300` or `<600`, all inclusive. A bound is
+/// plain digits with an optional decimal part; anything else is ignored, like
+/// a bad date. Pinned for both clients by shared-test-vectors/calorie-filter.json.
+fn parse_calorie_filter(expr: &str, result: &mut ParsedQuery) {
+    let digits = |part: &str| !part.is_empty() && part.bytes().all(|b| b.is_ascii_digit());
+    let bound = |text: &str| {
+        let (whole, fraction) = text.split_once('.').unwrap_or((text, "0"));
+        (digits(whole) && digits(fraction))
+            .then(|| text.parse::<f64>().ok())
+            .flatten()
+    };
+    if let Some((min, max)) = expr.split_once("..") {
+        result.calories_min = bound(min);
+        result.calories_max = bound(max);
+    } else if let Some(min) = expr.strip_prefix('>') {
+        result.calories_min = bound(min);
+    } else if let Some(max) = expr.strip_prefix('<') {
+        result.calories_max = bound(max);
     }
 }
 
@@ -240,6 +272,10 @@ pub struct RecipeSummary {
     pub rating: Option<i32>,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
+    /// Estimated calories per serving, for display: "~520 kcal",
+    /// "~380–560 kcal", or "~520+ kcal" when some ingredients couldn't be
+    /// counted. Null when there's no per-serving estimate.
+    pub calories_per_serving: Option<String>,
 }
 
 impl RecipeSummary {
@@ -253,6 +289,7 @@ impl RecipeSummary {
             rating: row.rating,
             created_at: row.created_at,
             updated_at: row.updated_at,
+            calories_per_serving: row.calories_per_serving,
         }
     }
 }
@@ -428,6 +465,15 @@ fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipe
     }
     if let Some(before) = parsed.created_before {
         query = query.filter(recipes::created_at.lt(day_end_utc_exclusive(before)));
+    }
+
+    // Calorie filters: a recipe with no stored estimate is null, which
+    // neither bound matches.
+    if let Some(min) = parsed.calories_min {
+        query = query.filter(recipe_versions::kcal_per_serving.ge(min));
+    }
+    if let Some(max) = parsed.calories_max {
+        query = query.filter(recipe_versions::kcal_per_serving.le(max));
     }
 
     query
@@ -622,6 +668,16 @@ fn list_recipes_blocking(
         (SortBy::CreatedAt, Direction::Asc) => {
             query.order((recipes::created_at.asc(), recipes::id.asc()))
         }
+        (SortBy::Calories, Direction::Desc) => query.order((
+            recipe_versions::kcal_per_serving.is_null().asc(),
+            recipe_versions::kcal_per_serving.desc(),
+            recipes::id.asc(),
+        )),
+        (SortBy::Calories, Direction::Asc) => query.order((
+            recipe_versions::kcal_per_serving.is_null().asc(),
+            recipe_versions::kcal_per_serving.asc(),
+            recipes::id.asc(),
+        )),
     };
 
     // Select columns including COUNT(*) OVER() for total and tags via correlated subquery
@@ -733,6 +789,31 @@ mod tests {
             parsed.created_before,
             Some(NaiveDate::from_ymd_opt(2024, 6, 30).unwrap())
         );
+    }
+
+    #[test]
+    fn test_parse_calorie_filters_match_clients() {
+        #[derive(serde::Deserialize)]
+        struct Vector {
+            name: String,
+            query: String,
+            min: Option<f64>,
+            max: Option<f64>,
+        }
+        let vectors: Vec<Vector> = serde_json::from_str(include_str!(
+            "../../../../shared-test-vectors/calorie-filter.json"
+        ))
+        .unwrap();
+        for vector in vectors {
+            let parsed = parse_query(&vector.query);
+            assert_eq!(
+                (parsed.calories_min, parsed.calories_max),
+                (vector.min, vector.max),
+                "{}",
+                vector.name
+            );
+            assert!(parsed.text.is_empty(), "{}", vector.name);
+        }
     }
 
     #[test]

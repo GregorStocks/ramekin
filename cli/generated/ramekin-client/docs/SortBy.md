@@ -9,6 +9,7 @@
 | Rating | rating |
 | Title | title |
 | CreatedAt | created_at |
+| Calories | calories |
 | Random | random |
 
 

@@ -1,6 +1,6 @@
 use ramekin_core::catalog;
 use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
-use ramekin_core::nutrition::{estimate, Status, WeightKey, MAX_UNKNOWN_LINES};
+use ramekin_core::nutrition::{estimate, ServingFigure, Status, WeightKey, MAX_UNKNOWN_LINES};
 
 #[test]
 fn scale_limits_match_both_clients() {
@@ -1018,6 +1018,41 @@ fn serving_ranges_give_a_per_serving_range() {
         assert!((per_serving.max - 232.2).abs() < 1e-9, "{servings}");
         assert_eq!(result.headline, "~150–240 kcal per serving", "{servings}");
     }
+}
+
+#[test]
+fn serving_figures_rank_complete_and_partial_estimates() {
+    let figure = |ingredients: &[ParsedIngredient], servings: Option<&str>| {
+        estimate(ingredients, servings, 1.0)
+            .unwrap()
+            .serving_figure()
+            .map(|ServingFigure { kcal, label }| ((kcal * 1e6).round() / 1e6, label))
+    };
+    let sugar = ingredient("granulated sugar", "240", "g");
+    // 928.8 kcal over 4.
+    assert_eq!(
+        figure(std::slice::from_ref(&sugar), Some("4")),
+        Some((232.2, "~230 kcal".into()))
+    );
+    // A serving range ranks by its midpoint, labeled like the headline.
+    assert_eq!(
+        figure(std::slice::from_ref(&sugar), Some("4 to 6")),
+        Some((193.5, "~150–240 kcal".into()))
+    );
+    // A partial estimate ranks by its lower bound, rounded down.
+    let unknown = ingredient("zzunknownfood", "1", "cup");
+    assert_eq!(
+        figure(&[sugar.clone(), unknown.clone()], Some("4")),
+        Some((232.2, "~230+ kcal".into()))
+    );
+    // No serving count, or too little data: no figure.
+    assert_eq!(figure(std::slice::from_ref(&sugar), None), None);
+    assert_eq!(
+        figure(std::slice::from_ref(&sugar), Some("Makes 12 cookies")),
+        None
+    );
+    assert_eq!(figure(&vec![unknown; 4], Some("4")), None);
+    assert_eq!(figure(&[], Some("4")), None);
 }
 
 #[test]

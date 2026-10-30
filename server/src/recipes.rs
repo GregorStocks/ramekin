@@ -110,10 +110,12 @@ fn insert_version_row(
         normalize_ops: new_version.normalize_ops.clone(),
         ..*new_version
     };
-    diesel::insert_into(recipe_versions::table)
+    let version_id = diesel::insert_into(recipe_versions::table)
         .values(&new_version)
         .returning(recipe_versions::id)
-        .get_result(conn)
+        .get_result(conn)?;
+    crate::recipe_calories::store(conn, version_id)?;
+    Ok(version_id)
 }
 
 fn apply_tags(

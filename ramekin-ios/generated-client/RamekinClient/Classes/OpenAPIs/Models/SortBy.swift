@@ -17,5 +17,6 @@ public enum SortBy: String, Codable, CaseIterable {
     case rating = "rating"
     case title = "title"
     case createdAt = "created_at"
+    case calories = "calories"
     case random = "random"
 }

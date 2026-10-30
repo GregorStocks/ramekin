@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`caloriesPerServing` | string
 `createdAt` | Date
 `description` | string
 `id` | string
@@ -22,6 +23,7 @@ import type { RecipeSummary } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "caloriesPerServing": null,
   "createdAt": null,
   "description": null,
   "id": null,

@@ -31,6 +31,7 @@ class SortBy(str, Enum):
     RATING = 'rating'
     TITLE = 'title'
     CREATED_AT = 'created_at'
+    CALORIES = 'calories'
     RANDOM = 'random'
 
     @classmethod

@@ -28,6 +28,7 @@ class RecipeSummary(BaseModel):
     """
     RecipeSummary
     """ # noqa: E501
+    calories_per_serving: Optional[StrictStr] = Field(default=None, description="Estimated calories per serving, for display: \"~520 kcal\", \"~380–560 kcal\", or \"~520+ kcal\" when some ingredients couldn't be counted. Null when there's no per-serving estimate.")
     created_at: datetime
     description: Optional[StrictStr] = None
     id: UUID
@@ -36,7 +37,7 @@ class RecipeSummary(BaseModel):
     thumbnail_photo_id: Optional[UUID] = Field(default=None, description="Photo ID of the first photo (thumbnail), if any")
     title: StrictStr
     updated_at: datetime
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "rating", "tags", "thumbnail_photo_id", "title", "updated_at"]
+    __properties: ClassVar[List[str]] = ["calories_per_serving", "created_at", "description", "id", "rating", "tags", "thumbnail_photo_id", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,6 +78,11 @@ class RecipeSummary(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if calories_per_serving (nullable) is None
+        # and model_fields_set contains the field
+        if self.calories_per_serving is None and "calories_per_serving" in self.model_fields_set:
+            _dict['calories_per_serving'] = None
+
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
@@ -104,6 +110,7 @@ class RecipeSummary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "calories_per_serving": obj.get("calories_per_serving"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "id": obj.get("id"),

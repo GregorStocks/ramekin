@@ -12,6 +12,7 @@ mod models;
 mod normalize;
 mod photos;
 mod raw_sql;
+mod recipe_calories;
 mod recipes;
 mod schema;
 mod scraping;
@@ -267,6 +268,13 @@ async fn main() {
         .expect("Failed to sync learned ingredient names with the catalog");
     for (sync, names) in synced {
         tracing::info!(?sync, names, "asking again about learned ingredient names");
+    }
+    // After that sync, which can set answers aside, and before the worker
+    // can resolve names: the list sorts and filters by the stored figure.
+    let recalculated =
+        recipe_calories::reconcile(&pool).expect("Failed to reconcile recipe calorie estimates");
+    if recalculated > 0 {
+        tracing::info!(recalculated, "stored new calorie estimates for recipes");
     }
     // Names a catalog change stopped recognizing, which no save will queue.
     let names = {

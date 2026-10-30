@@ -11,6 +11,8 @@ enum RecipeSortOrder: String, CaseIterable {
     case rating
     case title
     case created
+    case caloriesLow
+    case caloriesHigh
     case random
 
     var sortBy: SortBy {
@@ -19,14 +21,15 @@ enum RecipeSortOrder: String, CaseIterable {
         case .rating: return .rating
         case .title: return .title
         case .created: return .createdAt
+        case .caloriesLow, .caloriesHigh: return .calories
         case .random: return .random
         }
     }
 
     var sortDir: Direction {
         switch self {
-        case .newest, .rating, .created: return .desc
-        case .oldest, .title: return .asc
+        case .newest, .rating, .created, .caloriesHigh: return .desc
+        case .oldest, .title, .caloriesLow: return .asc
         case .random: return .desc
         }
     }
@@ -38,7 +41,18 @@ enum RecipeSortOrder: String, CaseIterable {
         case .rating: return "Highest rated"
         case .title: return "Title A–Z"
         case .created: return "Date added"
+        case .caloriesLow: return "Fewest calories"
+        case .caloriesHigh: return "Most calories"
         case .random: return "Random"
+        }
+    }
+
+    /// Browse orders the cache can't reproduce: random, and calories, which
+    /// the synced recipes don't carry.
+    var requiresServer: Bool {
+        switch self {
+        case .random, .caloriesLow, .caloriesHigh: return true
+        case .newest, .oldest, .rating, .title, .created: return false
         }
     }
 }

@@ -12,6 +12,8 @@ import AnyCodable
 
 public struct RecipeSummary: Codable, JSONEncodable, Hashable {
 
+    /** Estimated calories per serving, for display: \"~520 kcal\", \"~380–560 kcal\", or \"~520+ kcal\" when some ingredients couldn't be counted. Null when there's no per-serving estimate. */
+    public var caloriesPerServing: String?
     public var createdAt: Date
     public var description: String?
     public var id: UUID
@@ -23,7 +25,8 @@ public struct RecipeSummary: Codable, JSONEncodable, Hashable {
     public var title: String
     public var updatedAt: Date
 
-    public init(createdAt: Date, description: String? = nil, id: UUID, rating: Int? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
+    public init(caloriesPerServing: String? = nil, createdAt: Date, description: String? = nil, id: UUID, rating: Int? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
+        self.caloriesPerServing = caloriesPerServing
         self.createdAt = createdAt
         self.description = description
         self.id = id
@@ -35,6 +38,7 @@ public struct RecipeSummary: Codable, JSONEncodable, Hashable {
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case caloriesPerServing = "calories_per_serving"
         case createdAt = "created_at"
         case description
         case id
@@ -49,6 +53,7 @@ public struct RecipeSummary: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(caloriesPerServing, forKey: .caloriesPerServing)
         try container.encode(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(description, forKey: .description)
         try container.encode(id, forKey: .id)

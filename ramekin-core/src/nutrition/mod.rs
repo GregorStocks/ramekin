@@ -180,6 +180,37 @@ pub struct Estimate {
     pub weight_gaps: Vec<WeightKey>,
 }
 
+/// An estimate's per-serving calories as one comparable number, for sorting
+/// and filtering recipe lists, with its short label for a list row.
+#[derive(Debug, Clone, PartialEq)]
+pub struct ServingFigure {
+    /// A complete estimate's per-serving value (a range's midpoint), or a
+    /// partial estimate's lower bound.
+    pub kcal: f64,
+    /// "~520 kcal", "~380–560 kcal", or "~520+ kcal" for a lower bound,
+    /// rounded like the headline.
+    pub label: String,
+}
+
+impl Estimate {
+    /// The per-serving figure, for a complete or partial estimate with a
+    /// serving count; None otherwise.
+    pub fn serving_figure(&self) -> Option<ServingFigure> {
+        let range = self.per_serving_calories?;
+        match self.status {
+            Status::Complete => Some(ServingFigure {
+                kcal: (range.min + range.max) / 2.0,
+                label: kcal_text(range),
+            }),
+            Status::Partial => Some(ServingFigure {
+                kcal: range.min,
+                label: format!("~{}+ kcal", kcal_number(range.min, Rounding::Down)),
+            }),
+            Status::Insufficient | Status::Empty => None,
+        }
+    }
+}
+
 /// The most uncounted ingredients an estimate can have and still show a
 /// (lower-bound) number. See doc/calorie-estimates.md for how it was chosen.
 pub const MAX_UNKNOWN_LINES: usize = 3;

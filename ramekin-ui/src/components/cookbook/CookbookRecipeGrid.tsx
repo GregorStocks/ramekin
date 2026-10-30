@@ -116,6 +116,11 @@ export default function CookbookRecipeGrid(props: CookbookRecipeGridProps) {
                         </Show>
                       </div>
                     </Show>
+                    <Show when={recipe.caloriesPerServing}>
+                      <p class="recipe-calories">
+                        {recipe.caloriesPerServing} per serving
+                      </p>
+                    </Show>
                     <p class="recipe-date">
                       {formatRelativeDate(recipe.updatedAt)}
                     </p>

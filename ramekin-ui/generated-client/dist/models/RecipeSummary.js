@@ -35,6 +35,7 @@ export function RecipeSummaryFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'caloriesPerServing': json['calories_per_serving'] == null ? undefined : json['calories_per_serving'],
         'createdAt': (new Date(json['created_at'])),
         'description': json['description'] == null ? undefined : json['description'],
         'id': json['id'],
@@ -53,6 +54,7 @@ export function RecipeSummaryToJSONTyped(value, ignoreDiscriminator = false) {
         return value;
     }
     return {
+        'calories_per_serving': value['caloriesPerServing'],
         'created_at': value['createdAt'].toISOString(),
         'description': value['description'],
         'id': value['id'],
