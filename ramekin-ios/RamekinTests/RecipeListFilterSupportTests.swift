@@ -68,18 +68,22 @@ final class RecipeListFilterSupportTests: XCTestCase {
         XCTAssertFalse(RecipeListFilterState(caloriesMax: "lots").hasAdvancedFilters)
     }
 
-    func testParsesCalorieFiltersLikeTheServer() {
-        func bounds(_ query: String) -> [Double?] {
-            let parsed = RecipeSearchSupport.parse(query)
-            return [parsed.caloriesMin, parsed.caloriesMax]
+    func testParsesCalorieFiltersLikeTheServer() throws {
+        struct Vector: Decodable {
+            let name: String
+            let query: String
+            let min: Double?
+            let max: Double?
         }
-        XCTAssertEqual(bounds("calories:300..600"), [300, 600])
-        XCTAssertEqual(bounds("calories:300.."), [300, nil])
-        XCTAssertEqual(bounds("calories:..600"), [nil, 600])
-        XCTAssertEqual(bounds("calories:>300"), [300, nil])
-        XCTAssertEqual(bounds("calories:<600"), [nil, 600])
-        XCTAssertEqual(bounds("calories:lots"), [nil, nil])
-        XCTAssertTrue(RecipeSearchSupport.parse("calories:<600").textTokens.isEmpty)
+        let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "calorie-filter", withExtension: "json"))
+        let vectors = try JSONDecoder().decode([Vector].self, from: Data(contentsOf: url))
+        XCTAssertFalse(vectors.isEmpty)
+        for vector in vectors {
+            let parsed = RecipeSearchSupport.parse(vector.query)
+            XCTAssertEqual(parsed.caloriesMin, vector.min, vector.name)
+            XCTAssertEqual(parsed.caloriesMax, vector.max, vector.name)
+            XCTAssertTrue(parsed.textTokens.isEmpty, vector.name)
+        }
     }
 
     func testBuildQueryReturnsNilForEmptyFilters() {

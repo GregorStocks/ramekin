@@ -1,0 +1,142 @@
+[
+  {
+    "name": "range",
+    "query": "calories:300..600",
+    "min": 300,
+    "max": 600,
+    "canonical": "calories:300..600"
+  },
+  {
+    "name": "open minimum",
+    "query": "calories:300..",
+    "min": 300,
+    "max": null,
+    "canonical": "calories:300.."
+  },
+  {
+    "name": "open maximum",
+    "query": "calories:..600",
+    "min": null,
+    "max": 600,
+    "canonical": "calories:..600"
+  },
+  {
+    "name": "greater than is an inclusive minimum",
+    "query": "calories:>300",
+    "min": 300,
+    "max": null,
+    "canonical": "calories:300.."
+  },
+  {
+    "name": "less than is an inclusive maximum",
+    "query": "calories:<600",
+    "min": null,
+    "max": 600,
+    "canonical": "calories:..600"
+  },
+  {
+    "name": "decimal bounds",
+    "query": "calories:96.75..96.75",
+    "min": 96.75,
+    "max": 96.75,
+    "canonical": "calories:96.75..96.75"
+  },
+  {
+    "name": "zero",
+    "query": "calories:0..",
+    "min": 0,
+    "max": null,
+    "canonical": "calories:0.."
+  },
+  {
+    "name": "empty range sets nothing",
+    "query": "calories:..",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "bare number sets nothing",
+    "query": "calories:500",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "words set nothing",
+    "query": "calories:lots",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "bad maximum keeps the minimum",
+    "query": "calories:300..lots",
+    "min": 300,
+    "max": null,
+    "canonical": "calories:300.."
+  },
+  {
+    "name": "a second range marker makes the maximum invalid",
+    "query": "calories:300..600..900",
+    "min": 300,
+    "max": null,
+    "canonical": "calories:300.."
+  },
+  {
+    "name": "negative",
+    "query": "calories:..-5",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "leading plus",
+    "query": "calories:>+5",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "exponent",
+    "query": "calories:<1e3",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "hex",
+    "query": "calories:<0x10",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "trailing point",
+    "query": "calories:<5.",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "leading point",
+    "query": "calories:<.5",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "infinity",
+    "query": "calories:..inf",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  },
+  {
+    "name": "not a number",
+    "query": "calories:..NaN",
+    "min": null,
+    "max": null,
+    "canonical": ""
+  }
+]

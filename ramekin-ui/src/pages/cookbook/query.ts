@@ -150,13 +150,13 @@ export function parseQueryToFilters(query: string): {
       filters.photoDim = parseNumericThreshold(token.slice(10));
     } else if (token.startsWith("calories:")) {
       // Mirrors the server: "300..600", "300..", "..600", ">300", "<600".
+      // Pinned by shared-test-vectors/calorie-filter.json.
       const expression = token.slice(9);
-      const bound = (text: string) =>
-        text !== "" && Number.isFinite(Number(text)) ? text : "";
-      if (expression.includes("..")) {
-        const [min, max] = expression.split("..");
-        filters.caloriesMin = bound(min);
-        filters.caloriesMax = bound(max);
+      const bound = (text: string) => (/^\d+(\.\d+)?$/.test(text) ? text : "");
+      const dots = expression.indexOf("..");
+      if (dots >= 0) {
+        filters.caloriesMin = bound(expression.slice(0, dots));
+        filters.caloriesMax = bound(expression.slice(dots + 2));
       } else if (expression.startsWith(">")) {
         filters.caloriesMin = bound(expression.slice(1));
       } else if (expression.startsWith("<")) {

@@ -8,6 +8,17 @@ import {
   parseQueryToFilters,
   parseSortOption,
 } from "./query";
+import calorieVectorsJson from "../../../../shared-test-vectors/calorie-filter.json?raw";
+
+interface CalorieFilterVector {
+  name: string;
+  query: string;
+  min: number | null;
+  max: number | null;
+  canonical: string;
+}
+
+const calorieVectors = JSON.parse(calorieVectorsJson) as CalorieFilterVector[];
 
 describe("cookbook query filters", () => {
   it("parses text, quoted facets, aliases, thresholds, and dates", () => {
@@ -31,30 +42,21 @@ describe("cookbook query filters", () => {
     });
   });
 
-  it("parses and serializes calorie bounds like the server", () => {
-    const bounds = (query: string) => {
-      const { filters } = parseQueryToFilters(query);
-      return [filters.caloriesMin, filters.caloriesMax];
-    };
-    expect(bounds("calories:300..600")).toEqual(["300", "600"]);
-    expect(bounds("calories:300..")).toEqual(["300", ""]);
-    expect(bounds("calories:..600")).toEqual(["", "600"]);
-    expect(bounds("calories:>300")).toEqual(["300", ""]);
-    expect(bounds("calories:<600")).toEqual(["", "600"]);
-    expect(bounds("calories:lots")).toEqual(["", ""]);
-
-    for (const [query, canonical] of [
-      ["soup calories:<600", "soup calories:..600"],
-      ["calories:>300", "calories:300.."],
-      ["calories:300..600", "calories:300..600"],
-      ["calories:lots", ""],
-    ]) {
+  it.each(calorieVectors)(
+    "parses calorie filters like the server: $name",
+    ({ query, min, max, canonical }) => {
       const parsed = parseQueryToFilters(query);
+      const bound = (text: string) => (text === "" ? null : Number(text));
+      expect(parsed.textTerms).toEqual([]);
+      expect([
+        bound(parsed.filters.caloriesMin),
+        bound(parsed.filters.caloriesMax),
+      ]).toEqual([min, max]);
       expect(buildQueryFromFilters(parsed.textTerms, parsed.filters)).toBe(
         canonical,
       );
-    }
-  });
+    },
+  );
 
   it("serializes parsed filters using the canonical query spelling", () => {
     const parsed = parseQueryToFilters(

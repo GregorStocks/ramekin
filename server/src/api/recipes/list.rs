@@ -194,10 +194,17 @@ fn parse_numeric_threshold(expr: &str) -> Option<NumericThreshold> {
     }
 }
 
-/// `300..600`, `300..`, `..600`, `>300` or `<600`, all inclusive. An
-/// unparseable bound is ignored, like a bad date.
+/// `300..600`, `300..`, `..600`, `>300` or `<600`, all inclusive. A bound is
+/// plain digits with an optional decimal part; anything else is ignored, like
+/// a bad date. Pinned for both clients by shared-test-vectors/calorie-filter.json.
 fn parse_calorie_filter(expr: &str, result: &mut ParsedQuery) {
-    let bound = |text: &str| text.parse::<f64>().ok().filter(|value| value.is_finite());
+    let digits = |part: &str| !part.is_empty() && part.bytes().all(|b| b.is_ascii_digit());
+    let bound = |text: &str| {
+        let (whole, fraction) = text.split_once('.').unwrap_or((text, "0"));
+        (digits(whole) && digits(fraction))
+            .then(|| text.parse::<f64>().ok())
+            .flatten()
+    };
     if let Some((min, max)) = expr.split_once("..") {
         result.calories_min = bound(min);
         result.calories_max = bound(max);
@@ -785,19 +792,28 @@ mod tests {
     }
 
     #[test]
-    fn test_parse_calorie_filters() {
-        let bounds = |q: &str| {
-            let parsed = parse_query(q);
-            (parsed.calories_min, parsed.calories_max)
-        };
-        assert_eq!(bounds("calories:300..600"), (Some(300.0), Some(600.0)));
-        assert_eq!(bounds("calories:300.."), (Some(300.0), None));
-        assert_eq!(bounds("calories:..600"), (None, Some(600.0)));
-        assert_eq!(bounds("calories:>300"), (Some(300.0), None));
-        assert_eq!(bounds("calories:<600"), (None, Some(600.0)));
-        assert_eq!(bounds("calories:lots"), (None, None));
-        assert_eq!(bounds("calories:..inf"), (None, None));
-        assert!(parse_query("calories:<600").text.is_empty());
+    fn test_parse_calorie_filters_match_clients() {
+        #[derive(serde::Deserialize)]
+        struct Vector {
+            name: String,
+            query: String,
+            min: Option<f64>,
+            max: Option<f64>,
+        }
+        let vectors: Vec<Vector> = serde_json::from_str(include_str!(
+            "../../../../shared-test-vectors/calorie-filter.json"
+        ))
+        .unwrap();
+        for vector in vectors {
+            let parsed = parse_query(&vector.query);
+            assert_eq!(
+                (parsed.calories_min, parsed.calories_max),
+                (vector.min, vector.max),
+                "{}",
+                vector.name
+            );
+            assert!(parsed.text.is_empty(), "{}", vector.name);
+        }
     }
 
     #[test]

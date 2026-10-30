@@ -113,22 +113,6 @@ enum RecipeSearchSupport {
         return false
     }
 
-    /// Mirror of the server's `parse_calorie_filter`: `300..600`, `300..`,
-    /// `..600`, `>300` or `<600`, all inclusive.
-    private static func parseCalorieFilter(_ expression: String, into result: inout ParsedSearchQuery) {
-        func bound(_ text: Substring) -> Double? {
-            Double(text).flatMap { $0.isFinite ? $0 : nil }
-        }
-        if let dotsRange = expression.range(of: "..") {
-            result.caloriesMin = bound(expression[..<dotsRange.lowerBound])
-            result.caloriesMax = bound(expression[dotsRange.upperBound...])
-        } else if expression.hasPrefix(">") {
-            result.caloriesMin = bound(expression.dropFirst())
-        } else if expression.hasPrefix("<") {
-            result.caloriesMax = bound(expression.dropFirst())
-        }
-    }
-
     private static func value(of prefix: String, in token: String) -> String? {
         token.hasPrefix(prefix) ? String(token.dropFirst(prefix.count)) : nil
     }
@@ -392,4 +376,31 @@ enum RecipeSearchSupport {
         formatter.timeZone = TimeZone(secondsFromGMT: 0)!
         return formatter
     }()
+}
+
+// Kept outside the enum body to stay within its length limit.
+extension RecipeSearchSupport {
+    /// Mirror of the server's `parse_calorie_filter`: `300..600`, `300..`,
+    /// `..600`, `>300` or `<600`, all inclusive. A bound is plain digits with
+    /// an optional decimal part. Pinned by shared-test-vectors/calorie-filter.json.
+    private static func parseCalorieFilter(_ expression: String, into result: inout ParsedSearchQuery) {
+        func digits(_ part: Substring) -> Bool {
+            !part.isEmpty && part.allSatisfy { $0.isASCII && $0.isNumber }
+        }
+        func bound(_ text: Substring) -> Double? {
+            let parts = text.split(separator: ".", maxSplits: 1, omittingEmptySubsequences: false)
+            guard parts.allSatisfy(digits) else {
+                return nil
+            }
+            return Double(text)
+        }
+        if let dotsRange = expression.range(of: "..") {
+            result.caloriesMin = bound(expression[..<dotsRange.lowerBound])
+            result.caloriesMax = bound(expression[dotsRange.upperBound...])
+        } else if expression.hasPrefix(">") {
+            result.caloriesMin = bound(expression.dropFirst())
+        } else if expression.hasPrefix("<") {
+            result.caloriesMax = bound(expression.dropFirst())
+        }
+    }
 }
