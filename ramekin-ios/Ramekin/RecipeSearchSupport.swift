@@ -14,11 +14,16 @@ struct ParsedSearchQuery: Equatable {
     var createdBefore: String?
     var photoSize: NumericThreshold?
     var photoDim: NumericThreshold?
+    /// Inclusive per-serving calorie bounds.
+    var caloriesMin: Double?
+    var caloriesMax: Double?
 
-    /// `SyncRecipe` carries neither the source name nor detailed photo
-    /// metadata, so queries using them can only run on the server.
+    /// `SyncRecipe` carries neither the source name, detailed photo
+    /// metadata, nor calorie estimates, so queries using them can only run
+    /// on the server.
     var requiresServer: Bool {
         source != nil || photoSize != nil || photoDim != nil
+            || caloriesMin != nil || caloriesMax != nil
     }
 }
 
@@ -101,7 +106,27 @@ enum RecipeSearchSupport {
             result.photoDim = parseNumericThreshold(dimExpression)
             return true
         }
+        if let calorieExpression = value(of: "calories:", in: token) {
+            parseCalorieFilter(calorieExpression, into: &result)
+            return true
+        }
         return false
+    }
+
+    /// Mirror of the server's `parse_calorie_filter`: `300..600`, `300..`,
+    /// `..600`, `>300` or `<600`, all inclusive.
+    private static func parseCalorieFilter(_ expression: String, into result: inout ParsedSearchQuery) {
+        func bound(_ text: Substring) -> Double? {
+            Double(text).flatMap { $0.isFinite ? $0 : nil }
+        }
+        if let dotsRange = expression.range(of: "..") {
+            result.caloriesMin = bound(expression[..<dotsRange.lowerBound])
+            result.caloriesMax = bound(expression[dotsRange.upperBound...])
+        } else if expression.hasPrefix(">") {
+            result.caloriesMin = bound(expression.dropFirst())
+        } else if expression.hasPrefix("<") {
+            result.caloriesMax = bound(expression.dropFirst())
+        }
     }
 
     private static func value(of prefix: String, in token: String) -> String? {
@@ -254,7 +279,7 @@ enum RecipeSearchSupport {
         sortBy: SortBy?,
         sortDir: Direction?
     ) -> [RecipeSummary] {
-        precondition(!parsed.requiresServer, "source/photo_size/photo_dim queries are server-only")
+        precondition(!parsed.requiresServer, "source/photo_size/photo_dim/calories queries are server-only")
 
         let membershipTokens = parsed.textTokens.map(normalizedScalars)
         let matched = documents.filter {
@@ -290,6 +315,12 @@ enum RecipeSearchSupport {
             }
         case .random:
             fatalError("random ordering is server-only; routing must not send it here")
+        case .calories:
+            // Server-only too (the cache has no calories), but routing a
+            // calorie sort here shouldn't crash: keep the browse default.
+            return matched.map(\.summary).sorted { lhs, rhs in
+                compareDates(lhs.updatedAt, rhs.updatedAt, lhs.id, rhs.id, descending: true)
+            }
         }
     }
 

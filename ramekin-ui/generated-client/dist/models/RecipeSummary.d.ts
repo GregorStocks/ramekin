@@ -16,6 +16,14 @@
  */
 export interface RecipeSummary {
     /**
+     * Estimated calories per serving, for display: "~520 kcal",
+     * "~380–560 kcal", or "~520+ kcal" when some ingredients couldn't be
+     * counted. Null when there's no per-serving estimate.
+     * @type {string}
+     * @memberof RecipeSummary
+     */
+    caloriesPerServing?: string | null;
+    /**
      *
      * @type {Date}
      * @memberof RecipeSummary

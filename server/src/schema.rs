@@ -132,6 +132,8 @@ diesel::table! {
         created_at -> TimestamptzSqlite,
         change_seq -> BigInt,
         normalize_ops -> Nullable<Json>,
+        kcal_per_serving -> Nullable<Double>,
+        kcal_per_serving_label -> Nullable<Text>,
     }
 }
 

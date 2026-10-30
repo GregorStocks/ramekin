@@ -226,6 +226,38 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
         )
     }
 
+    func testRoutingKeepsCalorieQueriesOnTheNetwork() {
+        // The synced corpus has no calorie estimates: calorie filters and
+        // calorie browsing stay on the server.
+        XCTAssertFalse(
+            RecipeSummaryCacheSupport.canServeFromCache(
+                filterState: RecipeListFilterState(caloriesMax: "500"),
+                sortOrder: .newest
+            )
+        )
+        XCTAssertFalse(
+            RecipeSummaryCacheSupport.canServeFromCache(
+                filterState: RecipeListFilterState(searchText: "bread calories:<500"),
+                sortOrder: .newest
+            )
+        )
+        for sortOrder in [RecipeSortOrder.caloriesLow, .caloriesHigh] {
+            XCTAssertFalse(
+                RecipeSummaryCacheSupport.canServeFromCache(
+                    filterState: RecipeListFilterState(),
+                    sortOrder: sortOrder
+                )
+            )
+            // A text query ranks by relevance, so it still runs locally.
+            XCTAssertTrue(
+                RecipeSummaryCacheSupport.canServeFromCache(
+                    filterState: RecipeListFilterState(searchText: "bread"),
+                    sortOrder: sortOrder
+                )
+            )
+        }
+    }
+
     private func makeDocument(
         title: String,
         description: String? = nil,

@@ -9,6 +9,9 @@ struct RecipeListFilterState: Equatable {
     var createdBefore: String = ""
     var photoSizeThreshold: NumericThreshold?
     var photoDimensionThreshold: NumericThreshold?
+    /// Inclusive per-serving calorie bounds, whole numbers or "".
+    var caloriesMin: String = ""
+    var caloriesMax: String = ""
 
     var hasAdvancedFilters: Bool {
         !RecipeListFilterSupport.normalizedSource(source).isEmpty
@@ -16,6 +19,7 @@ struct RecipeListFilterState: Equatable {
             || !RecipeListFilterSupport.normalizedDateValue(createdBefore).isEmpty
             || photoSizeThreshold != nil
             || photoDimensionThreshold != nil
+            || RecipeListFilterSupport.caloriesToken(min: caloriesMin, max: caloriesMax) != nil
     }
 
     var hasAnyFilters: Bool {
@@ -87,6 +91,10 @@ enum RecipeListFilterSupport {
             parts.append("photo_dim:\(photoDimensionThreshold.queryValue)")
         }
 
+        if let caloriesToken = caloriesToken(min: state.caloriesMin, max: state.caloriesMax) {
+            parts.append(caloriesToken)
+        }
+
         if let createdDateToken = createdDateToken(
             createdAfter: state.createdAfter,
             createdBefore: state.createdBefore
@@ -103,17 +111,54 @@ enum RecipeListFilterSupport {
             createdAfter: state.createdAfter,
             createdBefore: state.createdBefore
         )
+        let caloriesLabel = caloriesFilterLabel(min: state.caloriesMin, max: state.caloriesMax)
         let hasPhotoThreshold = state.photoSizeThreshold != nil || state.photoDimensionThreshold != nil
 
-        switch (normalizedSource.isEmpty, createdLabel == nil, hasPhotoThreshold) {
-        case (true, true, false):
+        switch (normalizedSource.isEmpty, createdLabel == nil, caloriesLabel == nil, hasPhotoThreshold) {
+        case (true, true, true, false):
             return nil
-        case (false, true, false):
+        case (false, true, true, false):
             return normalizedSource
-        case (true, false, false):
+        case (true, false, true, false):
             return createdLabel
+        case (true, true, false, false):
+            return caloriesLabel
         default:
             return "Advanced"
+        }
+    }
+
+    /// A typed calorie bound as the query spells it: a whole number of
+    /// calories, or "" when empty or not a number.
+    static func normalizedCalorieBound(_ rawValue: String) -> String {
+        let trimmed = rawValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let value = Int(trimmed), value >= 0 else {
+            return ""
+        }
+        return String(value)
+    }
+
+    /// `calories:300..600`, `calories:300..` or `calories:..600`; nil when
+    /// neither bound is set.
+    static func caloriesToken(min: String, max: String) -> String? {
+        let min = normalizedCalorieBound(min)
+        let max = normalizedCalorieBound(max)
+        if min.isEmpty && max.isEmpty {
+            return nil
+        }
+        return "calories:\(min)..\(max)"
+    }
+
+    private static func caloriesFilterLabel(min: String, max: String) -> String? {
+        switch (normalizedCalorieBound(min), normalizedCalorieBound(max)) {
+        case ("", ""):
+            return nil
+        case let (min, ""):
+            return "≥\(min) kcal"
+        case let ("", max):
+            return "≤\(max) kcal"
+        case let (min, max):
+            return "\(min)–\(max) kcal"
         }
     }
 

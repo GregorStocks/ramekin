@@ -129,6 +129,28 @@ def test_saved_unknown_names_are_resolved_and_counted(authed_api_client):
     assert mock_answers(item.lower()) == 1
 
 
+def test_resolving_a_name_updates_listed_calories(authed_api_client):
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    item = unique("sugar")
+    api.create_recipe(
+        CreateRecipeRequest(
+            title="Resolved calories",
+            instructions="Cook.",
+            ingredients=[make_ingredient(item, "100", "g")],
+            servings="2",
+        )
+    )
+
+    def label():
+        recipes = api.list_recipes(q="calories:0..").recipes
+        return recipes[0].calories_per_serving if recipes else None
+
+    # Stored as soon as the name resolves, with no new save.
+    assert wait_for(label).endswith("kcal")
+    assert api.list_recipes().recipes[0].calories_per_serving == label()
+
+
 def test_reading_an_estimate_queues_nothing(authed_api_client):
     """Only saves queue names, so an unsaved edit can't add paid work."""
     client, _ = authed_api_client

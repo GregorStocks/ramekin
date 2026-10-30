@@ -412,7 +412,15 @@
   gap: 0.35rem;
 }
 
-.cookbook-filter-date-range span {
+.cookbook-filter-calorie-range {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cookbook-filter-date-range span,
+.cookbook-filter-calorie-range span {
   color: var(--text-faint);
   font-size: 0.8rem;
   text-align: center;
@@ -654,6 +662,13 @@
 .recipe-card .recipe-tags {
   display: var(--rc-tags-display);
   margin: auto 0 0.5rem;
+}
+
+.recipe-card .recipe-calories {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 0.15rem;
 }
 
 .recipe-card .recipe-date {

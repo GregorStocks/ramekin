@@ -13,6 +13,14 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct RecipeSummary {
+    /// Estimated calories per serving, for display: \"~520 kcal\", \"~380–560 kcal\", or \"~520+ kcal\" when some ingredients couldn't be counted. Null when there's no per-serving estimate.
+    #[serde(
+        rename = "calories_per_serving",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub calories_per_serving: Option<Option<String>>,
     #[serde(rename = "created_at")]
     pub created_at: String,
     #[serde(
@@ -57,6 +65,7 @@ impl RecipeSummary {
         updated_at: String,
     ) -> RecipeSummary {
         RecipeSummary {
+            calories_per_serving: None,
             created_at,
             description: None,
             id,

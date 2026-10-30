@@ -13,10 +13,21 @@ export interface FilterState {
   createdBefore: string;
   photoSize: NumericThreshold | null;
   photoDim: NumericThreshold | null;
+  /** Inclusive per-serving calorie bounds, as typed; "" when unset. */
+  caloriesMin: string;
+  caloriesMax: string;
 }
 
 export type SortOption =
-  "best" | "newest" | "oldest" | "rating" | "title" | "created" | "random";
+  | "best"
+  | "newest"
+  | "oldest"
+  | "rating"
+  | "title"
+  | "created"
+  | "calories_low"
+  | "calories_high"
+  | "random";
 
 export function getQueryParam(param: string | string[] | undefined): string {
   if (Array.isArray(param)) return param[0] || "";
@@ -38,6 +49,10 @@ export function getSortParams(sort: SortOption): {
       return { sortBy: "title", sortDir: "asc" };
     case "created":
       return { sortBy: "created_at", sortDir: "desc" };
+    case "calories_low":
+      return { sortBy: "calories", sortDir: "asc" };
+    case "calories_high":
+      return { sortBy: "calories", sortDir: "desc" };
     case "random":
       return { sortBy: "random" };
     case "best":
@@ -53,6 +68,8 @@ export function parseSortOption(sort: string): SortOption {
     sort === "rating" ||
     sort === "title" ||
     sort === "created" ||
+    sort === "calories_low" ||
+    sort === "calories_high" ||
     sort === "random"
   ) {
     return sort;
@@ -94,6 +111,8 @@ export function parseQueryToFilters(query: string): {
     createdBefore: "",
     photoSize: null,
     photoDim: null,
+    caloriesMin: "",
+    caloriesMax: "",
   };
   const textTerms: string[] = [];
 
@@ -129,6 +148,20 @@ export function parseQueryToFilters(query: string): {
       filters.photoSize = parseNumericThreshold(token.slice(11));
     } else if (token.startsWith("photo_dim:")) {
       filters.photoDim = parseNumericThreshold(token.slice(10));
+    } else if (token.startsWith("calories:")) {
+      // Mirrors the server: "300..600", "300..", "..600", ">300", "<600".
+      const expression = token.slice(9);
+      const bound = (text: string) =>
+        text !== "" && Number.isFinite(Number(text)) ? text : "";
+      if (expression.includes("..")) {
+        const [min, max] = expression.split("..");
+        filters.caloriesMin = bound(min);
+        filters.caloriesMax = bound(max);
+      } else if (expression.startsWith(">")) {
+        filters.caloriesMin = bound(expression.slice(1));
+      } else if (expression.startsWith("<")) {
+        filters.caloriesMax = bound(expression.slice(1));
+      }
     } else if (token.startsWith("created:")) {
       const expression = token.slice(8);
       if (expression.includes("..")) {
@@ -186,6 +219,10 @@ export function buildQueryFromFilters(
     parts.push(`photo_dim:${filters.photoDim.op}${filters.photoDim.value}`);
   }
 
+  if (filters.caloriesMin || filters.caloriesMax) {
+    parts.push(`calories:${filters.caloriesMin}..${filters.caloriesMax}`);
+  }
+
   if (filters.createdAfter && filters.createdBefore) {
     parts.push(
       filters.createdAfter === filters.createdBefore
@@ -208,5 +245,6 @@ export function countActiveFilters(filters: FilterState): number {
   if (filters.createdAfter || filters.createdBefore) count++;
   if (filters.photoSize) count++;
   if (filters.photoDim) count++;
+  if (filters.caloriesMin || filters.caloriesMax) count++;
   return count;
 }

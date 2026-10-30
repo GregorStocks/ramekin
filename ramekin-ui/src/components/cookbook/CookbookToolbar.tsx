@@ -81,6 +81,8 @@ export default function CookbookToolbar(props: CookbookToolbarProps) {
         <option value="rating">Highest rated</option>
         <option value="title">Title A–Z</option>
         <option value="created">Date added</option>
+        <option value="calories_low">Fewest calories</option>
+        <option value="calories_high">Most calories</option>
         <option value="random">Random order</option>
       </select>
       <button

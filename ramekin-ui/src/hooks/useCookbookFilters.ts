@@ -23,6 +23,8 @@ export function useCookbookFilters(options: UseCookbookFiltersOptions) {
   const [photoSizeInput, setPhotoSizeInput] = createSignal("");
   const [photoDimOp, setPhotoDimOp] = createSignal<"<" | ">">("<");
   const [photoDimInput, setPhotoDimInput] = createSignal("");
+  const [caloriesMinInput, setCaloriesMinInput] = createSignal("");
+  const [caloriesMaxInput, setCaloriesMaxInput] = createSignal("");
 
   const parsedQuery = createMemo(() => parseQueryToFilters(options.query()));
   const currentFilters = () => parsedQuery().filters;
@@ -38,6 +40,8 @@ export function useCookbookFilters(options: UseCookbookFiltersOptions) {
   createEffect(() => {
     const filters = currentFilters();
     setSourceInput(filters.source);
+    setCaloriesMinInput(filters.caloriesMin);
+    setCaloriesMaxInput(filters.caloriesMax);
     if (filters.photoSize) {
       setPhotoSizeOp(filters.photoSize.op);
       setPhotoSizeInput(String(filters.photoSize.value));
@@ -74,6 +78,8 @@ export function useCookbookFilters(options: UseCookbookFiltersOptions) {
       source: sourceInput().trim(),
       photoSize: buildThresholdFromInput(photoSizeInput(), photoSizeOp()),
       photoDim: buildThresholdFromInput(photoDimInput(), photoDimOp()),
+      caloriesMin: caloriesMinInput().trim(),
+      caloriesMax: caloriesMaxInput().trim(),
       ...patch,
     };
     options.setQuery(buildQueryFromFilters(currentTextTerms(), next));
@@ -83,6 +89,8 @@ export function useCookbookFilters(options: UseCookbookFiltersOptions) {
     setSourceInput("");
     setPhotoSizeInput("");
     setPhotoDimInput("");
+    setCaloriesMinInput("");
+    setCaloriesMaxInput("");
     patchFilters({
       tags: [],
       photos: "any",
@@ -134,6 +142,10 @@ export function useCookbookFilters(options: UseCookbookFiltersOptions) {
     setPhotoDimOp,
     photoDimInput,
     setPhotoDimInput,
+    caloriesMinInput,
+    setCaloriesMinInput,
+    caloriesMaxInput,
+    setCaloriesMaxInput,
     currentFilters,
     sortedTags,
     groupedTags,

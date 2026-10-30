@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**calories_per_serving** | Option<**String**> | Estimated calories per serving, for display: \"~520 kcal\", \"~380–560 kcal\", or \"~520+ kcal\" when some ingredients couldn't be counted. Null when there's no per-serving estimate. | [optional]
 **created_at** | **String** |  | 
 **description** | Option<**String**> |  | [optional]
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 

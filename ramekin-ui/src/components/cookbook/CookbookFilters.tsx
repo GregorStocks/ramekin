@@ -204,6 +204,41 @@ export default function CookbookFilters(props: CookbookFiltersProps) {
           </div>
         </div>
 
+        <div class="cookbook-filter-section">
+          <div class="cookbook-filter-label">Calories per serving</div>
+          <div class="cookbook-filter-calorie-range">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              class="cookbook-filter-input"
+              placeholder="Min"
+              aria-label="Minimum calories per serving"
+              value={state.caloriesMinInput()}
+              onInput={(event) =>
+                state.setCaloriesMinInput(event.currentTarget.value)
+              }
+              onBlur={state.flushLocalInputs}
+              onKeyDown={state.handleFlushKeyDown}
+            />
+            <span>to</span>
+            <input
+              type="number"
+              min="0"
+              step="1"
+              class="cookbook-filter-input"
+              placeholder="Max"
+              aria-label="Maximum calories per serving"
+              value={state.caloriesMaxInput()}
+              onInput={(event) =>
+                state.setCaloriesMaxInput(event.currentTarget.value)
+              }
+              onBlur={state.flushLocalInputs}
+              onKeyDown={state.handleFlushKeyDown}
+            />
+          </div>
+        </div>
+
         {renderThreshold(
           "Photo file size (bytes)",
           "e.g. 100000",

@@ -674,8 +674,9 @@ async fn save_resolved(
         .filter(|(_, resolution)| !matches!(resolution, NameResolution::Unknown))
         .map(|(name, _)| name.clone())
         .collect();
-    // One write for the answers and the categories they change, so no
-    // shopping write lands in between with an old answer.
+    // One write for the answers and the categories and recipe calories they
+    // change, so no shopping or recipe write lands in between with an old
+    // answer.
     crate::db::run_blocking_write(pool, move |conn| {
         let now = Utc::now();
         for (name, resolution) in &answers {
@@ -701,7 +702,8 @@ async fn save_resolved(
                 ))
                 .execute(conn)?;
         }
-        recategorize_shopping_items(conn, &recategorized)
+        recategorize_shopping_items(conn, &recategorized)?;
+        crate::recipe_calories::recompute_for_names(conn, &recategorized)
     })
     .await
     .map_err(|e| e.to_string())?

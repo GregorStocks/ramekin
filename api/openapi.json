@@ -760,7 +760,7 @@
           {
             "name": "q",
             "in": "query",
-            "description": "Search query with optional filters. Supports:\n- Plain text: searches title and description\n- tag:value: filter by tag (can use multiple)\n- source:value: filter by source name\n- has:photos / no:photos: filter by photo presence\n- created:>2024-01-01: created on or after date\n- created:<2024-12-31: created on or before date\n- created:2024-01-01..2024-12-31: created in date range\n\nDate filters name inclusive UTC calendar days.\n\nExample: \"chicken tag:dinner tag:quick has:photos\"",
+            "description": "Search query with optional filters. Supports:\n- Plain text: searches title and description\n- tag:value: filter by tag (can use multiple)\n- source:value: filter by source name\n- has:photos / no:photos: filter by photo presence\n- created:>2024-01-01: created on or after date\n- created:<2024-12-31: created on or before date\n- created:2024-01-01..2024-12-31: created in date range\n- calories:300..600, calories:300.., calories:..600: estimated\n  calories per serving, inclusive (calories:>300 and calories:<600 are\n  the same as the open ranges). A partial estimate counts by its lower\n  bound; recipes without a per-serving estimate never match.\n\nDate filters name inclusive UTC calendar days.\n\nExample: \"chicken tag:dinner tag:quick has:photos\"",
             "required": false,
             "schema": {
               "type": [
@@ -4448,6 +4448,13 @@
           "updated_at"
         ],
         "properties": {
+          "calories_per_serving": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Estimated calories per serving, for display: \"~520 kcal\",\n\"~380–560 kcal\", or \"~520+ kcal\" when some ingredients couldn't be\ncounted. Null when there's no per-serving estimate."
+          },
           "created_at": {
             "type": "string",
             "format": "date-time"
@@ -4798,6 +4805,7 @@
           "rating",
           "title",
           "created_at",
+          "calories",
           "random"
         ]
       },

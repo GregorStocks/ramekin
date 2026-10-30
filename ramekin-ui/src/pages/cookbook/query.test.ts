@@ -25,8 +25,35 @@ describe("cookbook query filters", () => {
         createdBefore: "2026-02-01",
         photoSize: { op: "<", value: 1000 },
         photoDim: { op: ">", value: 600 },
+        caloriesMin: "",
+        caloriesMax: "",
       },
     });
+  });
+
+  it("parses and serializes calorie bounds like the server", () => {
+    const bounds = (query: string) => {
+      const { filters } = parseQueryToFilters(query);
+      return [filters.caloriesMin, filters.caloriesMax];
+    };
+    expect(bounds("calories:300..600")).toEqual(["300", "600"]);
+    expect(bounds("calories:300..")).toEqual(["300", ""]);
+    expect(bounds("calories:..600")).toEqual(["", "600"]);
+    expect(bounds("calories:>300")).toEqual(["300", ""]);
+    expect(bounds("calories:<600")).toEqual(["", "600"]);
+    expect(bounds("calories:lots")).toEqual(["", ""]);
+
+    for (const [query, canonical] of [
+      ["soup calories:<600", "soup calories:..600"],
+      ["calories:>300", "calories:300.."],
+      ["calories:300..600", "calories:300..600"],
+      ["calories:lots", ""],
+    ]) {
+      const parsed = parseQueryToFilters(query);
+      expect(buildQueryFromFilters(parsed.textTerms, parsed.filters)).toBe(
+        canonical,
+      );
+    }
   });
 
   it("serializes parsed filters using the canonical query spelling", () => {
@@ -41,10 +68,10 @@ describe("cookbook query filters", () => {
 
   it("counts each active facet and each selected tag", () => {
     const { filters } = parseQueryToFilters(
-      "tag:a tag:b source:test has:photos photo_size:<10 photo_dim:>20 created:<2026-01-01",
+      "tag:a tag:b source:test has:photos photo_size:<10 photo_dim:>20 created:<2026-01-01 calories:..500",
     );
 
-    expect(countActiveFilters(filters)).toBe(7);
+    expect(countActiveFilters(filters)).toBe(8);
   });
 
   it("builds numeric thresholds only from populated numeric input", () => {
@@ -70,5 +97,14 @@ describe("cookbook sorting", () => {
       sortDir: "desc",
     });
     expect(getSortParams("random")).toEqual({ sortBy: "random" });
+    expect(getSortParams("calories_low")).toEqual({
+      sortBy: "calories",
+      sortDir: "asc",
+    });
+    expect(getSortParams("calories_high")).toEqual({
+      sortBy: "calories",
+      sortDir: "desc",
+    });
+    expect(parseSortOption("calories_low")).toBe("calories_low");
   });
 });

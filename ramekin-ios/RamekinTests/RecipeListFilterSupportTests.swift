@@ -54,6 +54,34 @@ final class RecipeListFilterSupportTests: XCTestCase {
         )
     }
 
+    func testBuildQueryIncludesCalorieBounds() {
+        func query(min: String, max: String) -> String? {
+            RecipeListFilterSupport.buildQuery(
+                from: RecipeListFilterState(caloriesMin: min, caloriesMax: max)
+            )
+        }
+        XCTAssertEqual(query(min: "300", max: "600"), "calories:300..600")
+        XCTAssertEqual(query(min: " 300 ", max: ""), "calories:300..")
+        XCTAssertEqual(query(min: "", max: "600"), "calories:..600")
+        XCTAssertNil(query(min: "lots", max: "-5"))
+        XCTAssertTrue(RecipeListFilterState(caloriesMax: "600").hasAdvancedFilters)
+        XCTAssertFalse(RecipeListFilterState(caloriesMax: "lots").hasAdvancedFilters)
+    }
+
+    func testParsesCalorieFiltersLikeTheServer() {
+        func bounds(_ query: String) -> [Double?] {
+            let parsed = RecipeSearchSupport.parse(query)
+            return [parsed.caloriesMin, parsed.caloriesMax]
+        }
+        XCTAssertEqual(bounds("calories:300..600"), [300, 600])
+        XCTAssertEqual(bounds("calories:300.."), [300, nil])
+        XCTAssertEqual(bounds("calories:..600"), [nil, 600])
+        XCTAssertEqual(bounds("calories:>300"), [300, nil])
+        XCTAssertEqual(bounds("calories:<600"), [nil, 600])
+        XCTAssertEqual(bounds("calories:lots"), [nil, nil])
+        XCTAssertTrue(RecipeSearchSupport.parse("calories:<600").textTokens.isEmpty)
+    }
+
     func testBuildQueryReturnsNilForEmptyFilters() {
         XCTAssertNil(RecipeListFilterSupport.buildQuery(from: RecipeListFilterState()))
     }
@@ -163,6 +191,22 @@ final class RecipeListFilterSupportTests: XCTestCase {
                 for: RecipeListFilterState(
                     photoSizeThreshold: NumericThreshold(comparison: .lessThan, value: 100_000)
                 )
+            ),
+            "Advanced"
+        )
+        XCTAssertEqual(
+            RecipeListFilterSupport.advancedFilterLabel(
+                for: RecipeListFilterState(caloriesMin: "300", caloriesMax: "600")
+            ),
+            "300–600 kcal"
+        )
+        XCTAssertEqual(
+            RecipeListFilterSupport.advancedFilterLabel(for: RecipeListFilterState(caloriesMax: "600")),
+            "≤600 kcal"
+        )
+        XCTAssertEqual(
+            RecipeListFilterSupport.advancedFilterLabel(
+                for: RecipeListFilterState(source: "NYTimes", caloriesMin: "300")
             ),
             "Advanced"
         )

@@ -25,6 +25,8 @@ pub enum SortBy {
     Title,
     #[serde(rename = "created_at")]
     CreatedAt,
+    #[serde(rename = "calories")]
+    Calories,
     #[serde(rename = "random")]
     Random,
 }
@@ -37,6 +39,7 @@ impl std::fmt::Display for SortBy {
             Self::Rating => write!(f, "rating"),
             Self::Title => write!(f, "title"),
             Self::CreatedAt => write!(f, "created_at"),
+            Self::Calories => write!(f, "calories"),
             Self::Random => write!(f, "random"),
         }
     }
