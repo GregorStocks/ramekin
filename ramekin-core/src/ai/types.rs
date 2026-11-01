@@ -149,11 +149,23 @@ pub struct ChatRequest {
 }
 
 /// Token usage information.
-#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+#[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
 pub struct Usage {
     pub prompt_tokens: u32,
     pub completion_tokens: u32,
     pub total_tokens: u32,
+    /// Prompt tokens read from the provider's prompt cache (part of
+    /// `prompt_tokens`).
+    #[serde(default)]
+    pub cached_prompt_tokens: u32,
+    /// Prompt tokens written to the provider's prompt cache (part of
+    /// `prompt_tokens`); only providers that bill cache writes report them.
+    #[serde(default)]
+    pub cache_write_tokens: u32,
+    /// Completion tokens spent on hidden reasoning (part of
+    /// `completion_tokens`).
+    #[serde(default)]
+    pub reasoning_tokens: u32,
     /// What the provider says the call cost in dollars (OpenRouter's
     /// `usage.cost`), which counts prompt-cache discounts that token counts
     /// don't show.

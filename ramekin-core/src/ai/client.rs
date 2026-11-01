@@ -231,15 +231,15 @@ impl CachingAiClient {
         }
     }
 
-    /// Post a chat completion request body and parse the answer, with the
-    /// provider's reported cost. openai-api-rs's request types have no room
-    /// for OpenRouter's `cache_control`, so we send the (edited) JSON
-    /// ourselves; failures read as openai-api-rs's would, for
+    /// Post a chat completion request body and parse the answer, with what
+    /// the provider reported about the call. openai-api-rs's request types
+    /// have no room for OpenRouter's `cache_control`, so we send the (edited)
+    /// JSON ourselves; failures read as openai-api-rs's would, for
     /// `chat_completion_error`.
     async fn post_chat_completion(
         &self,
         body: &serde_json::Value,
-    ) -> Result<(ChatCompletionResponse, Option<f64>), APIError> {
+    ) -> Result<(ChatCompletionResponse, Reported), APIError> {
         let custom = |message: String| APIError::CustomError { message };
         let url = format!(
             "{}/chat/completions",
@@ -258,12 +258,8 @@ impl CachingAiClient {
         if !status.is_success() {
             return Err(custom(format!("{status}: {text}")));
         }
-        let parse = |text: &str| -> Result<_, serde_json::Error> {
-            let value: serde_json::Value = serde_json::from_str(text)?;
-            let cost = value["usage"]["cost"].as_f64();
-            Ok((ChatCompletionResponse::deserialize(value)?, cost))
-        };
-        parse(&text).map_err(|e| custom(format!("Failed to parse JSON: {e} / response {text}")))
+        parse_chat_completion(&text)
+            .map_err(|e| custom(format!("Failed to parse JSON: {e} / response {text}")))
     }
 
     /// Convert our tool spec to openai-api-rs's format.
@@ -428,6 +424,43 @@ fn mark_cache_breakpoints(body: &mut serde_json::Value) {
     }
 }
 
+/// What the provider reported about a call besides its answer.
+#[derive(Debug, Default, PartialEq)]
+struct Reported {
+    usage: Usage,
+    /// The upstream provider OpenRouter routed the call to; a prompt cache
+    /// lives with one provider.
+    provider: Option<String>,
+    /// OpenRouter's generation id, for looking the call up in its activity
+    /// log.
+    generation_id: Option<String>,
+}
+
+/// Parse a chat completion response body, with what OpenRouter reported
+/// about the call: token usage (including prompt-cache reads and writes and
+/// hidden reasoning), cost, provider and generation id.
+fn parse_chat_completion(
+    text: &str,
+) -> Result<(ChatCompletionResponse, Reported), serde_json::Error> {
+    let value: serde_json::Value = serde_json::from_str(text)?;
+    let usage = &value["usage"];
+    let tokens = |field: &serde_json::Value| field.as_u64().unwrap_or(0) as u32;
+    let reported = Reported {
+        usage: Usage {
+            prompt_tokens: tokens(&usage["prompt_tokens"]),
+            completion_tokens: tokens(&usage["completion_tokens"]),
+            total_tokens: tokens(&usage["total_tokens"]),
+            cached_prompt_tokens: tokens(&usage["prompt_tokens_details"]["cached_tokens"]),
+            cache_write_tokens: tokens(&usage["prompt_tokens_details"]["cache_write_tokens"]),
+            reasoning_tokens: tokens(&usage["completion_tokens_details"]["reasoning_tokens"]),
+            cost: usage["cost"].as_f64(),
+        },
+        provider: value["provider"].as_str().map(str::to_string),
+        generation_id: value["id"].as_str().map(str::to_string),
+    };
+    Ok((ChatCompletionResponse::deserialize(value)?, reported))
+}
+
 /// First ~200 chars of a response, for inclusion in error messages.
 fn content_snippet(content: &str) -> String {
     content.chars().take(200).collect()
@@ -509,7 +542,8 @@ impl AiClient for CachingAiClient {
         }
 
         // Make the API call with a hard timeout to avoid hanging the pipeline.
-        let (response, cost) = tokio::time::timeout(
+        let start = Instant::now();
+        let (response, reported) = tokio::time::timeout(
             Duration::from_secs(self.config.request_timeout_secs),
             self.post_chat_completion(&body),
         )
@@ -539,30 +573,52 @@ impl AiClient for CachingAiClient {
             })
             .collect();
 
+        // Every answered call is billed, so log it even when its answer is
+        // rejected below.
+        let truncated = finish_reason == Some(FinishReason::length);
+        let unusable =
+            tool_calls.is_empty() && !response_content_usable(request.json_response, &content);
+        let outcome = if truncated {
+            "truncated"
+        } else if unusable {
+            "unusable"
+        } else {
+            "ok"
+        };
+        let usage = reported.usage;
+        tracing::info!(
+            prompt_name = prompt_name,
+            model = &self.config.model,
+            provider = reported.provider.as_deref().unwrap_or("unknown"),
+            generation_id = reported.generation_id.as_deref().unwrap_or("unknown"),
+            elapsed_ms = start.elapsed().as_millis() as u64,
+            outcome,
+            prompt_tokens = usage.prompt_tokens,
+            cached_prompt_tokens = usage.cached_prompt_tokens,
+            cache_write_tokens = usage.cache_write_tokens,
+            completion_tokens = usage.completion_tokens,
+            reasoning_tokens = usage.reasoning_tokens,
+            cost = usage.cost,
+            "AI call finished"
+        );
+
         // An unusable response must fail fast and must NOT be cached: caching
         // it would turn a transient provider problem into a permanent,
         // deterministic failure for this prompt.
-        if finish_reason == Some(FinishReason::length) {
+        if truncated {
             return Err(AiError::Truncated(format!(
                 "finish_reason=length; partial content: {:?}",
                 content_snippet(&content)
             )));
         }
 
-        if tool_calls.is_empty() && !response_content_usable(request.json_response, &content) {
+        if unusable {
             return Err(AiError::ParseError(format!(
                 "Unusable model response (finish_reason={:?}): {:?}",
                 finish_reason,
                 content_snippet(&content)
             )));
         }
-
-        let usage = Usage {
-            prompt_tokens: response.usage.prompt_tokens.max(0) as u32,
-            completion_tokens: response.usage.completion_tokens.max(0) as u32,
-            total_tokens: response.usage.total_tokens.max(0) as u32,
-            cost,
-        };
 
         let chat_response = ChatResponse {
             content,
@@ -800,6 +856,67 @@ mod tests {
             messages[3]["content"],
             json!([{"type": "text", "text": "Done.", "cache_control": ephemeral}])
         );
+    }
+
+    #[test]
+    fn chat_completion_reports_cache_reasoning_cost_and_provider() {
+        let body = json!({
+            "id": "gen-1",
+            "provider": "Anthropic",
+            "model": "anthropic/claude-opus-5.5",
+            "object": "chat.completion",
+            "created": 1,
+            "choices": [{
+                "index": 0,
+                "finish_reason": "stop",
+                "message": {"role": "assistant", "content": "{}"}
+            }],
+            "usage": {
+                "prompt_tokens": 1000,
+                "completion_tokens": 50,
+                "total_tokens": 1050,
+                "prompt_tokens_details": {"cached_tokens": 800, "cache_write_tokens": 150},
+                "completion_tokens_details": {"reasoning_tokens": 30},
+                "cost": 0.002
+            }
+        });
+
+        let (_, reported) = parse_chat_completion(&body.to_string()).unwrap();
+
+        assert_eq!(
+            reported,
+            Reported {
+                usage: Usage {
+                    prompt_tokens: 1000,
+                    completion_tokens: 50,
+                    total_tokens: 1050,
+                    cached_prompt_tokens: 800,
+                    cache_write_tokens: 150,
+                    reasoning_tokens: 30,
+                    cost: Some(0.002),
+                },
+                provider: Some("Anthropic".to_string()),
+                generation_id: Some("gen-1".to_string()),
+            }
+        );
+    }
+
+    #[test]
+    fn chat_completion_without_usage_details_reports_zeros() {
+        let mut body = choice_error_body(json!({"code": 502, "message": "x"}));
+        body["choices"][0] = json!({
+            "index": 0,
+            "finish_reason": "stop",
+            "message": {"role": "assistant", "content": "{}"}
+        });
+
+        let (_, reported) = parse_chat_completion(&body.to_string()).unwrap();
+
+        assert_eq!(reported.usage.cached_prompt_tokens, 0);
+        assert_eq!(reported.usage.cache_write_tokens, 0);
+        assert_eq!(reported.usage.reasoning_tokens, 0);
+        assert_eq!(reported.usage.cost, None);
+        assert_eq!(reported.provider.as_deref(), Some("Google"));
     }
 
     #[test]
