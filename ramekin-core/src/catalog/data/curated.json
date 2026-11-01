@@ -1,6 +1,8 @@
 {
   "aliases": {
     "1-inch bread cubes": "bread, white, commercially prepared (includes soft bread crumbs)",
+    "1-inch strip orange peel": "orange peel, raw",
+    "1-inch strips fresh orange zest": "orange peel, raw",
     "1/2-inch-thick slices of unpeeled fresh ginger": "ginger root",
     "1/4-inch-thick baguette bread slices": "baguette slices",
     "12- to 16-pound fresh turkey": "turkey, whole, meat and skin, raw",
@@ -1469,7 +1471,6 @@
     "lemon slices": "lemons, raw, without peel",
     "lemon twists": "lemon peel, raw",
     "lemon wedges": "lemons, raw, without peel",
-    "lemon zest": "lemon peel, raw",
     "lemon, juice of": "lemon juice",
     "lemon, juiced": "lemon juice",
     "lemon-lime soda": "beverages, carbonated, lemon-lime soda, no caffeine",
@@ -1495,6 +1496,7 @@
     "lightly salted homemade vegetable stock or store-bought low-sodium vegetable broth": "soup, vegetable broth, ready to serve",
     "lime juice from 1 lime": "lime juice",
     "lime leaves": "makrut lime leaves",
+    "lime peel": "lemon peel, raw",
     "lime slices": "limes",
     "lime wedge": "limes, raw",
     "lime zest": "lemon peel",
@@ -1752,8 +1754,8 @@
     "orange juiced": "orange juice, raw",
     "orange marmalade": "marmalade, orange",
     "orange or yellow food coloring": "food coloring",
+    "orange peel strips": "orange peel, raw",
     "orange slice": "oranges, raw, all commercial varieties",
-    "orange zest": "orange peel",
     "orange, peel intact": "oranges, raw, with peel",
     "orecchiette pasta": "pasta",
     "oregano": "dried oregano",
@@ -2482,6 +2484,7 @@
     "thin pasta, broken into 1-inch pieces": "pasta, dry, enriched",
     "thin slices aged provolone or swiss cheese": "cheese, provolone",
     "thin spaghetti": "pasta",
+    "thin strips orange zest": "orange peel, raw",
     "thinly sliced cloves of garlic": "garlic, raw",
     "thinly-sliced or diced cabbage": "cabbage",
     "thinly-sliced pickles": "pickles, cucumber, dill or kosher dill",
@@ -3381,6 +3384,7 @@
     "lemon juice, raw": "Produce",
     "lemon peel, raw": "Produce",
     "lemon pie filling": "Baking",
+    "lemon zest": "Produce",
     "lemons, raw, without peel": "Produce",
     "lentils, mature seeds, cooked, boiled, without salt": "Canned Goods",
     "lentils, pink or red, raw": "Canned Goods",
@@ -3529,6 +3533,7 @@
     "orange juice, raw (includes foods for usda's food distribution program)": "Beverages",
     "orange liqueur": "Beverages",
     "orange peel, raw": "Produce",
+    "orange zest": "Produce",
     "oranges, raw, all commercial varieties": "Produce",
     "oranges, raw, navels (includes foods for usda's food distribution program)": "Produce",
     "oranges, raw, with peel": "Produce",
@@ -5239,6 +5244,22 @@
         "value": 132.0
       }
     },
+    "lemon zest": {
+      "default_portion": "lemon",
+      "fdc_id": 167749,
+      "portions": {
+        "lemon": {
+          "source": "Zest of one lemon: 1 lemon yields 1 tbsp zest (Baking Bites); USDA SR Legacy lemon peel is 96 g per cup, so 6 g per tbsp",
+          "url": "https://bakingbites.com/2017/01/how-much-zest-does-citrus-lemon-yield/",
+          "value": 6.0
+        },
+        "strip": {
+          "source": "A strip of lemon zest, about 3 inches long. Serious Eats, Dirty Martini Dip: '2 (3-inch long; 3 g each) lemon peel strips'",
+          "url": "https://www.seriouseats.com/dirty-martini-dip-recipe-11732107",
+          "value": 3.0
+        }
+      }
+    },
     "lettuce": {
       "fdc_id": 2709789,
       "portions": {
@@ -5441,6 +5462,22 @@
     },
     "orange liqueur": {
       "fdc_id": 2710623
+    },
+    "orange zest": {
+      "default_portion": "orange",
+      "fdc_id": 169103,
+      "portions": {
+        "orange": {
+          "source": "Zest of one orange: 1 orange yields 1 to 1 1/2 tbsp zest (Baking Bites), taken as 1 1/4 tbsp; USDA SR Legacy orange peel is 96 g per cup, so 6 g per tbsp",
+          "url": "https://bakingbites.com/2017/01/how-much-zest-does-citrus-lemon-yield/",
+          "value": 7.5
+        },
+        "strip": {
+          "source": "A strip of orange zest, about 3 inches long. Serious Eats, Dirty Martini Dip: '2 (3-inch long; 3 g each) lemon peel strips'; orange peel is as dense as lemon peel (USDA SR Legacy: 96 g per cup each)",
+          "url": "https://www.seriouseats.com/dirty-martini-dip-recipe-11732107",
+          "value": 3.0
+        }
+      }
     },
     "oyster sauce": {
       "fdc_id": 174529,
@@ -6107,6 +6144,26 @@
         }
       }
     },
+    "lemon peel, raw": {
+      "default_portion": "strip",
+      "portions": {
+        "piece": {
+          "source": "A piece of lemon peel is one strip. Serious Eats, Dirty Martini Dip: '2 (3-inch long; 3 g each) lemon peel strips'",
+          "url": "https://www.seriouseats.com/dirty-martini-dip-recipe-11732107",
+          "value": 3.0
+        },
+        "strip": {
+          "source": "A strip of lemon peel or zest, about 3 inches long. Serious Eats, Dirty Martini Dip: '2 (3-inch long; 3 g each) lemon peel strips'",
+          "url": "https://www.seriouseats.com/dirty-martini-dip-recipe-11732107",
+          "value": 3.0
+        },
+        "twist": {
+          "source": "A lemon twist is one strip of peel. Serious Eats, Dirty Martini Dip: '2 (3-inch long; 3 g each) lemon peel strips'",
+          "url": "https://www.seriouseats.com/dirty-martini-dip-recipe-11732107",
+          "value": 3.0
+        }
+      }
+    },
     "lettuce, cos or romaine, raw": {
       "portions": {
         "leaf": {
@@ -6157,6 +6214,26 @@
     },
     "olives, ripe, canned (small-extra large)": {
       "default_portion": "large"
+    },
+    "orange peel, raw": {
+      "default_portion": "strip",
+      "portions": {
+        "piece": {
+          "source": "A piece of orange peel is one strip. Serious Eats, Dirty Martini Dip: '2 (3-inch long; 3 g each) lemon peel strips'; orange peel is as dense as lemon peel (USDA SR Legacy: 96 g per cup each)",
+          "url": "https://www.seriouseats.com/dirty-martini-dip-recipe-11732107",
+          "value": 3.0
+        },
+        "strip": {
+          "source": "A strip of orange peel or zest, about 3 inches long. Serious Eats, Dirty Martini Dip: '2 (3-inch long; 3 g each) lemon peel strips'; orange peel is as dense as lemon peel (USDA SR Legacy: 96 g per cup each)",
+          "url": "https://www.seriouseats.com/dirty-martini-dip-recipe-11732107",
+          "value": 3.0
+        },
+        "twist": {
+          "source": "A orange twist is one strip of peel. Serious Eats, Dirty Martini Dip: '2 (3-inch long; 3 g each) lemon peel strips'; orange peel is as dense as lemon peel (USDA SR Legacy: 96 g per cup each)",
+          "url": "https://www.seriouseats.com/dirty-martini-dip-recipe-11732107",
+          "value": 3.0
+        }
+      }
     },
     "papayas, raw": {
       "default_portion": "fruit",

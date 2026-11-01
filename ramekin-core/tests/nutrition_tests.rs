@@ -2239,3 +2239,40 @@ fn counted_cuts_of_meat_and_seafood_weigh_by_the_piece() {
         );
     }
 }
+
+#[test]
+fn counted_citrus_peel_weighs_by_the_strip() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // A strip, twist, or piece of peel is a 3 g strip.
+        ("3 strips lemon zest", "9 g lemon zest"),
+        ("10 thin strips orange zest", "30 g orange peel"),
+        ("3 (3- x 1/2-inch) orange peel strips", "9 g orange peel"),
+        ("One 1-inch strip orange peel", "3 g orange peel"),
+        ("1 Orange Peel", "3 g orange peel"),
+        ("2 lemon twists", "6 g lemon peel"),
+        (
+            "1 piece lemon peel (about the size of a quarter)",
+            "3 g lemon peel",
+        ),
+        (
+            "1 piece of orange peel (about 1 by 2 inches)",
+            "3 g orange peel",
+        ),
+        // A bare count of zest is the zest of that many fruit, not strips.
+        ("1/2 orange zest", "3.75 g orange zest"),
+        ("Zest of 1 lemon", "6 g lemon zest"),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
