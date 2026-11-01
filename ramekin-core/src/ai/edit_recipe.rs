@@ -117,6 +117,9 @@ pub(crate) async fn run_edit_loop<T: Serialize + DeserializeOwned>(
         usage.prompt_tokens += response.usage.prompt_tokens;
         usage.completion_tokens += response.usage.completion_tokens;
         usage.total_tokens += response.usage.total_tokens;
+        usage.cached_prompt_tokens += response.usage.cached_prompt_tokens;
+        usage.cache_write_tokens += response.usage.cache_write_tokens;
+        usage.reasoning_tokens += response.usage.reasoning_tokens;
         // A cost only when every turn reports one.
         usage.cost = match (turn, usage.cost, response.usage.cost) {
             (1, _, cost) => cost,
@@ -243,6 +246,9 @@ mod tests {
         assert_eq!(result.summary, "Doubled it.");
         assert_eq!(result.turns, 3);
         assert_eq!(result.usage.total_tokens, 45);
+        assert_eq!(result.usage.cached_prompt_tokens, 24);
+        assert_eq!(result.usage.cache_write_tokens, 6);
+        assert_eq!(result.usage.reasoning_tokens, 9);
         assert_eq!(result.usage.cost, Some(0.75));
         assert_eq!(result.recipe.servings.as_deref(), Some("4"));
         assert_eq!(

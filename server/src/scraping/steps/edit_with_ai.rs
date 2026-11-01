@@ -184,7 +184,11 @@ impl PipelineStep for EditWithAiStep {
             turns = edited.turns,
             cached = edited.cached,
             prompt_tokens = edited.usage.prompt_tokens,
+            cached_prompt_tokens = edited.usage.cached_prompt_tokens,
+            cache_write_tokens = edited.usage.cache_write_tokens,
             completion_tokens = edited.usage.completion_tokens,
+            reasoning_tokens = edited.usage.reasoning_tokens,
+            cost = edited.usage.cost,
             "Edit with AI finished"
         );
         let output = EditWithAiOutput {
