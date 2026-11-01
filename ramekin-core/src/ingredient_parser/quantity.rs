@@ -474,7 +474,8 @@ fn named_piece(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 /// leads, so rounded gram enrichments don't replace precise amounts), then a
 /// weight stated only in the note, then an inch size that sizes the primary
 /// ("1 piece ginger" noted "2-inch", "1/2 inch ginger") in its place, then a
-/// piece the item names ("2 thick slices bread"). Measurements are
+/// piece the item names ("2 thick slices bread"), then, when the item names
+/// its piece, the primary and other plain counts. Measurements are
 /// alternatives, not additive.
 pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
     let mut measures: Vec<Measure> = leading_size(ingredient)
@@ -507,6 +508,12 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
         }
     }
     let inch_primary = noted_inch_piece(ingredient).or_else(|| item_inches(ingredient));
+    // The primary's count read as the piece the item names, which beats
+    // counts of the food's default piece: "8 napa cabbage leaves" are never 8
+    // heads, and "5 large or 10 small chard leaves" are 5 leaves. The plain
+    // counts stay fallbacks, after it.
+    let named = named_piece(ingredient);
+    let mut plain_counts = Vec::new();
     for (index, Measurement { amount, unit }) in ingredient.measurements.iter().enumerate() {
         if index == 0 && inch_primary.is_some() {
             continue;
@@ -523,15 +530,18 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
             Some(stripped) => stripped.to_string(),
             None => unit,
         };
-        measures.push(
-            match noted_package(&unit, ingredient.note.as_deref(), &ingredient.item) {
-                Some(weighed) => {
-                    weighed_package = true;
-                    weighed.and_then(|unit| terms(amount, &unit))
-                }
-                None => terms(amount, &self::unit(&unit)),
-            },
-        );
+        let measure = match noted_package(&unit, ingredient.note.as_deref(), &ingredient.item) {
+            Some(weighed) => {
+                weighed_package = true;
+                weighed.and_then(|unit| terms(amount, &unit))
+            }
+            None => terms(amount, &self::unit(&unit)),
+        };
+        if named.is_some() && (index == 0 || count(&ingredient.measurements[index]).is_some()) {
+            plain_counts.push(measure);
+        } else {
+            measures.push(measure);
+        }
     }
     if !weighed_package {
         if let Some(weight) = noted_weight(ingredient) {
@@ -541,9 +551,10 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
     // An estimate from the catalog's inch pieces, so any weight the recipe
     // states beats it.
     measures.extend(inch_primary.map(Some));
-    // Last, so a weight the recipe states ("2 slices bread (50 g each)")
-    // beats the catalog's slice.
-    measures.extend(named_piece(ingredient).map(Some));
+    // After the stated measures, so a weight the recipe states ("2 slices
+    // bread (50 g each)") beats the catalog's slice.
+    measures.extend(named.map(Some));
+    measures.extend(plain_counts);
     measures
 }
 
@@ -776,15 +787,15 @@ mod tests {
         assert_eq!(
             sized("3", "1/2-inch-thick slices of ginger"),
             vec![
+                slices.clone(),
                 Some(vec![Term {
                     amount: Range::exact(3.0),
                     unit: Unit::Piece(String::new()),
                 }]),
-                slices.clone(),
             ]
         );
         assert_eq!(
-            sized("3", "1-inch slices from a large loaf").pop().unwrap(),
+            sized("3", "1-inch slices from a large loaf").remove(0),
             slices
         );
         // Only a bare count is a count of the sized items.
@@ -794,11 +805,11 @@ mod tests {
     }
 
     #[test]
-    fn pieces_the_item_names_come_last() {
+    fn pieces_the_item_names_beat_the_plain_count() {
         let named = |amount: &str, unit: Option<&str>, item: &str| {
             let mut line = line(amount, unit, None);
             line.item = item.to_string();
-            measures(&line).pop().unwrap()
+            measures(&line).remove(0)
         };
         let piece = |amount: f64, unit: &str| {
             Some(vec![Term {
@@ -852,7 +863,25 @@ mod tests {
         });
         let each = measures(&each);
         close(grams(each[0].as_ref().unwrap()), 100.0, 100.0);
-        assert_eq!(each.last().unwrap(), &piece(2.0, "slice thick"));
+        assert_eq!(each[1], piece(2.0, "slice thick"));
+        // The plain count is the last resort ("2 celery ribs with leaves"
+        // has no leaf weight, but its count of ribs weighs).
+        assert_eq!(each.last().unwrap(), &piece(2.0, ""));
+        // A count alternative is a plain count too, after the named piece.
+        let mut chard = line("5", Some("large"), None);
+        chard.item = "Swiss chard leaves".to_string();
+        chard.measurements.push(Measurement {
+            amount: Some("10".to_string()),
+            unit: Some("small".to_string()),
+        });
+        assert_eq!(
+            measures(&chard),
+            vec![
+                piece(5.0, "large leaf"),
+                piece(5.0, "large"),
+                piece(10.0, "small")
+            ]
+        );
     }
 
     #[test]

@@ -2276,3 +2276,29 @@ fn counted_citrus_peel_weighs_by_the_strip() {
         );
     }
 }
+
+#[test]
+fn napa_cabbage_weighs_by_the_head_and_leaf() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // A bare count of napa cabbage is heads.
+        ("1/2 Nappa cabbage (cut 2\" width)", "420 g napa cabbage"),
+        ("1 small head napa cabbage", "840 g napa cabbage"),
+        ("1/2 large Napa cabbage head, sliced", "420 g napa cabbage"),
+        ("6 leaves nappa cabbage", "90 g napa cabbage"),
+        ("8 Napa Cabbage leaves, sliced", "120 g napa cabbage"),
+        ("12 small romaine lettuce leaves", "156 g romaine lettuce"),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
