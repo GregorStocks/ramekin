@@ -1675,7 +1675,9 @@
     "naan flatbreads": "bread, naan, plain, commercially prepared, refrigerated",
     "nacho cheese sauce": "sauce, cheese, ready-to-serve",
     "napa cabbage": "cabbage, chinese (pe-tsai)",
+    "napa cabbage head": "cabbage, chinese (pe-tsai), raw",
     "napa cabbage kimchi": "cabbage, kimchi",
+    "napa cabbage leaves": "cabbage, chinese (pe-tsai), raw",
     "nappa cabbage": "cabbage, chinese (pe-tsai)",
     "natural cocoa powder": "cocoa powder",
     "natural granulated sweetener": null,
@@ -2146,6 +2148,7 @@
     "romaine": "lettuce, cos or romaine",
     "romaine leaves": "lettuce, cos or romaine, raw",
     "romaine lettuce": "lettuce, cos or romaine",
+    "romaine lettuce leaves": "lettuce, cos or romaine, raw",
     "room-temperature water": "water, bottled, generic",
     "rose water": "water, bottled, generic",
     "rosemary": "rosemary, fresh",
@@ -6051,6 +6054,21 @@
           "source": "USDA FNDDS 2707598 (Bread, white): 1 large or thick slice = 43 g",
           "url": "https://fdc.nal.usda.gov/food-details/2707598/nutrients",
           "value": 43.0
+        }
+      }
+    },
+    "cabbage, chinese (pe-tsai), raw": {
+      "default_portion": "head",
+      "portions": {
+        "head": {
+          "source": "USDA FNDDS 2709774 (Cabbage, Chinese, raw; Napa): 1 head = 840 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2709774/nutrients",
+          "value": 840.0
+        },
+        "leaf": {
+          "source": "USDA FNDDS 2709774 (Cabbage, Chinese, raw; Napa): 1 leaf = 15 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2709774/nutrients",
+          "value": 15.0
         }
       }
     },

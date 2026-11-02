@@ -255,7 +255,9 @@ lemon). A sized piece with no exact portion is the piece ("large lemon" →
 A size alone never means a leaf either ("1 medium cabbage" is "head medium", not
 "leaf medium"), and a thick or thin slice of a food with only a plain slice is
 that slice. A slice or leaves left in the item ("2 thick slices sourdough
-bread", "4 kale leaves") are the counted piece ("slice thick", "leaf").
+bread", "4 kale leaves") are the counted piece ("slice thick", "leaf"),
+even for a food whose bare count is another piece ("8 napa cabbage leaves"
+are leaves, not heads); the plain count weighs only when that piece doesn't.
 
 Name rules:
 
