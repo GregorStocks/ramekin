@@ -18,6 +18,7 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
             XCTAssertFalse(viewModel.isLoading, "\(cancellation)")
             XCTAssertNil(viewModel.error, "\(cancellation)")
             XCTAssertNil(viewModel.staleness, "\(cancellation)")
+            XCTAssertFalse(viewModel.hasMore, "\(cancellation)")
         }
     }
 

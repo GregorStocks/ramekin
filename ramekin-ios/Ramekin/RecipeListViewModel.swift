@@ -223,8 +223,9 @@ extension RecipeListViewModel {
         } catch {
             guard isCurrentRequest(generation, key) else { return }
             if CancellationSupport.isCancellation(error) || Task.isCancelled {
-                // Nothing newer took over the list, so nothing else would
-                // clear the spinner (cancelSearch() on disappear lands here).
+                // Nothing newer will clear the spinner (cancelSearch() lands
+                // here), and rows on screen belong to an earlier query: no paging.
+                hasMore = false
                 logger.log("loadRecipes: cancelled", source: "RecipeList")
             } else {
                 logger.log("loadRecipes: error - \(error.localizedDescription)", source: "RecipeList")
