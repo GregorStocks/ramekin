@@ -23,12 +23,12 @@ final class ShoppingListStoreTests: XCTestCase {
         store.setActiveAccountKey(secondUserAccount)
         XCTAssertTrue(store.items.isEmpty)
         store.addItem(name: "Bananas")
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         store.setActiveAccountKey(secondServerAccount)
         XCTAssertTrue(store.items.isEmpty)
         store.addItem(name: "Carrots")
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(requests.count, 2)
         XCTAssertEqual(requests[0].ops?.map { $0.fields?.item }, ["Bananas"])
@@ -107,7 +107,7 @@ final class ShoppingListStoreTests: XCTestCase {
         XCTAssertEqual(store.items.map(\.item), ["Apples"])
         XCTAssertEqual(store.items.first?.accountKey, firstAccount)
         XCTAssertEqual(store.categoryOrder, ["Produce", "Other"])
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         // Without a cursor the sync is a full resync, whatever the legacy
         // sync time says.
         XCTAssertNotNil(request)
@@ -133,10 +133,10 @@ final class ShoppingListStoreTests: XCTestCase {
             }
         )
 
-        await store.syncWithServer(isFollowUp: true)
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
+        await store.syncWithServer()
         store.setActiveAccountKey(secondUserAccount)
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(requests.map(\.cursor), [nil, 41, nil])
     }
@@ -322,14 +322,14 @@ extension ShoppingListStoreTests {
             automaticallySync: false,
             syncItems: { _ in responses.removeFirst() }
         )
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         // Not yet on the server; the response below doesn't acknowledge it.
         store.addItem(name: "Pending")
 
         // The server was restored from a backup taken before "Lost" existed:
         // it has neither the item nor a tombstone for it.
         responses.append(Self.response(changes: [kept], fullResync: true))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(Set(store.items.compactMap(\.item)), ["Kept", "Pending"])
     }
@@ -347,13 +347,13 @@ extension ShoppingListStoreTests {
             automaticallySync: false,
             syncItems: { _ in responses.removeFirst() }
         )
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         store.deleteItem(try XCTUnwrap(store.items.first { $0.item == "Lost" }))
 
         // Restored from a backup taken before "Lost" existed, so the server
         // can't acknowledge deleting it.
         responses.append(Self.response(changes: [kept], fullResync: true))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(store.items.compactMap(\.item), ["Kept"])
         XCTAssertTrue(
@@ -378,8 +378,8 @@ extension ShoppingListStoreTests {
             syncItems: { _ in responses.removeFirst() }
         )
 
-        await store.syncWithServer(isFollowUp: true)
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
+        await store.syncWithServer()
 
         XCTAssertEqual(Set(store.items.compactMap(\.item)), ["Kept", "Unchanged"])
     }
@@ -398,13 +398,84 @@ private final class ShoppingSyncStub {
         return try await withCheckedThrowingContinuation { continuation = $0 }
     }
 
-    func waitForRequest() async {
-        guard requests.isEmpty else { return }
-        await withCheckedContinuation { requestWaiters.append($0) }
+    func waitForRequest(count: Int = 1) async {
+        while requests.count < count {
+            await withCheckedContinuation { requestWaiters.append($0) }
+        }
     }
 
     func complete(with response: SyncShoppingListResponse) {
         continuation?.resume(returning: response)
         continuation = nil
+    }
+}
+
+// MARK: - Sync coordination
+
+extension ShoppingListStoreTests {
+    func testAnEditDuringAFailingSyncIsSentByARerun() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var store: ShoppingListStore!
+        var requests: [SyncShoppingListRequest] = []
+        store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: true,
+            networkMonitor: NetworkMonitor(startMonitoring: false),
+            syncItems: { request in
+                requests.append(request)
+                if requests.count == 1 {
+                    // Added while the first sync is in flight; that sync
+                    // then fails, so it does no follow-up of its own.
+                    store.addItem(name: "Apples")
+                    // Let the edit's sync trigger run while this one is
+                    // still in flight.
+                    await Task.yield()
+                    throw URLError(.timedOut)
+                }
+                return Self.response(results: (request.ops ?? []).map { _ in .applied })
+            }
+        )
+
+        await store.syncWithServer()
+
+        XCTAssertGreaterThanOrEqual(requests.count, 2)
+        XCTAssertEqual(requests[1].ops?.map { $0.fields?.item }, ["Apples"])
+        XCTAssertTrue(
+            try stack.viewContext.fetch(ShoppingItem.fetchPendingSync(accountKey: firstAccount)).isEmpty
+        )
+    }
+
+    func testPullToRefreshDuringASyncWaitsForAFreshPass() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let syncStub = ShoppingSyncStub()
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { try await syncStub.sync($0) }
+        )
+        let running = Task { await store.syncWithServer() }
+        await syncStub.waitForRequest()
+
+        var refreshed = false
+        let refresh = Task {
+            await store.syncWithServer()
+            refreshed = true
+        }
+        await Task.yield()
+        syncStub.complete(with: Self.emptyResponse(cursor: 1))
+        await syncStub.waitForRequest(count: 2)
+        XCTAssertFalse(refreshed, "pull-to-refresh returned before its own pass")
+
+        syncStub.complete(with: Self.emptyResponse(cursor: 2))
+        await refresh.value
+        await running.value
+        XCTAssertTrue(refreshed)
+        XCTAssertEqual(syncStub.requests.map(\.cursor), [nil, 1])
     }
 }

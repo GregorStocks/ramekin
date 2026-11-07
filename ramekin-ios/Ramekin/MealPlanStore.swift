@@ -26,6 +26,7 @@ final class MealPlanStore: ObservableObject {
     /// The same plans by their `yyyy-MM-dd` day, for the week view.
     @Published private(set) var plansByDay: [String: [MealPlanItem]] = [:]
     @Published private(set) var isSyncing = false
+    @Published private(set) var isOnline = true
     @Published var lastSyncError: String?
     /// Why the server refused a change made offline, to show once.
     @Published var refusal: String?
@@ -35,8 +36,9 @@ final class MealPlanStore: ObservableObject {
     private let syncMealPlans: (_ cursor: Int64?, _ ops: [[String: Any]]) async throws -> SyncMealPlansResponse
     private let automaticallySync: Bool
     private var activeAccountKey: String?
-    /// The network came back during a sync that may have failed offline.
-    private var retryAfterSync = false
+    /// Runs one sync pass at a time; any trigger during a pass queues a
+    /// rerun.
+    private var syncCoordinator: SyncCoordinator!
 
     private static let syncCursor = SyncCursorStore(prefix: "meal_plan_sync_cursor")
 
@@ -54,8 +56,12 @@ final class MealPlanStore: ObservableObject {
         self.userDefaults = coreDataStack.syncStateDefaults(userDefaults)
         self.automaticallySync = automaticallySync
         self.syncMealPlans = syncMealPlans
+        syncCoordinator = SyncCoordinator { [weak self] in await self?.runSyncPass() }
+        syncCoordinator.onBusyChanged = { [weak self] busy in self?.isSyncing = busy }
         if automaticallySync {
+            isOnline = networkMonitor.isOnline
             networkMonitor.observe { [weak self] online in
+                self?.isOnline = online
                 if online {
                     Task { await self?.syncIfPending() }
                 }
@@ -186,24 +192,34 @@ extension MealPlanStore {
     // MARK: - Sync
 
     private func triggerSync() {
-        guard automaticallySync else { return }
-        Task { await syncWithServer() }
+        guard automaticallySync, isOnline else { return }
+        syncCoordinator.request()
     }
 
-    /// Sends edits made offline; a no-op when there are none.
+    /// Sends edits made offline; a no-op when there are none. During a sync
+    /// it queues a rerun instead.
     func syncIfPending() async {
-        guard let activeAccountKey, hasPendingEdits(accountKey: activeAccountKey) else { return }
-        guard !isSyncing else {
-            retryAfterSync = true
+        guard let activeAccountKey, isOnline else { return }
+        guard !syncCoordinator.isBusy else {
+            syncCoordinator.request()
             return
         }
-        await syncWithServer()
+        guard hasPendingEdits(accountKey: activeAccountKey) else { return }
+        await syncCoordinator.sync()
     }
 
-    func syncWithServer(isFollowUp: Bool = false) async {
+    /// Sync now, and wait for it. When a sync is already running this waits
+    /// for it and for one more pass after it, so pull-to-refresh always
+    /// ends with a pass that started after the pull.
+    func syncWithServer() async {
+        await syncCoordinator.sync()
+    }
+
+    /// One round trip: send the outbox, apply the response. Only the
+    /// coordinator calls this, so passes never overlap.
+    private func runSyncPass() async {
         let logger = DebugLogger.shared
-        guard let syncAccountKey = activeAccountKey, !isSyncing else { return }
-        isSyncing = true
+        guard let syncAccountKey = activeAccountKey, isOnline else { return }
         lastSyncError = nil
 
         do {
@@ -223,25 +239,7 @@ extension MealPlanStore {
             }
         }
 
-        isSyncing = false
         fetchPlans()
-
-        // The account changed mid-sync: the new one hasn't synced yet.
-        guard activeAccountKey == syncAccountKey else {
-            retryAfterSync = false
-            triggerSync()
-            return
-        }
-        if retryAfterSync {
-            retryAfterSync = false
-            await syncIfPending()
-            return
-        }
-        // Edits made while the sync was in flight go out in one follow-up.
-        guard lastSyncError == nil, !isFollowUp else { return }
-        if hasPendingEdits(accountKey: syncAccountKey) {
-            await syncWithServer(isFollowUp: true)
-        }
     }
 
     private func hasPendingEdits(accountKey: String) -> Bool {

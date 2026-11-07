@@ -1,7 +1,7 @@
-import { createSignal, createEffect, For, onCleanup, Show } from "solid-js";
+import { createSignal, For, Show } from "solid-js";
 import { useAuth } from "../context/AuthContext";
 import Modal from "./Modal";
-import { extractApiError } from "../utils/recipeFormHelpers";
+import { createSubmitFlow } from "../utils/submitFlow";
 import {
   formatIngredient,
   formatIngredientAmount,
@@ -25,50 +25,17 @@ export default function AddToShoppingListModal(
   const [selectedIndices, setSelectedIndices] = createSignal<Set<number>>(
     new Set(),
   );
-  const [adding, setAdding] = createSignal(false);
-  const [error, setError] = createSignal<string | null>(null);
-  const [showSuccess, setShowSuccess] = createSignal(false);
-  const [wasOpen, setWasOpen] = createSignal(false);
-  // Bumped on every open and close so a submission or close timer from an
-  // earlier presentation can't touch the one that is showing now.
-  let presentation = 0;
-  let closeTimer: ReturnType<typeof setTimeout> | null = null;
-
-  const clearCloseTimer = () => {
-    if (closeTimer) {
-      clearTimeout(closeTimer);
-      closeTimer = null;
-    }
-  };
-
-  const close = () => {
-    presentation++;
-    clearCloseTimer();
-    props.onClose();
-  };
+  // How many items the last submission added, for the confirmation.
+  const [addedCount, setAddedCount] = createSignal(0);
 
   const scale = () => props.scale?.() ?? 1;
   const ingredients = () => props.recipe.ingredients ?? [];
 
-  // Select all ingredients by default when modal opens
-  createEffect(() => {
-    const open = props.isOpen();
-    if (open && !wasOpen()) {
-      presentation++;
-      clearCloseTimer();
-      const allIndices = new Set(ingredients().map((_, i) => i));
-      setSelectedIndices(allIndices);
-      setAdding(false);
-      setError(null);
-      setShowSuccess(false);
-    }
-    setWasOpen(open);
-  });
-
-  onCleanup(() => {
-    // A submission still in flight at unmount must not arm a close timer.
-    presentation++;
-    clearCloseTimer();
+  const flow = createSubmitFlow({
+    isOpen: props.isOpen,
+    onClose: props.onClose,
+    // Select every ingredient on each open.
+    onOpen: () => setSelectedIndices(new Set(ingredients().map((_, i) => i))),
   });
 
   const allSelected = () => selectedIndices().size === ingredients().length;
@@ -93,15 +60,11 @@ export default function AddToShoppingListModal(
     }
   };
 
-  const handleAdd = async () => {
+  const handleAdd = () => {
     const selected = selectedIndices();
     if (selected.size === 0) return;
 
-    const current = presentation;
-    const isCurrent = () => presentation === current;
-    setAdding(true);
-    setError(null);
-    try {
+    return flow.submit("Failed to add items to shopping list", async () => {
       const ops = ingredients()
         .filter((_, i) => selected.has(i))
         .map((ing): ShoppingListOp => ({
@@ -122,20 +85,9 @@ export default function AddToShoppingListModal(
         ops,
         (context, err) => logger.warn("Shopping", `${context}: ${String(err)}`),
       );
-
-      if (!isCurrent()) return;
-      setShowSuccess(true);
-      clearCloseTimer();
-      closeTimer = setTimeout(close, 1500);
-    } catch (err) {
-      const message = await extractApiError(
-        err,
-        "Failed to add items to shopping list",
-      );
-      if (isCurrent()) setError(message);
-    } finally {
-      if (isCurrent()) setAdding(false);
-    }
+      setAddedCount(ops.length);
+      return null;
+    });
   };
 
   const selectedCount = () => selectedIndices().size;
@@ -143,19 +95,19 @@ export default function AddToShoppingListModal(
   return (
     <Modal
       isOpen={props.isOpen}
-      onClose={close}
+      onClose={flow.close}
       title="Add to Shopping List"
       actions={
-        <Show when={!showSuccess()}>
-          <button class="btn" onClick={close} disabled={adding()}>
+        <Show when={!flow.confirmed()}>
+          <button class="btn" onClick={flow.close} disabled={flow.submitting()}>
             Cancel
           </button>
           <button
             class="btn btn-primary"
             onClick={handleAdd}
-            disabled={adding() || selectedCount() === 0}
+            disabled={flow.submitting() || selectedCount() === 0}
           >
-            {adding()
+            {flow.submitting()
               ? "Adding..."
               : `Add ${selectedCount()} item${selectedCount() !== 1 ? "s" : ""}`}
           </button>
@@ -163,17 +115,17 @@ export default function AddToShoppingListModal(
       }
     >
       <div class="add-shopping-modal">
-        <Show when={showSuccess()}>
+        <Show when={flow.confirmed()}>
           <div class="add-shopping-success">
-            Added {selectedCount()} item{selectedCount() !== 1 ? "s" : ""} to
-            shopping list!
+            Added {addedCount()} item{addedCount() !== 1 ? "s" : ""} to shopping
+            list!
           </div>
         </Show>
 
-        <Show when={!showSuccess()}>
-          <Show when={error()}>
+        <Show when={!flow.confirmed()}>
+          <Show when={flow.error()}>
             <div class="error-message" style={{ "margin-bottom": "1rem" }}>
-              {error()}
+              {flow.error()}
             </div>
           </Show>
 
