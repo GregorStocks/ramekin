@@ -8,7 +8,7 @@ pub(crate) mod charset;
 mod client;
 mod rate_limiter;
 
-pub use cache::{CacheStats, CachedError, CachedResponse, DiskCache};
+pub use cache::{CacheLookup, CacheStats, CachedError, CachedResponse, DiskCache, ErrorPermanence};
 pub use client::{CachingClient, CachingClientBuilder, HttpClient, MockClient, MockResponse};
 pub use rate_limiter::RateLimiter;
 

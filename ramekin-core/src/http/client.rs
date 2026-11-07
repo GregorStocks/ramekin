@@ -8,7 +8,7 @@ use std::time::Duration;
 
 use crate::error::FetchError;
 
-use super::cache::{is_permanent_status, DiskCache};
+use super::cache::{CacheLookup, DiskCache, ErrorPermanence};
 use super::charset;
 use super::rate_limiter::RateLimiter;
 
@@ -315,22 +315,23 @@ impl CachingClient {
 
         // Check cache
         if let Some(cache) = &self.cache {
-            // Check for cached error first
-            if let Some(cached_error) = cache.get_error(url) {
-                tracing::debug!(url, error = %cached_error.error, "cache hit (cached error)");
-                return Err(FetchError::InvalidUrl(format!(
-                    "Cached error: {}",
-                    cached_error.error
-                )));
-            }
-
-            // Cache hit: serve the cached response without revalidating.
-            if let Some(cached) = cache.get(url) {
-                tracing::debug!(url, "cache hit");
-                return Ok(FetchResult {
-                    data: cached.data,
-                    content_type: cached.metadata.content_type,
-                });
+            match cache.lookup(url) {
+                // Cache hit: serve the cached response without revalidating.
+                CacheLookup::Hit(cached) => {
+                    tracing::debug!(url, "cache hit");
+                    return Ok(FetchResult {
+                        data: cached.data,
+                        content_type: cached.metadata.content_type,
+                    });
+                }
+                CacheLookup::Error(cached_error) => {
+                    tracing::debug!(url, error = %cached_error.error, "cache hit (cached error)");
+                    return Err(FetchError::InvalidUrl(format!(
+                        "Cached error: {}",
+                        cached_error.error
+                    )));
+                }
+                CacheLookup::Miss => {}
             }
         }
 
@@ -355,8 +356,11 @@ impl CachingClient {
             let error_msg = format!("HTTP {}", response.status());
             tracing::debug!(url, status = %response.status(), "network: request failed");
             if let Some(cache) = &self.cache {
-                if is_permanent_status(response.status()) {
-                    let _ = cache.put_error(url, &error_msg);
+                // Only permanent failures are worth a negative-cache entry;
+                // transient ones would be classified as misses anyway.
+                let permanence = ErrorPermanence::from_status(response.status());
+                if permanence == ErrorPermanence::Permanent {
+                    let _ = cache.put_error(url, &error_msg, permanence);
                 }
             }
             return Err(FetchError::RequestFailed(
