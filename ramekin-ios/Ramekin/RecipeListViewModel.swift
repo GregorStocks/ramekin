@@ -442,11 +442,11 @@ private extension RecipeListViewModel {
     /// two at once (start-up plus pull-to-refresh) would race on the
     /// persisted cursor and pending-sweep record. The cursor is read when
     /// this sweep's turn comes, so it reflects the previous sweep.
-    /// Cancelling the caller cancels its own sweep, never an earlier one.
+    /// Cancelling the caller ends its wait at once but never an earlier sweep.
     func runSyncSweep(resumeFromCursor: Bool, accountKey: String) async throws {
         let previous = lastSyncSweep
         let sweep = Task { @MainActor [api = self.api, cache = self.cache, pageSize = syncPageSize] in
-            await previous?.value
+            if let previous { await CancellationSupport.wait(for: previous) }
             try Task.checkCancellation()
             try await RecipeSyncSweep.run(
                 cursor: resumeFromCursor ? cache.syncCursor(accountKey) : nil,
@@ -456,7 +456,7 @@ private extension RecipeListViewModel {
                 cache: cache
             )
         }
-        lastSyncSweep = Task { _ = await sweep.result }
+        lastSyncSweep = Task { await previous?.value; _ = await sweep.result }
         try await withTaskCancellationHandler {
             try await sweep.value
         } onCancel: {

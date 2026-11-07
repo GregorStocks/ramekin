@@ -21,4 +21,50 @@ enum CancellationSupport {
         let nsError = error as NSError
         return nsError.domain == NSURLErrorDomain && nsError.code == NSURLErrorCancelled
     }
+
+    /// Waits for `task` to finish, but returns as soon as the current task is
+    /// cancelled. A plain `await task.value` ignores the waiter's
+    /// cancellation. `task` keeps running either way.
+    static func wait(for task: Task<Void, Never>) async {
+        let resumer = ResumeOnce()
+        await withTaskCancellationHandler {
+            await withCheckedContinuation { continuation in
+                resumer.install(continuation)
+                Task {
+                    await task.value
+                    resumer.resume()
+                }
+            }
+        } onCancel: {
+            resumer.resume()
+        }
+    }
+}
+
+/// Resumes a continuation exactly once, from whichever side gets there
+/// first, including a cancellation that fires before it is installed.
+private final class ResumeOnce: @unchecked Sendable {
+    private let lock = NSLock()
+    private var continuation: CheckedContinuation<Void, Never>?
+    private var resumed = false
+
+    func install(_ continuation: CheckedContinuation<Void, Never>) {
+        lock.lock()
+        if resumed {
+            lock.unlock()
+            continuation.resume()
+            return
+        }
+        self.continuation = continuation
+        lock.unlock()
+    }
+
+    func resume() {
+        lock.lock()
+        let pending = continuation
+        continuation = nil
+        resumed = true
+        lock.unlock()
+        pending?.resume()
+    }
 }

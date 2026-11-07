@@ -127,6 +127,64 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
         XCTAssertNil(viewModel.staleness)
     }
 
+    func testCancelledQueuedSweepStopsWaitingButKeepsOrder() async throws {
+        let firstSweepStarted = RequestGate()
+        let releaseFirstSweep = RequestGate()
+        var calls = 0
+        var active = 0
+        var maxActive = 0
+
+        let viewModel = RecipeListViewModel(
+            api: RecipeListViewAPIClient(
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
+                listRecipes: { _, _, _, _, _ in throw URLError(.badURL) },
+                syncRecipes: { _, _, _ in
+                    calls += 1
+                    let call = calls
+                    active += 1
+                    maxActive = max(maxActive, active)
+                    if call == 1 {
+                        await firstSweepStarted.open()
+                        await releaseFirstSweep.wait()
+                    }
+                    active -= 1
+                    return SyncRecipesResponse(
+                        changes: [],
+                        cursor: 400 + Int64(call),
+                        deleted: [],
+                        fullResync: false,
+                        hasMore: false,
+                        normalizationContractVersion: SearchNormalizationSupport.contractVersion
+                    )
+                }
+            ),
+            cache: RecipeListTestSupport.cacheClient(currentAccountKey: { "account" }),
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
+        )
+
+        let first = Task { try await viewModel.runSyncSweep(resumeFromCursor: false, accountKey: "account") }
+        await firstSweepStarted.wait()
+        let queued = Task { try await viewModel.runSyncSweep(resumeFromCursor: false, accountKey: "account") }
+        for _ in 0..<20 { await Task.yield() }
+        queued.cancel()
+
+        // The cancelled caller returns while the first sweep is still held.
+        let queuedResult = await queued.result
+        XCTAssertThrowsError(try queuedResult.get()) { XCTAssertTrue($0 is CancellationError) }
+        XCTAssertEqual(calls, 1)
+
+        // A later sweep still waits for the first one.
+        let third = Task { try await viewModel.runSyncSweep(resumeFromCursor: false, accountKey: "account") }
+        for _ in 0..<50 { await Task.yield() }
+        XCTAssertEqual(calls, 1, "Cancelling a queued sweep must not let the next one jump ahead")
+
+        releaseFirstSweep.open()
+        try await first.value
+        try await third.value
+        XCTAssertEqual(calls, 2)
+        XCTAssertEqual(maxActive, 1)
+    }
+
     func testCancellationRecognizesWrappedCancels() {
         XCTAssertTrue(CancellationSupport.isCancellation(CancellationError()))
         XCTAssertTrue(CancellationSupport.isCancellation(URLError(.cancelled)))
