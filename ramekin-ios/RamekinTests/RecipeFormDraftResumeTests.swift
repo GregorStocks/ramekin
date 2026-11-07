@@ -14,6 +14,41 @@ final class RecipeFormDraftResumeTests: XCTestCase {
         XCTAssertEqual(model.resumableDraft, resumed)
     }
 
+    func testResumingAfterLosingTrackOfAnImportChecksTheSameJob() async {
+        let jobId = UUID()
+        let recipeId = UUID()
+        let resumed = RecipeFormDraft(
+            mode: .create, form: RecipeFormData(), recipeText: "Pancakes", lostImportJobId: jobId
+        )
+        // importFromText throws: checking again must not start a second import.
+        let model = RecipeFormViewModel(mode: .create, resuming: resumed, api: unexpectedCallsClient(
+            getScrape: { id in
+                XCTAssertEqual(id, jobId)
+                return ScrapeJobResponse(
+                    canRetry: false,
+                    createdAt: Date(timeIntervalSince1970: 1),
+                    id: jobId,
+                    isTerminal: true,
+                    recipeId: recipeId,
+                    recipeReady: true,
+                    retryCount: 0,
+                    status: .completed,
+                    steps: []
+                )
+            }
+        ))
+
+        XCTAssertTrue(model.lostTrackOfImport)
+        XCTAssertTrue(model.canImport)
+        XCTAssertEqual(model.resumableDraft, resumed)
+
+        let saved = await model.importRecipe()
+
+        XCTAssertTrue(saved)
+        XCTAssertEqual(model.importedRecipeId, recipeId)
+        XCTAssertNil(model.resumableDraft)
+    }
+
     func testFreshFormHasNoDraftToKeep() {
         let model = RecipeFormViewModel(mode: .create, api: unexpectedCallsClient())
 
@@ -59,7 +94,8 @@ final class RecipeFormDraftResumeTests: XCTestCase {
     }
 
     private func unexpectedCallsClient(
-        getRecipe: @escaping (UUID) async throws -> RecipeResponse = { _ in throw TestError.unexpectedCall }
+        getRecipe: @escaping (UUID) async throws -> RecipeResponse = { _ in throw TestError.unexpectedCall },
+        getScrape: @escaping (UUID) async throws -> ScrapeJobResponse = { _ in throw TestError.unexpectedCall }
     ) -> RecipeFormViewAPIClient {
         RecipeFormViewAPIClient(
             updateRecipe: { _, _ in throw TestError.unexpectedCall },
@@ -67,7 +103,7 @@ final class RecipeFormDraftResumeTests: XCTestCase {
             syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
             uploadPhoto: { _ in throw TestError.unexpectedCall },
             importFromText: { _ in throw TestError.unexpectedCall },
-            getScrape: { _ in throw TestError.unexpectedCall }
+            getScrape: getScrape
         )
     }
 

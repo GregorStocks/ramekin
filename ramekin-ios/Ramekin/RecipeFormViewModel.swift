@@ -81,6 +81,10 @@ final class RecipeFormViewModel: ObservableObject {
         savedFormData = initialFormData
         if let resumed {
             recipeText = resumed.recipeText
+            if let jobId = resumed.lostImportJobId {
+                importJobId = jobId
+                lostTrackOfImport = true
+            }
             if case .edit = mode {
                 isResumingEdit = true
                 resumedEditVersionId = resumed.form.expectedVersionId
@@ -112,7 +116,8 @@ extension RecipeFormViewModel {
         return RecipeFormDraft(
             mode: mode,
             form: formData,
-            recipeText: recipeText
+            recipeText: recipeText,
+            lostImportJobId: lostTrackOfImport ? importJobId : nil
         )
     }
 
