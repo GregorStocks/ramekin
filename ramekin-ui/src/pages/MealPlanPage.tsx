@@ -61,18 +61,26 @@ export default function MealPlanPage() {
   const loading = () => loadedWeek() !== formatDateLocal(weekStart());
   // Only the latest week request may write meal plans or the loaded week.
   const mealPlanRequests = createRequestTracker();
-  const [error, setError] = createSignal<string | null>(null);
+  // Why the week couldn't load. While set and no week is loaded, the grid
+  // stays hidden.
+  const [loadError, setLoadError] = createSignal<string | null>(null);
+  // What became of the last add, edit or delete. Kept apart from loadError
+  // so the reload that follows an action doesn't wipe it; the next action
+  // replaces it.
+  const [actionError, setActionError] = createSignal<string | null>(null);
   const [pickerError, setPickerError] = createSignal<string | null>(null);
 
-  // Recipe picker modal state
-  const [pickerOpen, setPickerOpen] = createSignal(false);
-  const [pickerDate, setPickerDate] = createSignal<Date | null>(null);
-  const [pickerMealType, setPickerMealType] = createSignal<MealType | null>(
-    null,
-  );
+  // Recipe picker modal state: the slot it adds to, or null when closed.
+  const [picker, setPicker] = createSignal<{
+    date: Date;
+    mealType: MealType;
+  } | null>(null);
   const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
   const [recipesLoading, setRecipesLoading] = createSignal(false);
+  // Only the latest picker search may write the results.
+  const recipeRequests = createRequestTracker();
   const [searchQuery, setSearchQuery] = createSignal("");
+  const [adding, setAdding] = createSignal(false);
 
   // Delete confirmation
   const [deletingMealPlan, setDeletingMealPlan] =
@@ -102,7 +110,7 @@ export default function MealPlanPage() {
   const loadMealPlans = async () => {
     const requestId = mealPlanRequests.start();
     const week = formatDateLocal(weekStart());
-    setError(null);
+    setLoadError(null);
     try {
       const days = weekDays();
       const response = await getMealPlansApi().listMealPlans({
@@ -117,7 +125,7 @@ export default function MealPlanPage() {
     } catch (err) {
       const message = await extractApiError(err, "Failed to load meal plans");
       if (!mealPlanRequests.isCurrent(requestId)) return;
-      setError(message);
+      setLoadError(message);
     }
   };
 
@@ -152,15 +160,20 @@ export default function MealPlanPage() {
   };
 
   const openPicker = (date: Date, mealType: MealType) => {
-    setPickerDate(date);
-    setPickerMealType(mealType);
+    setPicker({ date, mealType });
     setSearchQuery("");
     setPickerError(null);
-    setPickerOpen(true);
     loadRecipes();
   };
 
+  const closePicker = () => {
+    recipeRequests.invalidate();
+    setRecipesLoading(false);
+    setPicker(null);
+  };
+
   const loadRecipes = async () => {
+    const requestId = recipeRequests.start();
     setPickerError(null);
     setRecipesLoading(true);
     try {
@@ -168,12 +181,14 @@ export default function MealPlanPage() {
         limit: 50,
         q: searchQuery() || undefined,
       });
+      if (!recipeRequests.isCurrent(requestId)) return;
       setRecipes(response.recipes);
     } catch (err) {
       const message = await extractApiError(err, "Failed to load recipes");
+      if (!recipeRequests.isCurrent(requestId)) return;
       setPickerError(message);
     } finally {
-      setRecipesLoading(false);
+      if (recipeRequests.isCurrent(requestId)) setRecipesLoading(false);
     }
   };
 
@@ -183,25 +198,30 @@ export default function MealPlanPage() {
   };
 
   const addMealPlan = async (recipe: RecipeSummary) => {
-    const date = pickerDate();
-    const mealType = pickerMealType();
-    if (!date || !mealType) return;
+    const slot = picker();
+    if (!slot || adding()) return;
 
+    setAdding(true);
+    setActionError(null);
     try {
       const result = await writeMealPlan(
         getSyncApi(),
+        token(),
         createMealPlanOp({
           recipeId: recipe.id,
-          mealDate: toApiDate(date),
-          mealType: mealType,
+          mealDate: toApiDate(slot.date),
+          mealType: slot.mealType,
         }),
       );
-      setPickerOpen(false);
-      setError(mealPlanOpError(result, mealType));
+      closePicker();
+      setActionError(mealPlanOpError(result, slot.mealType));
       await loadMealPlans();
     } catch (err) {
       const message = await extractApiError(err, "Failed to add meal");
-      setError(message);
+      closePicker();
+      setActionError(message);
+    } finally {
+      setAdding(false);
     }
   };
 
@@ -229,8 +249,9 @@ export default function MealPlanPage() {
 
     setEditLoading(true);
     setEditError(null);
+    setActionError(null);
     try {
-      const result = await writeMealPlan(getSyncApi(), {
+      const result = await writeMealPlan(getSyncApi(), token(), {
         op: "update",
         id: mp.id,
         fields: {
@@ -245,7 +266,7 @@ export default function MealPlanPage() {
         return;
       }
       setEditingMealPlan(null);
-      setError(message);
+      setActionError(message);
       await loadMealPlans();
     } catch (err) {
       const message = await extractApiError(err, "Failed to update meal");
@@ -260,13 +281,18 @@ export default function MealPlanPage() {
     if (!mp) return;
 
     setDeleteLoading(true);
+    setActionError(null);
     try {
-      await writeMealPlan(getSyncApi(), { op: "delete", id: mp.id });
+      const result = await writeMealPlan(getSyncApi(), token(), {
+        op: "delete",
+        id: mp.id,
+      });
       setDeletingMealPlan(null);
+      setActionError(mealPlanOpError(result, mp.mealType));
       await loadMealPlans();
     } catch (err) {
       const message = await extractApiError(err, "Failed to delete meal");
-      setError(message);
+      setActionError(message);
       setDeletingMealPlan(null);
     } finally {
       setDeleteLoading(false);
@@ -299,11 +325,17 @@ export default function MealPlanPage() {
         </div>
       </div>
 
-      <Show when={error()}>
-        <div class="error-message">{error()}</div>
+      <Show when={loadError()}>
+        <div class="error-message">{loadError()}</div>
       </Show>
 
-      <Show when={loading() && !error()}>
+      <Show when={actionError()}>
+        <div class="error-message" role="alert">
+          {actionError()}
+        </div>
+      </Show>
+
+      <Show when={loading() && !loadError()}>
         <p class="loading-text">Loading meal plans...</p>
       </Show>
 
@@ -396,9 +428,14 @@ export default function MealPlanPage() {
 
       {/* Recipe picker modal */}
       <Modal
-        isOpen={pickerOpen}
-        onClose={() => setPickerOpen(false)}
-        title={`Add ${pickerMealType() ? MEAL_TYPE_LABELS[pickerMealType()!] : ""} - ${pickerDate() ? formatDayHeader(pickerDate()!) : ""}`}
+        isOpen={() => picker() !== null}
+        onClose={closePicker}
+        title={(() => {
+          const slot = picker();
+          return slot
+            ? `Add ${MEAL_TYPE_LABELS[slot.mealType]} - ${formatDayHeader(slot.date)}`
+            : "";
+        })()}
       >
         <form onSubmit={handleSearch} class="recipe-search-form">
           <input
@@ -434,6 +471,7 @@ export default function MealPlanPage() {
                 type="button"
                 class="recipe-picker-item"
                 aria-label={recipe.title}
+                disabled={adding()}
                 onClick={() => addMealPlan(recipe)}
               >
                 <Show when={recipe.thumbnailPhotoId}>

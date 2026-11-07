@@ -260,8 +260,9 @@ extension MealPlanStore {
         )
         for (id, result) in zip(outbox.order, response.results) {
             guard let plan = byId[id], let sent = outbox.sent[id] else { continue }
-            if result == .duplicate || result == .recipeMissing, activeAccountKey == accountKey {
-                refusal = Self.refusalMessage(result, recipeTitle: plan.recipeTitle ?? "A recipe")
+            if activeAccountKey == accountKey,
+               let message = Self.refusalMessage(result, kind: sent.kind, recipeTitle: plan.recipeTitle ?? "A recipe") {
+                refusal = message
             }
             if plan.settle(result: result, sent: sent) == .removed {
                 context.delete(plan)
@@ -272,12 +273,20 @@ extension MealPlanStore {
         coreDataStack.saveContext()
     }
 
-    static func refusalMessage(_ result: OpResult, recipeTitle: String) -> String {
+    /// What to tell the user about an op the server didn't apply, or nil
+    /// when there's nothing to say: an applied op, or a delete of a plan
+    /// that was already gone.
+    static func refusalMessage(_ result: OpResult, kind: OpKind, recipeTitle: String) -> String? {
         switch result {
+        case .applied:
+            return nil
         case .recipeMissing:
             return "\(recipeTitle) was deleted, so it was taken off the meal plan."
-        default:
+        case .duplicate:
             return "\(recipeTitle) was already planned for that meal, so the change was undone."
+        case .gone:
+            guard kind != .delete else { return nil }
+            return "\(recipeTitle) was already removed from the meal plan, so the change was dropped."
         }
     }
 }

@@ -30,7 +30,7 @@ interface AddToMealPlanModalProps {
 }
 
 export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
-  const { getSyncApi } = useAuth();
+  const { getSyncApi, token } = useAuth();
   const [mealPlanDate, setMealPlanDate] = createSignal(
     formatDateLocal(new Date()),
   );
@@ -91,6 +91,7 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
       const mealType = mealPlanMealType();
       const result = await writeMealPlan(
         getSyncApi(),
+        token(),
         createMealPlanOp({
           recipeId: props.recipeId,
           mealDate: toApiDate(parseLocalDate(mealPlanDate())),

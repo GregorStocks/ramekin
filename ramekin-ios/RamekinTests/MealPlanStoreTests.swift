@@ -92,7 +92,52 @@ final class MealPlanStoreTests: XCTestCase {
         await store.syncWithServer(isFollowUp: true)
 
         XCTAssertTrue(store.plans.isEmpty)
-        XCTAssertEqual(store.refusal, MealPlanStore.refusalMessage(.duplicate, recipeTitle: "Soup"))
+        XCTAssertEqual(store.refusal, MealPlanStore.refusalMessage(.duplicate, kind: .create, recipeTitle: "Soup"))
+    }
+
+    func testAnEditToAPlanRemovedElsewhereIsDroppedAndSaysWhy() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let id = UUID()
+        var responses = [response(changes: [change(id: id, recipeId: UUID(), title: "Soup")])]
+        let store = makeStore(stack: stack, defaults: defaults) { _, _ in responses.removeFirst() }
+        await store.syncWithServer(isFollowUp: true)
+        let plan = try XCTUnwrap(store.plans.first)
+
+        try store.update(plan, date: day("2026-04-17"), mealType: .dinner, notes: "Double batch")
+        responses.append(response(results: [.gone], deleted: [id]))
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertTrue(store.plans.isEmpty)
+        XCTAssertEqual(
+            store.refusal,
+            "Soup was already removed from the meal plan, so the change was dropped."
+        )
+    }
+
+    func testDeletingAPlanRemovedElsewhereSaysNothing() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let id = UUID()
+        var responses = [response(changes: [change(id: id, recipeId: UUID(), title: "Soup")])]
+        let store = makeStore(stack: stack, defaults: defaults) { _, _ in responses.removeFirst() }
+        await store.syncWithServer(isFollowUp: true)
+        let plan = try XCTUnwrap(store.plans.first)
+
+        store.delete(plan)
+        responses.append(response(results: [.gone], deleted: [id]))
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertTrue(store.plans.isEmpty)
+        XCTAssertNil(store.refusal)
+    }
+
+    func testRefusalMessagesCoverEveryResult() {
+        XCTAssertNil(MealPlanStore.refusalMessage(.applied, kind: .create, recipeTitle: "Soup"))
+        XCTAssertNotNil(MealPlanStore.refusalMessage(.duplicate, kind: .update, recipeTitle: "Soup"))
+        XCTAssertNotNil(MealPlanStore.refusalMessage(.recipeMissing, kind: .create, recipeTitle: "Soup"))
+        XCTAssertNotNil(MealPlanStore.refusalMessage(.gone, kind: .update, recipeTitle: "Soup"))
+        XCTAssertNil(MealPlanStore.refusalMessage(.gone, kind: .delete, recipeTitle: "Soup"))
     }
 
     func testAPlanMovedWhileItsRefusedCreateWasInFlightIsRetried() async throws {
