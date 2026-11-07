@@ -3,10 +3,9 @@ import SwiftUI
 struct RecipeListView: View {
     @StateObject private var viewModel: RecipeListViewModel
     @Environment(\.recipeFormDraftMemory) private var draftMemory
-    @State private var showingNewRecipe = false
-    /// A new recipe from before the app was terminated, offered for resuming.
-    @State private var resumableNewRecipe: RecipeFormDraft?
-    @State private var resumingNewRecipe: RecipeFormDraft?
+    /// The new-recipe form, and a new recipe from before the app was
+    /// terminated offered for resuming.
+    @State private var newRecipeFlow = RecipeFormDraftFlow.closed
 
     @MainActor
     init() {
@@ -23,17 +22,20 @@ struct RecipeListView: View {
     // List permanently in the hierarchy and draw status views as overlays.
     var body: some View {
         VStack(spacing: 0) {
-            if resumableNewRecipe != nil {
+            if newRecipeFlow.offeredDraft != nil {
                 resumeNewRecipeBanner
                 Divider()
             }
             if showsListChrome {
-                if viewModel.reloadFailed {
+                switch viewModel.staleness {
+                case .reloadFailed:
                     failureBanner("Couldn't update results — these may be out of date")
                     Divider()
-                } else if viewModel.syncFailed {
+                case .syncFailed:
                     failureBanner("Couldn't refresh — showing saved recipes")
                     Divider()
+                case nil:
+                    EmptyView()
                 }
                 filterBar
                 Divider()
@@ -56,10 +58,7 @@ struct RecipeListView: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
-                    // A fresh form replaces the draft offered for resuming.
-                    resumableNewRecipe = nil
-                    resumingNewRecipe = nil
-                    showingNewRecipe = true
+                    newRecipeFlow.openFresh()
                 } label: {
                     Image(systemName: "plus")
                 }
@@ -73,9 +72,12 @@ struct RecipeListView: View {
         }
         // Creating a recipe is a self-contained task, so it's a modal with
         // Cancel/Save rather than a push whose back swipe drops the draft.
-        .sheet(isPresented: $showingNewRecipe) {
+        .sheet(isPresented: Binding(
+            get: { newRecipeFlow.isOpen },
+            set: { if !$0 { newRecipeFlow.close() } }
+        )) {
             NavigationStack {
-                RecipeFormView(mode: .create, resuming: resumingNewRecipe) {
+                RecipeFormView(mode: .create, resuming: newRecipeFlow.resumingDraft) {
                     Task { await viewModel.refresh() }
                 }
             }
@@ -84,7 +86,7 @@ struct RecipeListView: View {
             await viewModel.refresh()
         }
         .task {
-            resumableNewRecipe = draftMemory.stored(.create)
+            newRecipeFlow.offer(draftMemory.stored(.create))
             await viewModel.start()
         }
         .onReceive(NotificationCenter.default.publisher(for: .tagsDidChange)) { _ in
@@ -170,15 +172,13 @@ struct RecipeListView: View {
             Spacer()
             Button("Discard", role: .destructive) {
                 draftMemory.remember(.create, nil)
-                resumableNewRecipe = nil
+                newRecipeFlow.discard()
             }
             .font(.footnote)
             .frame(minWidth: 44, minHeight: 44)
             .contentShape(Rectangle())
             Button("Resume") {
-                resumingNewRecipe = resumableNewRecipe
-                resumableNewRecipe = nil
-                showingNewRecipe = true
+                newRecipeFlow.resume()
             }
             .font(.footnote.weight(.semibold))
             .frame(minWidth: 44, minHeight: 44)
@@ -298,7 +298,7 @@ struct RecipeListView: View {
             Button("Retry") {
                 Task {
                     await viewModel.loadTags()
-                    await viewModel.loadRecipes(reset: true)
+                    await viewModel.loadRecipes()
                 }
             }
             .buttonStyle(.borderedProminent)

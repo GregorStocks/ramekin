@@ -2,25 +2,12 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var appState: AppState
+    @StateObject private var model = SettingsViewModel()
 
     @State private var showingLogoutConfirmation = false
     @State private var showingClearLogsConfirmation = false
-    @State private var connectionStatus: ConnectionStatus = .unknown
     @State private var showingDebugLogs = false
     @State private var debugLogs = ""
-    @State private var isExportingAll = false
-    @State private var exportShareItem: ShareItem?
-    @State private var exportError: String?
-    @State private var isUploadingLogs = false
-    @State private var logUploadError: String?
-    @State private var showingLogUploadSuccess = false
-
-    enum ConnectionStatus {
-        case unknown
-        case checking
-        case connected
-        case failed(String)
-    }
 
     var body: some View {
         Form {
@@ -94,17 +81,17 @@ struct SettingsView: View {
                 }
 
                 Button {
-                    Task { await exportAllRecipes() }
+                    Task { await model.exportAllRecipes() }
                 } label: {
                     HStack {
                         Label("Export All Recipes", systemImage: "square.and.arrow.up.on.square")
                         Spacer()
-                        if isExportingAll {
+                        if model.isExportingAll {
                             ProgressView()
                         }
                     }
                 }
-                .disabled(isExportingAll)
+                .disabled(model.isExportingAll)
             }
 
             Section("Account") {
@@ -154,17 +141,17 @@ struct SettingsView: View {
                 }
 
                 Button {
-                    Task { await uploadLogs() }
+                    Task { await model.uploadLogs() }
                 } label: {
                     HStack {
                         Label("Upload Logs to Server", systemImage: "icloud.and.arrow.up")
                         Spacer()
-                        if isUploadingLogs {
+                        if model.logUpload == .uploading {
                             ProgressView()
                         }
                     }
                 }
-                .disabled(isUploadingLogs)
+                .disabled(model.logUpload == .uploading)
             }
         }
         .sheet(isPresented: $showingDebugLogs) {
@@ -223,19 +210,21 @@ struct SettingsView: View {
         } message: {
             Text("You'll need to sign in again to save recipes.")
         }
-        .onAppear {
-            checkConnection()
+        // .task is cancelled when the screen goes away, unlike a Task
+        // started from onAppear.
+        .task {
+            await model.checkConnection()
         }
         .refreshable {
-            await checkConnectionAsync()
+            await model.checkConnection()
         }
         .modifier(ExportPresentationModifier(
-            shareItem: $exportShareItem,
-            errorMessage: $exportError
+            shareItem: $model.exportShareItem,
+            errorMessage: $model.exportError
         ))
         .modifier(LogUploadPresentationModifier(
-            showingSuccess: $showingLogUploadSuccess,
-            errorMessage: $logUploadError
+            state: model.logUpload,
+            onDismiss: { model.dismissLogUploadResult() }
         ))
     }
 
@@ -244,50 +233,9 @@ struct SettingsView: View {
 // MARK: - Actions
 
 extension SettingsView {
-    @MainActor
-    private func exportAllRecipes() async {
-        guard !isExportingAll else { return }
-        isExportingAll = true
-        defer { isExportingAll = false }
-        do {
-            let download = try await RamekinAPI.shared.exportAllRecipes()
-            let url = try RecipeExportSupport.writeToTempFile(
-                data: download.data,
-                filename: download.filename
-            )
-            exportShareItem = ShareItem(url: url)
-        } catch let apiError as RamekinAPI.APIError {
-            exportError = apiError.errorDescription ?? "Export failed"
-        } catch {
-            exportError = error.localizedDescription
-        }
-    }
-
-    @MainActor
-    private func uploadLogs() async {
-        guard !isUploadingLogs else { return }
-        isUploadingLogs = true
-        defer { isUploadingLogs = false }
-
-        let content = DebugLogger.shared.readLogs()
-        guard !content.isEmpty else {
-            logUploadError = "No logs to upload"
-            return
-        }
-
-        do {
-            try await RamekinAPI.shared.uploadLogs(content)
-            showingLogUploadSuccess = true
-        } catch let apiError as RamekinAPI.APIError {
-            logUploadError = apiError.errorDescription ?? "Upload failed"
-        } catch {
-            logUploadError = error.localizedDescription
-        }
-    }
-
     @ViewBuilder
     private var connectionStatusView: some View {
-        switch connectionStatus {
+        switch model.connectionStatus {
         case .unknown:
             Text("Unknown")
                 .foregroundColor(.secondary)
@@ -311,46 +259,31 @@ extension SettingsView {
             }
         }
     }
-
-    private func checkConnection() {
-        Task {
-            await checkConnectionAsync()
-        }
-    }
-
-    private func checkConnectionAsync() async {
-        await MainActor.run {
-            connectionStatus = .checking
-        }
-
-        do {
-            let connected = try await RamekinAPI.shared.testConnection()
-            await MainActor.run {
-                connectionStatus = connected ? .connected : .failed("Not reachable")
-            }
-        } catch {
-            await MainActor.run {
-                connectionStatus = .failed("Offline")
-            }
-        }
-    }
 }
 
 /// Adds the "Logs Uploaded" and "Upload Failed" alerts for the debug log
 /// upload flow. Kept as a ViewModifier so the calling view's body stays small
 /// enough for the Swift type-checker to handle.
 struct LogUploadPresentationModifier: ViewModifier {
-    @Binding var showingSuccess: Bool
-    @Binding var errorMessage: String?
+    let state: LogUploadState
+    let onDismiss: @MainActor () -> Void
+
+    private var errorMessage: String? {
+        if case let .failed(message) = state { return message }
+        return nil
+    }
 
     func body(content: Content) -> some View {
         content
-            .alert("Logs Uploaded", isPresented: $showingSuccess) {
+            .alert("Logs Uploaded", isPresented: Binding(
+                get: { state == .succeeded },
+                set: { if !$0 { onDismiss() } }
+            )) {
                 Button("OK", role: .cancel) {}
             }
             .alert("Upload Failed", isPresented: Binding(
                 get: { errorMessage != nil },
-                set: { if !$0 { errorMessage = nil } }
+                set: { if !$0 { onDismiss() } }
             )) {
                 Button("OK", role: .cancel) {}
             } message: {

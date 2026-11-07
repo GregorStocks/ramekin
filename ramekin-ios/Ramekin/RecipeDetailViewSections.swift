@@ -65,7 +65,7 @@ extension RecipeDetailView {
     }
 
     @ViewBuilder var statusBanners: some View {
-        if resumableEdit != nil {
+        if editFlow.offeredDraft != nil {
             resumeEditBanner
         }
 

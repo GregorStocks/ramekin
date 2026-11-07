@@ -1,5 +1,17 @@
 import SwiftUI
 
+// MARK: - List State
+
+/// Why the recipes on screen may not be current. At most one applies.
+enum RecipeListStaleness: Equatable {
+    /// A cache-served list could not be freshened: the list on screen may be
+    /// stale, and the user needs a signal plus a way to retry.
+    case syncFailed
+    /// A server load failed while earlier results were still on screen, so
+    /// the list may not match the current search, filters, or sort.
+    case reloadFailed
+}
+
 // MARK: - Sort & Filter Types
 
 /// Sort order for *browsing* the recipe list (no active text search). During

@@ -354,17 +354,10 @@ extension RecipeDetailViewModel {
         guard runningAction == nil else { return }
         runningAction = .exporting
         defer { runningAction = nil }
-        do {
-            let download = try await api.exportRecipe(recipeId)
-            let url = try RecipeExportSupport.writeToTempFile(
-                data: download.data,
-                filename: download.filename
-            )
-            exportShareItem = ShareItem(url: url)
-        } catch let apiError as RamekinAPI.APIError {
-            exportError = apiError.errorDescription ?? "Export failed"
-        } catch {
-            exportError = error.localizedDescription
+        switch await ExportOutcome.download({ try await api.exportRecipe(recipeId) }) {
+        case let .ready(item): exportShareItem = item
+        case let .failed(message): exportError = message
+        case .cancelled: break
         }
     }
 

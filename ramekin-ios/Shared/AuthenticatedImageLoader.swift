@@ -18,21 +18,52 @@ actor AuthenticatedImageCache {
     }
 }
 
+/// The server answered with bytes that are not an image.
+struct UndecodableImageError: Error, LocalizedError {
+    var errorDescription: String? { "The image could not be decoded" }
+}
+
 /// Loads images from authenticated endpoints with Bearer token
 @MainActor
 class AuthenticatedImageLoader: ObservableObject {
     typealias TokenProvider = @MainActor () -> String?
     typealias ImageFetcher = @Sendable (URLRequest) async throws -> (Data, URLResponse)
 
-    @Published var image: UIImage?
-    @Published var isLoading = false
-    @Published var error: Error?
+    /// Exactly one of: nothing shown, loading, an image, or a failure.
+    enum Phase {
+        case idle
+        case loading
+        case loaded(UIImage)
+        case failed(Error)
+    }
+
+    @Published private(set) var phase: Phase = .idle
+
+    var image: UIImage? {
+        if case let .loaded(image) = phase { return image }
+        return nil
+    }
+
+    var isLoading: Bool {
+        if case .loading = phase { return true }
+        return false
+    }
+
+    var error: Error? {
+        if case let .failed(error) = phase { return error }
+        return nil
+    }
 
     private let imageCache: AuthenticatedImageCache
     private let tokenProvider: TokenProvider
     private let imageFetcher: ImageFetcher
     /// The in-flight load. Readable so tests can await a load instead of polling for its result.
     private(set) var currentTask: Task<Void, Never>?
+    /// Identifies the latest load (or cancel): only it may change `phase`.
+    private var generation = UUID()
+    /// The URL `phase` describes, so reloading the same URL (the view
+    /// reappearing) keeps showing its image instead of blanking it.
+    private var phaseURL: URL?
 
     init(
         imageCache: AuthenticatedImageCache = .shared,
@@ -47,65 +78,93 @@ class AuthenticatedImageLoader: ObservableObject {
     }
 
     func load(url: URL) {
-        // Cancel any existing load
         currentTask?.cancel()
+        let generation = UUID()
+        self.generation = generation
+
+        // A different picture must not show the old one while it loads.
+        if phaseURL != url {
+            phase = .idle
+        }
+        phaseURL = url
 
         guard let token = tokenProvider() else {
+            currentTask = nil
+            phase = .idle
             return
         }
 
-        error = nil
         let cacheKey = Self.cacheKey(for: url, token: token)
 
         currentTask = Task {
-            if let cachedImage = await imageCache.image(forKey: cacheKey) {
-                guard !Task.isCancelled else { return }
-
-                self.image = cachedImage
-                self.isLoading = false
-                return
-            }
-
-            guard !Task.isCancelled else {
-                self.isLoading = false
-                return
-            }
-            self.isLoading = true
-
-            var request = URLRequest(url: url)
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            RamekinAPI.shared.applyAccessHeaders(to: &request)
-
-            do {
-                let (data, response) = try await imageFetcher(request)
-
-                guard !Task.isCancelled else { return }
-
-                if let httpResponse = response as? HTTPURLResponse {
-                    AuthExpiry.notifyIfRejected(statusCode: httpResponse.statusCode, sentToken: token)
-                }
-                guard let httpResponse = response as? HTTPURLResponse,
-                      httpResponse.statusCode == 200 else {
-                    throw URLError(.badServerResponse)
-                }
-
-                if let loadedImage = UIImage(data: data) {
-                    await imageCache.insert(loadedImage, forKey: cacheKey)
-                    self.image = loadedImage
-                }
-            } catch {
-                guard !Task.isCancelled else { return }
-                self.error = error
-            }
-
-            self.isLoading = false
+            await self.run(url: url, token: token, cacheKey: cacheKey, generation: generation)
         }
+    }
+
+    /// One load. Every step after an await first checks it is still the
+    /// latest load, so a superseded or cancelled one never touches `phase`.
+    private func run(url: URL, token: String, cacheKey: String, generation: UUID) async {
+        if let cachedImage = await imageCache.image(forKey: cacheKey) {
+            guard self.generation == generation else { return }
+            phase = .loaded(cachedImage)
+            return
+        }
+
+        guard self.generation == generation else { return }
+        if image == nil {
+            phase = .loading
+        }
+
+        let result: Phase
+        do {
+            result = .loaded(try await fetchImage(url: url, token: token, cacheKey: cacheKey))
+        } catch {
+            guard self.generation == generation else { return }
+            if CancellationSupport.isCancellation(error) || Task.isCancelled {
+                settleCancelled()
+                return
+            }
+            // Refetching the picture already on screen: keep showing it.
+            if image != nil { return }
+            result = .failed(error)
+        }
+
+        guard self.generation == generation else { return }
+        phase = result
+    }
+
+    private func fetchImage(url: URL, token: String, cacheKey: String) async throws -> UIImage {
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        RamekinAPI.shared.applyAccessHeaders(to: &request)
+
+        let (data, response) = try await imageFetcher(request)
+        if let httpResponse = response as? HTTPURLResponse {
+            AuthExpiry.notifyIfRejected(statusCode: httpResponse.statusCode, sentToken: token)
+        }
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+        guard let loadedImage = UIImage(data: data) else {
+            throw UndecodableImageError()
+        }
+        await imageCache.insert(loadedImage, forKey: cacheKey)
+        return loadedImage
     }
 
     func cancel() {
         currentTask?.cancel()
         currentTask = nil
-        isLoading = false
+        generation = UUID()
+        settleCancelled()
+    }
+
+    /// A cancelled load leaves an image it already had, and nothing else.
+    private func settleCancelled() {
+        if case .loading = phase {
+            phase = .idle
+        }
     }
 
     static func cacheKey(for url: URL, token: String) -> String {

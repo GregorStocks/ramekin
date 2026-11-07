@@ -34,7 +34,7 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
         )
 
         viewModel.searchText = "pasta"
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertEqual(viewModel.recipes.map(\.id), pastaPage1.map(\.id))
         XCTAssertTrue(viewModel.hasMore)
 
@@ -42,7 +42,7 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
         await appendStarted.wait()
 
         viewModel.searchText = "cake"
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         releaseAppend.open()
         await loadMoreTask.value
@@ -88,14 +88,14 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
         // adding a text query, so sortBy still reaches the API.
         viewModel.sourceFilter = "NYT"
         viewModel.sortOrder = .newest
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertEqual(viewModel.recipes.map(\.id), newestPage1.map(\.id))
 
         let loadMoreTask = Task { await viewModel.loadMore() }
         await appendStarted.wait()
 
         viewModel.sortOrder = .title
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         releaseAppend.open()
         await loadMoreTask.value
@@ -135,7 +135,7 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
         )
 
         viewModel.searchText = "pasta"
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         let loadMoreTask = Task { await viewModel.loadMore() }
         await appendStarted.wait()
@@ -181,7 +181,7 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
         )
 
         viewModel.searchText = "pasta"
-        let loadTask = Task { await viewModel.loadRecipes(reset: true) }
+        let loadTask = Task { await viewModel.loadRecipes() }
         await loadStarted.wait()
 
         // Typing in the advanced-filters sheet: the key moves on, but no reload
@@ -212,7 +212,7 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
         )
 
         viewModel.searchText = "pasta"
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertEqual(listCallCount, 1)
         XCTAssertTrue(viewModel.hasMore)
 

@@ -19,6 +19,33 @@ struct ShareItem: Identifiable {
     let url: URL
 }
 
+/// How a server export ended: a temp file ready for the share sheet, or the
+/// message for the "Export Failed" alert.
+enum ExportOutcome {
+    case ready(ShareItem)
+    case failed(String)
+    /// Cancelled, so there is nothing to show.
+    case cancelled
+
+    /// Downloads an export and writes it to a temp file. Shared by the
+    /// single-recipe and all-recipes Paprika exports.
+    static func download(_ fetch: () async throws -> RamekinAPI.ExportDownload) async -> ExportOutcome {
+        do {
+            let download = try await fetch()
+            let url = try RecipeExportSupport.writeToTempFile(data: download.data, filename: download.filename)
+            return .ready(ShareItem(url: url))
+        } catch {
+            if CancellationSupport.isCancellation(error) {
+                return .cancelled
+            }
+            if let apiError = error as? RamekinAPI.APIError {
+                return .failed(apiError.errorDescription ?? "Export failed")
+            }
+            return .failed(error.localizedDescription)
+        }
+    }
+}
+
 /// Adds a share-sheet presentation and an "Export Failed" alert to any view
 /// driven by an export flow. Kept as a ViewModifier so the calling view's body
 /// stays small enough for the Swift type-checker to handle.
