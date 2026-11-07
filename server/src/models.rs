@@ -1,5 +1,5 @@
 use crate::ids::{PhotoIds, Uuid};
-use crate::scraping::JobStatus;
+use crate::scraping::{JobKind, JobStatus};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use ramekin_core::catalog::Learned;
@@ -319,6 +319,8 @@ pub struct ScrapeJob {
     /// An Edit with AI job's request (`EditRequest`). Such a job proposes a
     /// version too.
     pub edit_request: Option<serde_json::Value>,
+    /// What the job does, set when it's created.
+    pub kind: JobKind,
 }
 
 #[derive(Insertable)]
@@ -327,6 +329,7 @@ pub struct NewScrapeJob<'a> {
     pub id: Uuid,
     pub user_id: Uuid,
     pub url: Option<&'a str>,
+    pub kind: JobKind,
 }
 
 #[derive(Insertable)]
@@ -336,6 +339,7 @@ pub struct NewImportJob<'a> {
     pub user_id: Uuid,
     pub url: Option<&'a str>,
     pub idempotency_key: Option<&'a str>,
+    pub kind: JobKind,
     pub status: JobStatus,
     pub current_step: Option<&'a str>,
     pub current_step_started_at: Option<DateTime<Utc>>,

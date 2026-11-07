@@ -566,3 +566,68 @@ class TestScrapeJobStateConstraints:
                 )
         finally:
             conn.close()
+
+
+class TestScrapeJobKind:
+    """Each job records its kind when it's created."""
+
+    def test_jobs_record_their_kind(self, authed_api_client, database_url):
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+        import_api = ImportApi(client)
+
+        scrape = scrape_api.create_scrape(
+            CreateScrapeRequest(url=f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html")
+        )
+        paprika = import_api.import_recipe(
+            {
+                "raw_recipe": {
+                    "title": "Kind Soup",
+                    "ingredients": "1 cup water",
+                    "instructions": "Boil the water.",
+                },
+                "photo_ids": [],
+                "extraction_method": "paprika",
+            }
+        )
+        text = import_api.import_from_text(
+            {"text": "Kind Pancakes\n1 cup flour\nMix and cook."}
+        )
+        jobs = {
+            str(scrape.id): "url_scrape",
+            str(paprika.job_id): "import",
+            str(text.job_id): "text_import",
+        }
+        for job_id in jobs:
+            wait_for_job_completion(scrape_api, job_id)
+
+        conn = connect_db(database_url)
+        try:
+            kinds = dict(
+                conn.execute(
+                    "SELECT id, kind FROM scrape_jobs WHERE user_id = ?",
+                    (str(user_id),),
+                ).fetchall()
+            )
+        finally:
+            conn.close()
+        assert kinds == jobs
+
+    def test_kind_must_match_the_job_columns(self, authed_api_client, database_url):
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+        response = scrape_api.create_scrape(
+            CreateScrapeRequest(url=f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html")
+        )
+        wait_for_job_completion(scrape_api, response.id)
+
+        conn = connect_db(database_url)
+        try:
+            for update in ["kind = 'teleport'", "kind = 'edit'", "photo_only = 1"]:
+                with pytest.raises(sqlite3.IntegrityError):
+                    conn.execute(
+                        f"UPDATE scrape_jobs SET {update} WHERE id = ?",
+                        (str(response.id),),
+                    )
+        finally:
+            conn.close()

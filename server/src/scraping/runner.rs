@@ -33,7 +33,7 @@ use super::steps::{
     FetchHtmlStep, FetchImagesStep, LoadRecipeStep, ProposeNormalizeStep,
     ResolveIngredientNamesStep, SaveRecipeStep,
 };
-use super::{run_scrape_db, run_scrape_db_write, JobStatus, ScrapeError};
+use super::{run_scrape_db, run_scrape_db_write, JobKind, JobStatus, ScrapeError};
 
 /// Maximum retries before hard fail
 const MAX_RETRIES: i32 = 5;
@@ -111,7 +111,7 @@ pub async fn build_registry(
                 pool.clone(),
                 base_version_id()?,
                 plan.ops.clone(),
-                job.edit_request.is_some(),
+                job.kind == JobKind::Edit,
             )),
             EDIT_WITH_AI_STEP => {
                 let request: EditRequest = job
@@ -178,26 +178,47 @@ pub async fn build_registry(
     Ok(registry)
 }
 
-/// The save step for `job`'s mode: a new recipe, or a new version of the
+/// The save step for `job`'s kind: a new recipe, or a new version of the
 /// recipe a rescrape or photo-only rescrape works on.
 fn save_step(pool: Arc<DbPool>, job: &ScrapeJob) -> Result<SaveRecipeStep, ScrapeError> {
     let user_id = job.user_id;
-    match (job.recipe_id, job.expected_version_id, job.photo_only) {
-        (Some(recipe_id), Some(expected_version_id), true) => Ok(
-            SaveRecipeStep::for_photo_rescrape(pool, user_id, recipe_id, expected_version_id),
-        ),
-        (Some(recipe_id), Some(expected_version_id), false) => Ok(SaveRecipeStep::for_rescrape(
-            pool,
-            user_id,
-            recipe_id,
-            expected_version_id,
-        )),
-        // Without an expected version, an existing recipe_id is one an
-        // earlier attempt of this job already created.
-        (_, None, _) => Ok(SaveRecipeStep::new(pool, user_id, job.id)),
-        (None, Some(_), _) => Err(ScrapeError::InvalidState(
-            "new recipe job unexpectedly has an expected recipe version".to_string(),
-        )),
+    let existing = || match (job.recipe_id, job.expected_version_id) {
+        (Some(recipe_id), Some(expected_version_id)) => Ok((recipe_id, expected_version_id)),
+        _ => Err(ScrapeError::InvalidState(format!(
+            "{} job has no recipe version to update",
+            job.kind
+        ))),
+    };
+    match job.kind {
+        JobKind::PhotoRescrape => {
+            let (recipe_id, expected_version_id) = existing()?;
+            Ok(SaveRecipeStep::for_photo_rescrape(
+                pool,
+                user_id,
+                recipe_id,
+                expected_version_id,
+            ))
+        }
+        JobKind::Rescrape => {
+            let (recipe_id, expected_version_id) = existing()?;
+            Ok(SaveRecipeStep::for_rescrape(
+                pool,
+                user_id,
+                recipe_id,
+                expected_version_id,
+            ))
+        }
+        // An existing recipe_id is one an earlier attempt of this job already
+        // created.
+        JobKind::UrlScrape
+        | JobKind::Capture
+        | JobKind::Import
+        | JobKind::TextImport
+        | JobKind::PhotoImport => Ok(SaveRecipeStep::new(pool, user_id, job.id)),
+        JobKind::Normalize | JobKind::Edit => Err(ScrapeError::InvalidState(format!(
+            "{} job doesn't save a recipe",
+            job.kind
+        ))),
     }
 }
 
@@ -261,9 +282,10 @@ enum InterruptedJobAction {
     Fail,
 }
 
-fn interrupted_job_action(url: Option<&str>, current_step: Option<&str>) -> InterruptedJobAction {
-    match (url, current_step) {
-        (_, Some(PHOTO_EXTRACT_STEP)) | (None, None) => InterruptedJobAction::Fail,
+fn interrupted_job_action(kind: JobKind, current_step: Option<&str>) -> InterruptedJobAction {
+    match (kind, current_step) {
+        // A photo import that hasn't finished extracting.
+        (JobKind::PhotoImport, None | Some(PHOTO_EXTRACT_STEP)) => InterruptedJobAction::Fail,
         _ => InterruptedJobAction::Respawn,
     }
 }
@@ -277,8 +299,13 @@ pub async fn resume_interrupted_jobs(pool: &Arc<DbPool>) {
     let jobs = run_scrape_db(pool, |conn| {
         scrape_jobs::table
             .filter(scrape_jobs::status.eq_any(JobStatus::ACTIVE))
-            .select((scrape_jobs::id, scrape_jobs::url, scrape_jobs::current_step))
-            .load::<(Uuid, Option<String>, Option<String>)>(conn)
+            .select((
+                scrape_jobs::id,
+                scrape_jobs::kind,
+                scrape_jobs::url,
+                scrape_jobs::current_step,
+            ))
+            .load::<(Uuid, JobKind, Option<String>, Option<String>)>(conn)
             .map_err(|e| ScrapeError::Database(e.to_string()))
     })
     .await;
@@ -295,8 +322,8 @@ pub async fn resume_interrupted_jobs(pool: &Arc<DbPool>) {
             "Resuming scrape jobs interrupted by a restart"
         );
     }
-    for (job_id, url, current_step) in jobs {
-        match interrupted_job_action(url.as_deref(), current_step.as_deref()) {
+    for (job_id, kind, url, current_step) in jobs {
+        match interrupted_job_action(kind, current_step.as_deref()) {
             InterruptedJobAction::Fail => {
                 let step = current_step.as_deref().unwrap_or(PHOTO_EXTRACT_STEP);
                 if let Err(e) = mark_failed(
@@ -505,9 +532,9 @@ async fn run_scrape_job_inner(
 
     // Determine final outcome. A normalize job works on its existing recipe
     // and saves nothing.
-    let recipe_id = match job.normalize_ops {
-        Some(_) => job.recipe_id,
-        None => store
+    let recipe_id = match job.kind.proposes() {
+        true => job.recipe_id,
+        false => store
             .get_output(SaveRecipeStepMeta::NAME)
             .await
             .and_then(|o| {
@@ -939,7 +966,7 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<JobStatus, ScrapeE
     // it again — creating an unrecoverable retry loop. Rewind to fetch_images
     // so it actually retries the image download. Narrowly scoped to
     // photo-only jobs; full scrapes have their own empty-photo handling.
-    if job.photo_only {
+    if job.kind == JobKind::PhotoRescrape {
         let pipeline_steps = plan.step_names();
         let resume_idx = pipeline_steps
             .iter()
@@ -1016,18 +1043,19 @@ mod tests {
     #[test]
     fn interrupted_jobs_resume_unless_they_need_in_memory_photos() {
         use InterruptedJobAction::{Fail, Respawn};
-        for (url, step, expected) in [
-            (Some("https://example.com"), None, Respawn),
-            (Some("https://example.com"), Some("save_recipe"), Respawn),
-            (None, Some("parse_ingredients"), Respawn),
-            (None, Some("auto_tag"), Respawn),
-            (None, Some(PHOTO_EXTRACT_STEP), Fail),
-            (None, None, Fail),
+        for (kind, step, expected) in [
+            (JobKind::UrlScrape, None, Respawn),
+            (JobKind::UrlScrape, Some("save_recipe"), Respawn),
+            (JobKind::Import, Some("parse_ingredients"), Respawn),
+            (JobKind::TextImport, Some("auto_tag"), Respawn),
+            (JobKind::PhotoImport, Some("parse_ingredients"), Respawn),
+            (JobKind::PhotoImport, Some(PHOTO_EXTRACT_STEP), Fail),
+            (JobKind::PhotoImport, None, Fail),
         ] {
             assert_eq!(
-                interrupted_job_action(url, step),
+                interrupted_job_action(kind, step),
                 expected,
-                "{url:?} {step:?}"
+                "{kind} {step:?}"
             );
         }
     }

@@ -26,7 +26,7 @@ use crate::recipes::VersionWriteError;
 use crate::schema::scrape_jobs;
 use crate::scraping::output_store::latest_output;
 use crate::scraping::steps::NormalizeProposal;
-use crate::scraping::{self, JobStatus, NormalizeStart, StoredSource};
+use crate::scraping::{self, JobKind, JobStatus, NormalizeStart, StoredSource};
 
 #[derive(Debug, Clone, Copy, Serialize, ToSchema)]
 #[serde(rename_all = "snake_case")]
@@ -391,38 +391,37 @@ async fn load_normalize_job(
     recipe_id: Uuid,
     job_id: Uuid,
 ) -> Result<ProposingJob, ApiError> {
-    let (status, ops, base_version_id, edit_request) = run_db(pool, move |conn| {
+    let (status, kind, ops, base_version_id) = run_db(pool, move |conn| {
         scrape_jobs::table
             .find(job_id)
             .filter(scrape_jobs::user_id.eq(user_id))
             .filter(scrape_jobs::recipe_id.eq(recipe_id))
+            .filter(scrape_jobs::kind.eq_any([JobKind::Normalize, JobKind::Edit]))
             .select((
                 scrape_jobs::status,
+                scrape_jobs::kind,
                 scrape_jobs::normalize_ops,
                 scrape_jobs::expected_version_id,
-                scrape_jobs::edit_request,
             ))
-            .first::<(
-                JobStatus,
-                Option<serde_json::Value>,
-                Option<Uuid>,
-                Option<serde_json::Value>,
-            )>(conn)
+            .first::<(JobStatus, JobKind, Option<serde_json::Value>, Option<Uuid>)>(conn)
             .map_err(|e| match e {
                 diesel::NotFound => ApiError::not_found("Normalize job not found"),
                 _ => ApiError::internal("Failed to fetch normalize job"),
             })
     })
     .await?;
-    let (Some(ops), Some(base_version_id)) = (ops, base_version_id) else {
-        return Err(ApiError::not_found("Normalize job not found"));
+    let base_version_id = base_version_id
+        .ok_or_else(|| ApiError::internal(format!("{kind} job {job_id} has no base version")))?;
+    // An edit job runs no normalize ops.
+    let ops = match ops {
+        Some(ops) => ops_from_json(&ops).map_err(ApiError::internal)?,
+        None => Vec::new(),
     };
-    let ops = ops_from_json(&ops).map_err(ApiError::internal)?;
     Ok(ProposingJob {
         status,
         ops,
         base_version_id,
-        edit: edit_request.is_some(),
+        edit: kind == JobKind::Edit,
     })
 }
 

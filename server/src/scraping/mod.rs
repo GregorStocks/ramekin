@@ -1,4 +1,5 @@
 mod allowlist;
+mod job_kind;
 mod job_status;
 mod jobs;
 pub mod output_store;
@@ -9,6 +10,7 @@ pub mod status;
 pub mod steps;
 
 pub use allowlist::is_host_allowed;
+pub use job_kind::JobKind;
 pub use job_status::JobStatus;
 pub use jobs::{
     create_edit_job, create_import_job, create_job, create_job_with_html, create_normalize_job,

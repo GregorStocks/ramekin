@@ -15,7 +15,7 @@ use crate::schema::{photos, scrape_jobs, step_outputs};
 use super::output_store::{copy_output, PreparedOutput};
 use super::plan::JobPlan;
 use super::steps::{EditRequest, FetchHtmlStep};
-use super::{run_scrape_db, run_scrape_db_write, JobStatus, ScrapeError};
+use super::{run_scrape_db, run_scrape_db_write, JobKind, JobStatus, ScrapeError};
 
 /// Create a new scrape job.
 pub async fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<ScrapeJob, ScrapeError> {
@@ -25,6 +25,7 @@ pub async fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<Scrap
             id: Uuid::now_v7(),
             user_id,
             url: Some(url.as_str()),
+            kind: JobKind::UrlScrape,
         };
 
         diesel::insert_into(scrape_jobs::table)
@@ -52,6 +53,7 @@ pub async fn create_photo_rescrape_job(
                 scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::url.eq(url.as_str()),
+                scrape_jobs::kind.eq(JobKind::PhotoRescrape),
                 scrape_jobs::recipe_id.eq(Some(recipe_id)),
                 scrape_jobs::expected_version_id.eq(Some(expected_version_id)),
                 scrape_jobs::photo_only.eq(true),
@@ -134,6 +136,7 @@ pub async fn create_text_import_job(
             .values((
                 scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
+                scrape_jobs::kind.eq(JobKind::TextImport),
                 scrape_jobs::status.eq(JobStatus::for_step(
                     &JobPlan::import_without_page(),
                     ExtractRecipeStep::NAME,
@@ -237,6 +240,7 @@ pub async fn create_normalize_job(
                 scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::url.eq(url),
+                scrape_jobs::kind.eq(JobKind::Normalize),
                 scrape_jobs::recipe_id.eq(Some(recipe_id)),
                 scrape_jobs::expected_version_id.eq(Some(base_version_id)),
                 scrape_jobs::normalize_ops.eq(Some(ops)),
@@ -276,8 +280,7 @@ pub async fn create_edit_job(
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::recipe_id.eq(Some(recipe_id)),
                 scrape_jobs::expected_version_id.eq(Some(base_version_id)),
-                // No normalize ops, but a proposal like a normalize job's.
-                scrape_jobs::normalize_ops.eq(Some(crate::normalize::ops_json(&[]))),
+                scrape_jobs::kind.eq(JobKind::Edit),
                 scrape_jobs::edit_request.eq(Some(request)),
                 scrape_jobs::status.eq(JobStatus::for_step(&JobPlan::edit(), LOAD_RECIPE_STEP)),
                 scrape_jobs::current_step.eq(Some(LOAD_RECIPE_STEP)),
@@ -309,6 +312,7 @@ pub async fn create_job_with_html(
                 scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::url.eq(Some(url.as_str())),
+                scrape_jobs::kind.eq(JobKind::Capture),
                 scrape_jobs::status.eq(JobStatus::for_step(
                     &JobPlan::import(),
                     ExtractRecipeStep::NAME,
@@ -375,6 +379,7 @@ pub async fn create_import_job(
                 user_id,
                 url: source_url.as_deref(),
                 idempotency_key: key,
+                kind: JobKind::Import,
                 status: JobStatus::for_step(
                     &JobPlan::import_without_page(),
                     ParseIngredientsStep::NAME,

@@ -174,6 +174,7 @@ diesel::table! {
         idempotency_key -> Nullable<Text>,
         normalize_ops -> Nullable<Json>,
         edit_request -> Nullable<Json>,
+        kind -> Text,
     }
 }
 

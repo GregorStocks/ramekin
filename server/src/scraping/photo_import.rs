@@ -19,7 +19,7 @@ use super::jobs::{
 };
 use super::plan::JobPlan;
 use super::runner::{job_slot, run_scrape_job_in_slot};
-use super::{run_scrape_db_write, JobStatus, ScrapeError};
+use super::{run_scrape_db_write, JobKind, JobStatus, ScrapeError};
 
 pub(super) const PHOTO_EXTRACT_STEP: &str = "photo_extract";
 
@@ -33,6 +33,7 @@ pub async fn create_pending_photo_job(
             id: Uuid::now_v7(),
             user_id,
             url: None,
+            kind: JobKind::PhotoImport,
         };
 
         diesel::insert_into(scrape_jobs::table)
