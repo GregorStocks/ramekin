@@ -52,7 +52,6 @@ export default function CookbookPage() {
   const [searchInput, setSearchInput] = createSignal(searchQuery());
   const [density, setDensity] = createSignal<Density>(loadDensity());
   const [error, setError] = createSignal<string | null>(null);
-  const [notice, setNotice] = createSignal<string | null>(null);
 
   createEffect(() => saveDensity(density()));
   createEffect(() =>
@@ -77,7 +76,6 @@ export default function CookbookPage() {
     hasTextQuery: filters.hasTextQuery,
     density,
     setError,
-    setNotice,
   });
 
   const bulkSelection = useCookbookBulkSelection({
@@ -86,9 +84,19 @@ export default function CookbookPage() {
     recipes: recipeList.recipes,
     total: recipeList.total,
     reloadRecipes: () => recipeList.loadRecipes(),
-    setError,
-    setNotice,
   });
+
+  // The list's load error and the last bulk action's result are separate
+  // states: either can be showing while the other changes.
+  const shownError = () => {
+    const bulk = bulkSelection.result();
+    const bulkError = bulk?.kind === "error" ? bulk.message : null;
+    return [error(), bulkError].filter(Boolean).join(" ") || null;
+  };
+  const shownNotice = () => {
+    const bulk = bulkSelection.result();
+    return bulk?.kind === "notice" ? bulk.message : null;
+  };
 
   createEffect(() => {
     const query = searchQuery();
@@ -181,8 +189,8 @@ export default function CookbookPage() {
           bulkMode={bulkSelection.bulkMode}
           selected={bulkSelection.selected}
           token={token}
-          error={error}
-          notice={notice}
+          error={shownError}
+          notice={shownNotice}
           clearSearch={clearSearch}
           toggleSelected={bulkSelection.toggleSelected}
         />

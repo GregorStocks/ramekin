@@ -14,9 +14,18 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
 import { createApiResource } from "../utils/asyncState";
+import { createRequestTracker } from "../utils/requestTracker";
+import { nameStatusPollDelay } from "../utils/nameStatusPolling";
 
-type ConnectionStatus = "checking" | "connected" | "error";
-type UploadState = "idle" | "uploading" | "done";
+type ConnectionStatus =
+  | { kind: "checking" }
+  | { kind: "connected" }
+  | { kind: "error"; message: string };
+type UploadState =
+  | { kind: "idle" }
+  | { kind: "uploading" }
+  | { kind: "done" }
+  | { kind: "failed"; message: string };
 
 export default function SettingsPage() {
   usePageTitle(() => "Settings");
@@ -24,31 +33,48 @@ export default function SettingsPage() {
     useAuth();
 
   const [username, setUsername] = createSignal<string | null>(null);
-  const [status, setStatus] = createSignal<ConnectionStatus>("checking");
-  const [errorMessage, setErrorMessage] = createSignal<string | null>(null);
+  const [status, setStatus] = createSignal<ConnectionStatus>({
+    kind: "checking",
+  });
   const [showLogoutConfirm, setShowLogoutConfirm] = createSignal(false);
-  const [uploadState, setUploadState] = createSignal<UploadState>("idle");
-  const [uploadError, setUploadError] = createSignal<string | null>(null);
+  const [uploadState, setUploadState] = createSignal<UploadState>({
+    kind: "idle",
+  });
 
   // On web the server is simply the origin serving the app.
   const serverUrl = window.location.origin;
 
+  // Only the latest check may report: an older one finishing late must not
+  // overwrite a newer answer.
+  const connectionChecks = createRequestTracker();
   const checkConnection = async () => {
-    setStatus("checking");
-    setErrorMessage(null);
+    const check = connectionChecks.start();
+    setStatus({ kind: "checking" });
     try {
       const response = await getUsersApi().me();
+      if (!connectionChecks.isCurrent(check)) return;
       setUsername(response.username);
-      setStatus("connected");
+      setStatus({ kind: "connected" });
     } catch (err) {
-      setStatus("error");
-      setErrorMessage(await extractApiError(err, "Could not reach the server"));
+      const message = await extractApiError(err, "Could not reach the server");
+      if (!connectionChecks.isCurrent(check)) return;
+      setStatus({ kind: "error", message });
     }
   };
+  onCleanup(() => connectionChecks.invalidate());
 
   createEffect(() => {
     checkConnection();
   });
+
+  const connectionError = () => {
+    const current = status();
+    return current.kind === "error" ? current.message : null;
+  };
+  const uploadError = () => {
+    const current = uploadState();
+    return current.kind === "failed" ? current.message : null;
+  };
 
   const logout = () => {
     setShowLogoutConfirm(false);
@@ -56,8 +82,8 @@ export default function SettingsPage() {
   };
 
   const handleUploadLogs = async () => {
-    setUploadState("uploading");
-    setUploadError(null);
+    if (uploadState().kind === "uploading") return;
+    setUploadState({ kind: "uploading" });
     logger.log("Settings", "uploading debug logs");
     try {
       await getClientLogsApi().createClientLog({
@@ -67,36 +93,42 @@ export default function SettingsPage() {
           content: logger.dump(),
         },
       });
-      setUploadState("done");
+      setUploadState({ kind: "done" });
     } catch (err) {
-      setUploadState("idle");
-      setUploadError(await extractApiError(err, "Failed to upload logs"));
+      setUploadState({
+        kind: "failed",
+        message: await extractApiError(err, "Failed to upload logs"),
+      });
     }
   };
 
   // Ingredient names the catalog doesn't know, resolved in the background.
-  const nameStatus = createApiResource(
-    () => getIngredientNamesApi().getIngredientNamesStatus(),
-    "Could not load ingredient recognition status",
-  );
+  // Consecutive failed status requests, for the retry backoff.
+  const [statusFailures, setStatusFailures] = createSignal(0);
+  const nameStatus = createApiResource(async () => {
+    try {
+      const result = await getIngredientNamesApi().getIngredientNamesStatus();
+      setStatusFailures(0);
+      return result;
+    } catch (err) {
+      setStatusFailures((failures) => failures + 1);
+      throw err;
+    }
+  }, "Could not load ingredient recognition status");
   const refetchNameStatus = () => void nameStatus.refetch();
   const [retrying, setRetrying] = createSignal(false);
   const [nameMessage, setNameMessage] = createSignal<string | null>(null);
   const [nameError, setNameError] = createSignal<string | null>(null);
   const failedCount = () => nameStatus.data()?.failed ?? 0;
   // Keep the counts current while names are waiting, and keep retrying a
-  // failed status request, backing off from 2 s to a minute.
-  let statusFailures = 0;
+  // failed status request with backoff.
   createEffect(() => {
-    let delay: number;
-    if (nameStatus.error()) {
-      delay = Math.min(2000 * 2 ** statusFailures, 60000);
-      statusFailures++;
-    } else {
-      statusFailures = 0;
-      if ((nameStatus.data()?.pending ?? 0) === 0) return;
-      delay = 2000;
-    }
+    if (nameStatus.loading()) return;
+    const delay = nameStatusPollDelay(
+      nameStatus.error() ? statusFailures() : 0,
+      nameStatus.data()?.pending ?? 0,
+    );
+    if (delay === null) return;
     const timer = setTimeout(refetchNameStatus, delay);
     onCleanup(() => clearTimeout(timer));
   });
@@ -142,12 +174,14 @@ export default function SettingsPage() {
           <div class="settings-row">
             <dt>Connection</dt>
             <dd>
-              <span class="settings-connection" data-status={status()}>
+              <span class="settings-connection" data-status={status().kind}>
                 <span class="settings-connection-dot" aria-hidden="true" />
                 <Switch>
-                  <Match when={status() === "checking"}>Checking…</Match>
-                  <Match when={status() === "connected"}>Connected</Match>
-                  <Match when={status() === "error"}>{errorMessage()}</Match>
+                  <Match when={status().kind === "checking"}>Checking…</Match>
+                  <Match when={status().kind === "connected"}>Connected</Match>
+                  <Match when={connectionError()}>
+                    {(message) => message()}
+                  </Match>
                 </Switch>
               </span>
             </dd>
@@ -157,9 +191,9 @@ export default function SettingsPage() {
           type="button"
           class="btn btn-small"
           onClick={checkConnection}
-          disabled={status() === "checking"}
+          disabled={status().kind === "checking"}
         >
-          {status() === "checking" ? "Checking…" : "Check again"}
+          {status().kind === "checking" ? "Checking…" : "Check again"}
         </button>
       </section>
 
@@ -243,16 +277,18 @@ export default function SettingsPage() {
         <button
           type="button"
           class="btn btn-small"
-          disabled={uploadState() === "uploading"}
+          disabled={uploadState().kind === "uploading"}
           onClick={handleUploadLogs}
         >
-          {uploadState() === "uploading" ? "Uploading…" : "Upload debug logs"}
+          {uploadState().kind === "uploading"
+            ? "Uploading…"
+            : "Upload debug logs"}
         </button>
-        <Show when={uploadState() === "done"}>
+        <Show when={uploadState().kind === "done"}>
           <p class="success">Logs uploaded.</p>
         </Show>
         <Show when={uploadError()}>
-          <p class="error">{uploadError()}</p>
+          {(message) => <p class="error">{message()}</p>}
         </Show>
       </section>
 

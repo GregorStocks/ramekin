@@ -17,16 +17,16 @@ export default function CookbookBulkToolbar(props: CookbookBulkToolbarProps) {
       <div class="bulk-toolbar">
         <span class="bulk-count">
           {state.selected().size} selected
-          <Show when={state.selectAllStatus()}>
+          <Show when={state.selectingAll()}>
             {" "}
-            · <em>{state.selectAllStatus()}</em>
+            · <em>Loading…</em>
           </Show>
         </span>
         <button
           type="button"
           class="btn btn-small"
           onClick={state.selectAll}
-          disabled={props.total() === 0 || state.selectAllStatus() !== null}
+          disabled={props.total() === 0 || state.selectingAll()}
         >
           Select all ({props.total()})
         </button>

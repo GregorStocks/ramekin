@@ -1,5 +1,6 @@
-import { createSignal, Show, For } from "solid-js";
+import { createEffect, createSignal, on, Show, For } from "solid-js";
 import { useAuth } from "../context/AuthContext";
+import { createRequestTracker } from "../utils/requestTracker";
 import VersionSourceBadge from "./VersionSourceBadge";
 import type { VersionSummary } from "ramekin-client";
 
@@ -45,28 +46,52 @@ export default function VersionHistoryPanel(props: VersionHistoryPanelProps) {
     }
   };
 
+  // The current version the loaded list was fetched for. A revert or an
+  // accepted AI edit makes a new current version, which makes the list stale.
+  const [loadedFor, setLoadedFor] = createSignal<string | null>(null);
+  const loads = createRequestTracker();
+
   const loadVersions = async () => {
+    const load = loads.start();
+    const forVersion = props.currentVersionId;
     setLoading(true);
     setError(null);
     try {
       const response = await getRecipesApi().listVersions({
         id: props.recipeId,
       });
+      if (!loads.isCurrent(load)) return;
       setVersions(response.versions);
-    } catch (err) {
+      setLoadedFor(forVersion);
+    } catch {
+      if (!loads.isCurrent(load)) return;
       setError("Failed to load version history");
     } finally {
-      setLoading(false);
+      if (loads.isCurrent(load)) setLoading(false);
     }
   };
 
   const toggleExpanded = () => {
     const wasExpanded = expanded();
     setExpanded(!wasExpanded);
-    if (!wasExpanded && versions().length === 0) {
-      loadVersions();
+    if (!wasExpanded && loadedFor() !== props.currentVersionId) {
+      void loadVersions();
     }
   };
+
+  // Refresh an open list when the current version changes under it. A
+  // collapsed one reloads when next expanded.
+  createEffect(
+    on(
+      () => props.currentVersionId,
+      (currentVersionId) => {
+        if (expanded() && loadedFor() !== currentVersionId) {
+          void loadVersions();
+        }
+      },
+      { defer: true },
+    ),
+  );
 
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat("en-US", {

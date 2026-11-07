@@ -2,9 +2,9 @@ import { createSignal, createMemo, Show } from "solid-js";
 import bookmarkletSource from "../bookmarklet.js?raw";
 import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
-import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { useUnsavedChangesGuard } from "../utils/unsavedChangesGuard";
+import { createStartFlow } from "../utils/startFlow";
 
 declare const __EXTERNAL_URL__: string;
 
@@ -13,38 +13,30 @@ export default function CreateRecipePage() {
   const navigate = useNavigate();
   const { getImportApi, getScrapeApi, getUsersApi } = useAuth();
   const [recipeText, setRecipeText] = createSignal("");
-  const [textError, setTextError] = createSignal<string | null>(null);
-  const [startingText, setStartingText] = createSignal(false);
-  const [textStarted, setTextStarted] = createSignal(false);
+  const textImport = createStartFlow(
+    () =>
+      getImportApi().importFromText({
+        importFromTextRequest: { text: recipeText() },
+      }),
+    (response) => navigate(`/scrape/${response.jobId}`),
+    "Could not start the import. Your text is unchanged; try again.",
+  );
 
   // Pasted text is work worth asking about before leaving.
-  useUnsavedChangesGuard(() => !textStarted() && recipeText().trim() !== "");
-
-  const startTextImport = async () => {
-    setStartingText(true);
-    setTextError(null);
-    try {
-      const response = await getImportApi().importFromText({
-        importFromTextRequest: { text: recipeText() },
-      });
-      setTextStarted(true);
-      navigate(`/scrape/${response.jobId}`);
-    } catch (error) {
-      setTextError(
-        await extractApiError(
-          error,
-          "Could not start the import. Your text is unchanged; try again.",
-        ),
-      );
-    } finally {
-      setStartingText(false);
-    }
-  };
+  useUnsavedChangesGuard(
+    () => textImport.state().kind !== "started" && recipeText().trim() !== "",
+  );
 
   // URL import state
   const [importUrl, setImportUrl] = createSignal("");
-  const [scrapeError, setScrapeError] = createSignal<string | null>(null);
-  const [scraping, setScraping] = createSignal(false);
+  const scrape = createStartFlow(
+    () =>
+      getScrapeApi().createScrape({
+        createScrapeRequest: { url: importUrl().trim() },
+      }),
+    (response) => navigate(`/scrape/${response.id}`),
+    "Failed to start import",
+  );
 
   const [showBookmarklet, setShowBookmarklet] = createSignal(false);
   // A long-lived, capture-scoped token minted just for the bookmarklet. Unlike
@@ -53,25 +45,18 @@ export default function CreateRecipePage() {
   const [bookmarkletToken, setBookmarkletToken] = createSignal<string | null>(
     null,
   );
-  const [bookmarkletError, setBookmarkletError] = createSignal<string | null>(
-    null,
+  const mintBookmarklet = createStartFlow(
+    () => getUsersApi().mintBookmarkletToken(),
+    (response) => setBookmarkletToken(response.token),
+    "Failed to create bookmarklet",
   );
 
-  const toggleBookmarklet = async () => {
+  const toggleBookmarklet = () => {
     const next = !showBookmarklet();
     setShowBookmarklet(next);
-    // Mint the token lazily, the first time the section is opened.
-    if (next && !bookmarkletToken()) {
-      setBookmarkletError(null);
-      try {
-        const response = await getUsersApi().mintBookmarkletToken();
-        setBookmarkletToken(response.token);
-      } catch (err) {
-        setBookmarkletError(
-          await extractApiError(err, "Failed to create bookmarklet"),
-        );
-      }
-    }
+    // Mint the token lazily, the first time the section is opened. The flow
+    // ignores a toggle while a mint is in flight or already done.
+    if (next) void mintBookmarklet.run();
   };
 
   const bookmarkletCode = createMemo(() => {
@@ -97,23 +82,9 @@ export default function CreateRecipePage() {
     return `javascript:${minified}`;
   });
 
-  const startScrape = async () => {
-    const url = importUrl().trim();
-    if (!url) return;
-
-    setScrapeError(null);
-    setScraping(true);
-
-    try {
-      const response = await getScrapeApi().createScrape({
-        createScrapeRequest: { url },
-      });
-      navigate(`/scrape/${response.id}`);
-    } catch (err) {
-      setScraping(false);
-      const errorMessage = await extractApiError(err, "Failed to start import");
-      setScrapeError(errorMessage);
-    }
+  const startScrape = () => {
+    if (!importUrl().trim()) return;
+    void scrape.run();
   };
 
   return (
@@ -127,19 +98,19 @@ export default function CreateRecipePage() {
           rows={14}
           value={recipeText()}
           onInput={(e) => setRecipeText(e.currentTarget.value)}
-          disabled={startingText()}
+          disabled={textImport.busy()}
           placeholder="Type or paste a whole recipe: title, ingredients, instructions, and any details."
         />
       </div>
       <button
         class="btn btn-primary"
-        onClick={startTextImport}
-        disabled={startingText() || !recipeText().trim()}
+        onClick={() => void textImport.run()}
+        disabled={textImport.busy() || !recipeText().trim()}
       >
-        {startingText() ? "Starting…" : "Import recipe"}
+        {textImport.busy() ? "Starting…" : "Import recipe"}
       </button>
-      <Show when={textError()}>
-        <p role="alert">{textError()}</p>
+      <Show when={textImport.error()}>
+        <p role="alert">{textImport.error()}</p>
       </Show>
 
       {/* URL Import Section */}
@@ -153,21 +124,21 @@ export default function CreateRecipePage() {
             placeholder="Paste recipe URL..."
             value={importUrl()}
             onInput={(e) => setImportUrl(e.currentTarget.value)}
-            disabled={scraping()}
+            disabled={scrape.busy()}
             class="import-input"
           />
           <button
             type="button"
             class="btn btn-primary"
             onClick={startScrape}
-            disabled={scraping() || !importUrl().trim()}
+            disabled={scrape.busy() || !importUrl().trim()}
           >
-            {scraping() ? "Starting..." : "Import"}
+            {scrape.busy() ? "Starting..." : "Import"}
           </button>
         </div>
-        <Show when={scrapeError()}>
+        <Show when={scrape.error()}>
           <div class="import-error">
-            <span>{scrapeError()}</span>
+            <span>{scrape.error()}</span>
           </div>
         </Show>
         <p class="import-hint">
@@ -195,7 +166,7 @@ export default function CreateRecipePage() {
               when={bookmarkletToken()}
               fallback={
                 <p class="bookmarklet-hint">
-                  {bookmarkletError() ?? "Generating bookmarklet…"}
+                  {mintBookmarklet.error() ?? "Generating bookmarklet…"}
                 </p>
               }
             >
