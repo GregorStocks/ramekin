@@ -21,6 +21,7 @@ use crate::db::DbPool;
 use crate::models::ScrapeJob;
 use crate::schema::{scrape_jobs, step_outputs, user_tags};
 
+use super::deadline::{run_with_deadline, step_deadline};
 use super::jobs::{
     enter_step, fail_unfinished, get_job, mark_completed, mark_failed,
     update_current_step_keeping_start, SOURCE_PHOTOS_STEP, SOURCE_TEXT_STEP,
@@ -816,7 +817,8 @@ async fn execute_step_with_tracing(
     };
 
     async {
-        let result = step.execute(&ctx).await;
+        let deadline = step_deadline(step_name);
+        let result = run_with_deadline(step_name, deadline, step.execute(&ctx)).await;
 
         // Record common fields
         let current_span = tracing::Span::current();

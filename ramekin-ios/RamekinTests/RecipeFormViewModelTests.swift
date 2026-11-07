@@ -78,6 +78,32 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertTrue(model.hasUnsavedChanges)
     }
 
+    func testTimedOutTextImportKeepsTheTextAndOffersImportAgain() async {
+        let jobId = UUID()
+        let timeout = "Timed out: extract_recipe was still running after 15 minutes and was stopped"
+        var polls = 0
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in jobId },
+            getScrape: { _ in
+                polls += 1
+                return polls < 3
+                    ? makeJob(id: jobId, recipeId: nil, status: "parsing")
+                    : makeJob(id: jobId, recipeId: nil, status: "failed", error: timeout)
+            }
+        ))
+        model.pollIntervalNanoseconds = 0
+        model.recipeText = "My original recipe"
+
+        let saved = await model.importRecipe()
+
+        XCTAssertFalse(saved)
+        XCTAssertEqual(polls, 3)
+        XCTAssertEqual(model.error, timeout)
+        XCTAssertEqual(model.recipeText, "My original recipe")
+        XCTAssertTrue(model.canImport)
+        XCTAssertTrue(model.hasUnsavedChanges)
+    }
+
     func testTextImportThatCannotStartKeepsTheText() async {
         let model = RecipeFormViewModel(mode: .create, api: createClient(
             importFromText: { _ in throw TestError.unexpectedCall },

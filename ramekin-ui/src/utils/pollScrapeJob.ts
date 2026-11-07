@@ -2,7 +2,6 @@ import type { ScrapeApi, ScrapeJobResponse } from "ramekin-client";
 
 export const SCRAPE_JOB_POLL_INTERVAL_MS = 500;
 export const SCRAPE_JOB_POLL_TIMEOUT_MS = 120_000;
-export const SCRAPE_JOB_LONG_POLL_TIMEOUT_MS = 10 * 60_000;
 
 const TERMINAL_STATUSES = new Set(["completed", "failed"]);
 

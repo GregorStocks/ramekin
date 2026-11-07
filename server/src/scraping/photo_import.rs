@@ -13,6 +13,7 @@ use crate::models::{NewScrapeJob, ScrapeJob};
 use crate::photos::load_photo_images;
 use crate::schema::scrape_jobs;
 
+use super::deadline::{step_deadline, timeout_error};
 use super::jobs::{
     enter_step, enter_step_conn, mark_failed, prepare_output, prepare_photos_source,
     save_step_output, SOURCE_PHOTOS_STEP,
@@ -118,7 +119,11 @@ async fn run_photo_import_job_inner(
             .map_err(AiError::from)?
             .for_extraction(),
     );
-    let extract_result = extract_recipe_from_photos(&ai_client, images).await?;
+    let deadline = step_deadline(PHOTO_EXTRACT_STEP);
+    let extract_result =
+        tokio::time::timeout(deadline, extract_recipe_from_photos(&ai_client, images))
+            .await
+            .map_err(|_| ScrapeError::TimedOut(timeout_error(PHOTO_EXTRACT_STEP, deadline)))??;
 
     tracing::info!(
         "Extracted recipe '{}' from photos (cached={})",

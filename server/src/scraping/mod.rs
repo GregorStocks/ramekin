@@ -1,4 +1,5 @@
 mod allowlist;
+mod deadline;
 mod job_kind;
 mod job_status;
 mod jobs;
@@ -47,6 +48,10 @@ pub enum ScrapeError {
 
     #[error("Invalid URL: {0}")]
     InvalidUrl(String),
+
+    /// A step ran past its deadline (see `deadline`); the message says which.
+    #[error("{0}")]
+    TimedOut(String),
 
     #[error("Max retries exceeded")]
     MaxRetriesExceeded,

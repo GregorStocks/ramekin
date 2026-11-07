@@ -139,8 +139,11 @@ extension RecipeFormViewModel {
         do {
             let jobId = try await api.importFromText(recipeText)
             importJobId = jobId
-            // AI can be slow, so there's no deadline; closing the form
-            // cancels the task, and the job carries on.
+            // AI can be slow, so there's no client deadline: the server
+            // stops a hung step at its deadline and fails the job, which ends
+            // this loop like any other failure (the text is kept, and Import
+            // starts over). Closing the form cancels the task, and the job
+            // carries on.
             while true {
                 try Task.checkCancellation()
                 let job = try await api.getScrape(jobId)

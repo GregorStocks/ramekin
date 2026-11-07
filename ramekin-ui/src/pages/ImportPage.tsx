@@ -7,10 +7,7 @@ import {
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
 import { ImportExtractionMethod, type ScrapeApi } from "ramekin-client";
-import {
-  pollScrapeJob,
-  SCRAPE_JOB_LONG_POLL_TIMEOUT_MS,
-} from "../utils/pollScrapeJob";
+import { pollScrapeJob } from "../utils/pollScrapeJob";
 
 type RecipeStatus =
   | { state: "pending" }
@@ -25,9 +22,7 @@ interface RecipeRow {
 }
 
 type TerminalResult =
-  | { status: "completed" }
-  | { status: "failed"; error: string }
-  | { status: "timeout" };
+  { status: "completed" } | { status: "failed"; error: string };
 
 const IMPORT_JOB_POLL_INTERVAL_MS = 2000;
 
@@ -38,7 +33,10 @@ function createJobPoller(scrapeApi: ScrapeApi) {
     const result = await pollScrapeJob(scrapeApi, jobId, {
       beforePoll: waitForPollTurn,
       intervalMs: 0,
-      timeoutMs: SCRAPE_JOB_LONG_POLL_TIMEOUT_MS,
+      // No client deadline: a job can wait a long time for a slot behind a
+      // big import, and the server fails any step that runs past its own
+      // deadline (with a "Timed out" error, shown on the row like any other).
+      timeoutMs: null,
       onPollError: (err) => {
         logger.warn(
           "Import",
@@ -50,11 +48,8 @@ function createJobPoller(scrapeApi: ScrapeApi) {
       return { status: "failed", error: result.error };
     }
     // Without untilRecipeReady this waits for normalize ops, so "recipe_ready"
-    // never comes back.
-    if (result.status === "recipe_ready") {
-      return { status: "completed" };
-    }
-    return { status: result.status };
+    // never comes back, and without a deadline neither does "timeout".
+    return { status: "completed" };
   };
 }
 
@@ -170,15 +165,8 @@ export default function ImportPage() {
             const terminal = await pollForJob(jobId);
             if (terminal.status === "completed") {
               updateRow(rowIndex, { state: "done", jobId });
-            } else if (terminal.status === "failed") {
-              updateRow(rowIndex, { state: "error", message: terminal.error });
             } else {
-              updateRow(rowIndex, {
-                state: "error",
-                message: `Timed out waiting for import job after ${
-                  SCRAPE_JOB_LONG_POLL_TIMEOUT_MS / 1000
-                }s`,
-              });
+              updateRow(rowIndex, { state: "error", message: terminal.error });
             }
           } catch (err) {
             updateRow(rowIndex, {
