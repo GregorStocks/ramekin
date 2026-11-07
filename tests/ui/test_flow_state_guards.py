@@ -6,7 +6,7 @@ import base64
 import json
 import uuid
 
-from playwright.sync_api import Page, Route, expect
+from playwright.sync_api import Error, Page, Route, expect
 
 from ramekin_client import ApiClient, Configuration
 from ramekin_client.api import AuthApi, RecipesApi
@@ -29,7 +29,9 @@ def create_user_with_edited_recipe(api_url: str) -> tuple[str, str, str]:
     username = f"ui_flow_{uuid.uuid4().hex[:8]}"
     password = "testpass123"
     with ApiClient(Configuration(host=api_url)) as client:
-        signup = AuthApi(client).signup(SignupRequest(username=username, password=password))
+        signup = AuthApi(client).signup(
+            SignupRequest(username=username, password=password)
+        )
 
     config = Configuration(host=api_url)
     config.access_token = signup.token
@@ -40,14 +42,19 @@ def create_user_with_edited_recipe(api_url: str) -> tuple[str, str, str]:
                 title="Lentil Soup",
                 instructions="Simmer lentils.",
                 ingredients=[
-                    Ingredient(item="lentils", measurements=[Measurement(amount="1", unit="cup")])
+                    Ingredient(
+                        item="lentils",
+                        measurements=[Measurement(amount="1", unit="cup")],
+                    )
                 ],
             )
         )
         current = recipes.get_recipe(created.id)
         recipes.update_recipe(
             created.id,
-            UpdateRecipeRequest(expected_version_id=current.version_id, title="Red Lentil Soup"),
+            UpdateRecipeRequest(
+                expected_version_id=current.version_id, title="Red Lentil Soup"
+            ),
         )
     return username, password, created.id
 
@@ -68,7 +75,9 @@ def test_version_history_refreshes_after_revert(page: Page, ui_url: str, api_url
     page.get_by_text("Version History").click()
     expect(page.locator(".version-count")).to_have_text("(2)")
 
-    page.locator(".version-item:not(.current)").get_by_role("button", name="Revert").click()
+    page.locator(".version-item:not(.current)").get_by_role(
+        "button", name="Revert"
+    ).click()
     page.get_by_role("dialog").get_by_role("button", name="Revert").click()
 
     # The open list picks up the version the revert created.
@@ -87,7 +96,7 @@ def test_compare_modal_closed_while_loading_stays_closed(
     def is_version_fetch(url: str) -> bool:
         return "version_id=" in url
 
-    page.route(is_version_fetch, held.append)
+    page.route(is_version_fetch, lambda route: held.append(route))
 
     page.goto(f"{ui_url}/recipes/{recipe_id}")
     page.get_by_text("Version History").click()
@@ -103,9 +112,12 @@ def test_compare_modal_closed_while_loading_stays_closed(
     page.keyboard.press("Escape")
     expect(dialog).to_have_count(0)
 
-    page.unroute(is_version_fetch)
+    # A route whose request the page already gave up on can't be continued.
     for route in held:
-        route.continue_()
+        try:
+            route.continue_()
+        except Error:
+            pass
 
     # The late responses must not reopen the modal.
     page.wait_for_timeout(1000)
@@ -152,7 +164,9 @@ def test_pdf_export_closed_while_generating_saves_nothing(
     page.unroute(f"**/api/photos/{photo_id}/thumbnail*")
     page.route(
         f"**/api/photos/{photo_id}/thumbnail*",
-        lambda route: route.fulfill(status=200, content_type="image/png", body=PNG_BYTES),
+        lambda route: route.fulfill(
+            status=200, content_type="image/png", body=PNG_BYTES
+        ),
     )
 
     page.wait_for_timeout(1500)
