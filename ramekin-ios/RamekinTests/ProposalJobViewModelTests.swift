@@ -49,14 +49,14 @@ final class ProposalJobViewModelTests: XCTestCase {
         viewModel.pollIntervalNanoseconds = 0
 
         await viewModel.load()
-        XCTAssertEqual(viewModel.phase, .choose)
+        XCTAssertEqual(viewModel.phase, .choose(error: nil))
         XCTAssertEqual(viewModel.selected, ["normalize_title", "generate_description", "auto_tag"])
 
         viewModel.selected = ["normalize_title"]
         await viewModel.run()
 
         XCTAssertEqual(startedOps, ["normalize_title"])
-        XCTAssertEqual(viewModel.phase, .review)
+        XCTAssertTrue(viewModel.isReviewing)
         XCTAssertEqual(
             viewModel.diffs,
             [RecipeContentFieldDiff(label: "Title", before: "Soup!!! The Best", after: "Soup")]
@@ -126,8 +126,140 @@ final class ProposalJobViewModelTests: XCTestCase {
         let saved = await viewModel.accept()
 
         XCTAssertFalse(saved)
-        XCTAssertEqual(viewModel.phase, .review)
-        XCTAssertNotNil(viewModel.error)
+        guard case .review(_, _, let isAccepting, let error) = viewModel.phase else {
+            return XCTFail("Expected the review to stay open, got \(viewModel.phase)")
+        }
+        XCTAssertFalse(isAccepting)
+        XCTAssertNotNil(error)
+        XCTAssertFalse(viewModel.isBusy)
+    }
+
+    @MainActor
+    func testFailedOpsLoadOffersRetry() async {
+        var attempts = 0
+        let viewModel = ProposalJobViewModel(
+            recipeId: UUID(),
+            mode: .normalize,
+            api: ProposalJobAPIClient(
+                listOps: { _ in
+                    attempts += 1
+                    if attempts == 1 { throw URLError(.timedOut) }
+                    return NormalizeOpsResponse(ops: normalizeTestOps)
+                },
+                start: { _, _ in throw URLError(.badServerResponse) },
+                startEdit: { _, _, _ in throw URLError(.badServerResponse) },
+                getScrape: { _ in throw URLError(.badServerResponse) },
+                getProposal: { _, _ in throw URLError(.badServerResponse) },
+                accept: { _, _ in throw URLError(.badServerResponse) }
+            )
+        )
+
+        await viewModel.load()
+        guard case .loadFailed = viewModel.phase else {
+            return XCTFail("Expected a failed load, got \(viewModel.phase)")
+        }
+        XCTAssertFalse(viewModel.canRun)
+
+        await viewModel.load()
+        XCTAssertEqual(viewModel.phase, .choose(error: nil))
+        XCTAssertFalse(viewModel.ops.isEmpty)
+    }
+
+    @MainActor
+    func testFailedStartReturnsToChoosingWithTheError() async {
+        let viewModel = ProposalJobViewModel(
+            recipeId: UUID(),
+            mode: .normalize,
+            api: ProposalJobAPIClient(
+                listOps: { _ in NormalizeOpsResponse(ops: normalizeTestOps) },
+                start: { _, _ in throw URLError(.timedOut) },
+                startEdit: { _, _, _ in throw URLError(.badServerResponse) },
+                getScrape: { _ in throw URLError(.badServerResponse) },
+                getProposal: { _, _ in throw URLError(.badServerResponse) },
+                accept: { _, _ in throw URLError(.badServerResponse) }
+            )
+        )
+
+        await viewModel.load()
+        await viewModel.run()
+
+        guard case .choose(let error) = viewModel.phase else {
+            return XCTFail("Expected to be choosing again, got \(viewModel.phase)")
+        }
+        XCTAssertNotNil(error)
+        XCTAssertTrue(viewModel.canRun)
+    }
+
+    @MainActor
+    func testTryAgainAfterAFailedJobGoesBackToChoosing() async {
+        let jobId = UUID()
+        let viewModel = ProposalJobViewModel(
+            recipeId: UUID(),
+            mode: .normalize,
+            api: ProposalJobAPIClient(
+                listOps: { _ in NormalizeOpsResponse(ops: normalizeTestOps) },
+                start: { _, _ in NormalizeJobResponse(jobId: jobId, status: .pending) },
+                startEdit: { _, _, _ in throw URLError(.badServerResponse) },
+                getScrape: { _ in
+                    makeJob(id: jobId, recipeId: nil, status: "failed", error: "Page not found")
+                },
+                getProposal: { _, _ in throw URLError(.badServerResponse) },
+                accept: { _, _ in throw URLError(.badServerResponse) }
+            )
+        )
+        viewModel.pollIntervalNanoseconds = 0
+
+        await viewModel.load()
+        viewModel.selected = ["normalize_title"]
+        await viewModel.run()
+        viewModel.tryAgain()
+
+        XCTAssertEqual(viewModel.phase, .choose(error: nil))
+        XCTAssertEqual(viewModel.selected, ["normalize_title"])
+    }
+
+    @MainActor
+    func testAcceptIsBusyUntilTheSaveAnswers() async {
+        let jobId = UUID()
+        var acceptContinuation: CheckedContinuation<AcceptNormalizeResponse, Never>?
+        let viewModel = ProposalJobViewModel(
+            recipeId: UUID(),
+            mode: .normalize,
+            api: ProposalJobAPIClient(
+                listOps: { _ in NormalizeOpsResponse(ops: normalizeTestOps) },
+                start: { _, _ in NormalizeJobResponse(jobId: jobId, status: .pending) },
+                startEdit: { _, _, _ in throw URLError(.badServerResponse) },
+                getScrape: { _ in makeJob(id: jobId, recipeId: nil, status: "completed") },
+                getProposal: { _, _ in
+                    NormalizeProposalResponse(
+                        base: makeNormalized(title: "A"),
+                        baseVersionId: UUID(),
+                        ops: ["normalize_title"],
+                        proposed: makeNormalized(title: "B"),
+                        status: .completed
+                    )
+                },
+                accept: { _, _ in
+                    await withCheckedContinuation { acceptContinuation = $0 }
+                }
+            )
+        )
+        viewModel.pollIntervalNanoseconds = 0
+
+        await viewModel.load()
+        await viewModel.run()
+        let acceptTask = Task { await viewModel.accept() }
+        while acceptContinuation == nil {
+            await Task.yield()
+        }
+
+        XCTAssertTrue(viewModel.isBusy)
+        let secondAccept = await viewModel.accept()
+        XCTAssertFalse(secondAccept, "A second Accept while saving does nothing")
+
+        acceptContinuation?.resume(returning: AcceptNormalizeResponse(versionId: UUID()))
+        let saved = await acceptTask.value
+        XCTAssertTrue(saved)
     }
 }
 
@@ -166,7 +298,7 @@ extension ProposalJobViewModelTests {
         viewModel.pollIntervalNanoseconds = 0
 
         await viewModel.load()
-        XCTAssertEqual(viewModel.phase, .choose)
+        XCTAssertEqual(viewModel.phase, .choose(error: nil))
         XCTAssertFalse(viewModel.canRun)
         viewModel.instruction = "  make it vegan  "
         XCTAssertTrue(viewModel.canRun)
@@ -174,9 +306,16 @@ extension ProposalJobViewModelTests {
 
         XCTAssertEqual(sent?.0, "make it vegan")
         XCTAssertEqual(sent?.1, [photoId])
-        XCTAssertEqual(viewModel.phase, .review)
+        XCTAssertTrue(viewModel.isReviewing)
         XCTAssertEqual(viewModel.proposal?.summary, "Made it vegan.")
         XCTAssertTrue(viewModel.hasChanges)
+    }
+}
+
+private extension ProposalJobViewModel {
+    var isReviewing: Bool {
+        guard case .review = phase else { return false }
+        return true
     }
 }
 

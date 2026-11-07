@@ -274,3 +274,11 @@
 .normalize-notice-failed {
   color: var(--text-secondary);
 }
+
+.recipe-action-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}

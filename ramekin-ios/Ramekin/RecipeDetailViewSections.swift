@@ -83,7 +83,8 @@ extension RecipeDetailView {
             aiActionProgressBanner(banner)
         }
 
-        if let error = viewModel.error {
+        // A reload that failed while the recipe is still showing.
+        if let error = viewModel.loadError {
             inlineErrorBanner(message: error)
         }
     }

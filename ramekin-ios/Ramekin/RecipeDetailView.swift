@@ -39,7 +39,7 @@ struct RecipeDetailView: View {
                 if viewModel.isLoading && viewModel.recipe == nil {
                     ProgressView()
                         .padding(.top, 100)
-                } else if let error = viewModel.error, viewModel.recipe == nil {
+                } else if let error = viewModel.loadError, viewModel.recipe == nil {
                     errorView(message: error)
                 } else if let recipe = viewModel.recipe {
                     recipeContent(recipe)
@@ -62,7 +62,7 @@ struct RecipeDetailView: View {
                         // A fresh edit replaces the one offered for resuming.
                         resumableEdit = nil
                         resumingEdit = nil
-                        viewModel.showingEdit = true
+                        viewModel.activeSheet = .edit
                     }
                     .fontWeight(.semibold)
                     .disabled(actionsDisabledForHistoricalVersion)
@@ -71,14 +71,14 @@ struct RecipeDetailView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Button {
-                            viewModel.showingReNormalize = true
+                            viewModel.activeSheet = .reNormalize
                         } label: {
                             Label("Re-normalize…", systemImage: "arrow.triangle.2.circlepath")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
                         Button {
-                            viewModel.showingEditWithAI = true
+                            viewModel.activeSheet = .editWithAI
                         } label: {
                             Label("Edit with AI…", systemImage: "wand.and.stars.inverse")
                         }
@@ -92,7 +92,7 @@ struct RecipeDetailView: View {
                         .disabled(actionsDisabledForHistoricalVersion)
 
                         Button {
-                            viewModel.showingAddToMealPlan = true
+                            viewModel.activeSheet = .addToMealPlan
                         } label: {
                             Label("Add to Meal Plan", systemImage: "calendar.badge.plus")
                         }
@@ -100,7 +100,7 @@ struct RecipeDetailView: View {
 
                         if !recipe.ingredients.isEmpty {
                             Button {
-                                viewModel.showingAddToShoppingList = true
+                                viewModel.activeSheet = .addToShoppingList
                             } label: {
                                 Label("Add to Shopping List", systemImage: "cart.badge.plus")
                             }
@@ -123,51 +123,8 @@ struct RecipeDetailView: View {
                 }
             }
         }
-        .sheet(isPresented: $viewModel.showingAddToShoppingList) {
-            if let recipe = viewModel.recipe {
-                AddToShoppingListSheet(
-                    recipe: recipe,
-                    scale: viewModel.recipeScale,
-                    isPresented: $viewModel.showingAddToShoppingList
-                )
-            }
-        }
-        .sheet(isPresented: $viewModel.showingAddToMealPlan) {
-            if let recipe = viewModel.recipe {
-                AddToMealPlanSheet(recipe: recipe, isPresented: $viewModel.showingAddToMealPlan)
-            }
-        }
-        .sheet(isPresented: $viewModel.showingEditWithAI) {
-            if let recipe = viewModel.recipe {
-                ProposalJobSheet(
-                    recipeId: recipeId,
-                    mode: .edit(photoIds: recipe.photoIds),
-                    isPresented: $viewModel.showingEditWithAI
-                ) {
-                    await viewModel.loadRecipe()
-                }
-            }
-        }
-        .sheet(isPresented: $viewModel.showingReNormalize) {
-            ProposalJobSheet(recipeId: recipeId, mode: .normalize, isPresented: $viewModel.showingReNormalize) {
-                await viewModel.loadRecipe()
-            }
-        }
-        .sheet(isPresented: $viewModel.showingEdit) {
-            NavigationStack {
-                RecipeFormView(mode: .edit(recipeId: recipeId), resuming: resumingEdit) {
-                    Task { await viewModel.loadRecipe() }
-                }
-            }
-        }
-        .sheet(isPresented: $viewModel.showingCompareSheet) {
-            RecipeVersionCompareSheet(
-                olderVersion: viewModel.comparedOlderVersion,
-                newerVersion: viewModel.comparedNewerVersion,
-                isLoading: viewModel.isLoadingCompare,
-                error: viewModel.compareError,
-                onClose: viewModel.closeCompareSheet
-            )
+        .sheet(item: $viewModel.activeSheet) { sheet in
+            sheetContent(sheet)
         }
         .confirmationDialog("Delete Recipe", isPresented: $viewModel.showingDeleteConfirmation) {
             Button("Delete Recipe", role: .destructive) {
@@ -180,21 +137,17 @@ struct RecipeDetailView: View {
         } message: {
             Text("Are you sure you want to delete this recipe? This cannot be undone.")
         }
-        .alert("Delete Failed", isPresented: Binding(
-            get: { viewModel.deleteError != nil },
-            set: { if !$0 { viewModel.deleteError = nil } }
-        )) {
+        .alert(
+            viewModel.actionAlert?.title ?? "",
+            isPresented: Binding(
+                get: { viewModel.actionAlert != nil },
+                set: { if !$0 { viewModel.actionAlert = nil } }
+            ),
+            presenting: viewModel.actionAlert
+        ) { _ in
             Button("OK", role: .cancel) {}
-        } message: {
-            Text(viewModel.deleteError ?? "")
-        }
-        .alert("AI Action Failed", isPresented: Binding(
-            get: { viewModel.aiActionError != nil },
-            set: { if !$0 { viewModel.aiActionError = nil } }
-        )) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text(viewModel.aiActionError ?? "")
+        } message: { alert in
+            Text(alert.message)
         }
         .alert(
             "Revert to this version?",
@@ -233,10 +186,66 @@ struct RecipeDetailView: View {
         .modifier(RecipeScaleRestorationModifier(recipeId: recipeId, viewModel: viewModel))
     }
 
+    @ViewBuilder
+    private func sheetContent(_ sheet: RecipeDetailSheet) -> some View {
+        switch sheet {
+        case .addToShoppingList:
+            if let recipe = viewModel.recipe {
+                AddToShoppingListSheet(
+                    recipe: recipe,
+                    scale: viewModel.recipeScale,
+                    isPresented: isPresented(sheet)
+                )
+            }
+        case .addToMealPlan:
+            if let recipe = viewModel.recipe {
+                AddToMealPlanSheet(recipe: recipe, isPresented: isPresented(sheet))
+            }
+        case .editWithAI:
+            if let recipe = viewModel.recipe {
+                ProposalJobSheet(
+                    recipeId: recipeId,
+                    mode: .edit(photoIds: recipe.photoIds),
+                    isPresented: isPresented(sheet)
+                ) {
+                    await viewModel.loadRecipe()
+                }
+            }
+        case .reNormalize:
+            ProposalJobSheet(recipeId: recipeId, mode: .normalize, isPresented: isPresented(sheet)) {
+                await viewModel.loadRecipe()
+            }
+        case .edit:
+            NavigationStack {
+                RecipeFormView(mode: .edit(recipeId: recipeId), resuming: resumingEdit) {
+                    Task { await viewModel.loadRecipe() }
+                }
+            }
+        case .compare:
+            RecipeVersionCompareSheet(
+                olderVersion: viewModel.comparedOlderVersion,
+                newerVersion: viewModel.comparedNewerVersion,
+                isLoading: viewModel.isLoadingCompare,
+                error: viewModel.compareError,
+                onClose: viewModel.closeCompareSheet
+            )
+        }
+    }
+
+    /// Whether `sheet` is the one showing, for sheets that close themselves.
+    private func isPresented(_ sheet: RecipeDetailSheet) -> Binding<Bool> {
+        Binding(
+            get: { viewModel.activeSheet == sheet },
+            set: { isShowing in
+                if !isShowing && viewModel.activeSheet == sheet { viewModel.activeSheet = nil }
+            }
+        )
+    }
+
     func resumeEdit() {
         resumingEdit = resumableEdit
         resumableEdit = nil
-        viewModel.showingEdit = true
+        viewModel.activeSheet = .edit
     }
 
     func discardResumableEdit() {

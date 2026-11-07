@@ -29,24 +29,30 @@ interface BulkReNormalizeModalProps {
   onAccepted: () => Promise<void>;
 }
 
-type RowStatus =
-  | "running"
-  | "ready"
-  | "unchanged"
-  | "saving"
-  | "accepted"
-  | "discarded"
-  | "failed";
-
-interface Row {
-  recipeId: string;
-  title: string;
-  jobId: string | null;
-  status: RowStatus;
-  error: string | null;
-  base: NormalizedRecipe | null;
-  proposed: NormalizedRecipe | null;
+/** A finished job's proposal, as reviewed and saved. */
+interface RowProposal {
+  jobId: string;
+  base: NormalizedRecipe;
+  proposed: NormalizedRecipe;
 }
+
+/**
+ * One recipe's run. Each status carries exactly what it needs, so a row ready
+ * for review always has its proposal and a failed row always says why.
+ */
+type RowState =
+  | { status: "running"; jobId: string }
+  /** `error` says why the last Accept didn't save. */
+  | ({ status: "ready"; error: string | null } & RowProposal)
+  | ({ status: "saving" } & RowProposal)
+  | { status: "unchanged" }
+  | { status: "accepted" }
+  | { status: "discarded" }
+  | { status: "failed"; jobId: string | null; error: string };
+
+type RowStatus = RowState["status"];
+
+type Row = { recipeId: string; title: string } & RowState;
 
 const POLL_INTERVAL_MS = 1500;
 
@@ -111,21 +117,25 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
     }),
   );
 
-  const updateRow = (recipeId: string, patch: Partial<Row>) =>
+  const updateRow = (recipeId: string, state: RowState) =>
     setRows((current) =>
       current
         ? current.map((row) =>
-            row.recipeId === recipeId ? { ...row, ...patch } : row,
+            row.recipeId === recipeId
+              ? { recipeId: row.recipeId, title: row.title, ...state }
+              : row,
           )
         : current,
     );
 
   const pollRows = async (signal: AbortSignal) => {
     while (!signal.aborted) {
-      const running = (rows() ?? []).filter((row) => row.status === "running");
+      const running = (rows() ?? []).flatMap((row) =>
+        row.status === "running" ? [row] : [],
+      );
       if (running.length === 0) return;
       for (const row of running) {
-        if (signal.aborted || !row.jobId) return;
+        if (signal.aborted) return;
         try {
           const proposal = await props.getNormalizeApi().getNormalizeProposal({
             id: row.recipeId,
@@ -134,18 +144,30 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
           if (signal.aborted) return;
           if (proposal.status === "completed") {
             const proposed = proposal.proposed ?? null;
-            updateRow(row.recipeId, {
-              status: !proposed
-                ? "failed"
+            updateRow(
+              row.recipeId,
+              !proposed
+                ? {
+                    status: "failed",
+                    jobId: row.jobId,
+                    error: "The job proposed nothing",
+                  }
                 : normalizedRecipeChanged(proposal.base, proposed)
-                  ? "ready"
-                  : "unchanged",
-              error: proposed ? null : "The job proposed nothing",
-              base: proposal.base,
-              proposed,
-            });
+                  ? {
+                      status: "ready",
+                      jobId: row.jobId,
+                      base: proposal.base,
+                      proposed,
+                      error: null,
+                    }
+                  : { status: "unchanged" },
+            );
           } else if (proposal.status === "failed") {
-            updateRow(row.recipeId, { status: "failed" });
+            updateRow(row.recipeId, {
+              status: "failed",
+              jobId: row.jobId,
+              error: "The job failed",
+            });
           }
         } catch {
           // A missed poll is retried on the next pass.
@@ -170,14 +192,16 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
       });
       if (runSession !== session) return;
       setRows(
-        response.results.map((result) => ({
+        response.results.map((result): Row => ({
           recipeId: result.recipeId,
           title: titles.get(result.recipeId) ?? "Recipe",
-          jobId: result.jobId ?? null,
-          status: result.jobId ? "running" : "failed",
-          error: result.error ?? null,
-          base: null,
-          proposed: null,
+          ...(result.jobId
+            ? { status: "running", jobId: result.jobId }
+            : {
+                status: "failed",
+                jobId: null,
+                error: result.error ?? "Couldn't start",
+              }),
         })),
       );
     } catch (err) {
@@ -199,22 +223,33 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
     // Rows are replaced on every update, so read the current one: the row may
     // have been discarded or saved since this was queued.
     const row = rows()?.find((candidate) => candidate.recipeId === recipeId);
-    if (!row || row.status !== "ready" || !row.jobId) return;
-    updateRow(row.recipeId, { status: "saving", error: null });
+    if (!row || row.status !== "ready") return;
+    const acceptSession = session;
+    const proposal: RowProposal = {
+      jobId: row.jobId,
+      base: row.base,
+      proposed: row.proposed,
+    };
+    updateRow(row.recipeId, { status: "saving", ...proposal });
     try {
       await props.getNormalizeApi().acceptNormalizeProposal({
         id: row.recipeId,
         jobId: row.jobId,
       });
-      accepted = true;
-      updateRow(row.recipeId, { status: "accepted" });
-      if (expanded() === row.recipeId) setExpanded(null);
     } catch (err) {
-      updateRow(row.recipeId, {
-        status: "ready",
-        error: await extractApiError(err, "Failed to save the new version"),
-      });
+      const message = await extractApiError(
+        err,
+        "Failed to save the new version",
+      );
+      // The modal has closed (and maybe reopened) since; this row is gone.
+      if (acceptSession !== session) return;
+      updateRow(row.recipeId, { status: "ready", ...proposal, error: message });
+      return;
     }
+    if (acceptSession !== session) return;
+    accepted = true;
+    updateRow(row.recipeId, { status: "accepted" });
+    if (expanded() === row.recipeId) setExpanded(null);
   };
 
   const acceptAllReady = async () => {
@@ -367,29 +402,45 @@ export default function BulkReNormalizeModal(props: BulkReNormalizeModalProps) {
                           </Show>
                         </span>
                       </div>
-                      <Show when={row.error}>
-                        <p class="error">{row.error}</p>
+                      <Show
+                        when={
+                          (row.status === "ready" || row.status === "failed") &&
+                          row.error
+                        }
+                      >
+                        {(error) => <p class="error">{error()}</p>}
                       </Show>
-                      <Show when={row.status === "failed" && row.jobId}>
-                        <A href={`/scrape/${row.jobId}`}>See what happened</A>
+                      <Show when={row.status === "failed" ? row.jobId : null}>
+                        {(jobId) => (
+                          <A href={`/scrape/${jobId()}`}>See what happened</A>
+                        )}
                       </Show>
                       <Show
                         when={
-                          expanded() === row.recipeId &&
-                          row.base &&
-                          row.proposed
+                          expanded() === row.recipeId && row.status === "ready"
+                            ? row
+                            : null
                         }
                       >
-                        <Show when={photosChanged(row.base!, row.proposed!)}>
-                          <p class="renormalize-hint">
-                            The recipe's photos change.
-                          </p>
-                        </Show>
-                        <RecipeContentDiff
-                          oldContent={row.base!.content}
-                          newContent={row.proposed!.content}
-                          emptyMessage="No other fields change."
-                        />
+                        {(ready) => (
+                          <>
+                            <Show
+                              when={photosChanged(
+                                ready().base,
+                                ready().proposed,
+                              )}
+                            >
+                              <p class="renormalize-hint">
+                                The recipe's photos change.
+                              </p>
+                            </Show>
+                            <RecipeContentDiff
+                              oldContent={ready().base.content}
+                              newContent={ready().proposed.content}
+                              emptyMessage="No other fields change."
+                            />
+                          </>
+                        )}
                       </Show>
                     </li>
                   )}

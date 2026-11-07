@@ -232,6 +232,36 @@ def test_edit_recipe_load_failure_offers_retry(logged_in_page: Page):
     expect(logged_in_page.locator("#title")).not_to_have_value("")
 
 
+def test_failed_delete_keeps_the_recipe_on_screen(logged_in_page: Page):
+    """An action failure shows above the recipe instead of replacing it."""
+    logged_in_page.locator(".recipe-card").first.click()
+    logged_in_page.wait_for_selector(".instructions")
+    recipe_id = logged_in_page.url.split("?")[0].rstrip("/").rsplit("/", 1)[-1]
+
+    def handle(route):
+        if route.request.method == "DELETE":
+            route.fulfill(
+                status=500, json={"error": "delete exploded", "code": "internal"}
+            )
+        else:
+            route.continue_()
+
+    logged_in_page.route(f"**/api/recipes/{recipe_id}", handle)
+    logged_in_page.locator(".recipe-more-actions > summary").click()
+    logged_in_page.get_by_role("button", name="Delete", exact=True).click()
+    dialog = logged_in_page.get_by_role("dialog", name="Delete Recipe")
+    dialog.get_by_role("button", name="Delete", exact=True).click()
+
+    expect(dialog).to_be_hidden()
+    banner = logged_in_page.locator(".recipe-action-error")
+    expect(banner).to_contain_text("delete exploded")
+    expect(logged_in_page.locator(".instructions")).to_be_visible()
+    expect(logged_in_page.locator(".view-recipe-page .error-state")).to_have_count(0)
+
+    banner.get_by_role("button", name="Dismiss").click()
+    expect(banner).to_have_count(0)
+
+
 def test_edit_missing_recipe_shows_not_found(logged_in_page: Page, ui_url: str):
     """Editing a recipe that doesn't exist shows Not Found, not an empty form."""
     logged_in_page.goto(f"{ui_url}/recipes/{uuid.uuid4()}/edit")

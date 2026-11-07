@@ -27,7 +27,7 @@ final class RecipeDetailViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.currentVersionId, currentVersionId)
         XCTAssertNil(requestedVersionId)
         XCTAssertFalse(viewModel.isLoading)
-        XCTAssertNil(viewModel.error)
+        XCTAssertNil(viewModel.loadError)
     }
 
     @MainActor
@@ -109,7 +109,7 @@ final class RecipeDetailViewModelTests: XCTestCase {
 
         await viewModel.openCompareSheet()
 
-        XCTAssertTrue(viewModel.showingCompareSheet)
+        XCTAssertEqual(viewModel.activeSheet, .compare)
         XCTAssertEqual(viewModel.comparedOlderVersion?.versionId, secondVersionId)
         XCTAssertEqual(viewModel.comparedNewerVersion?.versionId, firstVersionId)
         XCTAssertFalse(viewModel.isLoadingCompare)
@@ -163,6 +163,166 @@ final class RecipeDetailViewModelTests: XCTestCase {
         XCTAssertEqual(requestedVersionIds, [firstVersionId, secondVersionId])
         XCTAssertEqual(viewModel.comparedOlderVersion?.versionId, secondVersionId)
         XCTAssertEqual(viewModel.comparedNewerVersion?.versionId, firstVersionId)
+    }
+
+    @MainActor
+    func testClosingCompareMidLoadDropsTheLoad() async {
+        let recipeId = UUID()
+        let firstVersionId = UUID()
+        let secondVersionId = UUID()
+        var firstFetchContinuation: CheckedContinuation<RecipeResponse, Never>?
+
+        let viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, versionId in
+                    if versionId == firstVersionId {
+                        return await withCheckedContinuation { firstFetchContinuation = $0 }
+                    }
+                    return makeRecipe(id: recipeId, versionId: secondVersionId)
+                }
+            )
+        )
+        viewModel.compareSelection = [firstVersionId, secondVersionId]
+
+        let compareTask = Task { await viewModel.openCompareSheet() }
+        while firstFetchContinuation == nil {
+            await Task.yield()
+        }
+        // A swipe-down sets the sheet binding to nil.
+        viewModel.activeSheet = nil
+        XCTAssertFalse(viewModel.isLoadingCompare)
+        firstFetchContinuation?.resume(returning: makeRecipe(id: recipeId, versionId: firstVersionId))
+        await compareTask.value
+
+        XCTAssertNil(viewModel.activeSheet)
+        XCTAssertNil(viewModel.comparedOlderVersion)
+        XCTAssertNil(viewModel.comparedNewerVersion)
+        XCTAssertFalse(viewModel.isLoadingCompare)
+    }
+
+    @MainActor
+    func testStaleLoadDoesNotOverwriteANewerOne() async {
+        let recipeId = UUID()
+        let historicalVersionId = UUID()
+        let currentVersionId = UUID()
+        var historicalContinuation: CheckedContinuation<RecipeResponse, Never>?
+
+        let viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, versionId in
+                    if versionId == historicalVersionId {
+                        return await withCheckedContinuation { historicalContinuation = $0 }
+                    }
+                    return makeRecipe(id: recipeId, versionId: currentVersionId)
+                }
+            )
+        )
+
+        let staleLoad = Task { await viewModel.loadRecipe(versionId: historicalVersionId) }
+        while historicalContinuation == nil {
+            await Task.yield()
+        }
+        await viewModel.loadRecipe()
+        historicalContinuation?.resume(returning: makeRecipe(id: recipeId, versionId: historicalVersionId))
+        await staleLoad.value
+
+        XCTAssertEqual(viewModel.recipe?.versionId, currentVersionId)
+        XCTAssertFalse(viewModel.isViewingHistoricalVersion)
+        XCTAssertFalse(viewModel.isLoading)
+    }
+
+    @MainActor
+    func testLoadStaysLoadingUntilItsFollowUpFetchFinishes() async {
+        let recipeId = UUID()
+        let historicalVersionId = UUID()
+        var currentContinuation: CheckedContinuation<RecipeResponse, Never>?
+
+        let viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, versionId in
+                    if versionId == nil {
+                        return await withCheckedContinuation { currentContinuation = $0 }
+                    }
+                    return makeRecipe(id: recipeId, versionId: historicalVersionId)
+                }
+            )
+        )
+
+        let load = Task { await viewModel.loadRecipe(versionId: historicalVersionId) }
+        while currentContinuation == nil {
+            await Task.yield()
+        }
+        XCTAssertNotNil(viewModel.recipe)
+        XCTAssertTrue(viewModel.isLoading)
+
+        currentContinuation?.resume(returning: makeRecipe(id: recipeId))
+        await load.value
+        XCTAssertFalse(viewModel.isLoading)
+    }
+
+    @MainActor
+    func testFailedRevertAlertsAndKeepsTheLoadErrorClear() async {
+        let recipeId = UUID()
+        let viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, _ in makeRecipe(id: recipeId) },
+                revertRecipe: { _, _, _ in throw URLError(.timedOut) }
+            )
+        )
+        await viewModel.loadRecipe()
+
+        await viewModel.revert(to: makeVersion(isCurrent: false))
+
+        XCTAssertEqual(viewModel.actionAlert?.title, "Revert Failed")
+        XCTAssertNil(viewModel.loadError)
+        XCTAssertNil(viewModel.runningAction)
+    }
+
+    @MainActor
+    func testSuccessfulRevertReloadsTheRecipe() async {
+        let recipeId = UUID()
+        var loads = 0
+        let viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, versionId in
+                    if versionId == nil { loads += 1 }
+                    return makeRecipe(id: recipeId, title: "Load \(loads)")
+                },
+                revertRecipe: { _, _, _ in }
+            )
+        )
+        await viewModel.loadRecipe()
+
+        await viewModel.revert(to: makeVersion(isCurrent: false))
+
+        XCTAssertEqual(loads, 2)
+        XCTAssertNil(viewModel.actionAlert)
+        XCTAssertFalse(viewModel.isReverting)
+    }
+
+    @MainActor
+    func testDeleteReportsFailuresButNotCancellation() async {
+        var failure: Error = CancellationError()
+        let viewModel = RecipeDetailViewModel(
+            recipeId: UUID(),
+            api: makeAPI(deleteRecipe: { _ in throw failure })
+        )
+
+        let cancelled = await viewModel.deleteRecipe()
+        XCTAssertFalse(cancelled)
+        XCTAssertNil(viewModel.actionAlert)
+        XCTAssertFalse(viewModel.isDeleting)
+
+        failure = URLError(.timedOut)
+        let failed = await viewModel.deleteRecipe()
+        XCTAssertFalse(failed)
+        XCTAssertEqual(viewModel.actionAlert?.title, "Delete Failed")
+        XCTAssertFalse(viewModel.isDeleting)
     }
 
     @MainActor
