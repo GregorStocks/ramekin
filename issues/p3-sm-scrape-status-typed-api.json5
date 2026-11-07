@@ -1,0 +1,19 @@
+{
+  "title": "Scrape status: typed job/step status in the API, one poll helper per client",
+  "description": "The API exposes job status as a String (api/scrape/get.rs:22-27) and builds step status strings in scraping/status.rs:296-460 (the doc comment at status.rs:39 lists 'skipped', which nothing produces). \
+The generated Swift client types both as String. \
+Literals are compared in web ScrapeStatusPage.tsx:34-66, utils/pollScrapeJob.ts:7 and 19, ProposalJobModal.tsx:69-74, BulkReNormalizeModal.tsx:135/147; iOS RecipeFormView.swift:186-190 and ProposalJobSheet.swift:345-352 (which handles skipped; the form doesn't); and cli/src/import.rs:457-486. iOS has two poll loops with different completion rules: RecipeFormViewModel.swift:125-173 stops on recipeId != nil or status == failed, so a completed job without a recipeId polls forever, and its 'lost track' path (164-166) leaves the Import button disabled forever and the pasted text discardable without warning; ProposalJobViewModel.run() stops on status == completed. \
+Want: OpenAPI string enums for job and step status (after p2-sm-scrape-job-status-enum), and per doc/client-logic-sharing.md, push 'is terminal' / 'recipe ready' to server fields rather than re-deriving them on each client. \
+Web already has a PollScrapeJobResult union (utils/pollScrapeJob.ts:24-28); give iOS one equivalent helper used by both flows. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

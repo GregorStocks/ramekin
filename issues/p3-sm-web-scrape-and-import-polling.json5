@@ -1,0 +1,17 @@
+{
+  "title": "Web scrape status and import pages: restart, abort and stale-response handling",
+  "description": "ScrapeStatusPage.tsx: polling starts only in onMount (115), so /scrape/a -> /scrape/b on the reused route doesn't restart it. \
+The render relies on combination guards (pollError() && !job(), 196/205/225). \
+After retryScrape succeeds pollError isn't cleared until the next update. \
+ExpandedOutput allows loading + error + output together, and toggleExpand (129-153) has no staleness check, so a collapse or a retry clearing expanded (162-168) is undone when the old response writes back. \
+ImportPage.tsx: no abort on unmount, so up to 10 minutes of polling continues after leaving and updateRow keeps writing (167-190); busy and fileError sit outside the RecipeStatus union; rows show 'Queued...' for the whole job without live status. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

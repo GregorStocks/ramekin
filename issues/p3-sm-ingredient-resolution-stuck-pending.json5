@@ -1,0 +1,17 @@
+{
+  "title": "Ingredient name resolution: names can stay pending forever; save_resolved unguarded",
+  "description": "server/src/ingredient_names.rs: the table itself has good CHECKs (baseline 53-74). \
+But save_resolved (689-702) updates by name with no status = pending filter and relies on the in-memory BATCH mutex (57, 475), while requeue_failed (97-113) and sync_with_catalog (291-307) run outside that lock. \
+Provider-wide failures don't increment attempts (773-775), so during an outage or with a bad key a name stays pending indefinitely and the backoff lives only in memory (PROVIDER_ANSWERED, local backoff, 322-356). attempts also counts successful asks (700). \
+Want: a status guard on save_resolved, and a visible persisted signal (e.g. last_error / next_attempt_at) so a stuck provider shows up somewhere instead of looking like a quiet queue. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "nutrition",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

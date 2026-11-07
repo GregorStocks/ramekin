@@ -1,0 +1,21 @@
+{
+  "title": "iOS: stale responses and stuck spinners in recipe list, picker, tags and image loader",
+  "description": "RecipeListViewModel.swift: isLoading, isLoadingMore, error, hasMore, loadMoreFailed, isUsingLocalCache, syncFailed, reloadFailed (14-27, 68-73) allow syncFailed && reloadFailed (the view silently prefers one), error with recipes, and hasMore with the local cache. \
+The flag-reset block is written three times with different subsets (211-218, 368-377, 475-482); applyCachedRecipes clears none of the failure flags. \
+The CancellationError branch (260-261) leaves isLoading on, and cancelSearch() on disappear can hit it. \
+Two RecipeSyncSweep.runs can overlap (start + pull-to-refresh); the generation check protects only the UI apply, not cursor/pending-sweep writes. loadRecipes(reset: false) is never called. \
+RecipePickerSheet.swift (39-54, 95-123): initial .task load isn't tracked and debounced loads have no generation guard; cancelled path leaves isLoading set. \
+TagManagementView.swift: the account-changed early returns (237, 279, 310) skip resetting isLoading/isSaving; onSubmit (163-167) ignores isSaving; a finishing rename of tag A calls cancelEditing() (290) and wipes an edit started on tag B; delete has no in-progress state and its success clears the load error (315). \
+Shared/AuthenticatedImageLoader.swift (49-104): load(url:) never clears image, so the old picture shows while a new URL loads; image and error can both be set; undecodable data sets neither; the cancelled-after-fetch path (82) leaves isLoading on. \
+Cross-cutting: CalorieEstimateSection notes URLError.cancelled is not a CancellationError, so several cancel paths above may land in generic error branches. \
+CalorieEstimateViewModel's generation token is the pattern to copy. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

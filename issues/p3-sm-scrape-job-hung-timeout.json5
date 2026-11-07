@@ -1,0 +1,21 @@
+{
+  "title": "Scrape jobs: no timeout or cancel for a step that hangs",
+  "description": "A job stuck inside a step stays non-terminal until the server restarts; the only recovery is resume_interrupted_jobs at startup (scraping/runner.rs:279-327). \
+There is no cancelled or timed-out state. \
+Clients wait on it: the web ImportPage polls for up to SCRAPE_JOB_LONG_POLL_TIMEOUT_MS (10 min) and the iOS text-import loop has no deadline at all (RecipeFormViewModel.swift:125-173). \
+BulkReNormalizeModal.pollRows (123-156) has no timeout and swallows every error. \
+Want: a per-step deadline that moves the job to failed with a clear error (retryable), and client handling of that failure. \
+Pick deadlines per step (AI steps are slow); ask the owner if unsure. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "scraping",
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

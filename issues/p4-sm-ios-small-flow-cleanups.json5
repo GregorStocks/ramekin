@@ -1,0 +1,15 @@
+{
+  "title": "iOS: small flow-state cleanups (drafts, history, settings export)",
+  "description": "Resumable drafts: resumableNewRecipe/resumingNewRecipe/showingNewRecipe (RecipeListView.swift:6-9, 60-62, 179-181) mirror resumableEdit/resumingEdit/viewModel.showingEdit (RecipeDetailView.swift:11-12, 63-65, 236-245); same offered/resuming/fresh states in three fields in two places. \
+ShoppingListHistoryView.swift (63-83): load and undo share errorMessage, so a successful reload hides an undo failure; store.undo may only queue the sync (refreshAfterSync) before the history reloads. \
+SettingsView.swift (248-286): isExportingAll + exportShareItem + exportError nearly duplicates RecipeDetailViewModel.exportRecipeAsPaprika (299-315); isUploadingLogs / logUploadError / showingLogUploadSuccess is a three-state machine in three vars; checkConnection runs on every onAppear and .refreshable with no cancellation. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

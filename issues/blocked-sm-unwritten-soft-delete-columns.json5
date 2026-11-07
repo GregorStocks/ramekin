@@ -1,0 +1,18 @@
+{
+  "title": "Soft-delete columns that nothing writes: photos, users, client_log_uploads",
+  "description": "photos.deleted_at, users.deleted_at and client_log_uploads.deleted_at are only read. \
+The only writer of photos.deleted_at is a test using raw SQL (tests/test_normalize.py:420), so source_photos_live (scraping/jobs.rs:103-125) and the photo filters guard a state production can't reach, and users.deleted_at only matters through the session join filter (auth/db.rs:99). \
+Related: recipes can be soft-deleted (api/recipes/delete.rs:40-47) but never restored; meal plans refuse restore (api/sync/meal_plans.rs:107, 178-184), and a plan for a deleted recipe stays live in the row and in slot_taken (338-357) while hidden from the feed. \
+Tag revival is implemented twice (server/src/tags.rs:30-43, api/tags/create.rs:65-82). \
+Per AGENTS.md data is never hard-deleted; dropping a column that has never held a value isn't data loss, but confirm with the owner. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "api",
+  ],
+  "blocked": "Owner decision: implement deleting these (and restoring recipes), or drop the columns and the filters that read them.",
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Scrape jobs: can_retry offers retries that retry_job refuses",
+  "description": "api/scrape/get.rs:88 sets can_retry = status == failed. retry_job (scraping/runner.rs:902-913) also rejects jobs with retry_count >= MAX_RETRIES (5) and jobs with no url and no source_text output (photo and Paprika imports). \
+So the web ScrapeStatusPage and the iOS job views show a Retry button that then errors. \
+Fix: compute can_retry from the same predicate retry_job uses (one shared function), with end-to-end tests for the max-retries and no-source cases. \
+Neither client should need logic changes since both already read canRetry; check that each hides the button. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "api",
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}
