@@ -7,7 +7,7 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const { setToken } = useAuth();
+  const { signIn, sessionExpired } = useAuth();
 
   const [isLogin, setIsLogin] = createSignal(true);
   usePageTitle(() => (isLogin() ? "Sign In" : "Sign Up"));
@@ -28,12 +28,12 @@ export default function LoginPage() {
         const response = await api.login({
           loginRequest: { username: username(), password: password() },
         });
-        setToken(response.token);
+        signIn(response.token);
       } else {
         const response = await api.signup({
           signupRequest: { username: username(), password: password() },
         });
-        setToken(response.token);
+        signIn(response.token);
       }
       navigate("/");
     } catch (err) {
@@ -48,6 +48,11 @@ export default function LoginPage() {
       <h1>Ramekin</h1>
       <div class="auth-form">
         <h2>{isLogin() ? "Login" : "Sign Up"}</h2>
+        <Show when={sessionExpired()}>
+          <p class="session-expired" role="status">
+            Your session expired. Sign in again.
+          </p>
+        </Show>
         <form onSubmit={handleSubmit}>
           <div class="form-group">
             <label for="username">Username</label>

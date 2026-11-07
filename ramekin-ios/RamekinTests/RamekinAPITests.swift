@@ -142,17 +142,45 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertEqual(credentialStore.accessClientSecret, "cf-secret")
     }
 
-    func testLoginClearsStaleAccessCredentialsWhenValuesAreBlank() async {
+    func testLoginClearsStaleAccessCredentialsWhenValuesAreBlank() async throws {
         let credentialStore = MockCredentialStore()
         credentialStore.accessClientId = "stale-id"
         credentialStore.accessClientSecret = "stale-secret"
 
+        _ = try await RamekinAPI.shared.login(
+            serverURL: "example.com",
+            username: "gregor",
+            password: "pw",
+            accessClientId: " ",
+            accessClientSecret: "",
+            credentialStore: credentialStore,
+            updateClientConfiguration: false,
+            requestExecutor: { builder in
+                XCTAssertNil(builder.headers["CF-Access-Client-Id"])
+                XCTAssertNil(builder.headers["CF-Access-Client-Secret"])
+                return LoginResponse(token: "secret-token")
+            }
+        )
+
+        XCTAssertNil(credentialStore.accessClientId)
+        XCTAssertNil(credentialStore.accessClientSecret)
+    }
+
+    func testFailedLoginLeavesStoredCredentialsAndClientConfigUnchanged() async {
+        let credentialStore = MockCredentialStore()
+        credentialStore.serverURL = "https://old.example.com"
+        credentialStore.username = "old-user"
+        credentialStore.accessClientId = "old-id"
+        credentialStore.accessClientSecret = "old-secret"
+        let basePath = RamekinClientAPI.basePath
+        let customHeaders = RamekinClientAPI.customHeaders
+
         await XCTAssertThrowsErrorAsync {
             try await RamekinAPI.shared.login(
-                serverURL: "example.com",
+                serverURL: "new.example.com",
                 username: "gregor",
                 password: "pw",
-                accessClientId: " ",
+                accessClientId: "new-id",
                 accessClientSecret: "",
                 credentialStore: credentialStore,
                 updateClientConfiguration: false,
@@ -162,8 +190,61 @@ final class RamekinAPITests: XCTestCase {
             )
         }
 
-        XCTAssertNil(credentialStore.accessClientId)
-        XCTAssertNil(credentialStore.accessClientSecret)
+        XCTAssertEqual(credentialStore.serverURL, "https://old.example.com")
+        XCTAssertEqual(credentialStore.username, "old-user")
+        XCTAssertEqual(credentialStore.accessClientId, "old-id")
+        XCTAssertEqual(credentialStore.accessClientSecret, "old-secret")
+        XCTAssertNil(credentialStore.token)
+        XCTAssertEqual(RamekinClientAPI.basePath, basePath)
+        XCTAssertEqual(RamekinClientAPI.customHeaders, customHeaders)
+    }
+
+    func testLoginRequestDoesNotCarryTheGlobalSessionHeaders() {
+        let saved = RamekinClientAPI.customHeaders
+        defer { RamekinClientAPI.customHeaders = saved }
+        RamekinClientAPI.customHeaders = [
+            "Authorization": "Bearer old-token",
+            "CF-Access-Client-Id": "old-id",
+            "CF-Access-Client-Secret": "old-secret"
+        ]
+
+        let builder = RamekinAPI.loginRequestBuilder(
+            serverURL: "https://new.example.com",
+            loginRequest: LoginRequest(password: "pw", username: "gregor"),
+            accessClientId: "new-id",
+            accessClientSecret: nil
+        )
+
+        XCTAssertEqual(builder.URLString, "https://new.example.com/api/auth/login")
+        XCTAssertEqual(builder.headers, [
+            "Content-Type": "application/json",
+            "CF-Access-Client-Id": "new-id"
+        ])
+    }
+
+    func testLoginThrowsAndStaysSignedOutWhenTheKeychainRefusesAWrite() async {
+        for failingKey in ["serverURL", "username", "accessClientId", "accessClientSecret", "token"] {
+            let credentialStore = MockCredentialStore()
+            credentialStore.failingSaves = [failingKey]
+
+            do {
+                _ = try await RamekinAPI.shared.login(
+                    serverURL: "example.com",
+                    username: "gregor",
+                    password: "pw",
+                    accessClientId: "cf-id",
+                    accessClientSecret: "cf-secret",
+                    credentialStore: credentialStore,
+                    updateClientConfiguration: false,
+                    requestExecutor: { _ in LoginResponse(token: "secret-token") }
+                )
+                XCTFail("Expected login to throw when saving \(failingKey) fails")
+            } catch RamekinAPI.APIError.credentialStorageFailed {
+            } catch {
+                XCTFail("Unexpected error \(error) when saving \(failingKey) fails")
+            }
+            XCTAssertNil(credentialStore.token, "token kept after \(failingKey) failed to save")
+        }
     }
 
     func testRaceReturnsOperationResultWithinTimeout() async throws {
@@ -302,8 +383,11 @@ private final class MockCredentialStore: CredentialStore {
     var username: String?
     var accessClientId: String?
     var accessClientSecret: String?
+    /// Keys whose save returns false without storing anything.
+    var failingSaves: Set<String> = []
 
     func saveToken(_ token: String) -> Bool {
+        guard !failingSaves.contains("token") else { return false }
         self.token = token
         return true
     }
@@ -315,6 +399,7 @@ private final class MockCredentialStore: CredentialStore {
     }
 
     func saveServerURL(_ url: String) -> Bool {
+        guard !failingSaves.contains("serverURL") else { return false }
         serverURL = url
         return true
     }
@@ -322,6 +407,7 @@ private final class MockCredentialStore: CredentialStore {
     func getServerURL() -> String? { serverURL }
 
     func saveUsername(_ username: String) -> Bool {
+        guard !failingSaves.contains("username") else { return false }
         self.username = username
         return true
     }
@@ -329,6 +415,7 @@ private final class MockCredentialStore: CredentialStore {
     func getUsername() -> String? { username }
 
     func saveAccessClientId(_ value: String) -> Bool {
+        guard !failingSaves.contains("accessClientId") else { return false }
         accessClientId = value
         return true
     }
@@ -340,6 +427,7 @@ private final class MockCredentialStore: CredentialStore {
     }
 
     func saveAccessClientSecret(_ value: String) -> Bool {
+        guard !failingSaves.contains("accessClientSecret") else { return false }
         accessClientSecret = value
         return true
     }

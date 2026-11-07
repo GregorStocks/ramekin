@@ -76,28 +76,21 @@ class ShareViewController: UIViewController {
     }
 }
 
-/// SwiftUI View for the Share Extension
+/// SwiftUI View for the Share Extension. The state machine lives in
+/// `ShareCaptureModel`; this view only renders its status.
 struct ShareExtensionView: View {
     let payload: SharedPagePayload?
-    let onComplete: () -> Void
-    let onCancel: () -> Void
 
-    @State private var status: ShareStatus = .ready
-    @State private var errorMessage: String?
-    @State private var showSlowAffordance = false
+    @StateObject private var model: ShareCaptureModel
 
-    enum ShareStatus {
-        case ready
-        case sending
-        case success
-        case error
-        case notLoggedIn
+    init(payload: SharedPagePayload?, onComplete: @escaping () -> Void, onCancel: @escaping () -> Void) {
+        self.payload = payload
+        _model = StateObject(wrappedValue: ShareCaptureModel(
+            payload: payload,
+            onComplete: onComplete,
+            onCancel: onCancel
+        ))
     }
-
-    /// Delay after which, if we're still in `.sending`, we surface a
-    /// "Still working, tap to close" affordance so the user can dismiss
-    /// instead of waiting for iOS to terminate the extension.
-    static let slowAffordanceDelay: TimeInterval = 10
 
     var body: some View {
         NavigationStack {
@@ -127,37 +120,37 @@ struct ShareExtensionView: View {
             .navigationTitle("Save to Ramekin")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                switch status {
+                switch model.status {
                 case .success:
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Done") { onComplete() }
+                        Button("Done") { model.complete() }
                     }
                 case .notLoggedIn:
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("OK") { onCancel() }
+                        Button("OK") { model.cancel() }
                     }
-                case .ready, .sending, .error:
+                case .ready, .sending, .failed:
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") { onCancel() }
+                        Button("Cancel") { model.cancel() }
                     }
                 }
             }
             .onAppear {
-                checkLoginAndSend()
+                model.start()
             }
         }
     }
 
     @ViewBuilder
     private var statusIcon: some View {
-        switch status {
+        switch model.status {
         case .ready, .sending:
             ProgressView()
                 .scaleEffect(1.5)
         case .success:
             Image(systemName: "checkmark.circle.fill")
                 .foregroundColor(.green)
-        case .error:
+        case .failed:
             Image(systemName: "xmark.circle.fill")
                 .foregroundColor(.red)
         case .notLoggedIn:
@@ -168,7 +161,7 @@ struct ShareExtensionView: View {
 
     @ViewBuilder
     private var statusText: some View {
-        switch status {
+        switch model.status {
         case .ready:
             Text("Preparing…")
                 .font(.title2)
@@ -189,17 +182,15 @@ struct ShareExtensionView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-        case .error:
+        case .failed(let message):
             VStack(spacing: 8) {
                 Text("Failed to Save")
                     .font(.title2)
                     .fontWeight(.bold)
-                if let error = errorMessage {
-                    Text(error)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.center)
-                }
+                Text(message)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
             }
         case .notLoggedIn:
             VStack(spacing: 8) {
@@ -218,19 +209,19 @@ struct ShareExtensionView: View {
     /// body only offers what the bar can't: retrying, or leaving a slow save.
     @ViewBuilder
     private var actionButton: some View {
-        switch status {
-        case .sending where showSlowAffordance:
+        switch model.status {
+        case .sending(slow: true):
             Button {
-                onComplete()
+                model.complete()
             } label: {
                 Text("Still working, tap to close")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
             .controlSize(.large)
-        case .error:
+        case .failed:
             Button {
-                checkLoginAndSend()
+                model.retry()
             } label: {
                 Text("Try Again")
                     .fontWeight(.semibold)
@@ -240,101 +231,6 @@ struct ShareExtensionView: View {
             .controlSize(.large)
         case .ready, .sending, .success, .notLoggedIn:
             EmptyView()
-        }
-    }
-
-    private func checkLoginAndSend() {
-        DebugLogger.shared.log("checkLoginAndSend called")
-        DebugLogger.shared.log("isLoggedIn: \(RamekinAPI.shared.isLoggedIn)")
-        DebugLogger.shared.log("serverURL: \(RamekinAPI.shared.serverURL ?? "nil")")
-        DebugLogger.shared.log("authToken present: \(RamekinAPI.shared.authToken != nil)")
-
-        guard RamekinAPI.shared.isLoggedIn else {
-            DebugLogger.shared.log("ERROR: User not logged in")
-            status = .notLoggedIn
-            return
-        }
-
-        guard let payload else {
-            DebugLogger.shared.log("ERROR: No payload from Safari preprocessing")
-            status = .error
-            errorMessage = "Could not read page content. Open the page in Safari and share from there."
-            return
-        }
-
-        DebugLogger.shared.log("Payload URL: \(payload.url.absoluteString)")
-        sendCapture(payload)
-    }
-
-    private func sendCapture(_ payload: SharedPagePayload) {
-        DebugLogger.shared.log("sendCapture for: \(payload.url.absoluteString)")
-        status = .sending
-        showSlowAffordance = false
-
-        Task {
-            try? await Task.sleep(nanoseconds: UInt64(Self.slowAffordanceDelay * 1_000_000_000))
-            await MainActor.run {
-                if status == .sending {
-                    DebugLogger.shared.log(
-                        "Still sending after \(Int(Self.slowAffordanceDelay))s - showing slow affordance",
-                        source: "ShareExtension"
-                    )
-                    showSlowAffordance = true
-                }
-            }
-        }
-
-        Task {
-            do {
-                // Fail fast on an expired/invalid token before uploading the
-                // page. A doomed upload can otherwise hang on a buffering proxy.
-                try await DebugLogger.shared.timed("verifyAuth", source: "ShareExtension") {
-                    try await RamekinAPI.shared.verifyAuthenticated()
-                }
-                _ = try await DebugLogger.shared.timed("captureHTML", source: "ShareExtension") {
-                    try await RamekinAPI.shared.captureHTML(
-                        html: payload.html,
-                        sourceURL: payload.url.absoluteString
-                    )
-                }
-                DebugLogger.shared.log("API call succeeded", source: "ShareExtension")
-
-                await MainActor.run {
-                    status = .success
-                    DebugLogger.shared.log("Status set to success, will dismiss in 1.5s", source: "ShareExtension")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        DebugLogger.shared.log("Calling onComplete()", source: "ShareExtension")
-                        onComplete()
-                    }
-                }
-            } catch {
-                DebugLogger.shared.log("API call FAILED: \(error)", source: "ShareExtension")
-                await MainActor.run {
-                    // An expired/invalid session reads as "not signed in" so the
-                    // user is pointed at re-authenticating rather than retrying.
-                    if isUnauthorized(error) {
-                        status = .notLoggedIn
-                    } else {
-                        status = .error
-                        errorMessage = error.localizedDescription
-                    }
-                }
-            }
-        }
-    }
-
-    /// Whether an error from the capture flow means the session is no longer
-    /// valid (expired/revoked token or none at all), as opposed to a transient
-    /// failure worth retrying.
-    private func isUnauthorized(_ error: Error) -> Bool {
-        guard let apiError = error as? RamekinAPI.APIError else { return false }
-        switch apiError {
-        case .noAuthToken:
-            return true
-        case .httpError(let statusCode, _, _):
-            return statusCode == 401 || statusCode == 403
-        default:
-            return false
         }
     }
 }

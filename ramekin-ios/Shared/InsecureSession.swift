@@ -36,18 +36,17 @@ let insecureSession: URLSession = {
     URLSession(configuration: .default, delegate: InsecureSessionDelegate(), delegateQueue: nil)
 }()
 
-extension Notification.Name {
-    /// Posted when a bearer-authenticated API request returns 401, signalling
-    /// that the stored session token is no longer valid and the user must
-    /// sign in again.
-    static let ramekinAuthExpired = Notification.Name("ramekinAuthExpired")
-}
-
-private func notifyIfAuthExpired<T>(_ result: Swift.Result<Response<T>, ErrorResponse>) {
-    guard case let .failure(.error(statusCode, _, _, _)) = result, statusCode == 401 else {
-        return
-    }
-    NotificationCenter.default.post(name: .ramekinAuthExpired, object: nil)
+/// Report a 401 on a request that carried `authorization` (the builder's
+/// `Authorization` header) so only the session that sent it ends.
+private func notifyIfAuthExpired<T>(
+    _ result: Swift.Result<Response<T>, ErrorResponse>,
+    authorization: String?
+) {
+    guard case let .failure(.error(statusCode, _, _, _)) = result else { return }
+    AuthExpiry.notifyIfRejected(
+        statusCode: statusCode,
+        sentToken: AuthExpiry.bearerToken(fromAuthorizationHeader: authorization)
+    )
 }
 
 /// Request builder that accepts self-signed certificates.
@@ -59,8 +58,9 @@ class InsecureRequestBuilder<T>: URLSessionRequestBuilder<T> {
         _ apiResponseQueue: DispatchQueue = RamekinClientAPI.apiResponseQueue,
         _ completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void
     ) -> RequestTask {
-        super.execute(apiResponseQueue) { result in
-            notifyIfAuthExpired(result)
+        let authorization = headers["Authorization"]
+        return super.execute(apiResponseQueue) { result in
+            notifyIfAuthExpired(result, authorization: authorization)
             completion(result)
         }
     }
@@ -91,8 +91,9 @@ class InsecureDecodableBuilder<T: Decodable>: URLSessionDecodableRequestBuilder<
         _ apiResponseQueue: DispatchQueue = RamekinClientAPI.apiResponseQueue,
         _ completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void
     ) -> RequestTask {
-        super.execute(apiResponseQueue) { result in
-            notifyIfAuthExpired(result)
+        let authorization = headers["Authorization"]
+        return super.execute(apiResponseQueue) { result in
+            notifyIfAuthExpired(result, authorization: authorization)
             completion(result)
         }
     }

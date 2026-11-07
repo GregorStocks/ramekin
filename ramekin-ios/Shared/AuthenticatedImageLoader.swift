@@ -81,6 +81,9 @@ class AuthenticatedImageLoader: ObservableObject {
 
                 guard !Task.isCancelled else { return }
 
+                if let httpResponse = response as? HTTPURLResponse {
+                    AuthExpiry.notifyIfRejected(statusCode: httpResponse.statusCode, sentToken: token)
+                }
                 guard let httpResponse = response as? HTTPURLResponse,
                       httpResponse.statusCode == 200 else {
                     throw URLError(.badServerResponse)

@@ -1,9 +1,4 @@
-import {
-  createContext,
-  createSignal,
-  createEffect,
-  useContext,
-} from "solid-js";
+import { createContext, useContext } from "solid-js";
 import type { Accessor, ParentComponent } from "solid-js";
 import {
   Configuration,
@@ -21,11 +16,16 @@ import {
   ClientLogsApi,
   IngredientNamesApi,
 } from "ramekin-client";
+import { createAuthSession, type AuthState } from "./authSession";
 
 interface AuthContextValue {
+  authState: Accessor<AuthState>;
   token: () => string | null;
-  setToken: (token: string | null) => void;
+  signIn: (token: string) => void;
+  signOut: () => void;
   isAuthenticated: () => boolean;
+  /** True when the last session ended because the server rejected its token. */
+  sessionExpired: () => boolean;
   getRecipesApi: () => RecipesApi;
   getPhotosApi: () => PhotosApi;
   getScrapeApi: () => ScrapeApi;
@@ -39,7 +39,7 @@ interface AuthContextValue {
   getUsersApi: () => UsersApi;
   getClientLogsApi: () => ClientLogsApi;
   getIngredientNamesApi: () => IngredientNamesApi;
-  // Cached tags - fetched once, shared across components
+  // Cached tags - fetched once per session, shared across components
   tags: Accessor<string[]>;
   tagsLoading: Accessor<boolean>;
   refreshTags: () => Promise<void>;
@@ -52,114 +52,47 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue>();
 
 export const AuthProvider: ParentComponent = (props) => {
-  const [token, setTokenInternal] = createSignal<string | null>(
-    localStorage.getItem("token"),
-  );
-  const [tags, setTags] = createSignal<string[]>([]);
-  const [tagsLoading, setTagsLoading] = createSignal(false);
-
-  const setToken = (newToken: string | null) => {
-    setTokenInternal(newToken);
-  };
-
-  const handleAuthExpired = () => {
-    if (!token()) return;
-    setToken(null);
-  };
-
-  const authedFetch = async (
-    input: RequestInfo | URL,
-    init?: RequestInit,
-  ): Promise<Response> => {
-    const headers = new Headers(init?.headers);
-    const t = token();
-    if (t && !headers.has("Authorization")) {
-      headers.set("Authorization", `Bearer ${t}`);
-    }
-
-    const response = await fetch(input, { ...init, headers });
-    if (response.status === 401) {
-      handleAuthExpired();
-    }
-    return response;
-  };
-
-  createEffect(() => {
-    const t = token();
-    if (t) {
-      localStorage.setItem("token", t);
-    } else {
-      localStorage.removeItem("token");
-    }
-  });
-
   const getAuthedConfig = () =>
     new Configuration({
       basePath: "",
-      accessToken: () => token() ?? "",
-      fetchApi: authedFetch,
+      accessToken: () => session.token() ?? "",
+      fetchApi: (input, init) => session.authedFetch(input, init),
     });
 
-  const getRecipesApi = () => new RecipesApi(getAuthedConfig());
-  const getPhotosApi = () => new PhotosApi(getAuthedConfig());
-  const getScrapeApi = () => new ScrapeApi(getAuthedConfig());
-  const getEditRecipeApi = () => new EditRecipeApi(getAuthedConfig());
-  const getNormalizeApi = () => new NormalizeApi(getAuthedConfig());
   const getTagsApi = () => new TagsApi(getAuthedConfig());
-  const getMealPlansApi = () => new MealPlansApi(getAuthedConfig());
-  const getShoppingListApi = () => new ShoppingListApi(getAuthedConfig());
-  const getSyncApi = () => new SyncApi(getAuthedConfig());
-  const getImportApi = () => new ImportApi(getAuthedConfig());
-  const getUsersApi = () => new UsersApi(getAuthedConfig());
-  const getClientLogsApi = () => new ClientLogsApi(getAuthedConfig());
-  const getIngredientNamesApi = () => new IngredientNamesApi(getAuthedConfig());
 
-  const refreshTags = async () => {
-    if (!token()) {
-      setTags([]);
-      return;
-    }
-    setTagsLoading(true);
-    try {
-      const response = await getTagsApi().listAllTags();
-      setTags(response.tags.map((t) => t.name));
-    } catch {
-      // Ignore errors loading tags
-    } finally {
-      setTagsLoading(false);
-    }
-  };
-
-  // Fetch tags when token changes
-  createEffect(() => {
-    if (token()) {
-      refreshTags();
-    } else {
-      setTags([]);
-    }
+  const session = createAuthSession({
+    storage: localStorage,
+    fetch: (input, init) => fetch(input, init),
+    listTags: async () =>
+      (await getTagsApi().listAllTags()).tags.map((t) => t.name),
   });
+  void session.refreshTags();
 
   const value: AuthContextValue = {
-    token,
-    setToken,
-    isAuthenticated: () => !!token(),
-    getRecipesApi,
-    getPhotosApi,
-    getScrapeApi,
-    getEditRecipeApi,
-    getNormalizeApi,
+    authState: session.authState,
+    token: session.token,
+    signIn: session.signIn,
+    signOut: session.signOut,
+    isAuthenticated: () => session.authState().kind === "signedIn",
+    sessionExpired: () => session.authState().kind === "expired",
+    getRecipesApi: () => new RecipesApi(getAuthedConfig()),
+    getPhotosApi: () => new PhotosApi(getAuthedConfig()),
+    getScrapeApi: () => new ScrapeApi(getAuthedConfig()),
+    getEditRecipeApi: () => new EditRecipeApi(getAuthedConfig()),
+    getNormalizeApi: () => new NormalizeApi(getAuthedConfig()),
     getTagsApi,
-    getMealPlansApi,
-    getShoppingListApi,
-    getSyncApi,
-    getImportApi,
-    getUsersApi,
-    getClientLogsApi,
-    getIngredientNamesApi,
-    tags,
-    tagsLoading,
-    refreshTags,
-    authedFetch,
+    getMealPlansApi: () => new MealPlansApi(getAuthedConfig()),
+    getShoppingListApi: () => new ShoppingListApi(getAuthedConfig()),
+    getSyncApi: () => new SyncApi(getAuthedConfig()),
+    getImportApi: () => new ImportApi(getAuthedConfig()),
+    getUsersApi: () => new UsersApi(getAuthedConfig()),
+    getClientLogsApi: () => new ClientLogsApi(getAuthedConfig()),
+    getIngredientNamesApi: () => new IngredientNamesApi(getAuthedConfig()),
+    tags: session.tags,
+    tagsLoading: session.tagsLoading,
+    refreshTags: session.refreshTags,
+    authedFetch: session.authedFetch,
   };
 
   return (

@@ -11,7 +11,7 @@ const startTime = new Date().toLocaleString();
 const formatBuildTime = (iso: string) => new Date(iso).toLocaleString();
 
 const Layout: ParentComponent = (props) => {
-  const { setToken, token, authedFetch } = useAuth();
+  const { signOut, token, authedFetch } = useAuth();
   const [searchParams] = useSearchParams();
   const [isMobileNavOpen, setIsMobileNavOpen] = createSignal(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = createSignal(false);
@@ -31,7 +31,7 @@ const Layout: ParentComponent = (props) => {
 
   const logout = () => {
     closeAll();
-    setToken(null);
+    signOut();
   };
 
   const exportAllRecipes = async () => {

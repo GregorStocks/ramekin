@@ -98,9 +98,13 @@ class RamekinAPI {
         case httpError(Int, ErrorCode?, String?)
         case networkError(Error)
         case decodingError(Error)
+        /// The server accepted the sign-in but the keychain refused to store it.
+        case credentialStorageFailed
 
         var errorDescription: String? {
             switch self {
+            case .credentialStorageFailed:
+                return "Signed in, but couldn't save the sign-in to the keychain. Please try again."
             case .noServerURL:
                 return "No server URL configured"
             case .noAuthToken:
@@ -219,6 +223,7 @@ class RamekinAPI {
         logger.log("RESPONSE BODY: \(responseBody)")
 
         guard acceptedStatusCodes.contains(httpResponse.statusCode) else {
+            AuthExpiry.notifyIfRejected(statusCode: httpResponse.statusCode, sentToken: token)
             throw parseError(from: data, statusCode: httpResponse.statusCode)
         }
         return (data, httpResponse)
@@ -242,7 +247,11 @@ class RamekinAPI {
     /// (RecipeFlowTests.testLoginFailure).
     static let loginTimeout: TimeInterval = 15
 
-    /// Login to the Ramekin server
+    /// Login to the Ramekin server. Nothing global changes until the server
+    /// accepts the credentials: the request carries the form's server URL and
+    /// Access credentials directly, and only a successful login saves them.
+    /// If the keychain refuses any write, the token is removed so the app
+    /// stays signed out instead of half-switched, and the login throws.
     func login(
         serverURL: String,
         username: String,
@@ -259,56 +268,39 @@ class RamekinAPI {
         let normalizedAccessClientId = Self.normalizedOptionalCredential(accessClientId)
         let normalizedAccessClientSecret = Self.normalizedOptionalCredential(accessClientSecret)
 
-        // Persist (or clear) access credentials before the login call so the
-        // request itself carries the current CF-Access headers through the
-        // Access policy. Empty or nil clears so stale values aren't re-sent.
-        if let id = normalizedAccessClientId {
-            _ = credentialStore.saveAccessClientId(id)
-        } else {
-            credentialStore.deleteAccessClientId()
-        }
-        if let secret = normalizedAccessClientSecret {
-            _ = credentialStore.saveAccessClientSecret(secret)
-        } else {
-            credentialStore.deleteAccessClientSecret()
-        }
-
-        RamekinClientAPI.basePath = normalizedURL
-        RamekinClientAPI.customHeaders.removeValue(forKey: "Authorization")
-        if let id = normalizedAccessClientId {
-            RamekinClientAPI.customHeaders["CF-Access-Client-Id"] = id
-        } else {
-            RamekinClientAPI.customHeaders.removeValue(forKey: "CF-Access-Client-Id")
-        }
-        if let secret = normalizedAccessClientSecret {
-            RamekinClientAPI.customHeaders["CF-Access-Client-Secret"] = secret
-        } else {
-            RamekinClientAPI.customHeaders.removeValue(forKey: "CF-Access-Client-Secret")
-        }
-
-        let builder = AuthAPI.loginWithRequestBuilder(
-            loginRequest: LoginRequest(password: password, username: username)
+        let builder = Self.loginRequestBuilder(
+            serverURL: normalizedURL,
+            loginRequest: LoginRequest(password: password, username: username),
+            accessClientId: normalizedAccessClientId,
+            accessClientSecret: normalizedAccessClientSecret
         )
 
+        let loginResponse: LoginResponse
         do {
-            let loginResponse = try await Self.race(
+            loginResponse = try await Self.race(
                 { try await requestExecutor(builder) },
                 againstTimeout: Self.loginTimeout
             )
-            // Save credentials
-            _ = credentialStore.saveServerURL(normalizedURL)
-            _ = credentialStore.saveToken(loginResponse.token)
-            _ = credentialStore.saveUsername(username)
-
-            // Update generated client with new credentials
-            if updateClientConfiguration {
-                updateGeneratedClientConfig()
-            }
-
-            return loginResponse.token
         } catch {
             throw translateGeneratedError(error)
         }
+
+        let session = SessionCredentials(
+            serverURL: normalizedURL,
+            token: loginResponse.token,
+            username: username,
+            accessClientId: normalizedAccessClientId,
+            accessClientSecret: normalizedAccessClientSecret
+        )
+        let saved = session.save(in: credentialStore)
+        if updateClientConfiguration {
+            updateGeneratedClientConfig()
+        }
+        guard saved else {
+            logger.log("ERROR: Keychain refused to store the new session")
+            throw APIError.credentialStorageFailed
+        }
+        return loginResponse.token
     }
 
     static func normalizeServerURL(_ serverURL: String) -> String {
