@@ -272,7 +272,7 @@ final class RamekinAPITests: XCTestCase {
         let response = try JSONDecoder().decode(CreateScrapeResponse.self, from: data)
 
         XCTAssertEqual(response.id.uuidString, "12345678-1234-1234-1234-123456789ABC")
-        XCTAssertEqual(response.status, "pending")
+        XCTAssertEqual(response.status, .pending)
     }
 
     func testErrorResponseDecoding() throws {
