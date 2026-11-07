@@ -2,6 +2,12 @@
 //! stopped and fails the job at that step with a timeout error, which Retry
 //! resumes like any other failure; without this a hung step would leave its
 //! job running until the server restarts.
+//!
+//! Steps that write a recipe version (`save_recipe`, `apply_normalize`) have
+//! no deadline: their database work runs on a blocking thread that dropping
+//! the step can't stop, so a "timed out" write could still commit, and Retry
+//! would then fail its version check against the job's own write. They only
+//! do local database work, which the write lock's busy timeout bounds.
 
 use std::future::Future;
 use std::time::Duration;
@@ -15,7 +21,7 @@ use ramekin_core::pipeline::{
 
 use super::steps::FetchHtmlStep;
 
-/// Local work and database writes.
+/// Local work and database reads.
 const LOCAL_STEP_DEADLINE: Duration = Duration::from_secs(2 * 60);
 /// Fetching a page or its images.
 const FETCH_STEP_DEADLINE: Duration = Duration::from_secs(5 * 60);
@@ -24,16 +30,15 @@ const FETCH_STEP_DEADLINE: Duration = Duration::from_secs(5 * 60);
 /// slow.
 const AI_STEP_DEADLINE: Duration = Duration::from_secs(15 * 60);
 
-/// How long `step_name` may run.
-pub fn step_deadline(step_name: &str) -> Duration {
+/// How long `step_name` may run, if it has a deadline.
+pub fn step_deadline(step_name: &str) -> Option<Duration> {
     match step_name {
-        ParseIngredientsStep::NAME
-        | SaveRecipeStepMeta::NAME
-        | LOAD_RECIPE_STEP
-        | PROPOSE_NORMALIZE_STEP
-        | APPLY_NORMALIZE_STEP => LOCAL_STEP_DEADLINE,
-        FetchHtmlStep::NAME | FetchImagesStepMeta::NAME => FETCH_STEP_DEADLINE,
-        _ => AI_STEP_DEADLINE,
+        SaveRecipeStepMeta::NAME | APPLY_NORMALIZE_STEP => None,
+        ParseIngredientsStep::NAME | LOAD_RECIPE_STEP | PROPOSE_NORMALIZE_STEP => {
+            Some(LOCAL_STEP_DEADLINE)
+        }
+        FetchHtmlStep::NAME | FetchImagesStepMeta::NAME => Some(FETCH_STEP_DEADLINE),
+        _ => Some(AI_STEP_DEADLINE),
     }
 }
 
@@ -57,12 +62,15 @@ fn describe(deadline: Duration) -> String {
     }
 }
 
-/// Run `step`, a step's execution, stopping it at `deadline`.
+/// Run `step`, a step's execution, stopping it at `deadline` if it has one.
 pub async fn run_with_deadline(
     step_name: &str,
-    deadline: Duration,
+    deadline: Option<Duration>,
     step: impl Future<Output = StepResult>,
 ) -> StepResult {
+    let Some(deadline) = deadline else {
+        return step.await;
+    };
     match tokio::time::timeout(deadline, step).await {
         Ok(result) => result,
         Err(_) => StepResult {
@@ -82,23 +90,33 @@ mod tests {
 
     #[test]
     fn ai_steps_get_longer_than_local_ones() {
-        assert_eq!(step_deadline("save_recipe"), LOCAL_STEP_DEADLINE);
-        assert_eq!(step_deadline("fetch_html"), FETCH_STEP_DEADLINE);
+        assert_eq!(step_deadline("parse_ingredients"), Some(LOCAL_STEP_DEADLINE));
+        assert_eq!(step_deadline("fetch_html"), Some(FETCH_STEP_DEADLINE));
         for step in [
             "extract_recipe",
             "auto_tag",
             "edit_with_ai",
             "photo_extract",
         ] {
-            assert_eq!(step_deadline(step), AI_STEP_DEADLINE, "{step}");
+            assert_eq!(step_deadline(step), Some(AI_STEP_DEADLINE), "{step}");
         }
+    }
+
+    #[test]
+    fn version_writes_have_no_deadline() {
+        assert_eq!(step_deadline("save_recipe"), None);
+        assert_eq!(step_deadline("apply_normalize"), None);
     }
 
     #[tokio::test]
     async fn a_hung_step_fails_at_its_deadline() {
         let deadline = Duration::from_millis(20);
-        let result =
-            run_with_deadline("auto_tag", deadline, std::future::pending::<StepResult>()).await;
+        let result = run_with_deadline(
+            "auto_tag",
+            Some(deadline),
+            std::future::pending::<StepResult>(),
+        )
+        .await;
         assert!(!result.success);
         assert_eq!(result.error, Some(timeout_error("auto_tag", deadline)));
         assert_eq!(result.output["timed_out"], true);
@@ -115,7 +133,7 @@ mod tests {
             next_step: None,
         };
         let result =
-            run_with_deadline("auto_tag", Duration::from_secs(60), async { finished }).await;
+            run_with_deadline("auto_tag", Some(Duration::from_secs(60)), async { finished }).await;
         assert!(result.success);
         assert_eq!(result.output["suggested_tags"], serde_json::json!([]));
     }

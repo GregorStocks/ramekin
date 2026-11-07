@@ -1,4 +1,5 @@
 use std::sync::Arc;
+use std::time::Duration;
 
 use crate::ids::Uuid;
 use diesel::prelude::*;
@@ -119,7 +120,8 @@ async fn run_photo_import_job_inner(
             .map_err(AiError::from)?
             .for_extraction(),
     );
-    let deadline = step_deadline(PHOTO_EXTRACT_STEP);
+    // Photo extraction only calls the AI model, so stopping it is safe.
+    let deadline = step_deadline(PHOTO_EXTRACT_STEP).unwrap_or(Duration::MAX);
     let extract_result =
         tokio::time::timeout(deadline, extract_recipe_from_photos(&ai_client, images))
             .await
