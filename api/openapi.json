@@ -3199,7 +3199,7 @@
             "description": "The scrape job ID"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/ScrapeJobStatus",
             "description": "Current job status"
           }
         }
@@ -3398,7 +3398,7 @@
             "description": "The created job ID"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/ScrapeJobStatus",
             "description": "Current job status"
           }
         }
@@ -3428,7 +3428,7 @@
             "description": "The created job ID"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/ScrapeJobStatus",
             "description": "Current job status"
           }
         }
@@ -3604,7 +3604,7 @@
             "description": "The created job ID"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/ScrapeJobStatus",
             "description": "Current job status"
           }
         }
@@ -3967,7 +3967,7 @@
             "description": "The job; poll it with `GET /api/scrape/{id}`."
           },
           "status": {
-            "type": "string"
+            "$ref": "#/components/schemas/ScrapeJobStatus"
           }
         }
       },
@@ -4093,7 +4093,7 @@
             ]
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/ScrapeJobStatus",
             "description": "The job's status, as `GET /api/scrape/{id}` reports it."
           },
           "summary": {
@@ -4540,7 +4540,7 @@
             "description": "The scrape job ID"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/ScrapeJobStatus",
             "description": "Current job status"
           }
         }
@@ -4558,7 +4558,7 @@
             "description": "The scrape job ID"
           },
           "status": {
-            "type": "string",
+            "$ref": "#/components/schemas/ScrapeJobStatus",
             "description": "New job status after retry"
           }
         }
@@ -4568,6 +4568,8 @@
         "required": [
           "id",
           "status",
+          "is_terminal",
+          "recipe_ready",
           "can_retry",
           "retry_count",
           "steps",
@@ -4602,6 +4604,10 @@
             "format": "uuid",
             "description": "The scrape job ID"
           },
+          "is_terminal": {
+            "type": "boolean",
+            "description": "Whether the job has stopped (`completed` or `failed`): stop polling."
+          },
           "recipe_id": {
             "type": [
               "string",
@@ -4610,14 +4616,18 @@
             "format": "uuid",
             "description": "Recipe ID once the recipe is saved (also set on a job that failed\nafter saving; rescrapes and normalize jobs have it from the start)"
           },
+          "recipe_ready": {
+            "type": "boolean",
+            "description": "Whether `recipe_id` names a recipe the client can open now: the job\nhas saved it (even if a later normalize step then failed) or finished\nworking on it. Normalize ops may still update it while the job is\n`normalizing`."
+          },
           "retry_count": {
             "type": "integer",
             "format": "int32",
             "description": "Number of retry attempts"
           },
           "status": {
-            "type": "string",
-            "description": "Current job status (pending, scraping, parsing, normalizing, completed,\nfailed). While an import or scrape is \"normalizing\" the recipe is\nsaved and `recipe_id` is set; normalize ops may still update it until\nthe job completes. A manual normalize job saves nothing: it ends with\na proposal (see `GET /api/recipes/{id}/normalize/{job_id}`)."
+            "$ref": "#/components/schemas/ScrapeJobStatus",
+            "description": "Current job status. While an import or scrape is \"normalizing\" the\nrecipe is saved and `recipe_id` is set; normalize ops may still update\nit until the job completes. A manual normalize job saves nothing: it\nends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`)."
           },
           "steps": {
             "type": "array",
@@ -4634,6 +4644,18 @@
             "description": "URL being scraped (optional for imports)"
           }
         }
+      },
+      "ScrapeJobStatus": {
+        "type": "string",
+        "description": "A scrape job's status. `completed` and `failed` are terminal; while an\nimport or scrape is `normalizing` its recipe is already saved.",
+        "enum": [
+          "pending",
+          "scraping",
+          "parsing",
+          "normalizing",
+          "completed",
+          "failed"
+        ]
       },
       "ShoppingListFields": {
         "type": "object",
@@ -4852,8 +4874,7 @@
             "format": "date-time"
           },
           "status": {
-            "type": "string",
-            "description": "One of \"pending\", \"running\", \"completed\", \"failed\", \"skipped\"."
+            "$ref": "#/components/schemas/StepStatus"
           },
           "summary": {
             "type": [
@@ -4862,6 +4883,16 @@
             ]
           }
         }
+      },
+      "StepStatus": {
+        "type": "string",
+        "description": "A pipeline step's status in the status API.",
+        "enum": [
+          "pending",
+          "running",
+          "completed",
+          "failed"
+        ]
       },
       "SyncMealPlan": {
         "type": "object",

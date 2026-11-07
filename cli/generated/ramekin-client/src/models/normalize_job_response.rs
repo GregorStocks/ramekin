@@ -17,11 +17,11 @@ pub struct NormalizeJobResponse {
     #[serde(rename = "job_id")]
     pub job_id: uuid::Uuid,
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
 }
 
 impl NormalizeJobResponse {
-    pub fn new(job_id: uuid::Uuid, status: String) -> NormalizeJobResponse {
+    pub fn new(job_id: uuid::Uuid, status: models::ScrapeJobStatus) -> NormalizeJobResponse {
         NormalizeJobResponse { job_id, status }
     }
 }

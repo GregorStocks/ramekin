@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { StepStatus } from './StepStatus';
+import {
+    StepStatusFromJSON,
+    StepStatusFromJSONTyped,
+    StepStatusToJSON,
+    StepStatusToJSONTyped,
+} from './StepStatus';
+
 /**
  * A single pipeline step's state for the status API response.
  * @export
@@ -56,11 +64,11 @@ export interface StepState {
      */
     startedAt?: Date | null;
     /**
-     * One of "pending", "running", "completed", "failed", "skipped".
-     * @type {string}
+     * 
+     * @type {StepStatus}
      * @memberof StepState
      */
-    status: string;
+    status: StepStatus;
     /**
      * 
      * @type {string}
@@ -68,6 +76,8 @@ export interface StepState {
      */
     summary?: string | null;
 }
+
+
 
 /**
  * Check if a given object implements the StepState interface.
@@ -95,7 +105,7 @@ export function StepStateFromJSONTyped(json: any, ignoreDiscriminator: boolean):
         'hasOutput': json['has_output'],
         'name': json['name'],
         'startedAt': json['started_at'] == null ? undefined : (new Date(json['started_at'])),
-        'status': json['status'],
+        'status': StepStatusFromJSON(json['status']),
         'summary': json['summary'] == null ? undefined : json['summary'],
     };
 }
@@ -117,7 +127,7 @@ export function StepStateToJSONTyped(value?: StepState | null, ignoreDiscriminat
         'has_output': value['hasOutput'],
         'name': value['name'],
         'started_at': value['startedAt'] == null ? value['startedAt'] : value['startedAt'].toISOString(),
-        'status': value['status'],
+        'status': StepStatusToJSON(value['status']),
         'summary': value['summary'],
     };
 }

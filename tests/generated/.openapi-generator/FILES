@@ -98,6 +98,7 @@ ramekin_client/docs/RescrapeResponse.md
 ramekin_client/docs/RetryScrapeResponse.md
 ramekin_client/docs/ScrapeApi.md
 ramekin_client/docs/ScrapeJobResponse.md
+ramekin_client/docs/ScrapeJobStatus.md
 ramekin_client/docs/ShoppingListApi.md
 ramekin_client/docs/ShoppingListFields.md
 ramekin_client/docs/ShoppingListHistoryEntry.md
@@ -107,6 +108,7 @@ ramekin_client/docs/SignupRequest.md
 ramekin_client/docs/SignupResponse.md
 ramekin_client/docs/SortBy.md
 ramekin_client/docs/StepState.md
+ramekin_client/docs/StepStatus.md
 ramekin_client/docs/SyncApi.md
 ramekin_client/docs/SyncMealPlan.md
 ramekin_client/docs/SyncMealPlansRequest.md
@@ -199,6 +201,7 @@ ramekin_client/models/rename_tag_response.py
 ramekin_client/models/rescrape_response.py
 ramekin_client/models/retry_scrape_response.py
 ramekin_client/models/scrape_job_response.py
+ramekin_client/models/scrape_job_status.py
 ramekin_client/models/shopping_list_fields.py
 ramekin_client/models/shopping_list_history_entry.py
 ramekin_client/models/shopping_list_history_response.py
@@ -207,6 +210,7 @@ ramekin_client/models/signup_request.py
 ramekin_client/models/signup_response.py
 ramekin_client/models/sort_by.py
 ramekin_client/models/step_state.py
+ramekin_client/models/step_status.py
 ramekin_client/models/sync_meal_plan.py
 ramekin_client/models/sync_meal_plans_request.py
 ramekin_client/models/sync_meal_plans_response.py
@@ -305,6 +309,7 @@ ramekin_client/test/test_rescrape_response.py
 ramekin_client/test/test_retry_scrape_response.py
 ramekin_client/test/test_scrape_api.py
 ramekin_client/test/test_scrape_job_response.py
+ramekin_client/test/test_scrape_job_status.py
 ramekin_client/test/test_shopping_list_api.py
 ramekin_client/test/test_shopping_list_fields.py
 ramekin_client/test/test_shopping_list_history_entry.py
@@ -314,6 +319,7 @@ ramekin_client/test/test_signup_request.py
 ramekin_client/test/test_signup_response.py
 ramekin_client/test/test_sort_by.py
 ramekin_client/test/test_step_state.py
+ramekin_client/test/test_step_status.py
 ramekin_client/test/test_sync_api.py
 ramekin_client/test/test_sync_meal_plan.py
 ramekin_client/test/test_sync_meal_plans_request.py

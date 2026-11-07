@@ -11,6 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ScrapeJobStatusFromJSON, ScrapeJobStatusToJSON, } from './ScrapeJobStatus';
 /**
  * Check if a given object implements the RetryScrapeResponse interface.
  */
@@ -30,7 +31,7 @@ export function RetryScrapeResponseFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'id': json['id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 export function RetryScrapeResponseToJSON(json) {
@@ -42,6 +43,6 @@ export function RetryScrapeResponseToJSONTyped(value, ignoreDiscriminator = fals
     }
     return {
         'id': value['id'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }

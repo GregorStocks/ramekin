@@ -38,6 +38,9 @@ pub struct ScrapeJobResponse {
     /// The scrape job ID
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
+    /// Whether the job has stopped (`completed` or `failed`): stop polling.
+    #[serde(rename = "is_terminal")]
+    pub is_terminal: bool,
     /// Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes and normalize jobs have it from the start)
     #[serde(
         rename = "recipe_id",
@@ -46,12 +49,15 @@ pub struct ScrapeJobResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub recipe_id: Option<Option<uuid::Uuid>>,
+    /// Whether `recipe_id` names a recipe the client can open now: the job has saved it (even if a later normalize step then failed) or finished working on it. Normalize ops may still update it while the job is `normalizing`.
+    #[serde(rename = "recipe_ready")]
+    pub recipe_ready: bool,
     /// Number of retry attempts
     #[serde(rename = "retry_count")]
     pub retry_count: i32,
-    /// Current job status (pending, scraping, parsing, normalizing, completed, failed). While an import or scrape is \"normalizing\" the recipe is saved and `recipe_id` is set; normalize ops may still update it until the job completes. A manual normalize job saves nothing: it ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
+    /// Current job status. While an import or scrape is \"normalizing\" the recipe is saved and `recipe_id` is set; normalize ops may still update it until the job completes. A manual normalize job saves nothing: it ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
     /// Per-step state for the status page (ordered by pipeline step).
     #[serde(rename = "steps")]
     pub steps: Vec<models::StepState>,
@@ -70,8 +76,10 @@ impl ScrapeJobResponse {
         can_retry: bool,
         created_at: String,
         id: uuid::Uuid,
+        is_terminal: bool,
+        recipe_ready: bool,
         retry_count: i32,
-        status: String,
+        status: models::ScrapeJobStatus,
         steps: Vec<models::StepState>,
     ) -> ScrapeJobResponse {
         ScrapeJobResponse {
@@ -80,7 +88,9 @@ impl ScrapeJobResponse {
             error: None,
             failed_at_step: None,
             id,
+            is_terminal,
             recipe_id: None,
+            recipe_ready,
             retry_count,
             status,
             steps,

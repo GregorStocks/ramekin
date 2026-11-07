@@ -36,12 +36,12 @@ class TestImportFromPhotosResponse(unittest.TestCase):
         if include_optional:
             return ImportFromPhotosResponse(
                 job_id = '',
-                status = ''
+                status = 'pending'
             )
         else:
             return ImportFromPhotosResponse(
                 job_id = '',
-                status = '',
+                status = 'pending',
         )
         """
 

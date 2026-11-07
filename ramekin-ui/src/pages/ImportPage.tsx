@@ -1,4 +1,4 @@
-import { createSignal, Show, For } from "solid-js";
+import { createSignal, Show, For, onCleanup } from "solid-js";
 import { useAuth } from "../context/AuthContext";
 import {
   parsePaprikaArchive,
@@ -6,13 +6,22 @@ import {
 } from "../utils/paprikaImport";
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
-import { ImportExtractionMethod, type ScrapeApi } from "ramekin-client";
-import { pollScrapeJob } from "../utils/pollScrapeJob";
+import {
+  ImportExtractionMethod,
+  ScrapeJobStatus,
+  type ScrapeApi,
+  type ScrapeJobResponse,
+} from "ramekin-client";
+import {
+  PollScrapeJobAbortedError,
+  pollScrapeJob,
+} from "../utils/pollScrapeJob";
 
 type RecipeStatus =
   | { state: "pending" }
   | { state: "importing" }
-  | { state: "queued"; jobId: string }
+  /** The job is running; `jobStatus` is its status as last polled. */
+  | { state: "running"; jobId: string; jobStatus: ScrapeJobStatus }
   | { state: "done"; jobId: string }
   | { state: "error"; message: string };
 
@@ -21,22 +30,33 @@ interface RecipeRow {
   status: RecipeStatus;
 }
 
+/** The page: waiting for a file, importing one, or unable to read it. */
+type PageState =
+  | { state: "idle" }
+  | { state: "importing" }
+  | { state: "fileError"; message: string };
+
 type TerminalResult =
   { status: "completed" } | { status: "failed"; error: string };
 
 const IMPORT_JOB_POLL_INTERVAL_MS = 2000;
 
-function createJobPoller(scrapeApi: ScrapeApi) {
+function createJobPoller(scrapeApi: ScrapeApi, signal: AbortSignal) {
   const waitForPollTurn = createQueuedPollTurn(IMPORT_JOB_POLL_INTERVAL_MS);
 
-  return async (jobId: string): Promise<TerminalResult> => {
+  return async (
+    jobId: string,
+    onUpdate: (job: ScrapeJobResponse) => void,
+  ): Promise<TerminalResult> => {
     const result = await pollScrapeJob(scrapeApi, jobId, {
+      signal,
       beforePoll: waitForPollTurn,
       intervalMs: 0,
       // No client deadline: a job can wait a long time for a slot behind a
       // big import, and the server fails any step that runs past its own
       // deadline (with a "Timed out" error, shown on the row like any other).
       timeoutMs: null,
+      onUpdate,
       onPollError: (err) => {
         logger.warn(
           "Import",
@@ -44,12 +64,16 @@ function createJobPoller(scrapeApi: ScrapeApi) {
         );
       },
     });
-    if (result.status === "failed") {
-      return { status: "failed", error: result.error };
+    switch (result.status) {
+      case "completed":
+        return { status: "completed" };
+      case "failed":
+        return { status: "failed", error: result.error };
+      // Neither comes back without untilRecipeReady or a deadline.
+      case "recipe_ready":
+      case "timeout":
+        return { status: "failed", error: "Unexpected poll result" };
     }
-    // Without untilRecipeReady this waits for normalize ops, so "recipe_ready"
-    // never comes back, and without a deadline neither does "timeout".
-    return { status: "completed" };
   };
 }
 
@@ -70,39 +94,66 @@ function createQueuedPollTurn(intervalMs: number) {
   };
 }
 
+function jobStatusText(status: ScrapeJobStatus): string {
+  switch (status) {
+    case ScrapeJobStatus.Pending:
+      return "Queued...";
+    case ScrapeJobStatus.Scraping:
+    case ScrapeJobStatus.Parsing:
+      return "Parsing...";
+    case ScrapeJobStatus.Normalizing:
+      return "Saved; normalizing...";
+    case ScrapeJobStatus.Completed:
+      return "Finishing...";
+    case ScrapeJobStatus.Failed:
+      return "Failing...";
+  }
+}
+
 export default function ImportPage() {
   usePageTitle(() => "Import");
   const { getPhotosApi, getImportApi, getScrapeApi } = useAuth();
   const [rows, setRows] = createSignal<RecipeRow[]>([]);
-  const [busy, setBusy] = createSignal(false);
-  const [fileError, setFileError] = createSignal<string | null>(null);
+  const [page, setPage] = createSignal<PageState>({ state: "idle" });
+
+  // Leaving the page stops this import's polling; the jobs carry on.
+  let importController: AbortController | null = null;
+  onCleanup(() => {
+    importController?.abort();
+    importController = null;
+  });
 
   const handleFile = async (event: Event) => {
     const input = event.currentTarget as HTMLInputElement;
     const file = input.files?.[0];
     if (!file) return;
 
-    setFileError(null);
+    importController?.abort();
+    const controller = new AbortController();
+    importController = controller;
+    const signal = controller.signal;
+
     setRows([]);
-    setBusy(true);
+    setPage({ state: "importing" });
+
+    const failFile = (message: string) => {
+      setPage({ state: "fileError", message });
+      input.value = "";
+    };
 
     let parsed: ParsedPaprikaRecipe[];
     try {
       const buf = new Uint8Array(await file.arrayBuffer());
       parsed = parsePaprikaArchive(buf);
     } catch (err) {
-      setFileError(
-        err instanceof Error ? err.message : "Failed to parse archive",
-      );
-      setBusy(false);
-      input.value = "";
+      if (signal.aborted) return;
+      failFile(err instanceof Error ? err.message : "Failed to parse archive");
       return;
     }
+    if (signal.aborted) return;
 
     if (parsed.length === 0) {
-      setFileError("No recipes found in archive");
-      setBusy(false);
-      input.value = "";
+      failFile("No recipes found in archive");
       return;
     }
 
@@ -110,14 +161,26 @@ export default function ImportPage() {
       parsed.map((r) => ({ name: r.name, status: { state: "pending" } })),
     );
 
+    // Rows belong to this import: once it's aborted (the page closed or
+    // another file was picked) nothing writes to them.
+    const updateRow = (index: number, status: RecipeStatus) => {
+      if (signal.aborted) return;
+      setRows((prev) => {
+        const next = prev.slice();
+        next[index] = { ...next[index], status };
+        return next;
+      });
+    };
+
     const photosApi = getPhotosApi();
     const importApi = getImportApi();
     const scrapeApi = getScrapeApi();
-    const pollForJob = createJobPoller(scrapeApi);
+    const pollForJob = createJobPoller(scrapeApi, signal);
 
     const pollPromises: Promise<void>[] = [];
 
     for (let i = 0; i < parsed.length; i++) {
+      if (signal.aborted) return;
       const recipe = parsed[i];
       updateRow(i, { state: "importing" });
 
@@ -149,7 +212,7 @@ export default function ImportPage() {
           },
         });
         jobId = response.jobId;
-        updateRow(i, { state: "queued", jobId });
+        updateRow(i, { state: "running", jobId, jobStatus: response.status });
       } catch (err) {
         updateRow(i, {
           state: "error",
@@ -162,13 +225,22 @@ export default function ImportPage() {
       pollPromises.push(
         (async () => {
           try {
-            const terminal = await pollForJob(jobId);
+            const terminal = await pollForJob(jobId, (job) => {
+              if (!job.isTerminal) {
+                updateRow(rowIndex, {
+                  state: "running",
+                  jobId,
+                  jobStatus: job.status,
+                });
+              }
+            });
             if (terminal.status === "completed") {
               updateRow(rowIndex, { state: "done", jobId });
             } else {
               updateRow(rowIndex, { state: "error", message: terminal.error });
             }
           } catch (err) {
+            if (err instanceof PollScrapeJobAbortedError) return;
             updateRow(rowIndex, {
               state: "error",
               message: err instanceof Error ? err.message : String(err),
@@ -179,16 +251,9 @@ export default function ImportPage() {
     }
 
     await Promise.all(pollPromises);
-    setBusy(false);
+    if (signal.aborted) return;
+    setPage({ state: "idle" });
     input.value = "";
-  };
-
-  const updateRow = (index: number, status: RecipeStatus) => {
-    setRows((prev) => {
-      const next = prev.slice();
-      next[index] = { ...next[index], status };
-      return next;
-    });
   };
 
   const statusText = (s: RecipeStatus) => {
@@ -197,8 +262,8 @@ export default function ImportPage() {
         return "Waiting...";
       case "importing":
         return "Importing...";
-      case "queued":
-        return "Queued...";
+      case "running":
+        return jobStatusText(s.jobStatus);
       case "done":
         return "Imported";
       case "error":
@@ -214,6 +279,11 @@ export default function ImportPage() {
     return `${done} imported, ${errors} failed, ${all.length} total`;
   };
 
+  const fileError = () => {
+    const p = page();
+    return p.state === "fileError" ? p.message : null;
+  };
+
   return (
     <div class="import-page">
       <h1>Import Paprika Recipes</h1>
@@ -225,7 +295,7 @@ export default function ImportPage() {
         type="file"
         accept=".paprikarecipes,application/zip"
         onChange={handleFile}
-        disabled={busy()}
+        disabled={page().state === "importing"}
       />
       <Show when={fileError()}>
         <p class="error">{fileError()}</p>

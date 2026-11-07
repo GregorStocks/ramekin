@@ -162,7 +162,7 @@ extension RecipeFormView {
             Button("Done") { close() }
                 .fontWeight(.semibold)
         } else {
-            Button("Import") {
+            Button(viewModel.lostTrackOfImport ? "Check Again" : "Import") {
                 importTask = Task {
                     if await viewModel.importRecipe() {
                         onSaved?()
@@ -183,13 +183,13 @@ extension RecipeFormView {
                 ForEach(viewModel.importSteps, id: \.name) { step in
                     HStack {
                         switch step.status {
-                        case "completed":
+                        case .completed:
                             Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
-                        case "running":
+                        case .running:
                             ProgressView()
-                        case "failed":
+                        case .failed:
                             Image(systemName: "xmark.circle.fill").foregroundColor(.red)
-                        default:
+                        case .pending:
                             Image(systemName: "circle").foregroundColor(.secondary)
                         }
                         VStack(alignment: .leading, spacing: 2) {

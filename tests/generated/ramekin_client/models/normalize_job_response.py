@@ -17,9 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
+from ramekin_client.models.scrape_job_status import ScrapeJobStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class NormalizeJobResponse(BaseModel):
     NormalizeJobResponse
     """ # noqa: E501
     job_id: UUID = Field(description="The job; poll it with `GET /api/scrape/{id}`.")
-    status: StrictStr
+    status: ScrapeJobStatus
     __properties: ClassVar[List[str]] = ["job_id", "status"]
 
     model_config = ConfigDict(

@@ -31,7 +31,7 @@ pub struct NormalizeProposalResponse {
     pub proposed: Option<Option<Box<models::NormalizedRecipe>>>,
     /// The job's status, as `GET /api/scrape/{id}` reports it.
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
     /// What an Edit with AI run says it changed, once it completes.
     #[serde(
         rename = "summary",
@@ -47,7 +47,7 @@ impl NormalizeProposalResponse {
         base: models::NormalizedRecipe,
         base_version_id: uuid::Uuid,
         ops: Vec<String>,
-        status: String,
+        status: models::ScrapeJobStatus,
     ) -> NormalizeProposalResponse {
         NormalizeProposalResponse {
             base: Box::new(base),

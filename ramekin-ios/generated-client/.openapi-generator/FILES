@@ -97,6 +97,7 @@ RamekinClient/Classes/OpenAPIs/Models/RenameTagResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RescrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RetryScrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ScrapeJobResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/ScrapeJobStatus.swift
 RamekinClient/Classes/OpenAPIs/Models/ShoppingListFields.swift
 RamekinClient/Classes/OpenAPIs/Models/ShoppingListHistoryEntry.swift
 RamekinClient/Classes/OpenAPIs/Models/ShoppingListHistoryResponse.swift
@@ -105,6 +106,7 @@ RamekinClient/Classes/OpenAPIs/Models/SignupRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/SignupResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/SortBy.swift
 RamekinClient/Classes/OpenAPIs/Models/StepState.swift
+RamekinClient/Classes/OpenAPIs/Models/StepStatus.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncMealPlan.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncMealPlansRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncMealPlansResponse.swift
@@ -205,6 +207,7 @@ docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeAPI.md
 docs/ScrapeJobResponse.md
+docs/ScrapeJobStatus.md
 docs/ShoppingListAPI.md
 docs/ShoppingListFields.md
 docs/ShoppingListHistoryEntry.md
@@ -214,6 +217,7 @@ docs/SignupRequest.md
 docs/SignupResponse.md
 docs/SortBy.md
 docs/StepState.md
+docs/StepStatus.md
 docs/SyncAPI.md
 docs/SyncMealPlan.md
 docs/SyncMealPlansRequest.md

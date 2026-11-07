@@ -15,9 +15,9 @@ public struct CreateScrapeResponse: Codable, JSONEncodable, Hashable {
     /** The scrape job ID */
     public var id: UUID
     /** Current job status */
-    public var status: String
+    public var status: ScrapeJobStatus
 
-    public init(id: UUID, status: String) {
+    public init(id: UUID, status: ScrapeJobStatus) {
         self.id = id
         self.status = status
     }

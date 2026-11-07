@@ -11,6 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ScrapeJobStatusFromJSON, ScrapeJobStatusToJSON, } from './ScrapeJobStatus';
 import { NormalizedRecipeFromJSON, NormalizedRecipeToJSON, } from './NormalizedRecipe';
 /**
  * Check if a given object implements the NormalizeProposalResponse interface.
@@ -38,7 +39,7 @@ export function NormalizeProposalResponseFromJSONTyped(json, ignoreDiscriminator
         'baseVersionId': json['base_version_id'],
         'ops': json['ops'],
         'proposed': json['proposed'] == null ? undefined : NormalizedRecipeFromJSON(json['proposed']),
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
         'summary': json['summary'] == null ? undefined : json['summary'],
     };
 }
@@ -54,7 +55,7 @@ export function NormalizeProposalResponseToJSONTyped(value, ignoreDiscriminator 
         'base_version_id': value['baseVersionId'],
         'ops': value['ops'],
         'proposed': NormalizedRecipeToJSON(value['proposed']),
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
         'summary': value['summary'],
     };
 }

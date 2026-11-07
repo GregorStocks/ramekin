@@ -7,7 +7,7 @@ Response from recipe import
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **job_id** | **UUID** | The created job ID | 
-**status** | **str** | Current job status | 
+**status** | [**ScrapeJobStatus**](ScrapeJobStatus.md) | Current job status | 
 
 ## Example
 

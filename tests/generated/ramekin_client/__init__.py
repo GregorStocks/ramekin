@@ -111,6 +111,7 @@ __all__ = [
     "RescrapeResponse",
     "RetryScrapeResponse",
     "ScrapeJobResponse",
+    "ScrapeJobStatus",
     "ShoppingListFields",
     "ShoppingListHistoryEntry",
     "ShoppingListHistoryResponse",
@@ -119,6 +120,7 @@ __all__ = [
     "SignupResponse",
     "SortBy",
     "StepState",
+    "StepStatus",
     "SyncMealPlan",
     "SyncMealPlansRequest",
     "SyncMealPlansResponse",
@@ -236,6 +238,7 @@ from ramekin_client.models.rename_tag_response import RenameTagResponse as Renam
 from ramekin_client.models.rescrape_response import RescrapeResponse as RescrapeResponse
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse as RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse as ScrapeJobResponse
+from ramekin_client.models.scrape_job_status import ScrapeJobStatus as ScrapeJobStatus
 from ramekin_client.models.shopping_list_fields import ShoppingListFields as ShoppingListFields
 from ramekin_client.models.shopping_list_history_entry import ShoppingListHistoryEntry as ShoppingListHistoryEntry
 from ramekin_client.models.shopping_list_history_response import ShoppingListHistoryResponse as ShoppingListHistoryResponse
@@ -244,6 +247,7 @@ from ramekin_client.models.signup_request import SignupRequest as SignupRequest
 from ramekin_client.models.signup_response import SignupResponse as SignupResponse
 from ramekin_client.models.sort_by import SortBy as SortBy
 from ramekin_client.models.step_state import StepState as StepState
+from ramekin_client.models.step_status import StepStatus as StepStatus
 from ramekin_client.models.sync_meal_plan import SyncMealPlan as SyncMealPlan
 from ramekin_client.models.sync_meal_plans_request import SyncMealPlansRequest as SyncMealPlansRequest
 from ramekin_client.models.sync_meal_plans_response import SyncMealPlansResponse as SyncMealPlansResponse

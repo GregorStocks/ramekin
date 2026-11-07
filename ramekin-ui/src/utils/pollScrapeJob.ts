@@ -1,24 +1,11 @@
-import type { ScrapeApi, ScrapeJobResponse } from "ramekin-client";
+import {
+  ScrapeJobStatus,
+  type ScrapeApi,
+  type ScrapeJobResponse,
+} from "ramekin-client";
 
 export const SCRAPE_JOB_POLL_INTERVAL_MS = 500;
 export const SCRAPE_JOB_POLL_TIMEOUT_MS = 120_000;
-
-const TERMINAL_STATUSES = new Set(["completed", "failed"]);
-
-export function isTerminalScrapeJobStatus(status: string): boolean {
-  return TERMINAL_STATUSES.has(status);
-}
-
-/**
- * The job has saved its recipe. While it is "normalizing", normalize ops are still
- * running and may update the recipe before the job completes.
- */
-export function isScrapeRecipeReady(job: ScrapeJobResponse): boolean {
-  return (
-    (job.status === "normalizing" || job.status === "completed") &&
-    !!job.recipeId
-  );
-}
 
 export type PollScrapeJobResult =
   | { status: "completed"; job: ScrapeJobResponse }
@@ -73,8 +60,10 @@ export async function pollScrapeJob(
       lastJob = job;
       opts.onUpdate?.(job);
 
-      if (isTerminalScrapeJobStatus(job.status)) {
-        if (job.status === "completed") {
+      // The server decides when a job has stopped and when its recipe can
+      // be opened (`isTerminal`, `recipeReady`); neither is re-derived here.
+      if (job.isTerminal) {
+        if (job.status === ScrapeJobStatus.Completed) {
           return { status: "completed", job };
         }
         return {
@@ -83,7 +72,7 @@ export async function pollScrapeJob(
           error: job.error ?? "Scrape job failed",
         };
       }
-      if (opts.untilRecipeReady && isScrapeRecipeReady(job)) {
+      if (opts.untilRecipeReady && job.recipeReady) {
         return { status: "recipe_ready", job };
       }
     } catch (err) {

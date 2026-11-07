@@ -36,12 +36,12 @@ class TestNormalizeJobResponse(unittest.TestCase):
         if include_optional:
             return NormalizeJobResponse(
                 job_id = '',
-                status = ''
+                status = 'pending'
             )
         else:
             return NormalizeJobResponse(
                 job_id = '',
-                status = '',
+                status = 'pending',
         )
         """
 

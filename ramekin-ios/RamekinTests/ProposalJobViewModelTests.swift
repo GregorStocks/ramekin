@@ -23,7 +23,7 @@ final class ProposalJobViewModelTests: XCTestCase {
                 start: { id, ops in
                     XCTAssertEqual(id, recipeId)
                     startedOps = ops
-                    return NormalizeJobResponse(jobId: jobId, status: "pending")
+                    return NormalizeJobResponse(jobId: jobId, status: .pending)
                 },
                 startEdit: { _, _, _ in throw URLError(.badServerResponse) },
                 getScrape: { id in
@@ -37,7 +37,7 @@ final class ProposalJobViewModelTests: XCTestCase {
                         baseVersionId: UUID(),
                         ops: ["normalize_title"],
                         proposed: proposed,
-                        status: "completed"
+                        status: .completed
                     )
                 },
                 accept: { id, job in
@@ -79,7 +79,7 @@ final class ProposalJobViewModelTests: XCTestCase {
             mode: .normalize,
             api: ProposalJobAPIClient(
                 listOps: { _ in NormalizeOpsResponse(ops: normalizeTestOps) },
-                start: { _, _ in NormalizeJobResponse(jobId: jobId, status: "pending") },
+                start: { _, _ in NormalizeJobResponse(jobId: jobId, status: .pending) },
                 startEdit: { _, _, _ in throw URLError(.badServerResponse) },
                 getScrape: { _ in
                     makeJob(id: jobId, recipeId: nil, status: "failed", error: "Page not found")
@@ -104,7 +104,7 @@ final class ProposalJobViewModelTests: XCTestCase {
             mode: .normalize,
             api: ProposalJobAPIClient(
                 listOps: { _ in NormalizeOpsResponse(ops: normalizeTestOps) },
-                start: { _, _ in NormalizeJobResponse(jobId: jobId, status: "pending") },
+                start: { _, _ in NormalizeJobResponse(jobId: jobId, status: .pending) },
                 startEdit: { _, _, _ in throw URLError(.badServerResponse) },
                 getScrape: { _ in makeJob(id: jobId, recipeId: nil, status: "completed") },
                 getProposal: { _, _ in
@@ -113,7 +113,7 @@ final class ProposalJobViewModelTests: XCTestCase {
                         baseVersionId: UUID(),
                         ops: ["normalize_title"],
                         proposed: makeNormalized(title: "B"),
-                        status: "completed"
+                        status: .completed
                     )
                 },
                 accept: { _, _ in throw URLError(.timedOut) }
@@ -147,7 +147,7 @@ extension ProposalJobViewModelTests {
                 startEdit: { id, instruction, photoIds in
                     XCTAssertEqual(id, recipeId)
                     sent = (instruction, photoIds)
-                    return NormalizeJobResponse(jobId: jobId, status: "pending")
+                    return NormalizeJobResponse(jobId: jobId, status: .pending)
                 },
                 getScrape: { _ in makeJob(id: jobId, recipeId: recipeId, status: "completed") },
                 getProposal: { _, _ in
@@ -156,7 +156,7 @@ extension ProposalJobViewModelTests {
                         baseVersionId: UUID(),
                         ops: [],
                         proposed: makeNormalized(title: "Vegan Soup"),
-                        status: "completed",
+                        status: .completed,
                         summary: "Made it vegan."
                     )
                 },
@@ -187,13 +187,24 @@ private func makeNormalized(title: String) -> NormalizedRecipe {
     )
 }
 
-private func makeJob(id: UUID, recipeId: UUID?, status: String, error: String? = nil) -> ScrapeJobResponse {
-    ScrapeJobResponse(
-        canRetry: status == "failed",
+/// A job as the server reports it, with `isTerminal` and `recipeReady`
+/// following the server's rules for `status`.
+private func makeJob(
+    id: UUID,
+    recipeId: UUID?,
+    status rawStatus: String,
+    error: String? = nil
+) -> ScrapeJobResponse {
+    let status = ScrapeJobStatus(rawValue: rawStatus)!
+    let stopped = status == .completed || status == .failed
+    return ScrapeJobResponse(
+        canRetry: status == .failed,
         createdAt: Date(timeIntervalSince1970: 1),
         error: error,
         id: id,
+        isTerminal: stopped,
         recipeId: recipeId,
+        recipeReady: recipeId != nil && (stopped || status == .normalizing),
         retryCount: 0,
         status: status,
         steps: []

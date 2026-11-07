@@ -36,12 +36,12 @@ class TestImportRecipeResponse(unittest.TestCase):
         if include_optional:
             return ImportRecipeResponse(
                 job_id = '',
-                status = ''
+                status = 'pending'
             )
         else:
             return ImportRecipeResponse(
                 job_id = '',
-                status = '',
+                status = 'pending',
         )
         """
 

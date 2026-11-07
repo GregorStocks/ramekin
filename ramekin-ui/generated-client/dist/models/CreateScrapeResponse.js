@@ -11,6 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ScrapeJobStatusFromJSON, ScrapeJobStatusToJSON, } from './ScrapeJobStatus';
 /**
  * Check if a given object implements the CreateScrapeResponse interface.
  */
@@ -30,7 +31,7 @@ export function CreateScrapeResponseFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'id': json['id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 export function CreateScrapeResponseToJSON(json) {
@@ -42,6 +43,6 @@ export function CreateScrapeResponseToJSONTyped(value, ignoreDiscriminator = fal
     }
     return {
         'id': value['id'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }

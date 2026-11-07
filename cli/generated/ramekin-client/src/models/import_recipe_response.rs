@@ -19,12 +19,12 @@ pub struct ImportRecipeResponse {
     pub job_id: uuid::Uuid,
     /// Current job status
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
 }
 
 impl ImportRecipeResponse {
     /// Response from recipe import
-    pub fn new(job_id: uuid::Uuid, status: String) -> ImportRecipeResponse {
+    pub fn new(job_id: uuid::Uuid, status: models::ScrapeJobStatus) -> ImportRecipeResponse {
         ImportRecipeResponse { job_id, status }
     }
 }

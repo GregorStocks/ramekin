@@ -13,7 +13,7 @@ Name | Type
 `hasOutput` | boolean
 `name` | string
 `startedAt` | Date
-`status` | string
+`status` | [StepStatus](StepStatus.md)
 `summary` | string
 
 ## Example

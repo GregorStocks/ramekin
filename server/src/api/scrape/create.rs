@@ -19,7 +19,7 @@ pub struct CreateScrapeResponse {
     /// The scrape job ID
     pub id: Uuid,
     /// Current job status
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
 }
 
 #[utoipa::path(
@@ -67,7 +67,7 @@ pub async fn create_scrape(
         StatusCode::CREATED,
         Json(CreateScrapeResponse {
             id: job.id,
-            status: job.status.to_string(),
+            status: job.status,
         }),
     )
         .into_response()

@@ -9,13 +9,21 @@ use diesel::expression::AsExpression;
 use diesel::serialize::{self, IsNull, Output, ToSql};
 use diesel::sql_types::Text;
 use diesel::sqlite::{Sqlite, SqliteValue};
+use serde::Serialize;
+use utoipa::ToSchema;
 
 use super::photo_import::PHOTO_EXTRACT_STEP;
 use super::plan::JobPlan;
 use super::steps::FetchHtmlStep;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, AsExpression, FromSqlRow)]
+/// A scrape job's status. `completed` and `failed` are terminal; while an
+/// import or scrape is `normalizing` its recipe is already saved.
+#[derive(
+    Debug, Clone, Copy, PartialEq, Eq, Hash, AsExpression, FromSqlRow, Serialize, ToSchema,
+)]
 #[diesel(sql_type = Text)]
+#[serde(rename_all = "snake_case")]
+#[schema(as = ScrapeJobStatus)]
 pub enum JobStatus {
     /// Created, and not yet running a step (or waiting for a job slot).
     Pending,
@@ -65,6 +73,18 @@ impl JobStatus {
         matches!(self, JobStatus::Completed | JobStatus::Failed)
     }
 
+    /// Whether a job in this status, with a recipe (`has_recipe`), has a
+    /// recipe the client can open: a new recipe is saved before the
+    /// concurrent phase starts, and a job that works on an existing recipe
+    /// has it from the start but may change it until it stops.
+    pub const fn recipe_ready(self, has_recipe: bool) -> bool {
+        has_recipe
+            && matches!(
+                self,
+                JobStatus::Normalizing | JobStatus::Completed | JobStatus::Failed
+            )
+    }
+
     /// The status a job has while it runs `step` of `plan`. Every place that
     /// starts a step takes its status from here.
     pub fn for_step(plan: &JobPlan, step: &str) -> Self {
@@ -111,6 +131,34 @@ mod tests {
             assert_eq!(JobStatus::parse(status.as_str()), Some(status));
         }
         assert_eq!(JobStatus::parse("enriching"), None);
+    }
+
+    #[test]
+    fn recipe_is_ready_once_saved_and_past_parsing() {
+        for status in [JobStatus::Pending, JobStatus::Scraping, JobStatus::Parsing] {
+            assert!(!status.recipe_ready(true), "{status}");
+        }
+        for status in [
+            JobStatus::Normalizing,
+            JobStatus::Completed,
+            JobStatus::Failed,
+        ] {
+            assert!(status.recipe_ready(true), "{status}");
+            assert!(!status.recipe_ready(false), "{status}");
+        }
+    }
+
+    #[test]
+    fn statuses_serialize_as_their_text() {
+        for status in JobStatus::ACTIVE
+            .into_iter()
+            .chain([JobStatus::Completed, JobStatus::Failed])
+        {
+            assert_eq!(
+                serde_json::to_value(status).unwrap(),
+                serde_json::json!(status.as_str())
+            );
+        }
     }
 
     #[test]

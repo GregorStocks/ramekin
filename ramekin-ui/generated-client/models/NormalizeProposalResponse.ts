@@ -13,6 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
+import {
+    ScrapeJobStatusFromJSON,
+    ScrapeJobStatusFromJSONTyped,
+    ScrapeJobStatusToJSON,
+    ScrapeJobStatusToJSONTyped,
+} from './ScrapeJobStatus';
 import type { NormalizedRecipe } from './NormalizedRecipe';
 import {
     NormalizedRecipeFromJSON,
@@ -53,10 +60,10 @@ export interface NormalizeProposalResponse {
     proposed?: NormalizedRecipe | null;
     /**
      * The job's status, as `GET /api/scrape/{id}` reports it.
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof NormalizeProposalResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
     /**
      * What an Edit with AI run says it changed, once it completes.
      * @type {string}
@@ -64,6 +71,8 @@ export interface NormalizeProposalResponse {
      */
     summary?: string | null;
 }
+
+
 
 /**
  * Check if a given object implements the NormalizeProposalResponse interface.
@@ -90,7 +99,7 @@ export function NormalizeProposalResponseFromJSONTyped(json: any, ignoreDiscrimi
         'baseVersionId': json['base_version_id'],
         'ops': json['ops'],
         'proposed': json['proposed'] == null ? undefined : NormalizedRecipeFromJSON(json['proposed']),
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
         'summary': json['summary'] == null ? undefined : json['summary'],
     };
 }
@@ -110,7 +119,7 @@ export function NormalizeProposalResponseToJSONTyped(value?: NormalizeProposalRe
         'base_version_id': value['baseVersionId'],
         'ops': value['ops'],
         'proposed': NormalizedRecipeToJSON(value['proposed']),
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
         'summary': value['summary'],
     };
 }

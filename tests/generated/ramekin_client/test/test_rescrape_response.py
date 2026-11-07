@@ -36,12 +36,12 @@ class TestRescrapeResponse(unittest.TestCase):
         if include_optional:
             return RescrapeResponse(
                 job_id = '',
-                status = ''
+                status = 'pending'
             )
         else:
             return RescrapeResponse(
                 job_id = '',
-                status = '',
+                status = 'pending',
         )
         """
 

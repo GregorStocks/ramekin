@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.normalized_recipe import NormalizedRecipe
+from ramekin_client.models.scrape_job_status import ScrapeJobStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +33,7 @@ class NormalizeProposalResponse(BaseModel):
     base_version_id: UUID = Field(description="The version the job started from.")
     ops: List[StrictStr] = Field(description="The ops the job runs, in run order.")
     proposed: Optional[NormalizedRecipe] = Field(default=None, description="What accepting saves; absent until the job completes.")
-    status: StrictStr = Field(description="The job's status, as `GET /api/scrape/{id}` reports it.")
+    status: ScrapeJobStatus = Field(description="The job's status, as `GET /api/scrape/{id}` reports it.")
     summary: Optional[StrictStr] = Field(default=None, description="What an Edit with AI run says it changed, once it completes.")
     __properties: ClassVar[List[str]] = ["base", "base_version_id", "ops", "proposed", "status", "summary"]
 

@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
+import {
+    ScrapeJobStatusFromJSON,
+    ScrapeJobStatusFromJSONTyped,
+    ScrapeJobStatusToJSON,
+    ScrapeJobStatusToJSONTyped,
+} from './ScrapeJobStatus';
+
 /**
  * 
  * @export
@@ -27,11 +35,13 @@ export interface NormalizeJobResponse {
     jobId: string;
     /**
      * 
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof NormalizeJobResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
 }
+
+
 
 /**
  * Check if a given object implements the NormalizeJobResponse interface.
@@ -53,7 +63,7 @@ export function NormalizeJobResponseFromJSONTyped(json: any, ignoreDiscriminator
     return {
         
         'jobId': json['job_id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 
@@ -69,7 +79,7 @@ export function NormalizeJobResponseToJSONTyped(value?: NormalizeJobResponse | n
     return {
         
         'job_id': value['jobId'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }
 

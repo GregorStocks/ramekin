@@ -21,7 +21,7 @@ pub struct ImportFromTextResponse {
     /// The created job ID
     pub job_id: Uuid,
     /// Current job status
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
 }
 
 #[utoipa::path(
@@ -55,7 +55,7 @@ pub async fn import_from_text(
         StatusCode::CREATED,
         Json(ImportFromTextResponse {
             job_id: job.id,
-            status: job.status.to_string(),
+            status: job.status,
         }),
     ))
 }

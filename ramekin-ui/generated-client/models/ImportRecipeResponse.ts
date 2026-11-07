@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
+import {
+    ScrapeJobStatusFromJSON,
+    ScrapeJobStatusFromJSONTyped,
+    ScrapeJobStatusToJSON,
+    ScrapeJobStatusToJSONTyped,
+} from './ScrapeJobStatus';
+
 /**
  * Response from recipe import
  * @export
@@ -27,11 +35,13 @@ export interface ImportRecipeResponse {
     jobId: string;
     /**
      * Current job status
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof ImportRecipeResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
 }
+
+
 
 /**
  * Check if a given object implements the ImportRecipeResponse interface.
@@ -53,7 +63,7 @@ export function ImportRecipeResponseFromJSONTyped(json: any, ignoreDiscriminator
     return {
         
         'jobId': json['job_id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 
@@ -69,7 +79,7 @@ export function ImportRecipeResponseToJSONTyped(value?: ImportRecipeResponse | n
     return {
         
         'job_id': value['jobId'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }
 

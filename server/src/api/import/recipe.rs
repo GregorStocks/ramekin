@@ -126,7 +126,7 @@ pub struct ImportRecipeResponse {
     /// The created job ID
     pub job_id: Uuid,
     /// Current job status
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
 }
 
 #[utoipa::path(
@@ -193,7 +193,7 @@ pub async fn import_recipe(
         status,
         Json(ImportRecipeResponse {
             job_id: job.id,
-            status: job.status.to_string(),
+            status: job.status,
         }),
     )
         .into_response()

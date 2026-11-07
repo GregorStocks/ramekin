@@ -18,11 +18,11 @@ pub struct ImportFromPhotosResponse {
     pub job_id: uuid::Uuid,
     /// Current job status
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
 }
 
 impl ImportFromPhotosResponse {
-    pub fn new(job_id: uuid::Uuid, status: String) -> ImportFromPhotosResponse {
+    pub fn new(job_id: uuid::Uuid, status: models::ScrapeJobStatus) -> ImportFromPhotosResponse {
         ImportFromPhotosResponse { job_id, status }
     }
 }

@@ -11,9 +11,11 @@ Name | Type
 `error` | string
 `failedAtStep` | string
 `id` | string
+`isTerminal` | boolean
 `recipeId` | string
+`recipeReady` | boolean
 `retryCount` | number
-`status` | string
+`status` | [ScrapeJobStatus](ScrapeJobStatus.md)
 `steps` | [Array&lt;StepState&gt;](StepState.md)
 `url` | string
 
@@ -29,7 +31,9 @@ const example = {
   "error": null,
   "failedAtStep": null,
   "id": null,
+  "isTerminal": null,
   "recipeId": null,
+  "recipeReady": null,
   "retryCount": null,
   "status": null,
   "steps": null,

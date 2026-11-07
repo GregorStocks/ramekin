@@ -11,6 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { StepStatusFromJSON, StepStatusToJSON, } from './StepStatus';
 /**
  * Check if a given object implements the StepState interface.
  */
@@ -37,7 +38,7 @@ export function StepStateFromJSONTyped(json, ignoreDiscriminator) {
         'hasOutput': json['has_output'],
         'name': json['name'],
         'startedAt': json['started_at'] == null ? undefined : (new Date(json['started_at'])),
-        'status': json['status'],
+        'status': StepStatusFromJSON(json['status']),
         'summary': json['summary'] == null ? undefined : json['summary'],
     };
 }
@@ -55,7 +56,7 @@ export function StepStateToJSONTyped(value, ignoreDiscriminator = false) {
         'has_output': value['hasOutput'],
         'name': value['name'],
         'started_at': value['startedAt'] == null ? value['startedAt'] : value['startedAt'].toISOString(),
-        'status': value['status'],
+        'status': StepStatusToJSON(value['status']),
         'summary': value['summary'],
     };
 }

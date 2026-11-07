@@ -11,6 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ScrapeJobStatusFromJSON, ScrapeJobStatusToJSON, } from './ScrapeJobStatus';
 /**
  * Check if a given object implements the ImportFromTextResponse interface.
  */
@@ -30,7 +31,7 @@ export function ImportFromTextResponseFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'jobId': json['job_id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 export function ImportFromTextResponseToJSON(json) {
@@ -42,6 +43,6 @@ export function ImportFromTextResponseToJSONTyped(value, ignoreDiscriminator = f
     }
     return {
         'job_id': value['jobId'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }

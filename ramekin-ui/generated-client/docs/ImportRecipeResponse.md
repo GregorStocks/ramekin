@@ -8,7 +8,7 @@ Response from recipe import
 Name | Type
 ------------ | -------------
 `jobId` | string
-`status` | string
+`status` | [ScrapeJobStatus](ScrapeJobStatus.md)
 
 ## Example
 

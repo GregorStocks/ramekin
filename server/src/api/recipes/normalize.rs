@@ -88,7 +88,7 @@ pub struct BulkNormalizeRequest {
 pub struct NormalizeJobResponse {
     /// The job; poll it with `GET /api/scrape/{id}`.
     pub job_id: Uuid,
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -109,7 +109,7 @@ pub struct BulkNormalizeResponse {
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct NormalizeProposalResponse {
     /// The job's status, as `GET /api/scrape/{id}` reports it.
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
     /// The ops the job runs, in run order.
     pub ops: Vec<String>,
     /// The version the job started from.
@@ -309,7 +309,7 @@ async fn start_normalize_job(
     scraping::spawn_import_job(pool.clone(), job.id, "normalize");
     Ok(NormalizeJobResponse {
         job_id: job.id,
-        status: job.status.to_string(),
+        status: job.status,
     })
 }
 
@@ -473,7 +473,7 @@ pub async fn get_normalize_proposal(
         None => (None, None),
     };
     Ok(Json(NormalizeProposalResponse {
-        status: job.status.to_string(),
+        status: job.status,
         ops: op_ids(&job.ops),
         base_version_id,
         base,

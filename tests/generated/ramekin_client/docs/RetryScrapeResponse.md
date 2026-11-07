@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **UUID** | The scrape job ID | 
-**status** | **str** | New job status after retry | 
+**status** | [**ScrapeJobStatus**](ScrapeJobStatus.md) | New job status after retry | 
 
 ## Example
 

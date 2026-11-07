@@ -18,7 +18,7 @@ pub struct RetryScrapeResponse {
     /// The scrape job ID
     pub id: Uuid,
     /// New job status after retry
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
 }
 
 #[utoipa::path(
@@ -86,7 +86,7 @@ pub async fn retry_scrape(
         StatusCode::OK,
         Json(RetryScrapeResponse {
             id: job_id,
-            status: new_status.to_string(),
+            status: new_status,
         }),
     )
         .into_response()

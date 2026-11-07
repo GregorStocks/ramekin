@@ -19,12 +19,18 @@ use utoipa::ToSchema;
 pub struct ScrapeJobResponse {
     /// The scrape job ID
     pub id: Uuid,
-    /// Current job status (pending, scraping, parsing, normalizing, completed,
-    /// failed). While an import or scrape is "normalizing" the recipe is
-    /// saved and `recipe_id` is set; normalize ops may still update it until
-    /// the job completes. A manual normalize job saves nothing: it ends with
-    /// a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
-    pub status: String,
+    /// Current job status. While an import or scrape is "normalizing" the
+    /// recipe is saved and `recipe_id` is set; normalize ops may still update
+    /// it until the job completes. A manual normalize job saves nothing: it
+    /// ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
+    pub status: crate::scraping::JobStatus,
+    /// Whether the job has stopped (`completed` or `failed`): stop polling.
+    pub is_terminal: bool,
+    /// Whether `recipe_id` names a recipe the client can open now: the job
+    /// has saved it (even if a later normalize step then failed) or finished
+    /// working on it. Normalize ops may still update it while the job is
+    /// `normalizing`.
+    pub recipe_ready: bool,
     /// URL being scraped (optional for imports)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
@@ -116,7 +122,9 @@ pub async fn get_scrape(
         StatusCode::OK,
         Json(ScrapeJobResponse {
             id: job.id,
-            status: job.status.to_string(),
+            status: job.status,
+            is_terminal: job.status.is_terminal(),
+            recipe_ready: job.status.recipe_ready(job.recipe_id.is_some()),
             url: job.url,
             recipe_id: job.recipe_id,
             error: job.error_message,

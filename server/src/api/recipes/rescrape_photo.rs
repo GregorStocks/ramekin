@@ -20,7 +20,7 @@ pub struct RescrapeResponse {
     /// The scrape job ID
     pub job_id: Uuid,
     /// Current job status
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
 }
 
 #[utoipa::path(
@@ -68,7 +68,7 @@ pub async fn rescrape_photo(
         StatusCode::CREATED,
         Json(RescrapeResponse {
             job_id: job.id,
-            status: job.status.to_string(),
+            status: job.status,
         }),
     ))
 }

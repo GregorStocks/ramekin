@@ -12,6 +12,7 @@
  * Do not edit the class manually.
  */
 import { StepStateFromJSON, StepStateToJSON, } from './StepState';
+import { ScrapeJobStatusFromJSON, ScrapeJobStatusToJSON, } from './ScrapeJobStatus';
 /**
  * Check if a given object implements the ScrapeJobResponse interface.
  */
@@ -21,6 +22,10 @@ export function instanceOfScrapeJobResponse(value) {
     if (!('createdAt' in value) || value['createdAt'] === undefined)
         return false;
     if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('isTerminal' in value) || value['isTerminal'] === undefined)
+        return false;
+    if (!('recipeReady' in value) || value['recipeReady'] === undefined)
         return false;
     if (!('retryCount' in value) || value['retryCount'] === undefined)
         return false;
@@ -43,9 +48,11 @@ export function ScrapeJobResponseFromJSONTyped(json, ignoreDiscriminator) {
         'error': json['error'] == null ? undefined : json['error'],
         'failedAtStep': json['failed_at_step'] == null ? undefined : json['failed_at_step'],
         'id': json['id'],
+        'isTerminal': json['is_terminal'],
         'recipeId': json['recipe_id'] == null ? undefined : json['recipe_id'],
+        'recipeReady': json['recipe_ready'],
         'retryCount': json['retry_count'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
         'steps': (json['steps'].map(StepStateFromJSON)),
         'url': json['url'] == null ? undefined : json['url'],
     };
@@ -63,9 +70,11 @@ export function ScrapeJobResponseToJSONTyped(value, ignoreDiscriminator = false)
         'error': value['error'],
         'failed_at_step': value['failedAtStep'],
         'id': value['id'],
+        'is_terminal': value['isTerminal'],
         'recipe_id': value['recipeId'],
+        'recipe_ready': value['recipeReady'],
         'retry_count': value['retryCount'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
         'steps': (value['steps'].map(StepStateToJSON)),
         'url': value['url'],
     };

@@ -21,6 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
+from ramekin_client.models.scrape_job_status import ScrapeJobStatus
 from ramekin_client.models.step_state import StepState
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,12 +35,14 @@ class ScrapeJobResponse(BaseModel):
     error: Optional[StrictStr] = Field(default=None, description="Error message if failed")
     failed_at_step: Optional[StrictStr] = Field(default=None, description="Which step failed (for retry logic)")
     id: UUID = Field(description="The scrape job ID")
+    is_terminal: StrictBool = Field(description="Whether the job has stopped (`completed` or `failed`): stop polling.")
     recipe_id: Optional[UUID] = Field(default=None, description="Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes and normalize jobs have it from the start)")
+    recipe_ready: StrictBool = Field(description="Whether `recipe_id` names a recipe the client can open now: the job has saved it (even if a later normalize step then failed) or finished working on it. Normalize ops may still update it while the job is `normalizing`.")
     retry_count: StrictInt = Field(description="Number of retry attempts")
-    status: StrictStr = Field(description="Current job status (pending, scraping, parsing, normalizing, completed, failed). While an import or scrape is \"normalizing\" the recipe is saved and `recipe_id` is set; normalize ops may still update it until the job completes. A manual normalize job saves nothing: it ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).")
+    status: ScrapeJobStatus = Field(description="Current job status. While an import or scrape is \"normalizing\" the recipe is saved and `recipe_id` is set; normalize ops may still update it until the job completes. A manual normalize job saves nothing: it ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).")
     steps: List[StepState] = Field(description="Per-step state for the status page (ordered by pipeline step).")
     url: Optional[StrictStr] = Field(default=None, description="URL being scraped (optional for imports)")
-    __properties: ClassVar[List[str]] = ["can_retry", "created_at", "error", "failed_at_step", "id", "recipe_id", "retry_count", "status", "steps", "url"]
+    __properties: ClassVar[List[str]] = ["can_retry", "created_at", "error", "failed_at_step", "id", "is_terminal", "recipe_id", "recipe_ready", "retry_count", "status", "steps", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,7 +127,9 @@ class ScrapeJobResponse(BaseModel):
             "error": obj.get("error"),
             "failed_at_step": obj.get("failed_at_step"),
             "id": obj.get("id"),
+            "is_terminal": obj.get("is_terminal"),
             "recipe_id": obj.get("recipe_id"),
+            "recipe_ready": obj.get("recipe_ready"),
             "retry_count": obj.get("retry_count"),
             "status": obj.get("status"),
             "steps": [StepState.from_dict(_item) for _item in obj["steps"]] if obj.get("steps") is not None else None,

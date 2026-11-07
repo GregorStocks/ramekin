@@ -18,11 +18,11 @@ pub struct RescrapeResponse {
     pub job_id: uuid::Uuid,
     /// Current job status
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
 }
 
 impl RescrapeResponse {
-    pub fn new(job_id: uuid::Uuid, status: String) -> RescrapeResponse {
+    pub fn new(job_id: uuid::Uuid, status: models::ScrapeJobStatus) -> RescrapeResponse {
         RescrapeResponse { job_id, status }
     }
 }
