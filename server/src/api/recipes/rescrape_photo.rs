@@ -68,7 +68,7 @@ pub async fn rescrape_photo(
         StatusCode::CREATED,
         Json(RescrapeResponse {
             job_id: job.id,
-            status: job.status,
+            status: job.status.to_string(),
         }),
     ))
 }

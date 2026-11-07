@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**can_retry** | **bool** | Whether this job can be retried | 
+**can_retry** | **bool** | Whether &#x60;POST /api/scrape/{id}/retry&#x60; would accept this job: it failed, has retries left, and has a source to start again from. | 
 **created_at** | **datetime** | When the job was created | 
 **error** | **str** | Error message if failed | [optional] 
 **failed_at_step** | **str** | Which step failed (for retry logic) | [optional] 

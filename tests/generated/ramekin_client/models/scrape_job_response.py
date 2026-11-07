@@ -29,7 +29,7 @@ class ScrapeJobResponse(BaseModel):
     """
     ScrapeJobResponse
     """ # noqa: E501
-    can_retry: StrictBool = Field(description="Whether this job can be retried")
+    can_retry: StrictBool = Field(description="Whether `POST /api/scrape/{id}/retry` would accept this job: it failed, has retries left, and has a source to start again from.")
     created_at: datetime = Field(description="When the job was created")
     error: Optional[StrictStr] = Field(default=None, description="Error message if failed")
     failed_at_step: Optional[StrictStr] = Field(default=None, description="Which step failed (for retry logic)")

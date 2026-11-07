@@ -94,7 +94,7 @@ pub async fn edit_recipe_with_ai(
         StatusCode::CREATED,
         Json(NormalizeJobResponse {
             job_id: job.id,
-            status: job.status,
+            status: job.status.to_string(),
         }),
     ))
 }

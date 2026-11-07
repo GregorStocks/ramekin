@@ -14,11 +14,12 @@ use crate::photos::load_photo_images;
 use crate::schema::scrape_jobs;
 
 use super::jobs::{
-    mark_failed, prepare_output, prepare_photos_source, save_step_output, update_status_and_step,
-    SOURCE_PHOTOS_STEP,
+    enter_step, enter_step_conn, mark_failed, prepare_output, prepare_photos_source,
+    save_step_output, SOURCE_PHOTOS_STEP,
 };
+use super::plan::JobPlan;
 use super::runner::{job_slot, run_scrape_job_in_slot};
-use super::{run_scrape_db_write, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
+use super::{run_scrape_db_write, JobStatus, ScrapeError};
 
 pub(super) const PHOTO_EXTRACT_STEP: &str = "photo_extract";
 
@@ -101,8 +102,9 @@ async fn run_photo_import_job_inner(
     user_id: Uuid,
     photo_ids: Vec<Uuid>,
 ) -> Result<(), ScrapeError> {
-    // Update status to "scraping" (extraction phase)
-    update_status_and_step(&pool, job_id, STATUS_SCRAPING, Some(PHOTO_EXTRACT_STEP)).await?;
+    let plan = JobPlan::import_without_page();
+    let status = JobStatus::for_step(&plan, PHOTO_EXTRACT_STEP);
+    enter_step(&pool, job_id, status, PHOTO_EXTRACT_STEP).await?;
 
     // Step 1: Fetch photo bytes from database
     let images = load_photo_images(&pool, user_id, &photo_ids)
@@ -149,19 +151,9 @@ async fn run_photo_import_job_inner(
         save_step_output(conn, job_id, FetchImagesStepMeta::NAME, images_output)?;
         save_step_output(conn, job_id, SOURCE_PHOTOS_STEP, photos_source)?;
 
-        // Update job to start from parse_ingredients
-        let now = chrono::Utc::now();
-        diesel::update(scrape_jobs::table.find(job_id))
-            .set((
-                scrape_jobs::status.eq(STATUS_PARSING),
-                scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
-                scrape_jobs::current_step_started_at.eq(Some(now)),
-                scrape_jobs::updated_at.eq(now),
-            ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-        Ok(())
+        // Continue from parse_ingredients
+        let step = ParseIngredientsStep::NAME;
+        enter_step_conn(conn, job_id, JobStatus::for_step(&plan, step), step)
     })
     .await?;
 

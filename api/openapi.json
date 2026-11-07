@@ -4576,7 +4576,7 @@
         "properties": {
           "can_retry": {
             "type": "boolean",
-            "description": "Whether this job can be retried"
+            "description": "Whether `POST /api/scrape/{id}/retry` would accept this job: it\nfailed, has retries left, and has a source to start again from."
           },
           "created_at": {
             "type": "string",

@@ -12,7 +12,7 @@ import AnyCodable
 
 public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
 
-    /** Whether this job can be retried */
+    /** Whether `POST /api/scrape/{id}/retry` would accept this job: it failed, has retries left, and has a source to start again from. */
     public var canRetry: Bool
     /** When the job was created */
     public var createdAt: Date

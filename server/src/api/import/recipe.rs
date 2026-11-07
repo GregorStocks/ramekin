@@ -193,7 +193,7 @@ pub async fn import_recipe(
         status,
         Json(ImportRecipeResponse {
             job_id: job.id,
-            status: job.status,
+            status: job.status.to_string(),
         }),
     )
         .into_response()

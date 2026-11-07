@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ScrapeJobResponse {
-    /// Whether this job can be retried
+    /// Whether `POST /api/scrape/{id}/retry` would accept this job: it failed, has retries left, and has a source to start again from.
     #[serde(rename = "can_retry")]
     pub can_retry: bool,
     /// When the job was created

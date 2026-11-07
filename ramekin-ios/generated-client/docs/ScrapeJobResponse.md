@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**canRetry** | **Bool** | Whether this job can be retried | 
+**canRetry** | **Bool** | Whether &#x60;POST /api/scrape/{id}/retry&#x60; would accept this job: it failed, has retries left, and has a source to start again from. | 
 **createdAt** | **Date** | When the job was created | 
 **error** | **String** | Error message if failed | [optional] 
 **failedAtStep** | **String** | Which step failed (for retry logic) | [optional] 

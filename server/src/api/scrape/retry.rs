@@ -66,6 +66,9 @@ pub async fn retry_scrape(
         Err(scraping::ScrapeError::InvalidState(msg)) => {
             return ApiError::invalid_request(msg).into_response();
         }
+        Err(e @ scraping::ScrapeError::MaxRetriesExceeded) => {
+            return ApiError::invalid_request(e.to_string()).into_response();
+        }
         Err(e) => {
             tracing::error!("Failed to retry scrape job: {}", e);
             return ApiError::internal("Failed to retry scrape job").into_response();
@@ -83,7 +86,7 @@ pub async fn retry_scrape(
         StatusCode::OK,
         Json(RetryScrapeResponse {
             id: job_id,
-            status: new_status,
+            status: new_status.to_string(),
         }),
     )
         .into_response()

@@ -55,7 +55,7 @@ pub async fn import_from_text(
         StatusCode::CREATED,
         Json(ImportFromTextResponse {
             job_id: job.id,
-            status: job.status,
+            status: job.status.to_string(),
         }),
     ))
 }

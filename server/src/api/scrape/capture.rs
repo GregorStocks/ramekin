@@ -68,7 +68,7 @@ pub async fn capture(
         StatusCode::CREATED,
         Json(CreateScrapeResponse {
             id: job.id,
-            status: job.status,
+            status: job.status.to_string(),
         }),
     )
         .into_response()

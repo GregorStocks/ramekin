@@ -26,7 +26,7 @@ use crate::recipes::VersionWriteError;
 use crate::schema::scrape_jobs;
 use crate::scraping::output_store::latest_output;
 use crate::scraping::steps::NormalizeProposal;
-use crate::scraping::{self, NormalizeStart, StoredSource};
+use crate::scraping::{self, JobStatus, NormalizeStart, StoredSource};
 
 #[derive(Debug, Clone, Copy, Serialize, ToSchema)]
 #[serde(rename_all = "snake_case")]
@@ -309,7 +309,7 @@ async fn start_normalize_job(
     scraping::spawn_import_job(pool.clone(), job.id, "normalize");
     Ok(NormalizeJobResponse {
         job_id: job.id,
-        status: job.status,
+        status: job.status.to_string(),
     })
 }
 
@@ -377,7 +377,7 @@ pub async fn normalize_recipes(
 
 /// A normalize or Edit with AI job, as the proposal endpoints read it.
 struct ProposingJob {
-    status: String,
+    status: JobStatus,
     ops: Vec<NormalizeOp>,
     base_version_id: Uuid,
     /// An Edit with AI job.
@@ -403,7 +403,7 @@ async fn load_normalize_job(
                 scrape_jobs::edit_request,
             ))
             .first::<(
-                String,
+                JobStatus,
                 Option<serde_json::Value>,
                 Option<Uuid>,
                 Option<serde_json::Value>,
@@ -465,8 +465,8 @@ pub async fn get_normalize_proposal(
         load_version(conn, base_version_id).map_err(ApiError::internal)
     })
     .await?;
-    let proposal = match job.status.as_str() {
-        scraping::STATUS_COMPLETED => load_proposal(&pool, job_id).await?,
+    let proposal = match job.status {
+        JobStatus::Completed => load_proposal(&pool, job_id).await?,
         _ => None,
     };
     let (proposed, summary) = match proposal {
@@ -474,7 +474,7 @@ pub async fn get_normalize_proposal(
         None => (None, None),
     };
     Ok(Json(NormalizeProposalResponse {
-        status: job.status,
+        status: job.status.to_string(),
         ops: op_ids(&job.ops),
         base_version_id,
         base,
@@ -512,8 +512,8 @@ pub async fn accept_normalize_proposal(
         base_version_id,
         edit,
     } = load_normalize_job(&pool, user_id, recipe_id, job_id).await?;
-    let proposal = match status.as_str() {
-        scraping::STATUS_COMPLETED => load_proposal(&pool, job_id).await?,
+    let proposal = match status {
+        JobStatus::Completed => load_proposal(&pool, job_id).await?,
         _ => None,
     }
     .ok_or_else(|| ApiError::invalid_request("The normalize job has no proposal yet"))?;

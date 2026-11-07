@@ -22,8 +22,8 @@ use crate::models::ScrapeJob;
 use crate::schema::{scrape_jobs, step_outputs, user_tags};
 
 use super::jobs::{
-    fail_unfinished, get_job, mark_completed, mark_failed, update_current_step_keeping_start,
-    update_status_and_step, SOURCE_PHOTOS_STEP, SOURCE_TEXT_STEP,
+    enter_step, fail_unfinished, get_job, mark_completed, mark_failed,
+    update_current_step_keeping_start, SOURCE_PHOTOS_STEP, SOURCE_TEXT_STEP,
 };
 use super::output_store::{latest_output, DbOutputStore};
 use super::photo_import::PHOTO_EXTRACT_STEP;
@@ -33,10 +33,7 @@ use super::steps::{
     FetchHtmlStep, FetchImagesStep, LoadRecipeStep, ProposeNormalizeStep,
     ResolveIngredientNamesStep, SaveRecipeStep,
 };
-use super::{
-    run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_FAILED,
-    STATUS_NORMALIZING, STATUS_PARSING, STATUS_PENDING, STATUS_SCRAPING,
-};
+use super::{run_scrape_db, run_scrape_db_write, JobStatus, ScrapeError};
 
 /// Maximum retries before hard fail
 const MAX_RETRIES: i32 = 5;
@@ -279,12 +276,7 @@ fn interrupted_job_action(url: Option<&str>, current_step: Option<&str>) -> Inte
 pub async fn resume_interrupted_jobs(pool: &Arc<DbPool>) {
     let jobs = run_scrape_db(pool, |conn| {
         scrape_jobs::table
-            .filter(scrape_jobs::status.eq_any([
-                STATUS_PENDING,
-                STATUS_SCRAPING,
-                STATUS_PARSING,
-                STATUS_NORMALIZING,
-            ]))
+            .filter(scrape_jobs::status.eq_any(JobStatus::ACTIVE))
             .select((scrape_jobs::id, scrape_jobs::url, scrape_jobs::current_step))
             .load::<(Uuid, Option<String>, Option<String>)>(conn)
             .map_err(|e| ScrapeError::Database(e.to_string()))
@@ -411,7 +403,7 @@ async fn run_scrape_job_inner(
     let job = get_job(&pool, job_id).await?;
 
     // Terminal states - nothing to do
-    if job.status == STATUS_COMPLETED || job.status == STATUS_FAILED {
+    if job.status.is_terminal() {
         return Ok(());
     }
 
@@ -461,16 +453,9 @@ async fn run_scrape_job_inner(
     while let Some(step_name) = current_step_name.take() {
         *entered = Some(step_name.clone());
         if plan.is_concurrent(&step_name) {
-            let outcome = run_concurrent_steps(
-                &pool,
-                job_id,
-                &registry,
-                url,
-                &store,
-                &plan.concurrent,
-                &step_name,
-            )
-            .await?;
+            let outcome =
+                run_concurrent_steps(&pool, job_id, &registry, url, &store, &plan, &step_name)
+                    .await?;
             if let Some(name) = outcome.last_step_name {
                 last_step_name = name;
             }
@@ -489,16 +474,11 @@ async fn run_scrape_job_inner(
             }
         };
 
-        // Determine status for this step: fetch_html is "scraping", all others are "parsing"
-        let step_status = if step_name == FetchHtmlStep::NAME {
-            STATUS_SCRAPING
-        } else {
-            STATUS_PARSING
-        };
         last_step_name = step_name.clone();
 
         // Update job status and current_step before executing
-        update_status_and_step(&pool, job_id, step_status, Some(&step_name)).await?;
+        let step_status = JobStatus::for_step(&plan, &step_name);
+        enter_step(&pool, job_id, step_status, &step_name).await?;
 
         // Execute step with OpenTelemetry span
         let result = execute_step_with_tracing(step, url, &store, &step_name).await;
@@ -628,9 +608,10 @@ async fn run_concurrent_steps(
     registry: &StepRegistry,
     url: &str,
     store: &DbOutputStore<'_>,
-    steps: &[(&'static str, Vec<&'static str>)],
+    plan: &JobPlan,
     first_step: &str,
 ) -> Result<ConcurrentOutcome, ScrapeError> {
+    let steps = &plan.concurrent;
     let canonical_index = |name: &str| {
         steps
             .iter()
@@ -721,7 +702,7 @@ async fn run_concurrent_steps(
         if let Some(step) = earliest.filter(|step| Some(*step) != reported_step) {
             if reported_step.is_none() {
                 // Stamps current_step_started_at with the phase start.
-                update_status_and_step(pool, job_id, STATUS_NORMALIZING, Some(step)).await?;
+                enter_step(pool, job_id, JobStatus::for_step(plan, step), step).await?;
             } else {
                 update_current_step_keeping_start(pool, job_id, step).await?;
             }
@@ -886,30 +867,58 @@ async fn execute_step_with_tracing(
     .await
 }
 
+/// Why Retry can't restart a job.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum RetryRefusal {
+    /// Only a failed job can be retried.
+    NotFailed(JobStatus),
+    /// The job has used up its `MAX_RETRIES`.
+    MaxRetries,
+    /// A job without a page can only start again from pasted text; photo and
+    /// Paprika imports keep nothing to retry from.
+    NoSource,
+}
+
+impl From<RetryRefusal> for ScrapeError {
+    fn from(refusal: RetryRefusal) -> Self {
+        match refusal {
+            RetryRefusal::NotFailed(status) => {
+                ScrapeError::InvalidState(format!("Cannot retry job in status: {status}"))
+            }
+            RetryRefusal::MaxRetries => ScrapeError::MaxRetriesExceeded,
+            RetryRefusal::NoSource => {
+                ScrapeError::InvalidState("Cannot retry import jobs".to_string())
+            }
+        }
+    }
+}
+
+/// Why Retry would refuse `job`, if it would. [`retry_job`] and the status
+/// API's `can_retry` both ask this, so a client is never offered a retry the
+/// server then refuses.
+pub async fn retry_refusal(
+    pool: &DbPool,
+    job: &ScrapeJob,
+) -> Result<Option<RetryRefusal>, ScrapeError> {
+    if job.status != JobStatus::Failed {
+        return Ok(Some(RetryRefusal::NotFailed(job.status)));
+    }
+    if job.retry_count >= MAX_RETRIES {
+        return Ok(Some(RetryRefusal::MaxRetries));
+    }
+    if job.url.is_none() && !has_output(pool, job.id, SOURCE_TEXT_STEP).await? {
+        return Ok(Some(RetryRefusal::NoSource));
+    }
+    Ok(None)
+}
+
 /// Reset a failed job for retry.
 /// Returns the status to resume from.
-pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
+pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<JobStatus, ScrapeError> {
     let job = get_job(pool, job_id).await?;
 
-    if job.status != STATUS_FAILED {
-        return Err(ScrapeError::InvalidState(format!(
-            "Cannot retry job in status: {}",
-            job.status
-        )));
-    }
-
-    // Check retry count
-    if job.retry_count >= MAX_RETRIES {
-        return Err(ScrapeError::MaxRetriesExceeded);
-    }
-
-    // A job without a page can only start again from pasted text; photo and
-    // Paprika imports keep nothing to retry from.
-    let text_source = job.url.is_none() && has_output(pool, job_id, SOURCE_TEXT_STEP).await?;
-    if job.url.is_none() && !text_source {
-        return Err(ScrapeError::InvalidState(
-            "Cannot retry import jobs".to_string(),
-        ));
+    if let Some(refusal) = retry_refusal(pool, &job).await? {
+        return Err(refusal.into());
     }
 
     // Resume at the step that failed. `failed_at_step` holds the real pipeline
@@ -964,15 +973,8 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
         }
     }
 
+    let resume_status = JobStatus::for_step(&plan, &resume_step);
     run_scrape_db_write(pool, move |conn| {
-        let resume_status = if resume_step.as_str() == FetchHtmlStep::NAME {
-            STATUS_SCRAPING
-        } else if plan.is_concurrent(&resume_step) {
-            STATUS_NORMALIZING
-        } else {
-            STATUS_PARSING
-        };
-
         // Only reset the exact failure this request read: still failed, with
         // the retry count it saw (only this update changes it). Of two
         // retries that both passed the status check above, the second updates
@@ -982,7 +984,7 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
         let updated = diesel::update(
             scrape_jobs::table
                 .find(job_id)
-                .filter(scrape_jobs::status.eq(STATUS_FAILED))
+                .filter(scrape_jobs::status.eq(JobStatus::Failed))
                 .filter(scrape_jobs::retry_count.eq(job.retry_count)),
         )
         .set((
@@ -1002,7 +1004,7 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
             ));
         }
 
-        Ok(resume_status.to_string())
+        Ok(resume_status)
     })
     .await
 }

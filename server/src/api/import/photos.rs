@@ -94,7 +94,7 @@ pub async fn import_from_photos(
         StatusCode::CREATED,
         Json(ImportFromPhotosResponse {
             job_id: job.id,
-            status: job.status,
+            status: job.status.to_string(),
         }),
     ))
 }

@@ -16,7 +16,7 @@ use crate::db::DbPool;
 use crate::models::ScrapeJob;
 use crate::schema::step_outputs;
 use crate::scraping::plan::JobPlan;
-use crate::scraping::{run_scrape_db, ScrapeError};
+use crate::scraping::{run_scrape_db, JobStatus, ScrapeError};
 
 /// Row shape read by `build_step_states_from_outputs`:
 /// `(step_name, created_at, duration_ms, summary, success, error)`. The full
@@ -281,7 +281,7 @@ pub async fn build_step_states(
     Ok(build_step_states_from_outputs(
         plan,
         outputs,
-        &job.status,
+        job.status,
         job.current_step.as_deref(),
         job.current_step_started_at,
         job.failed_at_step.as_deref(),
@@ -295,7 +295,7 @@ pub async fn build_step_states(
 fn build_step_states_from_outputs(
     plan: &JobPlan,
     outputs: Vec<StepOutputRow>,
-    job_status: &str,
+    job_status: JobStatus,
     current_step: Option<&str>,
     current_step_started_at: Option<DateTime<Utc>>,
     failed_at_step: Option<&str>,
@@ -321,7 +321,7 @@ fn build_step_states_from_outputs(
         }
     }
 
-    let terminal = matches!(job_status, "completed" | "failed");
+    let terminal = job_status.is_terminal();
     let pipeline_steps = plan.step_names();
     // Concurrent steps run together, but the job row names only the earliest
     // running one. A later concurrent step that hasn't written output but
@@ -658,7 +658,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "failed",
+            JobStatus::Failed,
             None,
             None,
             Some("save_recipe"),
@@ -693,7 +693,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "completed",
+            JobStatus::Completed,
             None,
             None,
             None,
@@ -731,7 +731,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "normalizing",
+            JobStatus::Normalizing,
             Some("resolve_ingredient_names"),
             Some(at),
             None,
@@ -792,7 +792,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "normalizing",
+            JobStatus::Normalizing,
             Some("normalize_title"),
             Some(phase_start),
             None,
@@ -833,7 +833,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "normalizing",
+            JobStatus::Normalizing,
             Some("resolve_ingredient_names"),
             Some(at),
             None,
@@ -875,7 +875,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "scraping",
+            JobStatus::Scraping,
             Some("fetch_html"),
             Some(retry_started),
             None,

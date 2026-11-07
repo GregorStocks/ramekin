@@ -38,7 +38,8 @@ pub struct ScrapeJobResponse {
     /// Which step failed (for retry logic)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub failed_at_step: Option<String>,
-    /// Whether this job can be retried
+    /// Whether `POST /api/scrape/{id}/retry` would accept this job: it
+    /// failed, has retries left, and has a source to start again from.
     pub can_retry: bool,
     /// Number of retry attempts
     pub retry_count: i32,
@@ -85,22 +86,12 @@ pub async fn get_scrape(
         return ApiError::not_found("Scrape job not found").into_response();
     }
 
-    let can_retry = job.status == scraping::STATUS_FAILED;
-
-    let recipe_id = match job.recipe_id {
-        // A job that fails while normalizing has still saved its recipe.
-        None if job.status == scraping::STATUS_NORMALIZING
-            || job.status == scraping::STATUS_FAILED =>
-        {
-            match scraping::saved_recipe_id(&pool, job.id).await {
-                Ok(id) => id,
-                Err(e) => {
-                    tracing::error!("Failed to read saved recipe id: {}", e);
-                    return ApiError::internal("Failed to get scrape job").into_response();
-                }
-            }
+    let can_retry = match scraping::retry_refusal(&pool, &job).await {
+        Ok(refusal) => refusal.is_none(),
+        Err(e) => {
+            tracing::error!("Failed to check whether the job can be retried: {}", e);
+            return ApiError::internal("Failed to get scrape job").into_response();
         }
-        id => id,
     };
 
     // Build the per-step state list for the status page. `failed_at_step`
@@ -125,9 +116,9 @@ pub async fn get_scrape(
         StatusCode::OK,
         Json(ScrapeJobResponse {
             id: job.id,
-            status: job.status,
+            status: job.status.to_string(),
             url: job.url,
-            recipe_id,
+            recipe_id: job.recipe_id,
             error: job.error_message,
             failed_at_step: job.failed_at_step,
             can_retry,
