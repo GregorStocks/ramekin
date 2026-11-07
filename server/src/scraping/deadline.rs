@@ -90,7 +90,10 @@ mod tests {
 
     #[test]
     fn ai_steps_get_longer_than_local_ones() {
-        assert_eq!(step_deadline("parse_ingredients"), Some(LOCAL_STEP_DEADLINE));
+        assert_eq!(
+            step_deadline("parse_ingredients"),
+            Some(LOCAL_STEP_DEADLINE)
+        );
         assert_eq!(step_deadline("fetch_html"), Some(FETCH_STEP_DEADLINE));
         for step in [
             "extract_recipe",
@@ -132,8 +135,10 @@ mod tests {
             duration_ms: 5,
             next_step: None,
         };
-        let result =
-            run_with_deadline("auto_tag", Some(Duration::from_secs(60)), async { finished }).await;
+        let result = run_with_deadline("auto_tag", Some(Duration::from_secs(60)), async {
+            finished
+        })
+        .await;
         assert!(result.success);
         assert_eq!(result.output["suggested_tags"], serde_json::json!([]));
     }
