@@ -193,6 +193,14 @@ export default function SettingsPage() {
                 estimated · {status().notFood} not food · {status().unknown}{" "}
                 unknown · {status().pending} pending · {status().failed} failed
               </p>
+              <Show when={status().stall}>
+                {(stall) => (
+                  <p class="error settings-name-stall" role="status">
+                    Recognition is stalled: {stall().error}. It will try again
+                    by {stall().nextAttemptAt.toLocaleTimeString()}.
+                  </p>
+                )}
+              </Show>
               <Show when={status().failures.length > 0}>
                 <ul class="settings-name-failures">
                   <For each={status().failures}>

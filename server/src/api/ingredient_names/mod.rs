@@ -16,6 +16,7 @@ use crate::schema::{
 use crate::AppState;
 use axum::routing::{get, post};
 use axum::{extract::State, Json, Router};
+use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
@@ -29,6 +30,17 @@ pub struct IngredientNameFailure {
     pub name: String,
     pub error: String,
     pub attempts: i32,
+}
+
+/// The background resolver's last pass failed for a reason that isn't any
+/// one name's (the provider is down, rate-limited, or misconfigured), so
+/// pending names wait for it to try again.
+#[derive(Debug, Serialize, ToSchema)]
+pub struct IngredientNamesStall {
+    pub error: String,
+    /// When the resolver tries again at the latest. A newly queued name or a
+    /// Retry can make it try sooner.
+    pub next_attempt_at: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, ToSchema)]
@@ -50,6 +62,8 @@ pub struct IngredientNamesStatusResponse {
     pub failed: i64,
     /// The most recent failures.
     pub failures: Vec<IngredientNameFailure>,
+    /// Set while pending names are waiting on a resolver that keeps failing.
+    pub stall: Option<IngredientNamesStall>,
 }
 
 #[derive(Debug, Serialize, ToSchema)]
@@ -150,6 +164,15 @@ pub async fn get_ingredient_names_status(
             .select((names::name, names::error, names::attempts))
             .load(conn)
             .map_err(db_error)?;
+        let stall: Option<(Option<String>, Option<DateTime<Utc>>)> = names::table
+            .filter(names::name.eq_any(&own))
+            .filter(names::status.eq(PENDING))
+            .filter(names::last_error.is_not_null())
+            .order(names::next_attempt_at.desc())
+            .select((names::last_error, names::next_attempt_at))
+            .first(conn)
+            .optional()
+            .map_err(db_error)?;
         Ok(IngredientNamesStatusResponse {
             recognized: count(RESOLVED, Some("entry")),
             estimated: count(RESOLVED, Some("estimate")),
@@ -165,6 +188,12 @@ pub async fn get_ingredient_names_status(
                     attempts,
                 })
                 .collect(),
+            stall: stall.and_then(|(error, next_attempt_at)| {
+                Some(IngredientNamesStall {
+                    error: error?,
+                    next_attempt_at: next_attempt_at?,
+                })
+            }),
         })
     })
     .await?;
@@ -208,6 +237,7 @@ pub fn router() -> Router<AppState> {
     components(schemas(
         IngredientNamesStatusResponse,
         IngredientNameFailure,
+        IngredientNamesStall,
         IngredientNamesQueuedResponse
     ))
 )]

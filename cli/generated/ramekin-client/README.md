@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
  - [Ingredient](docs/Ingredient.md)
  - [IngredientNameFailure](docs/IngredientNameFailure.md)
  - [IngredientNamesQueuedResponse](docs/IngredientNamesQueuedResponse.md)
+ - [IngredientNamesStall](docs/IngredientNamesStall.md)
  - [IngredientNamesStatusResponse](docs/IngredientNamesStatusResponse.md)
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)

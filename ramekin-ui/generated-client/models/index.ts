@@ -37,6 +37,7 @@ export * from './ImportRecipeResponse';
 export * from './Ingredient';
 export * from './IngredientNameFailure';
 export * from './IngredientNamesQueuedResponse';
+export * from './IngredientNamesStall';
 export * from './IngredientNamesStatusResponse';
 export * from './ListRecipesResponse';
 export * from './LoginRequest';

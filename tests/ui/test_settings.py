@@ -100,3 +100,30 @@ def test_settings_survives_ingredient_status_failure(logged_in_page: Page, ui_ur
     # The panel retries on its own and recovers.
     expect(panel.locator(".settings-name-counts")).to_contain_text("recognized")
     expect(panel.locator(".settings-name-unavailable")).to_have_count(0)
+
+
+def test_settings_shows_a_stalled_resolver(logged_in_page: Page, ui_url: str):
+    """Names waiting on a failing provider say so instead of looking queued."""
+    stalled = {
+        "recognized": 0,
+        "estimated": 0,
+        "not_food": 0,
+        "unknown": 0,
+        "pending": 2,
+        "failed": 0,
+        "failures": [],
+        "stall": {
+            "error": "provider unavailable",
+            "next_attempt_at": "2026-11-07T18:30:00Z",
+        },
+    }
+    logged_in_page.route(
+        "**/api/ingredient-names/status", lambda route: route.fulfill(json=stalled)
+    )
+    logged_in_page.goto(f"{ui_url}/settings")
+
+    panel = logged_in_page.get_by_role("region", name="Ingredient recognition")
+    expect(panel.locator(".settings-name-counts")).to_contain_text("2 pending")
+    expect(panel.locator(".settings-name-stall")).to_contain_text(
+        "Recognition is stalled: provider unavailable"
+    )

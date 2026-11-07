@@ -410,6 +410,18 @@ pub fn create_pool(database_url: &str) -> DbPool {
         .expect("Failed to create database pool")
 }
 
+/// A small pool on a fresh migrated database in `dir`, for tests.
+#[cfg(test)]
+pub fn test_pool(dir: &std::path::Path) -> DbPool {
+    let url = dir.join("db.sqlite").to_str().unwrap().to_string();
+    drop(open_migrated(&url));
+    r2d2::Pool::builder()
+        .max_size(4)
+        .connection_customizer(Box::new(ConnectionSetup))
+        .build(ConnectionManager::<SqliteConnection>::new(url))
+        .expect("Failed to create test database pool")
+}
+
 /// Whether `table` in the database `conn` is open on has `column`.
 pub fn has_column(conn: &mut SqliteConnection, table: &str, column: &str) -> QueryResult<bool> {
     use crate::files::pragmas::pragma_table_info as columns;
@@ -471,5 +483,144 @@ mod sync_cursor_tests {
     #[test]
     fn a_cursor_from_another_database_is_a_full_resync() {
         assert_eq!(CURSOR.since(Some(101)), None);
+    }
+}
+
+#[cfg(test)]
+mod state_check_constraint_tests {
+    //! The 2026-11-07 CHECK constraints migration, run over rows written
+    //! before it.
+    use super::*;
+
+    const CHECKS_VERSION: &str = "20261107170000";
+
+    /// The one text column `sql` selects, as `value`.
+    fn values(conn: &mut SqliteConnection, sql: &str) -> Vec<String> {
+        #[derive(QueryableByName)]
+        struct Row {
+            #[diesel(sql_type = diesel::sql_types::Text)]
+            value: String,
+        }
+        diesel::sql_query(sql)
+            .load::<Row>(conn)
+            .unwrap()
+            .into_iter()
+            .map(|row| row.value)
+            .collect()
+    }
+
+    /// A database migrated up to just before the CHECK constraints.
+    fn before_checks(dir: &std::path::Path) -> SqliteConnection {
+        let url = dir.join("db.sqlite");
+        let mut conn = SqliteConnection::establish(url.to_str().unwrap()).unwrap();
+        setup_connection(&mut conn).unwrap();
+        for migration in conn.pending_migrations(MIGRATIONS).unwrap() {
+            if migration.name().version().to_string().as_str() >= CHECKS_VERSION {
+                break;
+            }
+            conn.run_migration(&*migration).unwrap();
+        }
+        conn
+    }
+
+    #[test]
+    fn existing_rows_are_backfilled_and_kept() {
+        let dir = std::env::temp_dir().join(format!("ramekin-checks-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let mut conn = before_checks(&dir);
+        conn.batch_execute(
+            "INSERT INTO users (id, username, password_hash) VALUES ('u', 'u', '');
+             INSERT INTO sessions (id, user_id, token_hash, expires_at, token_type) VALUES
+                 ('s1', 'u', 'h1', '2099-01-01', 'session'),
+                 ('s2', 'u', 'h2', '2099-01-01', 'mystery');
+             INSERT INTO recipes (seq, id, user_id) VALUES (1, 'r', 'u'), (2, 'gone', 'u');
+             INSERT INTO recipe_versions
+                 (id, recipe_id, title, ingredients, instructions, version_source)
+             VALUES ('v1', 'r', 'Soup', '[]', 'Cook.', 'scrape'),
+                    ('v2', 'r', 'Soup', '[]', 'Cook.', 'auto_tag'),
+                    ('v3', 'r', 'Soup', '[]', 'Cook.', 'mystery');
+             UPDATE recipes SET current_version_id = 'v3' WHERE id = 'r';
+             UPDATE recipes SET deleted_seq = 7 WHERE id = 'r';
+             UPDATE recipes SET deleted_at = '2026-01-01' WHERE id = 'gone';
+             INSERT INTO user_tags (id, user_id, name) VALUES ('t', 'u', 'soup');
+             INSERT INTO recipe_version_tags (recipe_version_id, tag_id) VALUES ('v3', 't');
+             INSERT INTO shopping_list_items (id, user_id, item, source_recipe_id)
+             VALUES ('i', 'u', 'leeks', 'r');
+             INSERT INTO scrape_jobs (id, user_id) VALUES ('j', 'u');
+             INSERT INTO step_outputs
+                 (id, scrape_job_id, step_name, build_id, output, success, error, output_hash)
+             VALUES ('o1', 'j', 'fetch_html', 'b', 'null', 1, NULL, 'abc'),
+                    ('o2', 'j', 'extract_recipe', 'b', '{}', 1, NULL, ''),
+                    ('o3', 'j', 'save_recipe', 'b', '{}', 0, NULL, ''),
+                    ('o4', 'j', 'auto_tag', 'b', '{}', 1, 'odd', '');
+             INSERT INTO shopping_list_history (id, user_id, undoes_id, undone_by_id) VALUES
+                 ('h1', 'u', NULL, NULL),
+                 ('h2', 'u', 'h1', NULL);",
+        )
+        .unwrap();
+
+        conn.run_pending_migrations(MIGRATIONS).unwrap();
+
+        // Foreign keys are back on, and no ON DELETE action ran while the
+        // tables were rebuilt.
+        let fk = "SELECT CAST(foreign_keys AS TEXT) AS value FROM pragma_foreign_keys";
+        assert_eq!(values(&mut conn, fk), ["1"]);
+        let tags = "SELECT tag_id AS value FROM recipe_version_tags";
+        assert_eq!(values(&mut conn, tags), ["t"]);
+        let sources = "SELECT source_recipe_id AS value FROM shopping_list_items";
+        assert_eq!(values(&mut conn, sources), ["r"]);
+        // The search index's rowids still match recipes.seq.
+        let search = "SELECT CAST(rowid AS TEXT) AS value FROM recipe_search";
+        assert_eq!(values(&mut conn, search), ["1"]);
+
+        let sessions = "SELECT token_type AS value FROM sessions ORDER BY id";
+        assert_eq!(values(&mut conn, sessions), ["session", "bookmarklet"]);
+        let versions = "SELECT version_source || ' ' || COALESCE(normalize_ops, '-') AS value \
+                        FROM recipe_versions ORDER BY id";
+        assert_eq!(
+            values(&mut conn, versions),
+            ["scrape -", "normalize [\"auto_tag\"]", "migration -"]
+        );
+        let recipes = "SELECT id || ' ' || (deleted_seq IS NOT NULL) AS value \
+                       FROM recipes ORDER BY seq";
+        assert_eq!(values(&mut conn, recipes), ["r 0", "gone 1"]);
+        let outputs = "SELECT id || ' ' || success || ' ' || COALESCE(error, '-') || ' ' \
+                       || COALESCE(output_hash, '-') AS value FROM step_outputs ORDER BY id";
+        assert_eq!(
+            values(&mut conn, outputs),
+            [
+                "o1 1 - abc",
+                "o2 1 - -",
+                "o3 0 The step failed without an error message. -",
+                "o4 1 - -",
+            ]
+        );
+        let history = "SELECT id || ' ' || COALESCE(undoes_id, '-') || ' ' \
+                       || COALESCE(undone_by_id, '-') AS value \
+                       FROM shopping_list_history ORDER BY id";
+        assert_eq!(values(&mut conn, history), ["h1 - h2", "h2 h1 -"]);
+
+        // The constraints hold from now on.
+        for bad in [
+            "UPDATE sessions SET token_type = 'admin'",
+            "UPDATE recipe_versions SET version_source = 'mystery'",
+            "UPDATE recipes SET deleted_seq = 3 WHERE id = 'r'",
+            "UPDATE step_outputs SET error = NULL WHERE id = 'o3'",
+            "UPDATE step_outputs SET error = 'x' WHERE id = 'o2'",
+            "UPDATE step_outputs SET output_hash = 'abc' WHERE id = 'o2'",
+            "UPDATE shopping_list_history SET undoes_id = id WHERE id = 'h1'",
+            "INSERT INTO shopping_list_history (id, user_id, undoes_id) VALUES ('h3', 'u', 'h1')",
+            "UPDATE shopping_list_history SET undone_by_id = 'h1' WHERE id = 'h2'",
+        ] {
+            assert!(conn.batch_execute(bad).is_err(), "{bad}");
+        }
+        // A soft delete still stamps.
+        conn.batch_execute("UPDATE recipes SET deleted_at = '2026-11-07' WHERE id = 'r'")
+            .unwrap();
+        let stamped = "SELECT id || ' ' || (deleted_seq IS NOT NULL) AS value \
+                       FROM recipes WHERE id = 'r'";
+        assert_eq!(values(&mut conn, stamped), ["r 1"]);
+        drop(conn);
+        std::fs::remove_dir_all(&dir).unwrap();
     }
 }

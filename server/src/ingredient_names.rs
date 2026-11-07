@@ -290,20 +290,24 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
     if !requeued.is_empty() {
         crate::db::write(&mut conn, |conn| {
             let now = Utc::now();
-            diesel::update(names::table.filter(names::name.eq_any(&requeued)))
-                .set((
-                    names::status.eq(PENDING),
-                    names::disposition.eq(None::<String>),
-                    names::catalog_key.eq(None::<String>),
-                    names::kcal_per_100g.eq(None::<f64>),
-                    names::grams_per_cup.eq(None::<f64>),
-                    names::grams_per_piece.eq(None::<f64>),
-                    names::shopping_category.eq(None::<String>),
-                    names::error.eq(None::<String>),
-                    names::attempts.eq(0),
-                    names::updated_at.eq(now),
-                ))
-                .execute(conn)?;
+            diesel::update(
+                names::table
+                    .filter(names::name.eq_any(&requeued))
+                    .filter(names::status.eq(RESOLVED)),
+            )
+            .set((
+                names::status.eq(PENDING),
+                names::disposition.eq(None::<String>),
+                names::catalog_key.eq(None::<String>),
+                names::kcal_per_100g.eq(None::<f64>),
+                names::grams_per_cup.eq(None::<f64>),
+                names::grams_per_piece.eq(None::<f64>),
+                names::shopping_category.eq(None::<String>),
+                names::error.eq(None::<String>),
+                names::attempts.eq(0),
+                names::updated_at.eq(now),
+            ))
+            .execute(conn)?;
             QueryResult::Ok(())
         })
         .map_err(|e| e.to_string())?;
@@ -340,6 +344,11 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
                         "Ingredient name resolution failed: {}",
                         e
                     );
+                    let next_attempt_at = Utc::now()
+                        + chrono::Duration::from_std(backoff).unwrap_or(chrono::Duration::MAX);
+                    if let Err(record_error) = record_stall(&pool, e, next_attempt_at).await {
+                        tracing::warn!("Failed to record the stalled names: {}", record_error);
+                    }
                     let retry_at = tokio::time::Instant::now() + backoff;
                     loop {
                         tokio::select! {
@@ -666,19 +675,15 @@ async fn save_resolved(
     answers: Vec<(String, NameResolution)>,
     model: String,
 ) -> Result<(), String> {
-    let resolved = answers.len();
-    // Entries, estimates and non-foods give a shopping category. A pending
-    // name has no earlier answer, so nothing else changes one.
-    let recategorized: HashSet<String> = answers
-        .iter()
-        .filter(|(_, resolution)| !matches!(resolution, NameResolution::Unknown))
-        .map(|(name, _)| name.clone())
-        .collect();
     // One write for the answers and the categories and recipe calories they
     // change, so no shopping or recipe write lands in between with an old
     // answer.
-    crate::db::run_blocking_write(pool, move |conn| {
+    let resolved = crate::db::run_blocking_write(pool, move |conn| {
         let now = Utc::now();
+        // Entries, estimates and non-foods give a shopping category. A
+        // pending name has no earlier answer, so nothing else changes one.
+        let mut recategorized = HashSet::new();
+        let mut resolved = 0;
         for (name, resolution) in &answers {
             let (disposition, key, estimate) = match resolution {
                 NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
@@ -686,7 +691,11 @@ async fn save_resolved(
                 NameResolution::NotFood => ("not_food", None, None),
                 NameResolution::Unknown => ("unknown", None, None),
             };
-            diesel::update(names::table.find(name))
+            // Only a name still pending takes the answer. The batch lock
+            // keeps two batches from asking about one name, but a Retry or
+            // the startup sync changes rows without it, and an answer is only
+            // meant for the pending row it was asked about.
+            let updated = diesel::update(names::table.find(name).filter(names::status.eq(PENDING)))
                 .set((
                     names::status.eq(RESOLVED),
                     names::disposition.eq(disposition),
@@ -697,13 +706,19 @@ async fn save_resolved(
                     names::shopping_category.eq(estimate.and_then(|e| e.category)),
                     names::model.eq(&model),
                     names::error.eq(None::<String>),
-                    names::attempts.eq(names::attempts + 1),
+                    names::last_error.eq(None::<String>),
+                    names::next_attempt_at.eq(None::<chrono::DateTime<Utc>>),
                     names::updated_at.eq(now),
                 ))
                 .execute(conn)?;
+            resolved += updated;
+            if updated > 0 && !matches!(resolution, NameResolution::Unknown) {
+                recategorized.insert(name.clone());
+            }
         }
         recategorize_shopping_items(conn, &recategorized)?;
-        crate::recipe_calories::recompute_for_names(conn, &recategorized)
+        crate::recipe_calories::recompute_for_names(conn, &recategorized)?;
+        QueryResult::Ok(resolved)
     })
     .await
     .map_err(|e| e.to_string())?
@@ -786,7 +801,35 @@ async fn save_failed(
             ))
             .execute(conn)?;
         diesel::update(failed.filter(names::attempts.ge(MAX_ATTEMPTS)))
-            .set((names::status.eq(FAILED), names::error.eq(&error)))
+            .set((
+                names::status.eq(FAILED),
+                names::error.eq(&error),
+                names::last_error.eq(None::<String>),
+                names::next_attempt_at.eq(None::<chrono::DateTime<Utc>>),
+            ))
+            .execute(conn)
+    })
+    .await
+    .map_err(|e| e.to_string())?
+    .map_err(|e| e.to_string())
+}
+
+/// Record on every pending name that the worker's last pass failed with
+/// `error` (the provider's, or the database's) and will be tried again by
+/// `next_attempt_at`, so the status shows a stalled queue rather than a quiet
+/// one. Not an attempt, and `updated_at` stays put: the worker's backoff
+/// reads it to tell new work from names it already tried.
+async fn record_stall(
+    pool: &Arc<DbPool>,
+    error: String,
+    next_attempt_at: chrono::DateTime<Utc>,
+) -> Result<usize, String> {
+    crate::db::run_blocking_write(pool, move |conn| {
+        diesel::update(names::table.filter(names::status.eq(PENDING)))
+            .set((
+                names::last_error.eq(&error),
+                names::next_attempt_at.eq(next_attempt_at),
+            ))
             .execute(conn)
     })
     .await
@@ -894,6 +937,123 @@ mod tests {
                 chunk(2..3)
             ]
         );
+    }
+
+    /// Each name's status, attempts, error, and whether it carries a stall.
+    type Stored = (String, i32, Option<String>, bool);
+
+    fn stored(pool: &DbPool, name: &str) -> Stored {
+        names::table
+            .find(name)
+            .select((
+                names::status,
+                names::attempts,
+                names::error,
+                names::last_error.is_not_null(),
+            ))
+            .first(&mut pool.get().unwrap())
+            .unwrap()
+    }
+
+    fn test_pool() -> (Arc<DbPool>, std::path::PathBuf) {
+        let dir = crate::files::temp_dir("ingredient-names-test");
+        (Arc::new(crate::db::test_pool(&dir)), dir)
+    }
+
+    #[tokio::test]
+    async fn an_answer_only_resolves_a_name_still_pending() {
+        let (pool, dir) = test_pool();
+        let mut conn = pool.get().unwrap();
+        enqueue(&mut conn, &["zq pending".into(), "zq failed".into()]).unwrap();
+        // Marked failed (as by another batch) after this answer was asked for.
+        diesel::update(names::table.find("zq failed"))
+            .set((
+                names::status.eq(FAILED),
+                names::error.eq("bad answer"),
+                names::attempts.eq(MAX_ATTEMPTS),
+            ))
+            .execute(&mut conn)
+            .unwrap();
+        drop(conn);
+        let answers = vec![
+            ("zq pending".to_string(), NameResolution::NotFood),
+            ("zq failed".to_string(), NameResolution::NotFood),
+        ];
+        save_resolved(&pool, answers, "model".into()).await.unwrap();
+        // A successful ask isn't an attempt.
+        assert_eq!(
+            stored(&pool, "zq pending"),
+            (RESOLVED.to_string(), 0, None, false)
+        );
+        assert_eq!(
+            stored(&pool, "zq failed"),
+            (
+                FAILED.to_string(),
+                MAX_ATTEMPTS,
+                Some("bad answer".into()),
+                false
+            )
+        );
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[tokio::test]
+    async fn a_stall_is_recorded_on_pending_names_until_they_leave_pending() {
+        let (pool, dir) = test_pool();
+        let names: Vec<String> = ["zq one", "zq two", "zq three"].map(String::from).into();
+        enqueue(&mut pool.get().unwrap(), &names).unwrap();
+        let next = Utc::now() + chrono::Duration::minutes(1);
+        assert_eq!(
+            record_stall(&pool, "provider down".into(), next)
+                .await
+                .unwrap(),
+            3
+        );
+        let (last_error, next_attempt_at): (Option<String>, Option<chrono::DateTime<Utc>>) =
+            names::table
+                .find("zq one")
+                .select((names::last_error, names::next_attempt_at))
+                .first(&mut pool.get().unwrap())
+                .unwrap();
+        assert_eq!(last_error.as_deref(), Some("provider down"));
+        assert!(next_attempt_at.is_some());
+        // Still pending with no attempt used: the provider failed, not the name.
+        assert_eq!(
+            stored(&pool, "zq one"),
+            (PENDING.to_string(), 0, None, true)
+        );
+
+        // Answered, or out of attempts: either way it isn't stalled anymore.
+        save_resolved(
+            &pool,
+            vec![("zq one".to_string(), NameResolution::NotFood)],
+            "model".into(),
+        )
+        .await
+        .unwrap();
+        assert_eq!(
+            stored(&pool, "zq one"),
+            (RESOLVED.to_string(), 0, None, false)
+        );
+        for _ in 0..MAX_ATTEMPTS {
+            save_failed(&pool, vec!["zq two".into()], "bad answer".into(), false)
+                .await
+                .unwrap();
+        }
+        assert_eq!(
+            stored(&pool, "zq two"),
+            (
+                FAILED.to_string(),
+                MAX_ATTEMPTS,
+                Some("bad answer".into()),
+                false
+            )
+        );
+        assert_eq!(
+            stored(&pool, "zq three"),
+            (PENDING.to_string(), 0, None, true)
+        );
+        std::fs::remove_dir_all(&dir).unwrap();
     }
 
     #[test]

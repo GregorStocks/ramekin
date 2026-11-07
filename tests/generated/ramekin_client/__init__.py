@@ -79,6 +79,7 @@ __all__ = [
     "Ingredient",
     "IngredientNameFailure",
     "IngredientNamesQueuedResponse",
+    "IngredientNamesStall",
     "IngredientNamesStatusResponse",
     "ListRecipesResponse",
     "LoginRequest",
@@ -204,6 +205,7 @@ from ramekin_client.models.import_recipe_response import ImportRecipeResponse as
 from ramekin_client.models.ingredient import Ingredient as Ingredient
 from ramekin_client.models.ingredient_name_failure import IngredientNameFailure as IngredientNameFailure
 from ramekin_client.models.ingredient_names_queued_response import IngredientNamesQueuedResponse as IngredientNamesQueuedResponse
+from ramekin_client.models.ingredient_names_stall import IngredientNamesStall as IngredientNamesStall
 from ramekin_client.models.ingredient_names_status_response import IngredientNamesStatusResponse as IngredientNamesStatusResponse
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest as LoginRequest

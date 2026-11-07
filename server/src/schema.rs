@@ -45,6 +45,8 @@ diesel::table! {
         grams_per_cup -> Nullable<Double>,
         grams_per_piece -> Nullable<Double>,
         shopping_category -> Nullable<Text>,
+        last_error -> Nullable<Text>,
+        next_attempt_at -> Nullable<TimestamptzSqlite>,
     }
 }
 
@@ -260,7 +262,7 @@ diesel::table! {
         summary -> Nullable<Text>,
         success -> Bool,
         error -> Nullable<Text>,
-        output_hash -> Text,
+        output_hash -> Nullable<Text>,
     }
 }
 

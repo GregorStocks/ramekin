@@ -72,6 +72,8 @@ pub mod ingredient_name_failure;
 pub use self::ingredient_name_failure::IngredientNameFailure;
 pub mod ingredient_names_queued_response;
 pub use self::ingredient_names_queued_response::IngredientNamesQueuedResponse;
+pub mod ingredient_names_stall;
+pub use self::ingredient_names_stall::IngredientNamesStall;
 pub mod ingredient_names_status_response;
 pub use self::ingredient_names_status_response::IngredientNamesStatusResponse;
 pub mod list_recipes_response;

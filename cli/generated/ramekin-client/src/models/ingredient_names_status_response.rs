@@ -31,6 +31,14 @@ pub struct IngredientNamesStatusResponse {
     /// Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means).
     #[serde(rename = "recognized")]
     pub recognized: i64,
+    /// Set while pending names are waiting on a resolver that keeps failing.
+    #[serde(
+        rename = "stall",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub stall: Option<Option<Box<models::IngredientNamesStall>>>,
     /// Resolved, but the model couldn't tell; still unknown in estimates.
     #[serde(rename = "unknown")]
     pub unknown: i64,
@@ -53,6 +61,7 @@ impl IngredientNamesStatusResponse {
             not_food,
             pending,
             recognized,
+            stall: None,
             unknown,
         }
     }

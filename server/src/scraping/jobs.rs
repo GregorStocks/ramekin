@@ -574,7 +574,7 @@ pub(super) fn save_step_output(
     // don't run the step, so there's no meaningful duration to record, and
     // they're always successful: the step didn't run so there's no failure
     // to record.
-    let new_output = output.into_row(job_id, step_name, None, true, None);
+    let new_output = output.into_row(job_id, step_name, None, Ok(()));
 
     diesel::insert_into(step_outputs::table)
         .values(&new_output)

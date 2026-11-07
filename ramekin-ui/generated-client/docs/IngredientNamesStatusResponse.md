@@ -12,6 +12,7 @@ Name | Type
 `notFood` | number
 `pending` | number
 `recognized` | number
+`stall` | [IngredientNamesStall](IngredientNamesStall.md)
 `unknown` | number
 
 ## Example
@@ -27,6 +28,7 @@ const example = {
   "notFood": null,
   "pending": null,
   "recognized": null,
+  "stall": null,
   "unknown": null,
 } satisfies IngredientNamesStatusResponse
 

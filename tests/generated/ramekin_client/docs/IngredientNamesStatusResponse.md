@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **not_food** | **int** | Resolved as not an ingredient (a heading, a serving note). | 
 **pending** | **int** | Waiting for the background resolver (including names whose answer was invalid and will be asked again). | 
 **recognized** | **int** | Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means). | 
+**stall** | [**IngredientNamesStall**](IngredientNamesStall.md) | Set while pending names are waiting on a resolver that keeps failing. | [optional] 
 **unknown** | **int** | Resolved, but the model couldn&#39;t tell; still unknown in estimates. | 
 
 ## Example

@@ -24,16 +24,19 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
     public var pending: Int64
     /** Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means). */
     public var recognized: Int64
+    /** Set while pending names are waiting on a resolver that keeps failing. */
+    public var stall: IngredientNamesStall?
     /** Resolved, but the model couldn't tell; still unknown in estimates. */
     public var unknown: Int64
 
-    public init(estimated: Int64, failed: Int64, failures: [IngredientNameFailure], notFood: Int64, pending: Int64, recognized: Int64, unknown: Int64) {
+    public init(estimated: Int64, failed: Int64, failures: [IngredientNameFailure], notFood: Int64, pending: Int64, recognized: Int64, stall: IngredientNamesStall? = nil, unknown: Int64) {
         self.estimated = estimated
         self.failed = failed
         self.failures = failures
         self.notFood = notFood
         self.pending = pending
         self.recognized = recognized
+        self.stall = stall
         self.unknown = unknown
     }
 
@@ -44,6 +47,7 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
         case notFood = "not_food"
         case pending
         case recognized
+        case stall
         case unknown
     }
 
@@ -57,6 +61,7 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
         try container.encode(notFood, forKey: .notFood)
         try container.encode(pending, forKey: .pending)
         try container.encode(recognized, forKey: .recognized)
+        try container.encodeIfPresent(stall, forKey: .stall)
         try container.encode(unknown, forKey: .unknown)
     }
 }

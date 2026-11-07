@@ -46,6 +46,9 @@ class TestIngredientNamesStatusResponse(unittest.TestCase):
                 not_food = 56,
                 pending = 56,
                 recognized = 56,
+                stall = ramekin_client.models.ingredient_names_stall.IngredientNamesStall(
+                    error = '', 
+                    next_attempt_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
                 unknown = 56
             )
         else:

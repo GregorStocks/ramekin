@@ -139,7 +139,9 @@ impl FileStore {
             hashes.extend(
                 step_outputs::table
                     .select(step_outputs::output_hash)
-                    .load::<String>(conn)?,
+                    .load::<Option<String>>(conn)?
+                    .into_iter()
+                    .flatten(),
             );
         }
         hashes.retain(|hash| !hash.is_empty());

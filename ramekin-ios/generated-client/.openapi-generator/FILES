@@ -64,6 +64,7 @@ RamekinClient/Classes/OpenAPIs/Models/ImportRecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/Ingredient.swift
 RamekinClient/Classes/OpenAPIs/Models/IngredientNameFailure.swift
 RamekinClient/Classes/OpenAPIs/Models/IngredientNamesQueuedResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/IngredientNamesStall.swift
 RamekinClient/Classes/OpenAPIs/Models/IngredientNamesStatusResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ListRecipesResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginRequest.swift
@@ -167,6 +168,7 @@ docs/Ingredient.md
 docs/IngredientNameFailure.md
 docs/IngredientNamesAPI.md
 docs/IngredientNamesQueuedResponse.md
+docs/IngredientNamesStall.md
 docs/IngredientNamesStatusResponse.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
