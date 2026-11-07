@@ -20,9 +20,10 @@ enum AuthState: Equatable {
     }
 
     /// The state after the server rejected a request sent with
-    /// `rejectedToken`. A late 401 for an earlier session's token leaves the
-    /// current session alone.
-    func afterRejection(of rejectedToken: String) -> AuthState {
+    /// `rejectedToken`. A late 401 for an earlier session's token, or for a
+    /// request sent without one, leaves the current session alone. Pinned by
+    /// shared-test-vectors/auth-session.json.
+    func afterRejection(of rejectedToken: String?) -> AuthState {
         if case .signedIn(let token) = self, token == rejectedToken {
             return .expired
         }

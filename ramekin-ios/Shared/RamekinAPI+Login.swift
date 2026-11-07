@@ -2,19 +2,15 @@ import Foundation
 
 extension RamekinAPI {
     /// The login request, addressed to `serverURL` and carrying only the
-    /// given Access credentials. The builder's init copies the global custom
-    /// headers (any old session's token and Access credentials), so they're
-    /// replaced rather than merged.
+    /// given Access credentials, never the global custom headers (any old
+    /// session's token and Access credentials).
     static func loginRequestBuilder(
         serverURL: String,
         loginRequest: LoginRequest,
         accessClientId: String?,
         accessClientSecret: String?
     ) -> RequestBuilder<LoginResponse> {
-        let builderType: RequestBuilder<LoginResponse>.Type = RamekinClientAPI
-            .requestBuilderFactory
-            .getBuilder()
-        let builder = builderType.init(
+        let builder = LoginRequestBuilder(
             method: "POST",
             URLString: serverURL + "/api/auth/login",
             parameters: JSONEncodingHelper.encodingParameters(forEncodableObject: loginRequest),
@@ -24,8 +20,19 @@ extension RamekinAPI {
         var headers = ["Content-Type": "application/json"]
         headers["CF-Access-Client-Id"] = accessClientId
         headers["CF-Access-Client-Secret"] = accessClientSecret
+        // The init copied the global custom headers in; drop them.
         builder.headers = headers
         return builder
+    }
+}
+
+/// Builds the login request from its own headers only. The generated
+/// builder merges `RamekinClientAPI.customHeaders` in again when it creates
+/// the URLRequest, which would send an old session's bearer token and Access
+/// credentials, possibly to a different server.
+final class LoginRequestBuilder: InsecureDecodableBuilder<LoginResponse> {
+    override func buildHeaders() -> [String: String] {
+        headers
     }
 }
 

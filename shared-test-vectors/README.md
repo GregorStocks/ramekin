@@ -35,3 +35,7 @@ client match it in the same PR.
   list's `calories:` filter into inclusive per-serving bounds (`min`/`max`,
   null when unset), and the web's canonical spelling of them. A bound is
   plain digits with an optional decimal part; anything else is ignored.
+- `auth-session.json`: web and iOS session-expiry rules: which status means
+  the session was rejected (401 only), parsing the bearer token a request
+  was sent with, and the auth state after a rejection (only the session whose
+  token was rejected expires).

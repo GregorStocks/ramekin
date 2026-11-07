@@ -199,7 +199,7 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertEqual(RamekinClientAPI.customHeaders, customHeaders)
     }
 
-    func testLoginRequestDoesNotCarryTheGlobalSessionHeaders() {
+    func testLoginRequestDoesNotCarryTheGlobalSessionHeaders() throws {
         let saved = RamekinClientAPI.customHeaders
         defer { RamekinClientAPI.customHeaders = saved }
         RamekinClientAPI.customHeaders = [
@@ -215,11 +215,24 @@ final class RamekinAPITests: XCTestCase {
             accessClientSecret: nil
         )
 
-        XCTAssertEqual(builder.URLString, "https://new.example.com/api/auth/login")
-        XCTAssertEqual(builder.headers, [
+        let expectedHeaders = [
             "Content-Type": "application/json",
             "CF-Access-Client-Id": "new-id"
-        ])
+        ]
+        XCTAssertEqual(builder.URLString, "https://new.example.com/api/auth/login")
+        XCTAssertEqual(builder.headers, expectedHeaders)
+
+        // The URLRequest actually sent must not pick the global headers back up.
+        let loginBuilder = try XCTUnwrap(builder as? LoginRequestBuilder)
+        let request = try loginBuilder.createURLRequest(
+            urlSession: insecureSession,
+            method: .post,
+            encoding: JSONDataEncoding(),
+            headers: loginBuilder.headers
+        )
+        XCTAssertNil(request.value(forHTTPHeaderField: "Authorization"))
+        XCTAssertNil(request.value(forHTTPHeaderField: "CF-Access-Client-Secret"))
+        XCTAssertEqual(request.value(forHTTPHeaderField: "CF-Access-Client-Id"), "new-id")
     }
 
     func testLoginThrowsAndStaysSignedOutWhenTheKeychainRefusesAWrite() async {

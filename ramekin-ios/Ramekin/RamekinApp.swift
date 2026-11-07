@@ -122,7 +122,9 @@ class AppState: ObservableObject {
     /// sent it ends: a late 401 from before the user signed in again, or a
     /// repeat from the same burst, changes nothing.
     func handleAuthExpired(rejectedToken: String) {
-        guard authState.afterRejection(of: rejectedToken) == .expired else { return }
+        // Only a signed-in session can expire. Once expired, later 401s must
+        // not clear credentials a new login may be saving right now.
+        guard authState.isSignedIn, authState.afterRejection(of: rejectedToken) == .expired else { return }
         RamekinAPI.shared.logout()
         authState = .expired
         refreshState()

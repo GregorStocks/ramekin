@@ -1,42 +1,50 @@
 import { describe, expect, it, vi } from "vitest";
+import vectorsJson from "../../../shared-test-vectors/auth-session.json?raw";
 import {
   afterRejection,
   bearerToken,
   createAuthSession,
+  isSessionRejection,
   TOKEN_STORAGE_KEY,
   type AuthState,
 } from "./authSession";
 
-// The afterRejection and bearerToken cases mirror
-// ramekin-ios/RamekinTests/AuthSessionSupportTests.swift.
-describe("afterRejection", () => {
-  it("expires the session whose token was rejected", () => {
-    expect(afterRejection({ kind: "signedIn", token: "a" }, "a")).toEqual({
-      kind: "expired",
-    });
-  });
+const vectors = JSON.parse(vectorsJson) as {
+  afterRejection: {
+    name: string;
+    state: AuthState;
+    rejectedToken: string | null;
+    expected: AuthState;
+  }[];
+  bearerToken: { header: string | null; expected: string | null }[];
+  sessionRejection: { status: number; expected: boolean }[];
+};
 
-  it("leaves a newer session alone when an older token is rejected", () => {
+describe("auth-session shared vectors", () => {
+  it.each(vectors.afterRejection)(
+    "afterRejection: $name",
+    ({ state, rejectedToken, expected }) => {
+      expect(afterRejection(state, rejectedToken)).toEqual(expected);
+    },
+  );
+
+  it.each(vectors.bearerToken)(
+    "bearerToken($header)",
+    ({ header, expected }) => {
+      expect(bearerToken(header)).toBe(expected);
+    },
+  );
+
+  it.each(vectors.sessionRejection)(
+    "isSessionRejection($status)",
+    ({ status, expected }) => {
+      expect(isSessionRejection(status)).toBe(expected);
+    },
+  );
+
+  it("returns the same state object when nothing changes", () => {
     const state: AuthState = { kind: "signedIn", token: "b" };
     expect(afterRejection(state, "a")).toBe(state);
-  });
-
-  it("ignores rejections while signed out or expired, or without a token", () => {
-    const signedOut: AuthState = { kind: "signedOut" };
-    const expired: AuthState = { kind: "expired" };
-    const signedIn: AuthState = { kind: "signedIn", token: "a" };
-    expect(afterRejection(signedOut, "a")).toBe(signedOut);
-    expect(afterRejection(expired, "a")).toBe(expired);
-    expect(afterRejection(signedIn, null)).toBe(signedIn);
-  });
-});
-
-describe("bearerToken", () => {
-  it("parses only non-empty Bearer headers", () => {
-    expect(bearerToken("Bearer abc")).toBe("abc");
-    expect(bearerToken("Bearer ")).toBeNull();
-    expect(bearerToken("Basic abc")).toBeNull();
-    expect(bearerToken(null)).toBeNull();
   });
 });
 

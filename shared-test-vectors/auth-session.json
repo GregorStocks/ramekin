@@ -1,0 +1,47 @@
+{
+  "afterRejection": [
+    {
+      "name": "rejecting the current token expires the session",
+      "state": { "kind": "signedIn", "token": "a" },
+      "rejectedToken": "a",
+      "expected": { "kind": "expired" }
+    },
+    {
+      "name": "a late 401 for an earlier token leaves the new session alone",
+      "state": { "kind": "signedIn", "token": "b" },
+      "rejectedToken": "a",
+      "expected": { "kind": "signedIn", "token": "b" }
+    },
+    {
+      "name": "a 401 for a request sent without a token changes nothing",
+      "state": { "kind": "signedIn", "token": "a" },
+      "rejectedToken": null,
+      "expected": { "kind": "signedIn", "token": "a" }
+    },
+    {
+      "name": "signed out stays signed out",
+      "state": { "kind": "signedOut" },
+      "rejectedToken": "a",
+      "expected": { "kind": "signedOut" }
+    },
+    {
+      "name": "expired stays expired",
+      "state": { "kind": "expired" },
+      "rejectedToken": "a",
+      "expected": { "kind": "expired" }
+    }
+  ],
+  "bearerToken": [
+    { "header": "Bearer abc", "expected": "abc" },
+    { "header": "Bearer ", "expected": null },
+    { "header": "Basic abc", "expected": null },
+    { "header": "bearer abc", "expected": null },
+    { "header": null, "expected": null }
+  ],
+  "sessionRejection": [
+    { "status": 401, "expected": true },
+    { "status": 403, "expected": false },
+    { "status": 404, "expected": false },
+    { "status": 500, "expected": false }
+  ]
+}

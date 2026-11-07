@@ -16,11 +16,21 @@ export function tokenOf(state: AuthState): string | null {
 }
 
 /**
+ * Only 401 means the session is gone. A 403 is a refusal that signing in
+ * again would not fix.
+ */
+export function isSessionRejection(status: number): boolean {
+  return status === 401;
+}
+
+/**
  * The state after the server rejected (401) a request sent with
  * `rejectedToken`. A late 401 for an earlier session's token, or for a
  * request sent without one, leaves the current session alone.
  *
- * Mirrors AuthState.afterRejection in ramekin-ios/Shared/AuthSessionSupport.swift.
+ * This, `isSessionRejection` and `bearerToken` mirror
+ * ramekin-ios/Shared/AuthSessionSupport.swift and are pinned by
+ * shared-test-vectors/auth-session.json.
  */
 export function afterRejection(
   state: AuthState,
@@ -134,7 +144,7 @@ export function createAuthSession(options: AuthSessionOptions): AuthSession {
     const sentToken = bearerToken(headers.get("Authorization"));
 
     const response = await options.fetch(input, { ...init, headers });
-    if (response.status === 401) {
+    if (isSessionRejection(response.status)) {
       const next = afterRejection(authState(), sentToken);
       if (next !== authState()) setAuthState(next);
     }

@@ -2,39 +2,82 @@ import UIKit
 import XCTest
 @testable import Ramekin
 
-/// Mirrors ramekin-ui/src/context/authState.test.ts: a 401 only expires the
-/// session whose token it was sent with.
+/// Runs shared-test-vectors/auth-session.json, which the web client's
+/// authSession.test.ts also runs: a 401 only expires the session whose token
+/// it was sent with.
 final class AuthSessionSupportTests: XCTestCase {
-    func testRejectionOfTheCurrentTokenExpiresTheSession() {
-        XCTAssertEqual(AuthState.signedIn(token: "a").afterRejection(of: "a"), .expired)
+    private struct VectorState: Decodable {
+        let kind: String
+        let token: String?
+
+        var authState: AuthState? {
+            switch kind {
+            case "signedOut": return .signedOut
+            case "expired": return .expired
+            case "signedIn": return token.map { .signedIn(token: $0) }
+            default: return nil
+            }
+        }
     }
 
-    func testRejectionOfAnEarlierTokenLeavesTheNewSessionAlone() {
-        XCTAssertEqual(AuthState.signedIn(token: "b").afterRejection(of: "a"), .signedIn(token: "b"))
+    private struct RejectionVector: Decodable {
+        let name: String
+        let state: VectorState
+        let rejectedToken: String?
+        let expected: VectorState
     }
 
-    func testRejectionWhileSignedOutOrExpiredChangesNothing() {
-        XCTAssertEqual(AuthState.signedOut.afterRejection(of: "a"), .signedOut)
-        XCTAssertEqual(AuthState.expired.afterRejection(of: "a"), .expired)
+    private struct BearerVector: Decodable {
+        let header: String?
+        let expected: String?
+    }
+
+    private struct StatusVector: Decodable {
+        let status: Int
+        let expected: Bool
+    }
+
+    private struct Vectors: Decodable {
+        let afterRejection: [RejectionVector]
+        let bearerToken: [BearerVector]
+        let sessionRejection: [StatusVector]
+    }
+
+    private func loadVectors() throws -> Vectors {
+        let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "auth-session", withExtension: "json"))
+        return try JSONDecoder().decode(Vectors.self, from: Data(contentsOf: url))
+    }
+
+    func testAfterRejectionMatchesSharedVectors() throws {
+        let vectors = try loadVectors()
+        XCTAssertFalse(vectors.afterRejection.isEmpty)
+        for vector in vectors.afterRejection {
+            let state = try XCTUnwrap(vector.state.authState, vector.name)
+            let expected = try XCTUnwrap(vector.expected.authState, vector.name)
+            XCTAssertEqual(state.afterRejection(of: vector.rejectedToken), expected, vector.name)
+        }
+    }
+
+    func testBearerTokenMatchesSharedVectors() throws {
+        for vector in try loadVectors().bearerToken {
+            XCTAssertEqual(
+                AuthExpiry.bearerToken(fromAuthorizationHeader: vector.header),
+                vector.expected,
+                "header: \(vector.header ?? "nil")"
+            )
+        }
+    }
+
+    func testSessionRejectionMatchesSharedVectors() throws {
+        for vector in try loadVectors().sessionRejection {
+            XCTAssertEqual(AuthExpiry.isSessionRejection(statusCode: vector.status), vector.expected, "\(vector.status)")
+        }
     }
 
     func testOnlySignedInCountsAsSignedIn() {
         XCTAssertTrue(AuthState.signedIn(token: "a").isSignedIn)
         XCTAssertFalse(AuthState.signedOut.isSignedIn)
         XCTAssertFalse(AuthState.expired.isSignedIn)
-    }
-
-    func testBearerTokenParsing() {
-        XCTAssertEqual(AuthExpiry.bearerToken(fromAuthorizationHeader: "Bearer abc"), "abc")
-        XCTAssertNil(AuthExpiry.bearerToken(fromAuthorizationHeader: "Bearer "))
-        XCTAssertNil(AuthExpiry.bearerToken(fromAuthorizationHeader: "Basic abc"))
-        XCTAssertNil(AuthExpiry.bearerToken(fromAuthorizationHeader: nil))
-    }
-
-    func testOnly401IsASessionRejection() {
-        XCTAssertTrue(AuthExpiry.isSessionRejection(statusCode: 401))
-        XCTAssertFalse(AuthExpiry.isSessionRejection(statusCode: 403))
-        XCTAssertFalse(AuthExpiry.isSessionRejection(statusCode: 500))
     }
 
     func testNotifyPostsTheRejectedTokenOn401() {
