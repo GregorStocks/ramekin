@@ -226,10 +226,13 @@ export default function RecipeForm(props: RecipeFormProps) {
         <Show when={props.form.photoIds().length === 0}>
           <p class="empty-photos">No photos yet</p>
         </Show>
+        <Show when={props.form.uploadError()}>
+          <div class="error">{props.form.uploadError()}</div>
+        </Show>
       </div>
 
-      <Show when={props.form.error()}>
-        <div class="error">{props.form.error()}</div>
+      <Show when={props.form.saveError()}>
+        <div class="error">{props.form.saveError()}</div>
       </Show>
 
       <div class="form-actions">
@@ -239,7 +242,7 @@ export default function RecipeForm(props: RecipeFormProps) {
         <button
           type="submit"
           class="btn btn-primary"
-          disabled={props.form.saving()}
+          disabled={!props.form.canSubmit()}
         >
           {props.form.saving() ? props.submitLabelSaving : props.submitLabel}
         </button>

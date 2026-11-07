@@ -32,6 +32,14 @@ struct RecipeFormViewAPIClient {
     )
 }
 
+/// Where an edit form is in loading the recipe it edits. The form is only
+/// shown, and so only editable, once the recipe has loaded.
+enum RecipeFormLoadState: Equatable {
+    case loading
+    case failed(String)
+    case loaded
+}
+
 @MainActor
 final class RecipeFormViewModel: ObservableObject {
     let mode: RecipeFormMode
@@ -42,8 +50,12 @@ final class RecipeFormViewModel: ObservableObject {
     @Published var newTagValue = ""
     @Published var newNamespace = ""
     @Published var isSaving = false
-    @Published var isLoading = false
+    /// Create forms have nothing to load, so they start loaded.
+    @Published private(set) var loadState: RecipeFormLoadState
+    /// A failed save or text import. Load failures live in `loadState` and
+    /// photo upload failures in `photoUploadError`.
     @Published var error: String?
+    @Published var photoUploadError: String?
     @Published var selectedPhotoItems: [PhotosPickerItem] = []
     @Published var isUploadingPhoto = false
     @Published var recipeText = ""
@@ -74,6 +86,7 @@ final class RecipeFormViewModel: ObservableObject {
     init(mode: RecipeFormMode, resuming resumed: RecipeFormDraft? = nil, api: RecipeFormViewAPIClient = .live) {
         self.mode = mode
         self.api = api
+        _loadState = Published(initialValue: mode == .create ? .loaded : .loading)
         // One shared value: each RecipeFormData() starts with a fresh
         // ingredient row id, so two defaults would never compare equal.
         let initialFormData = RecipeFormData()
@@ -124,7 +137,8 @@ extension RecipeFormViewModel {
     /// Only edits save from the form; a new recipe is imported from its text.
     var canSave: Bool {
         guard case .edit = mode else { return false }
-        return !formData.title.trimmingCharacters(in: .whitespaces).isEmpty
+        return loadState == .loaded
+            && !formData.title.trimmingCharacters(in: .whitespaces).isEmpty
             && !formData.instructions.trimmingCharacters(in: .whitespaces).isEmpty
             && formData.expectedVersionId != nil
             && !isSaving
@@ -362,8 +376,14 @@ extension RecipeFormViewModel {
         }
     }
 
+    /// Loads the recipe again after a failed load.
+    func retryLoad() async {
+        guard case .edit(let recipeId) = mode, case .failed = loadState else { return }
+        await loadRecipe(id: recipeId)
+    }
+
     func loadRecipe(id: UUID) async {
-        isLoading = true
+        loadState = .loading
         do {
             let recipe = try await api.getRecipe(id)
             let loaded = RecipeFormData(recipe: recipe)
@@ -376,12 +396,17 @@ extension RecipeFormViewModel {
                 formData = loaded
             }
             savedFormData = loaded
-            isLoading = false
+            loadState = .loaded
         } catch is CancellationError {
-            isLoading = false
+            // Only leaving the form cancels the load, but offer a retry in
+            // case the form is still showing.
+            loadState = .failed("Loading the recipe was interrupted.")
         } catch {
-            self.error = error.localizedDescription
-            isLoading = false
+            loadState = .failed(
+                APIErrorFormatter.code(from: error) == .notFound
+                    ? "This recipe no longer exists."
+                    : APIErrorFormatter.userMessage(from: error, fallback: "Could not load the recipe.")
+            )
         }
     }
 
@@ -396,6 +421,7 @@ extension RecipeFormViewModel {
     }
 
     func uploadPhotos(_ items: [PhotosPickerItem]) async {
+        photoUploadError = nil
         isUploadingPhoto = true
         for item in items {
             do {
@@ -409,7 +435,7 @@ extension RecipeFormViewModel {
             } catch is CancellationError {
                 break
             } catch {
-                self.error = "Photo upload failed: \(error.localizedDescription)"
+                photoUploadError = "Photo upload failed: \(error.localizedDescription)"
             }
         }
         isUploadingPhoto = false

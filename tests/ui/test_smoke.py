@@ -200,6 +200,48 @@ def test_edit_recipe_page(logged_in_page: Page):
     expect(logged_in_page.locator("textarea").first).to_be_visible()
 
 
+def test_edit_recipe_load_failure_offers_retry(logged_in_page: Page):
+    """A failed load shows an error with Retry instead of an empty form."""
+    logged_in_page.locator(".recipe-card").first.click()
+    logged_in_page.wait_for_selector(".instructions")
+    recipe_url = logged_in_page.url
+    recipe_id = recipe_url.rstrip("/").rsplit("/", 1)[-1]
+
+    attempts = []
+
+    def handle(route):
+        if route.request.method != "GET":
+            route.continue_()
+            return
+        attempts.append(route)
+        if len(attempts) == 1:
+            route.fulfill(status=500, json={"error": "boom", "code": "internal"})
+        else:
+            route.continue_()
+
+    logged_in_page.route(f"**/api/recipes/{recipe_id}", handle)
+    logged_in_page.goto(f"{recipe_url}/edit")
+
+    error_state = logged_in_page.locator(".edit-recipe-page .error-state")
+    expect(error_state).to_contain_text("Failed to load recipe")
+    expect(logged_in_page.locator(".edit-recipe-page form")).to_have_count(0)
+
+    error_state.get_by_role("button", name="Retry").click()
+
+    expect(logged_in_page.locator(".edit-recipe-page form")).to_be_visible()
+    expect(logged_in_page.locator("#title")).not_to_have_value("")
+
+
+def test_edit_missing_recipe_shows_not_found(logged_in_page: Page, ui_url: str):
+    """Editing a recipe that doesn't exist shows Not Found, not an empty form."""
+    logged_in_page.goto(f"{ui_url}/recipes/{uuid.uuid4()}/edit")
+
+    error_state = logged_in_page.locator(".edit-recipe-page .error-state")
+    expect(error_state).to_contain_text("Recipe not found")
+    expect(error_state.get_by_role("button", name="Retry")).to_have_count(0)
+    expect(logged_in_page.locator(".edit-recipe-page form")).to_have_count(0)
+
+
 def test_tags_page_bulk_rename(page: Page, ui_url: str, api_url: str):
     """Verify the tags page can rename multiple tags in one save."""
     username, password = create_user_with_flat_tags(api_url)

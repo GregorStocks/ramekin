@@ -109,6 +109,44 @@ describe("createRecipeFormState unsaved changes", () => {
     });
   });
 
+  it("blocks submitting while a photo uploads", () => {
+    createRoot((dispose) => {
+      const form = createRecipeFormState({
+        getPhotosApi: () =>
+          ({ upload: () => new Promise(() => {}) }) as unknown as PhotosApi,
+      });
+      expect(form.canSubmit()).toBe(true);
+      const input = { files: [new Blob(["x"])], value: "photo.jpg" };
+      void form.onPhotoUpload({ target: input } as unknown as Event);
+      expect(form.canSubmit()).toBe(false);
+      dispose();
+    });
+  });
+
+  it("keeps a save error when a photo upload starts or fails", async () => {
+    let resolveUpload: (() => void) | undefined;
+    await createRoot(async (dispose) => {
+      const form = createRecipeFormState({
+        getPhotosApi: () =>
+          ({
+            upload: () =>
+              new Promise((_, reject) => {
+                resolveUpload = () => reject(new Error("too big"));
+              }),
+          }) as unknown as PhotosApi,
+      });
+      form.setSaveError("This recipe changed since you opened it.");
+      const input = { files: [new Blob(["x"])], value: "photo.jpg" };
+      const upload = form.onPhotoUpload({ target: input } as unknown as Event);
+      expect(form.saveError()).toBe("This recipe changed since you opened it.");
+      resolveUpload?.();
+      await upload;
+      expect(form.uploadError()).toBe("Failed to upload photo");
+      expect(form.saveError()).toBe("This recipe changed since you opened it.");
+      dispose();
+    });
+  });
+
   it("treats loaded and saved values as the new baseline", () => {
     withForm((form) => {
       form.loadRecipe({

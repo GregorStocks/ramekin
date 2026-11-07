@@ -1,4 +1,4 @@
-import { createSignal, Show, onMount } from "solid-js";
+import { createEffect, createSignal, Match, on, Switch } from "solid-js";
 import { useParams, useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import RecipeForm from "../components/RecipeForm";
@@ -13,53 +13,73 @@ import { usePageTitle } from "../utils/pageTitle";
 import { useUnsavedChangesGuard } from "../utils/unsavedChangesGuard";
 import type { RecipeResponse } from "ramekin-client";
 
+/** The form is only shown, and so only editable, once its recipe loads. */
+type LoadState =
+  | { kind: "loading" }
+  | { kind: "failed"; message: string; retryable: boolean }
+  | { kind: "loaded" };
+
 export default function EditRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { getRecipesApi, getPhotosApi, refreshTags, token } = useAuth();
-  const [loading, setLoading] = createSignal(true);
+  const [loadState, setLoadState] = createSignal<LoadState>({
+    kind: "loading",
+  });
+  const loaded = () => loadState().kind === "loaded";
   const form = createRecipeFormState({
     getPhotosApi,
     initialValues: emptyEditRecipeFormValues(),
-    pasteEnabled: () => !loading(),
+    pasteEnabled: loaded,
   });
 
-  useUnsavedChangesGuard(() => !loading() && form.hasUnsavedChanges());
+  useUnsavedChangesGuard(() => loaded() && form.hasUnsavedChanges());
 
   usePageTitle(() => (form.title() ? `Edit: ${form.title()}` : "Edit Recipe"));
 
-  const loadRecipe = async () => {
-    setLoading(true);
-    form.setError(null);
+  // Bumped per load so a slow response for a recipe we've since left
+  // can't overwrite the one now being edited.
+  let loadGeneration = 0;
+
+  const loadRecipe = async (id: string) => {
+    const generation = ++loadGeneration;
+    setLoadState({ kind: "loading" });
+    form.setSaveError(null);
     try {
-      const response: RecipeResponse = await getRecipesApi().getRecipe({
-        id: params.id,
-      });
+      const response: RecipeResponse = await getRecipesApi().getRecipe({ id });
+      if (generation !== loadGeneration) return;
       form.loadRecipe(response);
+      setLoadState({ kind: "loaded" });
     } catch (err) {
+      if (generation !== loadGeneration) return;
       const parsed = await parseApiError(err, "Failed to load recipe");
-      form.setError(
-        parsed.code === ErrorCode.NotFound
-          ? "Recipe not found"
-          : "Failed to load recipe",
-      );
-    } finally {
-      setLoading(false);
+      if (generation !== loadGeneration) return;
+      const notFound = parsed.code === ErrorCode.NotFound;
+      setLoadState({
+        kind: "failed",
+        message: notFound ? "Recipe not found" : "Failed to load recipe",
+        retryable: !notFound,
+      });
     }
   };
 
-  onMount(() => {
-    loadRecipe();
-  });
+  createEffect(
+    on(
+      () => params.id,
+      (id) => void loadRecipe(id),
+    ),
+  );
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-    form.setError(null);
+    if (!loaded() || !form.canSubmit()) return;
+    const id = params.id;
+    form.setSaveError(null);
     form.setSaving(true);
 
     try {
       await getRecipesApi().updateRecipe({
-        id: params.id,
+        id,
         updateRecipeRequest: form.toUpdateRecipeRequest(),
       });
 
@@ -67,10 +87,10 @@ export default function EditRecipePage() {
       refreshTags();
 
       form.markSaved();
-      navigate(`/recipes/${params.id}`);
+      navigate(`/recipes/${id}`);
     } catch (err) {
       const parsed = await parseApiError(err, "Failed to update recipe");
-      form.setError(recipeUpdateErrorMessage(parsed));
+      form.setSaveError(recipeUpdateErrorMessage(parsed));
     } finally {
       form.setSaving(false);
     }
@@ -80,29 +100,47 @@ export default function EditRecipePage() {
     <div class="edit-recipe-page">
       <h2>Edit Recipe</h2>
 
-      <Show when={loading()}>
-        <p class="loading">Loading recipe...</p>
-      </Show>
-
-      <Show when={form.error() && loading()}>
-        <div class="error-state">
-          <p class="error">{form.error()}</p>
-          <A href="/" class="btn">
-            Back to Cookbook
-          </A>
-        </div>
-      </Show>
-
-      <Show when={!loading()}>
-        <RecipeForm
-          form={form}
-          onSubmit={handleSubmit}
-          submitLabel="Save Changes"
-          submitLabelSaving="Saving..."
-          cancelHref={`/recipes/${params.id}`}
-          token={token}
-        />
-      </Show>
+      <Switch>
+        <Match when={loadState().kind === "loading"}>
+          <p class="loading">Loading recipe...</p>
+        </Match>
+        <Match
+          when={(() => {
+            const state = loadState();
+            return state.kind === "failed" ? state : null;
+          })()}
+        >
+          {(failed) => (
+            <div class="error-state">
+              <p class="error">{failed().message}</p>
+              <div class="error-state-actions">
+                {failed().retryable && (
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onClick={() => void loadRecipe(params.id)}
+                  >
+                    Retry
+                  </button>
+                )}
+                <A href="/" class="btn">
+                  Back to Cookbook
+                </A>
+              </div>
+            </div>
+          )}
+        </Match>
+        <Match when={loaded()}>
+          <RecipeForm
+            form={form}
+            onSubmit={handleSubmit}
+            submitLabel="Save Changes"
+            submitLabelSaving="Saving..."
+            cancelHref={`/recipes/${params.id}`}
+            token={token}
+          />
+        </Match>
+      </Switch>
     </div>
   );
 }

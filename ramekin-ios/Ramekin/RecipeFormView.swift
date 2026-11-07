@@ -23,18 +23,7 @@ struct RecipeFormView: View {
     private static let errorSectionId = "recipe-form-error"
 
     var body: some View {
-        // Save and Import live in the navigation bar, so a failure must be
-        // brought into view rather than left at the bottom of a long form.
-        ScrollViewReader { proxy in
-            form
-                .onChange(of: viewModel.error) { error in
-                    guard error != nil else { return }
-                    // Next run loop, once the error section exists to scroll to.
-                    DispatchQueue.main.async {
-                        withAnimation { proxy.scrollTo(Self.errorSectionId, anchor: .top) }
-                    }
-                }
-        }
+        content
         .navigationTitle(viewModel.mode == .create ? "New Recipe" : "Edit Recipe")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -75,7 +64,6 @@ struct RecipeFormView: View {
             Button("Keep Editing", role: .cancel) {}
         }
         .disabled(viewModel.isSaving)
-        .overlay { if viewModel.isLoading { ProgressView("Loading recipe…") } }
         .task {
             await viewModel.start()
             // Opening the form afresh replaces any draft it wasn't resumed from.
@@ -99,6 +87,48 @@ struct RecipeFormView: View {
         .onChange(of: scenePhase) { phase in
             if phase != .active { rememberDraft() }
         }
+    }
+
+    /// An edit form shows the recipe's fields only once they've loaded, so
+    /// nothing typed is replaced by the load and a failed load can't be saved.
+    @ViewBuilder private var content: some View {
+        switch viewModel.loadState {
+        case .loading:
+            ProgressView("Loading recipe…")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        case .failed(let message):
+            loadFailureView(message)
+        case .loaded:
+            // Save and Import live in the navigation bar, so a failure must be
+            // brought into view rather than left at the bottom of a long form.
+            ScrollViewReader { proxy in
+                form
+                    .onChange(of: viewModel.error) { error in
+                        guard error != nil else { return }
+                        // Next run loop, once the error section exists to scroll to.
+                        DispatchQueue.main.async {
+                            withAnimation { proxy.scrollTo(Self.errorSectionId, anchor: .top) }
+                        }
+                    }
+            }
+        }
+    }
+
+    private func loadFailureView(_ message: String) -> some View {
+        VStack(spacing: 12) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .font(.largeTitle)
+                .foregroundColor(.orange)
+                .accessibilityHidden(true)
+            Text(message)
+                .multilineTextAlignment(.center)
+            Button("Retry") {
+                Task { await viewModel.retryLoad() }
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private func rememberDraft() {
@@ -333,6 +363,12 @@ extension RecipeFormView {
                 Label(viewModel.isUploadingPhoto ? "Uploading…" : "Add Photo", systemImage: "photo.badge.plus")
             }
             .disabled(viewModel.isUploadingPhoto)
+            if let photoUploadError = viewModel.photoUploadError {
+                HStack {
+                    Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.red)
+                    Text(photoUploadError).foregroundColor(.red)
+                }
+            }
         }
     }
 
