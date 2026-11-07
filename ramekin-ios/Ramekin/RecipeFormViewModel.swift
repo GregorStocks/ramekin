@@ -132,6 +132,13 @@ extension RecipeFormViewModel {
             && !isUploadingPhoto
     }
 
+    /// The text is locked while a job runs on it and once it's imported. It
+    /// stays locked after losing track of a job too: Check Again follows
+    /// that job, so edits made now would be silently dropped.
+    var canEditRecipeText: Bool {
+        !isImporting && importedRecipeId == nil && !lostTrackOfImport
+    }
+
     /// Import starts a job from the text; after losing track of one (see
     /// `lostTrackOfImport`) it follows that same job again instead, since a
     /// second job would make a second recipe.

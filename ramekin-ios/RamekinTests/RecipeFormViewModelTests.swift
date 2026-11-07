@@ -68,6 +68,7 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertEqual(model.error, "Lost track of the import. It may still be running; tap Check Again.")
         XCTAssertTrue(model.lostTrackOfImport)
         XCTAssertTrue(model.canImport, "Check Again follows the same job")
+        XCTAssertFalse(model.canEditRecipeText, "Edits would be ignored by Check Again")
         XCTAssertTrue(model.hasUnsavedChanges, "The text isn't safe until the job is accounted for")
 
         pollsFail = false

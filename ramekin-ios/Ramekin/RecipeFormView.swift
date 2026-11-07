@@ -148,7 +148,7 @@ extension RecipeFormView {
         } footer: {
             Text("Type or paste a whole recipe: title, ingredients, instructions, and any details, then tap Import.")
         }
-        .disabled(viewModel.isImporting || viewModel.importedRecipeId != nil)
+        .disabled(!viewModel.canEditRecipeText)
     }
 
     /// The step's primary action lives in the navigation bar so it stays
