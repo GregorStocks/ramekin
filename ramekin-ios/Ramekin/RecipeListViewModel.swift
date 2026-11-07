@@ -428,7 +428,7 @@ private extension RecipeListViewModel {
                     // The user is looking at a cache-served list that could
                     // not be freshened. Never leave that silent: new and
                     // edited recipes would just quietly not show up.
-                    error = nil
+                    self.error = nil
                     staleness = .syncFailed
                 } else {
                     fail(staleness: .syncFailed)
