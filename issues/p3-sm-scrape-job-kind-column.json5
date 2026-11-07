@@ -1,0 +1,20 @@
+{
+  "title": "Scrape jobs: store the job kind instead of inferring it from nullable columns",
+  "description": "The job kind (URL scrape, bookmarklet capture, structured import, text import, photo import, photo-only rescrape, rescrape, manual normalize, AI edit) is inferred from url, photo_only, normalize_ops, edit_request, expected_version_id and recipe_id. \
+It is decoded separately in JobPlan::for_job (scraping/plan.rs:51-70), save_step (runner.rs:186-205), interrupted_job_action (runner.rs:267-272), retry_job (runner.rs:908-913) and load_normalize_job (api/recipes/normalize.rs:417-419). save_step already has an InvalidState arm for recipe_id None with expected_version_id Some (runner.rs:201). \
+Match order decides the kind (edit_request beats normalize_ops beats photo_only). \
+Edit jobs depend on normalize_ops = [] (jobs.rs:268) so the proposal endpoints accept them. \
+A photo import is just url NULL + current_step NULL until photo_import.rs:105 runs, and restart logic infers 'photo job' from that pair (runner.rs:269). \
+Also two step-ordering mechanisms: core steps return next_step (ramekin-core/src/pipeline/executor.rs:99-100), which the CLI uses (cli/src/pipeline/runners.rs:193), while the server ignores it for JobPlan::next_after (runner.rs:523). \
+Want: a kind column with a CHECK, backfilled by a migration from the existing columns, and one decode site. make pipeline should produce no data/ diffs. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "scraping",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

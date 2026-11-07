@@ -1,0 +1,17 @@
+{
+  "title": "Add to meal plan / shopping list: one shared submit-confirm-dismiss flow per client",
+  "description": "Web AddToMealPlanModal.tsx:39-83 and AddToShoppingListModal.tsx:28-72 each hand-roll wasOpen / presentation counter / closeTimer / adding / error / success; adding && success and error && success are representable. iOS AddToMealPlanSheet.swift:9-118 and AddToShoppingListSheet.swift:48-188 implement the same idle -> submitting -> confirmed (auto-dismiss) | failed flow differently. \
+MealPlanStore.add is synchronous, so submitTask/isAdding are mostly vestigial, and the cancelled paths never reset isAdding (106, 114). \
+In the shopping sheet, rows stay tappable under the confirmation overlay, so 'Added N items' changes live. \
+Want: one hook/helper per client. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

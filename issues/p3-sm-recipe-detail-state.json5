@@ -1,0 +1,17 @@
+{
+  "title": "Recipe detail: split load state from action state, guard stale responses",
+  "description": "Web ViewRecipePage.tsx holds ~14 signals (140-184). \
+One error slot covers the page load and every action (delete 252, revert 352, next-random 277, AI photo), so an action failure renders the full 'error-state' block with Back to Cookbook above a loaded recipe (430-437), and any reload (which clears error at 194) erases an action error. loadCurrentVersionId (224-231) bypasses the request tracker and currentVersionId is never reset on recipe change (205 skips the refetch when set), feeding isViewingHistoricalVersion (291) and revert's expectedVersionId (308). normalizingJobId is seeded from ?scrapeJob= once (173-175). \
+The revert and delete modals can be closed by Escape/backdrop mid-request (893, 966-967; Modal.tsx:85-91). iOS RecipeDetailViewModel.swift:50-80 / RecipeDetailView.swift: six sheet booleans that can be true together (want an ActiveSheet enum), six error strings, seven in-flight flags. loadRecipe has no generation guard and is called from .task, displayVersion, revert, generatePhoto and retry. isLoading goes false (164) before the follow-up getRecipe/loadVersionHistory, re-enabling version buttons mid-load. \
+Swipe-dismissing compare doesn't cancel openCompareSheet (223-247). deleteRecipe reports cancellation as 'Delete Failed' and never resets isDeleting on success (144-155). revert's error is cleared by the loadRecipe it triggers on success. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}

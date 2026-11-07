@@ -1,0 +1,15 @@
+{
+  "title": "Web shopping list: double-click toggle sends the same value twice; per-item flags share one slot",
+  "description": "ShoppingListPage.tsx: toggleCheckedAction (138-146) sends isChecked: !item.isChecked from the captured item and waits for sync(), so two quick clicks both send the same value instead of checking then unchecking. updatingCategoryId is one slot (151/162), so two overlapping category changes clear each other's disabled state. createAsyncAction (utils/asyncState.ts:20-39) has one loading flag per action, so overlapping runs (toggling two items) end it early. \
+Also: each delete or clear replaces undoable, so only the last can be undone (171-175); loading isn't set back to true when the token changes and the effect reruns (228-230); pageError picks among seven error sources by fixed precedence (210-217) and six handlers repeat the same clear-all block (236-271). \
+Want: send the intended new state from the click (or apply optimistically like iOS, which toggles locally and queues via the outbox, ShoppingListStore.swift:159), per-item pending state, and one action-error slot. iOS doesn't have the toggle bug. \
+Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "web",
+  ],
+  "created_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T08:15:00-08:00",
+}
