@@ -43,6 +43,34 @@ struct RecipeDetailViewAPIClient {
     )
 }
 
+/// The one sheet the recipe page shows at a time.
+enum RecipeDetailSheet: String, Identifiable {
+    case addToShoppingList
+    case addToMealPlan
+    case editWithAI
+    case reNormalize
+    case edit
+    case compare
+
+    var id: String { rawValue }
+}
+
+/// A recipe action under way. Only one runs at a time, and the others are
+/// disabled until it finishes.
+enum RecipeDetailAction: Equatable {
+    case reverting
+    case deleting
+    case generatingPhoto
+    case exporting
+}
+
+/// A failed action, reported in an alert. Load failures aren't alerts: they
+/// show on the page, with Retry.
+struct RecipeDetailAlert: Equatable {
+    let title: String
+    let message: String
+}
+
 @MainActor
 final class RecipeDetailViewModel: ObservableObject {
     let recipeId: UUID
@@ -52,34 +80,38 @@ final class RecipeDetailViewModel: ObservableObject {
     @Published var versionHistory: [VersionSummary] = []
     @Published var compareSelection: [UUID] = []
     @Published var isVersionHistoryExpanded = false
-    @Published var isLoading = false
+    /// True until a load, including its follow-up requests, has finished.
+    @Published private(set) var isLoading = false
+    /// Why the last load failed. Actions report failures in `actionAlert`.
+    @Published private(set) var loadError: String?
     @Published var isLoadingVersions = false
-    @Published var isLoadingCompare = false
-    @Published var isReverting = false
-    @Published var error: String?
     @Published var versionHistoryError: String?
-    @Published var compareError: String?
+    @Published private(set) var isLoadingCompare = false
+    @Published private(set) var compareError: String?
+    @Published private(set) var comparedOlderVersion: RecipeResponse?
+    @Published private(set) var comparedNewerVersion: RecipeResponse?
     @Published var revertCandidate: VersionSummary?
-    @Published var showingAddToShoppingList = false
-    @Published var showingAddToMealPlan = false
-    @Published var showingEditWithAI = false
-    @Published var showingReNormalize = false
-    @Published var showingEdit = false
-    @Published var showingCompareSheet = false
-    @Published var comparedOlderVersion: RecipeResponse?
-    @Published var comparedNewerVersion: RecipeResponse?
+    @Published var activeSheet: RecipeDetailSheet? {
+        didSet {
+            // However compare closes (Close or a swipe), drop its load.
+            if oldValue == .compare && activeSheet != .compare {
+                resetCompare()
+            }
+        }
+    }
     @Published var showingDeleteConfirmation = false
-    @Published var isDeleting = false
-    @Published var deleteError: String?
-    @Published var isGeneratingPhoto = false
-    @Published var aiActionError: String?
+    @Published private(set) var runningAction: RecipeDetailAction?
+    @Published var actionAlert: RecipeDetailAlert?
     @Published var recipeScale: Double = 1
     @Published var customScaleInput = ""
-    @Published var isExporting = false
     @Published var exportShareItem: ShareItem?
     @Published var exportError: String?
 
     private let api: RecipeDetailViewAPIClient
+    /// Bumped per load, so only the latest load may write what it fetched.
+    private var loadGeneration = 0
+    /// Bumped per compare and when compare closes, likewise.
+    private var compareGeneration = 0
 
     init(recipeId: UUID, api: RecipeDetailViewAPIClient = .live) {
         self.recipeId = recipeId
@@ -96,8 +128,13 @@ extension RecipeDetailViewModel {
     }
 
     var actionsDisabledForHistoricalVersion: Bool {
-        isViewingHistoricalVersion || isReverting || isAiActionRunning || isDeleting
+        isViewingHistoricalVersion || runningAction != nil
     }
+
+    var isReverting: Bool { runningAction == .reverting }
+    var isDeleting: Bool { runningAction == .deleting }
+    var isGeneratingPhoto: Bool { runningAction == .generatingPhoto }
+    var isExporting: Bool { runningAction == .exporting }
 
     var isAiActionRunning: Bool {
         isGeneratingPhoto
@@ -142,31 +179,43 @@ extension RecipeDetailViewModel {
 
 extension RecipeDetailViewModel {
     func deleteRecipe() async -> Bool {
-        isDeleting = true
+        guard runningAction == nil else { return false }
+        runningAction = .deleting
+        defer { runningAction = nil }
         do {
             try await api.deleteRecipe(recipeId)
             NotificationCenter.default.post(name: .recipeDeleted, object: nil)
             return true
+        } catch is CancellationError {
+            return false
         } catch {
-            deleteError = error.localizedDescription
-            isDeleting = false
+            actionAlert = RecipeDetailAlert(
+                title: "Delete Failed",
+                message: APIErrorFormatter.userMessage(from: error, fallback: "Failed to delete the recipe")
+            )
             return false
         }
     }
 
     func loadRecipe(versionId: UUID? = nil) async {
+        loadGeneration += 1
+        let generation = loadGeneration
         isLoading = true
-        error = nil
+        loadError = nil
+        defer {
+            if generation == loadGeneration { isLoading = false }
+        }
 
         do {
             let loaded = try await api.getRecipe(recipeId, versionId)
+            guard generation == loadGeneration else { return }
             recipe = loaded
-            isLoading = false
 
             if versionId == nil {
                 currentVersionId = loaded.versionId
             } else if currentVersionId == nil {
                 let current = try await api.getRecipe(recipeId, nil)
+                guard generation == loadGeneration else { return }
                 currentVersionId = current.versionId
             }
 
@@ -178,10 +227,9 @@ extension RecipeDetailViewModel {
                 await loadVersionHistory(force: true)
             }
         } catch is CancellationError {
-            isLoading = false
         } catch {
-            self.error = error.localizedDescription
-            isLoading = false
+            guard generation == loadGeneration else { return }
+            loadError = APIErrorFormatter.userMessage(from: error, fallback: "Failed to load the recipe")
         }
     }
 
@@ -226,28 +274,34 @@ extension RecipeDetailViewModel {
         }
         let selectedVersionIds = compareSelection
 
-        showingCompareSheet = true
+        resetCompare()
+        let generation = compareGeneration
+        activeSheet = .compare
         isLoadingCompare = true
-        compareError = nil
-        comparedOlderVersion = nil
-        comparedNewerVersion = nil
 
         do {
             let first = try await api.getRecipe(recipeId, selectedVersionIds[0])
+            guard generation == compareGeneration else { return }
             let second = try await api.getRecipe(recipeId, selectedVersionIds[1])
+            guard generation == compareGeneration else { return }
             let orderedVersions = RecipeVersionSupport.sortForCompare(first, second)
             comparedOlderVersion = orderedVersions.older
             comparedNewerVersion = orderedVersions.newer
         } catch is CancellationError {
         } catch {
+            guard generation == compareGeneration else { return }
             compareError = "Failed to load versions for comparison"
         }
 
-        isLoadingCompare = false
+        if generation == compareGeneration { isLoadingCompare = false }
     }
 
     func closeCompareSheet() {
-        showingCompareSheet = false
+        if activeSheet == .compare { activeSheet = nil }
+    }
+
+    private func resetCompare() {
+        compareGeneration += 1
         isLoadingCompare = false
         compareError = nil
         comparedOlderVersion = nil
@@ -256,50 +310,50 @@ extension RecipeDetailViewModel {
 
     func revert(to version: VersionSummary) async {
         revertCandidate = nil
-        isReverting = true
-        error = nil
+        guard runningAction == nil else { return }
+        guard let currentVersionId else {
+            actionAlert = RecipeDetailAlert(title: "Revert Failed", message: "Reload the recipe and try again.")
+            return
+        }
+        runningAction = .reverting
+        defer { runningAction = nil }
 
         do {
             let historicalRecipe = try await api.getRecipe(recipeId, version.id)
-            guard let currentVersionId else {
-                error = "Reload the recipe and try again."
-                isReverting = false
-                return
-            }
             try await api.revertRecipe(recipeId, historicalRecipe, currentVersionId)
-
-            await loadRecipe()
         } catch is CancellationError {
+            return
         } catch {
-            self.error = "Failed to revert to this version"
+            actionAlert = RecipeDetailAlert(title: "Revert Failed", message: "Failed to revert to this version")
+            return
         }
-
-        isReverting = false
+        await loadRecipe()
     }
 }
 
 extension RecipeDetailViewModel {
     func generatePhoto() async {
-        guard recipe != nil else { return }
-        isGeneratingPhoto = true
-        aiActionError = nil
+        guard recipe != nil, runningAction == nil else { return }
+        runningAction = .generatingPhoto
+        defer { runningAction = nil }
 
         do {
             _ = try await api.generatePhoto(recipeId)
-            await loadRecipe()
         } catch is CancellationError {
+            return
         } catch {
-            aiActionError = "Failed to generate AI photo"
+            actionAlert = RecipeDetailAlert(title: "AI Action Failed", message: "Failed to generate AI photo")
+            return
         }
-        isGeneratingPhoto = false
+        await loadRecipe()
     }
 }
 
 extension RecipeDetailViewModel {
     func exportRecipeAsPaprika() async {
-        guard !isExporting else { return }
-        isExporting = true
-        defer { isExporting = false }
+        guard runningAction == nil else { return }
+        runningAction = .exporting
+        defer { runningAction = nil }
         do {
             let download = try await api.exportRecipe(recipeId)
             let url = try RecipeExportSupport.writeToTempFile(
@@ -315,9 +369,9 @@ extension RecipeDetailViewModel {
     }
 
     func exportRecipeAsPDF(_ recipe: RecipeResponse) async {
-        guard !isExporting else { return }
-        isExporting = true
-        defer { isExporting = false }
+        guard runningAction == nil else { return }
+        runningAction = .exporting
+        defer { runningAction = nil }
         do {
             let cover = await api.fetchCoverPhoto(recipe)
             let result = try RecipePDFRenderer.render(recipe: recipe, coverPhoto: cover)

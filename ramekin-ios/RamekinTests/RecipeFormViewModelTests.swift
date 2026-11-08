@@ -179,23 +179,23 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertNil(model.error)
     }
 
-    func testEditSaveRequiresLoadedRecipeVersion() {
+    func testEditSaveRequiresLoadedRecipe() async {
+        let recipe = makeRecipe()
         let viewModel = RecipeFormViewModel(
-            mode: .edit(recipeId: UUID()),
+            mode: .edit(recipeId: recipe.id),
             api: RecipeFormViewAPIClient(
                 updateRecipe: { _, _ in throw TestError.unexpectedCall },
-                getRecipe: { _ in throw TestError.unexpectedCall },
+                getRecipe: { _ in recipe },
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 uploadPhoto: { _ in throw TestError.unexpectedCall }
             )
         )
-        viewModel.formData.title = "Soup"
-        viewModel.formData.instructions = "Simmer"
-
+        XCTAssertEqual(viewModel.loadState, .loading)
         XCTAssertFalse(viewModel.canSave)
 
-        viewModel.formData.expectedVersionId = UUID()
+        await viewModel.loadRecipe(id: recipe.id)
 
+        XCTAssertEqual(viewModel.loadState, .loaded)
         XCTAssertTrue(viewModel.canSave)
     }
 
@@ -341,6 +341,73 @@ final class RecipeFormViewModelTests: XCTestCase {
     }
 }
 
+// Load state: the edit form only shows once its recipe has loaded.
+extension RecipeFormViewModelTests {
+    func testCreateFormStartsLoaded() {
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in throw TestError.unexpectedCall },
+            getScrape: { _ in throw TestError.unexpectedCall }
+        ))
+        XCTAssertEqual(model.loadState, .loaded)
+    }
+
+    func testFailedLoadKeepsErrorOutOfTheFormAndRetryLoads() async {
+        let recipe = makeRecipe()
+        var attempts = 0
+        let viewModel = RecipeFormViewModel(
+            mode: .edit(recipeId: recipe.id),
+            api: RecipeFormViewAPIClient(
+                updateRecipe: { _, _ in throw TestError.unexpectedCall },
+                getRecipe: { _ in
+                    attempts += 1
+                    if attempts == 1 { throw URLError(.notConnectedToInternet) }
+                    return recipe
+                },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
+                uploadPhoto: { _ in throw TestError.unexpectedCall }
+            )
+        )
+
+        await viewModel.loadRecipe(id: recipe.id)
+
+        guard case .failed = viewModel.loadState else {
+            return XCTFail("Expected a failed load, got \(viewModel.loadState)")
+        }
+        XCTAssertNil(viewModel.error, "Load failures don't use the save error")
+        XCTAssertFalse(viewModel.canSave)
+
+        await viewModel.retryLoad()
+
+        XCTAssertEqual(attempts, 2)
+        XCTAssertEqual(viewModel.loadState, .loaded)
+        XCTAssertEqual(viewModel.formData.title, recipe.title)
+        XCTAssertTrue(viewModel.canSave)
+    }
+
+    func testLoadOfMissingRecipeSaysItNoLongerExists() async {
+        let viewModel = RecipeFormViewModel(
+            mode: .edit(recipeId: UUID()),
+            api: RecipeFormViewAPIClient(
+                updateRecipe: { _, _ in throw TestError.unexpectedCall },
+                getRecipe: { _ in
+                    throw ErrorResponse.error(
+                        404,
+                        Data(#"{"code":"not_found","error":"Recipe not found"}"#.utf8),
+                        nil,
+                        TestError.unexpectedCall
+                    )
+                },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
+                uploadPhoto: { _ in throw TestError.unexpectedCall }
+            )
+        )
+
+        await viewModel.loadRecipe(id: UUID())
+
+        XCTAssertEqual(viewModel.loadState, .failed("This recipe no longer exists."))
+    }
+}
+
 private enum TestError: Error {
     case unexpectedCall
 }
@@ -357,6 +424,34 @@ private func createClient(
         uploadPhoto: { _ in throw TestError.unexpectedCall },
         importFromText: importFromText,
         getScrape: getScrape
+    )
+}
+
+private func makeRecipe() -> RecipeResponse {
+    RecipeResponse(
+        cookTime: nil,
+        createdAt: Date(timeIntervalSince1970: 100),
+        derivedMeasurements: [],
+        description: nil,
+        difficulty: nil,
+        id: UUID(),
+        ingredients: [],
+        instructions: "Simmer",
+        normalizeOps: [],
+        notes: nil,
+        nutritionalInfo: nil,
+        photoIds: [],
+        prepTime: nil,
+        rating: nil,
+        servings: nil,
+        sourceName: nil,
+        sourceUrl: nil,
+        tags: [],
+        title: "Soup",
+        totalTime: nil,
+        updatedAt: Date(timeIntervalSince1970: 200),
+        versionId: UUID(),
+        versionSource: "user"
     )
 }
 

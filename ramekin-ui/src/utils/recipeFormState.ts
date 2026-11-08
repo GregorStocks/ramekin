@@ -56,8 +56,12 @@ export interface RecipeFormState {
   uploading: Accessor<boolean>;
   saving: Accessor<boolean>;
   setSaving: Setter<boolean>;
-  error: Accessor<string | null>;
-  setError: Setter<string | null>;
+  /** Saving mid-upload would drop the photo being uploaded. */
+  canSubmit: Accessor<boolean>;
+  /** A failed save; load failures belong to the page, not the form. */
+  saveError: Accessor<string | null>;
+  setSaveError: Setter<string | null>;
+  uploadError: Accessor<string | null>;
   onPhotoUpload: (e: Event) => Promise<void>;
   removePhoto: (photoId: string) => void;
   loadRecipe: (recipe: RecipeResponse) => void;
@@ -109,7 +113,8 @@ export function createRecipeFormState(
   const [notes, setNotes] = createSignal(initialValues.notes);
   const [uploading, setUploading] = createSignal(false);
   const [saving, setSaving] = createSignal(false);
-  const [error, setError] = createSignal<string | null>(null);
+  const [saveError, setSaveError] = createSignal<string | null>(null);
+  const [uploadError, setUploadError] = createSignal<string | null>(null);
   const [expectedVersionId, setExpectedVersionId] = createSignal<string | null>(
     null,
   );
@@ -160,13 +165,13 @@ export function createRecipeFormState(
   const uploadPhotoFile = async (file: File) => {
     if (uploading()) return;
     setUploading(true);
-    setError(null);
+    setUploadError(null);
     try {
       const response = await options.getPhotosApi().upload({ file });
       setPhotoIds([...photoIds(), response.id]);
     } catch (err) {
       const errorMessage = await extractApiError(err, "Failed to upload photo");
-      setError(errorMessage);
+      setUploadError(errorMessage);
     } finally {
       setUploading(false);
     }
@@ -235,8 +240,10 @@ export function createRecipeFormState(
     uploading,
     saving,
     setSaving,
-    error,
-    setError,
+    canSubmit: () => !saving() && !uploading(),
+    saveError,
+    setSaveError,
+    uploadError,
     onPhotoUpload,
     removePhoto: (photoId: string) => {
       setPhotoIds(photoIds().filter((id) => id !== photoId));

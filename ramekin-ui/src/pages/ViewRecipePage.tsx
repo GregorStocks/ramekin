@@ -2,6 +2,7 @@ import {
   createSignal,
   createEffect,
   createMemo,
+  on,
   Show,
   For,
   onMount,
@@ -155,7 +156,14 @@ export default function ViewRecipePage() {
     null,
   );
   const [loading, setLoading] = createSignal(true);
-  const [error, setError] = createSignal<string | null>(null);
+  /** Why the latest load failed; reloads clear it. */
+  const [loadError, setLoadError] = createSignal<string | null>(null);
+  /**
+   * Why the last action (delete, revert, next random, AI photo) failed. Shown
+   * above the recipe rather than in place of it, and kept across reloads
+   * until the next action or dismissal.
+   */
+  const [actionError, setActionError] = createSignal<string | null>(null);
   const [deleting, setDeleting] = createSignal(false);
   const [showDeleteModal, setShowDeleteModal] = createSignal(false);
   // Revert state
@@ -170,8 +178,9 @@ export default function ViewRecipePage() {
   // A scrape job whose recipe is saved but whose normalize ops (title,
   // description, tags) are still running. The scrape status page links here
   // with ?scrapeJob= so the recipe shows right away; reload when it lands.
+  // Follows the URL, so navigating to another recipe drops the old job.
   const [normalizingJobId, setNormalizingJobId] = createSignal<string | null>(
-    typeof searchParams.scrapeJob === "string" ? searchParams.scrapeJob : null,
+    null,
   );
   const [normalizeFailedJobId, setNormalizeFailedJobId] = createSignal<
     string | null
@@ -186,12 +195,14 @@ export default function ViewRecipePage() {
   // Navigations can overlap (e.g. A -> B -> back to A); only the latest load
   // may write recipe, error, or loading state.
   const recipeRequests = createRequestTracker();
+  // Likewise for the current-version lookup a historical load starts.
+  const currentVersionRequests = createRequestTracker();
 
   const loadRecipe = async () => {
     const requestId = recipeRequests.start();
     const key = requestedKey();
     setLoading(true);
-    setError(null);
+    setLoadError(null);
     try {
       const vid = versionId();
       const response = await getRecipesApi().getRecipe({
@@ -210,7 +221,7 @@ export default function ViewRecipePage() {
     } catch (err) {
       const parsed = await parseApiError(err, "Failed to load recipe");
       if (!recipeRequests.isCurrent(requestId)) return;
-      setError(
+      setLoadError(
         parsed.code === ErrorCode.NotFound
           ? "Recipe not found"
           : "Failed to load recipe",
@@ -222,8 +233,10 @@ export default function ViewRecipePage() {
 
   // Load current version ID on mount (before potentially loading a specific version)
   const loadCurrentVersionId = async () => {
+    const requestId = currentVersionRequests.start();
     try {
       const response = await getRecipesApi().getRecipe({ id: params.id });
+      if (!currentVersionRequests.isCurrent(requestId)) return;
       setCurrentVersionId(response.versionId);
     } catch {
       // Ignore - will be handled by main loadRecipe
@@ -244,20 +257,28 @@ export default function ViewRecipePage() {
 
   const handleDeleteConfirm = async () => {
     setDeleting(true);
+    setActionError(null);
     try {
       await getRecipesApi().deleteRecipe({ id: params.id });
       goBackToCookbook();
     } catch (err) {
       const message = await extractApiError(err, "Failed to delete recipe");
-      setError(message);
+      setActionError(message);
       setShowDeleteModal(false);
       setDeleting(false);
     }
   };
 
+  // The request decides the dialog's outcome, so it can't be dismissed
+  // while one is in flight.
+  const closeDeleteModal = () => {
+    if (!deleting()) setShowDeleteModal(false);
+  };
+
   const goToNextRandom = async () => {
     const q = randomQuery();
     if (q === null) return;
+    setActionError(null);
     try {
       const response = await getRecipesApi().listRecipes({
         q: q || undefined,
@@ -274,7 +295,7 @@ export default function ViewRecipePage() {
         err,
         "Failed to load next random recipe",
       );
-      setError(message);
+      setActionError(message);
     }
   };
 
@@ -304,6 +325,7 @@ export default function ViewRecipePage() {
     if (!version) return;
 
     setReverting(true);
+    setActionError(null);
     try {
       const expectedVersionId = currentVersionId();
       if (!expectedVersionId) {
@@ -349,14 +371,15 @@ export default function ViewRecipePage() {
         err,
         "Failed to revert to this version",
       );
-      setError(message);
+      setActionError(message);
+      setRevertVersion(null);
     } finally {
       setReverting(false);
     }
   };
 
   const handleRevertCancel = () => {
-    setRevertVersion(null);
+    if (!reverting()) setRevertVersion(null);
   };
 
   const recipeAiActions = useRecipeAiActions({
@@ -364,8 +387,16 @@ export default function ViewRecipePage() {
     recipe,
     getRecipesApi,
     loadRecipe,
-    setError,
+    setError: setActionError,
   });
+
+  // Seed the normalizing job from the URL, and drop it when the page moves
+  // on to another recipe.
+  createEffect(
+    on([() => params.id, () => searchParams.scrapeJob], ([, scrapeJob]) => {
+      setNormalizingJobId(typeof scrapeJob === "string" ? scrapeJob : null);
+    }),
+  );
 
   createEffect(() => {
     const jobId = normalizingJobId();
@@ -414,12 +445,18 @@ export default function ViewRecipePage() {
     setShowMealPlanModal(false);
   };
 
-  // Reload when version_id changes
-  createEffect(() => {
-    // Read versionId to track it as a dependency
-    versionId();
-    loadRecipe();
-  });
+  // Reload when the recipe or version_id changes. Another recipe's current
+  // version and action errors don't apply to this one.
+  createEffect(
+    on([() => params.id, versionId], ([id], previous) => {
+      if (previous && previous[0] !== id) {
+        currentVersionRequests.invalidate();
+        setCurrentVersionId(null);
+        setActionError(null);
+      }
+      void loadRecipe();
+    }),
+  );
 
   return (
     <div class="view-recipe-page">
@@ -427,12 +464,23 @@ export default function ViewRecipePage() {
         <p class="loading">Loading recipe...</p>
       </Show>
 
-      <Show when={error()}>
+      <Show when={!recipe() && loadError()}>
         <div class="error-state">
-          <p class="error">{error()}</p>
-          <button type="button" class="btn" onClick={goBackToCookbook}>
-            Back to Cookbook
-          </button>
+          <p class="error">{loadError()}</p>
+          <div class="error-state-actions">
+            <Show when={loadError() !== "Recipe not found"}>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onClick={() => void loadRecipe()}
+              >
+                Retry
+              </button>
+            </Show>
+            <button type="button" class="btn" onClick={goBackToCookbook}>
+              Back to Cookbook
+            </button>
+          </div>
         </div>
       </Show>
 
@@ -572,6 +620,23 @@ export default function ViewRecipePage() {
                 </details>
               </div>
             </div>
+
+            <Show when={actionError() ?? loadError()}>
+              {(message) => (
+                <div class="recipe-action-error error" role="alert">
+                  <span>{message()}</span>
+                  <Show when={actionError()}>
+                    <button
+                      type="button"
+                      class="btn btn-small"
+                      onClick={() => setActionError(null)}
+                    >
+                      Dismiss
+                    </button>
+                  </Show>
+                </div>
+              )}
+            </Show>
 
             <Show when={normalizingJobId()}>
               <div class="normalize-notice" role="status">
@@ -899,6 +964,7 @@ export default function ViewRecipePage() {
                     type="button"
                     class="btn"
                     onClick={handleRevertCancel}
+                    disabled={reverting()}
                   >
                     Cancel
                   </button>
@@ -964,14 +1030,14 @@ export default function ViewRecipePage() {
             {/* Delete Confirmation Modal */}
             <Modal
               isOpen={showDeleteModal}
-              onClose={() => setShowDeleteModal(false)}
+              onClose={closeDeleteModal}
               title="Delete Recipe"
               actions={
                 <>
                   <button
                     type="button"
                     class="btn"
-                    onClick={() => setShowDeleteModal(false)}
+                    onClick={closeDeleteModal}
                     disabled={deleting()}
                   >
                     Cancel

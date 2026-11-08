@@ -27,6 +27,13 @@
   padding: 2rem;
 }
 
+.error-state-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;

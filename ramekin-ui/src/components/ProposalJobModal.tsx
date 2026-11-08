@@ -8,6 +8,7 @@ import {
   Show,
   Switch,
 } from "solid-js";
+import type { JSX } from "solid-js";
 import { A } from "@solidjs/router";
 import type {
   EditRecipeApi,
@@ -59,11 +60,27 @@ interface ProposalJobModalProps {
   onAccepted: () => Promise<void>;
 }
 
+/**
+ * Each phase carries its own data and errors, so nothing from one phase (a
+ * proposal, a failed save) can show in another.
+ */
 type Phase =
   | { kind: "loading" }
-  | { kind: "choose" }
+  /** The normalize ops didn't load; Retry loads them again. */
+  | { kind: "loadFailed"; error: string }
+  /** `error` says why the last Run didn't start. */
+  | { kind: "choose"; error: string | null }
+  | { kind: "starting" }
   | { kind: "running"; jobId: string; steps: StepState[] }
-  | { kind: "review"; jobId: string; proposal: NormalizeProposalResponse }
+  /** `error` says why the last Accept didn't save. */
+  | {
+      kind: "review";
+      jobId: string;
+      proposal: NormalizeProposalResponse;
+      accepting: boolean;
+      error: string | null;
+    }
+  /** The job failed or was lost; Try again goes back to choosing. */
   | { kind: "failed"; jobId: string; error: string };
 
 const STEP_MARKS: Record<string, string> = {
@@ -83,8 +100,6 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
   const [instruction, setInstruction] = createSignal("");
   const [selected, setSelected] = createSignal<Set<string>>(new Set());
   const [phase, setPhase] = createSignal<Phase>({ kind: "loading" });
-  const [error, setError] = createSignal<string | null>(null);
-  const [busy, setBusy] = createSignal(false);
   let controller: AbortController | null = null;
   // Bumped whenever the modal opens or closes, so answers to a closed
   // session's requests are ignored.
@@ -96,45 +111,62 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
   };
   onCleanup(abortRun);
 
+  const loadOps = () => {
+    const opened = session;
+    setPhase({ kind: "loading" });
+    void props
+      .getNormalizeApi()
+      .listNormalizeOps({ recipeId: props.recipeId })
+      .then((response) => {
+        if (opened !== session) return;
+        setOps(response.ops);
+        setSelected(defaultNormalizeSelection(response.ops));
+        setPhase({ kind: "choose", error: null });
+      })
+      .catch(async (err: unknown) => {
+        const message = await extractApiError(
+          err,
+          "Failed to load normalize ops",
+        );
+        if (opened !== session) return;
+        setPhase({ kind: "loadFailed", error: message });
+      });
+  };
+
   createEffect(
     on(props.isOpen, (open) => {
       session += 1;
       abortRun();
       if (!open) return;
-      const opened = session;
-      setError(null);
+      setOps([]);
+      setSelected(new Set<string>());
+      setInstruction("");
       if (props.mode.kind === "edit") {
-        setInstruction("");
-        setPhase({ kind: "choose" });
+        setPhase({ kind: "choose", error: null });
         return;
       }
-      setPhase({ kind: "loading" });
-      void props
-        .getNormalizeApi()
-        .listNormalizeOps({ recipeId: props.recipeId })
-        .then((response) => {
-          if (opened !== session) return;
-          setOps(response.ops);
-          setSelected(defaultNormalizeSelection(response.ops));
-          setPhase({ kind: "choose" });
-        })
-        .catch(async (err: unknown) => {
-          const message = await extractApiError(
-            err,
-            "Failed to load normalize ops",
-          );
-          if (opened !== session) return;
-          setError(message);
-          setPhase({ kind: "choose" });
-        });
+      loadOps();
     }),
   );
 
   const chosenOps = () => effectiveNormalizeOps(ops(), selected());
   const canRun = () =>
-    props.mode.kind === "edit"
+    phase().kind === "choose" &&
+    (props.mode.kind === "edit"
       ? instruction().trim().length > 0
-      : chosenOps().length > 0;
+      : chosenOps().length > 0);
+  /** Starting a job or saving its proposal: the choices are locked. */
+  const busy = () => {
+    const current = phase();
+    return (
+      current.kind === "starting" ||
+      (current.kind === "review" && current.accepting)
+    );
+  };
+  /** Closing mid-save would leave the save's outcome unseen. */
+  const close = () => {
+    if (!busy()) props.onClose();
+  };
 
   const startJob = async (): Promise<string> => {
     const mode = props.mode;
@@ -156,8 +188,8 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
   };
 
   const start = async () => {
-    setBusy(true);
-    setError(null);
+    if (!canRun()) return;
+    setPhase({ kind: "starting" });
     abortRun();
     const run = new AbortController();
     controller = run;
@@ -166,12 +198,10 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
       jobId = await startJob();
     } catch (err) {
       const message = await extractApiError(err, "Failed to start");
-      setBusy(false);
       // Closing the modal aborts the run; its answer belongs to no one.
-      if (!run.signal.aborted) setError(message);
+      if (!run.signal.aborted) setPhase({ kind: "choose", error: message });
       return;
     }
-    setBusy(false);
     if (run.signal.aborted) return;
     setPhase({ kind: "running", jobId, steps: [] });
     try {
@@ -187,7 +217,13 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
           .getNormalizeApi()
           .getNormalizeProposal({ id: props.recipeId, jobId });
         if (run.signal.aborted) return;
-        setPhase({ kind: "review", jobId, proposal });
+        setPhase({
+          kind: "review",
+          jobId,
+          proposal,
+          accepting: false,
+          error: null,
+        });
       } else if (result.status === "failed") {
         setPhase({ kind: "failed", jobId, error: result.error });
       }
@@ -202,20 +238,32 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
     }
   };
 
-  const accept = async (jobId: string) => {
-    setBusy(true);
-    setError(null);
+  const accept = async () => {
+    const current = phase();
+    if (current.kind !== "review" || current.accepting) return;
+    const acceptSession = session;
+    setPhase({ ...current, accepting: true, error: null });
     try {
       await props
         .getNormalizeApi()
-        .acceptNormalizeProposal({ id: props.recipeId, jobId });
-      await props.onAccepted();
-      props.onClose();
+        .acceptNormalizeProposal({ id: props.recipeId, jobId: current.jobId });
     } catch (err) {
-      setError(await extractApiError(err, "Failed to save the new version"));
-    } finally {
-      setBusy(false);
+      const message = await extractApiError(
+        err,
+        "Failed to save the new version",
+      );
+      // A save from a session that has since closed answers to no one.
+      if (acceptSession !== session) return;
+      setPhase({ ...current, accepting: false, error: message });
+      return;
     }
+    // The save landed, so the recipe changed even if this session closed.
+    await props.onAccepted();
+    if (acceptSession === session) props.onClose();
+  };
+
+  const tryAgain = () => {
+    if (phase().kind === "failed") setPhase({ kind: "choose", error: null });
   };
 
   const reviewChanges = (proposal: NormalizeProposalResponse) =>
@@ -225,75 +273,112 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
   const proposalPhotosChanged = (proposal: NormalizeProposalResponse) =>
     !!proposal.proposed && photosChanged(proposal.base, proposal.proposed);
 
-  const actions = () => {
+  const actions = (): JSX.Element => {
     const current = phase();
     switch (current.kind) {
       case "choose":
+      case "starting":
         return (
           <>
-            <button type="button" class="btn" onClick={props.onClose}>
+            <button type="button" class="btn" onClick={close} disabled={busy()}>
               Cancel
             </button>
             <button
               type="button"
               class="btn btn-primary"
               onClick={start}
-              disabled={busy() || !canRun()}
+              disabled={!canRun()}
             >
-              {busy() ? "Starting..." : "Run"}
+              {current.kind === "starting" ? "Starting..." : "Run"}
             </button>
           </>
+        );
+      case "loading":
+      case "loadFailed":
+        return (
+          <button type="button" class="btn" onClick={close}>
+            Cancel
+          </button>
         );
       case "review":
         if (!reviewChanges(current.proposal)) {
           return (
-            <button type="button" class="btn" onClick={props.onClose}>
+            <button type="button" class="btn" onClick={close}>
               Close
             </button>
           );
         }
         return (
           <>
-            <button type="button" class="btn" onClick={props.onClose}>
+            <button
+              type="button"
+              class="btn"
+              onClick={close}
+              disabled={current.accepting}
+            >
               Discard
             </button>
             <button
               type="button"
               class="btn btn-primary"
-              onClick={() => accept(current.jobId)}
-              disabled={busy()}
+              onClick={accept}
+              disabled={current.accepting}
             >
-              {busy() ? "Saving..." : "Accept"}
+              {current.accepting ? "Saving..." : "Accept"}
             </button>
           </>
         );
       default:
         return (
-          <button type="button" class="btn" onClick={props.onClose}>
+          <button type="button" class="btn" onClick={close}>
             Close
           </button>
         );
     }
   };
 
+  const phaseError = () => {
+    const current = phase();
+    return current.kind === "choose" || current.kind === "review"
+      ? current.error
+      : null;
+  };
+  const choosing = () =>
+    phase().kind === "choose" || phase().kind === "starting";
+
   return (
     <Modal
       isOpen={props.isOpen}
-      onClose={props.onClose}
+      onClose={close}
       title={
         props.mode.kind === "edit" ? "Edit with AI" : "Re-normalize recipe"
       }
       actions={actions()}
     >
       <div class="renormalize">
-        <Show when={error()}>
-          <p class="error">{error()}</p>
+        <Show when={phaseError()}>
+          <p class="error">{phaseError()}</p>
         </Show>
         <Switch>
           <Match when={phase().kind === "loading"}>
             <p class="loading-text">Loading...</p>
           </Match>
-          <Match when={phase().kind === "choose" && props.mode.kind === "edit"}>
+          <Match
+            when={(() => {
+              const current = phase();
+              return current.kind === "loadFailed" ? current : null;
+            })()}
+          >
+            {(failed) => (
+              <div class="error">
+                <p>{failed().error}</p>
+                <button type="button" class="btn btn-small" onClick={loadOps}>
+                  Retry
+                </button>
+              </div>
+            )}
+          </Match>
+          <Match when={choosing() && props.mode.kind === "edit"}>
             <label class="edit-with-ai-label" for="edit-with-ai-instruction">
               What would you like to change?
             </label>
@@ -317,7 +402,7 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
               review the result before it's saved.
             </p>
           </Match>
-          <Match when={phase().kind === "choose"}>
+          <Match when={choosing()}>
             <p class="renormalize-hint">
               Source ops replace the recipe's content, hand edits included. You
               review the result before it's saved.
@@ -397,10 +482,15 @@ export default function ProposalJobModal(props: ProposalJobModalProps) {
             })()}
           >
             {(failed) => (
-              <p class="error">
-                {failed().error}{" "}
-                <A href={`/scrape/${failed().jobId}`}>See what happened</A>
-              </p>
+              <div class="error">
+                <p>
+                  {failed().error}{" "}
+                  <A href={`/scrape/${failed().jobId}`}>See what happened</A>
+                </p>
+                <button type="button" class="btn btn-small" onClick={tryAgain}>
+                  Try again
+                </button>
+              </div>
             )}
           </Match>
         </Switch>

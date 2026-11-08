@@ -68,3 +68,32 @@ def test_renormalize_reviews_then_saves_the_proposal(
         recipe = RecipesApi(client).get_recipe(recipe_id)
     assert recipe.title == "Spaced Out Soup"
     assert recipe.version_source == "normalize"
+
+
+def test_renormalize_ops_load_failure_offers_retry(logged_in_page: Page):
+    """A failed ops load leaves a Retry, not an empty picker with Run disabled."""
+    attempts = []
+
+    def handle(route):
+        attempts.append(route)
+        if len(attempts) == 1:
+            route.fulfill(
+                status=500, json={"error": "ops exploded", "code": "internal"}
+            )
+        else:
+            route.continue_()
+
+    logged_in_page.route("**/api/recipes/normalize-ops*", handle)
+    logged_in_page.locator(".recipe-card").first.click()
+    logged_in_page.wait_for_selector(".instructions")
+    logged_in_page.locator(".recipe-more-actions > summary").click()
+    logged_in_page.get_by_role("button", name="Re-normalize…", exact=True).click()
+
+    dialog = logged_in_page.get_by_role("dialog", name="Re-normalize recipe")
+    expect(dialog.get_by_text("ops exploded")).to_be_visible()
+    expect(dialog.get_by_role("checkbox")).to_have_count(0)
+
+    dialog.get_by_role("button", name="Retry", exact=True).click()
+
+    expect(dialog.get_by_role("checkbox", name="Normalize title")).to_be_visible()
+    expect(dialog.get_by_text("ops exploded")).to_have_count(0)

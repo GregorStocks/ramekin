@@ -35,11 +35,20 @@ enum ProposalJobMode: Equatable {
 /// one it started from.
 @MainActor
 final class ProposalJobViewModel: ObservableObject {
+    /// Each phase carries its own data and errors, so nothing from one phase
+    /// (a proposal, a failed save) can show in another.
     enum Phase: Equatable {
         case loading
-        case choose
-        case running
-        case review
+        /// The normalize ops didn't load; retrying loads them again.
+        case loadFailed(String)
+        /// Picking ops or writing the instruction. `error` says why the last
+        /// Run didn't start.
+        case choose(error: String?)
+        case starting
+        case running(jobId: UUID, steps: [StepState])
+        /// `error` says why the last Accept didn't save.
+        case review(jobId: UUID, proposal: NormalizeProposalResponse, isAccepting: Bool, error: String?)
+        /// The job failed or was lost; trying again goes back to choosing.
         case failed(String)
     }
 
@@ -48,12 +57,7 @@ final class ProposalJobViewModel: ObservableObject {
     @Published var ops: [NormalizeOpInfo] = []
     @Published var instruction = ""
     @Published var selected: Set<String> = []
-    @Published var phase: Phase = .loading
-    @Published var steps: [StepState] = []
-    @Published var proposal: NormalizeProposalResponse?
-    @Published var error: String?
-    @Published var isBusy = false
-    private(set) var jobId: UUID?
+    @Published private(set) var phase: Phase = .loading
     var pollIntervalNanoseconds: UInt64 = 1_000_000_000
 
     private let api: ProposalJobAPIClient
@@ -65,12 +69,33 @@ final class ProposalJobViewModel: ObservableObject {
     }
 
     var canRun: Bool {
+        guard case .choose = phase else { return false }
         switch mode {
         case .normalize:
             return !effectiveOps.isEmpty
         case .edit:
             return !instruction.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         }
+    }
+
+    /// Starting a job or saving its proposal: the choices are locked and the
+    /// sheet stays open until it answers.
+    var isBusy: Bool {
+        switch phase {
+        case .starting: return true
+        case .review(_, _, let isAccepting, _): return isAccepting
+        default: return false
+        }
+    }
+
+    var steps: [StepState] {
+        guard case .running(_, let steps) = phase else { return [] }
+        return steps
+    }
+
+    var proposal: NormalizeProposalResponse? {
+        guard case .review(_, let proposal, _, _) = phase else { return nil }
+        return proposal
     }
 
     var effectiveOps: [String] {
@@ -105,9 +130,8 @@ final class ProposalJobViewModel: ObservableObject {
     }
 
     func load() async {
-        error = nil
         if case .edit = mode {
-            phase = .choose
+            phase = .choose(error: nil)
             return
         }
         phase = .loading
@@ -115,12 +139,18 @@ final class ProposalJobViewModel: ObservableObject {
             let response = try await api.listOps(recipeId)
             ops = response.ops
             selected = NormalizeSelection.defaultSelection(response.ops)
+            phase = .choose(error: nil)
         } catch is CancellationError {
             return
         } catch {
-            self.error = APIErrorFormatter.userMessage(from: error, fallback: "Failed to load normalize ops")
+            phase = .loadFailed(APIErrorFormatter.userMessage(from: error, fallback: "Failed to load normalize ops"))
         }
-        phase = .choose
+    }
+
+    /// Back to choosing after a failed job, keeping the choices made.
+    func tryAgain() {
+        guard case .failed = phase else { return }
+        phase = .choose(error: nil)
     }
 
     func toggle(_ id: String) {
@@ -139,33 +169,29 @@ final class ProposalJobViewModel: ObservableObject {
 
     /// Starts the job and follows it to its proposal.
     func run() async {
-        isBusy = true
-        error = nil
+        guard canRun else { return }
+        phase = .starting
         let jobId: UUID
         do {
             jobId = try await startJob()
         } catch is CancellationError {
-            isBusy = false
+            phase = .choose(error: nil)
             return
         } catch {
-            self.error = APIErrorFormatter.userMessage(from: error, fallback: "Failed to start")
-            isBusy = false
+            phase = .choose(error: APIErrorFormatter.userMessage(from: error, fallback: "Failed to start"))
             return
         }
-        isBusy = false
-        self.jobId = jobId
-        steps = []
-        phase = .running
+        phase = .running(jobId: jobId, steps: [])
 
         do {
             // AI can be slow, so there's no client deadline (the server
             // fails a step that runs past its own); closing the sheet
             // cancels the task.
             let poller = ScrapeJobPoller(getScrape: api.getScrape, intervalNanoseconds: pollIntervalNanoseconds)
-            switch try await poller.poll(jobId, onUpdate: { steps = $0.steps }) {
+            switch try await poller.poll(jobId, onUpdate: { phase = .running(jobId: jobId, steps: $0.steps) }) {
             case .completed, .recipeReady:
-                proposal = try await api.getProposal(recipeId, jobId)
-                phase = .review
+                let proposal = try await api.getProposal(recipeId, jobId)
+                phase = .review(jobId: jobId, proposal: proposal, isAccepting: false, error: nil)
             case .failed(let job):
                 phase = .failed(job.error ?? "The job failed")
             }
@@ -178,19 +204,22 @@ final class ProposalJobViewModel: ObservableObject {
 
     /// Saves the proposal as the recipe's new version; returns whether it did.
     func accept() async -> Bool {
-        guard let jobId else { return false }
-        isBusy = true
-        error = nil
-        defer { isBusy = false }
+        guard case .review(let jobId, let proposal, false, _) = phase else { return false }
+        phase = .review(jobId: jobId, proposal: proposal, isAccepting: true, error: nil)
+        let message: String?
         do {
             _ = try await api.accept(recipeId, jobId)
+            // Stays accepting: the sheet closes once the recipe reloads.
             return true
         } catch is CancellationError {
-            return false
+            message = nil
         } catch {
-            self.error = APIErrorFormatter.userMessage(from: error, fallback: "Failed to save the new version")
-            return false
+            message = APIErrorFormatter.userMessage(from: error, fallback: "Failed to save the new version")
         }
+        // Only this review's own save may reopen it for another try.
+        guard case .review(jobId, _, true, _) = phase else { return false }
+        phase = .review(jobId: jobId, proposal: proposal, isAccepting: false, error: message)
+        return false
     }
 }
 
@@ -200,6 +229,7 @@ struct ProposalJobSheet: View {
     /// The proposal was saved as the recipe's new version.
     let onAccepted: () async -> Void
     @State private var runTask: Task<Void, Never>?
+    @State private var acceptTask: Task<Void, Never>?
 
     init(
         recipeId: UUID,
@@ -216,11 +246,6 @@ struct ProposalJobSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                if let error = viewModel.error {
-                    Section {
-                        Text(error).foregroundColor(.red)
-                    }
-                }
                 content
             }
             .navigationTitle(viewModel.mode == .normalize ? "Re-normalize" : "Edit with AI")
@@ -230,7 +255,10 @@ struct ProposalJobSheet: View {
         }
         .task { await viewModel.load() }
         // Closing the sheet abandons the job; it proposes, so nothing is saved.
-        .onDisappear { runTask?.cancel() }
+        .onDisappear {
+            runTask?.cancel()
+            acceptTask?.cancel()
+        }
     }
 
     @ViewBuilder
@@ -240,7 +268,58 @@ struct ProposalJobSheet: View {
             Section {
                 ProgressView().frame(maxWidth: .infinity)
             }
-        case .choose where viewModel.mode != .normalize:
+        case .loadFailed(let message):
+            Section {
+                Text(message).foregroundColor(.red)
+                Button("Retry") {
+                    Task { await viewModel.load() }
+                }
+            }
+        case .choose(let error):
+            errorSection(error)
+            chooseContent
+        case .starting:
+            chooseContent
+        case .running:
+            Section("Progress") {
+                if viewModel.steps.isEmpty {
+                    Text("Starting…")
+                }
+                ForEach(viewModel.steps, id: \.name) { step in
+                    stepRow(step)
+                }
+            }
+        case .review(_, let proposal, _, let error):
+            errorSection(error)
+            reviewContent(proposal)
+        case .failed(let message):
+            Section {
+                Text(message).foregroundColor(.red)
+                Button("Try Again") { viewModel.tryAgain() }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func errorSection(_ error: String?) -> some View {
+        if let error {
+            Section {
+                Text(error).foregroundColor(.red)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var chooseContent: some View {
+        if viewModel.mode == .normalize {
+            Section {
+                Text("Source ops replace the recipe's content, hand edits included. You review the result before it's saved.")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+            }
+            opSection(.source, title: "Source")
+            opSection(.normalize, title: "Normalize")
+        } else {
             Section("What would you like to change?") {
                 TextField(
                     "e.g., make this vegan, convert to grams, cut it to 500 kcal a serving…",
@@ -255,47 +334,29 @@ struct ProposalJobSheet: View {
                     .font(.footnote)
                     .foregroundColor(.secondary)
             }
-        case .choose:
+        }
+    }
+
+    @ViewBuilder
+    private func reviewContent(_ proposal: NormalizeProposalResponse) -> some View {
+        if let summary = proposal.summary, !summary.isEmpty {
+            Section("Summary") {
+                Text(summary)
+            }
+        }
+        if viewModel.photosChange {
             Section {
-                Text("Source ops replace the recipe's content, hand edits included. You review the result before it's saved.")
-                    .font(.footnote)
+                Text("The recipe's photos change.")
                     .foregroundColor(.secondary)
             }
-            opSection(.source, title: "Source")
-            opSection(.normalize, title: "Normalize")
-        case .running:
-            Section("Progress") {
-                if viewModel.steps.isEmpty {
-                    Text("Starting…")
-                }
-                ForEach(viewModel.steps, id: \.name) { step in
-                    stepRow(step)
-                }
-            }
-        case .review:
-            if let summary = viewModel.proposal?.summary, !summary.isEmpty {
-                Section("Summary") {
-                    Text(summary)
-                }
-            }
-            if viewModel.photosChange {
-                Section {
-                    Text("The recipe's photos change.")
-                        .foregroundColor(.secondary)
-                }
-            }
-            Section("Changes") {
-                RecipeContentDiffView(
-                    diffs: viewModel.diffs,
-                    emptyMessage: viewModel.photosChange
-                        ? "No other fields change."
-                        : "Nothing changes, so there is nothing to save."
-                )
-            }
-        case .failed(let message):
-            Section {
-                Text(message).foregroundColor(.red)
-            }
+        }
+        Section("Changes") {
+            RecipeContentDiffView(
+                diffs: viewModel.diffs,
+                emptyMessage: viewModel.photosChange
+                    ? "No other fields change."
+                    : "Nothing changes, so there is nothing to save."
+            )
         }
     }
 
@@ -351,7 +412,7 @@ struct ProposalJobSheet: View {
 
     private var cancelTitle: String {
         switch viewModel.phase {
-        case .choose, .loading: return "Cancel"
+        case .choose, .loading, .loadFailed, .starting: return "Cancel"
         case .review where viewModel.hasChanges: return "Discard"
         default: return "Close"
         }
@@ -364,20 +425,22 @@ struct ProposalJobSheet: View {
                 runTask?.cancel()
                 isPresented = false
             }
+            // Closing mid-save would leave the save running unseen.
+            .disabled(viewModel.isBusy)
         }
         ToolbarItem(placement: .confirmationAction) {
             switch viewModel.phase {
-            case .choose:
+            case .choose, .starting:
                 Button("Run") {
                     runTask = Task { await viewModel.run() }
                 }
-                .disabled(!viewModel.canRun || viewModel.isBusy)
-            case .review where viewModel.hasChanges:
-                if viewModel.isBusy {
+                .disabled(!viewModel.canRun)
+            case .review(_, _, let isAccepting, _) where viewModel.hasChanges:
+                if isAccepting {
                     ProgressView().accessibilityLabel("Saving")
                 } else {
                     Button("Accept") {
-                        Task {
+                        acceptTask = Task {
                             if await viewModel.accept() {
                                 await onAccepted()
                                 isPresented = false
