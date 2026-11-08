@@ -11,6 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { IngredientNamesStallFromJSON, IngredientNamesStallToJSON, } from './IngredientNamesStall';
 import { IngredientNameFailureFromJSON, IngredientNameFailureToJSON, } from './IngredientNameFailure';
 /**
  * Check if a given object implements the IngredientNamesStatusResponse interface.
@@ -46,6 +47,7 @@ export function IngredientNamesStatusResponseFromJSONTyped(json, ignoreDiscrimin
         'notFood': json['not_food'],
         'pending': json['pending'],
         'recognized': json['recognized'],
+        'stall': json['stall'] == null ? undefined : IngredientNamesStallFromJSON(json['stall']),
         'unknown': json['unknown'],
     };
 }
@@ -63,6 +65,7 @@ export function IngredientNamesStatusResponseToJSONTyped(value, ignoreDiscrimina
         'not_food': value['notFood'],
         'pending': value['pending'],
         'recognized': value['recognized'],
+        'stall': IngredientNamesStallToJSON(value['stall']),
         'unknown': value['unknown'],
     };
 }

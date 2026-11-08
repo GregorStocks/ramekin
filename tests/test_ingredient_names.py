@@ -5,6 +5,7 @@ import os
 import threading
 import time
 import uuid
+from datetime import datetime, timezone
 
 import pytest
 import requests
@@ -433,6 +434,10 @@ def test_provider_outage_leaves_names_queued(authed_api_client):
         wait_for(lambda: mock_calls(item.lower()) >= 1)
         assert failures_named(names_api, item.lower()) == []
         assert estimate(api, item).resolving
+        # The stall is recorded where the status shows it, not just logged.
+        stall = wait_for(lambda: names_api.get_ingredient_names_status().stall)
+        assert stall.error
+        assert stall.next_attempt_at > datetime.now(timezone.utc)
     finally:
         mock_outage(item.lower(), False)
     # Queuing another name wakes the worker from its backoff.
@@ -440,6 +445,11 @@ def test_provider_outage_leaves_names_queued(authed_api_client):
     resolved = wait_for(lambda: (e := estimate(api, item)) and not e.resolving and e)
     assert resolved.lines[0].text != "Not recognized"
     assert failures_named(names_api, item.lower()) == []
+    # Resolving the names clears it.
+    status = wait_for(
+        lambda: (s := names_api.get_ingredient_names_status()) and s.pending == 0 and s
+    )
+    assert status.stall is None
 
 
 def test_foods_no_entry_matches_are_estimated(authed_api_client):

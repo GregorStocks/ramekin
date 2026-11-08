@@ -3677,6 +3677,24 @@
           }
         }
       },
+      "IngredientNamesStall": {
+        "type": "object",
+        "description": "The background resolver's last pass failed for a reason that isn't any\none name's (the provider is down, rate-limited, or misconfigured), so\npending names wait for it to try again.",
+        "required": [
+          "error",
+          "next_attempt_at"
+        ],
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "next_attempt_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the resolver tries again at the latest. A newly queued name or a\nRetry can make it try sooner."
+          }
+        }
+      },
       "IngredientNamesStatusResponse": {
         "type": "object",
         "required": [
@@ -3720,6 +3738,17 @@
             "type": "integer",
             "format": "int64",
             "description": "Resolved to a catalog food or product (for an ambiguous name, the one\na recipe most likely means)."
+          },
+          "stall": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/IngredientNamesStall",
+                "description": "Set while pending names are waiting on a resolver that keeps failing."
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "unknown": {
             "type": "integer",

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **not_food** | **i64** | Resolved as not an ingredient (a heading, a serving note). | 
 **pending** | **i64** | Waiting for the background resolver (including names whose answer was invalid and will be asked again). | 
 **recognized** | **i64** | Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means). | 
+**stall** | Option<[**models::IngredientNamesStall**](IngredientNamesStall.md)> | Set while pending names are waiting on a resolver that keeps failing. | [optional]
 **unknown** | **i64** | Resolved, but the model couldn't tell; still unknown in estimates. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

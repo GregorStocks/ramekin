@@ -250,9 +250,19 @@ pub fn record(
             .execute(conn)?;
     }
     if let Some(undoes) = undoes {
-        diesel::update(shopping_list_history::table.find(undoes))
-            .set(shopping_list_history::undone_by_id.eq(id))
-            .execute(conn)?;
+        // The undo endpoint checks the entry isn't undone already, in this
+        // same write; the filter makes the write itself refuse a second undo
+        // rather than repoint the entry at it.
+        let marked = diesel::update(
+            shopping_list_history::table
+                .find(undoes)
+                .filter(shopping_list_history::undone_by_id.is_null()),
+        )
+        .set(shopping_list_history::undone_by_id.eq(id))
+        .execute(conn)?;
+        if marked != 1 {
+            return Err(diesel::result::Error::NotFound);
+        }
     }
     Ok(Some(id))
 }
@@ -458,6 +468,42 @@ mod tests {
 
     fn deleted(item: &str) -> Event {
         event(OpKind::Delete, Some(fields(item)), None)
+    }
+
+    #[test]
+    fn an_entry_is_undone_once() {
+        use diesel::connection::SimpleConnection;
+        let dir = crate::files::temp_dir("history-undo-test");
+        let pool = crate::db::test_pool(&dir);
+        let mut conn = pool.get().unwrap();
+        let user_id = Uuid::now_v7();
+        let item = event(OpKind::Create, None, Some(fields("milk")));
+        conn.batch_execute(&format!(
+            "INSERT INTO users (id, username, password_hash) VALUES ('{user_id}', 'u', '');
+             INSERT INTO shopping_list_items (id, user_id, item) VALUES ('{}', '{user_id}', 'milk');",
+            item.item_id
+        ))
+        .unwrap();
+        let events = [item];
+        let now = Utc::now();
+        let entry = record(&mut conn, user_id, now, &events, None)
+            .unwrap()
+            .unwrap();
+        let undo = record(&mut conn, user_id, now, &events, Some(entry))
+            .unwrap()
+            .unwrap();
+        // A second undo of the same entry is refused, not recorded over the
+        // first.
+        let again = conn.transaction(|conn| record(conn, user_id, now, &events, Some(entry)));
+        assert!(again.is_err());
+        let undone_by: Option<Uuid> = shopping_list_history::table
+            .find(entry)
+            .select(shopping_list_history::undone_by_id)
+            .first(&mut conn)
+            .unwrap();
+        assert_eq!(undone_by, Some(undo));
+        drop(conn);
+        std::fs::remove_dir_all(&dir).unwrap();
     }
 
     #[test]

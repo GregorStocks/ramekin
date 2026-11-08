@@ -13,6 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
+import type { IngredientNamesStall } from './IngredientNamesStall';
+import {
+    IngredientNamesStallFromJSON,
+    IngredientNamesStallFromJSONTyped,
+    IngredientNamesStallToJSON,
+    IngredientNamesStallToJSONTyped,
+} from './IngredientNamesStall';
 import type { IngredientNameFailure } from './IngredientNameFailure';
 import {
     IngredientNameFailureFromJSON,
@@ -67,6 +74,12 @@ export interface IngredientNamesStatusResponse {
      */
     recognized: number;
     /**
+     * Set while pending names are waiting on a resolver that keeps failing.
+     * @type {IngredientNamesStall}
+     * @memberof IngredientNamesStatusResponse
+     */
+    stall?: IngredientNamesStall | null;
+    /**
      * Resolved, but the model couldn't tell; still unknown in estimates.
      * @type {number}
      * @memberof IngredientNamesStatusResponse
@@ -104,6 +117,7 @@ export function IngredientNamesStatusResponseFromJSONTyped(json: any, ignoreDisc
         'notFood': json['not_food'],
         'pending': json['pending'],
         'recognized': json['recognized'],
+        'stall': json['stall'] == null ? undefined : IngredientNamesStallFromJSON(json['stall']),
         'unknown': json['unknown'],
     };
 }
@@ -125,6 +139,7 @@ export function IngredientNamesStatusResponseToJSONTyped(value?: IngredientNames
         'not_food': value['notFood'],
         'pending': value['pending'],
         'recognized': value['recognized'],
+        'stall': IngredientNamesStallToJSON(value['stall']),
         'unknown': value['unknown'],
     };
 }

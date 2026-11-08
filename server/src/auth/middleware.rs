@@ -10,7 +10,7 @@ use axum::{
 };
 use std::sync::Arc;
 
-use super::db::{get_user_from_token, TOKEN_TYPE_BOOKMARKLET};
+use super::db::{get_user_from_token, TOKEN_TYPE_SESSION};
 
 /// Whether a bookmarklet-scoped token may access `(method, path)`.
 ///
@@ -76,8 +76,10 @@ pub async fn require_auth(
         None => return ApiError::unauthorized("Invalid or expired token").into_response(),
     };
 
-    // Bookmarklet tokens are restricted to the capture flow's endpoints.
-    if token_type == TOKEN_TYPE_BOOKMARKLET
+    // Bookmarklet tokens are restricted to the capture flow's endpoints. The
+    // sessions table only holds the two types, but any token that isn't a
+    // login session gets the narrower scope rather than the wider one.
+    if token_type != TOKEN_TYPE_SESSION
         && !bookmarklet_scope_allows(request.method(), request.uri().path())
     {
         return ApiError::forbidden(

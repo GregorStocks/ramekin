@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { IngredientNamesStall } from './IngredientNamesStall';
 import type { IngredientNameFailure } from './IngredientNameFailure';
 /**
  *
@@ -55,6 +56,12 @@ export interface IngredientNamesStatusResponse {
      * @memberof IngredientNamesStatusResponse
      */
     recognized: number;
+    /**
+     * Set while pending names are waiting on a resolver that keeps failing.
+     * @type {IngredientNamesStall}
+     * @memberof IngredientNamesStatusResponse
+     */
+    stall?: IngredientNamesStall | null;
     /**
      * Resolved, but the model couldn't tell; still unknown in estimates.
      * @type {number}

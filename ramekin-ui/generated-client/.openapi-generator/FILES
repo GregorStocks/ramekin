@@ -57,6 +57,7 @@ docs/Ingredient.md
 docs/IngredientNameFailure.md
 docs/IngredientNamesApi.md
 docs/IngredientNamesQueuedResponse.md
+docs/IngredientNamesStall.md
 docs/IngredientNamesStatusResponse.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
@@ -164,6 +165,7 @@ models/ImportRecipeResponse.ts
 models/Ingredient.ts
 models/IngredientNameFailure.ts
 models/IngredientNamesQueuedResponse.ts
+models/IngredientNamesStall.ts
 models/IngredientNamesStatusResponse.ts
 models/ListRecipesResponse.ts
 models/LoginRequest.ts

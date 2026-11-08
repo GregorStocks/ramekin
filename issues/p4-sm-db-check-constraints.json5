@@ -1,14 +1,15 @@
 {
-  "title": "DB: CHECK constraints for status-like TEXT columns and paired fields",
-  "description": "Columns that encode states with nothing enforcing the set or the pairing: step_outputs success/error (baseline 232-243), mirrored by ramekin-core StepResult's success: bool + error: Option (pipeline/step.rs:32-47), which could be a Result-like enum; output_hash = '' as the 'stored inline' sentinel (scraping/output_store.rs:100-114); sessions.token_type (baseline 26-33; string compare in auth/middleware.rs:80); recipe_versions.version_source (set from normalize.rs:35-39 and literals like 'user' in api/recipes/create.rs:104); recipes deleted_at/deleted_seq (deleted_seq set only by the recipes_stamp_delete trigger); shopping_list_history undoes_id/undone_by_id, whose update (api/shopping_list/history.rs:252-255) also lacks WHERE undone_by_id IS NULL and relies on the same transaction's 'already undone' check. \
-Check prod rows against each constraint before adding it; backfill, never delete. \
-Found in the 2026-11-07 implicit-state-machine audit; line numbers are as of e94669d4ca, so re-check each point before fixing.",
+  "title": "Model StepResult as a Result-like enum; pin recipes deleted_at => deleted_seq",
+  "description": "Left over from the 2026-11-07 CHECK constraints work, which added CHECKs for step_outputs (success/error pairing, output_hash NULL for inline), sessions.token_type, recipe_versions.version_source, recipes.deleted_seq, and the shopping_list_history undo pairing. (1) ramekin-core pipeline/step.rs StepResult still carries success: bool + error: Option<String>, and StepOutputStore::save_output takes the same pair; the server maps the pair to a Result when it writes a row (scraping/output_store.rs step_outcome). \
+Making StepResult hold a Result-like outcome touches about 60 constructors and 35 readers across ramekin-core, server and cli, and a failed step can still carry output (the executor saves failure output to root-cause runs), so the enum needs an output on both arms. (2) recipes only has CHECK (deleted_seq IS NULL OR deleted_at IS NOT NULL). \
+The converse can't be a CHECK while recipes_stamp_delete sets deleted_seq in an AFTER UPDATE trigger, since the UPDATE that sets deleted_at briefly leaves deleted_seq NULL; it would need the soft delete (api/recipes/delete.rs) to take the clock stamp itself.",
   "status": "open",
   "priority": 4,
   "type": "task",
   "labels": [
     "api",
+    "pipeline",
   ],
   "created_at": "2026-11-07T08:15:00-08:00",
-  "updated_at": "2026-11-07T08:15:00-08:00",
+  "updated_at": "2026-11-07T15:00:00-08:00",
 }

@@ -361,9 +361,9 @@ pub struct StepOutput {
     pub summary: Option<String>,
     pub success: bool,
     pub error: Option<String>,
-    /// The file in the [`crate::files::FileStore`] holding the output, or ''
-    /// when it's inline in `output`.
-    pub output_hash: String,
+    /// The file in the [`crate::files::FileStore`] holding the output, or
+    /// None when it's inline in `output`.
+    pub output_hash: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -378,7 +378,7 @@ pub struct NewStepOutput {
     pub summary: Option<String>,
     pub success: bool,
     pub error: Option<String>,
-    pub output_hash: String,
+    pub output_hash: Option<String>,
 }
 
 #[derive(Insertable)]

@@ -18,8 +18,9 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from ramekin_client.models.ingredient_name_failure import IngredientNameFailure
+from ramekin_client.models.ingredient_names_stall import IngredientNamesStall
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,8 +34,9 @@ class IngredientNamesStatusResponse(BaseModel):
     not_food: StrictInt = Field(description="Resolved as not an ingredient (a heading, a serving note).")
     pending: StrictInt = Field(description="Waiting for the background resolver (including names whose answer was invalid and will be asked again).")
     recognized: StrictInt = Field(description="Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means).")
+    stall: Optional[IngredientNamesStall] = Field(default=None, description="Set while pending names are waiting on a resolver that keeps failing.")
     unknown: StrictInt = Field(description="Resolved, but the model couldn't tell; still unknown in estimates.")
-    __properties: ClassVar[List[str]] = ["estimated", "failed", "failures", "not_food", "pending", "recognized", "unknown"]
+    __properties: ClassVar[List[str]] = ["estimated", "failed", "failures", "not_food", "pending", "recognized", "stall", "unknown"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +84,14 @@ class IngredientNamesStatusResponse(BaseModel):
                 if _item_failures:
                     _items.append(_item_failures.to_dict())
             _dict['failures'] = _items
+        # override the default output from pydantic by calling `to_dict()` of stall
+        if self.stall:
+            _dict['stall'] = self.stall.to_dict()
+        # set to None if stall (nullable) is None
+        # and model_fields_set contains the field
+        if self.stall is None and "stall" in self.model_fields_set:
+            _dict['stall'] = None
+
         return _dict
 
     @classmethod
@@ -100,6 +110,7 @@ class IngredientNamesStatusResponse(BaseModel):
             "not_food": obj.get("not_food"),
             "pending": obj.get("pending"),
             "recognized": obj.get("recognized"),
+            "stall": IngredientNamesStall.from_dict(obj["stall"]) if obj.get("stall") is not None else None,
             "unknown": obj.get("unknown")
         })
         return _obj

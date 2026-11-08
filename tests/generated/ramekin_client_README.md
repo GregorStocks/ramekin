@@ -153,6 +153,7 @@ Class | Method | HTTP request | Description
  - [Ingredient](ramekin_client/docs/Ingredient.md)
  - [IngredientNameFailure](ramekin_client/docs/IngredientNameFailure.md)
  - [IngredientNamesQueuedResponse](ramekin_client/docs/IngredientNamesQueuedResponse.md)
+ - [IngredientNamesStall](ramekin_client/docs/IngredientNamesStall.md)
  - [IngredientNamesStatusResponse](ramekin_client/docs/IngredientNamesStatusResponse.md)
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)

@@ -43,7 +43,7 @@ fn put(store: &FileStore, json: &[u8]) -> anyhow::Result<String> {
 pub struct PreparedOutput {
     summary: Option<String>,
     output: JsonValue,
-    output_hash: String,
+    output_hash: Option<String>,
 }
 
 impl PreparedOutput {
@@ -56,13 +56,13 @@ impl PreparedOutput {
             return Ok(Self {
                 summary,
                 output,
-                output_hash: String::new(),
+                output_hash: None,
             });
         }
         Ok(Self {
             summary,
             output: JsonValue::Null,
-            output_hash: put(store, &json)?,
+            output_hash: Some(put(store, &json)?),
         })
     }
 
@@ -73,14 +73,15 @@ impl PreparedOutput {
         tokio::task::spawn_blocking(move || Self::new(files::live(), &step_name, output)).await?
     }
 
-    /// The row recording this output of step `step_name` in job `job_id`.
+    /// The row recording this output of step `step_name` in job `job_id`,
+    /// which succeeded or failed with an error (the table's CHECK pairs
+    /// them).
     pub fn into_row(
         self,
         job_id: Uuid,
         step_name: &str,
         duration_ms: Option<i64>,
-        success: bool,
-        error: Option<&str>,
+        outcome: Result<(), &str>,
     ) -> NewStepOutput {
         NewStepOutput {
             id: Uuid::now_v7(),
@@ -90,18 +91,22 @@ impl PreparedOutput {
             output: self.output,
             duration_ms,
             summary: self.summary,
-            success,
-            error: error.map(|s| s.to_string()),
+            success: outcome.is_ok(),
+            error: outcome.err().map(str::to_string),
             output_hash: self.output_hash,
         }
     }
 }
 
 /// The output a row holds: `output` itself, or the file `output_hash` names.
-fn load(store: &FileStore, output: JsonValue, output_hash: &str) -> anyhow::Result<JsonValue> {
-    if output_hash.is_empty() {
+fn load(
+    store: &FileStore,
+    output: JsonValue,
+    output_hash: Option<&str>,
+) -> anyhow::Result<JsonValue> {
+    let Some(output_hash) = output_hash else {
         return Ok(output);
-    }
+    };
     let bytes = store.read(output_hash)?;
     // Files from before compression hold the JSON as is, and JSON never
     // starts with zstd's magic number.
@@ -124,7 +129,7 @@ pub async fn latest_output(
     successful: bool,
 ) -> anyhow::Result<Option<JsonValue>> {
     let step_name = step_name.to_string();
-    let row: Option<(JsonValue, String)> = run_blocking(pool, move |conn| {
+    let row: Option<(JsonValue, Option<String>)> = run_blocking(pool, move |conn| {
         let mut query = step_outputs::table
             .filter(step_outputs::scrape_job_id.eq(job_id))
             .filter(step_outputs::step_name.eq(step_name))
@@ -143,7 +148,8 @@ pub async fn latest_output(
         return Ok(None);
     };
     let output =
-        tokio::task::spawn_blocking(move || load(files::live(), output, &output_hash)).await??;
+        tokio::task::spawn_blocking(move || load(files::live(), output, output_hash.as_deref()))
+            .await??;
     Ok(Some(output))
 }
 
@@ -157,7 +163,7 @@ pub fn copy_output(
     to_job: Uuid,
     step_name: &str,
 ) -> QueryResult<bool> {
-    let row: Option<(JsonValue, String, Option<String>, String)> = step_outputs::table
+    let row: Option<(JsonValue, Option<String>, Option<String>, String)> = step_outputs::table
         .filter(step_outputs::scrape_job_id.eq(from_job))
         .filter(step_outputs::step_name.eq(step_name))
         .filter(step_outputs::success.eq(true))
@@ -212,7 +218,7 @@ pub fn move_outputs_out(conn: &mut SqliteConnection) -> anyhow::Result<()> {
     loop {
         // Characters, not bytes, but a text is never shorter in bytes.
         let batch: Vec<(Uuid, JsonValue)> = step_outputs::table
-            .filter(step_outputs::output_hash.eq(""))
+            .filter(step_outputs::output_hash.is_null())
             .filter(length(step_outputs::output).gt(INLINE_LIMIT as i64))
             .select((step_outputs::id, step_outputs::output))
             .limit(MOVE_BATCH)
@@ -242,6 +248,15 @@ pub fn move_outputs_out(conn: &mut SqliteConnection) -> anyhow::Result<()> {
         tracing::info!(moved, dir = %store.dir().display(), "moved large step outputs out of the database");
     }
     Ok(())
+}
+
+/// A step's outcome as `StepResult` reports it: `success`, and an error that
+/// only a failure carries. A failure without a message still gets one.
+fn step_outcome(success: bool, error: Option<&str>) -> Result<(), &str> {
+    match (success, error) {
+        (true, _) => Ok(()),
+        (false, error) => Err(error.unwrap_or("The step failed without an error message.")),
+    }
 }
 
 /// Database-backed output store for server pipeline runs.
@@ -294,7 +309,12 @@ impl<'a> DbOutputStore<'a> {
         let new_output = PreparedOutput::prepare(step_name, output.clone())
             .await
             .map_err(|e| Box::<dyn Error + Send + Sync>::from(format!("{e:#}")))?
-            .into_row(self.job_id, step_name, Some(duration_ms), success, error);
+            .into_row(
+                self.job_id,
+                step_name,
+                Some(duration_ms),
+                step_outcome(success, error),
+            );
 
         crate::db::run_blocking_write(self.pool, move |conn| {
             diesel::insert_into(step_outputs::table)
@@ -350,22 +370,19 @@ mod tests {
         let small = serde_json::json!({ "recipe_id": "r" });
         let prepared = PreparedOutput::new(&store, "save_recipe", small.clone()).unwrap();
         assert_eq!(prepared.output, small);
-        assert_eq!(prepared.output_hash, "");
+        assert_eq!(prepared.output_hash, None);
         assert_eq!(
-            load(&store, prepared.output, &prepared.output_hash).unwrap(),
+            load(&store, prepared.output, prepared.output_hash.as_deref()).unwrap(),
             small
         );
 
         let large = page(0);
         let prepared = PreparedOutput::new(&store, "fetch_html", large.clone()).unwrap();
         assert_eq!(prepared.output, JsonValue::Null);
-        assert_ne!(prepared.output_hash, "");
-        let stored = store.read(&prepared.output_hash).unwrap();
+        let hash = prepared.output_hash.as_deref().unwrap();
+        let stored = store.read(hash).unwrap();
         assert!(stored.len() < serde_json::to_vec(&large).unwrap().len() / 2);
-        assert_eq!(
-            load(&store, prepared.output, &prepared.output_hash).unwrap(),
-            large
-        );
+        assert_eq!(load(&store, prepared.output, Some(hash)).unwrap(), large);
         std::fs::remove_dir_all(&dir).unwrap();
     }
 
@@ -375,7 +392,7 @@ mod tests {
         let store = FileStore::new(dir.join("files"));
         let large = page(0);
         let hash = store.put(&serde_json::to_vec(&large).unwrap()).unwrap();
-        assert_eq!(load(&store, JsonValue::Null, &hash).unwrap(), large);
+        assert_eq!(load(&store, JsonValue::Null, Some(&hash)).unwrap(), large);
         std::fs::remove_dir_all(&dir).unwrap();
     }
 
@@ -417,7 +434,7 @@ mod tests {
         move_outputs_out(&mut conn).unwrap();
 
         let store = FileStore::beside(&database);
-        let rows: Vec<(Uuid, JsonValue, String)> = step_outputs::table
+        let rows: Vec<(Uuid, JsonValue, Option<String>)> = step_outputs::table
             .order(step_outputs::id)
             .select((
                 step_outputs::id,
@@ -429,10 +446,13 @@ mod tests {
         assert_eq!(rows.len(), count + 1);
         for (i, (_, output, output_hash)) in rows.iter().take(count).enumerate() {
             assert_eq!(*output, JsonValue::Null);
-            assert_eq!(load(&store, output.clone(), output_hash).unwrap(), page(i));
+            assert_eq!(
+                load(&store, output.clone(), output_hash.as_deref()).unwrap(),
+                page(i)
+            );
         }
         let (_, output, output_hash) = rows.last().unwrap();
-        assert_eq!((output, output_hash.as_str()), (&small, ""));
+        assert_eq!((output, output_hash), (&small, &None));
 
         // Run again, as every later startup does: nothing to do.
         move_outputs_out(&mut conn).unwrap();
