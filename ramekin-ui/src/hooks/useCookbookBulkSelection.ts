@@ -9,6 +9,13 @@ import { createRequestTracker } from "../utils/requestTracker";
 
 export type BulkOperation = "rescrapePhoto" | "photo";
 
+/**
+ * The outcome of the last bulk action, kept apart from the list's own load
+ * error: reloading or paging the list must not wipe it.
+ */
+export type BulkResult =
+  { kind: "error"; message: string } | { kind: "notice"; message: string };
+
 export interface BulkProgress {
   operation: BulkOperation;
   done: number;
@@ -21,8 +28,6 @@ interface UseCookbookBulkSelectionOptions {
   recipes: Accessor<RecipeSummary[]>;
   total: Accessor<number>;
   reloadRecipes: () => Promise<void>;
-  setError: (error: string | null) => void;
-  setNotice: (notice: string | null) => void;
 }
 
 export function useCookbookBulkSelection(
@@ -30,9 +35,8 @@ export function useCookbookBulkSelection(
 ) {
   const [bulkMode, setBulkMode] = createSignal(false);
   const [selected, setSelected] = createSignal<Set<string>>(new Set());
-  const [selectAllStatus, setSelectAllStatus] = createSignal<string | null>(
-    null,
-  );
+  const [selectingAll, setSelectingAll] = createSignal(false);
+  const [result, setResult] = createSignal<BulkResult | null>(null);
   const [bulkRecipes, setBulkRecipes] = createSignal<RecipeSummary[]>([]);
   const [showPdfModal, setShowPdfModal] = createSignal(false);
   const [showReNormalizeModal, setShowReNormalizeModal] = createSignal(false);
@@ -102,18 +106,16 @@ export function useCookbookBulkSelection(
   };
 
   const selectAll = async () => {
-    setSelectAllStatus("Loading…");
+    if (selectingAll()) return;
+    setSelectingAll(true);
+    setResult(null);
     try {
       const all = await fetchAllMatching();
-      if (all === null) {
-        setSelectAllStatus(null);
-        return;
-      }
-      setSelected(new Set(all.map((recipe) => recipe.id)));
-      setSelectAllStatus(null);
+      if (all !== null) setSelected(new Set(all.map((recipe) => recipe.id)));
     } catch {
-      setSelectAllStatus(null);
-      options.setError("Failed to load all recipes");
+      setResult({ kind: "error", message: "Failed to load all recipes" });
+    } finally {
+      setSelectingAll(false);
     }
   };
 
@@ -135,7 +137,7 @@ export function useCookbookBulkSelection(
       try {
         await fetchAllMatching();
       } catch {
-        options.setError(errorMessage);
+        setResult({ kind: "error", message: errorMessage });
         return false;
       }
     }
@@ -191,8 +193,7 @@ export function useCookbookBulkSelection(
     const ids = Array.from(selected());
     if (ids.length === 0 || !window.confirm(confirm(ids.length))) return;
 
-    options.setError(null);
-    options.setNotice(null);
+    setResult(null);
     setBulkProgress({ operation, done: 0, total: ids.length });
     const summary = await runRecipeAiBatchOperation({
       ids,
@@ -205,8 +206,10 @@ export function useCookbookBulkSelection(
     if (reloadRecipes) await options.reloadRecipes();
 
     const message = summarize(summary);
-    if (summary.errors.length > 0) options.setError(message);
-    else options.setNotice(message);
+    setResult({
+      kind: summary.errors.length > 0 ? "error" : "notice",
+      message,
+    });
   };
 
   const bulkGeneratePhoto = async () => {
@@ -247,7 +250,8 @@ export function useCookbookBulkSelection(
   return {
     bulkMode,
     selected,
-    selectAllStatus,
+    selectingAll,
+    result,
     showPdfModal,
     setShowPdfModal,
     showReNormalizeModal,

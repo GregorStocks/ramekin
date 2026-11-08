@@ -57,7 +57,6 @@ function setup() {
   const [query, setQuery] = createSignal("");
   const [sortOption, setSortOption] = createSignal<SortOption>("newest");
   let error: string | null = null;
-  let notice: string | null = null;
 
   const state = createCookbookRecipeRequests({
     getRecipesApi: () => api,
@@ -67,9 +66,6 @@ function setup() {
     setError: (value) => {
       error = value;
     },
-    setNotice: (value) => {
-      notice = value;
-    },
   });
 
   return {
@@ -78,7 +74,6 @@ function setup() {
     setQuery,
     setSortOption,
     getError: () => error,
-    getNotice: () => notice,
   };
 }
 
@@ -245,7 +240,7 @@ describe("createCookbookRecipeRequests", () => {
   });
 
   it("appends the next page when nothing superseded the request", async () => {
-    const { state, pending, getNotice } = setup();
+    const { state, pending } = setup();
 
     state.resetAndLoad();
     pending[0].resolve(page(["a-1", "a-2"], 3));
@@ -263,7 +258,6 @@ describe("createCookbookRecipeRequests", () => {
     expect(state.offset()).toBe(3);
     expect(state.hasMore()).toBe(false);
     expect(state.loadingMore()).toBe(false);
-    expect(getNotice()).toBeNull();
   });
 
   it("keeps unchanged recipe objects across a reload", async () => {

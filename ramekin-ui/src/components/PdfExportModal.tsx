@@ -1,4 +1,4 @@
-import { createMemo, createSignal, Show } from "solid-js";
+import { createMemo, createSignal, onCleanup, Show } from "solid-js";
 import jsPDF from "jspdf";
 import Modal from "./Modal";
 import type { RecipeSummary } from "ramekin-client";
@@ -14,6 +14,7 @@ import {
   type PdfFlipDirection,
   type PdfImageData,
 } from "../utils/pdfExport";
+import { createRequestTracker } from "../utils/requestTracker";
 
 interface Props {
   isOpen: () => boolean;
@@ -49,6 +50,16 @@ export default function PdfExportModal(props: Props) {
     { done: 0, total: 0 },
   );
   const [error, setError] = createSignal<string | null>(null);
+  // Closing the modal (Cancel, Escape, backdrop) abandons a generation in
+  // flight: it must not save a file or close the modal again afterwards.
+  const runs = createRequestTracker();
+  onCleanup(() => runs.invalidate());
+
+  const close = () => {
+    runs.invalidate();
+    setGenerating(false);
+    props.onClose();
+  };
 
   const pageSize = createMemo(() =>
     orientation() === "portrait"
@@ -110,6 +121,8 @@ export default function PdfExportModal(props: Props) {
     }
     const { cols, perPage } = l;
 
+    const run = runs.start();
+    const abandoned = () => !runs.isCurrent(run);
     setGenerating(true);
     setError(null);
     setProgress({ done: 0, total: chosen.length });
@@ -408,6 +421,7 @@ export default function PdfExportModal(props: Props) {
           const { x, y } = cardRect(col, row);
           drawCardBorder(x, y);
           await drawFrontCard(recipe, x, y);
+          if (abandoned()) return;
           if (!twoSided) {
             setProgress({ done: recipeIdx + 1, total: chosen.length });
           }
@@ -430,6 +444,7 @@ export default function PdfExportModal(props: Props) {
             const { x, y } = cardRect(backCol, backRow);
             drawCardBorder(x, y);
             await drawBackCard(recipe, x, y);
+            if (abandoned()) return;
             setProgress({ done: recipeIdx + 1, total: chosen.length });
           }
 
@@ -437,28 +452,25 @@ export default function PdfExportModal(props: Props) {
         }
       }
 
+      if (abandoned()) return;
       doc.save("recipe-cards.pdf");
-      props.onClose();
+      close();
     } catch (e) {
+      if (abandoned()) return;
       setError(e instanceof Error ? e.message : "Failed to generate PDF");
     } finally {
-      setGenerating(false);
+      if (!abandoned()) setGenerating(false);
     }
   };
 
   return (
     <Modal
       isOpen={props.isOpen}
-      onClose={props.onClose}
+      onClose={close}
       title={`Export ${props.recipes().length} recipes to PDF`}
       actions={
         <>
-          <button
-            type="button"
-            class="btn btn-small"
-            onClick={props.onClose}
-            disabled={generating()}
-          >
+          <button type="button" class="btn btn-small" onClick={close}>
             Cancel
           </button>
           <button

@@ -12,7 +12,6 @@ interface UseCookbookRecipesOptions {
   hasTextQuery: Accessor<boolean>;
   density: Accessor<Density>;
   setError: (error: string | null) => void;
-  setNotice: (notice: string | null) => void;
 }
 
 export function useCookbookRecipes(options: UseCookbookRecipesOptions) {

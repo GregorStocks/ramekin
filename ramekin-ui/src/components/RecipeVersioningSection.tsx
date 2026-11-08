@@ -3,6 +3,7 @@ import type { Accessor } from "solid-js";
 import type { RecipeResponse, VersionSummary } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { createRequestTracker } from "../utils/requestTracker";
 import VersionCompareModal from "./VersionCompareModal";
 import VersionHistoryPanel from "./VersionHistoryPanel";
 
@@ -13,19 +14,33 @@ interface RecipeVersioningSectionProps {
   onRevertVersion: (version: VersionSummary) => void;
 }
 
+/** The compare modal: closed, or open on a load, its result, or its error. */
+type CompareState =
+  | { kind: "closed" }
+  | { kind: "loading" }
+  | { kind: "loaded"; versions: [RecipeResponse, RecipeResponse] }
+  | { kind: "error"; message: string };
+
 export default function RecipeVersioningSection(
   props: RecipeVersioningSectionProps,
 ) {
   const { getRecipesApi } = useAuth();
-  const [compareLoading, setCompareLoading] = createSignal(false);
-  const [compareVersions, setCompareVersions] = createSignal<
-    [RecipeResponse, RecipeResponse] | null
-  >(null);
-  const [compareError, setCompareError] = createSignal<string | null>(null);
+  const [compare, setCompare] = createSignal<CompareState>({ kind: "closed" });
+  // Closing the modal or starting another comparison drops a load in flight.
+  const compareRequests = createRequestTracker();
+
+  const compareVersions = () => {
+    const state = compare();
+    return state.kind === "loaded" ? state.versions : null;
+  };
+  const compareError = () => {
+    const state = compare();
+    return state.kind === "error" ? state.message : null;
+  };
 
   const handleCompareVersions = async (versionIds: [string, string]) => {
-    setCompareLoading(true);
-    setCompareError(null);
+    const request = compareRequests.start();
+    setCompare({ kind: "loading" });
     try {
       const [versionA, versionB] = await Promise.all([
         getRecipesApi().getRecipe({
@@ -37,26 +52,28 @@ export default function RecipeVersioningSection(
           versionId: versionIds[1],
         }),
       ]);
+      if (!compareRequests.isCurrent(request)) return;
 
-      if (versionA.updatedAt > versionB.updatedAt) {
-        setCompareVersions([versionB, versionA]);
-      } else {
-        setCompareVersions([versionA, versionB]);
-      }
+      setCompare({
+        kind: "loaded",
+        versions:
+          versionA.updatedAt > versionB.updatedAt
+            ? [versionB, versionA]
+            : [versionA, versionB],
+      });
     } catch (err) {
       const message = await extractApiError(
         err,
         "Failed to load versions for comparison",
       );
-      setCompareError(message);
-    } finally {
-      setCompareLoading(false);
+      if (!compareRequests.isCurrent(request)) return;
+      setCompare({ kind: "error", message });
     }
   };
 
   const handleCompareClose = () => {
-    setCompareVersions(null);
-    setCompareError(null);
+    compareRequests.invalidate();
+    setCompare({ kind: "closed" });
   };
 
   return (
@@ -72,13 +89,9 @@ export default function RecipeVersioningSection(
       </Show>
 
       <VersionCompareModal
-        isOpen={() =>
-          compareLoading() ||
-          compareVersions() !== null ||
-          compareError() !== null
-        }
+        isOpen={() => compare().kind !== "closed"}
         onClose={handleCompareClose}
-        loading={compareLoading()}
+        loading={compare().kind === "loading"}
         error={compareError()}
         versionA={compareVersions()?.[0] ?? null}
         versionB={compareVersions()?.[1] ?? null}

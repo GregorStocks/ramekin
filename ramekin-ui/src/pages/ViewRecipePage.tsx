@@ -362,9 +362,14 @@ export default function ViewRecipePage() {
         },
       });
 
-      // Clear version param — the createEffect tracking versionId() will
-      // automatically reload the recipe with the new (null) version.
-      setSearchParams({ version_id: undefined });
+      // Back to the current version. Clearing the version param reloads it
+      // through the effect tracking versionId(); when there is no param to
+      // clear (reverting from the history panel), nothing would, so reload.
+      if (versionId()) {
+        setSearchParams({ version_id: undefined });
+      } else {
+        void loadRecipe();
+      }
       setRevertVersion(null);
     } catch (err) {
       const message = await extractApiError(
