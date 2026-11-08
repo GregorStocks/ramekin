@@ -60,8 +60,10 @@ impl Default for OrchestratorConfig {
 pub struct RunManifest {
     pub run_id: String,
     pub started_at: String,
-    pub completed_at: Option<String>,
     pub config: ManifestConfig,
+    /// Serialized flat as `"status": "..."` plus `completed_at` for terminal
+    /// states, so a running manifest can't carry a completion time.
+    #[serde(flatten)]
     pub status: RunStatus,
 }
 
@@ -73,12 +75,70 @@ pub struct ManifestConfig {
     pub concurrency: usize,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(tag = "status", rename_all = "snake_case")]
 pub enum RunStatus {
     Running,
-    Completed,
-    Failed,
+    Completed { completed_at: String },
+    Failed { completed_at: String },
+}
+
+/// Owns a run's `manifest.json` while the run is in progress.
+///
+/// Writes `running` on creation. Unless [`RunManifestGuard::complete`] is
+/// called, dropping the guard (an early `?` return or a panic) rewrites the
+/// manifest as `failed`, so no exit path leaves a run stuck in `running`.
+struct RunManifestGuard {
+    run_dir: PathBuf,
+    manifest: RunManifest,
+    finished: bool,
+}
+
+impl RunManifestGuard {
+    fn start(
+        run_dir: &Path,
+        run_id: &str,
+        started_at: String,
+        config: ManifestConfig,
+    ) -> Result<Self> {
+        let manifest = RunManifest {
+            run_id: run_id.to_string(),
+            started_at,
+            config,
+            status: RunStatus::Running,
+        };
+        save_manifest(run_dir, &manifest)?;
+        Ok(Self {
+            run_dir: run_dir.to_path_buf(),
+            manifest,
+            finished: false,
+        })
+    }
+
+    fn complete(mut self) -> Result<()> {
+        let mut manifest = self.manifest.clone();
+        manifest.status = RunStatus::Completed {
+            completed_at: Utc::now().to_rfc3339(),
+        };
+        // If this write fails, Drop still tries to record `failed`.
+        save_manifest(&self.run_dir, &manifest)?;
+        self.finished = true;
+        Ok(())
+    }
+}
+
+impl Drop for RunManifestGuard {
+    fn drop(&mut self) {
+        if self.finished {
+            return;
+        }
+        self.manifest.status = RunStatus::Failed {
+            completed_at: Utc::now().to_rfc3339(),
+        };
+        if let Err(e) = save_manifest(&self.run_dir, &self.manifest) {
+            tracing::warn!(error = %e, "Failed to persist failed run manifest");
+        }
+    }
 }
 
 // ============================================================================
@@ -176,6 +236,20 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // Create run directory
     fs::create_dir_all(&run_dir)?;
 
+    // Every exit from here on leaves a terminal manifest: `complete()` on
+    // success, `failed` (via Drop) on any error return or panic.
+    let manifest = RunManifestGuard::start(
+        &run_dir,
+        &run_id,
+        now.to_rfc3339(),
+        ManifestConfig {
+            test_urls_file: config.test_urls_file.display().to_string(),
+            delay_ms: config.delay_ms,
+            force_refetch: config.force_refetch,
+            concurrency: config.concurrency,
+        },
+    )?;
+
     // Load test URLs plus any snapshot-allowlisted URLs that must also run.
     let load_urls_start = Instant::now();
     let test_urls = load_pipeline_urls(&config.test_urls_file)?;
@@ -195,21 +269,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         sites = test_urls.sites.len(),
         "loaded test URLs"
     );
-
-    // Create manifest
-    let manifest = RunManifest {
-        run_id: run_id.clone(),
-        started_at: now.to_rfc3339(),
-        completed_at: None,
-        config: ManifestConfig {
-            test_urls_file: config.test_urls_file.display().to_string(),
-            delay_ms: config.delay_ms,
-            force_refetch: config.force_refetch,
-            concurrency: config.concurrency,
-        },
-        status: RunStatus::Running,
-    };
-    save_manifest(&run_dir, &manifest)?;
 
     // Initialize HTTP client with caching
     // The CachingClient uses RAMEKIN_HTTP_CACHE env var for cache directory
@@ -414,10 +473,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
     let elapsed = start_time.elapsed();
 
-    // Write allowlisted per-URL snapshots before the final manifest so that a
-    // snapshot failure propagates as a failed run. On failure we still record
-    // a terminal manifest status so external consumers aren't left observing a
-    // run stuck in "running".
+    // Write allowlisted per-URL snapshots before completing the manifest so
+    // that a snapshot failure propagates as a failed run.
     let snapshot_start = Instant::now();
     let snapshot_allowlist = snapshot_allowlist_path(&config.test_urls_file);
     let snapshot_result = write_pipeline_snapshots(&run_dir, &snapshot_allowlist);
@@ -428,28 +485,9 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         ok = snapshot_result.is_ok(),
         "wrote pipeline snapshots"
     );
-    if let Err(e) = snapshot_result {
-        let failed_manifest = RunManifest {
-            completed_at: Some(Utc::now().to_rfc3339()),
-            status: RunStatus::Failed,
-            ..manifest
-        };
-        if let Err(save_err) = save_manifest(&run_dir, &failed_manifest) {
-            tracing::warn!(
-                "Failed to persist failed manifest after snapshot error: {}",
-                save_err
-            );
-        }
-        return Err(e);
-    }
+    snapshot_result?;
 
-    // Update manifest with completion
-    let final_manifest = RunManifest {
-        completed_at: Some(Utc::now().to_rfc3339()),
-        status: RunStatus::Completed,
-        ..manifest
-    };
-    save_manifest(&run_dir, &final_manifest)?;
+    manifest.complete()?;
 
     // Print summary
     tracing::info!("");
@@ -1110,6 +1148,7 @@ pub fn print_cache_stats(cache_dir: &Path) {
     tracing::info!("Cache directory: {}", cache_dir.display());
     tracing::info!("Cached responses (success): {}", stats.cached_success);
     tracing::info!("Cached errors: {}", stats.cached_errors);
+    tracing::info!("Unusable entries (treated as misses): {}", stats.unusable);
     tracing::info!(
         "Total entries: {}",
         stats.cached_success + stats.cached_errors
@@ -1424,6 +1463,73 @@ mod tests {
             }
           ]
         }"#
+    }
+
+    fn read_manifest(run_dir: &Path) -> RunManifest {
+        serde_json::from_str(&fs::read_to_string(run_dir.join("manifest.json")).unwrap()).unwrap()
+    }
+
+    fn manifest_config() -> ManifestConfig {
+        ManifestConfig {
+            test_urls_file: "test-urls.json".to_string(),
+            delay_ms: 0,
+            force_refetch: false,
+            concurrency: 1,
+        }
+    }
+
+    #[test]
+    fn run_status_serializes_flat_with_completed_at_only_when_terminal() {
+        let tmp = TempDir::new().unwrap();
+        let guard = RunManifestGuard::start(tmp.path(), "run", "t0".to_string(), manifest_config())
+            .unwrap();
+        let running: serde_json::Value =
+            serde_json::from_str(&fs::read_to_string(tmp.path().join("manifest.json")).unwrap())
+                .unwrap();
+        assert_eq!(running["status"], "running");
+        assert!(running.get("completed_at").is_none());
+
+        guard.complete().unwrap();
+        let completed: serde_json::Value =
+            serde_json::from_str(&fs::read_to_string(tmp.path().join("manifest.json")).unwrap())
+                .unwrap();
+        assert_eq!(completed["status"], "completed");
+        assert!(completed["completed_at"].is_string());
+        assert!(matches!(
+            read_manifest(tmp.path()).status,
+            RunStatus::Completed { .. }
+        ));
+    }
+
+    #[test]
+    fn dropping_manifest_guard_without_completing_marks_run_failed() {
+        let tmp = TempDir::new().unwrap();
+        let guard = RunManifestGuard::start(tmp.path(), "run", "t0".to_string(), manifest_config())
+            .unwrap();
+        assert_eq!(read_manifest(tmp.path()).status, RunStatus::Running);
+        drop(guard);
+        assert!(matches!(
+            read_manifest(tmp.path()).status,
+            RunStatus::Failed { .. }
+        ));
+    }
+
+    #[tokio::test]
+    async fn early_error_in_pipeline_run_marks_manifest_failed() {
+        let tmp = TempDir::new().unwrap();
+        let config = OrchestratorConfig {
+            run_id: "early-error".to_string(),
+            test_urls_file: tmp.path().join("missing-test-urls.json"),
+            output_dir: tmp.path().join("runs"),
+            ..Default::default()
+        };
+        assert!(run_pipeline_test(config).await.is_err());
+        let manifest = read_manifest(&tmp.path().join("runs").join("early-error"));
+        assert!(
+            matches!(manifest.status, RunStatus::Failed { .. }),
+            "{:?}",
+            manifest.status
+        );
     }
 
     #[test]
