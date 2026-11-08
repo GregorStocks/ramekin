@@ -1,0 +1,17 @@
+{
+  "title": "Pipeline steps: two step-ordering mechanisms (core next_step vs server JobPlan)",
+  "description": "Left over from p3-sm-scrape-job-kind-column, which moved the job kind into a stored column but left step ordering alone. \
+Core steps return next_step (ramekin-core/src/pipeline/executor.rs), which the CLI pipeline runner follows (cli/src/pipeline/runners.rs), while the server ignores it and orders steps with JobPlan::next_after (server/src/scraping/runner.rs, plan.rs). \
+The two can drift: a step added or reordered in one place won't be picked up by the other. \
+Want: one source of truth for step order shared by the CLI and the server. make pipeline should produce no data/ diffs. \
+Found in the 2026-11-07 implicit-state-machine audit; re-check paths before fixing.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "scraping",
+    "pipeline",
+  ],
+  "created_at": "2026-11-07T16:21:46-08:00",
+  "updated_at": "2026-11-07T16:21:46-08:00",
+}
