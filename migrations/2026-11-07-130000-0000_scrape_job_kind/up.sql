@@ -9,7 +9,8 @@
 -- in the order it decoded them (edit beat normalize beat photo-only), plus
 -- the outputs a job was created with: a capture starts with a stored page,
 -- an import with a stored extraction, a text import with its text. No row
--- is deleted.
+-- is deleted. Legacy photo-only rescrapes that never recorded an expected
+-- version are backfilled with the recipe's version at job creation.
 PRAGMA foreign_keys = OFF;
 
 BEGIN;
@@ -59,7 +60,22 @@ INSERT INTO scrape_jobs_new (
 SELECT
     id, user_id, url, status, failed_at_step, recipe_id, error_message, retry_count,
     created_at, updated_at, current_step, photo_only, current_step_started_at,
-    expected_version_id, idempotency_key, normalize_ops, edit_request,
+    -- Photo-only rescrapes from before jobs recorded the version they
+    -- expected (a 2026-04-15 batch) get the recipe's version as of the
+    -- job's creation, which is what the job ran against.
+    CASE
+        WHEN expected_version_id IS NULL AND photo_only AND edit_request IS NULL
+            AND normalize_ops IS NULL
+        THEN (
+            SELECT v.id FROM recipe_versions v
+            WHERE v.recipe_id = scrape_jobs.recipe_id
+              AND v.created_at <= scrape_jobs.created_at
+            ORDER BY v.created_at DESC, v.change_seq DESC
+            LIMIT 1
+        )
+        ELSE expected_version_id
+    END,
+    idempotency_key, normalize_ops, edit_request,
     CASE
         WHEN edit_request IS NOT NULL THEN 'edit'
         WHEN normalize_ops IS NOT NULL THEN 'normalize'
