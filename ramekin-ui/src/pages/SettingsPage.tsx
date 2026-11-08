@@ -29,7 +29,7 @@ type UploadState =
 
 export default function SettingsPage() {
   usePageTitle(() => "Settings");
-  const { getUsersApi, getClientLogsApi, getIngredientNamesApi, setToken } =
+  const { getUsersApi, getClientLogsApi, getIngredientNamesApi, signOut } =
     useAuth();
 
   const [username, setUsername] = createSignal<string | null>(null);
@@ -78,7 +78,7 @@ export default function SettingsPage() {
 
   const logout = () => {
     setShowLogoutConfirm(false);
-    setToken(null);
+    signOut();
   };
 
   const handleUploadLogs = async () => {

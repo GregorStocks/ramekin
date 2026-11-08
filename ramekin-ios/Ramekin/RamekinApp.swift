@@ -72,7 +72,8 @@ struct RamekinApp: App {
 /// Global app state shared across views
 @MainActor
 class AppState: ObservableObject {
-    @Published var isLoggedIn: Bool = false
+    @Published private(set) var authState: AuthState = .signedOut
+    var isLoggedIn: Bool { authState.isSignedIn }
     @Published var username: String = ""
     @Published var serverURL: String = ""
     @Published var pendingRecipeId: UUID?
@@ -97,9 +98,10 @@ class AppState: ObservableObject {
             forName: .ramekinAuthExpired,
             object: nil,
             queue: .main
-        ) { [weak self] _ in
+        ) { [weak self] notification in
+            guard let rejectedToken = AuthExpiry.rejectedToken(from: notification) else { return }
             Task { @MainActor [weak self] in
-                self?.handleAuthExpired()
+                self?.handleAuthExpired(rejectedToken: rejectedToken)
             }
         }
         if let url = UniversalLinkStore.shared.consumePendingURL() {
@@ -116,15 +118,26 @@ class AppState: ObservableObject {
         }
     }
 
-    private func handleAuthExpired() {
-        // Only act when we still think we're logged in — repeated 401s in a
-        // single burst shouldn't each schedule a redundant logout.
-        guard isLoggedIn else { return }
-        logout()
+    /// A request sent with `rejectedToken` got a 401. Only the session that
+    /// sent it ends: a late 401 from before the user signed in again, or a
+    /// repeat from the same burst, changes nothing.
+    func handleAuthExpired(rejectedToken: String) {
+        // Only a signed-in session can expire. Once expired, later 401s must
+        // not clear credentials a new login may be saving right now.
+        guard authState.isSignedIn, authState.afterRejection(of: rejectedToken) == .expired else { return }
+        RamekinAPI.shared.logout()
+        authState = .expired
+        refreshState()
     }
 
+    /// Re-read the session from the keychain. Signed out stays `.expired`
+    /// when that's how the last session ended, so the login screen can say so.
     func refreshState() {
-        isLoggedIn = RamekinAPI.shared.isLoggedIn
+        if let token = RamekinAPI.shared.authToken, RamekinAPI.shared.serverURL != nil {
+            authState = .signedIn(token: token)
+        } else if authState != .expired {
+            authState = .signedOut
+        }
         username = KeychainHelper.shared.getUsername() ?? ""
         serverURL = KeychainHelper.shared.getServerURL() ?? ""
         let accountKey = AccountScope.currentAccountKey()
@@ -135,6 +148,7 @@ class AppState: ObservableObject {
 
     func logout() {
         RamekinAPI.shared.logout()
+        authState = .signedOut
         refreshState()
     }
 

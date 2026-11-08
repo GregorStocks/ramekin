@@ -53,6 +53,14 @@ struct LoginView: View {
                 .listRowBackground(Color.clear)
             }
 
+            if appState.authState == .expired {
+                Section {
+                    Label("Your session expired. Sign in again.", systemImage: "clock.badge.exclamationmark")
+                        .foregroundColor(.orange)
+                        .accessibilityIdentifier("login-session-expired")
+                }
+            }
+
             Section("Server") {
                 TextField(defaultServerURL, text: $serverURL)
                     .textContentType(.URL)
