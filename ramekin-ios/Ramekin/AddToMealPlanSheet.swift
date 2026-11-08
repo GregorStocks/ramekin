@@ -6,11 +6,7 @@ struct AddToMealPlanSheet: View {
 
     @State private var selectedDate: Date = Date()
     @State private var selectedMealType: MealType = .dinner
-    @State private var isAdding = false
-    @State private var showingConfirmation = false
-    @State private var error: String?
-    @State private var submitTask: Task<Void, Never>?
-    @State private var dismissTask: Task<Void, Never>?
+    @StateObject private var flow = AddSheetFlow()
 
     var body: some View {
         NavigationStack {
@@ -24,8 +20,10 @@ struct AddToMealPlanSheet: View {
                         }
                     }
                 }
+                // Frozen under the confirmation overlay.
+                .disabled(flow.isConfirmed)
 
-                if let error = error {
+                if let error = flow.error {
                     Section {
                         Text(error)
                             .foregroundColor(.red)
@@ -37,82 +35,65 @@ struct AddToMealPlanSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        cancelPendingWork()
+                        flow.cancel()
                         isPresented = false
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
-                        // Mark the submission active before spawning it so a
-                        // second tap can't start an untracked submission.
-                        guard !isAdding else { return }
-                        isAdding = true
-                        submitTask = Task { await addToMealPlan() }
+                        addToMealPlan()
                     }
                     // Stays disabled during the success overlay so a second
                     // tap can't schedule the recipe twice.
-                    .disabled(isAdding || showingConfirmation)
+                    .disabled(flow.isConfirmed)
                 }
             }
             .onDisappear {
-                // A swipe-down dismissal must not leave a pending submission
-                // or close that would dismiss the next presentation.
-                cancelPendingWork()
+                // A swipe-down dismissal must not leave a pending close that
+                // would dismiss the next presentation.
+                flow.cancel()
             }
             .overlay {
-                if showingConfirmation {
-                    confirmationOverlay
+                if let confirmation = flow.confirmation {
+                    AddSheetConfirmation(message: confirmation)
                 }
             }
         }
     }
 
-    private var confirmationOverlay: some View {
+    private func addToMealPlan() {
+        flow.submit(
+            confirmation: "Added to meal plan",
+            dismiss: { isPresented = false },
+            add: {
+                // Saved offline; the store syncs it.
+                try MealPlanStore.shared.add(
+                    recipeId: recipe.id,
+                    recipeTitle: recipe.title,
+                    thumbnailPhotoId: recipe.photoIds.first,
+                    date: selectedDate,
+                    mealType: selectedMealType
+                )
+            }
+        )
+    }
+}
+
+/// The check-mark overlay an add sheet shows before dismissing itself.
+struct AddSheetConfirmation: View {
+    let message: String
+
+    var body: some View {
         VStack(spacing: 12) {
             Image(systemName: "checkmark.circle.fill")
                 .scaledIconFont(size: 50)
                 .accessibilityHidden(true)
                 .foregroundColor(.green)
-            Text("Added to meal plan")
+            Text(message)
                 .font(.headline)
         }
         .padding(30)
         .background(.regularMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 16))
-    }
-
-    @MainActor
-    private func cancelPendingWork() {
-        submitTask?.cancel()
-        submitTask = nil
-        SheetAutoDismissSupport.cancel(&dismissTask)
-    }
-
-    @MainActor
-    private func addToMealPlan() async {
-        error = nil
-
-        do {
-            // Saved offline; the store syncs it.
-            try MealPlanStore.shared.add(
-                recipeId: recipe.id,
-                recipeTitle: recipe.title,
-                thumbnailPhotoId: recipe.photoIds.first,
-                date: selectedDate,
-                mealType: selectedMealType
-            )
-            // The sheet was dismissed in the meantime.
-            guard !Task.isCancelled else { return }
-            isAdding = false
-            showingConfirmation = true
-            UIAccessibility.post(notification: .announcement, argument: "Added to meal plan")
-            SheetAutoDismissSupport.schedule(&dismissTask) {
-                isPresented = false
-            }
-        } catch {
-            guard !Task.isCancelled else { return }
-            self.error = error.localizedDescription
-            isAdding = false
-        }
     }
 }

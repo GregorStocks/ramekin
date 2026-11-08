@@ -17,15 +17,17 @@ export function createAsyncAction<TArgs extends unknown[], TResult>(
   fallbackMessage: string,
   options: AsyncActionOptions = {},
 ): AsyncAction<TArgs, TResult> {
-  const [loading, setLoading] = createSignal(false);
+  // Runs in flight; loading stays true until the last of overlapping runs
+  // settles.
+  const [inFlight, setInFlight] = createSignal(0);
   const [error, setError] = createSignal<string | null>(null);
 
   return {
-    loading,
+    loading: () => inFlight() > 0,
     error,
     clearError: () => setError(null),
     run: async (...args) => {
-      setLoading(true);
+      setInFlight((n) => n + 1);
       setError(null);
       try {
         return await action(...args);
@@ -35,7 +37,7 @@ export function createAsyncAction<TArgs extends unknown[], TResult>(
         await options.onError?.(message, err);
         return undefined;
       } finally {
-        setLoading(false);
+        setInFlight((n) => n - 1);
       }
     },
   };

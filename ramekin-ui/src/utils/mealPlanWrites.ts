@@ -9,18 +9,21 @@ import { MEAL_TYPE_LABELS } from "./mealPlanHelpers";
 
 // Web reads meal plans a week at a time and doesn't cache them, so writes
 // ignore the feed in the response. Holding its cursor just keeps each
-// response to the rows that changed rather than every plan.
-let cursor: number | undefined;
+// response to the rows that changed rather than every plan. Cursors are kept
+// per session token, so signing in as someone else starts from scratch.
+const cursors = new Map<string, number>();
 
 /** Send one meal-plan op through the sync endpoint. */
 export async function writeMealPlan(
   api: Pick<SyncApi, "syncMealPlans">,
+  token: string | null,
   op: MealPlanOp,
 ): Promise<OpResult> {
+  const key = token ?? "";
   const response = await api.syncMealPlans({
-    syncMealPlansRequest: { cursor, ops: [op] },
+    syncMealPlansRequest: { cursor: cursors.get(key), ops: [op] },
   });
-  cursor = response.cursor;
+  cursors.set(key, response.cursor);
   return response.results[0];
 }
 

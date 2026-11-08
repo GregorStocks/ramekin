@@ -49,6 +49,30 @@ describe("createAsyncAction", () => {
       dispose();
     });
   });
+
+  it("stays loading until the last of overlapping runs settles", async () => {
+    await createRoot(async (dispose) => {
+      const resolvers: Array<() => void> = [];
+      const action = createAsyncAction(
+        () => new Promise<void>((resolve) => resolvers.push(resolve)),
+        "Failed",
+      );
+
+      const first = action.run();
+      const second = action.run();
+      expect(action.loading()).toBe(true);
+
+      resolvers[0]();
+      await first;
+      expect(action.loading()).toBe(true);
+
+      resolvers[1]();
+      await second;
+      expect(action.loading()).toBe(false);
+
+      dispose();
+    });
+  });
 });
 
 describe("createApiResource", () => {

@@ -45,9 +45,7 @@ struct AddToShoppingListSheet: View {
     @Binding var isPresented: Bool
 
     @State private var selectedIngredients: Set<Int> = []
-    @State private var showingConfirmation = false
-    @State private var error: String?
-    @State private var dismissTask: Task<Void, Never>?
+    @StateObject private var flow = AddSheetFlow()
 
     var body: some View {
         NavigationStack {
@@ -100,8 +98,11 @@ struct AddToShoppingListSheet: View {
                         .contentShape(Rectangle())
                     }
                 }
+                // Rows stay put under the confirmation overlay, so the
+                // count it shows can't change.
+                .disabled(flow.isConfirmed)
 
-                if let error {
+                if let error = flow.error {
                     Section {
                         Text(error)
                             .foregroundColor(.red)
@@ -114,7 +115,7 @@ struct AddToShoppingListSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        SheetAutoDismissSupport.cancel(&dismissTask)
+                        flow.cancel()
                         isPresented = false
                     }
                 }
@@ -124,7 +125,7 @@ struct AddToShoppingListSheet: View {
                     }
                     // Stays disabled during the success overlay so a second
                     // tap can't add the ingredients twice.
-                    .disabled(selectedIngredients.isEmpty || showingConfirmation)
+                    .disabled(selectedIngredients.isEmpty || flow.isConfirmed)
                 }
             }
             .onAppear {
@@ -134,11 +135,11 @@ struct AddToShoppingListSheet: View {
             .onDisappear {
                 // A swipe-down dismissal must not leave a pending close that
                 // would dismiss the next presentation of this sheet.
-                SheetAutoDismissSupport.cancel(&dismissTask)
+                flow.cancel()
             }
             .overlay {
-                if showingConfirmation {
-                    confirmationOverlay
+                if let confirmation = flow.confirmation {
+                    AddSheetConfirmation(message: confirmation)
                 }
             }
         }
@@ -148,45 +149,24 @@ struct AddToShoppingListSheet: View {
         selectedIngredients.count == recipe.ingredients.count
     }
 
-    private var confirmationOverlay: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "checkmark.circle.fill")
-                .scaledIconFont(size: 50)
-                .accessibilityHidden(true)
-                .foregroundColor(.green)
-            Text("Added \(selectedIngredients.count) items")
-                .font(.headline)
-        }
-        .padding(30)
-        .background(.regularMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-    }
-
     private func addToShoppingList() {
-        error = nil
-
         let ingredients = AddToShoppingListSheetSupport.ingredientsForShoppingList(
             recipe: recipe,
             selectedIngredients: selectedIngredients,
             scale: scale
         )
-
-        do {
-            try ShoppingListStore.shared.addItemsFromRecipe(
-                ingredients: ingredients,
-                recipeId: recipe.id,
-                recipeTitle: recipe.title
-            )
-
-            showingConfirmation = true
-            UIAccessibility.post(notification: .announcement, argument: "Added \(selectedIngredients.count) items")
-
-            SheetAutoDismissSupport.schedule(&dismissTask) {
-                isPresented = false
+        let confirmation = ingredients.count == 1 ? "Added 1 item" : "Added \(ingredients.count) items"
+        flow.submit(
+            confirmation: confirmation,
+            dismiss: { isPresented = false },
+            add: {
+                try ShoppingListStore.shared.addItemsFromRecipe(
+                    ingredients: ingredients,
+                    recipeId: recipe.id,
+                    recipeTitle: recipe.title
+                )
             }
-        } catch {
-            self.error = error.localizedDescription
-        }
+        )
     }
 }
 

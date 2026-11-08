@@ -25,12 +25,12 @@ extension ShoppingListStoreTests {
         responses.append(Self.response(
             results: [.applied], changes: [Self.serverChange(id: id, item: "Milk", isChecked: true)]
         ))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let undo = try XCTUnwrap(store.clearChecked())
         XCTAssertEqual(undo.message, "Cleared 1 item")
         responses.append(Self.response(results: [.applied], deleted: [id]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         XCTAssertTrue(store.items.isEmpty)
 
         store.restore(undo)
@@ -39,7 +39,7 @@ extension ShoppingListStoreTests {
         responses.append(Self.response(
             results: [.applied], changes: [Self.serverChange(id: id, item: "Milk", isChecked: true, changeSeq: 3)]
         ))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let restore = try XCTUnwrap(requests.last?.ops?.first)
         XCTAssertEqual(restore.op, .restore)
@@ -73,21 +73,21 @@ extension ShoppingListStoreTests {
         store.addItem(name: "Eggs")
         let id = try XCTUnwrap(store.items.first?.id)
         responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Eggs")]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let undo = try XCTUnwrap(store.deleteItem(try XCTUnwrap(store.items.first)))
         XCTAssertEqual(undo.message, "Deleted Eggs")
         duringSync = { store.restore(undo) }
         // The delete's own tombstone doesn't drop the restored row.
         responses.append(Self.response(results: [.applied], deleted: [id]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(store.items.map(\.item), ["Eggs"])
         XCTAssertEqual(store.items.first?.syncStatusEnum, .pendingRestore)
         responses.append(Self.response(
             results: [.applied], changes: [Self.serverChange(id: id, item: "Eggs", changeSeq: 3)]
         ))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         XCTAssertEqual(requests.last?.ops?.map(\.op), [.restore])
         XCTAssertEqual(store.items.first?.syncStatusEnum, .synced)
     }
@@ -117,13 +117,13 @@ extension ShoppingListStoreTests {
         let undo = try XCTUnwrap(store.deleteItem(try XCTUnwrap(store.items.first)))
         duringSync = { store.restore(undo) }
         responses.append(Self.response(results: [.gone], deleted: [id]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(store.items.map(\.item), ["Jam"])
         responses.append(Self.response(
             results: [.applied], changes: [Self.serverChange(id: id, item: "Jam", changeSeq: 2)]
         ))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         let restore = try XCTUnwrap(requests.last?.ops?.first)
         XCTAssertEqual(restore.op, .restore)
         XCTAssertEqual(restore.fields?.item, "Jam")
@@ -151,7 +151,7 @@ extension ShoppingListStoreTests {
         store.addItem(name: "Rice")
         let id = try XCTUnwrap(store.items.first?.id)
         responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Rice")]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         // Deleted on another device, so this update comes back gone; it was
         // deleted and undone here while the update was in flight.
@@ -161,13 +161,13 @@ extension ShoppingListStoreTests {
             if let undo = store.deleteItem(rice) { store.restore(undo) }
         }
         responses.append(Self.response(results: [.gone], deleted: [id]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(store.items.map(\.item), ["Rice"])
         responses.append(Self.response(
             results: [.applied], changes: [Self.serverChange(id: id, item: "Rice", changeSeq: 4)]
         ))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         XCTAssertEqual(requests.last?.ops?.map(\.op), [.restore])
         XCTAssertEqual(store.items.first?.syncStatusEnum, .synced)
     }
@@ -192,7 +192,7 @@ extension ShoppingListStoreTests {
         let undo = try XCTUnwrap(store.deleteItem(try XCTUnwrap(store.items.first)))
         store.restore(undo)
 
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let restore = try XCTUnwrap(requests.first?.ops)
         XCTAssertEqual(restore.map(\.op), [.restore])
@@ -252,7 +252,7 @@ extension ShoppingListStoreTests {
         // response predates it.
         duringSync = { try? await store.undo(entry: UUID()) }
 
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(syncs, 2)
     }

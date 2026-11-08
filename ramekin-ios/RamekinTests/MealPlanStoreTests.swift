@@ -23,7 +23,7 @@ final class MealPlanStoreTests: XCTestCase {
         XCTAssertEqual(plan.recipeTitle, "Soup")
         XCTAssertEqual(MealPlanDateSupport.apiDay(fromAPIDate: plan.mealDate), "2026-04-17")
         responses.append(response(results: [.applied], changes: [change(id: plan.id, recipeId: recipeId, title: "Soup")]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let create = try XCTUnwrap(requests.first?.ops.first)
         XCTAssertEqual(create["op"] as? String, "create")
@@ -63,12 +63,12 @@ final class MealPlanStoreTests: XCTestCase {
             requests.append((cursor, ops))
             return responses.removeFirst()
         }
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         let plan = try XCTUnwrap(store.plans.first)
 
         try store.update(plan, date: day("2026-04-17"), mealType: .dinner, notes: "Double batch")
         responses.append(response(results: [.applied]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let update = try XCTUnwrap(requests.last?.ops.first)
         XCTAssertEqual(update["op"] as? String, "update")
@@ -89,10 +89,55 @@ final class MealPlanStoreTests: XCTestCase {
 
         // Planned on another device too, before this one synced.
         try store.add(recipeId: UUID(), recipeTitle: "Soup", thumbnailPhotoId: nil, date: day("2026-04-17"), mealType: .dinner)
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertTrue(store.plans.isEmpty)
-        XCTAssertEqual(store.refusal, MealPlanStore.refusalMessage(.duplicate, recipeTitle: "Soup"))
+        XCTAssertEqual(store.refusal, MealPlanStore.refusalMessage(.duplicate, kind: .create, recipeTitle: "Soup"))
+    }
+
+    func testAnEditToAPlanRemovedElsewhereIsDroppedAndSaysWhy() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let id = UUID()
+        var responses = [response(changes: [change(id: id, recipeId: UUID(), title: "Soup")])]
+        let store = makeStore(stack: stack, defaults: defaults) { _, _ in responses.removeFirst() }
+        await store.syncWithServer()
+        let plan = try XCTUnwrap(store.plans.first)
+
+        try store.update(plan, date: day("2026-04-17"), mealType: .dinner, notes: "Double batch")
+        responses.append(response(results: [.gone], deleted: [id]))
+        await store.syncWithServer()
+
+        XCTAssertTrue(store.plans.isEmpty)
+        XCTAssertEqual(
+            store.refusal,
+            "Soup was already removed from the meal plan, so the change was dropped."
+        )
+    }
+
+    func testDeletingAPlanRemovedElsewhereSaysNothing() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let id = UUID()
+        var responses = [response(changes: [change(id: id, recipeId: UUID(), title: "Soup")])]
+        let store = makeStore(stack: stack, defaults: defaults) { _, _ in responses.removeFirst() }
+        await store.syncWithServer()
+        let plan = try XCTUnwrap(store.plans.first)
+
+        store.delete(plan)
+        responses.append(response(results: [.gone], deleted: [id]))
+        await store.syncWithServer()
+
+        XCTAssertTrue(store.plans.isEmpty)
+        XCTAssertNil(store.refusal)
+    }
+
+    func testRefusalMessagesCoverEveryResult() {
+        XCTAssertNil(MealPlanStore.refusalMessage(.applied, kind: .create, recipeTitle: "Soup"))
+        XCTAssertNotNil(MealPlanStore.refusalMessage(.duplicate, kind: .update, recipeTitle: "Soup"))
+        XCTAssertNotNil(MealPlanStore.refusalMessage(.recipeMissing, kind: .create, recipeTitle: "Soup"))
+        XCTAssertNotNil(MealPlanStore.refusalMessage(.gone, kind: .update, recipeTitle: "Soup"))
+        XCTAssertNil(MealPlanStore.refusalMessage(.gone, kind: .delete, recipeTitle: "Soup"))
     }
 
     func testAPlanMovedWhileItsRefusedCreateWasInFlightIsRetried() async throws {
@@ -112,12 +157,12 @@ final class MealPlanStoreTests: XCTestCase {
         // The user moves it to lunch while the dinner create is refused.
         duringSync = { try store.update(original, date: self.day("2026-04-17"), mealType: .lunch, notes: "") }
 
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let retried = try XCTUnwrap(store.plans.first)
         XCTAssertNotEqual(retried.id, original.id)
         XCTAssertEqual(retried.mealType, .lunch)
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         let retry = try XCTUnwrap(requests.last?.ops.first)
         XCTAssertEqual(retry["op"] as? String, "create")
         XCTAssertEqual((retry["fields"] as? [String: Any])?["meal_type"] as? String, "lunch")
@@ -133,9 +178,9 @@ final class MealPlanStoreTests: XCTestCase {
         ]
         let store = makeStore(stack: stack, defaults: defaults) { _, _ in responses.removeFirst() }
 
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         XCTAssertEqual(store.plans.map(\.id), [id])
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertTrue(store.plans.isEmpty)
     }
@@ -150,12 +195,12 @@ final class MealPlanStoreTests: XCTestCase {
             requests.append((cursor, ops))
             return responses.removeFirst()
         }
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         store.delete(try XCTUnwrap(store.plans.first))
         XCTAssertTrue(store.plans.isEmpty)
         responses.append(response(results: [.applied], deleted: [id]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(requests.last?.ops.first?["op"] as? String, "delete")
         XCTAssertTrue(try stack.viewContext.fetch(CachedMealPlan.fetchAll(accountKey: account)).isEmpty)
@@ -209,6 +254,42 @@ final class MealPlanStoreTests: XCTestCase {
         await store.syncWithServer()
 
         XCTAssertEqual(requestCount, 2)
+        XCTAssertTrue(try stack.viewContext.fetch(CachedMealPlan.fetchPendingSync(accountKey: account)).isEmpty)
+    }
+
+    func testAnEditDuringAFailingSyncIsSentByARerun() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var store: MealPlanStore!
+        var requests: [Request] = []
+        store = MealPlanStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: account,
+            automaticallySync: true,
+            networkMonitor: NetworkMonitor(startMonitoring: false),
+            syncMealPlans: { cursor, ops in
+                requests.append((cursor, ops))
+                if requests.count == 1 {
+                    // Planned while the first sync is in flight; that sync
+                    // then fails, so it does no follow-up of its own.
+                    try store.add(
+                        recipeId: UUID(), recipeTitle: "Soup", thumbnailPhotoId: nil,
+                        date: self.day("2026-04-17"), mealType: .dinner
+                    )
+                    // Let the edit's sync trigger run while this one is
+                    // still in flight.
+                    await Task.yield()
+                    throw URLError(.timedOut)
+                }
+                return self.response(results: ops.map { _ in .applied })
+            }
+        )
+
+        await store.syncWithServer()
+
+        let creates = requests.flatMap(\.ops).filter { $0["op"] as? String == "create" }
+        XCTAssertEqual(creates.count, 1)
         XCTAssertTrue(try stack.viewContext.fetch(CachedMealPlan.fetchPendingSync(accountKey: account)).isEmpty)
     }
 

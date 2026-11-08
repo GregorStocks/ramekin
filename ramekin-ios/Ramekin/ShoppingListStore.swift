@@ -18,7 +18,7 @@ class ShoppingListStore: ObservableObject {
     static let shared = ShoppingListStore()
 
     @Published var items: [ShoppingItem] = []
-    @Published var isSyncing = false
+    @Published private(set) var isSyncing = false
     @Published var isOnline = true
     @Published var lastSyncError: String?
     /// Canonical category display order, served by the API and persisted
@@ -34,11 +34,10 @@ class ShoppingListStore: ObservableObject {
     private let undoHistoryEntry: (UUID) async throws -> ShoppingListHistoryEntry
     private let automaticallySync: Bool
     private var activeAccountKey: String?
-    /// The network came back during a sync that may have failed offline.
-    private var retryAfterSync = false
-    /// A server-side change (a history undo) landed during a sync whose
-    /// response may predate it: sync again once it finishes.
-    private var refreshAfterSync = false
+    /// Runs one sync pass at a time; any trigger during a pass queues a
+    /// rerun (an edit, a reconnect, or a history undo whose change the
+    /// running pass may have missed).
+    private var syncCoordinator: SyncCoordinator!
 
     /// Wall-clock time of the last sync, used only to decide when a sync is stale.
     private static let lastSyncAtKeyPrefix = "shopping_list_last_sync_at"
@@ -71,6 +70,8 @@ class ShoppingListStore: ObservableObject {
         self.syncItems = syncItems
         self.listHistory = listHistory
         self.undoHistoryEntry = undoHistoryEntry
+        syncCoordinator = SyncCoordinator { [weak self] in await self?.runSyncPass() }
+        syncCoordinator.onBusyChanged = { [weak self] busy in self?.isSyncing = busy }
 
         if automaticallySync {
             isOnline = networkMonitor.isOnline
@@ -261,13 +262,11 @@ extension ShoppingListStore {
     }
 
     /// Undo a history entry on the server, then sync to show the result.
+    /// A sync already running may have read the server before the undo, so
+    /// it gets a rerun.
     func undo(entry id: UUID) async throws {
         _ = try await undoHistoryEntry(id)
-        if isSyncing {
-            refreshAfterSync = true
-        } else {
-            await syncWithServer()
-        }
+        await syncCoordinator.syncUnlessBusy()
     }
 
     private func saveAndSync() {
@@ -280,13 +279,15 @@ extension ShoppingListStore {
 
     private func triggerSync() {
         guard automaticallySync, isOnline else { return }
-        Task { await syncWithServer() }
+        syncCoordinator.request()
     }
 
+    /// Syncs when there are local edits to send or the last sync is stale.
+    /// During a sync it queues a rerun instead.
     func syncIfNeeded() async {
         guard let activeAccountKey, isOnline else { return }
-        guard !isSyncing else {
-            retryAfterSync = true
+        guard !syncCoordinator.isBusy else {
+            syncCoordinator.request()
             return
         }
         let hasPending = (try? coreDataStack.viewContext.fetch(
@@ -294,16 +295,24 @@ extension ShoppingListStore {
         ))?.isEmpty == false
         let lastSyncAt = lastSyncAt(accountKey: activeAccountKey)
         let stale = lastSyncAt == nil || Date().timeIntervalSince(lastSyncAt!) > 300
-        if hasPending || stale { await syncWithServer() }
+        if hasPending || stale { await syncCoordinator.sync() }
     }
 
-    func syncWithServer(isFollowUp: Bool = false) async {
+    /// Sync now, and wait for it. When a sync is already running this waits
+    /// for it and for one more pass after it, so pull-to-refresh always
+    /// ends with a pass that started after the pull.
+    func syncWithServer() async {
+        await syncCoordinator.sync()
+    }
+
+    /// One round trip: send the outbox, apply the response. Only the
+    /// coordinator calls this, so passes never overlap.
+    private func runSyncPass() async {
         let logger = DebugLogger.shared
-        guard let syncAccountKey = activeAccountKey, isOnline, !isSyncing else {
-            logger.log("syncWithServer skipped (online=\(isOnline), syncing=\(isSyncing))", source: "Shopping")
+        guard let syncAccountKey = activeAccountKey, isOnline else {
+            logger.log("sync pass skipped (online=\(isOnline))", source: "Shopping")
             return
         }
-        isSyncing = true
         lastSyncError = nil
         let syncStartedAt = Date()
         logger.log("syncWithServer started", source: "Shopping")
@@ -336,46 +345,7 @@ extension ShoppingListStore {
             }
         }
 
-        isSyncing = false
         fetchItems()
-        await syncAgainIfNeeded(after: syncAccountKey, isFollowUp: isFollowUp)
-    }
-
-    /// The sync, if any, that a finished one calls for: the account changed,
-    /// a server-side change or retry landed mid-sync, or edits made while it
-    /// was in flight still wait.
-    private func syncAgainIfNeeded(after syncAccountKey: String, isFollowUp: Bool) async {
-        guard activeAccountKey == syncAccountKey else {
-            retryAfterSync = false
-            refreshAfterSync = false
-            if automaticallySync {
-                await syncIfNeeded()
-            }
-            return
-        }
-        if refreshAfterSync {
-            refreshAfterSync = false
-            retryAfterSync = false
-            await syncWithServer()
-            return
-        }
-        if retryAfterSync {
-            retryAfterSync = false
-            await syncIfNeeded()
-            return
-        }
-
-        // Edits made while the sync was in flight are still pending: send
-        // them in one follow-up sync, not a loop.
-        if lastSyncError == nil && !isFollowUp {
-            let hasPending = (try? coreDataStack.viewContext.fetch(
-                ShoppingItem.fetchPendingSync(accountKey: syncAccountKey)
-            ))?.isEmpty == false
-            if hasPending && isOnline {
-                DebugLogger.shared.log("syncWithServer: still have pending items, follow-up sync", source: "Shopping")
-                await syncWithServer(isFollowUp: true)
-            }
-        }
     }
 
     /// Settle each op from its result, then apply the server's changes,

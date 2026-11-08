@@ -23,13 +23,13 @@ extension ShoppingListStoreTests {
         store.addItem(name: "Milk")
         let id = try XCTUnwrap(store.items.first?.id)
         responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Milk")]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         store.updateItem(try XCTUnwrap(store.items.first), note: "2%")
         var echo = Self.serverChange(id: id, item: "Milk", changeSeq: 2)
         echo.note = "2%"
         responses.append(Self.response(results: [.applied], changes: [echo]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let update = try XCTUnwrap(requests.last?.ops?.first)
         XCTAssertEqual(update.op, .update)
@@ -55,7 +55,7 @@ extension ShoppingListStoreTests {
         store.addItem(name: "Milk")
         let id = try XCTUnwrap(store.items.first?.id)
         responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Milk")]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         // Another device checks it off while this one edits the note. The
         // server applies the note on top, and sends back both.
@@ -63,7 +63,7 @@ extension ShoppingListStoreTests {
         var merged = Self.serverChange(id: id, item: "Milk", isChecked: true, changeSeq: 4)
         merged.note = "2%"
         responses.append(Self.response(results: [.applied], changes: [merged]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let milk = try XCTUnwrap(store.items.first)
         XCTAssertTrue(milk.isChecked)
@@ -92,7 +92,7 @@ extension ShoppingListStoreTests {
         store.addItem(name: "Milk")
         let id = try XCTUnwrap(store.items.first?.id)
         responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Milk")]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let milk = try XCTUnwrap(store.items.first)
         store.updateItem(milk, note: "2%")
@@ -100,13 +100,13 @@ extension ShoppingListStoreTests {
         var echo = Self.serverChange(id: id, item: "Milk", changeSeq: 2)
         echo.note = "2%"
         responses.append(Self.response(results: [.applied], changes: [echo]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         // The echo doesn't undo the check-off made mid-sync.
         XCTAssertTrue(milk.isChecked)
         XCTAssertEqual(milk.syncStatusEnum, .pendingUpdate)
         responses.append(Self.response(results: [.applied]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         let followUp = try XCTUnwrap(requests.last?.ops?.first)
         XCTAssertEqual(followUp.fields?.isChecked, true)
         XCTAssertNil(followUp.fields?.note)
@@ -133,17 +133,17 @@ extension ShoppingListStoreTests {
         store.addItem(name: "Milk")
         let id = try XCTUnwrap(store.items.first?.id)
         responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Milk")]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         let milk = try XCTUnwrap(store.items.first)
         store.updateItem(milk, note: "2%")
         duringSync = { store.deleteItem(milk) }
         responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Milk", changeSeq: 2)]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertTrue(store.items.isEmpty)
         responses.append(Self.response(results: [.applied], deleted: [id]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
         XCTAssertEqual(requests.last?.ops?.map(\.op), [.delete])
         XCTAssertTrue(
             try stack.viewContext.fetch(ShoppingItem.fetchPendingSync(accountKey: firstAccount)).isEmpty
@@ -164,11 +164,11 @@ extension ShoppingListStoreTests {
         store.addItem(name: "Eggs")
         let id = try XCTUnwrap(store.items.first?.id)
         responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Eggs")]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         store.updateItem(try XCTUnwrap(store.items.first), note: "a dozen")
         responses.append(Self.response(results: [.gone]))
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertTrue(store.items.isEmpty)
         XCTAssertTrue(
@@ -196,7 +196,7 @@ extension ShoppingListStoreTests {
         store.deleteItem(try XCTUnwrap(store.items.first))
         XCTAssertTrue(store.items.isEmpty)
 
-        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer()
 
         XCTAssertEqual(requests.first?.ops?.map(\.op), [.delete])
         XCTAssertTrue(

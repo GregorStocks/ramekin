@@ -1,11 +1,4 @@
-import {
-  createEffect,
-  createSignal,
-  For,
-  onCleanup,
-  Show,
-  type Accessor,
-} from "solid-js";
+import { createSignal, For, Show, type Accessor } from "solid-js";
 import type { MealType } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 import {
@@ -20,7 +13,7 @@ import {
   mealPlanOpError,
   writeMealPlan,
 } from "../utils/mealPlanWrites";
-import { extractApiError } from "../utils/recipeFormHelpers";
+import { createSubmitFlow } from "../utils/submitFlow";
 import Modal from "./Modal";
 
 interface AddToMealPlanModalProps {
@@ -30,102 +23,48 @@ interface AddToMealPlanModalProps {
 }
 
 export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
-  const { getSyncApi } = useAuth();
+  const { getSyncApi, token } = useAuth();
   const [mealPlanDate, setMealPlanDate] = createSignal(
     formatDateLocal(new Date()),
   );
   const [mealPlanMealType, setMealPlanMealType] =
     createSignal<MealType>("dinner");
-  const [addingToMealPlan, setAddingToMealPlan] = createSignal(false);
-  const [mealPlanError, setMealPlanError] = createSignal<string | null>(null);
-  const [mealPlanSuccess, setMealPlanSuccess] = createSignal(false);
-  const [wasOpen, setWasOpen] = createSignal(false);
-  // Bumped on every open and close so a submission or close timer from an
-  // earlier presentation can't touch the one that is showing now.
-  let presentation = 0;
-  let closeTimer: ReturnType<typeof setTimeout> | null = null;
-
-  const clearCloseTimer = () => {
-    if (closeTimer) {
-      clearTimeout(closeTimer);
-      closeTimer = null;
-    }
-  };
-
-  const reset = () => {
-    presentation++;
-    clearCloseTimer();
-    setAddingToMealPlan(false);
-    setMealPlanDate(formatDateLocal(new Date()));
-    setMealPlanMealType("dinner");
-    setMealPlanError(null);
-    setMealPlanSuccess(false);
-  };
-
-  const close = () => {
-    presentation++;
-    clearCloseTimer();
-    props.onClose();
-    setMealPlanError(null);
-    setMealPlanSuccess(false);
-  };
-
-  createEffect(() => {
-    const open = props.isOpen();
-    if (open && !wasOpen()) reset();
-    setWasOpen(open);
+  const flow = createSubmitFlow({
+    isOpen: props.isOpen,
+    onClose: props.onClose,
+    onOpen: () => {
+      setMealPlanDate(formatDateLocal(new Date()));
+      setMealPlanMealType("dinner");
+    },
   });
 
-  onCleanup(() => {
-    // A submission still in flight at unmount must not arm a close timer.
-    presentation++;
-    clearCloseTimer();
-  });
-
-  const handleAddToMealPlan = async () => {
-    const current = presentation;
-    const isCurrent = () => presentation === current;
-    setAddingToMealPlan(true);
-    setMealPlanError(null);
-    try {
+  const handleAddToMealPlan = () =>
+    flow.submit("Failed to add to meal plan", async () => {
       const mealType = mealPlanMealType();
       const result = await writeMealPlan(
         getSyncApi(),
+        token(),
         createMealPlanOp({
           recipeId: props.recipeId,
           mealDate: toApiDate(parseLocalDate(mealPlanDate())),
           mealType,
         }),
       );
-      if (!isCurrent()) return;
-      const message = mealPlanOpError(result, mealType);
-      if (message) {
-        setMealPlanError(message);
-        return;
-      }
-      setMealPlanSuccess(true);
-      clearCloseTimer();
-      closeTimer = setTimeout(close, 1500);
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to add to meal plan");
-      if (isCurrent()) setMealPlanError(message);
-    } finally {
-      if (isCurrent()) setAddingToMealPlan(false);
-    }
-  };
+      return mealPlanOpError(result, mealType);
+    });
 
   return (
     <Modal
       isOpen={props.isOpen}
-      onClose={close}
+      onClose={flow.close}
       title="Add to Meal Plan"
       actions={
         <>
           <button
             type="button"
             class="btn"
-            onClick={close}
-            disabled={addingToMealPlan()}
+            onClick={flow.close}
+            disabled={flow.submitting()}
           >
             Cancel
           </button>
@@ -133,17 +72,17 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
             type="button"
             class="btn btn-primary"
             onClick={handleAddToMealPlan}
-            disabled={addingToMealPlan() || mealPlanSuccess()}
+            disabled={flow.submitting() || flow.confirmed()}
           >
-            {addingToMealPlan() ? "Adding..." : "Add"}
+            {flow.submitting() ? "Adding..." : "Add"}
           </button>
         </>
       }
     >
-      <Show when={mealPlanSuccess()}>
+      <Show when={flow.confirmed()}>
         <div class="meal-plan-success">Added to meal plan!</div>
       </Show>
-      <Show when={!mealPlanSuccess()}>
+      <Show when={!flow.confirmed()}>
         <div class="meal-plan-form">
           <div class="form-group">
             <label for="meal-plan-date">Date</label>
@@ -170,8 +109,8 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
               </For>
             </div>
           </div>
-          <Show when={mealPlanError()}>
-            <p class="error">{mealPlanError()}</p>
+          <Show when={flow.error()}>
+            <p class="error">{flow.error()}</p>
           </Show>
         </div>
       </Show>
