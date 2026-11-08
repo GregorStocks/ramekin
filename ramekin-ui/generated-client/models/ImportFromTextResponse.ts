@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
+import {
+    ScrapeJobStatusFromJSON,
+    ScrapeJobStatusFromJSONTyped,
+    ScrapeJobStatusToJSON,
+    ScrapeJobStatusToJSONTyped,
+} from './ScrapeJobStatus';
+
 /**
  * 
  * @export
@@ -27,11 +35,13 @@ export interface ImportFromTextResponse {
     jobId: string;
     /**
      * Current job status
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof ImportFromTextResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
 }
+
+
 
 /**
  * Check if a given object implements the ImportFromTextResponse interface.
@@ -53,7 +63,7 @@ export function ImportFromTextResponseFromJSONTyped(json: any, ignoreDiscriminat
     return {
         
         'jobId': json['job_id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 
@@ -69,7 +79,7 @@ export function ImportFromTextResponseToJSONTyped(value?: ImportFromTextResponse
     return {
         
         'job_id': value['jobId'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }
 

@@ -20,11 +20,11 @@ public struct NormalizeProposalResponse: Codable, JSONEncodable, Hashable {
     /** What accepting saves; absent until the job completes. */
     public var proposed: NormalizedRecipe?
     /** The job's status, as `GET /api/scrape/{id}` reports it. */
-    public var status: String
+    public var status: ScrapeJobStatus
     /** What an Edit with AI run says it changed, once it completes. */
     public var summary: String?
 
-    public init(base: NormalizedRecipe, baseVersionId: UUID, ops: [String], proposed: NormalizedRecipe? = nil, status: String, summary: String? = nil) {
+    public init(base: NormalizedRecipe, baseVersionId: UUID, ops: [String], proposed: NormalizedRecipe? = nil, status: ScrapeJobStatus, summary: String? = nil) {
         self.base = base
         self.baseVersionId = baseVersionId
         self.ops = ops

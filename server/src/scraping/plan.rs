@@ -16,6 +16,7 @@ use ramekin_core::pipeline::{
 
 use crate::models::ScrapeJob;
 use crate::normalize::ops_from_json;
+use crate::scraping::JobKind;
 
 use super::steps::FetchHtmlStep;
 
@@ -49,26 +50,35 @@ fn scrape_steps() -> Vec<&'static str> {
 
 impl JobPlan {
     pub fn for_job(job: &ScrapeJob) -> Result<Self, String> {
-        if job.edit_request.is_some() {
-            return Ok(Self::edit());
-        }
-        let rescrape = job.expected_version_id.is_some();
-        match &job.normalize_ops {
-            Some(ops) => Ok(Self::normalize(&ops_from_json(ops)?)),
-            None if job.photo_only => Ok(Self {
+        Ok(match job.kind {
+            JobKind::Edit => Self::edit(),
+            JobKind::Normalize => {
+                let ops = job
+                    .normalize_ops
+                    .as_ref()
+                    .ok_or("normalize job has no ops")?;
+                Self::normalize(&ops_from_json(ops)?)
+            }
+            JobKind::PhotoRescrape => Self {
                 sequential: scrape_steps(),
                 // Photo-only rescrape must not run normalize ops: they could
                 // write another version after the photo-only update.
                 concurrent: Vec::new(),
                 ops: Vec::new(),
                 refetch: true,
-            }),
-            None if job.url.is_none() => Ok(Self::import_without_page()),
-            None => Ok(Self {
-                refetch: rescrape,
+            },
+            JobKind::Rescrape => Self {
+                refetch: true,
                 ..Self::import()
-            }),
-        }
+            },
+            // An import with a source URL can still fetch it on a retry that
+            // starts over.
+            JobKind::Import if job.url.is_some() => Self::import(),
+            JobKind::Import | JobKind::TextImport | JobKind::PhotoImport => {
+                Self::import_without_page()
+            }
+            JobKind::UrlScrape | JobKind::Capture => Self::import(),
+        })
     }
 
     /// A new recipe from a URL, capture or import.

@@ -158,22 +158,16 @@ final class ProposalJobViewModel: ObservableObject {
         phase = .running
 
         do {
-            // AI can be slow, so there's no deadline; closing the sheet
+            // AI can be slow, so there's no client deadline (the server
+            // fails a step that runs past its own); closing the sheet
             // cancels the task.
-            while true {
-                try Task.checkCancellation()
-                let job = try await api.getScrape(jobId)
-                steps = job.steps
-                if job.status == "completed" {
-                    proposal = try await api.getProposal(recipeId, jobId)
-                    phase = .review
-                    return
-                }
-                if job.status == "failed" {
-                    phase = .failed(job.error ?? "The job failed")
-                    return
-                }
-                try await Task.sleep(nanoseconds: pollIntervalNanoseconds)
+            let poller = ScrapeJobPoller(getScrape: api.getScrape, intervalNanoseconds: pollIntervalNanoseconds)
+            switch try await poller.poll(jobId, onUpdate: { steps = $0.steps }) {
+            case .completed, .recipeReady:
+                proposal = try await api.getProposal(recipeId, jobId)
+                phase = .review
+            case .failed(let job):
+                phase = .failed(job.error ?? "The job failed")
             }
         } catch is CancellationError {
             return
@@ -342,15 +336,13 @@ struct ProposalJobSheet: View {
     private func stepRow(_ step: StepState) -> some View {
         HStack {
             switch step.status {
-            case "completed":
+            case .completed:
                 Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
-            case "running":
+            case .running:
                 ProgressView()
-            case "failed":
+            case .failed:
                 Image(systemName: "xmark.circle.fill").foregroundColor(.red)
-            case "skipped":
-                Image(systemName: "minus.circle").foregroundColor(.secondary)
-            default:
+            case .pending:
                 Image(systemName: "circle").foregroundColor(.secondary)
             }
             Text(NormalizeSelection.stepLabel(step.name, ops: viewModel.ops))

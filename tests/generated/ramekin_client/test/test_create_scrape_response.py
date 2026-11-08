@@ -36,12 +36,12 @@ class TestCreateScrapeResponse(unittest.TestCase):
         if include_optional:
             return CreateScrapeResponse(
                 id = '',
-                status = ''
+                status = 'pending'
             )
         else:
             return CreateScrapeResponse(
                 id = '',
-                status = '',
+                status = 'pending',
         )
         """
 

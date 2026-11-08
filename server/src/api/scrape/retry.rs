@@ -18,7 +18,7 @@ pub struct RetryScrapeResponse {
     /// The scrape job ID
     pub id: Uuid,
     /// New job status after retry
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
 }
 
 #[utoipa::path(
@@ -65,6 +65,9 @@ pub async fn retry_scrape(
         Ok(s) => s,
         Err(scraping::ScrapeError::InvalidState(msg)) => {
             return ApiError::invalid_request(msg).into_response();
+        }
+        Err(e @ scraping::ScrapeError::MaxRetriesExceeded) => {
+            return ApiError::invalid_request(e.to_string()).into_response();
         }
         Err(e) => {
             tracing::error!("Failed to retry scrape job: {}", e);

@@ -3,7 +3,7 @@ use base64::Engine;
 use flate2::read::GzDecoder;
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::{auth_api, import_api, scrape_api};
-use ramekin_client::models::{LoginRequest, LookupImportJobsRequest};
+use ramekin_client::models::{LoginRequest, LookupImportJobsRequest, ScrapeJobStatus, StepStatus};
 use ramekin_core::pipeline::op_for_step;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -454,38 +454,37 @@ async fn wait_for_imports(config: &Configuration, mut jobs: Vec<uuid::Uuid>) -> 
             let job = scrape_api::get_scrape(config, &id.to_string())
                 .await
                 .with_context(|| format!("Failed to read import job {id}"))?;
-            match job.status.as_str() {
-                "completed" | "failed" => {
-                    let saved = job
-                        .steps
-                        .iter()
-                        .any(|step| step.name == "save_recipe" && step.status == "completed");
-                    let normalize_failed = job
-                        .failed_at_step
-                        .as_ref()
-                        .and_then(|step| step.as_deref())
-                        .is_some_and(|step| op_for_step(step).is_some());
-                    if job.status == "failed" && !(saved && normalize_failed) {
-                        bail!("Import job {id} failed; inspect its status for details; saved data is preserved");
-                    }
-                    if job.status == "completed" && job.recipe_id.flatten().is_none() {
-                        bail!("Import job {id} completed without a saved recipe");
-                    }
-                    let failed_steps: Vec<_> = job
-                        .steps
-                        .iter()
-                        .filter(|step| step.status == "failed")
-                        .map(|step| step.name.as_str())
-                        .collect();
-                    if !failed_steps.is_empty() {
-                        normalize_failures += 1;
-                        // Report step names, not provider response bodies or credentials.
-                        tracing::warn!(job_id = %id, steps = %failed_steps.join(", "),
-                            "Recipe saved, but normalizing it failed; inspect the import job for details");
-                    }
-                }
-                "pending" | "scraping" | "parsing" | "normalizing" => pending.push(id),
-                status => bail!("Import job {id} has unexpected status: {status}"),
+            if !job.is_terminal {
+                pending.push(id);
+                continue;
+            }
+            let failed = job.status == ScrapeJobStatus::Failed;
+            let saved = job
+                .steps
+                .iter()
+                .any(|step| step.name == "save_recipe" && step.status == StepStatus::Completed);
+            let normalize_failed = job
+                .failed_at_step
+                .as_ref()
+                .and_then(|step| step.as_deref())
+                .is_some_and(|step| op_for_step(step).is_some());
+            if failed && !(saved && normalize_failed) {
+                bail!("Import job {id} failed; inspect its status for details; saved data is preserved");
+            }
+            if !failed && job.recipe_id.flatten().is_none() {
+                bail!("Import job {id} completed without a saved recipe");
+            }
+            let failed_steps: Vec<_> = job
+                .steps
+                .iter()
+                .filter(|step| step.status == StepStatus::Failed)
+                .map(|step| step.name.as_str())
+                .collect();
+            if !failed_steps.is_empty() {
+                normalize_failures += 1;
+                // Report step names, not provider response bodies or credentials.
+                tracing::warn!(job_id = %id, steps = %failed_steps.join(", "),
+                    "Recipe saved, but normalizing it failed; inspect the import job for details");
             }
         }
         jobs = pending;
@@ -538,26 +537,28 @@ mod tests {
     }
 
     fn job(status: &str, saved: bool, failed_step: Option<&str>) -> ScrapeJobResponse {
+        let status: ScrapeJobStatus = serde_json::from_value(serde_json::json!(status)).unwrap();
         let mut job = ScrapeJobResponse {
             id: uuid::Uuid::new_v4(),
             created_at: "2026-09-09T00:00:00Z".into(),
-            status: status.into(),
+            status,
+            is_terminal: matches!(status, ScrapeJobStatus::Completed | ScrapeJobStatus::Failed),
             ..Default::default()
         };
         if saved {
             job.steps.push(StepState::new(
                 true,
                 "save_recipe".into(),
-                "completed".into(),
+                StepStatus::Completed,
             ));
-            if status == "completed" {
+            if status == ScrapeJobStatus::Completed {
                 job.recipe_id = Some(Some(uuid::Uuid::new_v4()));
             }
         }
         if let Some(step) = failed_step {
             job.failed_at_step = Some(Some(step.into()));
             job.steps
-                .push(StepState::new(true, step.into(), "failed".into()));
+                .push(StepState::new(true, step.into(), StepStatus::Failed));
         }
         job
     }
@@ -653,11 +654,11 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn completed_without_recipe_and_unknown_status_are_errors() {
-        for status in ["completed", "unknown"] {
-            assert!(poll_responses(vec![job(status, false, None)])
-                .await
-                .is_err());
-        }
+    async fn completed_without_recipe_is_an_error() {
+        // An unknown status can't reach this: the typed client fails to
+        // decode the response.
+        assert!(poll_responses(vec![job("completed", false, None)])
+            .await
+            .is_err());
     }
 }

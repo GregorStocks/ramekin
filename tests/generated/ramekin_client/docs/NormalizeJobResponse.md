@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **job_id** | **UUID** | The job; poll it with &#x60;GET /api/scrape/{id}&#x60;. | 
-**status** | **str** |  | 
+**status** | [**ScrapeJobStatus**](ScrapeJobStatus.md) |  | 
 
 ## Example
 

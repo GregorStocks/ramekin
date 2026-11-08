@@ -15,6 +15,9 @@ struct RecipeFormDraft: Codable, Equatable {
     var mode: RecipeFormMode
     var form: RecipeFormData
     var recipeText: String = ""
+    /// The import job the form lost track of, so a resumed form checks on
+    /// that job again instead of importing the text a second time.
+    var lostImportJobId: UUID?
 }
 
 /// Encodes where the user was — navigation stacks, per-recipe place, and

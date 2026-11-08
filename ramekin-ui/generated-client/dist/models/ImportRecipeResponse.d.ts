@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
 /**
  * Response from recipe import
  * @export
@@ -23,10 +24,10 @@ export interface ImportRecipeResponse {
     jobId: string;
     /**
      * Current job status
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof ImportRecipeResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
 }
 /**
  * Check if a given object implements the ImportRecipeResponse interface.

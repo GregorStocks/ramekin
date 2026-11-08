@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **has_output** | **bool** |  | 
 **name** | **str** |  | 
 **started_at** | **datetime** |  | [optional] 
-**status** | **str** | One of \&quot;pending\&quot;, \&quot;running\&quot;, \&quot;completed\&quot;, \&quot;failed\&quot;, \&quot;skipped\&quot;. | 
+**status** | [**StepStatus**](StepStatus.md) |  | 
 **summary** | **str** |  | [optional] 
 
 ## Example

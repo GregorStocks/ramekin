@@ -46,9 +46,8 @@ pub struct StepState {
         skip_serializing_if = "Option::is_none"
     )]
     pub started_at: Option<Option<String>>,
-    /// One of \"pending\", \"running\", \"completed\", \"failed\", \"skipped\".
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::StepStatus,
     #[serde(
         rename = "summary",
         default,
@@ -60,7 +59,7 @@ pub struct StepState {
 
 impl StepState {
     /// A single pipeline step's state for the status API response.
-    pub fn new(has_output: bool, name: String, status: String) -> StepState {
+    pub fn new(has_output: bool, name: String, status: models::StepStatus) -> StepState {
         StepState {
             duration_ms: None,
             error: None,

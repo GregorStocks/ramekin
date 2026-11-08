@@ -3,9 +3,7 @@ use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use diesel::result::{DatabaseErrorKind, Error as DieselError};
 
-use ramekin_core::pipeline::steps::{
-    ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
-};
+use ramekin_core::pipeline::steps::{ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep};
 use ramekin_core::pipeline::{NormalizeOp, LOAD_RECIPE_STEP};
 use ramekin_core::RawRecipe;
 use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, FetchImagesOutput};
@@ -14,12 +12,10 @@ use crate::db::DbPool;
 use crate::models::{NewImportJob, NewScrapeJob, ScrapeJob};
 use crate::schema::{photos, scrape_jobs, step_outputs};
 
-use super::output_store::{copy_output, latest_output, PreparedOutput};
+use super::output_store::{copy_output, PreparedOutput};
+use super::plan::JobPlan;
 use super::steps::{EditRequest, FetchHtmlStep};
-use super::{
-    run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_FAILED,
-    STATUS_PARSING,
-};
+use super::{run_scrape_db, run_scrape_db_write, JobKind, JobStatus, ScrapeError};
 
 /// Create a new scrape job.
 pub async fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<ScrapeJob, ScrapeError> {
@@ -29,6 +25,7 @@ pub async fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<Scrap
             id: Uuid::now_v7(),
             user_id,
             url: Some(url.as_str()),
+            kind: JobKind::UrlScrape,
         };
 
         diesel::insert_into(scrape_jobs::table)
@@ -56,6 +53,7 @@ pub async fn create_photo_rescrape_job(
                 scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::url.eq(url.as_str()),
+                scrape_jobs::kind.eq(JobKind::PhotoRescrape),
                 scrape_jobs::recipe_id.eq(Some(recipe_id)),
                 scrape_jobs::expected_version_id.eq(Some(expected_version_id)),
                 scrape_jobs::photo_only.eq(true),
@@ -138,7 +136,11 @@ pub async fn create_text_import_job(
             .values((
                 scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
-                scrape_jobs::status.eq(STATUS_PARSING),
+                scrape_jobs::kind.eq(JobKind::TextImport),
+                scrape_jobs::status.eq(JobStatus::for_step(
+                    &JobPlan::import_without_page(),
+                    ExtractRecipeStep::NAME,
+                )),
                 scrape_jobs::current_step.eq(Some(ExtractRecipeStep::NAME)),
                 scrape_jobs::current_step_started_at.eq(Some(now)),
             ))
@@ -211,6 +213,7 @@ pub async fn create_normalize_job(
     ops: &[NormalizeOp],
     start: NormalizeStart,
 ) -> Result<ScrapeJob, ScrapeError> {
+    let plan = JobPlan::normalize(ops);
     let ops = crate::normalize::ops_json(ops);
     run_scrape_db_write(pool, move |conn| {
         let (url, first_step) = match &start {
@@ -237,9 +240,11 @@ pub async fn create_normalize_job(
                 scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::url.eq(url),
+                scrape_jobs::kind.eq(JobKind::Normalize),
                 scrape_jobs::recipe_id.eq(Some(recipe_id)),
                 scrape_jobs::expected_version_id.eq(Some(base_version_id)),
                 scrape_jobs::normalize_ops.eq(Some(ops)),
+                scrape_jobs::status.eq(JobStatus::for_step(&plan, first_step)),
                 scrape_jobs::current_step.eq(Some(first_step)),
                 scrape_jobs::current_step_started_at.eq(Some(now)),
             ))
@@ -275,9 +280,9 @@ pub async fn create_edit_job(
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::recipe_id.eq(Some(recipe_id)),
                 scrape_jobs::expected_version_id.eq(Some(base_version_id)),
-                // No normalize ops, but a proposal like a normalize job's.
-                scrape_jobs::normalize_ops.eq(Some(crate::normalize::ops_json(&[]))),
+                scrape_jobs::kind.eq(JobKind::Edit),
                 scrape_jobs::edit_request.eq(Some(request)),
+                scrape_jobs::status.eq(JobStatus::for_step(&JobPlan::edit(), LOAD_RECIPE_STEP)),
                 scrape_jobs::current_step.eq(Some(LOAD_RECIPE_STEP)),
                 scrape_jobs::current_step_started_at.eq(Some(now)),
             ))
@@ -301,34 +306,26 @@ pub async fn create_job_with_html(
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
     let fetch_output = prepare_output(FetchHtmlStep::NAME, fetch_output).await?;
     run_scrape_db_write(pool, move |conn| {
-        // Create the job
-        let new_job = NewScrapeJob {
-            id: Uuid::now_v7(),
-            user_id,
-            url: Some(url.as_str()),
-        };
+        // The job starts at extract_recipe, past the fetch it doesn't need.
         let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
-            .values(&new_job)
+            .values((
+                scrape_jobs::id.eq(Uuid::now_v7()),
+                scrape_jobs::user_id.eq(user_id),
+                scrape_jobs::url.eq(Some(url.as_str())),
+                scrape_jobs::kind.eq(JobKind::Capture),
+                scrape_jobs::status.eq(JobStatus::for_step(
+                    &JobPlan::import(),
+                    ExtractRecipeStep::NAME,
+                )),
+                scrape_jobs::current_step.eq(Some(ExtractRecipeStep::NAME)),
+                scrape_jobs::current_step_started_at.eq(Some(Utc::now())),
+            ))
             .get_result(conn)
             .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
         // Store the HTML as the fetch_html step output
         save_step_output(conn, job.id, FetchHtmlStep::NAME, fetch_output)?;
-
-        // Update the job to start from parsing (skip fetch step)
-        let now = Utc::now();
-        diesel::update(scrape_jobs::table.find(job.id))
-            .set((
-                scrape_jobs::status.eq(STATUS_PARSING),
-                scrape_jobs::current_step.eq(Some(ExtractRecipeStep::NAME)),
-                scrape_jobs::current_step_started_at.eq(Some(now)),
-                scrape_jobs::updated_at.eq(now),
-            ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-        // Return the updated job
-        get_job_conn(conn, job.id)
+        Ok(job)
     })
     .await
 }
@@ -375,11 +372,20 @@ pub async fn create_import_job(
         }
         // One transaction so a job found by its key always has its outputs.
         let created = crate::db::write(conn, |conn| {
+            // Start from parse_ingredients (skip fetch_html, extract_recipe,
+            // fetch_images).
             let new_job = NewImportJob {
                 id: Uuid::now_v7(),
                 user_id,
                 url: source_url.as_deref(),
                 idempotency_key: key,
+                kind: JobKind::Import,
+                status: JobStatus::for_step(
+                    &JobPlan::import_without_page(),
+                    ParseIngredientsStep::NAME,
+                ),
+                current_step: Some(ParseIngredientsStep::NAME),
+                current_step_started_at: Some(Utc::now()),
             };
             let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
                 .values(&new_job)
@@ -393,19 +399,7 @@ pub async fn create_import_job(
 
             save_step_output(conn, job.id, ExtractRecipeStep::NAME, extract_output)?;
             save_step_output(conn, job.id, FetchImagesStepMeta::NAME, images_output)?;
-
-            // Start from parse_ingredients (skip fetch_html, extract_recipe, fetch_images)
-            let now = Utc::now();
-            diesel::update(scrape_jobs::table.find(job.id))
-                .set((
-                    scrape_jobs::status.eq(STATUS_PARSING),
-                    scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
-                    scrape_jobs::current_step_started_at.eq(Some(now)),
-                    scrape_jobs::updated_at.eq(now),
-                ))
-                .execute(conn)?;
-
-            get_job_conn(conn, job.id)
+            Ok(job)
         });
         match (created, key) {
             (Ok(job), _) => Ok((job, true)),
@@ -470,69 +464,74 @@ fn get_job_conn(
         .ok_or(ScrapeError::JobNotFound)
 }
 
-/// The recipe a job's `save_recipe` step saved, if it has run. New-recipe
-/// jobs record `recipe_id` on the job row when they save; jobs saved before
-/// that only have it in the step output until they complete.
-pub async fn saved_recipe_id(pool: &DbPool, job_id: Uuid) -> Result<Option<Uuid>, ScrapeError> {
-    let output = latest_output(pool, job_id, SaveRecipeStepMeta::NAME, true)
-        .await
-        .map_err(|e| ScrapeError::Database(format!("{e:#}")))?;
-    Ok(output
-        .as_ref()
-        .and_then(|o| o.get("recipe_id"))
-        .and_then(|v| v.as_str())
-        .and_then(|s| Uuid::parse_str(s).ok()))
+/// Fail a transition whose guarded UPDATE matched no row: say whether the job
+/// is gone or in a status the transition may not leave.
+fn check_transition(
+    conn: &mut diesel::SqliteConnection,
+    job_id: Uuid,
+    updated: usize,
+    transition: &str,
+) -> Result<(), ScrapeError> {
+    if updated > 0 {
+        return Ok(());
+    }
+    let status: Option<JobStatus> = scrape_jobs::table
+        .find(job_id)
+        .select(scrape_jobs::status)
+        .first(conn)
+        .optional()?;
+    match status {
+        None => Err(ScrapeError::JobNotFound),
+        Some(status) => Err(ScrapeError::InvalidState(format!(
+            "job {job_id} is {status}, so it can't {transition}"
+        ))),
+    }
 }
 
-/// Update job status and current_step.
+/// Start `step` of a running job, in `status` (from [`JobStatus::for_step`]).
 ///
-/// Also sets `current_step_started_at` to `NOW()` when a step is provided, or
-/// clears it when the step is cleared. The frontend uses this timestamp to
-/// show how long the currently running step has been executing.
-pub(super) async fn update_status_and_step(
+/// Also sets `current_step_started_at` to now. The frontend uses this
+/// timestamp to show how long the currently running step has been executing.
+pub(super) fn enter_step_conn(
+    conn: &mut diesel::SqliteConnection,
+    job_id: Uuid,
+    status: JobStatus,
+    step: &str,
+) -> Result<(), ScrapeError> {
+    let now = Utc::now();
+    let updated = diesel::update(
+        scrape_jobs::table
+            .find(job_id)
+            .filter(scrape_jobs::status.eq_any(JobStatus::ACTIVE)),
+    )
+    .set((
+        scrape_jobs::status.eq(status),
+        scrape_jobs::current_step.eq(Some(step)),
+        scrape_jobs::current_step_started_at.eq(Some(now)),
+        scrape_jobs::updated_at.eq(now),
+    ))
+    .execute(conn)?;
+    check_transition(conn, job_id, updated, &format!("start {step}"))
+}
+
+/// [`enter_step_conn`] on a connection of its own.
+pub(super) async fn enter_step(
     pool: &DbPool,
     job_id: Uuid,
-    status: &str,
-    current_step: Option<&str>,
+    status: JobStatus,
+    step: &str,
 ) -> Result<(), ScrapeError> {
-    let status = status.to_string();
-    let current_step = current_step.map(str::to_string);
+    let step = step.to_string();
     run_scrape_db_write(pool, move |conn| {
-        let now = Utc::now();
-        match current_step {
-            Some(step) => {
-                diesel::update(scrape_jobs::table.find(job_id))
-                    .set((
-                        scrape_jobs::status.eq(status.as_str()),
-                        scrape_jobs::current_step.eq(Some(step.as_str())),
-                        scrape_jobs::current_step_started_at.eq(Some(now)),
-                        scrape_jobs::updated_at.eq(now),
-                    ))
-                    .execute(conn)
-                    .map_err(|e| ScrapeError::Database(e.to_string()))?;
-            }
-            None => {
-                diesel::update(scrape_jobs::table.find(job_id))
-                    .set((
-                        scrape_jobs::status.eq(status.as_str()),
-                        scrape_jobs::current_step.eq::<Option<String>>(None),
-                        scrape_jobs::current_step_started_at.eq::<Option<DateTime<Utc>>>(None),
-                        scrape_jobs::updated_at.eq(now),
-                    ))
-                    .execute(conn)
-                    .map_err(|e| ScrapeError::Database(e.to_string()))?;
-            }
-        }
-
-        Ok(())
+        enter_step_conn(conn, job_id, status, &step)
     })
     .await
 }
 
-/// Point `current_step` at another step without touching
-/// `current_step_started_at`. Post-save steps run concurrently, so the job row
-/// keeps the time the phase started; the status API uses it to tell this
-/// attempt's outputs from a previous attempt's.
+/// Point `current_step` at another step of the concurrent phase without
+/// touching `current_step_started_at`. Post-save steps run concurrently, so
+/// the job row keeps the time the phase started; the status API uses it to
+/// tell this attempt's outputs from a previous attempt's.
 pub(super) async fn update_current_step_keeping_start(
     pool: &DbPool,
     job_id: Uuid,
@@ -540,14 +539,17 @@ pub(super) async fn update_current_step_keeping_start(
 ) -> Result<(), ScrapeError> {
     let current_step = current_step.to_string();
     run_scrape_db_write(pool, move |conn| {
-        diesel::update(scrape_jobs::table.find(job_id))
-            .set((
-                scrape_jobs::current_step.eq(Some(current_step.as_str())),
-                scrape_jobs::updated_at.eq(Utc::now()),
-            ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-        Ok(())
+        let updated = diesel::update(
+            scrape_jobs::table
+                .find(job_id)
+                .filter(scrape_jobs::status.eq(JobStatus::Normalizing)),
+        )
+        .set((
+            scrape_jobs::current_step.eq(Some(current_step.as_str())),
+            scrape_jobs::updated_at.eq(Utc::now()),
+        ))
+        .execute(conn)?;
+        check_transition(conn, job_id, updated, &format!("run {current_step}"))
     })
     .await
 }
@@ -584,7 +586,7 @@ pub(super) fn save_step_output(
     Ok(())
 }
 
-/// Mark job as failed.
+/// Mark a running job as failed.
 ///
 /// `step_name` is the real pipeline step name that failed (e.g. `"fetch_html"`,
 /// `"extract_recipe"`, `"photo_extract"`), not a job status string. The status
@@ -598,18 +600,22 @@ pub(super) async fn mark_failed(
     let step_name = step_name.to_string();
     let error = error.to_string();
     run_scrape_db_write(pool, move |conn| {
-        // Leave current_step_started_at set so the status API can show when the failed step started.
-        diesel::update(scrape_jobs::table.find(job_id))
-            .set((
-                scrape_jobs::status.eq(STATUS_FAILED),
-                scrape_jobs::failed_at_step.eq(Some(step_name.as_str())),
-                scrape_jobs::error_message.eq(Some(error.as_str())),
-                scrape_jobs::updated_at.eq(Utc::now()),
-            ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-        Ok(())
+        // Leave current_step_started_at set so the status API can show when
+        // the failed step started.
+        let updated = diesel::update(
+            scrape_jobs::table
+                .find(job_id)
+                .filter(scrape_jobs::status.eq_any(JobStatus::ACTIVE)),
+        )
+        .set((
+            scrape_jobs::status.eq(JobStatus::Failed),
+            scrape_jobs::current_step.eq::<Option<String>>(None),
+            scrape_jobs::failed_at_step.eq(Some(step_name.as_str())),
+            scrape_jobs::error_message.eq(Some(error.as_str())),
+            scrape_jobs::updated_at.eq(Utc::now()),
+        ))
+        .execute(conn)?;
+        check_transition(conn, job_id, updated, "fail")
     })
     .await
 }
@@ -630,50 +636,51 @@ pub(super) async fn fail_unfinished(
     run_scrape_db_write(pool, move |conn| {
         let unfinished = scrape_jobs::table
             .find(job_id)
-            .filter(scrape_jobs::status.ne_all([STATUS_COMPLETED, STATUS_FAILED]));
+            .filter(scrape_jobs::status.eq_any(JobStatus::ACTIVE));
         let step = match step {
             Some(step) => Some(step),
             None => unfinished
                 .clone()
                 .select(scrape_jobs::current_step)
                 .first::<Option<String>>(conn)
-                .optional()
-                .map_err(|e| ScrapeError::Database(e.to_string()))?
+                .optional()?
                 .flatten(),
         };
         diesel::update(unfinished)
             .set((
-                scrape_jobs::status.eq(STATUS_FAILED),
+                scrape_jobs::status.eq(JobStatus::Failed),
+                scrape_jobs::current_step.eq::<Option<String>>(None),
                 scrape_jobs::failed_at_step.eq(step),
                 scrape_jobs::error_message.eq(Some(error.as_str())),
                 scrape_jobs::updated_at.eq(Utc::now()),
             ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
+            .execute(conn)?;
         Ok(())
     })
     .await
 }
 
-/// Mark job as completed with recipe ID.
+/// Mark a running job as completed with recipe ID.
 pub(super) async fn mark_completed(
     pool: &DbPool,
     job_id: Uuid,
     recipe_id: Uuid,
 ) -> Result<(), ScrapeError> {
     run_scrape_db_write(pool, move |conn| {
-        diesel::update(scrape_jobs::table.find(job_id))
-            .set((
-                scrape_jobs::status.eq(STATUS_COMPLETED),
-                scrape_jobs::recipe_id.eq(Some(recipe_id)),
-                scrape_jobs::current_step.eq::<Option<String>>(None),
-                scrape_jobs::current_step_started_at.eq::<Option<DateTime<Utc>>>(None),
-                scrape_jobs::updated_at.eq(Utc::now()),
-            ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-        Ok(())
+        let updated = diesel::update(
+            scrape_jobs::table
+                .find(job_id)
+                .filter(scrape_jobs::status.eq_any(JobStatus::ACTIVE)),
+        )
+        .set((
+            scrape_jobs::status.eq(JobStatus::Completed),
+            scrape_jobs::recipe_id.eq(Some(recipe_id)),
+            scrape_jobs::current_step.eq::<Option<String>>(None),
+            scrape_jobs::current_step_started_at.eq::<Option<DateTime<Utc>>>(None),
+            scrape_jobs::updated_at.eq(Utc::now()),
+        ))
+        .execute(conn)?;
+        check_transition(conn, job_id, updated, "complete")
     })
     .await
 }

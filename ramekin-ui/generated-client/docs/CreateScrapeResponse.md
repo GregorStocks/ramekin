@@ -7,7 +7,7 @@
 Name | Type
 ------------ | -------------
 `id` | string
-`status` | string
+`status` | [ScrapeJobStatus](ScrapeJobStatus.md)
 
 ## Example
 

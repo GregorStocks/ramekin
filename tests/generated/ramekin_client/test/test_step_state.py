@@ -41,14 +41,14 @@ class TestStepState(unittest.TestCase):
                 has_output = True,
                 name = '',
                 started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                status = '',
+                status = 'pending',
                 summary = ''
             )
         else:
             return StepState(
                 has_output = True,
                 name = '',
-                status = '',
+                status = 'pending',
         )
         """
 

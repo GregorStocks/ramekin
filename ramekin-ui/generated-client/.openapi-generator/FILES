@@ -94,6 +94,7 @@ docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
 docs/ScrapeJobResponse.md
+docs/ScrapeJobStatus.md
 docs/ShoppingListApi.md
 docs/ShoppingListFields.md
 docs/ShoppingListHistoryEntry.md
@@ -103,6 +104,7 @@ docs/SignupRequest.md
 docs/SignupResponse.md
 docs/SortBy.md
 docs/StepState.md
+docs/StepStatus.md
 docs/SyncApi.md
 docs/SyncMealPlan.md
 docs/SyncMealPlansRequest.md
@@ -194,6 +196,7 @@ models/RenameTagResponse.ts
 models/RescrapeResponse.ts
 models/RetryScrapeResponse.ts
 models/ScrapeJobResponse.ts
+models/ScrapeJobStatus.ts
 models/ShoppingListFields.ts
 models/ShoppingListHistoryEntry.ts
 models/ShoppingListHistoryResponse.ts
@@ -202,6 +205,7 @@ models/SignupRequest.ts
 models/SignupResponse.ts
 models/SortBy.ts
 models/StepState.ts
+models/StepStatus.ts
 models/SyncMealPlan.ts
 models/SyncMealPlansRequest.ts
 models/SyncMealPlansResponse.ts

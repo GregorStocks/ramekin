@@ -36,12 +36,12 @@ class TestImportFromTextResponse(unittest.TestCase):
         if include_optional:
             return ImportFromTextResponse(
                 job_id = '',
-                status = ''
+                status = 'pending'
             )
         else:
             return ImportFromTextResponse(
                 job_id = '',
-                status = '',
+                status = 'pending',
         )
         """
 

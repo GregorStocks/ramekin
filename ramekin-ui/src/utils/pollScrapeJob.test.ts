@@ -2,15 +2,21 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ScrapeApi, ScrapeJobResponse } from "ramekin-client";
 import { PollScrapeJobAbortedError, pollScrapeJob } from "./pollScrapeJob";
 
+// The server computes isTerminal and recipeReady; mirror its rules here so
+// tests only have to say what differs.
 function scrapeJob(
   status: string,
   overrides: Partial<ScrapeJobResponse> = {},
 ): ScrapeJobResponse {
+  const recipeId = overrides.recipeId ?? null;
   return {
     id: "job-id",
     url: "https://example.com/recipe",
     status,
-    recipeId: null,
+    isTerminal: status === "completed" || status === "failed",
+    recipeReady:
+      !!recipeId && ["normalizing", "completed", "failed"].includes(status),
+    recipeId,
     error: null,
     createdAt: new Date("2026-07-06T12:00:00Z"),
     steps: [],
@@ -80,6 +86,20 @@ describe("pollScrapeJob", () => {
 
     expect(result.status).toBe("recipe_ready");
     expect(result.job?.recipeId).toBe("recipe-id");
+  });
+
+  it("follows the server's recipeReady flag rather than the status", async () => {
+    const api = scrapeApi([
+      scrapeJob("normalizing", { recipeId: "recipe-id", recipeReady: false }),
+      scrapeJob("completed", { recipeId: "recipe-id" }),
+    ]);
+
+    const result = await pollScrapeJob(api, "job-id", {
+      sleep: async () => {},
+      untilRecipeReady: true,
+    });
+
+    expect(result.status).toBe("completed");
   });
 
   it("returns failed with the job error", async () => {

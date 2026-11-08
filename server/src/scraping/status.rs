@@ -16,7 +16,7 @@ use crate::db::DbPool;
 use crate::models::ScrapeJob;
 use crate::schema::step_outputs;
 use crate::scraping::plan::JobPlan;
-use crate::scraping::{run_scrape_db, ScrapeError};
+use crate::scraping::{run_scrape_db, JobStatus, ScrapeError};
 
 /// Row shape read by `build_step_states_from_outputs`:
 /// `(step_name, created_at, duration_ms, summary, success, error)`. The full
@@ -32,12 +32,36 @@ type StepOutputRow = (
     Option<String>,
 );
 
+/// A pipeline step's status in the status API.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, ToSchema)]
+#[serde(rename_all = "snake_case")]
+pub enum StepStatus {
+    /// Not started (or not reached in this attempt).
+    Pending,
+    Running,
+    Completed,
+    /// The step failed. For a step that continues on failure the job may
+    /// still have completed.
+    Failed,
+}
+
+#[cfg(test)]
+impl StepStatus {
+    pub const fn as_str(self) -> &'static str {
+        match self {
+            StepStatus::Pending => "pending",
+            StepStatus::Running => "running",
+            StepStatus::Completed => "completed",
+            StepStatus::Failed => "failed",
+        }
+    }
+}
+
 /// A single pipeline step's state for the status API response.
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct StepState {
     pub name: String,
-    /// One of "pending", "running", "completed", "failed", "skipped".
-    pub status: String,
+    pub status: StepStatus,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub started_at: Option<DateTime<Utc>>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -225,7 +249,7 @@ pub fn extra_failed_state_for_unknown_step(
     }
     Some(StepState {
         name: name.to_string(),
-        status: "failed".to_string(),
+        status: StepStatus::Failed,
         started_at: current_step_started_at,
         finished_at: None,
         duration_ms: None,
@@ -281,7 +305,7 @@ pub async fn build_step_states(
     Ok(build_step_states_from_outputs(
         plan,
         outputs,
-        &job.status,
+        job.status,
         job.current_step.as_deref(),
         job.current_step_started_at,
         job.failed_at_step.as_deref(),
@@ -295,7 +319,7 @@ pub async fn build_step_states(
 fn build_step_states_from_outputs(
     plan: &JobPlan,
     outputs: Vec<StepOutputRow>,
-    job_status: &str,
+    job_status: JobStatus,
     current_step: Option<&str>,
     current_step_started_at: Option<DateTime<Utc>>,
     failed_at_step: Option<&str>,
@@ -321,7 +345,7 @@ fn build_step_states_from_outputs(
         }
     }
 
-    let terminal = matches!(job_status, "completed" | "failed");
+    let terminal = job_status.is_terminal();
     let pipeline_steps = plan.step_names();
     // Concurrent steps run together, but the job row names only the earliest
     // running one. A later concurrent step that hasn't written output but
@@ -385,7 +409,7 @@ fn build_step_states_from_outputs(
             };
             states.push(StepState {
                 name: name.clone(),
-                status: "failed".to_string(),
+                status: StepStatus::Failed,
                 started_at,
                 finished_at,
                 duration_ms,
@@ -396,7 +420,7 @@ fn build_step_states_from_outputs(
         } else if !terminal && current_step == Some(name.as_str()) {
             states.push(StepState {
                 name: name.clone(),
-                status: "running".to_string(),
+                status: StepStatus::Running,
                 started_at: current_step_started_at,
                 finished_at: None,
                 duration_ms: None,
@@ -407,7 +431,7 @@ fn build_step_states_from_outputs(
         } else if running_alongside_current(&name) {
             states.push(StepState {
                 name: name.clone(),
-                status: "running".to_string(),
+                status: StepStatus::Running,
                 started_at: None,
                 finished_at: None,
                 duration_ms: None,
@@ -423,11 +447,11 @@ fn build_step_states_from_outputs(
                 .and_then(chrono::Duration::try_milliseconds)
                 .map(|d| finished_at - d);
             let (status, summary_val, error_val) = if *success {
-                ("completed".to_string(), summary.clone(), None)
+                (StepStatus::Completed, summary.clone(), None)
             } else {
                 // Surface the per-step error. For a continues_on_failure
                 // step the overall job still completed.
-                ("failed".to_string(), None, step_error.clone())
+                (StepStatus::Failed, None, step_error.clone())
             };
             states.push(StepState {
                 name: name.clone(),
@@ -442,7 +466,7 @@ fn build_step_states_from_outputs(
         } else {
             states.push(StepState {
                 name: name.clone(),
-                status: "pending".to_string(),
+                status: StepStatus::Pending,
                 started_at: None,
                 finished_at: None,
                 duration_ms: None,
@@ -606,7 +630,7 @@ mod tests {
         )
         .expect("expected synthetic state for non-canonical step");
         assert_eq!(state.name, "photo_extract");
-        assert_eq!(state.status, "failed");
+        assert_eq!(state.status, StepStatus::Failed);
         assert_eq!(state.started_at, Some(started));
         assert_eq!(state.finished_at, None);
         assert_eq!(state.duration_ms, None);
@@ -621,7 +645,7 @@ mod tests {
         // and skips None optionals — this is the shape the API will expose.
         let state = StepState {
             name: "fetch_html".to_string(),
-            status: "pending".to_string(),
+            status: StepStatus::Pending,
             started_at: None,
             finished_at: None,
             duration_ms: None,
@@ -658,7 +682,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "failed",
+            JobStatus::Failed,
             None,
             None,
             Some("save_recipe"),
@@ -668,7 +692,7 @@ mod tests {
             .iter()
             .find(|s| s.name == "save_recipe")
             .expect("save_recipe state present");
-        assert_eq!(save.status, "failed");
+        assert_eq!(save.status, StepStatus::Failed);
         assert!(save.has_output);
         assert_eq!(save.finished_at, Some(finished));
         assert_eq!(save.duration_ms, Some(1000));
@@ -693,7 +717,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "completed",
+            JobStatus::Completed,
             None,
             None,
             None,
@@ -703,7 +727,7 @@ mod tests {
             .iter()
             .find(|s| s.name == "resolve_ingredient_names")
             .expect("resolve_ingredient_names state present");
-        assert_eq!(resolve.status, "failed");
+        assert_eq!(resolve.status, StepStatus::Failed);
         assert_eq!(resolve.error.as_deref(), Some("boom"));
         assert_eq!(resolve.finished_at, Some(finished));
         assert_eq!(resolve.duration_ms, Some(500));
@@ -731,7 +755,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "normalizing",
+            JobStatus::Normalizing,
             Some("resolve_ingredient_names"),
             Some(at),
             None,
@@ -792,7 +816,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "normalizing",
+            JobStatus::Normalizing,
             Some("normalize_title"),
             Some(phase_start),
             None,
@@ -833,7 +857,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "normalizing",
+            JobStatus::Normalizing,
             Some("resolve_ingredient_names"),
             Some(at),
             None,
@@ -875,7 +899,7 @@ mod tests {
         let states = build_step_states_from_outputs(
             &JobPlan::import(),
             outputs,
-            "scraping",
+            JobStatus::Scraping,
             Some("fetch_html"),
             Some(retry_started),
             None,
@@ -887,7 +911,8 @@ mod tests {
             .find(|s| s.name == "fetch_html")
             .expect("fetch_html state present");
         assert_eq!(
-            fetch_html.status, "running",
+            fetch_html.status,
+            StepStatus::Running,
             "current_step should override stale output row on retry"
         );
         assert_eq!(fetch_html.started_at, Some(retry_started));

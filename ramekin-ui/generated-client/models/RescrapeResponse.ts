@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
+import {
+    ScrapeJobStatusFromJSON,
+    ScrapeJobStatusFromJSONTyped,
+    ScrapeJobStatusToJSON,
+    ScrapeJobStatusToJSONTyped,
+} from './ScrapeJobStatus';
+
 /**
  * 
  * @export
@@ -27,11 +35,13 @@ export interface RescrapeResponse {
     jobId: string;
     /**
      * Current job status
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof RescrapeResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
 }
+
+
 
 /**
  * Check if a given object implements the RescrapeResponse interface.
@@ -53,7 +63,7 @@ export function RescrapeResponseFromJSONTyped(json: any, ignoreDiscriminator: bo
     return {
         
         'jobId': json['job_id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 
@@ -69,7 +79,7 @@ export function RescrapeResponseToJSONTyped(value?: RescrapeResponse | null, ign
     return {
         
         'job_id': value['jobId'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }
 

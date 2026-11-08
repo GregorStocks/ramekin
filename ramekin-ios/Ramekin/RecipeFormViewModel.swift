@@ -52,6 +52,10 @@ final class RecipeFormViewModel: ObservableObject {
     @Published private(set) var importJobId: UUID?
     /// The imported recipe, once the job has saved it.
     @Published private(set) var importedRecipeId: UUID?
+    /// Polling the import job failed, so whether it saved the recipe is
+    /// unknown: Import follows the same job again, and the text counts as
+    /// unsaved until it's accounted for.
+    @Published private(set) var lostTrackOfImport = false
     /// The text import job's steps, as last polled.
     @Published var importSteps: [StepState] = []
     var pollIntervalNanoseconds: UInt64 = 1_000_000_000
@@ -77,6 +81,10 @@ final class RecipeFormViewModel: ObservableObject {
         savedFormData = initialFormData
         if let resumed {
             recipeText = resumed.recipeText
+            if let jobId = resumed.lostImportJobId {
+                importJobId = jobId
+                lostTrackOfImport = true
+            }
             if case .edit = mode {
                 isResumingEdit = true
                 resumedEditVersionId = resumed.form.expectedVersionId
@@ -94,7 +102,8 @@ extension RecipeFormViewModel {
         if isUploadingPhoto { return true }
         return switch mode {
         case .create:
-            importJobId == nil && !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            (importJobId == nil || lostTrackOfImport)
+                && !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         case .edit:
             formData != savedFormData
         }
@@ -107,7 +116,8 @@ extension RecipeFormViewModel {
         return RecipeFormDraft(
             mode: mode,
             form: formData,
-            recipeText: recipeText
+            recipeText: recipeText,
+            lostImportJobId: lostTrackOfImport ? importJobId : nil
         )
     }
 
@@ -122,47 +132,74 @@ extension RecipeFormViewModel {
             && !isUploadingPhoto
     }
 
+    /// The text is locked while a job runs on it and once it's imported. It
+    /// stays locked after losing track of a job too: Check Again follows
+    /// that job, so edits made now would be silently dropped.
+    var canEditRecipeText: Bool {
+        !isImporting && importedRecipeId == nil && !lostTrackOfImport
+    }
+
+    /// Import starts a job from the text; after losing track of one (see
+    /// `lostTrackOfImport`) it follows that same job again instead, since a
+    /// second job would make a second recipe.
     var canImport: Bool {
-        !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-            && !isImporting && importJobId == nil
+        guard !isImporting, importedRecipeId == nil else { return false }
+        if importJobId != nil { return lostTrackOfImport }
+        return !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     /// Imports the recipe text as a job and follows it until the recipe is
     /// saved; returns whether it was. Normalize ops may still update the
     /// recipe afterwards, and one failing leaves it saved. The text is kept
-    /// when the import fails.
+    /// when the import fails. After losing track of a job, this follows that
+    /// job again rather than starting another.
     func importRecipe() async -> Bool {
         error = nil
         importSteps = []
         isImporting = true
         defer { isImporting = false }
         do {
-            let jobId = try await api.importFromText(recipeText)
-            importJobId = jobId
-            // AI can be slow, so there's no deadline; closing the form
-            // cancels the task, and the job carries on.
-            while true {
-                try Task.checkCancellation()
-                let job = try await api.getScrape(jobId)
+            let jobId: UUID
+            if let existing = importJobId, lostTrackOfImport {
+                jobId = existing
+            } else {
+                jobId = try await api.importFromText(recipeText)
+                importJobId = jobId
+            }
+            lostTrackOfImport = false
+            // AI can be slow, so there's no client deadline: the server
+            // stops a hung step at its deadline and fails the job, which ends
+            // this like any other failure (the text is kept, and Import
+            // starts over). Closing the form cancels the task, and the job
+            // carries on.
+            let poller = ScrapeJobPoller(getScrape: api.getScrape, intervalNanoseconds: pollIntervalNanoseconds)
+            let result = try await poller.poll(jobId, untilRecipeReady: true) { job in
                 importSteps = job.steps
-                if let recipeId = job.recipeId {
-                    importedRecipeId = recipeId
-                    return true
-                }
-                if job.status == "failed" {
+            }
+            switch result {
+            case .recipeReady(let job), .completed(let job):
+                guard let recipeId = job.recipeId else {
+                    // A text import always saves a recipe before it completes.
                     importJobId = nil
-                    error = job.error ?? "The import failed. Your text is unchanged; try again."
+                    error = "The import finished without a recipe. Your text is unchanged; try again."
                     return false
                 }
-                try await Task.sleep(nanoseconds: pollIntervalNanoseconds)
+                importedRecipeId = recipeId
+                return true
+            case .failed(let job):
+                importJobId = nil
+                error = job.error ?? "The import failed. Your text is unchanged; try again."
+                return false
             }
         } catch is CancellationError {
             return false
         } catch {
-            // A failed poll leaves the job running with the text, so trying
-            // again would import the recipe twice.
+            // Polling failed with the job still running on the text, so
+            // starting another would import the recipe twice: offer to check
+            // on this one again, and keep the text until it's accounted for.
             guard importJobId == nil else {
-                self.error = "Lost track of the import. It's still running; the recipe will appear in your list."
+                lostTrackOfImport = true
+                self.error = "Lost track of the import. It may still be running; tap Check Again."
                 return false
             }
             self.error = APIErrorFormatter.userMessage(

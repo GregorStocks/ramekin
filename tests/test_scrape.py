@@ -1,3 +1,5 @@
+import sqlite3
+
 import pytest
 
 from conftest import (
@@ -10,7 +12,7 @@ from conftest import (
     wait_for_job_completion,
     wait_until_queued,
 )
-from ramekin_client.api import RecipesApi, ScrapeApi
+from ramekin_client.api import ImportApi, RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import CreateRecipeRequest, CreateScrapeRequest
 
@@ -242,7 +244,8 @@ class TestScrapeRetry:
             )
             conn.execute(
                 "UPDATE scrape_jobs SET status = 'failed',"
-                " failed_at_step = 'save_recipe' WHERE id = ?",
+                " failed_at_step = 'save_recipe', error_message = 'lost output'"
+                " WHERE id = ?",
                 (str(job.id),),
             )
         conn.close()
@@ -288,6 +291,67 @@ class TestScrapeRetry:
             with pytest.raises(ApiException) as exc_info:
                 scrape_api.retry_scrape(response.id)
             assert exc_info.value.status == 400
+
+    def test_retry_refused_after_max_retries(self, authed_api_client, database_url):
+        """A job out of retries isn't offered one, and Retry refuses it."""
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+
+        url = f"{FIXTURE_BASE_URL}/nonexistent/page.html"
+        response = scrape_api.create_scrape(CreateScrapeRequest(url=url))
+        job = wait_for_job_completion(scrape_api, response.id)
+        assert job.status == "failed"
+        assert job.can_retry is True
+
+        conn = connect_db(database_url)
+        with conn:
+            conn.execute(
+                "UPDATE scrape_jobs SET retry_count = 5 WHERE id = ?", (str(job.id),)
+            )
+        conn.close()
+
+        job = scrape_api.get_scrape(job.id)
+        assert job.can_retry is False
+        with pytest.raises(ApiException) as exc_info:
+            scrape_api.retry_scrape(job.id)
+        assert exc_info.value.status == 400
+        assert scrape_api.get_scrape(job.id).retry_count == 5
+
+    def test_import_without_source_cannot_retry(self, authed_api_client, database_url):
+        """A failed import with no page or pasted text has nothing to retry from."""
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+
+        response = ImportApi(client).import_recipe(
+            {
+                "raw_recipe": {
+                    "title": "Paprika Soup",
+                    "ingredients": "1 cup water",
+                    "instructions": "Boil the water.",
+                },
+                "photo_ids": [],
+                "extraction_method": "paprika",
+            }
+        )
+        job = wait_for_job_completion(scrape_api, str(response.job_id))
+        assert job.status == "completed"
+
+        conn = connect_db(database_url)
+        with conn:
+            conn.execute(
+                "UPDATE scrape_jobs SET status = 'failed',"
+                " failed_at_step = 'parse_ingredients', error_message = 'boom'"
+                " WHERE id = ?",
+                (str(job.id),),
+            )
+        conn.close()
+
+        job = scrape_api.get_scrape(job.id)
+        assert job.status == "failed"
+        assert job.can_retry is False
+        with pytest.raises(ApiException) as exc_info:
+            scrape_api.retry_scrape(job.id)
+        assert exc_info.value.status == 400
 
     def test_concurrent_retries_restart_the_job_once(
         self, authed_api_client, database_url, uncommitted
@@ -469,3 +533,101 @@ class TestScrapeNotFound:
             scrape_api.retry_scrape("00000000-0000-0000-0000-000000000000")
 
         assert exc_info.value.status == 404
+
+
+class TestScrapeJobStateConstraints:
+    """The database refuses job rows whose status and columns disagree."""
+
+    @pytest.mark.parametrize(
+        "update",
+        [
+            "status = 'enriching'",
+            "status = 'failed', error_message = NULL",
+            "status = 'completed', recipe_id = NULL",
+            "current_step = 'save_recipe'",
+        ],
+    )
+    def test_invalid_job_state_is_rejected(
+        self, authed_api_client, database_url, update
+    ):
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+
+        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        response = scrape_api.create_scrape(CreateScrapeRequest(url=url))
+        job = wait_for_job_completion(scrape_api, response.id)
+        assert job.status == "completed"
+
+        conn = connect_db(database_url)
+        try:
+            with pytest.raises(sqlite3.IntegrityError):
+                conn.execute(
+                    f"UPDATE scrape_jobs SET {update} WHERE id = ?", (str(job.id),)
+                )
+        finally:
+            conn.close()
+
+
+class TestScrapeJobKind:
+    """Each job records its kind when it's created."""
+
+    def test_jobs_record_their_kind(self, authed_api_client, database_url):
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+        import_api = ImportApi(client)
+
+        scrape = scrape_api.create_scrape(
+            CreateScrapeRequest(url=f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html")
+        )
+        paprika = import_api.import_recipe(
+            {
+                "raw_recipe": {
+                    "title": "Kind Soup",
+                    "ingredients": "1 cup water",
+                    "instructions": "Boil the water.",
+                },
+                "photo_ids": [],
+                "extraction_method": "paprika",
+            }
+        )
+        text = import_api.import_from_text(
+            {"text": "Kind Pancakes\n1 cup flour\nMix and cook."}
+        )
+        jobs = {
+            str(scrape.id): "url_scrape",
+            str(paprika.job_id): "import",
+            str(text.job_id): "text_import",
+        }
+        for job_id in jobs:
+            wait_for_job_completion(scrape_api, job_id)
+
+        conn = connect_db(database_url)
+        try:
+            kinds = dict(
+                conn.execute(
+                    "SELECT id, kind FROM scrape_jobs WHERE user_id = ?",
+                    (str(user_id),),
+                ).fetchall()
+            )
+        finally:
+            conn.close()
+        assert kinds == jobs
+
+    def test_kind_must_match_the_job_columns(self, authed_api_client, database_url):
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+        response = scrape_api.create_scrape(
+            CreateScrapeRequest(url=f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html")
+        )
+        wait_for_job_completion(scrape_api, response.id)
+
+        conn = connect_db(database_url)
+        try:
+            for update in ["kind = 'teleport'", "kind = 'edit'", "photo_only = 1"]:
+                with pytest.raises(sqlite3.IntegrityError):
+                    conn.execute(
+                        f"UPDATE scrape_jobs SET {update} WHERE id = ?",
+                        (str(response.id),),
+                    )
+        finally:
+            conn.close()

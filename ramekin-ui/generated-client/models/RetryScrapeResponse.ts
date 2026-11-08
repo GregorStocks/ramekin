@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
+import {
+    ScrapeJobStatusFromJSON,
+    ScrapeJobStatusFromJSONTyped,
+    ScrapeJobStatusToJSON,
+    ScrapeJobStatusToJSONTyped,
+} from './ScrapeJobStatus';
+
 /**
  * 
  * @export
@@ -27,11 +35,13 @@ export interface RetryScrapeResponse {
     id: string;
     /**
      * New job status after retry
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof RetryScrapeResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
 }
+
+
 
 /**
  * Check if a given object implements the RetryScrapeResponse interface.
@@ -53,7 +63,7 @@ export function RetryScrapeResponseFromJSONTyped(json: any, ignoreDiscriminator:
     return {
         
         'id': json['id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 
@@ -69,7 +79,7 @@ export function RetryScrapeResponseToJSONTyped(value?: RetryScrapeResponse | nul
     return {
         
         'id': value['id'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }
 

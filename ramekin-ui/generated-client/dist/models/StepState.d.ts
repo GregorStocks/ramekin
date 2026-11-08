@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { StepStatus } from './StepStatus';
 /**
  * A single pipeline step's state for the status API response.
  * @export
@@ -52,11 +53,11 @@ export interface StepState {
      */
     startedAt?: Date | null;
     /**
-     * One of "pending", "running", "completed", "failed", "skipped".
-     * @type {string}
+     *
+     * @type {StepStatus}
      * @memberof StepState
      */
-    status: string;
+    status: StepStatus;
     /**
      *
      * @type {string}

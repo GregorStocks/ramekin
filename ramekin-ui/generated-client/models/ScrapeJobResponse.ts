@@ -20,6 +20,13 @@ import {
     StepStateToJSON,
     StepStateToJSONTyped,
 } from './StepState';
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
+import {
+    ScrapeJobStatusFromJSON,
+    ScrapeJobStatusFromJSONTyped,
+    ScrapeJobStatusToJSON,
+    ScrapeJobStatusToJSONTyped,
+} from './ScrapeJobStatus';
 
 /**
  * 
@@ -28,7 +35,8 @@ import {
  */
 export interface ScrapeJobResponse {
     /**
-     * Whether this job can be retried
+     * Whether `POST /api/scrape/{id}/retry` would accept this job: it
+     * failed, has retries left, and has a source to start again from.
      * @type {boolean}
      * @memberof ScrapeJobResponse
      */
@@ -58,6 +66,12 @@ export interface ScrapeJobResponse {
      */
     id: string;
     /**
+     * Whether the job has stopped (`completed` or `failed`): stop polling.
+     * @type {boolean}
+     * @memberof ScrapeJobResponse
+     */
+    isTerminal: boolean;
+    /**
      * Recipe ID once the recipe is saved (also set on a job that failed
      * after saving; rescrapes and normalize jobs have it from the start)
      * @type {string}
@@ -65,21 +79,29 @@ export interface ScrapeJobResponse {
      */
     recipeId?: string | null;
     /**
+     * Whether `recipe_id` names a recipe the client can open now: the job
+     * has saved it (even if a later normalize step then failed) or finished
+     * working on it. Normalize ops may still update it while the job is
+     * `normalizing`.
+     * @type {boolean}
+     * @memberof ScrapeJobResponse
+     */
+    recipeReady: boolean;
+    /**
      * Number of retry attempts
      * @type {number}
      * @memberof ScrapeJobResponse
      */
     retryCount: number;
     /**
-     * Current job status (pending, scraping, parsing, normalizing, completed,
-     * failed). While an import or scrape is "normalizing" the recipe is
-     * saved and `recipe_id` is set; normalize ops may still update it until
-     * the job completes. A manual normalize job saves nothing: it ends with
-     * a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
-     * @type {string}
+     * Current job status. While an import or scrape is "normalizing" the
+     * recipe is saved and `recipe_id` is set; normalize ops may still update
+     * it until the job completes. A manual normalize job saves nothing: it
+     * ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
+     * @type {ScrapeJobStatus}
      * @memberof ScrapeJobResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
     /**
      * Per-step state for the status page (ordered by pipeline step).
      * @type {Array<StepState>}
@@ -94,6 +116,8 @@ export interface ScrapeJobResponse {
     url?: string | null;
 }
 
+
+
 /**
  * Check if a given object implements the ScrapeJobResponse interface.
  */
@@ -101,6 +125,8 @@ export function instanceOfScrapeJobResponse(value: object): value is ScrapeJobRe
     if (!('canRetry' in value) || value['canRetry'] === undefined) return false;
     if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('isTerminal' in value) || value['isTerminal'] === undefined) return false;
+    if (!('recipeReady' in value) || value['recipeReady'] === undefined) return false;
     if (!('retryCount' in value) || value['retryCount'] === undefined) return false;
     if (!('status' in value) || value['status'] === undefined) return false;
     if (!('steps' in value) || value['steps'] === undefined) return false;
@@ -122,9 +148,11 @@ export function ScrapeJobResponseFromJSONTyped(json: any, ignoreDiscriminator: b
         'error': json['error'] == null ? undefined : json['error'],
         'failedAtStep': json['failed_at_step'] == null ? undefined : json['failed_at_step'],
         'id': json['id'],
+        'isTerminal': json['is_terminal'],
         'recipeId': json['recipe_id'] == null ? undefined : json['recipe_id'],
+        'recipeReady': json['recipe_ready'],
         'retryCount': json['retry_count'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
         'steps': ((json['steps'] as Array<any>).map(StepStateFromJSON)),
         'url': json['url'] == null ? undefined : json['url'],
     };
@@ -146,9 +174,11 @@ export function ScrapeJobResponseToJSONTyped(value?: ScrapeJobResponse | null, i
         'error': value['error'],
         'failed_at_step': value['failedAtStep'],
         'id': value['id'],
+        'is_terminal': value['isTerminal'],
         'recipe_id': value['recipeId'],
+        'recipe_ready': value['recipeReady'],
         'retry_count': value['retryCount'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
         'steps': ((value['steps'] as Array<any>).map(StepStateToJSON)),
         'url': value['url'],
     };

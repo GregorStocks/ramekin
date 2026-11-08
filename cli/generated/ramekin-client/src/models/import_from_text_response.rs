@@ -18,11 +18,11 @@ pub struct ImportFromTextResponse {
     pub job_id: uuid::Uuid,
     /// Current job status
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
 }
 
 impl ImportFromTextResponse {
-    pub fn new(job_id: uuid::Uuid, status: String) -> ImportFromTextResponse {
+    pub fn new(job_id: uuid::Uuid, status: models::ScrapeJobStatus) -> ImportFromTextResponse {
         ImportFromTextResponse { job_id, status }
     }
 }

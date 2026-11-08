@@ -126,7 +126,7 @@ pub struct ImportRecipeResponse {
     /// The created job ID
     pub job_id: Uuid,
     /// Current job status
-    pub status: String,
+    pub status: crate::scraping::JobStatus,
 }
 
 #[utoipa::path(

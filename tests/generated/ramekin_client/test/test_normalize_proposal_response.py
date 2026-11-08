@@ -103,7 +103,7 @@ class TestNormalizeProposalResponse(unittest.TestCase):
                     photo_ids = [
                         ''
                         ], ),
-                status = '',
+                status = 'pending',
                 summary = ''
             )
         else:
@@ -144,7 +144,7 @@ class TestNormalizeProposalResponse(unittest.TestCase):
                 ops = [
                     ''
                     ],
-                status = '',
+                status = 'pending',
         )
         """
 

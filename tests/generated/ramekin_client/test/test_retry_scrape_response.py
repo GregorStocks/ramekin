@@ -36,12 +36,12 @@ class TestRetryScrapeResponse(unittest.TestCase):
         if include_optional:
             return RetryScrapeResponse(
                 id = '',
-                status = ''
+                status = 'pending'
             )
         else:
             return RetryScrapeResponse(
                 id = '',
-                status = '',
+                status = 'pending',
         )
         """
 

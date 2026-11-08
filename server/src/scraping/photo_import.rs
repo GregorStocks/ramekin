@@ -1,4 +1,5 @@
 use std::sync::Arc;
+use std::time::Duration;
 
 use crate::ids::Uuid;
 use diesel::prelude::*;
@@ -13,12 +14,14 @@ use crate::models::{NewScrapeJob, ScrapeJob};
 use crate::photos::load_photo_images;
 use crate::schema::scrape_jobs;
 
+use super::deadline::{step_deadline, timeout_error};
 use super::jobs::{
-    mark_failed, prepare_output, prepare_photos_source, save_step_output, update_status_and_step,
-    SOURCE_PHOTOS_STEP,
+    enter_step, enter_step_conn, mark_failed, prepare_output, prepare_photos_source,
+    save_step_output, SOURCE_PHOTOS_STEP,
 };
+use super::plan::JobPlan;
 use super::runner::{job_slot, run_scrape_job_in_slot};
-use super::{run_scrape_db_write, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
+use super::{run_scrape_db_write, JobKind, JobStatus, ScrapeError};
 
 pub(super) const PHOTO_EXTRACT_STEP: &str = "photo_extract";
 
@@ -32,6 +35,7 @@ pub async fn create_pending_photo_job(
             id: Uuid::now_v7(),
             user_id,
             url: None,
+            kind: JobKind::PhotoImport,
         };
 
         diesel::insert_into(scrape_jobs::table)
@@ -101,8 +105,9 @@ async fn run_photo_import_job_inner(
     user_id: Uuid,
     photo_ids: Vec<Uuid>,
 ) -> Result<(), ScrapeError> {
-    // Update status to "scraping" (extraction phase)
-    update_status_and_step(&pool, job_id, STATUS_SCRAPING, Some(PHOTO_EXTRACT_STEP)).await?;
+    let plan = JobPlan::import_without_page();
+    let status = JobStatus::for_step(&plan, PHOTO_EXTRACT_STEP);
+    enter_step(&pool, job_id, status, PHOTO_EXTRACT_STEP).await?;
 
     // Step 1: Fetch photo bytes from database
     let images = load_photo_images(&pool, user_id, &photo_ids)
@@ -115,7 +120,12 @@ async fn run_photo_import_job_inner(
             .map_err(AiError::from)?
             .for_extraction(),
     );
-    let extract_result = extract_recipe_from_photos(&ai_client, images).await?;
+    // Photo extraction only calls the AI model, so stopping it is safe.
+    let deadline = step_deadline(PHOTO_EXTRACT_STEP).unwrap_or(Duration::MAX);
+    let extract_result =
+        tokio::time::timeout(deadline, extract_recipe_from_photos(&ai_client, images))
+            .await
+            .map_err(|_| ScrapeError::TimedOut(timeout_error(PHOTO_EXTRACT_STEP, deadline)))??;
 
     tracing::info!(
         "Extracted recipe '{}' from photos (cached={})",
@@ -149,19 +159,9 @@ async fn run_photo_import_job_inner(
         save_step_output(conn, job_id, FetchImagesStepMeta::NAME, images_output)?;
         save_step_output(conn, job_id, SOURCE_PHOTOS_STEP, photos_source)?;
 
-        // Update job to start from parse_ingredients
-        let now = chrono::Utc::now();
-        diesel::update(scrape_jobs::table.find(job_id))
-            .set((
-                scrape_jobs::status.eq(STATUS_PARSING),
-                scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
-                scrape_jobs::current_step_started_at.eq(Some(now)),
-                scrape_jobs::updated_at.eq(now),
-            ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-        Ok(())
+        // Continue from parse_ingredients
+        let step = ParseIngredientsStep::NAME;
+        enter_step_conn(conn, job_id, JobStatus::for_step(&plan, step), step)
     })
     .await?;
 

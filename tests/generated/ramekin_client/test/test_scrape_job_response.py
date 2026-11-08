@@ -40,9 +40,11 @@ class TestScrapeJobResponse(unittest.TestCase):
                 error = '',
                 failed_at_step = '',
                 id = '',
+                is_terminal = True,
                 recipe_id = '',
+                recipe_ready = True,
                 retry_count = 56,
-                status = '',
+                status = 'pending',
                 steps = [
                     ramekin_client.models.step_state.StepState(
                         duration_ms = 56, 
@@ -51,7 +53,7 @@ class TestScrapeJobResponse(unittest.TestCase):
                         has_output = True, 
                         name = '', 
                         started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        status = '', 
+                        status = 'pending', 
                         summary = '', )
                     ],
                 url = ''
@@ -61,8 +63,10 @@ class TestScrapeJobResponse(unittest.TestCase):
                 can_retry = True,
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 id = '',
+                is_terminal = True,
+                recipe_ready = True,
                 retry_count = 56,
-                status = '',
+                status = 'pending',
                 steps = [
                     ramekin_client.models.step_state.StepState(
                         duration_ms = 56, 
@@ -71,7 +75,7 @@ class TestScrapeJobResponse(unittest.TestCase):
                         has_output = True, 
                         name = '', 
                         started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        status = '', 
+                        status = 'pending', 
                         summary = '', )
                     ],
         )

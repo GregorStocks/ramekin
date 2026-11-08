@@ -15,9 +15,9 @@ public struct ImportFromTextResponse: Codable, JSONEncodable, Hashable {
     /** The created job ID */
     public var jobId: UUID
     /** Current job status */
-    public var status: String
+    public var status: ScrapeJobStatus
 
-    public init(jobId: UUID, status: String) {
+    public init(jobId: UUID, status: ScrapeJobStatus) {
         self.jobId = jobId
         self.status = status
     }

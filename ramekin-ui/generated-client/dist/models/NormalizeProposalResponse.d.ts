@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
 import type { NormalizedRecipe } from './NormalizedRecipe';
 /**
  *
@@ -42,10 +43,10 @@ export interface NormalizeProposalResponse {
     proposed?: NormalizedRecipe | null;
     /**
      * The job's status, as `GET /api/scrape/{id}` reports it.
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof NormalizeProposalResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
     /**
      * What an Edit with AI run says it changed, once it completes.
      * @type {string}

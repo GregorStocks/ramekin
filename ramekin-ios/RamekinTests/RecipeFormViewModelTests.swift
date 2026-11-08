@@ -40,22 +40,67 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertFalse(model.hasUnsavedChanges)
     }
 
-    func testLostPollDoesNotOfferToImportAgain() async {
+    func testLostPollOffersToCheckTheSameJobAgain() async {
+        let jobId = UUID()
+        let recipeId = UUID()
+        var imports = 0
+        var pollsFail = true
+        var polls = 0
         let model = RecipeFormViewModel(mode: .create, api: createClient(
-            importFromText: { _ in UUID() },
-            getScrape: { _ in throw TestError.unexpectedCall }
+            importFromText: { _ in
+                imports += 1
+                return jobId
+            },
+            getScrape: { id in
+                XCTAssertEqual(id, jobId)
+                polls += 1
+                if pollsFail { throw TestError.unexpectedCall }
+                return makeJob(id: jobId, recipeId: recipeId, status: "normalizing")
+            }
         ))
+        model.pollIntervalNanoseconds = 0
         model.recipeText = "Pasted recipe"
 
         let saved = await model.importRecipe()
 
         XCTAssertFalse(saved)
-        XCTAssertEqual(
-            model.error,
-            "Lost track of the import. It's still running; the recipe will appear in your list."
-        )
-        XCTAssertFalse(model.canImport, "Importing again would make a second recipe")
+        XCTAssertEqual(polls, 3, "Transient poll errors are retried before giving up")
+        XCTAssertEqual(model.error, "Lost track of the import. It may still be running; tap Check Again.")
+        XCTAssertTrue(model.lostTrackOfImport)
+        XCTAssertTrue(model.canImport, "Check Again follows the same job")
+        XCTAssertFalse(model.canEditRecipeText, "Edits would be ignored by Check Again")
+        XCTAssertTrue(model.hasUnsavedChanges, "The text isn't safe until the job is accounted for")
+
+        pollsFail = false
+        let savedOnRecheck = await model.importRecipe()
+
+        XCTAssertTrue(savedOnRecheck)
+        XCTAssertEqual(imports, 1, "Checking again must not start a second import")
+        XCTAssertEqual(model.importedRecipeId, recipeId)
+        XCTAssertFalse(model.lostTrackOfImport)
         XCTAssertFalse(model.hasUnsavedChanges)
+    }
+
+    func testCompletedJobWithoutRecipeStopsPolling() async {
+        let jobId = UUID()
+        var polls = 0
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in jobId },
+            getScrape: { _ in
+                polls += 1
+                return makeJob(id: jobId, recipeId: nil, status: "completed")
+            }
+        ))
+        model.pollIntervalNanoseconds = 0
+        model.recipeText = "Pasted recipe"
+
+        let saved = await model.importRecipe()
+
+        XCTAssertFalse(saved)
+        XCTAssertEqual(polls, 1)
+        XCTAssertNotNil(model.error)
+        XCTAssertTrue(model.canImport)
+        XCTAssertEqual(model.recipeText, "Pasted recipe")
     }
 
     func testFailedTextImportKeepsTheText() async {
@@ -74,6 +119,32 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertEqual(model.error, "No recipe found in the text (missing title).")
         XCTAssertEqual(model.recipeText, "My original recipe")
         XCTAssertFalse(model.isImporting)
+        XCTAssertTrue(model.canImport)
+        XCTAssertTrue(model.hasUnsavedChanges)
+    }
+
+    func testTimedOutTextImportKeepsTheTextAndOffersImportAgain() async {
+        let jobId = UUID()
+        let timeout = "Timed out: extract_recipe was still running after 15 minutes and was stopped"
+        var polls = 0
+        let model = RecipeFormViewModel(mode: .create, api: createClient(
+            importFromText: { _ in jobId },
+            getScrape: { _ in
+                polls += 1
+                return polls < 3
+                    ? makeJob(id: jobId, recipeId: nil, status: "parsing")
+                    : makeJob(id: jobId, recipeId: nil, status: "failed", error: timeout)
+            }
+        ))
+        model.pollIntervalNanoseconds = 0
+        model.recipeText = "My original recipe"
+
+        let saved = await model.importRecipe()
+
+        XCTAssertFalse(saved)
+        XCTAssertEqual(polls, 3)
+        XCTAssertEqual(model.error, timeout)
+        XCTAssertEqual(model.recipeText, "My original recipe")
         XCTAssertTrue(model.canImport)
         XCTAssertTrue(model.hasUnsavedChanges)
     }
@@ -289,13 +360,24 @@ private func createClient(
     )
 }
 
-private func makeJob(id: UUID, recipeId: UUID?, status: String, error: String? = nil) -> ScrapeJobResponse {
-    ScrapeJobResponse(
-        canRetry: status == "failed",
+/// A job as the server reports it, with `isTerminal` and `recipeReady`
+/// following the server's rules for `status`.
+private func makeJob(
+    id: UUID,
+    recipeId: UUID?,
+    status rawStatus: String,
+    error: String? = nil
+) -> ScrapeJobResponse {
+    let status = ScrapeJobStatus(rawValue: rawStatus)!
+    let stopped = status == .completed || status == .failed
+    return ScrapeJobResponse(
+        canRetry: status == .failed,
         createdAt: Date(timeIntervalSince1970: 1),
         error: error,
         id: id,
+        isTerminal: stopped,
         recipeId: recipeId,
+        recipeReady: recipeId != nil && (stopped || status == .normalizing),
         retryCount: 0,
         status: status,
         steps: []

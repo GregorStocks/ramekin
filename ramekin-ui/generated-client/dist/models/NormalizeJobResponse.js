@@ -11,6 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ScrapeJobStatusFromJSON, ScrapeJobStatusToJSON, } from './ScrapeJobStatus';
 /**
  * Check if a given object implements the NormalizeJobResponse interface.
  */
@@ -30,7 +31,7 @@ export function NormalizeJobResponseFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'jobId': json['job_id'],
-        'status': json['status'],
+        'status': ScrapeJobStatusFromJSON(json['status']),
     };
 }
 export function NormalizeJobResponseToJSON(json) {
@@ -42,6 +43,6 @@ export function NormalizeJobResponseToJSONTyped(value, ignoreDiscriminator = fal
     }
     return {
         'job_id': value['jobId'],
-        'status': value['status'],
+        'status': ScrapeJobStatusToJSON(value['status']),
     };
 }

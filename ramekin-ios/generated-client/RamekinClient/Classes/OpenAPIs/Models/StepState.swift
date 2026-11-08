@@ -19,11 +19,10 @@ public struct StepState: Codable, JSONEncodable, Hashable {
     public var hasOutput: Bool
     public var name: String
     public var startedAt: Date?
-    /** One of \"pending\", \"running\", \"completed\", \"failed\", \"skipped\". */
-    public var status: String
+    public var status: StepStatus
     public var summary: String?
 
-    public init(durationMs: Int64? = nil, error: String? = nil, finishedAt: Date? = nil, hasOutput: Bool, name: String, startedAt: Date? = nil, status: String, summary: String? = nil) {
+    public init(durationMs: Int64? = nil, error: String? = nil, finishedAt: Date? = nil, hasOutput: Bool, name: String, startedAt: Date? = nil, status: StepStatus, summary: String? = nil) {
         self.durationMs = durationMs
         self.error = error
         self.finishedAt = finishedAt

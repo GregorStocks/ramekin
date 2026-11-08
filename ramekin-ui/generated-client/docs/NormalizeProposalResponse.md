@@ -10,7 +10,7 @@ Name | Type
 `baseVersionId` | string
 `ops` | Array&lt;string&gt;
 `proposed` | [NormalizedRecipe](NormalizedRecipe.md)
-`status` | string
+`status` | [ScrapeJobStatus](ScrapeJobStatus.md)
 `summary` | string
 
 ## Example

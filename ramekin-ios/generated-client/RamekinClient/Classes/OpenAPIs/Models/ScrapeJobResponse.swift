@@ -12,7 +12,7 @@ import AnyCodable
 
 public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
 
-    /** Whether this job can be retried */
+    /** Whether `POST /api/scrape/{id}/retry` would accept this job: it failed, has retries left, and has a source to start again from. */
     public var canRetry: Bool
     /** When the job was created */
     public var createdAt: Date
@@ -22,24 +22,30 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     public var failedAtStep: String?
     /** The scrape job ID */
     public var id: UUID
+    /** Whether the job has stopped (`completed` or `failed`): stop polling. */
+    public var isTerminal: Bool
     /** Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes and normalize jobs have it from the start) */
     public var recipeId: UUID?
+    /** Whether `recipe_id` names a recipe the client can open now: the job has saved it (even if a later normalize step then failed) or finished working on it. Normalize ops may still update it while the job is `normalizing`. */
+    public var recipeReady: Bool
     /** Number of retry attempts */
     public var retryCount: Int
-    /** Current job status (pending, scraping, parsing, normalizing, completed, failed). While an import or scrape is \"normalizing\" the recipe is saved and `recipe_id` is set; normalize ops may still update it until the job completes. A manual normalize job saves nothing: it ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`). */
-    public var status: String
+    /** Current job status. While an import or scrape is \"normalizing\" the recipe is saved and `recipe_id` is set; normalize ops may still update it until the job completes. A manual normalize job saves nothing: it ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`). */
+    public var status: ScrapeJobStatus
     /** Per-step state for the status page (ordered by pipeline step). */
     public var steps: [StepState]
     /** URL being scraped (optional for imports) */
     public var url: String?
 
-    public init(canRetry: Bool, createdAt: Date, error: String? = nil, failedAtStep: String? = nil, id: UUID, recipeId: UUID? = nil, retryCount: Int, status: String, steps: [StepState], url: String? = nil) {
+    public init(canRetry: Bool, createdAt: Date, error: String? = nil, failedAtStep: String? = nil, id: UUID, isTerminal: Bool, recipeId: UUID? = nil, recipeReady: Bool, retryCount: Int, status: ScrapeJobStatus, steps: [StepState], url: String? = nil) {
         self.canRetry = canRetry
         self.createdAt = createdAt
         self.error = error
         self.failedAtStep = failedAtStep
         self.id = id
+        self.isTerminal = isTerminal
         self.recipeId = recipeId
+        self.recipeReady = recipeReady
         self.retryCount = retryCount
         self.status = status
         self.steps = steps
@@ -52,7 +58,9 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
         case error
         case failedAtStep = "failed_at_step"
         case id
+        case isTerminal = "is_terminal"
         case recipeId = "recipe_id"
+        case recipeReady = "recipe_ready"
         case retryCount = "retry_count"
         case status
         case steps
@@ -68,7 +76,9 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(error, forKey: .error)
         try container.encodeIfPresent(failedAtStep, forKey: .failedAtStep)
         try container.encode(id, forKey: .id)
+        try container.encode(isTerminal, forKey: .isTerminal)
         try container.encodeIfPresent(recipeId, forKey: .recipeId)
+        try container.encode(recipeReady, forKey: .recipeReady)
         try container.encode(retryCount, forKey: .retryCount)
         try container.encode(status, forKey: .status)
         try container.encode(steps, forKey: .steps)

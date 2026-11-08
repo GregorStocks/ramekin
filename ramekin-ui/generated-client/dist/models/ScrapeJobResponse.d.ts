@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 import type { StepState } from './StepState';
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
 /**
  *
  * @export
@@ -17,7 +18,8 @@ import type { StepState } from './StepState';
  */
 export interface ScrapeJobResponse {
     /**
-     * Whether this job can be retried
+     * Whether `POST /api/scrape/{id}/retry` would accept this job: it
+     * failed, has retries left, and has a source to start again from.
      * @type {boolean}
      * @memberof ScrapeJobResponse
      */
@@ -47,6 +49,12 @@ export interface ScrapeJobResponse {
      */
     id: string;
     /**
+     * Whether the job has stopped (`completed` or `failed`): stop polling.
+     * @type {boolean}
+     * @memberof ScrapeJobResponse
+     */
+    isTerminal: boolean;
+    /**
      * Recipe ID once the recipe is saved (also set on a job that failed
      * after saving; rescrapes and normalize jobs have it from the start)
      * @type {string}
@@ -54,21 +62,29 @@ export interface ScrapeJobResponse {
      */
     recipeId?: string | null;
     /**
+     * Whether `recipe_id` names a recipe the client can open now: the job
+     * has saved it (even if a later normalize step then failed) or finished
+     * working on it. Normalize ops may still update it while the job is
+     * `normalizing`.
+     * @type {boolean}
+     * @memberof ScrapeJobResponse
+     */
+    recipeReady: boolean;
+    /**
      * Number of retry attempts
      * @type {number}
      * @memberof ScrapeJobResponse
      */
     retryCount: number;
     /**
-     * Current job status (pending, scraping, parsing, normalizing, completed,
-     * failed). While an import or scrape is "normalizing" the recipe is
-     * saved and `recipe_id` is set; normalize ops may still update it until
-     * the job completes. A manual normalize job saves nothing: it ends with
-     * a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
-     * @type {string}
+     * Current job status. While an import or scrape is "normalizing" the
+     * recipe is saved and `recipe_id` is set; normalize ops may still update
+     * it until the job completes. A manual normalize job saves nothing: it
+     * ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
+     * @type {ScrapeJobStatus}
      * @memberof ScrapeJobResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
     /**
      * Per-step state for the status page (ordered by pipeline step).
      * @type {Array<StepState>}

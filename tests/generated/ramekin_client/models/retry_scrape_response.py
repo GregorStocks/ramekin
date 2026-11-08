@@ -17,9 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
+from ramekin_client.models.scrape_job_status import ScrapeJobStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class RetryScrapeResponse(BaseModel):
     RetryScrapeResponse
     """ # noqa: E501
     id: UUID = Field(description="The scrape job ID")
-    status: StrictStr = Field(description="New job status after retry")
+    status: ScrapeJobStatus = Field(description="New job status after retry")
     __properties: ClassVar[List[str]] = ["id", "status"]
 
     model_config = ConfigDict(

@@ -15,9 +15,9 @@ public struct RetryScrapeResponse: Codable, JSONEncodable, Hashable {
     /** The scrape job ID */
     public var id: UUID
     /** New job status after retry */
-    public var status: String
+    public var status: ScrapeJobStatus
 
-    public init(id: UUID, status: String) {
+    public init(id: UUID, status: ScrapeJobStatus) {
         self.id = id
         self.status = status
     }

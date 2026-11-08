@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { ScrapeJobStatus } from './ScrapeJobStatus';
 /**
  *
  * @export
@@ -23,10 +24,10 @@ export interface NormalizeJobResponse {
     jobId: string;
     /**
      *
-     * @type {string}
+     * @type {ScrapeJobStatus}
      * @memberof NormalizeJobResponse
      */
-    status: string;
+    status: ScrapeJobStatus;
 }
 /**
  * Check if a given object implements the NormalizeJobResponse interface.

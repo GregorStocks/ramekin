@@ -19,12 +19,18 @@ use utoipa::ToSchema;
 pub struct ScrapeJobResponse {
     /// The scrape job ID
     pub id: Uuid,
-    /// Current job status (pending, scraping, parsing, normalizing, completed,
-    /// failed). While an import or scrape is "normalizing" the recipe is
-    /// saved and `recipe_id` is set; normalize ops may still update it until
-    /// the job completes. A manual normalize job saves nothing: it ends with
-    /// a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
-    pub status: String,
+    /// Current job status. While an import or scrape is "normalizing" the
+    /// recipe is saved and `recipe_id` is set; normalize ops may still update
+    /// it until the job completes. A manual normalize job saves nothing: it
+    /// ends with a proposal (see `GET /api/recipes/{id}/normalize/{job_id}`).
+    pub status: crate::scraping::JobStatus,
+    /// Whether the job has stopped (`completed` or `failed`): stop polling.
+    pub is_terminal: bool,
+    /// Whether `recipe_id` names a recipe the client can open now: the job
+    /// has saved it (even if a later normalize step then failed) or finished
+    /// working on it. Normalize ops may still update it while the job is
+    /// `normalizing`.
+    pub recipe_ready: bool,
     /// URL being scraped (optional for imports)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
@@ -38,7 +44,8 @@ pub struct ScrapeJobResponse {
     /// Which step failed (for retry logic)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub failed_at_step: Option<String>,
-    /// Whether this job can be retried
+    /// Whether `POST /api/scrape/{id}/retry` would accept this job: it
+    /// failed, has retries left, and has a source to start again from.
     pub can_retry: bool,
     /// Number of retry attempts
     pub retry_count: i32,
@@ -85,22 +92,12 @@ pub async fn get_scrape(
         return ApiError::not_found("Scrape job not found").into_response();
     }
 
-    let can_retry = job.status == scraping::STATUS_FAILED;
-
-    let recipe_id = match job.recipe_id {
-        // A job that fails while normalizing has still saved its recipe.
-        None if job.status == scraping::STATUS_NORMALIZING
-            || job.status == scraping::STATUS_FAILED =>
-        {
-            match scraping::saved_recipe_id(&pool, job.id).await {
-                Ok(id) => id,
-                Err(e) => {
-                    tracing::error!("Failed to read saved recipe id: {}", e);
-                    return ApiError::internal("Failed to get scrape job").into_response();
-                }
-            }
+    let can_retry = match scraping::retry_refusal(&pool, &job).await {
+        Ok(refusal) => refusal.is_none(),
+        Err(e) => {
+            tracing::error!("Failed to check whether the job can be retried: {}", e);
+            return ApiError::internal("Failed to get scrape job").into_response();
         }
-        id => id,
     };
 
     // Build the per-step state list for the status page. `failed_at_step`
@@ -126,8 +123,10 @@ pub async fn get_scrape(
         Json(ScrapeJobResponse {
             id: job.id,
             status: job.status,
+            is_terminal: job.status.is_terminal(),
+            recipe_ready: job.status.recipe_ready(job.recipe_id.is_some()),
             url: job.url,
-            recipe_id,
+            recipe_id: job.recipe_id,
             error: job.error_message,
             failed_at_step: job.failed_at_step,
             can_retry,

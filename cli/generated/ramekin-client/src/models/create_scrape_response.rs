@@ -18,11 +18,11 @@ pub struct CreateScrapeResponse {
     pub id: uuid::Uuid,
     /// Current job status
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
 }
 
 impl CreateScrapeResponse {
-    pub fn new(id: uuid::Uuid, status: String) -> CreateScrapeResponse {
+    pub fn new(id: uuid::Uuid, status: models::ScrapeJobStatus) -> CreateScrapeResponse {
         CreateScrapeResponse { id, status }
     }
 }

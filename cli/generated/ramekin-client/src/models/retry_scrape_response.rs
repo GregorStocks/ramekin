@@ -18,11 +18,11 @@ pub struct RetryScrapeResponse {
     pub id: uuid::Uuid,
     /// New job status after retry
     #[serde(rename = "status")]
-    pub status: String,
+    pub status: models::ScrapeJobStatus,
 }
 
 impl RetryScrapeResponse {
-    pub fn new(id: uuid::Uuid, status: String) -> RetryScrapeResponse {
+    pub fn new(id: uuid::Uuid, status: models::ScrapeJobStatus) -> RetryScrapeResponse {
         RetryScrapeResponse { id, status }
     }
 }
