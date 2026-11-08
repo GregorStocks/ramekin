@@ -19,12 +19,7 @@ final class RecipeListViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var totalCount = 0
     @Published var isUsingLocalCache = false
-    /// A cache-served list could not be freshened: the list on screen may be
-    /// stale, and the user needs a signal plus a way to retry.
-    @Published var syncFailed = false
-    /// A server load failed while earlier results were still on screen, so
-    /// the list may not match the current search, filters, or sort.
-    @Published var reloadFailed = false
+    @Published private(set) var staleness: RecipeListStaleness?
     @Published var selectedTags: Set<String> = []
     @Published var availableTags: [SyncTag] = []
     @Published var showingAdvancedFilters = false
@@ -71,6 +66,10 @@ final class RecipeListViewModel: ObservableObject {
     /// initial and append requests that were already in flight.
     private var requestGeneration = 0
     private var searchTask: Task<Void, Never>?
+    /// The most recently started cache sync sweep. Sweeps write the sync
+    /// cursor and the pending-sweep record, so a new one waits for the
+    /// previous one to finish instead of running alongside it.
+    private var lastSyncSweep: Task<Void, Never>?
 
     init(
         api: RecipeListViewAPIClient = .live,
@@ -105,41 +104,21 @@ final class RecipeListViewModel: ObservableObject {
 }
 
 extension RecipeListViewModel {
-    var hasActiveFilters: Bool {
-        currentFilterState.hasAnyFilters
-    }
-
-    var currentFilterState: RecipeListFilterState {
-        RecipeListFilterState(
-            searchText: searchText,
-            selectedTags: selectedTags,
-            photoFilter: photoFilter,
-            source: sourceFilter,
-            createdAfter: createdAfterFilter,
-            createdBefore: createdBeforeFilter,
-            photoSizeThreshold: RecipeListFilterSupport.numericThreshold(from: photoSizeFilter),
-            photoDimensionThreshold: RecipeListFilterSupport.numericThreshold(from: photoDimensionFilter),
-            caloriesMin: caloriesMinFilter,
-            caloriesMax: caloriesMaxFilter
-        )
-    }
-
-    var advancedFilterLabel: String {
-        RecipeListFilterSupport.advancedFilterLabel(for: currentFilterState) ?? "Filters"
-    }
+    var syncFailed: Bool { staleness == .syncFailed }
+    var reloadFailed: Bool { staleness == .reloadFailed }
 
     func start() async {
         loadPersistedTags()
         loadPersistedAvailableTags()
         await loadCachedRecipesForCurrentQuery()
         await loadTags()
-        await loadRecipes(reset: true)
+        await loadRecipes()
     }
 
     func refresh() async {
         DebugLogger.shared.log("Pull-to-refresh started", source: "RecipeList")
         await loadTags()
-        await loadRecipes(reset: true)
+        await loadRecipes()
         DebugLogger.shared.log("Pull-to-refresh completed", source: "RecipeList")
     }
 
@@ -148,7 +127,7 @@ extension RecipeListViewModel {
             clearFilters()
         } else {
             SearchDebounceSupport.replaceTask(&searchTask) { [weak self] in
-                await self?.loadRecipes(reset: true)
+                await self?.loadRecipes()
             }
         }
     }
@@ -159,7 +138,7 @@ extension RecipeListViewModel {
 
     func reloadRecipes() {
         cancelSearch()
-        Task { await loadRecipes(reset: true) }
+        Task { await loadRecipes() }
     }
 
     func selectPhotoFilter(_ filter: PhotoFilter) {
@@ -193,36 +172,23 @@ extension RecipeListViewModel {
     }
 
     func handleRecipeDeleted() {
-        Task { await loadRecipes(reset: true) }
+        Task { await loadRecipes() }
     }
 
-    func loadRecipes(reset: Bool, forceNetwork: Bool = false) async {
+    /// Reloads the list from its first page. Later pages come from loadMore().
+    func loadRecipes(forceNetwork: Bool = false) async {
         let logger = DebugLogger.shared
         let queryValue = buildQuery()
-        logger.log("loadRecipes called (reset=\(reset), query=\(queryValue ?? "nil"))", source: "RecipeList")
+        logger.log("loadRecipes called (query=\(queryValue ?? "nil"))", source: "RecipeList")
 
         if !forceNetwork,
-           reset,
            RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder) {
             await syncCachedRecipes(key: currentKey())
             return
         }
 
-        if reset {
-            hasMore = true
-            loadMoreFailed = false
-            isLoadingMore = false
-            isUsingLocalCache = false
-            syncFailed = false
-            reloadFailed = false
-            requestGeneration += 1
-        }
         let key = ListRequestKey(query: queryValue, sortOrder: sortOrder)
-        activeKey = key
-        let generation = requestGeneration
-
-        isLoading = true
-        error = nil
+        let generation = beginReset(key: key, usingLocalCache: false)
 
         let useRelevance = RecipeListFilterSupport.hasTextQuery(currentFilterState)
 
@@ -249,23 +215,21 @@ extension RecipeListViewModel {
                 logger.log("loadRecipes: superseded request, discarding results", source: "RecipeList")
                 return
             }
-            recipes = response.recipes
-            totalCount = Int(response.pagination.total)
-            hasMore = recipes.count < totalCount
-            isLoading = false
+            publish(response.recipes, total: Int(response.pagination.total), usingLocalCache: false)
             logger.log(
                 "loadRecipes: got \(response.recipes.count) recipes, total \(response.pagination.total)",
                 source: "RecipeList"
             )
-        } catch is CancellationError {
-            logger.log("loadRecipes: cancelled", source: "RecipeList")
         } catch {
-            logger.log("loadRecipes: error - \(error.localizedDescription)", source: "RecipeList")
             guard isCurrentRequest(generation, key) else { return }
-            if recipes.isEmpty {
-                self.error = "Could not load recipes. Please try again."
+            if CancellationSupport.isCancellation(error) || Task.isCancelled {
+                // Nothing newer will clear the spinner (cancelSearch() lands
+                // here), and rows on screen belong to an earlier query: no paging.
+                hasMore = false
+                logger.log("loadRecipes: cancelled", source: "RecipeList")
             } else {
-                reloadFailed = true
+                logger.log("loadRecipes: error - \(error.localizedDescription)", source: "RecipeList")
+                fail(staleness: .reloadFailed)
             }
             isLoading = false
         }
@@ -300,14 +264,12 @@ extension RecipeListViewModel {
                 releaseAppendSlot(generation)
                 return
             }
-            recipes.append(contentsOf: response.recipes)
-            totalCount = Int(response.pagination.total)
-            hasMore = recipes.count < totalCount
-            isLoadingMore = false
-        } catch is CancellationError {
-            releaseAppendSlot(generation)
+            publish(recipes + response.recipes, total: Int(response.pagination.total), usingLocalCache: false)
         } catch {
-            guard appendMayApply(generation, key) else {
+            guard appendMayApply(generation, key),
+                  !CancellationSupport.isCancellation(error),
+                  !Task.isCancelled
+            else {
                 releaseAppendSlot(generation)
                 return
             }
@@ -328,6 +290,32 @@ extension RecipeListViewModel {
             await applyCachedRecipes(cachedDocuments)
         } catch {
             DebugLogger.shared.log("loadCachedRecipes error: \(error.localizedDescription)", source: "RecipeList")
+        }
+    }
+
+    /// Runs one sync sweep once any sweep already in flight has finished:
+    /// two at once (start-up plus pull-to-refresh) would race on the
+    /// persisted cursor and pending-sweep record. The cursor is read when
+    /// this sweep's turn comes, so it reflects the previous sweep.
+    /// Cancelling the caller ends its wait at once but never an earlier sweep.
+    func runSyncSweep(resumeFromCursor: Bool, accountKey: String) async throws {
+        let previous = lastSyncSweep
+        let sweep = Task { @MainActor [api = self.api, cache = self.cache, pageSize = syncPageSize] in
+            if let previous { await CancellationSupport.wait(for: previous) }
+            try Task.checkCancellation()
+            try await RecipeSyncSweep.run(
+                cursor: resumeFromCursor ? cache.syncCursor(accountKey) : nil,
+                accountKey: accountKey,
+                pageSize: pageSize,
+                api: api,
+                cache: cache
+            )
+        }
+        lastSyncSweep = Task { await previous?.value; _ = await sweep.result }
+        try await withTaskCancellationHandler {
+            try await sweep.value
+        } onCancel: {
+            sweep.cancel()
         }
     }
 }
@@ -362,23 +350,63 @@ private extension RecipeListViewModel {
         isLoadingMore = false
     }
 
+    /// Starts a reload of the whole list: bumps the generation so every
+    /// older response is discarded, and resets every per-list flag in one
+    /// place. Returns the new generation.
+    func beginReset(key: ListRequestKey, usingLocalCache: Bool) -> Int {
+        requestGeneration += 1
+        activeKey = key
+        isUsingLocalCache = usingLocalCache
+        // The cache holds the whole corpus, so a cache-served list never pages.
+        hasMore = !usingLocalCache
+        loadMoreFailed = false
+        isLoadingMore = false
+        staleness = nil
+        error = nil
+        // A cache-served reload keeps the old rows up until the cache answers.
+        isLoading = usingLocalCache ? recipes.isEmpty : true
+        return requestGeneration
+    }
+
+    /// Shows `newRecipes` as the answer to the active request, clearing every
+    /// loading flag and failure that answer supersedes. A failed cache sync
+    /// stays flagged: a cache answer is no fresher than the cache.
+    func publish(_ newRecipes: [RecipeSummary], total: Int, usingLocalCache: Bool) {
+        recipes = newRecipes
+        totalCount = total
+        hasMore = !usingLocalCache && newRecipes.count < total
+        isUsingLocalCache = usingLocalCache
+        isLoading = false
+        isLoadingMore = false
+        loadMoreFailed = false
+        error = nil
+        if staleness == .reloadFailed {
+            staleness = nil
+        }
+    }
+
+    /// Records a failed reload: the full-screen error when there is nothing
+    /// to show, otherwise `newStaleness` over the rows still on screen.
+    func fail(staleness newStaleness: RecipeListStaleness) {
+        if recipes.isEmpty {
+            error = "Could not load recipes. Please try again."
+            staleness = nil
+        } else {
+            error = nil
+            staleness = newStaleness
+            // The rows answer an older request: paging the new one onto them
+            // would splice two queries together. Retry reloads instead.
+            hasMore = false
+        }
+    }
+
     func syncCachedRecipes(key: ListRequestKey) async {
         let logger = DebugLogger.shared
 
-        activeKey = key
-        isUsingLocalCache = true
-        hasMore = false
-        loadMoreFailed = false
-        isLoadingMore = false
-        isLoading = recipes.isEmpty
-        error = nil
-        syncFailed = false
-        reloadFailed = false
-        requestGeneration += 1
-        let generation = requestGeneration
+        let generation = beginReset(key: key, usingLocalCache: true)
 
         guard let accountKey = cache.currentAccountKey() else {
-            await loadRecipes(reset: true, forceNetwork: true)
+            await loadRecipes(forceNetwork: true)
             return
         }
 
@@ -395,7 +423,7 @@ private extension RecipeListViewModel {
             if !cachedBeforeSync.isEmpty {
                 appliedCachedRecipes = await applyCachedRecipes(cachedBeforeSync)
             }
-            let cursor = cachedBeforeSync.isEmpty ? nil : cache.syncCursor(accountKey)
+            let resumeFromCursor = !cachedBeforeSync.isEmpty
             try await logger.timed("syncRecipeCache API", source: "RecipeList") {
                 // When the list was already served from the cache, the sweep
                 // only freshens it — give it a wall-clock budget so awaiting
@@ -403,10 +431,10 @@ private extension RecipeListViewModel {
                 // sync surfaces as the stale banner instead of a hang.
                 if appliedCachedRecipes {
                     try await withWallClockBudget(seconds: syncBudget) { [self] in
-                        try await runSyncSweep(cursor: cursor, accountKey: accountKey)
+                        try await runSyncSweep(resumeFromCursor: resumeFromCursor, accountKey: accountKey)
                     }
                 } else {
-                    try await runSyncSweep(cursor: cursor, accountKey: accountKey)
+                    try await runSyncSweep(resumeFromCursor: resumeFromCursor, accountKey: accountKey)
                 }
             }
             let cachedDocuments = try await cache.loadSearchDocuments(accountKey)
@@ -417,31 +445,24 @@ private extension RecipeListViewModel {
             }
             await applyCachedRecipes(cachedDocuments)
             logger.log("syncCachedRecipes: cache has \(cachedDocuments.count) recipes", source: "RecipeList")
-        } catch is CancellationError {
-            logger.log("syncCachedRecipes: cancelled", source: "RecipeList")
         } catch {
-            logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
             guard isCurrentRequest(generation, key) else { return }
-            if recipes.isEmpty && !appliedCachedRecipes {
-                self.error = "Could not load recipes. Please try again."
+            if CancellationSupport.isCancellation(error) || Task.isCancelled {
+                logger.log("syncCachedRecipes: cancelled", source: "RecipeList")
             } else {
-                // The user is looking at a cache-served list that could not
-                // be freshened. Never leave that silent: new and edited
-                // recipes would just quietly not show up.
-                syncFailed = true
+                logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
+                if appliedCachedRecipes {
+                    // The user is looking at a cache-served list that could
+                    // not be freshened. Never leave that silent: new and
+                    // edited recipes would just quietly not show up.
+                    self.error = nil
+                    staleness = .syncFailed
+                } else {
+                    fail(staleness: .syncFailed)
+                }
             }
             isLoading = false
         }
-    }
-
-    func runSyncSweep(cursor: Int64?, accountKey: String) async throws {
-        try await RecipeSyncSweep.run(
-            cursor: cursor,
-            accountKey: accountKey,
-            pageSize: syncPageSize,
-            api: api,
-            cache: cache
-        )
     }
 
     /// Filters and ranks the cached corpus off the main thread, then
@@ -472,24 +493,8 @@ private extension RecipeListViewModel {
             DebugLogger.shared.log("applyCachedRecipes: superseded while ranking, discarding", source: "RecipeList")
             return false
         }
-        recipes = visibleRecipes
-        totalCount = visibleRecipes.count
-        hasMore = false
-        isLoading = false
-        isLoadingMore = false
-        loadMoreFailed = false
-        isUsingLocalCache = true
         activeKey = key
+        publish(visibleRecipes, total: visibleRecipes.count, usingLocalCache: true)
         return true
     }
-
-    static let sortOrderKey = "recipeSortOrder"
-    static let photoFilterKey = "recipePhotoFilter"
-    static let sourceFilterKey = "recipeSourceFilter"
-    static let createdAfterFilterKey = "recipeCreatedAfterFilter"
-    static let createdBeforeFilterKey = "recipeCreatedBeforeFilter"
-    static let photoSizeFilterKey = "recipePhotoSizeFilter"
-    static let photoDimensionFilterKey = "recipePhotoDimensionFilter"
-    static let caloriesMinFilterKey = "recipeCaloriesMinFilter"
-    static let caloriesMaxFilterKey = "recipeCaloriesMaxFilter"
 }

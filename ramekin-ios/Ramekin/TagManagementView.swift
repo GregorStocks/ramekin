@@ -1,31 +1,18 @@
 import SwiftUI
 
 struct TagManagementView: View {
-    @State private var tags: [TagItem] = []
-    @State private var isLoading = false
-    @State private var error: String?
-    @State private var editingTagId: UUID?
-    @State private var editName = ""
-    @State private var editError: String?
-    @State private var isSaving = false
-    @State private var deletingTag: TagItem?
-    /// Shown as an alert: the tag may be far down the list from the error section.
-    @State private var deleteError: String?
-
-    private var groupedTags: [TagHierarchySupport.TagGroup<TagItem>] {
-        TagHierarchySupport.groups(for: tags)
-    }
+    @StateObject private var model = TagManagementViewModel()
 
     var body: some View {
         List {
-            if let error {
+            if let error = model.loadError {
                 Section {
                     Text(error)
                         .foregroundColor(.red)
                 }
             }
 
-            if isLoading && tags.isEmpty {
+            if model.isLoading && model.tags.isEmpty {
                 Section {
                     HStack {
                         Spacer()
@@ -34,7 +21,7 @@ struct TagManagementView: View {
                     }
                     .padding(.vertical, 12)
                 }
-            } else if tags.isEmpty {
+            } else if model.tags.isEmpty {
                 Section {
                     VStack(spacing: 12) {
                         Image(systemName: "tag.slash")
@@ -52,7 +39,7 @@ struct TagManagementView: View {
                     .padding(.vertical, 24)
                 }
             } else {
-                ForEach(groupedTags) { group in
+                ForEach(model.groupedTags) { group in
                     Section(group.title) {
                         ForEach(group.items) { tag in
                             row(for: tag)
@@ -71,42 +58,36 @@ struct TagManagementView: View {
         .navigationTitle("Manage Tags")
         .navigationBarTitleDisplayMode(.inline)
         .refreshable {
-            await loadTags()
+            await model.loadTags()
         }
         .task {
-            await loadTags()
+            await model.loadTags()
         }
         .alert(
             "Delete Tag",
             isPresented: Binding(
-                get: { deletingTag != nil },
-                set: { if !$0 { deletingTag = nil } }
+                get: { model.deleteCandidate != nil },
+                set: { if !$0 { model.deleteCandidate = nil } }
             ),
-            actions: {
-                if let tag = deletingTag {
-                    Button("Delete", role: .destructive) {
-                        Task {
-                            await deleteTag(tag)
-                        }
-                    }
+            presenting: model.deleteCandidate,
+            actions: { tag in
+                Button("Delete", role: .destructive) {
+                    Task { await model.delete(tag) }
                 }
-
                 Button("Cancel", role: .cancel) {}
             },
-            message: {
-                if let tag = deletingTag {
-                    Text("Remove \"\(tag.name)\" from \(TagManagementSupport.recipeCountText(for: tag.recipeCount))?")
-                }
+            message: { tag in
+                Text("Remove \"\(tag.name)\" from \(TagManagementSupport.recipeCountText(for: tag.recipeCount))?")
             }
         )
         .alert(
             "Couldn't Delete Tag",
             isPresented: Binding(
-                get: { deleteError != nil },
-                set: { if !$0 { deleteError = nil } }
+                get: { model.deleteError != nil },
+                set: { if !$0 { model.deleteError = nil } }
             ),
             actions: { Button("OK", role: .cancel) {} },
-            message: { Text(deleteError ?? "") }
+            message: { Text(model.deleteError ?? "") }
         )
     }
 }
@@ -114,7 +95,7 @@ struct TagManagementView: View {
 private extension TagManagementView {
     @ViewBuilder
     func row(for tag: TagItem) -> some View {
-        if editingTagId == tag.id {
+        if model.editingTagId == tag.id {
             editingRow(for: tag)
         } else {
             tagRow(for: tag)
@@ -132,45 +113,49 @@ private extension TagManagementView {
                 }
 
                 Spacer()
+
+                if model.isDeleting(tag) {
+                    ProgressView()
+                        .accessibilityLabel("Deleting")
+                }
             }
 
             HStack(spacing: 12) {
                 Button {
-                    startEditing(tag)
+                    model.startEditing(tag)
                 } label: {
                     Label("Rename", systemImage: "pencil")
                 }
                 .buttonStyle(.borderless)
 
                 Button(role: .destructive) {
-                    deletingTag = tag
+                    model.deleteCandidate = tag
                 } label: {
                     Label("Delete", systemImage: "trash")
                 }
                 .buttonStyle(.borderless)
             }
             .font(.subheadline)
+            .disabled(model.isDeleting(tag))
         }
         .padding(.vertical, 6)
     }
 
     func editingRow(for tag: TagItem) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            TextField("Tag name", text: $editName)
+            TextField("Tag name", text: $model.editName)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 .submitLabel(.done)
                 .onSubmit {
-                    Task {
-                        await renameTag(tag)
-                    }
+                    Task { await model.saveEdit() }
                 }
 
             Text(TagManagementSupport.recipeCountText(for: tag.recipeCount))
                 .font(.subheadline)
                 .foregroundColor(.secondary)
 
-            if let editError {
+            if let editError = model.editError {
                 Text(editError)
                     .font(.caption)
                     .foregroundColor(.red)
@@ -178,156 +163,26 @@ private extension TagManagementView {
 
             HStack(spacing: 12) {
                 Button {
-                    Task {
-                        await renameTag(tag)
-                    }
+                    Task { await model.saveEdit() }
                 } label: {
-                    if isSaving {
+                    if model.isSavingEdit {
                         ProgressView()
                     } else {
                         Text("Save")
                     }
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(isSaving)
+                // One rename at a time, even when it belongs to another tag.
+                .disabled(model.savingTagId != nil)
 
                 Button("Cancel") {
-                    cancelEditing()
+                    model.cancelEditing()
                 }
                 .buttonStyle(.bordered)
-                .disabled(isSaving)
+                .disabled(model.isSavingEdit)
             }
         }
         .padding(.vertical, 6)
-    }
-
-    @MainActor
-    func startEditing(_ tag: TagItem) {
-        editingTagId = tag.id
-        editName = tag.name
-        editError = nil
-    }
-
-    @MainActor
-    func cancelEditing() {
-        editingTagId = nil
-        editName = ""
-        editError = nil
-    }
-
-    func loadTags() async {
-        guard let accountKey = AccountScope.currentAccountKey() else {
-            await MainActor.run {
-                tags = []
-                isLoading = false
-            }
-            return
-        }
-        await MainActor.run {
-            isLoading = true
-            error = nil
-        }
-
-        do {
-            let response = try await TagsAPI.listAllTags()
-            guard AccountScope.currentAccountKey() == accountKey else { return }
-            await MainActor.run {
-                tags = response.tags
-                TagFilterCache.pruneSelectedTags(
-                    validNames: Set(response.tags.map(\.name)),
-                    accountKey: accountKey
-                )
-                isLoading = false
-            }
-        } catch is CancellationError {
-            await MainActor.run {
-                isLoading = false
-            }
-        } catch {
-            await MainActor.run {
-                self.error = APIErrorFormatter.userMessage(
-                    from: error,
-                    fallback: "Failed to load tags"
-                )
-                isLoading = false
-            }
-        }
-    }
-
-    func renameTag(_ tag: TagItem) async {
-        guard let accountKey = AccountScope.currentAccountKey() else { return }
-        let currentEditName = await MainActor.run { editName }
-
-        guard let newName = TagManagementSupport.normalizedName(from: currentEditName) else {
-            await MainActor.run {
-                editError = "Tag name cannot be empty"
-            }
-            return
-        }
-
-        await MainActor.run {
-            isSaving = true
-            editError = nil
-        }
-
-        do {
-            let response = try await TagsAPI.renameTag(
-                id: tag.id,
-                renameTagRequest: RenameTagRequest(name: newName)
-            )
-            guard AccountScope.currentAccountKey() == accountKey else { return }
-            await MainActor.run {
-                tags = TagManagementSupport.renamedTags(tags, id: tag.id, newName: response.name)
-                TagFilterCache.renameSelectedTag(
-                    from: tag.name,
-                    to: response.name,
-                    accountKey: accountKey
-                )
-                TagFilterCache.notifyTagsDidChange()
-                error = nil
-                isSaving = false
-                cancelEditing()
-            }
-        } catch is CancellationError {
-            await MainActor.run {
-                isSaving = false
-            }
-        } catch {
-            await MainActor.run {
-                editError = APIErrorFormatter.userMessage(
-                    from: error,
-                    fallback: "Failed to rename tag"
-                )
-                isSaving = false
-            }
-        }
-    }
-
-    func deleteTag(_ tag: TagItem) async {
-        guard let accountKey = AccountScope.currentAccountKey() else { return }
-        do {
-            try await TagsAPI.deleteTag(id: tag.id)
-            guard AccountScope.currentAccountKey() == accountKey else { return }
-            await MainActor.run {
-                tags = TagManagementSupport.removingTag(tags, id: tag.id)
-                TagFilterCache.removeSelectedTag(named: tag.name, accountKey: accountKey)
-                TagFilterCache.notifyTagsDidChange()
-                error = nil
-                deletingTag = nil
-                if editingTagId == tag.id {
-                    cancelEditing()
-                }
-            }
-        } catch is CancellationError {
-        } catch {
-            await MainActor.run {
-                deleteError = APIErrorFormatter.userMessage(
-                    from: error,
-                    fallback: "Failed to delete tag"
-                )
-                deletingTag = nil
-            }
-        }
     }
 }
 

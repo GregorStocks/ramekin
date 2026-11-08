@@ -56,7 +56,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertEqual(requests, [
             SyncRequest(cursor: nil, limit: 100, afterId: nil),
@@ -99,7 +99,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertEqual(requests, [SyncRequest(cursor: nil, limit: 100, afterId: resumeAfterId)])
         // The resumed sweep persists the original first-page watermark, not
@@ -128,7 +128,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertEqual(requests, [SyncRequest(cursor: 300, limit: 100, afterId: nil)])
     }
@@ -144,7 +144,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertTrue(viewModel.syncFailed)
         XCTAssertNil(viewModel.error)
@@ -174,7 +174,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertTrue(viewModel.syncFailed)
         XCTAssertNil(persistedCursor)
@@ -196,11 +196,11 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertTrue(viewModel.syncFailed)
 
         failSync = false
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertFalse(viewModel.syncFailed)
     }
@@ -220,7 +220,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             syncBudget: 0.05
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertTrue(viewModel.syncFailed)
         XCTAssertNil(viewModel.error)
@@ -242,7 +242,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             syncBudget: 0.05
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertTrue(didSync)
         XCTAssertFalse(viewModel.syncFailed)
@@ -273,7 +273,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertFalse(applied)
         XCTAssertTrue(viewModel.syncFailed)
@@ -352,7 +352,7 @@ extension RecipeListViewModelSyncTests {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertEqual(requests, [
             SyncRequest(cursor: 300, limit: 100, afterId: nil),
@@ -383,7 +383,7 @@ extension RecipeListViewModelSyncTests {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertEqual(requests, [SyncRequest(cursor: nil, limit: 100, afterId: resumeAfterId)])
     }
@@ -417,7 +417,7 @@ extension RecipeListViewModelSyncTests {
             )
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertEqual(requests, [
             SyncRequest(cursor: 300, limit: 100, afterId: resumeAfterId),

@@ -30,7 +30,7 @@ final class RecipeListViewModelTests: XCTestCase {
         )
 
         viewModel.searchText = "pasta"
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertEqual(viewModel.recipes.map(\.id), [recipe.id])
         XCTAssertEqual(capturedRequest?.limit, 20)
@@ -74,7 +74,7 @@ final class RecipeListViewModelTests: XCTestCase {
         )
 
         viewModel.selectedTags = ["Dinner"]
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertTrue(didSync)
         XCTAssertFalse(didListRecipes)
@@ -139,11 +139,11 @@ final class RecipeListViewModelTests: XCTestCase {
         )
 
         viewModel.searchText = "zuppa"
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertEqual(viewModel.recipes.map(\.id), [cachedNew.id])
 
         viewModel.searchText = ""
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertEqual(viewModel.recipes.map(\.id), [cachedNew.id, cachedOld.id])
         XCTAssertEqual(viewModel.totalCount, 2)
@@ -183,11 +183,11 @@ final class RecipeListViewModelTests: XCTestCase {
         )
 
         viewModel.sortOrder = .newest
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertEqual(viewModel.recipes.map(\.id), [newer.id, older.id])
 
         viewModel.sortOrder = .oldest
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertEqual(viewModel.recipes.map(\.id), [older.id, newer.id])
     }
 
@@ -215,7 +215,7 @@ final class RecipeListViewModelTests: XCTestCase {
         )
 
         viewModel.selectedTags = ["Dessert"]
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertTrue(viewModel.recipes.isEmpty)
         XCTAssertNil(viewModel.error)
@@ -244,17 +244,17 @@ final class RecipeListViewModelTests: XCTestCase {
         )
 
         viewModel.searchText = "pasta"
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertFalse(viewModel.reloadFailed)
 
         viewModel.searchText = "pastas"
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertTrue(viewModel.reloadFailed, "Stale results must not pass for the new search")
         XCTAssertNil(viewModel.error)
         XCTAssertEqual(viewModel.recipes.map(\.id), [recipe.id])
 
         calls = 0
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
         XCTAssertFalse(viewModel.reloadFailed)
     }
 
@@ -277,7 +277,7 @@ final class RecipeListViewModelTests: XCTestCase {
             pageSize: 20
         )
 
-        await viewModel.loadRecipes(reset: true)
+        await viewModel.loadRecipes()
 
         XCTAssertNotNil(viewModel.error)
         XCTAssertFalse(viewModel.isLoading)
@@ -304,7 +304,7 @@ final class RecipeListViewModelTests: XCTestCase {
             pageSize: 20
         )
 
-        await viewModel?.loadRecipes(reset: true)
+        await viewModel?.loadRecipes()
 
         XCTAssertEqual(viewModel?.recipes.isEmpty, true)
         XCTAssertNil(viewModel?.error)

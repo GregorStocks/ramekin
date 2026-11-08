@@ -7,9 +7,9 @@ struct RecipeDetailView: View {
     @Environment(\.recipeFormDraftMemory) var draftMemory
     @StateObject var viewModel: RecipeDetailViewModel
     @FocusState var customScaleFocused: Bool
-    /// Unsaved edits from before the app was terminated, offered for resuming.
-    @State var resumableEdit: RecipeFormDraft?
-    @State var resumingEdit: RecipeFormDraft?
+    /// The edit form, and unsaved edits from before the app was terminated
+    /// offered for resuming.
+    @State var editFlow = RecipeFormDraftFlow.closed
 
     init(recipeId: UUID) {
         self.recipeId = recipeId
@@ -60,8 +60,7 @@ struct RecipeDetailView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Edit") {
                         // A fresh edit replaces the one offered for resuming.
-                        resumableEdit = nil
-                        resumingEdit = nil
+                        editFlow.openFresh()
                         viewModel.activeSheet = .edit
                     }
                     .fontWeight(.semibold)
@@ -126,6 +125,10 @@ struct RecipeDetailView: View {
         .sheet(item: $viewModel.activeSheet) { sheet in
             sheetContent(sheet)
         }
+        .onChange(of: viewModel.activeSheet) { sheet in
+            // However the edit form closes, its draft flow closes with it.
+            if sheet != .edit { editFlow.close() }
+        }
         .confirmationDialog("Delete Recipe", isPresented: $viewModel.showingDeleteConfirmation) {
             Button("Delete Recipe", role: .destructive) {
                 Task {
@@ -175,7 +178,7 @@ struct RecipeDetailView: View {
             errorMessage: $viewModel.exportError
         ))
         .task {
-            resumableEdit = draftMemory.stored(.edit(recipeId: recipeId))
+            editFlow.offer(draftMemory.stored(.edit(recipeId: recipeId)))
             await viewModel.loadRecipe()
         }
         .onChange(of: viewModel.isVersionHistoryExpanded) { isExpanded in
@@ -217,7 +220,7 @@ struct RecipeDetailView: View {
             }
         case .edit:
             NavigationStack {
-                RecipeFormView(mode: .edit(recipeId: recipeId), resuming: resumingEdit) {
+                RecipeFormView(mode: .edit(recipeId: recipeId), resuming: editFlow.resumingDraft) {
                     Task { await viewModel.loadRecipe() }
                 }
             }
@@ -243,14 +246,13 @@ struct RecipeDetailView: View {
     }
 
     func resumeEdit() {
-        resumingEdit = resumableEdit
-        resumableEdit = nil
+        editFlow.resume()
         viewModel.activeSheet = .edit
     }
 
     func discardResumableEdit() {
         draftMemory.remember(.edit(recipeId: recipeId), nil)
-        resumableEdit = nil
+        editFlow.discard()
     }
 
     func setRecipeScale(_ value: Double) {
