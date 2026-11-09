@@ -546,7 +546,8 @@ mod state_check_constraint_tests {
              INSERT INTO recipe_version_tags (recipe_version_id, tag_id) VALUES ('v3', 't');
              INSERT INTO shopping_list_items (id, user_id, item, source_recipe_id)
              VALUES ('i', 'u', 'leeks', 'r');
-             INSERT INTO scrape_jobs (id, user_id) VALUES ('j', 'u');
+             INSERT INTO scrape_jobs (id, user_id, url, kind)
+             VALUES ('j', 'u', 'https://example.com', 'url_scrape');
              INSERT INTO step_outputs
                  (id, scrape_job_id, step_name, build_id, output, success, error, output_hash)
              VALUES ('o1', 'j', 'fetch_html', 'b', 'null', 1, NULL, 'abc'),
