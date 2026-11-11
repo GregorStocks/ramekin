@@ -11,7 +11,7 @@
     "generate-client": "./generate-client.sh"
   },
   "dependencies": {
-    "@solidjs/router": "^1.0.0",
+    "@solidjs/router": "^1.0.1",
     "@thisbeyond/solid-dnd": "^0.7.5",
     "@types/diff": "^8.0.0",
     "diff": "^9.0.0",
@@ -20,18 +20,18 @@
     "jspdf": "^4.2.1",
     "qrcode": "^1.5.4",
     "ramekin-client": "file:./generated-client",
-    "solid-js": "^1.9.17"
+    "solid-js": "^1.9.18"
   },
   "devDependencies": {
     "@types/http-proxy": "^1.17.17",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@types/qrcode": "^1.5.6",
     "prettier": "^3.9.10",
-    "stylelint": "^17.16.0",
-    "stylelint-config-standard": "^40.0.0",
+    "stylelint": "^18.0.0",
+    "stylelint-config-standard": "^41.0.0",
     "typescript": "~7.0.2",
     "vite": "^8.3.5",
-    "vite-plugin-solid": "^2.11.14",
-    "vitest": "^5.0.5"
+    "vite-plugin-solid": "^2.11.15",
+    "vitest": "^5.1.0"
   }
 }
