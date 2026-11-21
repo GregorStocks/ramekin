@@ -68,10 +68,9 @@ final class RecipeListViewModel: ObservableObject {
     /// generation is still current.
     var requestGeneration = 0
     private var searchTask: Task<Void, Never>?
-    /// The most recently started cache sync sweep. Sweeps move the cache's
-    /// sync position, so a new one waits for the
-    /// previous one to finish instead of running alongside it.
-    var lastSyncSweep: Task<Void, Never>?
+    /// Serializes this model's sync sweeps with everything else syncing
+    /// the same cache.
+    let syncQueue: RecipeSyncQueue
     /// The last ranking of the cached corpus, reused while the cache hands
     /// back the same corpus for the same filter+sort.
     var lastRanking: CachedRanking?
@@ -83,6 +82,8 @@ final class RecipeListViewModel: ObservableObject {
         syncPageSize: Int64 = 100,
         syncBudget: TimeInterval = 15
     ) {
+        // The live cache has one queue; an injected cache gets its own.
+        syncQueue = cache == nil ? .shared : RecipeSyncQueue()
         self.api = api
         self.cache = cache ?? .live
         self.userDefaults = userDefaults
