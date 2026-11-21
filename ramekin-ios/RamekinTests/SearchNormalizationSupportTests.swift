@@ -46,6 +46,42 @@ final class SearchNormalizationSupportTests: XCTestCase {
         XCTAssertEqual(SearchNormalizationSupport.normalizeForSearch("σουπες"), "σουπες")
     }
 
+    /// The corpus is normalized through the byte-level path, so it has to
+    /// agree with the contract's per-scalar definition everywhere.
+    func testNormalizedUTF8MatchesNormalizeForSearchForEveryScalar() {
+        var chunk = String.UnicodeScalarView()
+        var chunkLength = 0
+        func flush() {
+            let text = String(chunk)
+            let expected = Array(SearchNormalizationSupport.normalizeForSearch(text).utf8)
+            if SearchNormalizationSupport.normalizedUTF8(text) != expected {
+                XCTFail("normalizedUTF8 diverges within \(text.unicodeScalars.map { String($0.value, radix: 16) })")
+            }
+            chunk = String.UnicodeScalarView()
+            chunkLength = 0
+        }
+        for value in UInt32(0)...0x10FFFF {
+            guard let scalar = Unicode.Scalar(value) else { continue }
+            chunk.append(scalar)
+            chunkLength += 1
+            if chunkLength == 64 {
+                flush()
+            }
+        }
+        flush()
+    }
+
+    func testNormalizedUTF8HandlesMixedText() {
+        for text in ["", "plain", "Crème Brûlée", "1½ cups ﬁnely chopped JALAPEÑO 🌶️ at 350°F",
+                     "Cre\u{301}me", "ΣΟΥΠΑ", "ＡＢＣ", "Mom’s Sweet–and–Sour 𝒮auce"] {
+            XCTAssertEqual(
+                SearchNormalizationSupport.normalizedUTF8(text),
+                Array(SearchNormalizationSupport.normalizeForSearch(text).utf8),
+                text
+            )
+        }
+    }
+
     func testCitextFoldKeepsAccents() {
         XCTAssertEqual(SearchNormalizationSupport.citextFold("CRÈME"), "crème")
         XCTAssertEqual(SearchNormalizationSupport.citextFold("Dinner"), "dinner")

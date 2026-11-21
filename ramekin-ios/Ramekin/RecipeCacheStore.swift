@@ -51,6 +51,9 @@ final class RecipeCacheStore {
 
     /// Only touched inside `perform`.
     private let backgroundContext: NSManagedObjectContext
+    /// The corpus `loadSearchCorpus` last built, until `apply` changes the
+    /// cache. Only touched inside `perform`.
+    private var preparedCorpus: (accountKey: String, corpus: RecipeSearchCorpus)?
     private let userDefaults: UserDefaults
     private let logger = DebugLogger.shared
 
@@ -106,30 +109,58 @@ final class RecipeCacheStore {
 
     func loadSearchDocuments(accountKey: String) async throws -> [CachedRecipeSearchDocument] {
         try await backgroundContext.perform { [self] in
-            try purgeRowsWrittenByOlderSchema(accountKey: accountKey)
-            let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
-            request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
-            request.sortDescriptors = [
-                NSSortDescriptor(keyPath: \CachedRecipe.updatedAt, ascending: false),
-                NSSortDescriptor(keyPath: \CachedRecipe.id, ascending: true)
-            ]
-            var documents: [CachedRecipeSearchDocument] = []
-            var droppedRows = false
-            for row in try backgroundContext.fetch(request) {
-                if let document = searchDocument(from: row) {
-                    documents.append(document)
-                } else {
-                    droppedRows = true
-                    backgroundContext.delete(row)
-                }
-            }
-            if droppedRows {
-                // A full re-sync rewrites the dropped recipes.
-                try backgroundContext.save()
-                clearSyncCursor(accountKey: accountKey)
-            }
-            return documents
+            try fetchSearchDocuments(accountKey: accountKey)
         }
+    }
+
+    /// The account's cached recipes prepared for searching. Reading and
+    /// normalizing the whole cookbook is the expensive part of a search, so
+    /// the corpus is kept until `apply` changes the cache: typing a query
+    /// then costs a scan, not a reload.
+    func loadSearchCorpus(accountKey: String) async throws -> RecipeSearchCorpus {
+        try await backgroundContext.perform { [self] in
+            let purged = try purgeRowsWrittenByOlderSchema(accountKey: accountKey)
+            if !purged, let preparedCorpus, preparedCorpus.accountKey == accountKey {
+                return preparedCorpus.corpus
+            }
+            preparedCorpus = nil
+            let start = CFAbsoluteTimeGetCurrent()
+            let corpus = RecipeSearchCorpus(documents: try fetchSearchDocuments(accountKey: accountKey))
+            let elapsed = String(format: "%.2f", CFAbsoluteTimeGetCurrent() - start)
+            logger.log("Built search corpus of \(corpus.entries.count) recipes (\(elapsed)s)", source: "RecipeCache")
+            preparedCorpus = (accountKey, corpus)
+            // The list can show as soon as this returns; get the text ready
+            // for the first keystroke meanwhile.
+            Task.detached(priority: .utility) { corpus.prepareSearchTexts() }
+            return corpus
+        }
+    }
+
+    /// Runs on `backgroundContext`'s queue.
+    private func fetchSearchDocuments(accountKey: String) throws -> [CachedRecipeSearchDocument] {
+        try purgeRowsWrittenByOlderSchema(accountKey: accountKey)
+        let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
+        request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \CachedRecipe.updatedAt, ascending: false),
+            NSSortDescriptor(keyPath: \CachedRecipe.id, ascending: true)
+        ]
+        var documents: [CachedRecipeSearchDocument] = []
+        var droppedRows = false
+        for row in try backgroundContext.fetch(request) {
+            if let document = searchDocument(from: row) {
+                documents.append(document)
+            } else {
+                droppedRows = true
+                backgroundContext.delete(row)
+            }
+        }
+        if droppedRows {
+            // A full re-sync rewrites the dropped recipes.
+            try backgroundContext.save()
+            clearSyncCursor(accountKey: accountKey)
+        }
+        return documents
     }
 
     /// Which of `ids` the cache holds for the account, or nil until a full
@@ -156,22 +187,25 @@ final class RecipeCacheStore {
     /// would silently omit recipes the server would return. The schema bump
     /// already forces a full re-sync; this drops the migrated rows so the
     /// window before that sync completes serves nothing instead of wrong
-    /// results. Runs on `backgroundContext`'s queue.
-    private func purgeRowsWrittenByOlderSchema(accountKey: String) throws {
+    /// results. Returns whether it dropped any. Runs on `backgroundContext`'s
+    /// queue.
+    @discardableResult
+    private func purgeRowsWrittenByOlderSchema(accountKey: String) throws -> Bool {
         let key = rowsSchemaVersionKey(accountKey: accountKey)
         guard userDefaults.integer(forKey: key) != Self.cacheSchemaVersion else {
-            return
+            return false
         }
         let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
         request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
         let staleRows = try backgroundContext.fetch(request)
         guard !staleRows.isEmpty else {
-            return
+            return false
         }
         for row in staleRows {
             backgroundContext.delete(row)
         }
         try backgroundContext.save()
+        return true
     }
 
     /// `afterId` is the `after_id` the page was requested with, which bounds
@@ -241,6 +275,7 @@ final class RecipeCacheStore {
             }
 
             if context.hasChanges {
+                preparedCorpus = nil
                 try context.save()
             }
             userDefaults.set(Self.cacheSchemaVersion, forKey: rowsSchemaVersionKey(accountKey: accountKey))

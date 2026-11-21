@@ -30,75 +30,64 @@ extension RecipeSearchSupport {
     private static let weightTokenInInstructions: UInt32 = 50
     private static let weightTokenInNotes: UInt32 = 50
 
-    private struct NormalizedScoringDocument {
-        let title: [UInt32]
-        let description: [UInt32]?
-        let tags: [[UInt32]]
-        let ingredients: [[UInt32]]
-        let instructions: [UInt32]
-        let notes: [UInt32]?
-    }
-
     /// Mirror of `ramekin_core::search::relevance_score`.
     static func relevanceScore(textTokens: [String], document: ScoringDocument) -> UInt32 {
-        if textTokens.isEmpty {
+        relevanceScore(
+            tokens: textTokens.map(SearchNormalizationSupport.normalizedUTF8),
+            text: NormalizedSearchText(document)
+        )
+    }
+
+    /// The scorer over already-normalized tokens and fields.
+    static func relevanceScore(tokens: [[UInt8]], text: NormalizedSearchText) -> UInt32 {
+        if tokens.isEmpty {
             return 0
         }
 
-        let tokens = textTokens.map(normalizedScalars)
-        let normalized = NormalizedScoringDocument(
-            title: normalizedScalars(document.title),
-            description: document.description.map(normalizedScalars),
-            tags: document.tags.map(normalizedScalars),
-            ingredients: document.ingredients.map(normalizedScalars),
-            instructions: normalizedScalars(document.instructions),
-            notes: document.notes.map(normalizedScalars)
-        )
-
         var score: UInt32 = 0
 
-        var phrase: [UInt32] = []
+        var phrase: [UInt8] = []
         for (index, token) in tokens.enumerated() {
             if index > 0 {
                 phrase.append(0x20)
             }
             phrase.append(contentsOf: token)
         }
-        if normalized.title == phrase {
+        if text.title == phrase {
             score += weightExactTitle
-        } else if scalarsContain(normalized.title, phrase) {
+        } else if bytesContain(text.title, phrase) {
             score += weightTitlePhrase
         }
 
-        if tokens.allSatisfy({ scalarsContain(normalized.title, $0) }) {
+        if tokens.allSatisfy({ bytesContain(text.title, $0) }) {
             score += weightAllTokensInTitle
         }
 
         for token in tokens {
-            score += tokenScore(token, in: normalized)
+            score += tokenScore(token, in: text)
         }
 
         return score
     }
 
-    private static func tokenScore(_ token: [UInt32], in document: NormalizedScoringDocument) -> UInt32 {
+    private static func tokenScore(_ token: [UInt8], in text: NormalizedSearchText) -> UInt32 {
         var score: UInt32 = 0
-        if scalarsContain(document.title, token) {
+        if bytesContain(text.title, token) {
             score += weightTokenInTitle
         }
-        if document.tags.contains(where: { scalarsContain($0, token) }) {
+        if text.tags.contains(where: { bytesContain($0, token) }) {
             score += weightTokenInTag
         }
-        if let description = document.description, scalarsContain(description, token) {
+        if let description = text.description, bytesContain(description, token) {
             score += weightTokenInDescription
         }
-        if document.ingredients.contains(where: { scalarsContain($0, token) }) {
+        if text.ingredients.contains(where: { bytesContain($0, token) }) {
             score += weightTokenInIngredient
         }
-        if scalarsContain(document.instructions, token) {
+        if bytesContain(text.instructions, token) {
             score += weightTokenInInstructions
         }
-        if let notes = document.notes, scalarsContain(notes, token) {
+        if let notes = text.notes, bytesContain(notes, token) {
             score += weightTokenInNotes
         }
         return score
@@ -136,22 +125,19 @@ extension RecipeSearchSupport {
         )
     }
 
-    static func scalarsContain(_ haystack: [UInt32], _ needle: [UInt32]) -> Bool {
+    /// Substring containment over normalized UTF-8, which is the same
+    /// relation as containment over the strings' Unicode scalars.
+    static func bytesContain(_ haystack: [UInt8], _ needle: [UInt8]) -> Bool {
         if needle.isEmpty {
             return true
         }
         if needle.count > haystack.count {
             return false
         }
-        for start in 0...(haystack.count - needle.count) {
-            var offset = 0
-            while offset < needle.count, haystack[start + offset] == needle[offset] {
-                offset += 1
-            }
-            if offset == needle.count {
-                return true
+        return haystack.withUnsafeBytes { haystackBytes in
+            needle.withUnsafeBytes { needleBytes in
+                memmem(haystackBytes.baseAddress, haystackBytes.count, needleBytes.baseAddress, needleBytes.count) != nil
             }
         }
-        return false
     }
 }

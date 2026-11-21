@@ -175,29 +175,18 @@ enum RecipeSearchSupport {
 
     // MARK: - Result membership
 
-    /// Whether a cached recipe belongs in the result set — the mirror of the
-    /// server's SQL filters. Bare-text tokens AND together, each matching any
-    /// of title, description, instructions, notes, or the ingredient match
-    /// text (NULL fields never match, like SQL). Tags use whole-value
-    /// case-folded equality (`citextFold`): case-insensitive but
+    /// Whether a cached recipe passes the query's structured filters — the
+    /// mirror of the server's SQL filters other than bare text. Tags use
+    /// whole-value case-folded equality (`citextFold`): case-insensitive but
     /// accent-sensitive, never unaccented.
-    /// `membershipTokens` are the tokens' normalized Unicode scalars — like the
-    /// server, they are built once per query, not per row.
-    static func matches(
-        _ document: CachedRecipeSearchDocument,
-        parsed: ParsedSearchQuery,
-        membershipTokens: [[UInt32]]
-    ) -> Bool {
-        let summary = document.summary
+    static func matchesFilters(_ entry: RecipeSearchCorpus.Entry, query: PreparedSearchQuery) -> Bool {
+        let summary = entry.summary
 
-        for tag in parsed.tags {
-            let folded = SearchNormalizationSupport.citextFold(tag)
-            guard summary.tags.contains(where: { SearchNormalizationSupport.citextFold($0) == folded }) else {
-                return false
-            }
+        for tag in query.foldedTags where !entry.foldedTags.contains(tag) {
+            return false
         }
 
-        switch parsed.photoFilter {
+        switch query.parsed.photoFilter {
         case .any:
             break
         case .hasPhotos where summary.thumbnailPhotoId == nil:
@@ -208,45 +197,38 @@ enum RecipeSearchSupport {
             break
         }
 
-        guard matchesCreatedDates(
-            createdAt: summary.createdAt,
-            createdAfter: parsed.createdAfter,
-            createdBefore: parsed.createdBefore
-        ) else {
-            return false
-        }
-
-        if membershipTokens.isEmpty {
-            return true
-        }
-        let fields: [[UInt32]?] = [
-            normalizedScalars(summary.title),
-            summary.description.map(normalizedScalars),
-            normalizedScalars(document.instructions),
-            document.notes.map(normalizedScalars),
-            normalizedScalars(document.ingredientMatchText)
-        ]
-        return membershipTokens.allSatisfy { token in
-            fields.contains { field in
-                guard let field else { return false }
-                return scalarsContain(field, token)
+        if query.createdAfterDay != nil || query.createdBeforeDay != nil {
+            let createdDay = utcCalendar.startOfDay(for: summary.createdAt)
+            if let after = query.createdAfterDay, createdDay < after {
+                return false
             }
+            if let before = query.createdBeforeDay, createdDay > before {
+                return false
+            }
+        }
+        return true
+    }
+
+    /// Bare-text membership: the tokens AND together, each matching any of
+    /// title, description, instructions, notes, or the ingredient match text
+    /// (NULL fields never match, like SQL).
+    static func matchesText(_ text: RecipeSearchText, tokens: [[UInt8]]) -> Bool {
+        let fields = text.fields
+        return tokens.allSatisfy { token in
+            bytesContain(fields.title, token)
+                || fields.description.map { bytesContain($0, token) } ?? false
+                || bytesContain(fields.instructions, token)
+                || fields.notes.map { bytesContain($0, token) } ?? false
+                || bytesContain(text.ingredientMatch, token)
         }
     }
 
-    /// Inclusive UTC-calendar-day window on the recipe's creation time —
-    /// shared semantics with the server's created-date filters, pinned by
+    /// Start of the UTC calendar day a `yyyy-MM-dd` bound names. Created-date
+    /// filters are an inclusive window of UTC days on the recipe's creation
+    /// time — shared semantics with the server, pinned by
     /// shared-test-vectors/created-date-filter.json.
-    static func matchesCreatedDates(createdAt: Date, createdAfter: String?, createdBefore: String?) -> Bool {
-        if let after = createdAfter.flatMap(utcDateFormatter.date(from:)),
-           utcCalendar.startOfDay(for: createdAt) < utcCalendar.startOfDay(for: after) {
-            return false
-        }
-        if let before = createdBefore.flatMap(utcDateFormatter.date(from:)),
-           utcCalendar.startOfDay(for: createdAt) > utcCalendar.startOfDay(for: before) {
-            return false
-        }
-        return true
+    static func utcDay(_ value: String?) -> Date? {
+        value.flatMap(utcDateFormatter.date(from:)).map(utcCalendar.startOfDay(for:))
     }
 
     // MARK: - Execution
@@ -258,93 +240,115 @@ enum RecipeSearchSupport {
     /// breaks ties by recipe id ascending (UUID byte order), and relevance
     /// breaks score ties by recency first.
     static func execute(
-        documents: [CachedRecipeSearchDocument],
+        corpus: RecipeSearchCorpus,
         parsed: ParsedSearchQuery,
         sortBy: SortBy?,
         sortDir: Direction?
     ) -> [RecipeSummary] {
         precondition(!parsed.requiresServer, "source/photo_size/photo_dim/calories queries are server-only")
 
-        let membershipTokens = parsed.textTokens.map(normalizedScalars)
-        let matched = documents.filter {
-            matches($0, parsed: parsed, membershipTokens: membershipTokens)
+        let query = PreparedSearchQuery(parsed)
+        // Only a text query reads the normalized text, so browsing never
+        // waits for the corpus to be normalized.
+        let texts = query.tokens.isEmpty ? nil : corpus.searchTexts()
+        var matched: [RecipeSearchCorpus.Entry] = []
+        var matchedTexts: [RecipeSearchText] = []
+        for (index, entry) in corpus.entries.enumerated() where matchesFilters(entry, query: query) {
+            if let texts {
+                guard matchesText(texts[index], tokens: query.tokens) else { continue }
+                matchedTexts.append(texts[index])
+            }
+            matched.append(entry)
         }
         let effectiveSortBy = sortBy ?? (parsed.textTokens.isEmpty ? .updatedAt : .relevance)
         let descending = (sortDir ?? .desc) == .desc
 
         switch effectiveSortBy {
         case .relevance:
-            return rankedByRelevance(matched, textTokens: parsed.textTokens)
+            return rankedByRelevance(matched, texts: matchedTexts, tokens: query.tokens)
         case .title:
-            return matched.map(\.summary).sorted { lhs, rhs in
-                RecipeTitleSortSupport.areInIncreasingOrder(
-                    lhsTitle: lhs.title,
-                    lhsID: lhs.id,
-                    rhsTitle: rhs.title,
-                    rhsID: rhs.id,
-                    descending: descending
-                )
-            }
+            return matched
+                .map { (key: RecipeTitleSortSupport.sortKey($0.summary.title), entry: $0) }
+                .sorted { lhs, rhs in
+                    RecipeTitleSortSupport.areInIncreasingOrder(
+                        lhsKey: lhs.key,
+                        lhsID: lhs.entry.idKey,
+                        rhsKey: rhs.key,
+                        rhsID: rhs.entry.idKey,
+                        descending: descending
+                    )
+                }
+                .map(\.entry.summary)
         case .updatedAt:
-            return matched.map(\.summary).sorted { lhs, rhs in
-                compareDates(lhs.updatedAt, rhs.updatedAt, lhs.id, rhs.id, descending: descending)
-            }
+            return matched.sorted { lhs, rhs in
+                compareDates(lhs.summary.updatedAt, rhs.summary.updatedAt, lhs.idKey, rhs.idKey, descending: descending)
+            }.map(\.summary)
         case .createdAt:
-            return matched.map(\.summary).sorted { lhs, rhs in
-                compareDates(lhs.createdAt, rhs.createdAt, lhs.id, rhs.id, descending: descending)
-            }
+            return matched.sorted { lhs, rhs in
+                compareDates(lhs.summary.createdAt, rhs.summary.createdAt, lhs.idKey, rhs.idKey, descending: descending)
+            }.map(\.summary)
         case .rating:
-            return matched.map(\.summary).sorted { lhs, rhs in
-                compareRatingsNullsLast(lhs.rating, rhs.rating, lhs.id, rhs.id, descending: descending)
-            }
+            return matched.sorted { lhs, rhs in
+                compareRatingsNullsLast(lhs.summary.rating, rhs.summary.rating, lhs.idKey, rhs.idKey, descending: descending)
+            }.map(\.summary)
         case .random:
             fatalError("random ordering is server-only; routing must not send it here")
         case .calories:
             // Server-only too (the cache has no calories), but routing a
             // calorie sort here shouldn't crash: keep the browse default.
-            return matched.map(\.summary).sorted { lhs, rhs in
-                compareDates(lhs.updatedAt, rhs.updatedAt, lhs.id, rhs.id, descending: true)
-            }
+            return matched.sorted { lhs, rhs in
+                compareDates(lhs.summary.updatedAt, rhs.summary.updatedAt, lhs.idKey, rhs.idKey, descending: true)
+            }.map(\.summary)
         }
     }
 
-    private static func rankedByRelevance(
-        _ matched: [CachedRecipeSearchDocument],
-        textTokens: [String]
+    /// `execute` for callers holding raw documents rather than a prepared
+    /// corpus.
+    static func execute(
+        documents: [CachedRecipeSearchDocument],
+        parsed: ParsedSearchQuery,
+        sortBy: SortBy?,
+        sortDir: Direction?
     ) -> [RecipeSummary] {
-        let scored = matched.map { document in
-            (
-                score: relevanceScore(textTokens: textTokens, document: scoringDocument(for: document)),
-                summary: document.summary
-            )
+        execute(corpus: RecipeSearchCorpus(documents: documents), parsed: parsed, sortBy: sortBy, sortDir: sortDir)
+    }
+
+    private static func rankedByRelevance(
+        _ matched: [RecipeSearchCorpus.Entry],
+        texts: [RecipeSearchText],
+        tokens: [[UInt8]]
+    ) -> [RecipeSummary] {
+        // Without text terms every score is zero and `texts` is empty.
+        let scored = matched.enumerated().map { index, entry in
+            (score: tokens.isEmpty ? 0 : relevanceScore(tokens: tokens, text: texts[index].fields), entry: entry)
         }
         return scored.sorted { lhs, rhs in
             if lhs.score != rhs.score {
                 return lhs.score > rhs.score
             }
-            if lhs.summary.updatedAt != rhs.summary.updatedAt {
-                return lhs.summary.updatedAt > rhs.summary.updatedAt
+            if lhs.entry.summary.updatedAt != rhs.entry.summary.updatedAt {
+                return lhs.entry.summary.updatedAt > rhs.entry.summary.updatedAt
             }
-            return lhs.summary.id.uuidString < rhs.summary.id.uuidString
-        }.map(\.summary)
+            return lhs.entry.idKey < rhs.entry.idKey
+        }.map(\.entry.summary)
     }
 
     private static func compareDates(
-        _ lhs: Date, _ rhs: Date, _ lhsID: UUID, _ rhsID: UUID, descending: Bool
+        _ lhs: Date, _ rhs: Date, _ lhsID: String, _ rhsID: String, descending: Bool
     ) -> Bool {
         if lhs == rhs {
-            return lhsID.uuidString < rhsID.uuidString
+            return lhsID < rhsID
         }
         return descending ? lhs > rhs : lhs < rhs
     }
 
     /// Mirror of the server's `rating (a|de)sc NULLS LAST, id asc`.
     private static func compareRatingsNullsLast(
-        _ lhs: Int?, _ rhs: Int?, _ lhsID: UUID, _ rhsID: UUID, descending: Bool
+        _ lhs: Int?, _ rhs: Int?, _ lhsID: String, _ rhsID: String, descending: Bool
     ) -> Bool {
         switch (lhs, rhs) {
         case let (lhs?, rhs?) where lhs == rhs:
-            return lhsID.uuidString < rhsID.uuidString
+            return lhsID < rhsID
         case let (lhs?, rhs?):
             return descending ? lhs > rhs : lhs < rhs
         case (_?, nil):
@@ -352,15 +356,11 @@ enum RecipeSearchSupport {
         case (nil, _?):
             return false
         case (nil, nil):
-            return lhsID.uuidString < rhsID.uuidString
+            return lhsID < rhsID
         }
     }
 
     // MARK: - Shared helpers
-
-    static func normalizedScalars(_ text: String) -> [UInt32] {
-        SearchNormalizationSupport.normalizeForSearch(text).unicodeScalars.map(\.value)
-    }
 
     static let utcCalendar: Calendar = {
         var calendar = Calendar(identifier: .iso8601)

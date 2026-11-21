@@ -392,8 +392,17 @@ remains unchanged.
 
 ### Stage 2: optimize only from measurements
 
-If normalization and scanning are slow, first cache normalized strings. If a
-scan is still too slow, prototype a GRDB/FTS5 trigram candidate index and prove
+Measured (2026-11, 1,000 synthetic recipes, Debug build on a simulator):
+re-reading the cache and normalizing every recipe per query cost 1.0–1.5 s
+per keystroke, nearly all of it normalization. iOS now keeps a prepared
+`RecipeSearchCorpus` in memory (`RecipeCacheStore.loadSearchCorpus`), rebuilt
+only when a sync changes the cache: each recipe's text is normalized once to
+UTF-8 and queries scan it with `memmem`, which takes 10–25 ms. That makes the
+cache answer a keystroke immediately, so only the freshening sync is
+debounced. `SearchPerformanceBenchmarkTests` prints the numbers.
+
+A plain scan is fast enough at this size. If a
+scan becomes too slow, prototype a GRDB/FTS5 trigram candidate index and prove
 with the shared vectors that the final results remain identical. Keep Core Data
 unless maintaining two stores is measurably better than moving the cache.
 
