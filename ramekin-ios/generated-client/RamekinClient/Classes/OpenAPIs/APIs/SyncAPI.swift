@@ -51,8 +51,8 @@ open class SyncAPI {
     /**
 
      - parameter limit: (query) Maximum number of recipes returned per page, between 1 and 500. 
-     - parameter cursor: (query) Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
-     - parameter afterId: (query) ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. (optional)
+     - parameter cursor: (query) &#x60;cursor&#x60; from the previous response. Absent means a full sync. (optional)
+     - parameter afterId: (query) &#x60;after_id&#x60; from the previous response, when it had one. (optional)
      - returns: SyncRecipesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -66,8 +66,8 @@ open class SyncAPI {
        - type: http
        - name: bearer_auth
      - parameter limit: (query) Maximum number of recipes returned per page, between 1 and 500. 
-     - parameter cursor: (query) Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
-     - parameter afterId: (query) ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. (optional)
+     - parameter cursor: (query) &#x60;cursor&#x60; from the previous response. Absent means a full sync. (optional)
+     - parameter afterId: (query) &#x60;after_id&#x60; from the previous response, when it had one. (optional)
      - returns: RequestBuilder<SyncRecipesResponse> 
      */
     open class func syncRecipesWithRequestBuilder(limit: Int64, cursor: Int64? = nil, afterId: UUID? = nil) -> RequestBuilder<SyncRecipesResponse> {
@@ -78,8 +78,8 @@ open class SyncAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "cursor": (wrappedValue: cursor?.encodeToJSON(), isExplode: true),
-            "limit": (wrappedValue: limit.encodeToJSON(), isExplode: true),
             "after_id": (wrappedValue: afterId?.encodeToJSON(), isExplode: true),
+            "limit": (wrappedValue: limit.encodeToJSON(), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: Any?] = [

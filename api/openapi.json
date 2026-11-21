@@ -2321,7 +2321,7 @@
           {
             "name": "cursor",
             "in": "query",
-            "description": "Cursor returned by a previous sync. Absent means a full sync. Every\npage of one sweep passes the same cursor.",
+            "description": "`cursor` from the previous response. Absent means a full sync.",
             "required": false,
             "schema": {
               "type": [
@@ -2332,19 +2332,9 @@
             }
           },
           {
-            "name": "limit",
-            "in": "query",
-            "description": "Maximum number of recipes returned per page, between 1 and 500.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          {
             "name": "after_id",
             "in": "query",
-            "description": "ID of the last recipe on the previous page. Absent on a sweep's first\npage.",
+            "description": "`after_id` from the previous response, when it had one.",
             "required": false,
             "schema": {
               "type": [
@@ -2352,6 +2342,16 @@
                 "null"
               ],
               "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of recipes returned per page, between 1 and 500.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
             }
           }
         ],
@@ -5181,17 +5181,25 @@
           "normalization_contract_version"
         ],
         "properties": {
+          "after_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "Set while `has_more`: the last recipe of this page, which shares its\nchange stamp with recipes still to come. Pass it back with `cursor`."
+          },
           "changes": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SyncRecipe"
             },
-            "description": "The next `limit` active recipes (by ascending recipe ID, starting past\n`after_id`) changed at or after `cursor`. All active recipes match when\n`cursor` is absent."
+            "description": "The next `limit` active recipes changed since the request's position,\noldest change first. A recipe changed again later comes again, later\nin the stream, so paging can't skip a change that lands mid-sync."
           },
           "cursor": {
             "type": "integer",
             "format": "int64",
-            "description": "This page's snapshot watermark. Once a sweep completes, persist the\n*first* page's cursor and pass it to the next sync: changes committed\nmid-sweep can land in id ranges the sweep already passed, and only the\nfirst watermark is low enough to redeliver all of them. Changes may be\nredelivered across syncs, but none can be skipped."
+            "description": "Where the next request starts: pass it back as `cursor`, together\nwith `after_id`. Persist the pair once this page is applied; an\ninterrupted sync resumes from it. Changes may be redelivered, but\nnone can be skipped."
           },
           "deleted": {
             "type": "array",
@@ -5199,15 +5207,15 @@
               "type": "string",
               "format": "uuid"
             },
-            "description": "Recipe IDs deleted at or after `cursor`. Only sent on a delta sweep's\nfirst page; later pages and full resyncs return an empty list."
+            "description": "Recipe IDs deleted since the request's position. A full resync sends\nnone."
           },
           "full_resync": {
             "type": "boolean",
-            "description": "True when this page lists every active recipe in its ID range rather\nthan changes since `cursor`: `cursor` was absent, predates a restored\nbackup, or came from another database. The client must then drop\ncached recipes the sweep doesn't return (a full resync sends no\ntombstones) and request the\nsweep's remaining pages without `cursor`, since a later page could\notherwise judge the same cursor differently. Pages are ordered by ID,\nso each settles the ID range from `after_id` (exclusive) through its\nlast recipe, or to the end of the ID space on the last page."
+            "description": "True when the request's cursor couldn't be answered with a delta: it\nwas absent, predates a restored backup, or came from another\ndatabase. The stream then starts over from every active recipe, so\nthe client must drop everything it has cached before applying this\npage (recipes the server lost have no tombstone). Later pages of the\nsame sync are ordinary deltas."
           },
           "has_more": {
             "type": "boolean",
-            "description": "True when the sweep has more pages. Request the next one with the same\n`cursor` and `after_id` set to this page's last recipe ID."
+            "description": "True when more changes follow this page. Request them right away."
           },
           "normalization_contract_version": {
             "type": "integer",

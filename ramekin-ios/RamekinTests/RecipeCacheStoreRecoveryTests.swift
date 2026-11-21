@@ -6,20 +6,27 @@ import XCTest
 /// every launch.
 @MainActor
 final class RecipeCacheStoreRecoveryTests: XCTestCase {
-    func testInvalidPendingSyncSweepIsDiscardedInsteadOfCrashing() throws {
+    func testInvalidSyncPositionIsDiscardedInsteadOfCrashing() async throws {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        store.setPendingSyncSweep(
-            PendingSyncSweep(since: nil, afterId: UUID(), watermark: 250),
+        try await store.apply(
+            syncResponse: SyncRecipesResponse(
+                changes: [],
+                cursor: 300,
+                deleted: [],
+                fullResync: false,
+                hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
+            ),
             accountKey: accountKey
         )
-        let sweepKey = try XCTUnwrap(defaults.dictionaryRepresentation().keys.first {
-            $0.contains("pending_sweep")
+        let positionKey = try XCTUnwrap(defaults.dictionaryRepresentation().keys.first {
+            $0.contains("sync_position")
         })
-        defaults.set(Data("not json".utf8), forKey: sweepKey)
+        defaults.set(Data("not json".utf8), forKey: positionKey)
 
-        XCTAssertNil(store.pendingSyncSweep(accountKey: accountKey))
-        XCTAssertNil(defaults.object(forKey: sweepKey))
+        XCTAssertNil(store.syncPosition(accountKey: accountKey))
+        XCTAssertNil(defaults.object(forKey: positionKey))
     }
 
     func testCorruptCachedRowsAreDroppedAndForceFullSync() async throws {
@@ -38,14 +45,9 @@ final class RecipeCacheStoreRecoveryTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
-        store.setSyncCursor(300, accountKey: accountKey)
-        store.setPendingSyncSweep(
-            PendingSyncSweep(since: 300, afterId: UUID(), watermark: 400),
-            accountKey: accountKey
-        )
+        XCTAssertNotNil(store.syncPosition(accountKey: accountKey))
 
         // Written behind the store's back: rows whose ingredients or tags
         // JSON no longer decodes.
@@ -79,8 +81,7 @@ final class RecipeCacheStoreRecoveryTests: XCTestCase {
         }
         XCTAssertEqual(remainingRows, 1)
         // The next sync is a full one, which rewrites the dropped recipes.
-        XCTAssertNil(store.syncCursor(accountKey: accountKey))
-        XCTAssertNil(store.pendingSyncSweep(accountKey: accountKey))
+        XCTAssertNil(store.syncPosition(accountKey: accountKey))
     }
 
     private var accountKey: String { "https://example.test|chef" }

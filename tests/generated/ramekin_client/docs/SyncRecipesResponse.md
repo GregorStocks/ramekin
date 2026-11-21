@@ -5,11 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**changes** | [**List[SyncRecipe]**](SyncRecipe.md) | The next &#x60;limit&#x60; active recipes (by ascending recipe ID, starting past &#x60;after_id&#x60;) changed at or after &#x60;cursor&#x60;. All active recipes match when &#x60;cursor&#x60; is absent. | 
-**cursor** | **int** | This page&#39;s snapshot watermark. Once a sweep completes, persist the *first* page&#39;s cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped. | 
-**deleted** | **List[UUID]** | Recipe IDs deleted at or after &#x60;cursor&#x60;. Only sent on a delta sweep&#39;s first page; later pages and full resyncs return an empty list. | 
-**full_resync** | **bool** | True when this page lists every active recipe in its ID range rather than changes since &#x60;cursor&#x60;: &#x60;cursor&#x60; was absent, predates a restored backup, or came from another database. The client must then drop cached recipes the sweep doesn&#39;t return (a full resync sends no tombstones) and request the sweep&#39;s remaining pages without &#x60;cursor&#x60;, since a later page could otherwise judge the same cursor differently. Pages are ordered by ID, so each settles the ID range from &#x60;after_id&#x60; (exclusive) through its last recipe, or to the end of the ID space on the last page. | 
-**has_more** | **bool** | True when the sweep has more pages. Request the next one with the same &#x60;cursor&#x60; and &#x60;after_id&#x60; set to this page&#39;s last recipe ID. | 
+**after_id** | **UUID** | Set while &#x60;has_more&#x60;: the last recipe of this page, which shares its change stamp with recipes still to come. Pass it back with &#x60;cursor&#x60;. | [optional] 
+**changes** | [**List[SyncRecipe]**](SyncRecipe.md) | The next &#x60;limit&#x60; active recipes changed since the request&#39;s position, oldest change first. A recipe changed again later comes again, later in the stream, so paging can&#39;t skip a change that lands mid-sync. | 
+**cursor** | **int** | Where the next request starts: pass it back as &#x60;cursor&#x60;, together with &#x60;after_id&#x60;. Persist the pair once this page is applied; an interrupted sync resumes from it. Changes may be redelivered, but none can be skipped. | 
+**deleted** | **List[UUID]** | Recipe IDs deleted since the request&#39;s position. A full resync sends none. | 
+**full_resync** | **bool** | True when the request&#39;s cursor couldn&#39;t be answered with a delta: it was absent, predates a restored backup, or came from another database. The stream then starts over from every active recipe, so the client must drop everything it has cached before applying this page (recipes the server lost have no tombstone). Later pages of the same sync are ordinary deltas. | 
+**has_more** | **bool** | True when more changes follow this page. Request them right away. | 
 **normalization_contract_version** | **int** | Version of the shared search-normalization contract (shared-test-vectors/search-normalization.json) the server was built with. A client mirroring server search locally must fail the sync when it does not support this version: matching with a stale contract would silently drop or add results relative to server search. | 
 
 ## Example

@@ -20,7 +20,7 @@ final class RecipeListViewModelTests: XCTestCase {
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
                 loadRecipes: { _ in cachedRecipes },
-                apply: { _, _, _ in cachedRecipes = [matching, hidden] }
+                apply: { _, _ in cachedRecipes = [matching, hidden] }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
@@ -72,7 +72,7 @@ final class RecipeListViewModelTests: XCTestCase {
             ),
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) },
                 loadRecipes: { _ in [cachedOld, cachedNew] }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults()
@@ -106,7 +106,7 @@ final class RecipeListViewModelTests: XCTestCase {
             ),
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) },
                 loadRecipes: { _ in [older, newer] }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults()
@@ -130,7 +130,7 @@ final class RecipeListViewModelTests: XCTestCase {
             ),
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) },
                 loadRecipes: { _ in [cached] }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults()

@@ -124,12 +124,12 @@ export class SyncApi extends runtime.BaseAPI {
             queryParameters['cursor'] = requestParameters['cursor'];
         }
 
-        if (requestParameters['limit'] != null) {
-            queryParameters['limit'] = requestParameters['limit'];
-        }
-
         if (requestParameters['afterId'] != null) {
             queryParameters['after_id'] = requestParameters['afterId'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};

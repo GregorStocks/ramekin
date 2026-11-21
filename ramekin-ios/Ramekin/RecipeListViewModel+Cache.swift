@@ -23,16 +23,16 @@ extension RecipeListViewModel {
 
     /// Runs one sync sweep once any sweep already in flight has finished:
     /// two at once (start-up plus pull-to-refresh) would race on the
-    /// persisted cursor and pending-sweep record. The cursor is read when
-    /// this sweep's turn comes, so it reflects the previous sweep.
+    /// persisted position. It is read when this sweep's turn comes, so it
+    /// reflects the previous sweep.
     /// Cancelling the caller ends its wait at once but never an earlier sweep.
-    func runSyncSweep(resumeFromCursor: Bool, accountKey: String) async throws {
+    func runSyncSweep(fromStart: Bool, accountKey: String) async throws {
         let previous = lastSyncSweep
         let sweep = Task { @MainActor [api = self.api, cache = self.cache, pageSize = syncPageSize] in
             if let previous { await CancellationSupport.wait(for: previous) }
             try Task.checkCancellation()
             try await RecipeSyncSweep.run(
-                cursor: resumeFromCursor ? cache.syncCursor(accountKey) : nil,
+                fromStart: fromStart,
                 accountKey: accountKey,
                 pageSize: pageSize,
                 api: api,
@@ -73,7 +73,8 @@ extension RecipeListViewModel {
             if !cachedBeforeSync.isEmpty {
                 appliedCachedRecipes = await applyCachedRecipes(cachedBeforeSync)
             }
-            let resumeFromCursor = !cachedBeforeSync.isEmpty
+            // An empty cache has nothing a delta could build on.
+            let fromStart = cachedBeforeSync.isEmpty
             try await logger.timed("syncRecipeCache API", source: "RecipeList") {
                 // When the list was already served from the cache, the sweep
                 // only freshens it — give it a wall-clock budget so awaiting
@@ -81,10 +82,10 @@ extension RecipeListViewModel {
                 // sync surfaces as the stale banner instead of a hang.
                 if appliedCachedRecipes {
                     try await withWallClockBudget(seconds: syncBudget) { [self] in
-                        try await runSyncSweep(resumeFromCursor: resumeFromCursor, accountKey: accountKey)
+                        try await runSyncSweep(fromStart: fromStart, accountKey: accountKey)
                     }
                 } else {
-                    try await runSyncSweep(resumeFromCursor: resumeFromCursor, accountKey: accountKey)
+                    try await runSyncSweep(fromStart: fromStart, accountKey: accountKey)
                 }
             }
             let corpus = try await cache.loadSearchCorpus(accountKey)

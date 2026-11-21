@@ -53,7 +53,7 @@ endpoints so the recipe corpus, which is large, can page while the small
 domains answer in one response:
 
 ```
-GET  /api/sync/recipes?cursor=&after_id=&limit=   read-only feed, keyset pages
+GET  /api/sync/recipes?cursor=&after_id=&limit=   read-only feed, pages in change order
 GET  /api/sync/tags?cursor=                       read-only feed
 POST /api/sync/shopping-list  { cursor, ops }     feed + writes
 POST /api/sync/meal-plans     { cursor, ops }     feed + writes

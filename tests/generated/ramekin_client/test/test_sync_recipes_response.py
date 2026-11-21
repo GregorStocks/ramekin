@@ -35,6 +35,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
         model = SyncRecipesResponse()
         if include_optional:
             return SyncRecipesResponse(
+                after_id = '',
                 changes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         calories_per_serving = '', 

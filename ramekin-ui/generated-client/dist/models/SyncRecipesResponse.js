@@ -38,6 +38,7 @@ export function SyncRecipesResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'afterId': json['after_id'] == null ? undefined : json['after_id'],
         'changes': (json['changes'].map(SyncRecipeFromJSON)),
         'cursor': json['cursor'],
         'deleted': json['deleted'],
@@ -54,6 +55,7 @@ export function SyncRecipesResponseToJSONTyped(value, ignoreDiscriminator = fals
         return value;
     }
     return {
+        'after_id': value['afterId'],
         'changes': (value['changes'].map(SyncRecipeToJSON)),
         'cursor': value['cursor'],
         'deleted': value['deleted'],

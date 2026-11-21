@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`afterId` | string
 `changes` | [Array&lt;SyncRecipe&gt;](SyncRecipe.md)
 `cursor` | number
 `deleted` | Array&lt;string&gt;
@@ -20,6 +21,7 @@ import type { SyncRecipesResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "afterId": null,
   "changes": null,
   "cursor": null,
   "deleted": null,

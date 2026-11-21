@@ -59,11 +59,11 @@ export class SyncApi extends runtime.BaseAPI {
         if (requestParameters['cursor'] != null) {
             queryParameters['cursor'] = requestParameters['cursor'];
         }
-        if (requestParameters['limit'] != null) {
-            queryParameters['limit'] = requestParameters['limit'];
-        }
         if (requestParameters['afterId'] != null) {
             queryParameters['after_id'] = requestParameters['afterId'];
+        }
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
         }
         const headerParameters = {};
         if (this.configuration && this.configuration.accessToken) {

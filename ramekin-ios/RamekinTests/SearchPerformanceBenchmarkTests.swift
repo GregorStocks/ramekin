@@ -84,7 +84,6 @@ final class SearchPerformanceBenchmarkTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
 

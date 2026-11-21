@@ -108,9 +108,9 @@ async function example() {
   const body = {
     // number | Maximum number of recipes returned per page, between 1 and 500.
     limit: 789,
-    // number | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
+    // number | `cursor` from the previous response. Absent means a full sync. (optional)
     cursor: 789,
-    // string | ID of the last recipe on the previous page. Absent on a sweep\'s first page. (optional)
+    // string | `after_id` from the previous response, when it had one. (optional)
     afterId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
   } satisfies SyncRecipesRequest;
 
@@ -132,8 +132,8 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **limit** | `number` | Maximum number of recipes returned per page, between 1 and 500. | [Defaults to `undefined`] |
-| **cursor** | `number` | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. | [Optional] [Defaults to `undefined`] |
-| **afterId** | `string` | ID of the last recipe on the previous page. Absent on a sweep\&#39;s first page. | [Optional] [Defaults to `undefined`] |
+| **cursor** | `number` | &#x60;cursor&#x60; from the previous response. Absent means a full sync. | [Optional] [Defaults to `undefined`] |
+| **afterId** | `string` | &#x60;after_id&#x60; from the previous response, when it had one. | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 

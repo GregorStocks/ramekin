@@ -48,7 +48,6 @@ final class RecipeSearchCorpusCacheTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
     }

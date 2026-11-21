@@ -70,8 +70,8 @@ Name | Type | Description  | Notes
 import RamekinClient
 
 let limit = 987 // Int64 | Maximum number of recipes returned per page, between 1 and 500.
-let cursor = 987 // Int64 | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
-let afterId = 987 // UUID | ID of the last recipe on the previous page. Absent on a sweep's first page. (optional)
+let cursor = 987 // Int64 | `cursor` from the previous response. Absent means a full sync. (optional)
+let afterId = 987 // UUID | `after_id` from the previous response, when it had one. (optional)
 
 SyncAPI.syncRecipes(limit: limit, cursor: cursor, afterId: afterId) { (response, error) in
     guard error == nil else {
@@ -90,8 +90,8 @@ SyncAPI.syncRecipes(limit: limit, cursor: cursor, afterId: afterId) { (response,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Int64** | Maximum number of recipes returned per page, between 1 and 500. | 
- **cursor** | **Int64** | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. | [optional] 
- **afterId** | **UUID** | ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. | [optional] 
+ **cursor** | **Int64** | &#x60;cursor&#x60; from the previous response. Absent means a full sync. | [optional] 
+ **afterId** | **UUID** | &#x60;after_id&#x60; from the previous response, when it had one. | [optional] 
 
 ### Return type
 

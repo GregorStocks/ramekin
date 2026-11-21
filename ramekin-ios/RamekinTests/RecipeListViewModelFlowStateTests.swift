@@ -141,9 +141,9 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
             ),
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in persistedCursor },
-                setSyncCursor: { cursor, _ in persistedCursor = cursor },
-                loadRecipes: { _ in [cached] }
+                syncPosition: { _ in persistedCursor.map { RecipeSyncPosition(cursor: $0) } },
+                loadRecipes: { _ in [cached] },
+                apply: { response, _ in persistedCursor = response.cursor }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
@@ -161,7 +161,7 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
         await second.value
 
         XCTAssertEqual(maxActive, 1)
-        // The second sweep resumes from the cursor the first one persisted.
+        // The second sweep resumes from the position the first one left.
         XCTAssertEqual(cursorsSent, [300, 401])
         XCTAssertEqual(persistedCursor, 402)
         XCTAssertFalse(viewModel.isLoading)
@@ -202,9 +202,9 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
             userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
 
-        let first = Task { try await viewModel.runSyncSweep(resumeFromCursor: false, accountKey: "account") }
+        let first = Task { try await viewModel.runSyncSweep(fromStart: true, accountKey: "account") }
         await firstSweepStarted.wait()
-        let queued = Task { try await viewModel.runSyncSweep(resumeFromCursor: false, accountKey: "account") }
+        let queued = Task { try await viewModel.runSyncSweep(fromStart: true, accountKey: "account") }
         for _ in 0..<20 { await Task.yield() }
         queued.cancel()
 
@@ -214,7 +214,7 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
         XCTAssertEqual(calls, 1)
 
         // A later sweep still waits for the first one.
-        let third = Task { try await viewModel.runSyncSweep(resumeFromCursor: false, accountKey: "account") }
+        let third = Task { try await viewModel.runSyncSweep(fromStart: true, accountKey: "account") }
         for _ in 0..<50 { await Task.yield() }
         XCTAssertEqual(calls, 1, "Cancelling a queued sweep must not let the next one jump ahead")
 

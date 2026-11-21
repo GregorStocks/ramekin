@@ -4,8 +4,8 @@ The web cookbook intentionally stays server-backed and lazy-loaded.
 
 `GET /api/recipes` is paginated and supports the full web search/filter/sort
 surface. The cookbook currently loads one page at a time and fetches more on
-scroll. By contrast, `GET /api/sync/recipes` pages by recipe ID rather than by
-search: a first sync sweeps every active recipe for the user. Using it for normal cookbook
+scroll. By contrast, `GET /api/sync/recipes` pages by change order rather than by
+search: a first sync fetches every active recipe for the user. Using it for normal cookbook
 loads would change web from lazy loading to a full local recipe-summary cache.
 
 Web should not adopt iOS local recipe search unless the sync endpoint grows a

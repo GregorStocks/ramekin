@@ -68,8 +68,8 @@ final class RecipeListViewModel: ObservableObject {
     /// generation is still current.
     var requestGeneration = 0
     private var searchTask: Task<Void, Never>?
-    /// The most recently started cache sync sweep. Sweeps write the sync
-    /// cursor and the pending-sweep record, so a new one waits for the
+    /// The most recently started cache sync sweep. Sweeps move the cache's
+    /// sync position, so a new one waits for the
     /// previous one to finish instead of running alongside it.
     var lastSyncSweep: Task<Void, Never>?
     /// The last ranking of the cached corpus, reused while the cache hands

@@ -13,20 +13,23 @@ import AnyCodable
 public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
 
     public static let normalizationContractVersionRule = NumericRule<Int>(minimum: 0, exclusiveMinimum: false, maximum: nil, exclusiveMaximum: false, multipleOf: nil)
-    /** The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent. */
+    /** Set while `has_more`: the last recipe of this page, which shares its change stamp with recipes still to come. Pass it back with `cursor`. */
+    public var afterId: UUID?
+    /** The next `limit` active recipes changed since the request's position, oldest change first. A recipe changed again later comes again, later in the stream, so paging can't skip a change that lands mid-sync. */
     public var changes: [SyncRecipe]
-    /** This page's snapshot watermark. Once a sweep completes, persist the *first* page's cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped. */
+    /** Where the next request starts: pass it back as `cursor`, together with `after_id`. Persist the pair once this page is applied; an interrupted sync resumes from it. Changes may be redelivered, but none can be skipped. */
     public var cursor: Int64
-    /** Recipe IDs deleted at or after `cursor`. Only sent on a delta sweep's first page; later pages and full resyncs return an empty list. */
+    /** Recipe IDs deleted since the request's position. A full resync sends none. */
     public var deleted: [UUID]
-    /** True when this page lists every active recipe in its ID range rather than changes since `cursor`: `cursor` was absent, predates a restored backup, or came from another database. The client must then drop cached recipes the sweep doesn't return (a full resync sends no tombstones) and request the sweep's remaining pages without `cursor`, since a later page could otherwise judge the same cursor differently. Pages are ordered by ID, so each settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page. */
+    /** True when the request's cursor couldn't be answered with a delta: it was absent, predates a restored backup, or came from another database. The stream then starts over from every active recipe, so the client must drop everything it has cached before applying this page (recipes the server lost have no tombstone). Later pages of the same sync are ordinary deltas. */
     public var fullResync: Bool
-    /** True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID. */
+    /** True when more changes follow this page. Request them right away. */
     public var hasMore: Bool
     /** Version of the shared search-normalization contract (shared-test-vectors/search-normalization.json) the server was built with. A client mirroring server search locally must fail the sync when it does not support this version: matching with a stale contract would silently drop or add results relative to server search. */
     public var normalizationContractVersion: Int
 
-    public init(changes: [SyncRecipe], cursor: Int64, deleted: [UUID], fullResync: Bool, hasMore: Bool, normalizationContractVersion: Int) {
+    public init(afterId: UUID? = nil, changes: [SyncRecipe], cursor: Int64, deleted: [UUID], fullResync: Bool, hasMore: Bool, normalizationContractVersion: Int) {
+        self.afterId = afterId
         self.changes = changes
         self.cursor = cursor
         self.deleted = deleted
@@ -36,6 +39,7 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case afterId = "after_id"
         case changes
         case cursor
         case deleted
@@ -48,6 +52,7 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(afterId, forKey: .afterId)
         try container.encode(changes, forKey: .changes)
         try container.encode(cursor, forKey: .cursor)
         try container.encode(deleted, forKey: .deleted)

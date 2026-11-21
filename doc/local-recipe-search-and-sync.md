@@ -45,10 +45,21 @@ sync pages, loading the cached corpus, and ranking it all run off the main
 thread (the store owns a private background context), because a full first
 sync on the main thread stalled the app for tens of seconds:
 
-- The first request returns all active recipe summaries.
+- A request with no cursor starts the stream from every active recipe.
 - Later requests return current recipe versions changed at or after the previous
   cursor, plus recipes whose tags changed.
 - Soft-deleted recipe IDs are returned as tombstones.
+
+The first sync and a delta are the same operation. The server orders recipes
+by change stamp (the later of the current version's stamp and its tags'
+stamps), then recipe ID, and each page returns the position the next request
+starts from: `cursor`, plus `after_id` while more pages follow, because a tag
+rename gives every recipe carrying the tag the same stamp. The client persists
+that pair after applying each page (`RecipeSyncPosition`), so an interrupted
+sync resumes where it stopped. A change that commits while a client is paging
+takes a stamp above everything the earlier pages saw, so it arrives later in
+the same stream; no page has to remember where the sync began. The last page
+returns one past the clock.
 
 The cursor is a database change counter, not a wall clock. Every sync-visible
 change carries a stamp from the one-row `sync_clock` table
@@ -64,17 +75,19 @@ Some cursors can't be answered with a delta, and get a full resync instead:
 one above the clock (issued by another database), and one at or below
 `sync_clock.resync_floor`, which `db::restamp_live` sets when a restore or
 import changes rows under clients' feet. A row the restore rolled back has no
-tombstone, so the response sets `full_resync` and clients drop cached rows it
-omits. iOS prunes recipes page by page within each page's ID range, and
-requests the rest of a full-resync sweep without a cursor so every page is
-judged the same way. A sweep that turns into a full resync partway through
-starts over from its first page, so no ID range goes unpruned.
+tombstone, so the response sets `full_resync`. For recipes that flag means
+the stream is starting over: iOS drops every cached recipe before applying the
+page, and the following pages are ordinary deltas. A paged sync whose position
+stops being answerable partway through gets the same restart. A restamp leaves
+every live row at the floor itself, so a position that continues a page
+(`after_id` set) is answerable at the floor (`SyncCursor::continuing`).
 
 That ordering is what a wall-clock cursor could not provide: a transaction took
 its timestamp before the cursor, committed after the sync SELECT's snapshot, and
 was then excluded by the next request's strict `>` filter, permanently omitting a
 recipe update, tag change, or tombstone. Changes can still be *redelivered*
-across syncs (a sweep keeps its first page's cursor). Clients
+across syncs (the cursor is inclusive, and every delta page carries all
+tombstones from its position on). Clients
 already apply changes idempotently (upsert by id, tombstone by id), and
 redelivering a change is recoverable where skipping one is not.
 `tests/test_recipe_sync_races.py` pins this by stalling a real API write

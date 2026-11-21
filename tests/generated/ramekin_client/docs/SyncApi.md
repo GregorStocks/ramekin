@@ -120,8 +120,8 @@ with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ramekin_client.SyncApi(api_client)
     limit = 56 # int | Maximum number of recipes returned per page, between 1 and 500.
-    cursor = 56 # int | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
-    after_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | ID of the last recipe on the previous page. Absent on a sweep's first page. (optional)
+    cursor = 56 # int | `cursor` from the previous response. Absent means a full sync. (optional)
+    after_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | `after_id` from the previous response, when it had one. (optional)
 
     try:
         api_response = api_instance.sync_recipes(limit, cursor=cursor, after_id=after_id)
@@ -139,8 +139,8 @@ with ramekin_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Maximum number of recipes returned per page, between 1 and 500. | 
- **cursor** | **int**| Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. | [optional] 
- **after_id** | **UUID**| ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. | [optional] 
+ **cursor** | **int**| &#x60;cursor&#x60; from the previous response. Absent means a full sync. | [optional] 
+ **after_id** | **UUID**| &#x60;after_id&#x60; from the previous response, when it had one. | [optional] 
 
 ### Return type
 

@@ -131,6 +131,23 @@ pub fn recipe_search_like<'a, QS: 'a>(
     )
 }
 
+/// A recipe's position in the recipe sync stream: the latest change stamp
+/// among its current version and that version's tags. A tag rename or
+/// delete stamps the tag, not the versions carrying it, so both count.
+/// Diesel has no scalar `max` over a correlated aggregate.
+///
+/// # Safety
+/// Static SQL string with no user input. References recipe_versions from
+/// the outer query context.
+pub fn recipe_sync_seq() -> SqlLiteral<diesel::sql_types::BigInt> {
+    sql::<diesel::sql_types::BigInt>(
+        "max(recipe_versions.change_seq, coalesce((SELECT max(ut.change_seq) \
+         FROM recipe_version_tags rvt \
+         JOIN user_tags ut ON ut.id = rvt.tag_id \
+         WHERE rvt.recipe_version_id = recipe_versions.id), 0))",
+    )
+}
+
 /// The ingredient haystack bare-text search matches against: the stored
 /// ingredients JSON text, both indexed for the search filter and served as
 /// `ingredient_match_text` through recipe sync, so iOS local search matches
