@@ -288,17 +288,10 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { limit, offset, _, _, _ in
-                    ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
-                        recipes: []
-                    )
-                },
                 syncRecipes: syncRecipes
             ),
             cache: cache,
             userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20,
             syncBudget: syncBudget
         )
     }

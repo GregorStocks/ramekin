@@ -4,13 +4,6 @@ import Foundation
 /// a network or an on-disk cache.
 struct RecipeListViewAPIClient {
     var syncTags: (_ cursor: Int64?) async throws -> SyncTagsResponse
-    var listRecipes: (
-        _ limit: Int64,
-        _ offset: Int64,
-        _ query: String?,
-        _ sortBy: SortBy?,
-        _ sortDir: Direction?
-    ) async throws -> ListRecipesResponse
     var syncRecipes: (
         _ cursor: Int64?,
         _ limit: Int64,
@@ -19,15 +12,6 @@ struct RecipeListViewAPIClient {
 
     static let live = RecipeListViewAPIClient(
         syncTags: { try await SyncAPI.syncTags(cursor: $0) },
-        listRecipes: { limit, offset, query, sortBy, sortDir in
-            try await RecipesAPI.listRecipes(
-                limit: limit,
-                offset: offset,
-                q: query,
-                sortBy: sortBy,
-                sortDir: sortDir
-            )
-        },
         syncRecipes: { cursor, limit, afterId in
             try await SyncAPI.syncRecipes(limit: limit, cursor: cursor, afterId: afterId)
         }

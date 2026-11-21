@@ -3,62 +3,15 @@ import XCTest
 
 @MainActor
 final class RecipeListViewModelTests: XCTestCase {
-    func testTextSearchUsesRelevanceSortAndStoresResults() async {
-        let recipe = RecipeListTestSupport.makeRecipe(title: "Pasta")
-        var capturedRequest: ListRequest?
-        let viewModel = RecipeListViewModel(
-            api: RecipeListViewAPIClient(
-                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { limit, offset, query, sortBy, sortDir in
-                    capturedRequest = ListRequest(
-                        limit: limit,
-                        offset: offset,
-                        query: query,
-                        sortBy: sortBy,
-                        sortDir: sortDir
-                    )
-                    return ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 1),
-                        recipes: [recipe]
-                    )
-                },
-                syncRecipes: { _, _, _ in RecipeListTestSupport.emptySyncResponse() }
-            ),
-            cache: RecipeListTestSupport.noCacheClient(),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
-        )
-
-        viewModel.searchText = "pasta"
-        await viewModel.loadRecipes()
-
-        XCTAssertEqual(viewModel.recipes.map(\.id), [recipe.id])
-        XCTAssertEqual(capturedRequest?.limit, 20)
-        XCTAssertEqual(capturedRequest?.offset, 0)
-        XCTAssertEqual(capturedRequest?.query, "pasta")
-        XCTAssertNil(capturedRequest?.sortBy)
-        XCTAssertNil(capturedRequest?.sortDir)
-        XCTAssertFalse(viewModel.hasMore)
-        XCTAssertFalse(viewModel.isLoading)
-    }
-
     func testCacheableBrowseLoadsAndFiltersSyncedCache() async {
         let matching = RecipeListTestSupport.makeRecipe(title: "Dinner", tags: ["Dinner"])
         let hidden = RecipeListTestSupport.makeRecipe(title: "Lunch", tags: ["Lunch"])
-        var didListRecipes = false
         var didSync = false
         var cachedRecipes = [matching, hidden]
 
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { _, _, _, _, _ in
-                    didListRecipes = true
-                    return ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: 20, offset: 0, total: 0),
-                        recipes: []
-                    )
-                },
                 syncRecipes: { _, _, _ in
                     didSync = true
                     return RecipeListTestSupport.emptySyncResponse()
@@ -69,27 +22,21 @@ final class RecipeListViewModelTests: XCTestCase {
                 loadRecipes: { _ in cachedRecipes },
                 apply: { _, _, _ in cachedRecipes = [matching, hidden] }
             ),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
 
         viewModel.selectedTags = ["Dinner"]
         await viewModel.loadRecipes()
 
         XCTAssertTrue(didSync)
-        XCTAssertFalse(didListRecipes)
         XCTAssertEqual(viewModel.recipes.map(\.id), [matching.id])
-        XCTAssertEqual(viewModel.totalCount, 1)
-        XCTAssertTrue(viewModel.isUsingLocalCache)
-        XCTAssertFalse(viewModel.hasMore)
     }
 
     func testClearFiltersClearsSearchAndPersistedFilters() {
         let viewModel = RecipeListViewModel(
             api: RecipeListTestSupport.emptyAPIClient(),
             cache: RecipeListTestSupport.noCacheClient(),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
 
         viewModel.searchText = "cake"
@@ -121,12 +68,6 @@ final class RecipeListViewModelTests: XCTestCase {
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { limit, offset, _, _, _ in
-                    ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 1),
-                        recipes: [cachedNew]
-                    )
-                },
                 syncRecipes: { _, _, _ in throw URLError(.timedOut) }
             ),
             cache: RecipeListTestSupport.cacheClient(
@@ -134,8 +75,7 @@ final class RecipeListViewModelTests: XCTestCase {
                 syncCursor: { _ in 300 },
                 loadRecipes: { _ in [cachedOld, cachedNew] }
             ),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
 
         viewModel.searchText = "zuppa"
@@ -146,8 +86,6 @@ final class RecipeListViewModelTests: XCTestCase {
         await viewModel.loadRecipes()
 
         XCTAssertEqual(viewModel.recipes.map(\.id), [cachedNew.id, cachedOld.id])
-        XCTAssertEqual(viewModel.totalCount, 2)
-        XCTAssertTrue(viewModel.isUsingLocalCache)
         XCTAssertFalse(viewModel.isLoading)
         XCTAssertNil(viewModel.error)
     }
@@ -164,13 +102,6 @@ final class RecipeListViewModelTests: XCTestCase {
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { _, _, _, _, _ in
-                    XCTFail("cacheable browse must not hit listRecipes")
-                    return ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: 20, offset: 0, total: 0),
-                        recipes: []
-                    )
-                },
                 syncRecipes: { _, _, _ in throw URLError(.timedOut) }
             ),
             cache: RecipeListTestSupport.cacheClient(
@@ -178,8 +109,7 @@ final class RecipeListViewModelTests: XCTestCase {
                 syncCursor: { _ in 300 },
                 loadRecipes: { _ in [older, newer] }
             ),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
 
         viewModel.sortOrder = .newest
@@ -196,13 +126,6 @@ final class RecipeListViewModelTests: XCTestCase {
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { _, _, _, _, _ in
-                    XCTFail("cacheable browse must not hit listRecipes")
-                    return ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: 20, offset: 0, total: 0),
-                        recipes: []
-                    )
-                },
                 syncRecipes: { _, _, _ in throw URLError(.timedOut) }
             ),
             cache: RecipeListTestSupport.cacheClient(
@@ -210,8 +133,7 @@ final class RecipeListViewModelTests: XCTestCase {
                 syncCursor: { _ in 300 },
                 loadRecipes: { _ in [cached] }
             ),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
 
         viewModel.selectedTags = ["Dessert"]
@@ -222,99 +144,21 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertFalse(viewModel.isLoading)
     }
 
-    func testFailedReloadOverExistingResultsIsFlagged() async {
-        let recipe = RecipeListTestSupport.makeRecipe(title: "Pasta")
-        var calls = 0
-        let viewModel = RecipeListViewModel(
-            api: RecipeListViewAPIClient(
-                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { limit, offset, _, _, _ in
-                    calls += 1
-                    if calls > 1 { throw URLError(.timedOut) }
-                    return ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 1),
-                        recipes: [recipe]
-                    )
-                },
-                syncRecipes: { _, _, _ in RecipeListTestSupport.emptySyncResponse() }
-            ),
-            cache: RecipeListTestSupport.noCacheClient(),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
-        )
-
-        viewModel.searchText = "pasta"
-        await viewModel.loadRecipes()
-        XCTAssertFalse(viewModel.reloadFailed)
-
-        viewModel.searchText = "pastas"
-        await viewModel.loadRecipes()
-        XCTAssertTrue(viewModel.reloadFailed, "Stale results must not pass for the new search")
-        XCTAssertNil(viewModel.error)
-        XCTAssertEqual(viewModel.recipes.map(\.id), [recipe.id])
-
-        calls = 0
-        await viewModel.loadRecipes()
-        XCTAssertFalse(viewModel.reloadFailed)
-    }
-
     func testSyncFailureWithEmptyCacheStillShowsError() async {
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { limit, offset, _, _, _ in
-                    ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
-                        recipes: []
-                    )
-                },
                 syncRecipes: { _, _, _ in throw URLError(.timedOut) }
             ),
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" }
             ),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
         )
 
         await viewModel.loadRecipes()
 
         XCTAssertNotNil(viewModel.error)
         XCTAssertFalse(viewModel.isLoading)
-    }
-
-    func testFilterMovingServerOnlyDuringSyncLeavesListToItsReload() async {
-        // Editing the advanced filters mutates them without reloading until
-        // the sheet is applied, so a sync can finish under a source: filter
-        // the cache cannot answer. Ranking the cache then must not happen.
-        let cached = RecipeListTestSupport.makeRecipe(title: "Aioli")
-        var cachedRecipes: [RecipeSummary] = []
-        var viewModel: RecipeListViewModel?
-        viewModel = RecipeListViewModel(
-            api: RecipeListTestSupport.emptyAPIClient(),
-            cache: RecipeListTestSupport.cacheClient(
-                currentAccountKey: { "account" },
-                loadRecipes: { _ in cachedRecipes },
-                apply: { _, _, _ in
-                    cachedRecipes = [cached]
-                    viewModel?.sourceFilter = "Bakery"
-                }
-            ),
-            userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20
-        )
-
-        await viewModel?.loadRecipes()
-
-        XCTAssertEqual(viewModel?.recipes.isEmpty, true)
-        XCTAssertNil(viewModel?.error)
-    }
-
-    private struct ListRequest {
-        let limit: Int64
-        let offset: Int64
-        let query: String?
-        let sortBy: SortBy?
-        let sortDir: Direction?
     }
 }

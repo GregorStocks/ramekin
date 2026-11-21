@@ -50,10 +50,13 @@ extension RecipeListViewModel {
     func syncCachedRecipes(key: ListRequestKey) async {
         let logger = DebugLogger.shared
 
-        let generation = beginReset(key: key, usingLocalCache: true)
+        let generation = beginReset(key: key)
 
         guard let accountKey = cache.currentAccountKey() else {
-            await loadRecipes(forceNetwork: true)
+            // No signed-in account, so nothing to sync or show.
+            logger.log("syncCachedRecipes: no account", source: "RecipeList")
+            failSync()
+            isLoading = false
             return
         }
 
@@ -99,12 +102,9 @@ extension RecipeListViewModel {
             } else {
                 logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
                 if appliedCachedRecipes {
-                    // The user is looking at a cache-served list that could
-                    // not be freshened. Never leave that silent: new and
-                    // edited recipes would just quietly not show up.
                     flagSyncFailureOverCachedList()
                 } else {
-                    fail(staleness: .syncFailed)
+                    failSync()
                 }
             }
             isLoading = false
@@ -142,7 +142,7 @@ extension RecipeListViewModel {
             return false
         }
         activeKey = key
-        publish(visibleRecipes, total: visibleRecipes.count, usingLocalCache: true)
+        publish(visibleRecipes)
         return true
     }
 }

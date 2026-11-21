@@ -2,7 +2,7 @@ import XCTest
 @testable import Ramekin
 
 /// Loading and failure flags: cancellation never strands a spinner, the
-/// staleness reasons stay exclusive, and cache sync sweeps never overlap.
+/// stale flag and the error stay exclusive, and cache sync sweeps never overlap.
 @MainActor
 final class RecipeListViewModelFlowStateTests: XCTestCase {
     func testKeystrokeShowsCachedResultsWithoutWaitingForTheDebouncedReload() async {
@@ -32,7 +32,6 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
         }
 
         XCTAssertEqual(viewModel.recipes.map(\.id), [pasta.id])
-        XCTAssertTrue(viewModel.isUsingLocalCache)
         XCTAssertFalse(viewModel.isLoading)
         XCTAssertEqual(syncCount, 0)
     }
@@ -76,52 +75,32 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
             URLError(.cancelled),
             RamekinAPI.APIError.networkError(URLError(.cancelled))
         ] {
-            let viewModel = makeViewModel(listRecipes: { _, _ in throw cancellation })
+            var api = RecipeListTestSupport.emptyAPIClient()
+            api.syncRecipes = { _, _, _ in throw cancellation }
+            let viewModel = RecipeListViewModel(
+                api: api,
+                cache: RecipeListTestSupport.cacheClient(currentAccountKey: { "account" }),
+                userDefaults: RecipeListTestSupport.isolatedDefaults()
+            )
 
             await viewModel.loadRecipes()
 
             XCTAssertFalse(viewModel.isLoading, "\(cancellation)")
             XCTAssertNil(viewModel.error, "\(cancellation)")
-            XCTAssertNil(viewModel.staleness, "\(cancellation)")
-            XCTAssertFalse(viewModel.hasMore, "\(cancellation)")
+            XCTAssertFalse(viewModel.syncFailed, "\(cancellation)")
         }
     }
 
-    func testReloadFailureOverRowsIsStalenessNotError() async {
-        let soup = RecipeListTestSupport.makeRecipe(title: "Soup")
-        var fail = false
-        let viewModel = makeViewModel(listRecipes: { limit, offset in
-            if fail { throw URLError(.timedOut) }
-            return ListRecipesResponse(
-                pagination: PaginationMetadata(limit: limit, offset: offset, total: 5),
-                recipes: [soup]
-            )
-        })
-
-        await viewModel.loadRecipes()
-        XCTAssertTrue(viewModel.hasMore)
-        fail = true
-        await viewModel.loadRecipes()
-
-        XCTAssertEqual(viewModel.staleness, .reloadFailed)
-        XCTAssertNil(viewModel.error)
-        XCTAssertFalse(viewModel.isLoading)
-        XCTAssertFalse(viewModel.hasMore, "Never page a new query onto the old query's rows")
-
-        fail = false
-        await viewModel.loadRecipes()
-
-        XCTAssertNil(viewModel.staleness)
-        XCTAssertNil(viewModel.error)
-    }
-
-    func testFailedFirstLoadIsErrorWithoutStaleness() async {
-        let viewModel = makeViewModel(listRecipes: { _, _ in throw URLError(.timedOut) })
+    func testLoadWithoutAnAccountIsAnErrorNotASpinner() async {
+        let viewModel = RecipeListViewModel(
+            api: RecipeListTestSupport.emptyAPIClient(),
+            cache: RecipeListTestSupport.noCacheClient(),
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
+        )
 
         await viewModel.loadRecipes()
 
         XCTAssertNotNil(viewModel.error)
-        XCTAssertNil(viewModel.staleness)
         XCTAssertFalse(viewModel.isLoading)
         XCTAssertTrue(viewModel.recipes.isEmpty)
     }
@@ -139,10 +118,6 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { _, _, _, _, _ in
-                    XCTFail("A cache-served list must not page from the server")
-                    throw URLError(.badURL)
-                },
                 syncRecipes: { cursor, _, _ in
                     calls += 1
                     let call = calls
@@ -190,7 +165,7 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
         XCTAssertEqual(cursorsSent, [300, 401])
         XCTAssertEqual(persistedCursor, 402)
         XCTAssertFalse(viewModel.isLoading)
-        XCTAssertNil(viewModel.staleness)
+        XCTAssertFalse(viewModel.syncFailed)
     }
 
     func testCancelledQueuedSweepStopsWaitingButKeepsOrder() async throws {
@@ -203,7 +178,6 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { _, _, _, _, _ in throw URLError(.badURL) },
                 syncRecipes: { _, _, _ in
                     calls += 1
                     let call = calls
@@ -260,20 +234,5 @@ final class RecipeListViewModelFlowStateTests: XCTestCase {
         ))
         XCTAssertFalse(CancellationSupport.isCancellation(URLError(.timedOut)))
         XCTAssertFalse(CancellationSupport.isCancellation(RamekinAPI.APIError.invalidResponse))
-    }
-
-    /// A view model that always goes to the server: no account, so no cache.
-    private func makeViewModel(
-        listRecipes: @escaping (Int64, Int64) async throws -> ListRecipesResponse
-    ) -> RecipeListViewModel {
-        RecipeListViewModel(
-            api: RecipeListViewAPIClient(
-                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { limit, offset, _, _, _ in try await listRecipes(limit, offset) },
-                syncRecipes: { _, _, _ in RecipeListTestSupport.emptySyncResponse() }
-            ),
-            cache: RecipeListTestSupport.noCacheClient(),
-            userDefaults: RecipeListTestSupport.isolatedDefaults()
-        )
     }
 }

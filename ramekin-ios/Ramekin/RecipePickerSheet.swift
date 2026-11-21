@@ -15,27 +15,47 @@ final class RecipePickerViewModel: ObservableObject {
     private var generation = UUID()
     private var searchTask: Task<Void, Never>?
 
-    init(listRecipes: @escaping ListRecipes = { query in
-        // No explicit sort, matching the web meal-plan picker: the server
-        // ranks by relevance when searching, newest-first when browsing.
-        try await RecipesAPI.listRecipes(limit: 50, offset: 0, q: query).recipes
-    }) {
+    init(listRecipes: @escaping ListRecipes = RecipePickerViewModel.searchCachedRecipes) {
         self.listRecipes = listRecipes
+    }
+
+    /// Searches the synced recipe cache, like the recipe list: relevance
+    /// when searching, newest-first when browsing. Only a cache that has
+    /// nothing yet (no sync has landed) falls back to asking the server.
+    nonisolated static func searchCachedRecipes(_ query: String?) async throws -> [RecipeSummary] {
+        let store = RecipeCacheStore.shared
+        if let accountKey = store.currentAccountKey() {
+            let corpus = try await store.loadSearchCorpus(accountKey: accountKey)
+            if !corpus.isEmpty {
+                return await Task.detached(priority: .userInitiated) {
+                    RecipeSearchSupport.execute(
+                        corpus: corpus,
+                        parsed: RecipeSearchSupport.parse(query ?? ""),
+                        sortBy: nil,
+                        sortDir: nil
+                    )
+                }.value
+            }
+        }
+        return try await RecipesAPI.listRecipes(limit: 50, offset: 0, q: query).recipes
     }
 
     deinit {
         searchTask?.cancel()
     }
 
-    /// Debounces a search-text change into a load.
+    /// Loads for a search-text change right away: the cache answers in
+    /// milliseconds, so there is nothing to debounce.
     func searchTextChanged(_ text: String) {
-        SearchDebounceSupport.replaceTask(&searchTask) { [weak self] in
+        searchTask?.cancel()
+        searchTask = Task { [weak self] in
             await self?.load(searchText: text)
         }
     }
 
     func cancelSearch() {
-        SearchDebounceSupport.cancelTask(&searchTask)
+        searchTask?.cancel()
+        searchTask = nil
     }
 
     func load(searchText: String) async {

@@ -80,12 +80,6 @@ enum RecipeListTestSupport {
     static func emptyAPIClient() -> RecipeListViewAPIClient {
         RecipeListViewAPIClient(
             syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-            listRecipes: { limit, offset, _, _, _ in
-                ListRecipesResponse(
-                    pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
-                    recipes: []
-                )
-            },
             syncRecipes: { _, _, _ in emptySyncResponse() }
         )
     }
