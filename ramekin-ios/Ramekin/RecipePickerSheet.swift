@@ -12,11 +12,45 @@ final class RecipePickerViewModel: ObservableObject {
     @Published private(set) var error: String?
 
     private let listRecipes: ListRecipes
+    private let freshen: () async -> Void
     private var generation = UUID()
     private var searchTask: Task<Void, Never>?
+    private var lastSearchText = ""
 
-    init(listRecipes: @escaping ListRecipes = RecipePickerViewModel.searchCachedRecipes) {
+    init(
+        listRecipes: @escaping ListRecipes = RecipePickerViewModel.searchCachedRecipes,
+        freshen: @escaping () async -> Void = RecipePickerViewModel.syncRecipeCache
+    ) {
         self.listRecipes = listRecipes
+        self.freshen = freshen
+    }
+
+    /// Brings the recipe cache up to date, through the same queue as the
+    /// recipe list so the two never sync at once. A failure only means the
+    /// picker keeps showing what the cache already had.
+    static func syncRecipeCache() async {
+        guard let accountKey = RecipeCacheStore.shared.currentAccountKey() else { return }
+        do {
+            try await RecipeSyncQueue.shared.run(
+                resumeFromCursor: true,
+                accountKey: accountKey,
+                pageSize: 100,
+                api: .live,
+                cache: .live
+            )
+        } catch {
+            DebugLogger.shared.log("Picker recipe sync failed: \(error.localizedDescription)", source: "RecipePicker")
+        }
+    }
+
+    /// Shows what the cache has right away, then syncs it and shows the
+    /// result for whatever is being searched by then: the picker can be the
+    /// first screen opened after a recipe was added elsewhere.
+    func start(searchText: String) async {
+        await load(searchText: searchText)
+        await freshen()
+        guard !Task.isCancelled else { return }
+        await load(searchText: lastSearchText)
     }
 
     /// Searches the synced recipe cache, like the recipe list: relevance
@@ -61,6 +95,7 @@ final class RecipePickerViewModel: ObservableObject {
     func load(searchText: String) async {
         let generation = UUID()
         self.generation = generation
+        lastSearchText = searchText
         isLoading = true
         error = nil
 
@@ -125,7 +160,7 @@ struct RecipePickerSheet: View {
                     Button("Cancel") { dismiss() }
                 }
             }
-            .task { await model.load(searchText: searchText) }
+            .task { await model.start(searchText: searchText) }
         }
     }
 

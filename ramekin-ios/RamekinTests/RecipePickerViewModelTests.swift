@@ -30,6 +30,29 @@ final class RecipePickerViewModelTests: XCTestCase {
         XCTAssertFalse(model.isLoading)
     }
 
+    func testStartShowsTheCacheThenWhatSyncBroughtIn() async {
+        let cached = RecipeListTestSupport.makeRecipe(title: "Cached Cake")
+        let synced = RecipeListTestSupport.makeRecipe(title: "Synced Cake")
+        var cache = [cached]
+        var shownBeforeSync: [UUID] = []
+        var model: RecipePickerViewModel?
+        model = RecipePickerViewModel(
+            listRecipes: { query in query == "cake" ? cache : [] },
+            freshen: {
+                shownBeforeSync = model?.recipes.map(\.id) ?? []
+                cache.append(synced)
+                // The user kept typing while the sync ran.
+                await model?.load(searchText: "cake")
+            }
+        )
+
+        await model?.start(searchText: "cake")
+
+        XCTAssertEqual(shownBeforeSync, [cached.id])
+        XCTAssertEqual(model?.recipes.map(\.id), [cached.id, synced.id])
+        XCTAssertEqual(model?.isLoading, false)
+    }
+
     func testOlderLoadFinishingDoesNotClearNewerSpinner() async {
         let firstStarted = RequestGate()
         let releaseFirst = RequestGate()
