@@ -5,6 +5,71 @@ import XCTest
 /// staleness reasons stay exclusive, and cache sync sweeps never overlap.
 @MainActor
 final class RecipeListViewModelFlowStateTests: XCTestCase {
+    func testKeystrokeShowsCachedResultsWithoutWaitingForTheDebouncedReload() async {
+        let pasta = RecipeListTestSupport.makeRecipe(title: "Pasta")
+        let soup = RecipeListTestSupport.makeRecipe(title: "Soup")
+        var syncCount = 0
+        var api = RecipeListTestSupport.emptyAPIClient()
+        api.syncRecipes = { _, _, _ in
+            syncCount += 1
+            return RecipeListTestSupport.emptySyncResponse()
+        }
+        let viewModel = RecipeListViewModel(
+            api: api,
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                loadRecipes: { _ in [pasta, soup] }
+            ),
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
+        )
+
+        viewModel.searchText = "pas"
+        viewModel.handleSearchTextChange("pas")
+        // Drop the debounced reload: whatever shows up came from the cache.
+        viewModel.cancelSearch()
+        for _ in 0..<400 where viewModel.recipes.isEmpty {
+            try? await Task.sleep(nanoseconds: 5_000_000)
+        }
+
+        XCTAssertEqual(viewModel.recipes.map(\.id), [pasta.id])
+        XCTAssertTrue(viewModel.isUsingLocalCache)
+        XCTAssertFalse(viewModel.isLoading)
+        XCTAssertEqual(syncCount, 0)
+    }
+
+    func testReloadOfAnAnsweredEmptySearchShowsNoSpinner() async {
+        let soup = RecipeListTestSupport.makeRecipe(title: "Soup")
+        let gate = RequestGate()
+        var api = RecipeListTestSupport.emptyAPIClient()
+        api.syncRecipes = { _, _, _ in
+            await gate.wait()
+            return RecipeListTestSupport.emptySyncResponse()
+        }
+        let viewModel = RecipeListViewModel(
+            api: api,
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                loadRecipes: { _ in [soup] }
+            ),
+            userDefaults: RecipeListTestSupport.isolatedDefaults()
+        )
+
+        viewModel.searchText = "zzz"
+        await viewModel.loadCachedRecipesForCurrentQuery()
+        XCTAssertTrue(viewModel.recipes.isEmpty)
+        XCTAssertFalse(viewModel.isLoading)
+
+        // The freshening reload must not flash the first-load spinner over
+        // "no results" while its sync is in flight.
+        let reload = Task { await viewModel.loadRecipes() }
+        await Task.yield()
+        XCTAssertFalse(viewModel.isLoading)
+        gate.open()
+        await reload.value
+        XCTAssertFalse(viewModel.isLoading)
+        XCTAssertTrue(viewModel.recipes.isEmpty)
+    }
+
     func testCancelledLoadClearsSpinner() async {
         for cancellation in [
             CancellationError() as Error,

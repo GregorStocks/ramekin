@@ -43,7 +43,7 @@ struct RecipeListCacheClient {
     var pendingSyncSweep: (_ accountKey: String) -> PendingSyncSweep?
     var setPendingSyncSweep: (_ sweep: PendingSyncSweep, _ accountKey: String) -> Void
     var clearPendingSyncSweep: (_ accountKey: String) -> Void
-    var loadSearchDocuments: (_ accountKey: String) async throws -> [CachedRecipeSearchDocument]
+    var loadSearchCorpus: (_ accountKey: String) async throws -> RecipeSearchCorpus
     var apply: (_ syncResponse: SyncRecipesResponse, _ afterId: UUID?, _ accountKey: String) async throws -> Void
 
     static let live = RecipeListCacheClient(
@@ -54,7 +54,7 @@ struct RecipeListCacheClient {
         pendingSyncSweep: { RecipeCacheStore.shared.pendingSyncSweep(accountKey: $0) },
         setPendingSyncSweep: { RecipeCacheStore.shared.setPendingSyncSweep($0, accountKey: $1) },
         clearPendingSyncSweep: { RecipeCacheStore.shared.clearPendingSyncSweep(accountKey: $0) },
-        loadSearchDocuments: { try await RecipeCacheStore.shared.loadSearchDocuments(accountKey: $0) },
+        loadSearchCorpus: { try await RecipeCacheStore.shared.loadSearchCorpus(accountKey: $0) },
         apply: { try await RecipeCacheStore.shared.apply(syncResponse: $0, afterId: $1, accountKey: $2) }
     )
 }

@@ -23,18 +23,26 @@ enum RecipeSummaryCacheSupport {
     /// relevance exactly like the server default (the app never sends an
     /// explicit sort with a text query).
     static func visibleRecipes(
-        documents: [CachedRecipeSearchDocument],
+        corpus: RecipeSearchCorpus,
         filterState: RecipeListFilterState,
         sortOrder: RecipeSortOrder
     ) -> [RecipeSummary] {
         let parsed = parsedQuery(for: filterState)
         let hasText = !parsed.textTokens.isEmpty
         return RecipeSearchSupport.execute(
-            documents: documents,
+            corpus: corpus,
             parsed: parsed,
             sortBy: hasText ? nil : sortOrder.sortBy,
             sortDir: hasText ? nil : sortOrder.sortDir
         )
+    }
+
+    static func visibleRecipes(
+        documents: [CachedRecipeSearchDocument],
+        filterState: RecipeListFilterState,
+        sortOrder: RecipeSortOrder
+    ) -> [RecipeSummary] {
+        visibleRecipes(corpus: RecipeSearchCorpus(documents: documents), filterState: filterState, sortOrder: sortOrder)
     }
 
     /// The same query string the app would send the server, parsed the same

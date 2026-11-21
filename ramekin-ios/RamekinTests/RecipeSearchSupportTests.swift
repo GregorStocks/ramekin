@@ -77,13 +77,21 @@ final class RecipeSearchSupportTests: XCTestCase {
     func testNormalizedMetacharactersMatchLiterally() {
         for (query, literal) in [("％", "%"), ("﹪", "%"), ("＿", "_"),
                                  ("∖", "\\"), ("﹨", "\\"), ("＼", "\\")] {
-            let needle = RecipeSearchSupport.normalizedScalars("a" + query + "b")
-            XCTAssertTrue(RecipeSearchSupport.scalarsContain(scalars("a" + literal + "b"), needle))
-            XCTAssertFalse(RecipeSearchSupport.scalarsContain(scalars("axb ab"), needle))
+            let needle = SearchNormalizationSupport.normalizedUTF8("a" + query + "b")
+            XCTAssertTrue(RecipeSearchSupport.bytesContain(Array(("a" + literal + "b").utf8), needle))
+            XCTAssertFalse(RecipeSearchSupport.bytesContain(Array("axb ab".utf8), needle))
         }
     }
 
-    private func scalars(_ text: String) -> [UInt32] {
-        Array(text.unicodeScalars.map(\.value))
+    func testBytesContainFindsSubstringsAnywhere() {
+        let haystack = Array("crème brûlée".utf8)
+        for needle in ["", "c", "crème", "me br", "ée", "crème brûlée"] {
+            XCTAssertTrue(RecipeSearchSupport.bytesContain(haystack, Array(needle.utf8)), needle)
+        }
+        for needle in ["creme", "éé", "crème brûlée!", "x"] {
+            XCTAssertFalse(RecipeSearchSupport.bytesContain(haystack, Array(needle.utf8)), needle)
+        }
+        XCTAssertTrue(RecipeSearchSupport.bytesContain([], []))
+        XCTAssertFalse(RecipeSearchSupport.bytesContain([], Array("a".utf8)))
     }
 }

@@ -53,7 +53,7 @@ enum RecipeListTestSupport {
             pendingSyncSweep: pendingSyncSweep,
             setPendingSyncSweep: setPendingSyncSweep,
             clearPendingSyncSweep: clearPendingSyncSweep,
-            loadSearchDocuments: { try loadRecipes($0).map(makeDocument) },
+            loadSearchCorpus: { RecipeSearchCorpus(documents: try loadRecipes($0).map(makeDocument)) },
             apply: apply
         )
     }

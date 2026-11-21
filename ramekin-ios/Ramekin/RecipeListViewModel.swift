@@ -3,7 +3,14 @@ import Foundation
 
 /// Identifies the filter+sort combination a list request belongs to. Sort is
 /// part of it because a sort change leaves the query string untouched.
-private struct ListRequestKey: Equatable {
+/// The cached corpus ranked for one filter+sort.
+struct CachedRanking {
+    let corpusVersion: UUID
+    let key: ListRequestKey
+    let recipes: [RecipeSummary]
+}
+
+struct ListRequestKey: Equatable {
     let query: String?
     let sortOrder: RecipeSortOrder
 }
@@ -56,20 +63,23 @@ final class RecipeListViewModel: ObservableObject {
     let cache: RecipeListCacheClient
     let userDefaults: UserDefaults
     private let pageSize: Int64
-    private let syncPageSize: Int64
+    let syncPageSize: Int64
     /// Wall-clock budget for freshening a list already served from the cache.
-    private let syncBudget: TimeInterval
+    let syncBudget: TimeInterval
     /// Filter+sort the visible list was loaded with.
-    private var activeKey: ListRequestKey?
+    var activeKey: ListRequestKey?
     /// Bumped by every reset load. A response may only be applied while its
     /// generation is still current, so a filter or sort change discards both
     /// initial and append requests that were already in flight.
-    private var requestGeneration = 0
+    var requestGeneration = 0
     private var searchTask: Task<Void, Never>?
     /// The most recently started cache sync sweep. Sweeps write the sync
     /// cursor and the pending-sweep record, so a new one waits for the
     /// previous one to finish instead of running alongside it.
-    private var lastSyncSweep: Task<Void, Never>?
+    var lastSyncSweep: Task<Void, Never>?
+    /// The last ranking of the cached corpus, reused while the cache hands
+    /// back the same corpus for the same filter+sort.
+    var lastRanking: CachedRanking?
 
     init(
         api: RecipeListViewAPIClient = .live,
@@ -126,6 +136,10 @@ extension RecipeListViewModel {
         if newValue.isEmpty {
             clearFilters()
         } else {
+            // The cache answers in milliseconds, so show its results for
+            // this keystroke now; the debounced reload below only freshens
+            // them from the server.
+            Task { await loadCachedRecipesForCurrentQuery() }
             SearchDebounceSupport.replaceTask(&searchTask) { [weak self] in
                 await self?.loadRecipes()
             }
@@ -278,50 +292,10 @@ extension RecipeListViewModel {
         }
     }
 
-    func loadCachedRecipesForCurrentQuery() async {
-        guard RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder),
-              let accountKey = cache.currentAccountKey()
-        else {
-            return
-        }
-
-        do {
-            let cachedDocuments = try await cache.loadSearchDocuments(accountKey)
-            await applyCachedRecipes(cachedDocuments)
-        } catch {
-            DebugLogger.shared.log("loadCachedRecipes error: \(error.localizedDescription)", source: "RecipeList")
-        }
-    }
-
-    /// Runs one sync sweep once any sweep already in flight has finished:
-    /// two at once (start-up plus pull-to-refresh) would race on the
-    /// persisted cursor and pending-sweep record. The cursor is read when
-    /// this sweep's turn comes, so it reflects the previous sweep.
-    /// Cancelling the caller ends its wait at once but never an earlier sweep.
-    func runSyncSweep(resumeFromCursor: Bool, accountKey: String) async throws {
-        let previous = lastSyncSweep
-        let sweep = Task { @MainActor [api = self.api, cache = self.cache, pageSize = syncPageSize] in
-            if let previous { await CancellationSupport.wait(for: previous) }
-            try Task.checkCancellation()
-            try await RecipeSyncSweep.run(
-                cursor: resumeFromCursor ? cache.syncCursor(accountKey) : nil,
-                accountKey: accountKey,
-                pageSize: pageSize,
-                api: api,
-                cache: cache
-            )
-        }
-        lastSyncSweep = Task { await previous?.value; _ = await sweep.result }
-        try await withTaskCancellationHandler {
-            try await sweep.value
-        } onCancel: {
-            sweep.cancel()
-        }
-    }
 }
 
-private extension RecipeListViewModel {
-    func buildQuery() -> String? {
+extension RecipeListViewModel {
+    private func buildQuery() -> String? {
         RecipeListFilterSupport.buildQuery(from: currentFilterState)
     }
 
@@ -354,6 +328,9 @@ private extension RecipeListViewModel {
     /// older response is discarded, and resets every per-list flag in one
     /// place. Returns the new generation.
     func beginReset(key: ListRequestKey, usingLocalCache: Bool) -> Int {
+        // An empty list the cache already produced for this filter+sort is an
+        // answer ("no results"), not a list still waiting for its first load.
+        let alreadyAnswered = activeKey == key && isUsingLocalCache && !isLoading && error == nil
         requestGeneration += 1
         activeKey = key
         isUsingLocalCache = usingLocalCache
@@ -364,7 +341,7 @@ private extension RecipeListViewModel {
         staleness = nil
         error = nil
         // A cache-served reload keeps the old rows up until the cache answers.
-        isLoading = usingLocalCache ? recipes.isEmpty : true
+        isLoading = usingLocalCache ? recipes.isEmpty && !alreadyAnswered : true
         return requestGeneration
     }
 
@@ -372,7 +349,10 @@ private extension RecipeListViewModel {
     /// loading flag and failure that answer supersedes. A failed cache sync
     /// stays flagged: a cache answer is no fresher than the cache.
     func publish(_ newRecipes: [RecipeSummary], total: Int, usingLocalCache: Bool) {
-        recipes = newRecipes
+        // Re-publishing an identical list would make the List diff every row.
+        if recipes != newRecipes {
+            recipes = newRecipes
+        }
         totalCount = total
         hasMore = !usingLocalCache && newRecipes.count < total
         isUsingLocalCache = usingLocalCache
@@ -383,6 +363,11 @@ private extension RecipeListViewModel {
         if staleness == .reloadFailed {
             staleness = nil
         }
+    }
+
+    func flagSyncFailureOverCachedList() {
+        error = nil
+        staleness = .syncFailed
     }
 
     /// Records a failed reload: the full-screen error when there is nothing
@@ -398,103 +383,5 @@ private extension RecipeListViewModel {
             // would splice two queries together. Retry reloads instead.
             hasMore = false
         }
-    }
-
-    func syncCachedRecipes(key: ListRequestKey) async {
-        let logger = DebugLogger.shared
-
-        let generation = beginReset(key: key, usingLocalCache: true)
-
-        guard let accountKey = cache.currentAccountKey() else {
-            await loadRecipes(forceNetwork: true)
-            return
-        }
-
-        // Once the current filter+sort has been answered from the cache, a
-        // sync failure must not replace that answer with the full-screen load
-        // error — an empty `recipes` can just mean the filters match nothing.
-        var appliedCachedRecipes = false
-        do {
-            let cachedBeforeSync = try await cache.loadSearchDocuments(accountKey)
-            // Sorting, tag filters, and clearing a search are answerable from
-            // the cache alone, so apply them before the network round-trip.
-            // The sync below only freshens the data: if it fails or hangs, the
-            // list must not stay stuck on the previous filter+sort.
-            if !cachedBeforeSync.isEmpty {
-                appliedCachedRecipes = await applyCachedRecipes(cachedBeforeSync)
-            }
-            let resumeFromCursor = !cachedBeforeSync.isEmpty
-            try await logger.timed("syncRecipeCache API", source: "RecipeList") {
-                // When the list was already served from the cache, the sweep
-                // only freshens it — give it a wall-clock budget so awaiting
-                // callers like pull-to-refresh resolve promptly and a slow
-                // sync surfaces as the stale banner instead of a hang.
-                if appliedCachedRecipes {
-                    try await withWallClockBudget(seconds: syncBudget) { [self] in
-                        try await runSyncSweep(resumeFromCursor: resumeFromCursor, accountKey: accountKey)
-                    }
-                } else {
-                    try await runSyncSweep(resumeFromCursor: resumeFromCursor, accountKey: accountKey)
-                }
-            }
-            let cachedDocuments = try await cache.loadSearchDocuments(accountKey)
-
-            guard isCurrentRequest(generation, key) else {
-                logger.log("syncCachedRecipes: superseded request, discarding results", source: "RecipeList")
-                return
-            }
-            await applyCachedRecipes(cachedDocuments)
-            logger.log("syncCachedRecipes: cache has \(cachedDocuments.count) recipes", source: "RecipeList")
-        } catch {
-            guard isCurrentRequest(generation, key) else { return }
-            if CancellationSupport.isCancellation(error) || Task.isCancelled {
-                logger.log("syncCachedRecipes: cancelled", source: "RecipeList")
-            } else {
-                logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
-                if appliedCachedRecipes {
-                    // The user is looking at a cache-served list that could
-                    // not be freshened. Never leave that silent: new and
-                    // edited recipes would just quietly not show up.
-                    self.error = nil
-                    staleness = .syncFailed
-                } else {
-                    fail(staleness: .syncFailed)
-                }
-            }
-            isLoading = false
-        }
-    }
-
-    /// Filters and ranks the cached corpus off the main thread, then
-    /// publishes it unless the filter+sort changed or a newer reset load
-    /// started meanwhile. Returns whether it published.
-    @discardableResult
-    func applyCachedRecipes(_ cachedDocuments: [CachedRecipeSearchDocument]) async -> Bool {
-        let key = currentKey()
-        let generation = requestGeneration
-        let filterState = currentFilterState
-        let sortOrder = self.sortOrder
-        // The filters can move to a server-only query between the caller's
-        // routing check and here; the reload that change schedules owns the
-        // list then.
-        guard RecipeSummaryCacheSupport.canServeFromCache(filterState: filterState, sortOrder: sortOrder) else {
-            return false
-        }
-        let visibleRecipes = await Task.detached(priority: .userInitiated) {
-            RecipeSummaryCacheSupport.visibleRecipes(
-                documents: cachedDocuments,
-                filterState: filterState,
-                sortOrder: sortOrder
-            )
-        }.value
-        // A newer reset with the same filter+sort (pull-to-refresh, a reload
-        // after a delete) owns the list; this older corpus must not overwrite it.
-        guard key == currentKey(), generation == requestGeneration else {
-            DebugLogger.shared.log("applyCachedRecipes: superseded while ranking, discarding", source: "RecipeList")
-            return false
-        }
-        activeKey = key
-        publish(visibleRecipes, total: visibleRecipes.count, usingLocalCache: true)
-        return true
     }
 }
