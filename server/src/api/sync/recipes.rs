@@ -7,7 +7,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::Ingredient;
-use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
+use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -18,6 +18,7 @@ use chrono::{DateTime, Utc};
 use diesel::dsl::exists;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
 
@@ -92,11 +93,56 @@ pub struct SyncRecipe {
     pub ingredient_match_text: String,
     pub instructions: String,
     pub notes: Option<String>,
+    /// What `source:` filters match.
+    pub source_name: Option<String>,
+    /// Estimated calories per serving: what `calories:` filters and the
+    /// calorie sort compare. Null when there's no per-serving estimate.
+    pub kcal_per_serving: Option<f64>,
+    /// The estimate for display, as `RecipeSummary.calories_per_serving`.
+    pub calories_per_serving: Option<String>,
+    /// The recipe's photos, in order, leaving out deleted ones: what
+    /// `photo_size:` and `photo_dim:` filters compare.
+    pub photos: Vec<SyncPhoto>,
+}
+
+/// The stored facts about one photo that search filters on.
+#[derive(Debug, Clone, Serialize, ToSchema, Queryable)]
+pub struct SyncPhoto {
+    /// Size of the stored file in bytes.
+    pub file_size: Option<i32>,
+    pub width: Option<i32>,
+    pub height: Option<i32>,
+}
+
+type PhotoFacts = HashMap<Uuid, SyncPhoto>;
+
+/// The live photos among `ids`.
+fn photo_facts(conn: &mut SqliteConnection, ids: Vec<Uuid>) -> QueryResult<PhotoFacts> {
+    let mut facts = PhotoFacts::new();
+    // Chunked to stay under SQLite's bound-parameter limit.
+    for chunk in ids.chunks(500) {
+        let rows: Vec<(Uuid, SyncPhoto)> = photos::table
+            .filter(photos::id.eq_any(chunk))
+            .filter(photos::deleted_at.is_null())
+            .select((
+                photos::id,
+                (photos::file_size, photos::width, photos::height),
+            ))
+            .load(conn)?;
+        facts.extend(rows);
+    }
+    Ok(facts)
 }
 
 impl SyncRecipe {
-    fn try_from_row(row: RecipeSyncRow) -> Result<Self, serde_json::Error> {
+    fn try_from_row(row: RecipeSyncRow, photos: &PhotoFacts) -> Result<Self, serde_json::Error> {
         let ingredients = serde_json::from_value(row.ingredients)?;
+        let photos = row
+            .photo_ids
+            .iter()
+            .flatten()
+            .filter_map(|id| photos.get(id).cloned())
+            .collect();
         Ok(Self {
             id: row.id,
             title: row.title,
@@ -110,6 +156,10 @@ impl SyncRecipe {
             ingredient_match_text: row.ingredient_match_text,
             instructions: row.instructions,
             notes: row.notes,
+            source_name: row.source_name,
+            kcal_per_serving: row.kcal_per_serving,
+            calories_per_serving: row.calories_per_serving,
+            photos,
         })
     }
 }
@@ -152,7 +202,7 @@ pub async fn sync_recipes(
     // the sweep already passed, but its change_seq is at or above the first
     // page's watermark — which is why clients persist the first page's cursor,
     // not the last one's.
-    let (cursor, rows, deleted, has_more, full_resync) = run_db(&pool, move |conn| {
+    let (cursor, rows, photos, deleted, has_more, full_resync) = run_db(&pool, move |conn| {
         conn.transaction(|conn| {
             // Runs first so it establishes the snapshot the reads below use.
             let window = Window::read(conn, params.cursor)?;
@@ -197,9 +247,16 @@ pub async fn sync_recipes(
                 _ => Vec::new(),
             };
 
+            let photo_ids = rows
+                .iter()
+                .flat_map(|row| row.photo_ids.iter().flatten().copied())
+                .collect();
+            let photos = photo_facts(conn, photo_ids)?;
+
             Ok::<_, diesel::result::Error>((
                 window.cursor,
                 rows,
+                photos,
                 deleted,
                 has_more,
                 window.full_resync(),
@@ -214,7 +271,7 @@ pub async fn sync_recipes(
 
     let changes = match rows
         .into_iter()
-        .map(SyncRecipe::try_from_row)
+        .map(|row| SyncRecipe::try_from_row(row, &photos))
         .collect::<Result<Vec<_>, _>>()
     {
         Ok(changes) => changes,

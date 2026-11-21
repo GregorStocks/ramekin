@@ -18,6 +18,17 @@ private struct FixtureIngredient: Decodable {
     let section: String?
 }
 
+private struct FixturePhoto: Decodable {
+    let fileSize: Int?
+    let width: Int?
+    let height: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case width, height
+        case fileSize = "file_size"
+    }
+}
+
 private struct FixtureRecipe: Decodable {
     let id: String
     let title: String
@@ -29,6 +40,9 @@ private struct FixtureRecipe: Decodable {
     let notes: String?
     let rating: Int?
     let hasPhoto: Bool
+    let sourceName: String?
+    let kcalPerServing: Double?
+    let photo: FixturePhoto?
     let createdAt: String
     let updatedAt: String
 
@@ -36,6 +50,9 @@ private struct FixtureRecipe: Decodable {
         case id, title, description, tags, ingredients, instructions, notes, rating
         case ingredientMatchText = "ingredient_match_text"
         case hasPhoto = "has_photo"
+        case sourceName = "source_name"
+        case kcalPerServing = "kcal_per_serving"
+        case photo
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }
@@ -100,7 +117,10 @@ final class SearchMatchFilterSharedVectorTests: XCTestCase {
                 },
                 ingredientMatchText: recipe.ingredientMatchText,
                 instructions: recipe.instructions,
-                notes: recipe.notes
+                notes: recipe.notes,
+                sourceName: recipe.sourceName,
+                kcalPerServing: recipe.kcalPerServing,
+                photos: recipe.photo.map { [SyncPhoto(fileSize: $0.fileSize, height: $0.height, width: $0.width)] } ?? []
             )
         }
 

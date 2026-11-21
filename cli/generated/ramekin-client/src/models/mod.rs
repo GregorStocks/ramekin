@@ -164,6 +164,8 @@ pub mod sync_meal_plans_request;
 pub use self::sync_meal_plans_request::SyncMealPlansRequest;
 pub mod sync_meal_plans_response;
 pub use self::sync_meal_plans_response::SyncMealPlansResponse;
+pub mod sync_photo;
+pub use self::sync_photo::SyncPhoto;
 pub mod sync_recipe;
 pub use self::sync_recipe::SyncRecipe;
 pub mod sync_recipes_response;

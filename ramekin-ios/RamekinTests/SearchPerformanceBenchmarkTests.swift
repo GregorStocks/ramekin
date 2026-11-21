@@ -45,6 +45,7 @@ enum SearchBenchmarkCorpus {
                 ingredients: ingredients,
                 instructions: text(index + 99, wordCount: 230),
                 notes: index % 2 == 0 ? text(index + 5, wordCount: 30) : nil,
+                photos: [],
                 rating: index % 6 == 0 ? nil : index % 5 + 1,
                 tags: ["Dinner", "cuisine:\(words[index % words.count])"],
                 thumbnailPhotoId: index % 4 == 0 ? nil : UUID(),

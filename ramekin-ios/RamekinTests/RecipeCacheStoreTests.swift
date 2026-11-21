@@ -335,6 +335,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             ingredients: ingredients,
             instructions: instructions,
             notes: notes,
+            photos: [],
             rating: 5,
             tags: ["Dinner"],
             thumbnailPhotoId: UUID(),

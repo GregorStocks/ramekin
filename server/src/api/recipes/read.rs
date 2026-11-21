@@ -93,6 +93,9 @@ macro_rules! recipe_sync_select {
             $crate::raw_sql::ingredients_text(),
             $crate::schema::recipe_versions::instructions,
             $crate::schema::recipe_versions::notes,
+            $crate::schema::recipe_versions::source_name,
+            $crate::schema::recipe_versions::kcal_per_serving,
+            $crate::schema::recipe_versions::kcal_per_serving_label,
             $crate::raw_sql::tags_subquery(),
         )
     };
@@ -182,6 +185,9 @@ pub struct RecipeSyncRow {
     pub ingredient_match_text: String,
     pub instructions: String,
     pub notes: Option<String>,
+    pub source_name: Option<String>,
+    pub kcal_per_serving: Option<f64>,
+    pub calories_per_serving: Option<String>,
     pub tags: Vec<String>,
 }
 

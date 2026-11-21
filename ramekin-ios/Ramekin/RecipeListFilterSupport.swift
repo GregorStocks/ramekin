@@ -48,6 +48,16 @@ struct NumericThreshold: Equatable {
     var queryValue: String {
         "\(comparison.rawValue)\(value)"
     }
+
+    /// Strict, like the server's `<` and `>`.
+    func matches(_ candidate: Int) -> Bool {
+        switch comparison {
+        case .lessThan:
+            return candidate < value
+        case .greaterThan:
+            return candidate > value
+        }
+    }
 }
 
 enum RecipeListFilterSupport {

@@ -7,9 +7,7 @@ extension RecipeListViewModel {
     /// the network. A cache with no recipes answers nothing: it is either
     /// still waiting for its first sync or has nothing to search.
     func loadCachedRecipesForCurrentQuery() async {
-        guard RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder),
-              let accountKey = cache.currentAccountKey()
-        else {
+        guard let accountKey = cache.currentAccountKey() else {
             return
         }
 
@@ -122,12 +120,6 @@ extension RecipeListViewModel {
         let generation = requestGeneration
         let filterState = currentFilterState
         let sortOrder = self.sortOrder
-        // The filters can move to a server-only query between the caller's
-        // routing check and here; the reload that change schedules owns the
-        // list then.
-        guard RecipeSummaryCacheSupport.canServeFromCache(filterState: filterState, sortOrder: sortOrder) else {
-            return false
-        }
         let visibleRecipes: [RecipeSummary]
         if let lastRanking, lastRanking.corpusVersion == corpus.version, lastRanking.key == key {
             // A sync that changed nothing hands back the corpus this

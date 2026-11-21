@@ -11,6 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { SyncPhotoFromJSON, SyncPhotoToJSON, } from './SyncPhoto';
 import { IngredientFromJSON, IngredientToJSON, } from './Ingredient';
 /**
  * Check if a given object implements the SyncRecipe interface.
@@ -25,6 +26,8 @@ export function instanceOfSyncRecipe(value) {
     if (!('ingredients' in value) || value['ingredients'] === undefined)
         return false;
     if (!('instructions' in value) || value['instructions'] === undefined)
+        return false;
+    if (!('photos' in value) || value['photos'] === undefined)
         return false;
     if (!('tags' in value) || value['tags'] === undefined)
         return false;
@@ -42,14 +45,18 @@ export function SyncRecipeFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'caloriesPerServing': json['calories_per_serving'] == null ? undefined : json['calories_per_serving'],
         'createdAt': (new Date(json['created_at'])),
         'description': json['description'] == null ? undefined : json['description'],
         'id': json['id'],
         'ingredientMatchText': json['ingredient_match_text'],
         'ingredients': (json['ingredients'].map(IngredientFromJSON)),
         'instructions': json['instructions'],
+        'kcalPerServing': json['kcal_per_serving'] == null ? undefined : json['kcal_per_serving'],
         'notes': json['notes'] == null ? undefined : json['notes'],
+        'photos': (json['photos'].map(SyncPhotoFromJSON)),
         'rating': json['rating'] == null ? undefined : json['rating'],
+        'sourceName': json['source_name'] == null ? undefined : json['source_name'],
         'tags': json['tags'],
         'thumbnailPhotoId': json['thumbnail_photo_id'] == null ? undefined : json['thumbnail_photo_id'],
         'title': json['title'],
@@ -64,14 +71,18 @@ export function SyncRecipeToJSONTyped(value, ignoreDiscriminator = false) {
         return value;
     }
     return {
+        'calories_per_serving': value['caloriesPerServing'],
         'created_at': value['createdAt'].toISOString(),
         'description': value['description'],
         'id': value['id'],
         'ingredient_match_text': value['ingredientMatchText'],
         'ingredients': (value['ingredients'].map(IngredientToJSON)),
         'instructions': value['instructions'],
+        'kcal_per_serving': value['kcalPerServing'],
         'notes': value['notes'],
+        'photos': (value['photos'].map(SyncPhotoToJSON)),
         'rating': value['rating'],
+        'source_name': value['sourceName'],
         'tags': value['tags'],
         'thumbnail_photo_id': value['thumbnailPhotoId'],
         'title': value['title'],

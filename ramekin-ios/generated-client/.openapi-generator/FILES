@@ -111,6 +111,7 @@ RamekinClient/Classes/OpenAPIs/Models/StepStatus.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncMealPlan.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncMealPlansRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncMealPlansResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/SyncPhoto.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncRecipe.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncRecipesResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncShoppingListItem.swift
@@ -224,6 +225,7 @@ docs/SyncAPI.md
 docs/SyncMealPlan.md
 docs/SyncMealPlansRequest.md
 docs/SyncMealPlansResponse.md
+docs/SyncPhoto.md
 docs/SyncRecipe.md
 docs/SyncRecipesResponse.md
 docs/SyncShoppingListItem.md

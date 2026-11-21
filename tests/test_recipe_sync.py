@@ -1,6 +1,6 @@
 import requests
 
-from conftest import make_ingredient
+from conftest import connect_db, make_ingredient
 from ramekin_client.api import RecipesApi, TagsApi
 from ramekin_client.models import (
     CreateRecipeRequest,
@@ -119,6 +119,59 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     assert str(deleted.id) not in recipes_by_id
     assert str(deleted.id) in response["deleted"]
     assert response["full_resync"] is False
+
+
+def test_recipe_sync_redelivers_a_recipe_whose_calorie_estimate_changed(
+    authed_api_client, server_url, database_url
+):
+    """The server rewrites a version's estimate in place as ingredient names
+    resolve. Local calorie filters read the synced value, so the change has
+    to reach the next delta."""
+    client, _user_id = authed_api_client
+    created = RecipesApi(client).create_recipe(
+        CreateRecipeRequest(
+            title="Estimated Later",
+            instructions="Mix it.",
+            ingredients=[make_ingredient(item="flour")],
+        )
+    )
+    cursor = _sync(client, server_url)["cursor"]
+    assert _sync(client, server_url, cursor=cursor)["changes"] == []
+
+    conn = connect_db(database_url)
+    try:
+        conn.execute(
+            """
+            update recipe_versions
+            set kcal_per_serving = 432.5, kcal_per_serving_label = '~430 kcal'
+            where id = (select current_version_id from recipes where id = ?)
+            """,
+            (str(created.id),),
+        )
+    finally:
+        conn.close()
+
+    delta = _sync(client, server_url, cursor=cursor)
+    [changed] = delta["changes"]
+    assert changed["id"] == str(created.id)
+    assert changed["kcal_per_serving"] == 432.5
+    assert changed["calories_per_serving"] == "~430 kcal"
+
+    # Rewriting the same estimate is not a change.
+    cursor = delta["cursor"]
+    conn = connect_db(database_url)
+    try:
+        conn.execute(
+            """
+            update recipe_versions
+            set kcal_per_serving = 432.5, kcal_per_serving_label = '~430 kcal'
+            where id = (select current_version_id from recipes where id = ?)
+            """,
+            (str(created.id),),
+        )
+    finally:
+        conn.close()
+    assert _sync(client, server_url, cursor=cursor)["changes"] == []
 
 
 def test_recipe_sync_full_response_sends_no_tombstones(authed_api_client, server_url):

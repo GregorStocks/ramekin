@@ -312,6 +312,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             ingredients: [],
             instructions: "Cook it.",
             notes: nil,
+            photos: [],
             rating: nil,
             tags: [],
             thumbnailPhotoId: nil,

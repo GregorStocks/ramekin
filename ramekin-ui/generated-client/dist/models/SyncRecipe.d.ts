@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { SyncPhoto } from './SyncPhoto';
 import type { Ingredient } from './Ingredient';
 /**
  * Read-only recipe data needed to populate the iOS cache and mirror server search.
@@ -16,6 +17,12 @@ import type { Ingredient } from './Ingredient';
  * @interface SyncRecipe
  */
 export interface SyncRecipe {
+    /**
+     * The estimate for display, as `RecipeSummary.calories_per_serving`.
+     * @type {string}
+     * @memberof SyncRecipe
+     */
+    caloriesPerServing?: string | null;
     /**
      *
      * @type {Date}
@@ -56,17 +63,37 @@ export interface SyncRecipe {
      */
     instructions: string;
     /**
+     * Estimated calories per serving: what `calories:` filters and the
+     * calorie sort compare. Null when there's no per-serving estimate.
+     * @type {number}
+     * @memberof SyncRecipe
+     */
+    kcalPerServing?: number | null;
+    /**
      *
      * @type {string}
      * @memberof SyncRecipe
      */
     notes?: string | null;
     /**
+     * The recipe's photos, in order, leaving out deleted ones: what
+     * `photo_size:` and `photo_dim:` filters compare.
+     * @type {Array<SyncPhoto>}
+     * @memberof SyncRecipe
+     */
+    photos: Array<SyncPhoto>;
+    /**
      *
      * @type {number}
      * @memberof SyncRecipe
      */
     rating?: number | null;
+    /**
+     * What `source:` filters match.
+     * @type {string}
+     * @memberof SyncRecipe
+     */
+    sourceName?: string | null;
     /**
      *
      * @type {Array<string>}

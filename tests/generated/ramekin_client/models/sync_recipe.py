@@ -18,10 +18,11 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from uuid import UUID
 from ramekin_client.models.ingredient import Ingredient
+from ramekin_client.models.sync_photo import SyncPhoto
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,19 +30,23 @@ class SyncRecipe(BaseModel):
     """
     Read-only recipe data needed to populate the iOS cache and mirror server search.
     """ # noqa: E501
+    calories_per_serving: Optional[StrictStr] = Field(default=None, description="The estimate for display, as `RecipeSummary.calories_per_serving`.")
     created_at: datetime
     description: Optional[StrictStr] = None
     id: UUID
     ingredient_match_text: StrictStr = Field(description="The stored ingredients JSON text, exactly as the database holds it — the exact haystack the server's bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of `ingredients`, to reproduce server result membership.")
     ingredients: List[Ingredient]
     instructions: StrictStr
+    kcal_per_serving: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Estimated calories per serving: what `calories:` filters and the calorie sort compare. Null when there's no per-serving estimate.")
     notes: Optional[StrictStr] = None
+    photos: List[SyncPhoto] = Field(description="The recipe's photos, in order, leaving out deleted ones: what `photo_size:` and `photo_dim:` filters compare.")
     rating: Optional[StrictInt] = None
+    source_name: Optional[StrictStr] = Field(default=None, description="What `source:` filters match.")
     tags: List[StrictStr]
     thumbnail_photo_id: Optional[UUID] = None
     title: StrictStr
     updated_at: datetime
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "ingredient_match_text", "ingredients", "instructions", "notes", "rating", "tags", "thumbnail_photo_id", "title", "updated_at"]
+    __properties: ClassVar[List[str]] = ["calories_per_serving", "created_at", "description", "id", "ingredient_match_text", "ingredients", "instructions", "kcal_per_serving", "notes", "photos", "rating", "source_name", "tags", "thumbnail_photo_id", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,10 +94,27 @@ class SyncRecipe(BaseModel):
                 if _item_ingredients:
                     _items.append(_item_ingredients.to_dict())
             _dict['ingredients'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in photos (list)
+        _items = []
+        if self.photos:
+            for _item_photos in self.photos:
+                if _item_photos:
+                    _items.append(_item_photos.to_dict())
+            _dict['photos'] = _items
+        # set to None if calories_per_serving (nullable) is None
+        # and model_fields_set contains the field
+        if self.calories_per_serving is None and "calories_per_serving" in self.model_fields_set:
+            _dict['calories_per_serving'] = None
+
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
+
+        # set to None if kcal_per_serving (nullable) is None
+        # and model_fields_set contains the field
+        if self.kcal_per_serving is None and "kcal_per_serving" in self.model_fields_set:
+            _dict['kcal_per_serving'] = None
 
         # set to None if notes (nullable) is None
         # and model_fields_set contains the field
@@ -103,6 +125,11 @@ class SyncRecipe(BaseModel):
         # and model_fields_set contains the field
         if self.rating is None and "rating" in self.model_fields_set:
             _dict['rating'] = None
+
+        # set to None if source_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.source_name is None and "source_name" in self.model_fields_set:
+            _dict['source_name'] = None
 
         # set to None if thumbnail_photo_id (nullable) is None
         # and model_fields_set contains the field
@@ -121,14 +148,18 @@ class SyncRecipe(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "calories_per_serving": obj.get("calories_per_serving"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "id": obj.get("id"),
             "ingredient_match_text": obj.get("ingredient_match_text"),
             "ingredients": [Ingredient.from_dict(_item) for _item in obj["ingredients"]] if obj.get("ingredients") is not None else None,
             "instructions": obj.get("instructions"),
+            "kcal_per_serving": obj.get("kcal_per_serving"),
             "notes": obj.get("notes"),
+            "photos": [SyncPhoto.from_dict(_item) for _item in obj["photos"]] if obj.get("photos") is not None else None,
             "rating": obj.get("rating"),
+            "source_name": obj.get("source_name"),
             "tags": obj.get("tags"),
             "thumbnail_photo_id": obj.get("thumbnail_photo_id"),
             "title": obj.get("title"),

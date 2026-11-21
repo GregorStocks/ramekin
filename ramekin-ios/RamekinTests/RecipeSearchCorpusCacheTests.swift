@@ -62,6 +62,7 @@ final class RecipeSearchCorpusCacheTests: XCTestCase {
             ingredients: [],
             instructions: instructions,
             notes: nil,
+            photos: [],
             rating: nil,
             tags: [],
             thumbnailPhotoId: nil,

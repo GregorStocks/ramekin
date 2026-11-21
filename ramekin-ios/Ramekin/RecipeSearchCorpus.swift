@@ -47,11 +47,18 @@ struct RecipeSearchCorpus {
         let idKey: String
         /// The tags under `citextFold`, the form `tag:` filters compare.
         let foldedTags: [String]
+        /// The normalized source name, which `source:` matches.
+        let source: [UInt8]?
+        let kcalPerServing: Double?
+        let photos: [SyncPhoto]
 
-        init(_ summary: RecipeSummary) {
-            self.summary = summary
-            idKey = summary.id.uuidString
-            foldedTags = summary.tags.map(SearchNormalizationSupport.citextFold)
+        init(_ document: CachedRecipeSearchDocument) {
+            summary = document.summary
+            idKey = document.summary.id.uuidString
+            foldedTags = document.summary.tags.map(SearchNormalizationSupport.citextFold)
+            source = document.sourceName.map(SearchNormalizationSupport.normalizedUTF8)
+            kcalPerServing = document.kcalPerServing
+            photos = document.photos
         }
     }
 
@@ -64,7 +71,7 @@ struct RecipeSearchCorpus {
     var isEmpty: Bool { entries.isEmpty }
 
     init(documents: [CachedRecipeSearchDocument]) {
-        entries = documents.map { Entry($0.summary) }
+        entries = documents.map(Entry.init)
         texts = LazySearchTexts(documents)
     }
 
@@ -109,6 +116,8 @@ struct PreparedSearchQuery {
     /// The text terms, normalized.
     let tokens: [[UInt8]]
     let foldedTags: [String]
+    /// The `source:` value, normalized.
+    let source: [UInt8]?
     /// Start of the UTC day each created-date bound names.
     let createdAfterDay: Date?
     let createdBeforeDay: Date?
@@ -117,6 +126,7 @@ struct PreparedSearchQuery {
         self.parsed = parsed
         tokens = parsed.textTokens.map(SearchNormalizationSupport.normalizedUTF8)
         foldedTags = parsed.tags.map(SearchNormalizationSupport.citextFold)
+        source = parsed.source.map(SearchNormalizationSupport.normalizedUTF8)
         createdAfterDay = RecipeSearchSupport.utcDay(parsed.createdAfter)
         createdBeforeDay = RecipeSearchSupport.utcDay(parsed.createdBefore)
     }

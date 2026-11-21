@@ -15,7 +15,7 @@ enum RecipeListStaleness: Equatable {
 // MARK: - Sort & Filter Types
 
 /// Sort order for *browsing* the recipe list (no active text search). During
-/// a text search the list ignores this and lets the server rank by relevance;
+/// a text search the list ignores this and ranks by relevance;
 /// see RecipeListFilterSupport.hasTextQuery.
 enum RecipeSortOrder: String, CaseIterable {
     case newest
@@ -56,15 +56,6 @@ enum RecipeSortOrder: String, CaseIterable {
         case .caloriesLow: return "Fewest calories"
         case .caloriesHigh: return "Most calories"
         case .random: return "Random"
-        }
-    }
-
-    /// Browse orders the cache can't reproduce: random, and calories, which
-    /// the synced recipes don't carry.
-    var requiresServer: Bool {
-        switch self {
-        case .random, .caloriesLow, .caloriesHigh: return true
-        case .newest, .oldest, .rating, .title, .created: return false
         }
     }
 }

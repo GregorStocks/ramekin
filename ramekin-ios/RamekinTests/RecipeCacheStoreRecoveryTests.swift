@@ -103,6 +103,7 @@ final class RecipeCacheStoreRecoveryTests: XCTestCase {
             ingredients: [],
             instructions: "Cook it.",
             notes: nil,
+            photos: [],
             rating: nil,
             tags: ["Dinner"],
             thumbnailPhotoId: nil,

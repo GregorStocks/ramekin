@@ -14,6 +14,14 @@ use serde::{Deserialize, Serialize};
 /// SyncRecipe : Read-only recipe data needed to populate the iOS cache and mirror server search.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SyncRecipe {
+    /// The estimate for display, as `RecipeSummary.calories_per_serving`.
+    #[serde(
+        rename = "calories_per_serving",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub calories_per_serving: Option<Option<String>>,
     #[serde(rename = "created_at")]
     pub created_at: String,
     #[serde(
@@ -32,6 +40,14 @@ pub struct SyncRecipe {
     pub ingredients: Vec<models::Ingredient>,
     #[serde(rename = "instructions")]
     pub instructions: String,
+    /// Estimated calories per serving: what `calories:` filters and the calorie sort compare. Null when there's no per-serving estimate.
+    #[serde(
+        rename = "kcal_per_serving",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub kcal_per_serving: Option<Option<f64>>,
     #[serde(
         rename = "notes",
         default,
@@ -39,6 +55,9 @@ pub struct SyncRecipe {
         skip_serializing_if = "Option::is_none"
     )]
     pub notes: Option<Option<String>>,
+    /// The recipe's photos, in order, leaving out deleted ones: what `photo_size:` and `photo_dim:` filters compare.
+    #[serde(rename = "photos")]
+    pub photos: Vec<models::SyncPhoto>,
     #[serde(
         rename = "rating",
         default,
@@ -46,6 +65,14 @@ pub struct SyncRecipe {
         skip_serializing_if = "Option::is_none"
     )]
     pub rating: Option<Option<i32>>,
+    /// What `source:` filters match.
+    #[serde(
+        rename = "source_name",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub source_name: Option<Option<String>>,
     #[serde(rename = "tags")]
     pub tags: Vec<String>,
     #[serde(
@@ -69,19 +96,24 @@ impl SyncRecipe {
         ingredient_match_text: String,
         ingredients: Vec<models::Ingredient>,
         instructions: String,
+        photos: Vec<models::SyncPhoto>,
         tags: Vec<String>,
         title: String,
         updated_at: String,
     ) -> SyncRecipe {
         SyncRecipe {
+            calories_per_serving: None,
             created_at,
             description: None,
             id,
             ingredient_match_text,
             ingredients,
             instructions,
+            kcal_per_serving: None,
             notes: None,
+            photos,
             rating: None,
+            source_name: None,
             tags,
             thumbnail_photo_id: None,
             title,

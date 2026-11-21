@@ -1,5 +1,5 @@
 {
-  "_comment": "Shared end-to-end search match/filter vectors: raw query strings plus recipe documents in, matched recipe ids in final display order out. Consumed by tests/test_search_match_filter_vectors.py (which replays the corpus through the real API and database, timestamps included) and by SearchMatchFilterSharedVectorTests on iOS (which replays it through the Swift local-search pipeline). ingredient_match_text is the stored ingredients JSON exactly as the server writes it (compact, keys sorted) — copied from the database, never hand-written — and is the exact haystack bare-text tokens match against. Expected orders never depend on recipe-id tie-breaks (server ids are random UUIDs); score ties are resolved by distinct updated_at values instead. sort_by/sort_dir omitted means server defaults (relevance with text terms, updated_at desc without).",
+  "_comment": "Shared end-to-end search match/filter vectors: raw query strings plus recipe documents in, matched recipe ids in final display order out. Consumed by tests/test_search_match_filter_vectors.py (which replays the corpus through the real API and database, timestamps included) and by SearchMatchFilterSharedVectorTests on iOS (which replays it through the Swift local-search pipeline). ingredient_match_text is the stored ingredients JSON exactly as the server writes it (compact, keys sorted) — copied from the database, never hand-written — and is the exact haystack bare-text tokens match against. Expected orders never depend on recipe-id tie-breaks (server ids are random UUIDs); score ties are resolved by distinct updated_at values instead. sort_by/sort_dir omitted means server defaults (relevance with text terms, updated_at desc without). source_name is what source: matches; kcal_per_serving is what calories: filters and the calories sort compare (the harness writes it to the database, since the server derives it); photo holds the stored file size and pixel dimensions photo_size: and photo_dim: compare, null for a recipe without a photo, with null facts for a photo whose facts are unknown.",
   "recipes": [
     {
       "id": "revised-classic",
@@ -13,7 +13,10 @@
       "has_photo": false,
       "created_at": "2026-01-01T12:00:00Z",
       "updated_at": "2026-03-01T12:00:00Z",
-      "ingredient_match_text": "[]"
+      "ingredient_match_text": "[]",
+      "source_name": "Grandma's Kitchen",
+      "kcal_per_serving": 320,
+      "photo": null
     },
     {
       "id": "garlic-bread",
@@ -69,7 +72,14 @@
       "has_photo": true,
       "created_at": "2026-01-02T12:00:00Z",
       "updated_at": "2026-01-02T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"baguette\",\"measurements\":[{\"amount\":\"1\",\"unit\":null}],\"note\":null,\"section\":null},{\"item\":\"garlic\",\"measurements\":[{\"amount\":\"4\",\"unit\":\"cloves\"}],\"note\":\"minced\",\"section\":null},{\"item\":\"butter\",\"measurements\":[{\"amount\":\"½\",\"unit\":\"cup\"}],\"note\":\"softened\",\"section\":null},{\"item\":\"parsley\",\"measurements\":[],\"note\":null,\"section\":\"Garnish\"}]"
+      "ingredient_match_text": "[{\"item\":\"baguette\",\"measurements\":[{\"amount\":\"1\",\"unit\":null}],\"note\":null,\"section\":null},{\"item\":\"garlic\",\"measurements\":[{\"amount\":\"4\",\"unit\":\"cloves\"}],\"note\":\"minced\",\"section\":null},{\"item\":\"butter\",\"measurements\":[{\"amount\":\"½\",\"unit\":\"cup\"}],\"note\":\"softened\",\"section\":null},{\"item\":\"parsley\",\"measurements\":[],\"note\":null,\"section\":\"Garnish\"}]",
+      "source_name": "NYTimes Cooking",
+      "kcal_per_serving": 180,
+      "photo": {
+        "file_size": 40000,
+        "width": 800,
+        "height": 600
+      }
     },
     {
       "id": "cheesy-garlic-bread-bites",
@@ -117,7 +127,10 @@
       "has_photo": false,
       "created_at": "2026-01-03T12:00:00Z",
       "updated_at": "2026-01-03T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"bread\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"loaf\"}],\"note\":null,\"section\":null},{\"item\":\"garlic\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cloves\"}],\"note\":null,\"section\":null},{\"item\":\"mozzarella\",\"measurements\":[{\"amount\":\"8\",\"unit\":\"oz\"}],\"note\":null,\"section\":null}]"
+      "ingredient_match_text": "[{\"item\":\"bread\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"loaf\"}],\"note\":null,\"section\":null},{\"item\":\"garlic\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cloves\"}],\"note\":null,\"section\":null},{\"item\":\"mozzarella\",\"measurements\":[{\"amount\":\"8\",\"unit\":\"oz\"}],\"note\":null,\"section\":null}]",
+      "source_name": null,
+      "kcal_per_serving": null,
+      "photo": null
     },
     {
       "id": "roast-chicken",
@@ -178,7 +191,14 @@
       "has_photo": true,
       "created_at": "2026-01-04T12:00:00Z",
       "updated_at": "2026-01-04T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"whole chicken\",\"measurements\":[{\"amount\":\"1\",\"unit\":null}],\"note\":null,\"section\":null},{\"item\":\"garlic\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"head\"}],\"note\":null,\"section\":null},{\"item\":\"bread crumbs\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"cup\"}],\"note\":null,\"section\":null},{\"item\":\"white wine\",\"measurements\":[{\"amount\":\"½\",\"unit\":\"cup\"}],\"note\":null,\"section\":null}]"
+      "ingredient_match_text": "[{\"item\":\"whole chicken\",\"measurements\":[{\"amount\":\"1\",\"unit\":null}],\"note\":null,\"section\":null},{\"item\":\"garlic\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"head\"}],\"note\":null,\"section\":null},{\"item\":\"bread crumbs\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"cup\"}],\"note\":null,\"section\":null},{\"item\":\"white wine\",\"measurements\":[{\"amount\":\"½\",\"unit\":\"cup\"}],\"note\":null,\"section\":null}]",
+      "source_name": "Café Délices",
+      "kcal_per_serving": 520.5,
+      "photo": {
+        "file_size": 250000,
+        "width": 1600,
+        "height": 1200
+      }
     },
     {
       "id": "creme-brulee",
@@ -229,7 +249,10 @@
       "has_photo": false,
       "created_at": "2026-01-05T12:00:00Z",
       "updated_at": "2026-01-05T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"cream\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cups\"}],\"note\":null,\"section\":null},{\"item\":\"egg yolks\",\"measurements\":[{\"amount\":\"6\",\"unit\":null}],\"note\":null,\"section\":null},{\"item\":\"sugar\",\"measurements\":[{\"amount\":\"½\",\"unit\":\"cup\"}],\"note\":null,\"section\":null}]"
+      "ingredient_match_text": "[{\"item\":\"cream\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cups\"}],\"note\":null,\"section\":null},{\"item\":\"egg yolks\",\"measurements\":[{\"amount\":\"6\",\"unit\":null}],\"note\":null,\"section\":null},{\"item\":\"sugar\",\"measurements\":[{\"amount\":\"½\",\"unit\":\"cup\"}],\"note\":null,\"section\":null}]",
+      "source_name": "Bon Appétit",
+      "kcal_per_serving": 410,
+      "photo": null
     },
     {
       "id": "green-beans-amandine",
@@ -279,7 +302,14 @@
       "has_photo": true,
       "created_at": "2026-01-06T12:00:00Z",
       "updated_at": "2026-01-06T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"green beans\",\"measurements\":[{\"amount\":\"1½\",\"unit\":\"pounds\"}],\"note\":\"trimmed\",\"section\":null},{\"item\":\"almonds\",\"measurements\":[{\"amount\":\"¼\",\"unit\":\"cup\"}],\"note\":\"sliced\",\"section\":null},{\"item\":\"butter\",\"measurements\":[{\"amount\":\"3\",\"unit\":\"tablespoons\"}],\"note\":null,\"section\":null}]"
+      "ingredient_match_text": "[{\"item\":\"green beans\",\"measurements\":[{\"amount\":\"1½\",\"unit\":\"pounds\"}],\"note\":\"trimmed\",\"section\":null},{\"item\":\"almonds\",\"measurements\":[{\"amount\":\"¼\",\"unit\":\"cup\"}],\"note\":\"sliced\",\"section\":null},{\"item\":\"butter\",\"measurements\":[{\"amount\":\"3\",\"unit\":\"tablespoons\"}],\"note\":null,\"section\":null}]",
+      "source_name": null,
+      "kcal_per_serving": 95,
+      "photo": {
+        "file_size": null,
+        "width": null,
+        "height": null
+      }
     },
     {
       "id": "oeufs-en-meurette",
@@ -327,7 +357,10 @@
       "has_photo": false,
       "created_at": "2026-01-07T12:00:00Z",
       "updated_at": "2026-01-07T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"eggs\",\"measurements\":[{\"amount\":\"4\",\"unit\":null}],\"note\":null,\"section\":null},{\"item\":\"red wine\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cups\"}],\"note\":null,\"section\":null},{\"item\":\"bacon\",\"measurements\":[{\"amount\":\"4\",\"unit\":\"oz\"}],\"note\":null,\"section\":null}]"
+      "ingredient_match_text": "[{\"item\":\"eggs\",\"measurements\":[{\"amount\":\"4\",\"unit\":null}],\"note\":null,\"section\":null},{\"item\":\"red wine\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cups\"}],\"note\":null,\"section\":null},{\"item\":\"bacon\",\"measurements\":[{\"amount\":\"4\",\"unit\":\"oz\"}],\"note\":null,\"section\":null}]",
+      "source_name": "NYTimes Cooking",
+      "kcal_per_serving": 700,
+      "photo": null
     },
     {
       "id": "weeknight-pasta",
@@ -367,7 +400,10 @@
       "has_photo": false,
       "created_at": "2026-01-08T12:00:00Z",
       "updated_at": "2026-01-08T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"spaghetti\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"pound\"}],\"note\":null,\"section\":null},{\"item\":\"olive oil\",\"measurements\":[{\"amount\":\"¼\",\"unit\":\"cup\"}],\"note\":null,\"section\":null}]"
+      "ingredient_match_text": "[{\"item\":\"spaghetti\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"pound\"}],\"note\":null,\"section\":null},{\"item\":\"olive oil\",\"measurements\":[{\"amount\":\"¼\",\"unit\":\"cup\"}],\"note\":null,\"section\":null}]",
+      "source_name": null,
+      "kcal_per_serving": 600,
+      "photo": null
     },
     {
       "id": "hot-cocoa",
@@ -404,7 +440,10 @@
       "has_photo": false,
       "created_at": "2026-01-09T12:00:00Z",
       "updated_at": "2026-01-09T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"chocolate\",\"measurements\":[{\"amount\":\"100\",\"unit\":\"g\"}],\"note\":\"ﬁnely chopped, 100% cacao\",\"section\":null},{\"item\":\"milk\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cups\"}],\"note\":null,\"section\":null}]"
+      "ingredient_match_text": "[{\"item\":\"chocolate\",\"measurements\":[{\"amount\":\"100\",\"unit\":\"g\"}],\"note\":\"ﬁnely chopped, 100% cacao\",\"section\":null},{\"item\":\"milk\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cups\"}],\"note\":null,\"section\":null}]",
+      "source_name": null,
+      "kcal_per_serving": 150,
+      "photo": null
     },
     {
       "id": "pancakes",
@@ -452,7 +491,14 @@
       "has_photo": true,
       "created_at": "2026-01-10T12:00:00Z",
       "updated_at": "2026-01-10T12:00:00Z",
-      "ingredient_match_text": "[{\"item\":\"flour\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cups\"}],\"note\":null,\"section\":null},{\"item\":\"milk\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"cup\"}],\"note\":null,\"section\":null},{\"item\":\"egg\",\"measurements\":[{\"amount\":\"1\",\"unit\":null}],\"note\":null,\"section\":null}]"
+      "ingredient_match_text": "[{\"item\":\"flour\",\"measurements\":[{\"amount\":\"2\",\"unit\":\"cups\"}],\"note\":null,\"section\":null},{\"item\":\"milk\",\"measurements\":[{\"amount\":\"1\",\"unit\":\"cup\"}],\"note\":null,\"section\":null},{\"item\":\"egg\",\"measurements\":[{\"amount\":\"1\",\"unit\":null}],\"note\":null,\"section\":null}]",
+      "source_name": "Serious Eats",
+      "kcal_per_serving": 300,
+      "photo": {
+        "file_size": 120000,
+        "width": 500,
+        "height": 2000
+      }
     }
   ],
   "cases": [
@@ -902,6 +948,133 @@
       "name": "normalized ＼ does not act as a wildcard or escape",
       "query": "Bake＼",
       "expected_ids": []
+    },
+    {
+      "name": "source: matches a substring of the source name, case-insensitively",
+      "query": "source:nytimes",
+      "expected_ids": [
+        "oeufs-en-meurette",
+        "garlic-bread"
+      ]
+    },
+    {
+      "name": "source: is accent-insensitive",
+      "query": "source:CAFE",
+      "expected_ids": [
+        "roast-chicken"
+      ]
+    },
+    {
+      "name": "an accented source: value matches too",
+      "query": "source:appétit",
+      "expected_ids": [
+        "creme-brulee"
+      ]
+    },
+    {
+      "name": "source: never matches a recipe without a source",
+      "query": "source:nowhere",
+      "expected_ids": []
+    },
+    {
+      "name": "source: combines with text terms",
+      "query": "bread source:nytimes",
+      "expected_ids": [
+        "garlic-bread"
+      ]
+    },
+    {
+      "name": "photo_size:> compares the stored file size",
+      "query": "photo_size:>100000",
+      "expected_ids": [
+        "pancakes",
+        "roast-chicken"
+      ]
+    },
+    {
+      "name": "photo_size:< skips photos of unknown size",
+      "query": "photo_size:<100000",
+      "expected_ids": [
+        "garlic-bread"
+      ]
+    },
+    {
+      "name": "photo_dim:> compares the smaller dimension",
+      "query": "photo_dim:>550",
+      "expected_ids": [
+        "roast-chicken",
+        "garlic-bread"
+      ]
+    },
+    {
+      "name": "photo_dim:< compares the smaller dimension",
+      "query": "photo_dim:<550",
+      "expected_ids": [
+        "pancakes"
+      ]
+    },
+    {
+      "name": "calories range is inclusive at both ends",
+      "query": "calories:300..520.5",
+      "expected_ids": [
+        "revised-classic",
+        "pancakes",
+        "creme-brulee",
+        "roast-chicken"
+      ]
+    },
+    {
+      "name": "calories:> is inclusive",
+      "query": "calories:>520.5",
+      "expected_ids": [
+        "weeknight-pasta",
+        "oeufs-en-meurette",
+        "roast-chicken"
+      ]
+    },
+    {
+      "name": "calories:< is inclusive",
+      "query": "calories:<150",
+      "expected_ids": [
+        "hot-cocoa",
+        "green-beans-amandine"
+      ]
+    },
+    {
+      "name": "calories ascending puts recipes without an estimate last",
+      "query": "",
+      "sort_by": "calories",
+      "sort_dir": "asc",
+      "expected_ids": [
+        "green-beans-amandine",
+        "hot-cocoa",
+        "garlic-bread",
+        "pancakes",
+        "revised-classic",
+        "creme-brulee",
+        "roast-chicken",
+        "weeknight-pasta",
+        "oeufs-en-meurette",
+        "cheesy-garlic-bread-bites"
+      ]
+    },
+    {
+      "name": "calories descending puts recipes without an estimate last",
+      "query": "",
+      "sort_by": "calories",
+      "sort_dir": "desc",
+      "expected_ids": [
+        "oeufs-en-meurette",
+        "weeknight-pasta",
+        "roast-chicken",
+        "creme-brulee",
+        "revised-classic",
+        "pancakes",
+        "garlic-bread",
+        "hot-cocoa",
+        "green-beans-amandine",
+        "cheesy-garlic-bread-bites"
+      ]
     }
   ]
 }

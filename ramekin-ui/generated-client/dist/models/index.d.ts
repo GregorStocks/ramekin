@@ -81,6 +81,7 @@ export * from './StepStatus';
 export * from './SyncMealPlan';
 export * from './SyncMealPlansRequest';
 export * from './SyncMealPlansResponse';
+export * from './SyncPhoto';
 export * from './SyncRecipe';
 export * from './SyncRecipesResponse';
 export * from './SyncShoppingListItem';

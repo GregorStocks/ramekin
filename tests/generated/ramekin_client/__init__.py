@@ -125,6 +125,7 @@ __all__ = [
     "SyncMealPlan",
     "SyncMealPlansRequest",
     "SyncMealPlansResponse",
+    "SyncPhoto",
     "SyncRecipe",
     "SyncRecipesResponse",
     "SyncShoppingListItem",
@@ -253,6 +254,7 @@ from ramekin_client.models.step_status import StepStatus as StepStatus
 from ramekin_client.models.sync_meal_plan import SyncMealPlan as SyncMealPlan
 from ramekin_client.models.sync_meal_plans_request import SyncMealPlansRequest as SyncMealPlansRequest
 from ramekin_client.models.sync_meal_plans_response import SyncMealPlansResponse as SyncMealPlansResponse
+from ramekin_client.models.sync_photo import SyncPhoto as SyncPhoto
 from ramekin_client.models.sync_recipe import SyncRecipe as SyncRecipe
 from ramekin_client.models.sync_recipes_response import SyncRecipesResponse as SyncRecipesResponse
 from ramekin_client.models.sync_shopping_list_item import SyncShoppingListItem as SyncShoppingListItem

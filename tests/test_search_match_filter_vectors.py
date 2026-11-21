@@ -7,10 +7,11 @@ same file through its local search pipeline (SearchMatchFilterSharedVector-
 Tests); this harness replays it through the server so the vectors always
 describe what the server actually does.
 
-Recipes are created through the API, then their creation and version
-timestamps are set to the vector values directly in the database — the only
-recipe attributes a client cannot choose through the API — so ordering cases
-are deterministic on both sides.
+Recipes are created through the API, then the attributes a client cannot
+choose through the API are set to the vector values directly in the database:
+creation and version timestamps, the calorie estimate the server derives, and
+the stored facts about each photo. That keeps ordering and filter cases
+deterministic on both sides.
 """
 
 import json
@@ -37,6 +38,7 @@ SORT_BY = {
     "rating": SortBy.RATING,
     "title": SortBy.TITLE,
     "created_at": SortBy.CREATED_AT,
+    "calories": SortBy.CALORIES,
 }
 SORT_DIR = {"asc": Direction.ASC, "desc": Direction.DESC}
 
@@ -50,6 +52,10 @@ def _db_timestamp(iso: str) -> str:
     """An ISO-8601 vector timestamp in the server's stored text form."""
     utc = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(timezone.utc)
     return utc.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3] + "+00:00"
+
+
+def _kcal_label(kcal):
+    return None if kcal is None else f"~{kcal:g} kcal"
 
 
 def _ingredient(spec) -> Ingredient:
@@ -79,6 +85,19 @@ def corpus(authed_api_client, database_url, test_image, vectors):
             if recipe["has_photo"]:
                 upload = photos_api.upload(file=(f"{recipe['id']}.png", test_image))
                 photo_ids = [str(upload.id)]
+                photo = recipe["photo"]
+                conn.execute("BEGIN IMMEDIATE")
+                conn.execute(
+                    "update photos set file_size = ?, width = ?, height = ? "
+                    "where id = ?",
+                    (
+                        photo["file_size"],
+                        photo["width"],
+                        photo["height"],
+                        str(upload.id),
+                    ),
+                )
+                conn.execute("COMMIT")
 
             created = recipes_api.create_recipe(
                 CreateRecipeRequest(
@@ -89,6 +108,7 @@ def corpus(authed_api_client, database_url, test_image, vectors):
                     notes=recipe["notes"],
                     tags=recipe["tags"],
                     rating=recipe["rating"],
+                    source_name=recipe["source_name"],
                     photo_ids=photo_ids,
                 )
             )
@@ -129,10 +149,16 @@ def corpus(authed_api_client, database_url, test_image, vectors):
             )
             conn.execute(
                 """
-                update recipe_versions set created_at = ?
+                update recipe_versions
+                set created_at = ?, kcal_per_serving = ?, kcal_per_serving_label = ?
                 where id = (select current_version_id from recipes where id = ?)
                 """,
-                (_db_timestamp(recipe["updated_at"]), str(created.id)),
+                (
+                    _db_timestamp(recipe["updated_at"]),
+                    recipe["kcal_per_serving"],
+                    _kcal_label(recipe["kcal_per_serving"]),
+                    str(created.id),
+                ),
             )
             conn.execute("COMMIT")
     finally:
@@ -184,6 +210,38 @@ def test_sync_serves_the_same_ingredient_match_text(corpus, vectors):
 
     synced = {
         slug_by_id[str(r.id)]: r.ingredient_match_text
+        for r in response.changes
+        if str(r.id) in slug_by_id
+    }
+    assert synced == expected
+
+
+def test_sync_serves_what_the_structured_filters_compare(corpus, vectors):
+    """source:, calories:, photo_size: and photo_dim: run locally on iOS over
+    these synced fields, so the sync must carry exactly what the server's own
+    filters read."""
+    recipes_api, slug_by_id = corpus
+    expected = {
+        r["id"]: (
+            r["source_name"],
+            r["kcal_per_serving"],
+            _kcal_label(r["kcal_per_serving"]),
+            [r["photo"]] if r["photo"] else [],
+        )
+        for r in vectors["recipes"]
+    }
+
+    response = SyncApi(recipes_api.api_client).sync_recipes(limit=500)
+    synced = {
+        slug_by_id[str(r.id)]: (
+            r.source_name,
+            r.kcal_per_serving,
+            r.calories_per_serving,
+            [
+                {"file_size": p.file_size, "width": p.width, "height": p.height}
+                for p in r.photos
+            ],
+        )
         for r in response.changes
         if str(r.id) in slug_by_id
     }

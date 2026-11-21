@@ -96,6 +96,7 @@ from ramekin_client.models.step_status import StepStatus
 from ramekin_client.models.sync_meal_plan import SyncMealPlan
 from ramekin_client.models.sync_meal_plans_request import SyncMealPlansRequest
 from ramekin_client.models.sync_meal_plans_response import SyncMealPlansResponse
+from ramekin_client.models.sync_photo import SyncPhoto
 from ramekin_client.models.sync_recipe import SyncRecipe
 from ramekin_client.models.sync_recipes_response import SyncRecipesResponse
 from ramekin_client.models.sync_shopping_list_item import SyncShoppingListItem

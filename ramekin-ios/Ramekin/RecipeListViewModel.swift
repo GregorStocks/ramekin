@@ -127,6 +127,7 @@ extension RecipeListViewModel {
 
     func refresh() async {
         DebugLogger.shared.log("Pull-to-refresh started", source: "RecipeList")
+        lastRanking = nil
         await loadTags()
         await loadRecipes()
         DebugLogger.shared.log("Pull-to-refresh completed", source: "RecipeList")
@@ -152,6 +153,8 @@ extension RecipeListViewModel {
 
     func reloadRecipes() {
         cancelSearch()
+        // Asking again is how you get a new random order.
+        lastRanking = nil
         Task { await loadRecipes() }
     }
 
@@ -195,8 +198,10 @@ extension RecipeListViewModel {
         let queryValue = buildQuery()
         logger.log("loadRecipes called (query=\(queryValue ?? "nil"))", source: "RecipeList")
 
-        if !forceNetwork,
-           RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder) {
+        // Every filter and sort is answered from the synced cache; the
+        // server list is only the fallback for a session with no account to
+        // cache under.
+        if !forceNetwork {
             await syncCachedRecipes(key: currentKey())
             return
         }

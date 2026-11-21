@@ -5036,6 +5036,34 @@
           }
         }
       },
+      "SyncPhoto": {
+        "type": "object",
+        "description": "The stored facts about one photo that search filters on.",
+        "properties": {
+          "file_size": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "Size of the stored file in bytes."
+          },
+          "height": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "width": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          }
+        }
+      },
       "SyncRecipe": {
         "type": "object",
         "description": "Read-only recipe data needed to populate the iOS cache and mirror server search.",
@@ -5047,9 +5075,17 @@
           "updated_at",
           "ingredients",
           "ingredient_match_text",
-          "instructions"
+          "instructions",
+          "photos"
         ],
         "properties": {
+          "calories_per_serving": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The estimate for display, as `RecipeSummary.calories_per_serving`."
+          },
           "created_at": {
             "type": "string",
             "format": "date-time"
@@ -5077,11 +5113,26 @@
           "instructions": {
             "type": "string"
           },
+          "kcal_per_serving": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Estimated calories per serving: what `calories:` filters and the\ncalorie sort compare. Null when there's no per-serving estimate."
+          },
           "notes": {
             "type": [
               "string",
               "null"
             ]
+          },
+          "photos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncPhoto"
+            },
+            "description": "The recipe's photos, in order, leaving out deleted ones: what\n`photo_size:` and `photo_dim:` filters compare."
           },
           "rating": {
             "type": [
@@ -5089,6 +5140,13 @@
               "null"
             ],
             "format": "int32"
+          },
+          "source_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What `source:` filters match."
           },
           "tags": {
             "type": "array",

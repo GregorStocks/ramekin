@@ -10,6 +10,12 @@ struct CachedRecipeSearchDocument {
     let ingredientMatchText: String
     let instructions: String
     let notes: String?
+    /// Facts only the server knows, synced so the filters over them run
+    /// locally: what `source:`, `calories:` (and the calorie sort), and
+    /// `photo_size:`/`photo_dim:` compare.
+    var sourceName: String?
+    var kcalPerServing: Double?
+    var photos: [SyncPhoto] = []
 }
 
 /// Durable mid-sweep progress for a paged sync, so an interrupted sweep
@@ -45,9 +51,9 @@ enum RecipeCacheError: LocalizedError {
 /// tens of seconds on slow devices.
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
-    // v4 added ingredientMatchText; bumping forces a full re-sync so every
-    // cached recipe carries it.
-    private static let cacheSchemaVersion = 4
+    // v5 added the source name, calorie estimate and photo facts; bumping
+    // forces a full re-sync so every cached recipe carries them.
+    private static let cacheSchemaVersion = 5
 
     /// Only touched inside `perform`.
     private let backgroundContext: NSManagedObjectContext
@@ -259,19 +265,7 @@ final class RecipeCacheStore {
             for recipe in syncResponse.changes {
                 let cachedRecipe = existingById[recipe.id] ?? CachedRecipe(context: context)
                 existingById[recipe.id] = cachedRecipe
-                cachedRecipe.accountKey = accountKey
-                cachedRecipe.id = recipe.id
-                cachedRecipe.ingredientMatchText = recipe.ingredientMatchText
-                cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
-                cachedRecipe.instructions = recipe.instructions
-                cachedRecipe.notes = recipe.notes
-                cachedRecipe.title = recipe.title
-                cachedRecipe.summaryDescription = recipe.description
-                cachedRecipe.tagsJSON = try tagsJSON(recipe.tags)
-                cachedRecipe.thumbnailPhotoId = recipe.thumbnailPhotoId
-                cachedRecipe.rating = recipe.rating.map(String.init)
-                cachedRecipe.createdAt = recipe.createdAt
-                cachedRecipe.updatedAt = recipe.updatedAt
+                try write(recipe, accountKey: accountKey, to: cachedRecipe)
             }
 
             if context.hasChanges {
@@ -280,6 +274,26 @@ final class RecipeCacheStore {
             }
             userDefaults.set(Self.cacheSchemaVersion, forKey: rowsSchemaVersionKey(accountKey: accountKey))
         }
+    }
+
+    private func write(_ recipe: SyncRecipe, accountKey: String, to cachedRecipe: CachedRecipe) throws {
+        cachedRecipe.accountKey = accountKey
+        cachedRecipe.id = recipe.id
+        cachedRecipe.ingredientMatchText = recipe.ingredientMatchText
+        cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
+        cachedRecipe.instructions = recipe.instructions
+        cachedRecipe.notes = recipe.notes
+        cachedRecipe.sourceName = recipe.sourceName
+        cachedRecipe.kcalPerServing = recipe.kcalPerServing.map(NSNumber.init(value:))
+        cachedRecipe.caloriesLabel = recipe.caloriesPerServing
+        cachedRecipe.photosJSON = try encodeCachedJSON(recipe.photos, field: "photos")
+        cachedRecipe.title = recipe.title
+        cachedRecipe.summaryDescription = recipe.description
+        cachedRecipe.tagsJSON = try tagsJSON(recipe.tags)
+        cachedRecipe.thumbnailPhotoId = recipe.thumbnailPhotoId
+        cachedRecipe.rating = recipe.rating.map(String.init)
+        cachedRecipe.createdAt = recipe.createdAt
+        cachedRecipe.updatedAt = recipe.updatedAt
     }
 
     /// Nil for a corrupt row, which the caller drops so a re-sync can
@@ -291,6 +305,7 @@ final class RecipeCacheStore {
               let ingredientMatchText = cachedRecipe.ingredientMatchText,
               let ingredientsJSON = cachedRecipe.ingredientsJSON,
               let instructions = cachedRecipe.instructions,
+              let photosJSON = cachedRecipe.photosJSON,
               let tagsJSON = cachedRecipe.tagsJSON,
               let title = cachedRecipe.title,
               let updatedAt = cachedRecipe.updatedAt
@@ -299,12 +314,14 @@ final class RecipeCacheStore {
             return nil
         }
         guard let ingredients = decodeCachedJSON([Ingredient].self, from: ingredientsJSON, field: "ingredients", rowId: rowId),
-              let tags = decodeCachedJSON([String].self, from: tagsJSON, field: "tags", rowId: rowId)
+              let tags = decodeCachedJSON([String].self, from: tagsJSON, field: "tags", rowId: rowId),
+              let photos = decodeCachedJSON([SyncPhoto].self, from: photosJSON, field: "photos", rowId: rowId)
         else {
             return nil
         }
 
         let summary = RecipeSummary(
+            caloriesPerServing: cachedRecipe.caloriesLabel,
             createdAt: createdAt,
             description: cachedRecipe.summaryDescription,
             id: id,
@@ -319,7 +336,10 @@ final class RecipeCacheStore {
             ingredients: ingredients,
             ingredientMatchText: ingredientMatchText,
             instructions: instructions,
-            notes: cachedRecipe.notes
+            notes: cachedRecipe.notes,
+            sourceName: cachedRecipe.sourceName,
+            kcalPerServing: cachedRecipe.kcalPerServing?.doubleValue,
+            photos: photos
         )
     }
 
