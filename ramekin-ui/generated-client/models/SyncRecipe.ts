@@ -13,6 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
+import type { SyncPhoto } from './SyncPhoto';
+import {
+    SyncPhotoFromJSON,
+    SyncPhotoFromJSONTyped,
+    SyncPhotoToJSON,
+    SyncPhotoToJSONTyped,
+} from './SyncPhoto';
 import type { Ingredient } from './Ingredient';
 import {
     IngredientFromJSON,
@@ -27,6 +34,12 @@ import {
  * @interface SyncRecipe
  */
 export interface SyncRecipe {
+    /**
+     * The estimate for display, as `RecipeSummary.calories_per_serving`.
+     * @type {string}
+     * @memberof SyncRecipe
+     */
+    caloriesPerServing?: string | null;
     /**
      * 
      * @type {Date}
@@ -67,17 +80,37 @@ export interface SyncRecipe {
      */
     instructions: string;
     /**
+     * Estimated calories per serving: what `calories:` filters and the
+     * calorie sort compare. Null when there's no per-serving estimate.
+     * @type {number}
+     * @memberof SyncRecipe
+     */
+    kcalPerServing?: number | null;
+    /**
      * 
      * @type {string}
      * @memberof SyncRecipe
      */
     notes?: string | null;
     /**
+     * The recipe's photos, in order, leaving out deleted ones: what
+     * `photo_size:` and `photo_dim:` filters compare.
+     * @type {Array<SyncPhoto>}
+     * @memberof SyncRecipe
+     */
+    photos: Array<SyncPhoto>;
+    /**
      * 
      * @type {number}
      * @memberof SyncRecipe
      */
     rating?: number | null;
+    /**
+     * What `source:` filters match.
+     * @type {string}
+     * @memberof SyncRecipe
+     */
+    sourceName?: string | null;
     /**
      * 
      * @type {Array<string>}
@@ -113,6 +146,7 @@ export function instanceOfSyncRecipe(value: object): value is SyncRecipe {
     if (!('ingredientMatchText' in value) || value['ingredientMatchText'] === undefined) return false;
     if (!('ingredients' in value) || value['ingredients'] === undefined) return false;
     if (!('instructions' in value) || value['instructions'] === undefined) return false;
+    if (!('photos' in value) || value['photos'] === undefined) return false;
     if (!('tags' in value) || value['tags'] === undefined) return false;
     if (!('title' in value) || value['title'] === undefined) return false;
     if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
@@ -129,14 +163,18 @@ export function SyncRecipeFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     }
     return {
         
+        'caloriesPerServing': json['calories_per_serving'] == null ? undefined : json['calories_per_serving'],
         'createdAt': (new Date(json['created_at'])),
         'description': json['description'] == null ? undefined : json['description'],
         'id': json['id'],
         'ingredientMatchText': json['ingredient_match_text'],
         'ingredients': ((json['ingredients'] as Array<any>).map(IngredientFromJSON)),
         'instructions': json['instructions'],
+        'kcalPerServing': json['kcal_per_serving'] == null ? undefined : json['kcal_per_serving'],
         'notes': json['notes'] == null ? undefined : json['notes'],
+        'photos': ((json['photos'] as Array<any>).map(SyncPhotoFromJSON)),
         'rating': json['rating'] == null ? undefined : json['rating'],
+        'sourceName': json['source_name'] == null ? undefined : json['source_name'],
         'tags': json['tags'],
         'thumbnailPhotoId': json['thumbnail_photo_id'] == null ? undefined : json['thumbnail_photo_id'],
         'title': json['title'],
@@ -155,14 +193,18 @@ export function SyncRecipeToJSONTyped(value?: SyncRecipe | null, ignoreDiscrimin
 
     return {
         
+        'calories_per_serving': value['caloriesPerServing'],
         'created_at': value['createdAt'].toISOString(),
         'description': value['description'],
         'id': value['id'],
         'ingredient_match_text': value['ingredientMatchText'],
         'ingredients': ((value['ingredients'] as Array<any>).map(IngredientToJSON)),
         'instructions': value['instructions'],
+        'kcal_per_serving': value['kcalPerServing'],
         'notes': value['notes'],
+        'photos': ((value['photos'] as Array<any>).map(SyncPhotoToJSON)),
         'rating': value['rating'],
+        'source_name': value['sourceName'],
         'tags': value['tags'],
         'thumbnail_photo_id': value['thumbnailPhotoId'],
         'title': value['title'],

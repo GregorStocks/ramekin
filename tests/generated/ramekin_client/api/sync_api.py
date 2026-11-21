@@ -326,8 +326,8 @@ class SyncApi:
     def sync_recipes(
         self,
         limit: Annotated[StrictInt, Field(description="Maximum number of recipes returned per page, between 1 and 500.")],
-        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.")] = None,
-        after_id: Annotated[Optional[UUID], Field(description="ID of the last recipe on the previous page. Absent on a sweep's first page.")] = None,
+        cursor: Annotated[Optional[StrictInt], Field(description="`cursor` from the previous response. Absent means a full sync.")] = None,
+        after_id: Annotated[Optional[UUID], Field(description="`after_id` from the previous response, when it had one.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -346,9 +346,9 @@ class SyncApi:
 
         :param limit: Maximum number of recipes returned per page, between 1 and 500. (required)
         :type limit: int
-        :param cursor: Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.
+        :param cursor: `cursor` from the previous response. Absent means a full sync.
         :type cursor: int
-        :param after_id: ID of the last recipe on the previous page. Absent on a sweep's first page.
+        :param after_id: `after_id` from the previous response, when it had one.
         :type after_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -402,8 +402,8 @@ class SyncApi:
     def sync_recipes_with_http_info(
         self,
         limit: Annotated[StrictInt, Field(description="Maximum number of recipes returned per page, between 1 and 500.")],
-        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.")] = None,
-        after_id: Annotated[Optional[UUID], Field(description="ID of the last recipe on the previous page. Absent on a sweep's first page.")] = None,
+        cursor: Annotated[Optional[StrictInt], Field(description="`cursor` from the previous response. Absent means a full sync.")] = None,
+        after_id: Annotated[Optional[UUID], Field(description="`after_id` from the previous response, when it had one.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -422,9 +422,9 @@ class SyncApi:
 
         :param limit: Maximum number of recipes returned per page, between 1 and 500. (required)
         :type limit: int
-        :param cursor: Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.
+        :param cursor: `cursor` from the previous response. Absent means a full sync.
         :type cursor: int
-        :param after_id: ID of the last recipe on the previous page. Absent on a sweep's first page.
+        :param after_id: `after_id` from the previous response, when it had one.
         :type after_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -478,8 +478,8 @@ class SyncApi:
     def sync_recipes_without_preload_content(
         self,
         limit: Annotated[StrictInt, Field(description="Maximum number of recipes returned per page, between 1 and 500.")],
-        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.")] = None,
-        after_id: Annotated[Optional[UUID], Field(description="ID of the last recipe on the previous page. Absent on a sweep's first page.")] = None,
+        cursor: Annotated[Optional[StrictInt], Field(description="`cursor` from the previous response. Absent means a full sync.")] = None,
+        after_id: Annotated[Optional[UUID], Field(description="`after_id` from the previous response, when it had one.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -498,9 +498,9 @@ class SyncApi:
 
         :param limit: Maximum number of recipes returned per page, between 1 and 500. (required)
         :type limit: int
-        :param cursor: Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.
+        :param cursor: `cursor` from the previous response. Absent means a full sync.
         :type cursor: int
-        :param after_id: ID of the last recipe on the previous page. Absent on a sweep's first page.
+        :param after_id: `after_id` from the previous response, when it had one.
         :type after_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -577,13 +577,13 @@ class SyncApi:
             
             _query_params.append(('cursor', cursor))
             
-        if limit is not None:
-            
-            _query_params.append(('limit', limit))
-            
         if after_id is not None:
             
             _query_params.append(('after_id', after_id))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters

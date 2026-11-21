@@ -28,47 +28,49 @@ import {
  */
 export interface SyncRecipesResponse {
     /**
-     * The next `limit` active recipes (by ascending recipe ID, starting past
-     * `after_id`) changed at or after `cursor`. All active recipes match when
-     * `cursor` is absent.
+     * Set while `has_more`: the last recipe of this page, which shares its
+     * change stamp with recipes still to come. Pass it back with `cursor`.
+     * @type {string}
+     * @memberof SyncRecipesResponse
+     */
+    afterId?: string | null;
+    /**
+     * The next `limit` active recipes changed since the request's position,
+     * oldest change first. A recipe changed again later comes again, later
+     * in the stream, so paging can't skip a change that lands mid-sync.
      * @type {Array<SyncRecipe>}
      * @memberof SyncRecipesResponse
      */
     changes: Array<SyncRecipe>;
     /**
-     * This page's snapshot watermark. Once a sweep completes, persist the
-     * *first* page's cursor and pass it to the next sync: changes committed
-     * mid-sweep can land in id ranges the sweep already passed, and only the
-     * first watermark is low enough to redeliver all of them. Changes may be
-     * redelivered across syncs, but none can be skipped.
+     * Where the next request starts: pass it back as `cursor`, together
+     * with `after_id`. Persist the pair once this page is applied; an
+     * interrupted sync resumes from it. Changes may be redelivered, but
+     * none can be skipped.
      * @type {number}
      * @memberof SyncRecipesResponse
      */
     cursor: number;
     /**
-     * Recipe IDs deleted at or after `cursor`. Only sent on a delta sweep's
-     * first page; later pages and full resyncs return an empty list.
+     * Recipe IDs deleted since the request's position. A full resync sends
+     * none.
      * @type {Array<string>}
      * @memberof SyncRecipesResponse
      */
     deleted: Array<string>;
     /**
-     * True when this page lists every active recipe in its ID range rather
-     * than changes since `cursor`: `cursor` was absent, predates a restored
-     * backup, or came from another database. The client must then drop
-     * cached recipes the sweep doesn't return (a full resync sends no
-     * tombstones) and request the
-     * sweep's remaining pages without `cursor`, since a later page could
-     * otherwise judge the same cursor differently. Pages are ordered by ID,
-     * so each settles the ID range from `after_id` (exclusive) through its
-     * last recipe, or to the end of the ID space on the last page.
+     * True when the request's cursor couldn't be answered with a delta: it
+     * was absent, predates a restored backup, or came from another
+     * database. The stream then starts over from every active recipe, so
+     * the client must drop everything it has cached before applying this
+     * page (recipes the server lost have no tombstone). Later pages of the
+     * same sync are ordinary deltas.
      * @type {boolean}
      * @memberof SyncRecipesResponse
      */
     fullResync: boolean;
     /**
-     * True when the sweep has more pages. Request the next one with the same
-     * `cursor` and `after_id` set to this page's last recipe ID.
+     * True when more changes follow this page. Request them right away.
      * @type {boolean}
      * @memberof SyncRecipesResponse
      */
@@ -108,6 +110,7 @@ export function SyncRecipesResponseFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
+        'afterId': json['after_id'] == null ? undefined : json['after_id'],
         'changes': ((json['changes'] as Array<any>).map(SyncRecipeFromJSON)),
         'cursor': json['cursor'],
         'deleted': json['deleted'],
@@ -128,6 +131,7 @@ export function SyncRecipesResponseToJSONTyped(value?: SyncRecipesResponse | nul
 
     return {
         
+        'after_id': value['afterId'],
         'changes': ((value['changes'] as Array<any>).map(SyncRecipeToJSON)),
         'cursor': value['cursor'],
         'deleted': value['deleted'],

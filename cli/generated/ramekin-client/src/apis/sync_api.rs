@@ -114,10 +114,10 @@ pub async fn sync_recipes(
     if let Some(ref param_value) = p_query_cursor {
         req_builder = req_builder.query(&[("cursor", &param_value.to_string())]);
     }
-    req_builder = req_builder.query(&[("limit", &p_query_limit.to_string())]);
     if let Some(ref param_value) = p_query_after_id {
         req_builder = req_builder.query(&[("after_id", &param_value.to_string())]);
     }
+    req_builder = req_builder.query(&[("limit", &p_query_limit.to_string())]);
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }

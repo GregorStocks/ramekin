@@ -12,35 +12,90 @@ final class RecipePickerViewModel: ObservableObject {
     @Published private(set) var error: String?
 
     private let listRecipes: ListRecipes
+    private let freshen: () async -> Void
     private var generation = UUID()
     private var searchTask: Task<Void, Never>?
+    private var lastSearchText = ""
 
-    init(listRecipes: @escaping ListRecipes = { query in
-        // No explicit sort, matching the web meal-plan picker: the server
-        // ranks by relevance when searching, newest-first when browsing.
-        try await RecipesAPI.listRecipes(limit: 50, offset: 0, q: query).recipes
-    }) {
+    init(
+        listRecipes: @escaping ListRecipes = RecipePickerViewModel.searchCachedRecipes,
+        freshen: @escaping () async -> Void = RecipePickerViewModel.syncRecipeCache
+    ) {
         self.listRecipes = listRecipes
+        self.freshen = freshen
+    }
+
+    /// Brings the recipe cache up to date, through the same queue as the
+    /// recipe list so the two never sync at once. A failure only means the
+    /// picker keeps showing what the cache already had.
+    static func syncRecipeCache() async {
+        guard let accountKey = RecipeCacheStore.shared.currentAccountKey() else { return }
+        do {
+            try await RecipeSyncQueue.shared.run(
+                fromStart: false,
+                accountKey: accountKey,
+                pageSize: 100,
+                api: .live,
+                cache: .live
+            )
+        } catch {
+            DebugLogger.shared.log("Picker recipe sync failed: \(error.localizedDescription)", source: "RecipePicker")
+        }
+    }
+
+    /// Shows what the cache has right away, then syncs it and shows the
+    /// result for whatever is being searched by then: the picker can be the
+    /// first screen opened after a recipe was added elsewhere.
+    func start(searchText: String) async {
+        await load(searchText: searchText)
+        await freshen()
+        guard !Task.isCancelled else { return }
+        await load(searchText: lastSearchText)
+    }
+
+    /// Searches the synced recipe cache, like the recipe list: relevance
+    /// when searching, newest-first when browsing. Only a cache that has
+    /// nothing yet (no sync has landed) falls back to asking the server.
+    nonisolated static func searchCachedRecipes(_ query: String?) async throws -> [RecipeSummary] {
+        let store = RecipeCacheStore.shared
+        if let accountKey = store.currentAccountKey() {
+            let corpus = try await store.loadSearchCorpus(accountKey: accountKey)
+            if !corpus.isEmpty {
+                return await Task.detached(priority: .userInitiated) {
+                    RecipeSearchSupport.execute(
+                        corpus: corpus,
+                        parsed: RecipeSearchSupport.parse(query ?? ""),
+                        sortBy: nil,
+                        sortDir: nil
+                    )
+                }.value
+            }
+        }
+        return try await RecipesAPI.listRecipes(limit: 50, offset: 0, q: query).recipes
     }
 
     deinit {
         searchTask?.cancel()
     }
 
-    /// Debounces a search-text change into a load.
+    /// Loads for a search-text change right away: the cache answers in
+    /// milliseconds, so there is nothing to debounce.
     func searchTextChanged(_ text: String) {
-        SearchDebounceSupport.replaceTask(&searchTask) { [weak self] in
+        searchTask?.cancel()
+        searchTask = Task { [weak self] in
             await self?.load(searchText: text)
         }
     }
 
     func cancelSearch() {
-        SearchDebounceSupport.cancelTask(&searchTask)
+        searchTask?.cancel()
+        searchTask = nil
     }
 
     func load(searchText: String) async {
         let generation = UUID()
         self.generation = generation
+        lastSearchText = searchText
         isLoading = true
         error = nil
 
@@ -105,7 +160,7 @@ struct RecipePickerSheet: View {
                     Button("Cancel") { dismiss() }
                 }
             }
-            .task { await model.load(searchText: searchText) }
+            .task { await model.start(searchText: searchText) }
         }
     }
 

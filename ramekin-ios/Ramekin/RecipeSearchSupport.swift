@@ -17,14 +17,6 @@ struct ParsedSearchQuery: Equatable {
     /// Inclusive per-serving calorie bounds.
     var caloriesMin: Double?
     var caloriesMax: Double?
-
-    /// `SyncRecipe` carries neither the source name, detailed photo
-    /// metadata, nor calorie estimates, so queries using them can only run
-    /// on the server.
-    var requiresServer: Bool {
-        source != nil || photoSize != nil || photoDim != nil
-            || caloriesMin != nil || caloriesMax != nil
-    }
 }
 
 /// The local mirror of server search: query parsing, result membership,
@@ -206,7 +198,7 @@ enum RecipeSearchSupport {
                 return false
             }
         }
-        return true
+        return matchesServerDerivedFilters(entry, query: query)
     }
 
     /// Bare-text membership: the tokens AND together, each matching any of
@@ -238,15 +230,14 @@ enum RecipeSearchSupport {
     /// default: relevance when the query has text terms, updated-date
     /// descending otherwise. Relevance ignores sortDir; every ordering
     /// breaks ties by recipe id ascending (UUID byte order), and relevance
-    /// breaks score ties by recency first.
+    /// breaks score ties by recency first. Random is a fresh shuffle each
+    /// call, as it is a fresh order each request on the server.
     static func execute(
         corpus: RecipeSearchCorpus,
         parsed: ParsedSearchQuery,
         sortBy: SortBy?,
         sortDir: Direction?
     ) -> [RecipeSummary] {
-        precondition(!parsed.requiresServer, "source/photo_size/photo_dim/calories queries are server-only")
-
         let query = PreparedSearchQuery(parsed)
         // Only a text query reads the normalized text, so browsing never
         // waits for the corpus to be normalized.
@@ -289,16 +280,14 @@ enum RecipeSearchSupport {
             }.map(\.summary)
         case .rating:
             return matched.sorted { lhs, rhs in
-                compareRatingsNullsLast(lhs.summary.rating, rhs.summary.rating, lhs.idKey, rhs.idKey, descending: descending)
+                compareNullsLast(lhs.summary.rating, rhs.summary.rating, lhs.idKey, rhs.idKey, descending: descending)
+            }.map(\.summary)
+        case .calories:
+            return matched.sorted { lhs, rhs in
+                compareNullsLast(lhs.kcalPerServing, rhs.kcalPerServing, lhs.idKey, rhs.idKey, descending: descending)
             }.map(\.summary)
         case .random:
-            fatalError("random ordering is server-only; routing must not send it here")
-        case .calories:
-            // Server-only too (the cache has no calories), but routing a
-            // calorie sort here shouldn't crash: keep the browse default.
-            return matched.sorted { lhs, rhs in
-                compareDates(lhs.summary.updatedAt, rhs.summary.updatedAt, lhs.idKey, rhs.idKey, descending: true)
-            }.map(\.summary)
+            return matched.shuffled().map(\.summary)
         }
     }
 
@@ -342,9 +331,10 @@ enum RecipeSearchSupport {
         return descending ? lhs > rhs : lhs < rhs
     }
 
-    /// Mirror of the server's `rating (a|de)sc NULLS LAST, id asc`.
-    private static func compareRatingsNullsLast(
-        _ lhs: Int?, _ rhs: Int?, _ lhsID: String, _ rhsID: String, descending: Bool
+    /// Mirror of the server's `<column> (a|de)sc NULLS LAST, id asc`, for
+    /// rating and calories.
+    private static func compareNullsLast<Value: Comparable>(
+        _ lhs: Value?, _ rhs: Value?, _ lhsID: String, _ rhsID: String, descending: Bool
     ) -> Bool {
         switch (lhs, rhs) {
         case let (lhs?, rhs?) where lhs == rhs:

@@ -1,13 +1,13 @@
-use super::Window;
 use crate::api::recipes::read::{
     current_recipe_versions_for_user, recipe_sync_select, RecipeSyncRow,
 };
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
-use crate::db::DbPool;
+use crate::db::{self, DbPool};
 use crate::ids::Uuid;
 use crate::models::Ingredient;
-use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
+use crate::raw_sql;
+use crate::schema::{photos, recipes};
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -15,9 +15,9 @@ use axum::{
     Json,
 };
 use chrono::{DateTime, Utc};
-use diesel::dsl::exists;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
 
@@ -27,43 +27,39 @@ const MAX_SYNC_PAGE_SIZE: i64 = 500;
 
 #[derive(Debug, Deserialize, IntoParams)]
 pub struct SyncRecipesParams {
-    /// Cursor returned by a previous sync. Absent means a full sync. Every
-    /// page of one sweep passes the same cursor.
+    /// `cursor` from the previous response. Absent means a full sync.
     pub cursor: Option<i64>,
+    /// `after_id` from the previous response, when it had one.
+    pub after_id: Option<Uuid>,
     /// Maximum number of recipes returned per page, between 1 and 500.
     pub limit: i64,
-    /// ID of the last recipe on the previous page. Absent on a sweep's first
-    /// page.
-    pub after_id: Option<Uuid>,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct SyncRecipesResponse {
-    /// The next `limit` active recipes (by ascending recipe ID, starting past
-    /// `after_id`) changed at or after `cursor`. All active recipes match when
-    /// `cursor` is absent.
+    /// The next `limit` active recipes changed since the request's position,
+    /// oldest change first. A recipe changed again later comes again, later
+    /// in the stream, so paging can't skip a change that lands mid-sync.
     pub changes: Vec<SyncRecipe>,
-    /// Recipe IDs deleted at or after `cursor`. Only sent on a delta sweep's
-    /// first page; later pages and full resyncs return an empty list.
+    /// Recipe IDs deleted since the request's position. A full resync sends
+    /// none.
     pub deleted: Vec<Uuid>,
-    /// This page's snapshot watermark. Once a sweep completes, persist the
-    /// *first* page's cursor and pass it to the next sync: changes committed
-    /// mid-sweep can land in id ranges the sweep already passed, and only the
-    /// first watermark is low enough to redeliver all of them. Changes may be
-    /// redelivered across syncs, but none can be skipped.
+    /// Where the next request starts: pass it back as `cursor`, together
+    /// with `after_id`. Persist the pair once this page is applied; an
+    /// interrupted sync resumes from it. Changes may be redelivered, but
+    /// none can be skipped.
     pub cursor: i64,
-    /// True when the sweep has more pages. Request the next one with the same
-    /// `cursor` and `after_id` set to this page's last recipe ID.
+    /// Set while `has_more`: the last recipe of this page, which shares its
+    /// change stamp with recipes still to come. Pass it back with `cursor`.
+    pub after_id: Option<Uuid>,
+    /// True when more changes follow this page. Request them right away.
     pub has_more: bool,
-    /// True when this page lists every active recipe in its ID range rather
-    /// than changes since `cursor`: `cursor` was absent, predates a restored
-    /// backup, or came from another database. The client must then drop
-    /// cached recipes the sweep doesn't return (a full resync sends no
-    /// tombstones) and request the
-    /// sweep's remaining pages without `cursor`, since a later page could
-    /// otherwise judge the same cursor differently. Pages are ordered by ID,
-    /// so each settles the ID range from `after_id` (exclusive) through its
-    /// last recipe, or to the end of the ID space on the last page.
+    /// True when the request's cursor couldn't be answered with a delta: it
+    /// was absent, predates a restored backup, or came from another
+    /// database. The stream then starts over from every active recipe, so
+    /// the client must drop everything it has cached before applying this
+    /// page (recipes the server lost have no tombstone). Later pages of the
+    /// same sync are ordinary deltas.
     pub full_resync: bool,
     /// Version of the shared search-normalization contract
     /// (shared-test-vectors/search-normalization.json) the server was built
@@ -92,11 +88,63 @@ pub struct SyncRecipe {
     pub ingredient_match_text: String,
     pub instructions: String,
     pub notes: Option<String>,
+    /// What `source:` filters match.
+    pub source_name: Option<String>,
+    /// Estimated calories per serving: what `calories:` filters and the
+    /// calorie sort compare. Null when there's no per-serving estimate.
+    pub kcal_per_serving: Option<f64>,
+    /// The estimate for display, as `RecipeSummary.calories_per_serving`.
+    pub calories_per_serving: Option<String>,
+    /// The recipe's photos, in order, leaving out deleted ones: what
+    /// `photo_size:` and `photo_dim:` filters compare.
+    pub photos: Vec<SyncPhoto>,
+}
+
+/// The stored facts about one photo that search filters on.
+#[derive(Debug, Clone, Serialize, ToSchema, Queryable)]
+pub struct SyncPhoto {
+    /// Size of the stored file in bytes.
+    pub file_size: Option<i32>,
+    pub width: Option<i32>,
+    pub height: Option<i32>,
+}
+
+type PhotoFacts = HashMap<Uuid, SyncPhoto>;
+
+/// One page of the stream and where the next one starts.
+struct Page {
+    rows: Vec<RecipeSyncRow>,
+    position: (i64, Option<Uuid>),
+    has_more: bool,
+}
+
+/// The live photos among `ids`.
+fn photo_facts(conn: &mut SqliteConnection, ids: Vec<Uuid>) -> QueryResult<PhotoFacts> {
+    let mut facts = PhotoFacts::new();
+    // Chunked to stay under SQLite's bound-parameter limit.
+    for chunk in ids.chunks(500) {
+        let rows: Vec<(Uuid, SyncPhoto)> = photos::table
+            .filter(photos::id.eq_any(chunk))
+            .filter(photos::deleted_at.is_null())
+            .select((
+                photos::id,
+                (photos::file_size, photos::width, photos::height),
+            ))
+            .load(conn)?;
+        facts.extend(rows);
+    }
+    Ok(facts)
 }
 
 impl SyncRecipe {
-    fn try_from_row(row: RecipeSyncRow) -> Result<Self, serde_json::Error> {
+    fn try_from_row(row: RecipeSyncRow, photos: &PhotoFacts) -> Result<Self, serde_json::Error> {
         let ingredients = serde_json::from_value(row.ingredients)?;
+        let photos = row
+            .photo_ids
+            .iter()
+            .flatten()
+            .filter_map(|id| photos.get(id).cloned())
+            .collect();
         Ok(Self {
             id: row.id,
             title: row.title,
@@ -110,6 +158,10 @@ impl SyncRecipe {
             ingredient_match_text: row.ingredient_match_text,
             instructions: row.instructions,
             notes: row.notes,
+            source_name: row.source_name,
+            kcal_per_serving: row.kcal_per_serving,
+            calories_per_serving: row.calories_per_serving,
+            photos,
         })
     }
 }
@@ -141,68 +193,83 @@ pub async fn sync_recipes(
 
     let user_id = user.id;
 
-    // One read transaction, so the cursor and both reads come from a single
+    // One read transaction, so the cursor and the reads come from a single
     // snapshot (see `db::sync_cursor`). Applying a redelivered change is
     // idempotent.
     //
-    // A sweep pages through the recipe-id space under a fixed `cursor` filter.
-    // Every row matching the filter that committed before the sweep began is
-    // visible to every page's snapshot, so partitioning by id delivers each of
-    // them exactly once. A change committed mid-sweep can land in an id range
-    // the sweep already passed, but its change_seq is at or above the first
-    // page's watermark — which is why clients persist the first page's cursor,
-    // not the last one's.
-    let (cursor, rows, deleted, has_more, full_resync) = run_db(&pool, move |conn| {
+    // The stream is ordered by change stamp (`raw_sql::recipe_sync_seq`),
+    // then recipe id, and a page's position is the last (stamp, id) it
+    // returned. Every change committed after a page's snapshot takes a stamp
+    // above everything that page could see, so it sorts after the client's
+    // position whichever page the client is on. Nothing is skipped, and no
+    // page has to remember where the sync began.
+    let (page, photos, deleted, full_resync) = run_db(&pool, move |conn| {
         conn.transaction(|conn| {
             // Runs first so it establishes the snapshot the reads below use.
-            let window = Window::read(conn, params.cursor)?;
-            let since = window.since;
+            let sync_cursor = db::sync_cursor(conn)?;
+            let since = match (params.cursor, params.after_id) {
+                (Some(cursor), Some(_)) => sync_cursor.continuing(cursor),
+                (cursor, _) => sync_cursor.since(cursor),
+            };
 
             let mut query = current_recipe_versions_for_user!(user_id).into_boxed();
-
-            if let Some(since) = since {
-                // A rename or delete rewrites the tags of every recipe carrying
-                // the tag, without touching the recipe's own version row.
-                let tag_changed = exists(
-                    recipe_version_tags::table
-                        .inner_join(user_tags::table)
-                        .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
-                        .filter(user_tags::change_seq.ge(since)),
-                );
-                query = query.filter(recipe_versions::change_seq.ge(since).or(tag_changed));
-            }
-
-            if let Some(after_id) = params.after_id {
-                query = query.filter(recipes::id.gt(after_id));
+            match (since, params.after_id) {
+                (Some(since), Some(after_id)) => {
+                    query = query.filter(
+                        raw_sql::recipe_sync_seq()
+                            .gt(since)
+                            .or(raw_sql::recipe_sync_seq()
+                                .eq(since)
+                                .and(recipes::id.gt(after_id))),
+                    );
+                }
+                (Some(since), None) => {
+                    query = query.filter(raw_sql::recipe_sync_seq().ge(since));
+                }
+                (None, _) => {}
             }
 
             let mut rows: Vec<RecipeSyncRow> = query
                 .select(recipe_sync_select!())
-                .order(recipes::id.asc())
+                .order((raw_sql::recipe_sync_seq().asc(), recipes::id.asc()))
                 .limit(params.limit + 1)
                 .load(conn)?;
-
             let has_more = rows.len() as i64 > params.limit;
             rows.truncate(params.limit as usize);
 
-            // Deletions are cheap (bare IDs) and not paged, so one page — the
-            // first — carries them all and the rest skip the query.
+            // Bare IDs, so every delta page carries all of them from its
+            // position on rather than paging them too.
             let deleted: Vec<Uuid> = match since {
-                Some(since) if params.after_id.is_none() => recipes::table
+                Some(since) => recipes::table
                     .filter(recipes::user_id.eq(user_id))
                     .filter(recipes::deleted_at.is_not_null())
                     .filter(recipes::deleted_seq.ge(since))
                     .select(recipes::id)
                     .load(conn)?,
-                _ => Vec::new(),
+                None => Vec::new(),
             };
 
+            let photo_ids = rows
+                .iter()
+                .flat_map(|row| row.photo_ids.iter().flatten().copied())
+                .collect();
+            let photos = photo_facts(conn, photo_ids)?;
+
+            // Mid-stream the position is the last row; at the end it is the
+            // clock, past every stamp this snapshot could see.
+            let position = match rows.last() {
+                Some(last) if has_more => (last.sync_seq, Some(last.id)),
+                _ => (sync_cursor.value, None),
+            };
             Ok::<_, diesel::result::Error>((
-                window.cursor,
-                rows,
+                Page {
+                    rows,
+                    position,
+                    has_more,
+                },
+                photos,
                 deleted,
-                has_more,
-                window.full_resync(),
+                since.is_none(),
             ))
         })
         .map_err(|e| {
@@ -211,10 +278,15 @@ pub async fn sync_recipes(
         })
     })
     .await?;
+    let Page {
+        rows,
+        position: (cursor, after_id),
+        has_more,
+    } = page;
 
     let changes = match rows
         .into_iter()
-        .map(SyncRecipe::try_from_row)
+        .map(|row| SyncRecipe::try_from_row(row, &photos))
         .collect::<Result<Vec<_>, _>>()
     {
         Ok(changes) => changes,
@@ -230,6 +302,7 @@ pub async fn sync_recipes(
             changes,
             deleted,
             cursor,
+            after_id,
             has_more,
             full_resync,
             normalization_contract_version: ramekin_core::search::normalization_contract_version(),

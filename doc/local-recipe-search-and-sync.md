@@ -45,10 +45,21 @@ sync pages, loading the cached corpus, and ranking it all run off the main
 thread (the store owns a private background context), because a full first
 sync on the main thread stalled the app for tens of seconds:
 
-- The first request returns all active recipe summaries.
+- A request with no cursor starts the stream from every active recipe.
 - Later requests return current recipe versions changed at or after the previous
   cursor, plus recipes whose tags changed.
 - Soft-deleted recipe IDs are returned as tombstones.
+
+The first sync and a delta are the same operation. The server orders recipes
+by change stamp (the later of the current version's stamp and its tags'
+stamps), then recipe ID, and each page returns the position the next request
+starts from: `cursor`, plus `after_id` while more pages follow, because a tag
+rename gives every recipe carrying the tag the same stamp. The client persists
+that pair after applying each page (`RecipeSyncPosition`), so an interrupted
+sync resumes where it stopped. A change that commits while a client is paging
+takes a stamp above everything the earlier pages saw, so it arrives later in
+the same stream; no page has to remember where the sync began. The last page
+returns one past the clock.
 
 The cursor is a database change counter, not a wall clock. Every sync-visible
 change carries a stamp from the one-row `sync_clock` table
@@ -64,17 +75,19 @@ Some cursors can't be answered with a delta, and get a full resync instead:
 one above the clock (issued by another database), and one at or below
 `sync_clock.resync_floor`, which `db::restamp_live` sets when a restore or
 import changes rows under clients' feet. A row the restore rolled back has no
-tombstone, so the response sets `full_resync` and clients drop cached rows it
-omits. iOS prunes recipes page by page within each page's ID range, and
-requests the rest of a full-resync sweep without a cursor so every page is
-judged the same way. A sweep that turns into a full resync partway through
-starts over from its first page, so no ID range goes unpruned.
+tombstone, so the response sets `full_resync`. For recipes that flag means
+the stream is starting over: iOS drops every cached recipe before applying the
+page, and the following pages are ordinary deltas. A paged sync whose position
+stops being answerable partway through gets the same restart. A restamp leaves
+every live row at the floor itself, so a position that continues a page
+(`after_id` set) is answerable at the floor (`SyncCursor::continuing`).
 
 That ordering is what a wall-clock cursor could not provide: a transaction took
 its timestamp before the cursor, committed after the sync SELECT's snapshot, and
 was then excluded by the next request's strict `>` filter, permanently omitting a
 recipe update, tag change, or tombstone. Changes can still be *redelivered*
-across syncs (a sweep keeps its first page's cursor). Clients
+across syncs (the cursor is inclusive, and every delta page carries all
+tombstones from its position on). Clients
 already apply changes idempotently (upsert by id, tombstone by id), and
 redelivering a change is recoverable where skipping one is not.
 `tests/test_recipe_sync_races.py` pins this by stalling a real API write
@@ -87,9 +100,10 @@ updates, deletions, and schema-version invalidation.
 The cache serves offline browsing, tag filters, the basic photo-presence
 filter, date filters, deterministic browse sorts, and — since the
 `ios-local-search-relevance` work — bare-text search with server-identical
-membership, relevance ranking, and tie-breaks. Queries involving source,
-photo size or dimensions, or random sorting still go to the paginated server
-endpoint. `doc/web-sync.md` separately records why the web cookbook remains
+membership, relevance ranking, and tie-breaks. Since 2026-11 it serves every
+list query: sync also carries the source name, calorie estimate and stored
+photo facts, so `source:`, `calories:`, `photo_size:` and `photo_dim:` filter
+locally, and random browsing is a local shuffle. `doc/web-sync.md` separately records why the web cookbook remains
 server-backed and paginated.
 
 Core Data already uses an SQLite persistent store in the app-group container.
@@ -134,13 +148,14 @@ for all five bare-text matching families.
 exact `ingredients::text` value used by the current SQL filter, persisted
 beside the structured ingredients. If server search later changes to match only
 flattened ingredient values, change the API, iOS, and shared vectors together.
-Source and detailed photo metadata remain outside the search document. Text
-queries combined with `source:`, `photo_size:`, or `photo_dim:` therefore stay
-on the server, as does random browsing. Local search covers bare text, `tag:`,
-basic photo presence, and created-date filters, with relevance, updated-date,
-rating, created-date, and title browse ordering. (A text query's browse sort
-is irrelevant on both sides — the app always asks for relevance — so only
-random browsing without text terms needs the server.)
+`SyncRecipe` also carries the facts the remaining structured filters compare:
+`source_name`, `kcal_per_serving` (with its display label), and each live
+photo's stored file size and pixel dimensions. Local search therefore covers
+every query the server does: bare text, `tag:`, `source:`, photo presence,
+`photo_size:`, `photo_dim:`, `calories:` and created-date filters, with
+relevance, updated-date, rating, created-date, title, calorie and random
+ordering. A calorie estimate is rewritten in place as ingredient names
+resolve, so `recipe_versions_stamp_calories` stamps that change for sync.
 
 PR #643 made the initial sync larger; later syncs now transfer only changed
 recipes. Immutable `recipe_versions` provide a stable version identity, and
@@ -385,10 +400,8 @@ verified against the live database by
 matching, filtering, scoring, and ordering
 (`ramekin-ios/Ramekin/RecipeSearchSupport.swift`), and the behavior is pinned
 end to end by `shared-test-vectors/search-match-filter.json` and
-`search-ranking.json`, consumed by both the Python API tests and XCTest. Text
-queries now serve from the cache unless they need `source:`, `photo_size:`,
-or `photo_dim:`; random browsing without text terms stays on the server. Web
-remains unchanged.
+`search-ranking.json`, consumed by both the Python API tests and XCTest. Every
+list query now serves from the cache. Web remains unchanged.
 
 ### Stage 2: optimize only from measurements
 

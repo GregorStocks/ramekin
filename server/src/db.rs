@@ -185,6 +185,16 @@ impl SyncCursor {
     pub fn since(&self, cursor: Option<i64>) -> Option<i64> {
         cursor.filter(|&since| since > self.resync_floor && since <= self.value)
     }
+
+    /// [`Self::since`] for a cursor that continues a paged sync from partway
+    /// through a change stamp. Such a cursor is a row's stamp, and rows a
+    /// restamp wrote carry the floor itself, so the floor is answerable
+    /// here. A stamp from before the restamp is still below it: the floor
+    /// is at or above every cursor issued until then, and a cursor is one
+    /// past the stamps it covers.
+    pub fn continuing(&self, cursor: i64) -> Option<i64> {
+        Some(cursor).filter(|&since| since >= self.resync_floor && since <= self.value)
+    }
 }
 
 /// Move the sync clock and its resync floor to `value` and stamp every live
@@ -483,6 +493,20 @@ mod sync_cursor_tests {
     #[test]
     fn a_cursor_from_another_database_is_a_full_resync() {
         assert_eq!(CURSOR.since(Some(101)), None);
+    }
+
+    #[test]
+    fn a_paged_sync_continues_through_the_rows_a_restamp_wrote() {
+        // A restamp leaves every live row at the floor, so a full resync
+        // that pages through them hands out the floor as its position.
+        assert_eq!(CURSOR.continuing(50), Some(50));
+        assert_eq!(CURSOR.continuing(100), Some(100));
+    }
+
+    #[test]
+    fn a_paged_sync_from_before_a_restamp_or_another_database_starts_over() {
+        assert_eq!(CURSOR.continuing(49), None);
+        assert_eq!(CURSOR.continuing(101), None);
     }
 }
 

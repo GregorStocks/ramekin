@@ -13,6 +13,8 @@ import AnyCodable
 /** Read-only recipe data needed to populate the iOS cache and mirror server search. */
 public struct SyncRecipe: Codable, JSONEncodable, Hashable {
 
+    /** The estimate for display, as `RecipeSummary.calories_per_serving`. */
+    public var caloriesPerServing: String?
     public var createdAt: Date
     public var description: String?
     public var id: UUID
@@ -20,22 +22,32 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
     public var ingredientMatchText: String
     public var ingredients: [Ingredient]
     public var instructions: String
+    /** Estimated calories per serving: what `calories:` filters and the calorie sort compare. Null when there's no per-serving estimate. */
+    public var kcalPerServing: Double?
     public var notes: String?
+    /** The recipe's photos, in order, leaving out deleted ones: what `photo_size:` and `photo_dim:` filters compare. */
+    public var photos: [SyncPhoto]
     public var rating: Int?
+    /** What `source:` filters match. */
+    public var sourceName: String?
     public var tags: [String]
     public var thumbnailPhotoId: UUID?
     public var title: String
     public var updatedAt: Date
 
-    public init(createdAt: Date, description: String? = nil, id: UUID, ingredientMatchText: String, ingredients: [Ingredient], instructions: String, notes: String? = nil, rating: Int? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
+    public init(caloriesPerServing: String? = nil, createdAt: Date, description: String? = nil, id: UUID, ingredientMatchText: String, ingredients: [Ingredient], instructions: String, kcalPerServing: Double? = nil, notes: String? = nil, photos: [SyncPhoto], rating: Int? = nil, sourceName: String? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
+        self.caloriesPerServing = caloriesPerServing
         self.createdAt = createdAt
         self.description = description
         self.id = id
         self.ingredientMatchText = ingredientMatchText
         self.ingredients = ingredients
         self.instructions = instructions
+        self.kcalPerServing = kcalPerServing
         self.notes = notes
+        self.photos = photos
         self.rating = rating
+        self.sourceName = sourceName
         self.tags = tags
         self.thumbnailPhotoId = thumbnailPhotoId
         self.title = title
@@ -43,14 +55,18 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case caloriesPerServing = "calories_per_serving"
         case createdAt = "created_at"
         case description
         case id
         case ingredientMatchText = "ingredient_match_text"
         case ingredients
         case instructions
+        case kcalPerServing = "kcal_per_serving"
         case notes
+        case photos
         case rating
+        case sourceName = "source_name"
         case tags
         case thumbnailPhotoId = "thumbnail_photo_id"
         case title
@@ -61,14 +77,18 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(caloriesPerServing, forKey: .caloriesPerServing)
         try container.encode(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(description, forKey: .description)
         try container.encode(id, forKey: .id)
         try container.encode(ingredientMatchText, forKey: .ingredientMatchText)
         try container.encode(ingredients, forKey: .ingredients)
         try container.encode(instructions, forKey: .instructions)
+        try container.encodeIfPresent(kcalPerServing, forKey: .kcalPerServing)
         try container.encodeIfPresent(notes, forKey: .notes)
+        try container.encode(photos, forKey: .photos)
         try container.encodeIfPresent(rating, forKey: .rating)
+        try container.encodeIfPresent(sourceName, forKey: .sourceName)
         try container.encode(tags, forKey: .tags)
         try container.encodeIfPresent(thumbnailPhotoId, forKey: .thumbnailPhotoId)
         try container.encode(title, forKey: .title)

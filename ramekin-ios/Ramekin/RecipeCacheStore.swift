@@ -10,23 +10,20 @@ struct CachedRecipeSearchDocument {
     let ingredientMatchText: String
     let instructions: String
     let notes: String?
+    /// Facts only the server knows, synced so the filters over them run
+    /// locally: what `source:`, `calories:` (and the calorie sort), and
+    /// `photo_size:`/`photo_dim:` compare.
+    var sourceName: String?
+    var kcalPerServing: Double?
+    var photos: [SyncPhoto] = []
 }
 
-/// Durable mid-sweep progress for a paged sync, so an interrupted sweep
-/// resumes where it left off instead of re-fetching every page.
-struct PendingSyncSweep: Codable, Equatable {
-    /// The cursor every page of the sweep filters on. Nil for a full sync.
-    let since: Int64?
-    /// Last recipe ID applied; the next page starts past it.
-    let afterId: UUID
-    /// The sweep's first-page watermark — what gets persisted as the sync
-    /// cursor once the sweep completes. Later pages' watermarks are too high:
-    /// they would skip changes that committed mid-sweep in id ranges the
-    /// sweep had already passed.
-    let watermark: Int64
-    /// A page came back as a full resync, so the rest of the sweep is
-    /// requested without a cursor (see `RecipeSyncSweep.run`).
-    var fullResync = false
+/// Where the recipe cache stands in the server's change stream: what the
+/// last applied sync page said to ask for next.
+struct RecipeSyncPosition: Codable, Equatable {
+    let cursor: Int64
+    /// Set while the sync that produced it still had pages to fetch.
+    var afterId: UUID?
 }
 
 enum RecipeCacheError: LocalizedError {
@@ -45,9 +42,9 @@ enum RecipeCacheError: LocalizedError {
 /// tens of seconds on slow devices.
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
-    // v4 added ingredientMatchText; bumping forces a full re-sync so every
-    // cached recipe carries it.
-    private static let cacheSchemaVersion = 4
+    // v5 added the source name, calorie estimate and photo facts; bumping
+    // forces a full re-sync so every cached recipe carries them.
+    private static let cacheSchemaVersion = 5
 
     /// Only touched inside `perform`.
     private let backgroundContext: NSManagedObjectContext
@@ -66,45 +63,22 @@ final class RecipeCacheStore {
         AccountScope.currentAccountKey()
     }
 
-    func syncCursor(accountKey: String) -> Int64? {
-        userDefaults.object(forKey: syncCursorKey(accountKey: accountKey)) as? Int64
-    }
-
-    func setSyncCursor(_ cursor: Int64, accountKey: String) {
-        userDefaults.set(cursor, forKey: syncCursorKey(accountKey: accountKey))
-    }
-
-    func clearSyncCursor(accountKey: String) {
-        userDefaults.removeObject(forKey: syncCursorKey(accountKey: accountKey))
-        clearPendingSyncSweep(accountKey: accountKey)
-    }
-
-    func pendingSyncSweep(accountKey: String) -> PendingSyncSweep? {
-        guard let data = userDefaults.data(forKey: pendingSweepKey(accountKey: accountKey)) else {
+    func syncPosition(accountKey: String) -> RecipeSyncPosition? {
+        guard let data = userDefaults.data(forKey: syncPositionKey(accountKey: accountKey)) else {
             return nil
         }
         do {
-            return try JSONDecoder().decode(PendingSyncSweep.self, from: data)
+            return try JSONDecoder().decode(RecipeSyncPosition.self, from: data)
         } catch {
-            // Dropping it only costs re-fetching the pages it had covered.
-            logger.log("Discarding invalid pending sync sweep: \(error)", source: "RecipeCache")
-            clearPendingSyncSweep(accountKey: accountKey)
+            // Dropping it only costs a full sync.
+            logger.log("Discarding invalid sync position: \(error)", source: "RecipeCache")
+            clearSyncPosition(accountKey: accountKey)
             return nil
         }
     }
 
-    func setPendingSyncSweep(_ sweep: PendingSyncSweep, accountKey: String) {
-        do {
-            let data = try JSONEncoder().encode(sweep)
-            userDefaults.set(data, forKey: pendingSweepKey(accountKey: accountKey))
-        } catch {
-            // Without it an interrupted sweep restarts from its first page.
-            logger.log("Failed to encode pending sync sweep: \(error)", source: "RecipeCache")
-        }
-    }
-
-    func clearPendingSyncSweep(accountKey: String) {
-        userDefaults.removeObject(forKey: pendingSweepKey(accountKey: accountKey))
+    func clearSyncPosition(accountKey: String) {
+        userDefaults.removeObject(forKey: syncPositionKey(accountKey: accountKey))
     }
 
     func loadSearchDocuments(accountKey: String) async throws -> [CachedRecipeSearchDocument] {
@@ -158,16 +132,17 @@ final class RecipeCacheStore {
         if droppedRows {
             // A full re-sync rewrites the dropped recipes.
             try backgroundContext.save()
-            clearSyncCursor(accountKey: accountKey)
+            clearSyncPosition(accountKey: accountKey)
         }
         return documents
     }
 
-    /// Which of `ids` the cache holds for the account, or nil until a full
-    /// sync has completed (first launch, or after a schema bump), when a
-    /// missing recipe may just not be synced yet.
+    /// Which of `ids` the cache holds for the account, or nil while a sync
+    /// has yet to reach the end of the stream (first launch, a schema bump,
+    /// an interrupted sync), when a missing recipe may just not be synced
+    /// yet.
     func existingRecipeIds(_ ids: [UUID], accountKey: String) async throws -> Set<UUID>? {
-        guard syncCursor(accountKey: accountKey) != nil else {
+        guard let position = syncPosition(accountKey: accountKey), position.afterId == nil else {
             return nil
         }
         return try await backgroundContext.perform { [self] in
@@ -208,15 +183,17 @@ final class RecipeCacheStore {
         return true
     }
 
-    /// `afterId` is the `after_id` the page was requested with, which bounds
-    /// the ID range a full-resync page prunes.
-    func apply(syncResponse: SyncRecipesResponse, afterId: UUID?, accountKey: String) async throws {
+    /// Applies one sync page and records the position it leaves the cache
+    /// at. The position is written after the rows, so an interruption in
+    /// between only has the page delivered again.
+    func apply(syncResponse: SyncRecipesResponse, accountKey: String) async throws {
         try await backgroundContext.perform { [self] in
             let context = backgroundContext
             let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
             if syncResponse.fullResync {
-                // The page settles a whole ID range, so look at every cached
-                // row; full resyncs are rare.
+                // The server is starting the stream over and sends no
+                // tombstones for what it no longer has, so nothing cached
+                // can be trusted to still exist.
                 request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
             } else {
                 // One lookup for the whole page; a fetch per recipe dominated
@@ -235,43 +212,20 @@ final class RecipeCacheStore {
                 }
             }
 
-            for id in syncResponse.deleted {
+            let live = Set(syncResponse.changes.map(\.id))
+            let gone = syncResponse.fullResync
+                ? existingById.keys.filter { !live.contains($0) }
+                : syncResponse.deleted
+            for id in gone {
                 if let cachedRecipe = existingById.removeValue(forKey: id) {
                     context.delete(cachedRecipe)
-                }
-            }
-
-            if syncResponse.fullResync {
-                // A recipe the server lost without a tombstone (e.g. created
-                // after a restored backup was taken) is in neither list.
-                let live = Set(syncResponse.changes.map(\.id))
-                let gone = existingById.keys.filter {
-                    !live.contains($0)
-                        && RecipeSyncSweep.fullResyncPageCovers($0, afterId: afterId, response: syncResponse)
-                }
-                for id in gone {
-                    if let cachedRecipe = existingById.removeValue(forKey: id) {
-                        context.delete(cachedRecipe)
-                    }
                 }
             }
 
             for recipe in syncResponse.changes {
                 let cachedRecipe = existingById[recipe.id] ?? CachedRecipe(context: context)
                 existingById[recipe.id] = cachedRecipe
-                cachedRecipe.accountKey = accountKey
-                cachedRecipe.id = recipe.id
-                cachedRecipe.ingredientMatchText = recipe.ingredientMatchText
-                cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
-                cachedRecipe.instructions = recipe.instructions
-                cachedRecipe.notes = recipe.notes
-                cachedRecipe.title = recipe.title
-                cachedRecipe.summaryDescription = recipe.description
-                cachedRecipe.tagsJSON = try tagsJSON(recipe.tags)
-                cachedRecipe.thumbnailPhotoId = recipe.thumbnailPhotoId
-                cachedRecipe.rating = recipe.rating.map(String.init)
-                cachedRecipe.createdAt = recipe.createdAt
-                cachedRecipe.updatedAt = recipe.updatedAt
+                try write(recipe, accountKey: accountKey, to: cachedRecipe)
             }
 
             if context.hasChanges {
@@ -279,7 +233,29 @@ final class RecipeCacheStore {
                 try context.save()
             }
             userDefaults.set(Self.cacheSchemaVersion, forKey: rowsSchemaVersionKey(accountKey: accountKey))
+            let position = RecipeSyncPosition(cursor: syncResponse.cursor, afterId: syncResponse.afterId)
+            userDefaults.set(try JSONEncoder().encode(position), forKey: syncPositionKey(accountKey: accountKey))
         }
+    }
+
+    private func write(_ recipe: SyncRecipe, accountKey: String, to cachedRecipe: CachedRecipe) throws {
+        cachedRecipe.accountKey = accountKey
+        cachedRecipe.id = recipe.id
+        cachedRecipe.ingredientMatchText = recipe.ingredientMatchText
+        cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
+        cachedRecipe.instructions = recipe.instructions
+        cachedRecipe.notes = recipe.notes
+        cachedRecipe.sourceName = recipe.sourceName
+        cachedRecipe.kcalPerServing = recipe.kcalPerServing.map(NSNumber.init(value:))
+        cachedRecipe.caloriesLabel = recipe.caloriesPerServing
+        cachedRecipe.photosJSON = try encodeCachedJSON(recipe.photos, field: "photos")
+        cachedRecipe.title = recipe.title
+        cachedRecipe.summaryDescription = recipe.description
+        cachedRecipe.tagsJSON = try tagsJSON(recipe.tags)
+        cachedRecipe.thumbnailPhotoId = recipe.thumbnailPhotoId
+        cachedRecipe.rating = recipe.rating.map(String.init)
+        cachedRecipe.createdAt = recipe.createdAt
+        cachedRecipe.updatedAt = recipe.updatedAt
     }
 
     /// Nil for a corrupt row, which the caller drops so a re-sync can
@@ -291,6 +267,7 @@ final class RecipeCacheStore {
               let ingredientMatchText = cachedRecipe.ingredientMatchText,
               let ingredientsJSON = cachedRecipe.ingredientsJSON,
               let instructions = cachedRecipe.instructions,
+              let photosJSON = cachedRecipe.photosJSON,
               let tagsJSON = cachedRecipe.tagsJSON,
               let title = cachedRecipe.title,
               let updatedAt = cachedRecipe.updatedAt
@@ -299,12 +276,14 @@ final class RecipeCacheStore {
             return nil
         }
         guard let ingredients = decodeCachedJSON([Ingredient].self, from: ingredientsJSON, field: "ingredients", rowId: rowId),
-              let tags = decodeCachedJSON([String].self, from: tagsJSON, field: "tags", rowId: rowId)
+              let tags = decodeCachedJSON([String].self, from: tagsJSON, field: "tags", rowId: rowId),
+              let photos = decodeCachedJSON([SyncPhoto].self, from: photosJSON, field: "photos", rowId: rowId)
         else {
             return nil
         }
 
         let summary = RecipeSummary(
+            caloriesPerServing: cachedRecipe.caloriesLabel,
             createdAt: createdAt,
             description: cachedRecipe.summaryDescription,
             id: id,
@@ -319,7 +298,10 @@ final class RecipeCacheStore {
             ingredients: ingredients,
             ingredientMatchText: ingredientMatchText,
             instructions: instructions,
-            notes: cachedRecipe.notes
+            notes: cachedRecipe.notes,
+            sourceName: cachedRecipe.sourceName,
+            kcalPerServing: cachedRecipe.kcalPerServing?.doubleValue,
+            photos: photos
         )
     }
 
@@ -348,16 +330,9 @@ final class RecipeCacheStore {
         }
     }
 
-    private func syncCursorKey(accountKey: String) -> String {
+    private func syncPositionKey(accountKey: String) -> String {
         AccountScope.userDefaultsKey(
-            prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_sync_cursor",
-            accountKey: accountKey
-        )
-    }
-
-    private func pendingSweepKey(accountKey: String) -> String {
-        AccountScope.userDefaultsKey(
-            prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_pending_sweep",
+            prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_sync_position",
             accountKey: accountKey
         )
     }

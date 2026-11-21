@@ -98,6 +98,7 @@ docs/SyncApi.md
 docs/SyncMealPlan.md
 docs/SyncMealPlansRequest.md
 docs/SyncMealPlansResponse.md
+docs/SyncPhoto.md
 docs/SyncRecipe.md
 docs/SyncRecipesResponse.md
 docs/SyncShoppingListItem.md
@@ -218,6 +219,7 @@ src/models/step_status.rs
 src/models/sync_meal_plan.rs
 src/models/sync_meal_plans_request.rs
 src/models/sync_meal_plans_response.rs
+src/models/sync_photo.rs
 src/models/sync_recipe.rs
 src/models/sync_recipes_response.rs
 src/models/sync_shopping_list_item.rs

@@ -1,21 +1,9 @@
 import SwiftUI
 
-// MARK: - List State
-
-/// Why the recipes on screen may not be current. At most one applies.
-enum RecipeListStaleness: Equatable {
-    /// A cache-served list could not be freshened: the list on screen may be
-    /// stale, and the user needs a signal plus a way to retry.
-    case syncFailed
-    /// A server load failed while earlier results were still on screen, so
-    /// the list may not match the current search, filters, or sort.
-    case reloadFailed
-}
-
 // MARK: - Sort & Filter Types
 
 /// Sort order for *browsing* the recipe list (no active text search). During
-/// a text search the list ignores this and lets the server rank by relevance;
+/// a text search the list ignores this and ranks by relevance;
 /// see RecipeListFilterSupport.hasTextQuery.
 enum RecipeSortOrder: String, CaseIterable {
     case newest
@@ -56,15 +44,6 @@ enum RecipeSortOrder: String, CaseIterable {
         case .caloriesLow: return "Fewest calories"
         case .caloriesHigh: return "Most calories"
         case .random: return "Random"
-        }
-    }
-
-    /// Browse orders the cache can't reproduce: random, and calories, which
-    /// the synced recipes don't carry.
-    var requiresServer: Bool {
-        switch self {
-        case .random, .caloriesLow, .caloriesHigh: return true
-        case .newest, .oldest, .rating, .title, .created: return false
         }
     }
 }

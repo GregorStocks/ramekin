@@ -1,6 +1,6 @@
 import requests
 
-from conftest import make_ingredient
+from conftest import connect_db, make_ingredient
 from ramekin_client.api import RecipesApi, TagsApi
 from ramekin_client.models import (
     CreateRecipeRequest,
@@ -121,6 +121,59 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     assert response["full_resync"] is False
 
 
+def test_recipe_sync_redelivers_a_recipe_whose_calorie_estimate_changed(
+    authed_api_client, server_url, database_url
+):
+    """The server rewrites a version's estimate in place as ingredient names
+    resolve. Local calorie filters read the synced value, so the change has
+    to reach the next delta."""
+    client, _user_id = authed_api_client
+    created = RecipesApi(client).create_recipe(
+        CreateRecipeRequest(
+            title="Estimated Later",
+            instructions="Mix it.",
+            ingredients=[make_ingredient(item="flour")],
+        )
+    )
+    cursor = _sync(client, server_url)["cursor"]
+    assert _sync(client, server_url, cursor=cursor)["changes"] == []
+
+    conn = connect_db(database_url)
+    try:
+        conn.execute(
+            """
+            update recipe_versions
+            set kcal_per_serving = 432.5, kcal_per_serving_label = '~430 kcal'
+            where id = (select current_version_id from recipes where id = ?)
+            """,
+            (str(created.id),),
+        )
+    finally:
+        conn.close()
+
+    delta = _sync(client, server_url, cursor=cursor)
+    [changed] = delta["changes"]
+    assert changed["id"] == str(created.id)
+    assert changed["kcal_per_serving"] == 432.5
+    assert changed["calories_per_serving"] == "~430 kcal"
+
+    # Rewriting the same estimate is not a change.
+    cursor = delta["cursor"]
+    conn = connect_db(database_url)
+    try:
+        conn.execute(
+            """
+            update recipe_versions
+            set kcal_per_serving = 432.5, kcal_per_serving_label = '~430 kcal'
+            where id = (select current_version_id from recipes where id = ?)
+            """,
+            (str(created.id),),
+        )
+    finally:
+        conn.close()
+    assert _sync(client, server_url, cursor=cursor)["changes"] == []
+
+
 def test_recipe_sync_full_response_sends_no_tombstones(authed_api_client, server_url):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -232,94 +285,125 @@ def test_recipe_sync_includes_recipes_after_recipe_create_revives_tag(
     assert recipes_by_id[str(existing.id)]["tags"] == ["revived-by-create"]
 
 
-def test_recipe_sync_paginates_by_recipe_id(authed_api_client, server_url):
+def _create(recipes_api, title, tags=None):
+    return recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title=title,
+            instructions="Cook it.",
+            ingredients=[make_ingredient(item="salt")],
+            tags=tags,
+        )
+    )
+
+
+def _next_page(client, server_url, page, limit):
+    return _sync(
+        client,
+        server_url,
+        cursor=page["cursor"],
+        after_id=page["after_id"],
+        limit=limit,
+    )
+
+
+def test_recipe_sync_pages_in_change_order(authed_api_client, server_url):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
     cursor = _sync(client, server_url)["cursor"]
 
-    created_ids = set()
-    for index in range(3):
-        created = recipes_api.create_recipe(
-            CreateRecipeRequest(
-                title=f"Paged Recipe {index}",
-                instructions="Cook it.",
-                ingredients=[make_ingredient(item="salt")],
-            )
-        )
-        created_ids.add(str(created.id))
-    deleted = recipes_api.create_recipe(
-        CreateRecipeRequest(
-            title="Paged Deleted Recipe",
-            instructions="Cook it.",
-            ingredients=[make_ingredient(item="pepper")],
-        )
-    )
-
+    created = [str(_create(recipes_api, f"Paged {i}").id) for i in range(3)]
+    deleted = _create(recipes_api, "Paged Deleted")
     recipes_api.delete_recipe(deleted.id)
 
     first_page = _sync(client, server_url, cursor=cursor, limit=2)
 
-    assert len(first_page["changes"]) == 2
+    assert [recipe["id"] for recipe in first_page["changes"]] == created[:2]
     assert first_page["has_more"] is True
+    assert first_page["after_id"] == created[1]
+    assert first_page["full_resync"] is False
     assert str(deleted.id) in first_page["deleted"]
 
-    second_page = _sync(
-        client,
-        server_url,
-        cursor=cursor,
-        limit=2,
-        after_id=first_page["changes"][-1]["id"],
-    )
+    second_page = _next_page(client, server_url, first_page, limit=2)
 
+    assert [recipe["id"] for recipe in second_page["changes"]] == created[2:]
     assert second_page["has_more"] is False
-    # Deletions all ride on the sweep's first page.
-    assert second_page["deleted"] == []
+    assert second_page["after_id"] is None
+    assert second_page["full_resync"] is False
+    # The delete came after the first page's position, so it rides along
+    # again: a client that only applied this page still learns of it.
+    assert str(deleted.id) in second_page["deleted"]
 
-    swept_ids = {recipe["id"] for recipe in first_page["changes"]} | {
-        recipe["id"] for recipe in second_page["changes"]
-    }
-    assert created_ids <= swept_ids
-    # Pages sweep the recipe-id space in ascending order without overlap.
-    all_ids = [
-        recipe["id"] for recipe in first_page["changes"] + second_page["changes"]
-    ]
-    assert all_ids == sorted(all_ids)
-    assert len(all_ids) == len(set(all_ids))
+    # The final cursor is past everything delivered.
+    caught_up = _sync(client, server_url, cursor=second_page["cursor"])
+    assert caught_up["changes"] == []
+    assert caught_up["deleted"] == []
 
 
-def test_recipe_sync_first_page_cursor_covers_later_changes(
+def test_recipe_sync_delivers_changes_that_land_while_paging(
     authed_api_client, server_url
 ):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
+    early = _create(recipes_api, "Early")
+    _create(recipes_api, "Middle")
 
-    for index in range(2):
-        recipes_api.create_recipe(
-            CreateRecipeRequest(
-                title=f"Sweep Recipe {index}",
-                instructions="Cook it.",
-                ingredients=[make_ingredient(item="salt")],
-            )
-        )
+    page = _sync(client, server_url, limit=1)
+    assert page["full_resync"] is True
+    assert page["has_more"] is True
+    assert [recipe["id"] for recipe in page["changes"]] == [str(early.id)]
 
-    first_page = _sync(client, server_url, limit=1)
-    assert first_page["has_more"] is True
-
-    # A change that lands while the sweep is still paging. Persisting the
-    # first page's cursor (the documented client protocol) must hand it to
-    # the next sync.
-    late = recipes_api.create_recipe(
-        CreateRecipeRequest(
-            title="Late Arrival",
-            instructions="Cook it.",
-            ingredients=[make_ingredient(item="saffron")],
-        )
+    # Both land behind the position the client has already paged past in
+    # recipe-id terms, but ahead of it in the change stream.
+    recipes_api.update_recipe(
+        early.id,
+        UpdateRecipeRequest(
+            title="Early, Edited",
+            expected_version_id=recipes_api.get_recipe(early.id).version_id,
+        ),
     )
-    _sync(client, server_url, limit=1, after_id=first_page["changes"][-1]["id"])
+    late = _create(recipes_api, "Late Arrival")
 
-    next_sync = _sync(client, server_url, cursor=first_page["cursor"])
+    titles = {}
+    while page["has_more"]:
+        page = _next_page(client, server_url, page, limit=1)
+        # Only the page that restarted the stream is a full resync.
+        assert page["full_resync"] is False
+        for recipe in page["changes"]:
+            titles[recipe["id"]] = recipe["title"]
 
-    assert str(late.id) in {recipe["id"] for recipe in next_sync["changes"]}
+    assert titles[str(early.id)] == "Early, Edited"
+    assert titles[str(late.id)] == "Late Arrival"
+    assert page["after_id"] is None
+
+
+def test_recipe_sync_pages_through_recipes_sharing_one_change_stamp(
+    authed_api_client, server_url
+):
+    """A tag rename stamps the tag, so every recipe carrying it sits at the
+    same place in the stream; `after_id` is what tells them apart."""
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    tagged = {
+        str(_create(recipes_api, f"Tagged {i}", tags=["Shared"]).id) for i in range(3)
+    }
+    cursor = _sync(client, server_url)["cursor"]
+
+    tags_api = TagsApi(client)
+    tag = next(tag for tag in tags_api.list_all_tags().tags if tag.name == "Shared")
+    tags_api.rename_tag(tag.id, RenameTagRequest(name="Shared Renamed"))
+
+    page = _sync(client, server_url, cursor=cursor, limit=1)
+    pages = [page]
+    while page["has_more"]:
+        page = _next_page(client, server_url, page, limit=1)
+        pages.append(page)
+
+    delivered = [recipe for page in pages for recipe in page["changes"]]
+    assert sorted(recipe["id"] for recipe in delivered) == sorted(tagged)
+    assert all(recipe["tags"] == ["Shared Renamed"] for recipe in delivered)
+    # All three share the stamp: the cursor holds still while after_id moves.
+    assert pages[0]["cursor"] == pages[1]["cursor"]
+    assert pages[0]["after_id"] != pages[1]["after_id"]
 
 
 def test_recipe_sync_rejects_missing_or_invalid_limit(authed_api_client, server_url):
@@ -395,30 +479,3 @@ def test_recipe_sync_answers_a_cursor_from_another_database_with_a_full_sync(
     assert response["cursor"] >= current
     # Flagged so the client drops cached recipes this database doesn't have.
     assert response["full_resync"] is True
-
-
-def test_recipe_sync_full_resync_flag_is_on_every_page_of_a_full_sweep(
-    authed_api_client, server_url
-):
-    client, _user_id = authed_api_client
-    recipes_api = RecipesApi(client)
-    for title in ("Page One", "Page Two"):
-        recipes_api.create_recipe(
-            CreateRecipeRequest(
-                title=title,
-                instructions="Cook it.",
-                ingredients=[make_ingredient(item="rice")],
-            )
-        )
-
-    first = _sync(client, server_url, limit=1)
-    second = _sync(
-        client,
-        server_url,
-        limit=1,
-        after_id=first["changes"][0]["id"],
-    )
-
-    assert first["has_more"] is True
-    assert first["full_resync"] is True
-    assert second["full_resync"] is True

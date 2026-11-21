@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from uuid import UUID
 from ramekin_client.models.sync_recipe import SyncRecipe
@@ -29,13 +29,14 @@ class SyncRecipesResponse(BaseModel):
     """
     SyncRecipesResponse
     """ # noqa: E501
-    changes: List[SyncRecipe] = Field(description="The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent.")
-    cursor: StrictInt = Field(description="This page's snapshot watermark. Once a sweep completes, persist the *first* page's cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped.")
-    deleted: List[UUID] = Field(description="Recipe IDs deleted at or after `cursor`. Only sent on a delta sweep's first page; later pages and full resyncs return an empty list.")
-    full_resync: StrictBool = Field(description="True when this page lists every active recipe in its ID range rather than changes since `cursor`: `cursor` was absent, predates a restored backup, or came from another database. The client must then drop cached recipes the sweep doesn't return (a full resync sends no tombstones) and request the sweep's remaining pages without `cursor`, since a later page could otherwise judge the same cursor differently. Pages are ordered by ID, so each settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page.")
-    has_more: StrictBool = Field(description="True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID.")
+    after_id: Optional[UUID] = Field(default=None, description="Set while `has_more`: the last recipe of this page, which shares its change stamp with recipes still to come. Pass it back with `cursor`.")
+    changes: List[SyncRecipe] = Field(description="The next `limit` active recipes changed since the request's position, oldest change first. A recipe changed again later comes again, later in the stream, so paging can't skip a change that lands mid-sync.")
+    cursor: StrictInt = Field(description="Where the next request starts: pass it back as `cursor`, together with `after_id`. Persist the pair once this page is applied; an interrupted sync resumes from it. Changes may be redelivered, but none can be skipped.")
+    deleted: List[UUID] = Field(description="Recipe IDs deleted since the request's position. A full resync sends none.")
+    full_resync: StrictBool = Field(description="True when the request's cursor couldn't be answered with a delta: it was absent, predates a restored backup, or came from another database. The stream then starts over from every active recipe, so the client must drop everything it has cached before applying this page (recipes the server lost have no tombstone). Later pages of the same sync are ordinary deltas.")
+    has_more: StrictBool = Field(description="True when more changes follow this page. Request them right away.")
     normalization_contract_version: Annotated[int, Field(strict=True, ge=0)] = Field(description="Version of the shared search-normalization contract (shared-test-vectors/search-normalization.json) the server was built with. A client mirroring server search locally must fail the sync when it does not support this version: matching with a stale contract would silently drop or add results relative to server search.")
-    __properties: ClassVar[List[str]] = ["changes", "cursor", "deleted", "full_resync", "has_more", "normalization_contract_version"]
+    __properties: ClassVar[List[str]] = ["after_id", "changes", "cursor", "deleted", "full_resync", "has_more", "normalization_contract_version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +84,11 @@ class SyncRecipesResponse(BaseModel):
                 if _item_changes:
                     _items.append(_item_changes.to_dict())
             _dict['changes'] = _items
+        # set to None if after_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.after_id is None and "after_id" in self.model_fields_set:
+            _dict['after_id'] = None
+
         return _dict
 
     @classmethod
@@ -95,6 +101,7 @@ class SyncRecipesResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "after_id": obj.get("after_id"),
             "changes": [SyncRecipe.from_dict(_item) for _item in obj["changes"]] if obj.get("changes") is not None else None,
             "cursor": obj.get("cursor"),
             "deleted": obj.get("deleted"),

@@ -27,15 +27,9 @@ struct RecipeListView: View {
                 Divider()
             }
             if showsListChrome {
-                switch viewModel.staleness {
-                case .reloadFailed:
-                    failureBanner("Couldn't update results — these may be out of date")
-                    Divider()
-                case .syncFailed:
+                if viewModel.syncFailed {
                     failureBanner("Couldn't refresh — showing saved recipes")
                     Divider()
-                case nil:
-                    EmptyView()
                 }
                 filterBar
                 Divider()
@@ -217,34 +211,6 @@ struct RecipeListView: View {
             ForEach(viewModel.recipes) { recipe in
                 NavigationLink(value: NavigationDestination.recipe(recipe.id)) {
                     RecipeRowView(recipe: recipe)
-                }
-            }
-
-            if viewModel.hasMore {
-                if viewModel.loadMoreFailed {
-                    HStack {
-                        Spacer()
-                        VStack(spacing: 8) {
-                            Text("Couldn't load more recipes.")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                            Button("Retry") {
-                                Task { await viewModel.loadMore() }
-                            }
-                        }
-                        Spacer()
-                    }
-                    .listRowSeparator(.hidden)
-                } else {
-                    HStack {
-                        Spacer()
-                        ProgressView()
-                        Spacer()
-                    }
-                    .listRowSeparator(.hidden)
-                    .onAppear {
-                        Task { await viewModel.loadMore() }
-                    }
                 }
             }
         }

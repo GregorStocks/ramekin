@@ -4,13 +4,6 @@ import Foundation
 /// a network or an on-disk cache.
 struct RecipeListViewAPIClient {
     var syncTags: (_ cursor: Int64?) async throws -> SyncTagsResponse
-    var listRecipes: (
-        _ limit: Int64,
-        _ offset: Int64,
-        _ query: String?,
-        _ sortBy: SortBy?,
-        _ sortDir: Direction?
-    ) async throws -> ListRecipesResponse
     var syncRecipes: (
         _ cursor: Int64?,
         _ limit: Int64,
@@ -19,15 +12,6 @@ struct RecipeListViewAPIClient {
 
     static let live = RecipeListViewAPIClient(
         syncTags: { try await SyncAPI.syncTags(cursor: $0) },
-        listRecipes: { limit, offset, query, sortBy, sortDir in
-            try await RecipesAPI.listRecipes(
-                limit: limit,
-                offset: offset,
-                q: query,
-                sortBy: sortBy,
-                sortDir: sortDir
-            )
-        },
         syncRecipes: { cursor, limit, afterId in
             try await SyncAPI.syncRecipes(limit: limit, cursor: cursor, afterId: afterId)
         }
@@ -37,24 +21,15 @@ struct RecipeListViewAPIClient {
 @MainActor
 struct RecipeListCacheClient {
     var currentAccountKey: () -> String?
-    var syncCursor: (_ accountKey: String) -> Int64?
-    var setSyncCursor: (_ cursor: Int64, _ accountKey: String) -> Void
-    var clearSyncCursor: (_ accountKey: String) -> Void
-    var pendingSyncSweep: (_ accountKey: String) -> PendingSyncSweep?
-    var setPendingSyncSweep: (_ sweep: PendingSyncSweep, _ accountKey: String) -> Void
-    var clearPendingSyncSweep: (_ accountKey: String) -> Void
+    var syncPosition: (_ accountKey: String) -> RecipeSyncPosition?
     var loadSearchCorpus: (_ accountKey: String) async throws -> RecipeSearchCorpus
-    var apply: (_ syncResponse: SyncRecipesResponse, _ afterId: UUID?, _ accountKey: String) async throws -> Void
+    /// Applies a sync page and records the position it leaves the cache at.
+    var apply: (_ syncResponse: SyncRecipesResponse, _ accountKey: String) async throws -> Void
 
     static let live = RecipeListCacheClient(
         currentAccountKey: { RecipeCacheStore.shared.currentAccountKey() },
-        syncCursor: { RecipeCacheStore.shared.syncCursor(accountKey: $0) },
-        setSyncCursor: { RecipeCacheStore.shared.setSyncCursor($0, accountKey: $1) },
-        clearSyncCursor: { RecipeCacheStore.shared.clearSyncCursor(accountKey: $0) },
-        pendingSyncSweep: { RecipeCacheStore.shared.pendingSyncSweep(accountKey: $0) },
-        setPendingSyncSweep: { RecipeCacheStore.shared.setPendingSyncSweep($0, accountKey: $1) },
-        clearPendingSyncSweep: { RecipeCacheStore.shared.clearPendingSyncSweep(accountKey: $0) },
+        syncPosition: { RecipeCacheStore.shared.syncPosition(accountKey: $0) },
         loadSearchCorpus: { try await RecipeCacheStore.shared.loadSearchCorpus(accountKey: $0) },
-        apply: { try await RecipeCacheStore.shared.apply(syncResponse: $0, afterId: $1, accountKey: $2) }
+        apply: { try await RecipeCacheStore.shared.apply(syncResponse: $0, accountKey: $1) }
     )
 }

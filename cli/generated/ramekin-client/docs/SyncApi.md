@@ -50,8 +50,8 @@ Name | Type | Description  | Required | Notes
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **limit** | **i64** | Maximum number of recipes returned per page, between 1 and 500. | [required] |
-**cursor** | Option<**i64**> | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. |  |
-**after_id** | Option<**uuid::Uuid**> | ID of the last recipe on the previous page. Absent on a sweep's first page. |  |
+**cursor** | Option<**i64**> | `cursor` from the previous response. Absent means a full sync. |  |
+**after_id** | Option<**uuid::Uuid**> | `after_id` from the previous response, when it had one. |  |
 
 ### Return type
 

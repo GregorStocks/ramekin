@@ -9,7 +9,6 @@ final class RecipeSearchSupportTests: XCTestCase {
         let parsed = RecipeSearchSupport.parse("chicken soup")
         XCTAssertEqual(parsed.textTokens, ["chicken", "soup"])
         XCTAssertTrue(parsed.tags.isEmpty)
-        XCTAssertFalse(parsed.requiresServer)
     }
 
     func testParseQuotedPhraseIsOneToken() {
@@ -24,7 +23,6 @@ final class RecipeSearchSupportTests: XCTestCase {
         XCTAssertEqual(parsed.tags, ["dinner"])
         XCTAssertEqual(parsed.source, "NYTimes")
         XCTAssertEqual(parsed.photoFilter, .hasPhotos)
-        XCTAssertTrue(parsed.requiresServer)
     }
 
     func testParseNoPhotosToken() {
@@ -60,7 +58,6 @@ final class RecipeSearchSupportTests: XCTestCase {
         XCTAssertNil(parsed.createdBefore)
         XCTAssertNil(parsed.photoSize)
         XCTAssertNil(parsed.photoDim)
-        XCTAssertFalse(parsed.requiresServer)
     }
 
     func testParseUnknownPrefixIsText() {
@@ -71,7 +68,6 @@ final class RecipeSearchSupportTests: XCTestCase {
         let parsed = RecipeSearchSupport.parse("photo_size:<100000 photo_dim:>500")
         XCTAssertEqual(parsed.photoSize, NumericThreshold(comparison: .lessThan, value: 100_000))
         XCTAssertEqual(parsed.photoDim, NumericThreshold(comparison: .greaterThan, value: 500))
-        XCTAssertTrue(parsed.requiresServer)
     }
 
     func testNormalizedMetacharactersMatchLiterally() {

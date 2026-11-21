@@ -199,6 +199,7 @@ Class | Method | HTTP request | Description
  - [SyncMealPlan](ramekin_client/docs/SyncMealPlan.md)
  - [SyncMealPlansRequest](ramekin_client/docs/SyncMealPlansRequest.md)
  - [SyncMealPlansResponse](ramekin_client/docs/SyncMealPlansResponse.md)
+ - [SyncPhoto](ramekin_client/docs/SyncPhoto.md)
  - [SyncRecipe](ramekin_client/docs/SyncRecipe.md)
  - [SyncRecipesResponse](ramekin_client/docs/SyncRecipesResponse.md)
  - [SyncShoppingListItem](ramekin_client/docs/SyncShoppingListItem.md)

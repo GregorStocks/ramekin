@@ -15,7 +15,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             forKey: "recipe_cache_v2_last_sync_at_\(encodedAccountKey)"
         )
 
-        XCTAssertNil(store.syncCursor(accountKey: accountKey))
+        XCTAssertNil(store.syncPosition(accountKey: accountKey))
     }
 
     func testRowsWrittenByOlderSchemaArePurgedNotServed() async throws {
@@ -34,7 +34,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
         let markerKey = defaults.dictionaryRepresentation().keys.first {
@@ -55,7 +54,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
         let served = try await store.loadSearchDocuments(accountKey: accountKey)
@@ -88,7 +86,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
 
@@ -101,28 +98,30 @@ final class RecipeCacheStoreTests: XCTestCase {
         XCTAssertEqual(document.ingredientMatchText, "[{\"item\": \"flour\"}]")
         XCTAssertEqual(document.instructions, "Mix and bake.")
         XCTAssertEqual(document.notes, "Cool completely.")
-        // The cursor only advances when a sweep completes, never per page.
-        XCTAssertNil(store.syncCursor(accountKey: accountKey))
     }
 
-    func testPendingSyncSweepRoundTripsAndClearsWithCursor() {
+    func testApplyRecordsThePositionEachPageLeavesTheCacheAt() async throws {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        let sweep = PendingSyncSweep(since: nil, afterId: UUID(), watermark: 250)
+        let midStream = makeRecipe()
 
-        store.setPendingSyncSweep(sweep, accountKey: accountKey)
-        store.setSyncCursor(300, accountKey: accountKey)
+        var response = page([midStream], hasMore: true)
+        response.afterId = midStream.id
+        try await store.apply(syncResponse: response, accountKey: accountKey)
 
-        XCTAssertEqual(store.pendingSyncSweep(accountKey: accountKey), sweep)
-        XCTAssertEqual(store.syncCursor(accountKey: accountKey), 300)
-        XCTAssertNil(store.pendingSyncSweep(accountKey: "https://example.test|other"))
+        XCTAssertEqual(
+            store.syncPosition(accountKey: accountKey),
+            RecipeSyncPosition(cursor: 300, afterId: midStream.id)
+        )
+        XCTAssertNil(store.syncPosition(accountKey: "https://example.test|other"))
 
-        store.clearSyncCursor(accountKey: accountKey)
+        try await store.apply(syncResponse: page([makeRecipe()]), accountKey: accountKey)
 
-        XCTAssertNil(store.syncCursor(accountKey: accountKey))
-        // Invalidating the cache restarts the sweep from scratch: resuming a
-        // pending sweep against a different `since` would skip pages.
-        XCTAssertNil(store.pendingSyncSweep(accountKey: accountKey))
+        XCTAssertEqual(store.syncPosition(accountKey: accountKey), RecipeSyncPosition(cursor: 300))
+
+        store.clearSyncPosition(accountKey: accountKey)
+
+        XCTAssertNil(store.syncPosition(accountKey: accountKey))
     }
 
     func testApplyReplacesSearchableFieldsOnUpdate() async throws {
@@ -138,7 +137,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
         let updated = makeRecipe(
@@ -158,7 +156,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
 
@@ -182,7 +179,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
 
@@ -195,7 +191,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
 
@@ -217,7 +212,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
         let added = makeRecipe(updatedAt: Date(timeIntervalSince1970: 100))
@@ -231,7 +225,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
 
@@ -255,7 +248,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                     hasMore: false,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 ),
-                afterId: nil,
                 accountKey: key
             )
         }
@@ -269,7 +261,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
-            afterId: nil,
             accountKey: accountKey
         )
 
@@ -298,7 +289,6 @@ final class RecipeCacheStoreTests: XCTestCase {
                     hasMore: false,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 ),
-                afterId: nil,
                 accountKey: accountKey
             )
             return try await store.loadSearchDocuments(accountKey: accountKey)
@@ -335,6 +325,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             ingredients: ingredients,
             instructions: instructions,
             notes: notes,
+            photos: [],
             rating: 5,
             tags: ["Dinner"],
             thumbnailPhotoId: UUID(),
@@ -352,13 +343,12 @@ extension RecipeCacheStoreTests {
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         let kept = makeRecipe()
         let lost = makeRecipe()
-        try await store.apply(syncResponse: page([kept, lost]), afterId: nil, accountKey: accountKey)
+        try await store.apply(syncResponse: page([kept, lost]), accountKey: accountKey)
 
         // The server was restored from a backup taken before `lost` existed:
         // it has neither the recipe nor a tombstone for it.
         try await store.apply(
             syncResponse: page([kept], fullResync: true),
-            afterId: nil,
             accountKey: accountKey
         )
 
@@ -366,33 +356,25 @@ extension RecipeCacheStoreTests {
         XCTAssertEqual(documents.map(\.summary.id), [kept.id])
     }
 
-    func testFullResyncPagePrunesOnlyItsOwnIdRange() async throws {
+    func testOnlyThePageThatRestartsTheStreamDropsTheCache() async throws {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        let ids = ["1", "3", "5", "7"].map(Self.orderedId)
-        try await store.apply(
-            syncResponse: page(ids.map { makeRecipe(id: $0) }),
-            afterId: nil,
-            accountKey: accountKey
-        )
+        let stale = makeRecipe()
+        let first = makeRecipe()
+        let second = makeRecipe()
+        try await store.apply(syncResponse: page([stale]), accountKey: accountKey)
 
-        // The server only has ids[0] and ids[2]. The first page settles IDs
-        // through ids[0], so nothing past it may be dropped yet.
         try await store.apply(
-            syncResponse: page([makeRecipe(id: ids[0])], fullResync: true, hasMore: true),
-            afterId: nil,
+            syncResponse: page([first], fullResync: true, hasMore: true),
             accountKey: accountKey
         )
         var cached = try await store.loadSearchDocuments(accountKey: accountKey)
-        XCTAssertEqual(Set(cached.map(\.summary.id)), Set(ids))
+        XCTAssertEqual(cached.map(\.summary.id), [first.id])
 
-        try await store.apply(
-            syncResponse: page([makeRecipe(id: ids[2])], fullResync: true),
-            afterId: ids[0],
-            accountKey: accountKey
-        )
+        // The rest of the stream arrives as ordinary deltas.
+        try await store.apply(syncResponse: page([second]), accountKey: accountKey)
         cached = try await store.loadSearchDocuments(accountKey: accountKey)
-        XCTAssertEqual(Set(cached.map(\.summary.id)), [ids[0], ids[2]])
+        XCTAssertEqual(Set(cached.map(\.summary.id)), [first.id, second.id])
     }
 
     func testExistingRecipeIdsReportsOnlyThisAccountsCachedRecipes() async throws {
@@ -403,39 +385,20 @@ extension RecipeCacheStoreTests {
         let missing = UUID()
         let ids = [mine.id, theirs.id, missing]
 
-        try await store.apply(syncResponse: page([mine]), afterId: nil, accountKey: accountKey)
-        try await store.apply(syncResponse: page([theirs]), afterId: nil, accountKey: "https://example.test|other")
+        var partial = page([mine], hasMore: true)
+        partial.afterId = mine.id
+        try await store.apply(syncResponse: partial, accountKey: accountKey)
+        try await store.apply(syncResponse: page([theirs]), accountKey: "https://example.test|other")
 
-        // Until a sweep completes, a missing recipe may just be unsynced.
+        // Until a sync reaches the end of the stream, a missing recipe may
+        // just be unsynced.
         let midSweep = try await store.existingRecipeIds(ids, accountKey: accountKey)
         XCTAssertNil(midSweep)
 
-        store.setSyncCursor(300, accountKey: accountKey)
+        try await store.apply(syncResponse: page([]), accountKey: accountKey)
 
         let existing = try await store.existingRecipeIds(ids, accountKey: accountKey)
         XCTAssertEqual(existing, [mine.id])
-    }
-
-    func testFullResyncPageWithMoreButNoRecipesSettlesNothing() {
-        let response = page([], fullResync: true, hasMore: true)
-
-        XCTAssertFalse(RecipeSyncSweep.fullResyncPageCovers(Self.orderedId("9"), afterId: nil, response: response))
-    }
-
-    func testFullResyncPageCoversIdsInServerTextOrder() {
-        // The server orders lowercase hex text, where digits sort before letters.
-        let response = page([makeRecipe(id: Self.orderedId("a"))], fullResync: true, hasMore: true)
-
-        XCTAssertTrue(RecipeSyncSweep.fullResyncPageCovers(Self.orderedId("9"), afterId: nil, response: response))
-        XCTAssertFalse(RecipeSyncSweep.fullResyncPageCovers(Self.orderedId("b"), afterId: nil, response: response))
-        XCTAssertFalse(
-            RecipeSyncSweep.fullResyncPageCovers(Self.orderedId("9"), afterId: Self.orderedId("9"), response: response)
-        )
-    }
-
-    /// An ID whose position in server order is set by its first hex digit.
-    private static func orderedId(_ firstDigit: String) -> UUID {
-        UUID(uuidString: "\(firstDigit)0000000-0000-0000-0000-000000000000")!
     }
 
     private func page(

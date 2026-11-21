@@ -35,8 +35,10 @@ class TestSyncRecipesResponse(unittest.TestCase):
         model = SyncRecipesResponse()
         if include_optional:
             return SyncRecipesResponse(
+                after_id = '',
                 changes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
+                        calories_per_serving = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         id = '', 
@@ -53,8 +55,16 @@ class TestSyncRecipesResponse(unittest.TestCase):
                                 section = '', )
                             ], 
                         instructions = '', 
+                        kcal_per_serving = 1.337, 
                         notes = '', 
+                        photos = [
+                            ramekin_client.models.sync_photo.SyncPhoto(
+                                file_size = 56, 
+                                height = 56, 
+                                width = 56, )
+                            ], 
                         rating = 56, 
+                        source_name = '', 
                         tags = [
                             ''
                             ], 
@@ -74,6 +84,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
             return SyncRecipesResponse(
                 changes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
+                        calories_per_serving = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         id = '', 
@@ -90,8 +101,16 @@ class TestSyncRecipesResponse(unittest.TestCase):
                                 section = '', )
                             ], 
                         instructions = '', 
+                        kcal_per_serving = 1.337, 
                         notes = '', 
+                        photos = [
+                            ramekin_client.models.sync_photo.SyncPhoto(
+                                file_size = 56, 
+                                height = 56, 
+                                width = 56, )
+                            ], 
                         rating = 56, 
+                        source_name = '', 
                         tags = [
                             ''
                             ], 

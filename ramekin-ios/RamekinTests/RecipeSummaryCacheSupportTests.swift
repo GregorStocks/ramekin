@@ -134,128 +134,77 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
         }
     }
 
-    func testRoutingServesTextAndFilterQueriesFromCache() {
-        // Plain text now runs locally...
-        XCTAssertTrue(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "hidden ingredient"),
-                sortOrder: .newest
-            )
-        )
-        // ...as do text with tag/photo/date filters, typed or structured.
-        XCTAssertTrue(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(
-                    searchText: "garlic tag:dinner has:photos created:2024-01-01..2024-06-30"
-                ),
-                sortOrder: .newest
-            )
-        )
-        XCTAssertTrue(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(selectedTags: ["Dinner"]),
-                sortOrder: .title
-            )
-        )
-        // The browse sort is irrelevant to a text query — both sides rank it
-        // by relevance — so no browse sort may force a text search onto the
-        // network, not even the server-only Random.
-        XCTAssertTrue(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread"),
-                sortOrder: .title
-            )
-        )
-        XCTAssertTrue(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread"),
-                sortOrder: .random
-            )
-        )
-        // An unparseable threshold is a server-side no-op, so it can run
-        // locally too.
-        XCTAssertTrue(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread photo_size:abc"),
-                sortOrder: .newest
-            )
-        )
-    }
+    func testSourcePhotoAndCalorieFiltersRunOnSyncedFacts() {
+        var bread = makeDocument(title: "Bread", thumbnailPhotoId: UUID())
+        bread.sourceName = "Café Délices"
+        bread.kcalPerServing = 250
+        bread.photos = [SyncPhoto(fileSize: 90_000, height: 600, width: 800)]
+        var soup = makeDocument(title: "Soup", thumbnailPhotoId: UUID())
+        soup.kcalPerServing = 480
+        // A photo whose facts are unknown never satisfies a threshold.
+        soup.photos = [SyncPhoto()]
+        let plain = makeDocument(title: "Plain")
 
-    func testRoutingKeepsServerOnlyQueriesOnTheNetwork() {
-        // The synced corpus has no source or photo metadata: those queries
-        // stay on the server whether structured or typed as DSL tokens.
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(source: "NYT"),
-                sortOrder: .newest
-            )
-        )
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread source:NYT"),
-                sortOrder: .newest
-            )
-        )
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(
-                    photoSizeThreshold: NumericThreshold(comparison: .lessThan, value: 100_000)
-                ),
-                sortOrder: .newest
-            )
-        )
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread photo_size:<100000"),
-                sortOrder: .newest
-            )
-        )
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread photo_dim:>500"),
-                sortOrder: .newest
-            )
-        )
-        // Random browsing (no text terms) is server-only.
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(),
-                sortOrder: .random
-            )
-        )
-    }
-
-    func testRoutingKeepsCalorieQueriesOnTheNetwork() {
-        // The synced corpus has no calorie estimates: calorie filters and
-        // calorie browsing stay on the server.
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(caloriesMax: "500"),
-                sortOrder: .newest
-            )
-        )
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread calories:<500"),
-                sortOrder: .newest
-            )
-        )
-        for sortOrder in [RecipeSortOrder.caloriesLow, .caloriesHigh] {
-            XCTAssertFalse(
-                RecipeSummaryCacheSupport.canServeFromCache(
-                    filterState: RecipeListFilterState(),
-                    sortOrder: sortOrder
-                )
-            )
-            // A text query ranks by relevance, so it still runs locally.
-            XCTAssertTrue(
-                RecipeSummaryCacheSupport.canServeFromCache(
-                    filterState: RecipeListFilterState(searchText: "bread"),
-                    sortOrder: sortOrder
-                )
-            )
+        func titles(_ filterState: RecipeListFilterState) -> [String] {
+            RecipeSummaryCacheSupport.visibleRecipes(
+                documents: [bread, soup, plain],
+                filterState: filterState,
+                sortOrder: .title
+            ).map(\.title)
         }
+
+        XCTAssertEqual(titles(RecipeListFilterState(source: "cafe")), ["Bread"])
+        XCTAssertEqual(
+            titles(RecipeListFilterState(photoSizeThreshold: NumericThreshold(comparison: .lessThan, value: 100_000))),
+            ["Bread"]
+        )
+        XCTAssertEqual(
+            titles(RecipeListFilterState(photoDimensionThreshold: NumericThreshold(comparison: .greaterThan, value: 600))),
+            []
+        )
+        XCTAssertEqual(
+            titles(RecipeListFilterState(photoDimensionThreshold: NumericThreshold(comparison: .greaterThan, value: 599))),
+            ["Bread"]
+        )
+        XCTAssertEqual(titles(RecipeListFilterState(caloriesMin: "300")), ["Soup"])
+        XCTAssertEqual(titles(RecipeListFilterState(caloriesMin: "250", caloriesMax: "480")), ["Bread", "Soup"])
+    }
+
+    func testCalorieSortsPutRecipesWithoutAnEstimateLast() {
+        var light = makeDocument(title: "Light")
+        light.kcalPerServing = 120
+        var heavy = makeDocument(title: "Heavy")
+        heavy.kcalPerServing = 900
+        let unknown = makeDocument(title: "Unknown")
+
+        func titles(_ sortOrder: RecipeSortOrder) -> [String] {
+            RecipeSummaryCacheSupport.visibleRecipes(
+                documents: [unknown, heavy, light],
+                filterState: RecipeListFilterState(),
+                sortOrder: sortOrder
+            ).map(\.title)
+        }
+
+        XCTAssertEqual(titles(.caloriesLow), ["Light", "Heavy", "Unknown"])
+        XCTAssertEqual(titles(.caloriesHigh), ["Heavy", "Light", "Unknown"])
+    }
+
+    func testRandomSortReturnsEveryMatchInSomeOrder() {
+        let documents = (0..<40).map { makeDocument(title: "Recipe \($0)", tags: $0 < 30 ? ["Dinner"] : []) }
+        let expected = Set(documents.prefix(30).map(\.summary.id))
+        let filterState = RecipeListFilterState(selectedTags: ["Dinner"])
+
+        let orders = (0..<5).map { _ in
+            RecipeSummaryCacheSupport.visibleRecipes(documents: documents, filterState: filterState, sortOrder: .random)
+                .map(\.id)
+        }
+
+        for order in orders {
+            XCTAssertEqual(order.count, 30)
+            XCTAssertEqual(Set(order), expected)
+        }
+        // Thirty recipes shuffled five times do not come out the same way.
+        XCTAssertGreaterThan(Set(orders).count, 1)
     }
 
     private func makeDocument(

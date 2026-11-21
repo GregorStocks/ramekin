@@ -162,6 +162,7 @@ Class | Method | HTTP request | Description
  - [SyncMealPlan](docs/SyncMealPlan.md)
  - [SyncMealPlansRequest](docs/SyncMealPlansRequest.md)
  - [SyncMealPlansResponse](docs/SyncMealPlansResponse.md)
+ - [SyncPhoto](docs/SyncPhoto.md)
  - [SyncRecipe](docs/SyncRecipe.md)
  - [SyncRecipesResponse](docs/SyncRecipesResponse.md)
  - [SyncShoppingListItem](docs/SyncShoppingListItem.md)

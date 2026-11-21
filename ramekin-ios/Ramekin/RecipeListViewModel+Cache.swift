@@ -7,9 +7,7 @@ extension RecipeListViewModel {
     /// the network. A cache with no recipes answers nothing: it is either
     /// still waiting for its first sync or has nothing to search.
     func loadCachedRecipesForCurrentQuery() async {
-        guard RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder),
-              let accountKey = cache.currentAccountKey()
-        else {
+        guard let accountKey = cache.currentAccountKey() else {
             return
         }
 
@@ -23,39 +21,27 @@ extension RecipeListViewModel {
         }
     }
 
-    /// Runs one sync sweep once any sweep already in flight has finished:
-    /// two at once (start-up plus pull-to-refresh) would race on the
-    /// persisted cursor and pending-sweep record. The cursor is read when
-    /// this sweep's turn comes, so it reflects the previous sweep.
-    /// Cancelling the caller ends its wait at once but never an earlier sweep.
-    func runSyncSweep(resumeFromCursor: Bool, accountKey: String) async throws {
-        let previous = lastSyncSweep
-        let sweep = Task { @MainActor [api = self.api, cache = self.cache, pageSize = syncPageSize] in
-            if let previous { await CancellationSupport.wait(for: previous) }
-            try Task.checkCancellation()
-            try await RecipeSyncSweep.run(
-                cursor: resumeFromCursor ? cache.syncCursor(accountKey) : nil,
-                accountKey: accountKey,
-                pageSize: pageSize,
-                api: api,
-                cache: cache
-            )
-        }
-        lastSyncSweep = Task { await previous?.value; _ = await sweep.result }
-        try await withTaskCancellationHandler {
-            try await sweep.value
-        } onCancel: {
-            sweep.cancel()
-        }
+    /// Runs one sync sweep, after any already in flight on the same queue.
+    func runSyncSweep(fromStart: Bool, accountKey: String) async throws {
+        try await syncQueue.run(
+            fromStart: fromStart,
+            accountKey: accountKey,
+            pageSize: syncPageSize,
+            api: api,
+            cache: cache
+        )
     }
 
     func syncCachedRecipes(key: ListRequestKey) async {
         let logger = DebugLogger.shared
 
-        let generation = beginReset(key: key, usingLocalCache: true)
+        let generation = beginReset(key: key)
 
         guard let accountKey = cache.currentAccountKey() else {
-            await loadRecipes(forceNetwork: true)
+            // No signed-in account, so nothing to sync or show.
+            logger.log("syncCachedRecipes: no account", source: "RecipeList")
+            failSync()
+            isLoading = false
             return
         }
 
@@ -72,7 +58,8 @@ extension RecipeListViewModel {
             if !cachedBeforeSync.isEmpty {
                 appliedCachedRecipes = await applyCachedRecipes(cachedBeforeSync)
             }
-            let resumeFromCursor = !cachedBeforeSync.isEmpty
+            // An empty cache has nothing a delta could build on.
+            let fromStart = cachedBeforeSync.isEmpty
             try await logger.timed("syncRecipeCache API", source: "RecipeList") {
                 // When the list was already served from the cache, the sweep
                 // only freshens it — give it a wall-clock budget so awaiting
@@ -80,10 +67,10 @@ extension RecipeListViewModel {
                 // sync surfaces as the stale banner instead of a hang.
                 if appliedCachedRecipes {
                     try await withWallClockBudget(seconds: syncBudget) { [self] in
-                        try await runSyncSweep(resumeFromCursor: resumeFromCursor, accountKey: accountKey)
+                        try await runSyncSweep(fromStart: fromStart, accountKey: accountKey)
                     }
                 } else {
-                    try await runSyncSweep(resumeFromCursor: resumeFromCursor, accountKey: accountKey)
+                    try await runSyncSweep(fromStart: fromStart, accountKey: accountKey)
                 }
             }
             let corpus = try await cache.loadSearchCorpus(accountKey)
@@ -101,12 +88,9 @@ extension RecipeListViewModel {
             } else {
                 logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
                 if appliedCachedRecipes {
-                    // The user is looking at a cache-served list that could
-                    // not be freshened. Never leave that silent: new and
-                    // edited recipes would just quietly not show up.
                     flagSyncFailureOverCachedList()
                 } else {
-                    fail(staleness: .syncFailed)
+                    failSync()
                 }
             }
             isLoading = false
@@ -122,12 +106,6 @@ extension RecipeListViewModel {
         let generation = requestGeneration
         let filterState = currentFilterState
         let sortOrder = self.sortOrder
-        // The filters can move to a server-only query between the caller's
-        // routing check and here; the reload that change schedules owns the
-        // list then.
-        guard RecipeSummaryCacheSupport.canServeFromCache(filterState: filterState, sortOrder: sortOrder) else {
-            return false
-        }
         let visibleRecipes: [RecipeSummary]
         if let lastRanking, lastRanking.corpusVersion == corpus.version, lastRanking.key == key {
             // A sync that changed nothing hands back the corpus this
@@ -150,7 +128,7 @@ extension RecipeListViewModel {
             return false
         }
         activeKey = key
-        publish(visibleRecipes, total: visibleRecipes.count, usingLocalCache: true)
+        publish(visibleRecipes)
         return true
     }
 }

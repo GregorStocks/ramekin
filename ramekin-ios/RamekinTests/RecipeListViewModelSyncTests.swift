@@ -1,8 +1,8 @@
 import XCTest
 @testable import Ramekin
 
-/// The paged cache sync: durable sweep progress, first-page watermark
-/// persistence, failure surfacing, and the freshen time budget.
+/// The paged cache sync: following the server's positions, failure
+/// surfacing, and the freshen time budget.
 @MainActor
 final class RecipeListViewModelSyncTests: XCTestCase {
     private struct SyncRequest: Equatable {
@@ -11,32 +11,28 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         let afterId: UUID?
     }
 
-    func testMultiPageSweepPersistsFirstPageWatermark() async {
+    func testFirstSyncPagesFromTheStartOfTheStream() async {
         let pageOne = [makeSyncRecipe(title: "Aioli"), makeSyncRecipe(title: "Bread")]
         let pageTwo = [makeSyncRecipe(title: "Curry")]
         var requests: [SyncRequest] = []
-        var persistedSweeps: [PendingSyncSweep] = []
-        var persistedCursor: Int64?
-        var clearedPendingSweep = false
-        var appliedRecipeTitles: [String] = []
+        var applied: [SyncRecipesResponse] = []
 
         let viewModel = makeViewModel(
             syncRecipes: { cursor, limit, afterId in
                 requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
-                // The second page's snapshot watermark is higher: changes
-                // committed mid-sweep sit between the two, and only the first
-                // watermark redelivers them on the next sync.
-                if afterId == nil {
+                if cursor == nil {
                     return SyncRecipesResponse(
-                        changes: pageOne,
-                        cursor: 100,
-                        deleted: [],
-                        fullResync: false,
-                        hasMore: true,
-                        normalizationContractVersion: SearchNormalizationSupport.contractVersion
-                    )
+                    afterId: pageOne.last?.id,
+                    changes: pageOne,
+                    cursor: 100,
+                    deleted: [],
+                    fullResync: true,
+                    hasMore: true,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
+                )
                 }
                 return SyncRecipesResponse(
+                    afterId: nil,
                     changes: pageTwo,
                     cursor: 200,
                     deleted: [],
@@ -47,69 +43,25 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             },
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                setSyncCursor: { cursor, _ in persistedCursor = cursor },
-                setPendingSyncSweep: { sweep, _ in persistedSweeps.append(sweep) },
-                clearPendingSyncSweep: { _ in clearedPendingSweep = true },
-                apply: { response, _, _ in
-                    appliedRecipeTitles.append(contentsOf: response.changes.map(\.title))
-                }
+                apply: { response, _ in applied.append(response) }
             )
         )
 
         await viewModel.loadRecipes()
 
+        // Each request is just what the page before it said to ask for.
         XCTAssertEqual(requests, [
             SyncRequest(cursor: nil, limit: 100, afterId: nil),
-            SyncRequest(cursor: nil, limit: 100, afterId: pageOne.last?.id)
+            SyncRequest(cursor: 100, limit: 100, afterId: pageOne.last?.id)
         ])
-        XCTAssertEqual(appliedRecipeTitles, ["Aioli", "Bread", "Curry"])
-        XCTAssertEqual(
-            persistedSweeps,
-            [PendingSyncSweep(since: nil, afterId: pageOne.last!.id, watermark: 100)]
-        )
-        XCTAssertEqual(persistedCursor, 100)
-        XCTAssertTrue(clearedPendingSweep)
+        XCTAssertEqual(applied.flatMap { $0.changes.map(\.title) }, ["Aioli", "Bread", "Curry"])
+        XCTAssertEqual(applied.map(\.fullResync), [true, false])
         XCTAssertFalse(viewModel.syncFailed)
     }
 
-    func testInterruptedSweepResumesFromPendingState() async {
-        let resumeAfterId = UUID()
-        let finalPage = [makeSyncRecipe(title: "Dal")]
-        var requests: [SyncRequest] = []
-        var persistedCursor: Int64?
-
-        let viewModel = makeViewModel(
-            syncRecipes: { cursor, limit, afterId in
-                requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
-                return SyncRecipesResponse(
-                    changes: finalPage,
-                    cursor: 500,
-                    deleted: [],
-                    fullResync: false,
-                    hasMore: false,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
-                )
-            },
-            cache: RecipeListTestSupport.cacheClient(
-                currentAccountKey: { "account" },
-                setSyncCursor: { cursor, _ in persistedCursor = cursor },
-                pendingSyncSweep: { _ in
-                    PendingSyncSweep(since: nil, afterId: resumeAfterId, watermark: 50)
-                }
-            )
-        )
-
-        await viewModel.loadRecipes()
-
-        XCTAssertEqual(requests, [SyncRequest(cursor: nil, limit: 100, afterId: resumeAfterId)])
-        // The resumed sweep persists the original first-page watermark, not
-        // this page's: pages fetched before the interruption ran against the
-        // older snapshot.
-        XCTAssertEqual(persistedCursor, 50)
-    }
-
-    func testPendingStateForDifferentCursorIsIgnored() async {
+    func testSyncResumesFromThePositionTheCacheWasLeftAt() async {
         let cached = RecipeListTestSupport.makeRecipe(title: "Cached")
+        let resumeAfterId = UUID()
         var requests: [SyncRequest] = []
 
         let viewModel = makeViewModel(
@@ -119,18 +71,34 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             },
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
-                pendingSyncSweep: { _ in
-                    // Left over from a full sync; this sweep filters on 300.
-                    PendingSyncSweep(since: nil, afterId: UUID(), watermark: 50)
-                },
+                // An earlier sync stopped partway through the stream.
+                syncPosition: { _ in RecipeSyncPosition(cursor: 50, afterId: resumeAfterId) },
                 loadRecipes: { _ in [cached] }
             )
         )
 
         await viewModel.loadRecipes()
 
-        XCTAssertEqual(requests, [SyncRequest(cursor: 300, limit: 100, afterId: nil)])
+        XCTAssertEqual(requests, [SyncRequest(cursor: 50, limit: 100, afterId: resumeAfterId)])
+    }
+
+    func testEmptyCacheSyncsFromTheStartWhateverPositionWasLeft() async {
+        var requests: [SyncRequest] = []
+
+        let viewModel = makeViewModel(
+            syncRecipes: { cursor, limit, afterId in
+                requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
+                return RecipeListTestSupport.emptySyncResponse()
+            },
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) }
+            )
+        )
+
+        await viewModel.loadRecipes()
+
+        XCTAssertEqual(requests, [SyncRequest(cursor: nil, limit: 100, afterId: nil)])
     }
 
     func testSyncFailureOverCachedListShowsStaleBannerNotError() async {
@@ -139,7 +107,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             syncRecipes: { _, _, _ in throw URLError(.timedOut) },
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) },
                 loadRecipes: { _ in [cached] }
             )
         )
@@ -152,12 +120,15 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         XCTAssertFalse(viewModel.isLoading)
     }
 
-    func testEmptyPageClaimingMoreFailsSyncInsteadOfCrashing() async {
+    func testPageClaimingMoreWithoutSayingWhereFailsSync() async {
         let cached = RecipeListTestSupport.makeRecipe(title: "Cached")
-        var persistedCursor: Int64?
+        var applied = false
+        var requestCount = 0
         let viewModel = makeViewModel(
             syncRecipes: { _, _, _ in
-                SyncRecipesResponse(
+                requestCount += 1
+                return SyncRecipesResponse(
+                    afterId: nil,
                     changes: [],
                     cursor: 400,
                     deleted: [],
@@ -168,16 +139,17 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             },
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
-                setSyncCursor: { cursor, _ in persistedCursor = cursor },
-                loadRecipes: { _ in [cached] }
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) },
+                loadRecipes: { _ in [cached] },
+                apply: { _, _ in applied = true }
             )
         )
 
         await viewModel.loadRecipes()
 
         XCTAssertTrue(viewModel.syncFailed)
-        XCTAssertNil(persistedCursor)
+        XCTAssertFalse(applied)
+        XCTAssertEqual(requestCount, 1)
         XCTAssertEqual(viewModel.recipes.map(\.id), [cached.id])
     }
 
@@ -191,7 +163,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             },
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) },
                 loadRecipes: { _ in [cached] }
             )
         )
@@ -214,7 +186,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             },
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) },
                 loadRecipes: { _ in [cached] }
             ),
             syncBudget: 0.05
@@ -267,9 +239,9 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             },
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
+                syncPosition: { _ in RecipeSyncPosition(cursor: 300) },
                 loadRecipes: { _ in [cached] },
-                apply: { _, _, _ in applied = true }
+                apply: { _, _ in applied = true }
             )
         )
 
@@ -288,17 +260,10 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         RecipeListViewModel(
             api: RecipeListViewAPIClient(
                 syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-                listRecipes: { limit, offset, _, _, _ in
-                    ListRecipesResponse(
-                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
-                        recipes: []
-                    )
-                },
                 syncRecipes: syncRecipes
             ),
             cache: cache,
             userDefaults: RecipeListTestSupport.isolatedDefaults(),
-            pageSize: 20,
             syncBudget: syncBudget
         )
     }
@@ -312,118 +277,12 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             ingredients: [],
             instructions: "Cook it.",
             notes: nil,
+            photos: [],
             rating: nil,
             tags: [],
             thumbnailPhotoId: nil,
             title: title,
             updatedAt: Date(timeIntervalSince1970: 200)
         )
-    }
-}
-
-// MARK: - Full resync
-
-extension RecipeListViewModelSyncTests {
-    func testFullResyncSweepRequestsLaterPagesWithoutACursor() async {
-        let pageOne = [makeSyncRecipe(title: "Aioli")]
-        let pageTwo = [makeSyncRecipe(title: "Bread")]
-        var requests: [SyncRequest] = []
-        var persistedSweeps: [PendingSyncSweep] = []
-
-        let viewModel = makeViewModel(
-            syncRecipes: { cursor, limit, afterId in
-                requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
-                return SyncRecipesResponse(
-                    changes: afterId == nil ? pageOne : pageTwo,
-                    cursor: 100,
-                    deleted: [],
-                    fullResync: true,
-                    hasMore: afterId == nil,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
-                )
-            },
-            cache: RecipeListTestSupport.cacheClient(
-                currentAccountKey: { "account" },
-                // A cursor the server can't answer with a delta (it predates
-                // a restore).
-                syncCursor: { _ in 300 },
-                setPendingSyncSweep: { sweep, _ in persistedSweeps.append(sweep) },
-                loadRecipes: { _ in [RecipeListTestSupport.makeRecipe(title: "Cached")] }
-            )
-        )
-
-        await viewModel.loadRecipes()
-
-        XCTAssertEqual(requests, [
-            SyncRequest(cursor: 300, limit: 100, afterId: nil),
-            SyncRequest(cursor: nil, limit: 100, afterId: pageOne.last?.id)
-        ])
-        XCTAssertEqual(
-            persistedSweeps,
-            [PendingSyncSweep(since: 300, afterId: pageOne.last!.id, watermark: 100, fullResync: true)]
-        )
-    }
-
-    func testResumedFullResyncSweepStaysWithoutACursor() async {
-        let resumeAfterId = UUID()
-        var requests: [SyncRequest] = []
-
-        let viewModel = makeViewModel(
-            syncRecipes: { cursor, limit, afterId in
-                requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
-                return RecipeListTestSupport.emptySyncResponse()
-            },
-            cache: RecipeListTestSupport.cacheClient(
-                currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
-                pendingSyncSweep: { _ in
-                    PendingSyncSweep(since: 300, afterId: resumeAfterId, watermark: 50, fullResync: true)
-                },
-                loadRecipes: { _ in [RecipeListTestSupport.makeRecipe(title: "Cached")] }
-            )
-        )
-
-        await viewModel.loadRecipes()
-
-        XCTAssertEqual(requests, [SyncRequest(cursor: nil, limit: 100, afterId: resumeAfterId)])
-    }
-
-    func testSweepThatTurnsIntoAFullResyncMidwayStartsOver() async {
-        let resumeAfterId = UUID()
-        var requests: [SyncRequest] = []
-        var persistedCursor: Int64?
-
-        let viewModel = makeViewModel(
-            syncRecipes: { cursor, limit, afterId in
-                requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
-                return SyncRecipesResponse(
-                    changes: [],
-                    cursor: afterId == nil ? 900 : 800,
-                    deleted: [],
-                    fullResync: true,
-                    hasMore: false,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
-                )
-            },
-            cache: RecipeListTestSupport.cacheClient(
-                currentAccountKey: { "account" },
-                syncCursor: { _ in 300 },
-                setSyncCursor: { cursor, _ in persistedCursor = cursor },
-                // An incremental sweep interrupted before a restore.
-                pendingSyncSweep: { _ in
-                    PendingSyncSweep(since: 300, afterId: resumeAfterId, watermark: 50)
-                },
-                loadRecipes: { _ in [RecipeListTestSupport.makeRecipe(title: "Cached")] }
-            )
-        )
-
-        await viewModel.loadRecipes()
-
-        XCTAssertEqual(requests, [
-            SyncRequest(cursor: 300, limit: 100, afterId: resumeAfterId),
-            SyncRequest(cursor: nil, limit: 100, afterId: nil)
-        ])
-        // The restarted sweep's own first page sets the watermark.
-        XCTAssertEqual(persistedCursor, 900)
     }
 }

@@ -36,23 +36,13 @@ enum RecipeListTestSupport {
 
     static func cacheClient(
         currentAccountKey: @escaping () -> String? = { nil },
-        syncCursor: @escaping (String) -> Int64? = { _ in nil },
-        setSyncCursor: @escaping (Int64, String) -> Void = { _, _ in },
-        clearSyncCursor: @escaping (String) -> Void = { _ in },
-        pendingSyncSweep: @escaping (String) -> PendingSyncSweep? = { _ in nil },
-        setPendingSyncSweep: @escaping (PendingSyncSweep, String) -> Void = { _, _ in },
-        clearPendingSyncSweep: @escaping (String) -> Void = { _ in },
+        syncPosition: @escaping (String) -> RecipeSyncPosition? = { _ in nil },
         loadRecipes: @escaping (String) throws -> [RecipeSummary] = { _ in [] },
-        apply: @escaping (SyncRecipesResponse, UUID?, String) throws -> Void = { _, _, _ in }
+        apply: @escaping (SyncRecipesResponse, String) throws -> Void = { _, _ in }
     ) -> RecipeListCacheClient {
         RecipeListCacheClient(
             currentAccountKey: currentAccountKey,
-            syncCursor: syncCursor,
-            setSyncCursor: setSyncCursor,
-            clearSyncCursor: clearSyncCursor,
-            pendingSyncSweep: pendingSyncSweep,
-            setPendingSyncSweep: setPendingSyncSweep,
-            clearPendingSyncSweep: clearPendingSyncSweep,
+            syncPosition: syncPosition,
             loadSearchCorpus: { RecipeSearchCorpus(documents: try loadRecipes($0).map(makeDocument)) },
             apply: apply
         )
@@ -80,12 +70,6 @@ enum RecipeListTestSupport {
     static func emptyAPIClient() -> RecipeListViewAPIClient {
         RecipeListViewAPIClient(
             syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
-            listRecipes: { limit, offset, _, _, _ in
-                ListRecipesResponse(
-                    pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
-                    recipes: []
-                )
-            },
             syncRecipes: { _, _, _ in emptySyncResponse() }
         )
     }

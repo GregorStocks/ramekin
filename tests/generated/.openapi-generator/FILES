@@ -114,6 +114,7 @@ ramekin_client/docs/SyncApi.md
 ramekin_client/docs/SyncMealPlan.md
 ramekin_client/docs/SyncMealPlansRequest.md
 ramekin_client/docs/SyncMealPlansResponse.md
+ramekin_client/docs/SyncPhoto.md
 ramekin_client/docs/SyncRecipe.md
 ramekin_client/docs/SyncRecipesResponse.md
 ramekin_client/docs/SyncShoppingListItem.md
@@ -216,6 +217,7 @@ ramekin_client/models/step_status.py
 ramekin_client/models/sync_meal_plan.py
 ramekin_client/models/sync_meal_plans_request.py
 ramekin_client/models/sync_meal_plans_response.py
+ramekin_client/models/sync_photo.py
 ramekin_client/models/sync_recipe.py
 ramekin_client/models/sync_recipes_response.py
 ramekin_client/models/sync_shopping_list_item.py
@@ -327,6 +329,7 @@ ramekin_client/test/test_sync_api.py
 ramekin_client/test/test_sync_meal_plan.py
 ramekin_client/test/test_sync_meal_plans_request.py
 ramekin_client/test/test_sync_meal_plans_response.py
+ramekin_client/test/test_sync_photo.py
 ramekin_client/test/test_sync_recipe.py
 ramekin_client/test/test_sync_recipes_response.py
 ramekin_client/test/test_sync_shopping_list_item.py

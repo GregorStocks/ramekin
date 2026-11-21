@@ -35,6 +35,7 @@ class TestSyncRecipe(unittest.TestCase):
         model = SyncRecipe()
         if include_optional:
             return SyncRecipe(
+                calories_per_serving = '',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
                 id = '',
@@ -51,8 +52,16 @@ class TestSyncRecipe(unittest.TestCase):
                         section = '', )
                     ],
                 instructions = '',
+                kcal_per_serving = 1.337,
                 notes = '',
+                photos = [
+                    ramekin_client.models.sync_photo.SyncPhoto(
+                        file_size = 56, 
+                        height = 56, 
+                        width = 56, )
+                    ],
                 rating = 56,
+                source_name = '',
                 tags = [
                     ''
                     ],
@@ -77,6 +86,12 @@ class TestSyncRecipe(unittest.TestCase):
                         section = '', )
                     ],
                 instructions = '',
+                photos = [
+                    ramekin_client.models.sync_photo.SyncPhoto(
+                        file_size = 56, 
+                        height = 56, 
+                        width = 56, )
+                    ],
                 tags = [
                     ''
                     ],
