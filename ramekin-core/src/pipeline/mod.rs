@@ -2,7 +2,8 @@
 //!
 //! This module provides a trait-based pipeline system where:
 //! - Steps are defined via the `PipelineStep` trait
-//! - Each step returns `next_step` to indicate what runs next (duck typing)
+//! - The caller decides which steps run and in what order; the scrape order
+//!   is `scrape_steps`, shared by the CLI and the server
 //! - CLI and server build their own registries with appropriate implementations
 //! - DB-specific steps are abstract here (metadata only), implemented in cli/server
 
@@ -11,7 +12,7 @@ mod normalize_ops;
 mod step;
 pub mod steps;
 
-pub use executor::{run_pipeline, StepRegistry};
+pub use executor::{run_pipeline, scrape_steps, StepRegistry};
 pub use normalize_ops::{
     default_import_ops, normalize_phase_steps, op_for_step, order_ops, NormalizeOp,
     NormalizeOpGroup, APPLY_NORMALIZE_STEP, EDIT_WITH_AI_STEP, LOAD_RECIPE_STEP,
@@ -27,9 +28,24 @@ mod tests {
     use std::collections::HashSet;
 
     use super::steps::{
-        AutoTagStep, ExtractRecipeStep, FetchHtmlStep, FetchImagesStepMeta, SaveRecipeStepMeta,
+        AutoTagStep, ExtractRecipeStep, FetchHtmlStep, FetchImagesStepMeta, ParseIngredientsStep,
+        SaveRecipeStepMeta,
     };
     use crate::MockClient;
+
+    #[test]
+    fn scrape_steps_name_the_registered_steps() {
+        assert_eq!(
+            super::scrape_steps(),
+            vec![
+                FetchHtmlStep::<MockClient>::NAME,
+                ExtractRecipeStep::NAME,
+                FetchImagesStepMeta::NAME,
+                ParseIngredientsStep::NAME,
+                SaveRecipeStepMeta::NAME,
+            ]
+        );
+    }
 
     #[test]
     fn step_names_are_unique() {

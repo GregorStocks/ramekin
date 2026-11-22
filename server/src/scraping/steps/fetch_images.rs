@@ -52,7 +52,6 @@ impl PipelineStep for FetchImagesStep {
                     output: serde_json::Value::Null,
                     error: Some("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -71,7 +70,6 @@ impl PipelineStep for FetchImagesStep {
                     output: serde_json::Value::Null,
                     error: Some(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -104,7 +102,6 @@ impl PipelineStep for FetchImagesStep {
             output: serde_json::to_value(&output).expect("FetchImagesOutput serializes to JSON"),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

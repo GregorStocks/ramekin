@@ -41,9 +41,6 @@ pub struct StepResult {
     pub error: Option<String>,
     /// How long the step took in milliseconds
     pub duration_ms: u64,
-    /// Name of the next step to run (duck typing - step decides what's next)
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub next_step: Option<String>,
 }
 
 /// Abstraction for reading/writing step outputs.

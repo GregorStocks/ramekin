@@ -79,7 +79,6 @@ pub async fn run_with_deadline(
             output: serde_json::json!({ "timed_out": true }),
             error: Some(timeout_error(step_name, deadline)),
             duration_ms: deadline.as_millis() as u64,
-            next_step: None,
         },
     }
 }
@@ -133,7 +132,6 @@ mod tests {
             output: serde_json::json!({ "suggested_tags": [] }),
             error: None,
             duration_ms: 5,
-            next_step: None,
         };
         let result = run_with_deadline("auto_tag", Some(Duration::from_secs(60)), async {
             finished

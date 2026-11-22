@@ -693,7 +693,6 @@ async fn run_concurrent_steps(
                             output,
                             error: None,
                             duration_ms: 0,
-                            next_step: None,
                         };
                         let result = record_step_result(store, name, result).await;
                         if result.success {

@@ -97,7 +97,6 @@ impl PipelineStep for GenerateDescriptionStep {
                 .expect("GenerateDescriptionOutput serializes to JSON"),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

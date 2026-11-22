@@ -66,7 +66,6 @@ impl PipelineStep for ExtractPhotosStep {
             output: serde_json::to_value(output).expect("ExtractRecipeOutput serializes to JSON"),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

@@ -3,6 +3,13 @@
 use std::collections::HashMap;
 
 use crate::pipeline::step::{PipelineStep, StepContext, StepOutputStore, StepResult};
+use crate::types::PipelineStep as ScrapeStep;
+
+/// The names of the steps that scrape a recipe from its source URL, in
+/// execution order.
+pub fn scrape_steps() -> Vec<&'static str> {
+    ScrapeStep::ALL.iter().map(ScrapeStep::as_str).collect()
+}
 
 /// Registry that maps step names to their implementations.
 pub struct StepRegistry {
@@ -34,24 +41,25 @@ impl Default for StepRegistry {
     }
 }
 
-/// Run a pipeline starting from the given step.
+/// Run `steps` one after another, in order.
 ///
-/// The executor follows the step-driven chain: each step returns `next_step`
-/// to indicate what should run next. This continues until a step returns
-/// `next_step: None` or a step fails (unless it has `continues_on_failure`).
+/// Stops early when a step fails (unless it has `continues_on_failure`) or
+/// isn't registered.
 pub async fn run_pipeline(
-    first_step_name: &str,
+    steps: &[&str],
     url: &str,
     store: &mut dyn StepOutputStore,
     registry: &StepRegistry,
 ) -> Vec<StepResult> {
     let mut results = Vec::new();
-    let mut current_step_name = Some(first_step_name.to_string());
 
-    while let Some(step_name) = current_step_name {
-        let step = match registry.get(&step_name) {
+    for step_name in steps {
+        let step = match registry.get(step_name) {
             Some(s) => s,
-            None => break, // Unknown step, stop
+            None => {
+                tracing::error!("Pipeline step {} is not registered", step_name);
+                break;
+            }
         };
 
         let meta = step.metadata();
@@ -97,14 +105,11 @@ pub async fn run_pipeline(
         }
 
         let should_continue = result.success || meta.continues_on_failure;
-        let next = result.next_step.clone();
         results.push(result);
 
         if !should_continue {
             break;
         }
-
-        current_step_name = next;
     }
 
     results
@@ -196,12 +201,11 @@ mod tests {
                 },
                 error: (!self.success).then(|| "AI call failed: something specific".to_string()),
                 duration_ms: 1,
-                next_step: None,
             }
         }
     }
 
-    /// Step that always succeeds and chains to a second step.
+    /// Step that always succeeds.
     struct AlwaysOkStep;
 
     #[async_trait]
@@ -221,7 +225,6 @@ mod tests {
                 output: json!({"ok": true}),
                 error: None,
                 duration_ms: 0,
-                next_step: Some("never_reached".to_string()),
             }
         }
     }
@@ -253,7 +256,7 @@ mod tests {
         }));
         let mut store = RecordingStore::default();
 
-        run_pipeline("ok_step", "https://example.com", &mut store, &registry).await;
+        run_pipeline(&["ok_step"], "https://example.com", &mut store, &registry).await;
 
         assert_eq!(store.saves.len(), 1);
         let (name, output, success, error) = &store.saves[0];
@@ -272,7 +275,7 @@ mod tests {
         }));
         let mut store = RecordingStore::default();
 
-        run_pipeline("bad_step", "https://example.com", &mut store, &registry).await;
+        run_pipeline(&["bad_step"], "https://example.com", &mut store, &registry).await;
 
         assert_eq!(store.saves.len(), 1);
         let (name, output, success, error) = &store.saves[0];
@@ -292,7 +295,13 @@ mod tests {
         registry.register(Box::new(UnreachableStep));
         let mut store = FailingStore;
 
-        let results = run_pipeline("always_ok", "http://example.com", &mut store, &registry).await;
+        let results = run_pipeline(
+            &["always_ok", "never_reached"],
+            "http://example.com",
+            &mut store,
+            &registry,
+        )
+        .await;
 
         assert_eq!(results.len(), 1);
         let result = &results[0];

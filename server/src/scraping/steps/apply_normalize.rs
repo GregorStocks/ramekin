@@ -113,7 +113,6 @@ impl PipelineStep for ApplyNormalizeStep {
                 output: json!({ "changed": false }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: None,
             };
         }
 
@@ -151,7 +150,6 @@ impl PipelineStep for ApplyNormalizeStep {
             output,
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

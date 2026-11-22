@@ -92,6 +92,5 @@ pub fn step_failure(step_name: &str, start: Instant, error: String) -> StepResul
         output: json!({ "error": error }),
         error: Some(error),
         duration_ms: start.elapsed().as_millis() as u64,
-        next_step: None,
     }
 }
