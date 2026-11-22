@@ -19,8 +19,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
-from conftest import connect_db
-from ramekin_client.api import PhotosApi, RecipesApi, SyncApi
+from conftest import connect_db, wait_until
+from ramekin_client.api import IngredientNamesApi, PhotosApi, RecipesApi, SyncApi
 from ramekin_client.models import (
     CreateRecipeRequest,
     Direction,
@@ -78,6 +78,7 @@ def corpus(authed_api_client, database_url, test_image, vectors):
     photos_api = PhotosApi(client)
 
     slug_by_id = {}
+    recipe_ids = {}
     conn = connect_db(database_url)
     try:
         for recipe in vectors["recipes"]:
@@ -113,6 +114,7 @@ def corpus(authed_api_client, database_url, test_image, vectors):
                 )
             )
             slug_by_id[str(created.id)] = recipe["id"]
+            recipe_ids[recipe["id"]] = str(created.id)
 
             # Creation now adds weight estimates. These vectors intentionally
             # exercise exact, user-edited ingredient representations (including
@@ -142,10 +144,23 @@ def corpus(authed_api_client, database_url, test_image, vectors):
             ).fetchone()
             assert match_text == recipe["ingredient_match_text"], recipe["id"]
 
+        # Saving a recipe queues the names the catalog doesn't know, and the
+        # name worker recomputes the stored calories of every current version
+        # using a name it resolves. Let it finish with this corpus's names
+        # before setting the vector values, or it overwrites them.
+        names_api = IngredientNamesApi(client)
+        wait_until(
+            lambda: names_api.get_ingredient_names_status().pending == 0,
+            timeout=60.0,
+            what="the corpus's ingredient names to resolve",
+        )
+
+        for recipe in vectors["recipes"]:
+            recipe_id = recipe_ids[recipe["id"]]
             conn.execute("BEGIN IMMEDIATE")
             conn.execute(
                 "update recipes set created_at = ? where id = ?",
-                (_db_timestamp(recipe["created_at"]), str(created.id)),
+                (_db_timestamp(recipe["created_at"]), recipe_id),
             )
             conn.execute(
                 """
@@ -157,7 +172,7 @@ def corpus(authed_api_client, database_url, test_image, vectors):
                     _db_timestamp(recipe["updated_at"]),
                     recipe["kcal_per_serving"],
                     _kcal_label(recipe["kcal_per_serving"]),
-                    str(created.id),
+                    recipe_id,
                 ),
             )
             conn.execute("COMMIT")

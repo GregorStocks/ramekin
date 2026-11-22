@@ -42,6 +42,17 @@ def wait_for_job_completion(scrape_api, job_id: str, timeout: float = 30.0):
     raise TimeoutError(f"scrape {job_id} did not finish in {timeout}s")
 
 
+def wait_until(predicate, timeout: float = 20.0, what: str = "condition"):
+    """Poll ``predicate`` until it returns something truthy, and return it."""
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        value = predicate()
+        if value:
+            return value
+        time.sleep(0.2)
+    raise TimeoutError(f"timed out after {timeout}s waiting for {what}")
+
+
 def make_ingredient(
     item: str,
     amount: str | None = None,
