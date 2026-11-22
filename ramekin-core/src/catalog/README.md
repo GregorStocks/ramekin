@@ -55,7 +55,8 @@ Each entry also has two negligibility attributes, derived from the data:
   entry sets `trace_ok: true`. A line of it is negligible when it has no numeric
   amount ("to taste", no measurement), a trace unit (pinch, dash, sprig), or
   counts at most 10 small pieces (after scaling) USDA has no weight for ("2 bay
-  leaves", "1 cinnamon stick"). So is at most a tablespoon (after scaling) of one
+  leaves", "1 cinnamon stick", "3 large stalks rosemary"), cut to a length or
+  not ("1 2-inch piece cinnamon stick"). So is at most a tablespoon (after scaling) of one
   with no density ("1 tsp freshly ground black pepper"): about 15-25 kcal for most
   spices, and up to about 50 for dense, rich seeds such as whole mustard seed. A
   real amount, like a cup of cumin, counts in full.

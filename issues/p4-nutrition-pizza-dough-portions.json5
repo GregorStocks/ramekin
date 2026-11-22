@@ -1,0 +1,18 @@
+{
+  "title": "Calorie estimates: a ball or portion of a recipe's own pizza dough",
+  "description": "\"1 portion no-knead pizza dough\" x2 (iamafoodblog, pipeline fixtures) can't be weighed, and \"1 ball no-knead pizza dough\" x4 on the same site is charged as the catalog's 454 g store-bought ball (USDA Branded 2737131), about 1,090 kcal. \
+That site's dough recipe (https://iamafoodblog.com/no-knead-pizza-dough-recipe/) uses 500 g flour and is divided into 4 equal portions, each shaped into a ball for one 10-inch pizza, so a portion or ball there is about 215 g of dough, roughly half the catalog's ball. \
+Making a portion equal the 454 g ball would double-count, so it was left unknown when p3-nutrition-containers-and-packages closed (2026-11-22). \
+Options: leave it (a recipe's own dough is another recipe, like the lines \"Another recipe\" already skips), or give homemade or no-knead dough names their own smaller ball. \
+A store-bought 1 lb ball is right for \"1 ball pizza dough\" lines that mean a bought one. \
+Server-side only (ramekin-core nutrition), so no web or iOS change.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "catalog",
+  ],
+  "created_at": "2026-11-22T09:30:00-08:00",
+  "updated_at": "2026-11-22T09:30:00-08:00",
+}

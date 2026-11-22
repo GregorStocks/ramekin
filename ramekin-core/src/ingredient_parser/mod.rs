@@ -752,6 +752,26 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let mut primary_unit = read.modified_unit();
     remaining = read.rest.to_string();
 
+    // Step 3.1: "1/2 a head of romaine lettuce": an article between the
+    // amount and "<unit> of" hides the unit.
+    if primary_amount.is_some() && primary_unit.is_none() {
+        let after_article = remaining
+            .trim_start()
+            .split_once(' ')
+            .filter(|(word, _)| ["a", "an"].iter().any(|a| word.eq_ignore_ascii_case(a)))
+            .map(|(_, rest)| rest.to_string());
+        if let Some(after_article) = after_article {
+            let names_unit = after_article
+                .split_whitespace()
+                .nth(1)
+                .is_some_and(|word| word.eq_ignore_ascii_case("of"));
+            if let (true, (Some(unit), item)) = (names_unit, extract_unit(&after_article)) {
+                primary_unit = Some(unit);
+                remaining = item;
+            }
+        }
+    }
+
     // Step 3.5: "1/8, 1/4 or 1/2 teaspoon yeast", "2, 3 or 4 eggs": a list
     // of bare amounts ending in an "or" alternative shares its unit.
     if primary_amount.is_some() && read.unit.is_none() {
