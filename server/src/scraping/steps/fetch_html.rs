@@ -37,9 +37,8 @@ impl PipelineStep for FetchHtmlStep {
         if let Err(e) = is_host_allowed(ctx.url) {
             return StepResult {
                 step_name: Self::NAME.to_string(),
-                success: false,
                 output: serde_json::Value::Null,
-                error: Some(e.to_string()),
+                outcome: Err(e.to_string()),
                 duration_ms: start.elapsed().as_millis() as u64,
                 next_step: None,
             };
@@ -53,17 +52,15 @@ impl PipelineStep for FetchHtmlStep {
         match fetched {
             Ok(html) => StepResult {
                 step_name: Self::NAME.to_string(),
-                success: true,
                 output: json!({ "html": html }),
-                error: None,
+                outcome: Ok(()),
                 duration_ms: start.elapsed().as_millis() as u64,
                 next_step: None,
             },
             Err(e) => StepResult {
                 step_name: Self::NAME.to_string(),
-                success: false,
                 output: serde_json::Value::Null,
-                error: Some(e.to_string()),
+                outcome: Err(e.to_string()),
                 duration_ms: start.elapsed().as_millis() as u64,
                 next_step: None,
             },

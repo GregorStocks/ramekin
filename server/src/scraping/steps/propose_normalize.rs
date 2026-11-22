@@ -107,10 +107,9 @@ impl PipelineStep for ProposeNormalizeStep {
             };
             return StepResult {
                 step_name: PROPOSE_NORMALIZE_STEP.to_string(),
-                success: true,
                 output: serde_json::to_value(proposal)
                     .expect("NormalizeProposal serializes to JSON"),
-                error: None,
+                outcome: Ok(()),
                 duration_ms: start.elapsed().as_millis() as u64,
                 next_step: None,
             };
@@ -139,9 +138,8 @@ impl PipelineStep for ProposeNormalizeStep {
         };
         StepResult {
             step_name: PROPOSE_NORMALIZE_STEP.to_string(),
-            success: true,
             output: serde_json::to_value(proposal).expect("NormalizeProposal serializes to JSON"),
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: None,
         }

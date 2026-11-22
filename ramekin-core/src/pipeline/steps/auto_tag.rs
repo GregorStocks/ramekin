@@ -79,9 +79,8 @@ impl PipelineStep for AutoTagStep {
 
         StepResult {
             step_name: Self::NAME.to_string(),
-            success: true,
             output: serde_json::to_value(output).expect("AutoTagOutput serializes to JSON"),
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: None,
         }
