@@ -78,15 +78,14 @@ impl StepOutputStore for FileOutputStore {
         step_name: &str,
         output: &JsonValue,
         duration_ms: i64,
-        success: bool,
-        error: Option<&str>,
+        outcome: Result<(), &str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
         let dir = self.step_dir(step_name);
         fs::create_dir_all(&dir)?;
 
         // Failures go to error.json so that output.json (what get_output and
         // the snapshot writer read) only ever holds successful output.
-        if !success {
+        if let Err(error) = outcome {
             let json = serde_json::to_string_pretty(&serde_json::json!({
                 "error": error,
                 "output": output,
@@ -118,7 +117,7 @@ mod tests {
         let mut store = FileOutputStore::new(dir.path(), "https://example.com/recipe");
 
         store
-            .save_output("extract_recipe", &json!({ "value": 42 }), 5, true, None)
+            .save_output("extract_recipe", &json!({ "value": 42 }), 5, Ok(()))
             .await
             .unwrap();
 
@@ -140,8 +139,7 @@ mod tests {
                 "normalize_title",
                 &json!({ "error": "AI call failed: details" }),
                 7,
-                false,
-                Some("AI call failed: details"),
+                Err("AI call failed: details"),
             )
             .await
             .unwrap();

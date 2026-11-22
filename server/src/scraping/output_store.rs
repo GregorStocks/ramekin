@@ -250,15 +250,6 @@ pub fn move_outputs_out(conn: &mut SqliteConnection) -> anyhow::Result<()> {
     Ok(())
 }
 
-/// A step's outcome as `StepResult` reports it: `success`, and an error that
-/// only a failure carries. A failure without a message still gets one.
-fn step_outcome(success: bool, error: Option<&str>) -> Result<(), &str> {
-    match (success, error) {
-        (true, _) => Ok(()),
-        (false, error) => Err(error.unwrap_or("The step failed without an error message.")),
-    }
-}
-
 /// Database-backed output store for server pipeline runs.
 ///
 /// Stores step outputs in the step_outputs table, keyed by job_id and step_name.
@@ -303,18 +294,12 @@ impl<'a> DbOutputStore<'a> {
         step_name: &str,
         output: &JsonValue,
         duration_ms: i64,
-        success: bool,
-        error: Option<&str>,
+        outcome: Result<(), &str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
         let new_output = PreparedOutput::prepare(step_name, output.clone())
             .await
             .map_err(|e| Box::<dyn Error + Send + Sync>::from(format!("{e:#}")))?
-            .into_row(
-                self.job_id,
-                step_name,
-                Some(duration_ms),
-                step_outcome(success, error),
-            );
+            .into_row(self.job_id, step_name, Some(duration_ms), outcome);
 
         crate::db::run_blocking_write(self.pool, move |conn| {
             diesel::insert_into(step_outputs::table)
@@ -345,11 +330,9 @@ impl StepOutputStore for DbOutputStore<'_> {
         step_name: &str,
         output: &JsonValue,
         duration_ms: i64,
-        success: bool,
-        error: Option<&str>,
+        outcome: Result<(), &str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
-        self.save(step_name, output, duration_ms, success, error)
-            .await
+        self.save(step_name, output, duration_ms, outcome).await
     }
 }
 

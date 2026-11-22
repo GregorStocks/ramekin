@@ -1,6 +1,6 @@
 use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
-use crate::db::DbPool;
+use crate::db::{next_sync_stamp, DbPool};
 use crate::ids::Uuid;
 use crate::schema::recipes;
 use axum::{
@@ -35,26 +35,28 @@ pub async fn delete_recipe(
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
 
-    // Soft delete - set deleted_at timestamp
-    let updated = run_db_write(&pool, move |conn| {
-        diesel::update(
+    // Soft delete: set deleted_at and the sync stamp that tells clients of
+    // it, together (the table's CHECK pairs them). Deleting nothing is an
+    // error, so the transaction rolls back and the clock doesn't move.
+    run_db_write(&pool, move |conn| {
+        let deleted_seq = next_sync_stamp(conn)?;
+        let updated = diesel::update(
             recipes::table
                 .filter(recipes::id.eq(id))
                 .filter(recipes::user_id.eq(user_id))
                 .filter(recipes::deleted_at.is_null()),
         )
-        .set(recipes::deleted_at.eq(Some(Utc::now())))
-        .execute(conn)
-        .map_err(|e| {
-            tracing::error!("Failed to delete recipe: {}", e);
-            ApiError::internal("Failed to delete recipe")
-        })
+        .set((
+            recipes::deleted_at.eq(Some(Utc::now())),
+            recipes::deleted_seq.eq(Some(deleted_seq)),
+        ))
+        .execute(conn)?;
+        if updated == 0 {
+            return Err(ApiError::not_found("Recipe not found"));
+        }
+        Ok(())
     })
     .await?;
-
-    if updated == 0 {
-        return Err(ApiError::not_found("Recipe not found"));
-    }
 
     Ok(StatusCode::NO_CONTENT)
 }

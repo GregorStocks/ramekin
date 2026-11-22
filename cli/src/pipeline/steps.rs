@@ -46,9 +46,8 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
             None => {
                 return StepResult {
                     step_name: FetchImagesStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some("extract_recipe output not found".to_string()),
+                    outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
                     next_step: None,
                 };
@@ -64,9 +63,8 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
             None => {
                 return StepResult {
                     step_name: FetchImagesStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some("No raw_recipe in extract output".to_string()),
+                    outcome: Err("No raw_recipe in extract output".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
                     next_step: None,
                 };
@@ -95,13 +93,12 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
 
         StepResult {
             step_name: FetchImagesStepMeta::NAME.to_string(),
-            success: true, // Image fetch failures don't fail the pipeline
             output: json!({
                 "fetched_urls": fetched_urls,
                 "failed_urls": failed_urls,
                 "images_fetched": fetched_urls.len()
             }),
-            error: None,
+            outcome: Ok(()), // Image fetch failures don't fail the pipeline
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: Some("parse_ingredients".to_string()),
         }
@@ -128,9 +125,8 @@ impl PipelineStep for SaveRecipeStep {
             None => {
                 return StepResult {
                     step_name: SaveRecipeStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some("extract_recipe output not found".to_string()),
+                    outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
                     next_step: None,
                 };
@@ -143,9 +139,8 @@ impl PipelineStep for SaveRecipeStep {
             Err(e) => {
                 return StepResult {
                     step_name: SaveRecipeStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some(format!("Failed to parse extract output: {}", e)),
+                    outcome: Err(format!("Failed to parse extract output: {}", e)),
                     duration_ms: start.elapsed().as_millis() as u64,
                     next_step: None,
                 };
@@ -160,9 +155,8 @@ impl PipelineStep for SaveRecipeStep {
 
         StepResult {
             step_name: SaveRecipeStepMeta::NAME.to_string(),
-            success: true,
             output: serde_json::to_value(&save_output).unwrap_or_default(),
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: None,
         }

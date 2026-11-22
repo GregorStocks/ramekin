@@ -109,9 +109,8 @@ impl PipelineStep for ApplyNormalizeStep {
         if normalized.content == base.content {
             return StepResult {
                 step_name: APPLY_NORMALIZE_STEP.to_string(),
-                success: true,
                 output: json!({ "changed": false }),
-                error: None,
+                outcome: Ok(()),
                 duration_ms: start.elapsed().as_millis() as u64,
                 next_step: None,
             };
@@ -147,9 +146,8 @@ impl PipelineStep for ApplyNormalizeStep {
         };
         StepResult {
             step_name: APPLY_NORMALIZE_STEP.to_string(),
-            success: true,
             output,
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: None,
         }

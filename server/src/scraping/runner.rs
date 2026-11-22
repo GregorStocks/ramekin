@@ -513,19 +513,12 @@ async fn run_scrape_job_inner(
         let continues_on_failure = step.metadata().continues_on_failure;
         let result = record_step_result(&store, &step_name, result).await;
 
-        if !result.success {
-            last_error = result.error.clone();
-        }
-
-        if !(result.success || continues_on_failure) {
-            terminal_error = Some((
-                step_name.clone(),
-                result
-                    .error
-                    .clone()
-                    .unwrap_or_else(|| "Step failed".to_string()),
-            ));
-            break;
+        if let Err(error) = result.outcome {
+            last_error = Some(error.clone());
+            if !continues_on_failure {
+                terminal_error = Some((step_name.clone(), error));
+                break;
+            }
         }
 
         current_step_name = plan.next_after(&step_name).map(str::to_string);
@@ -581,29 +574,22 @@ async fn record_step_result(
             step_name,
             &result.output,
             result.duration_ms as i64,
-            result.success,
-            result.error.as_deref(),
+            result.outcome_ref(),
         )
         .await
     {
         let msg = format!("Failed to persist output for step {step_name}: {e}");
         tracing::error!("{msg}");
-        result.success = false;
-        result.error = Some(msg);
+        result.outcome = Err(msg);
     }
 
-    if result.success {
-        tracing::debug!(
+    match &result.outcome {
+        Ok(()) => tracing::debug!(
             "Step '{}' completed successfully in {}ms",
             step_name,
             result.duration_ms
-        );
-    } else {
-        tracing::debug!(
-            "Step '{}' failed: {}",
-            step_name,
-            result.error.as_deref().unwrap_or("unknown error")
-        );
+        ),
+        Err(error) => tracing::debug!("Step '{}' failed: {}", step_name, error),
     }
 
     result
@@ -689,14 +675,13 @@ async fn run_concurrent_steps(
                     if let Some(output) = store.get_output(name).await {
                         let result = StepResult {
                             step_name: name.to_string(),
-                            success: true,
                             output,
-                            error: None,
+                            outcome: Ok(()),
                             duration_ms: 0,
                             next_step: None,
                         };
                         let result = record_step_result(store, name, result).await;
-                        if result.success {
+                        if result.is_success() {
                             finished.insert(name);
                             reused_any = true;
                             continue;
@@ -744,16 +729,14 @@ async fn run_concurrent_steps(
         let result = record_step_result(store, name, result).await;
 
         outcome.last_step_name = Some(name.to_string());
-        if !result.success {
-            outcome.last_error = result.error.clone();
+        if let Err(error) = &result.outcome {
+            outcome.last_error = Some(error.clone());
         }
-        if result.success || continues_on_failure {
-            finished.insert(name);
-        } else {
-            failures.push((
-                name,
-                result.error.unwrap_or_else(|| "Step failed".to_string()),
-            ));
+        match result.outcome {
+            Err(error) if !continues_on_failure => failures.push((name, error)),
+            _ => {
+                finished.insert(name);
+            }
         }
     }
 
@@ -822,10 +805,10 @@ async fn execute_step_with_tracing(
 
         // Record common fields
         let current_span = tracing::Span::current();
-        current_span.record("step.success", result.success);
+        current_span.record("step.success", result.is_success());
         current_span.record("step.duration_ms", result.duration_ms);
-        if let Some(ref error) = result.error {
-            current_span.record("step.error", error.as_str());
+        if let Some(error) = result.error() {
+            current_span.record("step.error", error);
         }
 
         // Record step-specific fields based on output
