@@ -36,7 +36,6 @@ pub use tags::{
 pub use types::{
     ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
     FetchImagesOutput, ParseIngredientsOutput, PipelineStep, RawRecipe, SaveRecipeOutput,
-    StepOutput,
 };
 pub use volume_to_weight::derived_grams;
 

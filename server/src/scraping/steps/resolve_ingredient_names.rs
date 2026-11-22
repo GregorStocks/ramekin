@@ -31,17 +31,15 @@ impl ResolveIngredientNamesStep {
     }
 
     fn result(start: Instant, outcome: Result<usize, String>) -> StepResult {
-        let (success, output, error) = match outcome {
-            Ok(names) => (true, json!({ "names": names }), None),
-            Err(e) => (false, json!({ "error": e }), Some(e)),
+        let (output, outcome) = match outcome {
+            Ok(names) => (json!({ "names": names }), Ok(())),
+            Err(e) => (json!({ "error": e }), Err(e)),
         };
         StepResult {
             step_name: RESOLVE_INGREDIENT_NAMES_STEP.to_string(),
-            success,
+            outcome,
             output,
-            error,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

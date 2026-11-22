@@ -47,7 +47,6 @@ impl PipelineStep for LoadRecipeStep {
         };
         StepResult {
             step_name: LOAD_RECIPE_STEP.to_string(),
-            success: true,
             output: json!({
                 "raw_recipe": recipe.to_raw_recipe(),
                 "ingredients": recipe
@@ -57,9 +56,8 @@ impl PipelineStep for LoadRecipeStep {
                     .map(ParsedIngredient::from)
                     .collect::<Vec<_>>(),
             }),
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

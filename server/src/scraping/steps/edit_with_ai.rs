@@ -197,11 +197,9 @@ impl PipelineStep for EditWithAiStep {
         };
         StepResult {
             step_name: EDIT_WITH_AI_STEP.to_string(),
-            success: true,
             output: serde_json::to_value(output).expect("EditWithAiOutput serializes to JSON"),
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

@@ -2364,3 +2364,39 @@ fn cut_lengths_and_stalks_of_trace_foods_are_negligible() {
     assert!(celery.known_calories.is_some());
     assert!(!celery.lines[0].text.starts_with("Negligible"));
 }
+
+#[test]
+fn counted_umeboshi_and_jarred_roasted_peppers_weigh_by_the_piece() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // A pickled plum is 10 g.
+        ("1 Umeboshi pickled sour plum", "10 g pickled plums"),
+        (
+            "3 pickled plums (umeboshi) (optional)",
+            "30 g pickled plums",
+        ),
+        ("1 salted pickled plum", "10 g pickled plums"),
+        // A jarred roasted red pepper is 60 g.
+        (
+            "2 jarred roasted red peppers, drained",
+            "120 g roasted red peppers",
+        ),
+        (
+            "1 roasted red pepper (chopped (you can use jarred))",
+            "60 g roasted red peppers",
+        ),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(weighed_kcal.is_some(), "{weighed}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}

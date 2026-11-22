@@ -46,11 +46,9 @@ impl PipelineStep for ParseIngredientsStep {
             None => {
                 return StepResult {
                     step_name: Self::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some("extract_recipe output not found".to_string()),
+                    outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -65,11 +63,9 @@ impl PipelineStep for ParseIngredientsStep {
             Err(e) => {
                 return StepResult {
                     step_name: Self::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some(e),
+                    outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -88,11 +84,9 @@ impl PipelineStep for ParseIngredientsStep {
             Err(e) => {
                 return StepResult {
                     step_name: Self::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some(e),
+                    outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -120,12 +114,10 @@ impl PipelineStep for ParseIngredientsStep {
 
         StepResult {
             step_name: Self::NAME.to_string(),
-            success: true,
             output: serde_json::to_value(&output)
                 .expect("ParseIngredientsOutput serializes to JSON"),
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("save_recipe".to_string()),
         }
     }
 }
@@ -258,8 +250,7 @@ mod tests {
 
         let result = ParseIngredientsStep.execute(&ctx).await;
 
-        assert!(!result.success);
-        let err = result.error.unwrap();
+        let err = result.outcome.unwrap_err();
         assert!(
             err.starts_with("Malformed raw_recipe in extract_recipe output:"),
             "unexpected error: {err}"
@@ -279,9 +270,8 @@ mod tests {
 
         let result = ParseIngredientsStep.execute(&ctx).await;
 
-        assert!(!result.success);
         assert_eq!(
-            result.error.as_deref(),
+            result.error(),
             Some("Missing raw_recipe in extract_recipe output")
         );
     }
@@ -309,7 +299,7 @@ mod tests {
             outputs: &outputs,
         };
         let result = ParseIngredientsStep.execute(&ctx).await;
-        assert!(result.success, "{:?}", result.error);
+        assert_eq!(result.outcome, Ok(()));
         result.output["ingredients"]
             .as_array()
             .unwrap()
