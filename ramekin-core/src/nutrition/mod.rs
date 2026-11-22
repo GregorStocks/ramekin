@@ -220,9 +220,9 @@ const TRACE_UNITS: [&str; 5] = ["pinch", "dash", "smidgen", "sprinkle", "sprig"]
 
 /// Units that count small whole pieces of a trace food ("2 bay leaves", "1
 /// cinnamon stick"); no unit is a bare count.
-const TRACE_COUNT_UNITS: [&str; 16] = [
-    "", "leaf", "leaves", "stick", "sticks", "pod", "pods", "stem", "stems", "piece", "pieces",
-    "whole", "clove", "cloves", "star", "stars",
+const TRACE_COUNT_UNITS: [&str; 18] = [
+    "", "leaf", "leaves", "stick", "sticks", "pod", "pods", "stem", "stems", "stalk", "stalks",
+    "piece", "pieces", "whole", "clove", "cloves", "star", "stars",
 ];
 
 /// A line given no amount at all: no measurement, or none with an amount
@@ -284,8 +284,9 @@ fn is_cooking_fat(entry: &Entry) -> bool {
 const MAX_TRACE_COUNT: f64 = 10.0;
 
 /// A few whole leaves, sticks, or pods of a food USDA has no piece weight for
-/// ("2 bay leaves"), sized or not ("1 small bay leaf"); a handful of a trace
-/// food is a few calories.
+/// ("2 bay leaves"), sized ("1 small bay leaf", "3 large stalks rosemary") or
+/// not, or cut to a length ("1 2-inch piece cinnamon stick"); a handful of a
+/// trace food is a few calories.
 fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
     ingredient
         .measurements
@@ -297,9 +298,21 @@ fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) 
                     unit: Unit::Piece(unit),
                 }],
             ) => {
+                let plain = catalog::unsized_unit(unit);
                 amount.max * scale <= MAX_TRACE_COUNT
-                    && (TRACE_COUNT_UNITS.contains(&unit.as_str()) || catalog::is_size(unit))
+                    && (TRACE_COUNT_UNITS.contains(&plain.as_deref().unwrap_or(unit))
+                        || catalog::is_size(unit))
                     && catalog::grams_per_piece(entry, Some(unit)).is_none()
+            }
+            Some(
+                [Term {
+                    amount,
+                    unit: Unit::Inches(_),
+                }],
+            ) => {
+                amount.max * scale <= MAX_TRACE_COUNT
+                    && catalog::grams_per_piece(entry, Some("1 inch piece")).is_none()
+                    && catalog::grams_per_piece(entry, None).is_none()
             }
             _ => false,
         })

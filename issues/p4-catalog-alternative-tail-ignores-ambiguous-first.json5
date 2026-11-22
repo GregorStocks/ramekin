@@ -1,0 +1,18 @@
+{
+  "title": "Catalog: an alternatives line takes a food from the tail of an unknown brand name",
+  "description": "\"2 containers Stonyfield’s Petite-Creme Vive la Vanilla or yogurt of choice\" (pipeline fixtures) resolves to vanilla extract: the first alternative names no food, so first_alternative (ramekin-core/src/catalog/resolve.rs) tries its trailing words and finds \"vanilla\". \
+The estimate says \"Amount unclear (assumed vanilla)\" and reports a vanilla extract / container weight gap that make catalog-fill-weights would ask the model about. \
+No calories are charged today, since a container of vanilla extract has no weight, but one estimated weight would make this line wrong. \
+A null alias on the first alternative (\"stonyfield’s petite-creme vive la vanilla\") or on the whole item does not stop it: the trailing-words loop only asks whether the tail resolves directly. \
+Possible fix: when the first alternative is itself a curated ambiguous (null) name, return no food instead of trying its tail; check the effect with make ingredient-catalog-audit and a before/after diff of logs/ingredient-catalog-failures.json, since \"x or y\" resolution touches many lines. \
+Server-side only (ramekin-core catalog), so no web or iOS change.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "catalog",
+    "nutrition",
+  ],
+  "created_at": "2026-11-22T09:30:00-08:00",
+  "updated_at": "2026-11-22T09:30:00-08:00",
+}

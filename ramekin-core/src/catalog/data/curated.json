@@ -2148,6 +2148,7 @@
     "romaine": "lettuce, cos or romaine",
     "romaine leaves": "lettuce, cos or romaine, raw",
     "romaine lettuce": "lettuce, cos or romaine",
+    "romaine lettuce hearts": "romaine hearts",
     "romaine lettuce leaves": "lettuce, cos or romaine, raw",
     "room-temperature water": "water, bottled, generic",
     "rose water": "water, bottled, generic",
@@ -2334,6 +2335,7 @@
     "soft goat cheese": "cheese, goat, soft type",
     "soft white buns": "hamburger buns",
     "soft-boiled egg": "egg, whole, cooked, hard-boiled",
+    "somen noodles": "noodles, japanese, somen",
     "soppresatta": "salami, dry or hard, pork",
     "soup noodles of your choice": null,
     "sour cherries": "cherries, sour, red, raw",
@@ -3690,6 +3692,7 @@
     "rolls, hamburger or hot dog, whole wheat": "Bakery & Bread",
     "rolls, hamburger or hotdog, plain": "Bakery & Bread",
     "rolls, hard (includes kaiser)": "Bakery & Bread",
+    "romaine hearts": "Produce",
     "romesco sauce": "Condiments & Sauces",
     "rosemary, fresh": "Produce",
     "rutabagas, raw": "Produce",
@@ -5186,6 +5189,11 @@
     "kombu": {
       "fdc_id": 2709988,
       "portions": {
+        "1 inch piece": {
+          "source": "A quarter of a 4-inch-square piece: Food Network Kitchen, Shrimp and Leek Soba: 'two 4-inch-square pieces kombu (about 20 grams)', so 10 g a piece and 2.5 g for an inch of it",
+          "url": "https://www.foodnetwork.com/recipes/food-network-kitchen/shrimp-and-leek-soba-3362706",
+          "value": 2.5
+        },
         "piece": {
           "source": "Food Network Kitchen, Shrimp and Leek Soba: 'two 4-inch-square pieces kombu (about 20 grams)', so 10 g a piece",
           "url": "https://www.foodnetwork.com/recipes/food-network-kitchen/shrimp-and-leek-soba-3362706",
@@ -5729,6 +5737,9 @@
     },
     "rolled oats": {
       "fdc_id": 173904
+    },
+    "romaine hearts": {
+      "fdc_id": 169247
     },
     "romesco sauce": {
       "grams_per_cup": {

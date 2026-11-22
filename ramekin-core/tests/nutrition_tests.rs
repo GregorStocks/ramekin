@@ -2006,8 +2006,9 @@ fn daikon_and_turmeric_inch_pieces() {
         assert_eq!(calories(raw), Some(two_inches), "{raw}");
     }
     assert!(two_inches * 3.0 < calories("1 daikon").unwrap());
-    // The catalog has only ground turmeric, with no piece to weigh.
-    assert_eq!(calories("1 2-inch piece turmeric"), None);
+    // The catalog has only ground turmeric, a trace spice with no piece to
+    // weigh: a length of it is negligible, like a bare piece.
+    assert_eq!(calories("1 2-inch piece turmeric"), Some(0.0));
 }
 
 #[test]
@@ -2301,4 +2302,65 @@ fn napa_cabbage_weighs_by_the_head_and_leaf() {
             "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
         );
     }
+}
+
+#[test]
+fn hearts_blocks_bundles_loaves_and_inch_pieces_weigh() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // An article between the amount and its unit.
+        ("1/2 a head of romaine lettuce", "313 g romaine lettuce"),
+        ("3 romaine lettuce hearts, chopped", "624 g romaine lettuce"),
+        (
+            "1 romaine lettuce heart (cut into 1 inch pieces)",
+            "208 g romaine lettuce",
+        ),
+        ("1/2 block konnyaku", "125 g konnyaku"),
+        ("2 bunches somen noodles", "151 g dried somen noodles"),
+        ("2 bundles dried Somen noodle", "151 g dried somen noodles"),
+        ("1 loaf bread", "454 g bread"),
+        (
+            "1 loaf unsliced white bread, brioche or rich bread of your choice",
+            "454 g white bread",
+        ),
+        // An inch of a 4-inch-wide sheet.
+        ("4 inches Kombu (dried sea kelp)", "10 g kombu"),
+        ("3  (2-inch) pieces of kombu", "15 g kombu"),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
+
+#[test]
+fn cut_lengths_and_stalks_of_trace_foods_are_negligible() {
+    for raw in [
+        "1 (2-inch) piece cassia bark or cinnamon stick",
+        "3 large stalks rosemary",
+    ] {
+        let result = estimate(&[parse_ingredient(raw)], None, 1.0).unwrap();
+        assert!(result.unknown_ingredients.is_empty(), "{raw}");
+        assert!(result.lines[0].text.starts_with("Negligible"), "{raw}");
+    }
+    // Only a few: a dozen lengths of cinnamon are unknown, not zero.
+    let many = estimate(
+        &[parse_ingredient("12 (2-inch) pieces cinnamon stick")],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(many.unknown_ingredients.len(), 1);
+    // And only trace foods: a stalk of celery is weighed.
+    let celery = estimate(&[parse_ingredient("3 large stalks celery")], None, 1.0).unwrap();
+    assert!(celery.known_calories.is_some());
+    assert!(!celery.lines[0].text.starts_with("Negligible"));
 }

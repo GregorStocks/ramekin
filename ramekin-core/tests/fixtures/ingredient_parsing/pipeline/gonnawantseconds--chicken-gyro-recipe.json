@@ -201,11 +201,11 @@
     {
       "raw": "1/2 a head of romaine lettuce (cut into strips)",
       "expected": {
-        "item": "a head of romaine lettuce",
+        "item": "romaine lettuce",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "head"
           }
         ],
         "note": "cut into strips",

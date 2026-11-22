@@ -73,6 +73,15 @@
         }
       }
     },
+    "bread": {
+      "pieces": {
+        "loaf": {
+          "basis": "A loaf of bread is a 1-pound loaf: USDA FNDDS 2707614 (Bread, Italian, Grecian, Armenian): 1 loaf = 454 g; FNDDS 2707610 (French or Vienna) gives 470 g",
+          "grams": 454,
+          "url": "https://fdc.nal.usda.gov/food-details/2707614/nutrients"
+        }
+      }
+    },
     "broccoli": {
       "default": "head medium",
       "pieces": {
@@ -279,6 +288,15 @@
         }
       }
     },
+    "konnyaku": {
+      "pieces": {
+        "block": {
+          "basis": "Konnyaku blocks are sold at 250 g (Marufuji Kuro Konnyaku 250g; Shimonita and J-Basket blocks are the same size, Nishiki's is 200 g)",
+          "grams": 250,
+          "url": "https://www.arcasiangrocer.com.au/products/marufuji-kuro-konnyaku-250g"
+        }
+      }
+    },
     "lemon juice": {
       "pieces": {
         "lemon": {
@@ -370,6 +388,16 @@
         }
       }
     },
+    "romaine hearts": {
+      "default": "heart",
+      "pieces": {
+        "heart": {
+          "basis": "A third of a 3-count, 22 oz (624 g) bag of romaine hearts (Good & Gather Fresh Romaine Hearts, 3ct/22oz); organic 3-count bags run smaller, about 12 oz",
+          "grams": 208,
+          "url": "https://www.target.com/p/romaine-hearts-3ct-22oz-good-38-gather-8482/-/A-54571053"
+        }
+      }
+    },
     "savoy cabbage": {
       "default": "head",
       "pieces": {
@@ -446,6 +474,15 @@
           "basis": "Small shrimp: 51/60 per pound, so 8 g at the midpoint (America's Test Kitchen, Shrimp Size Chart)",
           "grams": 8,
           "url": "https://www.americastestkitchen.com/lessons/articles/2280-shrimp-size-chart"
+        }
+      }
+    },
+    "somen noodles": {
+      "pieces": {
+        "bunch": {
+          "basis": "Label serving of J-Basket Tomoshiraga Somen: 1 bundle (75.5 g). US grocery bundles run 75-90 g; hand-stretched Japanese ones are 50 g",
+          "grams": 75.5,
+          "url": "https://www.weee.com/en/product/J-Basket-Tomoshiraga-Somen-Noodle-10meals/10931"
         }
       }
     },
