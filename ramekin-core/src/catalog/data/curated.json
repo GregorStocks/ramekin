@@ -5913,10 +5913,23 @@
       "fdc_id": 2705448
     },
     "umeboshi pickled sour plum": {
+      "default_portion": "plum",
       "kcal_per_100g": {
         "source": "USDA FoodData Central Branded food 396531 (JFC, PICKLED PLUM, JFC International Inc.): 60 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/396531/nutrients",
         "value": 60.0
+      },
+      "portions": {
+        "piece": {
+          "source": "A piece of umeboshi is one plum. USDA FoodData Central Branded food 2030372 (JFC, PICKLED PLUM, JFC International Inc.): serving 1 pc = 10 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2030372/nutrients",
+          "value": 10.0
+        },
+        "plum": {
+          "source": "USDA FoodData Central Branded food 2030372 (JFC, PICKLED PLUM, JFC International Inc.): serving 1 pc = 10 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2030372/nutrients",
+          "value": 10.0
+        }
       }
     },
     "vanilla bean": {
@@ -6290,11 +6303,22 @@
       }
     },
     "peppers, sweet, red, canned, solids and liquids": {
+      "default_portion": "pepper",
       "portions": {
         "jar": {
           "source": "USDA FoodData Central Branded food 2091712 (ROASTED RED PEPPERS, Tree of Life, Inc.): package 12 oz/340 g, the smallest common jar",
           "url": "https://fdc.nal.usda.gov/food-details/2091712/nutrients",
           "value": 340.0
+        },
+        "pepper": {
+          "source": "USDA FoodData Central Branded food 2381701 (ROASTED RED PEPPERS, Price Chopper Supermarkets): serving 0.5 pepper = 30 g; USDA SR Legacy 168559 (Pimento, canned) weighs a whole pimiento at 66 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2381701/nutrients",
+          "value": 60.0
+        },
+        "piece": {
+          "source": "A piece of jarred roasted red pepper is one pepper. USDA FoodData Central Branded food 2381701 (ROASTED RED PEPPERS, Price Chopper Supermarkets): serving 0.5 pepper = 30 g; USDA SR Legacy 168559 (Pimento, canned) weighs a whole pimiento at 66 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2381701/nutrients",
+          "value": 60.0
         }
       }
     },
