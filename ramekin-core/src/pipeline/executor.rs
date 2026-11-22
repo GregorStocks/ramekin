@@ -69,15 +69,10 @@ pub async fn run_pipeline(
         };
         let mut result = step.execute(&ctx).await;
 
-        if !result.success {
+        if let Err(error) = &result.outcome {
             // The per-URL report truncates errors for grouping, so this is the
             // one place the full error is guaranteed to be visible.
-            tracing::warn!(
-                url,
-                step = meta.name,
-                error = result.error.as_deref().unwrap_or("unknown error"),
-                "Pipeline step failed"
-            );
+            tracing::warn!(url, step = meta.name, error, "Pipeline step failed");
         }
 
         // Save output for both success and failure - failure output is needed
@@ -87,8 +82,7 @@ pub async fn run_pipeline(
                 meta.name,
                 &result.output,
                 result.duration_ms as i64,
-                result.success,
-                result.error.as_deref(),
+                result.outcome_ref(),
             )
             .await
         {
@@ -98,13 +92,12 @@ pub async fn run_pipeline(
             // continuing would run them against silently missing data. An
             // already-failed step keeps its original (more useful) error and
             // stops the pipeline anyway.
-            if result.success {
-                result.success = false;
-                result.error = Some(format!("Failed to save step output: {}", e));
+            if result.is_success() {
+                result.outcome = Err(format!("Failed to save step output: {}", e));
             }
         }
 
-        let should_continue = result.success || meta.continues_on_failure;
+        let should_continue = result.is_success() || meta.continues_on_failure;
         results.push(result);
 
         if !should_continue {
@@ -126,7 +119,7 @@ mod tests {
     /// Store that records every save_output call.
     #[derive(Default)]
     struct RecordingStore {
-        saves: Vec<(String, JsonValue, bool, Option<String>)>,
+        saves: Vec<(String, JsonValue, Result<(), String>)>,
     }
 
     #[async_trait]
@@ -140,14 +133,12 @@ mod tests {
             step_name: &str,
             output: &JsonValue,
             _duration_ms: i64,
-            success: bool,
-            error: Option<&str>,
+            outcome: Result<(), &str>,
         ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
             self.saves.push((
                 step_name.to_string(),
                 output.clone(),
-                success,
-                error.map(String::from),
+                outcome.map_err(String::from),
             ));
             Ok(())
         }
@@ -167,8 +158,7 @@ mod tests {
             _step_name: &str,
             _output: &JsonValue,
             _duration_ms: i64,
-            _success: bool,
-            _error: Option<&str>,
+            _outcome: Result<(), &str>,
         ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
             Err("disk full".into())
         }
@@ -193,13 +183,16 @@ mod tests {
         async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
             StepResult {
                 step_name: self.name.to_string(),
-                success: self.success,
+                outcome: if self.success {
+                    Ok(())
+                } else {
+                    Err("AI call failed: something specific".to_string())
+                },
                 output: if self.success {
                     json!({ "value": 42 })
                 } else {
                     json!({ "error": "AI call failed: something specific" })
                 },
-                error: (!self.success).then(|| "AI call failed: something specific".to_string()),
                 duration_ms: 1,
             }
         }
@@ -221,9 +214,8 @@ mod tests {
         async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
             StepResult {
                 step_name: "always_ok".to_string(),
-                success: true,
                 output: json!({"ok": true}),
-                error: None,
+                outcome: Ok(()),
                 duration_ms: 0,
             }
         }
@@ -259,11 +251,10 @@ mod tests {
         run_pipeline(&["ok_step"], "https://example.com", &mut store, &registry).await;
 
         assert_eq!(store.saves.len(), 1);
-        let (name, output, success, error) = &store.saves[0];
+        let (name, output, outcome) = &store.saves[0];
         assert_eq!(name, "ok_step");
         assert_eq!(output, &json!({ "value": 42 }));
-        assert!(*success);
-        assert_eq!(error.as_deref(), None);
+        assert_eq!(outcome, &Ok(()));
     }
 
     #[tokio::test]
@@ -278,14 +269,16 @@ mod tests {
         run_pipeline(&["bad_step"], "https://example.com", &mut store, &registry).await;
 
         assert_eq!(store.saves.len(), 1);
-        let (name, output, success, error) = &store.saves[0];
+        let (name, output, outcome) = &store.saves[0];
         assert_eq!(name, "bad_step");
         assert_eq!(
             output,
             &json!({ "error": "AI call failed: something specific" })
         );
-        assert!(!*success);
-        assert_eq!(error.as_deref(), Some("AI call failed: something specific"));
+        assert_eq!(
+            outcome,
+            &Err("AI call failed: something specific".to_string())
+        );
     }
 
     #[tokio::test]
@@ -305,9 +298,8 @@ mod tests {
 
         assert_eq!(results.len(), 1);
         let result = &results[0];
-        assert!(!result.success);
         assert_eq!(
-            result.error.as_deref(),
+            result.error(),
             Some("Failed to save step output: disk full")
         );
     }

@@ -75,9 +75,8 @@ pub async fn run_with_deadline(
         Ok(result) => result,
         Err(_) => StepResult {
             step_name: step_name.to_string(),
-            success: false,
             output: serde_json::json!({ "timed_out": true }),
-            error: Some(timeout_error(step_name, deadline)),
+            outcome: Err(timeout_error(step_name, deadline)),
             duration_ms: deadline.as_millis() as u64,
         },
     }
@@ -119,8 +118,7 @@ mod tests {
             std::future::pending::<StepResult>(),
         )
         .await;
-        assert!(!result.success);
-        assert_eq!(result.error, Some(timeout_error("auto_tag", deadline)));
+        assert_eq!(result.outcome, Err(timeout_error("auto_tag", deadline)));
         assert_eq!(result.output["timed_out"], true);
     }
 
@@ -128,16 +126,15 @@ mod tests {
     async fn a_step_that_finishes_in_time_keeps_its_result() {
         let finished = StepResult {
             step_name: "auto_tag".to_string(),
-            success: true,
             output: serde_json::json!({ "suggested_tags": [] }),
-            error: None,
+            outcome: Ok(()),
             duration_ms: 5,
         };
         let result = run_with_deadline("auto_tag", Some(Duration::from_secs(60)), async {
             finished
         })
         .await;
-        assert!(result.success);
+        assert!(result.is_success());
         assert_eq!(result.output["suggested_tags"], serde_json::json!([]));
     }
 

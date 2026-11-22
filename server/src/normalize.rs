@@ -358,8 +358,7 @@ mod tests {
             _step_name: &str,
             _output: &Value,
             _duration_ms: i64,
-            _success: bool,
-            _error: Option<&str>,
+            _outcome: Result<(), &str>,
         ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
             unreachable!("read-only test output store")
         }

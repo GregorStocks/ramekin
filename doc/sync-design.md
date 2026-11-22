@@ -85,7 +85,8 @@ does every recipe write.
   `sync_clock`, and application code never writes it. `meal_plans` gains the
   column and its triggers. A recipe's own row keeps `deleted_seq`: the
   recipe's content is versioned, so its delete is the only change on the
-  row.
+  row. The delete handler takes that stamp from `sync_clock` itself and
+  writes it with `deleted_at`, so a CHECK can pair the two columns.
 * Shopping items stop using `version`, and the per-row `change_seq` takes
   over its job. Rows on writable feeds carry `change_seq`. A client ignores a server
   row older than the copy it holds, except on a full resync, whose stamps may

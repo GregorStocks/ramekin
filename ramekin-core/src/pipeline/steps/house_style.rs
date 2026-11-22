@@ -93,9 +93,8 @@ impl PipelineStep for HouseStyleStep {
 
         StepResult {
             step_name: Self::NAME.to_string(),
-            success: true,
             output: serde_json::to_value(output).expect("HouseStyleOutput serializes to JSON"),
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
         }
     }
@@ -154,7 +153,7 @@ mod tests {
 
         let result = HouseStyleStep::new(Arc::new(client)).execute(&ctx).await;
 
-        assert!(result.success, "{:?}", result.error);
+        assert_eq!(result.outcome, Ok(()));
         let output = result.output;
         assert_eq!(output["changed"], true);
         assert_eq!(output["summary"], "Moved the slicing.");
@@ -180,7 +179,7 @@ mod tests {
 
         let result = HouseStyleStep::new(Arc::new(client)).execute(&ctx).await;
 
-        assert!(result.success, "{:?}", result.error);
+        assert_eq!(result.outcome, Ok(()));
         assert_eq!(result.output["changed"], false);
     }
 
@@ -197,7 +196,6 @@ mod tests {
         )));
         let result = step.execute(&ctx).await;
 
-        assert!(!result.success);
-        assert!(result.error.unwrap().contains("OPENROUTER_API_KEY"));
+        assert!(result.outcome.unwrap_err().contains("OPENROUTER_API_KEY"));
     }
 }

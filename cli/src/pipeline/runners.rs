@@ -213,15 +213,15 @@ pub async fn run_all_steps(
         }
 
         // Extract stats for parse_ingredients step
-        if step == PipelineStep::ParseIngredients && result.success {
+        if step == PipelineStep::ParseIngredients && result.is_success() {
             ingredient_stats = extract_ingredient_stats_from_output(&result.output);
         }
 
         step_results.push(StepResult {
             step,
-            success: result.success,
+            success: result.is_success(),
             duration_ms: result.duration_ms,
-            error: result.error.clone(),
+            error: result.error().map(String::from),
             cached: false, // Generic pipeline doesn't track this
         });
     }

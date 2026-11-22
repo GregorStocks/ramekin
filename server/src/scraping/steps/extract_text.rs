@@ -60,9 +60,8 @@ impl PipelineStep for ExtractTextStep {
         }
         StepResult {
             step_name: ExtractRecipeStep::NAME.to_string(),
-            success: true,
             output,
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
         }
     }

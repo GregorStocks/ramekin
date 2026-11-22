@@ -4,7 +4,6 @@ use std::error::Error;
 
 use async_trait::async_trait;
 use serde::de::DeserializeOwned;
-use serde::{Deserialize, Serialize};
 use serde_json::Value as JsonValue;
 
 /// Metadata about a pipeline step.
@@ -28,19 +27,34 @@ pub struct StepMetadata {
 }
 
 /// Result of executing a step.
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone)]
 pub struct StepResult {
     /// Name of the step that produced this result
     pub step_name: String,
-    /// Whether the step succeeded
-    pub success: bool,
-    /// The output data (JSON)
+    /// Whether the step succeeded, or the error it failed with.
+    pub outcome: Result<(), String>,
+    /// The output data (JSON). A failed step has output too: it is saved to
+    /// root-cause failed runs.
     pub output: JsonValue,
-    /// Error message if failed
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub error: Option<String>,
     /// How long the step took in milliseconds
     pub duration_ms: u64,
+}
+
+impl StepResult {
+    pub fn is_success(&self) -> bool {
+        self.outcome.is_ok()
+    }
+
+    /// The error the step failed with, if it failed.
+    pub fn error(&self) -> Option<&str> {
+        self.outcome.as_ref().err().map(String::as_str)
+    }
+
+    /// The outcome with a borrowed error, as [`StepOutputStore::save_output`]
+    /// takes it.
+    pub fn outcome_ref(&self) -> Result<(), &str> {
+        self.outcome.as_ref().map(|_| ()).map_err(String::as_str)
+    }
 }
 
 /// Abstraction for reading/writing step outputs.
@@ -56,18 +70,16 @@ pub trait StepOutputStore: Send + Sync {
 
     /// Save the output from a step.
     ///
-    /// `success` records whether the step succeeded; `error` carries the
-    /// step's error message when `success == false`. These are persisted
-    /// alongside the output so the status API can surface per-step failures,
-    /// including for `continues_on_failure` steps (the overall job completes,
-    /// but the individual step still failed).
+    /// `outcome` records whether the step succeeded, or the error it failed
+    /// with. It is persisted alongside the output so the status API can
+    /// surface per-step failures, including for `continues_on_failure` steps
+    /// (the overall job completes, but the individual step still failed).
     async fn save_output(
         &mut self,
         step_name: &str,
         output: &JsonValue,
         duration_ms: i64,
-        success: bool,
-        error: Option<&str>,
+        outcome: Result<(), &str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>>;
 }
 

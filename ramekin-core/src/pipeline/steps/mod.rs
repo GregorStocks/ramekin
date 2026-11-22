@@ -77,8 +77,7 @@ impl crate::pipeline::StepOutputStore for TestOutputStore {
         _step_name: &str,
         _output: &serde_json::Value,
         _duration_ms: i64,
-        _success: bool,
-        _error: Option<&str>,
+        _outcome: Result<(), &str>,
     ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         Ok(())
     }
@@ -88,9 +87,8 @@ impl crate::pipeline::StepOutputStore for TestOutputStore {
 pub fn step_failure(step_name: &str, start: Instant, error: String) -> StepResult {
     StepResult {
         step_name: step_name.to_string(),
-        success: false,
         output: json!({ "error": error }),
-        error: Some(error),
+        outcome: Err(error),
         duration_ms: start.elapsed().as_millis() as u64,
     }
 }

@@ -92,10 +92,9 @@ impl PipelineStep for GenerateDescriptionStep {
 
         StepResult {
             step_name: Self::NAME.to_string(),
-            success: true,
             output: serde_json::to_value(output)
                 .expect("GenerateDescriptionOutput serializes to JSON"),
-            error: None,
+            outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
         }
     }

@@ -103,9 +103,8 @@ impl PipelineStep for SaveRecipeStep {
             None => {
                 return StepResult {
                     step_name: SaveRecipeStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some("extract_recipe output not found".to_string()),
+                    outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
                 };
             }
@@ -121,9 +120,8 @@ impl PipelineStep for SaveRecipeStep {
             Err(e) => {
                 return StepResult {
                     step_name: SaveRecipeStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some(e),
+                    outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                 };
             }
@@ -139,9 +137,8 @@ impl PipelineStep for SaveRecipeStep {
             Err(e) => {
                 return StepResult {
                     step_name: SaveRecipeStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some(e),
+                    outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                 };
             }
@@ -170,9 +167,8 @@ impl PipelineStep for SaveRecipeStep {
             Err(e) => {
                 return StepResult {
                     step_name: SaveRecipeStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some(e),
+                    outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                 };
             }
@@ -204,9 +200,8 @@ impl PipelineStep for SaveRecipeStep {
             Err(e) => {
                 return StepResult {
                     step_name: SaveRecipeStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some(e),
+                    outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                 };
             }
@@ -260,19 +255,17 @@ impl PipelineStep for SaveRecipeStep {
         match result {
             Ok((recipe_id, version_id)) => StepResult {
                 step_name: SaveRecipeStepMeta::NAME.to_string(),
-                success: true,
                 output: json!({
                     "recipe_id": recipe_id.to_string(),
                     "version_id": version_id.to_string(),
                 }),
-                error: None,
+                outcome: Ok(()),
                 duration_ms: start.elapsed().as_millis() as u64,
             },
             Err(e) => StepResult {
                 step_name: SaveRecipeStepMeta::NAME.to_string(),
-                success: false,
                 output: serde_json::Value::Null,
-                error: Some(e),
+                outcome: Err(e),
                 duration_ms: start.elapsed().as_millis() as u64,
             },
         }

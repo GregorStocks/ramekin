@@ -48,9 +48,8 @@ impl PipelineStep for FetchImagesStep {
             None => {
                 return StepResult {
                     step_name: FetchImagesStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some("extract_recipe output not found".to_string()),
+                    outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
                 };
             }
@@ -66,9 +65,8 @@ impl PipelineStep for FetchImagesStep {
             Err(e) => {
                 return StepResult {
                     step_name: FetchImagesStepMeta::NAME.to_string(),
-                    success: false,
                     output: serde_json::Value::Null,
-                    error: Some(e),
+                    outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                 };
             }
@@ -98,9 +96,8 @@ impl PipelineStep for FetchImagesStep {
 
         StepResult {
             step_name: FetchImagesStepMeta::NAME.to_string(),
-            success: true, // Image fetch failures don't fail the pipeline
             output: serde_json::to_value(&output).expect("FetchImagesOutput serializes to JSON"),
-            error: None,
+            outcome: Ok(()), // Image fetch failures don't fail the pipeline
             duration_ms: start.elapsed().as_millis() as u64,
         }
     }

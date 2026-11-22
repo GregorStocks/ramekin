@@ -165,6 +165,17 @@ pub fn sync_cursor(conn: &mut SqliteConnection) -> QueryResult<SyncCursor> {
     })
 }
 
+/// Advance the sync clock and return its new value: a change stamp for a row
+/// whose stamp no trigger writes (a recipe's `deleted_seq`). Call inside
+/// [`write`], in the transaction that writes the row.
+pub fn next_sync_stamp(conn: &mut SqliteConnection) -> QueryResult<i64> {
+    use crate::schema::sync_clock;
+    diesel::update(sync_clock::table.filter(sync_clock::id.eq(1)))
+        .set(sync_clock::value.eq(sync_clock::value + 1))
+        .returning(sync_clock::value)
+        .get_result(conn)
+}
+
 /// A sync's [`sync_cursor`], plus what it needs to vet the client's.
 #[derive(Debug, Clone, Copy)]
 pub struct SyncCursor {
@@ -533,18 +544,72 @@ mod state_check_constraint_tests {
             .collect()
     }
 
+    /// The migration that pins recipes' deleted_at <=> deleted_seq.
+    const DELETED_SEQ_PAIRING_VERSION: &str = "20261122033831";
+
     /// A database migrated up to just before the CHECK constraints.
     fn before_checks(dir: &std::path::Path) -> SqliteConnection {
+        migrated_to_before(dir, CHECKS_VERSION)
+    }
+
+    /// A database migrated up to just before the migration `version`.
+    fn migrated_to_before(dir: &std::path::Path, version: &str) -> SqliteConnection {
         let url = dir.join("db.sqlite");
         let mut conn = SqliteConnection::establish(url.to_str().unwrap()).unwrap();
         setup_connection(&mut conn).unwrap();
         for migration in conn.pending_migrations(MIGRATIONS).unwrap() {
-            if migration.name().version().to_string().as_str() >= CHECKS_VERSION {
+            if migration.name().version().to_string().as_str() >= version {
                 break;
             }
             conn.run_migration(&*migration).unwrap();
         }
         conn
+    }
+
+    #[test]
+    fn a_deleted_recipe_without_a_stamp_is_stamped_and_the_pairing_holds() {
+        let dir = std::env::temp_dir().join(format!("ramekin-pairing-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let mut conn = migrated_to_before(&dir, DELETED_SEQ_PAIRING_VERSION);
+        // 'stamped' is deleted through the old trigger; 'bare' lost its stamp.
+        conn.batch_execute(
+            "INSERT INTO users (id, username, password_hash) VALUES ('u', 'u', '');
+             INSERT INTO recipes (seq, id, user_id) VALUES
+                 (1, 'live', 'u'), (2, 'stamped', 'u'), (3, 'bare', 'u');
+             UPDATE recipes SET deleted_at = '2026-01-01' WHERE id = 'stamped';
+             DROP TRIGGER recipes_stamp_delete;
+             UPDATE recipes SET deleted_at = '2026-01-02' WHERE id = 'bare';",
+        )
+        .unwrap();
+        let stamps = "SELECT id || ' ' || COALESCE(deleted_seq, '-') AS value \
+                      FROM recipes ORDER BY seq";
+        assert_eq!(values(&mut conn, stamps), ["live -", "stamped 1", "bare -"]);
+
+        conn.run_pending_migrations(MIGRATIONS).unwrap();
+
+        assert_eq!(values(&mut conn, stamps), ["live -", "stamped 1", "bare 2"]);
+        let clock = "SELECT CAST(value AS TEXT) AS value FROM sync_clock";
+        assert_eq!(values(&mut conn, clock), ["2"]);
+        let fk = "SELECT CAST(foreign_keys AS TEXT) AS value FROM pragma_foreign_keys";
+        assert_eq!(values(&mut conn, fk), ["1"]);
+
+        // Neither column moves without the other.
+        for bad in [
+            "UPDATE recipes SET deleted_at = '2026-11-21' WHERE id = 'live'",
+            "UPDATE recipes SET deleted_seq = 9 WHERE id = 'live'",
+            "UPDATE recipes SET deleted_seq = NULL WHERE id = 'bare'",
+        ] {
+            assert!(conn.batch_execute(bad).is_err(), "{bad}");
+        }
+        // A soft delete takes its own stamp.
+        let stamp = next_sync_stamp(&mut conn).unwrap();
+        assert_eq!(stamp, 3);
+        conn.batch_execute(
+            "UPDATE recipes SET deleted_at = '2026-11-21', deleted_seq = 3 WHERE id = 'live'",
+        )
+        .unwrap();
+        drop(conn);
+        std::fs::remove_dir_all(&dir).unwrap();
     }
 
     #[test]
@@ -630,6 +695,7 @@ mod state_check_constraint_tests {
             "UPDATE sessions SET token_type = 'admin'",
             "UPDATE recipe_versions SET version_source = 'mystery'",
             "UPDATE recipes SET deleted_seq = 3 WHERE id = 'r'",
+            "UPDATE recipes SET deleted_at = '2026-11-07' WHERE id = 'r'",
             "UPDATE step_outputs SET error = NULL WHERE id = 'o3'",
             "UPDATE step_outputs SET error = 'x' WHERE id = 'o2'",
             "UPDATE step_outputs SET output_hash = 'abc' WHERE id = 'o2'",
@@ -639,12 +705,6 @@ mod state_check_constraint_tests {
         ] {
             assert!(conn.batch_execute(bad).is_err(), "{bad}");
         }
-        // A soft delete still stamps.
-        conn.batch_execute("UPDATE recipes SET deleted_at = '2026-11-07' WHERE id = 'r'")
-            .unwrap();
-        let stamped = "SELECT id || ' ' || (deleted_seq IS NOT NULL) AS value \
-                       FROM recipes WHERE id = 'r'";
-        assert_eq!(values(&mut conn, stamped), ["r 1"]);
         drop(conn);
         std::fs::remove_dir_all(&dir).unwrap();
     }
