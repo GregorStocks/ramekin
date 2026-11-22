@@ -38,8 +38,6 @@ pub struct StepResult {
     pub output: JsonValue,
     /// How long the step took in milliseconds
     pub duration_ms: u64,
-    /// Name of the next step to run (duck typing - step decides what's next)
-    pub next_step: Option<String>,
 }
 
 impl StepResult {

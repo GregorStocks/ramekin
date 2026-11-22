@@ -14,7 +14,10 @@ pub enum PipelineStep {
 }
 
 impl PipelineStep {
-    /// All steps in execution order
+    /// The steps that scrape a recipe from its source URL, in execution
+    /// order. This is the only definition of that order: the CLI pipeline
+    /// runs these steps as listed, and the server's job plans are built from
+    /// them.
     pub const ALL: &'static [PipelineStep] = &[
         PipelineStep::FetchHtml,
         PipelineStep::ExtractRecipe,
@@ -160,14 +163,6 @@ pub struct RawRecipe {
     /// Footnote text extracted from HTML, keyed by marker (e.g., "*", "**")
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub footnotes: Option<Vec<(String, String)>>,
-}
-
-/// Output from a pipeline step, stored in step_data
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct StepOutput<T> {
-    pub build_id: String,
-    pub output: T,
-    pub next_step: Option<String>,
 }
 
 /// Output from the fetch_html step

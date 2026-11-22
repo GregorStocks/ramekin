@@ -7,7 +7,7 @@ use std::time::Instant;
 use serde::{Deserialize, Serialize};
 
 use ramekin_core::http::{CachingClient, HttpClient};
-use ramekin_core::pipeline::{run_pipeline, StepRegistry};
+use ramekin_core::pipeline::{run_pipeline, scrape_steps, StepRegistry};
 pub use ramekin_core::PipelineStep;
 
 use super::output_store::FileOutputStore;
@@ -147,8 +147,8 @@ pub async fn run_all_steps(
         && client.get_cached_html(url).is_some()
         && client.get_cached_error(url).is_none();
 
-    // Determine starting point for the pipeline
-    let first_step = if force_fetch {
+    // Whether fetch_html is already done, so the pipeline starts past it
+    let html_ready = if force_fetch {
         // Force fetch by running the dedicated fetch function
         let fetch_result = run_fetch_html(url, &client, true).await;
         step_results.push(fetch_result.clone());
@@ -159,16 +159,16 @@ pub async fn run_all_steps(
                 ingredient_stats: None,
             };
         }
-        // After force fetch, pre-populate store and start from extract_recipe
+        // After force fetch, pre-populate store and skip fetch_html
         // Only cache in memory - skip disk write since HTML is already in disk cache
         {
             if let Some(html) = client.get_cached_html(url) {
                 store.cache_only("fetch_html", serde_json::json!({ "html": html }));
             }
         }
-        "extract_recipe"
+        true
     } else if already_cached {
-        // Content is cached - add a synthetic fetch result and skip to extract_recipe
+        // Content is cached - add a synthetic fetch result and skip fetch_html
         step_results.push(StepResult {
             step: PipelineStep::FetchHtml,
             success: true,
@@ -183,14 +183,18 @@ pub async fn run_all_steps(
                 store.cache_only("fetch_html", serde_json::json!({ "html": html }));
             }
         }
-        "extract_recipe"
+        true
     } else {
         // Not cached - start from fetch_html
-        "fetch_html"
+        false
     };
 
-    // Run the generic pipeline from the determined starting point
-    let generic_results = run_pipeline(first_step, url, &mut store, &registry).await;
+    // Run the scrape steps, in the order the server runs them too
+    let mut steps = scrape_steps();
+    if html_ready {
+        steps.retain(|name| *name != PipelineStep::FetchHtml.as_str());
+    }
+    let generic_results = run_pipeline(&steps, url, &mut store, &registry).await;
 
     // Convert generic results to our StepResult format and append to any existing results
     let mut extraction_stats = None;

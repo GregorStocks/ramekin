@@ -40,7 +40,6 @@ impl ResolveIngredientNamesStep {
             outcome,
             output,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

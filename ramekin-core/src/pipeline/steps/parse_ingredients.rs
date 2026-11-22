@@ -49,7 +49,6 @@ impl PipelineStep for ParseIngredientsStep {
                     output: serde_json::Value::Null,
                     outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -67,7 +66,6 @@ impl PipelineStep for ParseIngredientsStep {
                     output: serde_json::Value::Null,
                     outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -89,7 +87,6 @@ impl PipelineStep for ParseIngredientsStep {
                     output: serde_json::Value::Null,
                     outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -121,7 +118,6 @@ impl PipelineStep for ParseIngredientsStep {
                 .expect("ParseIngredientsOutput serializes to JSON"),
             outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("save_recipe".to_string()),
         }
     }
 }

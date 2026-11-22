@@ -76,7 +76,6 @@ impl PipelineStep for NormalizeTitleStep {
             output: serde_json::to_value(output).expect("NormalizeTitleOutput serializes to JSON"),
             outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

@@ -37,7 +37,6 @@ impl PipelineStep for ExtractRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err("fetch_html output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -50,7 +49,6 @@ impl PipelineStep for ExtractRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err("No 'html' field in fetch_html output".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -61,14 +59,12 @@ impl PipelineStep for ExtractRecipeStep {
                 output: serde_json::to_value(&output).expect("ExtractionOutput serializes to JSON"),
                 outcome: Ok(()),
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("fetch_images".to_string()),
             },
             Err(e) => StepResult {
                 step_name: Self::NAME.to_string(),
                 output: serde_json::Value::Null,
                 outcome: Err(e.to_string()),
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: None,
             },
         }
     }

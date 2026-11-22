@@ -49,7 +49,6 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
                     output: serde_json::Value::Null,
                     outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -66,7 +65,6 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
                     output: serde_json::Value::Null,
                     outcome: Err("No raw_recipe in extract output".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -100,7 +98,6 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
             }),
             outcome: Ok(()), // Image fetch failures don't fail the pipeline
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("parse_ingredients".to_string()),
         }
     }
 }
@@ -128,7 +125,6 @@ impl PipelineStep for SaveRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -142,7 +138,6 @@ impl PipelineStep for SaveRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err(format!("Failed to parse extract output: {}", e)),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -158,7 +153,6 @@ impl PipelineStep for SaveRecipeStep {
             output: serde_json::to_value(&save_output).unwrap_or_default(),
             outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

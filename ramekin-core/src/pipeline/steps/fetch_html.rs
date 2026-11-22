@@ -45,14 +45,12 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchHtmlStep<C> {
                 output: json!({ "html": html }),
                 outcome: Ok(()),
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("extract_recipe".to_string()),
             },
             Err(e) => StepResult {
                 step_name: Self::NAME.to_string(),
                 output: serde_json::Value::Null,
                 outcome: Err(e.to_string()),
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: None,
             },
         }
     }

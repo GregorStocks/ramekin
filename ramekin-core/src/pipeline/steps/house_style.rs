@@ -96,7 +96,6 @@ impl PipelineStep for HouseStyleStep {
             output: serde_json::to_value(output).expect("HouseStyleOutput serializes to JSON"),
             outcome: Ok(()),
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
         }
     }
 }

@@ -106,7 +106,6 @@ impl PipelineStep for SaveRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err("extract_recipe output not found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -124,7 +123,6 @@ impl PipelineStep for SaveRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -142,7 +140,6 @@ impl PipelineStep for SaveRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -173,7 +170,6 @@ impl PipelineStep for SaveRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -207,7 +203,6 @@ impl PipelineStep for SaveRecipeStep {
                     output: serde_json::Value::Null,
                     outcome: Err(e),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: None,
                 };
             }
         };
@@ -266,14 +261,12 @@ impl PipelineStep for SaveRecipeStep {
                 }),
                 outcome: Ok(()),
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: None,
             },
             Err(e) => StepResult {
                 step_name: SaveRecipeStepMeta::NAME.to_string(),
                 output: serde_json::Value::Null,
                 outcome: Err(e),
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: None,
             },
         }
     }

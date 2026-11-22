@@ -6,11 +6,9 @@
 //! manual normalize job runs its source ops' steps (or `load_recipe`), then
 //! its normalize ops and `propose_normalize`.
 
-use ramekin_core::pipeline::steps::{
-    ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
-};
+use ramekin_core::pipeline::steps::{ExtractRecipeStep, ParseIngredientsStep, SaveRecipeStepMeta};
 use ramekin_core::pipeline::{
-    default_import_ops, normalize_phase_steps, NormalizeOp, APPLY_NORMALIZE_STEP,
+    default_import_ops, normalize_phase_steps, scrape_steps, NormalizeOp, APPLY_NORMALIZE_STEP,
     EDIT_WITH_AI_STEP, LOAD_RECIPE_STEP, PROPOSE_NORMALIZE_STEP, RESOLVE_INGREDIENT_NAMES_STEP,
 };
 
@@ -34,17 +32,11 @@ pub struct JobPlan {
     pub refetch: bool,
 }
 
-/// The steps that read a recipe from its source URL.
-const SOURCE_STEPS: &[&str] = &[
-    FetchHtmlStep::NAME,
-    ExtractRecipeStep::NAME,
-    FetchImagesStepMeta::NAME,
-    ParseIngredientsStep::NAME,
-];
-
-fn scrape_steps() -> Vec<&'static str> {
-    let mut steps = SOURCE_STEPS.to_vec();
-    steps.push(SaveRecipeStepMeta::NAME);
+/// The steps that read a recipe from its source URL: the scrape steps, whose
+/// order core defines for the CLI pipeline too, without the save.
+fn source_steps() -> Vec<&'static str> {
+    let mut steps = scrape_steps();
+    steps.retain(|name| *name != SaveRecipeStepMeta::NAME);
     steps
 }
 
@@ -105,11 +97,15 @@ impl JobPlan {
     /// A manual normalize run of `ops`, proposing a version.
     pub fn normalize(ops: &[NormalizeOp]) -> Self {
         let sequential = if ops.contains(&NormalizeOp::Refetch) {
-            SOURCE_STEPS.to_vec()
+            source_steps()
         } else if ops.contains(&NormalizeOp::Reextract) {
             // Starts at parse_ingredients when the source has no page to
             // extract from (Paprika and photo imports).
-            vec![ExtractRecipeStep::NAME, ParseIngredientsStep::NAME]
+            let mut steps = source_steps();
+            steps.retain(|name| {
+                [ExtractRecipeStep::NAME, ParseIngredientsStep::NAME].contains(name)
+            });
+            steps
         } else {
             vec![LOAD_RECIPE_STEP]
         };
