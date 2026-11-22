@@ -1,0 +1,16 @@
+{
+  "title": "Flaky API tests: search vector corpus loses its kcal_per_serving values in CI",
+  "description": "tests/test_search_match_filter_vectors.py fails intermittently in CI, including on master (CI run for 8af3c6118a, 2026-11-21) and on PR #976, which doesn't touch that code. It passes locally. \
+The `corpus` fixture creates each recipe through the API, then writes kcal_per_serving and kcal_per_serving_label onto the current recipe_versions row with direct SQL. In the failing runs a few recipes (hot-cocoa, creme-brulee) come back with kcal None, so test_match_filter_vectors ('calories:<150' misses hot-cocoa) or test_sync_serves_what_the_structured_filters_compare fails; which recipes and which test vary by run. \
+Unverified guess: something the server does in the background after create/update (nutrition estimate or ingredient-name resolution) writes the version's kcal columns, or a new current version, after the fixture's SQL, undoing it. Find what writes those columns after create_recipe/update_recipe returns and make the fixture wait for it or set the values in a way that can't be raced. \
+Test-only; no web or iOS change expected, and no data/ diffs from make pipeline.",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "api",
+    "tests",
+  ],
+  "created_at": "2026-11-21T20:10:00-08:00",
+  "updated_at": "2026-11-21T20:10:00-08:00",
+}
