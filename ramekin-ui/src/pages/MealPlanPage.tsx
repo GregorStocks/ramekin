@@ -29,24 +29,37 @@ function formatDateUtc(d: Date): string {
   return `${year}-${month}-${day}`;
 }
 
+const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
 function formatDayHeader(d: Date): string {
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  return `${days[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}`;
+  return `${WEEKDAYS[d.getDay()]} ${MONTHS[d.getMonth()]} ${d.getDate()}`;
 }
+
+function formatWeekRange(start: Date, end: Date): string {
+  const from = `${MONTHS[start.getMonth()]} ${start.getDate()}`;
+  const to =
+    start.getMonth() === end.getMonth()
+      ? `${end.getDate()}`
+      : `${MONTHS[end.getMonth()]} ${end.getDate()}`;
+  return `${from} – ${to}, ${end.getFullYear()}`;
+}
+
+// Below this width the week is a vertical list of days (see MealPlanPage.css).
+const NARROW_QUERY = "(max-width: 960px)";
 
 export default function MealPlanPage() {
   usePageTitle(() => "Meal Plan");
@@ -155,8 +168,24 @@ export default function MealPlanPage() {
     setWeekStart(newStart);
   };
 
+  // On narrow screens the week is a list of days, so bring today into view
+  // on first load and whenever Today is pressed.
+  const [pendingScrollToToday, setPendingScrollToToday] = createSignal(true);
+  let gridRef: HTMLDivElement | undefined;
+  createEffect(() => {
+    if (loading() || !pendingScrollToToday()) return;
+    setPendingScrollToToday(false);
+    requestAnimationFrame(() => {
+      if (!window.matchMedia(NARROW_QUERY).matches) return;
+      gridRef
+        ?.querySelector(".meal-day.day-today")
+        ?.scrollIntoView({ block: "start" });
+    });
+  });
+
   const goToToday = () => {
     setWeekStart(getMonday(new Date()));
+    setPendingScrollToToday(true);
   };
 
   const openPicker = (date: Date, mealType: MealType) => {
@@ -311,7 +340,12 @@ export default function MealPlanPage() {
   return (
     <div class="meal-plan-page">
       <div class="page-header">
-        <h2>Meal Plan</h2>
+        <div class="meal-plan-title">
+          <h2>Meal Plan</h2>
+          <span class="meal-plan-range">
+            {formatWeekRange(weekDays()[0], weekDays()[6])}
+          </span>
+        </div>
         <div class="week-nav">
           <button class="btn btn-small" onClick={prevWeek}>
             &larr; Prev
@@ -340,35 +374,63 @@ export default function MealPlanPage() {
       </Show>
 
       <Show when={!loading()}>
-        <div class="meal-plan-grid">
-          {/* Header row with day names */}
-          <div class="meal-plan-header">
-            <div class="meal-type-label"></div>
-            <For each={weekDays()}>
-              {(day) => (
-                <div
-                  class="day-header"
-                  classList={{ "day-today": isToday(day) }}
-                >
-                  {formatDayHeader(day)}
-                </div>
-              )}
-            </For>
-          </div>
-
-          {/* Meal type rows */}
+        <div class="meal-plan-grid" ref={gridRef}>
+          {/* Row labels for the wide layout; each slot also carries its own
+              label, shown when the week stacks into a list of days. */}
           <For each={MEAL_TYPES}>
-            {(mealType) => (
-              <div class="meal-row">
-                <div class="meal-type-label">{MEAL_TYPE_LABELS[mealType]}</div>
-                <For each={weekDays()}>
-                  {(day) => {
+            {(mealType, i) => (
+              <div
+                class="meal-row-label"
+                style={{ "grid-row": `${i() + 2}` }}
+                aria-hidden="true"
+              >
+                {MEAL_TYPE_LABELS[mealType]}
+              </div>
+            )}
+          </For>
+          <For each={weekDays()}>
+            {(day) => (
+              <section
+                class="meal-day"
+                classList={{ "day-today": isToday(day) }}
+                aria-label={formatDayHeader(day)}
+              >
+                <h3 class="day-header">
+                  <span class="day-header-weekday">
+                    {WEEKDAYS[day.getDay()]}
+                  </span>
+                  <span class="day-header-date">{day.getDate()}</span>
+                  <Show when={isToday(day)}>
+                    <span class="day-header-today">Today</span>
+                  </Show>
+                </h3>
+                <For each={MEAL_TYPES}>
+                  {(mealType) => {
                     const meals = () => getMealsForSlot(day, mealType);
                     return (
                       <div
                         class="meal-slot"
-                        classList={{ "day-today": isToday(day) }}
+                        classList={{
+                          "day-today": isToday(day),
+                          "meal-slot-empty": meals().length === 0,
+                        }}
                       >
+                        <div class="meal-slot-head">
+                          <span class="meal-slot-label">
+                            {MEAL_TYPE_LABELS[mealType]}
+                          </span>
+                          <button
+                            class="add-meal-btn"
+                            onClick={() => openPicker(day, mealType)}
+                            title="Add recipe"
+                            aria-label={`Add ${MEAL_TYPE_LABELS[mealType]} on ${formatDayHeader(day)}`}
+                          >
+                            <span aria-hidden="true">+</span>
+                            <span class="add-meal-text" aria-hidden="true">
+                              Add
+                            </span>
+                          </button>
+                        </div>
                         <For each={meals()}>
                           {(mp) => (
                             <div class="meal-card">
@@ -384,43 +446,39 @@ export default function MealPlanPage() {
                                 href={`/recipes/${mp.recipeId}`}
                                 class="meal-title"
                               >
-                                <span>{mp.recipeTitle}</span>
+                                <span class="meal-title-text">
+                                  {mp.recipeTitle}
+                                </span>
                                 <Show when={mp.notes}>
                                   <span class="meal-notes">{mp.notes}</span>
                                 </Show>
                               </A>
-                              <button
-                                class="meal-edit"
-                                onClick={() => openEdit(mp)}
-                                title={`Edit ${mp.recipeTitle}`}
-                                aria-label={`Edit ${mp.recipeTitle}`}
-                              >
-                                ✎
-                              </button>
-                              <button
-                                class="meal-remove"
-                                onClick={() => confirmDelete(mp)}
-                                title={`Remove ${mp.recipeTitle}`}
-                                aria-label={`Remove ${mp.recipeTitle}`}
-                              >
-                                &times;
-                              </button>
+                              <div class="meal-card-actions">
+                                <button
+                                  class="meal-edit"
+                                  onClick={() => openEdit(mp)}
+                                  title={`Edit ${mp.recipeTitle}`}
+                                  aria-label={`Edit ${mp.recipeTitle}`}
+                                >
+                                  ✎
+                                </button>
+                                <button
+                                  class="meal-remove"
+                                  onClick={() => confirmDelete(mp)}
+                                  title={`Remove ${mp.recipeTitle}`}
+                                  aria-label={`Remove ${mp.recipeTitle}`}
+                                >
+                                  &times;
+                                </button>
+                              </div>
                             </div>
                           )}
                         </For>
-                        <button
-                          class="add-meal-btn"
-                          onClick={() => openPicker(day, mealType)}
-                          title="Add recipe"
-                          aria-label={`Add ${MEAL_TYPE_LABELS[mealType]} on ${formatDayHeader(day)}`}
-                        >
-                          +
-                        </button>
                       </div>
                     );
                   }}
                 </For>
-              </div>
+              </section>
             )}
           </For>
         </div>

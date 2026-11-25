@@ -1,4 +1,10 @@
-/* Meal Plan Page */
+/* Meal Plan Page
+ *
+ * One section per day. Wide screens lay the days out as calendar columns,
+ * with each day's slots on shared rows (subgrid) beside a column of meal
+ * labels. Narrow screens stack the days into a list, each slot labelled
+ * with its own meal name and add button.
+ */
 .meal-plan-page {
   max-width: 100%;
 }
@@ -6,8 +12,24 @@
 .meal-plan-page .page-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+.meal-plan-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meal-plan-title h2 {
+  margin: 0;
+}
+
+.meal-plan-range {
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .week-nav {
@@ -15,91 +37,170 @@
   gap: 0.5rem;
 }
 
+/* ---------- Wide layout: days as columns ---------- */
+
 .meal-plan-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  display: grid;
+  grid-template-columns: 6.5rem repeat(7, minmax(0, 1fr));
+  /* Day headers, then one row per meal type. */
+  grid-template-rows: auto repeat(4, minmax(5rem, auto));
   border: 1px solid var(--border-hairline);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+  box-shadow: var(--shadow-card);
   overflow: hidden;
 }
 
-.meal-plan-header {
-  display: grid;
-  grid-template-columns: 100px repeat(7, minmax(0, 1fr));
-  background: var(--surface-1);
-  border-bottom: 1px solid var(--border-hairline);
+.meal-row-label {
+  grid-column: 1;
+  padding: 0.85rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-hairline);
 }
 
-.meal-plan-header .meal-type-label {
-  padding: 0.75rem;
+.meal-day {
+  grid-row: 1 / span 5;
+  display: grid;
+  grid-template-rows: subgrid;
+  border-left: 1px solid var(--border-hairline);
+  min-width: 0;
+}
+
+.meal-day.day-today {
+  background: color-mix(in oklab, var(--accent-wash) 45%, var(--surface-1));
 }
 
 .day-header {
-  padding: 0.75rem;
-  text-align: center;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.75rem 0.75rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 500;
-  font-size: 0.85rem;
-  border-left: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
 }
 
-.day-header.day-today {
+.day-header-weekday {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.day-header-date {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.day-header-today {
+  margin-left: auto;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--text-on-accent);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.meal-day.day-today .day-header-weekday {
+  color: var(--accent);
+}
+
+.meal-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border-top: 1px solid var(--border-hairline);
+  min-width: 0;
+}
+
+/* The row labels name the slot here, so the head only holds the add
+   button, after the slot's meals. */
+.meal-slot-head {
+  order: 1;
+  display: flex;
+  align-items: center;
+}
+
+.meal-slot-label {
+  display: none;
+}
+
+.add-meal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.45rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+  cursor: pointer;
+  /* Quiet until the slot is hovered or focused; empty slots keep a faint
+     hint so an empty week still shows where to add. */
+  opacity: 0;
+  transition:
+    opacity 0.15s,
+    background 0.15s,
+    color 0.15s;
+}
+
+.meal-slot-empty .add-meal-btn {
+  opacity: 0.55;
+}
+
+.meal-slot:hover .add-meal-btn,
+.add-meal-btn:focus-visible {
+  opacity: 1;
+}
+
+.add-meal-btn:hover {
   background: var(--accent-wash);
   color: var(--accent);
 }
 
-.meal-row {
-  display: grid;
-  grid-template-columns: 100px repeat(7, minmax(0, 1fr));
-  border-bottom: 1px solid var(--border-hairline);
-}
-
-.meal-row:last-child {
-  border-bottom: none;
-}
-
-.meal-type-label {
-  padding: 0.75rem;
-  font-weight: 500;
-  font-size: 0.85rem;
-  background: var(--surface-1);
-  display: flex;
-  align-items: flex-start;
-}
-
-.meal-slot {
-  border-left: 1px solid var(--border-hairline);
-  padding: 0.5rem;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  background: var(--surface-2);
-}
-
-.meal-slot.day-today {
-  background: color-mix(in oklab, var(--accent-wash) 50%, var(--surface-2));
+@media (hover: none) {
+  .add-meal-btn {
+    opacity: 1;
+  }
 }
 
 .meal-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
-  padding: 0.375rem;
+  padding: 0.4rem;
   background: var(--surface-elevated);
-  border-radius: 4px;
   border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
   position: relative;
   min-width: 0;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
 
 .meal-card:hover {
   border-color: var(--border-subtle);
+  box-shadow: var(--shadow-card);
 }
 
 .meal-thumbnail {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 4px;
   overflow: hidden;
   flex-shrink: 0;
@@ -114,20 +215,24 @@
 .meal-title {
   flex: 1;
   min-width: 0;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  text-decoration: none;
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
-  overflow: hidden;
+  gap: 0.1rem;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: var(--text-secondary);
+  text-decoration: none;
 }
 
-.meal-title span {
-  min-width: 0;
-  white-space: nowrap;
+/* Two lines before truncating, so titles stay recognisable in narrow
+   columns. */
+.meal-title-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 
 .meal-title:hover {
@@ -137,14 +242,24 @@
 .meal-notes {
   color: var(--text-faint);
   font-size: 0.72rem;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meal-card-actions {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: flex;
+  gap: 3px;
 }
 
 .meal-edit,
 .meal-remove {
-  position: absolute;
-  top: -4px;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: none;
   color: var(--text-on-accent);
@@ -158,12 +273,10 @@
 }
 
 .meal-edit {
-  right: 18px;
   background: var(--accent);
 }
 
 .meal-remove {
-  right: -4px;
   background: var(--danger);
 }
 
@@ -174,67 +287,123 @@
   opacity: 1;
 }
 
-.add-meal-btn {
-  width: 100%;
-  padding: 0.375rem;
-  border: 1px dashed var(--border-subtle);
-  border-radius: 4px;
-  background: transparent;
-  color: var(--text-faint);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.add-meal-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-wash);
-}
+/* ---------- Narrow layout: a list of days ---------- */
 
 @media (max-width: 960px) {
+  .meal-plan-page .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .meal-plan-title {
+    align-items: center;
+  }
+
+  .week-nav {
+    justify-content: center;
+  }
+
   .meal-plan-grid {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    display: block;
   }
 
-  .meal-plan-header,
-  .meal-row {
-    grid-template-columns: 80px repeat(7, minmax(120px, 1fr));
-    min-width: 920px;
+  .meal-row-label {
+    display: none;
   }
 
-  .meal-type-label {
-    font-size: 0.75rem;
-    padding: 0.5rem;
+  .meal-day {
+    display: block;
+    border-left: none;
+    /* A little air above today's header when it's scrolled to. */
+    scroll-margin-top: 0.5rem;
+  }
+
+  .meal-day + .meal-day {
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .meal-day.day-today {
+    background: none;
   }
 
   .day-header {
-    font-size: 0.75rem;
-    padding: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--surface-2);
+  }
+
+  .meal-day.day-today .day-header {
+    background: var(--accent-wash);
   }
 
   .meal-slot {
-    min-height: 80px;
-    padding: 0.25rem;
+    padding: 0.15rem 1rem 0.4rem;
+    border-top: none;
+    gap: 0.35rem;
+  }
+
+  .meal-slot:first-of-type {
+    padding-top: 0.4rem;
+  }
+
+  .meal-slot-head {
+    order: 0;
+    justify-content: space-between;
+    min-height: 2rem;
+  }
+
+  .meal-slot-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .add-meal-btn,
+  .meal-slot-empty .add-meal-btn {
+    opacity: 1;
+    color: var(--accent);
+    /* A comfortable touch target without a taller row. */
+    min-height: 2.25rem;
+    margin: -0.25rem -0.45rem -0.25rem 0;
+    font-size: 0.85rem;
+    font-weight: 500;
   }
 
   .meal-card {
-    padding: 0.25rem;
-    gap: 0.25rem;
-  }
-
-  .meal-title {
-    font-size: 0.7rem;
+    align-items: center;
+    padding: 0.5rem;
   }
 
   .meal-thumbnail {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
   }
 
-  .add-meal-btn {
-    padding: 0.25rem;
-    font-size: 0.85rem;
+  .meal-title {
+    font-size: 0.9rem;
+  }
+
+  /* No hover on touch: keep the card actions inline and visible. */
+  .meal-card-actions {
+    position: static;
+    gap: 0.25rem;
+  }
+
+  .meal-edit,
+  .meal-remove {
+    opacity: 1;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    background: transparent;
+    color: var(--text-faint);
+  }
+
+  .meal-edit:hover {
+    color: var(--accent);
+  }
+
+  .meal-remove:hover {
+    color: var(--danger);
   }
 }
