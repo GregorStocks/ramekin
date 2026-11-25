@@ -140,6 +140,8 @@ pub mod scrape_job_response;
 pub use self::scrape_job_response::ScrapeJobResponse;
 pub mod scrape_job_status;
 pub use self::scrape_job_status::ScrapeJobStatus;
+pub mod shopping_group;
+pub use self::shopping_group::ShoppingGroup;
 pub mod shopping_list_fields;
 pub use self::shopping_list_fields::ShoppingListFields;
 pub mod shopping_list_history_entry;

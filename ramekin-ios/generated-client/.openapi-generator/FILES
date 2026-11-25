@@ -99,6 +99,7 @@ RamekinClient/Classes/OpenAPIs/Models/RescrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RetryScrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ScrapeJobResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ScrapeJobStatus.swift
+RamekinClient/Classes/OpenAPIs/Models/ShoppingGroup.swift
 RamekinClient/Classes/OpenAPIs/Models/ShoppingListFields.swift
 RamekinClient/Classes/OpenAPIs/Models/ShoppingListHistoryEntry.swift
 RamekinClient/Classes/OpenAPIs/Models/ShoppingListHistoryResponse.swift
@@ -211,6 +212,7 @@ docs/RetryScrapeResponse.md
 docs/ScrapeAPI.md
 docs/ScrapeJobResponse.md
 docs/ScrapeJobStatus.md
+docs/ShoppingGroup.md
 docs/ShoppingListAPI.md
 docs/ShoppingListFields.md
 docs/ShoppingListHistoryEntry.md

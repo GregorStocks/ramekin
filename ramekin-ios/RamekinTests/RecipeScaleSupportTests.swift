@@ -79,6 +79,7 @@ final class RecipeScaleSupportTests: XCTestCase {
             prepTime: nil,
             rating: nil,
             servings: "2",
+            shoppingGroups: [],
             sourceName: nil,
             sourceUrl: nil,
             tags: [],

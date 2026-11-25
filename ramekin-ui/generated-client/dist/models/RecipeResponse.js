@@ -13,6 +13,7 @@
  */
 import { IngredientFromJSON, IngredientToJSON, } from './Ingredient';
 import { DerivedMeasurementFromJSON, DerivedMeasurementToJSON, } from './DerivedMeasurement';
+import { ShoppingGroupFromJSON, ShoppingGroupToJSON, } from './ShoppingGroup';
 /**
  * Check if a given object implements the RecipeResponse interface.
  */
@@ -30,6 +31,8 @@ export function instanceOfRecipeResponse(value) {
     if (!('normalizeOps' in value) || value['normalizeOps'] === undefined)
         return false;
     if (!('photoIds' in value) || value['photoIds'] === undefined)
+        return false;
+    if (!('shoppingGroups' in value) || value['shoppingGroups'] === undefined)
         return false;
     if (!('tags' in value) || value['tags'] === undefined)
         return false;
@@ -66,6 +69,7 @@ export function RecipeResponseFromJSONTyped(json, ignoreDiscriminator) {
         'prepTime': json['prep_time'] == null ? undefined : json['prep_time'],
         'rating': json['rating'] == null ? undefined : json['rating'],
         'servings': json['servings'] == null ? undefined : json['servings'],
+        'shoppingGroups': (json['shopping_groups'].map(ShoppingGroupFromJSON)),
         'sourceName': json['source_name'] == null ? undefined : json['source_name'],
         'sourceUrl': json['source_url'] == null ? undefined : json['source_url'],
         'tags': json['tags'],
@@ -99,6 +103,7 @@ export function RecipeResponseToJSONTyped(value, ignoreDiscriminator = false) {
         'prep_time': value['prepTime'],
         'rating': value['rating'],
         'servings': value['servings'],
+        'shopping_groups': (value['shoppingGroups'].map(ShoppingGroupToJSON)),
         'source_name': value['sourceName'],
         'source_url': value['sourceUrl'],
         'tags': value['tags'],

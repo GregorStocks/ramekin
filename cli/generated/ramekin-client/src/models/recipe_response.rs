@@ -85,6 +85,9 @@ pub struct RecipeResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub servings: Option<Option<String>>,
+    /// Ingredients grouped by the category each would get on the shopping list, in shopping-list category order.
+    #[serde(rename = "shopping_groups")]
+    pub shopping_groups: Vec<models::ShoppingGroup>,
     #[serde(
         rename = "source_name",
         default,
@@ -129,6 +132,7 @@ impl RecipeResponse {
         instructions: String,
         normalize_ops: Vec<String>,
         photo_ids: Vec<uuid::Uuid>,
+        shopping_groups: Vec<models::ShoppingGroup>,
         tags: Vec<String>,
         title: String,
         updated_at: String,
@@ -151,6 +155,7 @@ impl RecipeResponse {
             prep_time: None,
             rating: None,
             servings: None,
+            shopping_groups,
             source_name: None,
             source_url: None,
             tags,

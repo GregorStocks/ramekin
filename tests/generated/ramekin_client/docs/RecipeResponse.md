@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **prep_time** | **str** |  | [optional] 
 **rating** | **int** |  | [optional] 
 **servings** | **str** |  | [optional] 
+**shopping_groups** | [**List[ShoppingGroup]**](ShoppingGroup.md) | Ingredients grouped by the category each would get on the shopping list, in shopping-list category order. | 
 **source_name** | **str** |  | [optional] 
 **source_url** | **str** |  | [optional] 
 **tags** | **List[str]** |  | 

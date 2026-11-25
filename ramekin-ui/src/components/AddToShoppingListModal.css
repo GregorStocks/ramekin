@@ -22,11 +22,27 @@
 }
 
 .add-shopping-modal .ingredient-select-list {
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.add-shopping-modal .ingredient-select-group {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
+}
+
+/* Matches the category headers on the shopping list page. */
+.add-shopping-modal .ingredient-select-group-header {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 
 .add-shopping-modal .ingredient-select-item {

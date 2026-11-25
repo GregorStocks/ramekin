@@ -124,6 +124,7 @@ final class RecipeFormDraftResumeTests: XCTestCase {
             prepTime: nil,
             rating: nil,
             servings: nil,
+            shoppingGroups: [],
             sourceName: nil,
             sourceUrl: nil,
             tags: [],

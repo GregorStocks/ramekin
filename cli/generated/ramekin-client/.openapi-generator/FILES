@@ -84,6 +84,7 @@ docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
 docs/ScrapeJobResponse.md
 docs/ScrapeJobStatus.md
+docs/ShoppingGroup.md
 docs/ShoppingListApi.md
 docs/ShoppingListFields.md
 docs/ShoppingListHistoryEntry.md
@@ -207,6 +208,7 @@ src/models/rescrape_response.rs
 src/models/retry_scrape_response.rs
 src/models/scrape_job_response.rs
 src/models/scrape_job_status.rs
+src/models/shopping_group.rs
 src/models/shopping_list_fields.rs
 src/models/shopping_list_history_entry.rs
 src/models/shopping_list_history_response.rs

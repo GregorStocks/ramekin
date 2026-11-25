@@ -113,6 +113,7 @@ __all__ = [
     "RetryScrapeResponse",
     "ScrapeJobResponse",
     "ScrapeJobStatus",
+    "ShoppingGroup",
     "ShoppingListFields",
     "ShoppingListHistoryEntry",
     "ShoppingListHistoryResponse",
@@ -242,6 +243,7 @@ from ramekin_client.models.rescrape_response import RescrapeResponse as Rescrape
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse as RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse as ScrapeJobResponse
 from ramekin_client.models.scrape_job_status import ScrapeJobStatus as ScrapeJobStatus
+from ramekin_client.models.shopping_group import ShoppingGroup as ShoppingGroup
 from ramekin_client.models.shopping_list_fields import ShoppingListFields as ShoppingListFields
 from ramekin_client.models.shopping_list_history_entry import ShoppingListHistoryEntry as ShoppingListHistoryEntry
 from ramekin_client.models.shopping_list_history_response import ShoppingListHistoryResponse as ShoppingListHistoryResponse

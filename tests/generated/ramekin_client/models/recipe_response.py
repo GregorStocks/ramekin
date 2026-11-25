@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.derived_measurement import DerivedMeasurement
 from ramekin_client.models.ingredient import Ingredient
+from ramekin_client.models.shopping_group import ShoppingGroup
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -45,6 +46,7 @@ class RecipeResponse(BaseModel):
     prep_time: Optional[StrictStr] = None
     rating: Optional[StrictInt] = None
     servings: Optional[StrictStr] = None
+    shopping_groups: List[ShoppingGroup] = Field(description="Ingredients grouped by the category each would get on the shopping list, in shopping-list category order.")
     source_name: Optional[StrictStr] = None
     source_url: Optional[StrictStr] = None
     tags: List[StrictStr]
@@ -53,7 +55,7 @@ class RecipeResponse(BaseModel):
     updated_at: datetime = Field(description="When viewing a specific version, this is the version's created_at")
     version_id: UUID = Field(description="Version metadata")
     version_source: StrictStr
-    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "derived_measurements", "description", "difficulty", "id", "ingredients", "instructions", "normalize_ops", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "updated_at", "version_id", "version_source"]
+    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "derived_measurements", "description", "difficulty", "id", "ingredients", "instructions", "normalize_ops", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "shopping_groups", "source_name", "source_url", "tags", "title", "total_time", "updated_at", "version_id", "version_source"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,6 +110,13 @@ class RecipeResponse(BaseModel):
                 if _item_ingredients:
                     _items.append(_item_ingredients.to_dict())
             _dict['ingredients'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in shopping_groups (list)
+        _items = []
+        if self.shopping_groups:
+            for _item_shopping_groups in self.shopping_groups:
+                if _item_shopping_groups:
+                    _items.append(_item_shopping_groups.to_dict())
+            _dict['shopping_groups'] = _items
         # set to None if cook_time (nullable) is None
         # and model_fields_set contains the field
         if self.cook_time is None and "cook_time" in self.model_fields_set:
@@ -190,6 +199,7 @@ class RecipeResponse(BaseModel):
             "prep_time": obj.get("prep_time"),
             "rating": obj.get("rating"),
             "servings": obj.get("servings"),
+            "shopping_groups": [ShoppingGroup.from_dict(_item) for _item in obj["shopping_groups"]] if obj.get("shopping_groups") is not None else None,
             "source_name": obj.get("source_name"),
             "source_url": obj.get("source_url"),
             "tags": obj.get("tags"),

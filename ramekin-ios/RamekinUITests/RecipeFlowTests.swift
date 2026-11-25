@@ -166,7 +166,11 @@ final class RecipeFlowTests: XCTestCase {
         let shoppingBar = app.navigationBars["Add to Shopping List"]
         XCTAssertTrue(shoppingBar.waitForExistence(timeout: slowSimulatorTimeout))
         XCTAssertFalse(editButton.isHittable)
-        let ingredient = app.buttons["shopping-ingredient-0"]
+        // Rows are grouped by shopping category, so ingredient 0 can sit in
+        // a later section below the fold; use whichever row comes first.
+        let ingredient = app.buttons
+            .matching(NSPredicate(format: "identifier BEGINSWITH %@", "shopping-ingredient-"))
+            .firstMatch
         XCTAssertTrue(ingredient.waitForExistence(timeout: slowSimulatorTimeout))
         XCTAssertFalse(ingredient.label.isEmpty)
         assertAccessibleValue(ingredient, equals: "Selected")

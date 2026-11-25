@@ -51,37 +51,7 @@ struct AddToShoppingListSheet: View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(Array(recipe.ingredients.enumerated()), id: \.offset) { index, ingredient in
-                        Button {
-                            if selectedIngredients.contains(index) {
-                                selectedIngredients.remove(index)
-                            } else {
-                                selectedIngredients.insert(index)
-                            }
-                        } label: {
-                            HStack {
-                                Image(systemName: selectedIngredients.contains(index) ? "checkmark.circle.fill" : "circle")
-                                    .foregroundColor(selectedIngredients.contains(index) ? .orange : .secondary)
-                                    .font(.title3)
-                                    .accessibilityHidden(true)
-
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(ingredient.formatted(scale: scale))
-                                        .foregroundColor(.primary)
-
-                                    if let note = ingredient.note, !note.isEmpty {
-                                        Text(note)
-                                            .font(.caption)
-                                            .foregroundColor(.secondary)
-                                            .italic()
-                                    }
-                                }
-                            }
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityValue(selectedIngredients.contains(index) ? "Selected" : "Not selected")
-                        .accessibilityIdentifier("shopping-ingredient-\(index)")
-                    }
+                    EmptyView()
                 } header: {
                     HStack {
                         Text("Select ingredients to add")
@@ -96,6 +66,15 @@ struct AddToShoppingListSheet: View {
                         .font(.caption)
                         .frame(minHeight: 44)
                         .contentShape(Rectangle())
+                    }
+                }
+                .disabled(flow.isConfirmed)
+
+                ForEach(recipe.shoppingGroups, id: \.category) { group in
+                    Section(group.category) {
+                        ForEach(group.ingredientIndices, id: \.self) { index in
+                            ingredientRow(index: index, ingredient: recipe.ingredients[index])
+                        }
                     }
                 }
                 // Rows stay put under the confirmation overlay, so the
@@ -143,6 +122,38 @@ struct AddToShoppingListSheet: View {
                 }
             }
         }
+    }
+
+    private func ingredientRow(index: Int, ingredient: Ingredient) -> some View {
+        Button {
+            if selectedIngredients.contains(index) {
+                selectedIngredients.remove(index)
+            } else {
+                selectedIngredients.insert(index)
+            }
+        } label: {
+            HStack {
+                Image(systemName: selectedIngredients.contains(index) ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(selectedIngredients.contains(index) ? .orange : .secondary)
+                    .font(.title3)
+                    .accessibilityHidden(true)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(ingredient.formatted(scale: scale))
+                        .foregroundColor(.primary)
+
+                    if let note = ingredient.note, !note.isEmpty {
+                        Text(note)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .italic()
+                    }
+                }
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityValue(selectedIngredients.contains(index) ? "Selected" : "Not selected")
+        .accessibilityIdentifier("shopping-ingredient-\(index)")
     }
 
     private var allSelected: Bool {

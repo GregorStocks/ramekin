@@ -69,6 +69,13 @@ class TestRecipeResponse(unittest.TestCase):
                 prep_time = '',
                 rating = 56,
                 servings = '',
+                shopping_groups = [
+                    ramekin_client.models.shopping_group.ShoppingGroup(
+                        category = '', 
+                        ingredient_indices = [
+                            0
+                            ], )
+                    ],
                 source_name = '',
                 source_url = '',
                 tags = [
@@ -107,6 +114,13 @@ class TestRecipeResponse(unittest.TestCase):
                     ],
                 photo_ids = [
                     ''
+                    ],
+                shopping_groups = [
+                    ramekin_client.models.shopping_group.ShoppingGroup(
+                        category = '', 
+                        ingredient_indices = [
+                            0
+                            ], )
                     ],
                 tags = [
                     ''
